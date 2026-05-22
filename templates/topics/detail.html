@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block title %}{{ topic.title }} — Infinity{% endblock %}
+
+{% block content %}
+<article x-data="{ layer: 1 }">
+  <nav class="text-xs text-ink-400">
+    <a href="{% url 'topics:index' %}" class="hover:text-ink-600">Topics</a>
+    <span class="mx-1">/</span>
+    <span>{{ topic.title }}</span>
+  </nav>
+
+  <header class="mt-4 max-w-prose">
+    <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight">{{ topic.title }}</h1>
+    {% if topic.summary %}
+    <p class="mt-3 text-ink-600">{{ topic.summary }}</p>
+    {% endif %}
+  </header>
+
+  <div
+    class="mt-8 inline-flex rounded-full border border-ink-200 bg-white p-1 text-sm"
+    role="tablist"
+    aria-label="Layer of detail"
+  >
+    <template x-for="n in [1, 2, 3]" :key="n">
+      <button
+        type="button"
+        role="tab"
+        :aria-selected="layer === n"
+        @click="layer = n"
+        :class="layer === n
+          ? 'bg-ink-900 text-white'
+          : 'text-ink-600 hover:text-ink-900'"
+        class="px-4 py-1.5 rounded-full transition-colors"
+        x-text="'L' + n"
+      ></button>
+    </template>
+  </div>
+  <p class="mt-2 text-xs text-ink-400">
+    <span x-show="layer === 1">Overview — visual, under 10 minutes.</span>
+    <span x-show="layer === 2">Comprehensive — full write-up with sources.</span>
+    <span x-show="layer === 3">Going further — curated learning map.</span>
+  </p>
+
+  <section x-show="layer === 1" class="mt-8">
+    <div class="rounded-2xl border border-ink-100 bg-white p-6 sm:p-10">
+      {% if topic.l1_content %}
+        {{ topic.l1_content|safe }}
+      {% else %}
+        <div class="text-sm text-ink-400">L1 placeholder — infographic goes here.</div>
+      {% endif %}
+    </div>
+  </section>
+
+  <section x-show="layer === 2" x-cloak class="mt-8 max-w-prose prose prose-ink">
+    {% if topic.l2_content %}
+      {{ topic.l2_content|safe }}
+    {% else %}
+      <p class="text-sm text-ink-400">L2 placeholder — comprehensive write-up goes here.</p>
+    {% endif %}
+  </section>
+
+  <section x-show="layer === 3" x-cloak class="mt-8 max-w-prose">
+    {% if topic.l3_content %}
+      {{ topic.l3_content|safe }}
+    {% else %}
+      <p class="text-sm text-ink-400">L3 placeholder — annotated link map goes here.</p>
+    {% endif %}
+  </section>
+
+  {% if related %}
+  <aside class="mt-16 border-t border-ink-100 pt-8">
+    <h2 class="text-sm font-medium text-ink-600 uppercase tracking-wide">Connects to</h2>
+    <ul class="mt-4 grid gap-2 sm:grid-cols-2">
+      {% for edge in related %}
+      <li>
+        <a
+          href="{% url 'topics:detail' edge.target.slug %}"
+          class="block rounded-lg border border-ink-100 bg-white p-3 hover:border-ink-200"
+        >
+          <div class="text-xs text-ink-400">{{ edge.get_kind_display }}</div>
+          <div class="text-sm font-medium">{{ edge.target.title }}</div>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </aside>
+  {% endif %}
+</article>
+
+<style>[x-cloak] { display: none !important; }</style>
+{% endblock %}
