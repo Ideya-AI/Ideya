@@ -1,0 +1,274 @@
+/* ============================================================================
+   Infinity (Ideya) — Colors & Type
+   A curated atlas of hard issues. Restrained, typographic, mobile-first.
+   Source of truth: Infinity_Project (Django + Tailwind).
+   Primary typeface: Plus Jakarta Sans (one family, whole system).
+   Inter is a tabular-numbers utility; JetBrains Mono is the code/mono face.
+   Fonts are loaded below via @font-face. If the user uploads self-hosted
+   files, those override these CDN sources — keep the family names identical.
+   ============================================================================ */
+
+/* ---- Web fonts (same families the tokens name — not substitutes).
+   Plus Jakarta Sans = --font-sans/display · Inter = --font-tabular · JetBrains Mono = --font-mono */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  /* ---- Neutral "ink" ramp — clean near-neutrals with only a whisper of green,
+     to echo the crisp green-on-white logo (not olive/muddy). Carries all chrome. */
+  --ink-50:  #f7f9f7;   /* page background */
+  --ink-100: #ebefea;   /* hairline borders, chip fills, dividers */
+  --ink-200: #dce1da;   /* hover borders, stronger dividers */
+  --ink-300: #bdc4bc;   /* disabled text, faint rules */
+  --ink-400: #888f86;   /* muted text, section labels, meta */
+  --ink-500: #666c64;   /* tertiary text */
+  --ink-600: #464d45;   /* secondary / body copy */
+  --ink-700: #353b34;   /* strong body */
+  --ink-800: #232823;   /* near-black */
+  --ink-900: #141813;   /* primary text, hard accents (crux rule) */
+  --white:   #ffffff;   /* card surface */
+
+  /* ---- Primary green — the logo's pastel grass green. The app's accent:
+     primary buttons, active toggles, links-as-action, brand touches. */
+  --green-500: #4cb050;        /* logo pastel green — the primary */
+  --green-600: #3f9a44;        /* hover / pressed */
+  --green-700: #327d38;        /* text-on-light, strong accent (AA on white) */
+  --green-tint:        #e9f5ea; /* pale fill behind green elements */
+  --green-tint-strong: #d7eed9; /* selected / hovered green fill */
+
+  --accent:        var(--green-500);
+  --accent-hover:  var(--green-600);
+  --accent-strong: var(--green-700);
+  --accent-tint:   var(--green-tint);
+  --on-accent:     #ffffff;
+
+  /* ---- Surfaces & lines (semantic aliases) */
+  --bg:           var(--ink-50);
+  --surface:      var(--white);
+  --surface-sunk: var(--ink-50);
+  --border:       var(--ink-100);
+  --border-hover: var(--ink-200);
+  --rule-strong:  var(--ink-900);
+
+  /* ---- Text (semantic aliases) */
+  --fg1: var(--ink-900);  /* primary / headings */
+  --fg2: var(--ink-600);  /* body / secondary */
+  --fg3: var(--ink-400);  /* muted / labels / meta */
+  --fg-disabled: var(--ink-300);
+  --fg-on-accent: var(--white);
+
+  /* ---- Position palette ---------------------------------------------------
+     Used ONLY to distinguish named positions within a single topic. Muted,
+     equal-weight peers so no side reads as the "default". Hues are assigned
+     per-topic and are NOT consistent across topics. (#4a9d6c = the brief's
+     "Climate Pragmatist" green.) */
+  --pos-green:  #4a9d6c;
+  --pos-blue:   #3b7ea1;
+  --pos-amber:  #b98a35;
+  --pos-rust:   #b5614a;
+  --pos-purple: #7a6aa8;
+  --pos-teal:   #3f8f8a;
+  --pos-slate:  #5e6b78;
+
+  /* ---- Brand color ----------------------------------------------------------
+     The Infinity logo is a single green on white. Green (#4CB050, = --green-500)
+     is the SOLE brand color — no secondary accent. The retired parent-org
+     "Ideya" orange/lime are gone. (Position colors are a separate per-topic
+     system — see --pos-* above.) */
+  --brand-green: #4cb050;
+
+  /* ---- Category palette -----------------------------------------------------
+     ONE muted hue per top-level category. Used ONLY in discovery tiers (Home
+     showcase + directory, Category page header/badge) for wayfinding — NEVER on
+     a Topic page (there, color = positions). Desaturated so they read as quiet
+     identity, not alarm. Distinct from --pos-* (which are per-topic and reused).
+     A category's --catN-tint is its pale fill. */
+  --cat-energy:   #4a9d6c;  --cat-energy-tint:   #e7f3ec;  /* Energy & Environment */
+  --cat-tech:     #3b7ea1;  --cat-tech-tint:     #e6f0f5;  /* AI & Technology */
+  --cat-gov:      #7a6aa8;  --cat-gov-tint:      #efecf6;  /* Political & Governance */
+  --cat-econ:     #b98a35;  --cat-econ-tint:     #f6efdf;  /* Economic & Social */
+  --cat-ethics:   #b5614a;  --cat-ethics-tint:   #f6e9e4;  /* Ethics & Philosophy */
+  --cat-risk:     #5e6b78;  --cat-risk-tint:     #eceef0;  /* Existential & Global Risk */
+  --link: var(--ink-900);          /* links read as bold ink, underlined on hover */
+  --focus-ring: var(--green-600);  /* keyboard focus — the brand green */
+
+  /* ========================================================================
+     TYPE
+     ===================================================================== */
+  --font-sans: 'Plus Jakarta Sans', 'Inter', ui-sans-serif, system-ui, -apple-system,
+               'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  /* Display role — same family, heavier weight. Use 'font-weight:800' for titles,
+     section eyebrows, and hero stats. Single-family system: hierarchy comes from
+     weight + size + tracking, not a second face. */
+  --font-display: var(--font-sans);
+  --weight-display: 800;
+  /* Inter is kept loaded as a fallback / option for dense tabular data. */
+  --font-tabular: 'Inter', 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, Consolas, monospace;
+
+  /* Inter tuning used app-wide */
+  --font-features: "cv11", "ss01";
+
+  /* Type scale (px). Topic page is the reference surface. */
+  --text-xs:   12px;   /* section labels, meta, source links */
+  --text-sm:   14px;   /* secondary copy, proponents, notes */
+  --text-base: 16px;   /* body / prose */
+  --text-lg:   18px;   /* directory titles, card headings */
+  --text-xl:   20px;
+  --text-2xl:  24px;   /* stat values, sub-heads */
+  --text-3xl:  30px;   /* topic title (mobile) */
+  --text-4xl:  36px;   /* topic title (desktop) */
+  --text-5xl:  48px;   /* hero / showcase display */
+
+  --leading-tight:  1.15;
+  --leading-snug:   1.3;
+  --leading-normal: 1.55;
+  --leading-prose:  1.65;
+
+  --tracking-tight: -0.02em;  /* large headings */
+  --tracking-normal: 0;
+  --tracking-wide:  0.06em;   /* uppercase section labels */
+
+  --weight-regular: 400;
+  --weight-medium:  500;
+  --weight-semibold: 600;
+  --weight-bold:    700;
+
+  --measure: 68ch;   /* max prose width (max-w-prose) */
+
+  /* ========================================================================
+     SHAPE · SPACE · ELEVATION
+     ===================================================================== */
+  --radius-sm:   8px;    /* small controls */
+  --radius:      12px;   /* default card (rounded-xl) */
+  --radius-lg:   16px;   /* crux / emphasis (rounded-2xl) */
+  --radius-pill: 9999px; /* chips, badges, search */
+
+  --border-w: 1px;
+  --rule-accent-w: 2px;  /* crux left rule */
+
+  /* Spacing — Tailwind 4px base */
+  --space-1: 4px;  --space-2: 8px;  --space-3: 12px; --space-4: 16px;
+  --space-5: 20px; --space-6: 24px; --space-8: 32px; --space-10: 40px;
+  --space-12: 48px; --space-14: 56px; --space-16: 64px; --space-20: 80px;
+
+  --container: 1024px;  /* max-w-5xl */
+  --gutter: 24px;
+
+  /* Elevation — the system is essentially flat. Cards = border, not shadow.
+     These exist only for transient overlays (search dropdown, popovers, tooltips). */
+  --shadow-none: none;
+  --shadow-pop:  0 4px 16px -4px rgba(26,26,24,0.12), 0 1px 3px rgba(26,26,24,0.06);
+  --shadow-overlay: 0 12px 40px -8px rgba(26,26,24,0.18);
+
+  /* Motion — quiet. Fades and small moves; no bounce. */
+  --ease: cubic-bezier(0.2, 0, 0, 1); /* @kind other */
+  --dur-fast: 120ms; /* @kind other */
+  --dur: 180ms; /* @kind other */
+  --dur-slow: 280ms; /* @kind other */
+}
+
+/* ============================================================================
+   SEMANTIC ELEMENT STYLES — apply directly or copy into components.
+   ============================================================================ */
+
+body {
+  background: var(--bg);
+  color: var(--fg1);
+  font-family: var(--font-sans);
+  font-feature-settings: var(--font-features);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  line-height: var(--leading-normal);
+}
+
+/* Topic / page title */
+.h1 {
+  font-size: var(--text-4xl);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
+  color: var(--fg1);
+}
+@media (max-width: 640px) { .h1 { font-size: var(--text-3xl); } }
+
+/* Section label — the quiet uppercase eyebrow over each section */
+.section-label {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  color: var(--fg3);
+}
+
+/* Card / directory heading */
+.h-card {
+  font-size: var(--text-lg);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg1);
+}
+
+/* Stat value */
+.stat-value {
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-semibold);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg1);
+}
+
+/* Body / prose */
+.p, .prose {
+  font-size: var(--text-base);
+  line-height: var(--leading-prose);
+  color: var(--fg2);
+  max-width: var(--measure);
+  text-wrap: pretty;
+}
+
+.small { font-size: var(--text-sm); color: var(--fg2); }
+.meta  { font-size: var(--text-xs); color: var(--fg3); }
+
+.mono {
+  font-family: var(--font-mono);
+  font-feature-settings: normal;
+  font-size: 0.92em;
+}
+
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 2px; }
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* ---- Primitive surfaces ---- */
+.card {
+  background: var(--surface);
+  border: var(--border-w) solid var(--border);
+  border-radius: var(--radius);
+  transition: border-color var(--dur) var(--ease);
+}
+.card:hover { border-color: var(--border-hover); }
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  color: var(--fg2);
+  background: var(--ink-100);
+  border-radius: var(--radius-pill);
+  padding: 4px 10px;
+}
+
+/* Crux — the editorial centerpiece. Set apart by a hard left rule, not color. */
+.crux {
+  background: var(--surface);
+  border-left: var(--rule-accent-w) solid var(--rule-strong);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-5);
+  color: var(--fg1);
+}

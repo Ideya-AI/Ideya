@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Nuclear Energy — Infinity (Mobile)</title>
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+<link rel="stylesheet" href="colors_and_type.css" />
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{background:#e7eae6;font-family:var(--font-sans);-webkit-font-smoothing:antialiased;display:flex;justify-content:center;padding:28px 16px;min-height:100vh}
+
+  /* phone frame */
+  .phone{width:390px;height:844px;background:var(--ink-50);border-radius:46px;border:11px solid #14160f;box-shadow:0 30px 70px -20px rgba(20,22,15,.5);position:relative;overflow:hidden}
+  .notch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:128px;height:30px;background:#14160f;border-radius:0 0 18px 18px;z-index:60}
+  .screen{position:absolute;inset:0;border-radius:35px;overflow:hidden;display:flex;flex-direction:column}
+  .statusbar{height:46px;flex:none;display:flex;align-items:flex-end;justify-content:space-between;padding:0 26px 5px;font-size:13px;font-weight:700;color:var(--ink-900);font-family:var(--font-display)}
+  .statusbar .right{display:flex;gap:6px;align-items:center;font-size:14px}
+
+  /* app header */
+  .appbar{flex:none;display:flex;align-items:center;gap:11px;padding:8px 16px 10px;background:var(--ink-50)}
+  .appbar .mark{width:24px;height:24px;border-radius:6px;display:block}
+  .appbar .wm{font-family:var(--font-display);font-weight:800;font-size:16px;letter-spacing:-.03em;color:var(--ink-900);margin-right:auto}
+  .appbar .ico{width:34px;height:34px;border-radius:9999px;background:#fff;border:1px solid var(--ink-100);display:flex;align-items:center;justify-content:center;color:var(--ink-600)}
+  .appbar .ico i{font-size:17px}
+
+  /* sticky controls: section scroller + depth */
+  .controls{flex:none;background:rgba(247,249,247,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--ink-100);padding:8px 0 9px;position:relative;z-index:20}
+  .chips{display:flex;gap:7px;overflow-x:auto;padding:0 16px 2px;scrollbar-width:none}
+  .chips::-webkit-scrollbar{display:none}
+  .chip{flex:none;display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--ink-500);background:#fff;border:1px solid var(--ink-100);border-radius:9999px;padding:6px 12px}
+  .chip i{font-size:13px;color:var(--ink-300)}
+  .chip.on{background:var(--ink-900);color:#fff;border-color:var(--ink-900)}
+  .chip.on i{color:var(--green-500)}
+  .depthrow{display:flex;align-items:center;gap:8px;padding:9px 16px 0}
+  .depthrow .dk{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-400)}
+  .seg{margin-left:auto;display:inline-flex;background:#fff;border:1px solid var(--ink-100);border-radius:9999px;padding:3px}
+  .seg button{all:unset;cursor:pointer;display:flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--ink-500);padding:5px 11px;border-radius:9999px}
+  .seg button .g{display:flex;gap:1.5px;align-items:flex-end;height:9px}
+  .seg button .g span{width:2.5px;border-radius:1px;background:var(--ink-200)}
+  .seg button .g span:nth-child(1){height:4px}.seg button .g span:nth-child(2){height:6.5px}.seg button .g span:nth-child(3){height:9px}
+  .seg button.on{background:var(--ink-900);color:#fff}
+  .seg button.on .g span{background:var(--green-500)}
+
+  /* scroll area */
+  .scroll{flex:1;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch}
+  .scroll::-webkit-scrollbar{display:none}
+
+  /* depth gating */
+  [data-depth="condensed"] .when-normal,[data-depth="condensed"] .when-deep{display:none!important}
+  [data-depth="normal"] .when-deep{display:none!important}
+
+  /* OVERVIEW hero */
+  .hero{padding:18px 16px 20px}
+  .badges{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:13px}
+  .badge{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:var(--green-700);background:var(--green-tint);border-radius:9999px;padding:4px 10px}
+  .badge i{font-size:12px}
+  .hicon{width:54px;height:54px;border-radius:15px;background:var(--green-tint);border:1px solid var(--green-tint-strong);display:flex;align-items:center;justify-content:center;color:var(--green-700);margin-bottom:13px}
+  .hicon i{font-size:30px}
+  .htitle{font-family:var(--font-display);font-weight:800;font-size:34px;letter-spacing:-.03em;line-height:1;margin:0;color:var(--ink-900)}
+  .hdesc{margin:13px 0 0;font-size:15.5px;line-height:1.5;color:var(--ink-700);text-wrap:pretty}
+  .hmeta{margin-top:15px;display:flex;flex-direction:column;gap:9px}
+  .mc{border:1px solid var(--ink-100);border-radius:12px;padding:12px 14px;background:#fff}
+  .mc .mk{display:flex;align-items:center;gap:6px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-400);margin-bottom:5px}
+  .mc .mk i{color:var(--green-700);font-size:13px}
+  .mc .mv{font-size:13px;line-height:1.5;color:var(--ink-600)}
+  .mc .mv b{color:var(--ink-900);font-weight:600}
+  .hrelated{margin-top:14px}
+  .hrelated .rk{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-400);margin-bottom:8px}
+  .rchips{display:flex;gap:7px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+  .rchips::-webkit-scrollbar{display:none}
+  .rchip{flex:none;display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--ink-700);background:#fff;border:1px solid var(--ink-100);border-radius:9999px;padding:6px 12px}
+  .rchip i{color:var(--green-700);font-size:13px}
+
+  /* accordion sections */
+  .acc{border-top:1px solid var(--ink-100);background:var(--ink-50)}
+  .acc-head{display:flex;align-items:center;gap:11px;padding:17px 16px;cursor:pointer;user-select:none}
+  .acc-head .ai{width:34px;height:34px;border-radius:10px;background:var(--green-tint);color:var(--green-700);display:flex;align-items:center;justify-content:center;flex:none}
+  .acc-head .ai i{font-size:18px}
+  .acc-head .at{flex:1}
+  .acc-head .an{font-family:var(--font-display);font-weight:800;font-size:17px;letter-spacing:-.01em;color:var(--ink-900);line-height:1.1}
+  .acc-head .as{font-size:11px;color:var(--ink-400);margin-top:2px}
+  .acc-head .cv{width:26px;height:26px;border-radius:9999px;display:flex;align-items:center;justify-content:center;color:var(--ink-400);transition:transform .25s var(--ease)}
+  .acc-head .cv i{font-size:16px}
+  .acc.open .acc-head .cv{transform:rotate(180deg)}
+  .acc-body{display:none;padding:0 16px 20px}
+  .acc.open .acc-body{display:block}
+
+  /* basics — 2col grid */
+  .bgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .tile{border:1px solid var(--ink-100);border-radius:13px;padding:13px 14px;background:#fff;display:flex;flex-direction:column;gap:9px}
+  .tile.full{grid-column:1 / -1}
+  .tk{font-size:10px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-400);line-height:1.3}
+  .tv{font-family:var(--font-display);font-weight:800;font-size:28px;font-variant-numeric:tabular-nums;letter-spacing:-.03em;line-height:.95;color:var(--ink-900)}
+  .tv small{font-size:13px;font-weight:700;color:var(--ink-400)}
+  .tnote{font-size:11px;line-height:1.45;color:var(--ink-600)}
+  .rank{display:flex;flex-direction:column;gap:6px}
+  .rrow{display:grid;grid-template-columns:44px 1fr 34px;align-items:center;gap:8px}
+  .rk2{font-size:10px;color:var(--ink-500)}
+  .rbar{height:7px;border-radius:9999px;background:var(--ink-100);overflow:hidden}
+  .rbar i{display:block;height:100%;border-radius:9999px;background:var(--ink-300)}
+  .rrow.on .rbar i{background:var(--green-500)}
+  .rrow.on .rk2{color:var(--ink-900);font-weight:700}
+  .rv{font-size:10px;text-align:right;font-variant-numeric:tabular-nums;color:var(--ink-400)}
+  .rrow.on .rv{color:var(--green-700);font-weight:700}
+  .pbar{height:7px;border-radius:9999px;background:var(--ink-100);overflow:hidden}
+  .pbar i{display:block;height:100%;border-radius:9999px;background:var(--green-500)}
+  .track{position:relative;height:7px;border-radius:9999px;background:linear-gradient(90deg,var(--green-tint-strong),var(--ink-100))}
+  .pin{position:absolute;top:50%;width:13px;height:13px;border-radius:9999px;background:var(--green-500);border:2.5px solid #fff;transform:translate(-50%,-50%);box-shadow:0 0 0 1px var(--green-600)}
+  .ghost{position:absolute;top:50%;width:8px;height:8px;border-radius:9999px;background:var(--ink-300);transform:translate(-50%,-50%)}
+  .ends{display:flex;justify-content:space-between;font-size:9px;color:var(--ink-400);margin-top:5px}
+
+  /* questions */
+  .qlist{display:flex;flex-direction:column;gap:10px}
+  .q{border:1px solid var(--ink-100);border-radius:13px;padding:14px;background:#fff}
+  .qtop{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+  .qtag{display:inline-flex;align-items:center;gap:5px;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:3px 8px;border-radius:9999px}
+  .qtag.emp{color:var(--pos-blue);background:color-mix(in srgb,var(--pos-blue) 11%,#fff)}
+  .qtag.val{color:var(--pos-amber);background:color-mix(in srgb,var(--pos-amber) 13%,#fff)}
+  .qtag i{font-size:11px}
+  .qvote{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--ink-100);border-radius:9999px;padding:3px 9px}
+  .qvote i{font-size:13px;color:var(--ink-300)}
+  .qvote i.up{color:var(--green-600)}
+  .qvote .qc{font-size:11px;font-weight:700;color:var(--ink-900);font-variant-numeric:tabular-nums}
+  .qt{font-family:var(--font-display);font-weight:800;font-size:15px;line-height:1.3;letter-spacing:-.01em;color:var(--ink-900)}
+  .qw{margin:8px 0 0;font-size:12.5px;line-height:1.5;color:var(--ink-600)}
+  .qw b{color:var(--ink-900);font-weight:600}
+
+  /* positions — stacked, tap to open sheet */
+  .plist{display:flex;flex-direction:column;gap:10px}
+  .pcard{position:relative;border:1px solid var(--ink-100);border-radius:14px;padding:14px 15px 14px 18px;background:#fff;overflow:hidden;cursor:pointer}
+  .pcard .prail{position:absolute;left:0;top:0;bottom:0;width:5px}
+  .phead{display:flex;align-items:center;gap:8px}
+  .pdot{width:9px;height:9px;border-radius:9999px;flex:none}
+  .pn{font-family:var(--font-display);font-weight:800;font-size:16px;letter-spacing:-.01em;flex:1}
+  .pn i{font-size:15px;color:var(--ink-300)}
+  .psteel{margin:9px 0 0;font-size:13.5px;font-style:italic;font-weight:500;line-height:1.4;color:var(--ink-800)}
+  .pmeta{margin:11px 0 0;display:flex;align-items:center;gap:10px;font-size:11px;color:var(--ink-400)}
+  .pmeta .pimp{display:inline-flex;align-items:center;gap:4px}
+  .pmeta .pimp i{font-size:13px;color:var(--green-600)}
+  .pmeta .pimp b{color:var(--ink-700);font-variant-numeric:tabular-nums}
+  .pmeta .taphint{margin-left:auto;display:inline-flex;align-items:center;gap:4px;color:var(--green-700);font-weight:600}
+  .pmeta .taphint i{font-size:13px}
+
+  /* crux */
+  .crux{background:var(--ink-900);border-radius:16px;padding:20px 18px;color:#fff;margin-top:2px}
+  .crux .ck{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--green-500)}
+  .crux .ck i{font-size:15px}
+  .crux .clead{margin:12px 0 0;font-family:var(--font-display);font-weight:800;font-size:21px;line-height:1.22;letter-spacing:-.02em}
+  .crux .clead .hl{color:var(--green-500)}
+  .crux .csub{margin:11px 0 0;font-size:13px;line-height:1.55;color:#c2cabf}
+  .crux .csub b{color:#fff;font-weight:600}
+  .crux .csplit{margin-top:14px;display:flex;flex-direction:column;gap:9px}
+  .crux .ax{border-radius:11px;padding:12px 13px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09)}
+  .crux .ax .ah{display:flex;align-items:center;gap:7px;font-family:var(--font-display);font-weight:800;font-size:12.5px;margin-bottom:5px}
+  .crux .ax.emp .ah{color:#7db8d8}.crux .ax.val .ah{color:#e0b96b}
+  .crux .ax p{margin:0;font-size:11.5px;line-height:1.5;color:#b6beac}
+  .crux .ax p b{color:#fff}
+
+  /* actions */
+  .alist{display:flex;flex-direction:column;gap:9px}
+  .act{display:block;border:1px solid var(--ink-100);border-radius:13px;padding:13px 14px;background:#fff}
+  .atop2{display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .akind{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-400)}
+  .akind i{color:var(--green-700);font-size:13px}
+  .afor{display:inline-flex;align-items:center;gap:5px;font-size:10px;color:var(--ink-500)}
+  .afor .fd{width:7px;height:7px;border-radius:9999px}
+  .atitle{margin-top:7px;font-family:var(--font-display);font-weight:800;font-size:14px;letter-spacing:-.01em;color:var(--ink-900)}
+  .adesc{margin-top:4px;font-size:12px;line-height:1.45;color:var(--ink-600)}
+
+  .endcap{padding:22px 16px 30px;text-align:center}
+  .endcap .submit{display:inline-flex;align-items:center;gap:8px;background:var(--ink-900);color:#fff;border-radius:9999px;padding:12px 22px;font-family:var(--font-display);font-weight:700;font-size:14px}
+  .endcap .submit i{font-size:16px;color:var(--green-500)}
+  .endcap .fb{margin-top:16px;font-size:11px;color:var(--ink-400)}
+
+  /* bottom sheet modal */
+  .scrim{position:absolute;inset:0;background:rgba(20,22,15,.4);opacity:0;pointer-events:none;transition:opacity .25s;z-index:70}
+  .scrim.on{opacity:1;pointer-events:auto}
+  .sheet{position:absolute;left:0;right:0;bottom:0;background:#fff;border-radius:24px 24px 0 0;padding:8px 18px calc(18px + env(safe-area-inset-bottom));transform:translateY(100%);transition:transform .3s var(--ease);z-index:80;max-height:78%;overflow-y:auto}
+  .sheet.on{transform:translateY(0)}
+  .grab{width:38px;height:4px;border-radius:9999px;background:var(--ink-200);margin:6px auto 14px}
+  .sheet .shead{display:flex;align-items:center;gap:9px}
+  .sheet .sdot{width:11px;height:11px;border-radius:9999px;flex:none}
+  .sheet .sn{font-family:var(--font-display);font-weight:800;font-size:21px;letter-spacing:-.02em}
+  .sheet .ssteel{margin:11px 0 0;font-size:15px;font-style:italic;font-weight:500;line-height:1.45;color:var(--ink-800)}
+  .sheet .sdesc{margin:13px 0 0;font-size:13.5px;line-height:1.6;color:var(--ink-600)}
+  .sheet .sex{margin:14px 0 0;display:flex;gap:9px;align-items:flex-start;background:var(--ink-50);border-radius:11px;padding:11px 13px}
+  .sheet .sex i{color:var(--green-700);font-size:18px;flex:none}
+  .sheet .sex .sext{font-size:12px;line-height:1.45;color:var(--ink-600)}
+  .sheet .sex .sext b{color:var(--ink-900)}
+  .sheet .sprop{margin:13px 0 0;font-size:11.5px;color:var(--ink-400);line-height:1.45}
+  .sheet .sprop b{color:var(--ink-600)}
+  .sheet .sfoot{display:flex;gap:9px;margin-top:16px}
+  .sheet .adb{flex:1;text-align:center;font-size:14px;font-weight:700;font-family:var(--font-display);padding:11px;border-radius:12px;border:1px solid var(--ink-200);color:var(--ink-700)}
+  .sheet .adb.agree{border-color:var(--sheetc);color:var(--sheetc);background:color-mix(in srgb,var(--sheetc) 9%,#fff)}
+</style>
+</head>
+<body>
+  <div class="phone">
+    <div class="notch"></div>
+    <div class="screen" id="screen" data-depth="normal">
+      <div class="statusbar"><span>9:41</span><span class="right"><i class="ph-fill ph-cell-signal-full"></i><i class="ph-fill ph-wifi-high"></i><i class="ph-fill ph-battery-high"></i></span></div>
+
+      <!-- app bar -->
+      <div class="appbar">
+        <img class="mark" src="assets/infinity-mark.png" alt="" />
+        <span class="wm">Infinity</span>
+        <span class="ico"><i class="ph-duotone ph-magnifying-glass"></i></span>
+        <span class="ico"><i class="ph-duotone ph-list"></i></span>
+      </div>
+
+      <!-- sticky controls -->
+      <div class="controls">
+        <div class="chips" id="chips">
+          <span class="chip on" data-go="overview"><i class="ph-duotone ph-compass-rose"></i>Overview</span>
+          <span class="chip" data-go="basics"><i class="ph-duotone ph-chart-bar"></i>Basics</span>
+          <span class="chip" data-go="questions"><i class="ph-duotone ph-question"></i>Questions</span>
+          <span class="chip" data-go="positions"><i class="ph-duotone ph-scales"></i>Positions</span>
+          <span class="chip" data-go="crux"><i class="ph-duotone ph-target"></i>Crux</span>
+          <span class="chip" data-go="actions"><i class="ph-duotone ph-compass"></i>Actions</span>
+        </div>
+        <div class="depthrow">
+          <span class="dk">Reading depth</span>
+          <div class="seg" id="seg">
+            <button data-d="condensed"><span class="g"><span></span><span></span><span></span></span>Brief</button>
+            <button class="on" data-d="normal"><span class="g"><span></span><span></span><span></span></span>Normal</button>
+            <button data-d="deep"><span class="g"><span></span><span></span><span></span></span>Deep</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- scroll content -->
+      <div class="scroll" id="scroll">
+
+        <!-- OVERVIEW -->
+        <div class="hero" id="overview">
+          <div class="badges"><span class="badge"><i class="ph-duotone ph-leaf"></i>Energy &amp; Environment</span><span class="badge when-normal"><i class="ph-duotone ph-cpu"></i>Technology</span></div>
+          <div class="hicon"><i class="ph-duotone ph-atom"></i></div>
+          <h1 class="htitle">Nuclear Energy</h1>
+          <p class="hdesc">Fission-based electricity — among the lowest-carbon, lowest-death sources, in a debate that scrambles partisan lines.</p>
+          <div class="hmeta when-normal">
+            <div class="mc"><div class="mk"><i class="ph-duotone ph-crop"></i>Scope</div><div class="mv">Civilian fission for grid power: cost, safety, waste, the climate case. <b>Not</b> weapons, fusion, or naval propulsion.</div></div>
+            <div class="mc"><div class="mk"><i class="ph-duotone ph-clock-countdown"></i>Why it matters now</div><div class="mv">A retiring fleet meets climbing demand from AI and electrification, just as climate targets need firm clean power.</div></div>
+          </div>
+          <div class="hrelated when-normal">
+            <div class="rk">Connects to</div>
+            <div class="rchips">
+              <span class="rchip"><i class="ph-duotone ph-sun"></i>Solar Power</span>
+              <span class="rchip"><i class="ph-duotone ph-battery-charging"></i>Grid Storage</span>
+              <span class="rchip"><i class="ph-duotone ph-brain"></i>AI Existential Risk</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- BASICS -->
+        <div class="acc open" id="basics">
+          <div class="acc-head"><span class="ai"><i class="ph-duotone ph-chart-bar"></i></span><div class="at"><div class="an">Basics</div><div class="as">6 figures · the numbers</div></div><span class="cv"><i class="ph-duotone ph-caret-down"></i></span></div>
+          <div class="acc-body">
+            <div class="bgrid">
+              <div class="tile full">
+                <div class="tk">Deaths per TWh · lifecycle</div>
+                <div class="rank">
+                  <div class="rrow"><span class="rk2">Coal</span><span class="rbar"><i style="width:100%"></i></span><span class="rv">24.6</span></div>
+                  <div class="rrow"><span class="rk2">Gas</span><span class="rbar"><i style="width:11%"></i></span><span class="rv">2.8</span></div>
+                  <div class="rrow on"><span class="rk2">Nuclear</span><span class="rbar"><i style="width:3%"></i></span><span class="rv">0.03</span></div>
+                  <div class="rrow"><span class="rk2">Solar</span><span class="rbar"><i style="width:3%"></i></span><span class="rv">0.03</span></div>
+                </div>
+                <div class="tnote when-normal">Among the safest sources — including Chernobyl and Fukushima.</div>
+              </div>
+              <div class="tile"><div class="tk">Global power</div><div class="tv">9<small>%</small></div><div class="pbar"><i style="width:9%"></i></div></div>
+              <div class="tile"><div class="tk">Capacity factor</div><div class="tv">92<small>%</small></div><div class="pbar"><i style="width:92%"></i></div></div>
+              <div class="tile when-normal"><div class="tk">Lifecycle CO₂ · g/kWh</div><div class="tv">12<small> g</small></div><div class="track"><span class="ghost" style="left:95%"></span><span class="pin" style="left:5%"></span></div><div class="ends"><span>clean</span><span>gas ~490</span></div></div>
+              <div class="tile when-normal"><div class="tk">Build cost · W vs Korea</div><div class="tv">~4<small>×</small></div><div class="pbar"><i style="width:25%;background:var(--ink-300)"></i></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- QUESTIONS -->
+        <div class="acc" id="questions">
+          <div class="acc-head"><span class="ai"><i class="ph-duotone ph-question"></i></span><div class="at"><div class="an">Questions</div><div class="as">4 open · vote to reorder</div></div><span class="cv"><i class="ph-duotone ph-caret-down"></i></span></div>
+          <div class="acc-body">
+            <div class="qlist">
+              <div class="q">
+                <div class="qtop"><span class="qtag emp"><i class="ph-duotone ph-flask"></i>Empirical</span><span class="qvote"><i class="ph-fill ph-caret-up up"></i><span class="qc">142</span><i class="ph-duotone ph-caret-down"></i></span></div>
+                <div class="qt">Are runaway Western nuclear costs fixable, or structural?</div>
+                <p class="qw when-normal"><b>Why contested:</b> Korea builds at ~¼ the per-kW cost. If costs reflect lost supply chains, reform helps — if safety preferences, it won't.</p>
+              </div>
+              <div class="q">
+                <div class="qtop"><span class="qtag val"><i class="ph-duotone ph-heart"></i>Value</span><span class="qvote"><i class="ph-duotone ph-caret-up"></i><span class="qc">98</span><i class="ph-duotone ph-caret-down"></i></span></div>
+                <div class="qt">Is the waste problem solved in principle, but not in practice?</div>
+                <p class="qw when-normal"><b>Why contested:</b> Disposal is settled science; Finland's Onkalo runs. Yet most countries have no sited repository — the gap is politics, not engineering.</p>
+              </div>
+              <div class="q when-normal">
+                <div class="qtop"><span class="qtag emp"><i class="ph-duotone ph-flask"></i>Empirical</span><span class="qvote"><i class="ph-duotone ph-caret-up"></i><span class="qc">64</span><i class="ph-duotone ph-caret-down"></i></span></div>
+                <div class="qt">Can new nuclear deploy fast enough to matter for 2050?</div>
+                <p class="qw"><b>Why contested:</b> Even optimistic build rates lag solar's growth. Critics say money decarbonizes more elsewhere; advocates say firm power is needed regardless.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- POSITIONS -->
+        <div class="acc open" id="positions">
+          <div class="acc-head"><span class="ai"><i class="ph-duotone ph-scales"></i></span><div class="at"><div class="an">Positions</div><div class="as">the debate — 4 positions · tap to open</div></div><span class="cv"><i class="ph-duotone ph-caret-down"></i></span></div>
+          <div class="acc-body">
+            <div class="plist" id="plist">
+              <div class="pcard" data-pos="0" style="--c:var(--pos-green)"><span class="prail" style="background:var(--pos-green)"></span>
+                <div class="phead"><span class="pdot" style="background:var(--pos-green)"></span><span class="pn">Climate Pragmatist</span><i class="ph-duotone ph-arrow-up-right"></i></div>
+                <p class="psteel">“The only proven, scaled, firm low-carbon source we have.”</p>
+                <div class="pmeta"><span class="pimp"><i class="ph-fill ph-caret-up"></i><b>88</b> important</span><span class="taphint">Details <i class="ph-duotone ph-caret-right"></i></span></div>
+              </div>
+              <div class="pcard" data-pos="1" style="--c:var(--pos-amber)"><span class="prail" style="background:var(--pos-amber)"></span>
+                <div class="phead"><span class="pdot" style="background:var(--pos-amber)"></span><span class="pn">Cost Skeptic</span><i class="ph-duotone ph-arrow-up-right"></i></div>
+                <p class="psteel">“Too slow and costly to be the rational marginal climate dollar.”</p>
+                <div class="pmeta"><span class="pimp"><i class="ph-fill ph-caret-up"></i><b>74</b> important</span><span class="taphint">Details <i class="ph-duotone ph-caret-right"></i></span></div>
+              </div>
+              <div class="pcard" data-pos="2" style="--c:var(--pos-blue)"><span class="prail" style="background:var(--pos-blue)"></span>
+                <div class="phead"><span class="pdot" style="background:var(--pos-blue)"></span><span class="pn">New-Nuclear Advocate</span><i class="ph-duotone ph-arrow-up-right"></i></div>
+                <p class="psteel">“Advanced reactors and serial builds can fix the cost problem.”</p>
+                <div class="pmeta"><span class="pimp"><i class="ph-fill ph-caret-up"></i><b>61</b> important</span><span class="taphint">Details <i class="ph-duotone ph-caret-right"></i></span></div>
+              </div>
+              <div class="pcard" data-pos="3" style="--c:var(--pos-rust)"><span class="prail" style="background:var(--pos-rust)"></span>
+                <div class="phead"><span class="pdot" style="background:var(--pos-rust)"></span><span class="pn">Risk-First Skeptic</span><i class="ph-duotone ph-arrow-up-right"></i></div>
+                <p class="psteel">“Catastrophic, intergenerational risks justify deep caution.”</p>
+                <div class="pmeta"><span class="pimp"><i class="ph-fill ph-caret-up"></i><b>52</b> important</span><span class="taphint">Details <i class="ph-duotone ph-caret-right"></i></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CRUX -->
+        <div class="acc open" id="crux">
+          <div class="acc-head"><span class="ai"><i class="ph-duotone ph-target"></i></span><div class="at"><div class="an">Crux</div><div class="as">where it actually sits</div></div><span class="cv"><i class="ph-duotone ph-caret-down"></i></span></div>
+          <div class="acc-body">
+            <div class="crux">
+              <div class="ck"><i class="ph-duotone ph-target"></i>The real disagreement</div>
+              <p class="clead">The debate narrows to <span class="hl">one question.</span></p>
+              <p class="csub when-normal">Can the West build reactors <b>on budget and on schedule</b> — and is that an <b>engineering problem</b> or a <b>values problem</b>? Almost everyone agrees nuclear is low-carbon and safe.</p>
+              <div class="csplit when-deep">
+                <div class="ax emp"><div class="ah"><i class="ph-duotone ph-flask"></i>If empirical</div><p>Overruns are contingent. Then <b>better data could settle it.</b></p></div>
+                <div class="ax val"><div class="ah"><i class="ph-duotone ph-heart"></i>If values</div><p>Costs encode real caution about dread risk. Then <b>no data closes it.</b></p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ACTIONS -->
+        <div class="acc" id="actions">
+          <div class="acc-head"><span class="ai"><i class="ph-duotone ph-compass"></i></span><div class="at"><div class="an">Actions</div><div class="as">6 paths · across the landscape</div></div><span class="cv"><i class="ph-duotone ph-caret-down"></i></span></div>
+          <div class="acc-body">
+            <div class="alist">
+              <a class="act"><div class="atop2"><span class="akind"><i class="ph-duotone ph-book-open"></i>Learn more</span></div><div class="atitle">Our World in Data ↗</div><p class="adesc when-normal">Lifecycle emissions and death rates across every source.</p></a>
+              <a class="act"><div class="atop2"><span class="akind"><i class="ph-duotone ph-hand-coins"></i>Donate</span><span class="afor"><span class="fd" style="background:var(--pos-blue)"></span>Advocate</span></div><div class="atitle">Good Energy Collective ↗</div><p class="adesc when-normal">Progressive nuclear policy research. 4-star rated.</p></a>
+              <a class="act when-normal"><div class="atop2"><span class="akind"><i class="ph-duotone ph-hand-coins"></i>Donate</span><span class="afor"><span class="fd" style="background:var(--pos-amber)"></span>Cost Skeptic</span></div><div class="atitle">Rocky Mountain Institute ↗</div><p class="adesc">Renewables-and-efficiency research.</p></a>
+              <a class="act when-normal"><div class="atop2"><span class="akind"><i class="ph-duotone ph-bank"></i>Policy</span></div><div class="atitle">Comment on NRC reform ↗</div><p class="adesc">Open dockets on advanced-reactor rules.</p></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="endcap">
+          <span class="submit"><i class="ph-duotone ph-paper-plane-tilt"></i>Submit your view</span>
+          <div class="fb">Infinity — a curated atlas of hard issues</div>
+        </div>
+
+      </div><!-- /scroll -->
+
+      <!-- bottom sheet -->
+      <div class="scrim" id="scrim"></div>
+      <div class="sheet" id="sheet">
+        <div class="grab"></div>
+        <div class="shead"><span class="sdot" id="sdot"></span><span class="sn" id="sn"></span></div>
+        <p class="ssteel" id="ssteel"></p>
+        <p class="sdesc" id="sdesc"></p>
+        <div class="sex"><i class="ph-duotone ph-user-focus"></i><span class="sext" id="sext"></span></div>
+        <p class="sprop" id="sprop"></p>
+        <div class="sfoot"><span class="adb agree">Agree</span><span class="adb">Disagree</span></div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    var screen=document.getElementById('screen');
+    // depth
+    document.querySelectorAll('#seg button').forEach(function(b){
+      b.addEventListener('click',function(){
+        document.querySelectorAll('#seg button').forEach(function(x){x.classList.remove('on')});
+        b.classList.add('on');screen.setAttribute('data-depth',b.dataset.d);
+      });
+    });
+    // accordion
+    document.querySelectorAll('.acc-head').forEach(function(h){
+      h.addEventListener('click',function(){h.parentElement.classList.toggle('open')});
+    });
+    // section jump
+    var scroll=document.getElementById('scroll');
+    document.querySelectorAll('#chips .chip').forEach(function(c){
+      c.addEventListener('click',function(){
+        document.querySelectorAll('#chips .chip').forEach(function(x){x.classList.remove('on')});
+        c.classList.add('on');
+        var t=document.getElementById(c.dataset.go);
+        if(t){var acc=t.closest('.acc');if(acc)acc.classList.add('open');
+          scroll.scrollTo({top:t.offsetTop-8,behavior:'smooth'});}
+      });
+    });
+    // position bottom sheet
+    var POS=[
+      {c:'--pos-green',n:'Climate Pragmatist',s:'“The only proven, scaled, firm low-carbon source we have.”',d:'Nuclear is the only dispatchable zero-carbon power that already runs at scale. IPCC 1.5 °C pathways lean on expanding it; Germany\u2019s reactor phase-out raised emissions. Firmness, not just cleanliness, is the point.',ex:'<b>Representative:</b> James Hansen — climate scientist who broke with much of the green movement to back nuclear.',p:'Proponents: James Hansen · Stewart Brand · Clean Air Task Force'},
+      {c:'--pos-amber',n:'Cost Skeptic',s:'“Too slow and costly to be the rational marginal climate dollar.”',d:'Vogtle and Hinkley Point C ran years late and billions over. Solar, wind and storage keep getting cheaper on a learning curve nuclear has never shown. Every dollar in a decade-long build decarbonizes less than the same dollar in renewables today.',ex:'<b>Representative:</b> Amory Lovins — physicist and long-time advocate of the efficiency-and-renewables path.',p:'Proponents: Amory Lovins · BNEF analysts · Mark Z. Jacobson'},
+      {c:'--pos-blue',n:'New-Nuclear Advocate',s:'“Advanced reactors and serial builds can fix the cost problem.”',d:'SMRs and Gen-IV designs trade gigawatt megaprojects for factory-built, repeatable units. The Korean and historical French fleets prove learning-by-building drives costs down — the West simply stopped building.',ex:'<b>Representative:</b> TerraPower — Gen-IV developer betting on factory-built reactors.',p:'Proponents: TerraPower · NuScale · Good Energy Collective · DOE'},
+      {c:'--pos-rust',n:'Risk-First Skeptic',s:'“Catastrophic, intergenerational risks justify deep caution.”',d:'Meltdowns, proliferation pathways, and waste that outlasts institutions are not ordinary risks. Centralized, high-consequence systems concentrate harm across centuries. A decentralized renewable grid fails gracefully; a reactor does not.',ex:'<b>Representative:</b> Naomi Oreskes — historian of science writing on risk and trust.',p:'Proponents: Naomi Oreskes · anti-nuclear NGOs · parts of the Green movement'}
+    ];
+    var scrim=document.getElementById('scrim'),sheet=document.getElementById('sheet');
+    function openSheet(i){var p=POS[i];
+      sheet.style.setProperty('--sheetc','var('+p.c+')');
+      document.getElementById('sdot').style.background='var('+p.c+')';
+      document.getElementById('sn').textContent=p.n;
+      document.getElementById('ssteel').textContent=p.s;
+      document.getElementById('sdesc').textContent=p.d;
+      document.getElementById('sext').innerHTML=p.ex;
+      document.getElementById('sprop').innerHTML='<b>'+p.p.split(':')[0]+':</b>'+p.p.split(':')[1];
+      scrim.classList.add('on');sheet.classList.add('on');
+    }
+    function closeSheet(){scrim.classList.remove('on');sheet.classList.remove('on');}
+    document.querySelectorAll('.pcard').forEach(function(c){c.addEventListener('click',function(){openSheet(+c.dataset.pos)})});
+    scrim.addEventListener('click',closeSheet);
+    // scrollspy chips
+    var ids=['overview','basics','questions','positions','crux','actions'];
+    scroll.addEventListener('scroll',function(){
+      var y=scroll.scrollTop+70,idx=0;
+      ids.forEach(function(id,i){var el=document.getElementById(id);if(el&&el.offsetTop<=y)idx=i;});
+      document.querySelectorAll('#chips .chip').forEach(function(c,i){c.classList.toggle('on',i===idx)});
+    },{passive:true});
+  </script>
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{background:var(--ink-50);font-family:var(--font-sans);-webkit-font-smoothing:antialiased;color:var(--ink-900);padding:30px}
+  .sheet{max-width:1060px;margin:0 auto;display:flex;flex-direction:column;gap:22px}
+
+  .ident{display:flex;align-items:flex-start;gap:16px;background:#fff;border:1px solid var(--ink-100);border-radius:18px;padding:22px 26px}
+  .ident .ic{flex:none;width:54px;height:54px;border-radius:15px;background:var(--green-tint);display:flex;align-items:center;justify-content:center;color:var(--green-700)}
+  .ident .ic i{font-size:30px;line-height:1}
+  .ident .n{font-family:var(--font-display);font-weight:800;font-size:26px;letter-spacing:-.02em;line-height:1}
+  .ident .step{font-size:12px;font-weight:700;color:var(--green-700);text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px}
+  .ident .job{margin:7px 0 0;font-size:15px;color:var(--ink-600);line-height:1.5;max-width:66ch}
+  .ident .job b{color:var(--ink-900);font-weight:700}
+
+  .block{background:#fff;border:1px solid var(--ink-100);border-radius:18px;padding:22px 26px}
+  .lbl{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-400);margin:0 0 16px}
+  .lbl i{color:var(--green-700);font-size:16px}
+  .lbl .tail{margin-left:auto;font-weight:500;text-transform:none;letter-spacing:0;color:var(--ink-300);font-size:11px}
+
+  /* two signals */
+  .signals{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .sig{border:1px solid var(--ink-100);border-radius:14px;padding:18px 20px}
+  .sig .sh{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+  .sig .sh .si{width:34px;height:34px;border-radius:10px;background:var(--green-tint);color:var(--green-700);display:flex;align-items:center;justify-content:center}
+  .sig .sh .si i{font-size:19px}
+  .sig .sh b{font-family:var(--font-display);font-weight:800;font-size:17px;letter-spacing:-.01em}
+  .sig .sh .q{margin-left:auto;font-size:11px;color:var(--ink-400);font-style:italic}
+  .sig p{margin:0 0 14px;font-size:13px;line-height:1.55;color:var(--ink-600)}
+  .sig p b{color:var(--ink-900);font-weight:600}
+
+  /* control demos */
+  .ctl{display:flex;align-items:center;gap:10px;background:var(--ink-50);border-radius:11px;padding:12px 14px}
+  .ctl .clab{font-size:11px;color:var(--ink-400);margin-left:auto}
+  .stance{display:flex;gap:7px}
+  .sbtn{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;padding:7px 14px;border-radius:9999px;border:1px solid var(--ink-200);color:var(--ink-600);background:#fff}
+  .sbtn i{font-size:14px}
+  .sbtn.agree{border-color:var(--green-500);color:var(--green-700);background:color-mix(in srgb,var(--green-500) 9%,#fff)}
+  .imp{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--ink-200);border-radius:9999px;padding:6px 12px;background:#fff}
+  .imp i{font-size:15px;color:var(--ink-300)}
+  .imp i.on{color:var(--green-600)}
+  .imp .ic2{font-size:16px;color:var(--green-700)}
+  .imp b{font-size:13px;font-weight:700;font-variant-numeric:tabular-nums;color:var(--ink-900)}
+
+  /* instantiation: question vs position */
+  .inst{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .icard{border:1px solid var(--ink-100);border-radius:14px;padding:0;overflow:hidden}
+  .icard .ih{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-400);padding:11px 16px;border-bottom:1px solid var(--ink-100);background:var(--ink-50);display:flex;align-items:center;gap:7px}
+  .icard .ih i{color:var(--green-700);font-size:14px}
+  .icard .ib{padding:16px 18px}
+  .qtag{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:3px 9px;border-radius:9999px;margin-bottom:8px;color:var(--pos-blue);background:color-mix(in srgb,var(--pos-blue) 11%,#fff)}
+  .qtag i{font-size:12px}
+  .qt{font-family:var(--font-display);font-weight:800;font-size:16px;line-height:1.3;color:var(--ink-900)}
+  .pn{font-family:var(--font-display);font-weight:800;font-size:16px;display:flex;align-items:center;gap:8px}
+  .pn .pd{width:9px;height:9px;border-radius:9999px;background:var(--pos-green)}
+  .psteel{margin:7px 0 0;font-size:13px;font-style:italic;color:var(--ink-700);line-height:1.4}
+
+  /* participation footer inside cards */
+  .pbar2{display:flex;align-items:center;gap:12px;margin-top:14px;padding-top:13px;border-top:1px solid var(--ink-100)}
+  .lean{flex:1}
+  .lean .lt{display:flex;justify-content:space-between;font-size:10px;color:var(--ink-400);margin-bottom:5px}
+  .lean .lt b{font-weight:700}
+  .lean .lt .a{color:var(--green-700)}
+  .lean .lt .d{color:var(--ink-500)}
+  .lbar{height:7px;border-radius:9999px;overflow:hidden;display:flex;background:var(--ink-100)}
+  .lbar .la{background:var(--green-500)}
+  .lbar .ld{background:var(--ink-300)}
+  .lean.bluebar .lbar .la{background:var(--pos-blue)}
+  .lean.bluebar .lt .a{color:var(--pos-blue)}
+  .impmini{flex:none;display:inline-flex;align-items:center;gap:6px;border:1px solid var(--ink-200);border-radius:9999px;padding:5px 11px}
+  .impmini i{font-size:14px;color:var(--green-600)}
+  .impmini b{font-size:12px;font-weight:700;font-variant-numeric:tabular-nums;color:var(--ink-900)}
+  .impmini span{font-size:10px;color:var(--ink-400)}
+
+  /* aggregation */
+  .agg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .ag{border:1px solid var(--ink-100);border-radius:13px;padding:15px 17px}
+  .ag .at{font-size:12px;font-weight:700;color:var(--ink-900);margin-bottom:6px;display:flex;align-items:center;gap:7px}
+  .ag .at i{color:var(--green-700);font-size:15px}
+  .ag p{margin:0;font-size:11.5px;line-height:1.5;color:var(--ink-600)}
+  .ag p b{color:var(--ink-900);font-weight:600}
+
+  .notes{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .note-b h4{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;margin:0 0 8px}
+  .note-b h4 i{color:var(--green-700);font-size:16px}
+  .note-b ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px}
+  .note-b li{font-size:12.5px;color:var(--ink-600);line-height:1.5;padding-left:14px;position:relative}
+  .note-b li::before{content:"";position:absolute;left:0;top:7px;width:5px;height:5px;border-radius:9999px;background:var(--green-500)}
+  .note-b li b{color:var(--ink-900);font-weight:600}
+
+  .flag{display:flex;gap:12px;align-items:flex-start;background:color-mix(in srgb,var(--pos-amber) 8%,#fff);border:1px solid color-mix(in srgb,var(--pos-amber) 26%,#fff);border-radius:13px;padding:15px 18px}
+  .flag .fi{flex:none;color:var(--pos-amber);font-size:22px}
+  .flag .ft{font-size:13px;line-height:1.5;color:var(--ink-700)}
+  .flag .ft b{color:var(--ink-900);font-weight:700}
+</style></head>
+<body>
+  <div class="sheet">
+
+    <div class="ident">
+      <div class="ic"><i class="ph-duotone ph-hand-pointing"></i></div>
+      <div>
+        <div class="step">Cross-section · Questions + Positions</div>
+        <div class="n">Participation model</div>
+        <p class="job"><b>Two signals, one consistent control set</b>, shared by Questions and Positions. Participation is always <b>secondary</b> — it sharpens the content, never becomes the destination. Same widgets, same place on every card.</p>
+      </div>
+    </div>
+
+    <!-- two signals -->
+    <div class="block">
+      <p class="lbl"><i class="ph-duotone ph-sliders-horizontal"></i>The two signals</p>
+      <div class="signals">
+        <div class="sig">
+          <div class="sh"><span class="si"><i class="ph-duotone ph-scales"></i></span><b>Stance</b><span class="q">where do you land?</span></div>
+          <p>A <b>two-way lean</b>: agree ↔ disagree. On a <b>Position</b> it's “do you hold this view.” On a <b>Question</b> it's “which way do you lean” on its two implied answers.</p>
+          <div class="ctl">
+            <div class="stance"><span class="sbtn agree"><i class="ph-fill ph-check-circle"></i>Agree</span><span class="sbtn">Disagree</span></div>
+            <span class="clab">tints on select</span>
+          </div>
+        </div>
+        <div class="sig">
+          <div class="sh"><span class="si"><i class="ph-duotone ph-arrow-fat-up"></i></span><b>Importance</b><span class="q">how much does this matter?</span></div>
+          <p>A <b>relevance weight</b> — independent of stance. You can think a question is pivotal while disagreeing with the common answer. Drives <b>soft ordering</b> and prominence.</p>
+          <div class="ctl">
+            <div class="imp"><i class="ph-fill ph-caret-up on"></i><b>142</b><i class="ph-duotone ph-caret-down"></i></div>
+            <span class="clab">up / down · relevance</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- instantiation -->
+    <div class="block">
+      <p class="lbl"><i class="ph-duotone ph-squares-four"></i>Same controls, two contexts <span class="tail">identical widget, context-specific meaning</span></p>
+      <div class="inst">
+        <div class="icard">
+          <div class="ih"><i class="ph-duotone ph-question"></i>On a Question</div>
+          <div class="ib">
+            <span class="qtag"><i class="ph-duotone ph-flask"></i>Empirical</span>
+            <div class="qt">Are Western nuclear costs fixable, or structural?</div>
+            <div class="pbar2">
+              <div class="lean bluebar">
+                <div class="lt"><span class="a">Fixable <b>61%</b></span><span class="d"><b>39%</b> Structural</span></div>
+                <div class="lbar"><span class="la" style="width:61%"></span><span class="ld" style="width:39%"></span></div>
+              </div>
+              <div class="impmini"><i class="ph-fill ph-caret-up"></i><b>142</b><span>matters</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="icard">
+          <div class="ih"><i class="ph-duotone ph-scales"></i>On a Position</div>
+          <div class="ib">
+            <div class="pn"><span class="pd"></span>Climate Pragmatist</div>
+            <p class="psteel">“The only firm low-carbon source we have.”</p>
+            <div class="pbar2">
+              <div class="lean">
+                <div class="lt"><span class="a">Agree <b>54%</b></span><span class="d"><b>46%</b> Disagree</span></div>
+                <div class="lbar"><span class="la" style="width:54%"></span><span class="ld" style="width:46%"></span></div>
+              </div>
+              <div class="impmini"><i class="ph-fill ph-caret-up"></i><b>88</b><span>weight</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- semantic flag -->
+    <div class="block">
+      <div class="flag">
+        <i class="ph-duotone ph-seal-question fi"></i>
+        <div class="ft"><b>One thing to confirm — what “stance” means on a Question.</b> A question like “fixable, or structural?” has <b>two implied poles</b>, so stance = the reader's lean between them (shown above as a Fixable/Structural split). That's more useful than a generic agree/disagree. If you'd rather stance on a question mean “is this the <b>right</b> question / well-framed,” I'll switch it — but the two-pole lean reads cleaner and aggregates into real signal.</div>
+      </div>
+    </div>
+
+    <!-- aggregation -->
+    <div class="block">
+      <p class="lbl"><i class="ph-duotone ph-chart-donut"></i>How each signal surfaces</p>
+      <div class="agg">
+        <div class="ag">
+          <div class="at"><i class="ph-duotone ph-arrows-down-up"></i>Importance → order</div>
+          <p>On <b>Questions</b>, importance gradually <b>reorders</b> the list. On <b>Positions</b>, it sets <b>prominence/weight</b> but never reorders the equal-weight sides.</p>
+        </div>
+        <div class="ag">
+          <div class="at"><i class="ph-duotone ph-divide"></i>Stance → distribution</div>
+          <p>Agree/disagree (or the question lean) aggregates into a <b>split bar</b> — the reader sees where others land, not a single score.</p>
+        </div>
+        <div class="ag">
+          <div class="at"><i class="ph-duotone ph-eye-slash"></i>Always secondary</div>
+          <p>Signals live in a <b>quiet footer</b> on each card. No counts in the hero, no leaderboards, no comments. Content first.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- notes -->
+    <div class="block">
+      <div class="notes">
+        <div class="note-b">
+          <h4><i class="ph-duotone ph-paint-brush-broad"></i>Design</h4>
+          <ul>
+            <li><b>One footer row</b> on every Question and Position card: split bar + importance pill.</li>
+            <li><b>Stance tints</b>: green on Positions; the question's <b>blue</b> on Questions (matches its type tag).</li>
+            <li>Distribution is a <b>bar, not a number</b> — no upvote-score vibe.</li>
+            <li>Controls are <b>pills</b>, consistent with the rest of the system.</li>
+          </ul>
+        </div>
+        <div class="note-b">
+          <h4><i class="ph-duotone ph-cursor-click"></i>Behavior</h4>
+          <ul>
+            <li><b>Two independent axes</b> — stance and importance never collapse into one score.</li>
+            <li>Logged-out can vote (accounts deferred); de-duped lightly.</li>
+            <li>Hidden in <b>Condensed / print / social</b> — participation needs a live page.</li>
+            <li>Results animate in <b>after</b> you act, never gate reading.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body></html>

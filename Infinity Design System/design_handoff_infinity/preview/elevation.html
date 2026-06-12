@@ -1,0 +1,19 @@
+<!doctype html><html><head><meta charset="utf-8"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0}
+  body{background:var(--ink-50);padding:22px 24px}
+  .head{font-size:11px;color:var(--fg3);margin:0 0 16px}
+  .row{display:flex;gap:18px}
+  .u{display:flex;flex-direction:column;gap:8px;flex:1}
+  .box{height:56px;border-radius:12px;background:var(--white)}
+  .lab{font-size:11px;font-weight:600;color:var(--fg1)}
+  .lab span{font-weight:400;color:var(--fg3)}
+</style></head>
+<body>
+  <p class="head">Elevation — the system is flat. Shadow is reserved for transient overlays only.</p>
+  <div class="row">
+    <div class="u"><div class="box" style="border:1px solid var(--ink-100)"></div><div class="lab">card <span>· 1px border, no shadow</span></div></div>
+    <div class="u"><div class="box" style="box-shadow:0 4px 16px -4px rgba(26,26,24,.12),0 1px 3px rgba(26,26,24,.06)"></div><div class="lab">pop <span>· dropdown / popover</span></div></div>
+    <div class="u"><div class="box" style="box-shadow:0 12px 40px -8px rgba(26,26,24,.18)"></div><div class="lab">overlay <span>· modal / sheet</span></div></div>
+  </div>
+</body></html>

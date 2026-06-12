@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Submit your view — Infinity</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+<link rel="stylesheet" href="colors_and_type.css" />
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{background:var(--ink-100);font-family:var(--font-sans);-webkit-font-smoothing:antialiased;color:var(--ink-900);min-height:100vh}
+
+  /* faux topic page behind */
+  .behind{position:fixed;inset:0;background:var(--ink-50);overflow:hidden}
+  .behind .bn{height:60px;border-bottom:1px solid var(--ink-100);background:#fff;display:flex;align-items:center;padding:0 32px;gap:10px}
+  .behind .bn .mk{width:24px;height:24px;border-radius:7px;background:var(--brand-green);display:block}
+  .behind .bn .wm{font-family:var(--font-display);font-weight:800;font-size:17px;letter-spacing:-.03em}
+  .behind .bbody{max-width:760px;margin:46px auto;padding:0 32px;filter:blur(1px);opacity:.5}
+  .behind .bt{font-family:var(--font-display);font-weight:800;font-size:46px;letter-spacing:-.03em;margin:0}
+  .behind .bl{height:14px;border-radius:7px;background:var(--ink-200);margin-top:18px}
+
+  .scrim{position:fixed;inset:0;background:rgba(20,22,15,.46);backdrop-filter:blur(2px);z-index:30;display:flex;align-items:center;justify-content:center;padding:28px}
+
+  .modal{width:560px;max-width:100%;background:#fff;border-radius:22px;box-shadow:0 30px 70px -22px rgba(20,22,15,.5);overflow:hidden;display:flex;flex-direction:column;max-height:92vh}
+  .m-head{display:flex;align-items:center;gap:13px;padding:20px 22px 16px;border-bottom:1px solid var(--ink-100)}
+  .m-head .hi{width:38px;height:38px;border-radius:11px;background:var(--green-tint);color:var(--green-700);display:flex;align-items:center;justify-content:center;flex:none}
+  .m-head .hi i{font-size:21px}
+  .m-head .ht{flex:1;min-width:0}
+  .m-head .ht .hn{font-family:var(--font-display);font-weight:800;font-size:17px;letter-spacing:-.01em;line-height:1.1}
+  .m-head .ht .hs{font-size:12.5px;color:var(--ink-400);margin-top:2px}
+  .m-head .hx{width:32px;height:32px;border-radius:9999px;background:var(--ink-50);display:flex;align-items:center;justify-content:center;color:var(--ink-500);cursor:pointer;flex:none}
+  .m-head .hx i{font-size:15px}
+
+  /* stepper */
+  .steps{display:flex;gap:7px;padding:14px 22px 0}
+  .steps .s{flex:1;height:4px;border-radius:9999px;background:var(--ink-100)}
+  .steps .s.done{background:var(--green-400,var(--green-500))}
+  .steps .s.on{background:var(--green-500)}
+
+  .m-body{padding:18px 22px 4px;overflow-y:auto}
+  .step{display:none}
+  .step.on{display:block}
+  .q-lead{font-family:var(--font-display);font-weight:800;font-size:20px;letter-spacing:-.02em;margin:6px 0 4px}
+  .q-sub{font-size:13.5px;color:var(--ink-500);line-height:1.5;margin:0 0 18px}
+
+  /* step 1 — pick position */
+  .poslist{display:flex;flex-direction:column;gap:9px}
+  .posopt{position:relative;display:flex;align-items:center;gap:13px;border:1.5px solid var(--ink-100);border-radius:14px;padding:14px 16px 14px 18px;cursor:pointer;overflow:hidden;transition:border-color .15s,background .15s}
+  .posopt .prail{position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--pc)}
+  .posopt:hover{border-color:var(--ink-200)}
+  .posopt.sel{border-color:var(--pc);background:color-mix(in srgb,var(--pc) 7%,#fff)}
+  .posopt .pdot{width:13px;height:13px;border-radius:9999px;background:var(--pc);flex:none}
+  .posopt .pt{flex:1;min-width:0}
+  .posopt .pn{font-family:var(--font-display);font-weight:800;font-size:15.5px;letter-spacing:-.01em}
+  .posopt .ps{font-size:12.5px;font-style:italic;color:var(--ink-600);margin-top:3px;line-height:1.4}
+  .posopt .pcheck{width:22px;height:22px;border-radius:9999px;border:2px solid var(--ink-200);flex:none;display:flex;align-items:center;justify-content:center;color:#fff}
+  .posopt.sel .pcheck{background:var(--pc);border-color:var(--pc)}
+  .posopt.sel .pcheck i{font-size:12px}
+  .posopt .pcheck i{display:none}.posopt.sel .pcheck i{display:block}
+  .posopt.none{border-style:dashed}
+  .posopt.none .pdot{background:var(--ink-300)}
+  .posopt.none.sel{border-color:var(--ink-400);background:var(--ink-50)}
+  .posopt.none.sel .pcheck{background:var(--ink-700);border-color:var(--ink-700)}
+
+  /* step 2 — stance + importance + reasoning */
+  .field{margin-bottom:20px}
+  .flabel{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--ink-800);margin-bottom:9px}
+  .flabel i{color:var(--green-700);font-size:16px}
+  .flabel .opt{margin-left:auto;font-weight:500;color:var(--ink-300);font-size:11.5px}
+  .stance{display:flex;gap:9px}
+  .sbtn{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;border:1.5px solid var(--ink-100);border-radius:12px;padding:12px;font-family:var(--font-display);font-weight:700;font-size:14.5px;color:var(--ink-600);cursor:pointer;transition:.15s}
+  .sbtn i{font-size:18px}
+  .sbtn.agree.on{border-color:var(--green-500);color:var(--green-700);background:var(--green-tint)}
+  .sbtn.disagree.on{border-color:var(--ink-700);color:var(--ink-900);background:var(--ink-50)}
+  .imp{display:flex;gap:7px}
+  .ibtn{flex:1;text-align:center;border:1.5px solid var(--ink-100);border-radius:10px;padding:10px 6px;font-size:13px;font-weight:600;color:var(--ink-500);cursor:pointer;transition:.15s}
+  .ibtn.on{border-color:var(--green-500);color:var(--green-700);background:var(--green-tint)}
+  .ta{width:100%;border:1.5px solid var(--ink-100);border-radius:12px;padding:13px 14px;font-family:var(--font-sans);font-size:14px;line-height:1.55;color:var(--ink-900);resize:vertical;min-height:96px}
+  .ta:focus{outline:none;border-color:color-mix(in srgb,var(--green-500) 55%,var(--ink-100));box-shadow:0 0 0 4px var(--green-tint)}
+  .ta::placeholder{color:var(--ink-400)}
+  .tahint{display:flex;align-items:center;gap:7px;margin-top:8px;font-size:11.5px;color:var(--ink-400);line-height:1.4}
+  .tahint i{font-size:14px;color:var(--ink-300);flex:none}
+
+  /* step 3 — identity */
+  .idopt{display:flex;align-items:flex-start;gap:12px;border:1.5px solid var(--ink-100);border-radius:14px;padding:15px 16px;cursor:pointer;margin-bottom:10px;transition:.15s}
+  .idopt.sel{border-color:var(--green-500);background:var(--green-tint)}
+  .idopt .radio{width:20px;height:20px;border-radius:9999px;border:2px solid var(--ink-200);flex:none;margin-top:1px;display:flex;align-items:center;justify-content:center}
+  .idopt.sel .radio{border-color:var(--green-600)}
+  .idopt.sel .radio::after{content:"";width:9px;height:9px;border-radius:9999px;background:var(--green-600)}
+  .idopt .it{flex:1}
+  .idopt .in{font-family:var(--font-display);font-weight:700;font-size:14.5px;display:flex;align-items:center;gap:8px}
+  .idopt .in .tag{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--green-700);background:#fff;border:1px solid var(--green-tint-strong);border-radius:9999px;padding:2px 8px}
+  .idopt .idesc{font-size:12.5px;color:var(--ink-500);margin-top:4px;line-height:1.45}
+  .emailrow{margin-top:10px;display:none}
+  .idopt.sel .emailrow.show{display:block}
+  .emailrow input{width:100%;border:1.5px solid var(--ink-100);border-radius:10px;padding:10px 13px;font-family:var(--font-sans);font-size:13.5px}
+  .emailrow input:focus{outline:none;border-color:color-mix(in srgb,var(--green-500) 55%,var(--ink-100))}
+
+  /* footer */
+  .m-foot{display:flex;align-items:center;gap:12px;padding:16px 22px;border-top:1px solid var(--ink-100);background:var(--ink-50)}
+  .m-foot .back{font-size:13.5px;font-weight:600;color:var(--ink-500);cursor:pointer;padding:8px 4px}
+  .m-foot .back.hide{visibility:hidden}
+  .m-foot .spacer{flex:1}
+  .m-foot .ghosttext{font-size:12px;color:var(--ink-400);margin-right:4px}
+  .btn{display:inline-flex;align-items:center;gap:8px;border-radius:9999px;font-family:var(--font-display);font-weight:700;font-size:14px;padding:11px 20px;cursor:pointer;border:none}
+  .btn.primary{background:var(--ink-900);color:#fff}
+  .btn.primary i{font-size:16px;color:var(--green-500)}
+  .btn.primary:disabled{opacity:.4;cursor:not-allowed}
+
+  /* confirmation */
+  .done-wrap{text-align:center;padding:34px 26px 30px;display:none}
+  .done-wrap.on{display:block}
+  .done-wrap .dcircle{width:66px;height:66px;border-radius:9999px;background:var(--green-tint);color:var(--green-700);display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
+  .done-wrap .dcircle i{font-size:36px}
+  .done-wrap h3{font-family:var(--font-display);font-weight:800;font-size:23px;letter-spacing:-.02em;margin:0}
+  .done-wrap p{font-size:14px;color:var(--ink-600);line-height:1.55;max-width:40ch;margin:12px auto 0}
+  .done-wrap .recap{display:inline-flex;align-items:center;gap:9px;margin-top:18px;background:var(--ink-50);border:1px solid var(--ink-100);border-radius:9999px;padding:9px 16px;font-size:13px}
+  .done-wrap .recap .rd{width:11px;height:11px;border-radius:9999px}
+  .done-wrap .recap b{font-family:var(--font-display);font-weight:700}
+  .done-wrap .dnote{margin-top:16px;font-size:12px;color:var(--ink-400);display:flex;align-items:center;gap:7px;justify-content:center}
+  .done-wrap .dnote i{font-size:14px;color:var(--green-700)}
+</style>
+</head>
+<body data-screen-label="Submit your view — flow">
+  <div class="behind">
+    <div class="bn"><span class="mk"></span><span class="wm">Infinity</span></div>
+    <div class="bbody"><h1 class="bt">Nuclear Energy</h1><div class="bl" style="width:90%"></div><div class="bl" style="width:78%"></div><div class="bl" style="width:84%"></div></div>
+  </div>
+
+  <div class="scrim">
+    <div class="modal" id="modal">
+      <div class="m-head">
+        <span class="hi"><i class="ph-duotone ph-paper-plane-tilt"></i></span>
+        <div class="ht"><div class="hn" id="headTitle">Submit your view</div><div class="hs" id="headSub">On Nuclear Energy · refines the landscape, not a comment</div></div>
+        <span class="hx"><i class="ph-bold ph-x"></i></span>
+      </div>
+
+      <div class="steps" id="stepper">
+        <div class="s on"></div><div class="s"></div><div class="s"></div>
+      </div>
+
+      <div class="m-body" id="mbody">
+        <!-- STEP 1 -->
+        <div class="step on" data-step="0">
+          <div class="q-lead">Which view is closest to yours?</div>
+          <p class="q-sub">Pick the position you most align with. You're refining where readers sit — curation still leads.</p>
+          <div class="poslist">
+            <div class="posopt" style="--pc:var(--pos-green)" data-pos="Climate Pragmatist"><span class="prail"></span><span class="pdot"></span><div class="pt"><div class="pn">Climate Pragmatist</div><div class="ps">“The only proven, firm low-carbon source we have.”</div></div><span class="pcheck"><i class="ph-bold ph-check"></i></span></div>
+            <div class="posopt" style="--pc:var(--pos-amber)" data-pos="Cost Skeptic"><span class="prail"></span><span class="pdot"></span><div class="pt"><div class="pn">Cost Skeptic</div><div class="ps">“Too slow and costly to be the rational climate dollar.”</div></div><span class="pcheck"><i class="ph-bold ph-check"></i></span></div>
+            <div class="posopt" style="--pc:var(--pos-blue)" data-pos="New-Nuclear Advocate"><span class="prail"></span><span class="pdot"></span><div class="pt"><div class="pn">New-Nuclear Advocate</div><div class="ps">“Advanced reactors can fix the cost problem.”</div></div><span class="pcheck"><i class="ph-bold ph-check"></i></span></div>
+            <div class="posopt" style="--pc:var(--pos-rust)" data-pos="Risk-First Skeptic"><span class="prail"></span><span class="pdot"></span><div class="pt"><div class="pn">Risk-First Skeptic</div><div class="ps">“Catastrophic risks justify deep caution.”</div></div><span class="pcheck"><i class="ph-bold ph-check"></i></span></div>
+            <div class="posopt none" data-pos="None of these"><span class="pdot"></span><div class="pt"><div class="pn">None quite fits</div><div class="ps">My view spans several, or sits outside them.</div></div><span class="pcheck"><i class="ph-bold ph-check"></i></span></div>
+          </div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="step" data-step="1">
+          <div class="q-lead">How do you hold it?</div>
+          <p class="q-sub">Two quick signals, then optional reasoning a curator may fold into the landscape.</p>
+          <div class="field">
+            <div class="flabel"><i class="ph-duotone ph-scales"></i>Your stance</div>
+            <div class="stance">
+              <div class="sbtn agree" data-stance="agree"><i class="ph-duotone ph-check-circle"></i>I hold this view</div>
+              <div class="sbtn disagree" data-stance="disagree"><i class="ph-duotone ph-x-circle"></i>I lean against it</div>
+            </div>
+          </div>
+          <div class="field">
+            <div class="flabel"><i class="ph-duotone ph-flag-banner"></i>How important is this topic to you?</div>
+            <div class="imp">
+              <div class="ibtn" data-imp="1">Not much</div>
+              <div class="ibtn" data-imp="2">Somewhat</div>
+              <div class="ibtn" data-imp="3">A lot</div>
+              <div class="ibtn" data-imp="4">It's critical</div>
+            </div>
+          </div>
+          <div class="field">
+            <div class="flabel"><i class="ph-duotone ph-pencil-simple-line"></i>Your reasoning <span class="opt">optional</span></div>
+            <textarea class="ta" id="reason" placeholder="What's the strongest version of your view? What would change your mind?"></textarea>
+            <div class="tahint"><i class="ph-duotone ph-info"></i>Aggregated into the position landscape — curators may quote or fold it in. Not posted as a public comment.</div>
+          </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="step" data-step="2">
+          <div class="q-lead">Add your name to it?</div>
+          <p class="q-sub">Submitting is anonymous by default. Sign in only if you want to track or revise your views later.</p>
+          <div class="idopt sel" data-id="anon">
+            <span class="radio"></span>
+            <div class="it"><div class="in">Stay anonymous <span class="tag">No account</span></div><div class="idesc">Your signals and reasoning count immediately. Nothing is tied to you.</div></div>
+          </div>
+          <div class="idopt" data-id="account">
+            <span class="radio"></span>
+            <div class="it"><div class="in">Add an email</div><div class="idesc">Track what you've submitted and revise it as topics evolve.</div>
+              <div class="emailrow"><input type="email" placeholder="you@example.com" /></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONFIRMATION -->
+        <div class="done-wrap" id="doneWrap">
+          <div class="dcircle"><i class="ph-duotone ph-check-circle"></i></div>
+          <h3>Your view joins the landscape</h3>
+          <p>Thanks — your stance and importance are counted now, and your reasoning is in the curators' queue.</p>
+          <div class="recap" id="recap"></div>
+          <div class="dnote"><i class="ph-duotone ph-shield-check"></i>Submitted anonymously</div>
+        </div>
+      </div>
+
+      <div class="m-foot" id="mfoot">
+        <span class="back hide" id="backBtn">Back</span>
+        <span class="spacer"></span>
+        <span class="ghosttext" id="ghostText">Pick a view to continue</span>
+        <button class="btn primary" id="nextBtn" disabled>Continue <i class="ph-bold ph-arrow-right"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var state={pos:null,pc:null,stance:null,imp:null,id:'anon'};
+    var step=0;
+    var steps=[].slice.call(document.querySelectorAll('.step'));
+    var stepBars=[].slice.call(document.querySelectorAll('#stepper .s'));
+    var nextBtn=document.getElementById('nextBtn'),backBtn=document.getElementById('backBtn'),ghost=document.getElementById('ghostText');
+
+    function showStep(n){
+      step=n;
+      steps.forEach(function(s){s.classList.toggle('on',+s.dataset.step===n)});
+      stepBars.forEach(function(b,i){b.classList.toggle('done',i<n);b.classList.toggle('on',i===n)});
+      backBtn.classList.toggle('hide',n===0);
+      validate();
+    }
+    function validate(){
+      var ok=false,hint='';
+      if(step===0){ok=!!state.pos;hint=ok?'':'Pick a view to continue';}
+      if(step===1){ok=state.stance&&state.imp;hint=ok?'':'Choose a stance and importance';}
+      if(step===2){ok=true;hint='';nextBtn.innerHTML='Submit view <i class="ph-bold ph-paper-plane-tilt"></i>';}
+      else nextBtn.innerHTML='Continue <i class="ph-bold ph-arrow-right"></i>';
+      nextBtn.disabled=!ok;
+      ghost.textContent=hint;ghost.style.display=hint?'':'none';
+    }
+
+    // step 1
+    document.querySelectorAll('.posopt').forEach(function(o){o.addEventListener('click',function(){
+      document.querySelectorAll('.posopt').forEach(function(x){x.classList.remove('sel')});
+      o.classList.add('sel');state.pos=o.dataset.pos;
+      state.pc=o.style.getPropertyValue('--pc')||'var(--ink-400)';
+      validate();
+    })});
+    // step 2 stance
+    document.querySelectorAll('.sbtn').forEach(function(b){b.addEventListener('click',function(){
+      document.querySelectorAll('.sbtn').forEach(function(x){x.classList.remove('on')});
+      b.classList.add('on');state.stance=b.dataset.stance;validate();
+    })});
+    document.querySelectorAll('.ibtn').forEach(function(b){b.addEventListener('click',function(){
+      document.querySelectorAll('.ibtn').forEach(function(x){x.classList.remove('on')});
+      b.classList.add('on');state.imp=b.dataset.imp;validate();
+    })});
+    // step 3 identity
+    document.querySelectorAll('.idopt').forEach(function(o){o.addEventListener('click',function(){
+      document.querySelectorAll('.idopt').forEach(function(x){x.classList.remove('sel')});
+      o.classList.add('sel');state.id=o.dataset.id;
+      var er=o.querySelector('.emailrow');if(er)er.classList.add('show');
+      document.querySelectorAll('.idopt:not(.sel) .emailrow').forEach(function(e){e.classList.remove('show')});
+    })});
+
+    nextBtn.addEventListener('click',function(){
+      if(step<2){showStep(step+1);return;}
+      // submit
+      document.getElementById('mfoot').style.display='none';
+      document.getElementById('stepper').style.display='none';
+      steps.forEach(function(s){s.classList.remove('on')});
+      document.getElementById('headTitle').textContent='Submitted';
+      document.getElementById('headSub').textContent='On Nuclear Energy';
+      var recap=document.getElementById('recap');
+      var stanceTxt=state.stance==='agree'?'Holds':'Leans against';
+      recap.innerHTML='<span class="rd" style="background:'+(state.pc||'var(--ink-400)')+'"></span><span>'+stanceTxt+' · <b>'+state.pos+'</b></span>';
+      document.querySelector('.dnote').style.display=state.id==='anon'?'flex':'none';
+      document.getElementById('doneWrap').classList.add('on');
+    });
+    backBtn.addEventListener('click',function(){if(step>0)showStep(step-1)});
+
+    validate();
+  </script>
+</body>
+</html>

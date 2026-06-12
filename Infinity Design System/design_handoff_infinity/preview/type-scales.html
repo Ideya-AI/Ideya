@@ -1,0 +1,83 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0}
+  *{box-sizing:border-box}
+  body{background:var(--ink-50);padding:18px;font-family:var(--font-sans)}
+  .panel{background:#fff;border:1px solid var(--ink-100);border-radius:16px;padding:24px 26px;margin-bottom:14px}
+  .phead{display:flex;align-items:baseline;justify-content:space-between;gap:12px;border-bottom:1px solid var(--ink-100);padding-bottom:10px;margin-bottom:18px}
+  .medium{font-family:var(--font-display);font-weight:800;font-size:14px;color:var(--green-700);text-transform:uppercase;letter-spacing:.04em}
+  .specs{font-size:11px;color:var(--ink-400);font-variant-numeric:tabular-nums;text-align:right;line-height:1.5}
+  /* shared roles — Display = Nunito, Text = Jakarta */
+  .eyebrow{display:flex;align-items:center;gap:8px;font-family:var(--font-display);font-weight:800;text-transform:uppercase;color:var(--ink-500)}
+  .eyebrow i{color:var(--green-700);line-height:1}
+  .title{font-family:var(--font-display);color:var(--ink-900);margin:0;display:flex;align-items:center;gap:18px}
+  .title .feat{color:var(--green-700);line-height:1;flex:none}
+  .stat{font-family:var(--font-display);font-weight:800;font-variant-numeric:tabular-nums;color:var(--ink-900);line-height:1}
+  .statlbl{font-family:var(--font-sans);color:var(--ink-400);text-transform:uppercase;letter-spacing:.03em}
+  .body{font-family:var(--font-sans);color:var(--ink-600);text-wrap:pretty}
+  .statrow{display:flex;align-items:baseline;gap:10px}
+
+  /* ---- POSTER ---- */
+  .poster .eyebrow{font-size:16px;letter-spacing:.06em;margin-bottom:14px}
+  .poster .eyebrow i{font-size:24px}
+  .poster .title{font-weight:800;font-size:72px;letter-spacing:-.035em;line-height:.98}
+  .poster .title .feat{font-size:78px}
+  .poster .statrow{margin-top:22px}
+  .poster .stat{font-size:60px;letter-spacing:-.03em}
+  .poster .statlbl{font-size:15px}
+  .poster .body{font-size:23px;line-height:1.4;max-width:30ch;margin-top:18px}
+
+  /* ---- WEB ---- */
+  .web{max-width:760px}
+  .web .eyebrow{font-size:12px;letter-spacing:.06em;margin-bottom:10px}
+  .web .eyebrow i{font-size:18px}
+  .web .title{font-weight:800;font-size:38px;letter-spacing:-.025em;line-height:1.05}
+  .web .title .feat{font-size:40px}
+  .web .statrow{margin-top:14px}
+  .web .stat{font-weight:800;font-size:32px;letter-spacing:-.02em}
+  .web .statlbl{font-size:11px}
+  .web .body{font-size:16px;line-height:1.55;max-width:60ch;margin-top:12px}
+
+  /* ---- MOBILE ---- */
+  .mobile{max-width:360px}
+  .mobile .eyebrow{font-size:11px;letter-spacing:.07em;margin-bottom:9px}
+  .mobile .eyebrow i{font-size:15px}
+  .mobile .title{font-weight:800;font-size:26px;letter-spacing:-.02em;line-height:1.1;gap:10px}
+  .mobile .title .feat{font-size:24px}
+  .mobile .statrow{margin-top:12px}
+  .mobile .stat{font-weight:800;font-size:24px;letter-spacing:-.01em}
+  .mobile .statlbl{font-size:10px}
+  .mobile .body{font-size:15px;line-height:1.5;margin-top:10px}
+</style></head>
+<body>
+
+  <div class="panel poster">
+    <div class="phead"><span class="medium">Poster / print</span><span class="specs">Display: Nunito 900 · title 72 / −3.5% / 0.98<br>Icon: fill, hero (78px) · margins wide</span></div>
+    <div class="eyebrow"><i class="ph-fill ph-scales"></i>Positions · the debate</div>
+    <h2 class="title"><i class="ph-fill ph-atom feat"></i>Nuclear Energy</h2>
+    <div class="statrow"><span class="stat">0.03</span><span class="statlbl">deaths<br>/ TWh</span></div>
+    <p class="body">Among the lowest-death sources of power.</p>
+  </div>
+
+  <div class="panel web">
+    <div class="phead"><span class="medium">Web</span><span class="specs">Display: Nunito 800 · title 38 / −2.5%<br>Icon: duotone (18–40px) · Text: Jakarta</span></div>
+    <div class="eyebrow"><i class="ph-duotone ph-scales"></i>Positions · the debate</div>
+    <h2 class="title"><i class="ph-duotone ph-atom feat"></i>Nuclear Energy</h2>
+    <div class="statrow"><span class="stat">0.03</span><span class="statlbl">deaths / TWh</span></div>
+    <p class="body">Among the lowest-carbon, lowest-death sources of power — held back by Western cost problems.</p>
+  </div>
+
+  <div class="panel mobile">
+    <div class="phead"><span class="medium">Mobile</span><span class="specs">Display: Nunito 800 · title 26<br>Icon: line (15px) · tighter density</span></div>
+    <div class="eyebrow"><i class="ph ph-scales"></i>Positions</div>
+    <h2 class="title"><i class="ph ph-atom feat"></i>Nuclear Energy</h2>
+    <div class="statrow"><span class="stat">0.03</span><span class="statlbl">deaths / TWh</span></div>
+    <p class="body">Among the lowest-death sources of power.</p>
+  </div>
+
+</body></html>

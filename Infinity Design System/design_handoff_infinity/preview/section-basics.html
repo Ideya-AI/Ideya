@@ -1,0 +1,297 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{background:var(--ink-50);font-family:var(--font-sans);-webkit-font-smoothing:antialiased;color:var(--ink-900);padding:30px}
+  .sheet{max-width:1060px;margin:0 auto;display:flex;flex-direction:column;gap:22px}
+
+  /* section identity banner */
+  .ident{display:flex;align-items:flex-start;gap:16px;background:#fff;border:1px solid var(--ink-100);border-radius:18px;padding:22px 26px}
+  .ident .ic{flex:none;width:54px;height:54px;border-radius:15px;background:var(--green-tint);display:flex;align-items:center;justify-content:center;color:var(--green-700)}
+  .ident .ic i{font-size:30px;line-height:1}
+  .ident .n{font-family:var(--font-display);font-weight:800;font-size:26px;letter-spacing:-.02em;line-height:1}
+  .ident .step{font-size:12px;font-weight:700;color:var(--green-700);text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px}
+  .ident .job{margin:7px 0 0;font-size:15px;color:var(--ink-600);line-height:1.5;max-width:62ch}
+  .ident .job b{color:var(--ink-900);font-weight:700}
+
+  .block{background:#fff;border:1px solid var(--ink-100);border-radius:18px;padding:22px 26px}
+  .lbl{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-400);margin:0 0 16px}
+  .lbl i{color:var(--green-700);font-size:16px}
+  .lbl .tail{margin-left:auto;font-weight:500;text-transform:none;letter-spacing:0;color:var(--ink-300);font-size:11px}
+
+  /* chart vocabulary */
+  .vocab{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+  .v{display:flex;flex-direction:column;gap:10px}
+  .v .viz{height:62px;display:flex;align-items:center;justify-content:center}
+  .v .when{font-size:12px;font-weight:700;color:var(--ink-900)}
+  .v .map{font-size:11px;color:var(--ink-400);line-height:1.45}
+  .v .map b{color:var(--green-700);font-weight:600}
+  .vdiv{border-top:1px solid var(--ink-100);padding-top:10px}
+
+  /* the atom — condensed basics row. POSTER-VISIBLE: big, bold, readable across a room. */
+  .atom{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .tile{border:1px solid var(--ink-100);border-radius:16px;padding:20px 18px 18px;display:flex;flex-direction:column;gap:14px;background:#fff}
+  .tile.hero{background:var(--green-tint);border-color:var(--green-tint-strong)}
+  .tk{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:var(--ink-500);line-height:1.25}
+  .tv{font-family:var(--font-display);font-weight:800;font-size:52px;font-variant-numeric:tabular-nums;letter-spacing:-.035em;line-height:.9;color:var(--ink-900)}
+  .tv small{font-size:22px;font-weight:800;color:var(--ink-400)}
+  .vizrow{margin-top:auto}
+  .atom .rk{font-size:12px;font-weight:600}
+  .atom .rbar{height:9px}
+  .atom .rv{font-size:12px}
+  .atom .pbar{height:10px}
+  .atom .ends{font-size:11px}
+
+  /* mini chart pieces */
+  .rank{display:flex;flex-direction:column;gap:6px}
+  .rrow{display:grid;grid-template-columns:38px 1fr 34px;align-items:center;gap:8px}
+  .rk{font-size:10px;color:var(--ink-500)}
+  .rbar{height:7px;border-radius:9999px;background:var(--ink-100);overflow:hidden}
+  .rbar i{display:block;height:100%;border-radius:9999px;background:var(--ink-300)}
+  .rrow.on .rbar i{background:var(--green-500)}
+  .rrow.on .rk{color:var(--ink-900);font-weight:700}
+  .rv{font-size:10px;text-align:right;font-variant-numeric:tabular-nums;color:var(--ink-400)}
+  .rrow.on .rv{color:var(--green-700);font-weight:700}
+  .track{position:relative;height:7px;border-radius:9999px;background:linear-gradient(90deg,var(--green-tint-strong),var(--ink-100))}
+  .pin{position:absolute;top:50%;width:13px;height:13px;border-radius:9999px;background:var(--green-500);border:2.5px solid #fff;transform:translate(-50%,-50%);box-shadow:0 0 0 1px var(--green-600)}
+  .ghost{position:absolute;top:50%;width:8px;height:8px;border-radius:9999px;background:var(--ink-300);transform:translate(-50%,-50%)}
+  .ends{display:flex;justify-content:space-between;font-size:9px;color:var(--ink-400);margin-top:5px}
+  .pbar{height:7px;border-radius:9999px;background:var(--ink-100);overflow:hidden}
+  .pbar i{display:block;height:100%;border-radius:9999px;background:var(--green-500)}
+
+  /* depth expansion */
+  .depth{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .dcol .dh{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;color:var(--ink-900);margin-bottom:10px}
+  .dcol .dh .pill{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--green-700);background:var(--green-tint);padding:2px 8px;border-radius:9999px}
+  .dcol .dh .pg{width:6px;height:6px;border-radius:2px;background:var(--ink-200)}
+  .dcol .dh .pg.on{background:var(--green-500)}
+  .demo{border:1px solid var(--ink-100);border-radius:14px;padding:15px;background:#fff;height:100%}
+  .demo .tk{margin-bottom:8px}
+  .demo .tv{font-size:30px;margin-bottom:9px}
+  .demo .note{font-size:12px;color:var(--ink-600);line-height:1.5;margin-top:11px}
+  .demo .src{margin-top:10px;display:inline-flex;align-items:center;gap:4px;font-size:11px;color:var(--ink-400)}
+  .demo .src i{font-size:12px}
+  .demo .go{margin-top:11px;display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--green-700)}
+  .demo .go i{font-size:13px}
+  .dnote{font-size:11px;color:var(--ink-400);margin-top:9px;line-height:1.45}
+
+  /* spec notes */
+  .notes{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .note-b h4{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;margin:0 0 8px}
+  .note-b h4 i{color:var(--green-700);font-size:16px}
+  .note-b ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px}
+  .note-b li{font-size:12.5px;color:var(--ink-600);line-height:1.5;padding-left:14px;position:relative}
+  .note-b li::before{content:"";position:absolute;left:0;top:7px;width:5px;height:5px;border-radius:9999px;background:var(--green-500)}
+  .note-b li b{color:var(--ink-900);font-weight:600}
+</style></head>
+<body>
+  <div class="sheet">
+
+    <!-- identity -->
+    <div class="ident">
+      <div class="ic"><i class="ph-duotone ph-chart-bar"></i></div>
+      <div>
+        <div class="step">Section 2 of 6</div>
+        <div class="n">Basics</div>
+        <p class="job"><b>Ground the reader in numbers before disagreement begins.</b> The shared empirical floor — facts most positions accept. Low text, high scannable density; every fact is a number made visual.</p>
+      </div>
+    </div>
+
+    <!-- chart vocabulary -->
+    <div class="block">
+      <p class="lbl"><i class="ph-duotone ph-shapes"></i>Chart vocabulary <span class="tail">fact shape → one fixed visualization</span></p>
+      <div class="vocab">
+        <div class="v">
+          <div class="viz">
+            <div class="rank" style="width:100%">
+              <div class="rrow"><span class="rk">Coal</span><span class="rbar"><i style="width:100%"></i></span></div>
+              <div class="rrow on"><span class="rk">Nuke</span><span class="rbar"><i style="width:4%"></i></span></div>
+              <div class="rrow"><span class="rk">Solar</span><span class="rbar"><i style="width:4%"></i></span></div>
+            </div>
+          </div>
+          <div class="when vdiv">Comparison</div>
+          <div class="map">“vs. its peers” → <b>ranked bars</b>, subject highlighted</div>
+        </div>
+        <div class="v">
+          <div class="viz">
+            <svg width="58" height="58" viewBox="0 0 72 72">
+              <circle cx="36" cy="36" r="28" fill="none" stroke="var(--ink-100)" stroke-width="9"/>
+              <circle cx="36" cy="36" r="28" fill="none" stroke="var(--green-500)" stroke-width="9" stroke-linecap="round" stroke-dasharray="15.8 160" transform="rotate(-90 36 36)"/>
+            </svg>
+          </div>
+          <div class="when vdiv">Proportion</div>
+          <div class="map">“share of a whole” → <b>radial gauge</b></div>
+        </div>
+        <div class="v">
+          <div class="viz">
+            <div style="width:100%">
+              <div class="track"><span class="ghost" style="left:94%"></span><span class="pin" style="left:6%"></span></div>
+              <div class="ends"><span>low</span><span>high</span></div>
+            </div>
+          </div>
+          <div class="when vdiv">Where it sits</div>
+          <div class="map">“on a known range” → <b>range marker</b></div>
+        </div>
+        <div class="v">
+          <div class="viz">
+            <div style="width:100%"><div class="pbar"><i style="width:92%"></i></div></div>
+          </div>
+          <div class="when vdiv">Magnitude</div>
+          <div class="map">“how much / how often” → <b>single bar</b></div>
+        </div>
+        <div class="v">
+          <div class="viz">
+            <svg width="74" height="40" viewBox="0 0 74 40" fill="none">
+              <polyline points="2,30 14,26 26,28 38,18 50,20 62,9 72,6" stroke="var(--green-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="72" cy="6" r="3" fill="var(--green-600)"/>
+            </svg>
+          </div>
+          <div class="when vdiv">Trend</div>
+          <div class="map">“over time” → <b>sparkline</b></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- the condensed atom -->
+    <div class="block">
+      <p class="lbl"><i class="ph-duotone ph-grid-four"></i>The condensed atom <span class="tail">what always shows — every medium, minimum depth</span></p>
+      <div class="atom">
+        <div class="tile hero">
+          <div class="tk">Deaths per TWh</div>
+          <div class="tv">0.03</div>
+          <div class="vizrow">
+            <div class="rank">
+              <div class="rrow"><span class="rk">Coal</span><span class="rbar"><i style="width:100%"></i></span><span class="rv">24.6</span></div>
+              <div class="rrow on"><span class="rk">Nuclear</span><span class="rbar"><i style="width:3%"></i></span><span class="rv">0.03</span></div>
+              <div class="rrow"><span class="rk">Solar</span><span class="rbar"><i style="width:3%"></i></span><span class="rv">0.03</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="tile">
+          <div class="tk">Share of global power</div>
+          <div class="tv">9<small>%</small></div>
+          <div class="vizrow">
+            <div class="pbar"><i style="width:9%"></i></div>
+          </div>
+        </div>
+        <div class="tile">
+          <div class="tk">Lifecycle CO₂<br>g/kWh</div>
+          <div class="tv">12<small> g</small></div>
+          <div class="vizrow">
+            <div class="track"><span class="ghost" style="left:95%"></span><span class="pin" style="left:5%"></span></div>
+            <div class="ends"><span>clean</span><span>gas ~490</span></div>
+          </div>
+        </div>
+        <div class="tile">
+          <div class="tk">Capacity factor</div>
+          <div class="tv">92<small>%</small></div>
+          <div class="vizrow">
+            <div class="pbar"><i style="width:92%"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- depth expansion -->
+    <div class="block">
+      <p class="lbl"><i class="ph-duotone ph-arrows-out-line-horizontal"></i>How one tile expands with depth <span class="tail">per-tile verbosity grows · and so does the number of tiles</span></p>
+      <div class="depth">
+        <div class="dcol">
+          <div class="dh"><span class="pg on"></span><span class="pg"></span><span class="pg"></span> Condensed <span class="pill">share / print</span></div>
+          <div class="demo">
+            <div class="tk">Deaths per TWh</div>
+            <div class="rank">
+              <div class="rrow"><span class="rk">Coal</span><span class="rbar"><i style="width:100%"></i></span><span class="rv">24.6</span></div>
+              <div class="rrow on"><span class="rk">Nuke</span><span class="rbar"><i style="width:3%"></i></span><span class="rv">0.03</span></div>
+              <div class="rrow"><span class="rk">Solar</span><span class="rbar"><i style="width:3%"></i></span><span class="rv">0.03</span></div>
+            </div>
+            <div class="dnote">Viz + value + label only. No prose.</div>
+          </div>
+        </div>
+        <div class="dcol">
+          <div class="dh"><span class="pg on"></span><span class="pg on"></span><span class="pg"></span> Normal <span class="pill">web / mobile</span></div>
+          <div class="demo">
+            <div class="tk">Deaths per TWh</div>
+            <div class="rank">
+              <div class="rrow"><span class="rk">Coal</span><span class="rbar"><i style="width:100%"></i></span><span class="rv">24.6</span></div>
+              <div class="rrow on"><span class="rk">Nuke</span><span class="rbar"><i style="width:3%"></i></span><span class="rv">0.03</span></div>
+              <div class="rrow"><span class="rk">Solar</span><span class="rbar"><i style="width:3%"></i></span><span class="rv">0.03</span></div>
+            </div>
+            <div class="note">Among the safest sources — including Chernobyl and Fukushima.</div>
+            <div class="src"><i class="ph-duotone ph-link-simple"></i>ourworldindata.org</div>
+          </div>
+        </div>
+        <div class="dcol">
+          <div class="dh"><span class="pg on"></span><span class="pg on"></span><span class="pg on"></span> Deep <span class="pill">go further</span></div>
+          <div class="demo">
+            <div class="tk">Deaths per TWh</div>
+            <div class="rank">
+              <div class="rrow"><span class="rk">Coal</span><span class="rbar"><i style="width:100%"></i></span><span class="rv">24.6</span></div>
+              <div class="rrow on"><span class="rk">Nuke</span><span class="rbar"><i style="width:3%"></i></span><span class="rv">0.03</span></div>
+              <div class="rrow"><span class="rk">Solar</span><span class="rbar"><i style="width:3%"></i></span><span class="rv">0.03</span></div>
+            </div>
+            <div class="note">Among the safest sources — including Chernobyl and Fukushima. Counts lifecycle deaths: mining, construction, operation, accidents.</div>
+            <div class="src"><i class="ph-duotone ph-link-simple"></i>Our World in Data · Markandya &amp; Wilkinson, 2007</div>
+            <div class="go"><i class="ph-duotone ph-arrow-right"></i>Methods &amp; full dataset</div>
+          </div>
+        </div>
+      </div>
+      <!-- tile-count expansion -->
+      <div style="margin-top:20px;border-top:1px solid var(--ink-100);padding-top:18px">
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+          <span style="font-size:12px;font-weight:700;color:var(--ink-900)">Tile count scales too</span>
+          <span class="dnote" style="margin:0">— condensed shows the <b>top 3–4</b> by editorial priority; deeper depth + bigger medium reveal the rest on request.</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:7px;margin-top:13px;flex-wrap:wrap">
+          <span style="width:84px;height:46px;border-radius:9px;background:var(--green-tint);border:1px solid var(--green-tint-strong)"></span>
+          <span style="width:84px;height:46px;border-radius:9px;background:#fff;border:1px solid var(--ink-100)"></span>
+          <span style="width:84px;height:46px;border-radius:9px;background:#fff;border:1px solid var(--ink-100)"></span>
+          <span style="width:84px;height:46px;border-radius:9px;background:#fff;border:1px solid var(--ink-100)"></span>
+          <span style="width:1px;height:34px;background:var(--ink-200);margin:0 4px"></span>
+          <span style="width:84px;height:46px;border-radius:9px;background:repeating-linear-gradient(135deg,var(--ink-50),var(--ink-50) 6px,#fff 6px,#fff 12px);border:1px dashed var(--ink-200)"></span>
+          <span style="width:84px;height:46px;border-radius:9px;background:repeating-linear-gradient(135deg,var(--ink-50),var(--ink-50) 6px,#fff 6px,#fff 12px);border:1px dashed var(--ink-200)"></span>
+          <span style="display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--green-700);padding:0 6px"><i class="ph-duotone ph-plus-circle" style="font-size:16px"></i>4 more</span>
+        </div>
+        <div class="dnote" style="margin-top:9px"><b style="color:var(--ink-900)">Default visible</b> (solid) · <b style="color:var(--ink-900)">reveal on request</b> (dashed). Poster/print bakes in a fixed curated set; web &amp; mobile let the reader pull more.</div>
+      </div>
+    </div>
+
+    <!-- spec notes -->
+    <div class="block">
+      <div class="notes">
+        <div class="note-b">
+          <h4><i class="ph-duotone ph-list-bullets"></i>Content</h4>
+          <ul>
+            <li><b>6–8 stat cards.</b> Each: label, big value, one-line note, source.</li>
+            <li><b>Smart title</b> = the metric, not a sentence. “Deaths per TWh,” not “How dangerous is it?”</li>
+            <li>Facts most positions <b>accept</b> — no contested numbers here (those live in Questions).</li>
+            <li>Comparative context baked in (“Coal ~24.6”), not standalone figures.</li>
+          </ul>
+        </div>
+        <div class="note-b">
+          <h4><i class="ph-duotone ph-paint-brush-broad"></i>Design</h4>
+          <ul>
+            <li>Each fact maps to <b>one</b> chart type by its shape (see vocabulary).</li>
+            <li>Charts are <b>ink + single green</b>; the subject is the only green bar.</li>
+            <li>Tabular figures (Inter) for all numbers; Jakarta 800 for the hero value.</li>
+            <li>Tile = flat, 1px border, no shadow. Equal height in a row.</li>
+          </ul>
+        </div>
+        <div class="note-b">
+          <h4><i class="ph-duotone ph-cursor-click"></i>Interaction &amp; expansion</h4>
+          <ul>
+            <li><b>Static by default</b> — readable with zero interaction (it's a poster too).</li>
+            <li>Tap a tile → its <b>source + methods</b> expand inline (no modal on desktop).</li>
+            <li>Depth grows the tile: <b>viz → +note+source → +methods/“go further.”</b></li>
+            <li>Layout per medium: <b>poster</b> 2-up hero + small; <b>web</b> 4-col; <b>mobile</b> 2-col, carousel optional.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body></html>

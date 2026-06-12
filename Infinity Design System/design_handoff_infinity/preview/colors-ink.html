@@ -1,0 +1,48 @@
+<!doctype html><html><head><meta charset="utf-8"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0}
+  *{box-sizing:border-box}
+  body{background:var(--white);padding:18px 20px}
+  .deriv{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+  .deriv img{height:26px;width:auto;display:block}
+  .deriv .arrow{color:var(--ink-300)}
+  .deriv .t{font-size:11px;color:var(--fg3);line-height:1.4}
+  .deriv .t b{color:var(--fg1)}
+  .block{margin-bottom:13px}
+  .cap{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--fg3);margin:0 0 7px}
+  .row{display:flex;gap:7px}
+  .sw{flex:1;display:flex;flex-direction:column;gap:4px}
+  .chip{height:38px;border-radius:8px;border:1px solid rgba(0,0,0,.05)}
+  .n{font-size:9.5px;font-weight:600;color:var(--fg1)}
+  .hex{font-size:9px;color:var(--fg3);font-variant-numeric:tabular-nums;text-transform:uppercase}
+  .pri .chip{display:flex;align-items:flex-end;padding:5px 7px;color:#fff;font-size:9px;font-weight:600}
+</style></head>
+<body>
+  <div class="deriv">
+    <img src="../assets/infinity-mark.png" alt="Infinity mark">
+    <span class="arrow">→</span>
+    <span class="t">The logo's green is the <b>one brand color</b>: a primary scale for action, over clean near-neutral surfaces. Crisp green-on-white, like the mark.</span>
+  </div>
+
+  <div class="block pri">
+    <p class="cap">Primary green · the brand</p>
+    <div class="row">
+      <div class="sw"><div class="chip" style="background:var(--green-500)">#4CB050</div><div class="n">green-500</div><div class="hex">brand / primary</div></div>
+      <div class="sw"><div class="chip" style="background:var(--green-600)">#3F9A44</div><div class="n">green-600</div><div class="hex">hover</div></div>
+      <div class="sw"><div class="chip" style="background:var(--green-700)">#327D38</div><div class="n">green-700</div><div class="hex">text / strong</div></div>
+      <div class="sw"><div class="chip" style="background:var(--green-tint);color:var(--green-700)">tint</div><div class="n">green-tint</div><div class="hex">#E9F5EA</div></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <p class="cap">Neutrals · clean, a whisper of green</p>
+    <div class="row">
+      <div class="sw"><div class="chip" style="background:var(--ink-50)"></div><div class="n">50</div><div class="hex">bg</div></div>
+      <div class="sw"><div class="chip" style="background:var(--ink-100)"></div><div class="n">100</div><div class="hex">border</div></div>
+      <div class="sw"><div class="chip" style="background:var(--ink-200)"></div><div class="n">200</div><div class="hex">hover</div></div>
+      <div class="sw"><div class="chip" style="background:var(--ink-400)"></div><div class="n">400</div><div class="hex">muted</div></div>
+      <div class="sw"><div class="chip" style="background:var(--ink-600)"></div><div class="n">600</div><div class="hex">body</div></div>
+      <div class="sw"><div class="chip" style="background:var(--ink-900)"></div><div class="n">900</div><div class="hex">text</div></div>
+    </div>
+  </div>
+</body></html>
