@@ -2,15 +2,6 @@
    Loaded (deferred) BEFORE Alpine so alpine:init listeners are registered. */
 (function () {
   document.addEventListener("alpine:init", function () {
-    // Reading depth — persisted, drives every section's reveal via body[data-depth].
-    Alpine.store("ui", {
-      depth: localStorage.getItem("infinity:depth") || "normal",
-      setDepth(d) {
-        this.depth = d;
-        localStorage.setItem("infinity:depth", d);
-      },
-    });
-
     // Global search overlay open/close state (the dropdown lives in _search.html).
     Alpine.store("search", {
       open: false,

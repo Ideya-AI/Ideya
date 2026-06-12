@@ -273,6 +273,54 @@ class Section(models.Model):
         except ValueError:
             return ""
 
+    def _crux_or_none(self):
+        try:
+            return self.crux
+        except Crux.DoesNotExist:
+            return None
+
+    @property
+    def has_layer_normal(self) -> bool:
+        """Any normal-layer content — part of the base read on desktop, behind
+        the section's Go-deeper on mobile (decision A: medium sets the base)."""
+        if self.kind == self.BASICS:
+            return bool(self.intro) or any(
+                s.note or s.reveal == "normal" for s in self.stats.all()
+            )
+        if self.kind == self.QUESTIONS:
+            return any(q.why or q.reveal == "normal" for q in self.questions.all())
+        if self.kind == self.POSITIONS:
+            return any(p.description for p in self.positions.all())
+        if self.kind == self.CRUX:
+            crux = self._crux_or_none()
+            return bool(crux and crux.subtitle)
+        if self.kind == self.ACTIONS:
+            return any(
+                a.description or a.reveal == "normal" for a in self.actions.all()
+            )
+        return False
+
+    @property
+    def has_layer_deep(self) -> bool:
+        """Any deep-layer content — always behind the section's Go-deeper."""
+        if self.kind == self.BASICS:
+            return any(s.source_label or s.reveal == "deep" for s in self.stats.all())
+        if self.kind == self.QUESTIONS:
+            return any(
+                q.lean_pct_a is not None or q.reveal == "deep"
+                for q in self.questions.all()
+            )
+        if self.kind == self.POSITIONS:
+            return any(
+                p.representative_name or p.proponents for p in self.positions.all()
+            )
+        if self.kind == self.CRUX:
+            crux = self._crux_or_none()
+            return bool(crux and (crux.empirical or crux.values))
+        if self.kind == self.ACTIONS:
+            return any(a.reveal == "deep" for a in self.actions.all())
+        return False
+
 
 class Stat(models.Model):
     """One Basics figure. `viz` maps the fact's shape to a fixed visualization."""

@@ -187,3 +187,23 @@ class ContentManagementTests(TestCase):
         self.assertNotIn("overview", self.draft.missing_sections)
         nuclear = Topic.objects.get(slug="nuclear-energy")
         self.assertEqual(nuclear.missing_sections, [])
+
+
+class LayeredReadingTests(TestCase):
+    """Decision A: medium sets the base, per-section expanders go deeper."""
+
+    def test_topic_page_has_expanders_not_global_toggle(self):
+        resp = self.client.get("/nuclear-energy/")
+        self.assertContains(resp, "Go deeper")
+        self.assertNotContains(resp, "Reading depth")
+        self.assertNotContains(resp, "data-depth")
+
+    def test_sections_without_layers_get_no_expander(self):
+        topic = Topic.objects.create(
+            title="Bare", slug="bare", status=Topic.PUBLISHED
+        )
+        section = Section.objects.create(topic=topic, kind=Section.QUESTIONS)
+        self.assertFalse(section.has_layer_normal)
+        self.assertFalse(section.has_layer_deep)
+        resp = self.client.get("/bare/")
+        self.assertNotContains(resp, "Go deeper")

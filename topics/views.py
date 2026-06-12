@@ -212,11 +212,6 @@ def topic_detail(request, slug):
             "sections": sections,
             "related": related,
             "positions": positions,
-            "depths": [
-                ("condensed", "Condensed"),
-                ("normal", "Normal"),
-                ("deep", "Deep"),
-            ],
             "act_filters": [
                 ("all", "All"),
                 ("learn", "Learn"),

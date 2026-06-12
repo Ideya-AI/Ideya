@@ -1,0 +1,10 @@
+{% comment %}Per-section Go-deeper expander (decision A). Expects `section` and
+an enclosing Alpine scope with `deeper`. m-only = the section has no deep
+layer, so the control only exists on mobile to reveal the normal layer.{% endcomment %}
+{% if section.has_layer_deep or section.has_layer_normal %}
+<button type="button" class="deeper{% if not section.has_layer_deep %} m-only{% endif %}"
+        :aria-expanded="deeper" @click="deeper = !deeper">
+  <i class="ph-duotone" :class="deeper ? 'ph-minus-circle' : 'ph-plus-circle'"></i>
+  <span x-text="deeper ? 'Show less' : 'Go deeper'"></span>
+</button>
+{% endif %}

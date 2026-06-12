@@ -1,7 +1,7 @@
 {% comment %}Position participation foot — stance toggle, gated agree ratio,
 importance vote. HTMX-swapped by topics:stance. Expects `p` (with .stance and
 .voted annotated).{% endcomment %}
-<div class="pfoot when-normal is-flex" id="pfoot-{{ p.id }}">
+<div class="pfoot" id="pfoot-{{ p.id }}">
   <div class="ad" role="group" aria-label="Your stance on {{ p.name }}">
     <button type="button" class="adb{% if p.stance == 'agree' %} on{% endif %}"
             hx-post="{% url 'topics:stance' p.id %}" hx-vals='{"value": "agree"}'

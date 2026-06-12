@@ -25,7 +25,7 @@
 
   {% block head %}{% endblock %}
 </head>
-<body x-data :data-depth="$store.ui.depth" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
+<body x-data hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
 
   {% block nav %}
   <header class="nav">
