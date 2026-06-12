@@ -1,0 +1,20 @@
+{% comment %}One open question row. Expects `q`.{% endcomment %}
+<div class="q{% if q.reveal_class %} {{ q.reveal_class }} is-grid{% endif %}">
+  {% include "topics/components/_qvote.html" %}
+  <div class="qb">
+    <span class="qtag {% if q.kind == 'empirical' %}emp{% else %}val{% endif %}"><i class="ph-duotone ph-{{ q.tag_icon }}"></i>{{ q.get_kind_display }}</span>
+    <div class="qt">{{ q.text }}</div>
+    {% if q.why %}<p class="qw when-normal"><b>Why it's contested:</b> {{ q.why }}</p>{% endif %}
+    {% if q.lean_pct_a is not None %}
+    <div class="qfoot when-deep">
+      <div class="lean{% if q.kind == 'empirical' %} blue{% endif %}">
+        <div class="lt">
+          <span class="a">{{ q.lean_label_a }} <b>{{ q.lean_pct_a }}%</b></span>
+          <span><b>{{ q.lean_pct_b }}%</b> {{ q.lean_label_b }}</span>
+        </div>
+        <div class="lbar"><span class="la" style="width:{{ q.lean_pct_a }}%"></span><span class="ld" style="width:{{ q.lean_pct_b }}%"></span></div>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</div>

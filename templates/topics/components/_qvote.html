@@ -1,0 +1,10 @@
+{% comment %}Question importance control. HTMX-swapped on vote. Expects `q` (with .voted).{% endcomment %}
+<div class="qvote" id="qvote-{{ q.id }}">
+  <button type="button" class="vbtn"
+    {% if not q.voted %}hx-post="{% url 'topics:vote' 'question' q.id %}" hx-target="#qvote-{{ q.id }}" hx-swap="outerHTML"{% endif %}
+    aria-label="Mark this question important"{% if q.voted %} disabled aria-pressed="true"{% endif %}>
+    <i class="ph-{% if q.voted %}fill ph-caret-up up{% else %}duotone ph-caret-up{% endif %}"></i>
+  </button>
+  <span class="qc">{{ q.votes }}</span>
+  <i class="ph-duotone ph-caret-down"></i>
+</div>

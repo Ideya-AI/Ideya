@@ -1,0 +1,19 @@
+{% comment %}Discovery card. Expects `topic` decorated with .dots, .is_stub, .color_category.{% endcomment %}
+{% with cc=topic.color_category %}
+<a class="tnode{% if topic.is_stub %} stub{% endif %}" href="{{ topic.get_absolute_url }}"
+   {% if cc %}style="--cat: {{ cc.color_var }}; --cat-tint: {{ cc.tint_var }};"{% endif %}>
+  <div class="tnode-head">
+    <span class="tnode-icon"><i class="ph-duotone ph-{{ topic.icon|default:'circle' }}"></i></span>
+    <span class="tnode-name">{{ topic.title }}</span>
+  </div>
+  <p class="tnode-sum">{{ topic.summary }}</p>
+  {% if topic.dots %}
+  <div class="tnode-dots">
+    {% for c in topic.dots %}<span class="dd" style="background:{{ c }}"></span>{% endfor %}
+    <span class="ddn">{{ topic.dots|length }} position{{ topic.dots|length|pluralize }}</span>
+  </div>
+  {% elif topic.is_stub %}
+  <div class="tnode-dots"><span class="ddn">Mapped soon</span></div>
+  {% endif %}
+</a>
+{% endwith %}

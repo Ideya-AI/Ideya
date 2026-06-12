@@ -1,0 +1,85 @@
+{% comment %}Submit-your-view flow. Expects `topic` and `positions`. Opened via the
+`open-submit` event (Actions card) or the store. Becomes a bottom sheet on mobile.{% endcomment %}
+<div x-data="submitFlow()" @open-submit.window="launch()" x-show="$store.submit.open" x-cloak style="display:none">
+  <div class="scrim" @click="$store.submit.open = false"></div>
+  <div class="sheet overlay-card" role="dialog" aria-label="Submit your view"
+       @keydown.escape.window="$store.submit.open = false">
+
+    <div id="submit-inner">
+      <header class="sheet-head">
+        <div>
+          <div class="sheet-eyebrow"><i class="ph-duotone ph-paper-plane-tilt"></i>Add your view</div>
+          <div class="sheet-topic">{{ topic.title }}</div>
+        </div>
+        <button type="button" class="menu" @click="$store.submit.open = false" aria-label="Close"><i class="ph-duotone ph-x"></i></button>
+      </header>
+
+      <div class="stepper">
+        <span class="stp" :class="{ on: step >= 1, done: step > 1 }">1 · Align</span>
+        <span class="stp" :class="{ on: step >= 2, done: step > 2 }">2 · Your stance</span>
+        <span class="stp" :class="{ on: step >= 3 }">3 · Identity</span>
+      </div>
+
+      <form hx-post="{% url 'topics:submit' %}" hx-target="#submit-inner" hx-swap="innerHTML">
+        <input type="hidden" name="topic" value="{{ topic.id }}" />
+
+        {# Step 1 — align with a position #}
+        <div class="sstep" x-show="step === 1">
+          <p class="sstep-q">Which position is closest to your own?</p>
+          <div class="pick">
+            {% for p in positions %}
+            <label class="pick-opt" :class="{ on: position === '{{ p.id }}' }">
+              <input type="radio" name="position" value="{{ p.id }}" x-model="position" hidden />
+              <span class="pick-dot" style="background:{{ p.color_var }}"></span>
+              <span><span class="pick-name">{{ p.name }}</span><span class="pick-steel">{{ p.steelman }}</span></span>
+            </label>
+            {% endfor %}
+            <label class="pick-opt" :class="{ on: position === 'none' }">
+              <input type="radio" name="position" value="none" x-model="position" hidden />
+              <span class="pick-dot" style="background:var(--ink-300)"></span>
+              <span><span class="pick-name">None of these</span><span class="pick-steel">My view sits outside the mapped positions.</span></span>
+            </label>
+          </div>
+        </div>
+
+        {# Step 2 — stance + importance + reasoning #}
+        <div class="sstep" x-show="step === 2">
+          <p class="sstep-q">How do you lean, and how much does it matter to you?</p>
+          <div class="seg-row">
+            <template x-for="opt in ['agree','neutral','disagree']" :key="opt">
+              <label class="seg-opt" :class="{ on: stance === opt }">
+                <input type="radio" name="stance" :value="opt" x-model="stance" hidden />
+                <span x-text="opt.charAt(0).toUpperCase() + opt.slice(1)"></span>
+              </label>
+            </template>
+          </div>
+          <label class="field-label">Importance <b x-text="importance"></b>/5</label>
+          <input class="range" type="range" min="1" max="5" name="importance" x-model="importance" />
+          <label class="field-label">Your reasoning <span class="muted">(optional — aggregated, never posted)</span></label>
+          <textarea class="field" name="reasoning" rows="3" x-model="reasoning" placeholder="What's the strongest reason behind your view?"></textarea>
+        </div>
+
+        {# Step 3 — identity #}
+        <div class="sstep" x-show="step === 3">
+          <p class="sstep-q">Stay anonymous, or leave an email for follow-up?</p>
+          <label class="pick-opt" :class="{ on: anon }" @click="anon = true">
+            <span class="pick-dot" style="background:var(--green-500)"></span>
+            <span><span class="pick-name">Anonymous</span><span class="pick-steel">The default. No account, no identity stored.</span></span>
+          </label>
+          <label class="pick-opt" :class="{ on: !anon }" @click="anon = false">
+            <span class="pick-dot" style="background:var(--ink-300)"></span>
+            <span><span class="pick-name">Leave an email</span><span class="pick-steel">Optional — only used to follow up on your view.</span></span>
+          </label>
+          <input class="field" type="email" name="email" x-model="email" x-show="!anon" placeholder="you@example.com" />
+        </div>
+
+        <footer class="sheet-foot">
+          <button type="button" class="btn btn-ghost" x-show="step > 1" @click="back()">Back</button>
+          <span style="flex:1"></span>
+          <button type="button" class="btn btn-primary" x-show="step < 3" :disabled="!canContinue" @click="next()">Continue</button>
+          <button type="submit" class="btn btn-primary" x-show="step === 3">Submit view</button>
+        </footer>
+      </form>
+    </div>
+  </div>
+</div>

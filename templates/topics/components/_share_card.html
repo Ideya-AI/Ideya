@@ -1,0 +1,17 @@
+{% load static %}{% comment %}Inner share-card content. Expects topic, cc, positions, crux; optional show_url.{% endcomment %}
+<div class="lt">
+  <div class="brand"><img class="mark" src="{% static 'img/infinity-mark.png' %}" alt="" /><span class="wm">Infinity</span><span class="sep"></span><span class="tag">a curated atlas of hard issues</span></div>
+  {% if cc %}<span class="cat"><i class="ph-duotone ph-{{ cc.icon|default:'squares-four' }}"></i>{{ cc.name }}</span>{% endif %}
+  <div class="ttlrow"><span class="ticon"><i class="ph-duotone ph-{{ topic.icon|default:'circle' }}"></i></span><h1 class="ttl">{{ topic.title }}</h1></div>
+  <p class="summary">{{ topic.summary }}</p>
+  {% if show_url %}<div class="url"><span class="ub"><img class="mark" src="{% static 'img/infinity-mark.png' %}" alt="" />infinity</span><span>/ {{ topic.slug }}</span></div>{% endif %}
+</div>
+<div class="dk">
+  <div class="dlabel"><i class="ph-duotone ph-scales"></i>The debate · {{ positions|length }} positions</div>
+  <div class="poss">
+    {% for p in positions %}
+    <div class="pos"><span class="pd" style="background:{{ p.color_var }}"></span><span class="pnm">{{ p.name }}</span></div>
+    {% endfor %}
+  </div>
+  {% if crux %}<div class="hook"><i class="ph-duotone ph-target"></i><span class="ct"><b>The crux:</b> {{ crux.subtitle|truncatewords:14 }}</span></div>{% endif %}
+</div>

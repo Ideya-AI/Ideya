@@ -1,0 +1,16 @@
+{% comment %}A named position — the heart. Expects `p`.{% endcomment %}
+<div class="pos" x-data="{ stance: '' }">
+  <span class="prail" style="background:{{ p.color_var }}"></span>
+  <div class="phead"><span class="pdot" style="background:{{ p.color_var }}"></span><span class="pn">{{ p.name }}</span></div>
+  <p class="psteel">“{{ p.steelman }}”</p>
+  {% if p.description %}<p class="pdesc when-normal">{{ p.description }}</p>{% endif %}
+  {% if p.representative_name %}<p class="prep when-deep"><i class="ph-duotone ph-user-focus"></i><span><b>{{ p.representative_name }}</b> — {{ p.representative_note }}</span></p>{% endif %}
+  {% if p.proponents %}<p class="pprop when-deep"><b>Proponents:</b> {{ p.proponent_list|join:" · " }}</p>{% endif %}
+  <div class="pfoot when-normal is-flex">
+    <div class="ad">
+      <button type="button" class="adb" :class="{ on: stance === 'agree' }" @click="stance = stance === 'agree' ? '' : 'agree'">Agree</button>
+      <button type="button" class="adb" :class="{ on: stance === 'disagree' }" @click="stance = stance === 'disagree' ? '' : 'disagree'">Disagree</button>
+    </div>
+    {% include "topics/components/_pimp.html" %}
+  </div>
+</div>

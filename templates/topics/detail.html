@@ -1,92 +1,166 @@
 {% extends "base.html" %}
+{% load infinity_extras %}
 
 {% block title %}{{ topic.title }} — Infinity{% endblock %}
+{% block description %}{{ topic.summary }}{% endblock %}
 
 {% block content %}
-<article x-data="{ layer: 1 }">
-  <nav class="text-xs text-ink-400">
-    <a href="{% url 'topics:index' %}" class="hover:text-ink-600">Topics</a>
-    <span class="mx-1">/</span>
-    <span>{{ topic.title }}</span>
+<div class="topic" x-data="{ active: 'overview' }" x-init="
+  const secs = [...$el.querySelectorAll('.content .sec')];
+  const obs = new IntersectionObserver((es) => {
+    es.forEach(e => { if (e.isIntersecting) active = e.target.id; });
+  }, { rootMargin: '-15% 0px -75% 0px', threshold: 0 });
+  secs.forEach(s => obs.observe(s));
+">
+
+  <!-- MOBILE section scroller + depth (sticky; desktop hides this) -->
+  <nav class="rail-mobile">
+    {% for s in sections %}
+    <a class="mlink" href="#{{ s.kind }}" :class="{ active: active === '{{ s.kind }}' }">{{ s.get_kind_display }}</a>
+    {% endfor %}
+    <div class="mdepth">
+      {% for d, label in depths %}
+      <button type="button" class="mopt" :class="{ on: $store.ui.depth === '{{ d }}' }" @click="$store.ui.setDepth('{{ d }}')">{{ label }}</button>
+      {% endfor %}
+    </div>
   </nav>
 
-  <header class="mt-4 max-w-prose">
-    <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight">{{ topic.title }}</h1>
-    {% if topic.summary %}
-    <p class="mt-3 text-ink-600">{{ topic.summary }}</p>
-    {% endif %}
-  </header>
+  <div class="shell">
 
-  <div
-    class="mt-8 inline-flex rounded-full border border-ink-200 bg-white p-1 text-sm"
-    role="tablist"
-    aria-label="Layer of detail"
-  >
-    <template x-for="n in [1, 2, 3]" :key="n">
-      <button
-        type="button"
-        role="tab"
-        :aria-selected="layer === n"
-        @click="layer = n"
-        :class="layer === n
-          ? 'bg-ink-900 text-white'
-          : 'text-ink-600 hover:text-ink-900'"
-        class="px-4 py-1.5 rounded-full transition-colors"
-        x-text="'L' + n"
-      ></button>
-    </template>
-  </div>
-  <p class="mt-2 text-xs text-ink-400">
-    <span x-show="layer === 1">Overview — visual, under 10 minutes.</span>
-    <span x-show="layer === 2">Comprehensive — full write-up with sources.</span>
-    <span x-show="layer === 3">Going further — curated learning map.</span>
-  </p>
-
-  <section x-show="layer === 1" class="mt-8">
-    <div class="rounded-2xl border border-ink-100 bg-white p-6 sm:p-10">
-      {% if topic.l1_content %}
-        {{ topic.l1_content|safe }}
-      {% else %}
-        <div class="text-sm text-ink-400">L1 placeholder — infographic goes here.</div>
-      {% endif %}
-    </div>
-  </section>
-
-  <section x-show="layer === 2" x-cloak class="mt-8 max-w-prose prose prose-ink">
-    {% if topic.l2_content %}
-      {{ topic.l2_content|safe }}
-    {% else %}
-      <p class="text-sm text-ink-400">L2 placeholder — comprehensive write-up goes here.</p>
-    {% endif %}
-  </section>
-
-  <section x-show="layer === 3" x-cloak class="mt-8 max-w-prose">
-    {% if topic.l3_content %}
-      {{ topic.l3_content|safe }}
-    {% else %}
-      <p class="text-sm text-ink-400">L3 placeholder — annotated link map goes here.</p>
-    {% endif %}
-  </section>
-
-  {% if related %}
-  <aside class="mt-16 border-t border-ink-100 pt-8">
-    <h2 class="text-sm font-medium text-ink-600 uppercase tracking-wide">Connects to</h2>
-    <ul class="mt-4 grid gap-2 sm:grid-cols-2">
-      {% for edge in related %}
-      <li>
-        <a
-          href="{% url 'topics:detail' edge.target.slug %}"
-          class="block rounded-lg border border-ink-100 bg-white p-3 hover:border-ink-200"
-        >
-          <div class="text-xs text-ink-400">{{ edge.get_kind_display }}</div>
-          <div class="text-sm font-medium">{{ edge.target.title }}</div>
-        </a>
-      </li>
+    <!-- STICKY RAIL -->
+    <aside class="rail">
+      <div class="crumb">
+        <a href="{% url 'topics:home' %}">Topics</a>
+        <i class="ph-duotone ph-caret-right" style="font-size:11px"></i>
+        <span>{{ topic.title|truncatechars:18 }}</span>
+      </div>
+      {% for s in sections %}
+      <a class="rlink" href="#{{ s.kind }}" :class="{ active: active === '{{ s.kind }}' }">
+        <i class="ph-duotone ph-{{ s.eyebrow_icon }}"></i><span class="rn">{{ s.get_kind_display }}</span><span class="rstep">{{ s.step }}</span>
+      </a>
       {% endfor %}
-    </ul>
-  </aside>
-  {% endif %}
-</article>
 
-<style>[x-cloak] { display: none !important; }</style>
+      <div class="depth">
+        <div class="dk"><i class="ph-duotone ph-arrows-out-line-horizontal"></i>Reading depth</div>
+        <div class="seg">
+          {% for d, label in depths %}
+          <button type="button" class="opt" data-d="{{ d }}" :class="{ on: $store.ui.depth === '{{ d }}' }" @click="$store.ui.setDepth('{{ d }}')">
+            <span class="glyph"><span></span><span></span><span></span></span>
+            <span class="ol">{{ label }}</span>
+          </button>
+          {% endfor %}
+        </div>
+      </div>
+    </aside>
+
+    <!-- CONTENT -->
+    <main class="content">
+      {% for section in sections %}
+
+      {% if section.kind == "overview" %}
+      <section class="sec" id="overview">
+        <div class="ov-badges">
+          {% for cat in topic.category_badges %}
+          <a class="ov-badge{% if not forloop.first %} when-normal is-inline{% endif %}" href="{{ cat.get_absolute_url }}"
+             style="--cat: {{ cat.color_var }}; --cat-tint: {{ cat.tint_var }};">
+            <i class="ph-duotone ph-{{ cat.icon|default:'squares-four' }}"></i>{{ cat.name }}
+          </a>
+          {% endfor %}
+        </div>
+        <div class="ov-head">
+          <span class="ov-icon"><i class="ph-duotone ph-{{ topic.icon|default:'circle' }}"></i></span>
+          <h1 class="ov-title">{{ topic.title }}</h1>
+        </div>
+        <p class="ov-desc">{{ topic.summary }}</p>
+        {% if topic.scope_covered or topic.why_now %}
+        <div class="ov-meta when-normal is-grid">
+          {% if topic.scope_covered %}
+          <div class="mc"><div class="mk"><i class="ph-duotone ph-crop"></i>Scope</div>
+            <div class="mv">{{ topic.scope_covered }}{% if topic.scope_excluded %} <b>Not</b> {{ topic.scope_excluded }}{% endif %}</div></div>
+          {% endif %}
+          {% if topic.why_now %}
+          <div class="mc"><div class="mk"><i class="ph-duotone ph-clock-countdown"></i>Why it matters now</div>
+            <div class="mv">{{ topic.why_now }}</div></div>
+          {% endif %}
+        </div>
+        {% endif %}
+        {% if related %}
+        <div class="ov-related when-normal is-flex">
+          <span class="rk">Connects to</span>
+          {% for edge in related %}
+          <a class="rchip" href="{{ edge.target.get_absolute_url }}"><i class="ph-duotone ph-{{ edge.target.icon|default:'circle' }}"></i>{{ edge.target.title }}</a>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </section>
+
+      {% elif section.kind == "basics" %}
+      <section class="sec" id="basics">
+        <div class="eyebrow"><i class="ph-duotone ph-{{ section.eyebrow_icon }}"></i>Basics <span class="sub">· {{ section.eyebrow_sub }}</span><span class="stepn">{{ section.step }}</span></div>
+        {% if section.intro %}<p class="prose">{{ section.intro }}</p>{% endif %}
+        <div class="basics">
+          {% for stat in section.stats.all %}{% include "topics/components/_stat_tile.html" %}{% endfor %}
+        </div>
+      </section>
+
+      {% elif section.kind == "questions" %}
+      <section class="sec" id="questions">
+        <div class="eyebrow"><i class="ph-duotone ph-{{ section.eyebrow_icon }}"></i>Questions <span class="sub">· {{ section.eyebrow_sub }}</span><span class="stepn">{{ section.step }}</span></div>
+        <div class="qlist">
+          {% for q in section.questions.all %}{% include "topics/components/_question.html" %}{% endfor %}
+        </div>
+      </section>
+
+      {% elif section.kind == "positions" %}
+      <section class="sec" id="positions">
+        <div class="eyebrow"><i class="ph-duotone ph-{{ section.eyebrow_icon }}"></i>Positions <span class="sub">· the debate — {{ section.positions.all|length }} position{{ section.positions.all|length|pluralize }}</span><span class="stepn">{{ section.step }}</span></div>
+        <div class="pos-grid">
+          {% for p in section.positions.all %}{% include "topics/components/_position.html" %}{% endfor %}
+        </div>
+      </section>
+
+      {% elif section.kind == "crux" %}
+      <section class="sec" id="crux">
+        <div class="eyebrow"><i class="ph-duotone ph-{{ section.eyebrow_icon }}"></i>Crux <span class="sub">· {{ section.eyebrow_sub }}</span><span class="stepn">{{ section.step }}</span></div>
+        {% with c=section.crux %}
+        <div class="crux">
+          <div class="ck"><i class="ph-duotone ph-target"></i>The real disagreement</div>
+          {% if c %}
+          <p class="clead">{{ c.lead|lead_hl:c.lead_highlight }}</p>
+          {% if c.subtitle %}<p class="csub when-normal">{{ c.subtitle }}</p>{% endif %}
+          {% if c.empirical or c.values %}
+          <div class="csplit when-deep is-grid">
+            <div class="ax emp"><div class="ah"><i class="ph-duotone ph-flask"></i>If empirical</div><p>{{ c.empirical }}</p></div>
+            <div class="ax val"><div class="ah"><i class="ph-duotone ph-heart"></i>If values</div><p>{{ c.values }}</p></div>
+          </div>
+          {% endif %}
+          {% else %}
+          <p class="clead">The crux for this topic hasn't been written yet.</p>
+          {% endif %}
+        </div>
+        {% endwith %}
+      </section>
+
+      {% elif section.kind == "actions" %}
+      <section class="sec" id="actions" x-data="{ af: 'all' }">
+        <div class="eyebrow"><i class="ph-duotone ph-{{ section.eyebrow_icon }}"></i>Actions <span class="sub">· {{ section.eyebrow_sub }}</span><span class="stepn">{{ section.step }}</span></div>
+        <div class="act-filter when-normal is-flex">
+          {% for key, label in act_filters %}
+          <button type="button" class="afilt" :class="{ on: af === '{{ key }}' }" @click="af = '{{ key }}'">{{ label }}</button>
+          {% endfor %}
+        </div>
+        <div class="act-grid">
+          {% for a in section.actions.all %}{% include "topics/components/_action.html" %}{% endfor %}
+        </div>
+      </section>
+      {% endif %}
+
+      {% endfor %}
+    </main>
+  </div>
+</div>
+{% endblock %}
+
+{% block modals %}
+  {% include "topics/components/_submit_modal.html" %}
 {% endblock %}

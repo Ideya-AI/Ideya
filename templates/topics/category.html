@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+{% block title %}{{ category.name }} — Infinity{% endblock %}
+{% block description %}{{ category.description }}{% endblock %}
+
+{% block content %}
+<div class="cat-page" style="--cat: {{ category.color_var }}; --cat-tint: {{ category.tint_var }};"
+     x-data="{ active: 'overview' }" x-init="
+       const secs = [...$el.querySelectorAll('.ccontent .sec')];
+       const obs = new IntersectionObserver((es) => { es.forEach(e => { if (e.isIntersecting) active = e.target.id; }); },
+         { rootMargin: '-15% 0px -75% 0px' });
+       secs.forEach(s => obs.observe(s));
+     ">
+  <div class="cshell">
+
+    <nav class="crail">
+      <div class="rl-label">{{ category.name|truncatechars:16 }}</div>
+      {% for s in sections %}
+      <a href="#{{ s.kind }}" :class="{ on: active === '{{ s.kind }}' }"><i class="ph-duotone ph-{{ s.eyebrow_icon }}"></i>{{ s.get_kind_display }}</a>
+      {% endfor %}
+      <div class="spacer"></div>
+      <a class="back" href="{% url 'topics:home' %}#directory"><i class="ph-duotone ph-arrow-left"></i>All categories</a>
+    </nav>
+
+    <main class="ccontent">
+
+      {% for section in sections %}
+
+      {% if section.kind == "overview" %}
+      <section class="sec" id="overview">
+        <div class="crumb">
+          <a href="{% url 'topics:home' %}">Home</a><i class="ph-duotone ph-caret-right" style="font-size:11px"></i>
+          <span>Categories</span><i class="ph-duotone ph-caret-right" style="font-size:11px"></i>
+          <span style="color:var(--fg2);font-weight:600">{{ category.name }}</span>
+        </div>
+        <div class="cov-head">
+          <span class="cov-icon"><i class="ph-duotone ph-{{ category.icon|default:'squares-four' }}"></i></span>
+          <div>
+            <span class="cov-kicker"><i class="ph-duotone ph-folders"></i>Category</span>
+            <h1 class="cov-title">{{ category.name }}</h1>
+          </div>
+        </div>
+        <p class="cov-desc">{{ section.body|default:category.description }}</p>
+        {% if category.parent or category.connects_to.all %}
+        <div class="cov-connects">
+          <div class="ck">Connects to</div>
+          <div class="chips">
+            {% if category.parent %}
+            <a class="rchip" href="{{ category.parent.get_absolute_url }}"><i class="ph-duotone ph-tree-structure" style="color:var(--cat)"></i>{{ category.parent.name }}</a>
+            {% endif %}
+            {% for c in category.connects_to.all %}
+            <a class="rchip" href="{{ c.get_absolute_url }}"><i class="ph-duotone ph-{{ c.icon|default:'squares-four' }}"></i>{{ c.name }}</a>
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
+      </section>
+
+      {% elif section.kind == "basics" %}
+      <section class="sec" id="basics">
+        <div class="eyebrow"><i class="ph-duotone ph-chart-bar"></i>Basics <span class="sub">· about the category itself</span></div>
+        <div class="meta-grid">
+          {% for stat in section.stats.all %}
+          <div class="mtile{% if forloop.counter > 2 %} wide{% endif %}">
+            <div class="mk">{{ stat.label }}</div>
+            <div class="mv">{{ stat.value }}{% if stat.unit %}<small>{{ stat.unit }}</small>{% endif %}</div>
+            {% if stat.note %}<div class="mn">{{ stat.note }}</div>{% endif %}
+          </div>
+          {% empty %}
+          <div class="mtile wide"><div class="mn">No category facts yet.</div></div>
+          {% endfor %}
+        </div>
+      </section>
+
+      {% elif section.kind == "topics" %}
+      <section class="sec" id="topics">
+        <div class="eyebrow"><i class="ph-duotone ph-squares-four"></i>Topics <span class="sub">· the destination</span><span class="count">{{ topics|length }} topic{{ topics|length|pluralize }}</span></div>
+        <p class="topics-lead">The actual topics in this category — a scoped view of the home showcase. Colour dots preview each topic's debate.</p>
+        <div class="nodes">
+          {% for t in topics %}
+          <a class="node{% if t.is_stub %} stub{% endif %}" href="{{ t.get_absolute_url }}">
+            {% if not t.is_stub %}<span class="ntop"></span>{% endif %}
+            <div class="nhead"><span class="nicon"><i class="ph-duotone ph-{{ t.icon|default:'circle' }}"></i></span><span class="nname">{{ t.title }}</span></div>
+            <p class="ndesc">{{ t.summary }}</p>
+            {% if t.dots %}
+            <div class="nsig">
+              <span class="ndots">{% for c in t.dots %}<span style="background:{{ c }}"></span>{% endfor %}</span>
+              <span class="nviews">{{ t.dots|length }} position{{ t.dots|length|pluralize }}</span>
+              <span class="narrow"><i class="ph-duotone ph-arrow-right"></i></span>
+            </div>
+            {% else %}
+            <div class="nbadge">In progress</div>
+            {% endif %}
+          </a>
+          {% empty %}
+          <p class="topics-lead">No topics in this category yet.</p>
+          {% endfor %}
+        </div>
+      </section>
+      {% endif %}
+
+      {% endfor %}
+    </main>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+
+{% block title %}Infinity — a curated atlas of hard issues{% endblock %}
+
+{% block content %}
+<div class="wrap">
+
+  {% if spotlight %}
+  <section class="spotlight" id="spotlight">
+    <div class="sp-head">
+      <span class="sp-kicker"><i class="ph-duotone ph-spotlight"></i>Spotlight</span>
+      <span class="sp-sub">· a curated place to start</span>
+    </div>
+
+    {% with t=spotlight.topic cc=spotlight.topic.color_category %}
+    <div class="sp-hero" {% if cc %}style="--cat: {{ cc.color_var }}; --cat-tint: {{ cc.tint_var }};"{% endif %}>
+      <div class="sp-lt">
+        {% if cc %}<span class="sp-cat"><i class="ph-duotone ph-{{ cc.icon|default:'squares-four' }}"></i>{{ cc.name }}</span>{% endif %}
+        <div class="sp-titlerow">
+          <span class="sp-icon"><i class="ph-duotone ph-{{ t.icon|default:'circle' }}"></i></span>
+          <h2 class="sp-title">{{ t.title }}</h2>
+        </div>
+        <p class="sp-summary">{{ t.summary }}</p>
+        <div class="sp-meta">
+          <span class="m"><i class="ph-duotone ph-scales"></i>{{ spotlight.counts.positions }} position{{ spotlight.counts.positions|pluralize }}</span>
+          <span class="m"><i class="ph-duotone ph-question"></i>{{ spotlight.counts.questions }} question{{ spotlight.counts.questions|pluralize }}</span>
+          <span class="m"><i class="ph-duotone ph-chart-bar"></i>{{ spotlight.counts.stats }} fact{{ spotlight.counts.stats|pluralize }}</span>
+        </div>
+        <div class="sp-cta"><a class="sp-read" href="{{ t.get_absolute_url }}">Explore this topic <i class="ph-duotone ph-arrow-right"></i></a></div>
+      </div>
+      <div class="sp-dk">
+        <div class="dl"><i class="ph-duotone ph-scales"></i>The debate · {{ spotlight.counts.positions }} positions</div>
+        <div class="sp-poss">
+          {% for p in spotlight.positions %}
+          <div class="sp-pos"><span class="pd" style="background:{{ p.color_var }}"></span><span class="pnm">{{ p.name }}</span></div>
+          {% endfor %}
+        </div>
+        {% if spotlight.crux %}
+        <div class="sp-hook"><i class="ph-duotone ph-target"></i><span class="ht"><b>The crux:</b> {{ spotlight.crux.subtitle|truncatewords:16 }}</span></div>
+        {% endif %}
+      </div>
+    </div>
+    {% endwith %}
+
+    {% if bench %}
+    <div class="sp-bench">
+      {% for t in bench %}{% with cc=t.color_category %}
+      <a class="sp-mini" href="{{ t.get_absolute_url }}" {% if cc %}style="--cat: {{ cc.color_var }}; --cat-tint: {{ cc.tint_var }};"{% endif %}>
+        <span class="mi"><i class="ph-duotone ph-{{ t.icon|default:'circle' }}"></i></span>
+        <div class="mt">
+          <div class="mn">{{ t.title }}</div>
+          <div class="mdots">
+            {% if t.dots %}<span class="dd">{% for c in t.dots %}<span style="background:{{ c }}"></span>{% endfor %}</span><span class="mv">{{ t.dots|length }} position{{ t.dots|length|pluralize }}</span>
+            {% else %}<span class="mv">Mapped soon</span>{% endif %}
+          </div>
+        </div>
+        <i class="ph-duotone ph-arrow-right marr"></i>
+      </a>
+      {% endwith %}{% endfor %}
+    </div>
+    {% endif %}
+  </section>
+  {% endif %}
+
+  <section class="purpose" x-data="{ i: 0 }" x-init="setInterval(() => i = (i + 1) % 3, 2600)">
+    <span class="kicker"><i class="ph-duotone ph-infinity"></i>The project</span>
+    <h1>Make the shape of hard issues legible.</h1>
+    <p class="lead">Infinity is a curated atlas of humanity's hardest issues — existential risk, governance, economics, ethics. For each one: what it actually is, where the live disagreements sit, who holds which position and why, and how to engage. Topic-first. Neutral by intention.</p>
+
+    <div class="wwh">
+      <div class="wwh-card" :style="i === 0 ? 'border-color: color-mix(in srgb, var(--green-500) 40%, var(--ink-100))' : ''">
+        <div class="num">01</div><div class="wi"><i class="ph-duotone ph-eye"></i></div>
+        <h3>What it is</h3>
+        <p>A visual wiki between an encyclopedia and a debate platform. Every topic is one structured infographic — six sections, always in the same order.</p>
+      </div>
+      <div class="wwh-card" :style="i === 1 ? 'border-color: color-mix(in srgb, var(--green-500) 40%, var(--ink-100))' : ''">
+        <div class="num">02</div><div class="wi"><i class="ph-duotone ph-compass"></i></div>
+        <h3>Why it exists</h3>
+        <p>Most sources either flatten disagreement or drown in it. Infinity surfaces the real contest — fairly, without a house position — so you can think, not just take a side.</p>
+      </div>
+      <div class="wwh-card" :style="i === 2 ? 'border-color: color-mix(in srgb, var(--green-500) 40%, var(--ink-100))' : ''">
+        <div class="num">03</div><div class="wi"><i class="ph-duotone ph-stack"></i></div>
+        <h3>How it works</h3>
+        <p>Read at the depth you want — a glanceable poster, a full page, or deep with curated sources. Vote to surface what matters. Curation leads; participation refines.</p>
+      </div>
+    </div>
+    <div class="wwh-dots"><span :class="{ on: i === 0 }"></span><span :class="{ on: i === 1 }"></span><span :class="{ on: i === 2 }"></span></div>
+  </section>
+
+  <section class="dir" id="directory" x-data="{ view: 'cat' }">
+    <div class="dir-head">
+      <div>
+        <h2 class="dt">Browse every topic</h2>
+        <div class="ds">The full directory — grouped by category, complete and scannable.</div>
+      </div>
+      <div class="toggle">
+        <button :class="{ on: view === 'cat' }" @click="view = 'cat'">By category</button>
+        <button :class="{ on: view === 'az' }" @click="view = 'az'">A–Z</button>
+      </div>
+    </div>
+
+    <div class="dir-grid" x-show="view === 'cat'">
+      {% for group in categories %}{% with cat=group.category %}
+      <div class="dir-col" x-data="{ open: false }">
+        <a class="dir-cat" href="{{ cat.get_absolute_url }}">
+          <span class="cdot" style="background:{{ cat.color_var }}"><i class="ph-duotone ph-{{ cat.icon|default:'squares-four' }}"></i></span>
+          <span class="cn">{{ cat.name }}</span>
+          <span class="ccount">{{ group.topics|length }}</span>
+        </a>
+        <div class="dir-list">
+          {% for t in group.topics %}
+          <a class="dir-item" href="{{ t.get_absolute_url }}" {% if forloop.counter > 4 %}x-show="open"{% endif %}>
+            <span class="idot" style="background:{{ cat.color_var }}"></span>
+            <span class="iname">{{ t.title }}</span>
+            <i class="ph-duotone ph-arrow-right iarrow"></i>
+          </a>
+          {% endfor %}
+          {% if group.topics|length > 4 %}
+          <div class="dir-more" @click="open = !open">
+            <i class="ph-duotone" :class="open ? 'ph-minus-circle' : 'ph-plus-circle'"></i>
+            <span x-text="open ? 'Show less' : '{{ group.topics|length|add:'-4' }} more'"></span>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      {% endwith %}{% endfor %}
+    </div>
+
+    <div class="dir-az" x-show="view === 'az'" x-cloak style="display:none">
+      {% regroup all_topics by title.0 as letters %}
+      {% for letter in letters %}
+      <div class="dir-col">
+        <div class="dir-cat"><span class="cn">{{ letter.grouper|upper }}</span></div>
+        <div class="dir-list">
+          {% for t in letter.list %}{% with cc=t.color_category %}
+          <a class="dir-item" href="{{ t.get_absolute_url }}">
+            <span class="idot" style="background:{% if cc %}{{ cc.color_var }}{% else %}var(--ink-300){% endif %}"></span>
+            <span class="iname">{{ t.title }}</span>
+            <i class="ph-duotone ph-arrow-right iarrow"></i>
+          </a>
+          {% endwith %}{% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+</div>
+{% endblock %}

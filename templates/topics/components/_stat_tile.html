@@ -1,0 +1,38 @@
+{% comment %}One Basics figure. `stat.viz` selects the visualization.{% endcomment %}
+<div class="tile{% if stat.wide %} wide{% endif %}{% if stat.reveal_class %} {{ stat.reveal_class }} is-flex{% endif %}">
+  <div class="tk">{{ stat.label }}</div>
+
+  {% if stat.viz == "ranked" %}
+    <div class="vrow"><div class="rank">
+      {% for row in stat.series %}
+      <div class="rrow{% if row.highlight %} on{% endif %}">
+        <span class="rk2">{{ row.label }}</span>
+        <span class="rbar"><i style="width:{{ row.pct }}%"></i></span>
+        <span class="rv">{{ row.value }}</span>
+      </div>
+      {% endfor %}
+    </div></div>
+
+  {% elif stat.viz == "radial" %}
+    <div class="radwrap">
+      <div class="radial" style="--pct:{{ stat.fill_pct|default:0 }}"></div>
+      <div class="tv">{{ stat.value }}{% if stat.unit %}<small>{{ stat.unit }}</small>{% endif %}</div>
+    </div>
+
+  {% elif stat.viz == "range" %}
+    <div class="tv">{{ stat.value }}{% if stat.unit %}<small>{{ stat.unit }}</small>{% endif %}</div>
+    <div class="vrow">
+      <div class="track"><span class="ghost" style="left:95%"></span><span class="pin" style="left:{{ stat.range_at|default:0 }}%"></span></div>
+      <div class="ends"><span>{{ stat.range_min }}</span><span>{{ stat.range_max }}</span></div>
+    </div>
+
+  {% else %}{# bar / sparkline #}
+    <div class="tv">{{ stat.value }}{% if stat.unit %}<small>{{ stat.unit }}</small>{% endif %}</div>
+    {% if stat.fill_pct is not None %}<div class="vrow"><div class="pbar"><i style="width:{{ stat.fill_pct }}%"></i></div></div>{% endif %}
+  {% endif %}
+
+  {% if stat.note %}<div class="tnote when-normal">{{ stat.note }}</div>{% endif %}
+  {% if stat.source_label %}
+  <a class="tsrc when-deep is-inline" href="{{ stat.source_url|default:'#' }}" target="_blank" rel="noopener"><i class="ph-duotone ph-link-simple"></i>{{ stat.source_label }}</a>
+  {% endif %}
+</div>

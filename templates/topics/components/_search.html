@@ -1,0 +1,21 @@
+{% comment %}Global search overlay — opened via $store.search.open. Enriched in the search task.{% endcomment %}
+<div x-show="$store.search.open" x-cloak style="display:none">
+  <div class="scrim" @click="$store.search.open = false"></div>
+  <div class="search-pop pop"
+       x-data="{ q: '', html: '<div class=\'sp-empty\'>Start typing to search topics, categories and positions.</div>',
+                 run() {
+                   if (!this.q.trim()) { this.html = '<div class=\'sp-empty\'>Start typing to search topics, categories and positions.</div>'; return; }
+                   fetch('{% url 'topics:search' %}?q=' + encodeURIComponent(this.q))
+                     .then(r => r.text()).then(t => this.html = t);
+                 } }"
+       @keydown.escape.window="$store.search.open = false" role="dialog" aria-label="Search">
+    <div class="sp-field">
+      <i class="ph-duotone ph-magnifying-glass"></i>
+      <input type="text" x-model="q" @input.debounce.150ms="run()"
+             placeholder="Search topics, categories, positions…"
+             x-ref="sinput" x-effect="if ($store.search.open) $nextTick(() => $refs.sinput.focus())" />
+      <span class="kbd">esc</span>
+    </div>
+    <div class="sp-body" x-html="html"></div>
+  </div>
+</div>
