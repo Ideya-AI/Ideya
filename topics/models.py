@@ -104,9 +104,24 @@ class Category(models.Model):
         return self.topics.count()
 
 
+class PublishedTopicManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(status="published")
+
+
 class Topic(models.Model):
+    DRAFT = "draft"
+    PUBLISHED = "published"
+    STATUS_CHOICES = [(DRAFT, "Draft"), (PUBLISHED, "Published")]
+
     title = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200, unique=True)
+    status = models.CharField(
+        max_length=10,
+        choices=STATUS_CHOICES,
+        default=DRAFT,
+        help_text="Drafts are invisible everywhere except to staff.",
+    )
     summary = models.CharField(
         max_length=400,
         blank=True,
@@ -135,6 +150,9 @@ class Topic(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    objects = models.Manager()
+    published = PublishedTopicManager()
+
     class Meta:
         ordering = ["title"]
 
@@ -143,6 +161,12 @@ class Topic(models.Model):
 
     def get_absolute_url(self) -> str:
         return reverse("topics:detail", args=[self.slug])
+
+    @property
+    def missing_sections(self):
+        """Spine kinds this topic hasn't authored yet (order preserved)."""
+        have = set(self.sections.values_list("kind", flat=True))
+        return [k for k in SECTION_ORDER if k != Section.TOPICS and k not in have]
 
     @property
     def color_category(self):
@@ -622,6 +646,16 @@ class Submission(models.Model):
         null=True,
         blank=True,
     )
+    # Hybrid participant keying (decision B). The user link anonymizes to NULL
+    # on account deletion — the view itself stays as aggregate content.
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="submissions",
+    )
+    session_key = models.CharField(max_length=40, blank=True, db_index=True)
     stance = models.CharField(max_length=10, choices=STANCE_CHOICES, default=AGREE)
     importance = models.PositiveSmallIntegerField(default=3, help_text="1–5.")
     reasoning = models.TextField(blank=True)

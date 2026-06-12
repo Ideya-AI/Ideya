@@ -25,17 +25,56 @@ class CategoryAdmin(admin.ModelAdmin):
     filter_horizontal = ("connects_to",)
 
 
+class TopicSectionInline(admin.TabularInline):
+    """The spine at a glance from the topic page; each row links to the
+    section's own page where the typed children (stats, questions…) live."""
+
+    model = Section
+    extra = 0
+    fields = ("kind", "intro")
+    show_change_link = True
+
+
 @admin.register(Topic)
 class TopicAdmin(admin.ModelAdmin):
-    list_display = ("title", "slug", "updated_at")
-    list_filter = ("categories",)
+    list_display = ("title", "status", "spine", "updated_at")
+    list_filter = ("status", "categories")
     search_fields = ("title", "summary")
     prepopulated_fields = {"slug": ("title",)}
     filter_horizontal = ("categories",)
+    inlines = [TopicSectionInline]
+    actions = ("publish", "unpublish", "scaffold_sections")
     fieldsets = (
-        (None, {"fields": ("title", "slug", "icon", "summary", "categories")}),
+        (
+            None,
+            {"fields": ("title", "slug", "status", "icon", "summary", "categories")},
+        ),
         ("Overview", {"fields": ("scope_covered", "scope_excluded", "why_now")}),
     )
+
+    @admin.display(description="Spine")
+    def spine(self, obj):
+        missing = obj.missing_sections
+        return "complete" if not missing else f"missing: {', '.join(missing)}"
+
+    @admin.action(description="Publish selected topics")
+    def publish(self, request, queryset):
+        updated = queryset.update(status=Topic.PUBLISHED)
+        self.message_user(request, f"{updated} topic(s) published.")
+
+    @admin.action(description="Unpublish selected topics (back to draft)")
+    def unpublish(self, request, queryset):
+        updated = queryset.update(status=Topic.DRAFT)
+        self.message_user(request, f"{updated} topic(s) back to draft.")
+
+    @admin.action(description="Create missing spine sections")
+    def scaffold_sections(self, request, queryset):
+        created = 0
+        for topic in queryset:
+            for kind in topic.missing_sections:
+                Section.objects.create(topic=topic, kind=kind)
+                created += 1
+        self.message_user(request, f"{created} section(s) created.")
 
 
 class StatInline(admin.TabularInline):

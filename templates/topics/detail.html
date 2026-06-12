@@ -59,6 +59,13 @@
 
     <!-- CONTENT -->
     <main class="content">
+      {% if topic.status == "draft" %}
+      <div class="stub-note card draft-note">
+        <i class="ph-duotone ph-eye-slash"></i>
+        <div><b>Draft — only staff can see this page.</b>
+        Publish it in the admin to make it live.</div>
+      </div>
+      {% endif %}
       {% if not sections %}
       <section class="sec" id="overview">
         <div class="ov-badges">

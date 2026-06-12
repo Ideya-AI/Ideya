@@ -73,18 +73,26 @@ def _participant_key(request) -> str:
     return request.session.session_key
 
 
+def _participant(request) -> dict:
+    """Filter/create kwargs identifying this participant's rows (decision B:
+    a user when logged in, the session otherwise)."""
+    if request.user.is_authenticated:
+        return {"user": request.user}
+    return {"session_key": _participant_key(request)}
+
+
 # --------------------------------------------------------------------------- #
 # Pages
 # --------------------------------------------------------------------------- #
 def home(request):
     authored = (
-        Topic.objects.filter(sections__kind="positions")
+        Topic.published.filter(sections__kind="positions")
         .select_related("primary_category")
         .distinct()
     )
     featured = (
         authored.prefetch_related("categories").first()
-        or Topic.objects.select_related("primary_category").first()
+        or Topic.published.select_related("primary_category").first()
     )
 
     spotlight = None
@@ -109,18 +117,18 @@ def home(request):
 
     bench_ids = [featured.id] if featured else []
     bench = _decorate(
-        Topic.objects.exclude(id__in=bench_ids).select_related("primary_category")[:3]
+        Topic.published.exclude(id__in=bench_ids).select_related("primary_category")[:3]
     )
 
     categories = []
     for cat in Category.objects.prefetch_related(
-        Prefetch("topics", queryset=Topic.objects.select_related("primary_category"))
+        Prefetch("topics", queryset=Topic.published.select_related("primary_category"))
     ):
         topic_list = _decorate(cat.topics.all())
         if topic_list:
             categories.append({"category": cat, "topics": topic_list})
 
-    all_topics = _decorate(Topic.objects.select_related("primary_category"))
+    all_topics = _decorate(Topic.published.select_related("primary_category"))
 
     return render(
         request,
@@ -140,8 +148,8 @@ def about(request):
         "topics/about.html",
         {
             "counts": {
-                "topics": Topic.objects.count(),
-                "mapped": Topic.objects.filter(sections__isnull=False)
+                "topics": Topic.published.count(),
+                "mapped": Topic.published.filter(sections__isnull=False)
                 .distinct()
                 .count(),
                 "categories": Category.objects.count(),
@@ -150,9 +158,16 @@ def about(request):
     )
 
 
+def _visible_topics(request):
+    """Drafts exist only for staff (preview); everyone else sees published."""
+    return Topic.objects if request.user.is_staff else Topic.published
+
+
 def topic_detail(request, slug):
     topic = get_object_or_404(
-        Topic.objects.select_related("primary_category").prefetch_related("categories"),
+        _visible_topics(request)
+        .select_related("primary_category")
+        .prefetch_related("categories"),
         slug=slug,
     )
     sections = _ordered_sections("topic", topic)
@@ -160,23 +175,26 @@ def topic_detail(request, slug):
         "target", "target__primary_category"
     ).all()
     positions = next((s.positions.all() for s in sections if s.kind == "positions"), [])
-    key = request.session.session_key or ""
+    if request.user.is_authenticated:
+        who = {"user": request.user}
+    else:
+        who = {"session_key": request.session.session_key or ""}
     voted_q, voted_p, stance_map = set(), set(), {}
-    if key:
+    if request.user.is_authenticated or request.session.session_key:
         voted_q = set(
-            Vote.objects.filter(
-                question__section__topic=topic, session_key=key
-            ).values_list("question_id", flat=True)
+            Vote.objects.filter(question__section__topic=topic, **who).values_list(
+                "question_id", flat=True
+            )
         )
         voted_p = set(
-            Vote.objects.filter(
-                position__section__topic=topic, session_key=key
-            ).values_list("position_id", flat=True)
+            Vote.objects.filter(position__section__topic=topic, **who).values_list(
+                "position_id", flat=True
+            )
         )
         stance_map = dict(
-            Stance.objects.filter(
-                position__section__topic=topic, session_key=key
-            ).values_list("position_id", "value")
+            Stance.objects.filter(position__section__topic=topic, **who).values_list(
+                "position_id", "value"
+            )
         )
     for s in sections:
         if s.kind == "questions":
@@ -215,7 +233,9 @@ def category_detail(request, slug):
         Category.objects.prefetch_related("connects_to"), slug=slug
     )
     sections = _ordered_sections("category", category)
-    topics = _decorate(category.topics.select_related("primary_category").all())
+    topics = _decorate(
+        category.topics(manager="published").select_related("primary_category").all()
+    )
     return render(
         request,
         "topics/category.html",
@@ -225,7 +245,7 @@ def category_detail(request, slug):
 
 def poster(request, slug):
     topic = get_object_or_404(
-        Topic.objects.select_related("primary_category"), slug=slug
+        _visible_topics(request).select_related("primary_category"), slug=slug
     )
     sec = {s.kind: s for s in _ordered_sections("topic", topic)}
     return render(request, "topics/poster.html", {"topic": topic, "sec": sec})
@@ -233,7 +253,7 @@ def poster(request, slug):
 
 def share_cards(request, slug):
     topic = get_object_or_404(
-        Topic.objects.select_related("primary_category"), slug=slug
+        _visible_topics(request).select_related("primary_category"), slug=slug
     )
     pos_section = (
         Section.objects.filter(topic=topic, kind="positions")
@@ -260,9 +280,9 @@ def search(request):
     topics, categories, positions = [], [], []
     if q:
         topics = _decorate(
-            Topic.objects.filter(title__icontains=q).select_related("primary_category")[
-                :6
-            ]
+            Topic.published.filter(title__icontains=q).select_related(
+                "primary_category"
+            )[:6]
         )
         categories = Category.objects.filter(name__icontains=q)[:4]
         positions = (
@@ -293,14 +313,14 @@ def vote(request, target, pk):
     else:
         return HttpResponseBadRequest("unknown vote target")
 
-    key = _participant_key(request)
+    who = _participant(request)
     with transaction.atomic():
-        existing = Vote.objects.filter(session_key=key, **lookup).first()
+        existing = Vote.objects.filter(**who, **lookup).first()
         if existing:
             existing.delete()
             delta = -1
         else:
-            Vote.objects.create(session_key=key, **lookup)
+            Vote.objects.create(**who, **lookup)
             delta = 1
         type(obj).objects.filter(pk=obj.pk).update(**{counter: F(counter) + delta})
     obj.refresh_from_db(fields=[counter])
@@ -317,8 +337,8 @@ def stance(request, pk):
     if value not in (Stance.AGREE, Stance.DISAGREE):
         return HttpResponseBadRequest("unknown stance value")
 
-    key = _participant_key(request)
-    existing = Stance.objects.filter(position=position, session_key=key).first()
+    who = _participant(request)
+    existing = Stance.objects.filter(position=position, **who).first()
     if existing and existing.value == value:
         existing.delete()
         position.stance = ""
@@ -327,10 +347,10 @@ def stance(request, pk):
         existing.save(update_fields=["value", "updated_at"])
         position.stance = value
     else:
-        Stance.objects.create(position=position, session_key=key, value=value)
+        Stance.objects.create(position=position, value=value, **who)
         position.stance = value
 
-    position.voted = Vote.objects.filter(position=position, session_key=key).exists()
+    position.voted = Vote.objects.filter(position=position, **who).exists()
     return render(request, "topics/components/_pfoot.html", {"p": position})
 
 
@@ -347,6 +367,7 @@ def submit(request):
         importance = 3
 
     stance_value = request.POST.get("stance", "agree")
+    who = _participant(request)
     Submission.objects.create(
         topic=topic,
         position=position,
@@ -354,16 +375,14 @@ def submit(request):
         importance=importance,
         reasoning=request.POST.get("reasoning", "").strip(),
         email=request.POST.get("email", "").strip(),
+        **who,
     )
     # A submission's agree/disagree is the same signal as the card toggle —
     # upsert the participant's Stance so aggregates stay one pool. (It no
     # longer bumps importance; that's a separate, explicit vote.)
     if position and stance_value in (Stance.AGREE, Stance.DISAGREE):
         Stance.objects.update_or_create(
-            position=position,
-            session_key=_participant_key(request),
-            user=None,
-            defaults={"value": stance_value},
+            position=position, **who, defaults={"value": stance_value}
         )
 
     return render(

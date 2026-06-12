@@ -48,6 +48,11 @@
   {% endblock %}
 
   {% block body %}
+  {% if messages %}
+  <div class="flash-wrap">
+    {% for m in messages %}<div class="flash"><i class="ph-duotone ph-check-circle"></i>{{ m }}</div>{% endfor %}
+  </div>
+  {% endif %}
   <main>{% block content %}{% endblock %}</main>
 
   <footer class="foot">

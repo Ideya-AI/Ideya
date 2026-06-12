@@ -1,3 +1,4 @@
+from django.contrib.auth import get_user_model
 from django.test import Client, TestCase
 from django.urls import reverse
 
@@ -5,8 +6,10 @@ from .models import (
     MIN_STANCE_SAMPLE,
     Position,
     Question,
+    Section,
     Stance,
     Submission,
+    Topic,
     Vote,
 )
 
@@ -149,3 +152,38 @@ class PageTests(TestCase):
     def test_stub_topic_renders_empty_state(self):
         resp = self.client.get("/solar-power/")
         self.assertContains(resp, "on the map, but not yet written")
+
+
+class ContentManagementTests(TestCase):
+    """Draft/published workflow (P2 task 7)."""
+
+    def setUp(self):
+        self.draft = Topic.objects.create(
+            title="Carbon Capture", slug="carbon-capture", status=Topic.DRAFT
+        )
+
+    def test_draft_is_invisible_to_readers(self):
+        self.assertEqual(self.client.get("/carbon-capture/").status_code, 404)
+        self.assertNotContains(self.client.get("/"), "Carbon Capture")
+        self.assertNotContains(
+            self.client.get("/search/?q=carbon"), "Carbon Capture"
+        )
+
+    def test_staff_previews_draft_with_banner(self):
+        staff = get_user_model().objects.create_user(
+            "editor@example.com", "atlas-editor-9", is_staff=True
+        )
+        self.client.force_login(staff)
+        resp = self.client.get("/carbon-capture/")
+        self.assertEqual(resp.status_code, 200)
+        self.assertContains(resp, "Draft — only staff can see this page.")
+
+    def test_seeded_topics_are_published(self):
+        self.assertEqual(Topic.published.count(), Topic.objects.count() - 1)
+
+    def test_missing_sections_tracks_spine(self):
+        self.assertEqual(len(self.draft.missing_sections), 6)
+        Section.objects.create(topic=self.draft, kind=Section.OVERVIEW)
+        self.assertNotIn("overview", self.draft.missing_sections)
+        nuclear = Topic.objects.get(slug="nuclear-energy")
+        self.assertEqual(nuclear.missing_sections, [])

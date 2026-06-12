@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Account — Infinity{% endblock %}
+
+{% block content %}
+<div class="wrap"><div class="auth auth-wide">
+  <div class="card auth-card">
+    <div class="eyebrow"><i class="ph-duotone ph-user-circle"></i>Account</div>
+    <div class="acct-row"><span class="ak">Email</span><span class="av">{{ user.email }}</span></div>
+    <div class="acct-row"><span class="ak">Member since</span><span class="av">{{ user.date_joined|date:"j N Y" }}</span></div>
+    <div class="acct-row"><span class="ak">Your participation</span>
+      <span class="av">{{ participation.votes }} importance vote{{ participation.votes|pluralize }} ·
+        {{ participation.stances }} stance{{ participation.stances|pluralize }} ·
+        {{ participation.submissions }} view{{ participation.submissions|pluralize }} submitted</span></div>
+
+    <div class="acct-actions">
+      <a class="btn btn-ghost" href="{% url 'accounts:password' %}"><i class="ph-duotone ph-password"></i>Change password</a>
+      <form method="post" action="{% url 'accounts:logout' %}">{% csrf_token %}
+        <button type="submit" class="btn btn-ghost"><i class="ph-duotone ph-sign-out"></i>Log out</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="card auth-card danger" x-data="{ arm: false }">
+    <div class="eyebrow"><i class="ph-duotone ph-warning-octagon"></i>Delete account</div>
+    <p class="auth-lead">Removes your account, votes and stances permanently. Submitted views stay in the aggregate, anonymized. This cannot be undone.</p>
+    <form method="post" action="{% url 'accounts:delete' %}">{% csrf_token %}
+      <div class="acct-actions">
+        <button type="button" class="btn btn-ghost" x-show="!arm" @click="arm = true">Delete my account…</button>
+        <button type="button" class="btn btn-ghost" x-show="arm" x-cloak @click="arm = false">Keep my account</button>
+        <button type="submit" class="btn btn-danger" x-show="arm" x-cloak>Yes, delete everything</button>
+      </div>
+    </form>
+  </div>
+</div></div>
+{% endblock %}

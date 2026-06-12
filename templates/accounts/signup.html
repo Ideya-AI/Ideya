@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Sign up — Infinity{% endblock %}
+
+{% block content %}
+<div class="wrap"><div class="auth">
+  <div class="card auth-card">
+    <div class="eyebrow"><i class="ph-duotone ph-user-plus"></i>Create an account</div>
+    <p class="auth-lead">An account keeps your participation across devices — nothing social, no profile. Anything you've voted on from this device comes with you.</p>
+    {% for e in form.non_field_errors %}<div class="ferr">{{ e }}</div>{% endfor %}
+    <form method="post">
+      {% csrf_token %}
+      <label class="field-label" for="{{ form.email.id_for_label }}">Email</label>
+      {{ form.email }}
+      {% for e in form.email.errors %}<div class="ferr">{{ e }}</div>{% endfor %}
+      <label class="field-label" for="{{ form.password1.id_for_label }}">Password</label>
+      {{ form.password1 }}
+      {% for e in form.password1.errors %}<div class="ferr">{{ e }}</div>{% endfor %}
+      <label class="field-label" for="{{ form.password2.id_for_label }}">Confirm password</label>
+      {{ form.password2 }}
+      {% for e in form.password2.errors %}<div class="ferr">{{ e }}</div>{% endfor %}
+      <button type="submit" class="btn btn-primary auth-btn">Sign up</button>
+    </form>
+    <p class="auth-alt">Already have an account? <a href="{% url 'accounts:login' %}">Log in</a></p>
+  </div>
+</div></div>
+{% endblock %}
