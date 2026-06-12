@@ -1,4 +1,5 @@
-from django.db.models import Prefetch
+from django.db import transaction
+from django.db.models import Count, F, Prefetch, Q
 from django.http import HttpResponseBadRequest
 from django.shortcuts import get_object_or_404, render
 from django.views.decorators.http import require_POST
@@ -10,9 +11,11 @@ from .models import (
     Position,
     Question,
     Section,
+    Stance,
     Stat,
     Submission,
     Topic,
+    Vote,
 )
 
 
@@ -42,12 +45,16 @@ def _decorate(topics):
 
 
 def _ordered_sections(parent_field, parent):
+    positions = Position.objects.annotate(
+        agree_count=Count("stances", filter=Q(stances__value=Stance.AGREE)),
+        disagree_count=Count("stances", filter=Q(stances__value=Stance.DISAGREE)),
+    ).order_by("order", "id")
     qs = Section.objects.filter(**{parent_field: parent}).prefetch_related(
         Prefetch("stats", queryset=Stat.objects.order_by("order", "id")),
         Prefetch(
             "questions", queryset=Question.objects.order_by("-votes", "order", "id")
         ),
-        Prefetch("positions", queryset=Position.objects.order_by("order", "id")),
+        Prefetch("positions", queryset=positions),
         Prefetch(
             "actions",
             queryset=Action.objects.select_related("position").order_by("order", "id"),
@@ -56,6 +63,14 @@ def _ordered_sections(parent_field, parent):
     )
     by_kind = {s.kind: s for s in qs}
     return [by_kind[k] for k in SECTION_ORDER if k in by_kind]
+
+
+def _participant_key(request) -> str:
+    """The session key participation rows hang off. Created on first use so a
+    reader only gets a session once they actually participate."""
+    if not request.session.session_key:
+        request.session.save()
+    return request.session.session_key
 
 
 # --------------------------------------------------------------------------- #
@@ -145,14 +160,32 @@ def topic_detail(request, slug):
         "target", "target__primary_category"
     ).all()
     positions = next((s.positions.all() for s in sections if s.kind == "positions"), [])
-    voted = request.session.get("voted", {})
+    key = request.session.session_key or ""
+    voted_q, voted_p, stance_map = set(), set(), {}
+    if key:
+        voted_q = set(
+            Vote.objects.filter(
+                question__section__topic=topic, session_key=key
+            ).values_list("question_id", flat=True)
+        )
+        voted_p = set(
+            Vote.objects.filter(
+                position__section__topic=topic, session_key=key
+            ).values_list("position_id", flat=True)
+        )
+        stance_map = dict(
+            Stance.objects.filter(
+                position__section__topic=topic, session_key=key
+            ).values_list("position_id", "value")
+        )
     for s in sections:
         if s.kind == "questions":
             for q in s.questions.all():
-                q.voted = voted.get(f"question:{q.id}", False)
+                q.voted = q.id in voted_q
         elif s.kind == "positions":
             for p in s.positions.all():
-                p.voted = voted.get(f"position:{p.id}", False)
+                p.voted = p.id in voted_p
+                p.stance = stance_map.get(p.id, "")
     return render(
         request,
         "topics/detail.html",
@@ -246,31 +279,59 @@ def search(request):
 
 @require_POST
 def vote(request, target, pk):
-    voted = request.session.setdefault("voted", {})
-    key = f"{target}:{pk}"
-    already = voted.get(key)
-
+    """Toggle an importance vote: first POST casts it, a second retracts it.
+    The Vote row is the truth; the counter on the model is a denormalized
+    cache kept in step inside the same transaction."""
     if target == "question":
         obj = get_object_or_404(Question, pk=pk)
-        if not already:
-            obj.votes += 1
-            obj.save(update_fields=["votes"])
-            voted[key] = True
-            request.session.modified = True
-        obj.voted = True
-        return render(request, "topics/components/_qvote.html", {"q": obj})
-
-    if target == "position":
+        lookup, counter = {"question": obj}, "votes"
+        template, ctx = "topics/components/_qvote.html", "q"
+    elif target == "position":
         obj = get_object_or_404(Position, pk=pk)
-        if not already:
-            obj.importance += 1
-            obj.save(update_fields=["importance"])
-            voted[key] = True
-            request.session.modified = True
-        obj.voted = True
-        return render(request, "topics/components/_pimp.html", {"p": obj})
+        lookup, counter = {"position": obj}, "importance"
+        template, ctx = "topics/components/_pimp.html", "p"
+    else:
+        return HttpResponseBadRequest("unknown vote target")
 
-    return HttpResponseBadRequest("unknown vote target")
+    key = _participant_key(request)
+    with transaction.atomic():
+        existing = Vote.objects.filter(session_key=key, **lookup).first()
+        if existing:
+            existing.delete()
+            delta = -1
+        else:
+            Vote.objects.create(session_key=key, **lookup)
+            delta = 1
+        type(obj).objects.filter(pk=obj.pk).update(**{counter: F(counter) + delta})
+    obj.refresh_from_db(fields=[counter])
+    obj.voted = delta > 0
+    return render(request, template, {ctx: obj})
+
+
+@require_POST
+def stance(request, pk):
+    """Toggle/switch an agree-disagree stance on a position. Same value again
+    retracts; the other value switches. Returns the position foot fragment."""
+    position = get_object_or_404(Position, pk=pk)
+    value = request.POST.get("value")
+    if value not in (Stance.AGREE, Stance.DISAGREE):
+        return HttpResponseBadRequest("unknown stance value")
+
+    key = _participant_key(request)
+    existing = Stance.objects.filter(position=position, session_key=key).first()
+    if existing and existing.value == value:
+        existing.delete()
+        position.stance = ""
+    elif existing:
+        existing.value = value
+        existing.save(update_fields=["value", "updated_at"])
+        position.stance = value
+    else:
+        Stance.objects.create(position=position, session_key=key, value=value)
+        position.stance = value
+
+    position.voted = Vote.objects.filter(position=position, session_key=key).exists()
+    return render(request, "topics/components/_pfoot.html", {"p": position})
 
 
 @require_POST
@@ -285,17 +346,25 @@ def submit(request):
     except (TypeError, ValueError):
         importance = 3
 
+    stance_value = request.POST.get("stance", "agree")
     Submission.objects.create(
         topic=topic,
         position=position,
-        stance=request.POST.get("stance", "agree"),
+        stance=stance_value,
         importance=importance,
         reasoning=request.POST.get("reasoning", "").strip(),
         email=request.POST.get("email", "").strip(),
     )
-    if position:
-        position.importance += 1
-        position.save(update_fields=["importance"])
+    # A submission's agree/disagree is the same signal as the card toggle —
+    # upsert the participant's Stance so aggregates stay one pool. (It no
+    # longer bumps importance; that's a separate, explicit vote.)
+    if position and stance_value in (Stance.AGREE, Stance.DISAGREE):
+        Stance.objects.update_or_create(
+            position=position,
+            session_key=_participant_key(request),
+            user=None,
+            defaults={"value": stance_value},
+        )
 
     return render(
         request,

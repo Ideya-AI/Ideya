@@ -1,8 +1,10 @@
-{% comment %}Position importance control. HTMX-swapped on vote. Expects `p` (with .voted).{% endcomment %}
+{% comment %}Position importance control — a toggle: vote, click again to
+retract. HTMX-swapped on vote. Expects `p` (with .voted).{% endcomment %}
 <span class="pimp" id="pimp-{{ p.id }}">
   <button type="button" class="vbtn"
-    {% if not p.voted %}hx-post="{% url 'topics:vote' 'position' p.id %}" hx-target="#pimp-{{ p.id }}" hx-swap="outerHTML"{% endif %}
-    aria-label="Mark this position important"{% if p.voted %} disabled aria-pressed="true"{% endif %}>
+    hx-post="{% url 'topics:vote' 'position' p.id %}" hx-target="#pimp-{{ p.id }}" hx-swap="outerHTML" hx-sync="#pimp-{{ p.id }}:replace"
+    aria-label="{% if p.voted %}Retract your importance vote{% else %}Mark this position important{% endif %}"
+    aria-pressed="{% if p.voted %}true{% else %}false{% endif %}">
     <i class="ph-fill ph-caret-up{% if p.voted %} up{% endif %}"></i>
   </button>
   <b>{{ p.importance }}</b>

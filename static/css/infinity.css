@@ -318,6 +318,8 @@ body[data-depth="deep"]   .when-deep.is-inline { display: inline-flex; }
 .adb:hover { background: var(--ink-100); }
 .adb + .adb { border-left: 1px solid var(--border); }
 .adb.on { background: var(--green-tint); color: var(--accent-strong); }
+.arat { font-size: var(--text-xs); color: var(--fg3); }
+.arat b { font-family: var(--font-tabular); color: var(--fg1); font-variant-numeric: tabular-nums; }
 .pimp { display: inline-flex; align-items: center; gap: 5px; font-size: var(--text-sm); color: var(--fg2); }
 .pimp i { font-size: 16px; color: var(--accent); }
 .pimp b { font-family: var(--font-tabular); color: var(--fg1); }

@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 from django.urls import reverse
 
@@ -22,6 +23,10 @@ POS_COLORS = [
     ("teal", "Teal"),
     ("slate", "Slate"),
 ]
+
+# Minimum agree+disagree stances before a position's ratio is displayed
+# (decision C: counts live, lean bars gated — avoids "2 votes = 100%" noise).
+MIN_STANCE_SAMPLE = 10
 
 # Reading-depth at which an item first appears. Shown when current depth >= reveal.
 REVEAL_CHOICES = [
@@ -376,6 +381,24 @@ class Position(models.Model):
     def proponent_list(self):
         return [p.strip() for p in self.proponents.split(",") if p.strip()]
 
+    @property
+    def stance_stats(self):
+        """Agree/disagree aggregate. Uses agree_count/disagree_count annotations
+        when the queryset provides them; falls back to queries for fragments."""
+        agree = getattr(self, "agree_count", None)
+        disagree = getattr(self, "disagree_count", None)
+        if agree is None or disagree is None:
+            agree = self.stances.filter(value="agree").count()
+            disagree = self.stances.filter(value="disagree").count()
+        total = agree + disagree
+        return {
+            "agree": agree,
+            "disagree": disagree,
+            "total": total,
+            "pct_agree": round(100 * agree / total) if total else None,
+            "shown": total >= MIN_STANCE_SAMPLE,
+        }
+
 
 class Crux(models.Model):
     """The synthesis — one per Crux section. The page's dark anchor."""
@@ -475,6 +498,110 @@ class TopicEdge(models.Model):
 
     def __str__(self) -> str:
         return f"{self.source} -[{self.kind}]-> {self.target}"
+
+
+class ParticipationBase(models.Model):
+    """Shared keying for participation rows: a session now, a user once
+    accounts land (decision B: hybrid — session rows merge into the user)."""
+
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        related_name="+",
+    )
+    session_key = models.CharField(max_length=40, blank=True, db_index=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        abstract = True
+
+
+class Vote(ParticipationBase):
+    """One importance vote on a question or a position. Idempotent (unique per
+    participant per target) and retractable (the row is deleted)."""
+
+    question = models.ForeignKey(
+        Question,
+        related_name="importance_votes",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+    )
+    position = models.ForeignKey(
+        Position,
+        related_name="importance_votes",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+    )
+
+    class Meta:
+        constraints = [
+            models.CheckConstraint(
+                check=(
+                    models.Q(question__isnull=False, position__isnull=True)
+                    | models.Q(question__isnull=True, position__isnull=False)
+                ),
+                name="vote_has_exactly_one_target",
+            ),
+            models.UniqueConstraint(
+                fields=["question", "session_key"],
+                condition=models.Q(question__isnull=False) & ~models.Q(session_key=""),
+                name="unique_question_vote_per_session",
+            ),
+            models.UniqueConstraint(
+                fields=["position", "session_key"],
+                condition=models.Q(position__isnull=False) & ~models.Q(session_key=""),
+                name="unique_position_vote_per_session",
+            ),
+            models.UniqueConstraint(
+                fields=["question", "user"],
+                condition=models.Q(question__isnull=False, user__isnull=False),
+                name="unique_question_vote_per_user",
+            ),
+            models.UniqueConstraint(
+                fields=["position", "user"],
+                condition=models.Q(position__isnull=False, user__isnull=False),
+                name="unique_position_vote_per_user",
+            ),
+        ]
+
+    def __str__(self) -> str:
+        return f"Vote · {self.question or self.position}"
+
+
+class Stance(ParticipationBase):
+    """One agree/disagree on a position. One row per participant per position;
+    re-clicking the same value retracts it, the other value switches it."""
+
+    AGREE = "agree"
+    DISAGREE = "disagree"
+    VALUE_CHOICES = [(AGREE, "Agree"), (DISAGREE, "Disagree")]
+
+    position = models.ForeignKey(
+        Position, related_name="stances", on_delete=models.CASCADE
+    )
+    value = models.CharField(max_length=10, choices=VALUE_CHOICES)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=["position", "session_key"],
+                condition=~models.Q(session_key=""),
+                name="unique_stance_per_session",
+            ),
+            models.UniqueConstraint(
+                fields=["position", "user"],
+                condition=models.Q(user__isnull=False),
+                name="unique_stance_per_user",
+            ),
+        ]
+
+    def __str__(self) -> str:
+        return f"{self.get_value_display()} · {self.position}"
 
 
 class Submission(models.Model):

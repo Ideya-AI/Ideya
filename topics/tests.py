@@ -1,3 +1,151 @@
-from django.test import TestCase
+from django.test import Client, TestCase
+from django.urls import reverse
 
-# Create your tests here.
+from .models import (
+    MIN_STANCE_SAMPLE,
+    Position,
+    Question,
+    Stance,
+    Submission,
+    Vote,
+)
+
+
+class ParticipationTests(TestCase):
+    """Vote + Stance backbone (P2): idempotent, retractable, session-keyed.
+    Uses the Nuclear Energy fixture from the seed migration."""
+
+    def setUp(self):
+        self.question = Question.objects.order_by("id").first()
+        self.position = Position.objects.order_by("id").first()
+        self.topic = self.position.section.topic
+
+    # ---- importance votes -------------------------------------------------
+
+    def test_vote_then_retract_question(self):
+        start = self.question.votes
+        url = reverse("topics:vote", args=["question", self.question.id])
+
+        self.client.post(url)
+        self.question.refresh_from_db()
+        self.assertEqual(self.question.votes, start + 1)
+        self.assertEqual(Vote.objects.filter(question=self.question).count(), 1)
+
+        self.client.post(url)  # same session again → retract
+        self.question.refresh_from_db()
+        self.assertEqual(self.question.votes, start)
+        self.assertEqual(Vote.objects.filter(question=self.question).count(), 0)
+
+    def test_vote_then_retract_position(self):
+        start = self.position.importance
+        url = reverse("topics:vote", args=["position", self.position.id])
+
+        self.client.post(url)
+        self.position.refresh_from_db()
+        self.assertEqual(self.position.importance, start + 1)
+
+        self.client.post(url)
+        self.position.refresh_from_db()
+        self.assertEqual(self.position.importance, start)
+
+    def test_distinct_sessions_count_separately(self):
+        start = self.question.votes
+        url = reverse("topics:vote", args=["question", self.question.id])
+        self.client.post(url)
+        Client().post(url)
+        self.question.refresh_from_db()
+        self.assertEqual(self.question.votes, start + 2)
+        self.assertEqual(Vote.objects.filter(question=self.question).count(), 2)
+
+    def test_unknown_vote_target_is_400(self):
+        resp = self.client.post(
+            reverse("topics:vote", args=["banana", self.question.id])
+        )
+        self.assertEqual(resp.status_code, 400)
+
+    # ---- stances -----------------------------------------------------------
+
+    def test_stance_set_switch_retract(self):
+        url = reverse("topics:stance", args=[self.position.id])
+
+        self.client.post(url, {"value": "agree"})
+        stance = Stance.objects.get(position=self.position)
+        self.assertEqual(stance.value, "agree")
+
+        self.client.post(url, {"value": "disagree"})  # switch
+        stance.refresh_from_db()
+        self.assertEqual(stance.value, "disagree")
+        self.assertEqual(Stance.objects.filter(position=self.position).count(), 1)
+
+        self.client.post(url, {"value": "disagree"})  # same again → retract
+        self.assertEqual(Stance.objects.filter(position=self.position).count(), 0)
+
+    def test_stance_rejects_unknown_value(self):
+        resp = self.client.post(
+            reverse("topics:stance", args=[self.position.id]), {"value": "maybe"}
+        )
+        self.assertEqual(resp.status_code, 400)
+
+    def test_ratio_gated_by_min_sample(self):
+        for i in range(MIN_STANCE_SAMPLE - 1):
+            Stance.objects.create(
+                position=self.position, session_key=f"s{i}", value="agree"
+            )
+        self.assertFalse(self.position.stance_stats["shown"])
+
+        Stance.objects.create(
+            position=self.position, session_key="s-last", value="disagree"
+        )
+        stats = self.position.stance_stats
+        self.assertTrue(stats["shown"])
+        self.assertEqual(stats["total"], MIN_STANCE_SAMPLE)
+        self.assertEqual(stats["pct_agree"], 90)
+
+    # ---- submit flow ---------------------------------------------------------
+
+    def test_submit_with_no_position(self):
+        resp = self.client.post(
+            reverse("topics:submit"),
+            {"topic": self.topic.id, "position": "none", "stance": "neutral"},
+        )
+        self.assertEqual(resp.status_code, 200)
+        sub = Submission.objects.latest("created_at")
+        self.assertIsNone(sub.position)
+        self.assertEqual(Stance.objects.count(), 0)
+
+    def test_submit_upserts_stance_without_importance_bump(self):
+        start = self.position.importance
+        self.client.post(
+            reverse("topics:submit"),
+            {
+                "topic": self.topic.id,
+                "position": self.position.id,
+                "stance": "agree",
+                "importance": 4,
+            },
+        )
+        self.position.refresh_from_db()
+        self.assertEqual(self.position.importance, start)  # no conflated bump
+        self.assertEqual(Stance.objects.get(position=self.position).value, "agree")
+
+        # Submitting again with a different stance updates, not duplicates.
+        self.client.post(
+            reverse("topics:submit"),
+            {
+                "topic": self.topic.id,
+                "position": self.position.id,
+                "stance": "disagree",
+            },
+        )
+        self.assertEqual(Stance.objects.filter(position=self.position).count(), 1)
+        self.assertEqual(Stance.objects.get(position=self.position).value, "disagree")
+
+
+class PageTests(TestCase):
+    def test_core_pages_render(self):
+        for url in ["/", "/about/", "/nuclear-energy/", "/category/energy/"]:
+            self.assertEqual(self.client.get(url).status_code, 200, url)
+
+    def test_stub_topic_renders_empty_state(self):
+        resp = self.client.get("/solar-power/")
+        self.assertContains(resp, "on the map, but not yet written")
