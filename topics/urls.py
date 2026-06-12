@@ -6,6 +6,7 @@ app_name = "topics"
 
 urlpatterns = [
     path("", views.home, name="home"),
+    path("about/", views.about, name="about"),
     path("search/", views.search, name="search"),
     path("submit/", views.submit, name="submit"),
     path("vote/<str:target>/<int:pk>/", views.vote, name="vote"),

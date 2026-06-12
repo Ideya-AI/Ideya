@@ -14,6 +14,7 @@
 ">
 
   <!-- MOBILE section scroller + depth (sticky; desktop hides this) -->
+  {% if sections %}
   <nav class="rail-mobile">
     {% for s in sections %}
     <a class="mlink" href="#{{ s.kind }}" :class="{ active: active === '{{ s.kind }}' }">{{ s.get_kind_display }}</a>
@@ -24,13 +25,14 @@
       {% endfor %}
     </div>
   </nav>
+  {% endif %}
 
   <div class="shell">
 
     <!-- STICKY RAIL -->
     <aside class="rail">
       <div class="crumb">
-        <a href="{% url 'topics:home' %}">Topics</a>
+        <a href="{% url 'topics:home' %}#directory">Topics</a>
         <i class="ph-duotone ph-caret-right" style="font-size:11px"></i>
         <span>{{ topic.title|truncatechars:18 }}</span>
       </div>
@@ -40,6 +42,7 @@
       </a>
       {% endfor %}
 
+      {% if sections %}
       <div class="depth">
         <div class="dk"><i class="ph-duotone ph-arrows-out-line-horizontal"></i>Reading depth</div>
         <div class="seg">
@@ -51,10 +54,38 @@
           {% endfor %}
         </div>
       </div>
+      {% endif %}
     </aside>
 
     <!-- CONTENT -->
     <main class="content">
+      {% if not sections %}
+      <section class="sec" id="overview">
+        <div class="ov-badges">
+          {% for cat in topic.category_badges %}
+          <a class="ov-badge" href="{{ cat.get_absolute_url }}"
+             style="--cat: {{ cat.color_var }}; --cat-tint: {{ cat.tint_var }};">
+            <i class="ph-duotone ph-{{ cat.icon|default:'squares-four' }}"></i>{{ cat.name }}
+          </a>
+          {% endfor %}
+        </div>
+        <div class="ov-head">
+          <span class="ov-icon"><i class="ph-duotone ph-{{ topic.icon|default:'circle' }}"></i></span>
+          <h1 class="ov-title">{{ topic.title }}</h1>
+        </div>
+        {% if topic.summary %}<p class="ov-desc">{{ topic.summary }}</p>{% endif %}
+        <div class="stub-note card">
+          <i class="ph-duotone ph-map-trifold"></i>
+          <div>
+            <b>This topic is on the map, but not yet written.</b>
+            It will get the full treatment — basics, open questions, named positions, and the crux.
+            {% if topic.color_category %}Until then, explore the rest of
+            <a href="{{ topic.color_category.get_absolute_url }}">{{ topic.color_category.name }}</a>.{% endif %}
+          </div>
+        </div>
+      </section>
+      {% endif %}
+
       {% for section in sections %}
 
       {% if section.kind == "overview" %}

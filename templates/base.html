@@ -39,7 +39,10 @@
         <span class="stxt">Search topics and categories</span>
         <span class="kbd">/</span>
       </button>
-      <button class="menu" type="button" aria-label="Menu"><i class="ph-duotone ph-list"></i></button>
+      <button class="menu" type="button" aria-label="Menu" aria-controls="nav-menu"
+              :aria-expanded="$store.menu.open" @click="$store.menu.toggle()">
+        <i class="ph-duotone" :class="$store.menu.open ? 'ph-x' : 'ph-list'"></i>
+      </button>
     </div>
   </header>
   {% endblock %}
@@ -50,12 +53,17 @@
   <footer class="foot">
     <div class="foot-in">
       <span class="fb"><img src="{% static 'img/infinity-mark.png' %}" alt="" />Infinity — a curated atlas of hard issues</span>
-      <span>Neutral by intention. Curation leads; participation refines.</span>
+      <nav class="flinks" aria-label="Footer">
+        <a href="{% url 'topics:home' %}#directory">All topics</a>
+        <a href="{% url 'topics:about' %}">About</a>
+        <span>Neutral by intention.</span>
+      </nav>
     </div>
   </footer>
   {% endblock %}
 
   {% include "topics/components/_search.html" %}
+  {% include "topics/components/_menu.html" %}
   {% block modals %}{% endblock %}
 </body>
 </html>

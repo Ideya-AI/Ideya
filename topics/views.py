@@ -119,6 +119,22 @@ def home(request):
     )
 
 
+def about(request):
+    return render(
+        request,
+        "topics/about.html",
+        {
+            "counts": {
+                "topics": Topic.objects.count(),
+                "mapped": Topic.objects.filter(sections__isnull=False)
+                .distinct()
+                .count(),
+                "categories": Category.objects.count(),
+            }
+        },
+    )
+
+
 def topic_detail(request, slug):
     topic = get_object_or_404(
         Topic.objects.select_related("primary_category").prefetch_related("categories"),
@@ -260,9 +276,10 @@ def vote(request, target, pk):
 @require_POST
 def submit(request):
     topic = get_object_or_404(Topic, pk=request.POST.get("topic"))
-    position = None
-    if request.POST.get("position"):
-        position = Position.objects.filter(pk=request.POST["position"]).first()
+    # The flow posts "none" for "None of these" — anything non-numeric means
+    # no position alignment.
+    pos_id = request.POST.get("position") or ""
+    position = Position.objects.filter(pk=pos_id).first() if pos_id.isdigit() else None
     try:
         importance = max(1, min(5, int(request.POST.get("importance", 3))))
     except (TypeError, ValueError):

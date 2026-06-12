@@ -1,0 +1,26 @@
+{% comment %}Global nav menu — opened via $store.menu. Dropdown under the nav on
+desktop, bottom sheet on mobile. Categories come from the navigation context
+processor.{% endcomment %}
+<div x-show="$store.menu.open" x-cloak style="display:none" id="nav-menu">
+  <div class="scrim" @click="$store.menu.open = false"></div>
+  <nav class="menu-pop pop" role="dialog" aria-label="Menu"
+       @keydown.escape.window="$store.menu.open = false">
+    <a class="mn-link" href="{% url 'topics:home' %}#directory" @click="$store.menu.open = false">
+      <i class="ph-duotone ph-squares-four mn-ico"></i>Browse all topics
+      <i class="ph-duotone ph-arrow-right mn-arr"></i>
+    </a>
+    <div class="mn-group">Categories</div>
+    {% for c in nav_categories %}
+    <a class="mn-link" href="{{ c.get_absolute_url }}" @click="$store.menu.open = false">
+      <span class="mn-dot" style="background:{{ c.color_var }}"><i class="ph-duotone ph-{{ c.icon|default:'squares-four' }}"></i></span>
+      {{ c.name }}
+      <span class="mn-count">{{ c.num_topics }}</span>
+    </a>
+    {% endfor %}
+    <div class="mn-sep"></div>
+    <a class="mn-link" href="{% url 'topics:about' %}" @click="$store.menu.open = false">
+      <i class="ph-duotone ph-info mn-ico"></i>About the project
+      <i class="ph-duotone ph-arrow-right mn-arr"></i>
+    </a>
+  </nav>
+</div>

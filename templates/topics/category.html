@@ -30,7 +30,7 @@
       <section class="sec" id="overview">
         <div class="crumb">
           <a href="{% url 'topics:home' %}">Home</a><i class="ph-duotone ph-caret-right" style="font-size:11px"></i>
-          <span>Categories</span><i class="ph-duotone ph-caret-right" style="font-size:11px"></i>
+          <a href="{% url 'topics:home' %}#directory">Categories</a><i class="ph-duotone ph-caret-right" style="font-size:11px"></i>
           <span style="color:var(--fg2);font-weight:600">{{ category.name }}</span>
         </div>
         <div class="cov-head">

@@ -9,13 +9,12 @@
   <section class="spotlight" id="spotlight">
     <div class="sp-head">
       <span class="sp-kicker"><i class="ph-duotone ph-spotlight"></i>Spotlight</span>
-      <span class="sp-sub">· a curated place to start</span>
     </div>
 
     {% with t=spotlight.topic cc=spotlight.topic.color_category %}
     <div class="sp-hero" {% if cc %}style="--cat: {{ cc.color_var }}; --cat-tint: {{ cc.tint_var }};"{% endif %}>
       <div class="sp-lt">
-        {% if cc %}<span class="sp-cat"><i class="ph-duotone ph-{{ cc.icon|default:'squares-four' }}"></i>{{ cc.name }}</span>{% endif %}
+        {% if cc %}<a class="sp-cat" href="{{ cc.get_absolute_url }}"><i class="ph-duotone ph-{{ cc.icon|default:'squares-four' }}"></i>{{ cc.name }}</a>{% endif %}
         <div class="sp-titlerow">
           <span class="sp-icon"><i class="ph-duotone ph-{{ t.icon|default:'circle' }}"></i></span>
           <h2 class="sp-title">{{ t.title }}</h2>

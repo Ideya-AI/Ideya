@@ -19,6 +19,14 @@
       },
     });
 
+    // Global nav menu — desktop dropdown / mobile sheet (lives in _menu.html).
+    Alpine.store("menu", {
+      open: false,
+      toggle() {
+        this.open = !this.open;
+      },
+    });
+
     // Submit-your-view modal open state.
     Alpine.store("submit", { open: false });
 
