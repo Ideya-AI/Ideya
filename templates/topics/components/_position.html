@@ -1,5 +1,7 @@
 {% comment %}A named position — the heart. Expects `p`.{% endcomment %}
-<div class="pos">
+{% comment %}On mobile the card is compact and tap-to-open: detail + participation
+live in the bottom sheet (_psheet.html); the inline foot is desktop-only.{% endcomment %}
+<div class="pos" @click="if (window.matchMedia('(max-width: 640px)').matches) $store.psheet.id = {{ p.id }}">
   <span class="prail" style="background:{{ p.color_var }}"></span>
   <div class="phead"><span class="pdot" style="background:{{ p.color_var }}"></span><span class="pn">{{ p.name }}</span></div>
   <p class="psteel">“{{ p.steelman }}”</p>
@@ -7,4 +9,8 @@
   {% if p.representative_name %}<p class="prep when-deep"><i class="ph-duotone ph-user-focus"></i><span><b>{{ p.representative_name }}</b> — {{ p.representative_note }}</span></p>{% endif %}
   {% if p.proponents %}<p class="pprop when-deep"><b>Proponents:</b> {{ p.proponent_list|join:" · " }}</p>{% endif %}
   {% include "topics/components/_pfoot.html" %}
+  <div class="pmeta m-only">
+    <span class="pimp-view"><i class="ph-fill ph-caret-up"></i><b>{{ p.importance }}</b> important</span>
+    <span class="taphint">Details <i class="ph-duotone ph-caret-right"></i></span>
+  </div>
 </div>

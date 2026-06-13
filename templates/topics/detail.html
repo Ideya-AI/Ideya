@@ -17,7 +17,9 @@
   {% if sections %}
   <nav class="rail-mobile">
     {% for s in sections %}
-    <a class="mlink" href="#{{ s.kind }}" :class="{ active: active === '{{ s.kind }}' }">{{ s.get_kind_display }}</a>
+    <a class="mlink" href="#{{ s.kind }}" :class="{ active: active === '{{ s.kind }}' }"
+       @click="$dispatch('open-sec', '{{ s.kind }}')">
+      <i class="ph-duotone ph-{{ s.eyebrow_icon }}"></i>{{ s.get_kind_display }}</a>
     {% endfor %}
   </nav>
   {% endif %}
@@ -120,35 +122,71 @@
       </section>
 
       {% elif section.kind == "basics" %}
-      <section class="sec" id="basics" x-data="{ deeper: false }" :class="{ 'is-open': deeper }">
-        <div class="eyebrow"><i class="ph-duotone ph-{{ section.eyebrow_icon }}"></i>Basics <span class="sub">· {{ section.eyebrow_sub }}</span><span class="stepn">{{ section.step }}</span></div>
-        {% if section.intro %}<p class="prose">{{ section.intro }}</p>{% endif %}
-        <div class="basics">
-          {% for stat in section.stats.all %}{% include "topics/components/_stat_tile.html" %}{% endfor %}
+      <section class="sec" id="basics" x-data="{ deeper: false, open: true }"
+               :class="{ 'is-open': deeper, 'acc-open': open }"
+               @open-sec.window="$event.detail === 'basics' && (open = true)">
+        <button type="button" class="acc-head m-only" :aria-expanded="open" @click="open = !open">
+          <span class="ai"><i class="ph-duotone ph-{{ section.eyebrow_icon }}"></i></span>
+          <span class="at"><span class="an">Basics</span><span class="as">{{ section.stats.all|length }} figure{{ section.stats.all|length|pluralize }} · {{ section.eyebrow_sub }}</span></span>
+          <span class="cv"><i class="ph-duotone ph-caret-down"></i></span>
+        </button>
+        <div class="sec-body">
+          <div class="eyebrow"><i class="ph-duotone ph-{{ section.eyebrow_icon }}"></i>Basics <span class="sub">· {{ section.eyebrow_sub }}</span><span class="stepn">{{ section.step }}</span></div>
+          {% if section.intro %}<p class="prose">{{ section.intro }}</p>{% endif %}
+          <div class="basics">
+            {% for stat in section.stats.all %}{% include "topics/components/_stat_tile.html" %}{% endfor %}
+          </div>
+          {% include "topics/components/_deeper.html" %}
         </div>
-        {% include "topics/components/_deeper.html" %}
       </section>
 
       {% elif section.kind == "questions" %}
-      <section class="sec" id="questions" x-data="{ deeper: false }" :class="{ 'is-open': deeper }">
-        <div class="eyebrow"><i class="ph-duotone ph-{{ section.eyebrow_icon }}"></i>Questions <span class="sub">· {{ section.eyebrow_sub }}</span><span class="stepn">{{ section.step }}</span></div>
-        <div class="qlist">
-          {% for q in section.questions.all %}{% include "topics/components/_question.html" %}{% endfor %}
+      <section class="sec" id="questions" x-data="{ deeper: false, open: false }"
+               :class="{ 'is-open': deeper, 'acc-open': open }"
+               @open-sec.window="$event.detail === 'questions' && (open = true)">
+        <button type="button" class="acc-head m-only" :aria-expanded="open" @click="open = !open">
+          <span class="ai"><i class="ph-duotone ph-{{ section.eyebrow_icon }}"></i></span>
+          <span class="at"><span class="an">Questions</span><span class="as">{{ section.questions.all|length }} open · vote to reorder</span></span>
+          <span class="cv"><i class="ph-duotone ph-caret-down"></i></span>
+        </button>
+        <div class="sec-body">
+          <div class="eyebrow"><i class="ph-duotone ph-{{ section.eyebrow_icon }}"></i>Questions <span class="sub">· {{ section.eyebrow_sub }}</span><span class="stepn">{{ section.step }}</span></div>
+          <div class="qlist">
+            {% for q in section.questions.all %}{% include "topics/components/_question.html" %}{% endfor %}
+          </div>
+          {% include "topics/components/_deeper.html" %}
         </div>
-        {% include "topics/components/_deeper.html" %}
       </section>
 
       {% elif section.kind == "positions" %}
-      <section class="sec" id="positions" x-data="{ deeper: false }" :class="{ 'is-open': deeper }">
-        <div class="eyebrow"><i class="ph-duotone ph-{{ section.eyebrow_icon }}"></i>Positions <span class="sub">· the debate — {{ section.positions.all|length }} position{{ section.positions.all|length|pluralize }}</span><span class="stepn">{{ section.step }}</span></div>
-        <div class="pos-grid">
-          {% for p in section.positions.all %}{% include "topics/components/_position.html" %}{% endfor %}
+      <section class="sec" id="positions" x-data="{ deeper: false, open: true }"
+               :class="{ 'is-open': deeper, 'acc-open': open }"
+               @open-sec.window="$event.detail === 'positions' && (open = true)">
+        <button type="button" class="acc-head m-only" :aria-expanded="open" @click="open = !open">
+          <span class="ai"><i class="ph-duotone ph-{{ section.eyebrow_icon }}"></i></span>
+          <span class="at"><span class="an">Positions</span><span class="as">the debate — {{ section.positions.all|length }} position{{ section.positions.all|length|pluralize }} · tap a card</span></span>
+          <span class="cv"><i class="ph-duotone ph-caret-down"></i></span>
+        </button>
+        <div class="sec-body">
+          <div class="eyebrow"><i class="ph-duotone ph-{{ section.eyebrow_icon }}"></i>Positions <span class="sub">· the debate — {{ section.positions.all|length }} position{{ section.positions.all|length|pluralize }}</span><span class="stepn">{{ section.step }}</span></div>
+          <div class="pos-grid">
+            {% for p in section.positions.all %}{% include "topics/components/_position.html" %}{% endfor %}
+          </div>
+          {% include "topics/components/_deeper.html" with d_only=True %}
         </div>
-        {% include "topics/components/_deeper.html" %}
+        {% for p in section.positions.all %}{% include "topics/components/_psheet.html" %}{% endfor %}
       </section>
 
       {% elif section.kind == "crux" %}
-      <section class="sec" id="crux" x-data="{ deeper: false }" :class="{ 'is-open': deeper }">
+      <section class="sec" id="crux" x-data="{ deeper: false, open: true }"
+               :class="{ 'is-open': deeper, 'acc-open': open }"
+               @open-sec.window="$event.detail === 'crux' && (open = true)">
+        <button type="button" class="acc-head m-only" :aria-expanded="open" @click="open = !open">
+          <span class="ai"><i class="ph-duotone ph-{{ section.eyebrow_icon }}"></i></span>
+          <span class="at"><span class="an">Crux</span><span class="as">{{ section.eyebrow_sub }}</span></span>
+          <span class="cv"><i class="ph-duotone ph-caret-down"></i></span>
+        </button>
+        <div class="sec-body">
         <div class="eyebrow"><i class="ph-duotone ph-{{ section.eyebrow_icon }}"></i>Crux <span class="sub">· {{ section.eyebrow_sub }}</span><span class="stepn">{{ section.step }}</span></div>
         {% with c=section.crux %}
         <div class="crux">
@@ -168,24 +206,43 @@
         </div>
         {% endwith %}
         {% include "topics/components/_deeper.html" %}
+        </div>
       </section>
 
       {% elif section.kind == "actions" %}
-      <section class="sec" id="actions" x-data="{ af: 'all', deeper: false }" :class="{ 'is-open': deeper }">
-        <div class="eyebrow"><i class="ph-duotone ph-{{ section.eyebrow_icon }}"></i>Actions <span class="sub">· {{ section.eyebrow_sub }}</span><span class="stepn">{{ section.step }}</span></div>
-        <div class="act-filter when-normal is-flex">
-          {% for key, label in act_filters %}
-          <button type="button" class="afilt" :class="{ on: af === '{{ key }}' }" @click="af = '{{ key }}'">{{ label }}</button>
-          {% endfor %}
+      <section class="sec" id="actions" x-data="{ af: 'all', deeper: false, open: false }"
+               :class="{ 'is-open': deeper, 'acc-open': open }"
+               @open-sec.window="$event.detail === 'actions' && (open = true)">
+        <button type="button" class="acc-head m-only" :aria-expanded="open" @click="open = !open">
+          <span class="ai"><i class="ph-duotone ph-{{ section.eyebrow_icon }}"></i></span>
+          <span class="at"><span class="an">Actions</span><span class="as">{{ section.actions.all|length }} path{{ section.actions.all|length|pluralize }} · across the landscape</span></span>
+          <span class="cv"><i class="ph-duotone ph-caret-down"></i></span>
+        </button>
+        <div class="sec-body">
+          <div class="eyebrow"><i class="ph-duotone ph-{{ section.eyebrow_icon }}"></i>Actions <span class="sub">· {{ section.eyebrow_sub }}</span><span class="stepn">{{ section.step }}</span></div>
+          <div class="act-filter when-normal is-flex">
+            {% for key, label in act_filters %}
+            <button type="button" class="afilt" :class="{ on: af === '{{ key }}' }" @click="af = '{{ key }}'">{{ label }}</button>
+            {% endfor %}
+          </div>
+          <div class="act-grid">
+            {% for a in section.actions.all %}{% include "topics/components/_action.html" %}{% endfor %}
+          </div>
+          {% include "topics/components/_deeper.html" %}
         </div>
-        <div class="act-grid">
-          {% for a in section.actions.all %}{% include "topics/components/_action.html" %}{% endfor %}
-        </div>
-        {% include "topics/components/_deeper.html" %}
       </section>
       {% endif %}
 
       {% endfor %}
+
+      {% if sections and positions %}
+      <div class="endcap">
+        <button type="button" class="submit-cta" @click="$dispatch('open-submit')">
+          <i class="ph-duotone ph-paper-plane-tilt"></i>Submit your view
+        </button>
+        <div class="ec-note">Aggregated into the landscape — never posted as a comment.</div>
+      </div>
+      {% endif %}
     </main>
   </div>
 </div>

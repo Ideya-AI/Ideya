@@ -1,0 +1,18 @@
+{% comment %}Mobile position-detail bottom sheet (one per position). Opened by
+tapping the card; holds the full detail + the real participation controls
+(prefix=spfoot keeps HTMX ids distinct from the desktop card). Expects `p`.{% endcomment %}
+<div x-show="$store.psheet.id === {{ p.id }}" x-cloak style="display:none">
+  <div class="scrim" @click="$store.psheet.id = null"></div>
+  <div class="psheet overlay-card" role="dialog" aria-label="{{ p.name }}"
+       @keydown.escape.window="$store.psheet.id = null">
+    <div class="grab"></div>
+    <div class="shead"><span class="sdot" style="background:{{ p.color_var }}"></span><span class="sn">{{ p.name }}</span></div>
+    <p class="ssteel">“{{ p.steelman }}”</p>
+    {% if p.description %}<p class="sdesc">{{ p.description }}</p>{% endif %}
+    {% if p.representative_name %}
+    <div class="sex"><i class="ph-duotone ph-user-focus"></i><span class="sext"><b>{{ p.representative_name }}</b> — {{ p.representative_note }}</span></div>
+    {% endif %}
+    {% if p.proponents %}<p class="sprop"><b>Proponents:</b> {{ p.proponent_list|join:" · " }}</p>{% endif %}
+    {% include "topics/components/_pfoot.html" with prefix="spfoot" %}
+  </div>
+</div>

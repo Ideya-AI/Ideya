@@ -320,7 +320,12 @@ def vote(request, target, pk):
         type(obj).objects.filter(pk=obj.pk).update(**{counter: F(counter) + delta})
     obj.refresh_from_db(fields=[counter])
     obj.voted = delta > 0
-    return render(request, template, {ctx: obj})
+    # The control renders in the card and the mobile sheet under distinct ids.
+    prefix = request.POST.get("prefix", "")
+    context = {ctx: obj}
+    if target == "position" and prefix in ("pimp", "spimp"):
+        context["prefix"] = prefix
+    return render(request, template, context)
 
 
 @require_POST
@@ -346,7 +351,11 @@ def stance(request, pk):
         position.stance = value
 
     position.voted = Vote.objects.filter(position=position, **who).exists()
-    return render(request, "topics/components/_pfoot.html", {"p": position})
+    context = {"p": position}
+    prefix = request.POST.get("prefix", "")
+    if prefix in ("pfoot", "spfoot"):
+        context["prefix"] = prefix
+    return render(request, "topics/components/_pfoot.html", context)
 
 
 @require_POST

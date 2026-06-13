@@ -21,6 +21,9 @@
     // Submit-your-view modal open state.
     Alpine.store("submit", { open: false });
 
+    // Mobile position-detail bottom sheet — holds the open position's id.
+    Alpine.store("psheet", { id: null });
+
     // The 3-step submit flow: align → stance/importance/reasoning → identity.
     Alpine.data("submitFlow", () => ({
       step: 1,
