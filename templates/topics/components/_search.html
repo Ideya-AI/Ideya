@@ -1,19 +1,46 @@
-{% comment %}Global search overlay — opened via $store.search.open. Enriched in the search task.{% endcomment %}
+{% comment %}Global search overlay — opened via $store.search.open. Live results
+fetched from topics:search; ↑/↓ move the highlight, ↵ opens it. Key handlers are
+window-scoped but guarded by $store.search.open so they never hijack keys (e.g.
+Enter in the submit modal or a login form) while the overlay is closed.{% endcomment %}
 <div x-show="$store.search.open" x-cloak style="display:none">
   <div class="scrim" @click="$store.search.open = false"></div>
   <div class="search-pop pop"
-       x-data="{ q: '', html: '<div class=\'sp-empty\'>Start typing to search topics, categories and positions.</div>',
+       x-data="{ q: '', busy: false, sel: -1,
+                 html: '<div class=\'sp-empty\'>Start typing to search topics, categories and positions.</div>',
                  run() {
-                   if (!this.q.trim()) { this.html = '<div class=\'sp-empty\'>Start typing to search topics, categories and positions.</div>'; return; }
+                   if (!this.q.trim()) { this.html = '<div class=\'sp-empty\'>Start typing to search topics, categories and positions.</div>'; this.sel = -1; return; }
+                   this.busy = true;
                    fetch('{% url 'topics:search' %}?q=' + encodeURIComponent(this.q))
-                     .then(r => r.text()).then(t => this.html = t);
+                     .then(r => r.text()).then(t => { this.html = t; this.sel = -1; this.busy = false; });
+                 },
+                 items() { return Array.from(this.$root.querySelectorAll('.sr')); },
+                 move(e, d) {
+                   if (!this.$store.search.open) return;
+                   const its = this.items(); if (!its.length) return;
+                   e.preventDefault();
+                   let n = this.sel + d;
+                   if (n < 0) n = its.length - 1;
+                   if (n >= its.length) n = 0;
+                   this.sel = n;
+                   its.forEach((el, i) => el.classList.toggle('active', i === n));
+                   its[n].scrollIntoView({ block: 'nearest' });
+                 },
+                 enter(e) {
+                   if (!this.$store.search.open) return;
+                   const its = this.items(); const t = its[this.sel] || its[0];
+                   if (t) { e.preventDefault(); window.location = t.href; }
                  } }"
-       @keydown.escape.window="$store.search.open = false" role="dialog" aria-label="Search">
+       @keydown.escape.window="$store.search.open = false"
+       @keydown.arrow-down.window="move($event, 1)"
+       @keydown.arrow-up.window="move($event, -1)"
+       @keydown.enter.window="enter($event)"
+       role="dialog" aria-modal="true" aria-label="Search">
     <div class="sp-field">
       <i class="ph-duotone ph-magnifying-glass"></i>
       <input type="text" x-model="q" @input.debounce.150ms="run()"
-             placeholder="Search topics, categories, positions…"
+             placeholder="Search topics, categories, positions…" aria-label="Search topics, categories, positions"
              x-ref="sinput" x-effect="if ($store.search.open) $nextTick(() => $refs.sinput.focus())" />
+      <i class="ph-duotone ph-circle-notch spin" x-show="busy" x-cloak style="display:none"></i>
       <span class="kbd">esc</span>
     </div>
     <div class="sp-body" x-html="html"></div>

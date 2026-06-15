@@ -6,6 +6,14 @@
   <title>{% block title %}Infinity — a curated atlas of hard issues{% endblock %}</title>
   <meta name="description" content="{% block description %}A curated, navigable atlas of hard human issues — a visual wiki between an encyclopedia and a debate platform.{% endblock %}" />
   <link rel="icon" href="{% static 'img/infinity-mark.png' %}" />
+  <link rel="canonical" href="{{ request.scheme }}://{{ request.get_host }}{{ request.path }}" />
+  <meta property="og:site_name" content="Infinity" />
+  <meta property="og:type" content="{% block og_type %}website{% endblock %}" />
+  <meta property="og:title" content="{% block og_title %}Infinity — a curated atlas of hard issues{% endblock %}" />
+  <meta property="og:description" content="{% block og_description %}A curated, navigable atlas of hard human issues — what each one is, where the disagreement sits, and how to act.{% endblock %}" />
+  <meta property="og:url" content="{{ request.scheme }}://{{ request.get_host }}{{ request.path }}" />
+  <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'img/infinity-mark.png' %}" />
+  <meta name="twitter:card" content="summary" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,6 +34,8 @@
   {% block head %}{% endblock %}
 </head>
 <body x-data hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
+
+  <a class="skip" href="#main">Skip to content</a>
 
   {% block nav %}
   <header class="nav">
@@ -53,7 +63,7 @@
     {% for m in messages %}<div class="flash"><i class="ph-duotone ph-check-circle"></i>{{ m }}</div>{% endfor %}
   </div>
   {% endif %}
-  <main>{% block content %}{% endblock %}</main>
+  <main id="main">{% block content %}{% endblock %}</main>
 
   <footer class="foot">
     <div class="foot-in">

@@ -3,6 +3,9 @@
 
 {% block title %}{{ topic.title }} — Infinity{% endblock %}
 {% block description %}{{ topic.summary }}{% endblock %}
+{% block og_type %}article{% endblock %}
+{% block og_title %}{{ topic.title }} — Infinity{% endblock %}
+{% block og_description %}{{ topic.summary }}{% endblock %}
 
 {% block content %}
 <div class="topic" x-data="{ active: 'overview' }" x-init="

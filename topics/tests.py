@@ -207,3 +207,47 @@ class LayeredReadingTests(TestCase):
         self.assertFalse(section.has_layer_deep)
         resp = self.client.get("/bare/")
         self.assertNotContains(resp, "Go deeper")
+
+
+class SearchAndSeoTests(TestCase):
+    """Task 13 (FTS5) + task 15 (states/SEO) coverage."""
+
+    def test_fts_finds_topic_by_body_text(self):
+        resp = self.client.get("/search/?q=fission")
+        self.assertContains(resp, "Nuclear Energy")
+
+    def test_fts_prefix_matching(self):
+        resp = self.client.get("/search/?q=nucl")
+        self.assertContains(resp, "Nuclear Energy")
+
+    def test_fts_index_follows_edits(self):
+        topic = Topic.objects.get(slug="nuclear-energy")
+        topic.summary = "zephyrwordtest appears here"
+        topic.save()
+        self.assertContains(self.client.get("/search/?q=zephyrwordtest"), "Nuclear Energy")
+
+    def test_search_hostile_input_is_safe(self):
+        resp = self.client.get('/search/?q="; DROP TABLE--')
+        self.assertEqual(resp.status_code, 200)
+
+    def test_sitemap_and_robots(self):
+        resp = self.client.get("/sitemap.xml")
+        self.assertEqual(resp.status_code, 200)
+        self.assertContains(resp, "/nuclear-energy/")
+        robots = self.client.get("/robots.txt")
+        self.assertContains(robots, "Sitemap:")
+
+    def test_sitemap_excludes_drafts(self):
+        Topic.objects.create(title="Hidden", slug="hidden-draft", status=Topic.DRAFT)
+        self.assertNotContains(self.client.get("/sitemap.xml"), "hidden-draft")
+
+    def test_custom_404_page(self):
+        with self.settings(DEBUG=False):
+            resp = self.client.get("/definitely-not-a-real-page/")
+        self.assertEqual(resp.status_code, 404)
+        self.assertContains(resp, "isn't on the map", status_code=404)
+
+    def test_topic_og_tags(self):
+        resp = self.client.get("/nuclear-energy/")
+        self.assertContains(resp, 'property="og:type" content="article"')
+        self.assertContains(resp, 'property="og:title" content="Nuclear Energy')

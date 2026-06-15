@@ -1,8 +1,10 @@
 from django.db import transaction
 from django.db.models import Count, F, Prefetch, Q
-from django.http import HttpResponseBadRequest
+from django.http import HttpResponse, HttpResponseBadRequest
 from django.shortcuts import get_object_or_404, render
 from django.views.decorators.http import require_POST
+
+from . import search as fts
 
 from .models import (
     SECTION_ORDER,
@@ -142,6 +144,14 @@ def home(request):
     )
 
 
+def robots_txt(request):
+    sitemap_url = request.build_absolute_uri("/sitemap.xml")
+    return HttpResponse(
+        f"User-agent: *\nAllow: /\nSitemap: {sitemap_url}\n",
+        content_type="text/plain",
+    )
+
+
 def about(request):
     return render(
         request,
@@ -270,10 +280,33 @@ def share_cards(request, slug):
 # --------------------------------------------------------------------------- #
 # Interactions
 # --------------------------------------------------------------------------- #
+def _in_order(qs, ids):
+    """Materialize a queryset in the id order FTS ranked them."""
+    by_id = {obj.id: obj for obj in qs}
+    return [by_id[i] for i in ids if i in by_id]
+
+
 def search(request):
     q = (request.GET.get("q") or "").strip()
     topics, categories, positions = [], [], []
-    if q:
+    if q and fts.available():
+        tids = fts.search_ids(q, "topic", 6)
+        cids = fts.search_ids(q, "category", 4)
+        pids = fts.search_ids(q, "position", 4)
+        topics = _decorate(
+            _in_order(
+                Topic.published.filter(id__in=tids).select_related("primary_category"),
+                tids,
+            )
+        )
+        categories = _in_order(Category.objects.filter(id__in=cids), cids)
+        positions = _in_order(
+            Position.objects.filter(
+                id__in=pids, section__topic__status=Topic.PUBLISHED
+            ).select_related("section", "section__topic"),
+            pids,
+        )
+    elif q:
         topics = _decorate(
             Topic.published.filter(title__icontains=q).select_related(
                 "primary_category"
@@ -281,7 +314,9 @@ def search(request):
         )
         categories = Category.objects.filter(name__icontains=q)[:4]
         positions = (
-            Position.objects.filter(name__icontains=q)
+            Position.objects.filter(
+                name__icontains=q, section__topic__status=Topic.PUBLISHED
+            )
             .select_related("section", "section__topic")
             .order_by("-importance")[:4]
         )

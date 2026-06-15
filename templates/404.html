@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Not on the map — Infinity{% endblock %}
+
+{% block content %}
+<div class="wrap"><div class="errpage">
+  <div class="err-icon"><i class="ph-duotone ph-compass"></i></div>
+  <h1>This page isn't on the map.</h1>
+  <p class="err-lead">The address may have changed, or the topic hasn't been charted yet.</p>
+  <div class="err-actions">
+    <button type="button" class="btn btn-primary" @click="$store.search.open = true"><i class="ph-duotone ph-magnifying-glass"></i>Search the atlas</button>
+    <a class="btn btn-ghost" href="{% url 'topics:home' %}#directory">Browse every topic</a>
+  </div>
+</div></div>
+{% endblock %}
