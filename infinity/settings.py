@@ -180,7 +180,13 @@ STATIC_ROOT = BASE_DIR / "staticfiles"  # collectstatic target (gitignored)
 STORAGES = {
     "default": {"BACKEND": "django.core.files.storage.FileSystemStorage"},
     "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage"
+        # Hashed + compressed manifest in production; plain storage in dev/test
+        # so `runserver` and the test suite work without a collectstatic run.
+        "BACKEND": (
+            "whitenoise.storage.CompressedManifestStaticFilesStorage"
+            if not DEBUG
+            else "django.contrib.staticfiles.storage.StaticFilesStorage"
+        )
     },
 }
 
