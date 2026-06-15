@@ -52,7 +52,7 @@
   /* ---- Text (semantic aliases) */
   --fg1: var(--ink-900);  /* primary / headings */
   --fg2: var(--ink-600);  /* body / secondary */
-  --fg3: var(--ink-400);  /* muted / labels / meta */
+  --fg3: #6c726a;  /* muted / labels / meta — darkened from ink-400 (#888f86) to clear WCAG AA 4.5:1 on white and ink-50; ink-400 itself stays for decorative icons */
   --fg-disabled: var(--ink-300);
   --fg-on-accent: var(--white);
 
