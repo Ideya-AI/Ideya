@@ -15,21 +15,22 @@
   <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'img/infinity-mark.png' %}" />
   <meta name="twitter:card" content="summary" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Self-hosted web fonts (Plus Jakarta Sans, Inter, JetBrains Mono — latin/latin-ext) -->
+  <link rel="stylesheet" href="{% static 'css/fonts.css' %}" />
 
-  <!-- Phosphor icons — duotone (default) + fill (heavy/active) -->
-  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css" />
-  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+  <!-- Phosphor icons — duotone (default) + fill (heavy/active), self-hosted -->
+  <link rel="stylesheet" href="{% static 'vendor/phosphor-duotone.css' %}" />
+  <link rel="stylesheet" href="{% static 'vendor/phosphor-fill.css' %}" />
 
-  <!-- Design tokens (also @imports the web fonts) + component system -->
+  <!-- Design tokens + component system -->
   <link rel="stylesheet" href="{% static 'css/tokens.css' %}" />
   <link rel="stylesheet" href="{% static 'css/infinity.css' %}" />
 
-  <!-- infinity.js must load before Alpine so its alpine:init listener runs -->
+  <!-- infinity.js must load before Alpine so its alpine:init listener runs.
+       Alpine + HTMX self-hosted (Alpine pinned 3.15.12, HTMX 2.0.3). -->
   <script defer src="{% static 'js/infinity.js' %}"></script>
-  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  <script src="https://unpkg.com/htmx.org@2.0.3"></script>
+  <script defer src="{% static 'vendor/alpine.min.js' %}"></script>
+  <script src="{% static 'vendor/htmx.min.js' %}"></script>
 
   {% block head %}{% endblock %}
 </head>

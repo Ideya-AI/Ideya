@@ -8,9 +8,8 @@
    files, those override these CDN sources — keep the family names identical.
    ============================================================================ */
 
-/* ---- Web fonts (same families the tokens name — not substitutes).
+/* ---- Web fonts: self-hosted via static/css/fonts.css (loaded in base.html).
    Plus Jakarta Sans = --font-sans/display · Inter = --font-tabular · JetBrains Mono = --font-mono */
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
 
 :root {
   /* ---- Neutral "ink" ramp — clean near-neutrals with only a whisper of green,
