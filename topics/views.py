@@ -50,7 +50,7 @@ def _ordered_sections(parent_field, parent):
     positions = Position.objects.annotate(
         agree_count=Count("stances", filter=Q(stances__value=Stance.AGREE)),
         disagree_count=Count("stances", filter=Q(stances__value=Stance.DISAGREE)),
-    ).order_by("order", "id")
+    ).order_by("-importance", "-prevalence_weight", "order", "id")
     qs = Section.objects.filter(**{parent_field: parent}).prefetch_related(
         Prefetch("stats", queryset=Stat.objects.order_by("order", "id")),
         Prefetch(

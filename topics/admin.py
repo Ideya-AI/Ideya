@@ -37,19 +37,37 @@ class TopicSectionInline(admin.TabularInline):
 
 @admin.register(Topic)
 class TopicAdmin(admin.ModelAdmin):
-    list_display = ("title", "status", "spine", "updated_at")
-    list_filter = ("status", "categories")
+    list_display = ("title", "status", "spine", "researched_at", "updated_at")
+    list_filter = ("status", "categories", "primary_category")
     search_fields = ("title", "summary")
     prepopulated_fields = {"slug": ("title",)}
     filter_horizontal = ("categories",)
     inlines = [TopicSectionInline]
     actions = ("publish", "unpublish", "scaffold_sections")
+    readonly_fields = ("researched_at", "research_dossier")
     fieldsets = (
         (
             None,
-            {"fields": ("title", "slug", "status", "icon", "summary", "categories")},
+            {
+                "fields": (
+                    "title",
+                    "slug",
+                    "status",
+                    "icon",
+                    "summary",
+                    "primary_category",
+                    "categories",
+                )
+            },
         ),
         ("Overview", {"fields": ("scope_covered", "scope_excluded", "why_now")}),
+        (
+            "Research provenance",
+            {
+                "classes": ("collapse",),
+                "fields": ("researched_at", "reviewed_at", "research_dossier"),
+            },
+        ),
     )
 
     @admin.display(description="Spine")
@@ -80,7 +98,18 @@ class TopicAdmin(admin.ModelAdmin):
 class StatInline(admin.TabularInline):
     model = Stat
     extra = 1
-    fields = ("order", "label", "viz", "wide", "value", "unit", "fill_pct", "note")
+    fields = (
+        "order",
+        "label",
+        "viz",
+        "wide",
+        "value",
+        "unit",
+        "fill_pct",
+        "note",
+        "source_label",
+        "source_published",
+    )
 
 
 class QuestionInline(admin.TabularInline):
@@ -92,7 +121,15 @@ class QuestionInline(admin.TabularInline):
 class PositionInline(admin.TabularInline):
     model = Position
     extra = 1
-    fields = ("order", "name", "color_key", "steelman", "importance")
+    fields = (
+        "order",
+        "name",
+        "color_key",
+        "steelman",
+        "prevalence_weight",
+        "spectrum_position",
+        "importance",
+    )
 
 
 class ActionInline(admin.TabularInline):

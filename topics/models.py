@@ -45,12 +45,15 @@ def _reveal_class(value: str) -> str:
 
 # Category palette — keys map to --cat-* tokens. Discovery tiers only.
 CAT_COLORS = [
-    ("energy", "Energy & Environment"),
-    ("tech", "AI & Technology"),
-    ("gov", "Political & Governance"),
-    ("econ", "Economic & Social"),
-    ("ethics", "Ethics & Philosophy"),
-    ("risk", "Existential & Global Risk"),
+    ("energy", "Green (energy/climate)"),
+    ("tech", "Blue (AI/tech)"),
+    ("gov", "Purple (governance)"),
+    ("econ", "Amber (economy)"),
+    ("ethics", "Rust (ethics)"),
+    ("risk", "Slate (global risk)"),
+    ("digital", "Teal (digital society)"),
+    ("bio", "Rose (bio/health)"),
+    ("society", "Olive (society/culture)"),
 ]
 
 
@@ -149,6 +152,21 @@ class Topic(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    # --- research provenance (pipeline) ---
+    researched_at = models.DateTimeField(
+        null=True,
+        blank=True,
+        help_text="When the research pipeline last authored this.",
+    )
+    reviewed_at = models.DateTimeField(
+        null=True, blank=True, help_text="When a human last reviewed/approved this."
+    )
+    research_dossier = models.JSONField(
+        default=dict,
+        blank=True,
+        help_text="Pipeline dossier — sources, raw research, notes. Reviewer-facing, not public.",
+    )
 
     objects = models.Manager()
     published = PublishedTopicManager()
@@ -361,6 +379,16 @@ class Stat(models.Model):
     note = models.CharField(max_length=400, blank=True)
     source_url = models.URLField(blank=True)
     source_label = models.CharField(max_length=120, blank=True)
+    source_published = models.CharField(
+        max_length=40,
+        blank=True,
+        help_text="When the source data is from, e.g. '2024' or 'Q1 2025'.",
+    )
+    source_accessed = models.DateField(
+        null=True,
+        blank=True,
+        help_text="When the figure was last verified during research.",
+    )
     reveal = models.CharField(
         max_length=10, choices=REVEAL_CHOICES, default="condensed"
     )
@@ -438,9 +466,21 @@ class Position(models.Model):
         max_length=400, blank=True, help_text="Comma-separated notable proponents."
     )
     importance = models.PositiveIntegerField(default=0)
+    prevalence_weight = models.PositiveSmallIntegerField(
+        default=0,
+        help_text="How widely held / influential (0–100). Seeds default order so the "
+        "mainstream leads; importance votes reorder over time.",
+    )
+    spectrum_position = models.SmallIntegerField(
+        null=True,
+        blank=True,
+        help_text="Optional ordinal on the debate's main axis (metadata, not the default order).",
+    )
 
     class Meta:
-        ordering = ["order", "id"]
+        # Prevalence-seeded, vote-reordered (decision 2026-06-17): when unvoted
+        # (importance 0) prevalence decides; importance votes take over as they accrue.
+        ordering = ["-importance", "-prevalence_weight", "order", "id"]
 
     def __str__(self) -> str:
         return self.name
