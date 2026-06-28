@@ -417,6 +417,22 @@ class Section(models.Model):
     def questions_has_extra(self):
         return len(self.questions.all()) > self.QUESTIONS_DEFAULT_SHOWN
 
+    POSITIONS_DEFAULT_SHOWN = 4  # leading position cards shown before Go-deeper
+
+    @property
+    def positions_tiles(self):
+        """Order-ranked Positions annotated for the two-axis grid: `is_extra`
+        cards (revealed only when the section's Go-deeper is open) come after the
+        leading POSITIONS_DEFAULT_SHOWN. Mirrors basics_tiles (breadth axis)."""
+        positions = list(self.positions.all())
+        for i, p in enumerate(positions):
+            p.is_extra = i >= self.POSITIONS_DEFAULT_SHOWN
+        return positions
+
+    @property
+    def positions_has_extra(self):
+        return len(self.positions.all()) > self.POSITIONS_DEFAULT_SHOWN
+
 
 class Stat(models.Model):
     """One Basics figure. `viz` maps the fact's shape to a fixed visualization."""
@@ -563,6 +579,10 @@ class Position(models.Model):
         max_length=400, help_text="One-line strongest case, in the side's own voice."
     )
     description = models.TextField(blank=True)
+    detail = models.TextField(
+        blank=True,
+        help_text="Deeper detail revealed when the position is expanded.",
+    )
     representative_name = models.CharField(max_length=120, blank=True)
     representative_note = models.CharField(max_length=300, blank=True)
     proponents = models.CharField(
@@ -595,6 +615,16 @@ class Position(models.Model):
     @property
     def proponent_list(self):
         return [p.strip() for p in self.proponents.split(",") if p.strip()]
+
+    @property
+    def has_more(self) -> bool:
+        """Any expandable detail behind the card's click-to-expand (axis 2)."""
+        return bool(
+            self.description
+            or self.detail
+            or self.representative_name
+            or self.proponents
+        )
 
     @property
     def stance_stats(self):

@@ -9,6 +9,7 @@ tapping the card; holds the full detail + the real participation controls
     <div class="shead"><span class="sdot" style="background:{{ p.color_var }}"></span><span class="sn">{{ p.name }}</span></div>
     <p class="ssteel">“{{ p.steelman }}”</p>
     {% if p.description %}<p class="sdesc">{{ p.description }}</p>{% endif %}
+    {% if p.detail %}<div class="sdetail">{{ p.detail|linebreaks }}</div>{% endif %}
     {% if p.representative_name %}
     <div class="sex"><i class="ph-duotone ph-user-focus"></i><span class="sext"><b>{{ p.representative_name }}</b> — {{ p.representative_note }}</span></div>
     {% endif %}
