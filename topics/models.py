@@ -244,7 +244,7 @@ class Section(models.Model):
     META = {
         OVERVIEW: ("compass-rose", "the orientation"),
         BASICS: ("chart-bar", "the numbers"),
-        QUESTIONS: ("question", "what's contested · vote to reorder"),
+        QUESTIONS: ("question", "what's contested"),
         POSITIONS: ("scales", "the debate"),
         CRUX: ("target", "where it actually sits"),
         ACTIONS: ("compass", "paths forward, across the landscape"),
@@ -401,6 +401,22 @@ class Section(models.Model):
         stats = list(self.stats.all())
         return self._basics_base_count(stats) < len(stats)
 
+    QUESTIONS_DEFAULT_SHOWN = 4  # leading questions shown before Go-deeper
+
+    @property
+    def questions_tiles(self):
+        """Vote-ordered Questions annotated for the two-axis list: `is_extra`
+        questions (beyond the default shown) appear only when Go-deeper is open.
+        Uses the prefetched queryset (ordered by -votes, order, id)."""
+        questions = list(self.questions.all())
+        for i, q in enumerate(questions):
+            q.is_extra = i >= self.QUESTIONS_DEFAULT_SHOWN
+        return questions
+
+    @property
+    def questions_has_extra(self):
+        return len(self.questions.all()) > self.QUESTIONS_DEFAULT_SHOWN
+
 
 class Stat(models.Model):
     """One Basics figure. `viz` maps the fact's shape to a fixed visualization."""
@@ -486,6 +502,10 @@ class Question(models.Model):
     text = models.CharField(max_length=400)
     kind = models.CharField(max_length=12, choices=KIND_CHOICES, default=EMPIRICAL)
     why = models.TextField(blank=True, help_text="Why this question is contested.")
+    detail = models.TextField(
+        blank=True,
+        help_text="Deeper follow-up revealed when the question is expanded.",
+    )
     votes = models.PositiveIntegerField(default=0, help_text="Importance aggregate.")
     # Optional aggregated lean (shown at deep depth).
     lean_label_a = models.CharField(max_length=40, blank=True)
@@ -508,6 +528,19 @@ class Question(models.Model):
     @property
     def tag_icon(self) -> str:
         return "flask" if self.kind == self.EMPIRICAL else "heart"
+
+    @property
+    def kind_tip(self) -> str:
+        """Hover explainer for the Empirical/Value badge."""
+        if self.kind == self.EMPIRICAL:
+            return (
+                "An empirical question — answerable in principle by evidence and "
+                "data, even if the answer is currently uncertain or contested."
+            )
+        return (
+            "A value question — the disagreement is about priorities and ethics, "
+            "not facts. Evidence informs it but can't settle it alone."
+        )
 
     @property
     def lean_pct_b(self):

@@ -330,6 +330,24 @@ body .sec.is-open .when-normal.is-inline, body .sec.is-open .when-deep.is-inline
 .lean .lbar .ld { background: var(--ink-300); }
 .lean.blue .lbar .la { background: var(--pos-blue); }
 .lean .lnote { margin-top: 6px; font-size: 10px; color: var(--fg3); }
+.qb-x { cursor: pointer; }
+.qdetail { font-size: var(--text-sm); color: var(--fg2); line-height: var(--leading-normal); margin-top: 10px; }
+.qdetail p { margin: 0 0 8px; }
+.qdetail p:last-child { margin-bottom: 0; }
+/* breadth axis: extra rows hidden until the section's Go-deeper is open
+   (display unset when revealed preserves .q's grid/block layout) */
+.sec:not(.is-open) .qlist .q-xtra { display: none; }
+
+/* ---- TOOLTIP (reusable) ---- */
+[data-tip] { position: relative; }
+[data-tip]:hover::after {
+  content: attr(data-tip); position: absolute; left: 0; bottom: calc(100% + 8px);
+  width: max-content; max-width: 260px; padding: 8px 11px; border-radius: 9px;
+  background: var(--ink-900); color: var(--surface); font-size: var(--text-xs);
+  font-weight: var(--weight-medium); text-transform: none; letter-spacing: normal;
+  line-height: 1.45; box-shadow: 0 6px 20px rgba(0, 0, 0, .18); z-index: 40;
+  pointer-events: none; white-space: normal;
+}
 
 /* ---- POSITIONS ---- */
 .pos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }

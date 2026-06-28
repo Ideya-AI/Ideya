@@ -176,15 +176,20 @@
                @open-sec.window="$event.detail === 'questions' && (open = true)">
         <button type="button" class="acc-head m-only" :aria-expanded="open" @click="open = !open">
           <span class="ai"><i class="ph-duotone ph-{{ section.eyebrow_icon }}"></i></span>
-          <span class="at"><span class="an">Questions</span><span class="as">{{ section.questions.all|length }} open · vote to reorder</span></span>
+          <span class="at"><span class="an">Questions</span><span class="as">{{ section.questions.all|length }} open</span></span>
           <span class="cv"><i class="ph-duotone ph-caret-down"></i></span>
         </button>
         <div class="sec-body">
           <div class="eyebrow"><i class="ph-duotone ph-{{ section.eyebrow_icon }}"></i>Questions <span class="sub">· {{ section.eyebrow_sub }}</span><span class="stepn">{{ section.step }}</span></div>
           <div class="qlist">
-            {% for q in section.questions.all %}{% include "topics/components/_question.html" %}{% endfor %}
+            {% for q in section.questions_tiles %}{% include "topics/components/_question.html" %}{% endfor %}
           </div>
-          {% include "topics/components/_deeper.html" %}
+          {% if section.questions_has_extra %}
+          <button type="button" class="deeper" :aria-expanded="deeper" @click="deeper = !deeper">
+            <i class="ph-duotone" :class="deeper ? 'ph-minus-circle' : 'ph-plus-circle'"></i>
+            <span x-text="deeper ? 'Show less' : 'Go deeper'"></span>
+          </button>
+          {% endif %}
         </div>
       </section>
 
