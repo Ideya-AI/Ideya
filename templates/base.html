@@ -1,4 +1,4 @@
-{% load static %}<!doctype html>
+{% load static infinity_extras %}<!doctype html>
 <html lang="en" class="h-full">
 <head>
   <meta charset="utf-8" />
@@ -22,13 +22,13 @@
   <link rel="stylesheet" href="{% static 'vendor/phosphor-duotone.css' %}" />
   <link rel="stylesheet" href="{% static 'vendor/phosphor-fill.css' %}" />
 
-  <!-- Design tokens + component system -->
-  <link rel="stylesheet" href="{% static 'css/tokens.css' %}" />
-  <link rel="stylesheet" href="{% static 'css/infinity.css' %}" />
+  <!-- Design tokens + component system (cache-busted in DEBUG for live edits) -->
+  <link rel="stylesheet" href="{% static_v 'css/tokens.css' %}" />
+  <link rel="stylesheet" href="{% static_v 'css/infinity.css' %}" />
 
   <!-- infinity.js must load before Alpine so its alpine:init listener runs.
        Alpine + HTMX self-hosted (Alpine pinned 3.15.12, HTMX 2.0.3). -->
-  <script defer src="{% static 'js/infinity.js' %}"></script>
+  <script defer src="{% static_v 'js/infinity.js' %}"></script>
   <script defer src="{% static 'vendor/alpine.min.js' %}"></script>
   <script src="{% static 'vendor/htmx.min.js' %}"></script>
 
@@ -43,7 +43,7 @@
     <div class="nav-in">
       <a class="brand" href="{% url 'topics:home' %}">
         <img class="mark" src="{% static 'img/infinity-mark.png' %}" alt="Infinity" />
-        <span class="wm">Infinity</span>
+        <span class="wm">infinity</span>
       </a>
       <button class="search" type="button" @click="$store.search.open = true" aria-label="Search topics and categories">
         <i class="ph-duotone ph-magnifying-glass"></i>
@@ -68,11 +68,10 @@
 
   <footer class="foot">
     <div class="foot-in">
-      <span class="fb"><img src="{% static 'img/infinity-mark.png' %}" alt="" />Infinity — a curated atlas of hard issues</span>
+      <span class="fb"><img src="{% static 'img/infinity-mark.png' %}" alt="" />Infinity Project</span>
       <nav class="flinks" aria-label="Footer">
         <a href="{% url 'topics:home' %}#directory">All topics</a>
         <a href="{% url 'topics:about' %}">About</a>
-        <span>Neutral by intention.</span>
       </nav>
     </div>
   </footer>

@@ -133,6 +133,15 @@ class Topic(models.Model):
     icon = models.CharField(
         max_length=80, blank=True, help_text="Phosphor icon name, e.g. 'atom'."
     )
+    primary_image_prompt = models.TextField(
+        blank=True,
+        help_text=(
+            "Generation prompt (Nano Banana / Gemini) for the topic's bespoke "
+            "primary illustration. The image itself is committed at "
+            "static/img/topics/<slug>.png; this keeps its provenance so the art "
+            "can be re-run or refined."
+        ),
+    )
     scope_covered = models.CharField(
         max_length=400, blank=True, help_text="What this topic covers."
     )
@@ -185,6 +194,15 @@ class Topic(models.Model):
         """Spine kinds this topic hasn't authored yet (order preserved)."""
         have = set(self.sections.values_list("kind", flat=True))
         return [k for k in SECTION_ORDER if k != Section.TOPICS and k not in have]
+
+    @property
+    def primary_art(self):
+        """Static path to this topic's bespoke primary illustration, when one
+        has been added at static/img/topics/<slug>.png; else None so callers
+        fall back to the Phosphor glyph tile. The committed asset rides the
+        existing WhiteNoise/manifest static pipeline."""
+        rel = f"img/topics/{self.slug}.png"
+        return rel if (settings.BASE_DIR / "static" / rel).exists() else None
 
     @property
     def color_category(self):
@@ -302,9 +320,9 @@ class Section(models.Model):
         """Any normal-layer content — part of the base read on desktop, behind
         the section's Go-deeper on mobile (decision A: medium sets the base)."""
         if self.kind == self.BASICS:
-            return bool(self.intro) or any(
-                s.note or s.reveal == "normal" for s in self.stats.all()
-            )
+            # Breadth axis only: extra tiles tagged to appear at normal depth.
+            # The lead note now always shows; per-tile detail is its own axis.
+            return any(s.reveal == "normal" for s in self.stats.all())
         if self.kind == self.QUESTIONS:
             return any(q.why or q.reveal == "normal" for q in self.questions.all())
         if self.kind == self.POSITIONS:
@@ -322,7 +340,9 @@ class Section(models.Model):
     def has_layer_deep(self) -> bool:
         """Any deep-layer content — always behind the section's Go-deeper."""
         if self.kind == self.BASICS:
-            return any(s.source_label or s.reveal == "deep" for s in self.stats.all())
+            # Breadth axis only: extra tiles tagged to appear at deep depth.
+            # Source moved into the per-tile More expander.
+            return any(s.reveal == "deep" for s in self.stats.all())
         if self.kind == self.QUESTIONS:
             return any(
                 q.lean_pct_a is not None or q.reveal == "deep"
@@ -338,6 +358,48 @@ class Section(models.Model):
         if self.kind == self.ACTIONS:
             return any(a.reveal == "deep" for a in self.actions.all())
         return False
+
+    BASICS_DEFAULT_ROWS = 2  # desktop rows (3-col grid) shown before Go-deeper
+
+    def _basics_base_count(self, stats):
+        """How many leading (importance-ordered) tiles to show before Go-deeper,
+        snapped to a clean desktop-row boundary so the default never orphans."""
+        cols = 3
+        cap = cols * self.BASICS_DEFAULT_ROWS
+
+        def span(s):
+            return 2 if s.wide else 1
+
+        if sum(span(s) for s in stats) <= cap:
+            return len(stats)
+        cells = n = 0
+        for s in stats:
+            if cells + span(s) > cap:
+                break
+            cells += span(s)
+            n += 1
+        while n > 0 and sum(span(s) for s in stats[:n]) % cols != 0:
+            n -= 1
+        return n or len(stats)
+
+    @property
+    def basics_tiles(self):
+        """Importance-ordered Stats annotated for the two-axis Basics grid:
+        `is_extra` (revealed only when Go-deeper is open) and `fill_row` (a
+        trailing orphan spans the full row so rows stay clean)."""
+        stats = list(self.stats.all())
+        base_n = self._basics_base_count(stats)
+        for i, s in enumerate(stats):
+            s.is_extra = i >= base_n
+            s.fill_row = False
+        if stats and sum(2 if s.wide else 1 for s in stats) % 3 == 1:
+            stats[-1].fill_row = True
+        return stats
+
+    @property
+    def basics_has_extra(self):
+        stats = list(self.stats.all())
+        return self._basics_base_count(stats) < len(stats)
 
 
 class Stat(models.Model):
@@ -376,7 +438,15 @@ class Stat(models.Model):
     range_at = models.PositiveSmallIntegerField(
         null=True, blank=True, help_text="0–100 marker position."
     )
-    note = models.CharField(max_length=400, blank=True)
+    note = models.CharField(
+        max_length=400,
+        blank=True,
+        help_text="Lead line on the tile — simple, 1–2 sentences.",
+    )
+    detail = models.TextField(
+        blank=True,
+        help_text="Deeper follow-up revealed when the tile is expanded. More depth/complexity allowed here.",
+    )
     source_url = models.URLField(blank=True)
     source_label = models.CharField(max_length=120, blank=True)
     source_published = models.CharField(

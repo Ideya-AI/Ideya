@@ -62,6 +62,18 @@ class TopicAdmin(admin.ModelAdmin):
         ),
         ("Overview", {"fields": ("scope_covered", "scope_excluded", "why_now")}),
         (
+            "Primary art",
+            {
+                "classes": ("collapse",),
+                "description": (
+                    "The bespoke hero illustration is committed at "
+                    "static/img/topics/&lt;slug&gt;.png. This field stores the "
+                    "prompt used to generate it."
+                ),
+                "fields": ("primary_image_prompt",),
+            },
+        ),
+        (
             "Research provenance",
             {
                 "classes": ("collapse",),

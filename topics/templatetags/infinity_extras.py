@@ -1,10 +1,29 @@
+import os
 import re
 
 from django import template
+from django.conf import settings
+from django.contrib.staticfiles import finders
+from django.templatetags.static import static as static_url
 from django.utils.html import escape
 from django.utils.safestring import mark_safe
 
 register = template.Library()
+
+
+@register.simple_tag
+def static_v(path):
+    """Like {% static %}, but in DEBUG appends a ?v=<mtime> cache-buster so an
+    edited CSS/JS file is refetched on the next reload instead of being served
+    stale from the browser cache. No-op in production — those assets are already
+    content-hashed by ManifestStaticFilesStorage, so the URL is left untouched."""
+    url = static_url(path)
+    if settings.DEBUG:
+        abs_path = finders.find(path)
+        if abs_path and os.path.exists(abs_path):
+            stamp = int(os.path.getmtime(abs_path))
+            url = f"{url}{'&' if '?' in url else '?'}v={stamp}"
+    return url
 
 
 @register.filter
