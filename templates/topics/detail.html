@@ -194,17 +194,22 @@
                @open-sec.window="$event.detail === 'positions' && (open = true)">
         <button type="button" class="acc-head m-only" :aria-expanded="open" @click="open = !open">
           <span class="ai"><i class="ph-duotone ph-{{ section.eyebrow_icon }}"></i></span>
-          <span class="at"><span class="an">Positions</span><span class="as">the debate — {{ section.positions.all|length }} position{{ section.positions.all|length|pluralize }} · tap a card</span></span>
+          <span class="at"><span class="an">Positions</span><span class="as">{{ section.eyebrow_sub }} · tap a card</span></span>
           <span class="cv"><i class="ph-duotone ph-caret-down"></i></span>
         </button>
         <div class="sec-body">
-          <div class="eyebrow"><i class="ph-duotone ph-{{ section.eyebrow_icon }}"></i>Positions <span class="sub">· the debate — {{ section.positions.all|length }} position{{ section.positions.all|length|pluralize }}</span><span class="stepn">{{ section.step }}</span></div>
+          <div class="eyebrow"><i class="ph-duotone ph-{{ section.eyebrow_icon }}"></i>Positions <span class="sub">· {{ section.eyebrow_sub }}</span><span class="stepn">{{ section.step }}</span></div>
           <div class="pos-grid">
-            {% for p in section.positions.all %}{% include "topics/components/_position.html" %}{% endfor %}
+            {% for p in section.positions_tiles %}{% include "topics/components/_position.html" %}{% endfor %}
           </div>
-          {% include "topics/components/_deeper.html" with d_only=True %}
+          {% if section.positions_has_extra %}
+          <button type="button" class="deeper" :aria-expanded="deeper" @click="deeper = !deeper">
+            <i class="ph-duotone" :class="deeper ? 'ph-minus-circle' : 'ph-plus-circle'"></i>
+            <span x-text="deeper ? 'Show less' : 'Go deeper'"></span>
+          </button>
+          {% endif %}
         </div>
-        {% for p in section.positions.all %}{% include "topics/components/_psheet.html" %}{% endfor %}
+        {% for p in section.positions_tiles %}{% include "topics/components/_psheet.html" %}{% endfor %}
       </section>
 
       {% elif section.kind == "crux" %}
