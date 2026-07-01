@@ -402,13 +402,23 @@ def share_cards(request, slug):
         .first()
     )
     crux_section = Section.objects.filter(topic=topic, kind="crux").first()
+    all_positions = list(pos_section.positions.all()) if pos_section else []
     return render(
         request,
         "topics/share.html",
         {
             "topic": topic,
-            "positions": pos_section.positions.all() if pos_section else [],
+            # Card shows only the primary positions (the leading cards on the
+            # detail page); the header still reports the debate's full size.
+            "positions": all_positions[: Section.POSITIONS_DEFAULT_SHOWN],
+            "positions_total": len(all_positions),
             "crux": getattr(crux_section, "crux", None) if crux_section else None,
+            "render_card": (
+                request.GET.get("render")
+                if request.GET.get("render") in ("og", "sq", "pt")
+                else ""
+            ),
+            "render_unfurl": request.GET.get("render") == "unfurl",
         },
     )
 

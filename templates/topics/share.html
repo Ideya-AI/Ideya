@@ -10,6 +10,19 @@
 <style>
   *{box-sizing:border-box} html,body{margin:0}
   body{background:#e7eae6;font-family:var(--font-sans);-webkit-font-smoothing:antialiased;padding:34px;display:flex;flex-direction:column;gap:34px;align-items:center}
+  /* ?render=og — one bare full-size OG card at 1200x630 for headless capture */
+  body.card-only{padding:0;background:#fff;display:block}
+  body.card-only .card{position:static}
+  /* ?render=unfurl — dev preview of how the shared link unfurls in a feed */
+  body.unfurl-only{padding:44px 34px;background:#eef1f4;display:block}
+  .unfurl{width:600px;margin:0 auto;font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+  .unfurl .lead{font-size:13px;color:#5b6b7a;margin:0 0 14px;font-weight:500}
+  .uf-card{border:1px solid #d3dce3;border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 10px 34px -14px rgba(20,30,40,.28)}
+  .uf-card img{display:block;width:100%;height:auto;border-bottom:1px solid #e5ebf0}
+  .uf-meta{padding:13px 17px 15px}
+  .uf-dom{font-size:13px;color:#8794a1}
+  .uf-ttl{font-size:15px;font-weight:600;color:#0f1720;margin:3px 0 4px;line-height:1.3}
+  .uf-desc{font-size:13px;color:#5b6b7a;line-height:1.45;margin:0}
   .row{display:flex;gap:30px;align-items:flex-start;flex-wrap:wrap;justify-content:center}
   .frame{display:flex;flex-direction:column;gap:9px}
   .flabel{font-weight:700;font-size:12px;color:var(--ink-500);display:flex;align-items:center;gap:7px}
@@ -33,42 +46,62 @@
   .pos{display:flex;align-items:center;gap:10px} .pos .pd{border-radius:9999px;flex:none}
   .pos .pnm{font-weight:700;color:#f3f5f0;letter-spacing:-.01em}
   .hook{margin-top:auto;border-top:1px solid rgba(255,255,255,.12);display:flex;gap:10px;align-items:flex-start}
-  .hook i{color:var(--green-500);flex:none} .hook .ct{color:#c7cfc1;line-height:1.4} .hook .ct b{color:#fff;font-weight:600}
+  .hook i{color:var(--green-500);flex:none} .hook .ct{color:#dfe4da;line-height:1.4} .hook .ct b{color:#fff;font-weight:600}
   .og{width:1200px;height:630px;--pad:52px;--gap:20px;--tir:18px}
-  .og .lt{flex:0 0 56%} .og .brand{font-size:21px}.og .brand .mark{width:30px;height:30px}.og .brand .tag{font-size:14px}
-  .og .cat{font-size:14px;padding:7px 15px;margin-top:30px} .og .ttlrow{margin-top:24px}
-  .og .ticon{width:74px;height:74px}.og .ticon i{font-size:42px} .og .ttl{font-size:60px}
-  .og .summary{font-size:21px;margin-top:22px;max-width:24ch} .og .url{font-size:14px}.og .url .ub .mark{width:20px;height:20px;border-radius:5px}
-  .og .dk{flex:0 0 44%;--pgap:15px;--pmt:20px} .og .dlabel{font-size:14px}
-  .og .pos .pd{width:13px;height:13px}.og .pos .pnm{font-size:21px}
-  .og .hook{margin-top:26px;padding-top:20px}.og .hook i{font-size:22px}.og .hook .ct{font-size:15px}
+  .og .lt{flex:0 0 56%;justify-content:center} .og .brand{font-size:22px}.og .brand .mark{height:30px;width:auto}
+  .og .cat{font-size:15px;padding:7px 15px;margin-top:30px} .og .ttlrow{margin-top:26px}
+  .og .ticon{width:80px;height:80px}.og .ticon i{font-size:46px} .og .ttl{font-size:66px}
+  .og .summary{font-size:24px;margin-top:24px;max-width:24ch}
+  .og .dk{flex:0 0 44%;--pgap:17px;--pmt:24px;justify-content:center} .og .dlabel{font-size:16px}
+  .og .pos .pd{width:14px;height:14px}.og .pos .pnm{font-size:25px}
+  .og .hook{margin-top:28px;padding-top:22px}.og .hook i{font-size:24px}.og .hook .ct{font-size:20px}
   .sq{width:1080px;height:1080px;flex-direction:column;--pad:56px;--gap:22px;--tir:20px}
-  .sq .lt{flex:0 0 56%} .sq .brand{font-size:23px}.sq .brand .mark{width:32px;height:32px}.sq .brand .tag{font-size:15px}
+  .sq .lt{flex:0 0 52%} .sq .brand{font-size:23px}.sq .brand .mark{height:32px;width:auto}.sq .brand .tag{font-size:15px}
   .sq .cat{font-size:15px;padding:8px 17px;margin-top:36px} .sq .ttlrow{margin-top:30px}
   .sq .ticon{width:92px;height:92px}.sq .ticon i{font-size:52px} .sq .ttl{font-size:78px}
   .sq .summary{font-size:27px;margin-top:28px;max-width:26ch}
-  .sq .dk{flex:0 0 44%;--pgap:18px;--pmt:26px} .sq .dlabel{font-size:16px}
+  .sq .dk{flex:0 0 48%;--pgap:18px;--pmt:24px;justify-content:center} .sq .dlabel{font-size:16px}
   .sq .pos .pd{width:15px;height:15px}.sq .pos .pnm{font-size:26px}
-  .sq .hook{margin-top:30px;padding-top:24px}.sq .hook i{font-size:26px}.sq .hook .ct{font-size:18px}
+  .sq .hook{margin-top:30px;padding-top:24px}.sq .hook i{font-size:28px}.sq .hook .ct{font-size:24px}
   .pt{width:1080px;height:1350px;flex-direction:column;--pad:60px;--gap:24px;--tir:22px}
-  .pt .lt{flex:0 0 58%} .pt .brand{font-size:24px}.pt .brand .mark{width:34px;height:34px}.pt .brand .tag{font-size:16px}
+  .pt .lt{flex:0 0 58%} .pt .brand{font-size:24px}.pt .brand .mark{height:34px;width:auto}.pt .brand .tag{font-size:16px}
   .pt .cat{font-size:16px;padding:9px 18px;margin-top:40px} .pt .ttlrow{margin-top:34px}
   .pt .ticon{width:104px;height:104px}.pt .ticon i{font-size:60px} .pt .ttl{font-size:92px}
   .pt .summary{font-size:30px;margin-top:32px;max-width:24ch} .pt .url{font-size:17px}.pt .url .ub .mark{width:24px;height:24px;border-radius:6px}
   .pt .dk{flex:0 0 42%;--pgap:20px;--pmt:30px} .pt .dlabel{font-size:17px}
   .pt .pos .pd{width:16px;height:16px}.pt .pos .pnm{font-size:30px}
-  .pt .hook{margin-top:34px;padding-top:26px}.pt .hook i{font-size:30px}.pt .hook .ct{font-size:20px}
+  .pt .hook{margin-top:34px;padding-top:26px}.pt .hook i{font-size:32px}.pt .hook .ct{font-size:28px}
+  /* call-to-action */
+  .cta{display:inline-flex;align-items:center;gap:8px;font-weight:700;color:var(--green-700)}
+  .og .cta{font-size:19px;margin-top:32px}.og .cta i{font-size:18px}
+  .sq .cta{font-size:23px;margin-top:36px}.sq .cta i{font-size:22px}
+  .pt .cta{font-size:25px;margin-top:40px}.pt .cta i{font-size:24px}
 </style>
 </head>
-<body>
+<body{% if render_card %} class="card-only"{% elif render_unfurl %} class="unfurl-only"{% endif %}>
 {% with cc=topic.color_category %}
 {% spaceless %}
+{% if render_card %}
+<div class="card {{ render_card }}">{% include "topics/components/_share_card.html" %}</div>
+{% elif render_unfurl %}
+<div class="unfurl">
+  <p class="lead">How this link unfurls when shared (X / LinkedIn / Slack)</p>
+  <div class="uf-card">
+    <img src="{% if topic.social_card %}{% static topic.social_card %}{% endif %}" alt="" />
+    <div class="uf-meta">
+      <div class="uf-dom">infinity · a curated atlas of hard issues</div>
+      <div class="uf-ttl">{{ topic.title }} — Infinity</div>
+      <p class="uf-desc">{{ topic.summary }}</p>
+    </div>
+  </div>
+</div>
+{% else %}
 <div class="row">
   <div class="frame">
     <div class="flabel"><i class="ph-duotone ph-link"></i>OG / Link preview <span class="dim">· 1200 × 630</span></div>
     <div class="scaler" style="width:600px;height:315px">
       <div class="card og" style="transform:scale(0.5);transform-origin:top left">
-        {% include "topics/components/_share_card.html" with mark_static="img/infinity-mark.png" show_url=1 %}
+        {% include "topics/components/_share_card.html" %}
       </div>
     </div>
   </div>
@@ -86,11 +119,12 @@
     <div class="flabel"><i class="ph-duotone ph-rectangle"></i>Portrait / Story <span class="dim">· 1080 × 1350</span></div>
     <div class="scaler" style="width:454px;height:567px">
       <div class="card pt" style="transform:scale(0.42037);transform-origin:top left">
-        {% include "topics/components/_share_card.html" with show_url=1 %}
+        {% include "topics/components/_share_card.html" %}
       </div>
     </div>
   </div>
 </div>
+{% endif %}
 {% endspaceless %}
 {% endwith %}
 </body>

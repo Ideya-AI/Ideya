@@ -256,6 +256,14 @@ class Topic(models.Model):
         return rel if (settings.BASE_DIR / "static" / rel).exists() else None
 
     @property
+    def social_card(self):
+        """Static path to this topic's 1200x630 OG link-preview card, generated to
+        static/img/social/<slug>.png (via `?render=og` on the share view + headless
+        Chrome); else None so the page falls back to the generic Infinity mark."""
+        rel = f"img/social/{self.slug}.png"
+        return rel if (settings.BASE_DIR / "static" / rel).exists() else None
+
+    @property
     def color_category(self):
         """The category whose --cat-* colour tints this topic in discovery tiers."""
         return self.primary_category or self.categories.first()
