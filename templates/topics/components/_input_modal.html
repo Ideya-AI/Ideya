@@ -1,0 +1,33 @@
+{% comment %}"Add your view" modal — three free tabs (Align / Questions / Your take), each a
+topic-level prompt rendered via _prompt.html. Selections auto-save on click; text saves
+when its send button is tapped (both flash the Saved toast). Nothing is required and the
+tabs aren't gated. Opened from the page CTA or the Actions card via $store.input; closing
+(X / scrim / Esc) just dismisses — saved answers persist.{% endcomment %}
+{% if topic_prompts %}
+<div x-data="{ tab: 0 }" x-show="$store.input.open" x-cloak style="display:none"
+     x-effect="document.body.style.overflow = $store.input.open ? 'hidden' : ''">
+  <div class="scrim" @click="$store.input.open = false"></div>
+  <div class="sheet overlay-card" role="dialog" aria-modal="true" aria-label="Add your view"
+       @keydown.escape.window="$store.input.open = false">
+    <header class="sheet-head">
+      <div>
+        <div class="sheet-eyebrow"><i class="ph-duotone ph-pen-nib"></i>Add your view</div>
+        <div class="sheet-topic">{{ topic.title }}</div>
+      </div>
+      <button type="button" class="sheet-close" @click="$store.input.open = false" aria-label="Close"></button>
+    </header>
+
+    <div class="modal-tabs" role="tablist">
+      <button type="button" class="mtab" :class="{ on: tab === 0 }" @click="tab = 0" :aria-selected="tab === 0">Align</button>
+      <button type="button" class="mtab" :class="{ on: tab === 1 }" @click="tab = 1" :aria-selected="tab === 1">Questions</button>
+      <button type="button" class="mtab" :class="{ on: tab === 2 }" @click="tab = 2" :aria-selected="tab === 2">Your take</button>
+    </div>
+
+    <div class="modal-tab-body">
+      {% with prompt=topic_prompts.0 %}<div x-show="tab === 0">{% if prompt %}{% include "topics/components/_prompt.html" %}{% endif %}</div>{% endwith %}
+      {% with prompt=topic_prompts.1 %}<div x-show="tab === 1" x-cloak>{% if prompt %}{% include "topics/components/_prompt.html" %}{% endif %}</div>{% endwith %}
+      {% with prompt=topic_prompts.2 %}<div x-show="tab === 2" x-cloak>{% if prompt %}{% include "topics/components/_prompt.html" %}{% endif %}</div>{% endwith %}
+    </div>
+  </div>
+</div>
+{% endif %}

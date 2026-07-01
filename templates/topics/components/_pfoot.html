@@ -1,22 +1,25 @@
-{% comment %}Position participation foot — stance toggle, gated agree ratio,
-importance vote. HTMX-swapped by topics:stance. Expects `p` (with .stance and
-.voted annotated); `prefix` ("pfoot" / "spfoot") keeps ids unique between the
-desktop card and the mobile sheet.{% endcomment %}
+{% comment %}Position participation foot — the agree/disagree split bar (mirrors the
+questions lean bar). The two poles double as vote buttons (click to cast / switch /
+retract); the bar shows the agree-vs-disagree proportion with counts, plus the %
+once the sample passes the threshold. Expects `p` (with .stance); `prefix` keeps
+ids unique across the card and the mobile sheet.{% endcomment %}
 {% with pf=prefix|default:"pfoot" %}
 <div class="pfoot" id="{{ pf }}-{{ p.id }}">
-  <div class="ad" role="group" aria-label="Your stance on {{ p.name }}">
-    <button type="button" class="adb{% if p.stance == 'agree' %} on{% endif %}"
-            hx-post="{% url 'topics:stance' p.id %}" hx-vals='{"value": "agree", "prefix": "{{ pf }}"}'
-            hx-target="#{{ pf }}-{{ p.id }}" hx-swap="outerHTML" hx-sync="#{{ pf }}-{{ p.id }}:replace"
-            aria-pressed="{% if p.stance == 'agree' %}true{% else %}false{% endif %}">Agree</button>
-    <button type="button" class="adb{% if p.stance == 'disagree' %} on{% endif %}"
-            hx-post="{% url 'topics:stance' p.id %}" hx-vals='{"value": "disagree", "prefix": "{{ pf }}"}'
-            hx-target="#{{ pf }}-{{ p.id }}" hx-swap="outerHTML" hx-sync="#{{ pf }}-{{ p.id }}:replace"
-            aria-pressed="{% if p.stance == 'disagree' %}true{% else %}false{% endif %}">Disagree</button>
-  </div>
   {% with ss=p.stance_stats %}
-  {% if ss.shown %}<span class="arat"><b>{{ ss.pct_agree }}%</b> agree · {{ ss.total }} stance{{ ss.total|pluralize }}</span>{% endif %}
+  <div class="lean stance">
+    <div class="lt">
+      <button type="button" class="lp a{% if p.stance == 'agree' %} on{% endif %}"
+        hx-post="{% url 'topics:stance' p.id %}" hx-vals='{"value": "agree", "prefix": "{{ pf }}"}'
+        hx-target="#{{ pf }}-{{ p.id }}" hx-swap="outerHTML" hx-sync="#{{ pf }}-{{ p.id }}:replace"
+        aria-pressed="{% if p.stance == 'agree' %}true{% else %}false{% endif %}">Agree{% if ss.shown %} <b>{{ ss.pct_agree }}%</b>{% endif %}</button>
+      <button type="button" class="lp b{% if p.stance == 'disagree' %} on{% endif %}"
+        hx-post="{% url 'topics:stance' p.id %}" hx-vals='{"value": "disagree", "prefix": "{{ pf }}"}'
+        hx-target="#{{ pf }}-{{ p.id }}" hx-swap="outerHTML" hx-sync="#{{ pf }}-{{ p.id }}:replace"
+        aria-pressed="{% if p.stance == 'disagree' %}true{% else %}false{% endif %}">{% if ss.shown %}<b>{{ ss.pct_disagree }}%</b> {% endif %}Disagree</button>
+    </div>
+    <div class="lbar" role="img" aria-label="{{ ss.agree }} agree, {{ ss.disagree }} disagree"><span class="la" style="width:{{ ss.pct_agree|default:50 }}%"></span><span class="ld" style="width:{{ ss.pct_disagree|default:50 }}%"></span></div>
+    <div class="lnote">{% if ss.total %}{{ ss.agree }} agree · {{ ss.disagree }} disagree{% else %}Be the first to weigh in{% endif %}</div>
+  </div>
   {% endwith %}
-  {% if pf == "spfoot" %}{% include "topics/components/_pimp.html" with prefix="spimp" %}{% else %}{% include "topics/components/_pimp.html" %}{% endif %}
 </div>
 {% endwith %}

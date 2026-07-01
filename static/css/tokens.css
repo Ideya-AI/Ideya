@@ -40,6 +40,17 @@
   --accent-tint:   var(--green-tint);
   --on-accent:     #ffffff;
 
+  /* semantic participation colours (decoupled from the per-topic --pos-* hues) */
+  --agree:    var(--green-500);
+  --disagree: #b5614a;
+  --danger:   #b5614a;            /* downvotes, errors, destructive buttons */
+  --pole-a:   #3b7ea1;            /* question direction poles (A / B) */
+  --pole-b:   #b5614a;            /* unified with the value/rust axis (was slate) */
+  --axis-empirical: #3b7ea1;      /* the "empirical" question / crux axis */
+  --axis-values:    #b5614a;      /* the "values" question / crux axis */
+  --axis-empirical-on-dark: #8ec5e6;  /* legible on the dark Crux band (>=7:1) */
+  --axis-values-on-dark:    #e7a791;
+
   /* ---- Surfaces & lines (semantic aliases) */
   --bg:           var(--ink-50);
   --surface:      var(--white);

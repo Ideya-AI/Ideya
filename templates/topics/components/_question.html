@@ -1,31 +1,19 @@
-{% comment %}One open question row. Expects `q`.
-Axis 2 (depth): glance = vote + type tag + question text; clicking the body
-expands it to reveal why it's contested, the deeper follow-up, and the editorial
-lean bar. Axis 1 (breadth): `is_extra` rows appear only when the section's
-Go-deeper is open.{% endcomment %}
+{% comment %}One open question. Compact view = vote + type tag + question text +
+"why it's contested" + the lean bar. Clicking the body expands a deeper analysis
+paragraph (q.detail). Axis 1 (breadth): `is_extra` rows appear only when the
+section's Go-deeper is open.{% endcomment %}
 <div class="q{% if q.is_extra %} q-xtra{% endif %}" x-data="{ more: false }">
   {% include "topics/components/_qvote.html" %}
-  <div class="qb{% if q.why or q.detail or q.lean_pct_a is not None %} qb-x{% endif %}"
-       {% if q.why or q.detail or q.lean_pct_a is not None %}@click="more = !more"{% endif %}>
+  {% if q.detail %}<button type="button" class="xtoggle" @click.stop="more = !more" :aria-expanded="more" aria-label="Toggle analysis"><i class="ph-duotone ph-caret-down"></i></button>{% endif %}
+  <div class="qb{% if q.detail %} qb-x{% endif %}"{% if q.detail %} @click="more = !more"{% endif %}>
     <span class="qtag {% if q.kind == 'empirical' %}emp{% else %}val{% endif %}" data-tip="{{ q.kind_tip }}"><i class="ph-duotone ph-{{ q.tag_icon }}"></i>{{ q.get_kind_display }}</span>
     <div class="qt">{{ q.text }}</div>
-    {% if q.why or q.detail or q.lean_pct_a is not None %}
+    {% if q.why %}<p class="qw"><b>Why it's contested:</b> {{ q.why }}</p>{% endif %}
+    {% if q.detail %}
     <div class="qmore" x-show="more" x-cloak>
-      {% if q.why %}<p class="qw"><b>Why it's contested:</b> {{ q.why }}</p>{% endif %}
-      {% if q.detail %}<div class="qdetail">{{ q.detail|linebreaks }}</div>{% endif %}
-      {% if q.lean_pct_a is not None %}
-      <div class="qfoot">
-        <div class="lean{% if q.kind == 'empirical' %} blue{% endif %}">
-          <div class="lt">
-            <span class="a">{{ q.lean_label_a }} <b>{{ q.lean_pct_a }}%</b></span>
-            <span><b>{{ q.lean_pct_b }}%</b> {{ q.lean_label_b }}</span>
-          </div>
-          <div class="lbar"><span class="la" style="width:{{ q.lean_pct_a }}%"></span><span class="ld" style="width:{{ q.lean_pct_b }}%"></span></div>
-          <div class="lnote">Editorial read of the research — not a user poll.</div>
-        </div>
-      </div>
-      {% endif %}
+      <div class="qdetail">{{ q.detail|linebreaks }}</div>
     </div>
     {% endif %}
+    {% if q.lean_label_a and q.lean_label_b %}<div class="qfoot" @click.stop>{% include "topics/components/_qlean.html" %}</div>{% endif %}
   </div>
 </div>

@@ -1,0 +1,157 @@
+{% load infinity_extras %}
+{% comment %}One open-participation prompt + its control, keyed by kind. Expects
+`prompt` with `.user_response` (the participant's saved Response, or None) and
+`.summary` (the latest approved InputSummary, or None). HTMX-posts each answer to
+topics:respond and swaps this whole card (#prompt-{{ prompt.id }}). An empty
+answer retracts. Structured aggregates surface once total >= min_prompt_sample.
+The control mirrors the .lean / .ad chip patterns — token-based, lightly styled.
+{% endcomment %}
+{% with ur=prompt.user_response stats=prompt.response_stats %}
+<div class="prompt card" id="prompt-{{ prompt.id }}">
+  <div class="prompt-q"><span>{{ prompt.text }}</span></div>
+  {% if prompt.help_text %}<p class="prompt-help">{{ prompt.help_text }}</p>{% endif %}
+
+  {% comment %}--- FREE TEXT ---{% endcomment %}
+  {% if prompt.kind == "free_text" %}
+  <div class="text-send">
+    <textarea class="field prompt-text" id="ptext-{{ prompt.id }}" name="text" rows="3" placeholder="Share your reasoning…">{% if ur %}{{ ur.text }}{% endif %}</textarea>
+    <button type="button" class="send-btn" aria-label="Save your take"
+      hx-post="{% url 'topics:respond' prompt.id %}" hx-include="#ptext-{{ prompt.id }}" hx-swap="none"
+      @click="$store.toast.flash('Saved')"><i class="ph-fill ph-paper-plane-tilt"></i></button>
+  </div>
+
+  {% comment %}--- CHOOSE ONE (radio chips; re-click the picked one to clear) ---{% endcomment %}
+  {% elif prompt.kind == "choose_one" %}
+  <div class="prompt-opts" role="group" aria-label="Choose one">
+    {% for o in prompt.options.all %}
+    {% if ur and o.id in ur.selected_ids %}
+    <button type="button" class="chip-opt on"
+      hx-post="{% url 'topics:respond' prompt.id %}" hx-vals='{"option": ""}'
+      hx-target="#prompt-{{ prompt.id }}" hx-swap="outerHTML" aria-pressed="true">{{ o.label }}</button>
+    {% else %}
+    <button type="button" class="chip-opt"
+      hx-post="{% url 'topics:respond' prompt.id %}" hx-vals='{"option": "{{ o.id }}"}'
+      hx-target="#prompt-{{ prompt.id }}" hx-swap="outerHTML" aria-pressed="false">{{ o.label }}</button>
+    {% endif %}
+    {% endfor %}
+  </div>
+
+  {% comment %}--- CHOOSE MANY (checkbox chips; Save the set, none = retract) ---{% endcomment %}
+  {% elif prompt.kind == "choose_many" %}
+  <div class="pick" id="pf-{{ prompt.id }}">
+    {% for o in prompt.options.all %}
+    <div class="pick-row">
+      <label class="pick-opt">
+        <input type="checkbox" name="option" value="{{ o.id }}" hidden{% if ur and o.id in ur.selected_ids %} checked{% endif %}
+          hx-post="{% url 'topics:respond' prompt.id %}" hx-trigger="change" hx-include="#pf-{{ prompt.id }}" hx-swap="none">
+        {% if o.position %}<span class="pick-dot" style="background:{{ o.position.color_var }}"></span>
+        <span><span class="pick-name">{{ o.label }}</span><span class="pick-steel">{{ o.position.steelman }}</span></span>
+        {% else %}<span class="pick-check"></span><span class="pick-name">{{ o.label }}</span>{% endif %}
+      </label>
+      {% if not o.position %}
+      <div class="note-send">
+        <input type="text" class="field pick-note" name="note_{{ o.id }}" value="{% if ur %}{{ ur.option_texts|dictget:o.id }}{% endif %}" placeholder="What do you think?">
+        <button type="button" class="send-btn" aria-label="Save note"
+          hx-post="{% url 'topics:respond' prompt.id %}" hx-include="#pf-{{ prompt.id }}" hx-swap="none"
+          @click="$store.toast.flash('Saved')"><i class="ph-fill ph-paper-plane-tilt"></i></button>
+      </div>
+      {% endif %}
+    </div>
+    {% endfor %}
+    {% if prompt.allow_text %}
+    <div class="pick-opt pick-own">
+      <span class="pick-dot" style="background:var(--ink-300)"></span>
+      <textarea class="pick-own-input" name="text" rows="2" placeholder="Something else — your own position…">{% if ur %}{{ ur.text }}{% endif %}</textarea>
+      <button type="button" class="send-btn" aria-label="Save"
+        hx-post="{% url 'topics:respond' prompt.id %}" hx-include="#pf-{{ prompt.id }}" hx-swap="none"
+        @click="$store.toast.flash('Saved')"><i class="ph-fill ph-paper-plane-tilt"></i></button>
+    </div>
+    {% endif %}
+  </div>
+
+  {% comment %}--- RATE (1–5; re-click the current value to clear) ---{% endcomment %}
+  {% elif prompt.kind == "rate" %}
+  <div class="prompt-rate" role="group" aria-label="Rate from 1 to 5">
+    {% for _ in "12345" %}{% with n=forloop.counter %}
+    <button type="button" class="rate-dot{% if ur and ur.rating >= n %} on{% endif %}"
+      hx-post="{% url 'topics:respond' prompt.id %}"
+      hx-vals='{"rating": "{% if ur and ur.rating == n %}{% else %}{{ n }}{% endif %}"}'
+      hx-target="#prompt-{{ prompt.id }}" hx-swap="outerHTML"
+      aria-pressed="{% if ur and ur.rating == n %}true{% else %}false{% endif %}"
+      aria-label="{{ n }} of 5">{{ n }}</button>
+    {% endwith %}{% endfor %}
+    {% if not prompt.help_text %}<span class="rate-scale">1 = low · 5 = high</span>{% endif %}
+  </div>
+
+  {% comment %}--- RANK (reorder, then Save) ---{% endcomment %}
+  {% elif prompt.kind == "rank" %}
+  <div class="prompt-rank" x-data="{
+      rows: [],
+      init() { this.rows = Array.from(this.$refs.list.querySelectorAll('[data-id]')); this.renumber(); },
+      renumber() {
+        this.rows.forEach((r, i) => r.querySelector('.rank-n').textContent = i + 1);
+        this.$refs.csv.value = this.rows.map(r => r.dataset.id).join(',');
+      },
+      move(row, d) {
+        const i = this.rows.indexOf(row), j = i + d;
+        if (j < 0 || j >= this.rows.length) return;
+        [this.rows[i], this.rows[j]] = [this.rows[j], this.rows[i]];
+        this.rows.forEach(r => row.parentNode.appendChild(r));
+        this.renumber();
+      }
+    }">
+    <div class="rank-list" x-ref="list">
+      {% for o in prompt.ranked_options %}
+      <div class="rank-row" data-id="{{ o.id }}">
+        <span class="rank-n"></span>
+        <span class="rank-label">{{ o.label }}</span>
+        <span class="rank-moves">
+          <button type="button" class="rank-mv" @click="move($el.closest('.rank-row'), -1)" aria-label="Move up"><i class="ph-duotone ph-caret-up"></i></button>
+          <button type="button" class="rank-mv" @click="move($el.closest('.rank-row'), 1)" aria-label="Move down"><i class="ph-duotone ph-caret-down"></i></button>
+        </span>
+      </div>
+      {% endfor %}
+    </div>
+    <input type="hidden" id="prank-{{ prompt.id }}" name="ranking" x-ref="csv">
+    <button type="button" class="btn btn-primary prompt-save"
+      hx-post="{% url 'topics:respond' prompt.id %}" hx-include="#prank-{{ prompt.id }}"
+      hx-target="#prompt-{{ prompt.id }}" hx-swap="outerHTML">Save ranking</button>
+  </div>
+  {% endif %}
+
+
+  {% comment %}--- LIVE AGGREGATE (structured, gated by sample size) ---{% endcomment %}
+  {% if prompt.is_structured and stats.total >= min_prompt_sample %}
+  <div class="prompt-agg">
+    <div class="agg-head">What readers chose · {{ stats.total }} response{{ stats.total|pluralize }}</div>
+    {% if prompt.kind == "rate" %}
+    <div class="agg-rate"><b>{{ stats.mean }}</b><span>/ 5 average · {{ stats.n }} rating{{ stats.n|pluralize }}</span></div>
+    {% elif prompt.kind == "rank" %}
+    {% for oid, info in stats.by_option.items %}
+    <div class="agg-row"><span class="agg-label">{{ info.label }}</span><span class="agg-val">{{ info.points }} pts</span></div>
+    {% endfor %}
+    {% else %}
+    {% for oid, info in stats.by_option.items %}
+    <div class="agg-row">
+      <span class="agg-label">{{ info.label }}</span>
+      <span class="agg-track"><span class="agg-fill" style="width: {% widthratio info.count stats.total 100 %}%"></span></span>
+      <span class="agg-val">{% widthratio info.count stats.total 100 %}%</span>
+    </div>
+    {% endfor %}
+    {% endif %}
+  </div>
+  {% endif %}
+
+  {% comment %}--- APPROVED SUMMARY ("What readers think") ---{% endcomment %}
+  {% if prompt.summary %}
+  <div class="prompt-summary">
+    <div class="ps-head"><i class="ph-duotone ph-sparkle"></i>What readers think</div>
+    <p class="ps-body">{{ prompt.summary.body|linebreaks }}</p>
+    {% if prompt.summary.themes %}
+    <ul class="ps-themes">{% for t in prompt.summary.themes %}<li>{{ t }}</li>{% endfor %}</ul>
+    {% endif %}
+    <p class="ps-note">AI-drafted from {{ prompt.summary.n_responses }} response{{ prompt.summary.n_responses|pluralize }}, editor-approved.</p>
+  </div>
+  {% endif %}
+</div>
+{% endwith %}

@@ -9,7 +9,7 @@
 
 {% block content %}
 <div class="topic" x-data="{ active: 'overview' }" x-init="
-  const secs = [...$el.querySelectorAll('.content .sec')];
+  const secs = [...$el.querySelectorAll('.content .sec:not(.prompt-block)')];
   const obs = new IntersectionObserver((es) => {
     es.forEach(e => { if (e.isIntersecting) active = e.target.id; });
   }, { rootMargin: '-15% 0px -75% 0px', threshold: 0 });
@@ -119,7 +119,7 @@
         {% if topic.summary %}<p class="ov-desc">{{ topic.summary }}</p>{% endif %}
         {% endif %}
         {% if topic.scope_covered or topic.why_now %}
-        <div class="ov-meta when-normal is-grid">
+        <div class="ov-meta">
           {% if topic.scope_covered %}
           <div class="mc"><div class="mk"><i class="ph-duotone ph-crop"></i>Scope</div>
             <div class="mv">{{ topic.scope_covered }}{% if topic.scope_excluded %} <b>Not</b> {{ topic.scope_excluded }}{% endif %}</div></div>
@@ -131,18 +131,12 @@
         </div>
         {% endif %}
         {% if related %}
-        <div class="ov-related when-normal is-flex">
+        <div class="ov-related">
           <span class="rk">Connects to</span>
           {% for edge in related %}
-          <a class="rchip" href="{{ edge.target.get_absolute_url }}" target="_blank" rel="noopener"{% if edge.target.color_category %} style="--cat: {{ edge.target.color_category.color_var }}; --cat-tint: {{ edge.target.color_category.tint_var }};"{% endif %}><i class="ph-duotone ph-{{ edge.target.icon|default:'circle' }}"></i>{{ edge.target.title }}</a>
+          <a class="rchip" href="{{ edge.target.get_absolute_url }}"{% if edge.target.color_category %} style="--cat: {{ edge.target.color_category.color_var }}; --cat-tint: {{ edge.target.color_category.tint_var }};"{% endif %}><i class="ph-duotone ph-{{ edge.target.icon|default:'circle' }}"></i>{{ edge.target.title }}</a>
           {% endfor %}
         </div>
-        {% endif %}
-        {% if topic.scope_covered or topic.why_now or related %}
-        <button type="button" class="deeper m-only" :aria-expanded="deeper" @click="deeper = !deeper">
-          <i class="ph-duotone" :class="deeper ? 'ph-minus-circle' : 'ph-plus-circle'"></i>
-          <span x-text="deeper ? 'Show less' : 'Go deeper'"></span>
-        </button>
         {% endif %}
       </section>
 
@@ -190,6 +184,12 @@
             <span x-text="deeper ? 'Show less' : 'Go deeper'"></span>
           </button>
           {% endif %}
+          {% for q in section.questions_tiles %}{% if q.prompts %}
+          <div class="prompt-attach">
+            <div class="prompt-attach-for"><i class="ph-duotone ph-question"></i>On “{{ q.text }}”</div>
+            {% for prompt in q.prompts %}{% include "topics/components/_prompt.html" %}{% endfor %}
+          </div>
+          {% endif %}{% endfor %}
         </div>
       </section>
 
@@ -213,13 +213,18 @@
             <span x-text="deeper ? 'Show less' : 'Go deeper'"></span>
           </button>
           {% endif %}
+          {% for p in section.positions_tiles %}{% if p.prompts %}
+          <div class="prompt-attach">
+            <div class="prompt-attach-for"><span class="pdot" style="background:{{ p.color_var }}"></span>On “{{ p.name }}”</div>
+            {% for prompt in p.prompts %}{% include "topics/components/_prompt.html" %}{% endfor %}
+          </div>
+          {% endif %}{% endfor %}
         </div>
-        {% for p in section.positions_tiles %}{% include "topics/components/_psheet.html" %}{% endfor %}
       </section>
 
       {% elif section.kind == "crux" %}
-      <section class="sec" id="crux" x-data="{ deeper: false, open: true }"
-               :class="{ 'is-open': deeper, 'acc-open': open }"
+      <section class="sec" id="crux" x-data="{ open: true }"
+               :class="{ 'acc-open': open }"
                @open-sec.window="$event.detail === 'crux' && (open = true)">
         <button type="button" class="acc-head m-only" :aria-expanded="open" @click="open = !open">
           <span class="ai"><i class="ph-duotone ph-{{ section.eyebrow_icon }}"></i></span>
@@ -227,25 +232,29 @@
           <span class="cv"><i class="ph-duotone ph-caret-down"></i></span>
         </button>
         <div class="sec-body">
-        <div class="eyebrow"><i class="ph-duotone ph-{{ section.eyebrow_icon }}"></i>Crux <span class="sub">· {{ section.eyebrow_sub }}</span><span class="stepn">{{ section.step }}</span></div>
+        <div class="eyebrow"><i class="ph-duotone ph-{{ section.eyebrow_icon }}"></i>Crux<span class="stepn">{{ section.step }}</span></div>
         {% with c=section.crux %}
-        <div class="crux">
-          <div class="ck"><i class="ph-duotone ph-target"></i>The real disagreement</div>
-          {% if c %}
+        {% if c %}
+        {% comment %}Axis 2 only: the lead is the header; clicking the band reveals
+        the empirical/values branches. No breadth axis — there is one crux.{% endcomment %}
+        <div class="crux"{% if c.empirical or c.values %} x-data="{ more: false }"{% endif %}>
           <p class="clead">{{ c.lead|lead_hl:c.lead_highlight }}</p>
-          {% if c.subtitle %}<p class="csub when-normal">{{ c.subtitle }}</p>{% endif %}
+          {% if c.subtitle %}<p class="csub">{{ c.subtitle }}</p>{% endif %}
           {% if c.empirical or c.values %}
-          <div class="csplit when-deep is-grid">
-            <div class="ax emp"><div class="ah"><i class="ph-duotone ph-flask"></i>If empirical</div><p>{{ c.empirical }}</p></div>
-            <div class="ax val"><div class="ah"><i class="ph-duotone ph-heart"></i>If values</div><p>{{ c.values }}</p></div>
+          <div class="csplit" x-show="more" x-cloak @click.stop>
+            <div class="ax emp"><div class="ah"><i class="ph-duotone ph-flask"></i>If it's empirical</div><p>{{ c.empirical }}</p></div>
+            <div class="ax val"><div class="ah"><i class="ph-duotone ph-heart"></i>If it's values</div><p>{{ c.values }}</p></div>
           </div>
-          {% endif %}
-          {% else %}
-          <p class="clead">The crux for this topic hasn't been written yet.</p>
+          <button type="button" class="cmore" @click.stop="more = !more" :aria-expanded="more">
+            <span x-text="more ? 'Show less' : 'See how it resolves'"></span>
+            <i class="ph-duotone ph-caret-down" :class="{ flip: more }"></i>
+          </button>
           {% endif %}
         </div>
+        {% else %}
+        <div class="crux"><p class="clead">The crux for this topic hasn't been written yet.</p></div>
+        {% endif %}
         {% endwith %}
-        {% include "topics/components/_deeper.html" %}
         </div>
       </section>
 
@@ -275,19 +284,24 @@
 
       {% endfor %}
 
-      {% if sections and positions %}
+      {% if topic_prompts %}
       <div class="endcap">
-        <button type="button" class="submit-cta" @click="$dispatch('open-submit')">
-          <i class="ph-duotone ph-paper-plane-tilt"></i>Submit your view
+        <button type="button" class="submit-cta" @click="$store.input.open = true">
+          <i class="ph-duotone ph-pen-nib"></i>Add your view
         </button>
-        <div class="ec-note">Aggregated into the landscape — never posted as a comment.</div>
+        <div class="ec-note">Nothing required — share what you like. Aggregated, never posted.</div>
       </div>
       {% endif %}
+
     </main>
   </div>
 </div>
 {% endblock %}
 
 {% block modals %}
-  {% include "topics/components/_submit_modal.html" %}
+  {% include "topics/components/_input_modal.html" %}
+  <div class="toast" x-data x-cloak x-show="$store.toast.show"
+       x-transition.opacity.duration.250ms role="status" aria-live="polite">
+    <i class="ph-fill ph-check-circle"></i><span x-text="$store.toast.msg"></span>
+  </div>
 {% endblock %}

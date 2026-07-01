@@ -1,6 +1,11 @@
+import datetime
+
 from django.conf import settings
+from django.contrib.contenttypes.fields import GenericForeignKey
+from django.contrib.contenttypes.models import ContentType
 from django.db import models
 from django.urls import reverse
+from django.utils import timezone
 
 # Fixed render order of a topic's (and category's) section spine.
 SECTION_ORDER = [
@@ -117,6 +122,16 @@ class Topic(models.Model):
     PUBLISHED = "published"
     STATUS_CHOICES = [(DRAFT, "Draft"), (PUBLISHED, "Published")]
 
+    FAST = "fast"
+    MEDIUM = "medium"
+    SLOW = "slow"
+    VOLATILITY_CHOICES = [
+        (FAST, "Fast — review ~quarterly"),
+        (MEDIUM, "Medium — review ~twice a year"),
+        (SLOW, "Slow — review ~yearly"),
+    ]
+    REVIEW_INTERVAL_DAYS = {FAST: 90, MEDIUM: 180, SLOW: 365}
+
     title = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200, unique=True)
     status = models.CharField(
@@ -176,6 +191,12 @@ class Topic(models.Model):
         blank=True,
         help_text="Pipeline dossier — sources, raw research, notes. Reviewer-facing, not public.",
     )
+    volatility = models.CharField(
+        max_length=10,
+        choices=VOLATILITY_CHOICES,
+        default=MEDIUM,
+        help_text="How fast this topic's content goes stale — drives the review cadence.",
+    )
 
     objects = models.Manager()
     published = PublishedTopicManager()
@@ -194,6 +215,36 @@ class Topic(models.Model):
         """Spine kinds this topic hasn't authored yet (order preserved)."""
         have = set(self.sections.values_list("kind", flat=True))
         return [k for k in SECTION_ORDER if k != Section.TOPICS and k not in have]
+
+    # --- content freshness / review cadence ---
+    @property
+    def review_interval_days(self) -> int:
+        return self.REVIEW_INTERVAL_DAYS.get(self.volatility, 180)
+
+    @property
+    def last_touched(self):
+        """The clock staleness runs from: most recent human review, else research."""
+        return self.reviewed_at or self.researched_at
+
+    @property
+    def review_due_at(self):
+        """When this topic next falls due for review (None if never touched)."""
+        base = self.last_touched
+        return (
+            base + datetime.timedelta(days=self.review_interval_days) if base else None
+        )
+
+    @property
+    def is_review_due(self) -> bool:
+        """True when overdue — or never researched (which always needs attention)."""
+        due = self.review_due_at
+        return due is None or due <= timezone.now()
+
+    @property
+    def days_overdue(self) -> int:
+        """Days past the due date; large sentinel if never touched (sorts first)."""
+        due = self.review_due_at
+        return 10**6 if due is None else (timezone.now() - due).days
 
     @property
     def primary_art(self):
@@ -522,7 +573,9 @@ class Question(models.Model):
         blank=True,
         help_text="Deeper follow-up revealed when the question is expanded.",
     )
-    votes = models.PositiveIntegerField(default=0, help_text="Importance aggregate.")
+    votes = models.IntegerField(
+        default=0, help_text="Net importance (upvotes minus downvotes)."
+    )
     # Optional aggregated lean (shown at deep depth).
     lean_label_a = models.CharField(max_length=40, blank=True)
     lean_label_b = models.CharField(max_length=40, blank=True)
@@ -562,6 +615,45 @@ class Question(models.Model):
     def lean_pct_b(self):
         return None if self.lean_pct_a is None else 100 - self.lean_pct_a
 
+    @property
+    def lean_stats(self):
+        """Community direction-vote aggregate (the reader poll) — distinct from the
+        editorial lean_pct_a. Counts QuestionLean rows for poles a/b."""
+        a = getattr(self, "lean_a_count", None)
+        b = getattr(self, "lean_b_count", None)
+        if a is None or b is None:
+            a = self.community_leans.filter(value="a").count()
+            b = self.community_leans.filter(value="b").count()
+        total = a + b
+        return {
+            "a": a,
+            "b": b,
+            "total": total,
+            "pct_a": round(100 * a / total) if total else None,
+            "pct_b": round(100 * b / total) if total else None,
+            "shown": total >= MIN_STANCE_SAMPLE,
+        }
+
+    @property
+    def lean_display(self):
+        """The single direction bar: community % once reader votes reach the
+        threshold, otherwise the research/editorial estimate (lean_pct_a)."""
+        ls = self.lean_stats
+        if ls["shown"]:
+            return {
+                "pct_a": ls["pct_a"],
+                "pct_b": ls["pct_b"],
+                "source": "community",
+                "total": ls["total"],
+            }
+        pa = self.lean_pct_a if self.lean_pct_a is not None else 50
+        return {
+            "pct_a": pa,
+            "pct_b": 100 - pa,
+            "source": "research",
+            "total": ls["total"],
+        }
+
 
 class Position(models.Model):
     section = models.ForeignKey(
@@ -588,7 +680,9 @@ class Position(models.Model):
     proponents = models.CharField(
         max_length=400, blank=True, help_text="Comma-separated notable proponents."
     )
-    importance = models.PositiveIntegerField(default=0)
+    importance = models.IntegerField(
+        default=0, help_text="Net importance (upvotes minus downvotes)."
+    )
     prevalence_weight = models.PositiveSmallIntegerField(
         default=0,
         help_text="How widely held / influential (0–100). Seeds default order so the "
@@ -640,7 +734,9 @@ class Position(models.Model):
             "agree": agree,
             "disagree": disagree,
             "total": total,
+            "net": agree - disagree,
             "pct_agree": round(100 * agree / total) if total else None,
+            "pct_disagree": round(100 * disagree / total) if total else None,
             "shown": total >= MIN_STANCE_SAMPLE,
         }
 
@@ -782,6 +878,8 @@ class Vote(ParticipationBase):
         blank=True,
     )
 
+    value = models.SmallIntegerField(default=1, help_text="+1 upvote, -1 downvote.")
+
     class Meta:
         constraints = [
             models.CheckConstraint(
@@ -849,6 +947,39 @@ class Stance(ParticipationBase):
         return f"{self.get_value_display()} · {self.position}"
 
 
+class QuestionLean(ParticipationBase):
+    """One reader's direction on a question (pole A or B) — the community poll,
+    distinct from the editorial lean. One row per participant per question;
+    re-clicking the same pole retracts it, the other pole switches it."""
+
+    A = "a"
+    B = "b"
+    VALUE_CHOICES = [(A, "Pole A"), (B, "Pole B")]
+
+    question = models.ForeignKey(
+        Question, related_name="community_leans", on_delete=models.CASCADE
+    )
+    value = models.CharField(max_length=1, choices=VALUE_CHOICES)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=["question", "session_key"],
+                condition=~models.Q(session_key=""),
+                name="unique_qlean_per_session",
+            ),
+            models.UniqueConstraint(
+                fields=["question", "user"],
+                condition=models.Q(user__isnull=False),
+                name="unique_qlean_per_user",
+            ),
+        ]
+
+    def __str__(self) -> str:
+        return f"{self.value} · {self.question}"
+
+
 class Submission(models.Model):
     """One inbound 'submit your view' — anonymous by default, aggregated, never a comment."""
 
@@ -890,3 +1021,221 @@ class Submission(models.Model):
         return (
             f"{self.get_stance_display()} · {self.topic} · {self.created_at:%Y-%m-%d}"
         )
+
+
+# --------------------------------------------------------------------------- #
+# Open participation layer — free-form + structured prompts, attachable at any
+# scale, with GenAI summaries that publish only after editorial approval.
+# Distinct from the core Question/Position votes above.
+# --------------------------------------------------------------------------- #
+class Prompt(models.Model):
+    """A reader-input prompt — free-form or structured (choose/rate/rank) — that can
+    attach to anything at any scale (a Topic overall, or a sub-piece: Section,
+    Question, Position) via a generic relation. The open participation layer:
+    structured answers aggregate into `response_stats`; text answers feed the
+    editor-gated GenAI summaries (`InputSummary`)."""
+
+    FREE_TEXT = "free_text"
+    CHOOSE_ONE = "choose_one"
+    CHOOSE_MANY = "choose_many"
+    RATE = "rate"
+    RANK = "rank"
+    KIND_CHOICES = [
+        (FREE_TEXT, "Free text"),
+        (CHOOSE_ONE, "Choose one"),
+        (CHOOSE_MANY, "Choose many"),
+        (RATE, "Rating (1–5)"),
+        (RANK, "Ranking"),
+    ]
+
+    kind = models.CharField(max_length=12, choices=KIND_CHOICES, default=FREE_TEXT)
+    text = models.CharField(max_length=300, help_text="The prompt shown to readers.")
+    help_text = models.CharField(max_length=300, blank=True)
+    allow_text = models.BooleanField(
+        default=False,
+        help_text="For structured prompts: also collect an optional free-text 'why'.",
+    )
+
+    # Generic attachment — overarching (Topic) or a sub-piece (Section/Question/Position).
+    content_type = models.ForeignKey(
+        ContentType,
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        help_text="What this attaches to (Topic / Section / Question / Position).",
+    )
+    object_id = models.PositiveIntegerField(null=True, blank=True)
+    target = GenericForeignKey("content_type", "object_id")
+
+    order = models.PositiveSmallIntegerField(default=0)
+    active = models.BooleanField(
+        default=True, help_text="Inactive prompts are hidden and accept no responses."
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["order", "id"]
+        indexes = [models.Index(fields=["content_type", "object_id"])]
+
+    def __str__(self) -> str:
+        return f"{self.get_kind_display()} · {self.text[:50]}"
+
+    @property
+    def is_structured(self) -> bool:
+        return self.kind in (self.CHOOSE_ONE, self.CHOOSE_MANY, self.RATE, self.RANK)
+
+    @property
+    def collects_text(self) -> bool:
+        return self.kind == self.FREE_TEXT or self.allow_text
+
+    @property
+    def target_label(self) -> str:
+        t = self.target
+        return f"{t.__class__.__name__}: {t}" if t is not None else "(unattached)"
+
+    @property
+    def response_stats(self):
+        """Aggregate of structured answers + a text-answer count. by_option counts
+        for choose; Borda points for rank; mean for rate. Drives any live display."""
+        responses = list(self.responses.all())
+        out = {
+            "total": len(responses),
+            "text_count": sum(1 for r in responses if (r.text or "").strip()),
+        }
+        if self.kind in (self.CHOOSE_ONE, self.CHOOSE_MANY):
+            from collections import Counter
+
+            counter = Counter()
+            for r in responses:
+                for oid in r.selected_ids or []:
+                    counter[oid] += 1
+            out["by_option"] = {
+                o.id: {"label": o.label, "count": counter.get(o.id, 0)}
+                for o in self.options.all()
+            }
+        elif self.kind == self.RATE:
+            vals = [r.rating for r in responses if r.rating is not None]
+            out["mean"] = round(sum(vals) / len(vals), 2) if vals else None
+            out["n"] = len(vals)
+        elif self.kind == self.RANK:
+            from collections import defaultdict
+
+            points = defaultdict(int)
+            for r in responses:
+                order = r.ranking or []
+                for i, oid in enumerate(order):
+                    points[oid] += len(order) - i  # first = most points
+            out["by_option"] = {
+                o.id: {"label": o.label, "points": points.get(o.id, 0)}
+                for o in self.options.all()
+            }
+        return out
+
+
+class PromptOption(models.Model):
+    """An option for a structured prompt (choose/rank). May reference a Position so
+    'which do you agree with most?' can point at the real mapped positions."""
+
+    prompt = models.ForeignKey(Prompt, related_name="options", on_delete=models.CASCADE)
+    label = models.CharField(max_length=200)
+    position = models.ForeignKey(
+        Position,
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name="prompt_options",
+        help_text="Optional — tie this option to a mapped Position.",
+    )
+    order = models.PositiveSmallIntegerField(default=0)
+
+    class Meta:
+        ordering = ["order", "id"]
+
+    def __str__(self) -> str:
+        return self.label
+
+
+class Response(ParticipationBase):
+    """One participant's answer to a Prompt — one row per (prompt, participant),
+    edited in place (upsert) like a vote. `text` feeds GenAI summaries; the
+    structured fields feed `Prompt.response_stats`."""
+
+    prompt = models.ForeignKey(
+        Prompt, related_name="responses", on_delete=models.CASCADE
+    )
+    text = models.TextField(blank=True)
+    selected_ids = models.JSONField(
+        default=list, blank=True, help_text="Chosen PromptOption ids (choose_*)."
+    )
+    rating = models.PositiveSmallIntegerField(
+        null=True, blank=True, help_text="1–5 for rate prompts."
+    )
+    ranking = models.JSONField(
+        default=list, blank=True, help_text="Ordered PromptOption ids for rank prompts."
+    )
+    option_texts = models.JSONField(
+        default=dict,
+        blank=True,
+        help_text="Optional per-option note/answer for choose_many: {option_id: text}.",
+    )
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=["prompt", "session_key"],
+                condition=~models.Q(session_key=""),
+                name="unique_response_per_session",
+            ),
+            models.UniqueConstraint(
+                fields=["prompt", "user"],
+                condition=models.Q(user__isnull=False),
+                name="unique_response_per_user",
+            ),
+        ]
+
+    def __str__(self) -> str:
+        return f"Response · prompt {self.prompt_id}"
+
+
+class InputSummary(models.Model):
+    """A GenAI digest of the responses to a Prompt — Amazon-review-style "what
+    readers think". Draft by default; it surfaces publicly only after editorial
+    approval (Decision D: AI drafts, a human publishes). It never edits the topic
+    content itself — it is a separate, clearly-labelled reader-opinion digest."""
+
+    DRAFT = "draft"
+    APPROVED = "approved"
+    REJECTED = "rejected"
+    STATUS_CHOICES = [(DRAFT, "Draft"), (APPROVED, "Approved"), (REJECTED, "Rejected")]
+
+    prompt = models.ForeignKey(
+        Prompt, related_name="summaries", on_delete=models.CASCADE
+    )
+    body = models.TextField(help_text="The generated digest.")
+    themes = models.JSONField(
+        default=list, blank=True, help_text="Optional structured themes / learnings."
+    )
+    n_responses = models.PositiveIntegerField(
+        default=0, help_text="How many responses this digest summarized."
+    )
+    model = models.CharField(
+        max_length=60, blank=True, help_text="The model that generated it."
+    )
+    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default=DRAFT)
+    approved_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name="+",
+    )
+    approved_at = models.DateTimeField(null=True, blank=True)
+    generated_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["-generated_at"]
+        verbose_name_plural = "input summaries"
+
+    def __str__(self) -> str:
+        return f"[{self.status}] summary · prompt {self.prompt_id}"

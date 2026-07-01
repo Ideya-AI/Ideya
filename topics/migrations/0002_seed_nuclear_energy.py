@@ -332,11 +332,11 @@ ACTIONS = [
 ]
 
 CRUX = dict(
-    lead="Strip away the rhetoric and the debate narrows to one question.",
-    lead_highlight="one question.",
-    subtitle="Can the West build reactors on budget and on schedule — and is that an engineering problem or a values problem? Almost everyone agrees nuclear is low-carbon and historically safe. They disagree about institutions, learning curves, and the price of caution.",
-    empirical="Cost overruns are contingent — supply chains, one-off designs. Then better data could settle it.",
-    values="High costs encode real democratic caution about dread risk. Then no data closes it — it's a choice.",
+    lead="Is the West's nuclear cost problem one we can engineer away — or one we've chosen?",
+    lead_highlight="or one we've chosen?",
+    subtitle="Almost everyone agrees nuclear is low-carbon and historically safe. The real split is narrower: whether runaway Western build costs are a fixable industrial failure or the deliberate price of democratic caution about catastrophic risk.",
+    empirical="Then the cost gap is contingent, not intrinsic — the residue of lost supply chains, first-of-a-kind designs, and stop-start programs. Korea still builds at a fraction of Western cost, and France once did by repeating one standardized reactor. Freeze a design, build it in series, and costs slide down the learning curve — so evidence and execution could settle it.",
+    values="Then the high price isn't failure but caution made visible — the safety margins, licensing rigor, and veto points a democracy chose against meltdown, proliferation, and waste outlasting its institutions. If that's the real fault line, building cheaper just means caring less — and no data can close that gap. Only a choice can.",
 )
 
 # Energy category meta-Basics (facts about the category itself).

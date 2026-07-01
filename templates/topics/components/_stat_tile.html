@@ -6,6 +6,7 @@ spans a trailing orphan across the row.{% endcomment %}
 <div class="tile{% if stat.wide %} wide{% endif %}{% if stat.is_extra %} tile-xtra{% endif %}{% if stat.fill_row %} tile-fill{% endif %}{% if stat.detail or stat.source_label %} tile-x{% endif %}"
      x-data="{ more: false }"
      {% if stat.detail or stat.source_label %}:class="{ 'tile-open': more }" @click="more = !more"{% endif %}>
+  {% if stat.detail or stat.source_label %}<button type="button" class="xtoggle" @click.stop="more = !more" :aria-expanded="more" aria-label="Toggle details"><i class="ph-duotone ph-caret-down"></i></button>{% endif %}
   <div class="tk">{{ stat.label }}</div>
 
   {% if stat.viz == "ranked" %}
@@ -42,7 +43,7 @@ spans a trailing orphan across the row.{% endcomment %}
   {% if stat.detail or stat.source_label %}
   <div class="tmore" x-show="more" x-cloak>
     {% if stat.detail %}<div class="tdetail">{{ stat.detail|linebreaks }}</div>{% endif %}
-    {% if stat.source_label %}<a class="tsrc" href="{{ stat.source_url|default:'#' }}" target="_blank" rel="noopener" @click.stop><i class="ph-duotone ph-link-simple"></i>{{ stat.source_label }}</a>{% endif %}
+    {% if stat.source_label %}{% if stat.source_url %}<a class="tsrc" href="{{ stat.source_url }}" target="_blank" rel="noopener" @click.stop><i class="ph-duotone ph-link-simple"></i>{{ stat.source_label }}{% if stat.source_published %} · {{ stat.source_published }}{% endif %}</a>{% else %}<span class="tsrc tsrc-plain"><i class="ph-duotone ph-link-simple"></i>{{ stat.source_label }}{% if stat.source_published %} · {{ stat.source_published }}{% endif %}</span>{% endif %}{% endif %}
   </div>
   {% endif %}
 </div>

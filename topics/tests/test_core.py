@@ -2,7 +2,7 @@ from django.contrib.auth import get_user_model
 from django.test import Client, TestCase
 from django.urls import reverse
 
-from .models import (
+from ..models import (
     MIN_STANCE_SAMPLE,
     Position,
     Question,
@@ -165,9 +165,7 @@ class ContentManagementTests(TestCase):
     def test_draft_is_invisible_to_readers(self):
         self.assertEqual(self.client.get("/carbon-capture/").status_code, 404)
         self.assertNotContains(self.client.get("/"), "Carbon Capture")
-        self.assertNotContains(
-            self.client.get("/search/?q=carbon"), "Carbon Capture"
-        )
+        self.assertNotContains(self.client.get("/search/?q=carbon"), "Carbon Capture")
 
     def test_staff_previews_draft_with_banner(self):
         staff = get_user_model().objects.create_user(
@@ -199,9 +197,7 @@ class LayeredReadingTests(TestCase):
         self.assertNotContains(resp, "data-depth")
 
     def test_sections_without_layers_get_no_expander(self):
-        topic = Topic.objects.create(
-            title="Bare", slug="bare", status=Topic.PUBLISHED
-        )
+        topic = Topic.objects.create(title="Bare", slug="bare", status=Topic.PUBLISHED)
         section = Section.objects.create(topic=topic, kind=Section.QUESTIONS)
         self.assertFalse(section.has_layer_normal)
         self.assertFalse(section.has_layer_deep)
@@ -224,7 +220,9 @@ class SearchAndSeoTests(TestCase):
         topic = Topic.objects.get(slug="nuclear-energy")
         topic.summary = "zephyrwordtest appears here"
         topic.save()
-        self.assertContains(self.client.get("/search/?q=zephyrwordtest"), "Nuclear Energy")
+        self.assertContains(
+            self.client.get("/search/?q=zephyrwordtest"), "Nuclear Energy"
+        )
 
     def test_search_hostile_input_is_safe(self):
         resp = self.client.get('/search/?q="; DROP TABLE--')

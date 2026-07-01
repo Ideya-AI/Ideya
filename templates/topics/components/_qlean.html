@@ -1,0 +1,22 @@
+{% comment %}Single direction bar for a question with poles. The pole labels ARE
+the vote buttons (click to cast / switch / retract your lean). The bar shows the
+research estimate until reader votes reach the threshold, then the community %.
+Expects `q` with .user_lean. HTMX-swapped.{% endcomment %}
+<div class="qlean" id="qlean-{{ q.id }}">
+  {% with ld=q.lean_display %}
+  <div class="lean">
+    <div class="lt">
+      <button type="button" class="lp a{% if q.user_lean == 'a' %} on{% endif %}"
+        hx-post="{% url 'topics:question_lean' q.id %}" hx-vals='{"value": "a"}'
+        hx-target="#qlean-{{ q.id }}" hx-swap="outerHTML" hx-sync="#qlean-{{ q.id }}:replace"
+        aria-pressed="{% if q.user_lean == 'a' %}true{% else %}false{% endif %}">{{ q.lean_label_a }} <b>{{ ld.pct_a }}%</b></button>
+      <button type="button" class="lp b{% if q.user_lean == 'b' %} on{% endif %}"
+        hx-post="{% url 'topics:question_lean' q.id %}" hx-vals='{"value": "b"}'
+        hx-target="#qlean-{{ q.id }}" hx-swap="outerHTML" hx-sync="#qlean-{{ q.id }}:replace"
+        aria-pressed="{% if q.user_lean == 'b' %}true{% else %}false{% endif %}"><b>{{ ld.pct_b }}%</b> {{ q.lean_label_b }}</button>
+    </div>
+    <div class="lbar"><span class="la" style="width:{{ ld.pct_a }}%"></span><span class="ld" style="width:{{ ld.pct_b }}%"></span></div>
+    <div class="lnote">{% if ld.source == 'community' %}{{ ld.total }} reader vote{{ ld.total|pluralize }}{% else %}Research estimate{% if ld.total %} · {{ ld.total }} reader vote{{ ld.total|pluralize }} so far{% endif %} · tap a side to weigh in{% endif %}</div>
+  </div>
+  {% endwith %}
+</div>

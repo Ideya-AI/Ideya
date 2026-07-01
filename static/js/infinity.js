@@ -18,46 +18,23 @@
       },
     });
 
-    // Submit-your-view modal open state.
-    Alpine.store("submit", { open: false });
+    // "Add your view" input modal open state.
+    Alpine.store("input", { open: false });
 
-    // Mobile position-detail bottom sheet — holds the open position's id.
-    Alpine.store("psheet", { id: null });
-
-    // The 3-step submit flow: align → stance/importance/reasoning → identity.
-    Alpine.data("submitFlow", () => ({
-      step: 1,
-      position: "",
-      stance: "",
-      importance: 3,
-      reasoning: "",
-      email: "",
-      anon: true,
-      launch() {
-        this.reset();
-        Alpine.store("submit").open = true;
+    // Transient confirmation toast — flash(msg) shows it briefly, then auto-hides.
+    Alpine.store("toast", {
+      show: false,
+      msg: "",
+      _t: null,
+      flash(msg) {
+        this.msg = msg;
+        this.show = true;
+        clearTimeout(this._t);
+        this._t = setTimeout(() => {
+          this.show = false;
+        }, 2400);
       },
-      reset() {
-        this.step = 1;
-        this.position = "";
-        this.stance = "";
-        this.importance = 3;
-        this.reasoning = "";
-        this.email = "";
-        this.anon = true;
-      },
-      get canContinue() {
-        if (this.step === 1) return !!this.position;
-        if (this.step === 2) return !!this.stance;
-        return true;
-      },
-      next() {
-        if (this.canContinue && this.step < 3) this.step++;
-      },
-      back() {
-        if (this.step > 1) this.step--;
-      },
-    }));
+    });
   });
 
   // Keyboard: "/" focuses search, Esc closes overlays. Registered once.

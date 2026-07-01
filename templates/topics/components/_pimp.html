@@ -1,16 +1,21 @@
-{% comment %}Position importance control — a toggle: vote, click again to
-retract. HTMX-swapped on vote. Expects `p` (with .voted); `prefix` makes the
-element id unique when the control renders in both the card and the mobile
-sheet ("pimp" / "spimp").{% endcomment %}
+{% comment %}Position importance control — up/down vote (POST dir=up|down; same
+direction retracts, opposite switches). HTMX-swapped. Expects `p` with
+`.user_vote` (1, -1, 0) and `.importance` (net); `prefix` ("pimp" / "spimp")
+keeps the id unique across the card and the mobile sheet.{% endcomment %}
 {% with pi=prefix|default:"pimp" %}
 <span class="pimp" id="{{ pi }}-{{ p.id }}">
   <button type="button" class="vbtn"
-    hx-post="{% url 'topics:vote' 'position' p.id %}" hx-vals='{"prefix": "{{ pi }}"}'
+    hx-post="{% url 'topics:vote' 'position' p.id %}" hx-vals='{"prefix": "{{ pi }}", "dir": "up"}'
     hx-target="#{{ pi }}-{{ p.id }}" hx-swap="outerHTML" hx-sync="#{{ pi }}-{{ p.id }}:replace"
-    aria-label="{% if p.voted %}Retract your importance vote{% else %}Mark this position important{% endif %}"
-    aria-pressed="{% if p.voted %}true{% else %}false{% endif %}">
-    <i class="ph-fill ph-caret-up{% if p.voted %} up{% endif %}"></i>
+    aria-label="Upvote this position" aria-pressed="{% if p.user_vote == 1 %}true{% else %}false{% endif %}">
+    <i class="ph-{% if p.user_vote == 1 %}fill ph-caret-up up{% else %}duotone ph-caret-up{% endif %}"></i>
   </button>
   <b>{{ p.importance }}</b>
+  <button type="button" class="vbtn"
+    hx-post="{% url 'topics:vote' 'position' p.id %}" hx-vals='{"prefix": "{{ pi }}", "dir": "down"}'
+    hx-target="#{{ pi }}-{{ p.id }}" hx-swap="outerHTML" hx-sync="#{{ pi }}-{{ p.id }}:replace"
+    aria-label="Downvote this position" aria-pressed="{% if p.user_vote == -1 %}true{% else %}false{% endif %}">
+    <i class="ph-{% if p.user_vote == -1 %}fill ph-caret-down down{% else %}duotone ph-caret-down{% endif %}"></i>
+  </button>
 </span>
 {% endwith %}

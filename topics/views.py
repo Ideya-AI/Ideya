@@ -1,3 +1,6 @@
+from collections import defaultdict
+
+from django.contrib.contenttypes.models import ContentType
 from django.db import transaction
 from django.db.models import Count, F, Prefetch, Q
 from django.http import HttpResponse, HttpResponseBadRequest
@@ -10,8 +13,12 @@ from .models import (
     SECTION_ORDER,
     Action,
     Category,
+    InputSummary,
     Position,
+    Prompt,
     Question,
+    QuestionLean,
+    Response,
     Section,
     Stance,
     Stat,
@@ -81,6 +88,114 @@ def _participant(request) -> dict:
     if request.user.is_authenticated:
         return {"user": request.user}
     return {"session_key": _participant_key(request)}
+
+
+# Minimum responses before a prompt's live aggregate surfaces (mirrors the
+# stance gate in spirit — avoids "1 vote = 100%" noise on the open layer).
+MIN_PROMPT_SAMPLE = 5
+
+
+def _decorate_prompt(prompt):
+    """Attach render aids a prompt fragment needs that aren't plain fields.
+    Currently: `ranked_options` — options in the participant's saved order (or
+    the default option order) so the rank control renders in place."""
+    if prompt.kind == Prompt.RANK:
+        opts = list(prompt.options.all())
+        resp = getattr(prompt, "user_response", None)
+        if resp and resp.ranking:
+            rank = {oid: i for i, oid in enumerate(resp.ranking)}
+            opts.sort(key=lambda o: rank.get(o.id, len(rank)))
+        prompt.ranked_options = opts
+    return prompt
+
+
+def _attach_prompts(request, topic, sections):
+    """Load the active prompts attached to a topic and its sub-pieces, attach to
+    each the participant's saved Response (`user_response`) and the latest
+    approved InputSummary (`summary`), and hang the child-attached ones off their
+    object (`question.prompts` / `position.prompts` / `section.prompts`). Returns
+    the topic-level prompts as a list. One query per concern — no per-prompt N+1."""
+    question_ids, position_ids = [], []
+    for s in sections:
+        if s.kind == Section.QUESTIONS:
+            question_ids += [q.id for q in s.questions.all()]
+        elif s.kind == Section.POSITIONS:
+            position_ids += [p.id for p in s.positions.all()]
+
+    ct = ContentType.objects.get_for_model
+    topic_ct = ct(Topic)
+    section_ct = ct(Section)
+    question_ct = ct(Question)
+    position_ct = ct(Position)
+    scopes = [
+        (topic_ct.id, {topic.id}),
+        (section_ct.id, {s.id for s in sections}),
+        (question_ct.id, set(question_ids)),
+        (position_ct.id, set(position_ids)),
+    ]
+    selector = Q()
+    for ct_id, ids in scopes:
+        if ids:
+            selector |= Q(content_type_id=ct_id, object_id__in=ids)
+    if not selector:
+        return []
+
+    prompts = list(
+        Prompt.objects.filter(active=True)
+        .filter(selector)
+        .prefetch_related("options", "responses")
+    )
+    pids = [p.id for p in prompts]
+
+    # Latest approved summary per prompt (the public "what readers think").
+    summary_map = {}
+    for s in InputSummary.objects.filter(
+        prompt_id__in=pids, status=InputSummary.APPROVED
+    ).order_by("-generated_at"):
+        summary_map.setdefault(s.prompt_id, s)
+
+    # The participant's own response — read off the prefetched rows so passive
+    # readers don't trigger a session (mirrors topic_detail's `who`).
+    user_id = request.user.id if request.user.is_authenticated else None
+    skey = "" if user_id else (request.session.session_key or "")
+    for p in prompts:
+        ur = None
+        for r in p.responses.all():
+            if user_id and r.user_id == user_id:
+                ur = r
+                break
+            if not user_id and skey and r.session_key == skey:
+                ur = r
+                break
+        p.user_response = ur
+        p.summary = summary_map.get(p.id)
+        _decorate_prompt(p)
+
+    topic_prompts = []
+    by_section, by_question, by_position = (
+        defaultdict(list),
+        defaultdict(list),
+        defaultdict(list),
+    )
+    for p in prompts:
+        if p.content_type_id == topic_ct.id:
+            topic_prompts.append(p)
+        elif p.content_type_id == question_ct.id:
+            by_question[p.object_id].append(p)
+        elif p.content_type_id == position_ct.id:
+            by_position[p.object_id].append(p)
+        elif p.content_type_id == section_ct.id:
+            by_section[p.object_id].append(p)
+
+    for s in sections:
+        s.prompts = by_section.get(s.id, [])
+        if s.kind == Section.QUESTIONS:
+            for q in s.questions.all():
+                q.prompts = by_question.get(q.id, [])
+        elif s.kind == Section.POSITIONS:
+            for p in s.positions.all():
+                p.prompts = by_position.get(p.id, [])
+    return topic_prompts
 
 
 # --------------------------------------------------------------------------- #
@@ -189,16 +304,16 @@ def topic_detail(request, slug):
         who = {"user": request.user}
     else:
         who = {"session_key": request.session.session_key or ""}
-    voted_q, voted_p, stance_map = set(), set(), {}
+    voted_q, voted_p, stance_map, lean_map = {}, {}, {}, {}
     if request.user.is_authenticated or request.session.session_key:
-        voted_q = set(
+        voted_q = dict(
             Vote.objects.filter(question__section__topic=topic, **who).values_list(
-                "question_id", flat=True
+                "question_id", "value"
             )
         )
-        voted_p = set(
+        voted_p = dict(
             Vote.objects.filter(position__section__topic=topic, **who).values_list(
-                "position_id", flat=True
+                "position_id", "value"
             )
         )
         stance_map = dict(
@@ -206,14 +321,39 @@ def topic_detail(request, slug):
                 "position_id", "value"
             )
         )
+        lean_map = dict(
+            QuestionLean.objects.filter(
+                question__section__topic=topic, **who
+            ).values_list("question_id", "value")
+        )
     for s in sections:
         if s.kind == "questions":
             for q in s.questions.all():
-                q.voted = q.id in voted_q
+                q.user_vote = voted_q.get(q.id, 0)
+                q.user_lean = lean_map.get(q.id, "")
         elif s.kind == "positions":
             for p in s.positions.all():
-                p.voted = p.id in voted_p
+                p.user_vote = voted_p.get(p.id, 0)
                 p.stance = stance_map.get(p.id, "")
+    topic_prompts = _attach_prompts(request, topic, sections)
+    # Filter chips derived from the action kinds actually present, so a chip never
+    # dead-ends to an empty grid. submit_view stays off the bar (it's the "add your
+    # view" CTA, shown under All).
+    actions_section = next((s for s in sections if s.kind == "actions"), None)
+    present = (
+        {a.kind for a in actions_section.actions.all()} if actions_section else set()
+    )
+    act_filters = [("all", "All")] + [
+        (key, label)
+        for key, kind, label in (
+            ("learn", Action.LEARN_MORE, "Learn"),
+            ("donate", Action.DONATE, "Donate"),
+            ("volunteer", Action.VOLUNTEER, "Volunteer"),
+            ("policy", Action.POLICY, "Policy"),
+            ("local", Action.LOCAL, "Local"),
+        )
+        if kind in present
+    ]
     return render(
         request,
         "topics/detail.html",
@@ -222,13 +362,9 @@ def topic_detail(request, slug):
             "sections": sections,
             "related": related,
             "positions": positions,
-            "act_filters": [
-                ("all", "All"),
-                ("learn", "Learn"),
-                ("donate", "Donate"),
-                ("policy", "Policy"),
-                ("local", "Local"),
-            ],
+            "topic_prompts": topic_prompts,
+            "min_prompt_sample": MIN_PROMPT_SAMPLE,
+            "act_filters": act_filters,
         },
     )
 
@@ -329,9 +465,9 @@ def search(request):
 
 @require_POST
 def vote(request, target, pk):
-    """Toggle an importance vote: first POST casts it, a second retracts it.
-    The Vote row is the truth; the counter on the model is a denormalized
-    cache kept in step inside the same transaction."""
+    """Cast an up/down importance vote (POST dir=up|down): the same direction
+    again retracts, the opposite switches. The Vote row is the truth; the
+    model's net counter is a denormalized cache kept in step in one transaction."""
     if target == "question":
         obj = get_object_or_404(Question, pk=pk)
         lookup, counter = {"question": obj}, "votes"
@@ -343,18 +479,24 @@ def vote(request, target, pk):
     else:
         return HttpResponseBadRequest("unknown vote target")
 
+    direction = -1 if request.POST.get("dir") == "down" else 1
     who = _participant(request)
     with transaction.atomic():
         existing = Vote.objects.filter(**who, **lookup).first()
-        if existing:
+        if existing and existing.value == direction:
             existing.delete()
-            delta = -1
+            delta, user_vote = -direction, 0
+        elif existing:
+            delta = direction - existing.value
+            existing.value = direction
+            existing.save(update_fields=["value"])
+            user_vote = direction
         else:
-            Vote.objects.create(**who, **lookup)
-            delta = 1
+            Vote.objects.create(**who, value=direction, **lookup)
+            delta, user_vote = direction, direction
         type(obj).objects.filter(pk=obj.pk).update(**{counter: F(counter) + delta})
     obj.refresh_from_db(fields=[counter])
-    obj.voted = delta > 0
+    obj.user_vote = user_vote
     # The control renders in the card and the mobile sheet under distinct ids.
     prefix = request.POST.get("prefix", "")
     context = {ctx: obj}
@@ -391,6 +533,30 @@ def stance(request, pk):
     if prefix in ("pfoot", "spfoot"):
         context["prefix"] = prefix
     return render(request, "topics/components/_pfoot.html", context)
+
+
+@require_POST
+def question_lean(request, pk):
+    """Cast a community direction vote (pole a|b) on a question. Same pole again
+    retracts; the other pole switches. Returns the _qlean fragment."""
+    question = get_object_or_404(Question, pk=pk)
+    value = request.POST.get("value")
+    if value not in (QuestionLean.A, QuestionLean.B):
+        return HttpResponseBadRequest("unknown lean value")
+
+    who = _participant(request)
+    existing = QuestionLean.objects.filter(question=question, **who).first()
+    if existing and existing.value == value:
+        existing.delete()
+        question.user_lean = ""
+    elif existing:
+        existing.value = value
+        existing.save(update_fields=["value", "updated_at"])
+        question.user_lean = value
+    else:
+        QuestionLean.objects.create(question=question, value=value, **who)
+        question.user_lean = value
+    return render(request, "topics/components/_qlean.html", {"q": question})
 
 
 @require_POST
@@ -432,4 +598,97 @@ def submit(request):
             "position": position,
             "stance": request.POST.get("stance", "agree"),
         },
+    )
+
+
+def _response_payload(request, prompt):
+    """Read the POST for `prompt`'s kind into Response field defaults. Returns
+    (defaults, keep): `keep` is False when there's nothing worth storing (an
+    empty answer → retract, mirroring the vote/stance clear semantics). Invalid
+    option ids are dropped; ratings clamp to 1–5."""
+    valid = set(prompt.options.values_list("id", flat=True))
+    text = (request.POST.get("text") or "").strip()
+    defaults, structured = {}, False
+
+    if prompt.kind == Prompt.FREE_TEXT:
+        defaults["text"] = text
+    elif prompt.kind == Prompt.CHOOSE_ONE:
+        raw = request.POST.get("option") or ""
+        sel = [int(raw)] if raw.isdigit() and int(raw) in valid else []
+        defaults["selected_ids"] = sel
+        structured = bool(sel)
+    elif prompt.kind == Prompt.CHOOSE_MANY:
+        sel = [
+            int(o)
+            for o in request.POST.getlist("option")
+            if o.isdigit() and int(o) in valid
+        ]
+        sel = list(dict.fromkeys(sel))  # de-dupe, keep order
+        defaults["selected_ids"] = sel
+        structured = bool(sel)
+        # Optional per-option note/answer, kept only for chosen options.
+        notes = {}
+        for oid in sel:
+            note = (request.POST.get(f"note_{oid}") or "").strip()
+            if note:
+                notes[str(oid)] = note
+        defaults["option_texts"] = notes
+    elif prompt.kind == Prompt.RATE:
+        try:
+            rating = max(1, min(5, int(request.POST.get("rating"))))
+        except (TypeError, ValueError):
+            rating = None
+        defaults["rating"] = rating
+        structured = rating is not None
+    elif prompt.kind == Prompt.RANK:
+        ranking, seen = [], set()
+        for o in (request.POST.get("ranking") or "").split(","):
+            o = o.strip()
+            if o.isdigit() and int(o) in valid and int(o) not in seen:
+                ranking.append(int(o))
+                seen.add(int(o))
+        defaults["ranking"] = ranking
+        structured = bool(ranking)
+    else:
+        return None, False
+
+    # Structured prompts may also collect an optional free-text "why".
+    if prompt.collects_text and prompt.kind != Prompt.FREE_TEXT:
+        defaults["text"] = text
+
+    keep = structured or (prompt.collects_text and bool(text))
+    return defaults, keep
+
+
+@require_POST
+def respond(request, pk):
+    """Capture a reader's answer to an open-participation Prompt. One Response per
+    participant, edited in place (upsert) like a vote; an empty answer retracts
+    it. Returns the prompt fragment with the saved answer + live aggregate."""
+    prompt = get_object_or_404(Prompt, pk=pk, active=True)
+    defaults, keep = _response_payload(request, prompt)
+    if defaults is None:
+        return HttpResponseBadRequest("unknown prompt kind")
+
+    who = _participant(request)
+    with transaction.atomic():
+        if keep:
+            response, _ = Response.objects.update_or_create(
+                prompt=prompt, **who, defaults=defaults
+            )
+        else:
+            Response.objects.filter(prompt=prompt, **who).delete()
+            response = None
+
+    prompt.user_response = response
+    prompt.summary = (
+        InputSummary.objects.filter(prompt=prompt, status=InputSummary.APPROVED)
+        .order_by("-generated_at")
+        .first()
+    )
+    _decorate_prompt(prompt)
+    return render(
+        request,
+        "topics/components/_prompt.html",
+        {"prompt": prompt, "min_prompt_sample": MIN_PROMPT_SAMPLE},
     )

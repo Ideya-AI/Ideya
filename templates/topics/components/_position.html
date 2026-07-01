@@ -1,14 +1,14 @@
 {% comment %}A named position — the heart. Expects `p`.
 Axis 1 (breadth): `is_extra` cards appear only when the section's Go-deeper is open.
-Axis 2 (depth): glance = name + steelman; on desktop clicking the card expands
-`.pmore` (description, detail, representative, proponents) — no button/signifier,
-mirroring _stat_tile. On mobile the card stays compact and a tap opens the bottom
-sheet (_psheet.html). The participation foot is desktop-only and click-isolated so
-voting never toggles the expand.{% endcomment %}
+Axis 2 (depth): glance = name + steelman; tapping the card expands `.pmore`
+(description, detail, representative, proponents) inline on every viewport — no
+button/signifier, mirroring _stat_tile; mobile behaves the same as desktop (no
+modal). The participation foot is click-isolated so voting never toggles the
+expand.{% endcomment %}
 <div class="pos{% if p.is_extra %} pos-xtra{% endif %}{% if p.has_more %} pos-x{% endif %}"
-     x-data="{ more: false }"{% if p.has_more %} :class="{ 'pos-open': more }"{% endif %}
-     @click="window.matchMedia('(max-width: 640px)').matches ? ($store.psheet.id = {{ p.id }}){% if p.has_more %} : (more = !more){% endif %}">
+     x-data="{ more: false }"{% if p.has_more %} :class="{ 'pos-open': more }" @click="more = !more"{% endif %}>
   <span class="prail" style="background:{{ p.color_var }}"></span>
+  {% if p.has_more %}<button type="button" class="xtoggle d-only" @click.stop="more = !more" :aria-expanded="more" aria-label="Toggle detail"><i class="ph-duotone ph-caret-down"></i></button>{% endif %}
   <div class="phead"><span class="pdot" style="background:{{ p.color_var }}"></span><span class="pn">{{ p.name }}</span></div>
   <p class="psteel">“{{ p.steelman }}”</p>
   {% if p.has_more %}
@@ -20,8 +20,4 @@ voting never toggles the expand.{% endcomment %}
   </div>
   {% endif %}
   <div @click.stop>{% include "topics/components/_pfoot.html" %}</div>
-  <div class="pmeta m-only">
-    <span class="pimp-view"><i class="ph-fill ph-caret-up"></i><b>{{ p.importance }}</b> important</span>
-    <span class="taphint">Details <i class="ph-duotone ph-caret-right"></i></span>
-  </div>
 </div>

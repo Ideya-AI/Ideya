@@ -117,14 +117,17 @@ class Command(BaseCommand):
                 reveal=q.get("reveal", "condensed"),
             )
 
-        # Positions — assign a colour per index; carry prevalence + spectrum.
+        # Positions — honour an explicit colour when the draft carries one (so an
+        # exported topic round-trips its palette); else assign per index as
+        # pipeline drafts have always relied on. Carry prevalence + spectrum.
         ps = sec(Section.POSITIONS)
         for i, p in enumerate(d.get("positions", [])):
+            ck = p.get("color_key")
             Position.objects.create(
                 section=ps,
                 order=i,
                 name=p.get("name", "")[:120],
-                color_key=POS_KEYS[i % len(POS_KEYS)],
+                color_key=ck if ck in POS_KEYS else POS_KEYS[i % len(POS_KEYS)],
                 steelman=p.get("steelman", "")[:400],
                 description=p.get("description", ""),
                 proponents=p.get("proponents", "")[:400],

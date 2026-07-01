@@ -60,3 +60,11 @@ def lead_hl(text, phrase):
     return mark_safe(
         f'{escape(before)}<span class="hl">{escape(mid)}</span>{escape(after)}'
     )
+
+
+@register.filter
+def dictget(mapping, key):
+    """Look up a dict by a (possibly non-string) key — templates can't do d[var]."""
+    if isinstance(mapping, dict):
+        return mapping.get(str(key), "")
+    return ""
