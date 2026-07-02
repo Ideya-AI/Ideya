@@ -8,7 +8,7 @@ session key on login, so callers must capture the key *before* authenticating.
 from django.db import transaction
 from django.db.models import F
 
-from .models import Position, Question, Response, Stance, Submission, Vote
+from .models import Position, Question, Response, Stance, Vote
 
 
 @transaction.atomic
@@ -59,10 +59,6 @@ def merge_session_participation(user, session_key):
         response.user = user
         response.session_key = ""
         response.save(update_fields=["user", "session_key"])
-
-    Submission.objects.filter(session_key=session_key, user__isnull=True).update(
-        user=user, session_key=""
-    )
 
 
 @transaction.atomic

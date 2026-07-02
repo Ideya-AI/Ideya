@@ -13,7 +13,6 @@ from .models import (
     Section,
     Stance,
     Stat,
-    Submission,
     Topic,
     TopicEdge,
     Vote,
@@ -224,13 +223,6 @@ class SectionAdmin(admin.ModelAdmin):
 class TopicEdgeAdmin(admin.ModelAdmin):
     list_display = ("source", "kind", "target")
     list_filter = ("kind",)
-
-
-@admin.register(Submission)
-class SubmissionAdmin(admin.ModelAdmin):
-    list_display = ("topic", "position", "stance", "importance", "created_at")
-    list_filter = ("stance", "topic")
-    readonly_fields = ("created_at",)
 
 
 @admin.register(Vote)

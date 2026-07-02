@@ -22,7 +22,6 @@ from .models import (
     Section,
     Stance,
     Stat,
-    Submission,
     Topic,
     Vote,
 )
@@ -567,48 +566,6 @@ def question_lean(request, pk):
         QuestionLean.objects.create(question=question, value=value, **who)
         question.user_lean = value
     return render(request, "topics/components/_qlean.html", {"q": question})
-
-
-@require_POST
-def submit(request):
-    topic = get_object_or_404(Topic, pk=request.POST.get("topic"))
-    # The flow posts "none" for "None of these" — anything non-numeric means
-    # no position alignment.
-    pos_id = request.POST.get("position") or ""
-    position = Position.objects.filter(pk=pos_id).first() if pos_id.isdigit() else None
-    try:
-        importance = max(1, min(5, int(request.POST.get("importance", 3))))
-    except (TypeError, ValueError):
-        importance = 3
-
-    stance_value = request.POST.get("stance", "agree")
-    who = _participant(request)
-    Submission.objects.create(
-        topic=topic,
-        position=position,
-        stance=stance_value,
-        importance=importance,
-        reasoning=request.POST.get("reasoning", "").strip(),
-        email=request.POST.get("email", "").strip(),
-        **who,
-    )
-    # A submission's agree/disagree is the same signal as the card toggle —
-    # upsert the participant's Stance so aggregates stay one pool. (It no
-    # longer bumps importance; that's a separate, explicit vote.)
-    if position and stance_value in (Stance.AGREE, Stance.DISAGREE):
-        Stance.objects.update_or_create(
-            position=position, **who, defaults={"value": stance_value}
-        )
-
-    return render(
-        request,
-        "topics/components/_submit_done.html",
-        {
-            "topic": topic,
-            "position": position,
-            "stance": request.POST.get("stance", "agree"),
-        },
-    )
 
 
 def _response_payload(request, prompt):

@@ -8,7 +8,6 @@ from ..models import (
     Question,
     Section,
     Stance,
-    Submission,
     Topic,
     Vote,
 )
@@ -103,45 +102,6 @@ class ParticipationTests(TestCase):
         self.assertTrue(stats["shown"])
         self.assertEqual(stats["total"], MIN_STANCE_SAMPLE)
         self.assertEqual(stats["pct_agree"], 90)
-
-    # ---- submit flow ---------------------------------------------------------
-
-    def test_submit_with_no_position(self):
-        resp = self.client.post(
-            reverse("topics:submit"),
-            {"topic": self.topic.id, "position": "none", "stance": "neutral"},
-        )
-        self.assertEqual(resp.status_code, 200)
-        sub = Submission.objects.latest("created_at")
-        self.assertIsNone(sub.position)
-        self.assertEqual(Stance.objects.count(), 0)
-
-    def test_submit_upserts_stance_without_importance_bump(self):
-        start = self.position.importance
-        self.client.post(
-            reverse("topics:submit"),
-            {
-                "topic": self.topic.id,
-                "position": self.position.id,
-                "stance": "agree",
-                "importance": 4,
-            },
-        )
-        self.position.refresh_from_db()
-        self.assertEqual(self.position.importance, start)  # no conflated bump
-        self.assertEqual(Stance.objects.get(position=self.position).value, "agree")
-
-        # Submitting again with a different stance updates, not duplicates.
-        self.client.post(
-            reverse("topics:submit"),
-            {
-                "topic": self.topic.id,
-                "position": self.position.id,
-                "stance": "disagree",
-            },
-        )
-        self.assertEqual(Stance.objects.filter(position=self.position).count(), 1)
-        self.assertEqual(Stance.objects.get(position=self.position).value, "disagree")
 
 
 class PageTests(TestCase):

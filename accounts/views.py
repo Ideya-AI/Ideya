@@ -7,7 +7,7 @@ from django.urls import reverse_lazy
 from django.views.decorators.http import require_POST
 from django.views.generic import CreateView
 
-from topics.models import Stance, Submission, Vote
+from topics.models import Response, Stance, Vote
 from topics.participation import (
     merge_session_participation,
     retract_user_participation,
@@ -74,7 +74,7 @@ def settings_view(request):
             "participation": {
                 "votes": Vote.objects.filter(user=user).count(),
                 "stances": Stance.objects.filter(user=user).count(),
-                "submissions": Submission.objects.filter(user=user).count(),
+                "responses": Response.objects.filter(user=user).count(),
             }
         },
     )

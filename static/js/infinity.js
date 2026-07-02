@@ -3,12 +3,7 @@
 (function () {
   document.addEventListener("alpine:init", function () {
     // Global search overlay open/close state (the dropdown lives in _search.html).
-    Alpine.store("search", {
-      open: false,
-      toggle() {
-        this.open = !this.open;
-      },
-    });
+    Alpine.store("search", { open: false });
 
     // Global nav menu — desktop dropdown / mobile sheet (lives in _menu.html).
     Alpine.store("menu", {

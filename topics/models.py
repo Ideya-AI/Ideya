@@ -560,10 +560,6 @@ class Stat(models.Model):
     def __str__(self) -> str:
         return f"{self.label}: {self.value}"
 
-    @property
-    def reveal_class(self) -> str:
-        return _reveal_class(self.reveal)
-
 
 class Question(models.Model):
     EMPIRICAL = "empirical"
@@ -599,10 +595,6 @@ class Question(models.Model):
         return self.text
 
     @property
-    def reveal_class(self) -> str:
-        return _reveal_class(self.reveal)
-
-    @property
     def tag_icon(self) -> str:
         return "flask" if self.kind == self.EMPIRICAL else "heart"
 
@@ -618,10 +610,6 @@ class Question(models.Model):
             "A value question — the disagreement is about priorities and ethics, "
             "not facts. Evidence informs it but can't settle it alone."
         )
-
-    @property
-    def lean_pct_b(self):
-        return None if self.lean_pct_a is None else 100 - self.lean_pct_a
 
     @property
     def lean_stats(self):
@@ -986,49 +974,6 @@ class QuestionLean(ParticipationBase):
 
     def __str__(self) -> str:
         return f"{self.value} · {self.question}"
-
-
-class Submission(models.Model):
-    """One inbound 'submit your view' — anonymous by default, aggregated, never a comment."""
-
-    AGREE = "agree"
-    DISAGREE = "disagree"
-    NEUTRAL = "neutral"
-    STANCE_CHOICES = [(AGREE, "Agree"), (DISAGREE, "Disagree"), (NEUTRAL, "Neutral")]
-
-    topic = models.ForeignKey(
-        Topic, related_name="submissions", on_delete=models.CASCADE
-    )
-    position = models.ForeignKey(
-        Position,
-        related_name="submissions",
-        on_delete=models.SET_NULL,
-        null=True,
-        blank=True,
-    )
-    # Hybrid participant keying (decision B). The user link anonymizes to NULL
-    # on account deletion — the view itself stays as aggregate content.
-    user = models.ForeignKey(
-        settings.AUTH_USER_MODEL,
-        on_delete=models.SET_NULL,
-        null=True,
-        blank=True,
-        related_name="submissions",
-    )
-    session_key = models.CharField(max_length=40, blank=True, db_index=True)
-    stance = models.CharField(max_length=10, choices=STANCE_CHOICES, default=AGREE)
-    importance = models.PositiveSmallIntegerField(default=3, help_text="1–5.")
-    reasoning = models.TextField(blank=True)
-    email = models.EmailField(blank=True, help_text="Optional; anonymous by default.")
-    created_at = models.DateTimeField(auto_now_add=True)
-
-    class Meta:
-        ordering = ["-created_at"]
-
-    def __str__(self) -> str:
-        return (
-            f"{self.get_stance_display()} · {self.topic} · {self.created_at:%Y-%m-%d}"
-        )
 
 
 # --------------------------------------------------------------------------- #

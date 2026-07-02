@@ -95,18 +95,10 @@ class AccountFlowTests(TestCase):
         self.assertEqual(resp.status_code, 302)
         self.assertIn(reverse("accounts:login"), resp.url)
 
-    def test_delete_account_undoes_counters_and_anonymizes_submissions(self):
+    def test_delete_account_undoes_vote_counters(self):
         user = User.objects.create_user("reader@example.com", "atlas-reader-9")
         self.client.force_login(user)
         self.client.post(self._vote_url("position", self.position))
-        self.client.post(
-            reverse("topics:submit"),
-            {
-                "topic": self.position.section.topic_id,
-                "position": self.position.id,
-                "stance": "agree",
-            },
-        )
         self.position.refresh_from_db()
         counted = self.position.importance
 
@@ -115,6 +107,3 @@ class AccountFlowTests(TestCase):
         self.assertFalse(User.objects.filter(email="reader@example.com").exists())
         self.position.refresh_from_db()
         self.assertEqual(self.position.importance, counted - 1)
-        # The submitted view survives, anonymized.
-        sub = self.position.submissions.latest("created_at")
-        self.assertIsNone(sub.user)
