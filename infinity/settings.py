@@ -142,10 +142,12 @@ WSGI_APPLICATION = "infinity.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+# SQLite by default. Point DJANGO_DB_PATH at a persistent volume in production
+# (e.g. /data/db.sqlite3) so the atlas survives container/instance restarts.
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "NAME": os.environ.get("DJANGO_DB_PATH") or (BASE_DIR / "db.sqlite3"),
     }
 }
 
