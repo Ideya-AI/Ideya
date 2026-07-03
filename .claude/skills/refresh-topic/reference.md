@@ -3,7 +3,14 @@
 Longer detail for [`SKILL.md`](SKILL.md): the file schema, the verdict shape, the
 editorial rules to enforce, the staging→publish mechanics, and the human-gate
 snippets. Authority for the content model is `RESEARCH_PIPELINE.md` and `topics/models.py`;
-the hand-built `research/topics/nuclear-energy.gold.json` is the quality bar.
+the hand-built `research/topics/nuclear-energy.gold.json` is the **content** quality bar.
+
+> **Shape caveat.** `nuclear-energy.gold.json` is in **export shape**
+> (`{title, summary, scope_*, why_now, sections:[…]}`, what `export_topic` emits) —
+> read it for the writing/quality standard, but **do not feed it to `load_topic_draft`**;
+> the loader wants `{draft:{overview,basics,…}}` and would silently load an empty topic
+> from it. For a *loadable-shape* example, see `research/topics/nuclear-energy-pipeline.json`
+> (or any `-calibration`/`-refresh` file the pipeline emits).
 
 ## The file: `research/topics/<slug>.json`
 The loader (`topics/management/commands/load_topic_draft.py`) reads

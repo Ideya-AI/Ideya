@@ -63,8 +63,9 @@ call. **A human reads this and approves before anything is written.**
 
 ## 4 · Apply — load the approved content as a draft
 On approval, write the merged content into `research/topics/<slug>.json` in the
-loader's `{ draft, verdicts, plan_positions }` shape (schema in `reference.md`; the
-hand-built `research/topics/nuclear-energy.gold.json` is the quality bar).
+loader's `{ draft, verdicts, plan_positions }` shape (schema in `reference.md`;
+`nuclear-energy.gold.json` is the *content* bar but is in export shape — copy its
+quality, not its structure; `nuclear-energy-pipeline.json` is a loadable-shape example).
 
 Load it as a **staging draft** — a distinct slug so the **live topic stays published
 and online** and the two can be compared side by side (the loader upserts by slug and

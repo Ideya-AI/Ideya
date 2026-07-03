@@ -40,6 +40,11 @@ class Command(BaseCommand):
         p.add_argument("--title", required=True)
         p.add_argument("--category", required=True, help="primary category slug")
         p.add_argument("--status", default="draft", choices=["draft", "published"])
+        p.add_argument(
+            "--icon",
+            default="",
+            help="Phosphor icon name; falls back to the draft's overview.icon, else 'atom'.",
+        )
 
     @transaction.atomic
     def handle(self, *args, **o):
@@ -50,6 +55,12 @@ class Command(BaseCommand):
             raise CommandError(f"category '{o['category']}' not found")
 
         ov = d.get("overview", {})
+        # Icon: explicit --icon wins, then the draft's overview.icon, then the
+        # existing topic's icon on a refresh (never clobber it), else 'atom'.
+        existing = Topic.objects.filter(slug=o["slug"]).first()
+        icon = (
+            o["icon"] or ov.get("icon") or (existing.icon if existing else "") or "atom"
+        )
         topic, _ = Topic.objects.update_or_create(
             slug=o["slug"],
             defaults={
@@ -60,7 +71,7 @@ class Command(BaseCommand):
                 "scope_covered": ov.get("scope_covered", ""),
                 "scope_excluded": ov.get("scope_excluded", ""),
                 "why_now": ov.get("why_now", ""),
-                "icon": "atom",
+                "icon": icon,
                 "researched_at": timezone.now(),
                 "research_dossier": {
                     "verdicts": payload.get("verdicts", []),
