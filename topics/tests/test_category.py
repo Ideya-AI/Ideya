@@ -1,7 +1,8 @@
+from django.core.management import call_command
 from django.test import TestCase
 from django.urls import reverse
 
-from ..models import Category, Topic
+from ..models import Category, Section, Topic
 
 
 class CategoryPageTests(TestCase):
@@ -91,3 +92,29 @@ class CategoryPageTests(TestCase):
         # the block.super guard protects).
         self.assertIsNone(self.cat.social_card)
         self.assertIn('property="og:image"', self.client.get(self.url).content.decode())
+
+
+class SeedCategoryOverviewsTests(TestCase):
+    """seed_category_overviews fills each category's overview Section (shown on
+    the page in place of the one-line description) and is safely idempotent."""
+
+    def test_seeds_overview_and_is_idempotent(self):
+        cat = Category.objects.create(slug="ai", name="AI", color_key="tech")
+
+        call_command("seed_category_overviews")
+        ov = Section.objects.get(category=cat, kind=Section.OVERVIEW)
+        self.assertIn("Artificial intelligence", ov.body)
+
+        # Re-running updates in place — no duplicate rows (unique constraint).
+        call_command("seed_category_overviews")
+        self.assertEqual(
+            Section.objects.filter(category=cat, kind=Section.OVERVIEW).count(), 1
+        )
+
+    def test_overview_overrides_description_on_page(self):
+        Category.objects.create(
+            slug="ai", name="AI", color_key="tech", description="short blurb"
+        )
+        call_command("seed_category_overviews")
+        body = self.client.get(reverse("topics:category", args=["ai"])).content.decode()
+        self.assertIn("Artificial intelligence has gone", body)
