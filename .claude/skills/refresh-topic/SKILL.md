@@ -37,8 +37,11 @@ detail (JSON shape, verdict shape, exact publish commands, snippets) is in
   `verdicts`) — that's the provenance you're re-verifying against.
 
 ## 2 · Research & verify — the heart of it
-Use the **`deep-research`** skill to re-verify the topic element by element. Honor the
-project's locked editorial rules (full checklist in `reference.md`):
+Use the **`deep-research`** skill to re-verify the topic element by element. The
+research itself is grunt work — run it on other / cheaper models (the same
+strategy as the authoring engine, `RESEARCH_PIPELINE.md` §11); reserve the strong
+model for the adversarial verdicts and the crux. Honor the project's locked
+editorial rules (full checklist in `reference.md`):
 - **Every Stat** — find a current, authoritative source; record value, `source_url`,
   `source_published`, and today's `source_accessed`. Never trust first-pass
   recollection — run the recency pass on any time-sensitive figure. **Prefer durable

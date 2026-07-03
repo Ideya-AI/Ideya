@@ -93,3 +93,27 @@ One session = one topic, end to end. **Input:** a universe catalog entry. **Outp
 - **Stat:** add `source_published_date` + `source_accessed_date` (source_url/source_label already exist).
 - **Topic:** add `researched_at` / `reviewed_at`; surface a light "Updated {month}".
 - **Dossier:** a per-topic store (JSON field or related model) for sources + research notes, visible to the reviewer, not (prominently) to readers.
+
+## 11. Implementation status + model strategy (2026-07-03)
+The pipeline is built as a runnable Workflow: `research/workflows/author_topic.js`
+(Plan → parallel Research → Crux → Distill → adversarial Gate → capped Fix →
+assemble to the `load_topic_draft` shape). First Nuclear Energy calibration
+recovered all four gold positions and the gate caught a real sourcing defect;
+tuning added the Distill stage + tighter caps to close the "researches deep,
+under-distills" gap against the hand-built gold.
+
+**Model strategy — the actual research runs on other / cheaper models; the
+premium model is reserved for judgment.** Two supported paths:
+- **A · In-workflow.** `author_topic.js` routes each stage to a model via
+  `args.models = { research, distill, critique, fix }`. Research defaults to a
+  cheaper tier so a run never burns the premium model on web grunt; Crux and the
+  critics take the `critique` model so the strong model is spent only where
+  editorial judgment matters. Pass `args.today` so `source_accessed` is real.
+- **B · External research, same contract.** Because the loader consumes a plain
+  `{ draft, verdicts, plan_positions }` JSON file (`reference.md` schema), any
+  external model/pipeline can produce a topic draft and load it — the workflow is
+  one producer of that contract, not the only one. The adversarial gate and the
+  human-publish gate apply regardless of which model did the research.
+
+The invariant across both: **AI drafts → a human publishes.** The gate may fail a
+draft and open fixes; it never auto-publishes.
