@@ -10,12 +10,12 @@ This command therefore NEVER creates an approved summary.
   manage.py summarize_input                       # every active text-collecting prompt
   manage.py summarize_input --prompt 12           # just one prompt
   manage.py summarize_input --min-new 10          # require 10 new responses
-  manage.py summarize_input --model claude-opus-4-8
+  manage.py summarize_input --model gemini-2.5-pro
   manage.py summarize_input --dry-run             # print the digest, save nothing
 
 For each prompt that collects text and has at least ``--min-new`` text responses
 *since its most recent summary*, the free-text responses plus the structured
-distribution (``Prompt.response_stats``) are sent to Claude, which returns a
+distribution (``Prompt.response_stats``) are sent to Gemini, which returns a
 concise digest. The actual API call lives behind ``_generate`` (the SDK is
 imported there, lazily) so it can be monkeypatched in tests; a missing key or
 SDK exits gracefully with an actionable message rather than a traceback.
@@ -28,8 +28,9 @@ from django.core.management.base import BaseCommand, CommandError
 
 from topics.models import InputSummary, Prompt
 
-# Skill-mandated default (claude-api): the latest, most capable Opus-tier model.
-DEFAULT_MODEL = "claude-opus-4-8"
+# Gemini is the app's AI provider. Flash balances cost and quality for this
+# reader-opinion synthesis; pass --model gemini-2.5-pro for the higher tier.
+DEFAULT_MODEL = "gemini-2.5-flash"
 DEFAULT_MIN_NEW = 5
 
 _SYSTEM = (
@@ -51,9 +52,9 @@ _SYSTEM = (
     "vote/rating split relates to what people wrote)."
 )
 
-# Structured-output schema (output_config.format): a digest body plus optional
-# typed themes. Kept to plain types + required + additionalProperties:false so it
-# is accepted as-is (no unsupported numeric/length constraints).
+# Structured-output schema (Gemini response_schema): a digest body plus typed
+# themes. Kept to the OpenAPI subset Gemini accepts — plain types + required,
+# no `additionalProperties` and no numeric/length constraints.
 _SCHEMA = {
     "type": "object",
     "properties": {
@@ -76,12 +77,12 @@ _SCHEMA = {
                     },
                 },
                 "required": ["title", "summary", "support"],
-                "additionalProperties": False,
+                "property_ordering": ["title", "summary", "support"],
             },
         },
     },
     "required": ["body", "themes"],
-    "additionalProperties": False,
+    "property_ordering": ["body", "themes"],
 }
 
 
@@ -110,43 +111,38 @@ def _build_user_content(prompt_obj, texts, stats):
 
 
 def _generate(prompt_obj, texts, stats, model):
-    """The single seam to the Anthropic API — tests monkeypatch this.
+    """The single seam to the Gemini API — tests monkeypatch this.
 
     Returns ``{"body": str, "themes": list}``. The SDK is imported here, lazily,
     so a missing dependency or missing API key raises ``SummarizerError`` (the
     command turns it into a clean CommandError) instead of failing at import.
     """
-    api_key = os.environ.get("ANTHROPIC_API_KEY")
+    api_key = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY")
     if not api_key:
         raise SummarizerError(
-            "ANTHROPIC_API_KEY is not set — export it before running "
-            "summarize_input (generating the digest needs the Claude API)."
+            "GEMINI_API_KEY is not set — export it before running "
+            "summarize_input (generating the digest needs the Gemini API)."
         )
     try:
-        import anthropic
+        from google import genai
+        from google.genai import types
     except ImportError as exc:  # pragma: no cover - environment-dependent
         raise SummarizerError(
-            "The 'anthropic' SDK is not installed — run `pip install anthropic`."
+            "The 'google-genai' SDK is not installed — run `pip install google-genai`."
         ) from exc
 
-    client = anthropic.Anthropic(api_key=api_key)
-    response = client.messages.create(
+    client = genai.Client(api_key=api_key)
+    response = client.models.generate_content(
         model=model,
-        max_tokens=16000,
-        # Adaptive thinking for the synthesis; medium effort balances cost/quality.
-        thinking={"type": "adaptive"},
-        output_config={
-            "effort": "medium",
-            "format": {"type": "json_schema", "schema": _SCHEMA},
-        },
-        system=_SYSTEM,
-        messages=[
-            {"role": "user", "content": _build_user_content(prompt_obj, texts, stats)}
-        ],
+        contents=_build_user_content(prompt_obj, texts, stats),
+        config=types.GenerateContentConfig(
+            system_instruction=_SYSTEM,
+            # Constrain the output to the digest schema so response.text is JSON.
+            response_mime_type="application/json",
+            response_schema=_SCHEMA,
+        ),
     )
-    # output_config.format guarantees the final text block is valid JSON.
-    raw = next((b.text for b in response.content if b.type == "text"), "")
-    data = json.loads(raw)
+    data = json.loads(response.text)
     return {"body": data["body"], "themes": data.get("themes", [])}
 
 
@@ -172,7 +168,7 @@ class Command(BaseCommand):
         p.add_argument(
             "--model",
             default=DEFAULT_MODEL,
-            help=f"Claude model id (default {DEFAULT_MODEL}).",
+            help=f"Gemini model id (default {DEFAULT_MODEL}).",
         )
         p.add_argument(
             "--dry-run",

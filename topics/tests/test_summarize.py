@@ -1,6 +1,6 @@
 """GenAI input-summarizer command (`summarize_input`).
 
-Network-free: the single Claude seam (`_generate`) is monkeypatched so no API
+Network-free: the single Gemini seam (`_generate`) is monkeypatched so no API
 call is made. These tests pin the command's load-bearing guarantees — it creates
 exactly one InputSummary per qualifying prompt, ALWAYS as a DRAFT (never
 auto-approved), records the right n_responses/model, and the --min-new gate
@@ -40,7 +40,7 @@ def _stub(calls):
 
 
 def _run(calls, **kwargs):
-    """Run summarize_input with the Claude seam patched; return captured stdout."""
+    """Run summarize_input with the Gemini seam patched; return captured stdout."""
     out = StringIO()
     with mock.patch.object(summarize_input, "_generate", _stub(calls)):
         call_command("summarize_input", stdout=out, **kwargs)
@@ -83,10 +83,10 @@ class SummarizeInputTests(TestCase):
 
     def test_custom_model_is_recorded_and_passed(self):
         calls = []
-        _run(calls, prompt=self.prompt.id, model="claude-sonnet-4-6")
-        self.assertEqual(calls[0]["model"], "claude-sonnet-4-6")
+        _run(calls, prompt=self.prompt.id, model="gemini-2.5-pro")
+        self.assertEqual(calls[0]["model"], "gemini-2.5-pro")
         self.assertEqual(
-            InputSummary.objects.get(prompt=self.prompt).model, "claude-sonnet-4-6"
+            InputSummary.objects.get(prompt=self.prompt).model, "gemini-2.5-pro"
         )
 
     def test_min_new_gating_skips_under_threshold(self):
