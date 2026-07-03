@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 import os
+import sys
 from pathlib import Path
 
 from django.core.exceptions import ImproperlyConfigured
@@ -72,6 +73,11 @@ if DEBUG and not ALLOWED_HOSTS:
 
 # Origins trusted for CSRF (scheme required), e.g. https://infinity.example.com
 CSRF_TRUSTED_ORIGINS = _env_list("DJANGO_CSRF_TRUSTED_ORIGINS")
+
+# Per-IP rate limiting on the anonymous participation writes (votes, stances,
+# leans, prompt answers). Off during the test run so the shared local-memory
+# cache counter doesn't bleed across cases; the rate-limit tests re-enable it.
+PARTICIPATION_RATELIMIT = "test" not in sys.argv
 
 # Public origin baked into print artifacts (poster QR codes), scheme included,
 # e.g. PUBLIC_ORIGIN=https://infinity.example.com. Empty → fall back to the

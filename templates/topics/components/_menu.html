@@ -22,21 +22,5 @@ processor.{% endcomment %}
       <i class="ph-duotone ph-info mn-ico"></i>About the project
       <i class="ph-duotone ph-arrow-right mn-arr"></i>
     </a>
-    <div class="mn-sep"></div>
-    {% if user.is_authenticated %}
-    <a class="mn-link" href="{% url 'accounts:settings' %}" @click="$store.menu.open = false">
-      <i class="ph-duotone ph-user-circle mn-ico"></i>Account
-    </a>
-    <form method="post" action="{% url 'accounts:logout' %}">{% csrf_token %}
-      <button type="submit" class="mn-link mn-btn"><i class="ph-duotone ph-sign-out mn-ico"></i>Log out</button>
-    </form>
-    {% else %}
-    <a class="mn-link" href="{% url 'accounts:login' %}" @click="$store.menu.open = false">
-      <i class="ph-duotone ph-sign-in mn-ico"></i>Log in
-    </a>
-    <a class="mn-link" href="{% url 'accounts:signup' %}" @click="$store.menu.open = false">
-      <i class="ph-duotone ph-user-plus mn-ico"></i>Sign up
-    </a>
-    {% endif %}
   </nav>
 </div>

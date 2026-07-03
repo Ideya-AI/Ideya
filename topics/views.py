@@ -11,7 +11,24 @@ from django.http import HttpResponse, HttpResponseBadRequest
 from django.shortcuts import get_object_or_404, render
 from django.views.decorators.http import require_POST
 
+from . import ratelimit
 from . import search as fts
+
+
+def _rate_ok(request):
+    """Guard the accountless participation writes against scripted spam. Returns
+    a 429 response when this IP is over the cap, else None to continue."""
+    if not getattr(settings, "PARTICIPATION_RATELIMIT", True):
+        return None
+    if ratelimit.rate_limited(
+        request,
+        "participate",
+        ratelimit.PARTICIPATE_LIMIT,
+        ratelimit.PARTICIPATE_WINDOW,
+    ):
+        return HttpResponse("Too many requests — slow down.", status=429)
+    return None
+
 
 from .models import (
     SECTION_ORDER,
@@ -526,6 +543,8 @@ def vote(request, target, pk):
     """Cast an up/down importance vote (POST dir=up|down): the same direction
     again retracts, the opposite switches. The Vote row is the truth; the
     model's net counter is a denormalized cache kept in step in one transaction."""
+    if limited := _rate_ok(request):
+        return limited
     if target == "question":
         obj = get_object_or_404(Question, pk=pk)
         lookup, counter = {"question": obj}, "votes"
@@ -567,6 +586,8 @@ def vote(request, target, pk):
 def stance(request, pk):
     """Toggle/switch an agree-disagree stance on a position. Same value again
     retracts; the other value switches. Returns the position foot fragment."""
+    if limited := _rate_ok(request):
+        return limited
     position = get_object_or_404(Position, pk=pk)
     value = request.POST.get("value")
     if value not in (Stance.AGREE, Stance.DISAGREE):
@@ -597,6 +618,8 @@ def stance(request, pk):
 def question_lean(request, pk):
     """Cast a community direction vote (pole a|b) on a question. Same pole again
     retracts; the other pole switches. Returns the _qlean fragment."""
+    if limited := _rate_ok(request):
+        return limited
     question = get_object_or_404(Question, pk=pk)
     value = request.POST.get("value")
     if value not in (QuestionLean.A, QuestionLean.B):
@@ -681,6 +704,8 @@ def respond(request, pk):
     """Capture a reader's answer to an open-participation Prompt. One Response per
     participant, edited in place (upsert) like a vote; an empty answer retracts
     it. Returns the prompt fragment with the saved answer + live aggregate."""
+    if limited := _rate_ok(request):
+        return limited
     prompt = get_object_or_404(Prompt, pk=pk, active=True)
     defaults, keep = _response_payload(request, prompt)
     if defaults is None:
