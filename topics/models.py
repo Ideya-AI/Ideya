@@ -111,6 +111,15 @@ class Category(models.Model):
     def topic_count(self) -> int:
         return self.topics.count()
 
+    @property
+    def social_card(self):
+        """Static path to this category's 1200x630 OG link-preview card, generated
+        to static/img/social/cat-<slug>.png (via `?render=og` on the category
+        share view + headless Chrome); else None so the page falls back to the
+        generic Infinity mark."""
+        rel = f"img/social/cat-{self.slug}.png"
+        return rel if (settings.BASE_DIR / "static" / rel).exists() else None
+
 
 class PublishedTopicManager(models.Manager):
     def get_queryset(self):

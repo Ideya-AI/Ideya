@@ -1,0 +1,55 @@
+{% load static %}<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{{ category.name }} — Share Card</title>
+<link rel="stylesheet" href="{% static 'css/fonts.css' %}" />
+<link rel="stylesheet" href="{% static 'vendor/phosphor-duotone.css' %}" />
+<link rel="stylesheet" href="{% static 'css/tokens.css' %}" />
+<style>
+  *{box-sizing:border-box} html,body{margin:0}
+  body{background:#e7eae6;font-family:var(--font-sans);-webkit-font-smoothing:antialiased;padding:44px;display:flex;justify-content:center}
+  body.card-only{padding:0;background:#fff;display:block}
+  body.card-only .card{position:static;box-shadow:none}
+
+  .card{width:1200px;height:630px;flex:none;background:#fff;color:var(--ink-900);position:relative;overflow:hidden;display:flex;flex-direction:column;padding:62px 72px;box-shadow:0 20px 60px -24px rgba(20,22,15,.4)}
+  .card::before{content:"";position:absolute;right:-140px;top:-140px;width:460px;height:460px;border-radius:9999px;background:var(--cat-tint);opacity:.5}
+  .card>*{position:relative}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand .mark{height:34px;width:auto;border-radius:8px}
+  .brand .wm{font-weight:800;font-size:26px;letter-spacing:-.03em}
+  .kicker{align-self:flex-start;display:inline-flex;align-items:center;gap:9px;margin-top:38px;font-weight:800;font-size:17px;text-transform:uppercase;letter-spacing:.06em;color:var(--cat);background:var(--cat-tint);border-radius:9999px;padding:8px 18px}
+  .kicker i{font-size:19px}
+  .head{display:flex;align-items:center;gap:26px;margin-top:24px}
+  .cicon{flex:none;width:104px;height:104px;border-radius:26px;background:var(--cat-tint);border:1px solid color-mix(in srgb,var(--cat) 22%,#fff);display:flex;align-items:center;justify-content:center;color:var(--cat)}
+  .cicon i{font-size:60px}
+  .cname{font-weight:800;font-size:56px;letter-spacing:-.035em;line-height:1.02;margin:0}
+  .cdesc{margin:26px 0 0;font-size:27px;line-height:1.4;color:var(--ink-600);max-width:32ch;text-wrap:pretty}
+  .foot{margin-top:auto;display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding-top:26px;border-top:1px solid var(--ink-100)}
+  .foot .cnt{display:inline-flex;align-items:center;gap:9px;font-weight:800;font-size:20px;color:var(--ink-900)}
+  .foot .cnt i{color:var(--cat);font-size:22px}
+  .tchips{display:flex;gap:10px;flex-wrap:wrap;overflow:hidden;max-height:42px}
+  .tchip{display:inline-flex;align-items:center;gap:7px;font-size:18px;font-weight:600;color:var(--ink-700);background:var(--ink-50);border:1px solid var(--ink-100);border-radius:9999px;padding:7px 15px;white-space:nowrap}
+  .tchip i{font-size:17px;color:var(--cat)}
+</style>
+</head>
+<body{% if render_card %} class="card-only"{% endif %}>
+  <div class="card" style="--cat: {{ category.color_var }}; --cat-tint: {{ category.tint_var }};">
+    <div class="brand"><img class="mark" src="{% static 'img/infinity-mark.png' %}" alt="" /><span class="wm">Infinity</span></div>
+    <span class="kicker"><i class="ph-duotone ph-folders"></i>Category</span>
+    <div class="head">
+      <span class="cicon"><i class="ph-duotone ph-{{ category.icon|default:'squares-four' }}"></i></span>
+      <h1 class="cname">{{ category.name }}</h1>
+    </div>
+    {% if category.description %}<p class="cdesc">{{ category.description }}</p>{% endif %}
+    <div class="foot">
+      <span class="cnt"><i class="ph-duotone ph-squares-four"></i>{{ topics_total }} topic{{ topics_total|pluralize }}</span>
+      {% if topics %}
+      <div class="tchips">
+        {% for t in topics %}<span class="tchip"><i class="ph-duotone ph-{{ t.icon|default:'circle' }}"></i>{{ t.title }}</span>{% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</body>
+</html>

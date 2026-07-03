@@ -389,6 +389,28 @@ def category_detail(request, slug):
     )
 
 
+def category_share(request, slug):
+    """Bare 1200x630 OG card for a category, captured to a PNG (Category.social_card
+    → og:image). `?render=og` renders the card-only body for headless capture; any
+    other request shows the same card framed for a dev preview."""
+    category = get_object_or_404(Category, slug=slug)
+    topics = list(
+        category.topics(manager="published")
+        .select_related("primary_category")
+        .all()[:6]
+    )
+    return render(
+        request,
+        "topics/category_share.html",
+        {
+            "category": category,
+            "topics": topics,
+            "topics_total": category.topics(manager="published").count(),
+            "render_card": request.GET.get("render") == "og",
+        },
+    )
+
+
 def poster(request, slug):
     topic = get_object_or_404(
         _visible_topics(request).select_related("primary_category"), slug=slug
