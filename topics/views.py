@@ -376,14 +376,16 @@ def category_detail(request, slug):
     category = get_object_or_404(
         Category.objects.prefetch_related("connects_to"), slug=slug
     )
-    sections = _ordered_sections("category", category)
+    # Category sections are optional enrichment (none are seeded today) — the
+    # page renders overview + topics from the category itself regardless.
+    sec = {s.kind: s for s in _ordered_sections("category", category)}
     topics = _decorate(
         category.topics(manager="published").select_related("primary_category").all()
     )
     return render(
         request,
         "topics/category.html",
-        {"category": category, "sections": sections, "topics": topics},
+        {"category": category, "sec": sec, "topics": topics},
     )
 
 

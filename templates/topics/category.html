@@ -15,18 +15,17 @@
 
     <nav class="crail">
       <div class="rl-label">{{ category.name|truncatechars:16 }}</div>
-      {% for s in sections %}
-      <a href="#{{ s.kind }}" :class="{ on: active === '{{ s.kind }}' }"><i class="ph-duotone ph-{{ s.eyebrow_icon }}"></i>{{ s.get_kind_display }}</a>
-      {% endfor %}
+      <a href="#overview" :class="{ on: active === 'overview' }"><i class="ph-duotone ph-book-open"></i>Overview</a>
+      {% if sec.basics %}
+      <a href="#basics" :class="{ on: active === 'basics' }"><i class="ph-duotone ph-chart-bar"></i>Basics</a>
+      {% endif %}
+      <a href="#topics" :class="{ on: active === 'topics' }"><i class="ph-duotone ph-squares-four"></i>Topics</a>
       <div class="spacer"></div>
       <a class="back" href="{% url 'topics:home' %}#directory"><i class="ph-duotone ph-arrow-left"></i>All categories</a>
     </nav>
 
     <main class="ccontent">
 
-      {% for section in sections %}
-
-      {% if section.kind == "overview" %}
       <section class="sec" id="overview">
         <div class="crumb">
           <a href="{% url 'topics:home' %}">Home</a><i class="ph-duotone ph-caret-right" style="font-size:11px"></i>
@@ -40,7 +39,7 @@
             <h1 class="cov-title">{{ category.name }}</h1>
           </div>
         </div>
-        <p class="cov-desc">{{ section.body|default:category.description }}</p>
+        <p class="cov-desc">{{ sec.overview.body|default:category.description }}</p>
         {% if category.parent or category.connects_to.all %}
         <div class="cov-connects">
           <div class="ck">Connects to</div>
@@ -56,11 +55,11 @@
         {% endif %}
       </section>
 
-      {% elif section.kind == "basics" %}
+      {% if sec.basics %}
       <section class="sec" id="basics">
         <div class="eyebrow"><i class="ph-duotone ph-chart-bar"></i>Basics <span class="sub">· about the category itself</span></div>
         <div class="meta-grid">
-          {% for stat in section.stats.all %}
+          {% for stat in sec.basics.stats.all %}
           <div class="mtile{% if forloop.counter > 2 %} wide{% endif %}">
             <div class="mk">{{ stat.label }}</div>
             <div class="mv">{{ stat.value }}{% if stat.unit %}<small>{{ stat.unit }}</small>{% endif %}</div>
@@ -71,11 +70,11 @@
           {% endfor %}
         </div>
       </section>
+      {% endif %}
 
-      {% elif section.kind == "topics" %}
       <section class="sec" id="topics">
         <div class="eyebrow"><i class="ph-duotone ph-squares-four"></i>Topics <span class="sub">· the destination</span><span class="count">{{ topics|length }} topic{{ topics|length|pluralize }}</span></div>
-        <p class="topics-lead">The actual topics in this category — a scoped view of the home showcase. Colour dots preview each topic's debate.</p>
+        <p class="topics-lead">{{ sec.topics.body|default:"The actual topics in this category — a scoped view of the home showcase. Colour dots preview each topic's debate." }}</p>
         <div class="nodes">
           {% for t in topics %}
           <a class="node{% if t.is_stub %} stub{% endif %}" href="{{ t.get_absolute_url }}">
@@ -97,9 +96,7 @@
           {% endfor %}
         </div>
       </section>
-      {% endif %}
 
-      {% endfor %}
     </main>
   </div>
 </div>
