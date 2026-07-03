@@ -73,6 +73,11 @@ if DEBUG and not ALLOWED_HOSTS:
 # Origins trusted for CSRF (scheme required), e.g. https://infinity.example.com
 CSRF_TRUSTED_ORIGINS = _env_list("DJANGO_CSRF_TRUSTED_ORIGINS")
 
+# Public origin baked into print artifacts (poster QR codes), scheme included,
+# e.g. PUBLIC_ORIGIN=https://infinity.example.com. Empty → fall back to the
+# origin of the request that rendered the artifact (fine in dev, wrong in print).
+PUBLIC_ORIGIN = os.environ.get("PUBLIC_ORIGIN", "").rstrip("/")
+
 
 # Application definition
 

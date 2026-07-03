@@ -8,104 +8,133 @@
 <link rel="stylesheet" href="{% static 'vendor/phosphor-fill.css' %}" />
 <link rel="stylesheet" href="{% static 'css/tokens.css' %}" />
 <style>
+  /* ---- Print-first canvas: 18in × 24in, no bleed. 1in = 96 CSS px.
+     Type is set in pt (true print sizes); structure in in/px. ---- */
+  @page { size: 18in 24in; margin: 0; }
   *{box-sizing:border-box} html,body{margin:0}
-  body{background:#dfe3dd;font-family:var(--font-sans);-webkit-font-smoothing:antialiased;display:flex;justify-content:center;padding:46px 20px}
-  .poster{width:1280px;flex:none;background:#fff;color:var(--ink-900);box-shadow:0 40px 90px -30px rgba(20,22,15,.45);overflow:hidden;position:relative}
-  .eyebrow{display:flex;align-items:center;gap:11px;font-weight:800;font-size:21px;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-400)}
-  .eyebrow i{color:var(--green-700);font-size:26px}
+  body{background:#dfe3dd;font-family:var(--font-sans);-webkit-font-smoothing:antialiased;display:flex;justify-content:center;padding:40px 20px}
+  .poster{width:18in;height:24in;flex:none;background:#fff;color:var(--ink-900);box-shadow:0 40px 90px -30px rgba(20,22,15,.45);overflow:hidden;position:relative;display:flex;flex-direction:column;justify-content:space-between;padding:0.75in}
+  .poster>*{flex:none}
+  @media print {
+    body{background:none;padding:0;display:block}
+    .poster{box-shadow:none;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+  }
+
+  /* ---- Shared ---- */
+  .eyebrow{display:flex;align-items:center;gap:10px;font-weight:800;font-size:12pt;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-400)}
+  .eyebrow i{color:var(--green-700);font-size:14pt}
   .eyebrow .sub{font-weight:600;color:var(--ink-300);letter-spacing:.03em}
-  .hero{padding:74px 84px 56px}
-  .brand{display:flex;align-items:center;gap:12px;margin-bottom:54px}
-  .brand .mark{width:34px;height:34px;border-radius:8px}
-  .brand .wm{font-weight:800;font-size:24px;letter-spacing:-.03em}
-  .brand .sep{width:4px;height:4px;border-radius:9999px;background:var(--ink-300)}
-  .brand .tagline{font-size:18px;color:var(--ink-400);font-weight:500}
-  .cat{display:inline-flex;align-items:center;gap:9px;font-weight:800;font-size:18px;text-transform:uppercase;letter-spacing:.05em;color:var(--green-700);background:var(--green-tint);border-radius:9999px;padding:9px 19px}
-  .cat i{font-size:20px}
-  .herorow{display:flex;align-items:center;gap:30px;margin-top:30px}
-  .heroicon{flex:none;width:128px;height:128px;border-radius:30px;background:var(--green-tint);border:1px solid var(--green-tint-strong);display:flex;align-items:center;justify-content:center;color:var(--green-700)}
-  .heroicon i{font-size:74px}
-  .title{font-weight:800;font-size:118px;letter-spacing:-.045em;line-height:.9;margin:0}
-  .summary{margin:34px 0 0;font-size:33px;line-height:1.4;color:var(--ink-700);max-width:30ch;text-wrap:pretty}
-  .basics-band{background:var(--ink-50);border-top:1px solid var(--ink-100);border-bottom:1px solid var(--ink-100);padding:46px 84px}
-  .basics{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:18px;margin-top:30px}
-  .tile{background:#fff;border:1px solid var(--ink-100);border-radius:20px;padding:26px 28px;display:flex;flex-direction:column}
-  .tk{font-size:16px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-400);margin-bottom:14px}
-  .tv{font-weight:800;font-size:78px;font-variant-numeric:tabular-nums;letter-spacing:-.04em;line-height:.9;color:var(--ink-900)}
-  .tv small{font-size:34px;font-weight:700;color:var(--ink-400)}
-  .vrow{margin-top:auto;padding-top:20px}
-  .rank{display:flex;flex-direction:column;gap:11px}
-  .rrow{display:grid;grid-template-columns:96px 1fr 70px;align-items:center;gap:14px}
-  .rk{font-size:18px;color:var(--ink-500)}
-  .rbar{height:14px;border-radius:9999px;background:var(--ink-100);overflow:hidden}
+  .band{margin-top:0.26in}
+
+  /* ---- Hero ---- */
+  .brand{display:flex;align-items:center;gap:11px}
+  .brand .mark{height:0.38in;width:auto;border-radius:8px}
+  .brand .wm{font-weight:800;font-size:18pt;letter-spacing:-.03em}
+  .herorow{display:flex;align-items:center;gap:0.45in;margin-top:0.3in}
+  .herotext{flex:1;min-width:0}
+  .heroart{flex:none;width:6.7in;border-radius:26px;border:1px solid var(--ink-100);overflow:hidden}
+  .heroart img{display:block;width:100%;height:auto}
+  .heroicon{flex:none;width:2in;height:2in;border-radius:34px;background:var(--green-tint);border:1px solid var(--green-tint-strong);display:flex;align-items:center;justify-content:center;color:var(--green-700)}
+  .heroicon i{font-size:88pt}
+  .cat{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:11pt;text-transform:uppercase;letter-spacing:.05em;color:var(--green-700);background:var(--green-tint);border-radius:9999px;padding:7px 16px}
+  .cat i{font-size:12pt}
+  .title{font-weight:800;font-size:102pt;letter-spacing:-.045em;line-height:.92;margin:0.16in 0 0}
+  .title.title-sm{font-size:80pt}
+  .title.title-xs{font-size:62pt}
+  .summary{margin:0.22in 0 0;font-size:20pt;line-height:1.45;color:var(--ink-700);text-wrap:pretty;border-left:4px solid var(--green-500);padding-left:0.24in}
+
+  /* ---- Basics (sunk rounded block) ---- */
+  .basics-band{background:var(--ink-50);border:1px solid var(--ink-100);border-radius:24px;padding:0.32in 0.36in}
+  .basics{display:grid;grid-template-columns:1.35fr 1fr 1fr;gap:0.2in;margin-top:0.22in}
+  .tile{background:#fff;border:1px solid var(--ink-100);border-radius:18px;padding:0.2in 0.22in;display:flex;flex-direction:column}
+  .tk{font-size:10.5pt;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-400);margin-bottom:12px}
+  .tv{font-weight:800;font-size:50pt;font-variant-numeric:tabular-nums;letter-spacing:-.04em;line-height:.9;color:var(--ink-900)}
+  .tv small{font-size:22pt;font-weight:700;color:var(--ink-400)}
+  .vrow{margin-top:auto;padding-top:14px}
+  .rank{display:flex;flex-direction:column;gap:9px}
+  .rrow{display:grid;grid-template-columns:0.9in 1fr 0.66in;align-items:center;gap:12px}
+  .rk{font-size:11pt;color:var(--ink-500)}
+  .rbar{height:11px;border-radius:9999px;background:var(--ink-100);overflow:hidden}
   .rbar i{display:block;height:100%;border-radius:9999px;background:var(--ink-300)}
   .rrow.on .rbar i{background:var(--green-500)} .rrow.on .rk{color:var(--ink-900);font-weight:700}
-  .rv{font-size:18px;text-align:right;font-variant-numeric:tabular-nums;color:var(--ink-400)}
+  .rv{font-size:11pt;text-align:right;font-variant-numeric:tabular-nums;color:var(--ink-400)}
   .rrow.on .rv{color:var(--green-700);font-weight:800}
-  .pbar{height:14px;border-radius:9999px;background:var(--ink-100);overflow:hidden}
+  .pbar{height:11px;border-radius:9999px;background:var(--ink-100);overflow:hidden}
   .pbar i{display:block;height:100%;border-radius:9999px;background:var(--green-500)}
-  .tnote{font-size:16px;line-height:1.4;color:var(--ink-500);margin-top:14px}
-  .qband{padding:54px 84px 8px}
-  .qrow{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-top:28px}
-  .qcell{border-left:3px solid var(--ink-200);padding-left:18px}
-  .qtag{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;padding:4px 11px;border-radius:9999px;margin-bottom:12px}
-  .qtag.emp{color:var(--pos-blue);background:color-mix(in srgb,var(--pos-blue) 12%,#fff)}
-  .qtag.val{color:var(--pos-rust);background:color-mix(in srgb,var(--pos-rust) 14%,#fff)}
-  .qtag i{font-size:14px}
-  .qt{font-weight:800;font-size:23px;line-height:1.25;letter-spacing:-.01em;color:var(--ink-900)}
-  .pos-band{padding:54px 84px}
-  .pos-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:30px}
-  .pos{position:relative;border:1px solid var(--ink-100);border-radius:22px;padding:28px 30px 28px 36px;overflow:hidden}
-  .pos .prail{position:absolute;left:0;top:0;bottom:0;width:8px}
-  .phead{display:flex;align-items:center;gap:13px}
-  .pdot{width:16px;height:16px;border-radius:9999px;flex:none}
-  .pn{font-weight:800;font-size:34px;letter-spacing:-.02em;line-height:1}
-  .psteel{margin:16px 0 0;font-size:23px;font-style:italic;font-weight:500;line-height:1.4;color:var(--ink-800)}
-  .pprop{margin:18px 0 0;font-size:16px;color:var(--ink-400)} .pprop b{color:var(--ink-600);font-weight:700}
-  .crux{background:var(--ink-900);color:#fff;padding:64px 84px;overflow:hidden}
-  .crux .ck{display:flex;align-items:center;gap:12px;font-weight:800;font-size:20px;text-transform:uppercase;letter-spacing:.1em;color:var(--green-500)}
-  .crux .ck i{font-size:26px}
-  .crux .clead{margin:24px 0 0;font-weight:800;font-size:62px;line-height:1.05;letter-spacing:-.03em;max-width:20ch}
+  .tnote{font-size:10.5pt;line-height:1.45;color:var(--ink-500);margin-top:11px}
+
+  /* ---- Questions ---- */
+  .qrow{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.2in;margin-top:0.16in}
+  .qcell{border-left:3px solid var(--ink-200);padding-left:15px}
+  .qtag{display:inline-flex;align-items:center;gap:5px;font-size:8.5pt;font-weight:800;text-transform:uppercase;letter-spacing:.05em;padding:3px 10px;border-radius:9999px;margin-bottom:9px}
+  .qtag.emp{color:var(--axis-empirical);background:color-mix(in srgb,var(--axis-empirical) 12%,#fff)}
+  .qtag.val{color:var(--axis-values);background:color-mix(in srgb,var(--axis-values) 14%,#fff)}
+  .qtag i{font-size:9.5pt}
+  .qt{font-weight:800;font-size:16pt;line-height:1.28;letter-spacing:-.01em;color:var(--ink-900)}
+
+  /* ---- Positions: 2×2 print grid, steelman only ---- */
+  .pos-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0.2in;margin-top:0.2in}
+  .pos{position:relative;border:1px solid var(--ink-100);border-radius:18px;padding:0.22in 0.26in 0.22in 0.32in;overflow:hidden}
+  .pos .prail{position:absolute;left:0;top:0;bottom:0;width:7px}
+  .phead{display:flex;align-items:flex-start;gap:10px}
+  .pdot{width:13px;height:13px;border-radius:9999px;flex:none;margin-top:6px}
+  .pn{font-weight:800;font-size:18pt;letter-spacing:-.02em;line-height:1.1}
+  .psteel{margin:10px 0 0;font-size:13.5pt;font-style:italic;font-weight:500;line-height:1.38;color:var(--ink-800);text-wrap:pretty}
+
+  /* ---- Crux (dark rounded block) ---- */
+  .crux{background:var(--ink-900);color:#fff;border-radius:26px;padding:0.46in 0.5in;overflow:hidden}
+  .crux .ck{display:flex;align-items:center;gap:10px;font-weight:800;font-size:12.5pt;text-transform:uppercase;letter-spacing:.1em;color:var(--green-500)}
+  .crux .ck i{font-size:15pt}
+  .crux .clead{margin:0.16in 0 0;font-weight:800;font-size:45pt;line-height:1.04;letter-spacing:-.03em;max-width:30ch;text-wrap:balance}
   .crux .clead .hl{color:var(--green-500)}
-  .crux .csub{margin:24px 0 0;font-size:25px;line-height:1.5;color:#c2cabf;max-width:54ch} .crux .csub b{color:#fff;font-weight:600}
-  .crux .csplit{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:34px}
-  .crux .ax{border-radius:18px;padding:24px 26px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1)}
-  .crux .ax .ah{display:flex;align-items:center;gap:10px;font-weight:800;font-size:21px;margin-bottom:11px}
-  .crux .ax.emp .ah{color:#7db8d8}.crux .ax.val .ah{color:#d79b86}
-  .crux .ax p{margin:0;font-size:18px;line-height:1.5;color:#b6beac} .crux .ax p b{color:#fff}
-  .act-band{padding:50px 84px 40px}
-  .acts{display:flex;flex-wrap:wrap;gap:13px;margin-top:26px}
-  .act{display:inline-flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--ink-100);border-radius:9999px;padding:13px 22px}
-  .act .ai{width:36px;height:36px;border-radius:9999px;background:var(--green-tint);color:var(--green-700);display:flex;align-items:center;justify-content:center;flex:none}
-  .act .ai i{font-size:20px}
-  .act .an{font-weight:700;font-size:21px;color:var(--ink-900)}
-  .act .afor{display:inline-flex;align-items:center;gap:7px;font-size:15px;color:var(--ink-400)}
-  .act .afor .fd{width:10px;height:10px;border-radius:9999px}
-  .foot{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--ink-100);margin-top:42px;padding-top:30px;font-size:17px;color:var(--ink-400)}
-  .foot .fb{display:flex;align-items:center;gap:11px;font-weight:700;color:var(--ink-600)}
-  .foot .fb img{width:26px;height:26px;border-radius:7px}
+  .crux .csub{margin:0.14in 0 0;font-size:15.5pt;line-height:1.5;color:#ccd4c6;max-width:74ch} .crux .csub b{color:#fff;font-weight:600}
+  .crux .csplit{display:grid;grid-template-columns:1fr 1fr;gap:0.2in;margin-top:0.26in}
+  .crux .ax{border-radius:18px;padding:0.2in 0.22in;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16)}
+  .crux .ax .ah{display:flex;align-items:center;gap:9px;font-weight:800;font-size:13.5pt;margin-bottom:10px}
+  .crux .ax.emp .ah{color:var(--axis-empirical-on-dark)}.crux .ax.val .ah{color:var(--axis-values-on-dark)}
+  .crux .ax p{margin:0;font-size:12pt;line-height:1.5;color:#c8d0c2;font-weight:500} .crux .ax p b{color:#fff}
+
+  /* ---- Go-deeper CTA (QR) ---- */
+  .cta{display:flex;align-items:center;justify-content:space-between;gap:0.5in;border-top:1px solid var(--ink-100);padding-top:0.16in}
+  .cta .cth{font-weight:800;font-size:21pt;letter-spacing:-.025em;line-height:1.1;margin:0}
+  .cta .cts{margin:8px 0 0;font-size:12.5pt;line-height:1.45;color:var(--ink-500);max-width:56ch}
+  .cta .url{margin:10px 0 0;font-family:var(--font-mono);font-size:11pt;font-weight:600;color:var(--green-700)}
+  .qr{flex:none;position:relative;width:1.45in;height:1.45in;border:2px solid var(--green-tint-strong);border-radius:16px;padding:10px;background:#fff}
+  .qr svg{display:block;width:100%;height:100%}
+  .qr svg path{fill:var(--green-700)!important}
+  .qrmark{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+  .qrmark img{width:38%;height:auto;background:#fff;border-radius:9px;padding:4px 6px}
 </style>
 </head>
 <body>
   <div class="poster">
     <div class="hero">
-      <div class="brand"><img class="mark" src="{% static 'img/infinity-mark.png' %}" alt="" /><span class="wm">Infinity</span><span class="sep"></span><span class="tagline">a curated atlas of hard issues</span></div>
-      {% with cc=topic.color_category %}
-      {% if cc %}<span class="cat"><i class="ph-duotone ph-{{ cc.icon|default:'squares-four' }}"></i>{{ cc.name }}</span>{% endif %}
-      {% endwith %}
-      <div class="herorow"><span class="heroicon"><i class="ph-duotone ph-{{ topic.icon|default:'circle' }}"></i></span><h1 class="title">{{ topic.title }}</h1></div>
-      <p class="summary">{{ topic.summary }}</p>
+      <div class="brand"><img class="mark" src="{% static 'img/infinity-mark.png' %}" alt="" /><span class="wm">Infinity</span></div>
+      <div class="herorow">
+        <div class="herotext">
+          {% with cc=topic.color_category %}
+          {% if cc %}<span class="cat"><i class="ph-duotone ph-{{ cc.icon|default:'squares-four' }}"></i>{{ cc.name }}</span>{% endif %}
+          {% endwith %}
+          {% with n=topic.title|length %}<h1 class="title{% if n > 40 %} title-xs{% elif n > 24 %} title-sm{% endif %}">{{ topic.title }}</h1>{% endwith %}
+          <p class="summary">{{ topic.summary }}</p>
+        </div>
+        {% if topic.primary_art %}
+        <figure class="heroart" style="margin:0"><img src="{% static topic.primary_art %}" alt="" /></figure>
+        {% else %}
+        <span class="heroicon"><i class="ph-duotone ph-{{ topic.icon|default:'circle' }}"></i></span>
+        {% endif %}
+      </div>
     </div>
 
     {% if sec.basics %}
-    <div class="basics-band">
+    <div class="band basics-band">
       <div class="eyebrow"><i class="ph-duotone ph-chart-bar"></i>Basics <span class="sub">· the numbers</span></div>
       <div class="basics">
         {% for stat in sec.basics.stats.all|slice:":3" %}
         <div class="tile">
           <div class="tk">{{ stat.label }}</div>
           {% if stat.viz == "ranked" %}
-          <div class="vrow" style="margin-top:6px"><div class="rank">
+          <div class="vrow" style="margin-top:2px"><div class="rank">
             {% for row in stat.series %}<div class="rrow{% if row.highlight %} on{% endif %}"><span class="rk">{{ row.label }}</span><span class="rbar"><i style="width:{{ row.pct }}%"></i></span><span class="rv">{{ row.value }}</span></div>{% endfor %}
           </div></div>
           <div class="tnote">{{ stat.note }}</div>
@@ -120,7 +149,7 @@
     {% endif %}
 
     {% if sec.questions %}
-    <div class="qband">
+    <div class="band qband">
       <div class="eyebrow"><i class="ph-duotone ph-question"></i>Questions <span class="sub">· what's contested</span></div>
       <div class="qrow">
         {% for q in sec.questions.questions.all|slice:":3" %}
@@ -131,14 +160,13 @@
     {% endif %}
 
     {% if sec.positions %}
-    <div class="pos-band">
-      <div class="eyebrow"><i class="ph-duotone ph-scales"></i>Positions <span class="sub">· the debate — {{ sec.positions.positions.all|length }} positions</span></div>
+    <div class="band pos-band">
+      <div class="eyebrow"><i class="ph-duotone ph-scales"></i>Positions <span class="sub">· the debate</span></div>
       <div class="pos-grid">
-        {% for p in sec.positions.positions.all %}
+        {% for p in sec.positions.positions.all|slice:":4" %}
         <div class="pos"><span class="prail" style="background:{{ p.color_var }}"></span>
           <div class="phead"><span class="pdot" style="background:{{ p.color_var }}"></span><span class="pn">{{ p.name }}</span></div>
           <p class="psteel">“{{ p.steelman }}”</p>
-          {% if p.proponents %}<p class="pprop"><b>{{ p.proponent_list.0 }}</b>{% for pr in p.proponent_list|slice:"1:" %} · {{ pr }}{% endfor %}</p>{% endif %}
         </div>
         {% endfor %}
       </div>
@@ -146,7 +174,7 @@
     {% endif %}
 
     {% if sec.crux.crux %}{% with c=sec.crux.crux %}
-    <div class="crux">
+    <div class="band crux">
       <div class="ck"><i class="ph-duotone ph-target"></i>Crux · the real disagreement</div>
       <div class="clead">{{ c.lead|lead_hl:c.lead_highlight }}</div>
       {% if c.subtitle %}<p class="csub">{{ c.subtitle }}</p>{% endif %}
@@ -159,20 +187,31 @@
     </div>
     {% endwith %}{% endif %}
 
-    <div class="act-band">
-      {% if sec.actions %}
-      <div class="eyebrow"><i class="ph-duotone ph-compass"></i>Actions <span class="sub">· paths forward, across the landscape</span></div>
-      <div class="acts">
-        {% for a in sec.actions.actions.all|slice:":5" %}
-        <div class="act"><span class="ai"><i class="ph-duotone ph-{{ a.phosphor_icon }}"></i></span><span class="an">{{ a.title }}</span>{% if a.position %}<span class="afor"><span class="fd" style="background:{{ a.position.color_var }}"></span>{{ a.position.name }}</span>{% endif %}</div>
-        {% endfor %}
+    <div class="band cta">
+      <div>
+        <h2 class="cth">Go deeper. Weigh in.</h2>
+        <p class="cts">Explore the full topic and say where you land.</p>
+        <p class="url">{{ topic_url_display }}</p>
       </div>
-      {% endif %}
-      <div class="foot">
-        <span class="fb"><img src="{% static 'img/infinity-mark.png' %}" alt="" />Infinity — a curated atlas of hard issues</span>
-        <span>infinity · /{{ topic.slug }}</span>
-      </div>
+      <div class="qr">{{ qr_svg|safe }}<span class="qrmark"><img src="{% static 'img/infinity-mark.png' %}" alt="" /></span></div>
     </div>
   </div>
+  {% if fitcheck %}
+  <script>
+    /* ?fit=1 — stamp the vertical overflow (px past the canvas; <=0 fits) onto
+       <html data-fit="..."> so `render_poster` can read it from --dump-dom.
+       Sums band heights + margins: the poster is a fixed-height clipped flex
+       column, so scrollHeight alone can't see past-the-edge content. */
+    addEventListener("load", () => requestAnimationFrame(() => {
+      const p = document.querySelector(".poster");
+      const cs = getComputedStyle(p);
+      const budget = p.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom);
+      const kids = [...p.children];
+      const used = kids.reduce((a, el) => a + el.offsetHeight, 0)
+        + kids.slice(1).reduce((a, el) => a + parseFloat(getComputedStyle(el).marginTop), 0);
+      document.documentElement.dataset.fit = String(Math.round(used - budget));
+    }));
+  </script>
+  {% endif %}
 </body>
 </html>

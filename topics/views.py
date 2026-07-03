@@ -1,5 +1,9 @@
 from collections import defaultdict
 
+import qrcode
+import qrcode.image.svg
+
+from django.conf import settings
 from django.contrib.contenttypes.models import ContentType
 from django.db import transaction
 from django.db.models import Count, F, Prefetch, Q
@@ -388,7 +392,26 @@ def poster(request, slug):
         _visible_topics(request).select_related("primary_category"), slug=slug
     )
     sec = {s.kind: s for s in _ordered_sections("topic", topic)}
-    return render(request, "topics/poster.html", {"topic": topic, "sec": sec})
+    origin = settings.PUBLIC_ORIGIN or request.build_absolute_uri("/").rstrip("/")
+    topic_url = origin + topic.get_absolute_url()
+    # Error correction H so the brand mark inset in the centre stays scannable.
+    qr = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_H, border=2)
+    qr.add_data(topic_url)
+    qr.make(fit=True)
+    qr_svg = qr.make_image(image_factory=qrcode.image.svg.SvgPathImage).to_string(
+        encoding="unicode"
+    )
+    return render(
+        request,
+        "topics/poster.html",
+        {
+            "topic": topic,
+            "sec": sec,
+            "topic_url_display": topic_url.split("://", 1)[-1],
+            "qr_svg": qr_svg,
+            "fitcheck": request.GET.get("fit") == "1",
+        },
+    )
 
 
 def share_cards(request, slug):
