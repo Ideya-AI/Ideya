@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>{% block title %}Infinity — a curated atlas of hard issues{% endblock %}</title>
+  <title>{% block title %}Infinity{% endblock %}</title>
   <meta name="description" content="{% block description %}A curated, navigable atlas of hard human issues — a visual wiki between an encyclopedia and a debate platform.{% endblock %}" />
   <link rel="icon" href="{% static 'img/infinity-mark.png' %}" />
   <link rel="canonical" href="{{ request.scheme }}://{{ request.get_host }}{{ request.path }}" />
   <meta property="og:site_name" content="Infinity" />
   <meta property="og:type" content="{% block og_type %}website{% endblock %}" />
-  <meta property="og:title" content="{% block og_title %}Infinity — a curated atlas of hard issues{% endblock %}" />
+  <meta property="og:title" content="{% block og_title %}Infinity{% endblock %}" />
   <meta property="og:description" content="{% block og_description %}A curated, navigable atlas of hard human issues — what each one is, where the disagreement sits, and how to act.{% endblock %}" />
   <meta property="og:url" content="{{ request.scheme }}://{{ request.get_host }}{{ request.path }}" />
   {% block og_image %}
