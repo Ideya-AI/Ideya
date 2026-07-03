@@ -1,14 +1,18 @@
-{% load static %}{% comment %}Inner share-card content. Expects topic, cc, positions, crux; optional show_url.{% endcomment %}
+{% load static %}{% comment %}Inner share-card content. Expects topic, cc, positions, positions_total, crux.{% endcomment %}
 <div class="lt">
   <div class="brand"><img class="mark" src="{% static 'img/infinity-mark.png' %}" alt="" /><span class="wm">Infinity</span></div>
   {% if cc %}<span class="cat"><i class="ph-duotone ph-{{ cc.icon|default:'squares-four' }}"></i>{{ cc.name }}</span>{% endif %}
-  <div class="ttlrow"><span class="ticon"><i class="ph-duotone ph-{{ topic.icon|default:'circle' }}"></i></span><h1 class="ttl">{{ topic.title }}</h1></div>
+  <div class="ttlrow">
+    {% if topic.primary_art %}<span class="ticon tart"><img src="{% static topic.primary_art %}" alt="" /></span>
+    {% else %}<span class="ticon"><i class="ph-duotone ph-{{ topic.icon|default:'circle' }}"></i></span>{% endif %}
+    <h1 class="ttl">{{ topic.title }}</h1>
+  </div>
   <p class="summary">{{ topic.summary }}</p>
   <div class="cta">Explore the full debate<i class="ph-fill ph-arrow-right"></i></div>
-  {% if show_url %}<div class="url"><span class="ub"><img class="mark" src="{% static 'img/infinity-mark.png' %}" alt="" />infinity</span><span>/ {{ topic.slug }}</span></div>{% endif %}
+  <div class="url"><span class="ub"><img class="mark" src="{% static 'img/infinity-mark.png' %}" alt="" />infinity</span><span>/ {{ topic.slug }}</span></div>
 </div>
 <div class="dk">
-  <div class="dlabel"><i class="ph-duotone ph-scales"></i>The debate</div>
+  <div class="dlabel"><i class="ph-duotone ph-scales"></i>The debate{% if positions_total > positions|length %} · {{ positions_total }} positions{% endif %}</div>
   <div class="poss">
     {% for p in positions %}
     <div class="pos"><span class="pd" style="background:{{ p.color_var }}"></span><span class="pnm">{{ p.name }}</span></div>

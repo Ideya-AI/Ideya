@@ -36,9 +36,13 @@
   .cat{display:inline-flex;align-items:center;gap:7px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--green-700);background:var(--green-tint);border-radius:9999px;align-self:flex-start}
   .ttlrow{display:flex;align-items:center;gap:var(--gap)}
   .ticon{flex:none;border-radius:var(--tir);background:var(--green-tint);border:1px solid var(--green-tint-strong);display:flex;align-items:center;justify-content:center;color:var(--green-700)}
+  .card .ticon.tart{width:auto;aspect-ratio:3/2;padding:0;overflow:hidden}
+  .card .ticon.tart img{width:100%;height:100%;object-fit:cover;display:block}
   .ttl{font-weight:800;letter-spacing:-.035em;line-height:.96;color:var(--ink-900);margin:0}
   .summary{color:var(--ink-600);line-height:1.45;text-wrap:pretty}
-  .url{margin-top:auto;display:flex;align-items:center;justify-content:space-between;color:var(--ink-400);font-variant-numeric:tabular-nums}
+  /* brand/URL footer row — only the portrait card has the height for it */
+  .url{display:none;margin-top:auto;align-items:center;justify-content:space-between;color:var(--ink-400);font-variant-numeric:tabular-nums}
+  .pt .url{display:flex}
   .url .ub{display:flex;align-items:center;gap:7px;color:var(--ink-500);font-weight:600}
   .dk{background:var(--ink-900);color:#fff;display:flex;flex-direction:column;padding:var(--pad)}
   .dk .dlabel{font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--green-500);display:flex;align-items:center;gap:8px}
@@ -67,7 +71,7 @@
   .pt .lt{flex:0 0 58%} .pt .brand{font-size:24px}.pt .brand .mark{height:34px;width:auto}.pt .brand .tag{font-size:16px}
   .pt .cat{font-size:16px;padding:9px 18px;margin-top:40px} .pt .ttlrow{margin-top:34px}
   .pt .ticon{width:104px;height:104px}.pt .ticon i{font-size:60px} .pt .ttl{font-size:92px}
-  .pt .summary{font-size:30px;margin-top:32px;max-width:24ch} .pt .url{font-size:17px}.pt .url .ub .mark{width:24px;height:24px;border-radius:6px}
+  .pt .summary{font-size:30px;margin-top:32px;max-width:24ch} .pt .url{font-size:17px}.pt .url .ub .mark{height:24px;width:auto;border-radius:6px}
   .pt .dk{flex:0 0 42%;--pgap:20px;--pmt:30px} .pt .dlabel{font-size:17px}
   .pt .pos .pd{width:16px;height:16px}.pt .pos .pnm{font-size:30px}
   .pt .hook{margin-top:34px;padding-top:26px}.pt .hook i{font-size:32px}.pt .hook .ct{font-size:28px}

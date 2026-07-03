@@ -126,9 +126,11 @@ class Command(BaseCommand):
                 capture_output=True,
                 timeout=120,
             )
-            self.stdout.write(
-                f"  {topic.slug}: fits ({-over}px slack) -> {pdf.relative_to(settings.BASE_DIR)}"
-            )
+            try:
+                shown = pdf.relative_to(settings.BASE_DIR)
+            except ValueError:
+                shown = pdf
+            self.stdout.write(f"  {topic.slug}: fits ({-over}px slack) -> {shown}")
 
         if overflowed:
             raise CommandError(
