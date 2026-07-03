@@ -244,9 +244,11 @@ def home(request):
     for cat in Category.objects.prefetch_related(
         Prefetch("topics", queryset=Topic.published.select_related("primary_category"))
     ):
-        topic_list = _decorate(cat.topics.all())
-        if topic_list:
-            categories.append({"category": cat, "topics": topic_list})
+        # Include every category so the directory is genuinely complete; empty
+        # ones render as browsable "coming soon" cards into their category page.
+        categories.append({"category": cat, "topics": _decorate(cat.topics.all())})
+    # Populated categories lead; the not-yet-mapped ones cluster at the end.
+    categories.sort(key=lambda g: 0 if g["topics"] else 1)
 
     all_topics = _decorate(Topic.published.select_related("primary_category"))
 

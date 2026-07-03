@@ -101,12 +101,13 @@
 
     <div class="dir-grid" x-show="view === 'cat'">
       {% for group in categories %}{% with cat=group.category %}
-      <div class="dir-col" x-data="{ open: false }">
+      <div class="dir-col{% if not group.topics %} empty{% endif %}" x-data="{ open: false }">
         <a class="dir-cat" href="{{ cat.get_absolute_url }}">
           <span class="cdot" style="background:{{ cat.color_var }}"><i class="ph-duotone ph-{{ cat.icon|default:'squares-four' }}"></i></span>
           <span class="cn">{{ cat.name }}</span>
-          <span class="ccount">{{ group.topics|length }}</span>
+          <span class="ccount">{% if group.topics %}{{ group.topics|length }}{% else %}soon{% endif %}</span>
         </a>
+        {% if group.topics %}
         <div class="dir-list">
           {% for t in group.topics %}
           <a class="dir-item" href="{{ t.get_absolute_url }}" {% if forloop.counter > 4 %}x-show="open"{% endif %}>
@@ -122,6 +123,9 @@
           </div>
           {% endif %}
         </div>
+        {% else %}
+        <a class="dir-empty" href="{{ cat.get_absolute_url }}"><i class="ph-duotone ph-map-pin-line"></i>Not yet mapped — explore the category</a>
+        {% endif %}
       </div>
       {% endwith %}{% endfor %}
     </div>
