@@ -1,0 +1,514 @@
+{
+ "draft": {
+  "slug": "nuclear-energy",
+  "title": "Nuclear Energy",
+  "status": "published",
+  "volatility": "medium",
+  "icon": "atom",
+  "primary_category": "climate-env",
+  "categories": [
+   "climate-env"
+  ],
+  "overview": {
+   "summary": "Fission-based electricity \u2014 among the lowest-carbon, lowest-death sources, in a debate that scrambles partisan lines.",
+   "scope_covered": "Civilian fission for grid power: cost, safety, waste, the climate case.",
+   "scope_excluded": "Weapons, fusion, naval propulsion.",
+   "why_now": "A retiring fleet meets climbing demand from AI and electrification, just as climate targets need firm clean power."
+  },
+  "basics": {
+   "intro": "",
+   "stats": [
+    {
+     "label": "Deaths per TWh \u00b7 lifecycle",
+     "value": "",
+     "unit": "",
+     "viz": "ranked",
+     "wide": true,
+     "fill_pct": null,
+     "series": [
+      {
+       "label": "Coal",
+       "value": "24.6",
+       "pct": 100,
+       "highlight": false
+      },
+      {
+       "label": "Gas",
+       "value": "2.8",
+       "pct": 11,
+       "highlight": false
+      },
+      {
+       "label": "Nuclear",
+       "value": "0.03",
+       "pct": 3,
+       "highlight": true
+      },
+      {
+       "label": "Solar",
+       "value": "0.03",
+       "pct": 3,
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "range_at": null,
+     "note": "Among the safest energy sources measured by deaths per unit of electricity \u2014 even after counting Chernobyl and Fukushima \u2014 roughly on par with wind and solar.",
+     "detail": "Counting accidents plus air-pollution deaths across the full fuel cycle, nuclear sits among the very lowest of any source: roughly on par with wind and solar, and two to three orders of magnitude below coal and oil. The figure already folds in the Chernobyl and Fukushima disasters. Even so, the dominant cause of energy-related death worldwide is chronic air pollution from burning fossil fuels, not reactor accidents \u2014 perceived risk runs far ahead of measured risk here, which is much of why nuclear stays politically contentious despite its record.",
+     "source_label": "ourworldindata.org",
+     "source_url": "https://ourworldindata.org/safest-sources-of-energy",
+     "source_published": "",
+     "source_accessed": "",
+     "reveal": "condensed"
+    },
+    {
+     "label": "Share of global power",
+     "value": "9",
+     "unit": "%",
+     "viz": "bar",
+     "wide": false,
+     "fill_pct": 9,
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "range_at": null,
+     "note": "Nuclear provides about 9% of the world's electricity today, down from a peak near 17% in the mid-1990s, though absolute output has held roughly flat.",
+     "detail": "Nuclear supplies roughly 9% of global electricity and about 4% of total primary energy. Its share peaked near 17% in 1996 and has drifted down since \u2014 not from mass shutdowns, but because global electricity demand grew far faster than the reactor fleet, while a few countries (notably Germany and Japan) retired capacity early after Fukushima. In absolute terms generation has stayed roughly flat for two decades. Whether the share rebounds depends largely on whether new builds in China and elsewhere outpace the retirement of aging Western reactors.",
+     "source_label": "",
+     "source_url": "",
+     "source_published": "",
+     "source_accessed": "",
+     "reveal": "condensed"
+    },
+    {
+     "label": "Capacity factor",
+     "value": "92",
+     "unit": "%",
+     "viz": "radial",
+     "wide": false,
+     "fill_pct": 92,
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "range_at": null,
+     "note": "At about 92%, nuclear runs closer to its maximum possible output than any other source \u2014 essentially around the clock, year-round.",
+     "detail": "Capacity factor is the share of a plant's theoretical maximum output it actually delivers over a year. At roughly 92%, nuclear runs closer to its nameplate rating than any other generation source, because reactors operate continuously apart from scheduled refuelling and maintenance. Wind and solar, capped by weather and daylight, typically land in the 25-45% range. This is why comparing 'installed capacity' across sources can mislead: a gigawatt of nuclear delivers far more energy over a year than a gigawatt of solar.",
+     "source_label": "",
+     "source_url": "",
+     "source_published": "",
+     "source_accessed": "",
+     "reveal": "condensed"
+    },
+    {
+     "label": "Lifecycle CO\u2082 \u00b7 g/kWh",
+     "value": "12",
+     "unit": " g",
+     "viz": "range",
+     "wide": false,
+     "fill_pct": null,
+     "series": [],
+     "range_min": "clean",
+     "range_max": "gas ~490",
+     "range_at": 5,
+     "note": "About 12 g of CO2 per kWh across its entire lifecycle \u2014 on par with wind, roughly 40x lower than gas and 70x lower than coal.",
+     "detail": "Counting emissions from mining, construction, fuel enrichment, operation and decommissioning, nuclear works out to roughly 12 grams of CO2-equivalent per kilowatt-hour. That puts it on par with wind, slightly below most solar, and far beneath natural gas (around 490) and coal (around 820). The estimate shifts with the grade of uranium ore and the energy used for enrichment, but even pessimistic accounting leaves nuclear firmly in the low-carbon tier. This is the core of the climate case for keeping existing reactors running rather than replacing them with gas.",
+     "source_label": "IPCC AR5",
+     "source_url": "",
+     "source_published": "",
+     "source_accessed": "",
+     "reveal": "normal"
+    },
+    {
+     "label": "Build cost \u00b7 West vs Korea",
+     "value": "~4",
+     "unit": "\u00d7",
+     "viz": "bar",
+     "wide": false,
+     "fill_pct": 25,
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "range_at": null,
+     "note": "Recent Western reactors have cost roughly four times as much per kilowatt to build as comparable South Korean or Chinese projects.",
+     "detail": "Recent Western first-of-a-kind builds \u2014 Vogtle in the US, Flamanville in France, Hinkley Point C in the UK \u2014 have run on the order of four times the per-kilowatt cost of comparable South Korean or Chinese projects. The gap is driven mostly by lost construction expertise, first-of-a-kind engineering, financing costs over decade-long timelines, and regulatory churn rather than the technology itself. Countries that build a steady series of reactors, with a stable design and workforce, watch costs fall with each unit \u2014 the central argument for standardised designs and sustained programmes.",
+     "source_label": "",
+     "source_url": "",
+     "source_published": "",
+     "source_accessed": "",
+     "reveal": "normal"
+    },
+    {
+     "label": "High-level waste, all-time",
+     "value": "~400",
+     "unit": "kt",
+     "viz": "bar",
+     "wide": false,
+     "fill_pct": 18,
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "range_at": null,
+     "note": "Every gram of high-level waste ever produced would cover a single football field just a few metres deep \u2014 the disposal problem is political, not technical.",
+     "detail": "All the high-level waste ever produced by commercial reactors amounts to roughly 400,000 tonnes worldwide \u2014 enough to cover one football field to a depth of a few metres. It is intensely radioactive and stays hazardous for thousands of years, the heart of the disposal challenge. The technical consensus favours deep geological repositories, and Finland's Onkalo is the first to reach operation; most other countries still store spent fuel on-site in pools and dry casks. The open question is intergenerational siting and politics, not whether safe disposal is technically possible.",
+     "source_label": "",
+     "source_url": "",
+     "source_published": "",
+     "source_accessed": "",
+     "reveal": "normal"
+    },
+    {
+     "label": "Operating reactors worldwide",
+     "value": "~440",
+     "unit": "",
+     "viz": "bar",
+     "wide": false,
+     "fill_pct": null,
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "range_at": null,
+     "note": "About 440 power reactors run across roughly 30 countries \u2014 the fleet behind nuclear's ~9% share of global electricity.",
+     "detail": "Around 440 commercial reactors operate worldwide, concentrated in the United States, France, China, Russia and South Korea. The total has been broadly flat for years, as Asian new-build roughly offsets Western retirements. Counting conventions vary \u2014 some reactors sit in long-term shutdown \u2014 so published figures range from the low 400s to about 440 depending on the source and date.",
+     "source_label": "IAEA PRIS",
+     "source_url": "https://pris.iaea.org",
+     "source_published": "",
+     "source_accessed": "",
+     "reveal": "condensed"
+    },
+    {
+     "label": "Reactors under construction",
+     "value": "~60",
+     "unit": "",
+     "viz": "bar",
+     "wide": false,
+     "fill_pct": null,
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "range_at": null,
+     "note": "Roughly 60 reactors are being built today, more than half of them in China \u2014 the pipeline is now overwhelmingly Asian.",
+     "detail": "About 60 reactors are under construction globally, with China alone accounting for well over half and India and Russia making up much of the rest. Western new-build has slowed to a trickle amid cost overruns and decade-long timelines. The concentration means nuclear's near-term trajectory is being set largely in Asia, where standardised designs and steady programmes have kept schedules and costs under control.",
+     "source_label": "World Nuclear Association",
+     "source_url": "https://world-nuclear.org",
+     "source_published": "",
+     "source_accessed": "",
+     "reveal": "condensed"
+    },
+    {
+     "label": "Top producers \u00b7 share of world nuclear",
+     "value": "",
+     "unit": "",
+     "viz": "ranked",
+     "wide": true,
+     "fill_pct": null,
+     "series": [
+      {
+       "label": "United States",
+       "value": "30%",
+       "pct": 100,
+       "highlight": true
+      },
+      {
+       "label": "France",
+       "value": "13%",
+       "pct": 43,
+       "highlight": false
+      },
+      {
+       "label": "China",
+       "value": "10%",
+       "pct": 33,
+       "highlight": false
+      },
+      {
+       "label": "Russia",
+       "value": "8%",
+       "pct": 27,
+       "highlight": false
+      },
+      {
+       "label": "South Korea",
+       "value": "7%",
+       "pct": 23,
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "range_at": null,
+     "note": "The US generates the most nuclear power overall; France relies on it most, drawing about 70% of its electricity from reactors.",
+     "detail": "By total output the United States leads with about 30% of global nuclear generation, followed by France, China, Russia and South Korea. Absolute output hides national reliance, though: France draws roughly 70% of its electricity from nuclear \u2014 the highest of any large economy \u2014 versus under 20% in the US. China is the fastest-growing producer and is on track to overtake today's leaders within a couple of decades.",
+     "source_label": "World Nuclear Association",
+     "source_url": "https://world-nuclear.org",
+     "source_published": "",
+     "source_accessed": "",
+     "reveal": "condensed"
+    },
+    {
+     "label": "Average reactor age",
+     "value": "~31",
+     "unit": "yrs",
+     "viz": "bar",
+     "wide": false,
+     "fill_pct": null,
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "range_at": null,
+     "note": "The global fleet averages about 31 years old, with much of the Western fleet near its original 40-year design life.",
+     "detail": "The average operating reactor is around 31 years old, and much of the Western fleet is now in its fourth or fifth decade. That creates competing pressures: aging plants face rising upkeep and eventual closure, yet extending their life to 60 or 80 years is often the cheapest low-carbon power available. Whether operators extend or retire these reactors is a major near-term swing factor for nuclear's share.",
+     "source_label": "IAEA PRIS",
+     "source_url": "https://pris.iaea.org",
+     "source_published": "",
+     "source_accessed": "",
+     "reveal": "condensed"
+    },
+    {
+     "label": "Operating life \u00b7 design vs extended",
+     "value": "60",
+     "unit": "yrs",
+     "viz": "range",
+     "wide": false,
+     "fill_pct": null,
+     "series": [],
+     "range_min": "40",
+     "range_max": "80",
+     "range_at": 50,
+     "note": "Reactors are licensed for about 40 years but well-run plants are routinely extended to 60, and increasingly 80, years.",
+     "detail": "Most reactors were licensed for 40 years, but experience shows the major components can run far longer with refurbishment. US regulators have approved many extensions to 60 years, and several plants are pursuing licenses to 80. Because construction cost is already sunk, extended operation is among the cheapest low-carbon electricity available \u2014 which is why early closures of healthy reactors are so contested on climate grounds.",
+     "source_label": "",
+     "source_url": "",
+     "source_published": "",
+     "source_accessed": "",
+     "reveal": "condensed"
+    },
+    {
+     "label": "Uranium reserves",
+     "value": "~90",
+     "unit": "yrs",
+     "viz": "bar",
+     "wide": false,
+     "fill_pct": null,
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "range_at": null,
+     "note": "Identified reserves cover roughly 90 years at current use \u2014 and centuries more with breeder reactors or seawater extraction.",
+     "detail": "Known, economically recoverable uranium is enough for roughly 90 years at today's consumption \u2014 comparable to proven fossil reserves and no near-term constraint. Higher prices would unlock far more lower-grade ore, breeder reactors could stretch the resource fiftyfold by using U-238, and uranium in seawater is an effectively limitless if costly backstop. Fuel supply is rarely the binding limit on nuclear's growth.",
+     "source_label": "OECD NEA / IAEA Red Book",
+     "source_url": "https://oecd-nea.org",
+     "source_published": "",
+     "source_accessed": "",
+     "reveal": "condensed"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Are runaway Western nuclear costs fixable, or structural?",
+    "kind": "empirical",
+    "why": "South Korea builds at ~\u00bc the per-kW cost of recent Western projects. If costs reflect lost supply chains, reform could restore them \u2014 if democratic safety preferences, no reform will.",
+    "detail": "The 'fixable' case reads the cost gap as execution, not physics: South Korea and China deliver reactors at a fraction of Western cost by repeating one standardised design with a stable workforce and supply chain, and historic US and French builds were far cheaper before the industry stalled. On this view, costs ballooned because the West stopped building, lost the expertise, and now reinvents each plant first-of-a-kind under shifting rules. The 'structural' case argues those higher costs encode durable democratic preferences \u2014 stringent safety review, litigation rights, public consultation, high labour and financing costs \u2014 that won't be repealed. The crux: could a sustained, standardised build programme actually be sustained politically here, or would the first overrun headline collapse support again?",
+    "votes": 143,
+    "lean_label_a": "Fixable",
+    "lean_label_b": "Structural",
+    "lean_pct_a": 61,
+    "reveal": "condensed"
+   },
+   {
+    "text": "Is the waste problem solved in principle, but unsolved in practice?",
+    "kind": "value",
+    "why": "Deep geological disposal is settled science; Finland's Onkalo is operating. Yet most countries have no sited repository \u2014 the gap is political siting, not engineering.",
+    "detail": "Technically, deep geological disposal is mature: Finland's Onkalo repository is operating, and isolating waste in stable rock over the required timescales is broadly settled science. The unresolved part is social and political \u2014 almost no other country has sited a permanent repository, because 'who hosts a multi-millennia hazard?' triggers local opposition, intergenerational-equity arguments, and policy that flips with each government. Calling it a value question is deliberate: whether you count the problem as 'solved' depends on whether you weigh technical feasibility or actual deployment, and on how much risk a community can fairly be asked to bear for others and for the distant future. Interim on-site storage is safe for decades but quietly defers the decision rather than resolving it.",
+    "votes": 99,
+    "lean_label_a": "Solved",
+    "lean_label_b": "Not in practice",
+    "lean_pct_a": 43,
+    "reveal": "condensed"
+   },
+   {
+    "text": "Can new nuclear deploy fast enough to matter for 2050?",
+    "kind": "empirical",
+    "why": "Even optimistic build rates add capacity slowly versus solar's exponential growth. Critics say the money decarbonizes more elsewhere; advocates say firm power is needed regardless.",
+    "detail": "The skeptical case is arithmetic: even optimistic nuclear build rates add capacity over years-to-decades per plant, while solar and storage grow exponentially and keep getting cheaper, so a dollar often abates more carbon sooner in renewables. The advocate case is that deep decarbonisation needs firm, dispatchable, low-carbon power for the hours and seasons when wind and solar underdeliver, and that grids leaning entirely on variable sources face rising integration and storage costs. Much of the disagreement turns on assumptions about storage-cost curves, grid flexibility, demand growth (AI, electrification), and whether 'firm' power must be nuclear or could come from geothermal, hydro, or gas-with-capture. It's empirical, but the answer hinges on which 2050 scenario you find credible.",
+    "votes": 64,
+    "lean_label_a": "Can matter",
+    "lean_label_b": "Too slow",
+    "lean_pct_a": 42,
+    "reveal": "normal"
+   },
+   {
+    "text": "Should we extend old reactors or build new ones?",
+    "kind": "empirical",
+    "why": "Life-extending a paid-off reactor is often the cheapest low-carbon power there is, but aging plants carry rising upkeep \u2014 and a dollar spent extending isn't building the next-generation fleet.",
+    "detail": "Extending existing reactors to 60 or 80 years is usually the cheapest clean power available, since construction cost is sunk and components can be refurbished. But the fleet is aging, inspection and upkeep costs climb, and an extension-only strategy eventually runs out of reactors to extend. New build keeps the supply chain and workforce alive and adds firm capacity, yet in the West it stays slow and costly. Most credible plans do both: extend aggressively now to buy time while rebuilding the ability to construct new plants affordably.",
+    "votes": 0,
+    "lean_label_a": "Extend",
+    "lean_label_b": "Build new",
+    "lean_pct_a": 55,
+    "reveal": "condensed"
+   },
+   {
+    "text": "Are small modular reactors a breakthrough or overhyped?",
+    "kind": "empirical",
+    "why": "SMRs promise factory-built, standardised reactors that dodge the overruns of giant bespoke plants \u2014 but almost none run commercially yet, and shrinking a reactor can forfeit the economies of scale that made large ones cheap per kWh.",
+    "detail": "Small modular reactors aim to fix nuclear's cost problem by mass-producing standardised units in factories instead of building each plant first-of-a-kind on site. Advocates expect learning-by-doing and shorter timelines; several designs are licensed and a few demonstrators exist. Skeptics note almost nothing operates commercially at scale, that shrinking a reactor sacrifices the per-kWh economies that favoured large plants, and that first units are expensive. Whether SMRs are transformative or a distraction hinges on whether order books get large enough to unlock the promised factory economics.",
+    "votes": 0,
+    "lean_label_a": "Breakthrough",
+    "lean_label_b": "Overhyped",
+    "lean_pct_a": 40,
+    "reveal": "condensed"
+   },
+   {
+    "text": "Is public fear of nuclear the real barrier, not its actual risk?",
+    "kind": "value",
+    "why": "Nuclear ranks among the safest sources by deaths per unit of energy, yet provokes outsized fear after Chernobyl and Fukushima \u2014 so the binding constraint may be public and political acceptance rather than physical risk.",
+    "detail": "By measured deaths per unit of electricity nuclear ranks among the safest sources, yet it draws fear out of proportion to that record \u2014 shaped by dread of radiation, the salience of Chernobyl and Fukushima, and the link to weapons. If perception is the real barrier, the fix is trust, transparency and siting consent, not new technology. Others argue the concern is legitimate: low-probability high-consequence accidents, millennia-long waste stewardship, and proliferation are real and not captured by an average-deaths statistic. Framing it as a value question keeps both the safety data and the legitimacy of public risk tolerance in view.",
+    "votes": 0,
+    "lean_label_a": "Perception",
+    "lean_label_b": "Real risk",
+    "lean_pct_a": 64,
+    "reveal": "condensed"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Climate Pragmatist",
+    "color_key": "green",
+    "steelman": "The only zero-carbon source already proven to run a grid around the clock at scale - and the climate clock is too tight to take it off the table.",
+    "description": "Nuclear is the only dispatchable, zero-carbon power proven at national scale: France runs a grid near 70% nuclear, and reactors deliver firm output around the clock at capacity factors above 90%. IPCC mitigation pathways lean on expanding it, while Germany's phase-out kept coal running and slowed its decarbonisation.",
+    "detail": "From this view, the decisive fact is that deep decarbonisation needs firm power that runs whatever the weather, and nuclear is the only low-carbon source that has actually delivered it at scale for decades. Its lifecycle emissions sit alongside wind, its land and materials footprint is tiny per unit of energy, and the historical record is real: France and Sweden cut their grid carbon faster than any wind-and-solar build has yet matched. Treating a working, proven technology as off-limits, the argument goes, only raises the cost and the risk of hitting climate targets on time.",
+    "representative_name": "James Hansen",
+    "representative_note": "climate scientist who broke with much of the green movement to back nuclear.",
+    "proponents": "James Hansen, Stewart Brand, Clean Air Task Force",
+    "importance": 87,
+    "prevalence_weight": 0,
+    "spectrum_position": null
+   },
+   {
+    "name": "Cost Skeptic",
+    "color_key": "amber",
+    "steelman": "Climate is a race against time, and slow, over-budget reactors buy less carbon abatement per dollar, and far later, than renewables we can build today.",
+    "description": "Vogtle and Hinkley Point C ran roughly a decade late and tens of billions over budget, while solar, wind and batteries have fallen by about 70-90% over the past decade on a steady learning curve. Nuclear has never shown that curve - in the US and France its real costs rose as programmes matured - so each dollar buys far less abatement, far later, than the alternatives.",
+    "detail": "The case here is about opportunity cost and time. Climate is a cumulative problem, so what matters is tonnes of CO2 avoided per dollar per year, and a reactor that takes ten to fifteen years and arrives far over budget compares poorly with renewables that can be financed and built in a fraction of that time. Defenders blame Western dysfunction, but the skeptic notes that even disciplined builders face rising safety and financing costs, and that 'negative learning' has dogged the industry for decades. Pouring scarce capital and political attention into slow megaprojects, on this view, crowds out the faster, cheaper wins already on the table.",
+    "representative_name": "Amory Lovins",
+    "representative_note": "physicist and advocate of the efficiency-and-renewables path.",
+    "proponents": "Amory Lovins, BNEF analysts, Mark Z. Jacobson",
+    "importance": 74,
+    "prevalence_weight": 0,
+    "spectrum_position": null
+   },
+   {
+    "name": "New-Nuclear Advocate",
+    "color_key": "blue",
+    "steelman": "Stop building bespoke megaprojects: freeze one design, build it in series, and nuclear's costs fall the way every mature manufacturing industry's do.",
+    "description": "Small modular and Gen-IV reactors aim to replace one-off gigawatt megaprojects with standardised, factory-built units installed in series, turning construction into manufacturing. Korea's APR-1400 fleet and France's 1970s-80s programme show that repeating a single design with a stable workforce drives costs down build after build, rather than the runaway overruns of bespoke first-of-a-kind plants.",
+    "detail": "Advocates argue the West's cost problem is a failure of method, not physics: it stopped building, lost its supply chain and skilled crews, then attempted complex first-of-a-kind plants from a standing start. The fix is serial production - freeze a licensed design, build it dozens of times, and capture the learning curve that every mature industry shows. Smaller units shrink the upfront capital at risk, can slot into retiring coal sites, and supply firm, dispatchable heat and power. The bet is real and not yet proven at modern scale, but the precedent of standardised national programmes suggests the cost curve can bend down with discipline and volume.",
+    "representative_name": "TerraPower",
+    "representative_note": "Gen-IV developer betting on factory-built reactors.",
+    "proponents": "TerraPower, NuScale, DOE",
+    "importance": 61,
+    "prevalence_weight": 0,
+    "spectrum_position": null
+   },
+   {
+    "name": "Risk-First Skeptic",
+    "color_key": "rust",
+    "steelman": "Some risks - meltdowns, proliferation, waste outlasting civilisation - are too catastrophic and irreversible to accept when safer options now exist.",
+    "description": "Meltdowns, weapons proliferation and waste that stays dangerous for tens of thousands of years are not ordinary, insurable risks - they are low-probability, high-consequence hazards that outlast the institutions meant to contain them. Chernobyl and Fukushima displaced whole regions for years. A decentralised renewable grid fails gracefully and locally; a reactor or a waste store can fail catastrophically and irreversibly.",
+    "detail": "This position weighs tail risk and time differently from a simple cost comparison. Even if accidents are rare, their consequences - exclusion zones, contaminated land, the spread of fissile material - are so severe and long-lived that ordinary expected-value math understates them. Civilian programmes remain entangled with weapons capability, and no society has yet operated a deep geological repository over the full lifetime of its waste, asking institutions to stay competent and funded across timescales longer than recorded history. With genuinely cheap, modular renewables now available, the skeptic argues there is no longer a compelling reason to accept those irreversible, intergenerational hazards.",
+    "representative_name": "Naomi Oreskes",
+    "representative_note": "historian of science writing on risk and trust.",
+    "proponents": "Naomi Oreskes, anti-nuclear NGOs",
+    "importance": 52,
+    "prevalence_weight": 0,
+    "spectrum_position": null
+   },
+   {
+    "name": "Go all-in: a fast, standardised build-out",
+    "color_key": "purple",
+    "steelman": "Firm, clean power at scale is non-negotiable for deep decarbonisation \u2014 commit to one design and build it relentlessly until costs fall.",
+    "description": "Treat nuclear as essential baseload for a net-zero grid and fix the cost problem the way Korea did: one standard design, a steady pipeline, and an intact workforce and supply chain.",
+    "detail": "Proponents argue variable renewables alone leave a firm-power gap storage can't yet close affordably, and that the West's high costs are a self-inflicted wound from stop-start building, not a law of nature. A sustained programme around a single licensed design drives costs down each unit, as France's 1970s-80s build and Korea's recent record show. The risk is political durability: such programmes need decades of stable policy and public consent, and one high-profile overrun can collapse support.",
+    "representative_name": "",
+    "representative_note": "",
+    "proponents": "",
+    "importance": 0,
+    "prevalence_weight": 15,
+    "spectrum_position": null
+   },
+   {
+    "name": "Keep existing plants, bet new money on renewables",
+    "color_key": "teal",
+    "steelman": "Every dollar should buy the most carbon abatement per year \u2014 and right now that's overwhelmingly solar, wind and storage, not slow, costly new reactors.",
+    "description": "Extend safe existing reactors for their cheap firm power, but direct new investment to renewables and storage, which deploy faster and cheaper per tonne of CO2 avoided.",
+    "detail": "This position accepts nuclear's value as existing firm capacity \u2014 so it opposes premature shutdowns \u2014 while arguing new reactors are too slow and costly to be the marginal climate dollar's best use. Solar and storage costs keep falling on steep learning curves, and grids can absorb high renewable shares with transmission, demand flexibility and a shrinking firm-backup role. Critics counter that deep decarbonisation eventually needs firm low-carbon power for dark, windless stretches, and that betting everything on continued cost declines is itself a gamble.",
+    "representative_name": "",
+    "representative_note": "",
+    "proponents": "",
+    "importance": 0,
+    "prevalence_weight": 10,
+    "spectrum_position": null
+   }
+  ],
+  "crux": {
+   "lead": "Is the West's nuclear cost problem one we can engineer away \u2014 or one we've chosen?",
+   "lead_highlight": "or one we've chosen?",
+   "subtitle": "Almost everyone agrees nuclear is low-carbon and historically safe. The real split is narrower: whether runaway Western build costs are a fixable industrial failure or the deliberate price of democratic caution about catastrophic risk.",
+   "empirical": "Then the cost gap is contingent, not intrinsic \u2014 the residue of lost supply chains, first-of-a-kind designs, and stop-start programs. Korea still builds at a fraction of Western cost, and France once did by repeating one standardized reactor. Freeze a design, build it in series, and costs slide down the learning curve \u2014 so evidence and execution could settle it.",
+   "values": "Then the high price isn't failure but caution made visible \u2014 the safety margins, licensing rigor, and veto points a democracy chose against meltdown, proliferation, and waste outlasting its institutions. If that's the real fault line, building cheaper just means caring less \u2014 and no data can close that gap. Only a choice can."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Our World in Data \u2014 energy",
+    "description": "Lifecycle emissions and death rates across every source.",
+    "url": "https://ourworldindata.org/energy",
+    "for_position": null,
+    "reveal": "condensed"
+   },
+   {
+    "kind": "donate",
+    "title": "Good Energy Collective",
+    "description": "Progressive nuclear policy research. 4-star rated.",
+    "url": "#",
+    "for_position": "New-Nuclear Advocate",
+    "reveal": "condensed"
+   },
+   {
+    "kind": "donate",
+    "title": "Rocky Mountain Institute",
+    "description": "Renewables-and-efficiency research.",
+    "url": "#",
+    "for_position": "Cost Skeptic",
+    "reveal": "condensed"
+   },
+   {
+    "kind": "policy",
+    "title": "Comment on NRC reform",
+    "description": "Open dockets on advanced-reactor rules.",
+    "url": "#",
+    "for_position": null,
+    "reveal": "normal"
+   },
+   {
+    "kind": "local",
+    "title": "Relicensing hearing",
+    "description": "Aging plants hold public hearings near the site.",
+    "url": "#",
+    "for_position": "Risk-First Skeptic",
+    "reveal": "normal"
+   },
+   {
+    "kind": "submit_view",
+    "title": "Add your view",
+    "description": "Your reasoning joins the position landscape \u2014 not posted as a comment.",
+    "url": "#",
+    "for_position": null,
+    "reveal": "normal"
+   }
+  ]
+ },
+ "verdicts": []
+}
