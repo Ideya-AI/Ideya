@@ -120,6 +120,15 @@ class Category(models.Model):
         rel = f"img/social/cat-{self.slug}.png"
         return rel if (settings.BASE_DIR / "static" / rel).exists() else None
 
+    @property
+    def primary_art(self):
+        """Static path to this category's bespoke hero illustration, when one has
+        been added at static/img/categories/<slug>.png; else None so the page
+        falls back to the Phosphor glyph tile. Same convention as
+        Topic.primary_art — the committed asset rides the WhiteNoise pipeline."""
+        rel = f"img/categories/{self.slug}.png"
+        return rel if (settings.BASE_DIR / "static" / rel).exists() else None
+
 
 class PublishedTopicManager(models.Manager):
     def get_queryset(self):

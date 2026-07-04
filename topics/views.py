@@ -296,7 +296,10 @@ def about(request):
         {
             "counts": {
                 "topics": Topic.published.count(),
-                "mapped": Topic.published.filter(sections__isnull=False)
+                # "Fully mapped" = has a positions section (real debate content),
+                # matching the home page's "authored" definition — a topic with an
+                # empty overview shouldn't count as mapped.
+                "mapped": Topic.published.filter(sections__kind="positions")
                 .distinct()
                 .count(),
                 "categories": Category.objects.count(),

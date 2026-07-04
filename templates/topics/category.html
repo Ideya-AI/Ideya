@@ -22,7 +22,11 @@
 
     <section class="cov">
       <div class="cov-head">
+        {% if category.primary_art %}
+        <span class="cov-icon cov-icon--art"><img src="{% static category.primary_art %}" alt="" width="256" height="256"></span>
+        {% else %}
         <span class="cov-icon"><i class="ph-duotone ph-{{ category.icon|default:'squares-four' }}"></i></span>
+        {% endif %}
         <div>
           <span class="cov-kicker"><i class="ph-duotone ph-folders"></i>Category</span>
           <h1 class="cov-title">{{ category.name }}</h1>

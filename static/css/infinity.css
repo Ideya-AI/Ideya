@@ -637,6 +637,10 @@ a.sp-cat:hover { text-decoration: none; box-shadow: inset 0 0 0 1px color-mix(in
 .cov-head { display: flex; align-items: center; gap: 22px; }
 .cov-icon { flex: none; width: 92px; height: 92px; border-radius: 24px; background: var(--cat-tint, var(--green-tint)); border: 1px solid color-mix(in srgb, var(--cat, var(--green-500)) 22%, #fff); display: flex; align-items: center; justify-content: center; color: var(--cat, var(--accent-strong)); }
 .cov-icon i { font-size: 52px; }
+/* Raster hero art sits on a neutral tile (its soft duotone fill needs a light
+   ground, not the category tint) and fills the rounded square with breathing room. */
+.cov-icon--art { background: #fff; padding: 8px; overflow: hidden; }
+.cov-icon--art img { width: 100%; height: 100%; object-fit: contain; }
 .cov-kicker { display: inline-flex; align-items: center; gap: 8px; font-weight: 800; font-size: var(--text-xs); text-transform: uppercase; letter-spacing: .06em; color: var(--cat, var(--accent-strong)); background: var(--cat-tint, var(--green-tint)); border-radius: var(--radius-pill); padding: 5px 13px; margin-bottom: 12px; }
 .cov-kicker i { font-size: 14px; }
 .cov-title { font-weight: 800; font-size: 58px; letter-spacing: -.035em; line-height: .95; margin: 0; }

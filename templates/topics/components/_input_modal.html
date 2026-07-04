@@ -8,7 +8,10 @@ tabs aren't gated. Opened from the page CTA or the Actions card via $store.input
      x-effect="document.body.style.overflow = $store.input.open ? 'hidden' : ''">
   <div class="scrim" @click="$store.input.open = false"></div>
   <div class="sheet overlay-card" role="dialog" aria-modal="true" aria-label="Add your view"
-       @keydown.escape.window="$store.input.open = false">
+       x-ref="sheet" tabindex="-1"
+       x-effect="$store.input.open &amp;&amp; $nextTick(() =&gt; ($refs.sheet.querySelector('.mtab') || $refs.sheet.querySelector('button, a[href], input, textarea'))?.focus())"
+       @keydown.escape.window="$store.input.open = false"
+       @keydown.tab="const f = [...$refs.sheet.querySelectorAll('a[href],button:not([disabled]),input:not([disabled]),textarea:not([disabled]),select:not([disabled]),[tabindex]:not([tabindex=&quot;-1&quot;])')].filter(el =&gt; el.offsetParent !== null); if (!f.length) return; const first = f[0], last = f[f.length - 1]; if ($event.shiftKey &amp;&amp; document.activeElement === first) { $event.preventDefault(); last.focus(); } else if (!$event.shiftKey &amp;&amp; document.activeElement === last) { $event.preventDefault(); first.focus(); }">
     <header class="sheet-head">
       <div>
         <div class="sheet-eyebrow"><i class="ph-duotone ph-pen-nib"></i>Add your view</div>
