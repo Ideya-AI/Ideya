@@ -8,7 +8,7 @@ with `.user_vote` (1, -1, or 0) and `.votes` (net score).{% endcomment %}
     aria-label="Upvote this question" aria-pressed="{% if q.user_vote == 1 %}true{% else %}false{% endif %}">
     <i class="ph-{% if q.user_vote == 1 %}fill ph-caret-up up{% else %}duotone ph-caret-up{% endif %}"></i>
   </button>
-  <span class="qc">{{ q.votes }}</span>
+  <span class="qc">{% if q.show_count %}{{ q.votes }}{% else %}·{% endif %}</span>
   <button type="button" class="vbtn"
     hx-post="{% url 'topics:vote' 'question' q.id %}" hx-vals='{"dir": "down"}'
     hx-target="#qvote-{{ q.id }}" hx-swap="outerHTML" hx-sync="#qvote-{{ q.id }}:replace"

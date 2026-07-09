@@ -14,12 +14,6 @@
 <div class="cat-page" style="--cat: {{ category.color_var }}; --cat-tint: {{ category.tint_var }};">
   <div class="cwrap">
 
-    <div class="crumb">
-      <a href="{% url 'topics:home' %}">Home</a><i class="ph-duotone ph-caret-right" style="font-size:11px"></i>
-      <a href="{% url 'topics:home' %}#directory">Categories</a><i class="ph-duotone ph-caret-right" style="font-size:11px"></i>
-      <span style="color:var(--fg2);font-weight:600">{{ category.name }}</span>
-    </div>
-
     <section class="cov">
       <div class="cov-head">
         {% if category.primary_art %}
@@ -49,23 +43,17 @@
     </section>
 
     <section class="ctopics">
-      <div class="eyebrow"><i class="ph-duotone ph-squares-four"></i>Topics <span class="sub">· the destination</span><span class="count">{{ topics|length }} topic{{ topics|length|pluralize }}</span></div>
-      {% if topics %}<p class="topics-lead">{{ sec.topics.body|default:"Every topic in this category. Colour dots preview each debate's positions — open one to read the map." }}</p>{% endif %}
+      <div class="eyebrow"><i class="ph-duotone ph-squares-four"></i>Topics<span class="count">{{ topics|length }} topic{{ topics|length|pluralize }}</span></div>
+      {% if topics and sec.topics.body %}<p class="topics-lead">{{ sec.topics.body }}</p>{% endif %}
       <div class="nodes">
         {% for t in topics %}
-        <a class="node{% if t.is_stub %} stub{% endif %}" href="{{ t.get_absolute_url }}">
-          {% if not t.is_stub %}<span class="ntop"></span>{% endif %}
+        <a class="node" href="{{ t.get_absolute_url }}">
+          <span class="ntop"></span>
           <div class="nhead"><span class="nicon"><i class="ph-duotone ph-{{ t.icon|default:'circle' }}"></i></span><span class="nname">{{ t.title }}</span></div>
           <p class="ndesc">{{ t.summary }}</p>
-          {% if t.dots %}
           <div class="nsig">
-            <span class="ndots">{% for c in t.dots %}<span style="background:{{ c }}"></span>{% endfor %}</span>
-            <span class="nviews">{{ t.dots|length }} position{{ t.dots|length|pluralize }}</span>
             <span class="narrow"><i class="ph-duotone ph-arrow-right"></i></span>
           </div>
-          {% else %}
-          <div class="nbadge">In progress</div>
-          {% endif %}
         </a>
         {% empty %}
         <p class="topics-lead">No topics in this category yet.</p>

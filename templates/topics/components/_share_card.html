@@ -1,4 +1,4 @@
-{% load static %}{% comment %}Inner share-card content. Expects topic, cc, positions, positions_total, crux.{% endcomment %}
+{% load static %}{% comment %}Inner share-card content. Expects topic, cc, positions, crux.{% endcomment %}
 <div class="lt">
   <div class="brand"><img class="mark" src="{% static 'img/infinity-mark.png' %}" alt="" /><span class="wm">Infinity</span></div>
   {% if cc %}<span class="cat"><i class="ph-duotone ph-{{ cc.icon|default:'squares-four' }}"></i>{{ cc.name }}</span>{% endif %}
@@ -9,10 +9,9 @@
   </div>
   <p class="summary">{{ topic.summary }}</p>
   <div class="cta">Explore the full debate<i class="ph-fill ph-arrow-right"></i></div>
-  <div class="url"><span class="ub"><img class="mark" src="{% static 'img/infinity-mark.png' %}" alt="" />infinity</span><span>/ {{ topic.slug }}</span></div>
 </div>
 <div class="dk">
-  <div class="dlabel"><i class="ph-duotone ph-scales"></i>The debate{% if positions_total > positions|length %} · {{ positions_total }} positions{% endif %}</div>
+  <div class="dlabel"><i class="ph-duotone ph-scales"></i>The debate</div>
   <div class="poss">
     {% for p in positions %}
     <div class="pos"><span class="pd" style="background:{{ p.color_var }}"></span><span class="pnm">{{ p.name }}</span></div>

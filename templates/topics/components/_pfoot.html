@@ -1,7 +1,7 @@
 {% comment %}Position participation foot — the agree/disagree split bar (mirrors the
 questions lean bar). The two poles double as vote buttons (click to cast / switch /
-retract); the bar shows the agree-vs-disagree proportion with counts, plus the %
-once the sample passes the threshold. Expects `p` (with .stance); `prefix` keeps
+retract); counts show live, while the bar and the % appear only once the sample
+passes the threshold. Expects `p` (with .stance); `prefix` keeps
 ids unique across the card and the mobile sheet.{% endcomment %}
 {% with pf=prefix|default:"pfoot" %}
 <div class="pfoot" id="{{ pf }}-{{ p.id }}">
@@ -17,8 +17,10 @@ ids unique across the card and the mobile sheet.{% endcomment %}
         hx-target="#{{ pf }}-{{ p.id }}" hx-swap="outerHTML" hx-sync="#{{ pf }}-{{ p.id }}:replace"
         aria-pressed="{% if p.stance == 'disagree' %}true{% else %}false{% endif %}">{% if ss.shown %}<b>{{ ss.pct_disagree }}%</b> {% endif %}Disagree</button>
     </div>
+    {% if ss.shown %}
     <div class="lbar" role="img" aria-label="{{ ss.agree }} agree, {{ ss.disagree }} disagree"><span class="la" style="width:{{ ss.pct_agree|default:50 }}%"></span><span class="ld" style="width:{{ ss.pct_disagree|default:50 }}%"></span></div>
-    <div class="lnote">{% if ss.total %}{{ ss.agree }} agree · {{ ss.disagree }} disagree{% else %}Be the first to weigh in{% endif %}</div>
+    {% endif %}
+    {% if ss.shown %}<div class="lnote">{{ ss.agree }} agree · {{ ss.disagree }} disagree</div>{% endif %}
   </div>
   {% endwith %}
 </div>

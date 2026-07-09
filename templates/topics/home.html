@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}Infinity{% endblock %}
 
@@ -16,19 +17,15 @@
       <div class="sp-lt">
         {% if cc %}<a class="sp-cat" href="{{ cc.get_absolute_url }}"><i class="ph-duotone ph-{{ cc.icon|default:'squares-four' }}"></i>{{ cc.name }}</a>{% endif %}
         <div class="sp-titlerow">
-          <span class="sp-icon"><i class="ph-duotone ph-{{ t.icon|default:'circle' }}"></i></span>
+          {% if t.primary_art %}<span class="sp-icon sp-art"><img src="{% static t.primary_art %}" alt="" /></span>
+          {% else %}<span class="sp-icon"><i class="ph-duotone ph-{{ t.icon|default:'circle' }}"></i></span>{% endif %}
           <h2 class="sp-title">{{ t.title }}</h2>
         </div>
         <p class="sp-summary">{{ t.summary }}</p>
-        <div class="sp-meta">
-          <span class="m"><i class="ph-duotone ph-scales"></i>{{ spotlight.counts.positions }} position{{ spotlight.counts.positions|pluralize }}</span>
-          <span class="m"><i class="ph-duotone ph-question"></i>{{ spotlight.counts.questions }} question{{ spotlight.counts.questions|pluralize }}</span>
-          <span class="m"><i class="ph-duotone ph-chart-bar"></i>{{ spotlight.counts.stats }} fact{{ spotlight.counts.stats|pluralize }}</span>
-        </div>
         <div class="sp-cta"><a class="sp-read" href="{{ t.get_absolute_url }}">Explore this topic <i class="ph-duotone ph-arrow-right"></i></a></div>
       </div>
       <div class="sp-dk">
-        <div class="dl"><i class="ph-duotone ph-scales"></i>The debate · {{ spotlight.counts.positions }} positions</div>
+        <div class="dl"><i class="ph-duotone ph-scales"></i>The debate</div>
         <div class="sp-poss">
           {% for p in spotlight.positions %}
           <div class="sp-pos"><span class="pd" style="background:{{ p.color_var }}"></span><span class="pnm">{{ p.name }}</span></div>
@@ -49,8 +46,7 @@
         <div class="mt">
           <div class="mn">{{ t.title }}</div>
           <div class="mdots">
-            {% if t.dots %}<span class="dd">{% for c in t.dots %}<span style="background:{{ c }}"></span>{% endfor %}</span><span class="mv">{{ t.dots|length }} position{{ t.dots|length|pluralize }}</span>
-            {% else %}<span class="mv">Mapped soon</span>{% endif %}
+            {% if t.dots %}<span class="dd">{% for c in t.dots %}<span style="background:{{ c }}"></span>{% endfor %}</span><span class="mv">{{ t.dots|length }} position{{ t.dots|length|pluralize }}</span>{% endif %}
           </div>
         </div>
         <i class="ph-duotone ph-arrow-right marr"></i>
@@ -61,37 +57,34 @@
   </section>
   {% endif %}
 
-  <section class="purpose" x-data="{ i: 0 }"
-           x-init="if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) setInterval(() => i = (i + 1) % 3, 2600)">
+  <section class="purpose" id="about">
     <span class="kicker"><i class="ph-duotone ph-infinity"></i>The project</span>
     <h1>Make the shape of hard issues legible.</h1>
-    <p class="lead">Infinity is a curated atlas of humanity's hardest issues — existential risk, governance, economics, ethics. For each one: what it actually is, where the live disagreements sit, who holds which position and why, and how to engage. Topic-first. Neutral by intention.</p>
+    <p class="lead">The Infinity Project is an atlas of humanity's hardest debates — existential risk, governance, economics, ethics. Each topic lays out the shared facts, the strongest case for every position, and the crux where the disagreement actually lives — so you can find where you stand, and why.</p>
 
     <div class="wwh">
-      <div class="wwh-card" :style="i === 0 ? 'border-color: color-mix(in srgb, var(--green-500) 40%, var(--ink-100))' : ''">
+      <div class="wwh-card">
         <div class="num">01</div><div class="wi"><i class="ph-duotone ph-eye"></i></div>
         <h3>What it is</h3>
-        <p>A visual wiki between an encyclopedia and a debate platform. Every topic is one structured infographic — six sections, always in the same order.</p>
+        <p>A visual wiki between an encyclopedia and a debate platform. Every topic is one structured page on the same six-section spine — overview, basics, questions, positions, crux, actions. Learn it once, navigate them all.</p>
       </div>
-      <div class="wwh-card" :style="i === 1 ? 'border-color: color-mix(in srgb, var(--green-500) 40%, var(--ink-100))' : ''">
+      <div class="wwh-card">
         <div class="num">02</div><div class="wi"><i class="ph-duotone ph-compass"></i></div>
         <h3>Why it exists</h3>
-        <p>Most sources either flatten disagreement or drown in it. Infinity surfaces the real contest — fairly, without a house position — so you can think, not just take a side.</p>
+        <p>Most coverage flattens hard issues into verdicts or drowns them in takes. The Infinity Project takes no side: every position gets its strongest case, in its own voice — you can't honestly disagree with an argument you've only met at its weakest.</p>
       </div>
-      <div class="wwh-card" :style="i === 2 ? 'border-color: color-mix(in srgb, var(--green-500) 40%, var(--ink-100))' : ''">
+      <div class="wwh-card">
         <div class="num">03</div><div class="wi"><i class="ph-duotone ph-stack"></i></div>
         <h3>How it works</h3>
-        <p>Read at the depth you want — a glanceable poster, a full page, or deep with curated sources. Vote to surface what matters. Curation leads; participation refines.</p>
+        <p>Read at the depth you have time for — glance at the shape of a debate, or go deep into sourced numbers and curated next steps. Editors keep the map accurate; your votes surface what matters. Curation leads, participation refines.</p>
       </div>
     </div>
-    <div class="wwh-dots"><span :class="{ on: i === 0 }"></span><span :class="{ on: i === 1 }"></span><span :class="{ on: i === 2 }"></span></div>
   </section>
 
   <section class="dir" id="directory" x-data="{ view: 'cat' }">
     <div class="dir-head">
       <div>
         <h2 class="dt">Browse every topic</h2>
-        <div class="ds">The full directory — grouped by category, complete and scannable.</div>
       </div>
       <div class="toggle">
         <button :class="{ on: view === 'cat' }" @click="view = 'cat'">By category</button>
