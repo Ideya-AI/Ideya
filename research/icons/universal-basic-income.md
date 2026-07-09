@@ -51,16 +51,16 @@ frame. Lessons carried over from the nuclear generation: force the soft fill to
 ~15–18% (it renders near-invisible if unstressed) and force uniform stroke weight
 (thin secondary elements drift thinner).
 
-**Fresh-generation prompt:**
-> A minimalist flat vector-style icon illustration of a universal basic income scene, in a clean editorial line-art style. Combine several simple symbols into one small, balanced composition: an open upturned hand with a single coin floating above the palm as the focal point, a row of three identical simple human figures each with a small coin above their head, a small two-pan balance scale weighing a coin on one pan against a wrench on the other, and a low horizon line grounding the scene.
+**Fresh-generation prompt:** *(v3: stacked pyramid; $ over heads; NO hill — simple thin ground line; classic hanging-pan balance, not a seesaw)*
+> A minimalist flat vector-style icon illustration of a universal basic income scene, in a clean editorial line-art style. Compose it as a compact, centered pyramid: at the top, an open upturned hand with a single large coin (drawn with a double-ring rim) floating above the palm — the focal point. Below it on the left, a row of three identical simple human figures, each with a small dollar sign ($) floating above their head. Below it on the right, a classic two-pan hanging balance scale: a tall center post on a small base, a horizontal beam across the top, and two shallow pans hanging from the beam on short cords — a coin resting in one pan, a wrench in the other. A single thin, straight horizontal ground line runs under the scene — no hill, no landscape.
 >
-> Important: NO border, NO frame, NO box or outline around the scene — just the illustration itself on a plain background.
+> Important: NO border, NO frame, NO box or outline around the scene — just the illustration itself on a plain background. Keep the composition compact and centered, not spread wide.
 >
-> Style: monoline line art with ONE uniform stroke weight on every element — the hand, the figures, the coins, the scale, and the horizon must all be exactly the same thickness. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.
+> Style: monoline line art with ONE uniform stroke weight on every element — the hand, the figures, the coin, the dollar signs, the scale, and the ground line must all be exactly the same thickness. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.
 >
-> Color: a single warm amber hue, two tones only. Draw all lines in solid amber (#b98a35), and give the main masses a clearly visible soft fill of the same amber at about 15–18% opacity — specifically fill the hand, the coins, the figures' bodies, and the scale pans with a light amber tint, so the two-tone duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.
+> Color: a single warm amber hue, two tones only. Draw all lines in solid amber (#b98a35), and give the main masses a clearly visible soft fill of the same amber at about 15-18% opacity — fill the hand, the coin, the figures' bodies, and the scale pans with a light amber tint. No other colors, no gradients, no shadows, no offset or misregistered fills, no 3D, no texture.
 >
-> Composition: centered with generous, even padding; balanced optical weight. Plain white background. Calm, neutral, editorial mood — even-handed, neither promoting nor criticizing basic income. No text, letters, or currency symbols other than the plain circular coins.
+> Composition: centered with generous, even padding; balanced optical weight. Plain white background. Calm, neutral, editorial mood — even-handed, neither promoting nor criticizing basic income. No text or letters; the only symbols allowed are the plain circular coins and the small dollar signs above the figures.
 
 **Edit-mode instruction (after the first generation, feed the concept back in):**
 > Using this image, keep the same composition, elements, and layout, but: (1) remove any border or frame around the scene entirely; (2) add a clearly visible soft light-amber fill (~15% opacity of the same hue) inside the hand, coins, figures, and scale pans so it reads as a two-tone duotone instead of mostly white; (3) make every line exactly the same thickness, matching the main outline weight. Keep it flat, single amber hue, no gradients, shadows, extra colors, or text.

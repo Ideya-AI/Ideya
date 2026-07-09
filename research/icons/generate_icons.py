@@ -89,7 +89,12 @@ def generate_one(key: str, model: str, prompt: str, size: str, aspect: str) -> b
     body = {
         "model": model,
         "input": [{"type": "text", "text": prompt}],
-        "generation_config": {"aspect_ratio": aspect, "image_size": size},
+        "response_format": {
+            "type": "image",
+            "mime_type": "image/jpeg",
+            "aspect_ratio": aspect,
+            "image_size": size,
+        },
     }
     req = urllib.request.Request(
         ENDPOINT,
@@ -104,26 +109,18 @@ def generate_one(key: str, model: str, prompt: str, size: str, aspect: str) -> b
         detail = exc.read().decode(errors="replace")[:600]
         sys.exit(f"API error {exc.code}: {detail}")
 
-    # Prefer the documented interactions shape; fall back to generateContent's.
+    # Interactions shape: the image lives in steps[type=model_output]
+    # .content[type=image].data (base64).
     data = None
-    out = payload.get("output_image") or payload.get("outputImage")
-    if isinstance(out, dict):
-        data = out.get("data")
-    if data is None:
-        for item in (
-            payload.get("output", []) if isinstance(payload.get("output"), list) else []
-        ):
-            if isinstance(item, dict) and item.get("type", "").endswith("image"):
-                data = item.get("data") or (item.get("image") or {}).get("data")
-                if data:
-                    break
-    if data is None:
-        for cand in payload.get("candidates", []):
-            for part in cand.get("content", {}).get("parts", []):
-                inline = part.get("inlineData") or part.get("inline_data") or {}
-                if inline.get("data"):
-                    data = inline["data"]
-                    break
+    for step in payload.get("steps", []):
+        if step.get("type") != "model_output":
+            continue
+        for item in step.get("content", []):
+            if item.get("type") == "image" and item.get("data"):
+                data = item["data"]
+                break
+        if data:
+            break
     if data is None:
         sys.exit(
             "No image data in response — API shape may have moved. Raw keys: "
@@ -157,14 +154,21 @@ def main() -> None:
     key = api_key()
     out_dir = Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
-    for i in range(1, args.n + 1):
+    # Never overwrite an earlier run — number on from the highest existing index.
+    existing = [
+        int(m.group(1))
+        for p in out_dir.glob(f"{args.slug}.{args.model}.*.jpg")
+        if (m := re.search(r"\.(\d+)\.jpg$", p.name))
+    ]
+    base = max(existing, default=0)
+    for i in range(base + 1, base + args.n + 1):
         png = generate_one(key, args.model, prompt, args.size, args.aspect)
-        path = out_dir / f"{args.slug}.{args.model}.{i}.png"
+        path = out_dir / f"{args.slug}.{args.model}.{i}.jpg"
         path.write_bytes(png)
-        print(f"[{i}/{args.n}] {path}  ({len(png) // 1024} KB)")
+        print(f"[{i - base}/{args.n}] {path}  ({len(png) // 1024} KB)")
     print(
         f"\nReview the candidates in {out_dir}/ and promote the winner to "
-        f"static/img/topics/{args.slug}.png"
+        f"static/img/topics/{args.slug}.png (normalize + convert in post)"
     )
 
 
