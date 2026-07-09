@@ -92,9 +92,21 @@ class Command(BaseCommand):
         bs = sec(Section.BASICS, intro=b.get("intro", ""))
         for i, s in enumerate(b.get("stats", [])):
             acc = s.get("source_accessed")
+            # Long units/notes are drafting defects (unit is a display token;
+            # a note is one sentence) — slicing silently garbles the rendered
+            # tile, so say what was lost.
+            for field, cap in (("unit", 12), ("note", 400)):
+                if len(s.get(field, "")) > cap:
+                    self.stderr.write(
+                        self.style.WARNING(
+                            f"{field} truncated to {cap} chars on stat "
+                            f"'{s.get('label', '')[:60]}'"
+                        )
+                    )
             Stat.objects.create(
                 section=bs,
                 order=i,
+                tier=max(1, int(s.get("tier") or 1)),
                 label=s.get("label", "")[:120],
                 value=s.get("value", "")[:24],
                 unit=s.get("unit", "")[:12],
@@ -105,6 +117,7 @@ class Command(BaseCommand):
                 ),
                 fill_pct=s.get("fill_pct"),
                 note=s.get("note", "")[:400],
+                detail=s.get("detail", ""),
                 source_label=s.get("source_label", "")[:120],
                 source_url=s.get("source_url", "") or "",
                 source_published=s.get("source_published", "")[:40],
@@ -118,6 +131,7 @@ class Command(BaseCommand):
             Question.objects.create(
                 section=qs,
                 order=i,
+                tier=max(1, int(q.get("tier") or 1)),
                 text=q.get("text", "")[:400],
                 kind=(
                     q.get("kind", "empirical")
@@ -125,6 +139,7 @@ class Command(BaseCommand):
                     else "empirical"
                 ),
                 why=q.get("why", ""),
+                detail=q.get("detail", ""),
                 reveal=q.get("reveal", "condensed"),
             )
 
@@ -137,10 +152,12 @@ class Command(BaseCommand):
             Position.objects.create(
                 section=ps,
                 order=i,
+                tier=max(1, int(p.get("tier") or 1)),
                 name=p.get("name", "")[:120],
                 color_key=ck if ck in POS_KEYS else POS_KEYS[i % len(POS_KEYS)],
                 steelman=p.get("steelman", "")[:400],
                 description=p.get("description", ""),
+                detail=p.get("detail", ""),
                 proponents=p.get("proponents", "")[:400],
                 representative_name=p.get("representative_name", "")[:120],
                 representative_note=p.get("representative_note", "")[:300],
@@ -170,6 +187,7 @@ class Command(BaseCommand):
             Action.objects.create(
                 section=acts,
                 order=i,
+                tier=max(1, int(a.get("tier") or 1)),
                 kind=kind if kind in ACTION_KINDS else "learn_more",
                 title=a.get("title", "")[:200],
                 description=a.get("description", "")[:400],
@@ -178,10 +196,39 @@ class Command(BaseCommand):
                 reveal=a.get("reveal", "condensed"),
             )
 
+        # Placeholder guard: every external action must arrive with a real URL
+        # (submit_view is the internal CTA and has none by design). A "#" here
+        # means the draft skipped link authoring — flag it at the boundary so
+        # neither the authoring engine nor a refresh can ship it silently.
+        unauthored = [
+            a
+            for a in acts.actions.exclude(kind=Action.SUBMIT_VIEW)
+            if not a.url.strip() or a.url.strip().startswith("#")
+        ]
+        for a in unauthored:
+            self.stderr.write(
+                self.style.ERROR(f"placeholder action URL: [{a.kind}] {a.title}")
+            )
+        if unauthored:
+            self.stderr.write(
+                self.style.ERROR(
+                    f"{len(unauthored)} action(s) missing a real URL — fix the draft "
+                    f"or run check_links --topic {o['slug']} before publishing."
+                )
+            )
+
+        # Standard participation prompts — every topic gets the Add-your-view
+        # endcap. Re-seeded each load so options track the rebuilt
+        # positions/questions (prior reader Responses to them reset with it).
+        from .seed_example_prompts import seed_topic_prompts
+
+        seed_topic_prompts(topic)
+
         self.stdout.write(
             self.style.SUCCESS(
                 f"loaded '{topic.title}' [{o['slug']}] status={o['status']} — "
                 f"{bs.stats.count()} stats, {qs.questions.count()} questions, "
-                f"{ps.positions.count()} positions, {acts.actions.count()} actions"
+                f"{ps.positions.count()} positions, {acts.actions.count()} actions, "
+                f"3 prompts"
             )
         )

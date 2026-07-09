@@ -32,6 +32,7 @@ def _date(d):
 def _stat(s):
     return {
         "label": s.label,
+        "tier": s.tier,
         "value": s.value,
         "unit": s.unit,
         "viz": s.viz,
@@ -54,6 +55,7 @@ def _stat(s):
 def _question(q):
     return {
         "text": q.text,
+        "tier": q.tier,
         "kind": q.kind,
         "why": q.why,
         "detail": q.detail,
@@ -68,6 +70,7 @@ def _question(q):
 def _position(p):
     return {
         "name": p.name,
+        "tier": p.tier,
         "color_key": p.color_key,
         "steelman": p.steelman,
         "description": p.description,
@@ -84,6 +87,7 @@ def _position(p):
 def _action(a):
     return {
         "kind": a.kind,
+        "tier": a.tier,
         "title": a.title,
         "description": a.description,
         "url": a.url,

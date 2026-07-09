@@ -31,6 +31,7 @@ def _rate_ok(request):
 
 
 from .models import (
+    MIN_VOTES_REORDER,
     SECTION_ORDER,
     Action,
     Category,
@@ -73,16 +74,44 @@ def _decorate(topics):
     return topics
 
 
+def _authored(qs):
+    """Public listings show only fully-mapped topics (a positions section
+    exists) — stubs and in-progress topics never appear in a public list."""
+    return qs.filter(sections__kind="positions").distinct()
+
+
 def _ordered_sections(parent_field, parent):
+    # Research seeds both rankings; community vote order takes over only once
+    # the list accrues MIN_VOTES_REORDER real votes (counted, not netted).
+    q_order = ["order", "id"]
+    if (
+        Vote.objects.filter(**{f"question__section__{parent_field}": parent}).count()
+        >= MIN_VOTES_REORDER
+    ):
+        q_order = ["-votes", "order", "id"]
+    p_order = ["-prevalence_weight", "order", "id"]
+    if (
+        Vote.objects.filter(**{f"position__section__{parent_field}": parent}).count()
+        >= MIN_VOTES_REORDER
+    ):
+        p_order = ["-importance"] + p_order
+    # distinct=True: stances and importance_votes are separate reverse joins,
+    # so un-distinct counts would multiply across the two relations.
     positions = Position.objects.annotate(
-        agree_count=Count("stances", filter=Q(stances__value=Stance.AGREE)),
-        disagree_count=Count("stances", filter=Q(stances__value=Stance.DISAGREE)),
-    ).order_by("-importance", "-prevalence_weight", "order", "id")
+        agree_count=Count(
+            "stances", filter=Q(stances__value=Stance.AGREE), distinct=True
+        ),
+        disagree_count=Count(
+            "stances", filter=Q(stances__value=Stance.DISAGREE), distinct=True
+        ),
+        votes_cast=Count("importance_votes", distinct=True),
+    ).order_by(*p_order)
+    questions = Question.objects.annotate(
+        votes_cast=Count("importance_votes", distinct=True)
+    ).order_by(*q_order)
     qs = Section.objects.filter(**{parent_field: parent}).prefetch_related(
         Prefetch("stats", queryset=Stat.objects.order_by("order", "id")),
-        Prefetch(
-            "questions", queryset=Question.objects.order_by("-votes", "order", "id")
-        ),
+        Prefetch("questions", queryset=questions),
         Prefetch("positions", queryset=positions),
         Prefetch(
             "actions",
@@ -243,23 +272,21 @@ def home(request):
         positions = list(pos_section.positions.all()) if pos_section else []
         spotlight = {
             "topic": featured,
-            "positions": positions,
+            # Core positions only — mirrors the share cards and the detail
+            # page's leading cards.
+            "positions": positions[: Section.POSITIONS_DEFAULT_SHOWN],
             "crux": getattr(crux_section, "crux", None) if crux_section else None,
-            "counts": {
-                "positions": len(positions),
-                "questions": Question.objects.filter(section__topic=featured).count(),
-                "stats": Stat.objects.filter(section__topic=featured).count(),
-            },
         }
 
     bench_ids = [featured.id] if featured else []
-    bench = _decorate(
-        Topic.published.exclude(id__in=bench_ids).select_related("primary_category")[:3]
-    )
+    bench = _decorate(authored.exclude(id__in=bench_ids)[:3])
 
     categories = []
     for cat in Category.objects.prefetch_related(
-        Prefetch("topics", queryset=Topic.published.select_related("primary_category"))
+        Prefetch(
+            "topics",
+            queryset=_authored(Topic.published.select_related("primary_category")),
+        )
     ):
         # Include every category so the directory is genuinely complete; empty
         # ones render as browsable "coming soon" cards into their category page.
@@ -267,7 +294,9 @@ def home(request):
     # Populated categories lead; the not-yet-mapped ones cluster at the end.
     categories.sort(key=lambda g: 0 if g["topics"] else 1)
 
-    all_topics = _decorate(Topic.published.select_related("primary_category"))
+    all_topics = _decorate(
+        _authored(Topic.published.select_related("primary_category"))
+    )
 
     return render(
         request,
@@ -289,28 +318,13 @@ def robots_txt(request):
     )
 
 
-def about(request):
-    return render(
-        request,
-        "topics/about.html",
-        {
-            "counts": {
-                "topics": Topic.published.count(),
-                # "Fully mapped" = has a positions section (real debate content),
-                # matching the home page's "authored" definition — a topic with an
-                # empty overview shouldn't count as mapped.
-                "mapped": Topic.published.filter(sections__kind="positions")
-                .distinct()
-                .count(),
-                "categories": Category.objects.count(),
-            }
-        },
-    )
-
-
 def _visible_topics(request):
-    """Drafts exist only for staff (preview); everyone else sees published."""
-    return Topic.objects if request.user.is_staff else Topic.published
+    """Drafts render in local dev (DEBUG) and for staff; the public sees
+    published only. There are no reader accounts, so DEBUG is how drafts get
+    previewed in practice."""
+    if settings.DEBUG or request.user.is_staff:
+        return Topic.objects
+    return Topic.published
 
 
 def topic_detail(request, slug):
@@ -402,7 +416,9 @@ def category_detail(request, slug):
     # page renders overview + topics from the category itself regardless.
     sec = {s.kind: s for s in _ordered_sections("category", category)}
     topics = _decorate(
-        category.topics(manager="published").select_related("primary_category").all()
+        _authored(
+            category.topics(manager="published").select_related("primary_category")
+        )
     )
     return render(
         request,
@@ -417,9 +433,9 @@ def category_share(request, slug):
     other request shows the same card framed for a dev preview."""
     category = get_object_or_404(Category, slug=slug)
     topics = list(
-        category.topics(manager="published")
-        .select_related("primary_category")
-        .all()[:6]
+        _authored(
+            category.topics(manager="published").select_related("primary_category")
+        )[:6]
     )
     return render(
         request,
@@ -477,9 +493,8 @@ def share_cards(request, slug):
         {
             "topic": topic,
             # Card shows only the primary positions (the leading cards on the
-            # detail page); the header still reports the debate's full size.
+            # detail page).
             "positions": all_positions[: Section.POSITIONS_DEFAULT_SHOWN],
-            "positions_total": len(all_positions),
             "crux": getattr(crux_section, "crux", None) if crux_section else None,
             "render_card": (
                 request.GET.get("render")
@@ -509,7 +524,11 @@ def search(request):
         pids = fts.search_ids(q, "position", 4)
         topics = _decorate(
             _in_order(
-                Topic.published.filter(id__in=tids).select_related("primary_category"),
+                _authored(
+                    Topic.published.filter(id__in=tids).select_related(
+                        "primary_category"
+                    )
+                ),
                 tids,
             )
         )
@@ -522,8 +541,10 @@ def search(request):
         )
     elif q:
         topics = _decorate(
-            Topic.published.filter(title__icontains=q).select_related(
-                "primary_category"
+            _authored(
+                Topic.published.filter(title__icontains=q).select_related(
+                    "primary_category"
+                )
             )[:6]
         )
         categories = Category.objects.filter(name__icontains=q)[:4]
@@ -577,6 +598,7 @@ def vote(request, target, pk):
         type(obj).objects.filter(pk=obj.pk).update(**{counter: F(counter) + delta})
     obj.refresh_from_db(fields=[counter])
     obj.user_vote = user_vote
+    obj.votes_cast = Vote.objects.filter(**lookup).count()
     # The control renders in the card and the mobile sheet under distinct ids.
     prefix = request.POST.get("prefix", "")
     context = {ctx: obj}

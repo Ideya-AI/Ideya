@@ -31,7 +31,14 @@ POS_COLORS = [
 
 # Minimum agree+disagree stances before a position's ratio is displayed
 # (decision C: counts live, lean bars gated — avoids "2 votes = 100%" noise).
+# Also gates the bar itself: below the sample, poles render without % or bar.
 MIN_STANCE_SAMPLE = 10
+
+# Importance-vote reveal gates (questions + positions). Both count votes CAST
+# (Vote rows), not the net score. Research seeds the initial experience; the
+# community takes over in stages as real participation accrues.
+MIN_VOTES_SHOW_COUNT = 5  # per item: the net number appears
+MIN_VOTES_REORDER = 25  # per list: vote order replaces research order
 
 # Reading-depth at which an item first appears. Shown when current depth >= reveal.
 REVEAL_CHOICES = [
@@ -436,28 +443,64 @@ class Section(models.Model):
             return any(a.reveal == "deep" for a in self.actions.all())
         return False
 
-    BASICS_DEFAULT_ROWS = 2  # desktop rows (3-col grid) shown before Go-deeper
+    @staticmethod
+    def _tier_lead_count(items, cols, min_show, max_show):
+        """How many leading (rank-ordered) items show before Go-deeper.
+
+        The research picks the natural cutoff: items carry a quality `tier`
+        (a new tier starts at a clear drop-off), and the lead set is the
+        smallest whole-tier prefix that reaches `min_show`, capped at
+        `max_show`. The display then snaps to full desktop rows (visual only):
+        round down, unless that would demote a tier-1 item or dip below the
+        minimum — then promote the next-ranked item(s) to complete the row
+        (tier 1 of 3 in a 2-up grid grabs a 4th; a 7-item lead set drops to 6).
+        """
+        total = len(items)
+        if total <= min_show:
+            return total
+        boundaries = [
+            i
+            for i in range(1, total)
+            if getattr(items[i], "tier", 1) != getattr(items[i - 1], "tier", 1)
+        ] + [total]
+        raw = next((b for b in boundaries if b >= min_show), total)
+        raw = min(raw, max_show, total)
+        if cols > 1 and raw % cols and raw != total:
+            floor = min(max(min_show, boundaries[0]), raw)
+            down = raw - raw % cols
+            up = min(raw + cols - raw % cols, total)
+            raw = down if down >= floor else up
+        return raw
+
+    BASICS_MIN_SHOWN = 3  # at least one full desktop row
+    BASICS_MAX_SHOWN = 9  # three desktop rows before Go-deeper takes over
 
     def _basics_base_count(self, stats):
-        """How many leading (importance-ordered) tiles to show before Go-deeper,
-        snapped to a clean desktop-row boundary so the default never orphans."""
+        """How many leading tiles to show before Go-deeper: the research tiers
+        pick the cutoff (via _tier_lead_count), then the count is snapped to a
+        clean desktop cell boundary (wide tiles span 2 of the 3 columns) so the
+        default never orphans."""
         cols = 3
-        cap = cols * self.BASICS_DEFAULT_ROWS
-
-        def span(s):
-            return 2 if s.wide else 1
-
-        if sum(span(s) for s in stats) <= cap:
+        n = self._tier_lead_count(
+            stats, 1, self.BASICS_MIN_SHOWN, self.BASICS_MAX_SHOWN
+        )
+        if n >= len(stats):
             return len(stats)
-        cells = n = 0
-        for s in stats:
-            if cells + span(s) > cap:
-                break
-            cells += span(s)
-            n += 1
-        while n > 0 and sum(span(s) for s in stats[:n]) % cols != 0:
-            n -= 1
-        return n or len(stats)
+
+        def cells(k):
+            return sum(2 if s.wide else 1 for s in stats[:k])
+
+        # Snap to a full row (same rule as _tier_lead_count): round down unless
+        # that dips below the minimum, else promote next-ranked tiles.
+        down = n
+        while down > 0 and cells(down) % cols != 0:
+            down -= 1
+        if down >= self.BASICS_MIN_SHOWN:
+            return down
+        up = n
+        while up < len(stats) and cells(up) % cols != 0:
+            up += 1
+        return up if cells(up) % cols == 0 else len(stats)
 
     @property
     def basics_tiles(self):
@@ -478,37 +521,57 @@ class Section(models.Model):
         stats = list(self.stats.all())
         return self._basics_base_count(stats) < len(stats)
 
-    QUESTIONS_DEFAULT_SHOWN = 4  # leading questions shown before Go-deeper
+    QUESTIONS_MIN_SHOWN = 3
+    QUESTIONS_MAX_SHOWN = 6
+
+    def _questions_base_count(self, questions):
+        # Single-column list — the tier cutoff needs no row snapping.
+        return self._tier_lead_count(
+            questions, 1, self.QUESTIONS_MIN_SHOWN, self.QUESTIONS_MAX_SHOWN
+        )
 
     @property
     def questions_tiles(self):
-        """Vote-ordered Questions annotated for the two-axis list: `is_extra`
-        questions (beyond the default shown) appear only when Go-deeper is open.
-        Uses the prefetched queryset (ordered by -votes, order, id)."""
+        """Ranked Questions annotated for the two-axis list: `is_extra`
+        questions (beyond the tier cutoff) appear only when Go-deeper is open.
+        Uses the prefetched queryset (research order, or vote order once the
+        list passes MIN_VOTES_REORDER)."""
         questions = list(self.questions.all())
+        base_n = self._questions_base_count(questions)
         for i, q in enumerate(questions):
-            q.is_extra = i >= self.QUESTIONS_DEFAULT_SHOWN
+            q.is_extra = i >= base_n
         return questions
 
     @property
     def questions_has_extra(self):
-        return len(self.questions.all()) > self.QUESTIONS_DEFAULT_SHOWN
+        questions = list(self.questions.all())
+        return self._questions_base_count(questions) < len(questions)
 
-    POSITIONS_DEFAULT_SHOWN = 4  # leading position cards shown before Go-deeper
+    POSITIONS_DEFAULT_SHOWN = 4  # fixed-layout surfaces (share cards, spotlight)
+    POSITIONS_MIN_SHOWN = 2
+    POSITIONS_MAX_SHOWN = 6
+
+    def _positions_base_count(self, positions):
+        # 2-column desktop grid — snap the tier cutoff to full rows.
+        return self._tier_lead_count(
+            positions, 2, self.POSITIONS_MIN_SHOWN, self.POSITIONS_MAX_SHOWN
+        )
 
     @property
     def positions_tiles(self):
-        """Order-ranked Positions annotated for the two-axis grid: `is_extra`
-        cards (revealed only when the section's Go-deeper is open) come after the
-        leading POSITIONS_DEFAULT_SHOWN. Mirrors basics_tiles (breadth axis)."""
+        """Ranked Positions annotated for the two-axis grid: `is_extra` cards
+        (revealed only when the section's Go-deeper is open) come after the
+        tier cutoff. Mirrors basics_tiles (breadth axis)."""
         positions = list(self.positions.all())
+        base_n = self._positions_base_count(positions)
         for i, p in enumerate(positions):
-            p.is_extra = i >= self.POSITIONS_DEFAULT_SHOWN
+            p.is_extra = i >= base_n
         return positions
 
     @property
     def positions_has_extra(self):
-        return len(self.positions.all()) > self.POSITIONS_DEFAULT_SHOWN
+        positions = list(self.positions.all())
+        return self._positions_base_count(positions) < len(positions)
 
 
 class Stat(models.Model):
@@ -529,6 +592,11 @@ class Stat(models.Model):
 
     section = models.ForeignKey(Section, related_name="stats", on_delete=models.CASCADE)
     order = models.PositiveSmallIntegerField(default=0)
+    tier = models.PositiveSmallIntegerField(
+        default=1,
+        help_text="Quality tier from research (1 = leading). A new tier starts at a "
+        "natural drop-off; tier 1 leads the section before Go-deeper.",
+    )
     label = models.CharField(max_length=120, help_text="The metric, not a sentence.")
     viz = models.CharField(max_length=12, choices=VIZ_CHOICES, default=BAR)
     wide = models.BooleanField(default=False, help_text="Span two columns (ranked).")
@@ -588,6 +656,10 @@ class Question(models.Model):
         Section, related_name="questions", on_delete=models.CASCADE
     )
     order = models.PositiveSmallIntegerField(default=0)
+    tier = models.PositiveSmallIntegerField(
+        default=1,
+        help_text="Quality tier from research (1 = leading); drives the Go-deeper split.",
+    )
     text = models.CharField(max_length=400)
     kind = models.CharField(max_length=12, choices=KIND_CHOICES, default=EMPIRICAL)
     why = models.TextField(blank=True, help_text="Why this question is contested.")
@@ -607,10 +679,22 @@ class Question(models.Model):
     )
 
     class Meta:
-        ordering = ["-votes", "order", "id"]
+        # Research order by default; the view layer switches to vote order once
+        # a topic's questions pass MIN_VOTES_REORDER real votes.
+        ordering = ["order", "id"]
 
     def __str__(self) -> str:
         return self.text
+
+    @property
+    def show_count(self):
+        """Gate the net number behind real participation (MIN_VOTES_SHOW_COUNT
+        votes cast). Uses the `votes_cast` annotation when the queryset
+        provides it; falls back to a query for HTMX fragments."""
+        n = getattr(self, "votes_cast", None)
+        if n is None:
+            n = self.importance_votes.count()
+        return n >= MIN_VOTES_SHOW_COUNT
 
     @property
     def tag_icon(self) -> str:
@@ -674,6 +758,10 @@ class Position(models.Model):
         Section, related_name="positions", on_delete=models.CASCADE
     )
     order = models.PositiveSmallIntegerField(default=0)
+    tier = models.PositiveSmallIntegerField(
+        default=1,
+        help_text="Quality tier from research (1 = leading); drives the Go-deeper split.",
+    )
     name = models.CharField(max_length=120)
     color_key = models.CharField(
         max_length=10,
@@ -709,12 +797,22 @@ class Position(models.Model):
     )
 
     class Meta:
-        # Prevalence-seeded, vote-reordered (decision 2026-06-17): when unvoted
-        # (importance 0) prevalence decides; importance votes take over as they accrue.
-        ordering = ["-importance", "-prevalence_weight", "order", "id"]
+        # Prevalence-seeded (research) by default; the view layer switches to
+        # importance-vote order once the topic's positions pass
+        # MIN_VOTES_REORDER real votes (supersedes decision 2026-06-17).
+        ordering = ["-prevalence_weight", "order", "id"]
 
     def __str__(self) -> str:
         return self.name
+
+    @property
+    def show_count(self):
+        """Gate the net number behind real participation (MIN_VOTES_SHOW_COUNT
+        votes cast). Mirrors Question.show_count."""
+        n = getattr(self, "votes_cast", None)
+        if n is None:
+            n = self.importance_votes.count()
+        return n >= MIN_VOTES_SHOW_COUNT
 
     @property
     def color_var(self) -> str:
@@ -803,6 +901,11 @@ class Action(models.Model):
         Section, related_name="actions", on_delete=models.CASCADE
     )
     order = models.PositiveSmallIntegerField(default=0)
+    tier = models.PositiveSmallIntegerField(
+        default=1,
+        help_text="Quality tier from research (1 = leading). Recorded for future "
+        "tier-driven display; actions currently split by reveal level.",
+    )
     kind = models.CharField(max_length=20, choices=KIND_CHOICES, default=LEARN_MORE)
     title = models.CharField(max_length=200)
     description = models.CharField(max_length=400, blank=True)
