@@ -95,7 +95,12 @@ onto `<slug>` instead — there's no live version to protect.
    feeds the reader-facing **"Last reviewed: \<month year\>"** trust badge. Edit the
    field in admin (Research provenance fieldset) or via shell (snippet in
    `reference.md`).
-4. **Commit** `research/topics/<slug>.json` to git — the diff *is* the content history.
+4. **Verify links landed** — `python manage.py check_links --topic <slug>` must
+   report **0 placeholder / 0 dead**. Non-optional, and it especially matters
+   after a piecemeal admin apply: that is exactly how the 2026-07-03 nuclear
+   refresh shipped fixed action URLs in the proposal but left `#` placeholders
+   live. (The loader also errors on placeholder action URLs now.)
+5. **Commit** `research/topics/<slug>.json` to git — the diff *is* the content history.
 
 ---
 

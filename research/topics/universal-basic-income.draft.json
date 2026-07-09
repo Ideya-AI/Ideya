@@ -1,297 +1,320 @@
 {
- "draft": {
-  "basics": {
-   "intro": "Seven load-bearing facts before the argument starts: cash pilots so far haven't shown reduced work, cash subsidies in tight housing markets mostly turn into higher rent rather than better housing, existing means-tested programs already run over a trillion dollars a year and still leave a fifth of eligible people uncovered, a job guarantee's price tag is a similar order of magnitude to a poverty-targeted UBI, and how a cash program is scoped — everyone vs. the poor — swings its cost several-fold.",
-   "stats": [
+  "draft": {
+    "basics": {
+      "intro": "Seven load-bearing facts before the argument starts: cash pilots so far haven't shown reduced work, cash subsidies in tight housing markets mostly turn into higher rent rather than better housing, existing means-tested programs already run over a trillion dollars a year and still leave a fifth of eligible people uncovered, a job guarantee's price tag is a similar order of magnitude to a poverty-targeted UBI, and how a cash program is scoped — everyone vs. the poor — swings its cost several-fold.",
+      "stats": [
+        {
+          "label": "Scale of the GiveDirectly Kenya basic-income study",
+          "value": "23,000",
+          "unit": "people",
+          "viz": "radial",
+          "fill_pct": 90,
+          "note": "The world's largest and longest-running basic-income study — ~195 villages, terms of 2–12 years — found long-term monthly cash increased entrepreneurship and investment with no evidence it reduced work, consistent with Stockton (SEED), Finland's trial, and Alaska's permanent dividend. All remain time-limited or far below poverty-level payments, so a permanent national UBI is largely untested.",
+          "source_label": "GiveDirectly, reported by NPR",
+          "source_url": "https://www.npr.org/sections/goatsandsoda/2023/12/07/1217478771/its-one-of-the-biggest-experiments-in-fighting-global-poverty-now-the-results-ar",
+          "source_published": "2023-12",
+          "source_accessed": "2026-07-03",
+          "reveal": "condensed",
+          "tier": 1
+        },
+        {
+          "label": "Pass-through of higher housing-voucher payments into rent",
+          "value": "46",
+          "unit": "¢ per $1",
+          "viz": "bar",
+          "fill_pct": 46,
+          "note": "Raising the rent ceiling landlords can charge voucher tenants mostly raised the rent itself, not housing quality — evidence for the in-kind-services claim that cash-like subsidies get absorbed into prices where supply is inelastic, rather than expanding supply. Only ~5¢ of each extra dollar bought measurably better housing.",
+          "source_label": "Collinson & Ganong, American Economic Journal: Economic Policy",
+          "source_url": "https://www.aeaweb.org/articles?id=10.1257/pol.20150176",
+          "source_published": "2018-05",
+          "source_accessed": "2026-07-03",
+          "reveal": "condensed",
+          "tier": 1
+        },
+        {
+          "label": "Net cost of a poverty-closing UBI vs. a flat universal payment",
+          "value": "783.7",
+          "unit": "$B/year",
+          "viz": "bar",
+          "fill_pct": 20,
+          "note": "Scoping a UBI to close the poverty gap and taxing it back above that line costs a fraction of paying every adult a flat $1,000/month, which would run roughly $3-4 trillion a year gross. The figure (2024 dollars) is sensitive to modeling choices — clawback rate, overhead, take-up — that haven't been tested at national-rollout scale.",
+          "source_label": "Rossbach & Widerquist, Basic Income Studies (De Gruyter Brill)",
+          "source_url": "https://www.degruyterbrill.com/document/doi/10.1515/bis-2025-0024/html",
+          "source_published": "2026-01",
+          "source_accessed": "2026-07-03",
+          "reveal": "condensed",
+          "tier": 1
+        },
+        {
+          "label": "Existing federal means-tested mandatory spending",
+          "value": "1,100+",
+          "unit": "$B/year",
+          "viz": "bar",
+          "fill_pct": 55,
+          "note": "Programs like Medicaid, SNAP, the EITC/CTC and SSI already cost over $1.1 trillion a year combined, the baseline any cash-vs-services redesign has to build on or replace.",
+          "source_label": "Congressional Budget Office, Federal Mandatory Spending for Means-Tested Programs and Tax Credits",
+          "source_url": "https://www.cbo.gov/publication/61472",
+          "source_published": "2025-06",
+          "source_accessed": "2026-07-03",
+          "reveal": "condensed",
+          "tier": 1
+        },
+        {
+          "label": "Non-take-up of the Earned Income Tax Credit among the eligible",
+          "value": "22",
+          "unit": "%",
+          "viz": "bar",
+          "fill_pct": 22,
+          "note": "Even one of the best-studied, most efficiently run means-tested benefits leaves a fifth of eligible households empty-handed (tax year 2021) — the paperwork, awareness, and stigma gap universalists cite against means-testing. Even SNAP, the safety net's best at reach, misses about 1 in 8 (88% participation, FY2022).",
+          "source_label": "U.S. Census Bureau & IRS, EITC Participation Results and IRS-Census Match Methodology, Tax Year 2021",
+          "source_url": "https://www.census.gov/library/working-papers/2024/adrm/CES-WP-24-75.html",
+          "source_published": "2024-12",
+          "source_accessed": "2026-07-03",
+          "reveal": "condensed",
+          "tier": 1
+        },
+        {
+          "label": "Estimated net cost of a federal job guarantee",
+          "value": "0.8-2",
+          "unit": "% of GDP/yr",
+          "viz": "bar",
+          "fill_pct": 40,
+          "note": "This modeling, based on 2018 labor-market conditions, nets out expected savings on unemployment insurance, Medicaid and the EITC. Covers 11–16 million jobs at $15/hr plus benefits.",
+          "source_label": "Levy Economics Institute of Bard College (Tcherneva, Working Paper 902)",
+          "source_url": "https://www.levyinstitute.org/pubs/wp_902.pdf",
+          "source_published": "2018-04",
+          "source_accessed": "2026-07-03",
+          "reveal": "condensed",
+          "tier": 1
+        },
+        {
+          "label": "US official poverty rate",
+          "value": "10.6",
+          "unit": "% of pop.",
+          "viz": "radial",
+          "fill_pct": 11,
+          "note": "The official poverty threshold was $31,812 for a family of four in 2024 — the population and income gap any cash, jobs, or services proposal is ultimately measured against. That is 35.9 million people.",
+          "source_label": "U.S. Census Bureau, Poverty in the United States: 2024",
+          "source_url": "https://www.census.gov/library/publications/2025/demo/p60-287.html",
+          "source_published": "2025-09",
+          "source_accessed": "2026-07-03",
+          "reveal": "condensed",
+          "tier": 2
+        }
+      ]
+    },
+    "crux": {
+      "lead": "Is the real fight over how much of the money reaches the poor — or over whether a check is the right thing to hand them at all?",
+      "lead_highlight": "or over whether a check is the right thing to hand them at all?",
+      "subtitle": "Cash's effect on work looks flat in every trial to date, but the trials are short and voluntary; what's genuinely unresolved is who should get it, and whether cash is the right instrument at all.",
+      "empirical": "Whether closing the same poverty gap costs less via a phased/clawed-back transfer, a flat universal payment, or continued reliance on the $1.1T+/year already spent on means-tested programs — a costing and administrative-overhead question, resolvable by modeling clawback rates and delivery costs, not by intuition.",
+      "values": "Whether unconditional, no-questions-asked eligibility is itself the good — dignity, automation-proofing, freedom from bureaucratic gatekeeping — even if it means paying the non-poor too; separately, whether needs like healthcare, childcare, and housing are things a check can actually buy, or whether they require the state to provision the good directly rather than trust the market to sell it to you; and whether a guaranteed job's stabilizing, public-goods-producing role is something a check structurally cannot replicate, independent of its cost."
+    },
+    "overview": {
+      "summary": "Whether income support should flow as unconditional cash paid to everyone, or as targeted transfers, guaranteed public jobs, or in-kind services aimed at those who need them.",
+      "scope_covered": "Evidence from cash-transfer pilots (Stockton SEED, GiveDirectly Kenya, Finland's 2017-18 trial, U.S. city and county programs like Cook County) on labor supply, poverty, and wellbeing; fiscal-cost and affordability analyses of national-scale UBI; the design debate between full universality and means-tested/negative-income-tax targeting; the job-guarantee alternative; and the case for in-kind services and existing welfare-state benefits over cash.",
+      "scope_excluded": "Country-by-country political horse-races and specific campaign platforms; resource-dividend programs like Alaska's Permanent Fund Dividend, whose finding on permanence is folded into Basics above but which is excluded as a standalone case study since its ~$1,000-1,700/year payout is roughly a tenth the scale of a poverty-level UBI; the broader automation/future-of-work economics literature except where it bears directly on the case for or against UBI; cryptocurrency- or corporate-funded basic-income schemes outside public policy.",
+      "why_now": "Automation and AI-driven job-loss anxiety have put income-support redesign back on the table, and a wave of guaranteed-income pilots — Stockton SEED, GiveDirectly Kenya, Finland, and dozens of U.S. city and county programs including Cook County, Illinois, which in its 2026 budget made its program permanent at $7.5 million a year, down from the $42 million, 3,250-household ARPA-funded pilot it ran from 2022 to 2025 — have now reported enough results to sharpen the debate over whether the safety net's next dollar should be universal cash, targeted transfers, guaranteed jobs, or in-kind services."
+    },
+    "positions": [
+      {
+        "name": "Negative-income-tax / targeted-transfer economists",
+        "steelman": "A dollar targeted to the poor beats a dollar spread across everyone, rich included.",
+        "description": "Every dollar of public money should do the most good it can buy — directing income support to households below a threshold, phased out smoothly as earnings rise, not mailed as an identical check to a billionaire and a single mother. This is Milton Friedman's negative-income-tax logic: one unified benefit replacing the current patchwork, with a gradual phase-out instead of a benefit cliff, preserving work incentive at a fraction of universal cost. The evidence backs the design, not just the intuition — Hanna and Olken's cross-country analysis (Journal of Economic Perspectives, 2018) finds targeted transfers deliver substantially larger welfare gains to the poor per dollar than universal payments, and Hoynes and Rothstein find a UBI generous enough to matter for poor families would be enormously costly because so much flows to middle- and upper-income households who don't need it. Give the poor more, not the rich the same — that's what makes generosity affordable.",
+        "proponents": "Milton Friedman, James Tobin, Robert Greenstein, Hilary Hoynes, Jesse Rothstein, Rema Hanna, Benjamin Olken",
+        "representative_name": "Robert Greenstein (Center on Budget and Policy Priorities)",
+        "representative_note": "Greenstein's CBPP commentary argues that converting dollars now targeted at the bottom fifth of earners into universal payments reaching up the income scale \"would increase poverty and inequality\" rather than reduce them. A separate CBPP analysis of the major means-tested programs — SNAP, Medicaid, the EITC, SSI and housing vouchers — found administrative costs consume just 1-9% of program resources, undercutting the case that targeting is the wasteful, bureaucratic option. His view sits alongside the academic backbone of the position: Hanna & Olken (JEP, 2018) and Hoynes & Rothstein (NBER/Annual Review of Economics, 2019).",
+        "prevalence_weight": 35,
+        "spectrum_position": 1,
+        "tier": 1
+      },
+      {
+        "name": "Welfare-state / in-kind-services defenders",
+        "steelman": "A right you can't be priced out of, not a check the market eats.",
+        "description": "What people need to live a good life isn't more purchasing power to shop in broken markets — it's the thing itself, guaranteed as a right: a GP appointment, a childcare place, a home, a bus that runs. Collective provision decommodifies these essentials, pooling risk and buying power so cost and quality don't depend on how well one household bargains, and builds shared social infrastructure a private transaction never can. Handing out cash for childcare or housing doesn't fix a shortage of childminders or homes — in inelastic markets, extra cash mostly gets absorbed into higher prices and rents rather than more supply. The UK's own costed Universal Basic Services proposal found extending free social housing, healthcare, education, transport, and legal/democratic support would run to roughly 2.3% of GDP — cheaper than most UBI schemes — while directly closing gaps cash transfers don't.",
+        "proponents": "Anna Coote, Andrew Percy, Jonathan Portes, Howard Reed (UCL Institute for Global Prosperity / New Economics Foundation), Ganesh Sitaraman, Anne Alstott, Robert Skidelsky, Tony Judt, Gøsta Esping-Andersen",
+        "representative_name": "Anna Coote &amp; Andrew Percy, \"The Case for Universal Basic Services\" (2020)",
+        "representative_note": "Builds on UCL Institute for Global Prosperity's 2017 costed UBS proposal (Portes, Reed, Percy), arguing expanded free housing, healthcare, education, transport, and care services beat unconditional cash for reducing poverty and inequality — explicitly framed as UBS vs. UBI, not a complement.",
+        "prevalence_weight": 30,
+        "spectrum_position": -3,
+        "tier": 1
+      },
+      {
+        "name": "UBI universalists (unconditional cash to all)",
+        "steelman": "A floor under everyone, unconditional, that can't fail you when you need it most.",
+        "description": "Universalists start from a principle, not a spreadsheet: income security is a right of citizenship, not a prize for proving your poverty to a caseworker. As Guy Standing puts it, the justification is \"ethical, not instrumental\" — unconditional cash treats people as agents with dignity, not suspects who must document disability, job searches, or destitution to qualify. Because everyone is covered, universal design can't produce the coverage gaps that hollow out targeted programs — where roughly a fifth of eligible households go without the EITC, and even SNAP misses about 1 in 8, due to paperwork, waitlists, and stigma — and it builds the broad political coalition that keeps a benefit funded, since programs \"for the poor\" alone become poor programs. And as automation and gig work sever the old link between a job and a paycheck, Standing and Scott Santens argue only an unconditional floor — not a means test bolted onto a shrinking labor market — can keep pace with how work is changing.",
+        "proponents": "Guy Standing, Scott Santens, Karl Widerquist, Andrew Yang, Rutger Bregman, Basic Income Earth Network (BIEN)",
+        "representative_name": "Guy Standing",
+        "representative_note": "Professor of development studies (SOAS, University of London) and co-founder of the Basic Income Earth Network; frames basic income as an ethical entitlement to security and dignity, not an instrumental poverty-reduction tool",
+        "prevalence_weight": 25,
+        "spectrum_position": 3,
+        "tier": 1
+      },
+      {
+        "name": "Federal job-guarantee proponents",
+        "steelman": "The right to a job beats a check — work builds what cash never can.",
+        "description": "Work, not just income, anchors dignity, skill, and community — a federal job guarantee offers anyone who wants one a public-sector job at a living wage, abolishing unemployment by right rather than cushioning it with a transfer. Unlike a check, a guaranteed job produces something: repaired infrastructure, staffed clinics and schools, cared-for elders, restored land — public goods a UBI check can't conjure into existence. It also does what cash structurally cannot: acts as a wage and price floor and automatic stabilizer, expanding in downturns and shrinking in booms, the way Depression-era work programs stabilized employment. And because joblessness is corrosive and contagious — hollowing out neighborhoods, not just wallets — putting people to work at good wages rebuilds the local ties and buy-in that idle income never will.",
+        "proponents": "Pavlina Tcherneva, L. Randall Wray, Stephanie Kelton, William Darity Jr., Darrick Hamilton, Mark Paul, Hyman Minsky (foundational), Bill Mitchell, Warren Mosler, Rep. Ro Khanna, Sen. Bernie Sanders (2018 proposal), Center on Budget and Policy Priorities Full Employment Project",
+        "representative_name": "Pavlina Tcherneva",
+        "representative_note": "Levy Economics Institute economist and author of The Case for a Job Guarantee (2020), the movement's central text; builds on Hyman Minsky's 1965 \"employer of last resort\" model and argues the program's public-goods and community-stabilization effects are what a UBI check cannot replicate.",
+        "prevalence_weight": 10,
+        "spectrum_position": -2,
+        "tier": 1
+      }
+    ],
+    "questions": [
+      {
+        "text": "Does unconditional cash meaningfully reduce paid work or labor-force participation?",
+        "kind": "empirical",
+        "why": "Every major pilot (Stockton SEED, GiveDirectly Kenya, Finland 2017-18, Cook County) finds flat or near-zero effects on employment, but skeptics argue these are small, time-limited, income-supplement-style trials with announced end dates — not evidence for how people behave under a permanent, national, fully unconditional floor with no expiration and real income effects at scale. Alaska's decades-old Permanent Fund Dividend is the one long-running counterexample on permanence, but its small dollar amount means it can't speak to the scale question. The two sides aren't reading different data so much as disputing whether short pilot or small-dividend results generalize at all.",
+        "reveal": "condensed",
+        "tier": 1
+      },
+      {
+        "text": "Is a UBI set at a genuinely livable level fiscally affordable at national scale?",
+        "kind": "empirical",
+        "why": "Cost estimates for a livable UBI (e.g. ~$1,000/month/adult in the US) swing from 'unaffordable multi-trillion-dollar budget-buster' to 'roughly revenue-neutral' depending entirely on modeling choices that are themselves contested: whether it replaces existing welfare spending, whether it's clawed back via taxes on higher earners, and whether growth/health/productivity offsets are counted. Both camps can cite defensible models — the disagreement is about which assumptions are honest, not about arithmetic.",
+        "reveal": "condensed",
+        "tier": 1
+      },
+      {
+        "text": "Is universal, no-strings eligibility a better design than means-tested targeting of the same dollars?",
+        "kind": "value",
+        "why": "Targeting can mathematically deliver more dollars per poor person for the same budget, and universalists concede the arithmetic — their case rests on what targeting costs beyond the ledger: stigma-driven non-take-up (about a fifth of eligible households miss the EITC; even SNAP, the best-performing program, misses about 1 in 8), bureaucratic exclusion errors, benefit cliffs that penalize work, and the political fragility of programs only the poor use. This is a values trade-off between fiscal efficiency and dignity/durability, not a dispute over who can do the math.",
+        "reveal": "condensed",
+        "tier": 1
+      },
+      {
+        "text": "Does unconditional cash outperform in-kind services, guaranteed jobs, or existing benefits at improving people's lives?",
+        "kind": "value",
+        "why": "Cash advocates point to recipients' own spending choices and autonomy as the measure of success; in-kind and job-guarantee proponents point to markets (healthcare, childcare, housing, employment) that don't reliably respond to demand no matter how much cash is injected, and to the non-monetary value of guaranteed work itself. The contest is less about which outcome metric moves more and more about whether the right model of a good life is one you buy for yourself or one the state builds and provides directly.",
+        "reveal": "condensed",
+        "tier": 1
+      }
+    ],
+    "actions": [
+      {
+        "kind": "donate",
+        "title": "Fund unconditional cash transfers directly",
+        "description": "GiveDirectly sends large, no-strings cash grants to people in extreme poverty, and its published UBI trial results show the money doesn't reduce recipients' work.",
+        "url": "https://www.givedirectly.org/ubi",
+        "for_position": "UBI universalists (unconditional cash to all)",
+        "reveal": "normal",
+        "tier": 2
+      },
+      {
+        "kind": "volunteer",
+        "title": "Volunteer for the global basic-income network",
+        "description": "BIEN is run entirely by volunteers who research, write, and organize for basic income as a right of citizenship, not a means-tested benefit, and it recruits year-round for its task forces.",
+        "url": "https://basicincome.org/volunteer-for-bien/",
+        "for_position": "UBI universalists (unconditional cash to all)",
+        "reveal": "condensed",
+        "tier": 1
+      },
+      {
+        "kind": "policy",
+        "title": "Track the federal job-guarantee bill",
+        "description": "H.R.7566, introduced in Congress in February 2026, would fund a Labor Department pilot guaranteeing employment in high-unemployment areas — read the bill text and status.",
+        "url": "https://www.congress.gov/bill/119th-congress/house-bill/7566",
+        "for_position": "Federal job-guarantee proponents",
+        "reveal": "deep",
+        "tier": 2
+      },
+      {
+        "kind": "policy",
+        "title": "The case for targeting, not universal checks",
+        "description": "CBPP argues a politically affordable UBI would pay less than many existing targeted programs, and makes the case for expanding the EITC and Child Tax Credit instead of paying everyone the same amount.",
+        "url": "https://www.cbpp.org/research/poverty-and-opportunity/commentary-universal-basic-income-may-sound-attractive-but-if-it",
+        "for_position": "Negative-income-tax / targeted-transfer economists",
+        "reveal": "normal",
+        "tier": 2
+      },
+      {
+        "kind": "donate",
+        "title": "Support research for targeted anti-poverty policy",
+        "description": "CBPP's research and advocacy helped build and defend the EITC, Child Tax Credit, SNAP and Medicaid — the targeted-transfer camp's case that a dollar aimed at the poor outperforms a dollar spread to everyone.",
+        "url": "https://www.cbpp.org/donate",
+        "for_position": "Negative-income-tax / targeted-transfer economists",
+        "reveal": "condensed",
+        "tier": 1
+      },
+      {
+        "kind": "donate",
+        "title": "Fund the push for public care infrastructure",
+        "description": "National Domestic Workers Alliance organizes and fundraises for guaranteed childcare, paid family leave, and long-term care as public services — not benefits a family has to shop for with a check in a shortage market.",
+        "url": "https://www.domesticworkers.org/donate/ways-to-give/",
+        "for_position": "Welfare-state / in-kind-services defenders",
+        "reveal": "normal",
+        "tier": 2
+      },
+      {
+        "kind": "local",
+        "title": "Guaranteed-income pilots near you",
+        "description": "The Mayors for a Guaranteed Income coalition tracks 100+ city and county cash-pilot programs — see whether one has run where you live.",
+        "url": "https://www.mayorsforagi.org/",
+        "for_position": "",
+        "reveal": "normal",
+        "tier": 2
+      },
+      {
+        "kind": "submit_view",
+        "title": "Add your view",
+        "description": "Share where you land on cash vs. targeted transfers vs. services vs. jobs — and why.",
+        "url": "",
+        "for_position": "",
+        "reveal": "condensed",
+        "tier": 1
+      }
+    ]
+  },
+  "verdicts": [
     {
-     "label": "Scale of the GiveDirectly Kenya basic-income study",
-     "value": "23,000",
-     "unit": "people across ~195 treatment villages (plus ~100 control villages surveyed only, no payments), on cash terms of 2-12 years depending on the study arm",
-     "viz": "radial",
-     "fill_pct": 90,
-     "note": "The world's largest and longest-running basic-income study to date found long-term monthly cash increased entrepreneurship and investment with no evidence it reduced work — consistent with smaller, shorter pilots in Stockton, CA (SEED) and Finland's national trial, which also found flat or slightly positive employment effects. All of these remain time-limited, voluntary pilots, not a permanent, unconditional, poverty-level program — how results would generalize to that scale and duration is largely untested. The one exception is Alaska's Permanent Fund Dividend, a genuinely permanent, universal cash payment running since 1982: Jones & Marinescu (NBER/AEJ: Economic Policy, 2022) find it too had no significant effect on employment. But at $1,000-1,700 a year, it pays roughly a tenth of a poverty-level UBI — evidence that permanence alone doesn't reduce work, not evidence about what a much larger permanent check would do.",
-     "source_label": "GiveDirectly, reported by NPR",
-     "source_url": "https://www.npr.org/sections/goatsandsoda/2023/12/07/1217478771/its-one-of-the-biggest-experiments-in-fighting-global-poverty-now-the-results-ar",
-     "source_published": "2023-12",
-     "source_accessed": "2026-07-03",
-     "reveal": "normal"
+      "critic": "neutrality",
+      "pass": false,
+      "issues": [
+        "Missing a genuine, high-prevalence position: nowhere in the four positions is there a steelman for the work-requirement / conditional-welfare view (e.g. Robert Rector/Heritage Foundation, Oren Cass/American Compass, Lawrence Mead) that holds cash — whether NIT, UBI, or in-kind — should come with work/behavioral conditions because dependency and long-run self-sufficiency are the real stakes, not short-run labor-supply elasticity. This is a real, currently active policy faction (TANF, SNAP and Medicaid work-requirement fights), arguably as prevalent as the job-guarantee position (weighted 10) or more. Its absence means the piece implicitly pre-resolves the 'does cash create dependency' question via the Basics intro ('cash pilots so far haven't shown reduced work') and Q1's framing, rather than giving that camp its own voice to argue the RCT/pilot evidence doesn't speak to their actual (multi-generational, norms-based) concern. As written, the four positions all accept some form of unconditional or lightly-conditioned transfer/service/job — none argues conditionality itself is the point — which is an asymmetry by omission, not a house verdict in wording but a scope tilt in effect.",
+        "Rigor asymmetry in the positions: NIT, welfare-state, and UBI-universalist descriptions each embed a specific named study or dataset inline (Hanna & Olken JEP 2018; the UK UBS costed 2.3%-of-GDP proposal; EITC/SNAP non-take-up figures), but the job-guarantee description leans on a vague, uncited historical claim ('the way Depression-era work programs stabilized employment') instead of a specific figure — even though the Levy Institute costing already sits in Basics (0.8-2% GDP) and could be pulled inline the way the other three positions pull their evidence inline. Fix: rewrite the job-guarantee description's stabilizer sentence to cite a concrete data point (e.g., WPA peak employment ~3 million, or the Levy Institute's 0.8-2%-of-GDP costing) so all four positions carry equivalent evidentiary weight in-voice.",
+        "Minor actions-section imbalance: the negative-income-tax position gets two actions from the same organization (CBPP donate + CBPP policy), and the UBI-universalist position gets two (GiveDirectly + BIEN), while welfare-state defenders and job-guarantee proponents get only one action each. Not a wording tilt, but an investment asymmetry. Fix: add a second action for the welfare-state or job-guarantee position (e.g., a UBS-aligned volunteer/advocacy org, or a Levy Institute / job-guarantee campaign resource) so each of the four positions has comparable actionable follow-through, or diversify NIT's second action away from CBPP to a different org."
+      ],
+      "fixes": [
+        "Add a fifth position steelmanning work-requirement/conditional-welfare traditionalists, with its own punchy steelman line (e.g. \"Conditions aren't cruelty — they're what turns a transfer into a ladder out of poverty\"), proponents (Robert Rector, Oren Cass, Lawrence Mead), and a representative figure/note, then rebalance prevalence_weight across all five positions and give this position at least one Basics-grounded question and one action.",
+        "Give the job-guarantee position an inline concrete citation (WPA employment figures or the Levy Institute 0.8-2%-of-GDP costing already in Basics) in place of the vague 'Depression-era work programs' line, matching the evidentiary density of the other three positions.",
+        "Add one more action item for whichever of welfare-state/job-guarantee positions currently has only one, or replace NIT's second CBPP action with a different organization, so action-count and source diversity are roughly even across positions."
+      ]
     },
     {
-     "label": "Pass-through of higher housing-voucher payments into rent",
-     "value": "46",
-     "unit": "¢ of every extra $1 in voucher value captured as higher rent, vs. 5¢ in measurably better housing",
-     "viz": "bar",
-     "fill_pct": 46,
-     "note": "Raising the rent ceiling landlords can charge voucher tenants mostly raised the rent itself, not housing quality — evidence for the in-kind-services claim that cash-like subsidies get absorbed into prices where supply is inelastic, rather than expanding supply.",
-     "source_label": "Collinson & Ganong, American Economic Journal: Economic Policy",
-     "source_url": "https://www.aeaweb.org/articles?id=10.1257/pol.20150176",
-     "source_published": "2018-05",
-     "source_accessed": "2026-07-03",
-     "reveal": "normal"
+      "critic": "steelman-genuineness",
+      "pass": true,
+      "issues": [],
+      "fixes": []
     },
     {
-     "label": "Net cost of a poverty-closing UBI vs. a flat universal payment",
-     "value": "783.7",
-     "unit": "$ billion/year net (2024), if scoped to and clawed back at the poverty line",
-     "viz": "bar",
-     "fill_pct": 20,
-     "note": "Scoping a UBI to close the poverty gap and taxing it back above that line costs a fraction of paying every adult a flat $1,000/month regardless of income, which would run roughly $3-4 trillion a year gross. Like other UBI/NIT cost estimates, this figure is sensitive to modeling choices — clawback rate, administrative overhead, and take-up — that haven't been tested at actual national-rollout scale.",
-     "source_label": "Rossbach & Widerquist, Basic Income Studies (De Gruyter Brill)",
-     "source_url": "https://www.degruyterbrill.com/document/doi/10.1515/bis-2025-0024/html",
-     "source_published": "2026-01",
-     "source_accessed": "2026-07-03",
-     "reveal": "deep"
+      "critic": "fact-source",
+      "pass": true,
+      "issues": [
+        "CBO means-tested mandatory spending total ($1.1-1.2T) could not be independently re-verified verbatim from the source PDF (cbo.gov blocks automated fetch with 403); the report itself is real, correctly titled, and correctly dated 2025-06, and the aggregate is directionally consistent with known program sizes (Medicaid+SNAP+EITC/CTC+SSI), but a human should spot-check the exact table figure once.",
+        "Alaska PFD note omits that Jones & Marinescu also found a 1.8pp increase in part-time work (a general-equilibrium effect) alongside 'no significant effect on employment' -- not an error, just an omitted nuance given the space constraints.",
+        "GiveDirectly note's phrase 'cash terms of 2-12 years depending on the study arm' slightly glosses over the lump-sum arm (paid as a single lump sum representing ~2 years of income, not disbursed over 2 years) -- minor wording imprecision, not a numeric error."
+      ],
+      "fixes": [
+        "Optional: have a human open https://www.cbo.gov/system/files/2025-06/61472-Means-Tested-Programs.pdf directly (browser, not curl) and confirm the exact aggregate dollar figure matches '1,100+ / nearly $1.2 trillion' before final publish.",
+        "Optional: in the Alaska PFD note, could add '(with a small offsetting rise in part-time work)' for completeness, though current phrasing is not inaccurate.",
+        "Optional: reword GiveDirectly note's unit field to 'cash paid over 2-12 years, or as a single lump sum, depending on study arm' for precision."
+      ]
     },
     {
-     "label": "Existing federal means-tested mandatory spending",
-     "value": "1,100+",
-     "unit": "$ billion/year, means-tested mandatory spending (CBO's FY2025 estimate is nearly $1.2 trillion)",
-     "viz": "bar",
-     "fill_pct": 55,
-     "note": "Programs like Medicaid, SNAP, the EITC/CTC and SSI already cost over $1.1 trillion a year combined, the baseline any cash-vs-services redesign has to build on or replace.",
-     "source_label": "Congressional Budget Office, Federal Mandatory Spending for Means-Tested Programs and Tax Credits",
-     "source_url": "https://www.cbo.gov/publication/61472",
-     "source_published": "2025-06",
-     "source_accessed": "2026-07-03",
-     "reveal": "normal"
-    },
-    {
-     "label": "Non-take-up of the Earned Income Tax Credit among the eligible",
-     "value": "22",
-     "unit": "% of eligible taxpayers who don't claim it, tax year 2021 (about 1 in 5)",
-     "viz": "bar",
-     "fill_pct": 22,
-     "note": "Even one of the best-studied, most efficiently run means-tested benefits in the federal system leaves a fifth of eligible households empty-handed — the paperwork, awareness, and stigma gap universalists cite against means-testing generally. SNAP, the safety net's most successful program at reaching those eligible, still misses about 1 in 8 (88% national participation, FY2022): no means-tested program yet reaches full coverage.",
-     "source_label": "U.S. Census Bureau & IRS, EITC Participation Results and IRS-Census Match Methodology, Tax Year 2021",
-     "source_url": "https://www.census.gov/library/working-papers/2024/adrm/CES-WP-24-75.html",
-     "source_published": "2024-12",
-     "source_accessed": "2026-07-03",
-     "reveal": "normal"
-    },
-    {
-     "label": "Estimated net cost of a federal job guarantee",
-     "value": "0.8-2",
-     "unit": "% of GDP/year (11-16 million jobs at $15/hr plus benefits)",
-     "viz": "bar",
-     "fill_pct": 40,
-     "note": "This modeling, based on 2018 labor-market conditions, nets out expected savings on unemployment insurance, Medicaid and the EITC.",
-     "source_label": "Levy Economics Institute of Bard College (Tcherneva, Working Paper 902)",
-     "source_url": "https://www.levyinstitute.org/pubs/wp_902.pdf",
-     "source_published": "2018-04",
-     "source_accessed": "2026-07-03",
-     "reveal": "deep"
-    },
-    {
-     "label": "US official poverty rate",
-     "value": "10.6",
-     "unit": "% of population (35.9 million people), 2024",
-     "viz": "radial",
-     "fill_pct": 11,
-     "note": "The official poverty threshold was $31,812 for a family of four in 2024 — the population and income gap any cash, jobs, or services proposal is ultimately measured against.",
-     "source_label": "U.S. Census Bureau, Poverty in the United States: 2024",
-     "source_url": "https://www.census.gov/library/publications/2025/demo/p60-287.html",
-     "source_published": "2025-09",
-     "source_accessed": "2026-07-03",
-     "reveal": "condensed"
+      "critic": "crux",
+      "pass": true,
+      "issues": [
+        "The crux correctly avoids a house verdict and avoids 'both sides have a point' hedging — it identifies real, evidence-backed fault lines (targeting efficiency vs. universal coverage; cash vs. direct provision in inelastic markets; job guarantee's structural role) rather than declaring a winner or splitting the difference.",
+        "However, the 'values' field bundles three distinct value disagreements into one run-on sentence (unconditional eligibility as the good; whether cash can buy healthcare/childcare/housing vs. needing direct state provision; whether a guaranteed job's stabilizer/public-goods role is independent of cost). This dilutes the 'genuine narrowing' the crux is supposed to deliver — a crux should point at the single sharpest place disagreement sits, not enumerate positions 2, 3, and 4's separate objections in a list. Note the 'questions' array already unpacks these same three axes individually (Q3 targeting-vs-dignity, Q4 cash-vs-services/jobs), so the crux.values field is redundant with content already carried elsewhere and could be tightened to just the sharpest single line.",
+        "Phrasing drift: 'rather than trust the market to sell it to you' inside the values field imports the in-kind-services camp's own rhetorical framing (the crux's own text sounds like it's arguing for that side) rather than describing the axis neutrally. This is a voice-neutrality issue adjacent to false balance — the crux's descriptive prose should not read as steelmanning one side while describing the disagreement."
+      ],
+      "fixes": [
+        "Tighten crux.values to a single, sharpest fault line rather than three concatenated ones — e.g. keep only: 'Whether unconditional, no-questions-asked eligibility is itself the good — dignity, automation-proofing, freedom from bureaucratic gatekeeping — even if it means paying the non-poor too.' Move the market-provision and job-guarantee-can't-be-replicated points either into the questions[] entries (where they largely already live) or drop them from the crux body to avoid re-listing all four positions' objections in the crux.",
+        "Reword the market-provision clause to neutral language, e.g.: 'whether needs like healthcare, childcare, and housing are things a check can actually buy in the markets that supply them, or whether they require the state to provision the good directly' — remove 'rather than trust the market to sell it to you,' which reads as advocacy phrasing rather than neutral framing of the disagreement.",
+        "Consider whether the lead's two-way split ('how much reaches the poor' vs. 'whether a check is right at all') should be explicitly cross-checked against all four positions once more: confirm position 4 (job guarantee) is legible under the second disjunct alongside position 2 (services) — currently it is, but only implicitly; a parenthetical or the subtitle could make explicit that 'a check' spans both in-kind services and guaranteed jobs as the two non-cash alternatives, so readers don't assume the crux is only cash-vs-services."
+      ]
     }
-   ]
-  },
-  "crux": {
-   "lead": "Is the real fight over how much of the money reaches the poor — or over whether a check is the right thing to hand them at all?",
-   "lead_highlight": "or over whether a check is the right thing to hand them at all?",
-   "subtitle": "Cash's effect on work looks flat in every trial to date, but the trials are short and voluntary; what's genuinely unresolved is who should get it, and whether cash is the right instrument at all.",
-   "empirical": "Whether closing the same poverty gap costs less via a phased/clawed-back transfer, a flat universal payment, or continued reliance on the $1.1T+/year already spent on means-tested programs — a costing and administrative-overhead question, resolvable by modeling clawback rates and delivery costs, not by intuition.",
-   "values": "Whether unconditional, no-questions-asked eligibility is itself the good — dignity, automation-proofing, freedom from bureaucratic gatekeeping — even if it means paying the non-poor too; separately, whether needs like healthcare, childcare, and housing are things a check can actually buy, or whether they require the state to provision the good directly rather than trust the market to sell it to you; and whether a guaranteed job's stabilizing, public-goods-producing role is something a check structurally cannot replicate, independent of its cost."
-  },
-  "overview": {
-   "summary": "Whether income support should flow as unconditional cash paid to everyone, or as targeted transfers, guaranteed public jobs, or in-kind services aimed at those who need them.",
-   "scope_covered": "Evidence from cash-transfer pilots (Stockton SEED, GiveDirectly Kenya, Finland's 2017-18 trial, U.S. city and county programs like Cook County) on labor supply, poverty, and wellbeing; fiscal-cost and affordability analyses of national-scale UBI; the design debate between full universality and means-tested/negative-income-tax targeting; the job-guarantee alternative; and the case for in-kind services and existing welfare-state benefits over cash.",
-   "scope_excluded": "Country-by-country political horse-races and specific campaign platforms; resource-dividend programs like Alaska's Permanent Fund Dividend, whose finding on permanence is folded into Basics above but which is excluded as a standalone case study since its ~$1,000-1,700/year payout is roughly a tenth the scale of a poverty-level UBI; the broader automation/future-of-work economics literature except where it bears directly on the case for or against UBI; cryptocurrency- or corporate-funded basic-income schemes outside public policy.",
-   "why_now": "Automation and AI-driven job-loss anxiety have put income-support redesign back on the table, and a wave of guaranteed-income pilots — Stockton SEED, GiveDirectly Kenya, Finland, and dozens of U.S. city and county programs including Cook County, Illinois, which in its 2026 budget made its program permanent at $7.5 million a year, down from the $42 million, 3,250-household ARPA-funded pilot it ran from 2022 to 2025 — have now reported enough results to sharpen the debate over whether the safety net's next dollar should be universal cash, targeted transfers, guaranteed jobs, or in-kind services."
-  },
-  "positions": [
-   {
-    "name": "Negative-income-tax / targeted-transfer economists",
-    "steelman": "A dollar targeted to the poor beats a dollar spread across everyone, rich included.",
-    "description": "Every dollar of public money should do the most good it can buy — directing income support to households below a threshold, phased out smoothly as earnings rise, not mailed as an identical check to a billionaire and a single mother. This is Milton Friedman's negative-income-tax logic: one unified benefit replacing the current patchwork, with a gradual phase-out instead of a benefit cliff, preserving work incentive at a fraction of universal cost. The evidence backs the design, not just the intuition — Hanna and Olken's cross-country analysis (Journal of Economic Perspectives, 2018) finds targeted transfers deliver substantially larger welfare gains to the poor per dollar than universal payments, and Hoynes and Rothstein find a UBI generous enough to matter for poor families would be enormously costly because so much flows to middle- and upper-income households who don't need it. Give the poor more, not the rich the same — that's what makes generosity affordable.",
-    "proponents": "Milton Friedman, James Tobin, Robert Greenstein, Hilary Hoynes, Jesse Rothstein, Rema Hanna, Benjamin Olken",
-    "representative_name": "Robert Greenstein (Center on Budget and Policy Priorities)",
-    "representative_note": "Greenstein's CBPP commentary argues that converting dollars now targeted at the bottom fifth of earners into universal payments reaching up the income scale \"would increase poverty and inequality\" rather than reduce them. A separate CBPP analysis of the major means-tested programs — SNAP, Medicaid, the EITC, SSI and housing vouchers — found administrative costs consume just 1-9% of program resources, undercutting the case that targeting is the wasteful, bureaucratic option. His view sits alongside the academic backbone of the position: Hanna & Olken (JEP, 2018) and Hoynes & Rothstein (NBER/Annual Review of Economics, 2019).",
-    "prevalence_weight": 35,
-    "spectrum_position": 1
-   },
-   {
-    "name": "Welfare-state / in-kind-services defenders",
-    "steelman": "A right you can't be priced out of, not a check the market eats.",
-    "description": "What people need to live a good life isn't more purchasing power to shop in broken markets — it's the thing itself, guaranteed as a right: a GP appointment, a childcare place, a home, a bus that runs. Collective provision decommodifies these essentials, pooling risk and buying power so cost and quality don't depend on how well one household bargains, and builds shared social infrastructure a private transaction never can. Handing out cash for childcare or housing doesn't fix a shortage of childminders or homes — in inelastic markets, extra cash mostly gets absorbed into higher prices and rents rather than more supply. The UK's own costed Universal Basic Services proposal found extending free social housing, healthcare, education, transport, and legal/democratic support would run to roughly 2.3% of GDP — cheaper than most UBI schemes — while directly closing gaps cash transfers don't.",
-    "proponents": "Anna Coote, Andrew Percy, Jonathan Portes, Howard Reed (UCL Institute for Global Prosperity / New Economics Foundation), Ganesh Sitaraman, Anne Alstott, Robert Skidelsky, Tony Judt, Gøsta Esping-Andersen",
-    "representative_name": "Anna Coote &amp; Andrew Percy, \"The Case for Universal Basic Services\" (2020)",
-    "representative_note": "Builds on UCL Institute for Global Prosperity's 2017 costed UBS proposal (Portes, Reed, Percy), arguing expanded free housing, healthcare, education, transport, and care services beat unconditional cash for reducing poverty and inequality — explicitly framed as UBS vs. UBI, not a complement.",
-    "prevalence_weight": 30,
-    "spectrum_position": -3
-   },
-   {
-    "name": "UBI universalists (unconditional cash to all)",
-    "steelman": "A floor under everyone, unconditional, that can't fail you when you need it most.",
-    "description": "Universalists start from a principle, not a spreadsheet: income security is a right of citizenship, not a prize for proving your poverty to a caseworker. As Guy Standing puts it, the justification is \"ethical, not instrumental\" — unconditional cash treats people as agents with dignity, not suspects who must document disability, job searches, or destitution to qualify. Because everyone is covered, universal design can't produce the coverage gaps that hollow out targeted programs — where roughly a fifth of eligible households go without the EITC, and even SNAP misses about 1 in 8, due to paperwork, waitlists, and stigma — and it builds the broad political coalition that keeps a benefit funded, since programs \"for the poor\" alone become poor programs. And as automation and gig work sever the old link between a job and a paycheck, Standing and Scott Santens argue only an unconditional floor — not a means test bolted onto a shrinking labor market — can keep pace with how work is changing.",
-    "proponents": "Guy Standing, Scott Santens, Karl Widerquist, Andrew Yang, Rutger Bregman, Basic Income Earth Network (BIEN)",
-    "representative_name": "Guy Standing",
-    "representative_note": "Professor of development studies (SOAS, University of London) and co-founder of the Basic Income Earth Network; frames basic income as an ethical entitlement to security and dignity, not an instrumental poverty-reduction tool",
-    "prevalence_weight": 25,
-    "spectrum_position": 3
-   },
-   {
-    "name": "Federal job-guarantee proponents",
-    "steelman": "The right to a job beats a check — work builds what cash never can.",
-    "description": "Work, not just income, anchors dignity, skill, and community — a federal job guarantee offers anyone who wants one a public-sector job at a living wage, abolishing unemployment by right rather than cushioning it with a transfer. Unlike a check, a guaranteed job produces something: repaired infrastructure, staffed clinics and schools, cared-for elders, restored land — public goods a UBI check can't conjure into existence. It also does what cash structurally cannot: acts as a wage and price floor and automatic stabilizer, expanding in downturns and shrinking in booms, the way Depression-era work programs stabilized employment. And because joblessness is corrosive and contagious — hollowing out neighborhoods, not just wallets — putting people to work at good wages rebuilds the local ties and buy-in that idle income never will.",
-    "proponents": "Pavlina Tcherneva, L. Randall Wray, Stephanie Kelton, William Darity Jr., Darrick Hamilton, Mark Paul, Hyman Minsky (foundational), Bill Mitchell, Warren Mosler, Rep. Ro Khanna, Sen. Bernie Sanders (2018 proposal), Center on Budget and Policy Priorities Full Employment Project",
-    "representative_name": "Pavlina Tcherneva",
-    "representative_note": "Levy Economics Institute economist and author of The Case for a Job Guarantee (2020), the movement's central text; builds on Hyman Minsky's 1965 \"employer of last resort\" model and argues the program's public-goods and community-stabilization effects are what a UBI check cannot replicate.",
-    "prevalence_weight": 10,
-    "spectrum_position": -2
-   }
-  ],
-  "questions": [
-   {
-    "text": "Does unconditional cash meaningfully reduce paid work or labor-force participation?",
-    "kind": "empirical",
-    "why": "Every major pilot (Stockton SEED, GiveDirectly Kenya, Finland 2017-18, Cook County) finds flat or near-zero effects on employment, but skeptics argue these are small, time-limited, income-supplement-style trials with announced end dates — not evidence for how people behave under a permanent, national, fully unconditional floor with no expiration and real income effects at scale. Alaska's decades-old Permanent Fund Dividend is the one long-running counterexample on permanence, but its small dollar amount means it can't speak to the scale question. The two sides aren't reading different data so much as disputing whether short pilot or small-dividend results generalize at all.",
-    "reveal": "deep"
-   },
-   {
-    "text": "Is a UBI set at a genuinely livable level fiscally affordable at national scale?",
-    "kind": "empirical",
-    "why": "Cost estimates for a livable UBI (e.g. ~$1,000/month/adult in the US) swing from 'unaffordable multi-trillion-dollar budget-buster' to 'roughly revenue-neutral' depending entirely on modeling choices that are themselves contested: whether it replaces existing welfare spending, whether it's clawed back via taxes on higher earners, and whether growth/health/productivity offsets are counted. Both camps can cite defensible models — the disagreement is about which assumptions are honest, not about arithmetic.",
-    "reveal": "deep"
-   },
-   {
-    "text": "Is universal, no-strings eligibility a better design than means-tested targeting of the same dollars?",
-    "kind": "value",
-    "why": "Targeting can mathematically deliver more dollars per poor person for the same budget, and universalists concede the arithmetic — their case rests on what targeting costs beyond the ledger: stigma-driven non-take-up (about a fifth of eligible households miss the EITC; even SNAP, the best-performing program, misses about 1 in 8), bureaucratic exclusion errors, benefit cliffs that penalize work, and the political fragility of programs only the poor use. This is a values trade-off between fiscal efficiency and dignity/durability, not a dispute over who can do the math.",
-    "reveal": "normal"
-   },
-   {
-    "text": "Does unconditional cash outperform in-kind services, guaranteed jobs, or existing benefits at improving people's lives?",
-    "kind": "value",
-    "why": "Cash advocates point to recipients' own spending choices and autonomy as the measure of success; in-kind and job-guarantee proponents point to markets (healthcare, childcare, housing, employment) that don't reliably respond to demand no matter how much cash is injected, and to the non-monetary value of guaranteed work itself. The contest is less about which outcome metric moves more and more about whether the right model of a good life is one you buy for yourself or one the state builds and provides directly.",
-    "reveal": "normal"
-   }
-  ],
-  "actions": [
-   {
-    "kind": "donate",
-    "title": "Fund unconditional cash transfers directly",
-    "description": "GiveDirectly sends large, no-strings cash grants to people in extreme poverty, and its published UBI trial results show the money doesn't reduce recipients' work.",
-    "url": "https://www.givedirectly.org/ubi",
-    "for_position": "UBI universalists (unconditional cash to all)",
-    "reveal": "normal"
-   },
-   {
-    "kind": "volunteer",
-    "title": "Volunteer for the global basic-income network",
-    "description": "BIEN is run entirely by volunteers who research, write, and organize for basic income as a right of citizenship, not a means-tested benefit, and it recruits year-round for its task forces.",
-    "url": "https://basicincome.org/volunteer-for-bien/",
-    "for_position": "UBI universalists (unconditional cash to all)",
-    "reveal": "condensed"
-   },
-   {
-    "kind": "policy",
-    "title": "Track the federal job-guarantee bill",
-    "description": "H.R.7566, introduced in Congress in February 2026, would fund a Labor Department pilot guaranteeing employment in high-unemployment areas — read the bill text and status.",
-    "url": "https://www.congress.gov/bill/119th-congress/house-bill/7566",
-    "for_position": "Federal job-guarantee proponents",
-    "reveal": "deep"
-   },
-   {
-    "kind": "policy",
-    "title": "The case for targeting, not universal checks",
-    "description": "CBPP argues a politically affordable UBI would pay less than many existing targeted programs, and makes the case for expanding the EITC and Child Tax Credit instead of paying everyone the same amount.",
-    "url": "https://www.cbpp.org/research/poverty-and-opportunity/commentary-universal-basic-income-may-sound-attractive-but-if-it",
-    "for_position": "Negative-income-tax / targeted-transfer economists",
-    "reveal": "normal"
-   },
-   {
-    "kind": "donate",
-    "title": "Support research for targeted anti-poverty policy",
-    "description": "CBPP's research and advocacy helped build and defend the EITC, Child Tax Credit, SNAP and Medicaid — the targeted-transfer camp's case that a dollar aimed at the poor outperforms a dollar spread to everyone.",
-    "url": "https://www.cbpp.org/donate",
-    "for_position": "Negative-income-tax / targeted-transfer economists",
-    "reveal": "condensed"
-   },
-   {
-    "kind": "donate",
-    "title": "Fund the push for public care infrastructure",
-    "description": "National Domestic Workers Alliance organizes and fundraises for guaranteed childcare, paid family leave, and long-term care as public services — not benefits a family has to shop for with a check in a shortage market.",
-    "url": "https://www.domesticworkers.org/donate/ways-to-give/",
-    "for_position": "Welfare-state / in-kind-services defenders",
-    "reveal": "normal"
-   },
-   {
-    "kind": "local",
-    "title": "Guaranteed-income pilots near you",
-    "description": "The Mayors for a Guaranteed Income coalition tracks 100+ city and county cash-pilot programs — see whether one has run where you live.",
-    "url": "https://www.mayorsforagi.org/",
-    "for_position": "",
-    "reveal": "normal"
-   },
-   {
-    "kind": "submit_view",
-    "title": "Add your view",
-    "description": "Share where you land on cash vs. targeted transfers vs. services vs. jobs — and why.",
-    "url": "",
-    "for_position": "",
-    "reveal": "condensed"
-   }
   ]
- },
- "verdicts": [
-  {
-   "critic": "neutrality",
-   "pass": false,
-   "issues": [
-    "Missing a genuine, high-prevalence position: nowhere in the four positions is there a steelman for the work-requirement / conditional-welfare view (e.g. Robert Rector/Heritage Foundation, Oren Cass/American Compass, Lawrence Mead) that holds cash — whether NIT, UBI, or in-kind — should come with work/behavioral conditions because dependency and long-run self-sufficiency are the real stakes, not short-run labor-supply elasticity. This is a real, currently active policy faction (TANF, SNAP and Medicaid work-requirement fights), arguably as prevalent as the job-guarantee position (weighted 10) or more. Its absence means the piece implicitly pre-resolves the 'does cash create dependency' question via the Basics intro ('cash pilots so far haven't shown reduced work') and Q1's framing, rather than giving that camp its own voice to argue the RCT/pilot evidence doesn't speak to their actual (multi-generational, norms-based) concern. As written, the four positions all accept some form of unconditional or lightly-conditioned transfer/service/job — none argues conditionality itself is the point — which is an asymmetry by omission, not a house verdict in wording but a scope tilt in effect.",
-    "Rigor asymmetry in the positions: NIT, welfare-state, and UBI-universalist descriptions each embed a specific named study or dataset inline (Hanna & Olken JEP 2018; the UK UBS costed 2.3%-of-GDP proposal; EITC/SNAP non-take-up figures), but the job-guarantee description leans on a vague, uncited historical claim ('the way Depression-era work programs stabilized employment') instead of a specific figure — even though the Levy Institute costing already sits in Basics (0.8-2% GDP) and could be pulled inline the way the other three positions pull their evidence inline. Fix: rewrite the job-guarantee description's stabilizer sentence to cite a concrete data point (e.g., WPA peak employment ~3 million, or the Levy Institute's 0.8-2%-of-GDP costing) so all four positions carry equivalent evidentiary weight in-voice.",
-    "Minor actions-section imbalance: the negative-income-tax position gets two actions from the same organization (CBPP donate + CBPP policy), and the UBI-universalist position gets two (GiveDirectly + BIEN), while welfare-state defenders and job-guarantee proponents get only one action each. Not a wording tilt, but an investment asymmetry. Fix: add a second action for the welfare-state or job-guarantee position (e.g., a UBS-aligned volunteer/advocacy org, or a Levy Institute / job-guarantee campaign resource) so each of the four positions has comparable actionable follow-through, or diversify NIT's second action away from CBPP to a different org."
-   ],
-   "fixes": [
-    "Add a fifth position steelmanning work-requirement/conditional-welfare traditionalists, with its own punchy steelman line (e.g. \"Conditions aren't cruelty — they're what turns a transfer into a ladder out of poverty\"), proponents (Robert Rector, Oren Cass, Lawrence Mead), and a representative figure/note, then rebalance prevalence_weight across all five positions and give this position at least one Basics-grounded question and one action.",
-    "Give the job-guarantee position an inline concrete citation (WPA employment figures or the Levy Institute 0.8-2%-of-GDP costing already in Basics) in place of the vague 'Depression-era work programs' line, matching the evidentiary density of the other three positions.",
-    "Add one more action item for whichever of welfare-state/job-guarantee positions currently has only one, or replace NIT's second CBPP action with a different organization, so action-count and source diversity are roughly even across positions."
-   ]
-  },
-  {
-   "critic": "steelman-genuineness",
-   "pass": true,
-   "issues": [],
-   "fixes": []
-  },
-  {
-   "critic": "fact-source",
-   "pass": true,
-   "issues": [
-    "CBO means-tested mandatory spending total ($1.1-1.2T) could not be independently re-verified verbatim from the source PDF (cbo.gov blocks automated fetch with 403); the report itself is real, correctly titled, and correctly dated 2025-06, and the aggregate is directionally consistent with known program sizes (Medicaid+SNAP+EITC/CTC+SSI), but a human should spot-check the exact table figure once.",
-    "Alaska PFD note omits that Jones & Marinescu also found a 1.8pp increase in part-time work (a general-equilibrium effect) alongside 'no significant effect on employment' -- not an error, just an omitted nuance given the space constraints.",
-    "GiveDirectly note's phrase 'cash terms of 2-12 years depending on the study arm' slightly glosses over the lump-sum arm (paid as a single lump sum representing ~2 years of income, not disbursed over 2 years) -- minor wording imprecision, not a numeric error."
-   ],
-   "fixes": [
-    "Optional: have a human open https://www.cbo.gov/system/files/2025-06/61472-Means-Tested-Programs.pdf directly (browser, not curl) and confirm the exact aggregate dollar figure matches '1,100+ / nearly $1.2 trillion' before final publish.",
-    "Optional: in the Alaska PFD note, could add '(with a small offsetting rise in part-time work)' for completeness, though current phrasing is not inaccurate.",
-    "Optional: reword GiveDirectly note's unit field to 'cash paid over 2-12 years, or as a single lump sum, depending on study arm' for precision."
-   ]
-  },
-  {
-   "critic": "crux",
-   "pass": true,
-   "issues": [
-    "The crux correctly avoids a house verdict and avoids 'both sides have a point' hedging — it identifies real, evidence-backed fault lines (targeting efficiency vs. universal coverage; cash vs. direct provision in inelastic markets; job guarantee's structural role) rather than declaring a winner or splitting the difference.",
-    "However, the 'values' field bundles three distinct value disagreements into one run-on sentence (unconditional eligibility as the good; whether cash can buy healthcare/childcare/housing vs. needing direct state provision; whether a guaranteed job's stabilizer/public-goods role is independent of cost). This dilutes the 'genuine narrowing' the crux is supposed to deliver — a crux should point at the single sharpest place disagreement sits, not enumerate positions 2, 3, and 4's separate objections in a list. Note the 'questions' array already unpacks these same three axes individually (Q3 targeting-vs-dignity, Q4 cash-vs-services/jobs), so the crux.values field is redundant with content already carried elsewhere and could be tightened to just the sharpest single line.",
-    "Phrasing drift: 'rather than trust the market to sell it to you' inside the values field imports the in-kind-services camp's own rhetorical framing (the crux's own text sounds like it's arguing for that side) rather than describing the axis neutrally. This is a voice-neutrality issue adjacent to false balance — the crux's descriptive prose should not read as steelmanning one side while describing the disagreement."
-   ],
-   "fixes": [
-    "Tighten crux.values to a single, sharpest fault line rather than three concatenated ones — e.g. keep only: 'Whether unconditional, no-questions-asked eligibility is itself the good — dignity, automation-proofing, freedom from bureaucratic gatekeeping — even if it means paying the non-poor too.' Move the market-provision and job-guarantee-can't-be-replicated points either into the questions[] entries (where they largely already live) or drop them from the crux body to avoid re-listing all four positions' objections in the crux.",
-    "Reword the market-provision clause to neutral language, e.g.: 'whether needs like healthcare, childcare, and housing are things a check can actually buy in the markets that supply them, or whether they require the state to provision the good directly' — remove 'rather than trust the market to sell it to you,' which reads as advocacy phrasing rather than neutral framing of the disagreement.",
-    "Consider whether the lead's two-way split ('how much reaches the poor' vs. 'whether a check is right at all') should be explicitly cross-checked against all four positions once more: confirm position 4 (job guarantee) is legible under the second disjunct alongside position 2 (services) — currently it is, but only implicitly; a parenthetical or the subtitle could make explicit that 'a check' spans both in-kind services and guaranteed jobs as the two non-cash alternatives, so readers don't assume the crux is only cash-vs-services."
-   ]
-  }
- ]
 }

@@ -17,9 +17,10 @@ The loader (`topics/management/commands/load_topic_draft.py`) reads
 `{ draft, verdicts, plan_positions }` (a bare `draft` object also works). `verdicts`
 is stored on `Topic.research_dossier` for the reviewer; `plan_positions` is carried
 for provenance but not consumed. Fields below are what the loader actually maps — the
-models hold more (e.g. Stat `series`/`wide`/`range_*`/`detail`), so `ranked` /
-`sparkline` / `range` viz need either those fields plus a loader extension or a fall
-back to `bar`/`radial`.
+models hold more (e.g. Stat `series`/`wide`/`range_*`), so `ranked` / `sparkline` /
+`range` viz need either those fields plus a loader extension or a fall back to
+`bar`/`radial`. The loader also (re)seeds the topic's 3 Add-your-view prompts on
+every load, and warns on placeholder action URLs and truncated stat units/notes.
 
 ```jsonc
 {
@@ -28,20 +29,28 @@ back to `bar`/`radial`.
     "basics": {
       "intro": "lead-in copy",
       "stats": [{
-        "label", "value", "unit",
+        "label", "value",
+        "unit",                                        // DISPLAY TOKEN <= 12 chars ('%', '$B/yr')
         "viz": "bar|ranked|radial|range|sparkline",   // default bar
         "fill_pct": 0-100,
-        "note",
+        "note",                                        // one tight sentence (visible layer)
+        "detail",                                      // deeper analysis shown on tile expand
+        "tier": 1..n,                                  // 1 = leading; new tier at a natural drop-off
         "source_label", "source_url",
         "source_published": "2025 | Q1 2025",          // when the data is from
         "source_accessed": "YYYY-MM-DD",               // when you verified it
         "reveal": "condensed|normal|deep"              // reading depth, default condensed
       }]
     },
-    "questions": [{ "text", "kind": "empirical|value", "why", "reveal" }],
+    "questions": [{ "text", "kind": "empirical|value",
+      "why",                                           // 1-2 tight sentences (visible layer)
+      "detail",                                        // deeper analysis shown on expand
+      "tier": 1..n, "reveal" }],
     "positions": [{
       "name", "steelman",                              // one-line, in the side's own voice
       "description",
+      "detail",                                        // deeper in-voice background on card expand
+      "tier": 1..n,                                    // drives the Go-deeper split
       "proponents": "comma, separated, names",
       "representative_name", "representative_note",
       "prevalence_weight": 0-100,                       // seeds default order (mainstream leads)
@@ -52,6 +61,7 @@ back to `bar`/`radial`.
       "kind": "learn_more|donate|volunteer|policy|local|submit_view",
       "title", "description", "url",
       "for_position": "<a position name>",              // maps the action to that Position
+      "tier": 1..n,
       "reveal": "condensed|normal|deep"
     }]
   },
