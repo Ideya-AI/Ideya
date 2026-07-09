@@ -7,9 +7,11 @@ requests N candidates, and saves them for side-by-side review. The model is
 always pinned explicitly so we control exactly which image model runs.
 
 Models (2026):
-    gemini-3.1-flash-image        Nano Banana 2 — default workhorse (~$0.067 @1K)
+    gemini-3-pro-image            Nano Banana Pro — DEFAULT: hero art is a one-shot
+                                  brand asset, and Pro adheres best to the style
+                                  constraints (uniform stroke, fill opacity, no frame)
+    gemini-3.1-flash-image        Nano Banana 2 — cheaper workhorse (~$0.067 @1K)
     gemini-3.1-flash-lite-image   Nano Banana 2 Lite — fastest/cheapest
-    gemini-3-pro-image            Nano Banana Pro — complex compositions
     gemini-2.5-flash-image        Nano Banana (legacy)
 
 Auth: GEMINI_API_KEY env var (also read from the repo .env). Create a key at
@@ -135,7 +137,7 @@ def main() -> None:
     ap.add_argument(
         "--slug", required=True, help="icon brief slug (research/icons/<slug>.md)"
     )
-    ap.add_argument("--model", default="gemini-3.1-flash-image")
+    ap.add_argument("--model", default="gemini-3-pro-image")
     ap.add_argument("--n", type=int, default=4, help="number of candidates (default 4)")
     ap.add_argument("--size", default="1K", choices=["0.5K", "1K", "2K", "4K"])
     ap.add_argument("--aspect", default="3:2", help="primaries are 3:2 wide (framing is normalized in post anyway)")
