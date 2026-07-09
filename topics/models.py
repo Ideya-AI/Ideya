@@ -491,11 +491,18 @@ class Section(models.Model):
             return sum(2 if s.wide else 1 for s in stats[:k])
 
         # Snap to a full row (same rule as _tier_lead_count): round down unless
-        # that dips below the minimum, else promote next-ranked tiles.
+        # that demotes a tier-1 tile or dips below the minimum, else promote
+        # next-ranked tiles to complete the row.
+        first_tier = getattr(stats[0], "tier", 1)
+        tier1 = next(
+            (i for i, s in enumerate(stats) if getattr(s, "tier", 1) != first_tier),
+            len(stats),
+        )
+        floor = min(max(self.BASICS_MIN_SHOWN, tier1), n)
         down = n
         while down > 0 and cells(down) % cols != 0:
             down -= 1
-        if down >= self.BASICS_MIN_SHOWN:
+        if down >= floor:
             return down
         up = n
         while up < len(stats) and cells(up) % cols != 0:

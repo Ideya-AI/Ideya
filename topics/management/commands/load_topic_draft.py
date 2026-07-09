@@ -103,6 +103,27 @@ class Command(BaseCommand):
                             f"'{s.get('label', '')[:60]}'"
                         )
                     )
+            # Rich viz needs its data: ranked needs series rows, range needs
+            # min/max. Fall back to bar (and say so) rather than render an
+            # empty visualization.
+            viz = s.get("viz", "bar")
+            if viz not in dict(Stat.VIZ_CHOICES):
+                viz = "bar"
+            series = s.get("series") or []
+            if viz == "ranked" and not (
+                isinstance(series, list) and series and isinstance(series[0], dict)
+            ):
+                viz = "bar"
+                series = []
+            if viz == "range" and not (s.get("range_min") and s.get("range_max")):
+                viz = "bar"
+            if viz != s.get("viz", "bar"):
+                self.stderr.write(
+                    self.style.WARNING(
+                        f"viz '{s.get('viz')}' missing its data on stat "
+                        f"'{s.get('label', '')[:60]}' — fell back to bar"
+                    )
+                )
             Stat.objects.create(
                 section=bs,
                 order=i,
@@ -110,11 +131,12 @@ class Command(BaseCommand):
                 label=s.get("label", "")[:120],
                 value=s.get("value", "")[:24],
                 unit=s.get("unit", "")[:12],
-                viz=(
-                    s.get("viz", "bar")
-                    if s.get("viz") in dict(Stat.VIZ_CHOICES)
-                    else "bar"
-                ),
+                viz=viz,
+                wide=bool(s.get("wide")),
+                series=series if viz in ("ranked", "sparkline") else [],
+                range_min=str(s.get("range_min") or "")[:40],
+                range_max=str(s.get("range_max") or "")[:40],
+                range_at=s.get("range_at") if viz == "range" else None,
                 fill_pct=s.get("fill_pct"),
                 note=s.get("note", "")[:400],
                 detail=s.get("detail", ""),
@@ -140,6 +162,9 @@ class Command(BaseCommand):
                 ),
                 why=q.get("why", ""),
                 detail=q.get("detail", ""),
+                lean_label_a=q.get("lean_label_a", "")[:40],
+                lean_label_b=q.get("lean_label_b", "")[:40],
+                lean_pct_a=q.get("lean_pct_a"),
                 reveal=q.get("reveal", "condensed"),
             )
 
