@@ -138,7 +138,7 @@ def main() -> None:
     ap.add_argument("--model", default="gemini-3.1-flash-image")
     ap.add_argument("--n", type=int, default=4, help="number of candidates (default 4)")
     ap.add_argument("--size", default="1K", choices=["0.5K", "1K", "2K", "4K"])
-    ap.add_argument("--aspect", default="1:1")
+    ap.add_argument("--aspect", default="3:2", help="primaries are 3:2 wide (framing is normalized in post anyway)")
     ap.add_argument("--out-dir", default=str(HERE / "candidates"))
     ap.add_argument("--dry-run", action="store_true", help="print the prompt and exit")
     args = ap.parse_args()

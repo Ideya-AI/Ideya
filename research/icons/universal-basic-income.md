@@ -19,8 +19,8 @@ read both large and small, on light and dark.
 
 ## Composition
 A small bespoke **scene** combining several *simple* sub-icons in one frame — about
-**2.5–3.5× the complexity of a single Gorges icon**. Square (~256), legible from
-~56px to hero size, readable on a dark background.
+**2.5–3.5× the complexity of a single Gorges icon**. Generate wide (3:2); framing is normalized in post (trim to content, ~8% pad,
+fit 3:2 on white). Legible from ~56px to hero size, readable on a dark background.
 
 ## Elements — promise *and* peril
 The debate is cash-for-everyone vs. targeting, jobs, and services — the art should
