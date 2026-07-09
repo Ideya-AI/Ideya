@@ -16,11 +16,12 @@ the hand-built `research/topics/nuclear-energy.gold.json` is the **content** qua
 The loader (`topics/management/commands/load_topic_draft.py`) reads
 `{ draft, verdicts, plan_positions }` (a bare `draft` object also works). `verdicts`
 is stored on `Topic.research_dossier` for the reviewer; `plan_positions` is carried
-for provenance but not consumed. Fields below are what the loader actually maps — the
-models hold more (e.g. Stat `series`/`wide`/`range_*`), so `ranked` / `sparkline` /
-`range` viz need either those fields plus a loader extension or a fall back to
-`bar`/`radial`. The loader also (re)seeds the topic's 3 Add-your-view prompts on
-every load, and warns on placeholder action URLs and truncated stat units/notes.
+for provenance but not consumed. Fields below are what the loader actually maps.
+Rich viz round-trips: `ranked` needs `series` rows + usually `wide: true`; `range`
+needs `range_min`/`range_max`/`range_at`; a rich viz arriving without its data falls
+back to `bar` with a warning. Question lean poles (`lean_label_a/b`, `lean_pct_a`)
+also round-trip. The loader (re)seeds the topic's 3 Add-your-view prompts on every
+load, and warns on placeholder action URLs and truncated stat units/notes.
 
 ```jsonc
 {
@@ -32,6 +33,9 @@ every load, and warns on placeholder action URLs and truncated stat units/notes.
         "label", "value",
         "unit",                                        // DISPLAY TOKEN <= 12 chars ('%', '$B/yr')
         "viz": "bar|ranked|radial|range|sparkline",   // default bar
+        "wide": true|false,                            // ranked tiles span two columns
+        "series": [{ "label", "value", "pct", "highlight" }],  // ranked rows, source data only
+        "range_min", "range_max", "range_at": 0-100,   // range viz track + marker
         "fill_pct": 0-100,
         "note",                                        // one tight sentence (visible layer)
         "detail",                                      // deeper analysis shown on tile expand
@@ -45,6 +49,7 @@ every load, and warns on placeholder action URLs and truncated stat units/notes.
     "questions": [{ "text", "kind": "empirical|value",
       "why",                                           // 1-2 tight sentences (visible layer)
       "detail",                                        // deeper analysis shown on expand
+      "lean_label_a", "lean_label_b", "lean_pct_a",    // optional direction poles + research estimate
       "tier": 1..n, "reveal" }],
     "positions": [{
       "name", "steelman",                              // one-line, in the side's own voice
