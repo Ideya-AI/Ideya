@@ -91,9 +91,9 @@ onto `<slug>` instead — there's no live version to protect.
    `<slug>-draft` staging topic. Or, for light changes, edit + publish in the Django
    admin (`TopicAdmin` → status, or the **Publish selected topics** action).
 3. **Set `Topic.reviewed_at = now()`** — the loader sets `researched_at` but not
-   `reviewed_at`; setting it records human approval, resets the cadence clock, and
-   feeds the reader-facing **"Last reviewed: \<month year\>"** trust badge. Edit the
-   field in admin (Research provenance fieldset) or via shell (snippet in
+   `reviewed_at`; setting it records human approval and resets the cadence clock.
+   (Internal only — there is deliberately no reader-facing "last reviewed" badge.)
+   Edit the field in admin (Research provenance fieldset) or via shell (snippet in
    `reference.md`).
 4. **Verify links landed** — `python manage.py check_links --topic <slug>` must
    report **0 placeholder / 0 dead**. Non-optional, and it especially matters

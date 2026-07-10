@@ -134,7 +134,7 @@ python manage.py shell -c "from django.utils import timezone; from topics.models
   Topic.objects.filter(slug='<slug>').update(reviewed_at=timezone.now())"
 ```
 `reviewed_at` resets the cadence clock (`last_touched = reviewed_at or researched_at`,
-read by `topics_due`) and feeds the reader "Last reviewed: \<month year\>" badge.
+read by `topics_due`). Internal only — deliberately no reader-facing badge.
 
 **Admin path (light changes):** `TopicAdmin` lists `status` and `researched_at`, has
 **Publish selected topics** / **Unpublish** actions, and exposes `reviewed_at` as an
