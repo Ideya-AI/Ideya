@@ -51,7 +51,7 @@ _HEADERS = {
 # browsers. A network-level failure (or 403) to one of these is "needs manual
 # check", not "dead". The .gov suffix already covers these two; they are listed
 # for documentation and as a home for any future non-.gov additions.
-_BOT_WALLED_HOSTS = {"regulations.gov", "nrc.gov"}
+_BOT_WALLED_HOSTS = {"regulations.gov", "nrc.gov", "mckinsey.com"}
 
 # HEAD outcomes that mean "the server didn't really answer" — retry with GET.
 # (A clean 2xx, a 404/410, a 429, or a timeout are trusted as-is: retrying would
