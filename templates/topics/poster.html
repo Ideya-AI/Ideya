@@ -36,7 +36,7 @@
   .heroart img{display:block;width:100%;height:auto}
   .heroicon{flex:none;width:2in;height:2in;border-radius:34px;background:var(--green-tint);border:1px solid var(--green-tint-strong);display:flex;align-items:center;justify-content:center;color:var(--green-700)}
   .heroicon i{font-size:88pt}
-  .cat{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:11pt;text-transform:uppercase;letter-spacing:.05em;color:var(--green-700);background:var(--green-tint);border-radius:9999px;padding:7px 16px}
+  .cat{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:11pt;text-transform:uppercase;letter-spacing:.05em;color:var(--cat,var(--green-700));background:var(--cat-tint,var(--green-tint));border-radius:9999px;padding:7px 16px}
   .cat i{font-size:12pt}
   .title{font-weight:800;font-size:102pt;letter-spacing:-.045em;line-height:.92;margin:0.16in 0 0}
   .title.title-sm{font-size:80pt}
@@ -113,7 +113,7 @@
       <div class="herorow">
         <div class="herotext">
           {% with cc=topic.color_category %}
-          {% if cc %}<span class="cat"><i class="ph-duotone ph-{{ cc.icon|default:'squares-four' }}"></i>{{ cc.name }}</span>{% endif %}
+          {% if cc %}<span class="cat" style="--cat:{{ cc.color_var }};--cat-tint:{{ cc.tint_var }}"><i class="ph-duotone ph-{{ cc.icon|default:'squares-four' }}"></i>{{ cc.name }}</span>{% endif %}
           {% endwith %}
           {% with n=topic.title|length %}<h1 class="title{% if n > 40 %} title-xs{% elif n > 24 %} title-sm{% endif %}">{{ topic.title }}</h1>{% endwith %}
           <p class="summary">{{ topic.summary }}</p>
