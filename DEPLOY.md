@@ -64,17 +64,33 @@ reset the DB on every deploy — see "Database" below).
 
 ## 3. Seed the content
 
-A fresh database has schema + the Nuclear Energy topic (seeded by migration) but
-none of your published stubs. Two ways to populate production:
+A fresh database has schema only — content lives outside migrations, in
+`research/catalog/topic-universe.json` (taxonomy + draft universe) and
+`research/topics/<slug>.json` (full topics, the single source of truth;
+`export_topic` regenerates them from the DB). Two ways to populate production:
 
 - **Ship your curated state (simplest):** copy your local `db.sqlite3` onto the
   volume at `DJANGO_DB_PATH`. It holds exactly what you see locally. The public
   only ever sees *published* topics, so the draft experiments in your local DB
   stay invisible — they're just harmless rows.
 - **Reproducible seed from scratch:** after `migrate`, run
-  `python manage.py load_universe`, then `seed_category_links`, then
-  `seed_example_prompts`. This rebuilds the taxonomy, catalog (as drafts), the
-  category adjacency graph, and the Nuclear participation prompts.
+
+  ```
+  python manage.py load_universe
+  python manage.py load_topic_draft --file research/topics/nuclear-energy.json \
+      --slug nuclear-energy --title 'Nuclear Energy' --category climate-env --status published
+  python manage.py load_topic_draft --file research/topics/universal-basic-income.json \
+      --slug universal-basic-income --title 'Universal Basic Income' --category economy --status published
+  python manage.py seed_category_overviews
+  python manage.py seed_category_links
+  python manage.py seed_example_prompts
+  python manage.py rebuild_search
+  ```
+
+  This rebuilds the taxonomy, catalog (as drafts), both published topics, the
+  category overviews + adjacency graph, participation prompts, and the search
+  index. (Vote counts, reader submissions, and the historical related-topic
+  edges of the original seed are local-DB state — they don't reproduce.)
 
 To use the local Django admin (optional — you publish/update locally), create a
 superuser: `python manage.py createsuperuser`.

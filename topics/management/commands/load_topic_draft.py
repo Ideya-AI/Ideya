@@ -55,11 +55,16 @@ class Command(BaseCommand):
             raise CommandError(f"category '{o['category']}' not found")
 
         ov = d.get("overview", {})
-        # Icon: explicit --icon wins, then the draft's overview.icon, then the
-        # existing topic's icon on a refresh (never clobber it), else 'atom'.
+        # Icon: explicit --icon wins, then the draft's icon (root level, where
+        # export_topic writes it, or overview.icon), then the existing topic's
+        # icon on a refresh (never clobber it), else 'atom'.
         existing = Topic.objects.filter(slug=o["slug"]).first()
         icon = (
-            o["icon"] or ov.get("icon") or (existing.icon if existing else "") or "atom"
+            o["icon"]
+            or d.get("icon")
+            or ov.get("icon")
+            or (existing.icon if existing else "")
+            or "atom"
         )
         topic, _ = Topic.objects.update_or_create(
             slug=o["slug"],
