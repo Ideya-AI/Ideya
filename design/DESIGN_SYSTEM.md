@@ -12,7 +12,7 @@ A curated, navigable **atlas of hard human issues** — existential/global risk,
 ## Sources (provided context)
 
 - **Codebase:** `Infinity_Project/` — a Django 5.1 + HTMX + Alpine.js + Tailwind (Play CDN) app, SQLite, one seeded topic (Nuclear Energy). The source of truth for UI patterns. Key files:
-  - `DESIGN_BRIEF.md`, `PROJECT.md` — product shape, IA, the six-section topic spine, depth-as-axis model.
+  - `DESIGN_BRIEF.md`, `PROJECT.md` — product shape, IA, the six-section topic spine, depth-as-axis model. (Both since retired — see git history; this folder is now the product-shape record.)
   - `templates/base.html` — the live Tailwind theme config (the `ink` palette, Inter, container widths).
   - `templates/topics/detail.html` — the canonical topic page; every component below is lifted from here.
   - `templates/topics/index.html` — the topic directory.
@@ -31,9 +31,9 @@ A curated, navigable **atlas of hard human issues** — existential/global risk,
 | `README.md` | This file — product context, content + visual foundations, iconography. |
 | `colors_and_type.css` | All design tokens: ink ramp, position palette, brand accents, type scale, radii, spacing, elevation, motion + semantic element classes. Import this everywhere. |
 | `assets/` | Ideya logos (horizontal lockup, stacked, square mark, vector). |
-| `preview/` | Design-system specimen cards + the six **section specs** (rendered in the Design System tab). |
+| `preview/` | Removed post-build (git history) — specimen cards + the six section specs; the live app supersedes them. |
 | `components/` | The reusable React components (`.d.ts` + `.jsx`): `TopicNode`, `PositionCard`, `QuestionCard`, `StatTile`, `DepthToggle`, `VoteControl`. Plus `types.d.ts` (the canonical **data model**), `nuclear-energy.example.ts` (a populated fixture), and `Gallery.html` (live specimen). |
-| Page mocks (project root) | High-fidelity reference designs — the source of truth for the locked system. **Home**, **Category Page**, **Desktop/Mobile/Poster/Social** Topic, **Search**, **Submit Your View**. |
+| Page mocks | Removed post-build (git history) — the shipped app is now the reference for **Home**, **Category Page**, **Desktop/Mobile/Poster/Social** Topic, **Search**, **Submit Your View**. |
 | `RESPONSIVE.md` | Breakpoint + per-surface reflow intent for the desktop-only pages. |
 | `SKILL.md` | Agent Skill manifest for reuse in Claude Code. |
 

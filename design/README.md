@@ -32,7 +32,9 @@ The files here are **design references authored in HTML/CSS/React** — prototyp
 ---
 
 ## Screens / views
-All mocks are at the **project root** (copied into `mocks/` here). Widths: desktop content max 1180px; mobile 390px.
+> The `mocks/` and `preview/` HTML files were removed after the build shipped (the live app is now the reference implementation); they remain in git history. The surface descriptions below are the durable spec.
+
+Widths: desktop content max 1180px; mobile 390px.
 
 ### 1. Home — `mocks/Home - Desktop.html`
 - **Purpose:** orient a (often redirect-arriving) visitor and route them onward.
@@ -111,6 +113,5 @@ Flag these to the team — best refined against real implementation:
 - `RESPONSIVE.md` — breakpoints + per-surface reflow.
 - `COMPONENTS.md` — full source of the six components (props + implementation).
 - `DATA_MODEL.md` — the schema + a populated fixture.
-- `mocks/` — the eight high-fidelity HTML surface mocks.
-- `preview/` — design-system specimen cards + the six section specs (deep per-section rules).
 - `assets/` — brand mark.
+- `mocks/` + `preview/` — removed post-build (see git history); the live app supersedes them.

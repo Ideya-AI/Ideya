@@ -12,8 +12,7 @@ Key files:
 - `README.md` — product context, CONTENT FUNDAMENTALS (voice/tone), VISUAL FOUNDATIONS, ICONOGRAPHY, logo usage.
 - `colors_and_type.css` — all design tokens (ink ramp, position palette, category palette, brand green, type scale, radii, spacing, elevation, motion) + semantic element classes. Import it.
 - `assets/` — Ideya logos (horizontal/stacked lockups, square mark, vector).
-- `preview/` — specimen cards for every token, plus the six **section specs** (Overview, Basics, Questions, Positions, Crux, Actions) and the Participation model. These are the canonical definition of each section.
-- **Page mocks** (project root) — high-fidelity reference designs and the source of truth for the locked system: `Home - Desktop`, `Category Page - Energy`, `Desktop / Mobile / Topic Poster / Social Share Cards - Nuclear Energy`, `Search - Dropdown`, `Submit Your View - Flow`. Reuse their patterns.
+- `preview/` + page mocks — removed post-build (recoverable from git history); the shipped app and the section rules in `README.md` are now the canonical reference for each section and surface.
 
 If creating visual artifacts (slides, mocks, throwaway prototypes), copy assets out and create static HTML files for the user to view. If working on production code, copy assets and read the rules here to design like an Infinity expert.
 
