@@ -79,35 +79,33 @@ which settings already trusts, so no code or env changes beyond the table above.
    ```sh
    docker build -t infinity .
    docker run -d --name ideya --restart unless-stopped \
-     -p 127.0.0.1:8000:8000 \
+     -p 127.0.0.1:8642:8000 \
      -v /srv/infinity-data:/data \
      --env-file /srv/infinity-data/prod.env \
      infinity
    ```
 
-   Put the production env values (table above) in `/srv/infinity-data/prod.env`
-   — do **not** reuse the repo's dev `.env` (it sets `DJANGO_DEBUG=true`).
-3. **Create the tunnel:**
-
-   ```sh
-   cloudflared tunnel login
-   cloudflared tunnel create ideya
-   cloudflared tunnel route dns ideya ideya1.org
-   ```
-
-   `~/.cloudflared/config.yml`:
+   Host port **8642** is deliberately uncommon so day-to-day dev servers
+   (8000/8080/3000/…) never collide with the live site. Put the production env
+   values (table above) in `/srv/infinity-data/prod.env` — do **not** reuse the
+   repo's dev `.env` (it sets `DJANGO_DEBUG=true`).
+3. **Wire the tunnel.** An existing cloudflared tunnel can serve this too —
+   add a hostname block to its ingress and route the domain to it:
 
    ```yaml
-   tunnel: ideya
-   credentials-file: /home/<you>/.cloudflared/<tunnel-id>.json
-   ingress:
-     - hostname: ideya1.org
-       service: http://localhost:8000
-     - service: http_status:404
+   # in the existing tunnel's config.yml, above the http_status:404 catch-all
+   - hostname: ideya1.org
+     service: http://localhost:8642
    ```
 
-   Install it as a service so it survives reboots:
-   `sudo cloudflared service install`.
+   ```sh
+   cloudflared tunnel route dns <existing-tunnel-name> ideya1.org
+   sudo systemctl restart cloudflared
+   ```
+
+   (Starting fresh instead: `cloudflared tunnel login && cloudflared tunnel
+   create ideya && cloudflared tunnel route dns ideya ideya1.org`, same ingress
+   block, then `sudo cloudflared service install`.)
 4. **Redirects at the edge:** in Cloudflare, add Redirect Rules (dynamic, 301)
    sending `ideya1.com`, `www.ideya1.com`, and `www.ideya1.org` to
    `https://ideya1.org` + the original path. (For the `.com` zone, the rule
