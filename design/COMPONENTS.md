@@ -1,4 +1,4 @@
-# Infinity — Component Source
+# Ideya — Component Source
 
 The six reusable components, authored as React. Each has a typed props contract (`.d.ts`) and an implementation (`.jsx`). Recreate these in the target framework; preserve the prop contracts and the depth-awareness.
 

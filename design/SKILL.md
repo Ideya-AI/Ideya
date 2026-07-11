@@ -1,12 +1,12 @@
 ---
-name: infinity-design
-description: Use this skill to generate well-branded interfaces and assets for Infinity (the Ideya "atlas of hard issues" product), either for production or throwaway prototypes/mocks/etc. Contains essential design guidelines, colors, type, fonts, assets, and reference page mocks for prototyping.
+name: ideya-design
+description: Use this skill to generate well-branded interfaces and assets for Ideya (the "atlas of hard issues" product), either for production or throwaway prototypes/mocks/etc. Contains essential design guidelines, colors, type, fonts, assets, and reference page mocks for prototyping.
 user-invocable: true
 ---
 
 Read the `README.md` file within this skill, and explore the other available files.
 
-Infinity is a curated, navigable atlas of hard human issues — "a visual wiki between encyclopedia and debate platform." The look is restrained, editorial, and mobile-first: a warm green-tinted **ink** palette for all chrome, **Plus Jakarta Sans** for display + **Inter** for body, flat bordered cards (no shadow), and color used with discipline — **positions** within a topic, **categories** in discovery tiers, and the **logo green** as the single brand accent.
+Ideya is a curated, navigable atlas of hard human issues — "a visual wiki between encyclopedia and debate platform." The look is restrained, editorial, and mobile-first: a warm green-tinted **ink** palette for all chrome, **Plus Jakarta Sans** for display + **Inter** for body, flat bordered cards (no shadow), and color used with discipline — **positions** within a topic, **categories** in discovery tiers, and the **logo green** as the single brand accent.
 
 Key files:
 - `README.md` — product context, CONTENT FUNDAMENTALS (voice/tone), VISUAL FOUNDATIONS, ICONOGRAPHY, logo usage.
@@ -14,7 +14,7 @@ Key files:
 - `assets/` — Ideya logos (horizontal/stacked lockups, square mark, vector).
 - `preview/` + page mocks — removed post-build (recoverable from git history); the shipped app and the section rules in `README.md` are now the canonical reference for each section and surface.
 
-If creating visual artifacts (slides, mocks, throwaway prototypes), copy assets out and create static HTML files for the user to view. If working on production code, copy assets and read the rules here to design like an Infinity expert.
+If creating visual artifacts (slides, mocks, throwaway prototypes), copy assets out and create static HTML files for the user to view. If working on production code, copy assets and read the rules here to design like an Ideya expert.
 
 If the user invokes this skill without other guidance, ask what they want to build, ask a few focused questions, and act as an expert designer who outputs HTML artifacts or production code as needed.
 

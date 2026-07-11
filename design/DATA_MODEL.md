@@ -1,4 +1,4 @@
-# Infinity — Data Model
+# Ideya — Data Model
 
 The canonical content schema. Every page and component renders some slice of a `Topic`.
 
@@ -6,7 +6,7 @@ The canonical content schema. Every page and component renders some slice of a `
 
 ```ts
 /**
- * Infinity — core data model.
+ * Ideya — core data model.
  *
  * The shape of a Topic and its parts. This is the source of truth for the
  * content schema: every page mock and component renders some slice of a `Topic`.

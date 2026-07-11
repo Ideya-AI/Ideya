@@ -1,4 +1,4 @@
-/* Infinity — Alpine stores + small helpers.
+/* Ideya — Alpine stores + small helpers.
    Loaded (deferred) BEFORE Alpine so alpine:init listeners are registered. */
 (function () {
   document.addEventListener("alpine:init", function () {

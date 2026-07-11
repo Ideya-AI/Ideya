@@ -1,7 +1,7 @@
-# Handoff: Infinity — Design System & Product Surfaces
+# Handoff: Ideya — Design System & Product Surfaces
 
 ## Overview
-**Infinity** is a curated, navigable **atlas of hard human issues** (existential risk, governance, energy, economics, ethics) — "a visual wiki between an encyclopedia and a debate platform." Each issue is one structured infographic with **six sections in a fixed order**: Overview → Basics → Questions → Positions → Crux → Actions. The product is topic-first, neutral by intention, and explicitly *not* social media (no feed, follows, or recency).
+**Ideya** (working name "Infinity" at handoff time) is a curated, navigable **atlas of hard human issues** (existential risk, governance, energy, economics, ethics) — "a visual wiki between an encyclopedia and a debate platform." Each issue is one structured infographic with **six sections in a fixed order**: Overview → Basics → Questions → Positions → Crux → Actions. The product is topic-first, neutral by intention, and explicitly *not* social media (no feed, follows, or recency).
 
 This bundle contains the full design system (tokens, type, color, iconography), six reusable components, the data model, and high-fidelity mocks of every product surface across four mediums.
 
@@ -94,8 +94,8 @@ The six reusable components — full typed source (props `.d.ts` + `.jsx` implem
 **All** values live in `colors_and_type.css` (108 tokens): ink ramp, brand green scale + tint, `--pos-*`, `--cat-*` (+ tints), the type scale and font vars, spacing (4px Tailwind scale), radii (`8 / 12 / 16 / 9999`), elevation (overlay shadows only), and motion (easing + durations). **Wire these into the host theme; do not hard-code.** Full prose rationale in `README.md` (VISUAL FOUNDATIONS) and `SKILL.md` (hard rules).
 
 ## Assets
-- `assets/infinity-mark.png` — the square brand mark (app icon / nav bug). Keep on brand green; never recolor.
-- Logos (horizontal/stacked/vector) are in the source project's `assets/`; in-product wordmark is the mark + "Infinity" in Plus Jakarta Sans Bold ink.
+- `assets/ideya-mark.png` — the square brand mark (app icon / nav bug). Keep on brand green; never recolor.
+- Logos (horizontal/stacked/vector) are in the source project's `assets/`; in-product wordmark is the mark + "Ideya" in Plus Jakarta Sans Bold ink.
 - **Icons:** Phosphor via CDN (`@phosphor-icons/web` duotone + fill) — not bundled here.
 - **Fonts:** Plus Jakarta Sans + Inter via Google Fonts; self-host for production.
 

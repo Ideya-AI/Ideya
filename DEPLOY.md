@@ -1,4 +1,4 @@
-# Deploying Infinity
+# Deploying Ideya
 
 The app is production-ready: 12-factor settings (everything secret or
 host-specific comes from the environment), WhiteNoise for static files, gunicorn
@@ -34,15 +34,15 @@ secure-by-default behavior, not a bug.
 ### A. Docker (any VPS or container host)
 
 ```sh
-docker build -t infinity .
+docker build -t ideya .
 docker run -d -p 80:8000 \
-  -v /srv/infinity-data:/data \
+  -v /srv/ideya-data:/data \
   -e DJANGO_SECRET_KEY=... \
   -e DJANGO_ALLOWED_HOSTS=ideya1.org,www.ideya1.org,ideya1.com,www.ideya1.com \
   -e DJANGO_CSRF_TRUSTED_ORIGINS=https://ideya1.org,https://www.ideya1.org,https://ideya1.com,https://www.ideya1.com \
   -e PUBLIC_ORIGIN=https://ideya1.org \
   -e DJANGO_DB_PATH=/data/db.sqlite3 \
-  infinity
+  ideya
 ```
 
 The image bakes hashed/compressed static files at build time; the container runs
@@ -77,17 +77,17 @@ which settings already trusts, so no code or env changes beyond the table above.
    only way in):
 
    ```sh
-   docker build -t infinity .
+   docker build -t ideya .
    docker run -d --name ideya --restart unless-stopped \
      -p 127.0.0.1:8642:8000 \
-     -v /srv/infinity-data:/data \
-     --env-file /srv/infinity-data/prod.env \
-     infinity
+     -v /srv/ideya-data:/data \
+     --env-file /srv/ideya-data/prod.env \
+     ideya
    ```
 
    Host port **8642** is deliberately uncommon so day-to-day dev servers
    (8000/8080/3000/…) never collide with the live site. Put the production env
-   values (table above) in `/srv/infinity-data/prod.env` — do **not** reuse the
+   values (table above) in `/srv/ideya-data/prod.env` — do **not** reuse the
    repo's dev `.env` (it sets `DJANGO_DEBUG=true`).
 3. **Wire the tunnel.** An existing cloudflared tunnel can serve this too —
    add a hostname block to its ingress and route the domain to it:
@@ -113,7 +113,7 @@ which settings already trusts, so no code or env changes beyond the table above.
    orange-clouded — so requests reach Cloudflare to be redirected.)
 5. **Desktop realities:** disable suspend/hibernate (`systemctl mask sleep.target
    suspend.target`), rely on `--restart unless-stopped` + the cloudflared service
-   after reboots, and back up `/srv/infinity-data/db.sqlite3` (it's the only
+   after reboots, and back up `/srv/ideya-data/db.sqlite3` (it's the only
    state — a nightly `cp` to another disk or Litestream→R2 both work). Uptime is
    the machine's uptime; that's the accepted trade-off until this moves to a
    host, which is just "run the same image elsewhere and repoint the tunnel."

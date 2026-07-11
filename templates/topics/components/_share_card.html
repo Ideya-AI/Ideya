@@ -1,6 +1,6 @@
 {% load static %}{% comment %}Inner share-card content. Expects topic, cc, positions, crux.{% endcomment %}
 <div class="lt">
-  <div class="brand"><img class="mark" src="{% static 'img/infinity-mark.png' %}" alt="" /><span class="wm">Ideya</span></div>
+  <div class="brand"><img class="mark" src="{% static 'img/ideya-mark.png' %}" alt="" /><span class="wm">Ideya</span></div>
   {% if cc %}<span class="cat"><i class="ph-duotone ph-{{ cc.icon|default:'squares-four' }}"></i>{{ cc.name }}</span>{% endif %}
   <div class="ttlrow">
     {% if topic.primary_art %}<span class="ticon tart"><img src="{% static topic.primary_art %}" alt="" /></span>

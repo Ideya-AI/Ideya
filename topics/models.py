@@ -123,7 +123,7 @@ class Category(models.Model):
         """Static path to this category's 1200x630 OG link-preview card, generated
         to static/img/social/cat-<slug>.png (via `?render=og` on the category
         share view + headless Chrome); else None so the page falls back to the
-        generic Infinity mark."""
+        generic Ideya mark."""
         rel = f"img/social/cat-{self.slug}.png"
         return rel if (settings.BASE_DIR / "static" / rel).exists() else None
 
@@ -284,7 +284,7 @@ class Topic(models.Model):
     def social_card(self):
         """Static path to this topic's 1200x630 OG link-preview card, generated to
         static/img/social/<slug>.png (via `?render=og` on the share view + headless
-        Chrome); else None so the page falls back to the generic Infinity mark."""
+        Chrome); else None so the page falls back to the generic Ideya mark."""
         rel = f"img/social/{self.slug}.png"
         return rel if (settings.BASE_DIR / "static" / rel).exists() else None
 

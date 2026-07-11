@@ -1,4 +1,4 @@
-{% load static infinity_extras %}<!doctype html>
+{% load static ideya_extras %}<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8" />
@@ -109,7 +109,7 @@
 <body>
   <div class="poster">
     <div class="hero">
-      <div class="brand"><img class="mark" src="{% static 'img/infinity-mark.png' %}" alt="" /><span class="wm">Ideya</span></div>
+      <div class="brand"><img class="mark" src="{% static 'img/ideya-mark.png' %}" alt="" /><span class="wm">Ideya</span></div>
       <div class="herorow">
         <div class="herotext">
           {% with cc=topic.color_category %}
@@ -193,7 +193,7 @@
         <p class="cts">Explore the full topic and say where you land.</p>
         <p class="url">{{ topic_url_display }}</p>
       </div>
-      <div class="qr">{{ qr_svg|safe }}<span class="qrmark"><img src="{% static 'img/infinity-mark.png' %}" alt="" /></span></div>
+      <div class="qr">{{ qr_svg|safe }}<span class="qrmark"><img src="{% static 'img/ideya-mark.png' %}" alt="" /></span></div>
     </div>
   </div>
   {% if fitcheck %}

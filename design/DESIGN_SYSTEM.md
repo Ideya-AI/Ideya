@@ -1,9 +1,8 @@
-# Infinity (Ideya) — Design System
+# Ideya — Design System
 
 A curated, navigable **atlas of hard human issues** — existential/global risk, governance, economics, ethics. The product makes the *shape* of an issue legible: what the topic is, where the live disagreements sit, who holds which position and why, and how to engage. Positioning anchor: **"a visual wiki, between encyclopedia and debate platform"** — closer to Our World in Data or a well-designed textbook than to Wikipedia or Reddit.
 
-- **Working name:** Infinity Project (private framing: "humanity's last chance to understand its issues before AI takes over").
-- **Candidate public name:** Ideya (the parent org's brand; the green/orange logo).
+- **Name:** Ideya (decided 2026-07-10; formerly working name "Infinity Project" — private framing: "humanity's last chance to understand its issues before AI takes over"). Public domains: ideya1.org (primary), ideya1.com.
 - **Topic-first, not question-first.** Readers orient on what something *is* before being asked to take a side.
 - **Neutral by intention**, not by audited performance. No bias-balance theater (no AllSides-style ratings).
 - **Curation is the product; participation is feedback.** Votes/comments improve content, never destinations of their own.
@@ -41,7 +40,7 @@ A curated, navigable **atlas of hard human issues** — existential/global risk,
 
 ## CONTENT FUNDAMENTALS
 
-How Infinity writes. The voice is the product: editorially confident, neutral by posture, never preachy.
+How Ideya writes. The voice is the product: editorially confident, neutral by posture, never preachy.
 
 - **Tone:** calm, precise, intellectually serious but plainspoken. Explanatory, not persuasive. It earns trust by being *legible*, not by hedging. Think a great textbook or an Our World in Data explainer.
 - **Person:** mostly **third-person and impersonal** ("most of the debate collapses onto…", "positions scramble partisan lines"). Addresses the reader as **"you"** only at action points ("submit your view", "where you can go further"). Never "we" in editorial copy — the product holds no house position.
@@ -92,15 +91,15 @@ How Infinity writes. The voice is the product: editorially confident, neutral by
 - **Delivery:** load from CDN — `https://unpkg.com/@phosphor-icons/web` (duotone + fill stylesheets), used as `<i class="ph-duotone ph-atom">`. No custom-drawn icon set.
 - **Unicode as icon:** sparingly — the external-link `↗` and mid-dot `·` are used as typographic icons inline.
 - **Emoji:** **not used.** The data model allows an emoji in `icon` as a fallback, but the language is Phosphor-only.
-- **Brand mark:** the Infinity double-leaf / infinity glyph (`assets/infinity-mark.png`) is a *logo*, not an icon — never recolored, never used inline as a UI icon.
+- **Brand mark:** the Ideya double-leaf / infinity glyph (`assets/ideya-mark.png`) is a *logo*, not an icon — never recolored, never used inline as a UI icon.
 
 ---
 
 ## Logo & brand usage
 
 - **Primary logo:** the **Infinity Project** logo (`assets/infinity-logo.svg`, raster `assets/infinity-logo.jpg`) — the infinity glyph of two leaves reversed in white on the brand-green rounded badge, stacked over an all-caps geometric “INFINITY PROJECT” wordmark.
-- **Mark:** the badge alone (`assets/infinity-mark.png`) is the app icon / favicon bug.
-- **In-product wordmark:** drop “Project” — pair the mark with **“Infinity”** set in Plus Jakarta Sans Bold ink. This is what the nav and shareable artifacts use.
+- **Mark:** the badge alone (`assets/ideya-mark.png`) is the app icon / favicon bug.
+- **In-product wordmark:** drop “Project” — pair the mark with **“Ideya”** set in Plus Jakarta Sans Bold ink. This is what the nav and shareable artifacts use.
 - **Construction:** white double-leaf / infinity symbol on the brand green (`#4CB050`).
 - **Discipline:** keep the mark on the brand green; never recolor it. Chrome stays in the green-tinted ink ramp; the in-product wordmark is ink, not a colored logotype.
 

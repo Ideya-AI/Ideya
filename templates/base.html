@@ -1,11 +1,11 @@
-{% load static infinity_extras %}<!doctype html>
+{% load static ideya_extras %}<!doctype html>
 <html lang="en" class="h-full">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>{% block title %}Ideya{% endblock %}</title>
   <meta name="description" content="{% block description %}A curated, navigable atlas of hard human issues — a visual wiki between an encyclopedia and a debate platform.{% endblock %}" />
-  <link rel="icon" href="{% static 'img/infinity-mark.png' %}" />
+  <link rel="icon" href="{% static 'img/ideya-mark.png' %}" />
   <link rel="canonical" href="{{ request.scheme }}://{{ request.get_host }}{{ request.path }}" />
   <meta property="og:site_name" content="Ideya" />
   <meta property="og:type" content="{% block og_type %}website{% endblock %}" />
@@ -13,7 +13,7 @@
   <meta property="og:description" content="{% block og_description %}A curated, navigable atlas of hard human issues — what each one is, where the disagreement sits, and how to act.{% endblock %}" />
   <meta property="og:url" content="{{ request.scheme }}://{{ request.get_host }}{{ request.path }}" />
   {% block og_image %}
-  <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'img/infinity-mark.png' %}" />
+  <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'img/ideya-mark.png' %}" />
   <meta name="twitter:card" content="summary" />
   {% endblock %}
 
@@ -26,11 +26,11 @@
 
   <!-- Design tokens + component system (cache-busted in DEBUG for live edits) -->
   <link rel="stylesheet" href="{% static_v 'css/tokens.css' %}" />
-  <link rel="stylesheet" href="{% static_v 'css/infinity.css' %}" />
+  <link rel="stylesheet" href="{% static_v 'css/ideya.css' %}" />
 
-  <!-- infinity.js must load before Alpine so its alpine:init listener runs.
+  <!-- ideya.js must load before Alpine so its alpine:init listener runs.
        Alpine + HTMX self-hosted (Alpine pinned 3.15.12, HTMX 2.0.3). -->
-  <script defer src="{% static_v 'js/infinity.js' %}"></script>
+  <script defer src="{% static_v 'js/ideya.js' %}"></script>
   <script defer src="{% static 'vendor/alpine.min.js' %}"></script>
   <script src="{% static 'vendor/htmx.min.js' %}"></script>
 
@@ -44,7 +44,7 @@
   <header class="nav">
     <div class="nav-in">
       <a class="brand" href="{% url 'topics:home' %}">
-        <img class="mark" src="{% static 'img/infinity-mark.png' %}" alt="Infinity" />
+        <img class="mark" src="{% static 'img/ideya-mark.png' %}" alt="Ideya" />
         <span class="wm">Ideya</span>
       </a>
       <button class="search" type="button" @click="$store.search.open = true" aria-label="Search topics and categories">
@@ -70,7 +70,7 @@
 
   <footer class="foot">
     <div class="foot-in">
-      <span class="fb"><img src="{% static 'img/infinity-mark.png' %}" alt="" />Infinity Project</span>
+      <span class="fb"><img src="{% static 'img/ideya-mark.png' %}" alt="" />Ideya</span>
       <nav class="flinks" aria-label="Footer">
         <a href="{% url 'topics:home' %}#directory">All topics</a>
         <a href="{% url 'topics:home' %}#about">About</a>
