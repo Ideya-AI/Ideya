@@ -8,7 +8,7 @@ This bundle contains the full design system (tokens, type, color, iconography), 
 ## About the design files
 The files here are **design references authored in HTML/CSS/React** — prototypes that show the intended look, structure, and behavior. They are **not production code to ship directly**. Your task is to **recreate these designs in the target codebase's environment**, using its established patterns and libraries.
 
-> Context: the original product is a **Django 5.1 + HTMX + Alpine.js + Tailwind** app (`Infinity_Project/`, SQLite). If you are building into that stack, translate these designs into Django templates + Tailwind + Alpine. If into a fresh stack, React is the natural fit — the components are already authored as React (`components/*.jsx`). Either way, reproduce the **tokens and component contracts** faithfully; adapt the implementation to the host environment.
+> Context: the original product is a **Django 5.1 + HTMX + Alpine.js + Tailwind** app (now `Ideya/`, SQLite). If you are building into that stack, translate these designs into Django templates + Tailwind + Alpine. If into a fresh stack, React is the natural fit — the components are already authored as React (`components/*.jsx`). Either way, reproduce the **tokens and component contracts** faithfully; adapt the implementation to the host environment.
 
 ## Fidelity
 **High-fidelity.** Final colors, typography, spacing, iconography, and interactions are all specified. Recreate the UI pixel-faithfully using the codebase's libraries. All values come from `colors_and_type.css` (108 design tokens) — wire those into the host theme rather than hard-coding.

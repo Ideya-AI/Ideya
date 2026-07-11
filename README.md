@@ -1,4 +1,4 @@
-# Infinity_Project
+# Ideya
 
 Part of the [Ideya-AI](https://github.com/Ideya-AI) project set.
 

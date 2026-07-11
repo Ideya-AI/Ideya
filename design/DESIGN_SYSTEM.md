@@ -10,7 +10,7 @@ A curated, navigable **atlas of hard human issues** — existential/global risk,
 
 ## Sources (provided context)
 
-- **Codebase:** `Infinity_Project/` — a Django 5.1 + HTMX + Alpine.js + Tailwind (Play CDN) app, SQLite, one seeded topic (Nuclear Energy). The source of truth for UI patterns. Key files:
+- **Codebase:** `Ideya/` (named `Infinity_Project/` at handoff time) — a Django 5.1 + HTMX + Alpine.js + Tailwind (Play CDN) app, SQLite, one seeded topic (Nuclear Energy). The source of truth for UI patterns. Key files:
   - `DESIGN_BRIEF.md`, `PROJECT.md` — product shape, IA, the six-section topic spine, depth-as-axis model. (Both since retired — see git history; this folder is now the product-shape record.)
   - `templates/base.html` — the live Tailwind theme config (the `ink` palette, Inter, container widths).
   - `templates/topics/detail.html` — the canonical topic page; every component below is lifted from here.
