@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% load infinity_extras static %}
 
-{% block title %}{{ topic.title }} — Infinity{% endblock %}
+{% block title %}{{ topic.title }} — Ideya{% endblock %}
 {% block description %}{{ topic.summary }}{% endblock %}
 {% block og_type %}article{% endblock %}
-{% block og_title %}{{ topic.title }} — Infinity{% endblock %}
+{% block og_title %}{{ topic.title }} — Ideya{% endblock %}
 {% block og_description %}{{ topic.summary }}{% endblock %}
 {% block og_image %}{% if topic.social_card %}
   <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static topic.social_card %}" />

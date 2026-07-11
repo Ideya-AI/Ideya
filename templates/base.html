@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>{% block title %}Infinity{% endblock %}</title>
+  <title>{% block title %}Ideya{% endblock %}</title>
   <meta name="description" content="{% block description %}A curated, navigable atlas of hard human issues — a visual wiki between an encyclopedia and a debate platform.{% endblock %}" />
   <link rel="icon" href="{% static 'img/infinity-mark.png' %}" />
   <link rel="canonical" href="{{ request.scheme }}://{{ request.get_host }}{{ request.path }}" />
-  <meta property="og:site_name" content="Infinity" />
+  <meta property="og:site_name" content="Ideya" />
   <meta property="og:type" content="{% block og_type %}website{% endblock %}" />
-  <meta property="og:title" content="{% block og_title %}Infinity{% endblock %}" />
+  <meta property="og:title" content="{% block og_title %}Ideya{% endblock %}" />
   <meta property="og:description" content="{% block og_description %}A curated, navigable atlas of hard human issues — what each one is, where the disagreement sits, and how to act.{% endblock %}" />
   <meta property="og:url" content="{{ request.scheme }}://{{ request.get_host }}{{ request.path }}" />
   {% block og_image %}
@@ -45,7 +45,7 @@
     <div class="nav-in">
       <a class="brand" href="{% url 'topics:home' %}">
         <img class="mark" src="{% static 'img/infinity-mark.png' %}" alt="Infinity" />
-        <span class="wm">Infinity</span>
+        <span class="wm">Ideya</span>
       </a>
       <button class="search" type="button" @click="$store.search.open = true" aria-label="Search topics and categories">
         <i class="ph-duotone ph-magnifying-glass"></i>

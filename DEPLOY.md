@@ -14,16 +14,18 @@ host — do **not** commit a filled-in `.env`):
 | Variable | Required | What it is |
 |---|---|---|
 | `DJANGO_SECRET_KEY` | ✅ (prod) | Generate: `python -c "from django.core.management.utils import get_random_secret_key as g; print(g())"` |
-| `DJANGO_ALLOWED_HOSTS` | ✅ (prod) | Your domain(s), comma-separated: `infinity.example.com,www.infinity.example.com` |
-| `DJANGO_CSRF_TRUSTED_ORIGINS` | ✅ (prod) | Same host(s) **with scheme**: `https://infinity.example.com` |
-| `PUBLIC_ORIGIN` | recommended | `https://infinity.example.com` — baked into poster QR codes and social-card URLs |
+| `DJANGO_ALLOWED_HOSTS` | ✅ (prod) | Your domain(s), comma-separated: `ideya1.org,www.ideya1.org,ideya1.com,www.ideya1.com` |
+| `DJANGO_CSRF_TRUSTED_ORIGINS` | ✅ (prod) | Same host(s) **with scheme**: `https://ideya1.org` |
+| `PUBLIC_ORIGIN` | recommended | `https://ideya1.org` — baked into poster QR codes and social-card URLs |
 | `DJANGO_DB_PATH` | recommended | Absolute SQLite path on a **persistent volume**, e.g. `/data/db.sqlite3` |
 | `DJANGO_DEBUG` | — | Leave unset/`false` in production |
 | `WEB_CONCURRENCY` | — | gunicorn worker count (default 2 — see the rate-limit note below) |
 
-**Getting a domain is the last blocker.** When you have it, the only change is
-those three host variables (`ALLOWED_HOSTS`, `CSRF_TRUSTED_ORIGINS`,
-`PUBLIC_ORIGIN`) — no code edits. `ALLOWED_HOSTS` is empty by default, so the
+**Domains: `ideya1.org` (primary) + `ideya1.com`.** Both are listed in
+`ALLOWED_HOSTS`/`CSRF_TRUSTED_ORIGINS` above so either resolves; canonicalize at
+the proxy/DNS layer with a 301 from `ideya1.com` (and both `www.` hosts) to
+`https://ideya1.org` so search engines and shares see one origin.
+`PUBLIC_ORIGIN` is always the `.org`. `ALLOWED_HOSTS` is empty by default, so the
 site returns 400 for every request until it's set; that's the intended
 secure-by-default behavior, not a bug.
 
@@ -36,9 +38,9 @@ docker build -t infinity .
 docker run -d -p 80:8000 \
   -v /srv/infinity-data:/data \
   -e DJANGO_SECRET_KEY=... \
-  -e DJANGO_ALLOWED_HOSTS=infinity.example.com \
-  -e DJANGO_CSRF_TRUSTED_ORIGINS=https://infinity.example.com \
-  -e PUBLIC_ORIGIN=https://infinity.example.com \
+  -e DJANGO_ALLOWED_HOSTS=ideya1.org,www.ideya1.org,ideya1.com,www.ideya1.com \
+  -e DJANGO_CSRF_TRUSTED_ORIGINS=https://ideya1.org,https://www.ideya1.org,https://ideya1.com,https://www.ideya1.com \
+  -e PUBLIC_ORIGIN=https://ideya1.org \
   -e DJANGO_DB_PATH=/data/db.sqlite3 \
   infinity
 ```

@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}{{ category.name }} — Infinity{% endblock %}
+{% block title %}{{ category.name }} — Ideya{% endblock %}
 {% block description %}{{ category.description }}{% endblock %}
-{% block og_title %}{{ category.name }} — Infinity{% endblock %}
+{% block og_title %}{{ category.name }} — Ideya{% endblock %}
 {% block og_description %}{{ category.description }}{% endblock %}
 {% block og_image %}{% if category.social_card %}
   <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static category.social_card %}" />
