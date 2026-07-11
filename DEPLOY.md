@@ -64,6 +64,62 @@ Set the env vars from the table, and attach a **persistent disk** mounted where
 `DJANGO_DB_PATH` points (platforms with an ephemeral filesystem will otherwise
 reset the DB on every deploy — see "Database" below).
 
+### C. Self-host from the desktop via Cloudflare Tunnel (the launch plan)
+
+Run the Docker container locally and publish it through a **Cloudflare Tunnel**
+— no port-forwarding, no exposed home IP, works behind CGNAT/dynamic IPs, free.
+Cloudflare terminates TLS at the edge and forwards `X-Forwarded-Proto: https`,
+which settings already trusts, so no code or env changes beyond the table above.
+
+1. **Cloudflare setup (once):** add both `ideya1.org` and `ideya1.com` as sites
+   on a free plan and switch their nameservers to Cloudflare at the registrar.
+2. **Run the app** (same image as path A, loopback-only since the tunnel is the
+   only way in):
+
+   ```sh
+   docker build -t infinity .
+   docker run -d --name ideya --restart unless-stopped \
+     -p 127.0.0.1:8000:8000 \
+     -v /srv/infinity-data:/data \
+     --env-file /srv/infinity-data/prod.env \
+     infinity
+   ```
+
+   Put the production env values (table above) in `/srv/infinity-data/prod.env`
+   — do **not** reuse the repo's dev `.env` (it sets `DJANGO_DEBUG=true`).
+3. **Create the tunnel:**
+
+   ```sh
+   cloudflared tunnel login
+   cloudflared tunnel create ideya
+   cloudflared tunnel route dns ideya ideya1.org
+   ```
+
+   `~/.cloudflared/config.yml`:
+
+   ```yaml
+   tunnel: ideya
+   credentials-file: /home/<you>/.cloudflared/<tunnel-id>.json
+   ingress:
+     - hostname: ideya1.org
+       service: http://localhost:8000
+     - service: http_status:404
+   ```
+
+   Install it as a service so it survives reboots:
+   `sudo cloudflared service install`.
+4. **Redirects at the edge:** in Cloudflare, add Redirect Rules (dynamic, 301)
+   sending `ideya1.com`, `www.ideya1.com`, and `www.ideya1.org` to
+   `https://ideya1.org` + the original path. (For the `.com` zone, the rule
+   needs a proxied placeholder DNS record — e.g. an `A` record to `192.0.2.1`,
+   orange-clouded — so requests reach Cloudflare to be redirected.)
+5. **Desktop realities:** disable suspend/hibernate (`systemctl mask sleep.target
+   suspend.target`), rely on `--restart unless-stopped` + the cloudflared service
+   after reboots, and back up `/srv/infinity-data/db.sqlite3` (it's the only
+   state — a nightly `cp` to another disk or Litestream→R2 both work). Uptime is
+   the machine's uptime; that's the accepted trade-off until this moves to a
+   host, which is just "run the same image elsewhere and repoint the tunnel."
+
 ## 3. Seed the content
 
 A fresh database has schema only — content lives outside migrations, in
