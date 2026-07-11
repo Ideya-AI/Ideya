@@ -230,7 +230,7 @@
         {% if c %}
         {% comment %}Axis 2 only: the lead is the header; clicking the band reveals
         the empirical/values branches. No breadth axis — there is one crux.{% endcomment %}
-        <div class="crux"{% if c.empirical or c.values %} x-data="{ more: false }"{% endif %}>
+        <div class="crux"{% if c.empirical or c.values %} x-data="{ more: false }" :class="{ 'is-open': more }" @click="more = !more"{% endif %}>
           <p class="clead">{{ c.lead|lead_hl:c.lead_highlight }}</p>
           {% if c.subtitle %}<p class="csub">{{ c.subtitle }}</p>{% endif %}
           {% if c.empirical or c.values %}

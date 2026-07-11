@@ -279,7 +279,23 @@ def home(request):
         }
 
     bench_ids = [featured.id] if featured else []
-    bench = _decorate(authored.exclude(id__in=bench_ids)[:3])
+    bench = _decorate(authored.exclude(id__in=bench_ids)[:4])
+    # Pad the bench to a full row of four with curated coming-soon drafts;
+    # each slot converts to a live card as the topic publishes.
+    soon = []
+    if len(bench) < 4:
+        teasers = [
+            "ai-existential-risk",
+            "gene-editing",
+            "democratic-backsliding-populism",
+        ]
+        by_slug = {
+            t.slug: t
+            for t in Topic.objects.filter(
+                slug__in=teasers, status=Topic.DRAFT
+            ).select_related("primary_category")
+        }
+        soon = [by_slug[s] for s in teasers if s in by_slug][: 4 - len(bench)]
 
     categories = []
     for cat in Category.objects.prefetch_related(
@@ -304,6 +320,7 @@ def home(request):
         {
             "spotlight": spotlight,
             "bench": bench,
+            "soon": soon,
             "categories": categories,
             "all_topics": all_topics,
         },
@@ -517,11 +534,10 @@ def _in_order(qs, ids):
 
 def search(request):
     q = (request.GET.get("q") or "").strip()
-    topics, categories, positions = [], [], []
+    topics, categories = [], []
     if q and fts.available():
         tids = fts.search_ids(q, "topic", 6)
         cids = fts.search_ids(q, "category", 4)
-        pids = fts.search_ids(q, "position", 4)
         topics = _decorate(
             _in_order(
                 _authored(
@@ -533,12 +549,6 @@ def search(request):
             )
         )
         categories = _in_order(Category.objects.filter(id__in=cids), cids)
-        positions = _in_order(
-            Position.objects.filter(
-                id__in=pids, section__topic__status=Topic.PUBLISHED
-            ).select_related("section", "section__topic"),
-            pids,
-        )
     elif q:
         topics = _decorate(
             _authored(
@@ -548,17 +558,10 @@ def search(request):
             )[:6]
         )
         categories = Category.objects.filter(name__icontains=q)[:4]
-        positions = (
-            Position.objects.filter(
-                name__icontains=q, section__topic__status=Topic.PUBLISHED
-            )
-            .select_related("section", "section__topic")
-            .order_by("-importance")[:4]
-        )
     return render(
         request,
         "topics/components/_search_results.html",
-        {"q": q, "topics": topics, "categories": categories, "positions": positions},
+        {"q": q, "topics": topics, "categories": categories},
     )
 
 

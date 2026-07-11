@@ -1,7 +1,7 @@
 {% load ideya_extras %}{% comment %}Live search results fragment (returned by topics:search).{% endcomment %}
 {% if not q %}
-  <div class="sp-empty">Start typing to search topics, categories and positions.</div>
-{% elif not topics and not categories and not positions %}
+  <div class="sp-empty">Start typing to search topics and categories.</div>
+{% elif not topics and not categories %}
   <div class="sp-empty">No matches for “{{ q }}”.</div>
 {% else %}
   {% if topics %}
@@ -10,7 +10,6 @@
   <a class="sr" href="{{ t.get_absolute_url }}" {% if cc %}style="--cat: {{ cc.color_var }}; --cat-tint: {{ cc.tint_var }};"{% endif %}>
     <span class="sicon"><i class="ph-duotone ph-{{ t.icon|default:'circle' }}"></i></span>
     <span><span class="sname">{{ t.title|highlight:q }}</span><br><span class="smeta">{{ t.summary|truncatewords:12 }}</span></span>
-    {% if t.dots %}<span class="sdots">{% for c in t.dots %}<span class="dd" style="background:{{ c }}"></span>{% endfor %}</span>{% endif %}
   </a>
   {% endwith %}{% endfor %}
   {% endif %}
@@ -21,16 +20,6 @@
   <a class="sr" href="{{ c.get_absolute_url }}" style="--cat: {{ c.color_var }}; --cat-tint: {{ c.tint_var }};">
     <span class="sicon"><i class="ph-duotone ph-{{ c.icon|default:'squares-four' }}"></i></span>
     <span><span class="sname">{{ c.name|highlight:q }}</span><br><span class="smeta">{{ c.topic_count }} topic{{ c.topic_count|pluralize }}</span></span>
-  </a>
-  {% endfor %}
-  {% endif %}
-
-  {% if positions %}
-  <div class="sp-group">Positions</div>
-  {% for p in positions %}
-  <a class="sr" href="{{ p.section.topic.get_absolute_url }}#positions">
-    <span class="sicon" style="--cat: {{ p.color_var }}; --cat-tint: color-mix(in srgb, {{ p.color_var }} 14%, #fff);"><i class="ph-duotone ph-scales"></i></span>
-    <span><span class="sname">{{ p.name|highlight:q }}</span><br><span class="smeta">in {{ p.section.topic.title }}</span></span>
   </a>
   {% endfor %}
   {% endif %}
