@@ -117,3 +117,42 @@ premium model is reserved for judgment.** Two supported paths:
 
 The invariant across both: **AI drafts → a human publishes.** The gate may fail a
 draft and open fixes; it never auto-publishes.
+
+## 12. Staged pipeline (2026-07) — supersedes the single-workflow shape of §9/§11
+
+The pipeline is now split into independently re-runnable stages, each an automated
+create-and-refine step with its own gate, orchestrated by the `author-topic` skill
+(`.claude/skills/author-topic/`). §9's single `author_topic.js` is retired; §9/§11 stay
+as the design record. The five stages:
+
+1. **Research (substance)** — `research/workflows/research_topic.js`: plan (now also emits
+   the Phosphor `icon`) → parallel section research → crux → the four-critic **substance
+   gate** (neutrality / steelman / fact-source / crux) → keep-best fix loop. Judges
+   substance on the full, un-compressed draft. Artifact: `research/dossiers/<slug>.json`.
+2. **Distribute (presentation)** — `research/workflows/distribute_topic.js`: distill the
+   compact layer → assign tier (the "Go deeper" fold), reveal (compact vs expanded), and
+   item **order** → the three-critic **presentation gate** (compact-self-sufficiency,
+   reading-level-fit, above-fold-selection) → presentation-only fix loop. Never changes a
+   fact (the patch whitelist rejects value/source/url/name/text edits; a JS port of
+   `Section._tier_lead_count` gives agents the real fold). Artifact: the loader contract
+   `research/topics/<slug>.json`, with verdicts stage-tagged `substance`/`presentation`.
+3. **Iconography** — skill-driven: brief → `generate_icons.py` (Nano Banana, per-slug
+   candidates, `--edit` refine mode) → Claude picks → `postprocess_icon.py` normalizes to
+   `static/img/topics/<slug>.png` (1035×690). Prompt provenance wired into
+   `Topic.primary_image_prompt` via `load_topic_draft --image-brief`.
+4. **Views** — `render_screens.py` (full-height desktop/mobile) + `render_social` +
+   `render_poster` → `fable` critics read the images → content findings loop back through
+   `distribute_topic.js --fix_only`; CSS defects are logged for the human, not auto-fixed.
+   Artifacts under `research/reviews/<slug>/` incl. `REVIEW.md`.
+5. **Human review & publish** — unchanged: preview the draft, publish, set `reviewed_at`,
+   `check_links`, commit.
+
+Gate placement is the point of the split: the **substance gate ends stage 1**, the
+**presentation gate ends stage 2**, so presentation tuning (the common iteration) re-runs
+without re-spending web research. The invariant holds throughout: **AI drafts → a human
+publishes.**
+
+**Content-policy limit:** dual-use topics (engineered pathogens / bioweapons-adjacent)
+are blocked by the safety classifier — stage-1 research agents error out. Those topics are
+not automatable through Claude agents; use path B (external research → the same
+`research/topics/<slug>.json` contract) and resume at stage 3.

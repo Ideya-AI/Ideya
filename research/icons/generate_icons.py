@@ -85,10 +85,30 @@ def prompt_from_brief(slug: str) -> str:
     return prompt
 
 
-def generate_one(key: str, model: str, prompt: str, size: str, aspect: str) -> bytes:
+def generate_one(
+    key: str,
+    model: str,
+    prompt: str,
+    size: str,
+    aspect: str,
+    edit_image: bytes | None = None,
+) -> bytes:
+    # In edit mode the input carries the source image plus a text instruction so
+    # Nano Banana refines the existing candidate instead of drawing from scratch.
+    if edit_image is not None:
+        input_items = [
+            {
+                "type": "image",
+                "mime_type": "image/jpeg",
+                "data": base64.b64encode(edit_image).decode(),
+            },
+            {"type": "text", "text": prompt},
+        ]
+    else:
+        input_items = [{"type": "text", "text": prompt}]
     body = {
         "model": model,
-        "input": [{"type": "text", "text": prompt}],
+        "input": input_items,
         "response_format": {
             "type": "image",
             "mime_type": "image/jpeg",
@@ -137,22 +157,53 @@ def main() -> None:
     ap.add_argument("--model", default="gemini-3-pro-image")
     ap.add_argument("--n", type=int, default=4, help="number of candidates (default 4)")
     ap.add_argument("--size", default="1K", choices=["0.5K", "1K", "2K", "4K"])
-    ap.add_argument("--aspect", default="3:2", help="primaries are 3:2 wide (framing is normalized in post anyway)")
-    ap.add_argument("--out-dir", default=str(HERE / "candidates"))
+    ap.add_argument(
+        "--aspect",
+        default="3:2",
+        help="primaries are 3:2 wide (framing is normalized in post anyway)",
+    )
+    # Default: a per-slug subdir so runs for different topics don't intermingle.
+    ap.add_argument(
+        "--out-dir",
+        default="",
+        help="candidate dir (default research/icons/candidates/<slug>/)",
+    )
+    ap.add_argument(
+        "--edit",
+        default="",
+        help="path to a candidate JPEG to refine instead of drawing fresh",
+    )
+    ap.add_argument(
+        "--edit-prompt",
+        default="",
+        help="the refinement instruction for --edit (what to change)",
+    )
     ap.add_argument("--dry-run", action="store_true", help="print the prompt and exit")
     args = ap.parse_args()
 
-    prompt = prompt_from_brief(args.slug)
+    edit_image = None
+    if args.edit:
+        if not args.edit_prompt:
+            sys.exit("--edit needs --edit-prompt describing the change to make.")
+        edit_path = Path(args.edit)
+        if not edit_path.exists():
+            sys.exit(f"--edit image not found: {edit_path}")
+        edit_image = edit_path.read_bytes()
+        prompt = args.edit_prompt
+    else:
+        prompt = prompt_from_brief(args.slug)
+
     if args.dry_run:
         print(
             f"model: {args.model} · size {args.size} · aspect {args.aspect} · n={args.n}"
+            + ("  [EDIT mode]" if edit_image else "")
         )
         print("--- prompt ---")
         print(prompt)
         return
 
     key = api_key()
-    out_dir = Path(args.out_dir)
+    out_dir = Path(args.out_dir) if args.out_dir else HERE / "candidates" / args.slug
     out_dir.mkdir(parents=True, exist_ok=True)
     # Never overwrite an earlier run — number on from the highest existing index.
     existing = [
@@ -162,13 +213,13 @@ def main() -> None:
     ]
     base = max(existing, default=0)
     for i in range(base + 1, base + args.n + 1):
-        png = generate_one(key, args.model, prompt, args.size, args.aspect)
+        png = generate_one(key, args.model, prompt, args.size, args.aspect, edit_image)
         path = out_dir / f"{args.slug}.{args.model}.{i}.jpg"
         path.write_bytes(png)
         print(f"[{i - base}/{args.n}] {path}  ({len(png) // 1024} KB)")
     print(
-        f"\nReview the candidates in {out_dir}/ and promote the winner to "
-        f"static/img/topics/{args.slug}.png (normalize + convert in post)"
+        f"\nReview the candidates in {out_dir}/ and promote the winner with "
+        f"postprocess_icon.py → static/img/topics/{args.slug}.png"
     )
 
 

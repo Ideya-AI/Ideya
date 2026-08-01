@@ -16,7 +16,9 @@ the hand-built `research/topics/nuclear-energy.gold.json` is the **content** qua
 The loader (`topics/management/commands/load_topic_draft.py`) reads
 `{ draft, verdicts, plan_positions }` (a bare `draft` object also works). `verdicts`
 is stored on `Topic.research_dossier` for the reviewer; `plan_positions` is carried
-for provenance but not consumed. Fields below are what the loader actually maps.
+for provenance but not consumed. (Verdicts from the `author-topic` pipeline may carry an
+additive `stage: "substance" | "presentation"` key; the loader stores them opaquely, so
+it's harmless here.) Fields below are what the loader actually maps.
 Rich viz round-trips: `ranked` needs `series` rows + usually `wide: true`; `range`
 needs `range_min`/`range_max`/`range_at`; a rich viz arriving without its data falls
 back to `bar` with a warning. Question lean poles (`lean_label_a/b`, `lean_pct_a`)

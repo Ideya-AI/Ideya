@@ -31,6 +31,30 @@ POS_KEYS = [k for k, _ in POS_COLORS]
 ACTION_KINDS = {k for k, _ in Action.KIND_CHOICES}
 
 
+def image_prompt_from_brief(path: Path) -> str:
+    """The '## Generation prompt' blockquote from an icon brief (same rule the
+    generator reads), for provenance in Topic.primary_image_prompt."""
+    lines = path.read_text().splitlines()
+    try:
+        start = next(
+            i
+            for i, l in enumerate(lines)
+            if l.lower().startswith("## generation prompt")
+        )
+    except StopIteration:
+        return ""
+    block, in_block = [], False
+    for line in lines[start + 1 :]:
+        if line.startswith(">"):
+            in_block = True
+            block.append(line.lstrip("> ").rstrip())
+        elif in_block and line.strip() == "":
+            block.append("")
+        elif in_block:
+            break
+    return "\n".join(block).strip()
+
+
 class Command(BaseCommand):
     help = "Load a research-pipeline TopicDraft JSON into the DB as a topic."
 
@@ -44,6 +68,12 @@ class Command(BaseCommand):
             "--icon",
             default="",
             help="Phosphor icon name; falls back to the draft's overview.icon, else 'atom'.",
+        )
+        p.add_argument(
+            "--image-brief",
+            default="",
+            help="path to research/icons/<slug>.md; its '## Generation prompt' "
+            "blockquote is stored as Topic.primary_image_prompt for provenance.",
         )
 
     @transaction.atomic
@@ -66,23 +96,37 @@ class Command(BaseCommand):
             or (existing.icon if existing else "")
             or "atom"
         )
+        # Primary-art generation prompt: from --image-brief if given, else keep
+        # what the topic already had (never blow away provenance on a refresh),
+        # else what the draft carries.
+        image_prompt = d.get("primary_image_prompt", "")
+        if o["image_brief"]:
+            brief_path = Path(o["image_brief"])
+            if not brief_path.exists():
+                raise CommandError(f"--image-brief not found: {brief_path}")
+            image_prompt = image_prompt_from_brief(brief_path) or image_prompt
+        if not image_prompt and existing:
+            image_prompt = existing.primary_image_prompt
+        defaults = {
+            "title": o["title"],
+            "status": o["status"],
+            "primary_category": cat,
+            "summary": ov.get("summary", ""),
+            "scope_covered": ov.get("scope_covered", ""),
+            "scope_excluded": ov.get("scope_excluded", ""),
+            "why_now": ov.get("why_now", ""),
+            "icon": icon,
+            "researched_at": timezone.now(),
+            "research_dossier": {
+                "verdicts": payload.get("verdicts", []),
+                "generated_by": "topic-research pipeline",
+            },
+        }
+        if image_prompt:
+            defaults["primary_image_prompt"] = image_prompt
         topic, _ = Topic.objects.update_or_create(
             slug=o["slug"],
-            defaults={
-                "title": o["title"],
-                "status": o["status"],
-                "primary_category": cat,
-                "summary": ov.get("summary", ""),
-                "scope_covered": ov.get("scope_covered", ""),
-                "scope_excluded": ov.get("scope_excluded", ""),
-                "why_now": ov.get("why_now", ""),
-                "icon": icon,
-                "researched_at": timezone.now(),
-                "research_dossier": {
-                    "verdicts": payload.get("verdicts", []),
-                    "generated_by": "topic-research pipeline",
-                },
-            },
+            defaults=defaults,
         )
         topic.categories.set([cat])
         topic.sections.all().delete()  # clean rebuild
