@@ -2,7 +2,7 @@
 
 Longer detail for [`SKILL.md`](SKILL.md): the file schema, the verdict shape, the
 editorial rules to enforce, the staging→publish mechanics, and the human-gate
-snippets. Authority for the content model is `RESEARCH_PIPELINE.md` and `topics/models.py`;
+snippets. Authority for the content model is `research/RESEARCH_PIPELINE.md` and `topics/models.py`;
 the hand-built `research/topics/nuclear-energy.gold.json` is the **content** quality bar.
 
 > **Shape caveat.** `nuclear-energy.gold.json` is in **export shape**
@@ -85,7 +85,7 @@ SKILL.md stage 3 traces back to a verdict, and so the dossier records *why* each
 was made.
 
 ## Editorial rules to enforce (stage 2)
-From `RESEARCH_PIPELINE.md` §2 + §8 — the same bar published content must meet:
+From `research/RESEARCH_PIPELINE.md` §2 + §8 — the same bar published content must meet:
 - **Neutral by intention** — no house position, no section tilts.
 - **Genuine steelman per position** — each side's strongest case *in its own voice*,
   such that a real proponent would endorse it. Not strawmen, not balance theatre.
@@ -157,7 +157,6 @@ durable current copy to diff against. `topics_due` reports the queue globally (n
 `--topic` flag) — filter its `--json` output by slug when you need one row.
 
 ## Related
-- `RESEARCH_PIPELINE.md` — the authoring pipeline this upkeep loop mirrors.
-- `research/README.md` — what lives under `research/` and why.
+- `research/RESEARCH_PIPELINE.md` — the authoring pipeline this upkeep loop mirrors.
 - `deep-research` skill — the fan-out + adversarial-verification harness for stage 2.
 - `schedule` skill — for the weekly link sweep / cadence backstop runs.

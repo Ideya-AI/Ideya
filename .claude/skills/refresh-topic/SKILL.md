@@ -8,7 +8,7 @@ description: Re-research, adversarially verify, and update ONE topic's content a
 Keep a published Topic accurate as the world moves. One run = one topic, end to end:
 **detect → re-research & verify → propose a cited diff (the human gate) → load the
 approved content as a draft → review against live → publish.** This is the upkeep
-mirror of the authoring pipeline in `RESEARCH_PIPELINE.md`.
+mirror of the authoring pipeline in `research/RESEARCH_PIPELINE.md`.
 
 > **Iron rule — automation may OPEN a proposal; a human approves every content change.
 > Never auto-publish.** (Decision D: AI drafts → human publishes.) Stages 1–2 can run
@@ -39,7 +39,7 @@ detail (JSON shape, verdict shape, exact publish commands, snippets) is in
 ## 2 · Research & verify — the heart of it
 Use the **`deep-research`** skill to re-verify the topic element by element. The
 research itself is grunt work — run it on other / cheaper models (the same
-strategy as the authoring engine, `RESEARCH_PIPELINE.md` §11); reserve the strong
+strategy as the authoring engine, `research/RESEARCH_PIPELINE.md` §11); reserve the strong
 model for the adversarial verdicts and the crux. Honor the project's locked
 editorial rules (full checklist in `reference.md`):
 - **Every Stat** — find a current, authoritative source; record value, `source_url`,
@@ -110,7 +110,7 @@ onto `<slug>` instead — there's no live version to protect.
   A broken link opens a proposal; it does not auto-fix.
 - **Full re-research — per topic, on the volatility interval**, surfaced by
   `topics_due` as a backstop so nothing rots silently. But the project is **durable by
-  default** (`RESEARCH_PIPELINE.md` §8): the strongest trigger is **event-driven** — a
+  default** (`research/RESEARCH_PIPELINE.md` §8): the strongest trigger is **event-driven** — a
   position obsolesced, a key fact moved a lot — with the cadence as the safety net and
   the occasional light review for genuinely fast-moving topics (e.g. AI).
 - **The gate never moves.** A scheduled run may detect staleness and OPEN a cited

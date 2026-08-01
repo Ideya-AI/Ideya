@@ -1,6 +1,6 @@
 # What Drives the Housing Affordability Crisis — primary icon art brief
 
-Handoff brief for an illustrator or image/vector tool. Full style theme: `../../ICONOGRAPHY.md`.
+Handoff brief for an illustrator or image/vector tool. Full style theme: `../ICONOGRAPHY.md`.
 Template siblings: `nuclear-energy.md` (the tuned reference), `universal-basic-income.md`.
 
 ## Use

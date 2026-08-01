@@ -53,8 +53,9 @@ already trusts for HTTPS detection.
 
 ### B. Buildpack platform (Railway / Render / Heroku-style)
 
-The `Procfile` (release = migrate, web = gunicorn) and `.python-version` are
-already here. Set the build command to install deps and collect static:
+Create a `Procfile` (`release: python manage.py migrate --noinput`, `web:` the
+gunicorn line from `entrypoint.sh`) and a `.python-version` containing `3.12`.
+Set the build command to install deps and collect static:
 
 ```
 pip install -r requirements.txt && python manage.py collectstatic --noinput
@@ -117,6 +118,33 @@ which settings already trusts, so no code or env changes beyond the table above.
    state — a nightly `cp` to another disk or Litestream→R2 both work). Uptime is
    the machine's uptime; that's the accepted trade-off until this moves to a
    host, which is just "run the same image elsewhere and repoint the tunnel."
+
+#### Day-to-day operations
+
+```sh
+docker stop ideya      # take the site down (visitors get a Cloudflare error)
+docker start ideya     # bring it back (also auto-starts after reboot)
+docker logs -f ideya   # tail the app
+```
+
+**Update the live site** (code and static files are baked into the image, so
+redeploy = rebuild and swap; the DB on `/srv/ideya-data` survives, and
+`entrypoint.sh` migrates on start):
+
+```sh
+docker build -t ideya .
+docker stop ideya && docker rm ideya
+docker run -d --name ideya --restart unless-stopped \
+  -p 127.0.0.1:8642:8000 \
+  -v /srv/ideya-data:/data \
+  --env-file /srv/ideya-data/prod.env \
+  ideya
+```
+
+The tunnel half is a systemd service and normally never needs touching:
+`sudo systemctl status|restart cloudflared`. Local dev is separate from all of
+this: `.venv/bin/python manage.py runserver` on port 8000 with the repo's dev
+`.env` and `db.sqlite3`.
 
 ## 3. Seed the content
 

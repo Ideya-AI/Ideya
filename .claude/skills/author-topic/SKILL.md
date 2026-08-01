@@ -30,7 +30,7 @@ artifact is skipped unless you pass `--redo`.
 > similar) are blocked by content policy — the deep-research agents error out. If stage 1
 > fails that way, the topic is not automatable through Claude agents; author it via an
 > external-research path onto the same `research/topics/<slug>.json` contract (path B in
-> `RESEARCH_PIPELINE.md §11`) and resume at stage 3.
+> `research/RESEARCH_PIPELINE.md §11`) and resume at stage 3.
 
 ---
 
@@ -83,12 +83,12 @@ Use `<slug>-draft` only when a published version is live and must stay online.)
 ## Stage 3 · Iconography
 
 Loop, capped at ~3 refine rounds:
-1. A `fable` sub-agent writes `research/icons/<slug>.md` from `ICONOGRAPHY.md` +
+1. A `fable` sub-agent writes `research/icons/<slug>.md` from `research/ICONOGRAPHY.md` +
    `research/icons/categories.md` + the two existing briefs as exemplars (match their
    headings; the `## Generation prompt` blockquote is what the generator reads).
 2. `python research/icons/generate_icons.py --slug <slug> --n 4` → candidates land in
    `research/icons/candidates/<slug>/`.
-3. **Read** the candidates; score against the `ICONOGRAPHY.md` checklist (uniform
+3. **Read** the candidates; score against the `research/ICONOGRAPHY.md` checklist (uniform
    monoline stroke, same-hue ~16–18% duotone fill, category colour, 2.5–3.5× scene
    complexity, white ground, no text/frame, 40px legibility). None pass → refine the
    prompt or `generate_icons.py --edit <candidate> --edit-prompt "..."`; one passes →

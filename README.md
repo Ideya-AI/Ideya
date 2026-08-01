@@ -11,8 +11,6 @@ Django + HTMX + Alpine, token-native CSS, SQLite. Content is AI-drafted and huma
 - `topics/` — the app: models, views, and the management commands that load, export, render (posters/social cards), and maintain content.
 - `templates/`, `static/` — the built product surface (design tokens in `static/css/tokens.css`).
 - `design/` — the locked design system: foundations, component specs, responsive rules, data model.
-- `research/` — the content pipeline: topic universe catalog, per-topic JSON (source of truth), icon briefs + generator, authoring/refresh workflows.
-- `RESEARCH_PIPELINE.md` — the authoring engine's design + editorial quality bar (referenced by the workflows and the refresh-topic skill).
-- `ICONOGRAPHY.md` — the locked topic-icon style.
+- `research/` — the content pipeline: topic universe catalog, per-topic JSON (source of truth), icon briefs + generator, authoring/refresh workflows, plus its two governing docs — `RESEARCH_PIPELINE.md` (the authoring engine's design + editorial quality bar, referenced by the workflows and skills) and `ICONOGRAPHY.md` (the locked topic-icon style).
 - `DEPLOY.md` — how to go live (env vars, Docker/buildpack, content seeding).
 - `accounts/` — shelved accounts app (kept by decision; no public entry points).

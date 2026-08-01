@@ -1,6 +1,6 @@
 # Category primary icon art — briefs for all 9 categories
 
-Handoff briefs for Nano Banana / Gemini. Full locked style: `../../ICONOGRAPHY.md`
+Handoff briefs for Nano Banana / Gemini. Full locked style: `../ICONOGRAPHY.md`
 and the worked example `nuclear-energy.md`. Read those once; every prompt below
 assumes that style.
 

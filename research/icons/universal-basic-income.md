@@ -1,6 +1,6 @@
 # Universal Basic Income — primary icon art brief
 
-Handoff brief for an illustrator or image/vector tool. Full style theme: `../../ICONOGRAPHY.md`.
+Handoff brief for an illustrator or image/vector tool. Full style theme: `../ICONOGRAPHY.md`.
 Template sibling: `nuclear-energy.md` (the tuned reference).
 
 ## Use
