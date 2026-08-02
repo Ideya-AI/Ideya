@@ -1,8 +1,9 @@
-"""Round-trip tests for the export_topic command: it must serialise the seeded
+"""Round-trip tests for the export_topic command: it must serialise the
 nuclear-energy topic into the exact JSON load_topic_draft consumes, so that
 re-loading reproduces the topic's sections, typed children, and key fields.
 Network-free — exercises only the two management commands against the test DB
-(built from migrations, which seed nuclear-energy)."""
+(nuclear-energy seeded via NuclearFixtureMixin; the old seed migration was
+retired 2026-07-10)."""
 
 import json
 import tempfile
@@ -13,6 +14,7 @@ from django.core.management import call_command
 from django.test import TestCase
 
 from topics.models import Action, Crux, Position, Question, Section, Stat, Topic
+from topics.tests.test_core import NuclearFixtureMixin
 
 
 def _counts(topic):
@@ -27,7 +29,7 @@ def _counts(topic):
     }
 
 
-class ExportTopicTests(TestCase):
+class ExportTopicTests(NuclearFixtureMixin, TestCase):
     slug = "nuclear-energy"
 
     def _export_payload(self):

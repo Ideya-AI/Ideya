@@ -5,6 +5,7 @@ from django.test import RequestFactory, TestCase, override_settings
 from django.urls import reverse
 
 from ..models import Question
+from .test_core import NuclearFixtureMixin
 from ..ratelimit import client_ip, rate_limited
 
 
@@ -44,7 +45,7 @@ class RateLimitHelperTests(TestCase):
 
 
 @override_settings(PARTICIPATION_RATELIMIT=True)
-class VoteRateLimitTests(TestCase):
+class VoteRateLimitTests(NuclearFixtureMixin, TestCase):
     """The vote endpoint returns 429 once an IP blows past the participation cap,
     without ever recording the over-limit votes."""
 

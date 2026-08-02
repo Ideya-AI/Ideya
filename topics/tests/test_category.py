@@ -26,6 +26,9 @@ class CategoryPageTests(TestCase):
             primary_category=self.cat,
         )
         self.topic.categories.add(self.cat)
+        # Public listings show only authored topics (a positions section
+        # exists) — the guard below is about CATEGORY sections staying empty.
+        Section.objects.create(topic=self.topic, kind=Section.POSITIONS)
         self.url = reverse("topics:category", args=[self.cat.slug])
 
     def test_renders_overview_and_topic_without_sections(self):

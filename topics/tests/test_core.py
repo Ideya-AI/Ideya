@@ -1,8 +1,14 @@
+from io import StringIO
+from pathlib import Path
+
+from django.conf import settings
 from django.contrib.auth import get_user_model
+from django.core.management import call_command
 from django.test import Client, TestCase
 from django.urls import reverse
 
 from ..models import (
+    Category,
     Position,
     Question,
     Section,
@@ -11,9 +17,42 @@ from ..models import (
 )
 
 
-class ParticipationTests(TestCase):
+class NuclearFixtureMixin:
+    """Seeds the Nuclear Energy topic the way fresh databases do now — through
+    the loader from research/topics/nuclear-energy.json. (The old seed
+    migration 0002 was retired/emptied 2026-07-10; content's single source of
+    truth is the per-topic JSON.) Also creates a published section-less stub
+    so the empty-state path stays covered."""
+
+    @classmethod
+    def setUpTestData(cls):
+        super().setUpTestData()
+        Category.objects.get_or_create(
+            slug="climate-env",
+            defaults={
+                "name": "Climate, Energy & Environment",
+                "color_key": "energy",
+            },
+        )
+        call_command(
+            "load_topic_draft",
+            file=str(Path(settings.BASE_DIR) / "research/topics/nuclear-energy.json"),
+            slug="nuclear-energy",
+            title="Nuclear Energy",
+            category="climate-env",
+            status="published",
+            stdout=StringIO(),
+            stderr=StringIO(),
+        )
+        Topic.objects.get_or_create(
+            slug="solar-power",
+            defaults={"title": "Solar Power", "status": Topic.PUBLISHED},
+        )
+
+
+class ParticipationTests(NuclearFixtureMixin, TestCase):
     """Upvote backbone (P2): idempotent, retractable, session-keyed.
-    Uses the Nuclear Energy fixture from the seed migration."""
+    Runs against the Nuclear Energy fixture (NuclearFixtureMixin)."""
 
     def setUp(self):
         self.question = Question.objects.order_by("id").first()
@@ -72,9 +111,10 @@ class ParticipationTests(TestCase):
         self.assertEqual(Vote.objects.filter(question=self.question).count(), 0)
 
 
-class PageTests(TestCase):
+class PageTests(NuclearFixtureMixin, TestCase):
     def test_core_pages_render(self):
-        for url in ["/", "/about/", "/nuclear-energy/", "/category/energy/"]:
+        # /about/ retired at pre-launch cleanup — About is a home anchor now.
+        for url in ["/", "/nuclear-energy/", "/category/climate-env/"]:
             self.assertEqual(self.client.get(url).status_code, 200, url)
 
     def test_stub_topic_renders_empty_state(self):
@@ -82,7 +122,7 @@ class PageTests(TestCase):
         self.assertContains(resp, "on the map, but not yet written")
 
 
-class ContentManagementTests(TestCase):
+class ContentManagementTests(NuclearFixtureMixin, TestCase):
     """Draft/published workflow (P2 task 7)."""
 
     def setUp(self):
@@ -102,7 +142,7 @@ class ContentManagementTests(TestCase):
         self.client.force_login(staff)
         resp = self.client.get("/carbon-capture/")
         self.assertEqual(resp.status_code, 200)
-        self.assertContains(resp, "Draft — only staff can see this page.")
+        self.assertContains(resp, "Draft — not publicly visible.")
 
     def test_seeded_topics_are_published(self):
         self.assertEqual(Topic.published.count(), Topic.objects.count() - 1)
@@ -115,7 +155,7 @@ class ContentManagementTests(TestCase):
         self.assertEqual(nuclear.missing_sections, [])
 
 
-class LayeredReadingTests(TestCase):
+class LayeredReadingTests(NuclearFixtureMixin, TestCase):
     """Decision A: medium sets the base, per-section expanders go deeper."""
 
     def test_topic_page_has_expanders_not_global_toggle(self):
@@ -133,7 +173,7 @@ class LayeredReadingTests(TestCase):
         self.assertNotContains(resp, "Go deeper")
 
 
-class SearchAndSeoTests(TestCase):
+class SearchAndSeoTests(NuclearFixtureMixin, TestCase):
     """Task 13 (FTS5) + task 15 (states/SEO) coverage."""
 
     def test_fts_finds_topic_by_body_text(self):
@@ -141,8 +181,10 @@ class SearchAndSeoTests(TestCase):
         self.assertContains(resp, "Nuclear Energy")
 
     def test_fts_prefix_matching(self):
+        # The popup highlights the matched prefix (<mark>Nucl</mark>ear Energy),
+        # so assert on the stable link target, not the split title string.
         resp = self.client.get("/search/?q=nucl")
-        self.assertContains(resp, "Nuclear Energy")
+        self.assertContains(resp, 'href="/nuclear-energy/"')
 
     def test_fts_index_follows_edits(self):
         topic = Topic.objects.get(slug="nuclear-energy")

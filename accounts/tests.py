@@ -2,13 +2,14 @@ from django.test import TestCase
 from django.urls import reverse
 
 from topics.models import Position, Question, Vote
+from topics.tests.test_core import NuclearFixtureMixin
 
 from .models import User
 
 
-class AccountFlowTests(TestCase):
-    """Email-keyed accounts + the hybrid merge (decision B). Uses the Nuclear
-    Energy fixture from the seed migration."""
+class AccountFlowTests(NuclearFixtureMixin, TestCase):
+    """Email-keyed accounts + the hybrid merge (decision B). Runs against the
+    Nuclear Energy fixture (NuclearFixtureMixin)."""
 
     def setUp(self):
         self.question = Question.objects.order_by("id").first()

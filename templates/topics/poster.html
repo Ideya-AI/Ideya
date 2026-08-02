@@ -49,7 +49,10 @@
   .tile{background:#fff;border:1px solid var(--ink-100);border-radius:18px;padding:0.2in 0.22in;display:flex;flex-direction:column}
   .tk{font-size:10.5pt;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-400);margin-bottom:12px}
   .tv{font-weight:800;font-size:50pt;font-variant-numeric:tabular-nums;letter-spacing:-.04em;line-height:.9;color:var(--ink-900)}
-  .tv small{font-size:22pt;font-weight:700;color:var(--ink-400)}
+  /* letter-spacing:0 — the value's negative tracking (inherited) collapses the
+     unit's internal spaces in Chrome's print path with Plus Jakarta Sans
+     ("3.7 M homes" → "3.7Mhomes"); the unit needs normal tracking. */
+  .tv small{font-size:22pt;font-weight:700;color:var(--ink-400);letter-spacing:0}
   .vrow{margin-top:auto;padding-top:14px}
   .rank{display:flex;flex-direction:column;gap:9px}
   .rrow{display:grid;grid-template-columns:0.9in 1fr 0.66in;align-items:center;gap:12px}
