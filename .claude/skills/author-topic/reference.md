@@ -43,7 +43,10 @@ runner = runner[:idx] + "\nconst __ARGS = " + json.dumps(run_args) + ";\n" + run
 open("<scratch>/run_distribute_<slug>.js", "w").write(runner)
 ```
 Then `Workflow({scriptPath: "<scratch>/run_distribute_<slug>.js"})`. Syntax-check first by
-wrapping the body in a function (top-level `return`/`export` won't parse bare in Node).
+stripping the leading `export` keyword from the meta declaration (e.g.
+`runner.replace("export const meta", "const meta")`) and then wrapping the body in a
+function — top-level `return` won't parse bare in Node, and `export` won't parse inside
+a function either, so both transforms are needed for the check.
 
 For a **fix_only** view-feedback pass, add `"fix_only": [<finding objects or strings>]`
 to `run_args`; the workflow skips distill/distribute and runs only the presentation fix
@@ -52,14 +55,18 @@ loop against the current `research/topics/<slug>.json` draft.
 ## Presentation-patch contract (stage 2)
 
 `distribute_topic.js` edits **presentation only**. `applyPresentationPatch`:
-- **edits**: field on the whitelist `{tier, reveal, wide, note, why, steelman, detail,
-  intro, lead, subtitle, summary}` — anything else (value/unit/source_*/url/kind/name/
-  text/label) is **rejected**, never applied. Facts are locked by stage 1.
+- **edits**: field on the whitelist `{tier, reveal, wide, note, why, steelman,
+  description, detail, intro, lead, subtitle, summary}` — anything else
+  (value/unit/source_*/url/kind/name/text/label) is **rejected**, never applied. Facts
+  are locked by stage 1.
 - **reorder**: per-section full new order of item ids; rebuilds the array (omitted items
-  append, keeping relative order). This is how an item is moved across the fold — the
-  loader assigns `order = array index`, and the fold math (`Section._tier_lead_count`,
-  ported into the workflow's `foldPreview`) reads that order. `tier` alone only marks the
-  drop-off within the current order.
+  append, keeping relative order). For stats/questions/actions this is how an item is
+  moved across the fold — the loader assigns `order = array index`, and the fold math
+  (`Section._tier_lead_count`, ported into the workflow's `foldPreview`) reads that
+  order. `tier` alone only marks the drop-off within the current order. **Positions are
+  the exception**: they render by `-prevalence_weight` first (array order only breaks
+  ties), and prevalence is a locked fact — steer the position fold with `tier`, and keep
+  the array sorted to match prevalence.
 
 ## Fold reference (must match `topics/models.py`)
 

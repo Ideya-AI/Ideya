@@ -201,8 +201,11 @@
     /* ?fit=1 — stamp the vertical overflow (px past the canvas; <=0 fits) onto
        <html data-fit="..."> so `render_poster` can read it from --dump-dom.
        Sums band heights + margins: the poster is a fixed-height clipped flex
-       column, so scrollHeight alone can't see past-the-edge content. */
-    addEventListener("load", () => requestAnimationFrame(() => {
+       column, so scrollHeight alone can't see past-the-edge content.
+       Stamp synchronously AND on load (no requestAnimationFrame): offsetHeight
+       forces layout, and newer headless Chrome dumps the DOM before rAF ever
+       ticks — the rAF version left data-fit unstamped on every fit-check. */
+    const stampFit = () => {
       const p = document.querySelector(".poster");
       const cs = getComputedStyle(p);
       const budget = p.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom);
@@ -210,7 +213,13 @@
       const used = kids.reduce((a, el) => a + el.offsetHeight, 0)
         + kids.slice(1).reduce((a, el) => a + parseFloat(getComputedStyle(el).marginTop), 0);
       document.documentElement.dataset.fit = String(Math.round(used - budget));
-    }));
+      // Per-band heights for overflow diagnosis (fit-check page only).
+      document.documentElement.dataset.fitBands = kids
+        .map((el) => `${(el.className || "band").split(" ").pop()}:${el.offsetHeight}`)
+        .join(",");
+    };
+    stampFit();
+    addEventListener("load", stampFit);
   </script>
   {% endif %}
 </body>

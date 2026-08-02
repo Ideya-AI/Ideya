@@ -141,6 +141,18 @@ class Command(BaseCommand):
         bs = sec(Section.BASICS, intro=b.get("intro", ""))
         for i, s in enumerate(b.get("stats", [])):
             acc = s.get("source_accessed")
+            # A non-ISO date would abort the whole atomic load — degrade and
+            # warn like the other malformed-field guards instead.
+            try:
+                acc_date = datetime.date.fromisoformat(acc) if acc else None
+            except ValueError:
+                self.stderr.write(
+                    self.style.WARNING(
+                        f"source_accessed '{acc}' is not YYYY-MM-DD on stat "
+                        f"'{s.get('label', '')[:60]}' — stored as unset"
+                    )
+                )
+                acc_date = None
             # Long units/notes are drafting defects (unit is a display token;
             # a note is one sentence) — slicing silently garbles the rendered
             # tile, so say what was lost.
@@ -192,7 +204,7 @@ class Command(BaseCommand):
                 source_label=s.get("source_label", "")[:120],
                 source_url=s.get("source_url", "") or "",
                 source_published=s.get("source_published", "")[:40],
-                source_accessed=datetime.date.fromisoformat(acc) if acc else None,
+                source_accessed=acc_date,
                 reveal=s.get("reveal", "condensed"),
             )
 
@@ -258,6 +270,15 @@ class Command(BaseCommand):
         for i, a in enumerate(d.get("actions", [])):
             kind = a.get("kind", "learn_more")
             Position_ref = pos_by_name.get(a.get("for_position"))
+            # A typo'd/renamed for_position silently unaligns the action —
+            # surface it at the boundary like the placeholder-URL guard.
+            if a.get("for_position") and Position_ref is None:
+                self.stderr.write(
+                    self.style.WARNING(
+                        f"for_position '{a.get('for_position', '')[:60]}' matches no "
+                        f"position on action '{a.get('title', '')[:60]}' — left unaligned"
+                    )
+                )
             Action.objects.create(
                 section=acts,
                 order=i,

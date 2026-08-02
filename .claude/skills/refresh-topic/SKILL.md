@@ -115,3 +115,8 @@ onto `<slug>` instead — there's no live version to protect.
   the occasional light review for genuinely fast-moving topics (e.g. AI).
 - **The gate never moves.** A scheduled run may detect staleness and OPEN a cited
   proposal (stages 1–3). It must stop there. **A human approves every content change.**
+- **Presentation/display is out of this skill's scope** — `topics_due` measures
+  content/link freshness only. For editorial-structure and rendered-view review (and to
+  feed pipeline lessons back into the system), run the **`review-topic`** skill
+  (on-demand); any content findings it surfaces on a published topic route back through
+  this skill's stages 2–5 unchanged.

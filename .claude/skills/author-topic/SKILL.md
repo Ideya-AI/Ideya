@@ -84,7 +84,7 @@ Use `<slug>-draft` only when a published version is live and must stay online.)
 
 Loop, capped at ~3 refine rounds:
 1. A `fable` sub-agent writes `research/icons/<slug>.md` from `research/ICONOGRAPHY.md` +
-   `research/icons/categories.md` + the two existing briefs as exemplars (match their
+   `research/icons/categories.md` + the existing briefs as exemplars (match their
    headings; the `## Generation prompt` blockquote is what the generator reads).
 2. `python research/icons/generate_icons.py --slug <slug> --n 4` → candidates land in
    `research/icons/candidates/<slug>/`.
@@ -113,6 +113,13 @@ under DEBUG), render + critique, capped at ~3 rounds:
    - **code/CSS defect** → log in `REVIEW.md` for the human; the pipeline never edits
      templates/CSS.
 3. Pass = poster fit exit 0 + all three social formats + no blocking content findings.
+
+> **After stage 4, run the `review-topic` skill** (light, sonnet-based) before handing
+> the packet to the human: stage 4's view critique is one-shot and self-reported, while
+> review-topic also spot-checks content and editorial structure, audits prior residuals,
+> and feeds generalizable lessons back into the pipelines
+> (`research/PIPELINE_TUNING_LOG.md`). Unlike stage 4 it can be re-run any time,
+> including against a published topic.
 
 ## Stage 5 · Human review & publish
 

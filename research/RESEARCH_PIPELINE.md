@@ -156,3 +156,19 @@ publishes.**
 are blocked by the safety classifier — stage-1 research agents error out. Those topics are
 not automatable through Claude agents; use path B (external research → the same
 `research/topics/<slug>.json` contract) and resume at stage 3.
+
+## 13. The standing review + tuning loop (2026-08-01)
+
+The project's ongoing rhythm is now: **the human names a topic → author-topic or
+refresh-topic runs → the `review-topic` skill inspects the result → the human
+publishes.** review-topic (`.claude/skills/review-topic/`) is deliberately light — three
+sonnet reviewers (content spot-check / editorial structure across both depth axes /
+rendered views) plus deterministic checks and a residual audit of prior findings; it is
+NOT a re-research pass (research rigor stays in stage 1 and refresh). Its distinct job
+is closing the loop: topic fixes route through the existing flows (draft edits or the
+refresh approval flow; `distribute_topic.js --fix_only`; code/CSS logged for the human),
+and every generalizable defect becomes a pipeline improvement — incremental prompt
+changes applied directly, transformative schema/contract changes PROPOSED for a human
+decision — recorded in `research/PIPELINE_TUNING_LOG.md` so tuning compounds across
+cycles. Calibration reference: the 2026-07-31 housing deep review (heavyweight, one-off)
+whose lessons seeded the log.
