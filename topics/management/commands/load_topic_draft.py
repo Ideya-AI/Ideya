@@ -77,6 +77,19 @@ class Command(BaseCommand):
         )
 
     @transaction.atomic
+    def _cap(self, value, cap, field, ident):
+        """Slice to the model's max_length, but never silently: mid-sentence
+        truncation ships broken prose to readers (found live on UBI's
+        Targeted-Transfer representative_note, cut at exactly 300 chars)."""
+        value = value or ""
+        if len(value) > cap:
+            self.stderr.write(
+                self.style.WARNING(
+                    f"{field} truncated to {cap} chars on '{ident[:60]}'"
+                )
+            )
+        return value[:cap]
+
     def handle(self, *args, **o):
         payload = json.loads(Path(o["file"]).read_text())
         d = payload.get("draft", payload)
@@ -199,7 +212,7 @@ class Command(BaseCommand):
                 range_max=str(s.get("range_max") or "")[:40],
                 range_at=s.get("range_at") if viz == "range" else None,
                 fill_pct=s.get("fill_pct"),
-                note=s.get("note", "")[:400],
+                note=self._cap(s.get("note", ""), 400, "note", s.get("label", "")),
                 detail=s.get("detail", ""),
                 source_label=s.get("source_label", "")[:120],
                 source_url=s.get("source_url", "") or "",
@@ -215,7 +228,7 @@ class Command(BaseCommand):
                 section=qs,
                 order=i,
                 tier=max(1, int(q.get("tier") or 1)),
-                text=q.get("text", "")[:400],
+                text=self._cap(q.get("text", ""), 400, "question text", q.get("text", "")),
                 kind=(
                     q.get("kind", "empirical")
                     if q.get("kind") in ("empirical", "value")
@@ -241,12 +254,12 @@ class Command(BaseCommand):
                 tier=max(1, int(p.get("tier") or 1)),
                 name=p.get("name", "")[:120],
                 color_key=ck if ck in POS_KEYS else POS_KEYS[i % len(POS_KEYS)],
-                steelman=p.get("steelman", "")[:400],
+                steelman=self._cap(p.get("steelman", ""), 400, "steelman", p.get("name", "")),
                 description=p.get("description", ""),
                 detail=p.get("detail", ""),
-                proponents=p.get("proponents", "")[:400],
+                proponents=self._cap(p.get("proponents", ""), 400, "proponents", p.get("name", "")),
                 representative_name=p.get("representative_name", "")[:120],
-                representative_note=p.get("representative_note", "")[:300],
+                representative_note=self._cap(p.get("representative_note", ""), 300, "representative_note", p.get("name", "")),
                 prevalence_weight=p.get("prevalence_weight") or 0,
                 spectrum_position=p.get("spectrum_position"),
             )
@@ -285,7 +298,7 @@ class Command(BaseCommand):
                 tier=max(1, int(a.get("tier") or 1)),
                 kind=kind if kind in ACTION_KINDS else "learn_more",
                 title=a.get("title", "")[:200],
-                description=a.get("description", "")[:400],
+                description=self._cap(a.get("description", ""), 400, "description", a.get("title", "")),
                 url=a.get("url", "") or "",
                 position=Position_ref,
                 reveal=a.get("reveal", "condensed"),

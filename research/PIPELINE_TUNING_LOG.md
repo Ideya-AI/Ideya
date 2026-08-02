@@ -173,3 +173,26 @@ never re-attach a number to a different total."
 **Applied how:** optimistic-and-logged (prose-only).
 **Status:** applied 2026-08-01. (Also validates the review loop itself: the light
 sonnet spot-check caught a defect the fix pass introduced minutes earlier.)
+
+## 2026-08-01 — universal-basic-income, review cycle 1 (first published-topic run)
+
+Packet: `research/reviews/universal-basic-income/DEEP_REVIEW.md`
+
+### Lesson 9 — the loader can silently amputate prose at a length cap
+
+**Finding:** Blocking (live site) — the Targeted-Transfer Economist's
+representative_note ends mid-word at exactly 300 chars ("...a UBI gener"): the
+loader slices prose fields to model max_lengths with no warning for most of
+them (unit/note warned; representative_note, steelman, proponents, question
+text, action description did not).
+**Why generalizable:** any pipeline draft whose prose exceeds a cap ships broken
+mid-sentence text to readers with zero signal at load time.
+**Applied diff:** `load_topic_draft.py` — `_cap()` helper warns whenever a slice
+actually truncates; routed the six at-risk prose fields through it.
+**File(s) touched:** `topics/management/commands/load_topic_draft.py`.
+**Applied how:** optimistic-and-logged (warning-only; no behavior change).
+**Also applied (workflow half):** `research_topic.js` shapeCheck now flags
+representative_note/proponents/action-description prose near their DB caps, so
+truncation risk surfaces at authoring time, not after load.
+**Status:** applied 2026-08-01. The truncated UBI note itself routes through the
+refresh proposal (content fix, human-gated).
