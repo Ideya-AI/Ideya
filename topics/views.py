@@ -42,7 +42,6 @@ from .models import (
     QuestionLean,
     Response,
     Section,
-    Stance,
     Stat,
     Topic,
     Vote,
@@ -95,15 +94,7 @@ def _ordered_sections(parent_field, parent):
         >= MIN_VOTES_REORDER
     ):
         p_order = ["-importance"] + p_order
-    # distinct=True: stances and importance_votes are separate reverse joins,
-    # so un-distinct counts would multiply across the two relations.
     positions = Position.objects.annotate(
-        agree_count=Count(
-            "stances", filter=Q(stances__value=Stance.AGREE), distinct=True
-        ),
-        disagree_count=Count(
-            "stances", filter=Q(stances__value=Stance.DISAGREE), distinct=True
-        ),
         votes_cast=Count("importance_votes", distinct=True),
     ).order_by(*p_order)
     questions = Question.objects.annotate(
@@ -360,7 +351,7 @@ def topic_detail(request, slug):
         who = {"user": request.user}
     else:
         who = {"session_key": request.session.session_key or ""}
-    voted_q, voted_p, stance_map, lean_map = {}, {}, {}, {}
+    voted_q, voted_p, lean_map = {}, {}, {}
     if request.user.is_authenticated or request.session.session_key:
         voted_q = dict(
             Vote.objects.filter(question__section__topic=topic, **who).values_list(
@@ -369,11 +360,6 @@ def topic_detail(request, slug):
         )
         voted_p = dict(
             Vote.objects.filter(position__section__topic=topic, **who).values_list(
-                "position_id", "value"
-            )
-        )
-        stance_map = dict(
-            Stance.objects.filter(position__section__topic=topic, **who).values_list(
                 "position_id", "value"
             )
         )
@@ -390,7 +376,6 @@ def topic_detail(request, slug):
         elif s.kind == "positions":
             for p in s.positions.all():
                 p.user_vote = voted_p.get(p.id, 0)
-                p.stance = stance_map.get(p.id, "")
     topic_prompts = _attach_prompts(request, topic, sections)
     # Filter chips derived from the action kinds actually present, so a chip never
     # dead-ends to an empty grid. submit_view stays off the bar (it's the "add your
@@ -567,11 +552,14 @@ def search(request):
 
 @require_POST
 def vote(request, target, pk):
-    """Cast an up/down importance vote (POST dir=up|down): the same direction
-    again retracts, the opposite switches. The Vote row is the truth; the
-    model's net counter is a denormalized cache kept in step in one transaction."""
+    """Cast an upvote (the same participant again retracts). Downvotes were
+    retired 2026-08-01 — the counter is a plain upvote count. The Vote row is
+    the truth; the model's counter is a denormalized cache kept in step in one
+    transaction."""
     if limited := _rate_ok(request):
         return limited
+    if request.POST.get("dir") == "down":
+        return HttpResponseBadRequest("downvotes are retired")
     if target == "question":
         obj = get_object_or_404(Question, pk=pk)
         lookup, counter = {"question": obj}, "votes"
@@ -583,7 +571,7 @@ def vote(request, target, pk):
     else:
         return HttpResponseBadRequest("unknown vote target")
 
-    direction = -1 if request.POST.get("dir") == "down" else 1
+    direction = 1
     who = _participant(request)
     with transaction.atomic():
         existing = Vote.objects.filter(**who, **lookup).first()
@@ -608,38 +596,6 @@ def vote(request, target, pk):
     if target == "position" and prefix in ("pimp", "spimp"):
         context["prefix"] = prefix
     return render(request, template, context)
-
-
-@require_POST
-def stance(request, pk):
-    """Toggle/switch an agree-disagree stance on a position. Same value again
-    retracts; the other value switches. Returns the position foot fragment."""
-    if limited := _rate_ok(request):
-        return limited
-    position = get_object_or_404(Position, pk=pk)
-    value = request.POST.get("value")
-    if value not in (Stance.AGREE, Stance.DISAGREE):
-        return HttpResponseBadRequest("unknown stance value")
-
-    who = _participant(request)
-    existing = Stance.objects.filter(position=position, **who).first()
-    if existing and existing.value == value:
-        existing.delete()
-        position.stance = ""
-    elif existing:
-        existing.value = value
-        existing.save(update_fields=["value", "updated_at"])
-        position.stance = value
-    else:
-        Stance.objects.create(position=position, value=value, **who)
-        position.stance = value
-
-    position.voted = Vote.objects.filter(position=position, **who).exists()
-    context = {"p": position}
-    prefix = request.POST.get("prefix", "")
-    if prefix in ("pfoot", "spfoot"):
-        context["prefix"] = prefix
-    return render(request, "topics/components/_pfoot.html", context)
 
 
 @require_POST

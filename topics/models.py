@@ -29,7 +29,7 @@ POS_COLORS = [
     ("slate", "Slate"),
 ]
 
-# Minimum agree+disagree stances before a position's ratio is displayed
+# Minimum community lean votes before a question's reader-poll bar is displayed
 # (decision C: counts live, lean bars gated — avoids "2 votes = 100%" noise).
 # Also gates the bar itself: below the sample, poles render without % or bar.
 MIN_STANCE_SAMPLE = 10
@@ -839,26 +839,6 @@ class Position(models.Model):
             or self.proponents
         )
 
-    @property
-    def stance_stats(self):
-        """Agree/disagree aggregate. Uses agree_count/disagree_count annotations
-        when the queryset provides them; falls back to queries for fragments."""
-        agree = getattr(self, "agree_count", None)
-        disagree = getattr(self, "disagree_count", None)
-        if agree is None or disagree is None:
-            agree = self.stances.filter(value="agree").count()
-            disagree = self.stances.filter(value="disagree").count()
-        total = agree + disagree
-        return {
-            "agree": agree,
-            "disagree": disagree,
-            "total": total,
-            "net": agree - disagree,
-            "pct_agree": round(100 * agree / total) if total else None,
-            "pct_disagree": round(100 * disagree / total) if total else None,
-            "shown": total >= MIN_STANCE_SAMPLE,
-        }
-
 
 class Crux(models.Model):
     """The synthesis — one per Crux section. The page's dark anchor."""
@@ -1002,7 +982,9 @@ class Vote(ParticipationBase):
         blank=True,
     )
 
-    value = models.SmallIntegerField(default=1, help_text="+1 upvote, -1 downvote.")
+    value = models.SmallIntegerField(
+        default=1, help_text="+1 upvote (downvotes retired 2026-08-01)."
+    )
 
     class Meta:
         constraints = [
@@ -1037,38 +1019,6 @@ class Vote(ParticipationBase):
 
     def __str__(self) -> str:
         return f"Vote · {self.question or self.position}"
-
-
-class Stance(ParticipationBase):
-    """One agree/disagree on a position. One row per participant per position;
-    re-clicking the same value retracts it, the other value switches it."""
-
-    AGREE = "agree"
-    DISAGREE = "disagree"
-    VALUE_CHOICES = [(AGREE, "Agree"), (DISAGREE, "Disagree")]
-
-    position = models.ForeignKey(
-        Position, related_name="stances", on_delete=models.CASCADE
-    )
-    value = models.CharField(max_length=10, choices=VALUE_CHOICES)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        constraints = [
-            models.UniqueConstraint(
-                fields=["position", "session_key"],
-                condition=~models.Q(session_key=""),
-                name="unique_stance_per_session",
-            ),
-            models.UniqueConstraint(
-                fields=["position", "user"],
-                condition=models.Q(user__isnull=False),
-                name="unique_stance_per_user",
-            ),
-        ]
-
-    def __str__(self) -> str:
-        return f"{self.get_value_display()} · {self.position}"
 
 
 class QuestionLean(ParticipationBase):

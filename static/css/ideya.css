@@ -307,7 +307,6 @@ body .sec.is-open .when-normal.is-inline, body .sec.is-open .when-deep.is-inline
 .qvote i { font-size: 18px; color: var(--ink-300); padding: 2px; border-radius: 6px; transition: color var(--dur) var(--ease), background var(--dur) var(--ease); }
 .qvote i:hover { background: var(--ink-100); }
 .qvote i.up, .qvote i.ph-fill.ph-caret-up { color: var(--accent); }
-.qvote i.down, .qvote i.ph-fill.ph-caret-down { color: var(--danger); }
 .qvote .qc { font-family: var(--font-tabular); font-weight: var(--weight-bold); font-size: var(--text-sm); color: var(--fg1); }
 .qtag { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: var(--weight-bold); text-transform: uppercase; letter-spacing: .04em; padding: 3px 9px; border-radius: var(--radius-pill); margin-bottom: 9px; }
 .qtag i { font-size: 13px; }
@@ -369,19 +368,9 @@ body .sec.is-open .when-normal.is-inline, body .sec.is-open .when-deep.is-inline
 .pdesc { margin: 12px 0 0; font-size: var(--text-sm); color: var(--fg2); line-height: var(--leading-normal); }
 .pprop { margin: 12px 0 0; font-size: var(--text-xs); color: var(--fg3); }
 .pprop b { color: var(--fg2); font-weight: var(--weight-semibold); }
-.pfoot { margin-top: 14px; padding-top: 13px; border-top: 1px solid var(--border); }
-/* positions reuse the questions .lean split bar, with semantic agree/disagree hues —
-   the poles double as vote buttons; the bar shows the agree-vs-disagree proportion. */
-.lean.stance .lt .lp.a, .lean.stance .lt .lp.a b { color: var(--agree); }
-.lean.stance .lt .lp.b, .lean.stance .lt .lp.b b { color: var(--disagree); }
-.lean.stance .lt .lp.a.on { background: var(--agree); border-color: var(--agree); }
-.lean.stance .lt .lp.b.on { background: var(--disagree); border-color: var(--disagree); }
-.lean.stance .lbar .la { background: var(--agree); }
-.lean.stance .lbar .ld { background: var(--disagree); }
 .pimp { display: inline-flex; align-items: center; gap: 5px; font-size: var(--text-sm); color: var(--fg2); }
 .pimp i { font-size: 16px; color: var(--ink-300); }
 .pimp i.up { color: var(--accent); }
-.pimp i.down { color: var(--danger); }
 .pimp b { font-family: var(--font-tabular); color: var(--fg1); }
 /* mobile card meta row (display-only importance + tap hint) */
 /* positions two-axis: axis 2 = per-card click-to-expand (mirrors .tile-x),

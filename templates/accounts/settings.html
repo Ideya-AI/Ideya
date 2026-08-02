@@ -10,7 +10,6 @@
     <div class="acct-row"><span class="ak">Member since</span><span class="av">{{ user.date_joined|date:"j N Y" }}</span></div>
     <div class="acct-row"><span class="ak">Your participation</span>
       <span class="av">{{ participation.votes }} importance vote{{ participation.votes|pluralize }} ·
-        {{ participation.stances }} stance{{ participation.stances|pluralize }} ·
         {{ participation.responses }} view{{ participation.responses|pluralize }} submitted</span></div>
 
     <div class="acct-actions">
@@ -23,7 +22,7 @@
 
   <div class="card auth-card danger" x-data="{ arm: false }">
     <div class="eyebrow"><i class="ph-duotone ph-warning-octagon"></i>Delete account</div>
-    <p class="auth-lead">Removes your account, votes and stances permanently. Submitted views stay in the aggregate, anonymized. This cannot be undone.</p>
+    <p class="auth-lead">Removes your account and votes permanently. Submitted views stay in the aggregate, anonymized. This cannot be undone.</p>
     <form method="post" action="{% url 'accounts:delete' %}">{% csrf_token %}
       <div class="acct-actions">
         <button type="button" class="btn btn-ghost" x-show="!arm" @click="arm = true">Delete my account…</button>

@@ -11,7 +11,6 @@ from .models import (
     Question,
     Response,
     Section,
-    Stance,
     Stat,
     Topic,
     TopicEdge,
@@ -230,13 +229,6 @@ class VoteAdmin(admin.ModelAdmin):
     list_display = ("__str__", "user", "session_key", "created_at")
     list_filter = ("created_at",)
     readonly_fields = ("created_at",)
-
-
-@admin.register(Stance)
-class StanceAdmin(admin.ModelAdmin):
-    list_display = ("position", "value", "user", "session_key", "updated_at")
-    list_filter = ("value",)
-    readonly_fields = ("created_at", "updated_at")
 
 
 class PromptOptionInline(admin.TabularInline):

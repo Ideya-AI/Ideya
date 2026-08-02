@@ -1,7 +1,7 @@
 from django.test import TestCase
 from django.urls import reverse
 
-from topics.models import Position, Question, Stance, Vote
+from topics.models import Position, Question, Vote
 
 from .models import User
 
@@ -20,9 +20,6 @@ class AccountFlowTests(TestCase):
     def test_signup_logs_in_and_merges_session(self):
         # Participate anonymously first.
         self.client.post(self._vote_url("question", self.question))
-        self.client.post(
-            reverse("topics:stance", args=[self.position.id]), {"value": "agree"}
-        )
 
         resp = self.client.post(
             reverse("accounts:signup"),
@@ -37,7 +34,6 @@ class AccountFlowTests(TestCase):
 
         # The anonymous rows now belong to the account.
         self.assertEqual(Vote.objects.filter(user=user).count(), 1)
-        self.assertEqual(Stance.objects.get(user=user).value, "agree")
         self.assertFalse(Vote.objects.filter(user__isnull=True).exists())
 
     def test_login_merge_drops_duplicate_vote_and_fixes_counter(self):
@@ -61,22 +57,6 @@ class AccountFlowTests(TestCase):
         self.assertEqual(self.question.votes, counted)
         self.assertEqual(Vote.objects.filter(question=self.question).count(), 1)
         self.assertEqual(Vote.objects.get(question=self.question).user, user)
-
-    def test_login_merge_session_stance_wins(self):
-        user = User.objects.create_user("reader@example.com", "atlas-reader-9")
-        Stance.objects.create(user=user, position=self.position, value="agree")
-
-        self.client.post(
-            reverse("topics:stance", args=[self.position.id]), {"value": "disagree"}
-        )
-        self.client.post(
-            reverse("accounts:login"),
-            {"username": "reader@example.com", "password": "atlas-reader-9"},
-        )
-        self.assertEqual(
-            Stance.objects.get(position=self.position, user=user).value, "disagree"
-        )
-        self.assertEqual(Stance.objects.filter(position=self.position).count(), 1)
 
     def test_authenticated_vote_is_user_keyed_and_retractable(self):
         user = User.objects.create_user("reader@example.com", "atlas-reader-9")

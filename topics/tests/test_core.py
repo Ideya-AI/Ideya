@@ -3,18 +3,16 @@ from django.test import Client, TestCase
 from django.urls import reverse
 
 from ..models import (
-    MIN_STANCE_SAMPLE,
     Position,
     Question,
     Section,
-    Stance,
     Topic,
     Vote,
 )
 
 
 class ParticipationTests(TestCase):
-    """Vote + Stance backbone (P2): idempotent, retractable, session-keyed.
+    """Upvote backbone (P2): idempotent, retractable, session-keyed.
     Uses the Nuclear Energy fixture from the seed migration."""
 
     def setUp(self):
@@ -65,43 +63,13 @@ class ParticipationTests(TestCase):
         )
         self.assertEqual(resp.status_code, 400)
 
-    # ---- stances -----------------------------------------------------------
-
-    def test_stance_set_switch_retract(self):
-        url = reverse("topics:stance", args=[self.position.id])
-
-        self.client.post(url, {"value": "agree"})
-        stance = Stance.objects.get(position=self.position)
-        self.assertEqual(stance.value, "agree")
-
-        self.client.post(url, {"value": "disagree"})  # switch
-        stance.refresh_from_db()
-        self.assertEqual(stance.value, "disagree")
-        self.assertEqual(Stance.objects.filter(position=self.position).count(), 1)
-
-        self.client.post(url, {"value": "disagree"})  # same again → retract
-        self.assertEqual(Stance.objects.filter(position=self.position).count(), 0)
-
-    def test_stance_rejects_unknown_value(self):
+    def test_downvote_rejected(self):
         resp = self.client.post(
-            reverse("topics:stance", args=[self.position.id]), {"value": "maybe"}
+            reverse("topics:vote", args=["question", self.question.id]),
+            {"dir": "down"},
         )
         self.assertEqual(resp.status_code, 400)
-
-    def test_ratio_gated_by_min_sample(self):
-        for i in range(MIN_STANCE_SAMPLE - 1):
-            Stance.objects.create(
-                position=self.position, session_key=f"s{i}", value="agree"
-            )
-        self.assertFalse(self.position.stance_stats["shown"])
-
-        Stance.objects.create(
-            position=self.position, session_key="s-last", value="disagree"
-        )
-        stats = self.position.stance_stats
-        self.assertTrue(stats["shown"])
-        self.assertEqual(stats["total"], MIN_STANCE_SAMPLE)
-        self.assertEqual(stats["pct_agree"], 90)
+        self.assertEqual(Vote.objects.filter(question=self.question).count(), 0)
 
 
 class PageTests(TestCase):

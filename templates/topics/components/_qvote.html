@@ -1,6 +1,6 @@
-{% comment %}Question importance control — up/down vote. POST dir=up|down; the
-same direction again retracts, the opposite switches. HTMX-swapped. Expects `q`
-with `.user_vote` (1, -1, or 0) and `.votes` (net score).{% endcomment %}
+{% comment %}Question importance control — upvote only (downvotes retired
+2026-08-01). POST casts; the same participant again retracts. HTMX-swapped.
+Expects `q` with `.user_vote` (1 or 0) and `.votes` (upvote count).{% endcomment %}
 <div class="qvote" id="qvote-{{ q.id }}">
   <button type="button" class="vbtn"
     hx-post="{% url 'topics:vote' 'question' q.id %}" hx-vals='{"dir": "up"}'
@@ -9,10 +9,4 @@ with `.user_vote` (1, -1, or 0) and `.votes` (net score).{% endcomment %}
     <i class="ph-{% if q.user_vote == 1 %}fill ph-caret-up up{% else %}duotone ph-caret-up{% endif %}"></i>
   </button>
   <span class="qc">{% if q.show_count %}{{ q.votes }}{% else %}·{% endif %}</span>
-  <button type="button" class="vbtn"
-    hx-post="{% url 'topics:vote' 'question' q.id %}" hx-vals='{"dir": "down"}'
-    hx-target="#qvote-{{ q.id }}" hx-swap="outerHTML" hx-sync="#qvote-{{ q.id }}:replace"
-    aria-label="Downvote this question" aria-pressed="{% if q.user_vote == -1 %}true{% else %}false{% endif %}">
-    <i class="ph-{% if q.user_vote == -1 %}fill ph-caret-down down{% else %}duotone ph-caret-down{% endif %}"></i>
-  </button>
 </div>

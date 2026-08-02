@@ -8,7 +8,7 @@ session key on login, so callers must capture the key *before* authenticating.
 from django.db import transaction
 from django.db.models import F
 
-from .models import Position, Question, Response, Stance, Vote
+from .models import Position, Question, Response, Vote
 
 
 @transaction.atomic
@@ -38,20 +38,7 @@ def merge_session_participation(user, session_key):
             vote.session_key = ""
             vote.save(update_fields=["user", "session_key"])
 
-    # Stances — the session stance is the fresher signal, so it wins.
-    for stance in Stance.objects.filter(session_key=session_key, user__isnull=True):
-        existing = Stance.objects.filter(user=user, position=stance.position).first()
-        if existing:
-            if existing.value != stance.value:
-                existing.value = stance.value
-                existing.save(update_fields=["value", "updated_at"])
-            stance.delete()
-        else:
-            stance.user = user
-            stance.session_key = ""
-            stance.save(update_fields=["user", "session_key"])
-
-    # Prompt responses — like stances, the session answer is the fresher signal,
+    # Prompt responses — the session answer is the fresher signal,
     # so it wins: drop any earlier answer the user gave to the same prompt, then
     # promote the session row.
     for response in Response.objects.filter(session_key=session_key, user__isnull=True):
