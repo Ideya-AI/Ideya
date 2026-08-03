@@ -37,10 +37,26 @@ detail (JSON shape, verdict shape, exact publish commands, snippets) is in
   `verdicts`) — that's the provenance you're re-verifying against.
 
 ## 2 · Research & verify — the heart of it
-Use the **`deep-research`** skill to re-verify the topic element by element. The
-research itself is grunt work — run it on other / cheaper models (the same
-strategy as the authoring engine, `research/RESEARCH_PIPELINE.md` §11); reserve the strong
-model for the adversarial verdicts and the crux. Honor the project's locked
+
+**Standard path: run `research/workflows/refresh_topic.js`** (the purpose-built
+engine — it re-verifies every element in parallel, re-checks the crux, runs the
+severity gate + fix loop, and returns `{draft, changelog, verdicts, unverified}` in
+loader shape with model/effort routing baked in). Bake the stage-1 export in as
+`args.current` (the `__ARGS` recipe in `reference.md`), plus `args.today`,
+`args.link_report` (check_links output), and `args.findings` for anything the editor
+wants verified this run. If `unverified` names any section, say so in the proposal —
+those sections were NOT checked. Fall back to the manual `deep-research` path below
+only when the workflow tool is unavailable.
+
+**Light path (barely-stale):** when a topic is merely cadence-due with clean
+`check_links` and no material event, skip the engine: skim `why_now` + crux,
+spot-check the 2-3 most perishable stats, fix any link via admin, set
+`reviewed_at = now()`, done. "Checked, nothing changed" is a legitimate outcome —
+record it by resetting `reviewed_at`, not by forcing a load.
+
+The research itself is grunt work — cheaper models carry it; the strong model is
+reserved for the adversarial verdicts and the crux (knobs: `args.models`,
+`args.efforts`). Honor the project's locked
 editorial rules (full checklist in `reference.md`):
 - **Every Stat** — find a current, authoritative source; record value, `source_url`,
   `source_published`, and today's `source_accessed`. Never trust first-pass
@@ -66,7 +82,11 @@ call. **A human reads this and approves before anything is written.**
 
 ## 4 · Apply — load the approved content as a draft
 On approval, write the merged content into `research/topics/<slug>.json` in the
-loader's `{ draft, verdicts, plan_positions }` shape (schema in `reference.md`;
+loader's `{ draft, verdicts, plan_positions }` shape — and include the workflow's
+`changelog` array as a top-level `changelog` key (the loader ignores it; it is the
+durable provenance of this refresh, otherwise the citations die with the session).
+Commit the stage-1 export FIRST ("checkpoint: live state") so the final commit's
+diff is exactly this refresh (schema in `reference.md`;
 `nuclear-energy.gold.json` is the *content* bar but is in export shape — copy its
 quality, not its structure; `nuclear-energy-pipeline.json` is a loadable-shape example).
 
@@ -86,8 +106,14 @@ onto `<slug>` instead — there's no live version to protect.
 
 ## 5 · Review & publish — the human gate
 1. **Compare** the staging draft against the live topic (preview both as staff).
+   If the changelog added/removed items or materially grew compact-layer text
+   (notes/whys/steelmen), run `distribute_topic.js` with `args.fix_only:[findings]`
+   on the merged JSON first — refresh preserves tier/reveal but never re-balances
+   the fold, and a grown compact line can overflow tiles/cards/poster.
 2. **Publish** the approved content onto the canonical slug — re-run the loader with
-   `--slug <slug> --status published` (atomic, upserts in place), then delete the
+   `--slug <slug> --status published` (atomic, upserts in place; participation
+   survives — votes/leans re-attach by exact question text / position name, and the
+   loader warns about any rows it had to drop because text changed), then delete the
    `<slug>-draft` staging topic. Or, for light changes, edit + publish in the Django
    admin (`TopicAdmin` → status, or the **Publish selected topics** action).
 3. **Set `Topic.reviewed_at = now()`** — the loader sets `researched_at` but not
@@ -101,6 +127,11 @@ onto `<slug>` instead — there's no live version to protect.
    refresh shipped fixed action URLs in the proposal but left `#` placeholders
    live. (The loader also errors on placeholder action URLs now.)
 5. **Commit** `research/topics/<slug>.json` to git — the diff *is* the content history.
+6. **Push to live** — the live container's DB is separate from this authoring DB.
+   Follow "Publish one topic to the live site" in `DEPLOY.md` §3: rebuild + redeploy
+   the image if the JSON changed since the last build, then `docker exec` the loader
+   onto the canonical slug, `load_universe`, `rebuild_search`, and set `reviewed_at`
+   inside the container's shell too.
 
 ---
 

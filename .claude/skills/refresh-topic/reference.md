@@ -148,13 +148,12 @@ Finally `git add research/topics/<slug>.json` and commit — the JSON diff is th
 durable content history.
 
 ## Companion commands
-In-tree today: `topics_due` and `load_topic_draft`. `check_links` (per-topic link
-audit) and `export_topic` (dump the live topic back to its JSON) are companion
-freshness commands this workflow drives — confirm with `python manage.py help` and read
-each command's `--help`. If one isn't available yet: read "is it due" from
-`topics_due --json`, and treat the committed `research/topics/<slug>.json` as the
-durable current copy to diff against. `topics_due` reports the queue globally (no
-`--topic` flag) — filter its `--json` output by slug when you need one row.
+All four are in-tree: `topics_due` (review queue by volatility cadence),
+`check_links --topic <slug>` (dead/placeholder/redirect audit over action URLs +
+stat sources incl. per-row series sources), `export_topic --slug <slug>` (re-sync
+the JSON from the live DB), `load_topic_draft` (the loader). `topics_due` reports
+the queue globally (no `--topic` flag) — filter its `--json` output by slug when
+you need one row.
 
 ## Related
 - `research/RESEARCH_PIPELINE.md` — the authoring pipeline this upkeep loop mirrors.

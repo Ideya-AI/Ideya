@@ -33,6 +33,11 @@ class Command(BaseCommand):
         qs = Topic.objects.all()
         if o.get("status"):
             qs = qs.filter(status=o["status"])
+        else:
+            # The catalog's ~130 unauthored stubs are drafts and "always due" —
+            # they drowned the queue (132 rows of noise). The refresh queue is
+            # published topics unless a status is asked for explicitly.
+            qs = qs.filter(status=Topic.PUBLISHED)
         # Most overdue first; never-touched (large sentinel) sort to the top.
         topics = sorted(qs, key=lambda t: t.days_overdue, reverse=True)
 

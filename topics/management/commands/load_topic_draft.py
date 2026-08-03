@@ -298,14 +298,28 @@ class Command(BaseCommand):
         # exported topic round-trips its palette); else assign per index as
         # pipeline drafts have always relied on. Carry prevalence + spectrum.
         ps = sec(Section.POSITIONS)
+        assigned_keys = [
+            p.get("color_key")
+            for p in d.get("positions", [])
+            if p.get("color_key") in POS_KEYS
+        ]
         for i, p in enumerate(d.get("positions", [])):
             ck = p.get("color_key")
+            if ck not in POS_KEYS:
+                # First unused colour, not index-modulo: a refresh that swaps
+                # one position out must not hand the newcomer a colour an
+                # existing card already wears.
+                ck = next(
+                    (k for k in POS_KEYS if k not in assigned_keys),
+                    POS_KEYS[i % len(POS_KEYS)],
+                )
+                assigned_keys.append(ck)
             Position.objects.create(
                 section=ps,
                 order=i,
                 tier=max(1, int(p.get("tier") or 1)),
                 name=p.get("name", "")[:120],
-                color_key=ck if ck in POS_KEYS else POS_KEYS[i % len(POS_KEYS)],
+                color_key=ck,
                 steelman=self._cap(p.get("steelman", ""), 400, "steelman", p.get("name", "")),
                 description=p.get("description", ""),
                 detail=p.get("detail", ""),
