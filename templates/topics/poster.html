@@ -162,11 +162,11 @@
     </div>
     {% endif %}
 
-    {% if sec.positions %}
+    {% if sec.positions %}{% with allpos=sec.positions.positions.all %}
     <div class="band pos-band">
-      <div class="eyebrow"><i class="ph-duotone ph-scales"></i>Positions <span class="sub">· the debate</span></div>
+      <div class="eyebrow"><i class="ph-duotone ph-scales"></i>Positions <span class="sub">· the debate{% if allpos|length > 4 %} · showing 4 of {{ allpos|length }}{% endif %}</span></div>
       <div class="pos-grid">
-        {% for p in sec.positions.positions.all|slice:":4" %}
+        {% for p in allpos|slice:":4" %}
         <div class="pos"><span class="prail" style="background:{{ p.color_var }}"></span>
           <div class="phead"><span class="pdot" style="background:{{ p.color_var }}"></span><span class="pn">{{ p.name }}</span></div>
           <p class="psteel">“{{ p.steelman }}”</p>
@@ -174,7 +174,7 @@
         {% endfor %}
       </div>
     </div>
-    {% endif %}
+    {% endwith %}{% endif %}
 
     {% if sec.crux.crux %}{% with c=sec.crux.crux %}
     <div class="band crux">

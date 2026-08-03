@@ -1,14 +1,14 @@
 {% comment %}A named position — the heart. Expects `p`.
 Axis 1 (breadth): `is_extra` cards appear only when the section's Go-deeper is open.
 Axis 2 (depth): glance = name + steelman; tapping the card expands `.pmore`
-(description, detail, representative, proponents) inline on every viewport — no
-button/signifier, mirroring _stat_tile; mobile behaves the same as desktop (no
-modal). The participation foot is click-isolated so voting never toggles the
-expand.{% endcomment %}
+(description, detail, representative, proponents) inline on every viewport, with
+the caret toggle as the visible affordance on all viewports (mirroring
+_stat_tile). The participation foot is click-isolated so voting never toggles
+the expand.{% endcomment %}
 <div class="pos{% if p.is_extra %} pos-xtra{% endif %}{% if p.has_more %} pos-x{% endif %}"
      x-data="{ more: false }"{% if p.has_more %} :class="{ 'pos-open': more }" @click="more = !more"{% endif %}>
   <span class="prail" style="background:{{ p.color_var }}"></span>
-  {% if p.has_more %}<button type="button" class="xtoggle d-only" @click.stop="more = !more" :aria-expanded="more" aria-label="Toggle detail"><i class="ph-duotone ph-caret-down"></i></button>{% endif %}
+  {% if p.has_more %}<button type="button" class="xtoggle" @click.stop="more = !more" :aria-expanded="more" aria-label="Toggle detail"><i class="ph-duotone ph-caret-down"></i></button>{% endif %}
   <div class="phead"><span class="pdot" style="background:{{ p.color_var }}"></span><span class="pn">{{ p.name }}</span></div>
   <p class="psteel">“{{ p.steelman }}”</p>
   {% if p.has_more %}

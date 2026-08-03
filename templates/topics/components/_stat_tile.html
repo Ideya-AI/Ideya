@@ -29,7 +29,7 @@ spans a trailing orphan across the row.{% endcomment %}
   {% elif stat.viz == "range" %}
     <div class="tv">{{ stat.value }}{% if stat.unit %}<small>{{ stat.unit }}</small>{% endif %}</div>
     <div class="vrow">
-      <div class="track"><span class="ghost" style="left:95%"></span><span class="pin" style="left:{{ stat.range_at|default:0 }}%"></span></div>
+      <div class="track"><span class="pin" style="left:{{ stat.range_at|default:0 }}%"></span></div>
       <div class="ends"><span>{{ stat.range_min }}</span><span>{{ stat.range_max }}</span></div>
     </div>
 

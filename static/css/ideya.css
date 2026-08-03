@@ -240,7 +240,8 @@ body .sec.is-open .when-normal.is-inline, body .sec.is-open .when-deep.is-inline
   transition: filter var(--dur) var(--ease);
 }
 .rchip:hover { filter: brightness(0.96); text-decoration: none; }
-.rchip i { font-size: 15px; color: inherit; }
+.rchip { max-width: 100%; } /* long titles wrap inside the pill instead of clipping at narrow viewports */
+.rchip i { font-size: 15px; color: inherit; flex: none; }
 
 /* Stub topic — on the map, not yet written */
 .stub-note { display: flex; gap: 13px; margin-top: 26px; padding: 18px 20px; border-style: dashed; background: var(--ink-50); }
@@ -278,7 +279,8 @@ body .sec.is-open .when-normal.is-inline, body .sec.is-open .when-deep.is-inline
 .vrow { margin-top: 12px; }
 /* ranked bars */
 .rank { display: flex; flex-direction: column; gap: 9px; }
-.rrow { display: grid; grid-template-columns: 64px 1fr 52px; align-items: center; gap: 12px; font-size: var(--text-sm); }
+/* label column: fixed share of the tile (same for every row, so bars stay aligned) — a hard 64px wrapped long labels into slivers on wide tiles and narrow viewports */
+.rrow { display: grid; grid-template-columns: minmax(64px, 28%) 1fr 52px; align-items: center; gap: 12px; font-size: var(--text-sm); }
 .rrow .rk2 { color: var(--fg2); }
 .rrow .rbar { height: 9px; background: var(--ink-100); border-radius: var(--radius-pill); overflow: hidden; }
 .rrow .rbar i { display: block; height: 100%; background: var(--ink-300); border-radius: var(--radius-pill); }
@@ -292,7 +294,6 @@ body .sec.is-open .when-normal.is-inline, body .sec.is-open .when-deep.is-inline
 /* range marker */
 .track { position: relative; height: 9px; background: linear-gradient(90deg, var(--green-tint), var(--ink-100)); border-radius: var(--radius-pill); }
 .track .pin { position: absolute; top: 50%; width: 12px; height: 12px; border-radius: var(--radius-pill); background: var(--accent); border: 2px solid var(--surface); transform: translate(-50%, -50%); }
-.track .ghost { position: absolute; top: 50%; width: 9px; height: 9px; border-radius: var(--radius-pill); background: var(--ink-300); transform: translate(-50%, -50%); }
 .ends { display: flex; justify-content: space-between; font-size: 11px; color: var(--fg3); margin-top: 7px; }
 /* radial */
 .radial { --pct: 0; width: 64px; height: 64px; border-radius: 50%; margin-top: 4px;

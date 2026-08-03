@@ -500,6 +500,9 @@ def share_cards(request, slug):
             # Card shows only the primary positions (the leading cards on the
             # detail page).
             "positions": all_positions[: Section.POSITIONS_DEFAULT_SHOWN],
+            "positions_more": max(
+                0, len(all_positions) - Section.POSITIONS_DEFAULT_SHOWN
+            ),
             "crux": getattr(crux_section, "crux", None) if crux_section else None,
             "render_card": (
                 request.GET.get("render")
