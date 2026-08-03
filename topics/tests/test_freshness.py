@@ -65,6 +65,9 @@ class FreshnessCadenceTests(TestCase):
 
 class TopicsDueCommandTests(TestCase):
     def _topic(self, slug, **kw):
+        # The queue defaults to published topics (2026-08-03: the catalog's
+        # ~130 unauthored draft stubs are "always due" and drowned it).
+        kw.setdefault("status", Topic.PUBLISHED)
         return Topic.objects.create(title=slug.title(), slug=slug, **kw)
 
     def test_lists_due_topic(self):
