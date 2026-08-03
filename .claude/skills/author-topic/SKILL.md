@@ -34,12 +34,18 @@ artifact is skipped unless you pass `--redo`.
 
 ---
 
-## Model routing (baked as workflow defaults; override via `args.models`)
+## Model + effort routing (baked as workflow defaults; override via `args.models` / `args.efforts`)
 
 Judgment on **fable**; web grunt on **sonnet**/**opus**; never below sonnet.
-- Stage 1: plan `fable` · research `sonnet` · crux `fable` · gate `fable` · fix `opus`
+- Stage 1: plan `fable` · research `sonnet` · crux `fable` · gate `fable`
+  (EXCEPT fact-source critic: `opus` — token-heavy mechanical web checking) · fix `opus`
 - Stage 2: distill `opus` · distribute `fable` · gate `fable` · fix `sonnet`
 - Stages 3–4: brief/pick and view critics on `fable` (main session + sub-agents)
+
+High-volume subtasks also pin an explicit reasoning **effort** instead of inheriting
+the session's (often max) effort — the main session-overage lever: stage-1
+research/critics/fix `high`; stage-2 distill/critics `high`, fix `low` (whitelisted
+patch application). Judgment singletons (plan, crux, distribute) inherit.
 
 ---
 

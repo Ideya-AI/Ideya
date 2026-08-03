@@ -406,6 +406,9 @@ def topic_detail(request, slug):
             "topic_prompts": topic_prompts,
             "min_prompt_sample": MIN_PROMPT_SAMPLE,
             "act_filters": act_filters,
+            # DEBUG-only capture aid: ?expanded=1 forces all depth layers
+            # visible so render_screens --expanded can photograph them.
+            "expanded": settings.DEBUG and request.GET.get("expanded") == "1",
         },
     )
 

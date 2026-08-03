@@ -83,6 +83,13 @@ class Command(BaseCommand):
             default=None,
             help="Output dir (default: research/reviews/<slug>/).",
         )
+        parser.add_argument(
+            "--expanded",
+            action="store_true",
+            help="Capture with ?expanded=1 (DEBUG-only page mode that forces "
+            "all Go-deeper extras and detail regions visible) — files get an "
+            "-expanded suffix.",
+        )
 
     def handle(self, *args, **opts):
         chrome = next(
@@ -103,9 +110,11 @@ class Command(BaseCommand):
         out_dir.mkdir(parents=True, exist_ok=True)
         base = opts["base_url"].rstrip("/")
 
+        suffix = "-expanded" if opts["expanded"] else ""
+        query = "?expanded=1" if opts["expanded"] else ""
         for w in widths:
             tag = "desktop" if w >= 1024 else "mobile"
-            png = out_dir / f"{tag}-{w}.png"
+            png = out_dir / f"{tag}-{w}{suffix}.png"
             subprocess.run(
                 [
                     chrome,
@@ -115,7 +124,7 @@ class Command(BaseCommand):
                     "--hide-scrollbars",
                     "--virtual-time-budget=10000",
                     f"--screenshot={png}",
-                    f"{base}/{slug}/",
+                    f"{base}/{slug}/{query}",
                 ],
                 check=True,
                 capture_output=True,

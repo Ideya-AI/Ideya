@@ -80,7 +80,7 @@ even if the note clarifies it."
 **Applied how:** optimistic-and-logged.
 **Status:** applied 2026-08-01.
 
-### Lesson 4 — ranked-stat rows have no per-row source (PROPOSED, transformative)
+### Lesson 4 — ranked-stat rows have no per-row source (transformative; approved + applied 2026-08-02)
 
 **Finding:** Blocking — the social/public-housing ranked stat carries ONE
 source_label/source_url for the whole stat, but its series rows (Singapore 77% of
@@ -90,16 +90,21 @@ sources AND different denominators; one citation cannot support every row.
 per-row source/scope field exists, so ANY ranked stat spanning multiple sources is
 structurally unable to attribute its rows. A prose-only critic fix only catches it
 after the fact.
-**Proposed diff (NOT applied):** add optional `source_label`/`source_url`/`scope_note`
-to series rows in the STAT schema (all three workflow mirrors), the loader's series
-mapping (`load_topic_draft.py`), and optionally the ranked-tile template.
-**File(s) that would be touched:** `research_topic.js`, `refresh_topic.js`,
-`distribute_topic.js`, `topics/management/commands/load_topic_draft.py`, ranked tile
-template.
-**Applied how:** PROPOSED only — schema-shape change (transformative bucket).
-**Interim mitigation:** per-row denominators go in series labels and per-row sources in
-the stat's `detail`, which the existing schema supports (applied to housing 2026-08-01).
-**Status:** PROPOSED, pending decision.
+**Applied diff (2026-08-02, human-approved):** series rows now require
+`source_label`/`source_url` (empty string when the stat-level source covers the row) in
+the STAT schema across all three workflow mirrors, plus a prompt rule in the basics
+research prompt (`research_topic.js`) and basics re-verify prompt (`refresh_topic.js`):
+rows from different sources/denominators carry their own source fields and name their
+denominator in the label. `scope_note` was dropped — the denominator-in-label rule
+covers it without a third field.
+**File(s) touched:** `research_topic.js`, `refresh_topic.js`, `distribute_topic.js`.
+The loader needed NO change — `series` is stored raw as a JSONField, so the new row
+keys pass through. The ranked-tile template does not yet display per-row sources; the
+data is now carried so a template change stays display-only whenever wanted.
+**Applied how:** approved in chat 2026-08-02 ("make your best choice"), then applied.
+Existing topics keep the old row shape (valid — loader is shape-agnostic); rows gain
+sources at their next refresh.
+**Status:** applied 2026-08-02.
 
 ### Lesson 5 — gate verdicts flagged as blocking can sit unapplied indefinitely
 
@@ -144,14 +149,18 @@ default collapsed page; below-fold and expanded-detail content is never visually
 inspected by the view step.
 **Why generalizable:** every topic's Go-deeper and click-to-expand layers are invisible
 to the current render set — a whole display axis escapes view review on every run.
-**Applied (incremental):** review-topic SKILL.md view step now carries the coverage
-caveat — changed below-fold/expanded content must be inspected in the browser.
-**Proposed (small tooling change, needs a nod):** add an `--expanded` capture mode to
-`render_screens` (expand all sections/details before screenshotting) so the expanded
-axis gets first-class artifacts.
-**File(s) touched:** `.claude/skills/review-topic/SKILL.md` (applied);
-`topics/management/commands/render_screens.py` (proposed).
-**Status:** caveat applied 2026-08-01; tooling change PROPOSED, pending decision.
+**Applied (incremental, 2026-08-01):** review-topic SKILL.md view step carries the
+coverage caveat — changed below-fold/expanded content must be inspected directly.
+**Applied (tooling, approved + applied 2026-08-02):** `render_screens --expanded`
+captures `?expanded=1` — a DEBUG-only page mode (`topic_detail` context flag + a
+conditional style block in `detail.html`) that forces every Go-deeper extra
+(`.tile-xtra`/`.q-xtra`/`.pos-xtra`) and detail region (`.tmore`/`.qmore`/`.pmore`/
+`.csplit`) visible; files get an `-expanded` suffix. SKILL.md now says to capture and
+review both sets when depth-layer content changed.
+**File(s) touched:** `.claude/skills/review-topic/SKILL.md`,
+`topics/management/commands/render_screens.py`, `topics/views.py`,
+`templates/topics/detail.html`.
+**Status:** applied 2026-08-02 (approved in chat: "make your best choice").
 
 ### Lesson 8 — a rewrite can re-attach a figure to the wrong population
 
@@ -196,3 +205,35 @@ representative_note/proponents/action-description prose near their DB caps, so
 truncation risk surfaces at authoring time, not after load.
 **Status:** applied 2026-08-01. The truncated UBI note itself routes through the
 refresh proposal (content fix, human-gated).
+
+## 2026-08-02 — cross-pipeline cost review (session-overage evidence)
+
+### Lesson 10 — premium models and inherited max effort on mechanical subtasks
+
+**Finding:** Process/cost — repeated session overages during the housing/wildfires/UBI
+runs. Two routing mis-fits identified: (a) the fact-source critic — the single most
+token-hungry agent in both gates (fetches every source, compares each claim) — ran on
+`fable` alongside the judgment critics, though its work is mechanical
+claim-vs-source checking; (b) every sub-agent inherited the orchestrating session's
+reasoning effort (often max), so ~10 web-grunt agents per authoring run and 5+ per
+refresh each reasoned at max effort over mostly-mechanical work.
+**Why generalizable:** cost-fit was never a routing dimension — models were assigned by
+judgment-vs-grunt, but effort wasn't assigned at all, and the gates treated all four
+critics as one tier. Every future run pays the same overhead until routed.
+**Applied diff:** all three workflows — (1) per-critic model override in the gate
+rosters (`model: FACT_MODEL` on fact-source, default `opus`; judgment critics stay
+`CRITIQUE_MODEL`/fable; `runGate` uses `c.model ?? CRITIQUE_MODEL`); refresh's crux
+re-check moved to its own `CRUX_MODEL` knob (fable) so overriding `critique` no longer
+drags the crux with it. (2) `args.efforts` plumbing with explicit defaults:
+research/re-verify agents, critics, and fixers pin `high`; distribute's fixer pins
+`low` (it applies a whitelisted patch); judgment singletons (plan, crux, distribute)
+inherit the session effort.
+**File(s) touched:** `research/workflows/research_topic.js`,
+`research/workflows/refresh_topic.js`, `research/workflows/distribute_topic.js`;
+routing tables in `.claude/skills/author-topic/SKILL.md`.
+**Also applied (review dimension):** `review-topic` SKILL.md lesson-mining now
+explicitly asks the model/effort cost-fit question each cycle, treating session
+overages as review evidence — so routing keeps getting tuned from real runs.
+**Applied how:** optimistic-and-logged (default-knob changes; no schema/contract
+change — `args.models`/`args.efforts` remain overridable per run).
+**Status:** applied 2026-08-02.

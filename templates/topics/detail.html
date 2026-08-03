@@ -15,6 +15,20 @@
   <meta name="twitter:image" content="{{ request.scheme }}://{{ request.get_host }}{% static topic.social_card %}" />
 {% else %}{{ block.super }}{% endif %}{% endblock %}
 
+{% block head %}{% if expanded %}
+<style>
+  /* DEBUG capture aid (?expanded=1, render_screens --expanded): force the
+     Go-deeper extras and every click-to-expand detail region visible so the
+     expanded reading axis gets first-class screenshots. #main outranks the
+     [x-cloak] !important rule. */
+  #main .tile-xtra { display: flex !important; }
+  #main .q-xtra { display: grid !important; }
+  #main .pos-xtra { display: flex !important; }
+  #main .tmore, #main .qmore, #main .pmore { display: block !important; }
+  #main .csplit { display: grid !important; }
+</style>
+{% endif %}{% endblock %}
+
 {% block content %}
 <div class="topic" x-data="{ active: 'overview' }" x-init="
   const secs = [...$el.querySelectorAll('.content .sec:not(.prompt-block)')];

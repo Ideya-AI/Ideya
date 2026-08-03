@@ -57,10 +57,10 @@ adjudication. Total cost per review should be a small fraction of an authoring r
    320, og/sq/pt cards, poster — for clipping, truncation, overflow, broken tiles, fold
    problems, icon/color correctness per `design/DESIGN_SYSTEM.md`. A browser (or Claude
    in Chrome) walk of the live/dev page is an acceptable substitute for re-rendering.
-   **Coverage caveat:** `render_screens` captures the default (collapsed) page state —
-   below-the-fold and expanded-detail content never appears in those images. If a
-   below-fold or `detail`/expanded element changed, inspect it in the browser (expand
-   the section) rather than assuming the captures cover it.
+   **Coverage:** the default `render_screens` run captures the collapsed page state;
+   add `render_screens --slug <slug> --expanded` (DEBUG dev server) to also capture
+   `desktop-1440-expanded.png` etc. with every Go-deeper extra and detail region forced
+   visible — review BOTH sets whenever below-fold or `detail`/expanded content changed.
 
 Each reviewer returns findings as `{severity: blocking|advisory|note, item, issue,
 evidence, fix, routing: content|presentation|code-css|process}`. For a **blocking**
@@ -83,6 +83,14 @@ step exists because flagged findings have sat unapplied for weeks before (see
 | presentation | `distribute_topic.js --fix_only [findings]` → reload → re-render. |
 | code-css | Log in the packet's Engineering issues section for the human. Never edit templates/CSS. |
 | process | Generalize: would a pipeline prompt/schema change prevent this class of defect on future topics? Incremental → apply to the workflow `.js` file(s) now, entry in `PIPELINE_TUNING_LOG.md` (check the MIRROR siblings need the same edit). Transformative → PROPOSED entry + tell the human in chat. |
+
+Process lesson-mining explicitly includes **model/effort cost-fit**: for each pipeline
+run reviewed, ask whether any subtask burned a premium model or max reasoning effort on
+mechanical work (web fetching, patch application, reformatting) — or, inversely,
+whether a cheap/low-effort assignment produced a defect a stronger one would have
+caught. Session overages are themselves review evidence of mis-fit routing. Route
+findings like any other process lesson: incremental default changes to the workflow
+`args.models`/`args.efforts` knobs apply directly; structural changes are PROPOSED.
 
 ## 5 · Packet
 
