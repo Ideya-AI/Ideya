@@ -294,6 +294,7 @@ body .sec.is-open .when-normal.is-inline, body .sec.is-open .when-deep.is-inline
 /* range marker */
 .track { position: relative; height: 9px; background: linear-gradient(90deg, var(--green-tint), var(--ink-100)); border-radius: var(--radius-pill); }
 .track .pin { position: absolute; top: 50%; width: 12px; height: 12px; border-radius: var(--radius-pill); background: var(--accent); border: 2px solid var(--surface); transform: translate(-50%, -50%); }
+.track .rband { position: absolute; top: -1.5px; bottom: -1.5px; border-radius: var(--radius-pill); background: var(--accent); border: 2px solid var(--surface); } /* value-is-a-span marker ("60–90") — marks the span, not a midpoint */
 .ends { display: flex; justify-content: space-between; font-size: 11px; color: var(--fg3); margin-top: 7px; }
 /* radial */
 .radial { --pct: 0; width: 64px; height: 64px; border-radius: 50%; margin-top: 4px;

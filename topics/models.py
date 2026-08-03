@@ -1,4 +1,5 @@
 import datetime
+import re
 
 from django.conf import settings
 from django.contrib.contenttypes.fields import GenericForeignKey
@@ -652,6 +653,34 @@ class Stat(models.Model):
 
     def __str__(self) -> str:
         return f"{self.label}: {self.value}"
+
+    @property
+    def range_band(self):
+        """For a range viz whose VALUE is itself a numeric span ("60–90"),
+        the track should mark the span, not a single midpoint pin (a pin at
+        75 misreads "60–90%" as ~75). Returns {left, width} percentages when
+        value parses as a span inside numeric range_min/range_max, else None
+        (point values keep the pin)."""
+        m = re.match(
+            r"\s*~?(-?\d+(?:\.\d+)?)\s*[–—-]\s*~?(-?\d+(?:\.\d+)?)\s*$",
+            (self.value or "").replace(",", ""),
+        )
+        if not m:
+            return None
+        ends = []
+        for bound in (self.range_min, self.range_max):
+            n = re.search(r"-?\d+(?:\.\d+)?", (bound or "").replace(",", ""))
+            if not n:
+                return None
+            ends.append(float(n.group()))
+        mn, mx = ends
+        if mx <= mn:
+            return None
+        pct = lambda v: max(0.0, min(100.0, (v - mn) / (mx - mn) * 100))
+        lo, hi = pct(float(m.group(1))), pct(float(m.group(2)))
+        if hi <= lo:
+            return None
+        return {"left": round(lo, 1), "width": round(hi - lo, 1)}
 
 
 class Question(models.Model):
