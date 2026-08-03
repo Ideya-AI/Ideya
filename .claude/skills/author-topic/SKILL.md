@@ -49,11 +49,24 @@ patch application). Judgment singletons (plan, crux, distribute) inherit.
 
 ---
 
+## Stage 0 · Catalog entry (only if the topic isn't cataloged yet)
+
+If the named topic has no entry in `research/catalog/topic-universe.json`, author one
+first (match the existing entries' shape): `{title, slug, summary, why_now,
+primary_category_slug, secondary_category_slugs, suggested_icon, position_names,
+related_slugs}` — `related_slugs` is 3-5 existing catalog slugs, and add this new slug
+to 1-2 neighbouring entries' `related_slugs` so edges point both ways. Then
+`manage.py load_universe` registers the stub (idempotent).
+
 ## Stage 1 · Research (substance)
 
 Pull the catalog entry from `research/catalog/topic-universe.json` and run the
 `research_topic.js` workflow with args `{title, slug, summary, why_now, category,
-suggested_icon, positionNames, questionsSeed:[], today:"YYYY-MM-DD"}`.
+suggested_icon, positionNames, questionsSeed:[], today:"YYYY-MM-DD"}` — mapping the
+catalog keys `primary_category_slug`→`category` and `position_names`→`positionNames`
+(`questionsSeed` is `[]` unless seeding). Stage-1 args are small: pass them inline as
+the Workflow tool's `args` (no baking needed — the `__ARGS` recipe below is only for
+stage 2's 60KB+ dossier).
 
 Persist the return (`{draft, plan, verdicts, shape_notes, plan_positions}`) to
 `research/dossiers/<slug>.json` wrapped in `{dossier_version:1, generated, slug, input,
@@ -77,12 +90,16 @@ rejects edits to value/unit/source/url/name/text).
 > files. Bake it in: copy the workflow to a run script, whole-word replace `args` →
 > `__ARGS`, and inject `const __ARGS = {...}` after the meta block. See `reference.md`.
 
-Load to a staging draft and confirm zero loader warnings:
+Before persisting, write the catalog entry's categories into the draft:
+`draft.categories = [primary_category_slug, ...secondary_category_slugs]` — the
+workflows don't emit this key and the loader would otherwise drop the topic's
+secondary categories. Then load to a staging draft and confirm zero loader warnings:
 ```
 .venv/bin/python manage.py load_topic_draft --file research/topics/<slug>.json \
-  --slug <slug> --title "<Title>" --category <cat> --status draft \
-  --image-brief research/icons/<slug>.md
+  --slug <slug> --title "<Title>" --category <cat> --status draft
 ```
+(`--image-brief research/icons/<slug>.md` is added from stage 3 on — the brief doesn't
+exist yet at this point and the loader hard-errors on a missing path.)
 (For a brand-new topic use the real slug — it's already an unpublished catalog draft.
 Use `<slug>-draft` only when a published version is live and must stay online.)
 
@@ -105,14 +122,16 @@ Loop, capped at ~3 refine rounds:
 
 ## Stage 4 · Views
 
-With the draft loaded and a dev server up (`DJANGO_DEBUG=true … runserver`; drafts render
+With the draft loaded and a dev server up (`DJANGO_DEBUG=true … runserver 8641` — one
+pinned dev port everywhere below, deliberately not 8642, the live container; drafts render
 under DEBUG), render + critique, capped at ~3 rounds:
 1. `render_screens --slug <slug> --base-url <dev>` (1440/390/320, full height) —
    add a `--expanded` run too (captures `?expanded=1` with every Go-deeper extra and
    detail region forced visible; the depth layers get no visual coverage otherwise),
-   `render_social --slug <slug> --formats og,sq,pt --out research/reviews/<slug>`,
-   `render_poster --slug <slug> --out research/reviews/<slug>` (its fit-check exit code
-   is a hard gate).
+   `render_social --slug <slug> --formats og,sq,pt --base-url <dev> --out
+   research/reviews/<slug>`, `render_poster --slug <slug> --base-url <dev> --out
+   research/reviews/<slug>` (its fit-check exit code is a hard gate; `--base-url` is
+   required on all three render commands).
 2. `fable` sub-agents **Read** every image against `design/DESIGN_SYSTEM.md` +
    `design/RESPONSIVE.md`. Classify findings:
    - **content-fixable** (overlong text, bad fold, poster overflow) → re-run
@@ -136,4 +155,6 @@ creates the `TopicEdge` rows — without this step the new topic ships with an e
 "Connects to" strip → set
 `reviewed_at = now()` → `check_links --topic <slug>` (0 dead / 0 placeholder) → commit
 `research/dossiers/<slug>.json`, `research/topics/<slug>.json`, the icon assets, and the
-review packet.
+review packet. **Then put it on the live site** — the live DB is separate from this
+authoring DB; follow "Publish one topic to the live site" in `DEPLOY.md` §3 (a
+`docker exec` load against the live container — never copy the whole DB over it).

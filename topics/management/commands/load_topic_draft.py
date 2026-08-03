@@ -22,9 +22,11 @@ from topics.models import (
     Crux,
     Position,
     Question,
+    QuestionLean,
     Section,
     Stat,
     Topic,
+    Vote,
 )
 
 POS_KEYS = [k for k, _ in POS_COLORS]
@@ -83,7 +85,6 @@ class Command(BaseCommand):
             "blockquote is stored as Topic.primary_image_prompt for provenance.",
         )
 
-    @transaction.atomic
     def _cap(self, value, cap, field, ident):
         """Slice to the model's max_length, but never silently: mid-sentence
         truncation ships broken prose to readers (found live on UBI's
@@ -97,7 +98,10 @@ class Command(BaseCommand):
             )
         return value[:cap]
 
+    @transaction.atomic
     def handle(self, *args, **o):
+        # Atomic is load-bearing: the rebuild starts with a destructive
+        # sections.delete(); any later error must roll the whole load back.
         payload = json.loads(Path(o["file"]).read_text())
         d = payload.get("draft", payload)
         cat = Category.objects.filter(slug=o["category"]).first()
@@ -164,6 +168,32 @@ class Command(BaseCommand):
                 and c.pk != cat.pk
             ]
         topic.categories.set([cat] + extra_cats)
+
+        # Participation survives a reload: the rebuild cascades Vote/QuestionLean
+        # rows, so snapshot them keyed by question text / position name and
+        # re-attach to the matching rebuilt rows. Rows whose text/name changed
+        # in the new draft genuinely refer to something else — those votes drop
+        # (reported below), which is the honest outcome.
+        part_key = ("user_id", "session_key", "value")
+        saved_qv = [
+            (v.question.text, tuple(getattr(v, k) for k in part_key))
+            for v in Vote.objects.filter(question__section__topic=topic).select_related(
+                "question"
+            )
+        ]
+        saved_pv = [
+            (v.position.name, tuple(getattr(v, k) for k in part_key))
+            for v in Vote.objects.filter(position__section__topic=topic).select_related(
+                "position"
+            )
+        ]
+        saved_leans = [
+            (l.question.text, tuple(getattr(l, k) for k in part_key))
+            for l in QuestionLean.objects.filter(
+                question__section__topic=topic
+            ).select_related("question")
+        ]
+
         topic.sections.all().delete()  # clean rebuild
 
         def sec(kind, **kw):
@@ -206,7 +236,7 @@ class Command(BaseCommand):
             if viz not in dict(Stat.VIZ_CHOICES):
                 viz = "bar"
             series = s.get("series") or []
-            if viz == "ranked" and not (
+            if viz in ("ranked", "sparkline") and not (
                 isinstance(series, list) and series and isinstance(series[0], dict)
             ):
                 viz = "bar"
@@ -353,6 +383,59 @@ class Command(BaseCommand):
         from .seed_example_prompts import seed_topic_prompts
 
         seed_topic_prompts(topic)
+
+        # Re-attach the snapshotted participation to the rebuilt rows.
+        if saved_qv or saved_pv or saved_leans:
+            new_q = {q.text: q for q in Question.objects.filter(section=qs)}
+            new_p = {p.name: p for p in Position.objects.filter(section=ps)}
+            revived_votes, revived_leans, dropped = [], [], 0
+            for text, (user_id, skey, val) in saved_qv:
+                if text in new_q:
+                    revived_votes.append(
+                        Vote(question=new_q[text], user_id=user_id,
+                             session_key=skey, value=val)
+                    )
+                else:
+                    dropped += 1
+            for name, (user_id, skey, val) in saved_pv:
+                if name in new_p:
+                    revived_votes.append(
+                        Vote(position=new_p[name], user_id=user_id,
+                             session_key=skey, value=val)
+                    )
+                else:
+                    dropped += 1
+            for text, (user_id, skey, val) in saved_leans:
+                if text in new_q:
+                    revived_leans.append(
+                        QuestionLean(question=new_q[text], user_id=user_id,
+                                     session_key=skey, value=val)
+                    )
+                else:
+                    dropped += 1
+            Vote.objects.bulk_create(revived_votes)
+            QuestionLean.objects.bulk_create(revived_leans)
+            for q in new_q.values():
+                Question.objects.filter(pk=q.pk).update(
+                    votes=Vote.objects.filter(question=q).count()
+                )
+            for p in new_p.values():
+                Position.objects.filter(pk=p.pk).update(
+                    importance=Vote.objects.filter(position=p).count()
+                )
+            msg = (
+                f"participation preserved: "
+                f"{len(revived_votes) + len(revived_leans)} row(s) re-attached"
+            )
+            if dropped:
+                self.stderr.write(
+                    self.style.WARNING(
+                        msg + f"; {dropped} dropped (their question text / "
+                        "position name changed in this draft)"
+                    )
+                )
+            else:
+                self.stdout.write(msg)
 
         self.stdout.write(
             self.style.SUCCESS(

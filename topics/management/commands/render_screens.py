@@ -135,5 +135,14 @@ class Command(BaseCommand):
                 timeout=120,
             )
             _trim_bottom(png)
+            with Image.open(png) as shot:
+                if shot.size[1] > height - 200:
+                    self.stderr.write(
+                        self.style.WARNING(
+                            f"  {png.name} is within 200px of the {height}px capture "
+                            "window — the page bottom is likely clipped; raise "
+                            "CAPTURE_HEIGHT(_EXPANDED)."
+                        )
+                    )
             self.stdout.write(f"  {slug} [{w}px] -> {_pretty(png)}")
         self.stdout.write(self.style.SUCCESS(f"{len(widths)} screenshot(s) captured."))

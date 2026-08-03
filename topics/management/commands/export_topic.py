@@ -154,6 +154,7 @@ class Command(BaseCommand):
                 topic.primary_category.slug if topic.primary_category_id else None
             ),
             "categories": [c.slug for c in topic.categories.order_by("slug")],
+            "primary_image_prompt": topic.primary_image_prompt,
             "overview": {
                 "summary": topic.summary,
                 "scope_covered": topic.scope_covered,

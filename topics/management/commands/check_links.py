@@ -321,14 +321,28 @@ class Command(BaseCommand):
                 )
             )
         for s in stats:
-            if not (s.source_url or "").strip():
-                continue
             label, slug = self._topic_of(s.section)
-            items.append(
-                LinkItem(
-                    label, slug, "Source", s.label or f"Stat #{s.pk}", s.source_url
+            if (s.source_url or "").strip():
+                items.append(
+                    LinkItem(
+                        label, slug, "Source", s.label or f"Stat #{s.pk}", s.source_url
+                    )
                 )
-            )
+            # Ranked rows may carry their own source when it differs from the
+            # stat-level one (added 2026-08-02) — the pre-publish gate must
+            # cover those too.
+            for row in s.series or []:
+                url = (row.get("source_url") or "").strip() if isinstance(row, dict) else ""
+                if url:
+                    items.append(
+                        LinkItem(
+                            label,
+                            slug,
+                            "Source",
+                            f"{s.label or f'Stat #{s.pk}'} · row {row.get('label', '?')}",
+                            url,
+                        )
+                    )
         return items
 
     @staticmethod

@@ -36,7 +36,7 @@ load, and warns on placeholder action URLs and truncated stat units/notes.
         "unit",                                        // DISPLAY TOKEN <= 12 chars ('%', '$B/yr')
         "viz": "bar|ranked|radial|range|sparkline",   // default bar
         "wide": true|false,                            // ranked tiles span two columns
-        "series": [{ "label", "value", "pct", "highlight" }],  // ranked rows, source data only
+        "series": [{ "label", "value", "pct", "highlight", "source_label", "source_url" }],  // ranked rows; per-row source empty when the stat-level source covers it
         "range_min", "range_max", "range_at": 0-100,   // range viz track + marker
         "fill_pct": 0-100,
         "note",                                        // one tight sentence (visible layer)

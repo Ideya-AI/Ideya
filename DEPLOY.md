@@ -176,6 +176,28 @@ A fresh database has schema only — content lives outside migrations, in
   index. (Vote counts, reader submissions, and the historical related-topic
   edges of the original seed are local-DB state — they don't reproduce.)
 
+### Publish one topic to the live site (the standing flow)
+
+The live DB (`/srv/ideya-data/db.sqlite3`) is separate from the repo's authoring DB and
+holds real reader participation — **never copy the whole local DB over it after launch**.
+To put a newly-authored or refreshed topic live, run the same loader surgically inside
+the container (the image carries `research/topics/*.json`; rebuild + redeploy first if
+the JSON changed since the last image build):
+
+```sh
+docker exec ideya python manage.py load_topic_draft \
+  --file research/topics/<slug>.json --slug <slug> --title "<Title>" \
+  --category <cat> --status published --image-brief research/icons/<slug>.md
+docker exec ideya python manage.py load_universe   # wires related-topic edges
+docker exec ideya python manage.py rebuild_search  # refresh the FTS index
+```
+
+Reloading an existing published topic rebuilds its sections; the loader preserves that
+topic's votes/leans by re-attaching them to matching question text / position name
+(rows whose text changed lose their votes — that is the honest outcome). Verify with a
+curl of the live page, then set `reviewed_at` via the same `docker exec` shell if this
+was a refresh.
+
 To use the local Django admin (optional — you publish/update locally), create a
 superuser: `python manage.py createsuperuser`.
 
