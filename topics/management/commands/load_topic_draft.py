@@ -31,6 +31,13 @@ POS_KEYS = [k for k, _ in POS_COLORS]
 ACTION_KINDS = {k for k, _ in Action.KIND_CHOICES}
 
 
+def _pct(v):
+    """A valid 0-100 integer or None — the workflow schemas use -1 as their
+    'unset' sentinel (structured output can't emit null), which must never
+    reach the PositiveSmallIntegerField."""
+    return v if isinstance(v, int) and 0 <= v <= 100 else None
+
+
 def image_prompt_from_brief(path: Path) -> str:
     """The '## Generation prompt' blockquote from an icon brief (same rule the
     generator reads), for provenance in Topic.primary_image_prompt."""
@@ -137,11 +144,26 @@ class Command(BaseCommand):
         }
         if image_prompt:
             defaults["primary_image_prompt"] = image_prompt
+        # Volatility drives the review cadence; the export carries it — a
+        # round-trip must not silently reset it to the model default.
+        if d.get("volatility") in dict(Topic.VOLATILITY_CHOICES):
+            defaults["volatility"] = d["volatility"]
         topic, _ = Topic.objects.update_or_create(
             slug=o["slug"],
             defaults=defaults,
         )
-        topic.categories.set([cat])
+        if d.get("categories") is None and existing:
+            # A refresh draft carries no categories key — never clobber the
+            # topic's existing secondaries (same rule as icon/volatility).
+            extra_cats = [c for c in topic.categories.all() if c.pk != cat.pk]
+        else:
+            extra_cats = [
+                c
+                for cslug in d.get("categories") or []
+                if (c := Category.objects.filter(slug=cslug).first())
+                and c.pk != cat.pk
+            ]
+        topic.categories.set([cat] + extra_cats)
         topic.sections.all().delete()  # clean rebuild
 
         def sec(kind, **kw):
@@ -238,7 +260,7 @@ class Command(BaseCommand):
                 detail=q.get("detail", ""),
                 lean_label_a=q.get("lean_label_a", "")[:40],
                 lean_label_b=q.get("lean_label_b", "")[:40],
-                lean_pct_a=q.get("lean_pct_a"),
+                lean_pct_a=_pct(q.get("lean_pct_a")),
                 reveal=q.get("reveal", "condensed"),
             )
 

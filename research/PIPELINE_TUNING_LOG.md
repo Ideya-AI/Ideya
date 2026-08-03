@@ -259,3 +259,61 @@ default produced error-page captures twice in the 2026-08-01 runs.
 commands in `topics/management/commands/`.
 **Applied how:** optimistic-and-logged (runbook + fail-fast tooling; no contract change).
 **Status:** applied 2026-08-03.
+
+## 2026-08-03 — transformative slate from the 2026-08-01 audit (approved in chat: "Go for it")
+
+### Lesson 12 — refresh round-trips silently stripped fields its schemas couldn't emit
+
+**Finding:** the workflow schemas never carried `lean_pct_a` (lean-bar seed),
+`color_key` (position card colour), or the `sparkline` viz; export→load also
+dropped secondary categories and `volatility`. Consequence: the first refresh of
+a hand-edited topic (Nuclear) would have wiped its lean seeds, recoloured its
+cards by index, and reset its review cadence — silently, since an agent schema
+strips what it cannot re-emit.
+**Why generalizable:** any model field not present in the re-verify schemas is
+deleted by every future refresh; the schema IS the survival contract.
+**Applied diff:** `lean_pct_a` (integer; -1 = unset sentinel, structured output
+can't emit null) + `color_key` (empty = auto; refresh PRESERVEs verbatim) added
+to the QUESTION/POSITION mirrors in research_topic.js + refresh_topic.js;
+"sparkline" added to all three viz enums; loader gains `_pct()` normalization
+(sentinel never reaches the DB), reads `volatility` (valid keys only) and
+secondary `categories` from the draft. Verified by a real export→doctor→load
+round-trip (lean values, colours, fast volatility, economy secondary all
+survive) and a scratch-topic delete.
+**File(s) touched:** all three workflow mirrors,
+`topics/management/commands/load_topic_draft.py`.
+**Status:** applied 2026-08-03.
+
+### Lesson 13 — a gate fix demanding a new question/action could never converge
+
+**Finding:** PATCH_SCHEMA had add_positions/add_stats only; a critic's blocking
+fix that required adding a question or action gave the fixer no legal op — the
+fix loop spun to its cap and the defect shipped as a residual.
+**Applied diff:** `add_questions`/`add_actions` ops (JSON-encoded-string
+pattern, mirroring add_positions — the inline-schema variant trips the safety
+classifier) in research_topic.js + refresh_topic.js PATCH_SCHEMA + applyPatch;
+fixer prompts name the full op set; key lists mirror the item schemas
+(incl. lean_pct_a and per-row series sources).
+**Status:** applied 2026-08-03 (node-tested: adds land, malformed JSON → missed).
+
+### Lesson 14 — refresh additions were stuck at the array tail
+
+**Finding:** applyPatch appended add_* items with no way to place them, but
+display order = array order — a newly load-bearing stat could never reach the
+fold on a refresh.
+**Applied diff:** distribute's `reorder` op ported into refresh_topic.js
+(PATCH_SCHEMA + applyPatch; effective-reorder-only counts as applied, unique-
+prefix matching, omitted items keep relative order at the tail); fixer prompt
+carries the placement rule + the positions-render-by-prevalence exception.
+**Status:** applied 2026-08-03 (node-tested: added question reordered to lead;
+no-op reorder not counted).
+
+**Post-audit addenda (same cycle, 3-auditor adversarial pass, all 3 clean):**
+the port of reorder into refresh exposed that refresh's EDIT matching still used
+first-prefix-match (silent wrong-item edit risk) — unique-prefix guard
+backported; sparkline clause added to refresh's viz description; add_positions
+descriptions now state color_key is omitted (auto-assigned at load); loader
+never clobbers existing secondary categories when a draft (i.e. any refresh
+output) carries no categories key. Deferred as not-yet-real: volatility on a
+fresh-slug refresh preview resets to medium (all topics are medium today; add
+--volatility or schema carriage if one ever isn't).
