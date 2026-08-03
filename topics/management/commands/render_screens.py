@@ -75,8 +75,9 @@ class Command(BaseCommand):
         )
         parser.add_argument(
             "--base-url",
-            default="http://localhost:8000",
-            help="Origin of a running dev server (default: %(default)s).",
+            required=True,
+            help="Origin of a RUNNING dev server (e.g. http://localhost:8641). "
+            "Required: a wrong default silently captures error pages.",
         )
         parser.add_argument(
             "--out",

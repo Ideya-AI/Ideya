@@ -133,7 +133,11 @@ Assemble `research/reviews/<slug>/REVIEW.md` (template in `reference.md`): stage
 timings/rounds, substance + presentation verdict summaries, the fold preview, icon winner
 + candidates, screenshot/card/poster links, and the engineering issues found. Then the
 human: preview the draft as staff → publish
-(`load_topic_draft … --slug <slug> --status published --image-brief …`) → set
+(`load_topic_draft … --slug <slug> --status published --image-brief …`) → **wire
+related-topic edges**: the catalog entry's `related_slugs` (every entry carries 3-5;
+add them when creating a new entry) feed `manage.py load_universe` (idempotent) which
+creates the `TopicEdge` rows — without this step the new topic ships with an empty
+"Connects to" strip → set
 `reviewed_at = now()` → `check_links --topic <slug>` (0 dead / 0 placeholder) → commit
 `research/dossiers/<slug>.json`, `research/topics/<slug>.json`, the icon assets, and the
 review packet.

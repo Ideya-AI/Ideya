@@ -237,3 +237,25 @@ overages as review evidence — so routing keeps getting tuned from real runs.
 **Applied how:** optimistic-and-logged (default-knob changes; no schema/contract
 change — `args.models`/`args.efforts` remain overridable per run).
 **Status:** applied 2026-08-02.
+
+## 2026-08-03 — loop upkeep (review-derived tooling closures)
+
+### Lesson 11 — edge wiring existed but was never in the authoring runbook
+
+**Finding:** Note (wildfires packet) — "related-topic edges are seeded only by
+load_universe — the pipeline doesn't create them"; wildfires' three edges were wired
+manually during its run.
+**Why generalizable:** the machinery is complete (catalog `related_slugs` → idempotent
+`load_universe` → `TopicEdge` rows; all 115 entries carry `related_slugs`) but no
+authoring stage ever invoked it, so every future topic would ship with an empty
+"Connects to" strip until someone noticed.
+**Applied diff:** author-topic SKILL.md stage 5 now carries the edge-wiring step
+(publish → `load_universe` → edges), plus the rule that a NEW catalog entry must
+include 3-5 `related_slugs`.
+**Also applied (same cycle):** `--base-url` is now REQUIRED on
+`render_screens`/`render_social`/`render_poster` — the silent `localhost:8000`
+default produced error-page captures twice in the 2026-08-01 runs.
+**File(s) touched:** `.claude/skills/author-topic/SKILL.md`, the three render
+commands in `topics/management/commands/`.
+**Applied how:** optimistic-and-logged (runbook + fail-fast tooling; no contract change).
+**Status:** applied 2026-08-03.
