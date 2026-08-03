@@ -107,7 +107,9 @@ Loop, capped at ~3 refine rounds:
 
 With the draft loaded and a dev server up (`DJANGO_DEBUG=true … runserver`; drafts render
 under DEBUG), render + critique, capped at ~3 rounds:
-1. `render_screens --slug <slug> --base-url <dev>` (1440/390/320, full height),
+1. `render_screens --slug <slug> --base-url <dev>` (1440/390/320, full height) —
+   add a `--expanded` run too (captures `?expanded=1` with every Go-deeper extra and
+   detail region forced visible; the depth layers get no visual coverage otherwise),
    `render_social --slug <slug> --formats og,sq,pt --out research/reviews/<slug>`,
    `render_poster --slug <slug> --out research/reviews/<slug>` (its fit-check exit code
    is a hard gate).
@@ -120,12 +122,6 @@ under DEBUG), render + critique, capped at ~3 rounds:
      templates/CSS.
 3. Pass = poster fit exit 0 + all three social formats + no blocking content findings.
 
-> **After stage 4, run the `review-topic` skill** (light, sonnet-based) before handing
-> the packet to the human: stage 4's view critique is one-shot and self-reported, while
-> review-topic also spot-checks content and editorial structure, audits prior residuals,
-> and feeds generalizable lessons back into the pipelines
-> (`research/PIPELINE_TUNING_LOG.md`). Unlike stage 4 it can be re-run any time,
-> including against a published topic.
 
 ## Stage 5 · Human review & publish
 

@@ -26,8 +26,10 @@ CHROME_CANDIDATES = [
 ]
 # Headless --screenshot clips to the window height, so capture very tall and
 # trim the dead background below the content in post (these pages run long —
-# a fixed cap silently clipped the Crux/Actions sections).
+# a fixed cap silently clipped the Crux/Actions sections). Expanded captures
+# force every detail layer visible and run far taller still.
 CAPTURE_HEIGHT = 12000
+CAPTURE_HEIGHT_EXPANDED = 22000
 
 
 def _pretty(path):
@@ -113,6 +115,7 @@ class Command(BaseCommand):
 
         suffix = "-expanded" if opts["expanded"] else ""
         query = "?expanded=1" if opts["expanded"] else ""
+        height = CAPTURE_HEIGHT_EXPANDED if opts["expanded"] else CAPTURE_HEIGHT
         for w in widths:
             tag = "desktop" if w >= 1024 else "mobile"
             png = out_dir / f"{tag}-{w}{suffix}.png"
@@ -121,7 +124,7 @@ class Command(BaseCommand):
                     chrome,
                     "--headless=new",
                     "--disable-gpu",
-                    f"--window-size={w},{CAPTURE_HEIGHT}",
+                    f"--window-size={w},{height}",
                     "--hide-scrollbars",
                     "--virtual-time-budget=10000",
                     f"--screenshot={png}",

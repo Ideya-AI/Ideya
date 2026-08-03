@@ -157,18 +157,15 @@ are blocked by the safety classifier — stage-1 research agents error out. Thos
 not automatable through Claude agents; use path B (external research → the same
 `research/topics/<slug>.json` contract) and resume at stage 3.
 
-## 13. The standing review + tuning loop (2026-08-01)
+## 13. Review layer retired (2026-08-03)
 
-The project's ongoing rhythm is now: **the human names a topic → author-topic or
-refresh-topic runs → the `review-topic` skill inspects the result → the human
-publishes.** review-topic (`.claude/skills/review-topic/`) is deliberately light — three
-sonnet reviewers (content spot-check / editorial structure across both depth axes /
-rendered views) plus deterministic checks and a residual audit of prior findings; it is
-NOT a re-research pass (research rigor stays in stage 1 and refresh). Its distinct job
-is closing the loop: topic fixes route through the existing flows (draft edits or the
-refresh approval flow; `distribute_topic.js --fix_only`; code/CSS logged for the human),
-and every generalizable defect becomes a pipeline improvement — incremental prompt
-changes applied directly, transformative schema/contract changes PROPOSED for a human
-decision — recorded in `research/PIPELINE_TUNING_LOG.md` so tuning compounds across
-cycles. Calibration reference: the 2026-07-31 housing deep review (heavyweight, one-off)
-whose lessons seeded the log.
+A standing `review-topic` skill + `PIPELINE_TUNING_LOG.md` tuning loop ran 2026-08-01
+→ 2026-08-03 (housing deep review, wildfires, UBI published-topic cycle, and a
+post-fix pass). It found and closed real defects, and its 14 generalized lessons were
+applied directly to the workflow files, the loader, and the render commands — where
+they now live as code and prompts. With the pipelines hardened, the standing loop was
+deliberately retired (decision 2026-08-03): topic pages are close enough that the
+human prompts specific changes directly, and each run's own adversarial gates carry
+the quality bar. Kept from that era: the `--expanded` render mode (stage 4), required
+`--base-url` on render commands, and `refresh_topic.js`'s `args.findings` seed for
+human-flagged items.
