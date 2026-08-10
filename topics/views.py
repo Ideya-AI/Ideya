@@ -337,12 +337,17 @@ def _visible_topics(request):
 
 def topic_detail(request, slug):
     topic = get_object_or_404(
-        _visible_topics(request)
-        .select_related("primary_category")
-        .prefetch_related("categories"),
+        Topic.objects.select_related("primary_category").prefetch_related("categories"),
         slug=slug,
     )
-    sections = _ordered_sections("topic", topic)
+    # Drafts render in full for staff/DEBUG previews; the public gets the
+    # coming-soon stub treatment (no sections, noindex) instead of a 404 —
+    # related chips on published topics link to drafts as teasers.
+    can_preview = settings.DEBUG or request.user.is_staff
+    if topic.status != Topic.PUBLISHED and not can_preview:
+        sections = []
+    else:
+        sections = _ordered_sections("topic", topic)
     related = topic.outgoing_edges.select_related(
         "target", "target__primary_category"
     ).all()
@@ -401,6 +406,7 @@ def topic_detail(request, slug):
         {
             "topic": topic,
             "sections": sections,
+            "can_preview": can_preview,
             "related": related,
             "positions": positions,
             "topic_prompts": topic_prompts,

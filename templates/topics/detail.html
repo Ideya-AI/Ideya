@@ -15,7 +15,8 @@
   <meta name="twitter:image" content="{{ request.scheme }}://{{ request.get_host }}{% static topic.social_card %}" />
 {% else %}{{ block.super }}{% endif %}{% endblock %}
 
-{% block head %}{% if expanded %}
+{% block head %}{% if topic.status != "published" %}<meta name="robots" content="noindex" />
+{% endif %}{% if expanded %}
 <style>
   /* DEBUG capture aid (?expanded=1, render_screens --expanded): force the
      Go-deeper extras and every click-to-expand detail region visible so the
@@ -51,7 +52,7 @@
 
     <!-- CONTENT -->
     <div class="content">
-      {% if topic.status == "draft" %}
+      {% if topic.status == "draft" and can_preview %}
       <div class="stub-note card draft-note">
         <i class="ph-duotone ph-eye-slash"></i>
         <div><b>Draft — not publicly visible.</b>

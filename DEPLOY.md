@@ -115,7 +115,11 @@ which settings already trusts, so no code or env changes beyond the table above.
 5. **Desktop realities:** disable suspend/hibernate (`systemctl mask sleep.target
    suspend.target`), rely on `--restart unless-stopped` + the cloudflared service
    after reboots, and back up `/srv/ideya-data/db.sqlite3` (it's the only
-   state — a nightly `cp` to another disk or Litestream→R2 both work). Uptime is
+   state). In place since 2026-08-10: a weekly cron (`crontab -l`, Sun 03:45)
+   runs `/srv/ideya-data/backup-db.sh` — a consistent `sqlite3 .backup` gzipped
+   into `/srv/ideya-data/backups/`, newest 12 kept. Same-disk only: it covers
+   corruption and bad writes, not disk death — offsite (Litestream→R2 or a
+   periodic copy elsewhere) is still open. Uptime is
    the machine's uptime; that's the accepted trade-off until this moves to a
    host, which is just "run the same image elsewhere and repoint the tunnel."
 
