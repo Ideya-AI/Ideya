@@ -16,6 +16,32 @@
     // "Add your view" input modal open state.
     Alpine.store("input", { open: false });
 
+    // Row-synced expandable grid (positions, basics) — expansion state lives
+    // on the grid (keyed by data-xid) so a click opens/closes every card
+    // sharing the visual row: the CSS grid stretches row partners anyway, and
+    // a stretched-but-empty card reads as a bug. Rows are detected by
+    // offsetTop at click time, which stays correct across responsive column
+    // counts, wide tiles, and dense grid packing.
+    Alpine.data("rowGrid", function () {
+      return {
+        open: {},
+        toggle(card) {
+          var next = !this.open[card.dataset.xid];
+          var row = Array.prototype.filter.call(
+            card.parentElement.querySelectorAll("[data-xid]"),
+            function (c) {
+              return c.offsetParent !== null && c.offsetTop === card.offsetTop;
+            },
+          );
+          var self = this;
+          row.forEach(function (c) {
+            self.open[c.dataset.xid] = next;
+          });
+          if (!next) window.anchorCollapse(card);
+        },
+      };
+    });
+
     // Transient confirmation toast — flash(msg) shows it briefly, then auto-hides.
     Alpine.store("toast", {
       show: false,
@@ -31,6 +57,21 @@
       },
     });
   });
+
+  // After collapsing a tall box the reader who clicked at its bottom would be
+  // left far below where they started: the page reflows but the viewport
+  // doesn't. If the collapsed element's top ended up above the viewport,
+  // scroll it back to just under the sticky header. setTimeout(0) runs after
+  // Alpine's microtask flush (post-collapse layout); the fresh measurement
+  // absorbs whatever Chrome's native scroll anchoring already compensated,
+  // and "instant" (not the page's smooth default) keeps the correction
+  // imperceptible.
+  window.anchorCollapse = function (el) {
+    setTimeout(function () {
+      var top = el.getBoundingClientRect().top;
+      if (top < 84) window.scrollBy({ top: top - 84, behavior: "instant" });
+    }, 0);
+  };
 
   // Keyboard: "/" focuses search, Esc closes overlays. Registered once.
   document.addEventListener("keydown", function (e) {

@@ -164,8 +164,7 @@ class Command(BaseCommand):
             extra_cats = [
                 c
                 for cslug in d.get("categories") or []
-                if (c := Category.objects.filter(slug=cslug).first())
-                and c.pk != cat.pk
+                if (c := Category.objects.filter(slug=cslug).first()) and c.pk != cat.pk
             ]
         topic.categories.set([cat] + extra_cats)
 
@@ -280,7 +279,9 @@ class Command(BaseCommand):
                 section=qs,
                 order=i,
                 tier=max(1, int(q.get("tier") or 1)),
-                text=self._cap(q.get("text", ""), 400, "question text", q.get("text", "")),
+                text=self._cap(
+                    q.get("text", ""), 400, "question text", q.get("text", "")
+                ),
                 kind=(
                     q.get("kind", "empirical")
                     if q.get("kind") in ("empirical", "value")
@@ -320,12 +321,21 @@ class Command(BaseCommand):
                 tier=max(1, int(p.get("tier") or 1)),
                 name=p.get("name", "")[:120],
                 color_key=ck,
-                steelman=self._cap(p.get("steelman", ""), 400, "steelman", p.get("name", "")),
+                steelman=self._cap(
+                    p.get("steelman", ""), 400, "steelman", p.get("name", "")
+                ),
                 description=p.get("description", ""),
                 detail=p.get("detail", ""),
-                proponents=self._cap(p.get("proponents", ""), 400, "proponents", p.get("name", "")),
+                proponents=self._cap(
+                    p.get("proponents", ""), 400, "proponents", p.get("name", "")
+                ),
                 representative_name=p.get("representative_name", "")[:120],
-                representative_note=self._cap(p.get("representative_note", ""), 300, "representative_note", p.get("name", "")),
+                representative_note=self._cap(
+                    p.get("representative_note", ""),
+                    300,
+                    "representative_note",
+                    p.get("name", ""),
+                ),
                 prevalence_weight=p.get("prevalence_weight") or 0,
                 spectrum_position=p.get("spectrum_position"),
             )
@@ -364,7 +374,9 @@ class Command(BaseCommand):
                 tier=max(1, int(a.get("tier") or 1)),
                 kind=kind if kind in ACTION_KINDS else "learn_more",
                 title=a.get("title", "")[:200],
-                description=self._cap(a.get("description", ""), 400, "description", a.get("title", "")),
+                description=self._cap(
+                    a.get("description", ""), 400, "description", a.get("title", "")
+                ),
                 url=a.get("url", "") or "",
                 position=Position_ref,
                 reveal=a.get("reveal", "condensed"),
@@ -406,24 +418,36 @@ class Command(BaseCommand):
             for text, (user_id, skey, val) in saved_qv:
                 if text in new_q:
                     revived_votes.append(
-                        Vote(question=new_q[text], user_id=user_id,
-                             session_key=skey, value=val)
+                        Vote(
+                            question=new_q[text],
+                            user_id=user_id,
+                            session_key=skey,
+                            value=val,
+                        )
                     )
                 else:
                     dropped += 1
             for name, (user_id, skey, val) in saved_pv:
                 if name in new_p:
                     revived_votes.append(
-                        Vote(position=new_p[name], user_id=user_id,
-                             session_key=skey, value=val)
+                        Vote(
+                            position=new_p[name],
+                            user_id=user_id,
+                            session_key=skey,
+                            value=val,
+                        )
                     )
                 else:
                     dropped += 1
             for text, (user_id, skey, val) in saved_leans:
                 if text in new_q:
                     revived_leans.append(
-                        QuestionLean(question=new_q[text], user_id=user_id,
-                                     session_key=skey, value=val)
+                        QuestionLean(
+                            question=new_q[text],
+                            user_id=user_id,
+                            session_key=skey,
+                            value=val,
+                        )
                     )
                 else:
                     dropped += 1

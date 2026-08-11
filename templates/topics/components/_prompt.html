@@ -12,12 +12,17 @@ The control mirrors the .lean / .ad chip patterns — token-based, lightly style
   {% if prompt.help_text %}<p class="prompt-help">{{ prompt.help_text }}</p>{% endif %}
 
   {% comment %}--- FREE TEXT ---{% endcomment %}
+  {% comment %}The send button posts only when there is something to do: text to
+  save, or a previously saved answer to clear (empty = retract server-side). A
+  blank send with nothing saved is a no-op — no post, no toast.{% endcomment %}
   {% if prompt.kind == "free_text" %}
-  <div class="text-send">
+  <div class="text-send" x-data="{ saved: {% if ur %}true{% else %}false{% endif %} }">
     <textarea class="field prompt-text" id="ptext-{{ prompt.id }}" name="text" rows="3" placeholder="Share your reasoning…">{% if ur %}{{ ur.text }}{% endif %}</textarea>
     <button type="button" class="send-btn" aria-label="Save your take"
       hx-post="{% url 'topics:respond' prompt.id %}" hx-include="#ptext-{{ prompt.id }}" hx-swap="none"
-      @click="$store.toast.flash('Saved')"><i class="ph-fill ph-paper-plane-tilt"></i></button>
+      hx-trigger="confirmed"
+      @click="const has = document.getElementById('ptext-{{ prompt.id }}').value.trim().length > 0;
+              if (has || saved) { htmx.trigger($el, 'confirmed'); $store.toast.flash(has ? 'Saved' : 'Cleared'); saved = has; }"><i class="ph-fill ph-paper-plane-tilt"></i></button>
   </div>
 
   {% comment %}--- CHOOSE ONE (radio chips; re-click the picked one to clear) ---{% endcomment %}

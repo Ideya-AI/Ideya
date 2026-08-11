@@ -163,11 +163,11 @@
         <div class="sec-body">
           <div class="eyebrow"><i class="ph-duotone ph-{{ section.eyebrow_icon }}"></i>Basics <span class="sub">· {{ section.eyebrow_sub }}</span><span class="stepn">{{ section.step }}</span></div>
           {% if section.intro %}<p class="prose">{{ section.intro }}</p>{% endif %}
-          <div class="basics">
+          <div class="basics" x-data="rowGrid()">
             {% for stat in section.basics_tiles %}{% include "topics/components/_stat_tile.html" %}{% endfor %}
           </div>
           {% if section.basics_has_extra %}
-          <button type="button" class="deeper" :aria-expanded="deeper" @click="deeper = !deeper">
+          <button type="button" class="deeper" :aria-expanded="deeper" @click="deeper = !deeper; if (!deeper) anchorCollapse($el)">
             <i class="ph-duotone" :class="deeper ? 'ph-minus-circle' : 'ph-plus-circle'"></i>
             <span x-text="deeper ? 'Show less' : 'Go deeper'"></span>
           </button>
@@ -189,7 +189,7 @@
             {% for q in section.questions_tiles %}{% include "topics/components/_question.html" %}{% endfor %}
           </div>
           {% if section.questions_has_extra %}
-          <button type="button" class="deeper" :aria-expanded="deeper" @click="deeper = !deeper">
+          <button type="button" class="deeper" :aria-expanded="deeper" @click="deeper = !deeper; if (!deeper) anchorCollapse($el)">
             <i class="ph-duotone" :class="deeper ? 'ph-minus-circle' : 'ph-plus-circle'"></i>
             <span x-text="deeper ? 'Show less' : 'Go deeper'"></span>
           </button>
@@ -213,11 +213,11 @@
         </button>
         <div class="sec-body">
           <div class="eyebrow"><i class="ph-duotone ph-{{ section.eyebrow_icon }}"></i>Positions <span class="sub">· {{ section.eyebrow_sub }}</span><span class="stepn">{{ section.step }}</span></div>
-          <div class="pos-grid">
+          <div class="pos-grid" x-data="rowGrid()">
             {% for p in section.positions_tiles %}{% include "topics/components/_position.html" %}{% endfor %}
           </div>
           {% if section.positions_has_extra %}
-          <button type="button" class="deeper" :aria-expanded="deeper" @click="deeper = !deeper">
+          <button type="button" class="deeper" :aria-expanded="deeper" @click="deeper = !deeper; if (!deeper) anchorCollapse($el)">
             <i class="ph-duotone" :class="deeper ? 'ph-minus-circle' : 'ph-plus-circle'"></i>
             <span x-text="deeper ? 'Show less' : 'Go deeper'"></span>
           </button>
@@ -245,7 +245,7 @@
         {% if c %}
         {% comment %}Axis 2 only: the lead is the header; clicking the band reveals
         the empirical/values branches. No breadth axis — there is one crux.{% endcomment %}
-        <div class="crux"{% if c.empirical or c.values %} x-data="{ more: false }" :class="{ 'is-open': more }" @click="more = !more"{% endif %}>
+        <div class="crux"{% if c.empirical or c.values %} x-data="{ more: false }" :class="{ 'is-open': more }" @click="more = !more; if (!more) anchorCollapse($el)"{% endif %}>
           <p class="clead">{{ c.lead|lead_hl:c.lead_highlight }}</p>
           {% if c.subtitle %}<p class="csub">{{ c.subtitle }}</p>{% endif %}
           {% if c.empirical or c.values %}
@@ -253,7 +253,7 @@
             <div class="ax emp"><div class="ah"><i class="ph-duotone ph-flask"></i>If it's empirical</div><p>{{ c.empirical }}</p></div>
             <div class="ax val"><div class="ah"><i class="ph-duotone ph-heart"></i>If it's values</div><p>{{ c.values }}</p></div>
           </div>
-          <button type="button" class="cmore" @click.stop="more = !more" :aria-expanded="more">
+          <button type="button" class="cmore" @click.stop="more = !more; if (!more) anchorCollapse($el.closest('.crux'))" :aria-expanded="more">
             <span x-text="more ? 'Show less' : 'See how it resolves'"></span>
             <i class="ph-duotone ph-caret-down" :class="{ flip: more }"></i>
           </button>
@@ -267,7 +267,7 @@
       </section>
 
       {% elif section.kind == "actions" %}
-      <section class="sec" id="actions" x-data="{ af: 'all', deeper: false, open: true }"
+      <section class="sec" id="actions" x-data="{ deeper: false, open: true }"
                :class="{ 'is-open': deeper, 'acc-open': open }">
         <button type="button" class="acc-head m-only" :aria-expanded="open" @click="open = !open">
           <span class="ai"><i class="ph-duotone ph-{{ section.eyebrow_icon }}"></i></span>
@@ -276,11 +276,6 @@
         </button>
         <div class="sec-body">
           <div class="eyebrow"><i class="ph-duotone ph-{{ section.eyebrow_icon }}"></i>Actions <span class="sub">· {{ section.eyebrow_sub }}</span><span class="stepn">{{ section.step }}</span></div>
-          <div class="act-filter when-normal is-flex">
-            {% for key, label in act_filters %}
-            <button type="button" class="afilt" :class="{ on: af === '{{ key }}' }" @click="af = '{{ key }}'">{{ label }}</button>
-            {% endfor %}
-          </div>
           <div class="act-grid">
             {% for a in section.actions.all %}{% include "topics/components/_action.html" %}{% endfor %}
           </div>

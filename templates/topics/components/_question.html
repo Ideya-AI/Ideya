@@ -4,8 +4,8 @@ paragraph (q.detail). Axis 1 (breadth): `is_extra` rows appear only when the
 section's Go-deeper is open.{% endcomment %}
 <div class="q{% if q.is_extra %} q-xtra{% endif %}" x-data="{ more: false }">
   {% include "topics/components/_qvote.html" %}
-  {% if q.detail %}<button type="button" class="xtoggle" @click.stop="more = !more" :aria-expanded="more" aria-label="Toggle analysis"><i class="ph-duotone ph-caret-down"></i></button>{% endif %}
-  <div class="qb{% if q.detail %} qb-x{% endif %}"{% if q.detail %} @click="more = !more"{% endif %}>
+  {% if q.detail %}<button type="button" class="xtoggle" @click.stop="more = !more; if (!more) anchorCollapse($el.closest('.q'))" :aria-expanded="more" aria-label="Toggle analysis"><i class="ph-duotone ph-caret-down"></i></button>{% endif %}
+  <div class="qb{% if q.detail %} qb-x{% endif %}"{% if q.detail %} @click="more = !more; if (!more) anchorCollapse($el.closest('.q'))"{% endif %}>
     <span class="qtag {% if q.kind == 'empirical' %}emp{% else %}val{% endif %}" data-tip="{{ q.kind_tip }}"><i class="ph-duotone ph-{{ q.tag_icon }}"></i>{{ q.get_kind_display }}</span>
     <div class="qt">{{ q.text }}</div>
     {% if q.why %}<p class="qw"><b>Why it's contested:</b> {{ q.why }}</p>{% endif %}

@@ -1,22 +1,27 @@
-{% comment %}A named position — the heart. Expects `p`.
+{% comment %}A named position — the heart. Expects `p` inside the pos-grid's
+rowGrid Alpine scope (expansion state lives on the grid, keyed by data-xid, so
+row partners open together — see rowGrid in ideya.js).
 Axis 1 (breadth): `is_extra` cards appear only when the section's Go-deeper is open.
 Axis 2 (depth): glance = name + steelman; tapping the card expands `.pmore`
 (description, detail, representative, proponents) inline on every viewport, with
 the caret toggle as the visible affordance on all viewports (mirroring
 _stat_tile). The participation foot is click-isolated so voting never toggles
 the expand.{% endcomment %}
-<div class="pos{% if p.is_extra %} pos-xtra{% endif %}{% if p.has_more %} pos-x{% endif %}"
-     x-data="{ more: false }"{% if p.has_more %} :class="{ 'pos-open': more }" @click="more = !more"{% endif %}>
+<div class="pos{% if p.is_extra %} pos-xtra{% endif %}{% if p.has_more %} pos-x{% endif %}" data-xid="{{ p.id }}"
+     {% if p.has_more %}:class="{ 'pos-open': open[{{ p.id }}] }" @click="toggle($el)"{% endif %}>
   <span class="prail" style="background:{{ p.color_var }}"></span>
-  {% if p.has_more %}<button type="button" class="xtoggle" @click.stop="more = !more" :aria-expanded="more" aria-label="Toggle detail"><i class="ph-duotone ph-caret-down"></i></button>{% endif %}
+  {% if p.has_more %}<button type="button" class="xtoggle" @click.stop="toggle($el.closest('.pos'))" :aria-expanded="!!open[{{ p.id }}]" aria-label="Toggle detail"><i class="ph-duotone ph-caret-down"></i></button>{% endif %}
   <div class="phead"><span class="pdot" style="background:{{ p.color_var }}"></span><span class="pn">{{ p.name }}</span></div>
   <p class="psteel">“{{ p.steelman }}”</p>
   {% if p.has_more %}
-  <div class="pmore" x-show="more" x-cloak>
+  <div class="pmore" x-show="open[{{ p.id }}]" x-cloak>
     {% if p.description %}<p class="pdesc">{{ p.description }}</p>{% endif %}
     {% if p.detail %}<div class="pdetail">{{ p.detail|linebreaks }}</div>{% endif %}
     {% if p.representative_name %}<p class="prep"><i class="ph-duotone ph-user-focus"></i><span><b>{{ p.representative_name }}</b> — {{ p.representative_note }}</span></p>{% endif %}
     {% if p.proponents %}<p class="pprop"><b>Proponents:</b> {{ p.proponent_list|join:" · " }}</p>{% endif %}
   </div>
   {% endif %}
+  <div class="pfoot">
+    <span class="pfoot-hit" @click.stop>{% include "topics/components/_pimp.html" %}</span>
+  </div>
 </div>

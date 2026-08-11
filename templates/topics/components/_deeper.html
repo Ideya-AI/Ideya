@@ -5,7 +5,7 @@ d_only = the section handles depth differently on mobile (positions use the
 bottom sheet), so the control is desktop-only.{% endcomment %}
 {% if section.has_layer_deep or section.has_layer_normal %}
 <button type="button" class="deeper{% if not section.has_layer_deep %} m-only{% endif %}{% if d_only %} d-only{% endif %}"
-        :aria-expanded="deeper" @click="deeper = !deeper">
+        :aria-expanded="deeper" @click="deeper = !deeper; if (!deeper) anchorCollapse($el)">
   <i class="ph-duotone" :class="deeper ? 'ph-minus-circle' : 'ph-plus-circle'"></i>
   <span x-text="deeper ? 'Show less' : 'Go deeper'"></span>
 </button>

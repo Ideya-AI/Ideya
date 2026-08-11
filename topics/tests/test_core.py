@@ -130,8 +130,13 @@ class ContentManagementTests(NuclearFixtureMixin, TestCase):
             title="Carbon Capture", slug="carbon-capture", status=Topic.DRAFT
         )
 
-    def test_draft_is_invisible_to_readers(self):
-        self.assertEqual(self.client.get("/carbon-capture/").status_code, 404)
+    def test_draft_gets_coming_soon_stub_not_content(self):
+        # Drafts are public teaser pages (2026-08-10): stub note + noindex,
+        # never sections — and they stay out of home and search.
+        resp = self.client.get("/carbon-capture/")
+        self.assertEqual(resp.status_code, 200)
+        self.assertContains(resp, "on the map, but not yet written")
+        self.assertContains(resp, "noindex")
         self.assertNotContains(self.client.get("/"), "Carbon Capture")
         self.assertNotContains(self.client.get("/search/?q=carbon"), "Carbon Capture")
 

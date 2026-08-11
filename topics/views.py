@@ -382,24 +382,6 @@ def topic_detail(request, slug):
             for p in s.positions.all():
                 p.user_vote = voted_p.get(p.id, 0)
     topic_prompts = _attach_prompts(request, topic, sections)
-    # Filter chips derived from the action kinds actually present, so a chip never
-    # dead-ends to an empty grid. submit_view stays off the bar (it's the "add your
-    # view" CTA, shown under All).
-    actions_section = next((s for s in sections if s.kind == "actions"), None)
-    present = (
-        {a.kind for a in actions_section.actions.all()} if actions_section else set()
-    )
-    act_filters = [("all", "All")] + [
-        (key, label)
-        for key, kind, label in (
-            ("learn", Action.LEARN_MORE, "Learn"),
-            ("donate", Action.DONATE, "Donate"),
-            ("volunteer", Action.VOLUNTEER, "Volunteer"),
-            ("policy", Action.POLICY, "Policy"),
-            ("local", Action.LOCAL, "Local"),
-        )
-        if kind in present
-    ]
     return render(
         request,
         "topics/detail.html",
@@ -411,7 +393,6 @@ def topic_detail(request, slug):
             "positions": positions,
             "topic_prompts": topic_prompts,
             "min_prompt_sample": MIN_PROMPT_SAMPLE,
-            "act_filters": act_filters,
             # DEBUG-only capture aid: ?expanded=1 forces all depth layers
             # visible so render_screens --expanded can photograph them.
             "expanded": settings.DEBUG and request.GET.get("expanded") == "1",
