@@ -220,7 +220,7 @@ class Command(BaseCommand):
             # Long units/notes are drafting defects (unit is a display token;
             # a note is one sentence) — slicing silently garbles the rendered
             # tile, so say what was lost.
-            for field, cap in (("unit", 12), ("note", 400)):
+            for field, cap in (("unit", 24), ("note", 400)):
                 if len(s.get(field, "")) > cap:
                     self.stderr.write(
                         self.style.WARNING(
@@ -255,7 +255,7 @@ class Command(BaseCommand):
                 tier=max(1, int(s.get("tier") or 1)),
                 label=s.get("label", "")[:120],
                 value=s.get("value", "")[:24],
-                unit=s.get("unit", "")[:12],
+                unit=s.get("unit", "")[:24],
                 viz=viz,
                 wide=bool(s.get("wide")),
                 series=series if viz in ("ranked", "sparkline") else [],

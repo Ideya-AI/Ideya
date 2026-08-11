@@ -609,7 +609,11 @@ class Stat(models.Model):
     viz = models.CharField(max_length=12, choices=VIZ_CHOICES, default=BAR)
     wide = models.BooleanField(default=False, help_text="Span two columns (ranked).")
     value = models.CharField(max_length=24, blank=True, help_text="Headline number.")
-    unit = models.CharField(max_length=12, blank=True, help_text="e.g. %, g, ×, kt.")
+    unit = models.CharField(
+        max_length=24,
+        blank=True,
+        help_text="Spelled out for the glance layer, e.g. %, ' tonnes', ' trillion/yr'.",
+    )
     fill_pct = models.PositiveSmallIntegerField(
         null=True, blank=True, help_text="0–100 bar/radial fill."
     )

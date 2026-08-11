@@ -33,12 +33,12 @@ load, and warns on placeholder action URLs and truncated stat units/notes.
       "intro": "lead-in copy",
       "stats": [{
         "label", "value",
-        "unit",                                        // DISPLAY TOKEN <= 12 chars ('%', '$B/yr')
+        "unit",                                        // <= 24 chars, SPELLED OUT (' points', ' trillion/yr'; leading space before word units; currency goes in value: '$3–4')
         "viz": "bar|ranked|radial|range|sparkline",   // default bar
         "wide": true|false,                            // ranked tiles span two columns
         "series": [{ "label", "value", "pct", "highlight", "source_label", "source_url" }],  // ranked rows; per-row source empty when the stat-level source covers it
         "range_min", "range_max", "range_at": 0-100,   // range viz track + marker
-        "fill_pct": 0-100,
+        "fill_pct": 0-100 | null,                      // ONLY a true share of a whole the tile names (then = value); null otherwise — decorative bars fake comparisons; real non-% scales use range viz
         "note",                                        // one tight sentence (visible layer)
         "detail",                                      // deeper analysis shown on tile expand
         "tier": 1..n,                                  // 1 = leading; new tier at a natural drop-off
