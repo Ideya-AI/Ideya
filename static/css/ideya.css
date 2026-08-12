@@ -323,7 +323,7 @@ body .sec.is-open .when-normal.is-inline, body .sec.is-open .when-deep.is-inline
    split bar they drive (.a = left pole, blue; .b = right pole, slate). Equal-width
    chips keep the pair symmetric; the % on each flanks the centre, label to the edge. */
 .lean .lt { display: flex; align-items: stretch; gap: 8px; margin-bottom: 8px; }
-.lean .lt .lp { flex: 1 1 0; min-width: 0; display: inline-flex; align-items: baseline; justify-content: space-between; gap: 8px; background: var(--surface); border: 1px solid var(--border); padding: 6px 12px; border-radius: var(--radius-pill); font: inherit; font-size: var(--text-xs); font-weight: var(--weight-semibold); color: var(--fg2); cursor: pointer; white-space: normal; overflow-wrap: anywhere; transition: border-color var(--dur) var(--ease), background var(--dur) var(--ease), color var(--dur) var(--ease); }
+.lean .lt .lp { flex: 1 1 0; min-width: 0; display: inline-flex; align-items: baseline; justify-content: space-between; gap: 8px; background: var(--surface); border: 1px solid var(--border); padding: 6px 12px; border-radius: var(--radius-pill); font: inherit; font-size: var(--text-xs); font-weight: var(--weight-semibold); color: var(--fg2); cursor: pointer; white-space: normal; overflow-wrap: break-word; hyphens: auto; transition: border-color var(--dur) var(--ease), background var(--dur) var(--ease), color var(--dur) var(--ease); }
 .lean .lt .lp b { font-family: var(--font-tabular); }
 .lean .lt .lp.a, .lean .lt .lp.a b { color: var(--pole-a); }
 .lean .lt .lp.b, .lean .lt .lp.b b { color: var(--pole-b); }

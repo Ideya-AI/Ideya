@@ -1,0 +1,601 @@
+{
+ "draft": {
+  "overview": {
+   "summary": "Whether advanced AI arrives as a sharp self-accelerating jump or gradually, and whether control is lost in one decisive moment, by slow drift, or not at all.",
+   "scope_covered": "The transition to superhuman AI: takeoff speed, recursive self-improvement, decisive takeover vs slow disempowerment, warning shots, and what each bet implies for safety strategy.",
+   "scope_excluded": "Near-term harms (bias, jobs, deepfakes), machine consciousness, alignment technique details, and the specific machinery of AI governance regimes.",
+   "why_now": "Frontier labs now publicly target fully automated AI research within a few years, turning the takeoff-speed bet from thought experiment into a near-term planning assumption; in one year of resurveying, AI researchers\u2019 median date for human-level systems moved thirteen years closer.",
+   "icon": "rocket-launch"
+  },
+  "basics": {
+   "intro": "",
+   "stats": [
+    {
+     "label": "AI task-length doubling time \u00b7 autonomous benchmark tasks",
+     "value": "~7",
+     "unit": " months",
+     "viz": "bar",
+     "fill_pct": null,
+     "note": "The length of tasks AI agents can complete on their own, at 50% reliability, has doubled roughly every 7 months for the last 6 years.",
+     "detail": "METR, an independent AI evaluations group, measured this by testing models on software and research tasks of increasing length, from seconds-long tasks in 2019 to roughly hour-long tasks by 2025. Extrapolating implies week-long autonomous tasks within a few years, but METR itself flags that the trend could bend if it depends on a specific capability mix that stops scaling proportionally, and real-world tasks are messier than benchmark tasks.",
+     "tier": 1,
+     "source_label": "METR, \u201cMeasuring AI Ability to Complete Long Tasks\u201d",
+     "source_url": "https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/",
+     "source_published": "2025",
+     "source_accessed": "2026-08-12",
+     "reveal": "condensed",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "range_at": 0,
+     "wide": false
+    },
+    {
+     "label": "Frontier AI training compute growth \u00b7 per year",
+     "value": "4\u20135",
+     "unit": "\u00d7 per year",
+     "viz": "bar",
+     "fill_pct": null,
+     "note": "Training compute for top AI models has grown 4-5x every year since 2020, doubling roughly every 5 months.",
+     "detail": "Epoch AI, a research group that tracks compute trends across thousands of published models, puts the 90% confidence range at 4x to 6x per year since 2020, far faster than historical hardware efficiency gains alone; most of the growth comes from labs spending more on larger runs. Whether the pace holds depends on chip supply, energy, and capital, not just algorithmic progress.",
+     "tier": 1,
+     "source_label": "Epoch AI, Trends dashboard",
+     "source_url": "https://epoch.ai/trends",
+     "source_published": "2025",
+     "source_accessed": "2026-08-12",
+     "reveal": "condensed",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "range_at": 0,
+     "wide": false
+    },
+    {
+     "label": "Median year for human-level AI \u00b7 AI researcher survey",
+     "value": "2047",
+     "unit": "",
+     "viz": "bar",
+     "fill_pct": null,
+     "note": "AI researchers\u2019 median even-odds year for machines matching humans at every task is 2047, thirteen years earlier than the same survey found just one year before.",
+     "detail": "In late 2023, AI Impacts surveyed 2,778 researchers who had published at top AI venues; the median respondent put a 10% chance on high-level machine intelligence by 2027 and 50% by 2047, down from a median of 2060 in an equivalent survey of the same population one year earlier. Individual estimates span decades in both directions, response rates were roughly 15-17%, and the surveyed population skews toward people already engaged with AI research.",
+     "tier": 1,
+     "source_label": "\u201cThousands of AI Authors on the Future of AI\u201d (AI Impacts survey)",
+     "source_url": "https://arxiv.org/abs/2401.02843",
+     "source_published": "2024",
+     "source_accessed": "2026-08-12",
+     "reveal": "condensed",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "range_at": 0,
+     "wide": false
+    },
+    {
+     "label": "AI catastrophe probability \u00b7 researcher survey",
+     "value": "5",
+     "unit": "%",
+     "viz": "radial",
+     "fill_pct": 5,
+     "note": "Surveyed AI researchers put a median 5% chance on AI causing human extinction or a similarly severe and permanent loss of human power, and a substantial minority put it at 10% or higher.",
+     "detail": "The median comes from AI Impacts\u2019 2022 survey of machine-learning researchers and was corroborated in the larger 2023 follow-up (2,778 respondents), where the share assigning 10%+ probability ranged 38-51% depending on exact question wording. Responses are highly right-skewed: most respondents give low probabilities while a substantial minority give much higher ones, and low response rates (~15-17%) leave room for selection effects in either direction.",
+     "tier": 1,
+     "source_label": "AI Impacts / \u201cThousands of AI Authors on the Future of AI\u201d",
+     "source_url": "https://arxiv.org/abs/2401.02843",
+     "source_published": "2024",
+     "source_accessed": "2026-08-12",
+     "reveal": "condensed",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "range_at": 0,
+     "wide": false
+    },
+    {
+     "label": "Frontier AI training-run cost growth \u00b7 per year",
+     "value": "2.4",
+     "unit": "\u00d7 per year",
+     "viz": "bar",
+     "fill_pct": null,
+     "note": "Compute and energy costs for the largest AI training runs have grown 2.4x per year since 2016; researchers project runs exceeding $1 billion by 2027.",
+     "detail": "Epoch AI\u2019s estimates cover hardware amortization and energy for a model\u2019s final training run (e.g. GPT-4, Gemini Ultra), not the larger R&D and staffing spend around it. At this trajectory, only a small number of well-capitalized companies or states can field frontier-scale runs, a structural, funding-driven constraint on who can compete at the capability frontier regardless of how fast algorithms improve.",
+     "tier": 2,
+     "source_label": "Epoch AI, \u201cHow much does it cost to train frontier AI models?\u201d",
+     "source_url": "https://epoch.ai/blog/how-much-does-it-cost-to-train-frontier-ai-models",
+     "source_published": "2024",
+     "source_accessed": "2026-08-12",
+     "reveal": "normal",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "range_at": 0,
+     "wide": false
+    },
+    {
+     "label": "Data-centre electricity demand \u00b7 IEA",
+     "value": "945",
+     "unit": " terawatt-hours",
+     "viz": "bar",
+     "fill_pct": null,
+     "note": "Data centres used about 415 terawatt-hours in 2024; the IEA projects demand more than doubling to roughly 945 by 2030, with AI as the main driver.",
+     "detail": "This is total data-centre electricity use, not AI-specific, but the IEA identifies AI training and inference as the dominant growth driver alongside cloud and crypto. Grid connection and power supply, not chip count or algorithms, is increasingly cited by both AI labs and grid operators as the binding constraint on how fast new AI compute capacity can actually come online.",
+     "tier": 2,
+     "source_label": "International Energy Agency data, via Wikipedia \u201cEnvironmental impact of artificial intelligence\u201d",
+     "source_url": "https://en.wikipedia.org/wiki/Environmental_impact_of_artificial_intelligence",
+     "source_published": "2025",
+     "source_accessed": "2026-08-12",
+     "reveal": "normal",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "range_at": 0,
+     "wide": false
+    },
+    {
+     "label": "Countries committing to AI safety oversight \u00b7 Bletchley Declaration",
+     "value": "28",
+     "unit": " countries + EU",
+     "viz": "bar",
+     "fill_pct": null,
+     "note": "28 countries plus the EU, including the US and China, signed the 2023 Bletchley Declaration, the first international statement naming frontier AI risk a shared concern.",
+     "detail": "Bletchley (November 2023) produced a shared statement of concern, not binding rules, and launched an annual summit series (Seoul 2024, Paris 2025, New Delhi 2026). It sits alongside separate, largely uncoordinated national efforts (the EU AI Act, US executive actions, China\u2019s own AI rules). Whether any current arrangement, national or international, could act fast enough on a discontinuous capability jump, versus only shaping gradual deployment, remains untested.",
+     "tier": 2,
+     "source_label": "Bletchley Declaration, UK AI Safety Summit",
+     "source_url": "https://en.wikipedia.org/wiki/AI_Safety_Summit",
+     "source_published": "2023",
+     "source_accessed": "2026-08-12",
+     "reveal": "normal",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "range_at": 0,
+     "wide": false
+    },
+    {
+     "label": "Frontier AI compute by company \u00b7 H100-equivalent GPUs",
+     "value": "~2.6",
+     "unit": "M H100-equivalents",
+     "viz": "ranked",
+     "fill_pct": null,
+     "note": "Four US companies together held roughly 2.6 million H100-equivalent AI chips in Epoch\u2019s mid-2024 snapshot, and no comparable public count exists for state-controlled compute.",
+     "detail": "Epoch AI\u2019s mid-2024 estimates (in H100-equivalent GPUs): Google ~1.24 million combining its ~920k TPU fleet with ~320k NVIDIA chips, Microsoft ~660k, Meta ~400k and Amazon ~290k, with substantial further capacity across other cloud providers (Oracle, CoreWeave) and companies including Tesla and xAI. The AI buildout has continued rapidly since this snapshot (new Anthropic, xAI, and sovereign compute deals), so exact totals are dated even though the broad picture, capability-relevant compute concentrated among a handful of firms, is not.",
+     "tier": 3,
+     "source_label": "Epoch AI, computing capacity estimates",
+     "source_url": "https://epoch.ai/data-insights/computing-capacity",
+     "source_published": "2024",
+     "source_accessed": "2026-08-12",
+     "reveal": "deep",
+     "series": [
+      {
+       "label": "Google",
+       "value": "1.24M",
+       "pct": 100,
+       "highlight": false,
+       "source_label": "",
+       "source_url": ""
+      },
+      {
+       "label": "Microsoft",
+       "value": "660k",
+       "pct": 53,
+       "highlight": false,
+       "source_label": "",
+       "source_url": ""
+      },
+      {
+       "label": "Meta",
+       "value": "400k",
+       "pct": 32,
+       "highlight": false,
+       "source_label": "",
+       "source_url": ""
+      },
+      {
+       "label": "Amazon",
+       "value": "290k",
+       "pct": 23,
+       "highlight": false,
+       "source_label": "",
+       "source_url": ""
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "range_at": 0,
+     "wide": true
+    },
+    {
+     "label": "Real-world AI harm incidents logged \u00b7 AI Incident Database",
+     "value": "1,600+",
+     "unit": " incidents",
+     "viz": "bar",
+     "fill_pct": null,
+     "note": "A crowdsourced public registry of AI systems causing or nearly causing real-world harm has logged over 1,600 entries and keeps growing.",
+     "detail": "Logged incidents span discrimination, misinformation, safety failures, and accidents involving deployed systems; none to date is civilization-scale, which is itself contested evidence: some read the pattern as reassuring (many small warning shots, no big one), others as showing that warning shots don\u2019t reliably precede a discontinuous jump. The database is crowdsourced and almost certainly undercounts incidents in regions with less press or tech-sector coverage.",
+     "tier": 3,
+     "source_label": "AI Incident Database",
+     "source_url": "https://incidentdatabase.ai/",
+     "source_published": "2026",
+     "source_accessed": "2026-08-12",
+     "reveal": "deep",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "range_at": 0,
+     "wide": false
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Can AI meaningfully accelerate AI research itself, and would that feedback loop run fast enough to outpace human oversight?",
+    "kind": "empirical",
+    "why": "AI already speeds up the engineers who build AI; whether that help compounds into a self-reinforcing loop is the unresolved premise the whole takeoff debate rests on.",
+    "detail": "The evidence base is real but thin. Labs already report using AI internally to write code, generate evals, and search architectures, giving Hard Takeoff Hawks a live existence proof that AI-assisted AI research is not science fiction. Their strongest case is that recursive self-improvement is a matter of degree, not kind: once a model can meaningfully speed up the next model\u2019s training pipeline, the loop compounding further is a rate question, not an if question, and rates can surprise. The gap in that case is that speeding up a subtask (writing code, sifting logs) is a long way from automating the parts of research that still require physical compute build-out, data collection, and slow empirical validation, and no discontinuous jump has yet been observed despite years of AI-assists-AI narratives. Course-Correction Gradualists and Normal Technology Skeptics both lean on that gap, arguing that even fast software-layer gains hit hard, months-to-years bottlenecks (fabs, power, physical experiment) that no amount of algorithmic cleverness dissolves overnight. The disagreement is ultimately about which bottleneck binds first: the software loop or the physical world.",
+    "lean_label_a": "Compounds fast",
+    "lean_label_b": "Stays capped",
+    "lean_pct_a": 30,
+    "tier": 1,
+    "reveal": "condensed"
+   },
+   {
+    "text": "Do real-world bottlenecks (compute, data, physical experiment) damp any takeoff regardless of algorithmic progress?",
+    "kind": "empirical",
+    "why": "Skeptics say chips, energy, and data supply put a physical speed limit on any capability jump; hawks argue a software-only loop could outrun them before the physical world can respond.",
+    "detail": "Normal Technology Skeptics have the more concrete evidence: chip fabrication, power buildout, and the physical infrastructure behind frontier training runs move on multi-year timescales set by capital and construction, not by algorithmic insight, and every past general-purpose technology diffused unevenly because of exactly these kinds of real-world constraints. Hard Takeoff Hawks grant the constraint on training new frontier models but argue it does not bind the more dangerous scenario, a system getting dramatically more capable using compute and data it already has access to, through better algorithms, better use of existing hardware, or self-directed fine-tuning, none of which requires new fabs to come online. The disagreement narrows to a specific empirical question with no settled answer: how much of frontier capability is currently compute-and-data-bound versus algorithm-bound, and how much headroom exists in the second category before physical bottlenecks would have to catch up.",
+    "lean_label_a": "Hard limits hold",
+    "lean_label_b": "Software escapes them",
+    "lean_pct_a": 55,
+    "tier": 1,
+    "reveal": "condensed"
+   },
+   {
+    "text": "Will capability growth be continuous enough to produce warning shots, or could a decisive jump arrive without one?",
+    "kind": "empirical",
+    "why": "Gradualists point to years of smooth, predictable scaling; hawks answer that single capabilities have jumped before, and that the most dangerous jump is the one that skips the warning.",
+    "detail": "Course-Correction Gradualists have the stronger track record to point to: capability growth so far has tracked fairly continuous scaling trends, and iterative deployment (staged releases, evals, red-teaming) has repeatedly surfaced smaller-scale failures before they became large ones, which is itself an argument that the mechanism generating warning shots is structural, not lucky. Hard Takeoff Hawks reply that continuity in aggregate benchmarks has coexisted with genuinely discontinuous jumps in specific narrow capabilities, and that the property that matters most (whether a system is scheming or power-seeking) is exactly the kind of capability that a system has incentive to hide until it no longer needs to, meaning smooth external metrics could mask a step change in the one dimension nobody is measuring. The crux is whether \u2018warning shot\u2019 is a property of capability curves in general (gradualist bet) or of this particular capability (hawk bet), and no one has a reliable instrument for the second.",
+    "lean_label_a": "Warning shots likely",
+    "lean_label_b": "Jump, no warning",
+    "lean_pct_a": 55,
+    "tier": 1,
+    "reveal": "condensed"
+   },
+   {
+    "text": "Does losing control require a power-seeking system, or can ordinary competition hand power to AI systems no one directs?",
+    "kind": "empirical",
+    "why": "The classic safety scenario needs a scheming agent to lose control to; disempowerment theorists argue no villain is required, since competition alone can hollow out the levers humans hold.",
+    "detail": "The traditional case (and the one Hard Takeoff Hawks build on) is agent-centric: a misaligned system with goals of its own seeks power because power helps achieve almost any goal, and the danger is legible as a specific system doing a specific thing. Gradual Disempowerment Theorists reject that this is even necessary: if AI systems are cheaper, faster, or more competitive than humans at running firms, informing culture, or administering states, then competitive pressure alone pushes decision-makers to hand them more and more real authority, with no single system ever needing to \u2018want\u2019 anything. Their strongest evidence is structural analogy, not a smoking gun: automation, financialization, and platform algorithms have already shifted real influence to systems no human directly steers, without any of them being agentic in the science-fiction sense. The rebuttal from Hard Takeoff Hawks and Course-Correction Gradualists is that this analogy proves diffusion of influence, not loss of control, since humans can still in principle turn the systems off. Whether that \u2018in principle\u2019 remains true once institutions depend on AI systems to function is exactly what is contested.",
+    "lean_label_a": "Needs an agent",
+    "lean_label_b": "No agent needed",
+    "lean_pct_a": 55,
+    "tier": 1,
+    "reveal": "normal"
+   },
+   {
+    "text": "How much present benefit is worth forgoing to insure against a takeover scenario whose probability no one can agree on?",
+    "kind": "value",
+    "why": "One side treats an unbounded downside as reason enough to pay a real cost now, the other treats an unmeasurable tail risk as no reason to give up certain, compounding gains.",
+    "detail": "There is no shared probability estimate to plug into an expected-value calculation, which is what makes this a value question rather than a modeling exercise. Course-Correction Gradualists and Hard Takeoff Hawks (despite disagreeing on timing) both tend to favor real present costs (slower deployment, mandatory evaluations, compute caps) because they treat catastrophic and irreversible downside as dominating even a low or unknown probability. Effective Accelerationists and Normal Technology Skeptics push back from different angles: accelerationists argue that slowing down does not remove the risk, it just hands the frontier to whoever is least cautious, so the \u2018safe\u2019 choice is actually the reckless one; skeptics argue that treating an unquantified tail risk as decision-relevant at all is a category error that could justify forgoing almost unlimited benefit (medical, economic) for a threat that may not be physically realizable. The disagreement is not really about the size of the risk, it is about what kind of uncertainty licenses costly precaution.",
+    "lean_label_a": "Pay to insure",
+    "lean_label_b": "Don\u2019t sacrifice now",
+    "lean_pct_a": 55,
+    "tier": 2,
+    "reveal": "condensed"
+   },
+   {
+    "text": "If takeoff is slow, would institutions actually use the extra time to course-correct, or just normalize each increment?",
+    "kind": "empirical",
+    "why": "Slow takeoff buys time, but gradualists bet it gets used to steer while disempowerment theorists point to other well-warned, slow-building risks that were normalized instead of fixed.",
+    "detail": "Course-Correction Gradualists\u2019 case rests on a mechanism, not just hope: staged capability growth generates staged evidence, and institutions (regulators, labs, courts) have historically used exactly that kind of accumulating evidence to build oversight regimes for other technologies over years or decades. The doubt, pressed hardest by Gradual Disempowerment Theorists, is that \u2018time available\u2019 and \u2018time used\u2019 are different things: slow-building, well-telegraphed risks in other domains have often been normalized incrementally rather than corrected, precisely because each individual increment looked tolerable and the actors best positioned to notice the trend line had competitive reasons not to slow down. Applied here, the worry is that each new AI capability gets absorbed as the new baseline before its cumulative effect on who holds real decision-making power is visible. There is no controlled experiment either way; the dispute is about which historical precedent is the better analogy for this case.",
+    "lean_label_a": "Time gets used",
+    "lean_label_b": "Just normalized",
+    "lean_pct_a": 40,
+    "tier": 2,
+    "reveal": "normal"
+   },
+   {
+    "text": "Who should decide whether systems that might be uncontrollable get built at all: labs, states, or the public?",
+    "kind": "value",
+    "why": "Whoever bears the risk arguably deserves a vote, but the actors with the technical understanding and the speed to act are labs and states, not the public.",
+    "detail": "Effective Accelerationists\u2019 implicit answer is closest to \u2018none of the above, in a centralized sense\u2019: open competition among many labs and states, not a single designated decider, is what prevents any one actor from unilaterally controlling the outcome, so the right governance is decentralized rather than assigned. Course-Correction Gradualists and Hard Takeoff Hawks generally favor some mix of state and international authority, on the logic that a risk this consequential and this technical cannot be left to the commercial incentives of the firms building it, mirroring how other dual-use, catastrophic-risk technologies were eventually brought under state oversight. The public-mandate case, pressed by disempowerment-focused voices, is that the people bearing the downside of a bad outcome are the general public, not labs or even states acting on their behalf, so legitimacy requires some form of public consent, even though the public lacks the technical fluency to evaluate specific capability claims. No position resolves the tension between who understands the risk and who bears it.",
+    "lean_label_a": "Public mandate",
+    "lean_label_b": "Experts decide",
+    "lean_pct_a": 60,
+    "tier": 3,
+    "reveal": "deep"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Normal Technology Skeptic",
+    "steelman": "AI diffuses like electricity did: decades of adoption lag, not a discontinuous jump.",
+    "description": "We judge AI by how technologies actually spread through the world, not by benchmark scores or thought experiments about a discontinuous jump nobody can specify a mechanism for. Invention is fast; adoption is slow and bottlenecked by organizations rather than chips: generative AI reached 40% of U.S. adults within two years but still accounts for only 0.5-3.5% of work hours (Bick et al., 2024), much as electrification took roughly four decades to show up in factory productivity (David, 1990). Recursive self-improvement, if it happens, will look far more like the gradual automation of research tasks we are already watching than a singular takeoff. Loss of control is a practical engineering and governance problem, solved the way aviation safety was, through auditing, monitoring, circuit breakers, and sector-specific regulation: build resilience and evidence, not moratoriums.",
+    "detail": "The clearest articulation is Arvind Narayanan and Sayash Kapoor\u2019s \u201cAI as Normal Technology\u201d (Knight First Amendment Institute, April 2025), which explicitly frames itself as a worldview competing with the \u201ctransformative AI\u201d and superintelligence framings that dominate lab and policy discourse, and concedes upfront that it hasn\u2019t yet answered every counterargument from the alignment literature. The strongest evidence is empirical, not philosophical: benchmark leaps (bar exam scores, coding evals) have repeatedly failed to predict real-world reliability, the \u201ccapability-reliability gap\u201d that keeps autonomous agents from being trusted with consequential tasks; Epic\u2019s sepsis-prediction algorithm scored well in internal validation but missed roughly two-thirds of real cases once deployed, exactly the kind of gap sector-specific safety regulation exists to catch.\n\nJeffrey Ding\u2019s work on the diffusion of general-purpose technologies backs the deeper claim: national and organizational power has historically tracked broad absorptive capacity for a technology, not who has the single best lab or model. The position doesn\u2019t deny catastrophic misuse or accident risk \u2014 it argues those are addressable through the same downstream defenses, auditing, and market and regulatory pressure that tamed aviation and are already reshaping self-driving cars, and that misalignment at the level of a rogue superintelligence remains a \u201cspeculative risk\u201d worth building resilience for, not the organizing premise for restricting development today. Its live internal tension: proponents disagree on how much of the \u201csystemic risk\u201d bucket (bias entrenchment, job displacement, surveillance, democratic erosion) deserves urgent policy attention now versus later, and critics inside the broader discourse note the essay\u2019s own admission that it has bet against fast, discontinuous takeoff rather than rebutted the case for it.",
+    "tier": 1,
+    "proponents": "Arvind Narayanan, Sayash Kapoor, Jeffrey Ding",
+    "representative_name": "Arvind Narayanan & Sayash Kapoor",
+    "representative_note": "Princeton computer scientists; their April 2025 essay \u201cAI as Normal Technology\u201d (Knight First Amendment Institute) is the position\u2019s foundational text.",
+    "prevalence_weight": 32,
+    "spectrum_position": 2,
+    "color_key": ""
+   },
+   {
+    "name": "Course-Correction Gradualist",
+    "steelman": "Fast is fine if it\u2019s continuous: every rung up the ladder is a chance to steer.",
+    "description": "What we are protecting is our ability to steer, not a guess about where the road ends. Capability really is accelerating: METR measured a roughly seven-month doubling time in the length of tasks AI agents can autonomously complete, sustained over six straight years, yet that curve is smooth and forecastable rung by rung, not a cliff. That is why staged regimes like Anthropic\u2019s Responsible Scaling Policy gate the next capability tier on solving the last one\u2019s safety failures instead of demanding alignment be solved before anything gets built. Even Paul Christiano\u2019s canonical slow-takeoff case asks only for months to years of lead time, not decades, and that is enough to correct course before any single decisive jump.",
+    "detail": "The intellectual anchor is Paul Christiano\u2019s 2018 essay \u201cTakeoff speeds,\u201d written explicitly against the Bostrom/Yudkowsky hard-takeoff picture: Christiano\u2019s own estimate put fast takeoff at roughly 30%, against the 70-90% then common in parts of the rationalist safety community, precisely because he expected an early, weaker, deployed version of any powerful capability to exist and diffuse before the frontier version did. Ajeya Cotra\u2019s biological-anchors work and Tom Davidson\u2019s compute-centric takeoff modeling (Open Philanthropy) both refined this into quantitative form: even a software-driven \u201cintelligence explosion,\u201d where AI meaningfully accelerates AI research, plays out over a period of months to a few years of compressed but trackable progress, not hours or days.\n\nThe position\u2019s strongest recent evidence is empirical rather than theoretical: METR\u2019s time-horizon tracking shows a consistent, measurable doubling trend rather than a discontinuity, and organizations from METR to the UK and US AI Safety Institutes now run pre-deployment evaluations specifically because capability jumps between model generations have so far been legible enough to test for in advance. The live internal debate is less about whether growth is continuous (most in this camp now grant it\u2019s fast) than about whether \u201clegible\u201d will remain true once AI starts automating its own R&D loop, and whether institutions will actually act on warning shots (jailbreaks, deceptive eval behavior, agentic mishaps) rather than normalizing them; proponents point to the fact that every major lab now ships a public responsible-scaling or preparedness framework as evidence the correction mechanism is already operating, not merely hoped for.",
+    "tier": 1,
+    "proponents": "Paul Christiano, Ajeya Cotra, Tom Davidson, Anthropic (Responsible Scaling Policy), METR (Beth Barnes), Jan Leike",
+    "representative_name": "Paul Christiano",
+    "representative_note": "AI safety researcher (Alignment Research Center); his 2018 essay \u201cTakeoff speeds\u201d is the founding argument for AI progress that is fast, transformative, and continuous enough to correct course before a decisive moment.",
+    "prevalence_weight": 28,
+    "spectrum_position": -1,
+    "color_key": ""
+   },
+   {
+    "name": "Hard Takeoff Hawk",
+    "steelman": "Once a mind can improve itself, human oversight doesn\u2019t get a second try.",
+    "description": "One mechanism deserves to be taken literally: intelligence applied to the problem of building intelligence is the one feedback loop with no obvious ceiling, and once a system can improve the process that trains its successor, capability compounds faster than any human institution can watch and react. In a decisive jump, the first misaligned superintelligence does not get corrected, it gets to act first. The mechanism is not hypothetical: I.J. Good named the intelligence explosion in 1965, and the AI 2027 forecast, co-written by ex-OpenAI researcher Daniel Kokotajlo, models AI-automated research reaching a 50x progress multiplier within about a year, the point where a year passes every week. Every current alignment technique is post-hoc pattern-matching on systems nobody can read from the inside, so hoping the first superintelligence happens to land safely is not a strategy.",
+    "detail": "The argument has a long pedigree: I.J. Good\u2019s 1965 paper coined \u201cintelligence explosion,\u201d and Nick Bostrom\u2019s Superintelligence (2014) formalized it with the orthogonality thesis (intelligence and goals are independent) and instrumental convergence (almost any goal creates incentives to seek resources and resist being shut down). Eliezer Yudkowsky pushed the hardest version in the 2008 \u201cFOOM debate\u201d with Robin Hanson, arguing capability gains would be local to one lab or system and fast, not smoothly diffused across the economy the way past technologies were.\n\nThe newest addition to the case is MIRI\u2019s own trajectory: after roughly two decades trying to find a technical alignment solution, Yudkowsky and Nate Soares\u2019s 2025 book \u201cIf Anyone Builds It, Everyone Dies\u201d concluded the field has run out of runway, comparing a future confrontation with superintelligence to a human playing chess against Stockfish: you don\u2019t see the loss coming, you just lose. A related internal concept, the \u201csharp left turn,\u201d holds that capabilities and alignment don\u2019t fail together: a self-improving system\u2019s raw problem-solving generalizes far past the point where its trained-in safety behavior still holds, so the system can look aligned right up until it isn\u2019t. Proponents disagree on how certain the outcome is (Yudkowsky treats it as near-certain absent a halt, Bostrom and the AI 2027 authors frame it as a dominant-probability scenario worth acting on, not a certainty), but they converge on the operational claim: nobody today has a technique that would reliably control a system smarter than its makers, and the absence of that technique is itself the emergency, not a research gap to be funded through at leisure.",
+    "tier": 1,
+    "proponents": "Eliezer Yudkowsky, Nate Soares, Nick Bostrom, I.J. Good, Daniel Kokotajlo",
+    "representative_name": "\u201cIf Anyone Builds It, Everyone Dies\u201d (Yudkowsky & Soares, 2025)",
+    "representative_note": "MIRI\u2019s flagship book-length case: after two decades searching for a technical fix, its authors concluded none exists in time and call for an international halt on frontier development rather than continued racing.",
+    "prevalence_weight": 18,
+    "spectrum_position": -3,
+    "color_key": ""
+   },
+   {
+    "name": "Gradual Disempowerment Theorist",
+    "steelman": "You don\u2019t need a coup to lose control: you just need better alternatives to humans.",
+    "description": "What matters is not whether some AI seizes power in one dramatic moment, but whether ordinary people keep the levers (a job worth hiring for, a vote worth courting, a culture worth shaping) that make institutions answer to them at all. Those levers erode through nothing more sinister than competition: firms adopt whichever workforce is cheaper and more reliable, states fund themselves from whichever tax base is easiest to extract, and each domain\u2019s declining need for humans removes the incentive to keep humans in the loop next door. This is not speculative extrapolation: labor\u2019s share of income across most industrialized economies was already sliding from the 1980s onward as capital got cheaper relative to workers (Karabarbounis & Neiman, 2014), and this framework says AI now generalizes that same substitution across economic, cultural, and political systems at once. Kulveit, Douglas, Ammann, Turan, Krueger and Duvenaud\u2019s founding paper names the mechanism a feedback loop: economic power buys cultural and political influence, which secures more economic power, with no single moment anyone could point to and call a takeover.",
+    "detail": "The intellectual seed is Paul Christiano\u2019s 2019 essay \u201cWhat Failure Looks Like,\u201d whose \u201cPart I\u201d describes institutions optimizing for whatever is cheap to measure rather than what people actually want \u2014 \u201cyou get what you can measure,\u201d not what you asked for. Jan Kulveit, Raymond Douglas, Nora Ammann, Deger Turan, David Krueger and David Duvenaud formalized this into \u201cgradual disempowerment\u201d in their January 2025 paper, mapping three systems \u2014 economy, culture, and the state \u2014 that currently stay tethered to human interests only because they still need human labor, human attention, or human tax revenue, and arguing all three could detach from that dependence on roughly the same timeline.\n\nThe live debate inside the safety field is whether this counts as a distinct existential risk at all or is just ordinary political economy running faster; the authors\u2019 answer is that past automation waves hit one system at a time and left the others as a check, whereas AI is positioned to hollow out the economic, cultural, and political checks simultaneously, so no domain is left standing to correct the others. Their strongest evidence is historical pattern more than forecast: the same labor-share decline documented since the 1980s is now visible in AI doing more of the substantive work behind hiring screens, ad targeting, newsfeed curation, and even legislative drafting \u2014 each handover locally rational and individually reversible, but cumulatively not. Proponents are candid this is also the position\u2019s weak point: the paper states plainly that \u201cno one has a concrete plausible plan for stopping gradual disempowerment,\u201d which is exactly their case for treating it as seriously as any sudden-takeover scenario rather than a problem later technical alignment work will simply mop up.",
+    "tier": 1,
+    "proponents": "Jan Kulveit, Raymond Douglas, Nora Ammann, Deger Turan, David Krueger, David Duvenaud, Paul Christiano",
+    "representative_name": "Jan Kulveit",
+    "representative_note": "Lead author of the founding 2025 paper and head of the Alignment of Complex Systems Group, Charles University \u2014 coined and formalized the term \u201cgradual disempowerment.\u201d",
+    "prevalence_weight": 12,
+    "spectrum_position": -2,
+    "color_key": ""
+   },
+   {
+    "name": "Effective Accelerationist",
+    "steelman": "Slowing down doesn\u2019t stop the race \u2014 it just hands the lead to someone less careful.",
+    "description": "We are for abundance: two centuries of general-purpose technology, from mechanization to electricity to computing, raised wages and cut poverty every single time, and there is no evidence intelligence itself will be the exception. The real safety mechanism is not a committee deciding who is allowed to build, it is keeping the field open enough that no one lab, company, or government ever locks in a permanent, unchecked lead. When DeepSeek matched a leading US reasoning model within months in early 2025, at a fraction of the training cost, it showed that frontier leads do not hold and moats do not form: competition does the disciplining work that centralized control keeps promising and failing to deliver. Pause the leaders and you do not pause the technology, you hand the future to whichever lab, state, or actor cares least about doing it right.",
+    "detail": "The movement traces to a pseudonymous May 2022 thread crystallized by physicist Guillaume Verdon under the handle \u201cBeff Jezos,\u201d before Forbes unmasked him in December 2023 \u2014 by then he\u2019d left Google X\u2019s quantum computing team to found Extropic, building thermodynamic hardware on the same premise made literal: more compute, faster, distributed, beats a slow centralized bottleneck.\n\nVerdon frames the case in physics as much as economics, casting intelligence as an extension of thermodynamic complexity and arguing that a civilization maximizing its climb up the energy-capture (Kardashev) gradient is the one that survives, while concentrating power in any single actor \u2014 human or AI \u2014 is the fragile, riskier bet, not the safe one. Marc Andreessen\u2019s October 2023 \u201cTechno-Optimist Manifesto\u201d became the movement\u2019s most-read text, naming the precautionary principle and institutionalized \u201cAI safety\u201d as adversaries and stating flatly that \u201cany deceleration of AI will cost lives\u201c; his companion essay \u201cAI Will Save the World\u201d adds the geopolitical spine, naming a China-dominant AI future as the real risk to guard against and open competition (big labs, startups, open-weight models) as the check against both that outcome and against U.S. regulatory capture by whichever incumbent gets there first.\n\nProponents split on register \u2014 Andreessen pitches the urgency as strategic (an unpausable great-power race), while Verdon\u2019s framing runs closer to civilizational: deceleration isn\u2019t just costly, it\u2019s an evolutionary error. Critics inside AI safety, notably Connor Leahy in public debates with Verdon, press the hardest question the movement hasn\u2019t answered: what stops a capability jump too fast for market competition to catch up to. e/acc\u2019s rejoinder is empirical rather than theoretical \u2014 no such discontinuity has shown up yet; every frontier lead so far, OpenAI\u2019s included, has been matched by rivals (Anthropic, Google DeepMind, and open-weight entrants like DeepSeek) within a year or less, which they read as evidence the diffusion mechanism is already working faster than any regulator could.",
+    "tier": 1,
+    "proponents": "Guillaume Verdon (Beff Jezos), Marc Andreessen, Garry Tan, Aaron Levie",
+    "representative_name": "Guillaume Verdon (BasedBeffJezos)",
+    "representative_note": "Physicist who coined \u201ce/acc\u201d pseudonymously in 2022, then left Google X to found Extropic \u2014 building thermodynamic AI hardware as the accelerationist thesis made literal.",
+    "prevalence_weight": 10,
+    "spectrum_position": 3,
+    "color_key": ""
+   }
+  ],
+  "crux": {
+   "lead": "Will the window for human control close all at once, by inches \u2014 or never at all?",
+   "lead_highlight": "or never at all?",
+   "subtitle": "Every safety strategy on offer is a bet on which answer is right, and the bets don\u2019t hedge each other.",
+   "empirical": "Whether AI-run AI research can outrun its own bottlenecks. If compute, data, and physical experiment keep gating progress, capability growth stays continuous and warning shots arrive in time to matter; if the research loop closes on itself, the first clear signal may also be the last.",
+   "values": "How much certain present benefit to trade against an unrecoverable loss whose probability no one can agree on \u2014 and whether labs, states, or the public get to place that bet for everyone else."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "AI as Normal Technology",
+    "description": "Narayanan and Kapoor\u2019s essay argues AI will diffuse gradually like past general-purpose technologies, bottlenecked by real-world deployment, not existential discontinuity.",
+    "url": "https://knightcolumbia.org/content/ai-as-normal-technology",
+    "for_position": "Normal Technology Skeptic",
+    "tier": 1,
+    "reveal": "condensed"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Join AI Safety Camp",
+    "description": "Apply to AI Safety Camp\u2019s research incubator and pursue a concrete AI safety research direction alongside other participants.",
+    "url": "https://aisafety.camp/",
+    "for_position": "Course-Correction Gradualist",
+    "tier": 1,
+    "reveal": "normal"
+   },
+   {
+    "kind": "donate",
+    "title": "Support MIRI",
+    "description": "The Machine Intelligence Research Institute funds research aimed at reducing existential risk from smarter-than-human AI, premised on a fast takeoff that would be hard to control.",
+    "url": "https://intelligence.org/donate/",
+    "for_position": "Hard Takeoff Hawk",
+    "tier": 1,
+    "reveal": "condensed"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Gradual Disempowerment",
+    "description": "The Kulveit et al. paper lays out how ordinary economic, cultural, and political competition could shift power to AI systems with no takeover or power-seeking required.",
+    "url": "https://gradual-disempowerment.ai/",
+    "for_position": "Gradual Disempowerment Theorist",
+    "tier": 1,
+    "reveal": "condensed"
+   },
+   {
+    "kind": "learn_more",
+    "title": "The Techno-Optimist Manifesto",
+    "description": "Marc Andreessen\u2019s a16z manifesto argues that faster technological and AI development, not deceleration, is what actually saves lives and keeps any single actor from dominating.",
+    "url": "https://a16z.com/the-techno-optimist-manifesto/",
+    "for_position": "Effective Accelerationist",
+    "tier": 1,
+    "reveal": "normal"
+   },
+   {
+    "kind": "policy",
+    "title": "Back Encode\u2019s AI policy work",
+    "description": "Encode, the youth-founded group behind California\u2019s SB 53 and New York\u2019s RAISE Act, campaigns for iterative AI safety regulation such as testing and disclosure requirements.",
+    "url": "https://encodeai.org/",
+    "for_position": "Course-Correction Gradualist",
+    "tier": 2,
+    "reveal": "normal"
+   },
+   {
+    "kind": "submit_view",
+    "title": "Add your view",
+    "description": "Think a genuine position on AI takeoff and control is missing or under-argued here? Submit your own steelman.",
+    "url": "",
+    "for_position": "",
+    "tier": 3,
+    "reveal": "condensed"
+   }
+  ],
+  "categories": [
+   "ai",
+   "global-risk"
+  ]
+ },
+ "verdicts": [
+  {
+   "critic": "neutrality",
+   "pass": true,
+   "blocking": [],
+   "notes": [
+    "Missing-camp check caveat: the session's web-search budget was exhausted before this review ran, so the active-camp scan relied on model knowledge (current to Jan 2026) rather than fresh search. Within that limit, no missing MAJOR camp found: the five positions span the fast/slow x decisive/drift/never space, and PauseAI-style halt advocacy is carried by the Hard Takeoff Hawk entry (MIRI halt call). Three genuine-but-minor stances are unnamed and worth a mention rather than a sixth position: (a) capability skeptics who dispute that superhuman AI is coming at all on the current paradigm (Yann LeCun, Melanie Mitchell, Gary Marcus) \u2014 the substantive view is covered by Normal Technology Skeptic, but its most prominent public faces are not listed as proponents; (b) d/acc / defensive accelerationism (Vitalik Buterin) \u2014 accepts real takeoff risk but answers with accelerating defensive tech rather than pausing or trusting markets; one line in the e/acc or Gradualist detail would cover it; (c) successionists (Rich Sutton) who dispute the premise that losing control is bad \u2014 relevant to the value question on bet-sizing, one clause would suffice.",
+    "Narrator-voice evidence adjudications appear in three question details: Q2 'Course-Correction Gradualists have the stronger track record to point to' and Q6 'Normal Technology Skeptics have the more concrete evidence' both credit the slow/skeptic side, though each is defensible as description of the evidential record and is followed by a charitable hawk rebuttal; Q5's framing presses hardest against gradualists, so the pattern is mixed rather than one-directional. Not misleading, but rephrasing as attributed claims ('point to a stronger track record') would keep the narrator fully out of adjudication.",
+    "Position-detail closings are slightly asymmetric: Normal Technology Skeptic, Gradual Disempowerment, and Effective Accelerationist details all end on an internal tension or unanswered criticism, while the Hard Takeoff Hawk detail ends on the position's own strongest line ('the absence of that technique is itself the emergency'). The Yudkowsky-vs-Bostrom certainty split already in that paragraph could close it for symmetry.",
+    "Actions: Course-Correction Gradualist gets two actions (AI Safety Camp, Encode) while every other position gets one, and AI Safety Camp is generic AI-safety rather than distinctly gradualist; consider reassigning or trimming.",
+    "Encoding artifact: '&amp;' appears in two representative_name fields (Narayanan & Kapoor; Yudkowsky & Soares).",
+    "Sourcing (other critic's dimension, flagged in passing): two Basics stats cite Wikipedia as the source (IEA data-centre projection, Bletchley Declaration) where primary IEA / gov.uk sources exist and would be stronger.",
+    "The e/acc description states the DeepSeek 'fraction of the training cost' claim as flat fact; it is contested accounting, but since it sits inside the position's own-voice description this is acceptable steelman practice \u2014 a hedge could live in the detail if desired."
+   ],
+   "stage": "substance"
+  },
+  {
+   "blocking": [],
+   "critic": "steelman",
+   "pass": true,
+   "notes": [
+    "Normal Technology Skeptic detail closes on a critics'-eye framing (\"bet against fast takeoff rather than rebutted it\"). The essay itself concedes this, so it is defensible, but flipping the last sentence back into the proponents' own confidence (why they think the bet is a good one) would end the section on their strongest note.",
+    "Course-Correction Gradualist attributes a \"roughly 30%\" fast-takeoff probability to Christiano's 2018 essay; that figure comes from his later self-reports rather than the essay text itself. Worth softening the attribution to \"Christiano has put fast takeoff at roughly 30%\" so a pedantic proponent can't quibble.",
+    "Hard Takeoff Hawk's representative is a book title rather than a person; consistent with the camp's center of gravity (MIRI institutional position), but note the asymmetry with other positions' named representatives.",
+    "Effective Accelerationist steelman line uses an em dash where a colon would serve (\"Slowing down doesn't stop the race \u2014 it just hands the lead...\"); register nit for the distribution pass, not a steelman defect.",
+    "Question 1's framing gives Hard Takeoff Hawks their existence proof but the strongest hawk reply to the physical-bottleneck objection (software-only gains on existing hardware) appears only in Question 6; a cross-reference or slight rebalance would let hawks feel fully answered in both places."
+   ],
+   "stage": "substance"
+  },
+  {
+   "critic": "fact-source",
+   "pass": false,
+   "blocking": [
+    {
+     "issue": "Basics stat 8 (\"Frontier AI computing power by company \u00b7 concentration\", 49%) misreads the Epoch source. Epoch's computing-capacity insight (Oct 9 2024) splits Google into two rows \u2014 Google NVIDIA ~320k H100e and Google TPU ~920k H100e \u2014 so Google's total is ~1.24M, not 920k. The draft's series row labelled plainly \"Google \u2014 920,000 H100-eq\" is the TPU fleet only, which drops ~320k from the four-firm sum: the stated combined ~2.27M should be ~2.59M. The headline 49% is therefore understated (~55% against a 4.67M denominator; more if the denominator is the ~4.0M the page's medians actually sum to), and the ranked bars (Microsoft 72%, Meta 43%, Amazon 32%) are all scaled against the wrong Google baseline. The 4.67M total also isn't reproduced by the page \u2014 its listed medians (320k + 660k + 400k + 290k + 1.4M other + 920k TPU) sum to ~3.99M.",
+     "fix": "Either relabel the row \"Google (TPUs)\" and add a second Google row for its ~320k NVIDIA H100e, or use Google's ~1.24M combined figure; recompute the four-firm sum to ~2.59M and the headline share accordingly (~55% if Epoch's total is 4.67M), and rescale the ranked bars against the corrected Google value. Quote the total exactly as Epoch states it at https://epoch.ai/data-insights/computing-capacity, or drop the denominator claim and present the four absolute figures."
+    },
+    {
+     "issue": "Elon Musk is listed in the Effective Accelerationist `proponents` field (and in the detail as someone who \"historically\" pitched the accelerationist case). This misattributes the position to its most prominent public counterexample: Musk signed the March 2023 FLI letter calling for a six-month pause on frontier training runs, publicly endorsed California's SB 1047 in August 2024 (which e/acc campaigned against), and repeatedly puts double-digit probability on AI catastrophe. Wikipedia's e/acc article names Andreessen, Tan, Levie and Pincus as adherents and does not describe Musk as one. A named proponent who publicly holds the opposite view on the pause-vs-accelerate axis undercuts the steelman's claim to be in a real proponent's voice.",
+     "fix": "Remove Elon Musk from the `proponents` list (Verdon, Andreessen, Tan, Levie stand on their own) and drop the \"and, historically, Elon Musk\" clause from the detail, or replace it with a proponent who actually holds the position \u2014 e.g. Mark Pincus, or Verdon's Extropic co-founders \u2014 keeping the strategic-race register the sentence needs."
+    }
+   ],
+   "notes": [
+    "Two of nine Basics stats are sourced to Wikipedia where a primary source exists. The IEA figures (415 TWh 2024 \u2192 ~945 TWh 2030) are accurate and Wikipedia cites them to the IEA's 2025 \"Energy and AI\" report \u2014 cite that directly (https://www.iea.org/reports/energy-and-ai; it 403s bots but is live in a browser). Same for Bletchley: the declaration text is on gov.uk. Honest labelling (\"via Wikipedia\") keeps this out of blocking, but it reads below the atlas's own primary/official-first rule.",
+    "Bletchley stat label \"Countries committing to AI safety oversight\" overstates what 28 countries + the EU actually signed \u2014 a non-binding statement of shared concern. The detail corrects this in the next breath; consider \"Countries signing the first joint statement on frontier AI risk\" so the label doesn't need the walk-back.",
+    "Stat 2's headline value \"4\u20135\u00d7\" is a notch below Epoch's own central estimate: the trends dashboard states 5\u00d7 per year since 2020 (90% CI 4\u00d7\u20136\u00d7, doubling 5.2 months). The detail correctly gives the 4\u20136\u00d7 interval. Setting the value to \"5\" would match the source's headline exactly and still support the \"~5 months\" doubling claim in the note.",
+    "METR's paper contains a second figure that is material to this specific topic and is omitted: fitting only 2024\u20132025 data yields a substantially faster doubling (roughly 4 months), shortening the month-long-task extrapolation by about 2.5 years. Since the whole topic turns on whether the curve is bending, one clause on the recent-subset acceleration would strengthen the stat rather than dilute it. Also worth a recency check \u2014 the ~7-month figure is from March 2025 and METR has continued adding models to the time-horizon trend.",
+    "Course-Correction Gradualist detail refers to \"the UK and US AI Safety Institutes\". Both have been renamed: the UK body became the AI Security Institute (February 2025) and the US body became the Center for AI Standards and Innovation / CAISI (June 2025). The substantive claim (they run pre-deployment evaluations) still holds; the names are stale.",
+    "The Gradual Disempowerment quote is one word off from the paper: it reads \"no one has a concrete plausible plan for stopping gradual human disempowerment\". Restore \"human\" inside the quotation marks.",
+    "Course-Correction Gradualist detail credits \"Ajeya Cotra's biological-anchors work\" with refining takeoff speed into quantitative form. Bio-anchors is a timelines model (when transformative AI arrives), not a takeoff-speed model; Tom Davidson's compute-centric takeoff report is the one that does the takeoff-speed work. Either drop Cotra from that sentence or attribute her separately for timelines.",
+    "The AI Safety Camp action description ends \"...alongside other participants, evals and iteration in practice.\" The program is a research incubator built around framing a genuinely confusing research question, with lightning talks and one-on-ones; it is not evals-focused. Trim the trailing clause.",
+    "Hard Takeoff Hawk detail: the AI 2027 numbers check out (Agent-4, September 2027: 300,000 copies at ~50x human thinking speed, \"a year passes every week\", overall algorithmic progress sped up \"by about 50x\" because of compute bottlenecks). \"Within about a year\" is loose \u2014 the scenario reaches that point roughly six months after its superhuman-coder milestone. Pinning it to the milestone rather than an unanchored year would be tighter.",
+    "Verified clean and needing no change: METR 7-month doubling over 6 years; Epoch cost growth 2.4x/year since 2016 with $1B runs by 2027 (and the hardware+energy-only scoping); AI Impacts 2,778 respondents, 10% by 2027, 50% by 2047, 13 years earlier than 2060, 15% response rate, median 5% on extinction-or-severe-disempowerment, 38\u201351% at 10%+; AI Incident Database at 1,600+ (recent IDs ~1631); Christiano's \"I'm around 30% of fast takeoff\" against 70\u201390%; Narayanan/Kapoor's 40% of US adults, 0.5\u20133.5% of work hours, Epic sepsis missing two-thirds of cases, ~40 years for electrification, and \"most speculative of the risks\"; Kulveit et al. authorship, January 2025, three systems, feedback loop; Yudkowsky/Soares 2025 title, halt call, and Stockfish analogy; Verdon/Forbes December 2023, Google X, Extropic; Encode as youth-founded and behind SB 53 and the RAISE Act. All fourteen cited URLs return HTTP 200."
+   ],
+   "post_run_fixes_applied": "Both blocking issues fixed per the critic's prescribed corrections before persisting (2026-08-12): concentration stat rebuilt on absolute per-firm figures with Google's fleets combined; Musk removed from e/acc proponents/detail. 2 HTML entities scrubbed.",
+   "stage": "substance"
+  },
+  {
+   "critic": "crux",
+   "pass": true,
+   "blocking": [],
+   "notes": [
+    "The lead's three-way axis (all at once / by inches / never at all) is genuinely multi-camp, not a binary compression: Hard Takeoff Hawks locate at 'all at once', Gradual Disempowerment Theorists at 'by inches', Normal Technology Skeptics and Effective Accelerationists at 'never at all', and Course-Correction Gradualists at 'never, conditional on steering'. That last placement is the least crisp \u2014 a gradualist's diagnosis is 'the window stays open because we act on warning shots', which the lead only accommodates implicitly. Not misleading, but worth knowing it's the loosest fit.",
+    "The empirical crux narrows to the takeoff-speed question (research loop vs physical bottlenecks) and its 'warning shots arrive in time to matter' branch quietly embeds an assumption Gradual Disempowerment Theorists dispute: their claim is that warning shots can arrive AND be normalized, so continuity does not save you. The draft covers this well in the tier-2 question on normalization, so no reader is misled, but a phrasing like 'warning shots arrive in time to be usable' vs 'arrive and get acted on' could fold their diagnosis into the empirical crux itself rather than leaving it to the values side and the questions section.",
+    "The subtitle ('the bets don't hedge each other') is a strong, verdict-free narrowing \u2014 it names why the disagreement is decision-relevant without ranking the camps. No house verdict and no 'both sides have a point' filler anywhere in the crux block.",
+    "Minor: the values crux does double duty (bet-sizing under uncertainty + who decides), which slightly dilutes its sharpness; the 'who decides' clause duplicates the tier-3 governance question and could be trimmed at distribution time if space is tight."
+   ],
+   "stage": "substance"
+  },
+  {
+   "blocking": [
+    {
+     "issue": "Basics stat 4 label scope: the label \"Median extinction-risk probability \u00b7 AI researcher survey\" is narrower than what the 5% value actually measures. The survey question (per the note and detail) is extinction OR a similarly severe and permanent disempowerment of humanity, so labeling the value as pure extinction risk overstates the narrow outcome for a grid-scanning reader who takes in only label + value. This is exactly the label/scope mismatch class that misleads even though the note clarifies it, and it sits on the topic's single most-quoted number.",
+     "fix": "Reword the stat's 'label' field to match the measured quantity, e.g. \"Median risk of AI extinction or permanent disempowerment \u00b7 AI researcher survey\" (or, if length-constrained, \"Median AI catastrophe probability \u00b7 AI researcher survey\"). Leave value, note, and detail unchanged; the note already carries the full definition."
+    }
+   ],
+   "critic": "compact-self-sufficiency",
+   "pass": false,
+   "notes": [
+    "Overall the above-fold layer is strong: every T1 stat note carries its own key caveat in compact (50% reliability and benchmark scope on the METR stat, survey population on both survey stats, 2024-vs-2030 framing on the IEA stat), and the six visible stats balance four acceleration signals against two physical-constraint signals, so the fold does not tilt hawk or skeptic.",
+    "Stats 2 and 5: the label suffix \"\u00b7 per year\" duplicates the unit \"\u00d7 per year\", so the rendered line reads roughly \"growth \u00b7 per year \u2014 4\u20135\u00d7 per year\". Dropping \"\u00b7 per year\" from the two labels would tighten the grid; not misleading, just redundant.",
+    "Basics stat 8 (below fold): headline value ~2.6M H100-equivalents is the four-company TOTAL while the label says \"by company\" and the viz ranks individual companies. The note's first words (\"Four US companies together\") rescue it, and it is behind Go deeper, so note-level only; consider a label like \"Frontier AI computing power \u00b7 top four US companies\".",
+    "\"Warning shots\" in question 3 is mild jargon, but the sentence itself defines it by contrast (\"continuous enough to produce... or a decisive jump without one\") and the why reinforces it, so it clears the compact bar.",
+    "Load-bearing caveats are correctly placed: nothing essential to the above-fold picture lives only in a detail field. The strongest candidates (METR's trend-could-bend caveat, survey response rates ~15-17%, Epoch cost scope covering only final training runs) are all methodology depth that genuinely belongs in the expanded register, since the compact notes never over-claim beyond them.",
+    "Crux lead punctuation (\"all at once, by inches \u2014 or never at all?\") mixes comma and em dash in a three-item list; a consistent \"all at once, by inches, or never at all?\" would scan cleaner, but the current form is a defensible punch choice."
+   ],
+   "stage": "presentation"
+  },
+  {
+   "critic": "reading-level-fit",
+   "pass": true,
+   "blocking": [],
+   "notes": [
+    "Tier-3 compute-concentration stat: the always-visible unit is 'M H100-equivalents', a bare chip model code at the compact bar. The note rescues it by glossing 'H100-equivalent AI chips', so it clears parity, but a friendlier unit ('M top-end AI chips') with H100-equivalents kept to the detail would read cleaner for a general reader.",
+    "T1 compute-growth stat note leads with 'Training compute', an industry mass-noun. Context ('for top AI models has grown 4-5x') makes it parseable, so not blocking, but 'Computing power used to train top AI models' would hit the compact bar more squarely.",
+    "Expanded register asks terms of art be defined at first use: 'evals' appears undefined in question 1's detail ('generate evals') and in Course-Correction Gradualist's detail; a one-word gloss ('evals, internal capability tests') would fix both.",
+    "Hard Takeoff Hawk detail references 'Stockfish' without a gloss; the chess context carries most readers, but 'the superhuman chess engine Stockfish' would close the gap.",
+    "Position descriptions carry academic parenthetical citations (Bick et al., 2024; David, 1990; Karabarbounis & Neiman, 2014). Fine if the description renders in the opt-in layer (the compact spec covers only name/steelman); if descriptions are ever surfaced above the fold they are denser than the compact bar.",
+    "Details genuinely add throughout: every stat detail brings source, methodology caveat, or mechanism beyond its note, and question details map which position leans on which evidence rather than restating the why line. No restatement failures found.",
+    "Nice compact-register touches worth keeping: 'median even-odds year' as a plain gloss of 50% probability, and the energy stat pairing 415 to 945 terawatt-hours as 'more than doubling' so the reader retains the shape, not the digits."
+   ],
+   "stage": "presentation"
+  },
+  {
+   "critic": "above-fold-selection",
+   "pass": true,
+   "blocking": [],
+   "notes": [
+    "Basics T1 set is well chosen: the two capability-trend stats (task-length doubling, compute growth) plus the two survey headline numbers (2047 median, 5% extinction risk) are exactly the four a reader needs to weigh the takeoff bet. The 6-above-fold cut also lands on two clean rows of the 3-col grid.",
+    "The fold boundary in basics splits tier 2, but the within-tier order is right: cost growth and electricity demand are bottleneck evidence feeding the T1 empirical crux, while Bletchley is governance context adjacent to scope_excluded material, so it is correctly the T2 item that drops below.",
+    "Questions: all four above-fold items are empirical and jointly map onto the crux's empirical dimension; the values crux (Q5, how much benefit to forgo) sits below the fold, leaving zero value questions visible in the questions section. Not blocking because the crux band itself surfaces the values dimension above the fold, and none of the four T1 empirical questions is clearly less central than Q5. If a future pass wants a value question visible, Q5 is the promotion candidate, at the cost of a 5/7 fold.",
+    "T1 compute growth (4-5x/yr) and T2 training-cost growth (2.4x/yr) partially overlap as signals; the tier split correctly ranks the more fundamental one higher, and both show above the fold, so no display consequence.",
+    "Positions 5/5 above fold with all five tier 1 is correct: each is a genuinely distinct bet (diffusion skeptic, gradualist, hard takeoff, structural disempowerment, accelerationist) and prevalence-first ordering reads naturally.",
+    "T3 placements (company compute snapshot, incident database, who-decides question) are the right deep-reveal items: dated snapshot, contested-interpretation registry, and a governance-legitimacy question bordering the excluded scope."
+   ],
+   "stage": "presentation"
+  }
+ ],
+ "plan_positions": [
+  {
+   "name": "Normal Technology Skeptic",
+   "prevalence_weight": 32,
+   "spectrum_position": 2,
+   "sketch": "AI diffuses like past general-purpose technologies, bottlenecked by the real world; control is an engineering and policy problem, not an existential cliff."
+  },
+  {
+   "name": "Course-Correction Gradualist",
+   "prevalence_weight": 28,
+   "spectrum_position": -1,
+   "sketch": "Capabilities grow fast but continuously; iterative deployment, evals, and warning shots give society repeated chances to steer before any decisive moment."
+  },
+  {
+   "name": "Hard Takeoff Hawk",
+   "prevalence_weight": 18,
+   "spectrum_position": -3,
+   "sketch": "Recursive self-improvement produces a rapid capability jump; the first misaligned superintelligence is decisive, and no one currently knows how to control it."
+  },
+  {
+   "name": "Gradual Disempowerment Theorist",
+   "prevalence_weight": 12,
+   "spectrum_position": -2,
+   "sketch": "No takeover needed: ordinary competition steadily shifts economic, cultural, and political power to AI systems until humans lose the levers that keep institutions serving them."
+  },
+  {
+   "name": "Effective Accelerationist",
+   "prevalence_weight": 10,
+   "spectrum_position": 3,
+   "sketch": "Faster development is safer development: slowing down cedes the future to worse actors, and open competition prevents any single system or lab from becoming a singleton."
+  }
+ ]
+}

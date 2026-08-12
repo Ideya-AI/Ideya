@@ -39,14 +39,15 @@
   .card .ticon.tart{width:auto;aspect-ratio:3/2;padding:0;overflow:hidden}
   .card .ticon.tart img{width:100%;height:100%;object-fit:cover;display:block}
   .ttl{font-weight:800;letter-spacing:-.035em;line-height:.96;color:var(--ink-900);margin:0}
-  /* the summary is the sacrificial element: it may shrink (clamped + hidden)
-     but the CTA and title never get pushed past the card edge */
-  .summary{color:var(--ink-600);line-height:1.45;text-wrap:pretty;display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden;flex:0 1 auto;min-height:0}
+  /* truncation comes from the line-clamp ALONE: the summary is flex:none —
+     a flex-shrunk -webkit-box does NOT re-clamp, it pixel-cuts mid-glyph.
+     Budgets below are tuned so title bucket + clamp always fit the column. */
+  .summary{color:var(--ink-600);line-height:1.45;text-wrap:pretty;display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden;flex:none}
   .cta{flex:none}
   .dk{background:var(--ink-900);color:#fff;display:flex;flex-direction:column;padding:var(--pad)}
   .dk .dlabel{font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--green-500);display:flex;align-items:center;gap:8px}
   .poss{display:flex;flex-direction:column;gap:var(--pgap);margin-top:var(--pmt)}
-  .pos{display:flex;align-items:center;gap:10px} .pos .pd{border-radius:9999px;flex:none}
+  .pos{display:flex;align-items:flex-start;gap:10px} .pos .pd{border-radius:9999px;flex:none;margin-top:8px}
   .pos .pnm{font-weight:700;color:#f3f5f0;letter-spacing:-.01em}
   .pos .pd-dim{background:rgba(255,255,255,.28)} .pos .pnm-dim{color:rgba(255,255,255,.6);font-weight:600}
   .hook{margin-top:auto;border-top:1px solid rgba(255,255,255,.12);display:flex;gap:10px;align-items:flex-start}
@@ -55,7 +56,7 @@
   .og .lt{flex:0 0 56%;justify-content:safe center} .og .brand{font-size:22px}.og .brand .mark{height:30px;width:auto}
   .og .cat{font-size:15px;padding:7px 15px;margin-top:24px} .og .ttlrow{margin-top:20px}
   .og .ticon{width:132px;height:132px}.og .ticon i{font-size:74px} .og .ttl{font-size:66px}
-  .og .summary{font-size:24px;margin-top:18px;max-width:26ch;-webkit-line-clamp:5}
+  .og .summary{font-size:24px;margin-top:18px;max-width:26ch;-webkit-line-clamp:4}
   .og .dk{flex:0 0 44%;--pgap:17px;--pmt:24px;justify-content:center} .og .dlabel{font-size:16px}
   .og .pos .pd{width:14px;height:14px}.og .pos .pnm{font-size:25px}
   .og .hook{margin-top:28px;padding-top:22px}.og .hook i{font-size:24px}.og .hook .ct{font-size:20px}
@@ -70,13 +71,13 @@
   .sq.t-mid .ttl{font-size:64px} .sq.t-long .ttl{font-size:52px}
   .pt.t-mid .ttl{font-size:76px} .pt.t-long .ttl{font-size:62px}
   .og.t-mid .summary,.og.t-long .summary{-webkit-line-clamp:4}
-  .sq.t-mid .summary,.sq.t-long .summary{-webkit-line-clamp:4}
-  .pt.t-mid .summary,.pt.t-long .summary{-webkit-line-clamp:6}
+  .sq.t-mid .summary,.sq.t-long .summary{-webkit-line-clamp:3}
+  .pt.t-mid .summary,.pt.t-long .summary{-webkit-line-clamp:5}
   .sq{width:1080px;height:1080px;flex-direction:column;--pad:56px;--gap:24px;--tir:20px}
   .sq .brand{font-size:23px}.sq .brand .mark{height:32px;width:auto}.sq .brand .tag{font-size:15px}
-  .sq .cat{font-size:15px;padding:8px 17px;margin-top:20px} .sq .ttlrow{margin-top:20px}
+  .sq .cat{font-size:15px;padding:8px 17px;margin-top:14px} .sq .ttlrow{margin-top:14px}
   .sq .ticon{width:144px;height:144px}.sq .ticon i{font-size:82px} .sq .ttl{font-size:78px}
-  .sq .summary{font-size:27px;margin-top:18px;max-width:36ch;-webkit-line-clamp:5}
+  .sq .summary{font-size:27px;margin-top:14px;max-width:36ch;-webkit-line-clamp:4}
   .sq .dk{--pgap:15px;--pmt:18px;padding:44px 56px} .sq .dlabel{font-size:16px}
   .sq .pos .pd{width:15px;height:15px}.sq .pos .pnm{font-size:26px}
   .sq .hook{margin-top:26px;padding-top:20px}.sq .hook i{font-size:28px}.sq .hook .ct{font-size:24px}
@@ -86,12 +87,12 @@
   .pt .ticon{width:160px;height:160px}.pt .ticon i{font-size:90px} .pt .ttl{font-size:92px}
   .pt .summary{font-size:30px;margin-top:24px;max-width:34ch;-webkit-line-clamp:7}
   .pt .dk{--pgap:17px;--pmt:22px;padding:48px 60px} .pt .dlabel{font-size:17px}
-  .pt .pos .pd{width:16px;height:16px}.pt .pos .pnm{font-size:30px}
+  .pt .pos .pd{width:16px;height:16px;margin-top:10px}.pt .pos .pnm{font-size:30px}
   .pt .hook{margin-top:30px;padding-top:24px}.pt .hook i{font-size:32px}.pt .hook .ct{font-size:28px}
   /* call-to-action */
   .cta{display:inline-flex;align-items:center;gap:8px;font-weight:700;color:var(--green-700)}
   .og .cta{font-size:19px;margin-top:20px}.og .cta i{font-size:18px}
-  .sq .cta{font-size:23px;margin-top:22px}.sq .cta i{font-size:22px}
+  .sq .cta{font-size:23px;margin-top:18px}.sq .cta i{font-size:22px}
   .pt .cta{font-size:25px;margin-top:32px}.pt .cta i{font-size:24px}
 </style>
 </head>
