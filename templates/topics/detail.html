@@ -24,6 +24,9 @@
      [x-cloak] !important rule. */
   #main .tile-xtra { display: flex !important; }
   #main .q-xtra { display: grid !important; }
+  /* mobile renders .q as block (ideya.css) — keep the harness override in step
+     or the extra questions collapse to a sliver column in mobile captures */
+  @media (max-width: 640px) { #main .q-xtra { display: block !important; } }
   #main .pos-xtra { display: flex !important; }
   #main .tmore, #main .qmore, #main .pmore { display: block !important; }
   #main .csplit { display: grid !important; }
@@ -134,7 +137,7 @@
         <div class="ov-meta">
           {% if topic.scope_covered %}
           <div class="mc"><div class="mk"><i class="ph-duotone ph-crop"></i>Scope</div>
-            <div class="mv">{{ topic.scope_covered }}{% if topic.scope_excluded %} <b>Not</b> {{ topic.scope_excluded }}{% endif %}</div></div>
+            <div class="mv">{{ topic.scope_covered }}{% if topic.scope_excluded %} <b>Not:</b> {{ topic.scope_excluded }}{% endif %}</div></div>
           {% endif %}
           {% if topic.why_now %}
           <div class="mc"><div class="mk"><i class="ph-duotone ph-clock-countdown"></i>Why it matters now</div>

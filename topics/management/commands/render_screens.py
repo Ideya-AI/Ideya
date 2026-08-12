@@ -29,7 +29,7 @@ CHROME_CANDIDATES = [
 # a fixed cap silently clipped the Crux/Actions sections). Expanded captures
 # force every detail layer visible and run far taller still.
 CAPTURE_HEIGHT = 12000
-CAPTURE_HEIGHT_EXPANDED = 22000
+CAPTURE_HEIGHT_EXPANDED = 45000
 
 
 def _pretty(path):

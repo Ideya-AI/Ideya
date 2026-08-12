@@ -507,6 +507,13 @@ def share_cards(request, slug):
                 0, len(all_positions) - Section.POSITIONS_DEFAULT_SHOWN
             ),
             "crux": getattr(crux_section, "crux", None) if crux_section else None,
+            # Long titles step the card headline down a size bucket (mirrors
+            # the poster's length buckets) so they never clip the layout.
+            "title_class": (
+                "t-long"
+                if len(topic.title) > 40
+                else "t-mid" if len(topic.title) > 26 else ""
+            ),
             "render_card": (
                 request.GET.get("render")
                 if request.GET.get("render") in ("og", "sq", "pt")
