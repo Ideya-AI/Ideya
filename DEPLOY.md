@@ -17,6 +17,7 @@ automatically — do **not** commit it):
 | `DJANGO_ALLOWED_HOSTS` | ✅ (prod) | Your domain(s), comma-separated: `ideya1.org,www.ideya1.org,ideya1.com,www.ideya1.com` |
 | `DJANGO_CSRF_TRUSTED_ORIGINS` | ✅ (prod) | Same host(s) **with scheme**: `https://ideya1.org` |
 | `PUBLIC_ORIGIN` | recommended | `https://ideya1.org` — baked into poster QR codes and social-card URLs |
+| `GA_MEASUREMENT_ID` | optional | Google Analytics 4 id (`G-…`). Unset → no analytics markup rendered at all. Set in prod.env + restart to enable |
 | `DJANGO_DB_PATH` | recommended | Absolute SQLite path on a **persistent volume**, e.g. `/data/db.sqlite3` |
 | `DJANGO_DEBUG` | — | Leave unset/`false` in production |
 | `WEB_CONCURRENCY` | — | gunicorn worker count (default 2 — see the rate-limit note below) |

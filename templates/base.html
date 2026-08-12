@@ -17,6 +17,17 @@
   <meta name="twitter:card" content="summary" />
   {% endblock %}
 
+  {% if GA_MEASUREMENT_ID %}
+  <!-- Google Analytics 4 — renders only when GA_MEASUREMENT_ID is set -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ GA_MEASUREMENT_ID }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ GA_MEASUREMENT_ID }}');
+  </script>
+  {% endif %}
+
   <!-- Self-hosted web fonts (Plus Jakarta Sans, Inter, JetBrains Mono — latin/latin-ext) -->
   <link rel="stylesheet" href="{% static 'css/fonts.css' %}" />
 
