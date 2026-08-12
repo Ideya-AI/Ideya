@@ -118,7 +118,7 @@
           {% with cc=topic.color_category %}
           {% if cc %}<span class="cat" style="--cat:{{ cc.color_var }};--cat-tint:{{ cc.tint_var }}"><i class="ph-duotone ph-{{ cc.icon|default:'squares-four' }}"></i>{{ cc.name }}</span>{% endif %}
           {% endwith %}
-          {% with n=topic.title|length %}<h1 class="title{% if n > 40 %} title-xs{% elif n > 24 %} title-sm{% endif %}">{{ topic.title }}</h1>{% endwith %}
+          {% with n=topic.title|length %}<h1 class="title{% if n > 32 %} title-xs{% elif n > 24 %} title-sm{% endif %}">{{ topic.title }}</h1>{% endwith %}
           <p class="summary">{{ topic.summary }}</p>
         </div>
         {% if topic.primary_art %}
