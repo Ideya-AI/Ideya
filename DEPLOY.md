@@ -8,8 +8,8 @@ in three environment variables is the whole "point it at the domain" step.
 
 ## 1. Environment variables
 
-Copy `.env.example` and set real values (or set these as real env vars on your
-host — do **not** commit a filled-in `.env`):
+Set these as env vars on the host (or in a local `.env`, which settings reads
+automatically — do **not** commit it):
 
 | Variable | Required | What it is |
 |---|---|---|
