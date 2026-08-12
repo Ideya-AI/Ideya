@@ -276,13 +276,16 @@ body .sec.is-open .when-normal.is-inline, body .sec.is-open .when-deep.is-inline
 .tile-x { cursor: pointer; }
 .basics .tile-xtra { display: none; }
 .sec.is-open .basics .tile-xtra { display: flex; }
+/* expanded sections: cards size to their own content — equal-height stretch
+   left ~250px of dead white inside short cards next to long ones */
+.sec.is-open .basics, .sec.is-open .pos-grid { align-items: start; }
 .tile.tile-fill { grid-column: 1 / -1; }
 .vrow { margin-top: 12px; }
 /* ranked bars */
 .rank { display: flex; flex-direction: column; gap: 9px; }
 /* label column: fixed share of the tile (same for every row, so bars stay aligned) — a hard 64px wrapped long labels into slivers on wide tiles and narrow viewports */
-.rrow { display: grid; grid-template-columns: minmax(64px, 28%) 1fr 52px; align-items: center; gap: 12px; font-size: var(--text-sm); }
-.rrow .rk2 { color: var(--fg2); min-width: 0; overflow-wrap: anywhere; }
+.rrow { display: grid; grid-template-columns: minmax(64px, 28%) 1fr minmax(52px, 12ch); align-items: center; gap: 12px; font-size: var(--text-sm); }
+.rrow .rk2 { color: var(--fg2); min-width: 0; overflow-wrap: break-word; hyphens: auto; }
 .rrow .rbar { height: 9px; background: var(--ink-100); border-radius: var(--radius-pill); overflow: hidden; }
 .rrow .rbar i { display: block; height: 100%; background: var(--ink-300); border-radius: var(--radius-pill); }
 .rrow .rv { text-align: right; font-family: var(--font-tabular); font-variant-numeric: tabular-nums; color: var(--fg2); }
@@ -456,6 +459,8 @@ body .sec.is-open .when-normal.is-inline, body .sec.is-open .when-deep.is-inline
 .afor .fd { width: 8px; height: 8px; border-radius: var(--radius-pill); }
 .atitle { font-size: var(--text-base); font-weight: var(--weight-semibold); color: var(--fg1); }
 .adesc { margin: 7px 0 0; font-size: var(--text-sm); color: var(--fg2); line-height: var(--leading-normal); }
+/* narrow phones: the kind + position labels can't share one row */
+@media (max-width: 360px) { .atop { flex-direction: column; align-items: flex-start; gap: 4px; } }
 
 /* ============================================================================
    HOME

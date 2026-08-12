@@ -8,7 +8,7 @@ section's Go-deeper is open.{% endcomment %}
   <div class="qb{% if q.detail %} qb-x{% endif %}"{% if q.detail %} @click="more = !more; if (!more) anchorCollapse($el.closest('.q'))"{% endif %}>
     <span class="qtag {% if q.kind == 'empirical' %}emp{% else %}val{% endif %}" data-tip="{{ q.kind_tip }}"><i class="ph-duotone ph-{{ q.tag_icon }}"></i>{{ q.get_kind_display }}</span>
     <div class="qt">{{ q.text }}</div>
-    {% if q.why %}<p class="qw"><b>Why it's contested:</b> {{ q.why }}</p>{% endif %}
+    {% if q.why %}<p class="qw"><b>Why it’s contested:</b> {{ q.why }}</p>{% endif %}
     {% if q.detail %}
     <div class="qmore" x-show="more" x-cloak>
       <div class="qdetail">{{ q.detail|linebreaks }}</div>

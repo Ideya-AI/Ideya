@@ -6,7 +6,7 @@
     <span class="akind"><i class="ph-duotone ph-{{ a.phosphor_icon }}"></i>{{ a.get_kind_display }}</span>
     {% if a.position %}<span class="afor"><span class="fd" style="background:{{ a.position.color_var }}"></span>{{ a.position.name }}</span>{% endif %}
   </div>
-  <div class="atitle">{{ a.title }} {% if a.kind == 'submit_view' %}→{% elif a.url %}↗{% endif %}</div>
+  <div class="atitle">{{ a.title }}{% if a.kind == 'submit_view' %} →{% elif a.url %} ↗{% endif %}</div>
   {% if a.description %}<p class="adesc when-normal">{{ a.description }}</p>{% endif %}
 </a>
 {% endwith %}
