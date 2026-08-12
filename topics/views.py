@@ -419,6 +419,22 @@ def category_detail(request, slug):
     )
 
 
+def site_share(request):
+    """Bare 1200x630 OG card for the site itself, captured to a PNG
+    (static/img/social/site.png → base.html's default og:image). Mirrors
+    category_share: `?render=og` renders the card-only body for headless
+    capture; anything else shows a framed dev preview."""
+    return render(
+        request,
+        "topics/site_share.html",
+        {
+            "categories": Category.objects.all(),
+            "topics_total": Topic.objects.count(),
+            "render_card": request.GET.get("render") == "og",
+        },
+    )
+
+
 def category_share(request, slug):
     """Bare 1200x630 OG card for a category, captured to a PNG (Category.social_card
     → og:image). `?render=og` renders the card-only body for headless capture; any
