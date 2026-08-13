@@ -248,7 +248,7 @@
           <span class="cv"><i class="ph-duotone ph-caret-down"></i></span>
         </button>
         <div class="sec-body">
-        <div class="eyebrow"><i class="ph-duotone ph-{{ section.eyebrow_icon }}"></i>Crux<span class="stepn">{{ section.step }}</span></div>
+        <div class="eyebrow"><i class="ph-duotone ph-{{ section.eyebrow_icon }}"></i>Crux{% if section.eyebrow_sub %} <span class="sub">· {{ section.eyebrow_sub }}</span>{% endif %}<span class="stepn">{{ section.step }}</span></div>
         {% with c=section.crux %}
         {% if c %}
         {% comment %}Axis 2 only: the lead is the header; clicking the band reveals

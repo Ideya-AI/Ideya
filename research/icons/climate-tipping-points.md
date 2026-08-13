@@ -116,3 +116,8 @@ earlier linework-only elements nearly vanished at 40px.
   set `Topic.primary_art = "img/topics/climate-tipping-points.png"`, and
   regenerate the social PNGs
   (`render_social --slug climate-tipping-points --formats og,sq,pt`).
+
+## Selection
+
+**Winner: candidate 2** (`climate-tipping-points.gemini-3-pro-image.2.jpg`), picked 2026-08-13.
+All four render ball-at-apex + iceberg + snowflake. 2 is the only strict two-tone: every mass (hill, ball, both iceberg halves, snowflake core) carries the same ~16-18% fill — 1 and 4 introduce a third darker value on selected masses, 3 leaves the iceberg's crown unfilled. Ball rests exactly at the apex; neutrality holds.

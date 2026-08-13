@@ -76,7 +76,7 @@
      2026-08-13, which made position dots read as category marks on any
      surface showing both (topic header, share cards). Same key names; only
      the hex values moved. */
-  --pos-green:  #2a8653;
+  --pos-green:  #146c4f;
   --pos-blue:   #2f6cb3;
   --pos-amber:  #d08018;
   --pos-rust:   #c44e35;
@@ -92,9 +92,9 @@
   --brand-green: #4cb050;
 
   /* ---- Category palette -----------------------------------------------------
-     ONE muted hue per top-level category. Used ONLY in discovery tiers (Home
-     showcase + directory, Category page header/badge) for wayfinding — NEVER on
-     a Topic page (there, color = positions). Desaturated so they read as quiet
+     ONE muted hue per top-level category. Used in discovery tiers (Home
+     showcase + directory, Category page header/badge) and as the Topic page's
+     header identity chips — everywhere else on a Topic page, color = positions. Desaturated so they read as quiet
      identity, not alarm. The --pos-* family is deliberately deeper/more saturated so the two systems never read as one, even side by side on the topic header and share cards.
      A category's --catN-tint is its pale fill. */
   --cat-energy:   #4a9d6c;  --cat-energy-tint:   #e7f3ec;  /* Energy & Environment */
