@@ -265,9 +265,13 @@ class Command(BaseCommand):
                 fill_pct=s.get("fill_pct"),
                 note=self._cap(s.get("note", ""), 400, "note", s.get("label", "")),
                 detail=s.get("detail", ""),
-                source_label=s.get("source_label", "")[:120],
+                source_label=self._cap(
+                    s.get("source_label", ""), 120, "source_label", s.get("label", "")
+                ),
                 source_url=s.get("source_url", "") or "",
-                source_published=s.get("source_published", "")[:40],
+                source_published=self._cap(
+                    s.get("source_published", ""), 40, "source_published", s.get("label", "")
+                ),
                 source_accessed=acc_date,
                 reveal=s.get("reveal", "condensed"),
             )

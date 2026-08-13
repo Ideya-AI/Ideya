@@ -124,7 +124,9 @@ Loop, capped at ~3 refine rounds:
 
 With the draft loaded and a dev server up (`DJANGO_DEBUG=true … runserver 8641` — one
 pinned dev port everywhere below, deliberately not 8642, the live container; drafts render
-under DEBUG), render + critique, capped at ~3 rounds:
+under DEBUG), render + critique, capped at ~3 rounds. **Restart the dev server after any
+template edit**: Django 4.1+ caches compiled templates even under DEBUG, and with
+`--noreload` nothing invalidates the cache — renders silently serve the pre-edit template:
 1. `render_screens --slug <slug> --base-url <dev>` (1440/390/320, full height) —
    add a `--expanded` run too (captures `?expanded=1` with every Go-deeper extra and
    detail region forced visible; the depth layers get no visual coverage otherwise),

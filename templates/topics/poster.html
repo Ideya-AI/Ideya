@@ -143,7 +143,8 @@
           <div class="tnote">{{ stat.note }}</div>
           {% else %}
           <div class="tv">{{ stat.value }}{% if stat.unit %}<small>{{ stat.unit }}</small>{% endif %}</div>
-          <div class="vrow"><div class="pbar"><i style="width:{{ stat.fill_pct|default:0 }}%"></i></div><div class="tnote">{{ stat.note }}</div></div>
+          {# Meter only when there is a true share to show — an empty track under a bare number reads as "zero" (mirrors _stat_tile's guard). #}
+          <div class="vrow">{% if stat.fill_pct is not None %}<div class="pbar"><i style="width:{{ stat.fill_pct }}%"></i></div>{% endif %}<div class="tnote">{{ stat.note }}</div></div>
           {% endif %}
         </div>
         {% endfor %}
