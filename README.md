@@ -45,7 +45,7 @@ Reader participation is anonymous by design (no accounts): votes, leans, and wri
 
 ## About this repo
 
-This repository is public for clarity of intentions — so the editorial rules, the pipeline, and the full history of every published claim are inspectable. It is not packaged as a turnkey product, and self-hosting it is not a supported path.
+This repository is public for clarity of intentions — so the editorial rules, the pipeline, and the sourcing behind every published claim are inspectable. It is not packaged as a turnkey product, and self-hosting it is not a supported path.
 
 Stack: Django + HTMX + Alpine, token-native CSS, SQLite.
 
