@@ -569,11 +569,20 @@ class Section(models.Model):
     def positions_tiles(self):
         """Ranked Positions annotated for the two-axis grid: `is_extra` cards
         (revealed only when the section's Go-deeper is open) come after the
-        tier cutoff. Mirrors basics_tiles (breadth axis)."""
+        tier cutoff. Mirrors basics_tiles (breadth axis), including the
+        trailing-orphan fill: `fill_base` spans the last card when the
+        collapsed count is odd, `fill_open` when the full count is odd."""
         positions = list(self.positions.all())
         base_n = self._positions_base_count(positions)
         for i, p in enumerate(positions):
             p.is_extra = i >= base_n
+            p.fill_base = False
+            p.fill_open = False
+        if positions:
+            if base_n % 2 == 1:
+                positions[base_n - 1].fill_base = True
+            if len(positions) % 2 == 1:
+                positions[-1].fill_open = True
         return positions
 
     @property

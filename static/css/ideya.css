@@ -222,7 +222,12 @@ body .sec.is-open .when-normal.is-inline, body .sec.is-open .when-deep.is-inline
 .ov-hero-text .ov-badges { margin-bottom: 0; }
 .ov-desc--art { font-size: var(--text-lg); max-width: none; }
 .ov-title { margin: 0; font-size: var(--text-4xl); font-weight: 800; letter-spacing: var(--tracking-tight); line-height: var(--leading-tight); }
-@media (max-width: 640px) { .ov-hero { grid-template-columns: 1fr; gap: 16px; } }
+@media (max-width: 640px) {
+  .ov-hero { grid-template-columns: 1fr; gap: 16px; }
+  /* full-width 3:2 art ate the first screen (summary started ~890px down) —
+     narrow the card so the title AND summary open above the fold; no crop */
+  .ov-hero .ov-art { max-width: 300px; margin: 0 auto; }
+}
 .ov-desc { margin: 0; font-size: var(--text-xl); line-height: var(--leading-snug); color: var(--fg2); max-width: var(--measure); }
 .ov-meta { display: grid; margin-top: 22px; grid-template-columns: 1fr 1fr; gap: 14px; }
 .ov-meta .mc { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; }
@@ -394,6 +399,10 @@ body .sec.is-open .when-normal.is-inline, body .sec.is-open .when-deep.is-inline
 .pdetail p:last-child { margin-bottom: 0; }
 .pos-grid .pos-xtra { display: none; }
 .sec.is-open .pos-grid .pos-xtra { display: flex; }
+/* odd-count grids: the trailing card spans the full row instead of leaving a
+   dead column (fill_base = collapsed state's orphan, fill_open = expanded's) */
+.sec:not(.is-open) .pos-grid .pos-fill-base { grid-column: 1 / -1; }
+.sec.is-open .pos-grid .pos-fill-open { grid-column: 1 / -1; }
 
 /* ---- CRUX (the dark band) ---- */
 .crux {
