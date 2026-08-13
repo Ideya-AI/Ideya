@@ -30,6 +30,11 @@
   #main .pos-xtra { display: flex !important; }
   #main .tmore, #main .qmore, #main .pmore { display: block !important; }
   #main .csplit { display: grid !important; }
+  /* reveal layers (mobile gates these behind each section's Go-deeper) */
+  #main .when-normal, #main .when-deep { display: block !important; }
+  #main .when-normal.is-flex, #main .when-deep.is-flex { display: flex !important; }
+  #main .when-normal.is-grid, #main .when-deep.is-grid { display: grid !important; }
+  #main .when-normal.is-inline, #main .when-deep.is-inline { display: inline-flex !important; }
 </style>
 {% endif %}{% endblock %}
 

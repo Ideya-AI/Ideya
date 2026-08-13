@@ -834,6 +834,10 @@ a.sp-cat:hover { text-decoration: none; box-shadow: inset 0 0 0 1px color-mix(in
      so the caret toggle is hidden — it would otherwise collide with the pill. */
   .q { display: block; position: relative; }
   .q .xtoggle { display: none; }
+  /* ranked rows: label column needs a real floor at phone widths or names
+     shatter; the bar keeps a visible minimum */
+  .rrow { grid-template-columns: minmax(96px, 42%) minmax(40px, 1fr) minmax(44px, 10ch); }
+
   /* wrapped position names: pin the dot to the first line, not the block center */
   .phead { align-items: flex-start; }
   .phead .pdot { margin-top: 8px; }
