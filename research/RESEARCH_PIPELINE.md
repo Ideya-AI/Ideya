@@ -1,4 +1,227 @@
-# Topic Research Pipeline — initial design thinking (2026-06-16)
+# The Ideya authoring engine
+
+**Part I is the current design and is authoritative. [Part II](#part-ii--decision-history-archive)
+is the dated decision history, kept for rationale.** Last revised 2026-08-14.
+
+The engine turns a catalog entry into a publish-ready **draft** topic plus a review
+packet. It does not publish. Every guard below exists because something failed; the
+failure is named next to the guard, because a rule whose reason has been forgotten is
+the first one someone deletes.
+
+---
+
+## 1. What the engine is for
+
+One topic in, one draft out, with human input approaching zero. The target is **one
+human item per ten topics** — and a legitimate human item is a judgment call only the
+editor can make (does this camp deserve its own card, is this framing right). *"Please
+verify this fact"* is not a human item; it is the pipeline failing to close its own loop.
+
+**Iron rule: automation drafts, a human publishes.** Enforced by a `PreToolUse` hook
+(`.claude/hooks/pipeline-guard.sh`), not by prose — a rule stated in a skill is advice
+the model may or may not be attending to on round 14 of a fix loop.
+
+## 2. Artifacts and contracts
+
+| Artifact | Written by | Contract |
+|---|---|---|
+| `research/catalog/topic-universe.json` | human / stage 0 | skeleton: title, slug, summary, why_now, categories, position names, `related_slugs` |
+| `research/dossiers/<slug>.json` | stage 1 | substance record: draft, plan, verdicts, `claim_ledger`, shape notes |
+| `research/topics/<slug>.json` | stage 2 | **the loader contract and a topic's source of truth** |
+| `static/img/topics/<slug>.png` + `research/icons/<slug>.md` | stage 3 | hero art + the brief it was generated from |
+| `research/reviews/<slug>/` | stage 4 | screenshots, cards, poster, `REVIEW.md` |
+
+Each stage is independently re-runnable from the previous stage's artifact. Workflow
+scripts have **no filesystem access** — the script coordinates agents, agents read and
+write. That is why stage 2 bakes its 60KB dossier into a run script (`reference.md`).
+
+## 3. Stage flow
+
+```
+0 catalog ─▶ 1 research ─▶ 2 distribute ─▶ 3 icon ─▶ 4 views ─▶ 5 HUMAN publishes
+             plan                distill        brief      render
+             parallel research   tier/reveal    generate   critique
+             crux                fold           pick       fix
+             CLAIM LEDGER        gate (2)       postproc
+             gate (3)            fix loop
+             fix loop
+```
+
+**Stage 1 · research (substance).** A plan agent locks scope, questions, positions and
+the Phosphor glyph. Section agents research basics/questions/positions/actions in
+parallel. A crux agent writes the editorial narrowing. Then verification, then the gate,
+then a capped fix loop. Facts are settled here and nowhere else.
+
+**Stage 2 · distribute (presentation).** Distils the compact layer, assigns tier (the
+Go-deeper fold) and reveal (compact vs expanded), and reorders so the most
+decision-relevant items lead. **Display order = array order**; `tier` only marks the
+drop-off *within* that order, so moving an item across the fold means reordering.
+Positions are the exception — they render by `prevalence_weight`. Facts are locked: the
+patch whitelist rejects edits to value/unit/source_*/url/name/text.
+
+**Stages 3–4 · icon and views.** A brief agent writes the art brief from
+`ICONOGRAPHY.md`; candidates are generated, scored against the brief, post-processed,
+and checked at 40px. Views render at 1440/390/320 (normal and expanded), three social
+formats, and the poster — whose fit check is a **hard exit-code gate**.
+
+**Stage 5 · human.** The only step the engine does not do.
+
+## 4. The claim ledger — how facts are actually verified
+
+Between crux and gate, an extraction agent enumerates every load-bearing claim as a
+verbatim `quote` plus an atomic restatement. Verifiers then check them in parallel.
+
+Four properties carry the weight:
+
+1. **Verifiers are blind to the draft.** They see one claim and its cited URL, nothing
+   else. Handing a judge the surrounding document primes it to rationalise what is
+   already written; isolating the claim turns a re-read into a check.
+2. **`kind: fact | inference`.** A fact is checked against a source. An **inference** —
+   a causal, comparative or predictive conclusion — is checked against *who draws it*.
+   Welding two sourced figures into a third claim neither source makes is the failure
+   mode where every component verifies and the sentence joining them does not. Its
+   remedy leads with **attribution to a named proponent**, which preserves the steelman
+   while removing our invention.
+3. **No source quote ⇒ `unverifiable`, in code.** Not at the model's discretion.
+4. **Findings ride the existing fix loop.** Stage 1's `applyPatch` has no field
+   whitelist, so `value`/`label`/`source_*` are repairable there. Failing claims are
+   **re-verified every round**, so a fix that changed nothing cannot drop out of the
+   verdict set and score clean.
+
+*Why it exists:* only stats carry `source_*` fields — position and question prose carries
+none, so it is unsourced by construction. Two wrong claims shipped through a 4/4 gate in
+exactly that prose. On its first calibration the ledger flagged six claims nobody had
+planted, most of them real errors in a topic that had passed the gate and a human review.
+
+## 5. The verdict contract
+
+Every critic returns `{critic, pass, blocking[], notes[], checks_run[]}`.
+
+- **`pass` is derived, never self-reported**: no blocking findings *and* every named
+  check ran. A critic that files blocking items cannot report a pass.
+- **`checks_run` is machine-read.** A check with `ran: false` fails that critic and
+  **re-runs it once**, WebFetch-first. *Why:* a critic once passed while noting in prose
+  that it never performed its central check — and a caveat inside a verdict the human
+  reads as 4/4 looks like coverage that never happened. The first fix was prompt text
+  and was inert, because `pass` didn't read the field.
+- **Every blocking finding carries a verbatim `quote`.** A defect a critic cannot quote
+  is one it cannot show, and the quote gives the fixer an exact identifier instead of a
+  paraphrase to guess at.
+- **`notes` may never carry a factual matter.** An unverifiable load-bearing claim is
+  *blocking*, with a remedy that works without the missing verification: cut, soften to
+  what the source supports, or attribute in-voice.
+
+**Critics are chosen on measured yield.** Across the corpus `fact-source` blocked 71% of
+the time while the crux critic produced 0 blocking findings in 21 verdicts and
+above-fold-selection 0 in 9; both were folded into the neighbouring critic that reads the
+same material. Neutrality and steelman are kept despite low block rates — their downside
+is asymmetric, since they guard the product's core promise.
+
+## 6. The fix loop
+
+Keep-best across rounds, tie-broken on blocking count, so a regressed round never ships
+and never seeds the next one. Two refinements:
+
+- **Rounds are asymmetric.** Externally-grounded findings (ledger, deterministic shape)
+  keep three rounds; judgment findings get one. Unguided self-correction degrades output
+  rather than improving it ([arXiv 2310.01798](https://arxiv.org/abs/2310.01798)), and a
+  critic's round-2 opinion has no external anchor.
+- **Dropped edits are fed forward.** `missed` (and stage 2's `rejected`) reach the next
+  round's prompt. Previously they were logged and discarded, so an edit whose identifier
+  matched nothing was indistinguishable from one that applied — the fixer could keep
+  "fixing" while the draft never changed.
+
+## 7. The deterministic layer
+
+Anything decidable must never cost critic attention or reach the human.
+
+| Check | Where | Catches |
+|---|---|---|
+| `lint_draft.py` | before the gate; `--fix` for safe rewrites | typography, entities, over-cap fields, wrapped lean chips, one-paragraph details, poster-band units, Words-to-Watch classes |
+| `shapeCheck` | inside stage 1, **as gate input** | minimum counts, tiering, missing detail, near-cap prose |
+| poster `?fit=1` | stage 4 | pixel overflow of a fixed 18×24in sheet |
+| `pipeline-guard.sh` | `PreToolUse` | publishing; the live container's port |
+
+Words to Watch is **scoped by voice**: editorialising adverbs and loaded attribution
+verbs are exempt in a camp's own voice (a steelman is meant to sound committed), while
+weasel phrasing is flagged everywhere — "studies show" instead of naming the study is a
+weak steelman *and* a sourcing failure. The relative-time class is the "durable by
+default" rule expressed mechanically, and it is the cheapest durability check available.
+
+## 8. Editorial rules that shape the output
+
+Mirrored by hand across the three workflow scripts (scripts cannot import), and guarded
+by `topics/tests/test_workflow_mirrors.py` — that duplication has already drifted with
+consequences.
+
+- **Neutral by intention**; no house verdict, no section tilts.
+- **Genuine steelman** per position, in its own voice, at its real prevalence.
+- **Source quality is judged per claim, not globally.** Basics take official statistics
+  and peer-reviewed *secondary* literature. Positions take **the camp's own texts and
+  named proponents as the preferred source** — an advocacy org is a reliable primary
+  source for its own position. *Why:* a global ladder that ranked advocacy last pushed
+  position research toward opponents' characterisations, manufacturing the strawmen the
+  steelman critic then had to catch.
+- **Plain text, typographic quotes, US spelling** (except inside proper nouns).
+- **Vary the form.** A corpus scan found 11 of 11 crux leads ending in "?" and position
+  names collapsing into five suffixes, because one worked example was copied
+  structurally. Within a topic that reads as rigor; across the atlas it reads as a form
+  letter, and no per-topic gate can see it.
+
+## 9. Model routing
+
+Judgment on **opus**; web research on **sonnet**; never below sonnet. No Fable anywhere —
+its weekly limit ran out mid-run and killed three gate critics, and an `args.models`
+override was **not** enough to prevent it because the default won. Defaults are removed
+from all three scripts and a test guards against reintroduction.
+
+Web search is a **shared pool** (`CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION`, default 200,
+counted across every subagent; raised to 1500 here). WebFetch draws on a different pool
+and keeps working when search is spent — which is why verification is WebFetch-first.
+
+## 10. How the engine is measured
+
+- **`research/engine-scorecard.local.md`** — per-run, five axes, and the distinction that
+  matters: **caught** (engine fixed it — good), **escaped** (a later stage found it — a
+  gate underperformed), **human** (reached the editor — the number to drive to zero).
+- **`seed_defects.py`** — injects defects of known class into a lint-clean topic and
+  scores a gate run. This is the only way to tell a *sensitive* judge from an *agreeable*
+  one; "the bar is PARITY, not perfection" is editorially right but is also an unmeasured
+  leniency lever. Blatant classes score near 100% and discriminate poorly; the subtle
+  classes (`synthesis`, `over-hedge`, `due-weight`, `source-misattributed`) are the
+  informative ones.
+- **`tally_tokens.py`** → `research/token-ledger.local.md` — output tokens by model.
+- **`lint_draft.py --all`** — corpus-wide mechanical quality; the count collapsed from
+  8–33 per topic to 0 once the rules were encoded.
+
+## 11. Known gaps
+
+- **Repeated agent roles are still inline prompts.** Custom `agentType` did not resolve
+  from a workflow script when probed; unresolved between "unsupported" and a
+  directory-watcher caveat, and only a session restart distinguishes them. Consequence:
+  the verifier's blindness is honour-system — the agent inherits `Read` and could open
+  the dossier. A `tools: WebFetch` definition would make it structural.
+- **`prevalence_weight` has no stated basis and no critic judges it**, while the rules
+  push only toward inclusion (omitting a camp is a failure) with no counter-pressure —
+  so the engine ratchets toward over-inclusion, and equal-sized cards assert a parity the
+  weight only weakly corrects. Wikipedia's DUE is the prior art; a `prevalence_basis`
+  routed through the ledger would make it checkable.
+- **The refresh changelog is generated and discarded at load**, so corrections never
+  reach the reader. `last_touched` exists on the model and no template renders it.
+- **Corpus-level quality is unmeasured by the engine** — the mode-collapse scan was
+  manual. Every gate reads one topic.
+- **CSS defects** remain the standing list in each review packet; the pipeline is
+  forbidden from touching templates.
+
+---
+# Part II · Decision history (archive)
+
+> Kept because the *reasons* behind locked decisions are the expensive part to
+> reconstruct. Sections are dated and some supersede others; where this half and
+> Part I disagree, **Part I is authoritative**. Read this for why a decision was
+> made, not for how the engine currently works.
+
+## Original design thinking (2026-06-16)
 
 Draft thinking for tomorrow. Decision D stands: **AI drafts → human publishes.**
 The pipeline turns a *catalog entry* (skeleton from the topic universe) into a

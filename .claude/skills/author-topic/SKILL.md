@@ -40,20 +40,13 @@ artifact is skipped unless you pass `--redo`.
 
 Judgment on **opus**; web grunt on **sonnet**; never below sonnet.
 - Stage 1: plan `opus` · research `sonnet` · crux `opus` · gate `opus` (3 critics) · fix `opus`
-- Two critics were retired on evidence, not taste: across the corpus the **crux** critic
-  produced 0 blocking findings in 21 verdicts and **above-fold-selection** 0 in 9, while
-  `fact-source` blocked 71% of the time. Both remits were folded into the neighbouring
-  critic that reads the same material; the saving goes to verification, which is where
-  the failures actually are.
+- Two critics were retired on measured yield; see `research/RESEARCH_PIPELINE.md` §5.
 - Stage 2: distill `opus` · distribute `opus` · gate `opus` · fix `sonnet`
 - Stages 3–4: icon brief/pick and view critics on `opus` (main session + sub-agents)
 
-> **No Fable anywhere (2026-08-13).** The weekly Fable limit was exhausted mid-run on
-> `frontier-ai-regulation`, killing three of the four gate critics. `args.models` alone
-> was NOT enough to prevent it — the override silently did not reach the workflow script,
-> so the old `?? "fable"` defaults won. Every Fable default has been removed from all
-> three workflow scripts; do not reintroduce one on the assumption an arg will override it.
-> First Opus-only run held quality: stage-1 gate 4/4 with zero blocking findings.
+> **No Fable anywhere.** Defaults are removed from all three scripts and a test guards
+> reintroduction — an `args.models` override alone does NOT reliably reach the script.
+> Rationale: `research/RESEARCH_PIPELINE.md` §9.
 
 High-volume subtasks also pin an explicit reasoning **effort** instead of inheriting
 the session's (often max) effort — the main session-overage lever: stage-1
