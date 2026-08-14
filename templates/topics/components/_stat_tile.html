@@ -1,4 +1,4 @@
-{% comment %}One Basics figure. `stat.viz` selects the visualization. Expects
+{% load ideya_extras %}{% comment %}One Basics figure. `stat.viz` selects the visualization. Expects
 the enclosing .basics grid's rowGrid Alpine scope (expansion state lives on the
 grid, keyed by data-xid, so row partners open together — see rowGrid in ideya.js).
 Axis 2 (depth): glance = label + viz + lead note; clicking the tile expands it
@@ -16,7 +16,7 @@ spans a trailing orphan across the row.{% endcomment %}
       <div class="rrow{% if row.highlight %} on{% endif %}">
         <span class="rk2">{{ row.label }}</span>
         <span class="rbar"><i style="width:{{ row.pct }}%"></i></span>
-        <span class="rv">{{ row.value }}</span>
+        <span class="rv">{{ row.value|sup_exp }}</span>
       </div>
       {% endfor %}
     </div></div>
@@ -24,11 +24,11 @@ spans a trailing orphan across the row.{% endcomment %}
   {% elif stat.viz == "radial" %}
     <div class="radwrap">
       <div class="radial" style="--pct:{{ stat.fill_pct|default:0 }}"></div>
-      <div class="tv">{{ stat.value }}{% if stat.unit %}<small{% if stat.unit|slice:":1" == " " %} class="u-word"{% endif %}>{{ stat.unit }}</small>{% endif %}</div>
+      <div class="tv">{{ stat.value|sup_exp }}{% if stat.unit %}<small{% if stat.unit|slice:":1" == " " %} class="u-word"{% endif %}>{{ stat.unit }}</small>{% endif %}</div>
     </div>
 
   {% elif stat.viz == "range" %}
-    <div class="tv">{{ stat.value }}{% if stat.unit %}<small{% if stat.unit|slice:":1" == " " %} class="u-word"{% endif %}>{{ stat.unit }}</small>{% endif %}</div>
+    <div class="tv">{{ stat.value|sup_exp }}{% if stat.unit %}<small{% if stat.unit|slice:":1" == " " %} class="u-word"{% endif %}>{{ stat.unit }}</small>{% endif %}</div>
     <div class="vrow">
       {% with band=stat.range_band %}
       <div class="track">{% if band %}<span class="rband" style="left:{{ band.left }}%;width:{{ band.width }}%"></span>{% else %}<span class="pin" style="left:{{ stat.range_at|default:0 }}%"></span>{% endif %}</div>
@@ -37,15 +37,15 @@ spans a trailing orphan across the row.{% endcomment %}
     </div>
 
   {% else %}{# bar / sparkline #}
-    <div class="tv">{{ stat.value }}{% if stat.unit %}<small{% if stat.unit|slice:":1" == " " %} class="u-word"{% endif %}>{{ stat.unit }}</small>{% endif %}</div>
+    <div class="tv">{{ stat.value|sup_exp }}{% if stat.unit %}<small{% if stat.unit|slice:":1" == " " %} class="u-word"{% endif %}>{{ stat.unit }}</small>{% endif %}</div>
     {% if stat.fill_pct is not None %}<div class="vrow"><div class="pbar"><i style="width:{{ stat.fill_pct }}%"></i></div></div>{% endif %}
   {% endif %}
 
-  {% if stat.note %}<div class="tnote">{{ stat.note }}</div>{% endif %}
+  {% if stat.note %}<div class="tnote">{{ stat.note|sup_exp }}</div>{% endif %}
 
   {% if stat.detail or stat.source_label %}
   <div class="tmore" x-show="open[{{ stat.id }}]" x-cloak>
-    {% if stat.detail %}<div class="tdetail">{{ stat.detail|linebreaks }}</div>{% endif %}
+    {% if stat.detail %}<div class="tdetail">{{ stat.detail|sup_exp|linebreaks }}</div>{% endif %}
     {% if stat.source_label %}{% if stat.source_url %}<a class="tsrc" href="{{ stat.source_url }}" target="_blank" rel="noopener" @click.stop><i class="ph-duotone ph-link-simple"></i>{{ stat.source_label }}{% if stat.source_published %} · {{ stat.source_published }}{% endif %}</a>{% else %}<span class="tsrc tsrc-plain"><i class="ph-duotone ph-link-simple"></i>{{ stat.source_label }}{% if stat.source_published %} · {{ stat.source_published }}{% endif %}</span>{% endif %}{% endif %}
   </div>
   {% endif %}

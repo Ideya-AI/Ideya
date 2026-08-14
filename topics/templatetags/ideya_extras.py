@@ -68,3 +68,24 @@ def dictget(mapping, key):
     if isinstance(mapping, dict):
         return mapping.get(str(key), "")
     return ""
+
+
+@register.filter
+def sup_exp(text):
+    """Render caret exponents as real superscripts: 10^26 -> 10<sup>26</sup>.
+
+    Compute thresholds are written in the source JSON as ASCII (`10^26`) so the
+    content stays plain text and greppable; typing `10²⁶` into the data would
+    break that register and can't be searched. The transform belongs here, at
+    the display edge — a reader should not have to parse a caret.
+    """
+    s = str(text)
+    if "^" not in s:
+        return escape(s)
+    out, last = [], 0
+    for m in re.finditer(r"\^(-?\d+)", s):
+        out.append(escape(s[last : m.start()]))
+        out.append(f"<sup>{escape(m.group(1))}</sup>")
+        last = m.end()
+    out.append(escape(s[last:]))
+    return mark_safe("".join(out))

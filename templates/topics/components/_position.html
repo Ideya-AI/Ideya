@@ -1,4 +1,4 @@
-{% comment %}A named position — the heart. Expects `p` inside the pos-grid's
+{% load ideya_extras %}{% comment %}A named position — the heart. Expects `p` inside the pos-grid's
 rowGrid Alpine scope (expansion state lives on the grid, keyed by data-xid, so
 row partners open together — see rowGrid in ideya.js).
 Axis 1 (breadth): `is_extra` cards appear only when the section's Go-deeper is open.
@@ -15,8 +15,8 @@ the expand.{% endcomment %}
   <p class="psteel">“{{ p.steelman }}”</p>
   {% if p.has_more %}
   <div class="pmore" x-show="open[{{ p.id }}]" x-cloak>
-    {% if p.description %}<p class="pdesc">{{ p.description }}</p>{% endif %}
-    {% if p.detail %}<div class="pdetail">{{ p.detail|linebreaks }}</div>{% endif %}
+    {% if p.description %}<p class="pdesc">{{ p.description|sup_exp }}</p>{% endif %}
+    {% if p.detail %}<div class="pdetail">{{ p.detail|sup_exp|linebreaks }}</div>{% endif %}
     {% if p.representative_name %}<p class="prep"><i class="ph-duotone ph-user-focus"></i><span><b>{{ p.representative_name }}</b> — {{ p.representative_note }}</span></p>{% endif %}
     {% if p.proponents %}<p class="pprop"><b>Proponents:</b> {{ p.proponent_list|join:" · " }}</p>{% endif %}
   </div>
