@@ -20,7 +20,7 @@ artifact is skipped unless you pass `--redo`.
 
 | Stage | Does | Artifact |
 |---|---|---|
-| 1 Research | substance: plan (+icon) → parallel research → crux → substance gate | `research/dossiers/<slug>.json` |
+| 1 Research | substance: plan (+icon) → parallel research → crux → **claim ledger + per-claim verification** → substance gate | `research/dossiers/<slug>.json` |
 | 2 Distribute | presentation: distill → tier/reveal/fold → presentation gate | `research/topics/<slug>.json` (loader contract) |
 | 3 Iconography | brief → Nano Banana candidates → pick → post-process | `static/img/topics/<slug>.png` + `research/icons/<slug>.md` + candidates |
 | 4 Views | render desktop/mobile/social/poster → critique → content-fix loop | `research/reviews/<slug>/` (+ `REVIEW.md`) |
@@ -79,7 +79,7 @@ catalog keys `primary_category_slug`→`category` and `position_names`→`positi
 the Workflow tool's `args` (no baking needed — the `__ARGS` recipe below is only for
 stage 2's 60KB+ dossier).
 
-Persist the return (`{draft, plan, verdicts, shape_notes, plan_positions}`) to
+Persist the return (`{draft, plan, verdicts, shape_notes, plan_positions, claim_ledger}`) to
 `research/dossiers/<slug>.json` wrapped in `{dossier_version:1, generated, slug, input,
 ...}`. Check: substance gate 3/3 and `shape_notes` empty. A verdict now carries `checks_run`;
 a check with `ran=false` fails that critic and re-runs it once automatically, so a gate
@@ -94,6 +94,19 @@ Escalate a fact to the human only when the resolution needs a judgment they alon
 make (e.g. cutting the claim would change which camps the topic can represent), and then
 state the decision being asked for, never "please verify this".
 The plan emits the Phosphor `icon`, so `--icon` at load is optional.
+
+**Claim ledger (stage 1, between Crux and Gate).** An extraction agent enumerates every
+load-bearing claim — figures, dates, statute/EO names and numbers, "X did Y" assertions —
+sweeping position/question prose as hard as the stats, because **only stats carry
+`source_*` fields**: prose is unsourced by construction and is exactly where run 11's two
+wrong claims hid behind a 4/4 gate. Verifiers then check each claim in parallel and see
+**only the claim and its cited URL, never the draft** — handing a judge the draft primes it
+to rationalise, so an isolated check is the whole point. A missing `source_quote` forces
+`unverifiable` in code rather than at the model's discretion, and `contradicted` /
+`unverifiable` become blocking items on the existing fix loop. Failing claims are
+**re-verified each fix round**, so a fact "fix" that changed nothing cannot drop out of the
+verdict set and score clean. Report `claim_ledger` coverage (supported/total) in the packet
+— it is the factual-precision metric, and it replaces asserting that facts were checked.
 
 > **Web-search budget is a shared, non-configurable pool.** There is no setting for it
 > (checked against the Claude Code settings docs, 2026-08-13). Stage 1 runs 7 web-enabled
