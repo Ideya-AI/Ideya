@@ -37,7 +37,12 @@ artifact is skipped unless you pass `--redo`.
 ## Model + effort routing (baked as workflow defaults; override via `args.models` / `args.efforts`)
 
 Judgment on **opus**; web grunt on **sonnet**; never below sonnet.
-- Stage 1: plan `opus` · research `sonnet` · crux `opus` · gate `opus` · fix `opus`
+- Stage 1: plan `opus` · research `sonnet` · crux `opus` · gate `opus` (3 critics) · fix `opus`
+- Two critics were retired on evidence, not taste: across the corpus the **crux** critic
+  produced 0 blocking findings in 21 verdicts and **above-fold-selection** 0 in 9, while
+  `fact-source` blocked 71% of the time. Both remits were folded into the neighbouring
+  critic that reads the same material; the saving goes to verification, which is where
+  the failures actually are.
 - Stage 2: distill `opus` · distribute `opus` · gate `opus` · fix `sonnet`
 - Stages 3–4: icon brief/pick and view critics on `opus` (main session + sub-agents)
 
@@ -76,7 +81,9 @@ stage 2's 60KB+ dossier).
 
 Persist the return (`{draft, plan, verdicts, shape_notes, plan_positions}`) to
 `research/dossiers/<slug>.json` wrapped in `{dossier_version:1, generated, slug, input,
-...}`. Check: substance gate 4/4 and `shape_notes` empty. **Fact residuals are NOT a
+...}`. Check: substance gate 3/3 and `shape_notes` empty. A verdict now carries `checks_run`;
+a check with `ran=false` fails that critic and re-runs it once automatically, so a gate
+reported as clean means the checks actually happened. **Fact residuals are NOT a
 human-review item.** If a verdict leaves any factual matter unresolved — a wrong number,
 a shaky citation, a claim the critic could not verify — it is the pipeline's to close
 before the packet is written: re-run the fact critic on that claim, or apply the
@@ -103,8 +110,8 @@ The plan emits the Phosphor `icon`, so `--icon` at load is optional.
 Run `distribute_topic.js` with args `{slug, title, today, dossier:<the stage-1 return>,
 models}`. It distills the compact layer, assigns tier (the "Go deeper" fold) and reveal
 (compact vs expanded), and reorders items so the most decision-relevant lead — then a
-3-critic presentation gate (compact-self-sufficiency, reading-level-fit,
-above-fold-selection). **Display order = array order; `tier` marks the drop-off within
+2-critic presentation gate (compact-self-sufficiency — which now also judges above-fold
+selection — and reading-level-fit). **Display order = array order; `tier` marks the drop-off within
 that order — to move an item across the fold you REORDER, not just re-tier.** Persist the
 return as `research/topics/<slug>.json` (`{draft, verdicts, plan_positions}` — the loader
 contract; verdicts are stage-tagged). Facts are never changed here (the patch whitelist
