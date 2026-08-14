@@ -118,6 +118,28 @@ verdict set and score clean. Report `claim_ledger` coverage (supported/total) in
 > reports a check it could not run, re-run that critic alone in a fresh workflow invocation
 > (a new run gets a fresh pool) rather than accepting the caveat.
 
+### Measuring whether the gate is actually sensitive
+
+Clean gate results are self-reported, and a run of them is equally consistent with
+"the drafts are good" and "the judges are agreeable" — the gate's own "bar is PARITY,
+not perfection" is a leniency lever with no measurement on it. To calibrate, inject
+defects of known class into a known-good topic and count what comes back:
+
+```
+.venv/bin/python research/workflows/seed_defects.py \
+  --src research/topics/frontier-ai-regulation.json --out <scratch>/seeded.json
+# run stage 1's gate against the seeded draft, save the verdicts, then:
+.venv/bin/python research/workflows/seed_defects.py --score <scratch>/seeded.manifest.json <verdicts.json>
+```
+
+Seed from a topic that lints at 0 so every finding is attributable to an injection.
+Injection targets are disjoint (two defects on one stat make per-class detection
+unscoreable), and the classes span easy to subtle on purpose: `fact-wrong-10x` and
+`dead-link` should be near-100%, while `source-misattributed` (a live, reputable URL
+that simply does not support the claim) and `unsupported-precision` (an invented
+figure in prose, which carries no source field) are the ones that discriminate. A
+class at 0% is a blind spot to close with a rule, not a prompt nudge.
+
 ## Stage 2 · Distribute (presentation)
 
 Run `distribute_topic.js` with args `{slug, title, today, dossier:<the stage-1 return>,
