@@ -1,6 +1,8 @@
 ---
 name: refresh-topic
 description: Re-research, adversarially verify, and update ONE topic's content as it goes stale — propose a cited diff for human approval, then load it as a draft and publish. Use when topics_due / check_links flags a topic, or when something material changed a topic's shape.
+disable-model-invocation: true
+argument-hint: "[slug]"
 ---
 
 # refresh-topic

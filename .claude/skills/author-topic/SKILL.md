@@ -1,6 +1,8 @@
 ---
 name: author-topic
 description: Author ONE new Ideya topic end to end through the staged pipeline — research (substance) → distribute (presentation) → iconography → views → a review packet for the human. Use when turning a catalog entry into a publish-ready draft. AI drafts → a human publishes.
+disable-model-invocation: true
+argument-hint: "[slug]"
 ---
 
 # author-topic
@@ -108,8 +110,13 @@ to rationalise, so an isolated check is the whole point. A missing `source_quote
 verdict set and score clean. Report `claim_ledger` coverage (supported/total) in the packet
 — it is the factual-precision metric, and it replaces asserting that facts were checked.
 
-> **Web-search budget is a shared, non-configurable pool.** There is no setting for it
-> (checked against the Claude Code settings docs, 2026-08-13). Stage 1 runs 7 web-enabled
+> **Web-search budget is a shared pool — and it IS configurable** (this note previously
+> said otherwise; the settings page does not document it, but the tools reference does).
+> The cap is `CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION`, default **200**, counted across
+> the main conversation and every subagent it spawns. It is raised to 1500 in
+> `.claude/settings.json`. `/clear` resets the counter — a cheaper recovery than re-running
+> a critic in a fresh workflow — but a still-running workflow carries its count across the
+> clear. Stage 1 runs 7 web-enabled
 > research agents BEFORE the gate, so the critics arrive last and can find the pool empty —
 > on `frontier-ai-regulation` both the neutrality and fact-source critics reported it spent
 > before their first search. **WebFetch is NOT affected** and kept working throughout; that
