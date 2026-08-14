@@ -114,6 +114,18 @@ rejects edits to value/unit/source/url/name/text).
 > files. Bake it in: copy the workflow to a run script, whole-word replace `args` →
 > `__ARGS`, and inject `const __ARGS = {...}` after the meta block. See `reference.md`.
 
+**Lint before the gate.** Run the deterministic lint on the persisted JSON — mechanical
+defects (straight quotes, entities, double spaces, over-cap fields, wrapped lean chips,
+one-paragraph details, over-long poster-band units) are decidable and must never consume
+critic attention or reach the human:
+```
+.venv/bin/python research/workflows/lint_draft.py research/topics/<slug>.json --fix
+```
+`--fix` applies only the safe deterministic rewrites (typography/spacing/entities); it
+exits 1 while any judgment finding remains. Drive it to **0 findings** before rendering.
+It catches things eyeballing misses — it found a capitalised `Honouring` that a manual
+case-sensitive sweep had walked straight past.
+
 Before persisting, write the catalog entry's categories into the draft:
 `draft.categories = [primary_category_slug, ...secondary_category_slugs]` — the
 workflows don't emit this key and the loader would otherwise drop the topic's
