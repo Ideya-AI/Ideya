@@ -269,6 +269,9 @@ body .sec.is-open .when-normal.is-inline, body .sec.is-open .when-deep.is-inline
 .tk { font-size: var(--text-xs); font-weight: var(--weight-semibold); text-transform: uppercase; letter-spacing: .04em; color: var(--fg3); }
 .tv { font-family: var(--font-tabular); font-size: var(--text-4xl); font-weight: 700; letter-spacing: var(--tracking-tight); color: var(--fg1); font-variant-numeric: tabular-nums; line-height: 1.05; margin-top: 8px; }
 .tv small { font-size: var(--text-xl); font-weight: var(--weight-semibold); color: var(--fg3); line-height: 1.25; display: inline-block; }
+/* inline-block eats the leading space authors put in a word unit, so "1,600+" and
+   "incidents logged" ran together. Symbol units (%, x, °C) must stay tight. */
+.tv small.u-word { margin-left: .18em; }
 .tnote { font-size: var(--text-sm); color: var(--fg2); line-height: var(--leading-normal); margin-top: 10px; }
 .tsrc { display: inline-flex; align-items: center; gap: 6px; font-size: var(--text-xs); color: var(--fg3); margin-top: 10px; }
 .tsrc i { font-size: 13px; }

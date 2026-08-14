@@ -24,11 +24,11 @@ spans a trailing orphan across the row.{% endcomment %}
   {% elif stat.viz == "radial" %}
     <div class="radwrap">
       <div class="radial" style="--pct:{{ stat.fill_pct|default:0 }}"></div>
-      <div class="tv">{{ stat.value }}{% if stat.unit %}<small>{{ stat.unit }}</small>{% endif %}</div>
+      <div class="tv">{{ stat.value }}{% if stat.unit %}<small{% if stat.unit|slice:":1" == " " %} class="u-word"{% endif %}>{{ stat.unit }}</small>{% endif %}</div>
     </div>
 
   {% elif stat.viz == "range" %}
-    <div class="tv">{{ stat.value }}{% if stat.unit %}<small>{{ stat.unit }}</small>{% endif %}</div>
+    <div class="tv">{{ stat.value }}{% if stat.unit %}<small{% if stat.unit|slice:":1" == " " %} class="u-word"{% endif %}>{{ stat.unit }}</small>{% endif %}</div>
     <div class="vrow">
       {% with band=stat.range_band %}
       <div class="track">{% if band %}<span class="rband" style="left:{{ band.left }}%;width:{{ band.width }}%"></span>{% else %}<span class="pin" style="left:{{ stat.range_at|default:0 }}%"></span>{% endif %}</div>
@@ -37,7 +37,7 @@ spans a trailing orphan across the row.{% endcomment %}
     </div>
 
   {% else %}{# bar / sparkline #}
-    <div class="tv">{{ stat.value }}{% if stat.unit %}<small>{{ stat.unit }}</small>{% endif %}</div>
+    <div class="tv">{{ stat.value }}{% if stat.unit %}<small{% if stat.unit|slice:":1" == " " %} class="u-word"{% endif %}>{{ stat.unit }}</small>{% endif %}</div>
     {% if stat.fill_pct is not None %}<div class="vrow"><div class="pbar"><i style="width:{{ stat.fill_pct }}%"></i></div></div>{% endif %}
   {% endif %}
 
