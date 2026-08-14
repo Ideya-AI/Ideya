@@ -36,11 +36,17 @@ artifact is skipped unless you pass `--redo`.
 
 ## Model + effort routing (baked as workflow defaults; override via `args.models` / `args.efforts`)
 
-Judgment on **fable**; web grunt on **sonnet**/**opus**; never below sonnet.
-- Stage 1: plan `fable` · research `sonnet` · crux `fable` · gate `fable`
-  (EXCEPT fact-source critic: `opus` — token-heavy mechanical web checking) · fix `opus`
-- Stage 2: distill `opus` · distribute `fable` · gate `fable` · fix `sonnet`
-- Stages 3–4: brief/pick and view critics on `fable` (main session + sub-agents)
+Judgment on **opus**; web grunt on **sonnet**; never below sonnet.
+- Stage 1: plan `opus` · research `sonnet` · crux `opus` · gate `opus` · fix `opus`
+- Stage 2: distill `opus` · distribute `opus` · gate `opus` · fix `sonnet`
+- Stages 3–4: icon brief/pick and view critics on `opus` (main session + sub-agents)
+
+> **No Fable anywhere (2026-08-13).** The weekly Fable limit was exhausted mid-run on
+> `frontier-ai-regulation`, killing three of the four gate critics. `args.models` alone
+> was NOT enough to prevent it — the override silently did not reach the workflow script,
+> so the old `?? "fable"` defaults won. Every Fable default has been removed from all
+> three workflow scripts; do not reintroduce one on the assumption an arg will override it.
+> First Opus-only run held quality: stage-1 gate 4/4 with zero blocking findings.
 
 High-volume subtasks also pin an explicit reasoning **effort** instead of inheriting
 the session's (often max) effort — the main session-overage lever: stage-1
@@ -70,9 +76,27 @@ stage 2's 60KB+ dossier).
 
 Persist the return (`{draft, plan, verdicts, shape_notes, plan_positions}`) to
 `research/dossiers/<slug>.json` wrapped in `{dossier_version:1, generated, slug, input,
-...}`. Check: substance gate 4/4 (or logged residuals — the fact-source critic often
-leaves a citation-attribution note; that's a human-review item, not a blocker), and
-`shape_notes` empty. The plan emits the Phosphor `icon`, so `--icon` at load is optional.
+...}`. Check: substance gate 4/4 and `shape_notes` empty. **Fact residuals are NOT a
+human-review item.** If a verdict leaves any factual matter unresolved — a wrong number,
+a shaky citation, a claim the critic could not verify — it is the pipeline's to close
+before the packet is written: re-run the fact critic on that claim, or apply the
+resolution it prescribed (cut / soften to what the source supports / attribute in-voice).
+Stage 1's `applyPatch` has NO field whitelist, so fact fields (`value`, `label`,
+`source_*`) ARE fixable here — the whitelist that rejects them exists only in stage 2.
+Escalate a fact to the human only when the resolution needs a judgment they alone can
+make (e.g. cutting the claim would change which camps the topic can represent), and then
+state the decision being asked for, never "please verify this".
+The plan emits the Phosphor `icon`, so `--icon` at load is optional.
+
+> **Web-search budget is a shared, non-configurable pool.** There is no setting for it
+> (checked against the Claude Code settings docs, 2026-08-13). Stage 1 runs 7 web-enabled
+> research agents BEFORE the gate, so the critics arrive last and can find the pool empty —
+> on `frontier-ai-regulation` both the neutrality and fact-source critics reported it spent
+> before their first search. **WebFetch is NOT affected** and kept working throughout; that
+> is why fact-source could still verify every URL directly. Verification should therefore
+> lean on WebFetch of primary sources, with search reserved for discovery. If a gate critic
+> reports a check it could not run, re-run that critic alone in a fresh workflow invocation
+> (a new run gets a fresh pool) rather than accepting the caveat.
 
 ## Stage 2 · Distribute (presentation)
 
@@ -106,7 +130,7 @@ Use `<slug>-draft` only when a published version is live and must stay online.)
 ## Stage 3 · Iconography
 
 Loop, capped at ~3 refine rounds:
-1. A `fable` sub-agent writes `research/icons/<slug>.md` from `research/ICONOGRAPHY.md` +
+1. An `opus` sub-agent writes `research/icons/<slug>.md` from `research/ICONOGRAPHY.md` +
    `research/icons/categories.md` + the existing briefs as exemplars (match their
    headings; the `## Generation prompt` blockquote is what the generator reads).
 2. `python research/icons/generate_icons.py --slug <slug> --n 4` → candidates land in
@@ -134,7 +158,7 @@ template edit**: Django 4.1+ caches compiled templates even under DEBUG, and wit
    research/reviews/<slug>`, `render_poster --slug <slug> --base-url <dev> --out
    research/reviews/<slug>` (its fit-check exit code is a hard gate; `--base-url` is
    required on all three render commands).
-2. `fable` sub-agents **Read** every image against `design/DESIGN_SYSTEM.md` +
+2. `opus` sub-agents **Read** every image against `design/DESIGN_SYSTEM.md` +
    `design/RESPONSIVE.md`. Classify findings:
    - **content-fixable** (overlong text, bad fold, poster overflow) → re-run
      `distribute_topic.js` with `args.fix_only:[findings]` (skips distill/distribute, runs

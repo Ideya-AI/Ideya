@@ -101,7 +101,11 @@ Poster fit: <slack>px.
 - <code/CSS defects the view critics found>
 
 ## Check in 5 minutes
-- <the few things most worth a human eye: the flagged residual, any close editorial call>
+- <the few things most worth a human eye: close EDITORIAL calls (a fold choice, a
+  contested framing, whether a camp deserves its own card). NOT unresolved facts —
+  those are closed inside the pipeline before this packet is written. A fact appears
+  here only when the RESOLUTION needs the human's judgment, and then it states the
+  decision being asked for, never "please verify this".>
 
 ## To publish
 load_topic_draft --slug <slug> --status published --image-brief research/icons/<slug>.md

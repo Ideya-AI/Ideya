@@ -141,7 +141,7 @@ as the design record. The five stages:
    `static/img/topics/<slug>.png` (1035×690). Prompt provenance wired into
    `Topic.primary_image_prompt` via `load_topic_draft --image-brief`.
 4. **Views** — `render_screens.py` (full-height desktop/mobile) + `render_social` +
-   `render_poster` → `fable` critics read the images → content findings loop back through
+   `render_poster` → `opus` critics read the images → content findings loop back through
    `distribute_topic.js --fix_only`; CSS defects are logged for the human, not auto-fixed.
    Artifacts under `research/reviews/<slug>/` incl. `REVIEW.md`.
 5. **Human review & publish** — unchanged: preview the draft, publish, set `reviewed_at`,
