@@ -123,8 +123,11 @@ Author an entry in `research/catalog/topic-universe.json` matching the existing
 shape: `{title, slug, summary, why_now, primary_category_slug,
 secondary_category_slugs, suggested_icon, position_names, related_slugs}`.
 `related_slugs` is 3–5 existing catalog slugs; also add this slug to 1–2 neighboring
-entries so edges point both ways. Then `manage.py load_universe` (idempotent)
-registers the stub.
+entries so edges point both ways — the site shows **outgoing** edges only, so a
+one-way reference renders on one page and not the other. Then `manage.py
+load_universe` (idempotent) registers the stub; it warns on any `related_slugs`
+entry that matches no topic (a renamed slug once left a dangling reference that
+silently created no edge).
 
 ### Stage 1 — research (substance)
 

@@ -176,6 +176,14 @@ class Command(BaseCommand):
                             source=src, target=tgt, kind=TopicEdge.RELATES_TO
                         )
                         edges += made
+                elif rel != src.slug:
+                    # A dangling related_slug silently created no edge for weeks
+                    # (a renamed slug left one behind, found 2026-08-26) — warn.
+                    self.stderr.write(
+                        self.style.WARNING(
+                            f"related_slug '{rel}' on '{src.slug}' matches no topic — no edge created"
+                        )
+                    )
 
         # 5) Remove now-orphaned old categories (slugs not in the new taxonomy).
         orphans = Category.objects.exclude(slug__in=new_slugs)
