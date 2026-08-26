@@ -17,8 +17,8 @@ Which doc do I want?
 - **Design system** (tokens, type, color discipline) → `design/`. **Icon spec** →
   `research/ICONOGRAPHY.md`.
 
-The skills `/author-topic` and `/refresh-topic` are thin launchers into §Runbook A
-and §Runbook B — the procedure lives here, once.
+The skills `/author-topic` and `/refresh-topic` are thin launchers into §5 (Runbook
+A) and §6 (Runbook B) — the procedure lives here, once.
 
 ---
 
@@ -60,7 +60,7 @@ flowchart TD
 | Stage | Engine piece | Does | Gate | Artifact |
 |---|---|---|---|---|
 | 0 Catalog | hand-authored entry + `load_universe` | register the topic stub + taxonomy edges | — | entry in `research/catalog/topic-universe.json` |
-| 1 Research | `research/workflows/research_topic.js` | plan (+icon, prevalence_basis) → 7-agent parallel section research → crux → **claim ledger + isolated per-claim verification** → 3-critic substance gate → fix loop | substance gate 3/3, shape_notes empty, ledger closed | `research/dossiers/<slug>.json` |
+| 1 Research | `research/workflows/research_topic.js` | plan (+icon, prevalence_basis) → parallel section research (basics + questions + one agent per position + actions) → crux → **claim ledger + isolated per-claim verification** → 3-critic substance gate → fix loop | substance gate 3/3, shape_notes empty, ledger closed | `research/dossiers/<slug>.json` |
 | 2 Distribute | `research/workflows/distribute_topic.js` + `lint_draft.py` | distill compact layer → tier/reveal/fold → reorder → 2-critic presentation gate → whitelisted fix loop | gate 2/2 + lint at 0 findings + loader loads with 0 warnings | `research/topics/<slug>.json` |
 | 3 Iconography | brief agent + `research/icons/generate_icons.py` + `postprocess_icon.py` | brief → 4 Nano Banana candidates → pick vs checklist → normalize | checklist pass at 40px | `static/img/topics/<slug>.png` + `research/icons/<slug>.md` |
 | 4 Views | `render_screens/social/poster` + view critics | render all surfaces → critique → content-fix loop (`fix_only`) | poster fit exit 0 + all 3 social formats + no blocking content findings | `research/reviews/<slug>/` + `REVIEW.md` |
@@ -370,7 +370,8 @@ the main overage lever. Judgment singletons (plan, crux, distribute) inherit.
 
 - **Web-search pool**: `CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION` (default 200,
   raised to 1500 in `.claude/settings.json`), shared across the session and all
-  subagents. WebFetch is separate and uncapped — verification leans on it.
+  subagents. WebFetch draws on a separate pool the search cap does not touch —
+  verification leans on it; search is for discovery.
 - **Accounting**: `research/workflows/tally_tokens.py` per run. Reference points:
   fable-era topic ~285k opus-equivalent output; first opus+sonnet-only run ~553k
   (inflated by a resumed double-gate + largest topic yet).
@@ -452,11 +453,13 @@ actions cross the fold by reorder; positions by `tier` (prevalence is locked).
 wide spans 2), QUESTIONS 3/6 (1-col), POSITIONS 2/6 (2-col). The workflows'
 `foldPreview` reproduces `Section._tier_lead_count` exactly.
 
-**Verdict contract:** each critic returns `{critic, pass, blocking, notes,
+**Verdict contract:** each pipeline critic returns `{critic, pass, blocking, notes,
 checks_run}`; `pass=false` only on a blocking defect ("parity with a strong
 published topic, not perfection"); an unperformed check is filed as blocking, never
 passed with a caveat. VERDICT_SCHEMA is hand-mirrored across the three scripts —
-**change it in all three or the guard test fails.**
+**change it in all three or the guard test fails.** (The loader sample above shows
+the older per-element `{pass, issues, fixes}` shape from manual refresh verdicts;
+the loader stores either opaquely, so both round-trip.)
 
 **The `__ARGS` recipe** (workflow scripts can't read files; 60KB+ args must be
 baked into a run script):
@@ -491,7 +494,7 @@ six-section skeleton at every depth; more room adds evidence, never sections).
 
 | Symptom | Cause | Fix |
 |---|---|---|
-| Critic reports a check it couldn't run | shared search pool spent (7 research agents run first) | re-run that critic alone in a fresh workflow (fresh pool); lean on WebFetch |
+| Critic reports a check it couldn't run | shared search pool spent (the research fan-out runs first) | re-run that critic alone in a fresh workflow (fresh pool); lean on WebFetch |
 | Render doesn't show your template edit | compiled-template cache + `--noreload` | restart the dev server — always, after any template edit |
 | `args.models` override seems ignored | args don't reliably reach a script's `??` defaults | defaults are baked in the scripts; edit them there |
 | Empty topic loaded, no error | fed an export-shape file (gold) to the loader | loader wants `{draft:{overview,…}}`; use a pipeline-emitted file |
