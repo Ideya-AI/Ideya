@@ -100,6 +100,7 @@ cited old→new changelog → **human approves the diff** → staged load → pu
 | `research/dossiers/` | stage-1 substance records |
 | `research/topics/` | canonical per-topic JSON (the loader contract) |
 | `research/reviews/` | per-topic human review packets |
+| `research/reviews/UI_DEFECTS.md` | standing site-wide UI-defect register (critics consult; human burns down) |
 | `research/icons/` | briefs, exemplars, candidates |
 | `research/RESEARCH_PIPELINE.md` | design rationale + decision history (the "why") |
 | `research/ICONOGRAPHY.md` | icon visual spec |
@@ -222,12 +223,15 @@ Render + critique, capped at ~3 rounds:
    <dev> --out research/reviews/<slug>`; `render_poster --slug <slug> --base-url
    <dev> --out research/reviews/<slug>`. `--base-url` is required on all three.
 2. `opus` sub-agents **Read** every image against `design/DESIGN_SYSTEM.md` +
-   `design/RESPONSIVE.md`. Findings split:
+   `design/RESPONSIVE.md`, **with `research/reviews/UI_DEFECTS.md` in hand**.
+   Findings split:
    - **content-fixable** (overlong text, bad fold, poster overflow) → re-run
      `distribute_topic.js` with `args.fix_only:[findings]` (runs only the
      presentation fix loop) → reload → re-render.
-   - **code/CSS defect** → log in `REVIEW.md` for the human; never edit
-     templates/CSS.
+   - **code/CSS defect** → check the register first: matches an OPEN entry →
+     cite it, don't re-report; matches a FIXED entry → report as a REGRESSION;
+     genuinely new and site-wide → log in `REVIEW.md` AND append to the
+     register. Never edit templates/CSS.
 3. Pass = poster fit exit 0 + all three social formats + no blocking content
    findings.
 
