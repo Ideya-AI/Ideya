@@ -200,10 +200,13 @@ Loop, capped at ~3 refine rounds (spec: `research/ICONOGRAPHY.md`):
 2. `python research/icons/generate_icons.py --slug <slug> --n 4` → candidates in
    `research/icons/candidates/<slug>/`.
 3. **Read** the candidates; score against the checklist (uniform monoline stroke,
-   same-hue ~16–18% duotone fill, category color, 2.5–3.5× scene complexity, white
-   ground, no text/frame, 40px legibility). None pass → refine the prompt or
-   `--edit <candidate> --edit-prompt "..."`. One passes → append a `## Selection`
-   note to the brief.
+   same-hue ~16–18% duotone fill on EVERY major element — outline-only linework
+   vanishes at 40px, category color, 2.5–3.5× scene complexity, white ground, no
+   text/frame, 40px legibility). Judge family fit too: view the strongest
+   candidate next to 2–3 existing winners in `static/img/topics/` — 38 tiles will
+   sit on one wall, and per-icon quality does not guarantee the set reads as one
+   hand. None pass → refine the prompt or `--edit <candidate> --edit-prompt
+   "..."`. One passes → append a `## Selection` note to the brief.
 4. `python research/icons/postprocess_icon.py --slug <slug> --src <winner.jpg>` →
    `static/img/topics/<slug>.png` (1035×690) + 40px thumb; Read the thumb to
    confirm legibility. Keep all candidates for human swaps.

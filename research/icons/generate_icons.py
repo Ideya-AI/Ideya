@@ -29,6 +29,7 @@ import json
 import os
 import re
 import sys
+import time
 import urllib.error
 import urllib.request
 from pathlib import Path
@@ -91,19 +92,22 @@ def generate_one(
     prompt: str,
     size: str,
     aspect: str,
-    edit_image: bytes | None = None,
+    edit_images: list[bytes] | None = None,
 ) -> bytes:
-    # In edit mode the input carries the source image plus a text instruction so
+    # In edit mode the input carries the source image(s) plus a text instruction so
     # Nano Banana refines the existing candidate instead of drawing from scratch.
-    if edit_image is not None:
+    # Several images may be passed to blend or compare references; they arrive in
+    # the order given, so a prompt can refer to "image 1", "image 2" and so on.
+    if edit_images:
         input_items = [
             {
                 "type": "image",
                 "mime_type": "image/jpeg",
-                "data": base64.b64encode(edit_image).decode(),
-            },
-            {"type": "text", "text": prompt},
+                "data": base64.b64encode(img).decode(),
+            }
+            for img in edit_images
         ]
+        input_items.append({"type": "text", "text": prompt})
     else:
         input_items = [{"type": "text", "text": prompt}]
     body = {
@@ -122,12 +126,21 @@ def generate_one(
         headers={"x-goog-api-key": key, "Content-Type": "application/json"},
         method="POST",
     )
-    try:
-        with urllib.request.urlopen(req, timeout=180) as resp:
-            payload = json.load(resp)
-    except urllib.error.HTTPError as exc:
-        detail = exc.read().decode(errors="replace")[:600]
-        sys.exit(f"API error {exc.code}: {detail}")
+    payload = None
+    for attempt in (1, 2):
+        try:
+            with urllib.request.urlopen(req, timeout=180) as resp:
+                payload = json.load(resp)
+            break
+        except urllib.error.HTTPError as exc:
+            detail = exc.read().decode(errors="replace")[:600]
+            # One retry on transient failures — a 429/5xx mid-batch otherwise
+            # kills the whole candidate run.
+            if attempt == 1 and exc.code in (429, 500, 502, 503):
+                print(f"  transient API error {exc.code}; retrying in 15s…")
+                time.sleep(15)
+                continue
+            sys.exit(f"API error {exc.code}: {detail}")
 
     # Interactions shape: the image lives in steps[type=model_output]
     # .content[type=image].data (base64).
@@ -170,8 +183,10 @@ def main() -> None:
     )
     ap.add_argument(
         "--edit",
-        default="",
-        help="path to a candidate JPEG to refine instead of drawing fresh",
+        default=[],
+        action="append",
+        help="path to a candidate JPEG to refine instead of drawing fresh; "
+        "repeat to pass several references (order is preserved for the prompt)",
     )
     ap.add_argument(
         "--edit-prompt",
@@ -181,14 +196,15 @@ def main() -> None:
     ap.add_argument("--dry-run", action="store_true", help="print the prompt and exit")
     args = ap.parse_args()
 
-    edit_image = None
+    edit_images = []
     if args.edit:
         if not args.edit_prompt:
             sys.exit("--edit needs --edit-prompt describing the change to make.")
-        edit_path = Path(args.edit)
-        if not edit_path.exists():
-            sys.exit(f"--edit image not found: {edit_path}")
-        edit_image = edit_path.read_bytes()
+        for raw in args.edit:
+            edit_path = Path(raw)
+            if not edit_path.exists():
+                sys.exit(f"--edit image not found: {edit_path}")
+            edit_images.append(edit_path.read_bytes())
         prompt = args.edit_prompt
     else:
         prompt = prompt_from_brief(args.slug)
@@ -196,7 +212,7 @@ def main() -> None:
     if args.dry_run:
         print(
             f"model: {args.model} · size {args.size} · aspect {args.aspect} · n={args.n}"
-            + ("  [EDIT mode]" if edit_image else "")
+            + (f"  [EDIT mode, {len(edit_images)} ref]" if edit_images else "")
         )
         print("--- prompt ---")
         print(prompt)
@@ -213,7 +229,7 @@ def main() -> None:
     ]
     base = max(existing, default=0)
     for i in range(base + 1, base + args.n + 1):
-        png = generate_one(key, args.model, prompt, args.size, args.aspect, edit_image)
+        png = generate_one(key, args.model, prompt, args.size, args.aspect, edit_images)
         path = out_dir / f"{args.slug}.{args.model}.{i}.jpg"
         path.write_bytes(png)
         print(f"[{i - base}/{args.n}] {path}  ({len(png) // 1024} KB)")

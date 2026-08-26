@@ -9,6 +9,7 @@ Synthesis of the references (Gorges Beer Co · Phosphor · Flaticon Lineal):
 - **Line style (Gorges / Flaticon Lineal):** minimal, **one consistent stroke weight** across the whole set, rounded caps/joins; clean monoline with no fussy internal detail. **Uniform optical size + padding** so the set reads as one family.
 - **Composition / complexity (decided 2026-06-20):** the primary is a small **scene** — about **2.5–3.5× the complexity of a single Gorges icon**, achieved by **combining several simple sub-icons in a larger space**, NOT by making any one element more detailed. Each sub-icon stays Gorges-simple; the richness is in the combination. (Nuclear = cooling towers + atom + transmission pylon + hill line.)
 - **Duotone (from Phosphor):** single color, two tones — full-strength line + a soft (~16–18%) fill of the **same hue** on the main mass(es). Not multi-color.
+- **Filled masses, never outline-only (2026-08 rule):** EVERY major element carries the soft fill — thin unfilled linework nearly vanished at 40px on ai-takeoff; since briefs demanded fills on all masses, winners have come from the first batch. Prompts should forbid "outline-only" major elements explicitly.
 - **Color:** the topic's **category color**, two tones (energy = green, bio = rose, …). Lives in the existing rounded-square category-tinted tile.
 - **Legibility:** reads from ~40px up to hero size.
 
