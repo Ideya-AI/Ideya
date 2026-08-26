@@ -14,6 +14,7 @@ from pathlib import Path
 from django.core.management.base import BaseCommand, CommandError
 from django.db import transaction
 from django.utils import timezone
+from django.utils.text import slugify
 
 from topics.models import (
     POS_COLORS,
@@ -26,6 +27,7 @@ from topics.models import (
     Section,
     Stat,
     Topic,
+    TopicEdge,
     Vote,
 )
 
@@ -270,7 +272,10 @@ class Command(BaseCommand):
                 ),
                 source_url=s.get("source_url", "") or "",
                 source_published=self._cap(
-                    s.get("source_published", ""), 40, "source_published", s.get("label", "")
+                    s.get("source_published", ""),
+                    40,
+                    "source_published",
+                    s.get("label", ""),
                 ),
                 source_accessed=acc_date,
                 reveal=s.get("reveal", "condensed"),
@@ -478,6 +483,37 @@ class Command(BaseCommand):
                 )
             else:
                 self.stdout.write(msg)
+
+        # Wire related-topic edges from the catalog for this slug. load_universe
+        # does this for the whole catalog at seed time; a topic loaded after that
+        # run would otherwise ship with no "Connects to" chips (wildfires' edges
+        # had to be created by hand). Idempotent, both directions.
+        catalog_path = Path("research/catalog/topic-universe.json")
+        if catalog_path.exists():
+            entries = json.loads(catalog_path.read_text())["catalog"]
+            edges = 0
+            for e in entries:
+                e_slug = e.get("slug") or slugify(e["title"])
+                rels = e.get("related_slugs", [])
+                if e_slug == o["slug"]:
+                    for rel in rels:
+                        tgt = (
+                            Topic.objects.filter(slug=rel).exclude(pk=topic.pk).first()
+                        )
+                        if tgt:
+                            _, made = TopicEdge.objects.get_or_create(
+                                source=topic, target=tgt, kind=TopicEdge.RELATES_TO
+                            )
+                            edges += made
+                elif o["slug"] in rels:
+                    src = Topic.objects.filter(slug=e_slug).exclude(pk=topic.pk).first()
+                    if src:
+                        _, made = TopicEdge.objects.get_or_create(
+                            source=src, target=topic, kind=TopicEdge.RELATES_TO
+                        )
+                        edges += made
+            if edges:
+                self.stdout.write(f"related edges wired from catalog: {edges}")
 
         self.stdout.write(
             self.style.SUCCESS(
