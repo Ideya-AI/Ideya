@@ -22,7 +22,7 @@ The files here are **design references authored in HTML/CSS/React** — prototyp
   1. **Ink ramp** — a green-tinted neutral scale carries *all* chrome (`--ink-50` `#f7f9f7` bg → `--ink-900` `#141813` text).
   2. **Brand green** `#4CB050` (`--green-500/600/700` + `--green-tint`) — the single accent: actions, links-as-action, active states, brand. Used throughout chrome.
   3. **Position colors** (`--pos-green/amber/blue/rust/purple/teal/slate`) — distinguish named positions *within a topic*; assigned per-topic, reused across topics, **no fixed meaning**.
-  4. **Category colors** (`--cat-energy/tech/gov/econ/ethics/risk`) — identify top-level categories in **discovery tiers only** (Home, Category, Search) — **never on a Topic page**.
+  4. **Category colors** (`--cat-energy/tech/gov/econ/ethics/risk`) — identify top-level categories on **wayfinding elements only**: discovery tiers (Home, Category, Search) plus a Topic page's category badge and related-topic chips — **never on a Topic page's content** (positions, facts, questions, crux).
 - **Cards:** flat — white, `1px var(--ink-100)` border, **no shadow**, ~14–18px radius. Hover may lift the border / translate slightly. Shadow exists *only* for transient overlays (dropdown, modal/sheet).
 - **The Crux** is the one section that **inverts to a full dark band** (`--ink-900`, white text, green highlight) — the page's visual anchor.
 - **Reading depth** (Brief / Normal / Deep) is a first-class, cross-cutting control. Every section degrades to a "condensed atom" for sharing/print; Normal adds context; Deep adds sources / "go further."

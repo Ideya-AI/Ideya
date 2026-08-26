@@ -24,7 +24,7 @@ Hard rules to honor:
 - **Color discipline (three independent systems):**
   - **Logo green** is the single brand accent — links-as-action, primary buttons, active states, brand touches. Used throughout product chrome (this supersedes the old "green on marketing only" rule).
   - **Position colors** (`--pos-*`) distinguish named positions *within a topic*; assigned per-topic, reused across topics, never carry fixed meaning.
-  - **Category colors** (`--cat-*`) identify top-level categories in **discovery tiers only** (Home, Category pages, search) — never on a Topic page.
+  - **Category colors** (`--cat-*`) identify top-level categories on **wayfinding elements only**: discovery tiers (Home, Category pages, search) plus a Topic page's category badge and related-topic chips — never on a Topic page's content (positions, facts, questions, crux).
 - **Cards** are flat: 1px `--ink-100` border, ~14–18px radius, no shadow (hover may lift slightly).
 - **The Crux** is set apart as a full **dark inverted band** (`--ink-900`), the one place that goes dark — its visual anchor, not a side rule.
 - **Reading depth** (Brief / Normal / Deep) is a first-class control; every section degrades gracefully to its condensed atom for sharing and print.
