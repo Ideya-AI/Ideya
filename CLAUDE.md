@@ -40,9 +40,14 @@ Django + HTMX + Alpine. A curated atlas of hard debates; depth is an axis, not a
   `research/dossiers/` — stage-1 substance records. `research/reviews/<slug>/` — the
   human's review packet.
 - `research/workflows/` — the engine: the three Workflow scripts plus `lint_draft.py`,
-  `seed_defects.py` (gate calibration) and `tally_tokens.py`.
-- `research/RESEARCH_PIPELINE.md` — **the authoring engine's design doc** (Part I current, Part II decision history). Start there for how the engine works and why. `design/` — the locked design
-  system; treat it as authoritative over any prompt that contradicts it.
+  `seed_defects.py` (gate calibration), `tally_tokens.py`, and `check_engine.py`.
+- `research/ENGINE.md` — **the engine's operator manual and single source of truth
+  for operations** (structure, runbooks, routing, contracts, failure modes). Any
+  commit that changes the engine updates it in the same commit; `check_engine.py`
+  verifies the checkable parts (hook-enforced on engine-file edits).
+- `research/RESEARCH_PIPELINE.md` — the engine's design rationale + decision history
+  (the "why"). `design/` — the locked design system; treat it as authoritative over
+  any prompt that contradicts it.
 
 ## Pipeline
 

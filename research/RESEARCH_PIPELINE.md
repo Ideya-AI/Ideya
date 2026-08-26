@@ -1,7 +1,9 @@
-# The Ideya authoring engine
+# The Ideya authoring engine — design rationale
 
-**Part I is the current design and is authoritative. [Part II](#part-ii--decision-history-archive)
-is the dated decision history, kept for rationale.** Last revised 2026-08-14.
+**This doc is the "why": Part I is the current design and its reasoning; [Part II](#part-ii--decision-history-archive)
+is the dated decision history. For the "how" — operating the engine (runbooks,
+routing, contracts, failure modes) — `research/ENGINE.md` is the single source of
+truth.** Last revised 2026-08-26.
 
 The engine turns a catalog entry into a publish-ready **draft** topic plus a review
 packet. It does not publish. Every guard below exists because something failed; the
