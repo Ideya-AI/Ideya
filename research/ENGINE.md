@@ -122,12 +122,14 @@ digital · climate-env · bio-health · economy · governance · society · ethi
 Author an entry in `research/catalog/topic-universe.json` matching the existing
 shape: `{title, slug, summary, why_now, primary_category_slug,
 secondary_category_slugs, suggested_icon, position_names, related_slugs}`.
-`related_slugs` is 3–5 existing catalog slugs; also add this slug to 1–2 neighboring
-entries so edges point both ways — the site shows **outgoing** edges only, so a
-one-way reference renders on one page and not the other. Then `manage.py
-load_universe` (idempotent) registers the stub; it warns on any `related_slugs`
-entry that matches no topic (a renamed slug once left a dangling reference that
-silently created no edge).
+`related_slugs` is this topic's **best 3–5 related topics, from its own
+perspective** — the site shows **outgoing** edges only, and asymmetry is deliberate
+(decided 2026-08-26): a niche topic may point at a hub without being one of the
+hub's own best five, so never force reciprocity. When adding a new entry, also
+review 1–2 neighboring entries and add this slug there only where it genuinely
+belongs in *their* best 3–5. Then `manage.py load_universe` (idempotent) registers
+the stub; it warns on any `related_slugs` entry that matches no topic (a renamed
+slug once left a dangling reference that silently created no edge).
 
 ### Stage 1 — research (substance)
 
