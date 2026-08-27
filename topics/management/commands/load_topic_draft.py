@@ -72,9 +72,32 @@ class Command(BaseCommand):
     def add_arguments(self, p):
         p.add_argument("--file", required=True)
         p.add_argument("--slug", required=True)
-        p.add_argument("--title", required=True)
-        p.add_argument("--category", required=True, help="primary category slug")
+        # Title and category were required and hand-typed on every invocation —
+        # three near-identical ones per publish (local, container, and the
+        # DEPLOY seed). Both are recoverable from the artifacts, so they are now
+        # optional and resolved in _resolve_title / _resolve_category, which
+        # error loudly rather than guess when nothing supplies them.
+        p.add_argument(
+            "--title",
+            default="",
+            help="defaults to the draft's own title, else the catalog entry for --slug.",
+        )
+        p.add_argument(
+            "--category",
+            default="",
+            help="primary category slug; defaults to draft.primary_category, "
+            "then draft.categories[0] (stage 2 writes the primary first), "
+            "then the catalog's primary_category_slug.",
+        )
         p.add_argument("--status", default="draft", choices=["draft", "published"])
+        p.add_argument(
+            "--reviewed",
+            action="store_true",
+            help="also stamp reviewed_at=now() in the same transaction. This is "
+            "the human-approval clock topics_due schedules from; setting it by "
+            "hand afterwards was a separate `shell -c` that is easy to forget, "
+            "and forgetting it is SILENT — the topic just quietly comes due early.",
+        )
         p.add_argument(
             "--icon",
             default="",
@@ -86,6 +109,51 @@ class Command(BaseCommand):
             help="path to research/icons/<slug>.md; its '## Generation prompt' "
             "blockquote is stored as Topic.primary_image_prompt for provenance.",
         )
+
+    @staticmethod
+    def _catalog_entry(slug):
+        """The stage-0 catalog entry for a slug, or {}. The catalog is the
+        authoritative source for a topic's title; pipeline-emitted drafts do not
+        carry one."""
+        path = Path("research/catalog/topic-universe.json")
+        if not path.exists():
+            return {}
+        try:
+            entries = json.loads(path.read_text()).get("catalog", [])
+        except (json.JSONDecodeError, OSError):
+            return {}
+        return next(
+            (e for e in entries if (e.get("slug") or slugify(e["title"])) == slug), {}
+        )
+
+    def _resolve_title(self, o, d, entry):
+        title = o["title"] or d.get("title") or entry.get("title") or ""
+        if not title:
+            raise CommandError(
+                f"no title for '{o['slug']}': not in --title, the draft, or the "
+                "catalog. Pass --title explicitly."
+            )
+        return title
+
+    def _resolve_category(self, o, d, entry):
+        # draft.categories is written primary-first by stage 2 (ENGINE.md §5).
+        cats = d.get("categories") or []
+        slug = (
+            o["category"]
+            or d.get("primary_category")
+            or (cats[0] if cats else "")
+            or entry.get("primary_category_slug")
+            or ""
+        )
+        if not slug:
+            raise CommandError(
+                f"no category for '{o['slug']}': not in --category, the draft, or "
+                "the catalog. Pass --category explicitly."
+            )
+        cat = Category.objects.filter(slug=slug).first()
+        if not cat:
+            raise CommandError(f"category '{slug}' not found")
+        return cat
 
     def _cap(self, value, cap, field, ident):
         """Slice to the model's max_length, but never silently: mid-sentence
@@ -106,9 +174,13 @@ class Command(BaseCommand):
         # sections.delete(); any later error must roll the whole load back.
         payload = json.loads(Path(o["file"]).read_text())
         d = payload.get("draft", payload)
-        cat = Category.objects.filter(slug=o["category"]).first()
-        if not cat:
-            raise CommandError(f"category '{o['category']}' not found")
+        entry = self._catalog_entry(o["slug"])
+        title = self._resolve_title(o, d, entry)
+        cat = self._resolve_category(o, d, entry)
+        # Say what was inferred: a wrong title loaded silently is worse than one
+        # the operator was asked for.
+        if not o["title"] or not o["category"]:
+            self.stdout.write(f"resolved: title={title!r} category={cat.slug!r}")
 
         ov = d.get("overview", {})
         # Icon: explicit --icon wins, then the draft's icon (root level, where
@@ -134,7 +206,7 @@ class Command(BaseCommand):
         if not image_prompt and existing:
             image_prompt = existing.primary_image_prompt
         defaults = {
-            "title": o["title"],
+            "title": title,
             "status": o["status"],
             "primary_category": cat,
             "summary": ov.get("summary", ""),
@@ -154,6 +226,12 @@ class Command(BaseCommand):
         # round-trip must not silently reset it to the model default.
         if d.get("volatility") in dict(Topic.VOLATILITY_CHOICES):
             defaults["volatility"] = d["volatility"]
+        # reviewed_at is the HUMAN-approval clock (researched_at above is the
+        # machine's). Stamping it here puts it in the same atomic transaction as
+        # the load, so a publish cannot half-succeed into a state where the topic
+        # is live but its review cadence still reads "never reviewed".
+        if o["reviewed"]:
+            defaults["reviewed_at"] = timezone.now()
         topic, _ = Topic.objects.update_or_create(
             slug=o["slug"],
             defaults=defaults,

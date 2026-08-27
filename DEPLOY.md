@@ -191,11 +191,25 @@ the JSON changed since the last image build):
 
 ```sh
 docker exec ideya python manage.py load_topic_draft \
-  --file research/topics/<slug>.json --slug <slug> --title "<Title>" \
-  --category <cat> --status published --image-brief research/icons/<slug>.md
+  --file research/topics/<slug>.json --slug <slug> \
+  --status published --image-brief research/icons/<slug>.md --reviewed
 docker exec ideya python manage.py load_universe   # wires related-topic edges
 docker exec ideya python manage.py rebuild_search  # refresh the FTS index
+
+# Confirm it actually landed. A just-published topic missing from the live site
+# is a known failure mode (ENGINE.md §11) and nothing used to check for it.
+curl -s -o /dev/null -w '%{http_code}\n' https://<live-host>/<slug>/   # expect 200
 ```
+
+`--title` and `--category` are no longer needed: the loader resolves the title
+from the draft or the catalog entry, and the category from the draft's own
+`primary_category`/`categories`, printing what it resolved. `--reviewed` stamps
+the human-approval clock in the same transaction, replacing the separate
+`shell -c` that had to be run inside the container afterwards.
+
+Run `manage.py publish_topic --slug <slug> --confirm` locally FIRST — it
+preflights the artifacts and links, publishes, and prints these commands filled
+in for you.
 
 Reloading an existing published topic rebuilds its sections; the loader preserves that
 topic's votes/leans by re-attaching them to matching question text / position name

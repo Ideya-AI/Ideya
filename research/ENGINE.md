@@ -31,8 +31,9 @@ independently re-runnable; a stage that already has its artifact is skipped unle
 redone deliberately.
 
 Iron rules (enforced, not advisory — see `CLAUDE.md` Invariants for the full list):
-- **Automation drafts; a human publishes.** `--status published` from automation is
-  blocked by `.claude/hooks/pipeline-guard.sh`.
+- **Automation drafts; a human publishes.** `--status published` and
+  `publish_topic` are both blocked from automation by
+  `.claude/hooks/pipeline-guard.sh`.
 - **The pipeline never edits templates or CSS** — code defects go in the review
   packet.
 - **An unverified claim may not be asserted** — cut, soften, or attribute in-voice;
@@ -67,7 +68,7 @@ flowchart TD
 | 3 Iconography | brief agent + `research/icons/generate_icons.py` + `postprocess_icon.py` | brief → 4 Nano Banana candidates → pick vs checklist → normalize | checklist pass at 40px | `static/img/topics/<slug>.png` + `research/icons/<slug>.md` |
 | 4 Views | `render_screens/social/poster` + view critics | render all surfaces → critique → content-fix loop (`fix_only`) | poster fit exit 0 + all 3 social formats + no blocking content findings | `research/reviews/<slug>/` + `REVIEW.md` |
 | 4.5 PM gate | `.claude/agents/topic-pm.md` | fresh-context read of the FINISHED topic: deterministic pass (lint/links/artifacts) → reads every render → routes findings to the owning stage → writes the packet | every deterministic check green + no open routed finding | `research/reviews/<slug>/REVIEW.md` |
-| 5 Publish | **human** | review packet → publish → live push | human judgment | live topic |
+| 5 Publish | **human** + `publish_topic` | read the packet → `publish_topic --confirm` (preflight → publish → reviewed_at) → commit → live push | human judgment | live topic |
 
 Refresh (`refresh_topic.js`) is the upkeep mirror: detect → re-verify everything →
 cited old→new changelog → **human approves the diff** → staged load → publish.
@@ -90,11 +91,12 @@ cited old→new changelog → **human approves the diff** → staged load → pu
 | `.claude/agents/topic-pm.md` | stage-4.5 PM gate: verifies the finished topic, routes findings, writes the packet. Fable (allowlisted), falls back to opus |
 | `.claude/skills/author-topic/SKILL.md` | launcher for Runbook A (user-invoked only) |
 | `.claude/skills/refresh-topic/SKILL.md` | launcher for Runbook B (user-invoked only) |
-| `.claude/hooks/pipeline-guard.sh` | blocks automated publishing + dev-server-on-8642 |
+| `.claude/hooks/pipeline-guard.sh` | blocks automated publishing (`--status published` AND `publish_topic`) + dev-server-on-8642; heredoc bodies exempt so docs can quote the command |
 | `.claude/hooks/engine-doc-guard.sh` | runs check_engine.py after engine-file edits |
 | `topics/management/commands/load_topic_draft.py` | the loader: JSON → DB topic; wires catalog edges; idempotent |
 | `topics/management/commands/load_universe.py` | catalog → DB stubs + taxonomy + all related edges |
-| `topics/management/commands/export_topic.py` | DB → canonical JSON re-sync |
+| `topics/management/commands/publish_topic.py` | stage 5: preflight → publish → reviewed_at → prints the live-push commands. Human-only (hook-blocked) |
+| `topics/management/commands/export_topic.py` | DB → canonical JSON re-sync; preserves top-level keys it cannot regenerate (`changelog`) |
 | `topics/management/commands/check_links.py` | dead/placeholder/redirect audit (stat sources + action URLs + series rows) |
 | `topics/management/commands/topics_due.py` | refresh queue by volatility cadence |
 | `topics/management/commands/render_screens.py` | full-height page renders (1440/390/320, `--expanded`) |
@@ -337,12 +339,43 @@ tool, so the artifact stays under the orchestrator's hand.
 
 ### Stage 5 — human review & publish (the hard stop)
 
-The human: preview the draft as staff → publish (`load_topic_draft … --status
-published --image-brief research/icons/<slug>.md`) → set `reviewed_at = now()` →
-`check_links --topic <slug>` (0 dead / 0 placeholder) → commit the dossier, topic
-JSON, icon assets, and review packet. **Then push to live** — the live DB is
-separate; follow "Publish one topic to the live site" in `DEPLOY.md` §3 (a
-`docker exec` load against the live container — never copy the whole DB over it).
+Read the packet, open the page, decide. Then:
+
+```
+manage.py publish_topic --slug <slug> --dry-run     # preflight + the plan
+manage.py publish_topic --slug <slug> --confirm     # do it
+```
+
+`publish_topic` runs the whole local half: preflight (icon brief, primary art,
+**the OG card at `static/img/social/<slug>.png`**, links 0 dead / 0 placeholder)
+→ publish → `reviewed_at` → `rebuild_search` → print the live-push commands. It
+refuses to write anything without `--confirm`, and a failed preflight aborts
+before the publish rather than after it.
+
+**Links are checked BEFORE the publish, not after.** The old order checked them
+afterwards, which finds a dead link on a topic that is already live.
+
+Then commit the artifacts and push to live — the live DB is separate; follow
+"Publish one topic to the live site" in `DEPLOY.md` §3 (a `docker exec` load
+against the live container — never copy the whole DB over it). `publish_topic`
+prints those commands filled in, including a `curl` to confirm the topic actually
+appears on the live site: a just-published topic missing from live is a known
+failure mode (§11), and nothing used to check for it.
+
+**This is still the hard stop.** `.claude/hooks/pipeline-guard.sh` blocks
+`publish_topic` by name and `load_topic_draft --status published` — collapsing
+nine hand-typed steps into one human-invoked command changes the friction, not
+the rule. Two honest limits on that guard: it is not a sandbox (`manage.py shell`
+can always write `status` directly, as it always could), and it errs toward
+blocking, so a command that merely *quotes* a publish invocation inside a quoted
+argument is refused. Heredoc bodies are exempt, so documentation can print the
+command.
+
+`--title` and `--category` are optional everywhere now: the loader takes the
+title from the draft or the catalog entry, and the category from
+`draft.primary_category`, then `draft.categories[0]`, then the catalog. It prints
+what it resolved and errors when nothing supplies it — hand-typing them across
+three near-identical invocations was the most likely thing to get wrong.
 
 ## 6. Runbook B — refresh a topic
 
@@ -411,12 +444,11 @@ straight onto the real slug.
    ```
    Or for light changes: Django admin (`TopicAdmin` → Publish action — sets status
    only, still set `reviewed_at` yourself).
-3. **Set `reviewed_at`** (the loader sets `researched_at`, not `reviewed_at`;
-   this records human approval and resets the cadence clock; internal only):
-   ```
-   manage.py shell -c "from django.utils import timezone; from topics.models import Topic; \
-     Topic.objects.filter(slug='<slug>').update(reviewed_at=timezone.now())"
-   ```
+3. **Set `reviewed_at`** — pass `--reviewed` to the publishing load above and it
+   is stamped in the same transaction (the loader sets `researched_at`, the
+   machine's clock; `reviewed_at` records human approval and resets the cadence).
+   Doing it afterwards was a separate `shell -c` that is easy to forget, and
+   forgetting it is silent: `topics_due` just re-queues the topic early.
 4. **`check_links --topic <slug>`** — 0 dead / 0 placeholder. Non-optional; a
    piecemeal admin apply is exactly how the 2026-07-03 nuclear refresh shipped `#`
    placeholders live.
@@ -659,6 +691,7 @@ six-section skeleton at every depth; more room adds evidence, never sections).
 | `output schema too large to classify safely` | an output schema over ~3KB (worst with a long prompt) | split the call and merge locally, or move rich sub-objects to JSON-encoded strings (what stage 2's `add_*` does); stage 1's basics is split facts→shape for this reason |
 | `agent type '<name>' not found` mid-run | the custom-agent registry picks up a new `.claude/agents/*.md` on a **lag**, not instantly | wait and retry before doing anything drastic — 2026-08-27: a just-written definition failed to resolve, and the same file resolved later in the same session with its tool restriction intact. Restarting the session also works but is rarely needed |
 | Link previews show the generic Ideya mark | the og card was rendered into the review folder, not `static/img/social/` | stage 4 runs the `og` format with NO `--out`; the review-folder copy is not what `og:image` serves |
+| `reviewed_at` never set, topic re-queues early | it was a separate `shell -c` after the publish, easy to forget and silent when missed | `--reviewed` on the loader (or `publish_topic`, which passes it) stamps it in the same transaction |
 | Live site missing a just-published topic | authoring DB ≠ live DB | `DEPLOY.md` §3 docker-exec load; never copy the whole DB |
 
 ## 12. Appendix — REVIEW.md template
@@ -701,6 +734,7 @@ Rounds: research <n> · distribute <n> · icon <n> · views <n> · PM <n> (<n> r
 <new site-wide defects, or "none — <n> open entries cited from UI_DEFECTS.md">
 
 ## Publish
-Runbook A stage 5 — the loader invocation, then reviewed_at, then
-check_links --topic <slug> (0/0), then commit, then DEPLOY.md §3.
+manage.py publish_topic --slug <slug> --dry-run    # preflight + plan
+manage.py publish_topic --slug <slug> --confirm    # publish + reviewed_at
+→ it prints the commit and DEPLOY.md §3 live-push commands, filled in.
 ```

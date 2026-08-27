@@ -15,7 +15,11 @@ from pathlib import Path
 
 from django.test import SimpleTestCase
 
+import json
+import subprocess
+
 ROOT = Path(__file__).resolve().parents[2]
+HOOK = ROOT / ".claude" / "hooks" / "pipeline-guard.sh"
 WF = ROOT / "research" / "workflows"
 AGENTS = ROOT / ".claude" / "agents"
 # Fable is barred from the engine (weekly limit exhausted mid-run, 2026-08-13,
@@ -140,4 +144,57 @@ class WorkflowMirrorTests(SimpleTestCase):
                 '"issue", "fix", "quote"',
                 _read(name),
                 f"{name} allows a blocking finding with no verbatim quote",
+            )
+
+
+class PipelineGuardTests(SimpleTestCase):
+    """The publish guard is the enforcement behind "automation drafts, a human
+    publishes". It has twice been too greedy — blocking its own commit message,
+    then a heredoc that quoted the command it guards — and each loosening risks
+    the opposite failure. These cases pin both edges."""
+
+    def _verdict(self, command):
+        result = subprocess.run(
+            ["bash", str(HOOK)],
+            input=json.dumps({"tool_input": {"command": command}}),
+            capture_output=True,
+            text=True,
+        )
+        return "BLOCK" if result.returncode == 2 else "ALLOW"
+
+    def test_blocks_every_real_publish_invocation(self):
+        for command in [
+            "manage.py load_topic_draft --file x.json --slug s --status published",
+            ".venv/bin/python manage.py load_topic_draft --slug s --status=published",
+            "docker exec ideya python manage.py load_topic_draft --slug s --status published",
+            "cd /repo && manage.py load_topic_draft --slug s --status published",
+            # publish_topic reaches the loader through Python, so it never renders
+            # a `--status published` string — it must be blocked by name.
+            "manage.py publish_topic --slug s --confirm",
+            ".venv/bin/python manage.py publish_topic --slug s --dry-run",
+            "docker exec ideya python manage.py publish_topic --slug s",
+            "DJANGO_DEBUG=true python manage.py runserver 8642 --noreload",
+            # a heredoc whose OPENING line is a real publish still blocks
+            "manage.py load_topic_draft --status published <<'EOF'\nnotes\nEOF",
+        ]:
+            self.assertEqual(
+                "BLOCK", self._verdict(command), f"guard let this through: {command!r}"
+            )
+
+    def test_allows_documentation_that_quotes_the_command(self):
+        """The review packet prints the publish command for the human to copy.
+        Quoting a command is not invoking it."""
+        for command in [
+            "cat > doc.md <<'EOF'\nmanage.py load_topic_draft --slug s --status published\nEOF",
+            "cat > doc.md <<'EOF'\nRun publish_topic --slug s --confirm when ready\nEOF",
+            "git commit -F - <<'EOF'\nfix: --status published in prose\nEOF",
+            "python3 - <<'PY'\nprint('load_topic_draft --status published')\nPY",
+            'cat > x.sh <<-"END"\n  manage.py publish_topic --slug s\n  END',
+            "manage.py load_topic_draft --file x.json --slug s --status draft",
+            "grep -rn publish_topic topics/",
+            "cat topics/management/commands/publish_topic.py",
+            "DJANGO_DEBUG=true python manage.py runserver 8641 --noreload",
+        ]:
+            self.assertEqual(
+                "ALLOW", self._verdict(command), f"guard falsely blocked: {command!r}"
             )

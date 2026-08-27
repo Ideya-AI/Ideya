@@ -88,7 +88,21 @@ mistakes already paid for here:
    "Fix the simple things" is how a verifier acquires edit rights over facts and CSS,
    both of which are locked.
 
-**Stage 5 · human.** The only step the engine does not do.
+**Stage 5 · human.** The only step the engine does not do — the decision, not the
+typing. It was nine hand-typed steps: three near-identical loader invocations with
+hand-typed `--title`/`--category` and two raw `shell -c` one-liners, with the link
+check running *after* the publish so a dead link was discovered on a topic that
+was already live. `publish_topic` collapses the local half into one command
+(preflight → publish → `reviewed_at` → print the live-push commands), and the
+preflight runs before anything is written.
+
+*Why that does not weaken the iron rule:* the rule is that a human decides and
+initiates, not that a human types nine commands. `publish_topic` refuses to write
+without `--confirm`, and the guard hook blocks it by name — which it must, because
+the command reaches the loader through Python and so never renders the
+`--status published` string the older rule matched on. **Adding a publish path
+without adding it to the guard would have silently retired the guard**, which is
+the failure this note exists to prevent next time.
 
 ## 4. The claim ledger — how facts are actually verified
 
