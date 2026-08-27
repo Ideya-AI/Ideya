@@ -14,4 +14,16 @@ case "$FILE" in
     }
     ;;
 esac
+
+# A workflow-script edit also gets the mirrored-contract guard (the three
+# scripts duplicate rules/schemas by hand; drift there was consequential).
+case "$FILE" in
+  */research/workflows/*.js)
+    OUT=$(DJANGO_DEBUG=true .venv/bin/python manage.py test topics.tests.test_workflow_mirrors -v 0 2>&1) || {
+      echo "workflow mirror-contract guard FAILED:" >&2
+      echo "$OUT" | tail -20 >&2
+      exit 2
+    }
+    ;;
+esac
 exit 0

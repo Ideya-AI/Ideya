@@ -82,6 +82,7 @@ cited old→new changelog → **human approves the diff** → staged load → pu
 | `research/workflows/seed_defects.py` | gate calibration: inject known defects, score detection |
 | `research/workflows/tally_tokens.py` | per-run token/cost accounting |
 | `research/workflows/check_engine.py` | verifies this manual against the code (routing + inventory) |
+| `topics/tests/test_workflow_mirrors.py` | guard on the hand-mirrored workflow contracts (run after ANY workflow-script edit: `manage.py test topics.tests.test_workflow_mirrors`) |
 | `.claude/skills/author-topic/SKILL.md` | launcher for Runbook A (user-invoked only) |
 | `.claude/skills/refresh-topic/SKILL.md` | launcher for Runbook B (user-invoked only) |
 | `.claude/hooks/pipeline-guard.sh` | blocks automated publishing + dev-server-on-8642 |
@@ -101,6 +102,7 @@ cited old→new changelog → **human approves the diff** → staged load → pu
 | `research/topics/` | canonical per-topic JSON (the loader contract) |
 | `research/reviews/` | per-topic human review packets |
 | `research/reviews/UI_DEFECTS.md` | standing site-wide UI-defect register (critics consult; human burns down) |
+| `research/refresh/` | refresh proposals + pre-refresh snapshots (`<slug>.refresh-proposal.<date>.json`) |
 | `research/icons/` | briefs, exemplars, candidates |
 | `research/RESEARCH_PIPELINE.md` | design rationale + decision history (the "why") |
 | `research/ICONOGRAPHY.md` | icon visual spec |
@@ -278,7 +280,9 @@ rules". Grunt research on cheaper models; judgment on the strong model
 ### 3 · Propose — the human gate
 A changelog the reviewer can act on, grouped by section: **old → new** with source
 URL + date + confidence + the driving verdict. Call out anything unverifiable or
-needing an editorial call. No DB writes yet.
+needing an editorial call. Persist it as
+`research/refresh/<slug>.refresh-proposal.<YYYY-MM-DD>.json` (snapshot the
+pre-refresh export beside it). No DB writes yet.
 
 ### 4 · Apply — staged load
 On approval, write the merged content to `research/topics/<slug>.json` in loader
@@ -469,7 +473,8 @@ wide spans 2), QUESTIONS 3/6 (1-col), POSITIONS 2/6 (2-col). The workflows'
 checks_run}`; `pass=false` only on a blocking defect ("parity with a strong
 published topic, not perfection"); an unperformed check is filed as blocking, never
 passed with a caveat. VERDICT_SCHEMA is hand-mirrored across the three scripts —
-**change it in all three or the guard test fails.** (The loader sample above shows
+**change it in all three or the guard test fails** (`manage.py test
+topics.tests.test_workflow_mirrors`; run it after any workflow-script edit). (The loader sample above shows
 the older per-element `{pass, issues, fixes}` shape from manual refresh verdicts;
 the loader stores either opaquely, so both round-trip.)
 
