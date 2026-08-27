@@ -48,8 +48,10 @@ flowchart TD
     D -->|distribute_topic.js + lint_draft.py| J[research/topics/slug.json<br/>stage 2 · loader contract]
     J -->|load_topic_draft| DB[(authoring DB · DRAFT)]
     D -->|icon brief + generate + postprocess| I[static/img/topics/slug.png<br/>stage 3 · primary icon]
-    DB -->|render_screens / social / poster + view critics| R[research/reviews/slug/<br/>stage 4 · review packet]
-    R -->|HUMAN reviews + publishes| P[stage 5 · published topic]
+    DB -->|render_screens / social / poster + view critics| R[research/reviews/slug/<br/>stage 4 · rendered views]
+    R -->|topic-pm: verify, route back, write the packet| Q[REVIEW.md<br/>stage 4.5 · one-page packet]
+    Q -.->|routed findings| DB
+    Q -->|HUMAN reviews + publishes| P[stage 5 · published topic]
     P -->|DEPLOY.md §3 docker exec| L[(live container DB)]
     P -.->|export_topic re-syncs| J
     J -->|refresh_topic.js, upkeep mirror| J
@@ -64,6 +66,7 @@ flowchart TD
 | 2 Distribute | `research/workflows/distribute_topic.js` + `lint_draft.py` | distill compact layer → tier/reveal/fold → reorder → 2-critic presentation gate → whitelisted fix loop | gate 2/2 + lint at 0 findings + loader loads with 0 warnings | `research/topics/<slug>.json` |
 | 3 Iconography | brief agent + `research/icons/generate_icons.py` + `postprocess_icon.py` | brief → 4 Nano Banana candidates → pick vs checklist → normalize | checklist pass at 40px | `static/img/topics/<slug>.png` + `research/icons/<slug>.md` |
 | 4 Views | `render_screens/social/poster` + view critics | render all surfaces → critique → content-fix loop (`fix_only`) | poster fit exit 0 + all 3 social formats + no blocking content findings | `research/reviews/<slug>/` + `REVIEW.md` |
+| 4.5 PM gate | `.claude/agents/topic-pm.md` | fresh-context read of the FINISHED topic: deterministic pass (lint/links/artifacts) → reads every render → routes findings to the owning stage → writes the packet | every deterministic check green + no open routed finding | `research/reviews/<slug>/REVIEW.md` |
 | 5 Publish | **human** | review packet → publish → live push | human judgment | live topic |
 
 Refresh (`refresh_topic.js`) is the upkeep mirror: detect → re-verify everything →
@@ -84,6 +87,7 @@ cited old→new changelog → **human approves the diff** → staged load → pu
 | `research/workflows/check_engine.py` | verifies this manual against the code (routing + inventory) |
 | `topics/tests/test_workflow_mirrors.py` | guard on the hand-mirrored workflow contracts (run after ANY workflow-script edit: `manage.py test topics.tests.test_workflow_mirrors`) |
 | `.claude/agents/claim-verifier.md` | stage-1 ledger verifier: `tools: WebFetch, WebSearch` only — the blindness is structural, not a prompt |
+| `.claude/agents/topic-pm.md` | stage-4.5 PM gate: verifies the finished topic, routes findings, writes the packet. Fable (allowlisted), falls back to opus |
 | `.claude/skills/author-topic/SKILL.md` | launcher for Runbook A (user-invoked only) |
 | `.claude/skills/refresh-topic/SKILL.md` | launcher for Runbook B (user-invoked only) |
 | `.claude/hooks/pipeline-guard.sh` | blocks automated publishing + dev-server-on-8642 |
@@ -261,9 +265,23 @@ template edit** — the compiled-template cache silently serves stale renders).
 Render + critique, capped at ~3 rounds:
 1. `render_screens --slug <slug> --base-url <dev>` plus an `--expanded` run
    (`?expanded=1` forces every Go-deeper extra visible — the depth layers get no
-   coverage otherwise); `render_social --slug <slug> --formats og,sq,pt --base-url
-   <dev> --out research/reviews/<slug>`; `render_poster --slug <slug> --base-url
-   <dev> --out research/reviews/<slug>`. `--base-url` is required on all three.
+   coverage otherwise); then social in **two** calls, and
+   `render_poster --slug <slug> --base-url <dev> --out research/reviews/<slug>`.
+   `--base-url` is required on all three.
+
+   ```
+   render_social --slug <slug> --formats og      --base-url <dev>          # NO --out
+   render_social --slug <slug> --formats sq,pt   --base-url <dev> --out research/reviews/<slug>
+   ```
+
+   **The `og` call takes no `--out` on purpose.** Its default is
+   `static/img/social/<slug>.png`, which is the file `Topic.social_card` and the
+   page's `og:image` actually serve; a copy in the review folder is a review
+   artifact and reaches no reader. Redirecting all three formats there — as this
+   runbook did until 2026-08-27 — ships every topic with the generic site image
+   for link previews and shares. The three published topics have real cards only
+   because someone installed them by hand. `sq`/`pt` are for manual posting and
+   belong in the packet. The stage-4.5 PM checks for the installed file.
 2. `opus` sub-agents **Read** every image against `design/DESIGN_SYSTEM.md` +
    `design/RESPONSIVE.md`, **with `research/reviews/UI_DEFECTS.md` in hand**.
    Findings split:
@@ -274,10 +292,48 @@ Render + critique, capped at ~3 rounds:
      cite it, don't re-report; matches a FIXED entry → report as a REGRESSION;
      genuinely new and site-wide → log in `REVIEW.md` AND append to the
      register. Never edit templates/CSS.
-3. Pass = poster fit exit 0 + all three social formats + no blocking content
-   findings.
+3. Pass = poster fit exit 0 + all three social formats + **the og card installed at
+   `static/img/social/<slug>.png`** + no blocking content findings.
 
 Assemble `research/reviews/<slug>/REVIEW.md` from the template in §12.
+
+### Stage 4.5 — the PM gate
+
+The last engine step before the human. Invoke `topic-pm` (Agent tool,
+`subagent_type: "topic-pm"`) with the slug, the title, the counts, the stage
+verdicts and the ledger coverage. **Give it nothing from the dossier** — it judges
+the finished artifact, not the research.
+
+It is the only agent in the engine that sees the topic whole. Every other critic
+reads one slice; a defect that only shows up when the page, the cards and the
+poster are read together has, until now, had no reader but you.
+
+Three properties make it a gate rather than a second opinion:
+
+- **Fresh context.** It did not watch the run. An agent that watched the pipeline
+  work is primed to accept its output — the same reason ledger verifiers are blind
+  to the draft. This is why the PM must NOT also be the orchestrator: a context
+  that ran the pipeline and then certifies it is marking its own homework.
+- **Grounded findings only.** It may file what it can point at — a failed check, a
+  missing artifact, text truncated mid-word, a card contradicting the page. Not
+  "this could be sharper". Judgment findings are capped at one fix round for a
+  reason (`RESEARCH_PIPELINE.md` §6); an unconstrained PM re-opens exactly that loop.
+- **It routes, it does not repair.** Each finding names the owning stage. Its only
+  repair is `lint_draft.py --fix`, which is deterministic and reversible.
+
+Its deterministic pass is the checklist in the agent definition — lint at 0, links
+0/0, the icon at 1035×690, **the OG card present at `static/img/social/<slug>.png`**
+(not the review-folder copy), all three social formats, the poster, and all six
+renders. Anything failing there is decidable and must never reach you.
+
+Re-run the routed stages, then re-run the PM. Exit: every deterministic check
+green and no open routed finding. It returns ROUTING plus the packet markdown; the
+orchestrator writes `research/reviews/<slug>/REVIEW.md` (§12) — the PM has no Write
+tool, so the artifact stays under the orchestrator's hand.
+
+> **Honest limit:** the PM's blindness to the dossier is a prompt rule, not a tool
+> restriction — it needs Bash for the deterministic pass, and Bash can read
+> anything. Unlike `claim-verifier`, this one is convention.
 
 ### Stage 5 — human review & publish (the hard stop)
 
@@ -409,9 +465,26 @@ at 0% is a blind spot to close with a rule, not a prompt nudge. Last calibration
 
 ## 9. Cost, models, budgets
 
-Judgment on **opus**, web grunt on **sonnet**, never below sonnet, **no Fable
-anywhere** (weekly limit exhaustion, 2026-08-13; defaults are baked in the scripts —
-an `args.models` override alone does NOT reliably reach a script).
+Judgment on **opus**, web grunt on **sonnet**, never below sonnet (defaults are
+baked in the scripts — an `args.models` override alone does NOT reliably reach a
+script).
+
+**Fable: barred from the workflow scripts, allowed for the PM gate** (Jeff,
+2026-08-27). The 2026-08-13 exhaustion came from putting Fable on the engine's
+highest-call-count work — plan, crux, distribute and the stage-1 gate — not from
+Fable being a poor fit. It is the most capable model and the most expensive
+($10/$50 per MTok, twice opus), so the rule is about **call count, not tier**:
+Fable is for high-level, low-call-count roles only. `topic-pm` is the only agent
+allowlisted, and `topics/tests/test_workflow_mirrors.py` enforces both halves —
+no `?? "fable"` in the scripts, and no un-allowlisted `.claude/agents/*.md` naming
+Fable (the scripts-only check missed agent definitions entirely).
+
+**Fable → opus fallback.** If Fable's weekly allowance is spent, re-invoke the PM
+with `model: "opus"` and change nothing else: `topic-pm.md` declares
+`model: fable`, and an explicit `model` on the Agent call overrides the
+definition. The prompt is model-agnostic, so the fallback is a one-line retry, not
+a reconfiguration — but it is a retry the orchestrator performs, not something the
+platform does for you.
 
 <!-- routing:begin — check_engine.py verifies this table against the scripts -->
 | Script | Model defaults | Effort pins |
@@ -572,41 +645,49 @@ six-section skeleton at every depth; more room adds evidence, never sections).
 | Stage-1 agents error out on a topic | dual-use content policy | path B: external research onto the loader contract, resume at stage 3 |
 | `output schema too large to classify safely` | an output schema over ~3KB (worst with a long prompt) | split the call and merge locally, or move rich sub-objects to JSON-encoded strings (what stage 2's `add_*` does); stage 1's basics is split facts→shape for this reason |
 | `agent type '<name>' not found` mid-run | the custom-agent registry picks up a new `.claude/agents/*.md` on a **lag**, not instantly | wait and retry before doing anything drastic — 2026-08-27: a just-written definition failed to resolve, and the same file resolved later in the same session with its tool restriction intact. Restarting the session also works but is rarely needed |
+| Link previews show the generic Ideya mark | the og card was rendered into the review folder, not `static/img/social/` | stage 4 runs the `og` format with NO `--out`; the review-folder copy is not what `og:image` serves |
 | Live site missing a just-published topic | authoring DB ≠ live DB | `DEPLOY.md` §3 docker-exec load; never copy the whole DB |
 
 ## 12. Appendix — REVIEW.md template
 
+Written by the stage-4.5 PM, persisted by the orchestrator. **One page, hard.**
+Links first — the point is one click to each view.
+
+Nothing mechanical reaches this file. Facts, links, lint, missing artifacts and
+truncation are closed inside the pipeline; if one shows up here, the gate leaked.
+Engine-development narrative does not belong here either — that goes in
+`RESEARCH_PIPELINE.md`. Packets drifted to 50–259 lines (mean ~94) by absorbing
+calibration findings and engine notes, which is how a review packet becomes a
+build log the human has to mine.
+
 ```
 # <Title> — review packet (<date>)
 
-**Status:** DRAFT loaded as <slug>. Stages: research <n> fix rounds, distribute <n>,
-icon <n> rounds, views <n> rounds.
+**DRAFT `<slug>`** · <n> stats · <n> questions · <n> positions · <n> actions
+Fold above "Go deeper": basics <n>/<N> · questions <n>/<N> · positions <n>/<N>
 
-## Substance gate (stage 1)
-<critics: pass/fail + one line each; claim-ledger coverage supported/total
-(+ any resolved-by-revision); prescribed_fixes applied verbatim, if any>
+## Look
+[page](http://localhost:8641/<slug>/) · [expanded](http://localhost:8641/<slug>/?expanded=1)
+[1440](desktop-1440.png) · [390](mobile-390.png) · [320](mobile-320.png)
+[OG](<slug>.png) · [square](<slug>-sq.png) · [portrait](<slug>-pt.png) · [poster](<slug>.pdf)
+<the first two need the dev server up on 8641>
 
-## Presentation gate (stage 2)
-<critics: pass/fail + one line each>
-Fold above "Go deeper": basics <n>/<N>, questions <n>/<N>, positions <n>/<N>.
+## Run
+substance <n>/3 · presentation <n>/2 · ledger <supported>/<total> · lint 0 · links 0/0 · poster fits (<n>px)
+Rounds: research <n> · distribute <n> · icon <n> · views <n> · PM <n> (<n> routed, all closed)
 
-## Icon
-Winner: <candidate>; <one line why>. Candidates in research/icons/candidates/<slug>/.
-
-## Views
-Desktop / mobile-390 / mobile-320 / OG / poster — <pass, or the content findings fixed>.
-Poster fit: <slack>px.
-
-## Engineering issues (for you — pipeline does not touch CSS)
-- <code/CSS defects the view critics found>
+## Decided for you
+<editorial forks the engine resolved by its own rules, one line each, naming the
+ rule it applied. "None this run" is a valid and common answer.>
 
 ## Check in 5 minutes
-- <the few things most worth a human eye: close EDITORIAL calls only. NOT
-  unresolved facts — those are closed inside the pipeline before this packet is
-  written; a fact appears here only when the RESOLUTION needs the human's judgment,
-  stated as the decision being asked.>
+<at most THREE, editorial only — a call you might make differently. Never a fact,
+ never a mechanical defect. Empty is a good packet, not a suspicious one.>
 
-## To publish
-load_topic_draft --slug <slug> --status published --image-brief research/icons/<slug>.md
-→ set reviewed_at → check_links --topic <slug> (0/0) → commit artifacts.
+## Engineering (the pipeline may not touch CSS)
+<new site-wide defects, or "none — <n> open entries cited from UI_DEFECTS.md">
+
+## Publish
+Runbook A stage 5 — the loader invocation, then reviewed_at, then
+check_links --topic <slug> (0/0), then commit, then DEPLOY.md §3.
 ```

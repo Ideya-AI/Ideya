@@ -66,6 +66,28 @@ patch whitelist rejects edits to value/unit/source_*/url/name/text.
 and checked at 40px. Views render at 1440/390/320 (normal and expanded), three social
 formats, and the poster — whose fit check is a **hard exit-code gate**.
 
+**Stage 4.5 · the PM gate.** A fresh-context agent reads the FINISHED topic — every
+render, the cards, the poster — runs the deterministic pass (lint, links, artifacts),
+routes what it finds to the owning stage, and writes the one-page packet. It is the
+only reader in the engine that sees the topic whole; every other critic reads one
+slice, so a defect that only appears when page, cards and poster are read together
+had no reader but the human.
+
+Three constraints make it a gate instead of a second opinion, and all three come from
+mistakes already paid for here:
+
+1. **It must not be the orchestrator.** A context that ran the pipeline and then
+   certifies it is marking its own homework — the same priming that makes ledger
+   verifiers blind to the draft (§4). This is why "have the PM also run the engine"
+   is a separate, later question, not a free extension.
+2. **Findings must be groundable.** §6 caps judgment findings at one round because
+   unguided re-review degrades output. An unconstrained PM is precisely another
+   unguided round, so its remit is what it can point at: a failed check, a missing
+   artifact, truncation, a card contradicting the page.
+3. **It routes, it does not repair.** Its only repair is `lint_draft.py --fix`.
+   "Fix the simple things" is how a verifier acquires edit rights over facts and CSS,
+   both of which are locked.
+
 **Stage 5 · human.** The only step the engine does not do.
 
 ## 4. The claim ledger — how facts are actually verified
@@ -192,8 +214,21 @@ consequences.
 
 ## 9. Model routing
 
-Judgment on **opus**; web research on **sonnet**; never below sonnet. No Fable anywhere —
-its weekly limit ran out mid-run and killed three gate critics, and an `args.models`
+Judgment on **opus**; web research on **sonnet**; never below sonnet.
+
+**Fable, revisited 2026-08-27.** The ban held for two weeks and was right about the
+incident but wrong about the cause: Fable had been running plan, crux, distribute and
+the stage-1 gate — the highest-call-count work in the engine — so the weekly allowance
+went in a single run. Fable is the most capable model and the most expensive ($10/$50
+per MTok, twice opus); the durable rule is **call count, not tier**. It is now allowed
+for high-level, low-call-count roles (the PM gate) and still barred from the workflow
+scripts. The guard was widened to match, because the original one grepped only the
+three `.js` files and an agent definition naming `model: fable` would have walked
+straight past it. Falling back to opus is a one-line retry, since the PM's prompt is
+model-agnostic.
+
+The original finding, unchanged: its weekly limit ran out mid-run and killed three
+gate critics, and an `args.models`
 override was **not** enough to prevent it because the default won. Defaults are removed
 from all three scripts and a test guards against reintroduction.
 

@@ -15,7 +15,16 @@ from pathlib import Path
 
 from django.test import SimpleTestCase
 
-WF = Path(__file__).resolve().parents[2] / "research" / "workflows"
+ROOT = Path(__file__).resolve().parents[2]
+WF = ROOT / "research" / "workflows"
+AGENTS = ROOT / ".claude" / "agents"
+# Fable is barred from the engine (weekly limit exhausted mid-run, 2026-08-13,
+# killing three gate critics). The ban is about VOLUME, not fitness: Fable was
+# running plan/crux/distribute and the stage-1 gate — the highest-call-count work
+# in the engine. Jeff reopened it 2026-08-27 for high-level, low-call-count roles
+# only. Every agent allowed to name Fable is listed here, so the exception stays
+# a decision instead of an oversight.
+FABLE_ALLOWED_AGENTS = {"topic-pm"}
 SCRIPTS = ["research_topic.js", "distribute_topic.js", "refresh_topic.js"]
 GATED = [
     "research_topic.js",
@@ -58,6 +67,32 @@ class WorkflowMirrorTests(SimpleTestCase):
                 '?? "fable"',
                 _read(name),
                 f"{name} reintroduced a fable default — an args override does not reliably reach the script",
+            )
+
+    def test_fable_is_confined_to_the_allowlisted_agents(self):
+        """The scripts-only check above had a hole: an agent definition naming
+        `model: fable` never touches a .js file, so per-run Fable spend could
+        reappear through .claude/agents/ without tripping anything. The allowlist
+        is the exception made explicit."""
+        for path in sorted(AGENTS.glob("*.md")):
+            if "fable" not in path.read_text().lower():
+                continue
+            self.assertIn(
+                path.stem,
+                FABLE_ALLOWED_AGENTS,
+                f"{path.name} names Fable but is not in FABLE_ALLOWED_AGENTS. "
+                "Fable is permitted only for high-level, low-call-count roles — "
+                "the 2026-08-13 limit exhaustion came from putting it on "
+                "high-volume work. Add it deliberately or use opus.",
+            )
+
+    def test_allowlisted_fable_agents_exist(self):
+        """An allowlist entry for a deleted agent silently widens the exception
+        for whatever later takes that name."""
+        for stem in FABLE_ALLOWED_AGENTS:
+            self.assertTrue(
+                (AGENTS / f"{stem}.md").exists(),
+                f"FABLE_ALLOWED_AGENTS names {stem}, which has no definition",
             )
 
     def test_shared_editorial_rules_are_mirrored(self):
