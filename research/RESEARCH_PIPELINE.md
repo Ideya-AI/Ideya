@@ -198,11 +198,14 @@ and keeps working when search is spent — which is why verification is WebFetch
 
 ## 11. Known gaps
 
-- **Repeated agent roles are still inline prompts.** Custom `agentType` did not resolve
-  from a workflow script when probed; unresolved between "unsupported" and a
-  directory-watcher caveat, and only a session restart distinguishes them. Consequence:
-  the verifier's blindness is honour-system — the agent inherits `Read` and could open
-  the dossier. A `tools: WebFetch` definition would make it structural.
+- ~~**The verifier's blindness is honour-system.**~~ *Closed 2026-08-27.* Custom
+  `agentType` **does** resolve from a workflow script; the earlier failed probe was the
+  directory-watcher caveat — the registry is snapshotted at **session start**, so a
+  definition added mid-session is invisible until the next one. The ledger verifiers now
+  run as `.claude/agents/claim-verifier.md` with `tools: WebFetch, WebSearch`, so they
+  have no way to open the draft. Measured on the probe: an agent declaring `tools: Read`
+  reported exactly `Read` and no web tools, so the frontmatter genuinely constrains the
+  tool set rather than merely advertising it.
 - **`prevalence_weight` has no stated basis and no critic judges it**, while the rules
   push only toward inclusion (omitting a camp is a failure) with no counter-pressure —
   so the engine ratchets toward over-inclusion, and equal-sized cards assert a parity the

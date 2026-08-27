@@ -83,6 +83,7 @@ cited old→new changelog → **human approves the diff** → staged load → pu
 | `research/workflows/tally_tokens.py` | per-run token/cost accounting |
 | `research/workflows/check_engine.py` | verifies this manual against the code (routing + inventory) |
 | `topics/tests/test_workflow_mirrors.py` | guard on the hand-mirrored workflow contracts (run after ANY workflow-script edit: `manage.py test topics.tests.test_workflow_mirrors`) |
+| `.claude/agents/claim-verifier.md` | stage-1 ledger verifier: `tools: WebFetch, WebSearch` only — the blindness is structural, not a prompt |
 | `.claude/skills/author-topic/SKILL.md` | launcher for Runbook A (user-invoked only) |
 | `.claude/skills/refresh-topic/SKILL.md` | launcher for Runbook B (user-invoked only) |
 | `.claude/hooks/pipeline-guard.sh` | blocks automated publishing + dev-server-on-8642 |
@@ -156,8 +157,14 @@ load-bearing claim — figures, dates, statute/EO names, "X did Y" — sweeping
 position/question prose as hard as stats, because only stats carry `source_*` fields
 and unsourced prose is where wrong claims hide behind a clean gate. Verifiers check
 each claim in parallel seeing **only the claim + cited URL, never the draft** (a
-draft primes rationalization). A missing `source_quote` forces `unverifiable` in
-code. `contradicted`/`unverifiable` are blocking; failing claims re-verify each fix
+draft primes rationalization). That blindness is **structural**: they run as the
+custom `claim-verifier` agent (`.claude/agents/claim-verifier.md`), whose
+`tools: WebFetch, WebSearch` frontmatter leaves them no way to open the draft or
+the dossier — until 2026-08-27 they were general-purpose agents that inherited
+`Read` and were merely *asked* not to look. A missing `source_quote` forces
+`unverifiable` in code, and a claim that comes back with **no verdict at all** is
+filed as blocking — an empty results array has no failures in it, so a
+verification batch that died would otherwise report a clean ledger. `contradicted`/`unverifiable` are blocking; failing claims re-verify each fix
 round. Report ledger coverage (supported/total) in the packet — it replaces
 asserting that facts were checked.
 
@@ -498,8 +505,9 @@ runner = runner[:idx] + "\nconst __ARGS = " + json.dumps(run_args) + ";\n" + run
 open("<scratch>/run_distribute_<slug>.js", "w").write(runner)
 ```
 Then `Workflow({scriptPath: "<scratch>/run_…js"})`. To syntax-check: strip the
-leading `export` AND wrap the body in a function (top-level `return` won't parse
-bare; `export` won't parse inside a function). For a view-feedback pass add
+leading `export` AND wrap the body in an **async** function (top-level `return`
+won't parse bare; `export` won't parse inside a function; the scripts `await` at
+top level, so a plain function won't parse either). For a view-feedback pass add
 `"fix_only": [<findings>]` — skips distill/distribute, runs only the fix loop.
 
 **Editorial rules** (the bar all content must meet; rationale in
@@ -525,6 +533,7 @@ six-section skeleton at every depth; more room adds evidence, never sections).
 | Fact errors surviving a clean 4/4 gate | wrong claims hide in unsourced position/question prose | the claim ledger exists for this; check its coverage number in the packet |
 | Workflow "could not be resumed" after session restart | background fork checkpoint | relaunch with `resumeFromRunId` + identical args; cached prefix returns |
 | Stage-1 agents error out on a topic | dual-use content policy | path B: external research onto the loader contract, resume at stage 3 |
+| `agent type '<name>' not found` mid-run | the custom-agent registry is snapshotted at **session start**; a definition added or renamed during this session is invisible to it | restart the session before running a stage that uses a just-added `.claude/agents/*.md` (confirmed 2026-08-27: an agent file created mid-session did not resolve; one from a previous session did) |
 | Live site missing a just-published topic | authoring DB ≠ live DB | `DEPLOY.md` §3 docker-exec load; never copy the whole DB |
 
 ## 12. Appendix — REVIEW.md template
