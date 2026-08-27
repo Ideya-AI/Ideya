@@ -165,7 +165,7 @@
 
     {% if sec.positions %}{% with allpos=sec.positions.positions.all %}
     <div class="band pos-band">
-      <div class="eyebrow"><i class="ph-duotone ph-scales"></i>Positions <span class="sub">· the debate{% if allpos|length > 4 %} · showing 4 of {{ allpos|length }}{% endif %}</span></div>
+      <div class="eyebrow"><i class="ph-duotone ph-scales"></i>Positions <span class="sub">· the debate</span></div>
       <div class="pos-grid">
         {% for p in allpos|slice:":4" %}
         <div class="pos"><span class="prail" style="background:{{ p.color_var }}"></span>
