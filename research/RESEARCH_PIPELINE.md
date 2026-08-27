@@ -89,6 +89,18 @@ Four properties carry the weight:
    whitelist, so `value`/`label`/`source_*` are repairable there. Failing claims are
    **re-verified every round**, so a fix that changed nothing cannot drop out of the
    verdict set and score clean.
+5. **A claim the draft no longer asserts is closed, in code.** Before each round
+   re-verifies anything, a failing claim whose verbatim `quote` has left the draft is
+   marked `resolved-by-revision`. *Why:* re-verification asked the source whether the
+   claim was true and never asked the draft whether it still said it, so a landed fix
+   went on blocking — 5 of 6 "blocking" ledger items on the 2026-08-27 ai-alignment run
+   were defects the pipeline had already closed, in a packet whose whole promise is that
+   what reaches the human is live. The residual is deliberate: a *replacement* sentence
+   is not re-extracted, so the ledger checks what the draft said, not what it now says.
+6. **No verdict is not a pass.** A claim the verifiers never answered for is blocking.
+   An empty results array contains no failures, so a verification batch that died —
+   an agentType that did not resolve, a killed agent — would otherwise read as a clean
+   ledger. Same shape as the `checks_run` rule, one layer down.
 
 *Why it exists:* only stats carry `source_*` fields — position and question prose carries
 none, so it is unsourced by construction. Two wrong claims shipped through a 4/4 gate in

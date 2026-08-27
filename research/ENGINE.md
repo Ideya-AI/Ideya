@@ -165,8 +165,13 @@ the dossier — until 2026-08-27 they were general-purpose agents that inherited
 `unverifiable` in code, and a claim that comes back with **no verdict at all** is
 filed as blocking — an empty results array has no failures in it, so a
 verification batch that died would otherwise report a clean ledger. `contradicted`/`unverifiable` are blocking; failing claims re-verify each fix
-round. Report ledger coverage (supported/total) in the packet — it replaces
-asserting that facts were checked.
+round **and are first checked against the revised draft**: a claim whose verbatim
+`quote` no longer appears in the draft is marked `resolved-by-revision` in code
+and stops blocking, because a claim the draft no longer asserts is not a live
+defect. Without that, a landed fix kept scoring blocking for the rest of the run
+(ai-alignment, 2026-08-27: 5 of 6 "blocking" ledger items were stale). Report
+ledger coverage (supported/total, plus resolved-by-revision) in the packet — it
+replaces asserting that facts were checked.
 
 **Fact residuals are the pipeline's to close, never the human's.** Stage 1's
 `applyPatch` has no field whitelist, so fact fields are fixable here. Re-run the
@@ -418,6 +423,12 @@ the main overage lever. Judgment singletons (plan, crux, distribute) inherit.
   "shape_notes": [], "plan_positions": [...],
   "claim_ledger": { claims, results } }
 ```
+A ledger `result.status` is `supported` | `contradicted` | `unverifiable` |
+`resolved-by-revision` (the fix loop removed the sentence the claim was extracted
+from, so it is closed rather than checked). A claim that got **no** result at all
+is filed as blocking, never passed.
+```
+```
 `draft` is substance-complete, presentation-provisional (stage 2 finalizes
 tier/reveal).
 
@@ -531,6 +542,7 @@ six-section skeleton at every depth; more room adds evidence, never sections).
 | Published topic went offline during refresh | loaded onto the live slug with `--status draft` | always stage at `<slug>-draft`; publish by re-running onto the canonical slug |
 | Poster stamp/fit silently wrong | render commands default to dead `localhost:8000` | `--base-url` is required on all three render commands |
 | Fact errors surviving a clean 4/4 gate | wrong claims hide in unsourced position/question prose | the claim ledger exists for this; check its coverage number in the packet |
+| Packet lists ledger defects the run already fixed | a failing claim was re-verified against its SOURCE each round but never against the REVISED draft | fixed 2026-08-27 — a claim whose verbatim quote is gone from the draft is `resolved-by-revision`; if stale items reappear, check that the fixer edited the quoted sentence rather than adding a second one |
 | Workflow "could not be resumed" after session restart | background fork checkpoint | relaunch with `resumeFromRunId` + identical args; cached prefix returns |
 | Stage-1 agents error out on a topic | dual-use content policy | path B: external research onto the loader contract, resume at stage 3 |
 | `agent type '<name>' not found` mid-run | the custom-agent registry is snapshotted at **session start**; a definition added or renamed during this session is invisible to it | restart the session before running a stage that uses a just-added `.claude/agents/*.md` (confirmed 2026-08-27: an agent file created mid-session did not resolve; one from a previous session did) |
