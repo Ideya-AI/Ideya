@@ -60,7 +60,7 @@ flowchart TD
 | Stage | Engine piece | Does | Gate | Artifact |
 |---|---|---|---|---|
 | 0 Catalog | hand-authored entry + `load_universe` | register the topic stub + taxonomy edges | — | entry in `research/catalog/topic-universe.json` |
-| 1 Research | `research/workflows/research_topic.js` | plan (+icon, prevalence_basis) → parallel section research (basics + questions + one agent per position + actions) → crux → **claim ledger + isolated per-claim verification** → 3-critic substance gate → fix loop | substance gate 3/3, shape_notes empty, ledger closed | `research/dossiers/<slug>.json` |
+| 1 Research | `research/workflows/research_topic.js` | plan (+icon, prevalence_basis) → parallel section research (basics + questions + one agent per position + actions) → crux → **claim ledger + isolated per-claim verification** → 3-critic substance gate → fix loop → verbatim prescribed-fix pass | substance gate 3/3, shape_notes empty, ledger closed | `research/dossiers/<slug>.json` |
 | 2 Distribute | `research/workflows/distribute_topic.js` + `lint_draft.py` | distill compact layer → tier/reveal/fold → reorder → 2-critic presentation gate → whitelisted fix loop | gate 2/2 + lint at 0 findings + loader loads with 0 warnings | `research/topics/<slug>.json` |
 | 3 Iconography | brief agent + `research/icons/generate_icons.py` + `postprocess_icon.py` | brief → 4 Nano Banana candidates → pick vs checklist → normalize | checklist pass at 40px | `static/img/topics/<slug>.png` + `research/icons/<slug>.md` |
 | 4 Views | `render_screens/social/poster` + view critics | render all surfaces → critique → content-fix loop (`fix_only`) | poster fit exit 0 + all 3 social formats + no blocking content findings | `research/reviews/<slug>/` + `REVIEW.md` |
@@ -172,6 +172,17 @@ defect. Without that, a landed fix kept scoring blocking for the rest of the run
 (ai-alignment, 2026-08-27: 5 of 6 "blocking" ledger items were stale). Report
 ledger coverage (supported/total, plus resolved-by-revision) in the packet — it
 replaces asserting that facts were checked.
+
+**Prescribed fixes are applied in code once the fix loop is spent.** A blocking
+finding that quotes BOTH the target and its replacement ("replace “X” with “Y”")
+is a repair the critic already wrote; after the loop, any such prescription whose
+target still appears verbatim in the draft is applied as a literal string swap and
+the finding is retired. Deliberately narrow — a fix that quotes only its
+replacement leaves the target ambiguous and is left alone. Applied swaps are
+recorded in the dossier's `prescribed_fixes` (no fixer agent authored them, so the
+packet says so). *Why:* the loop is capped and judgment findings get one round,
+so a prescription could expire unapplied and reach the human as a blocking defect
+with its own fix printed beside it — democratic-backsliding, then ai-alignment.
 
 **Fact residuals are the pipeline's to close, never the human's.** Stage 1's
 `applyPatch` has no field whitelist, so fact fields are fixable here. Re-run the
@@ -421,7 +432,8 @@ the main overage lever. Judgment singletons (plan, crux, distribute) inherit.
   "plan": { ...planner output incl. icon + positions (prevalence_basis lives here) },
   "verdicts": [ {critic, pass, blocking, notes, checks_run} ],
   "shape_notes": [], "plan_positions": [...],
-  "claim_ledger": { claims, results } }
+  "claim_ledger": { claims, results },
+  "prescribed_fixes": [ {critic, from, to, fields} ] }
 ```
 A ledger `result.status` is `supported` | `contradicted` | `unverifiable` |
 `resolved-by-revision` (the fix loop removed the sentence the claim was extracted
@@ -557,7 +569,8 @@ six-section skeleton at every depth; more room adds evidence, never sections).
 icon <n> rounds, views <n> rounds.
 
 ## Substance gate (stage 1)
-<critics: pass/fail + one line each; claim-ledger coverage supported/total>
+<critics: pass/fail + one line each; claim-ledger coverage supported/total
+(+ any resolved-by-revision); prescribed_fixes applied verbatim, if any>
 
 ## Presentation gate (stage 2)
 <critics: pass/fail + one line each>

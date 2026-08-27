@@ -144,6 +144,14 @@ and never seeds the next one. Two refinements:
   round's prompt. Previously they were logged and discarded, so an edit whose identifier
   matched nothing was indistinguishable from one that applied — the fixer could keep
   "fixing" while the draft never changed.
+- **A prescription that quotes both sides is applied in code, after the loop.** When a
+  blocking finding says *replace “X” with “Y”* and X is still in the draft, the swap is
+  literal and needs no agent. *Why:* the cap plus the one-round rule for judgment
+  findings meant a critic's exact repair could expire unapplied and reach the editor as
+  a blocking defect with the fix printed next to it — twice, on democratic-backsliding
+  and ai-alignment. It stays narrow on purpose: a fix quoting only its replacement
+  leaves the target ambiguous, and guessing a target is how a deterministic pass turns
+  into an unreviewed rewrite.
 
 ## 7. The deterministic layer
 
