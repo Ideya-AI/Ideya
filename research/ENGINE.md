@@ -329,9 +329,17 @@ Its deterministic pass is the checklist in the agent definition — lint at 0, l
 renders. Anything failing there is decidable and must never reach you.
 
 Re-run the routed stages, then re-run the PM. Exit: every deterministic check
-green and no open routed finding. It returns ROUTING plus the packet markdown; the
-orchestrator writes `research/reviews/<slug>/REVIEW.md` (§12) — the PM has no Write
-tool, so the artifact stays under the orchestrator's hand.
+green and no open routed finding. It returns **CHECKS** (a fixed six-line
+PASS/FAIL block with the real numbers — the same "an unperformed check is not a
+pass" rule the gate critics follow, in a shape you can read at a glance), then
+ROUTING, then the packet markdown; the orchestrator writes
+`research/reviews/<slug>/REVIEW.md` (§12) — the PM has no Write tool, so the
+artifact stays under the orchestrator's hand.
+
+**The PM repairs nothing, not even `lint --fix`.** It reads renders captured from
+a loaded topic; editing the JSON underneath them desynchronizes the two, and the
+packet would then describe a page that no longer matches its source. Autofixable
+lint is a routed finding: fix, re-load, re-render, re-run the gate.
 
 > **Honest limit:** the PM's blindness to the dossier is a prompt rule, not a tool
 > restriction — it needs Bash for the deterministic pass, and Bash can read

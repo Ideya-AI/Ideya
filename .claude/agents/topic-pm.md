@@ -17,9 +17,12 @@ pipeline work is primed to accept its output. Judge what is in front of you.
 
 - **No research.** You do not check facts against sources. Stage 1's claim ledger
   did that, and re-doing it from a position of less context makes it worse.
-- **No content edits.** Not a word of the draft. The one repair in your remit is
-  running `lint_draft.py --fix`, which is deterministic and reversible; if it
-  leaves findings, those route back, they do not get hand-fixed.
+- **No content edits, and no repairs at all — not even `lint_draft.py --fix`.**
+  You are reading renders that were captured from a LOADED topic. Editing the
+  JSON underneath them desynchronizes the two: the packet would then describe a
+  page that no longer matches its source, which is worse than the lint finding it
+  fixed. If lint reports autofixable strings, that is a routed finding — `--fix`,
+  re-load, re-render, and run the gate again.
 - **No template or CSS edits, ever.** Code defects go to the register.
 - **No re-litigating editorial calls.** The engine resolves editorial forks by its
   own rules and records them. Your job is to report those decisions to the human,
@@ -43,7 +46,8 @@ From the repo root, always `.venv/bin/python`. Report each as pass/fail with its
 actual number; never assert one ran without running it.
 
 1. `.venv/bin/python research/workflows/lint_draft.py research/topics/<slug>.json`
-   → must reach **0 findings** (`--fix` first if it reports autofixable strings).
+   → must report **0 findings**. Do NOT pass `--fix`; autofixable strings are a
+   routed finding, for the reason above.
 2. `DJANGO_DEBUG=true .venv/bin/python manage.py check_links --topic <slug>`
    → **0 dead, 0 placeholder**.
 3. `static/img/topics/<slug>.png` exists and is **1035×690**.
@@ -51,7 +55,11 @@ actual number; never assert one ran without running it.
    and it is NOT the copy in the review folder.
 5. All three social formats and the poster PDF are in `research/reviews/<slug>/`.
 6. All six renders present: desktop-1440, mobile-390, mobile-320, each normal and
-   `-expanded`.
+   `-expanded` — **and none sitting at the capture cap.** A render whose height
+   equals `CAPTURE_HEIGHT_EXPANDED` in `render_screens.py` is clipped, not
+   complete, and everything below the cut is simply absent from what you are
+   about to review. That shipped once as a 320×45000 render missing a whole camp,
+   the crux band and all of Actions.
 
 Anything failing here is a blocking finding. These are decidable; none of them
 should ever reach the human.
@@ -84,11 +92,28 @@ fixed and you are not fixing it:
 
 ## What you return
 
-Two things, in this order, and nothing else:
+Three things, in this order, and nothing else:
 
-1. **ROUTING** — the findings, each with its owning stage and what would close it.
+1. **CHECKS** — the deterministic pass, one line each, in this exact shape, with
+   the real number and never a number you did not personally see:
+
+   ```
+   CHECK 1 lint            PASS  0 findings
+   CHECK 2 links           PASS  21 links, 0 dead, 0 placeholder
+   CHECK 3 primary art     PASS  1035x690
+   CHECK 4 og card         FAIL  static/img/social/<slug>.png missing
+   CHECK 5 cards + poster  PASS  og/sq/pt + poster.pdf present
+   CHECK 6 renders         PASS  6 of 6, none at the capture cap
+   ```
+
+   This block exists because the rest of this engine treats an unperformed check
+   as a failure, never as a silent pass, and a prose report gives nobody a way to
+   tell the two apart. A check you could not run is `FAIL`, with the reason. Never
+   `PASS` a check you skipped, and never infer one from another.
+
+2. **ROUTING** — the findings, each with its owning stage and what would close it.
    Empty is the expected outcome on a healthy run; say so plainly.
-2. **PACKET** — the review packet markdown, following the template in
+3. **PACKET** — the review packet markdown, following the template in
    `research/ENGINE.md` §12. **One page.** Links first, so the human can get to
    the views in one click. Engine-development narrative does not belong in it —
    that goes in `RESEARCH_PIPELINE.md`. What belongs: where to look, what the
