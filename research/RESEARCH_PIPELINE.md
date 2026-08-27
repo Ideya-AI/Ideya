@@ -235,6 +235,11 @@ and keeps working when search is spent — which is why verification is WebFetch
   reach the reader. `last_touched` exists on the model and no template renders it.
 - **Corpus-level quality is unmeasured by the engine** — the mode-collapse scan was
   manual. Every gate reads one topic.
+- **One output schema is still over the classifier's budget.** `refresh_topic.js`'s
+  `reverify(BASICS_SCHEMA)` serializes to ~4.7KB, past the ~3KB the rest of the engine
+  now holds to. It has not fired yet because refresh edits an existing Basics rather
+  than researching one, so its prompt is smaller — but it is the same trap stage 1's
+  basics call sprang twice, and the same split (facts, then chart shape) closes it.
 - **CSS defects** remain the standing list in each review packet; the pipeline is
   forbidden from touching templates.
 

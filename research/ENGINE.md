@@ -60,7 +60,7 @@ flowchart TD
 | Stage | Engine piece | Does | Gate | Artifact |
 |---|---|---|---|---|
 | 0 Catalog | hand-authored entry + `load_universe` | register the topic stub + taxonomy edges | — | entry in `research/catalog/topic-universe.json` |
-| 1 Research | `research/workflows/research_topic.js` | plan (+icon, prevalence_basis) → parallel section research (basics + questions + one agent per position + actions) → crux → **claim ledger + isolated per-claim verification** → 3-critic substance gate → fix loop → verbatim prescribed-fix pass | substance gate 3/3, shape_notes empty, ledger closed | `research/dossiers/<slug>.json` |
+| 1 Research | `research/workflows/research_topic.js` | plan (+icon, prevalence_basis) → parallel section research (basics facts→shape + questions + one agent per position + actions) → crux → **claim ledger + isolated per-claim verification** → 3-critic substance gate → fix loop → verbatim prescribed-fix pass | substance gate 3/3, shape_notes empty, ledger closed | `research/dossiers/<slug>.json` |
 | 2 Distribute | `research/workflows/distribute_topic.js` + `lint_draft.py` | distill compact layer → tier/reveal/fold → reorder → 2-critic presentation gate → whitelisted fix loop | gate 2/2 + lint at 0 findings + loader loads with 0 warnings | `research/topics/<slug>.json` |
 | 3 Iconography | brief agent + `research/icons/generate_icons.py` + `postprocess_icon.py` | brief → 4 Nano Banana candidates → pick vs checklist → normalize | checklist pass at 40px | `static/img/topics/<slug>.png` + `research/icons/<slug>.md` |
 | 4 Views | `render_screens/social/poster` + view critics | render all surfaces → critique → content-fix loop (`fix_only`) | poster fit exit 0 + all 3 social formats + no blocking content findings | `research/reviews/<slug>/` + `REVIEW.md` |
@@ -147,6 +147,18 @@ claim_ledger}`) to `research/dossiers/<slug>.json` wrapped as `{dossier_version:
 generated, slug, input, ...}`. Check: gate 3/3, `shape_notes` empty. Verdicts carry
 `checks_run`; a check with `ran=false` fails its critic and re-runs once — a clean
 gate means the checks actually happened.
+
+**Basics is researched in two calls** — the facts (label/value/unit/note/detail/
+tier/source_*), then the chart shape for those same facts (viz/wide/series/
+range_*/fill_pct) — merged locally by exact label. A shape that arrives without
+its data (ranked with no rows, range with no endpoints) is demoted to `bar` in
+code, and an unmatched label defaults to `bar`; both are logged, never silent.
+*Why:* one whole-section schema carrying both halves serialized to ~4.5KB and
+the safety classifier refused it twice in `[basics]` on a large topic
+("output schema too large to classify safely"). **Operating budget: keep any one
+output schema under ~3KB.** Every schema in the engine now sits under that except
+`refresh_topic.js`'s `reverify(BASICS_SCHEMA)` (~4.7KB) — the same trap, unsprung
+so far because refresh edits an existing Basics rather than researching one.
 
 The plan emits the Phosphor `icon` and, per position, `prevalence_weight` **with a
 one-line `prevalence_basis`** (the evidence behind the weight — capture only, no
@@ -557,6 +569,7 @@ six-section skeleton at every depth; more room adds evidence, never sections).
 | Packet lists ledger defects the run already fixed | a failing claim was re-verified against its SOURCE each round but never against the REVISED draft | fixed 2026-08-27 — a claim whose verbatim quote is gone from the draft is `resolved-by-revision`; if stale items reappear, check that the fixer edited the quoted sentence rather than adding a second one |
 | Workflow "could not be resumed" after session restart | background fork checkpoint | relaunch with `resumeFromRunId` + identical args; cached prefix returns |
 | Stage-1 agents error out on a topic | dual-use content policy | path B: external research onto the loader contract, resume at stage 3 |
+| `output schema too large to classify safely` | an output schema over ~3KB (worst with a long prompt) | split the call and merge locally, or move rich sub-objects to JSON-encoded strings (what stage 2's `add_*` does); stage 1's basics is split facts→shape for this reason |
 | `agent type '<name>' not found` mid-run | the custom-agent registry is snapshotted at **session start**; a definition added or renamed during this session is invisible to it | restart the session before running a stage that uses a just-added `.claude/agents/*.md` (confirmed 2026-08-27: an agent file created mid-session did not resolve; one from a previous session did) |
 | Live site missing a just-published topic | authoring DB ≠ live DB | `DEPLOY.md` §3 docker-exec load; never copy the whole DB |
 
