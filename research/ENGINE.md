@@ -164,8 +164,13 @@ asserting that facts were checked.
 **Fact residuals are the pipeline's to close, never the human's.** Stage 1's
 `applyPatch` has no field whitelist, so fact fields are fixable here. Re-run the
 fact critic or apply its prescribed resolution (cut / soften / attribute in-voice).
-Escalate only when the resolution itself needs human judgment, stating the decision
-being asked — never "please verify this".
+
+**Nothing escalates mid-run (Jeff, 2026-08-27) — the engine decides editorial
+forks itself**, by its own rules: a verified genuine missing camp is ADDED
+(omission is a neutrality failure); when a critic offers alternatives, take its
+primary prescription. Every such decision is flagged in the packet's "Check in 5
+minutes" for the stage-5 human, who can override before publishing. The run never
+stops to ask.
 
 ### Stage 2 — distribute (presentation)
 
