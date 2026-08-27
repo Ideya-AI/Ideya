@@ -174,13 +174,33 @@ class Command(BaseCommand):
             "draft": draft,
             "verdicts": (topic.research_dossier or {}).get("verdicts", []),
         }
-        text = json.dumps(payload, indent=1, ensure_ascii=True)
 
         out = o["out"]
         if out == "-":
-            self.stdout.write(text)
+            self.stdout.write(json.dumps(payload, indent=1, ensure_ascii=True))
             return
         path = Path(out) if out else Path("research/topics") / f"{topic.slug}.json"
+
+        # Carry forward top-level keys the DB cannot regenerate. `changelog` is
+        # the refresh's durable provenance and lives ONLY in this file — the
+        # loader ignores it, so a re-export would silently erase the history the
+        # previous refresh wrote. Refresh Runbook B opens with an export onto
+        # this exact path, so step 1 of each refresh was destroying step 4 of the
+        # last one. Generic rather than a `changelog` special case: anything here
+        # that the export does not produce is by definition unrecoverable.
+        preserved = []
+        if path.exists():
+            try:
+                existing = json.loads(path.read_text())
+            except (json.JSONDecodeError, OSError):
+                existing = {}
+            if isinstance(existing, dict):
+                for key, value in existing.items():
+                    if key not in payload:
+                        payload[key] = value
+                        preserved.append(key)
+
+        text = json.dumps(payload, indent=1, ensure_ascii=True)
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(text + "\n")
         self.stdout.write(
@@ -190,5 +210,6 @@ class Command(BaseCommand):
                 f"{len(draft['questions'])} questions, "
                 f"{len(draft['positions'])} positions, "
                 f"{len(draft['actions'])} actions"
+                + (f" — preserved: {', '.join(preserved)}" if preserved else "")
             )
         )

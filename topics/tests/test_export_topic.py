@@ -57,6 +57,37 @@ class ExportTopicTests(NuclearFixtureMixin, TestCase):
         self.assertTrue(d["basics"]["stats"])
         self.assertTrue(d["actions"])
 
+    def test_export_preserves_unregenerable_top_level_keys(self):
+        """A refresh writes `changelog` into research/topics/<slug>.json as its
+        durable provenance; the loader ignores it, so the DB cannot regenerate it.
+        Refresh Runbook B opens by exporting onto that same path — so step 1 of
+        each refresh was erasing step 4 of the previous one."""
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "ne.json"
+            call_command("export_topic", slug=self.slug, out=str(path))
+
+            doc = json.loads(path.read_text())
+            doc["changelog"] = [{"section": "basics", "change": "old -> new"}]
+            doc["plan_positions"] = ["Cost Skeptic"]
+            path.write_text(json.dumps(doc))
+
+            call_command("export_topic", slug=self.slug, out=str(path))
+            after = json.loads(path.read_text())
+
+        self.assertEqual(
+            after.get("changelog"),
+            [{"section": "basics", "change": "old -> new"}],
+            "re-export dropped `changelog` — the refresh history is unrecoverable",
+        )
+        self.assertEqual(after.get("plan_positions"), ["Cost Skeptic"])
+        # The keys the export DOES produce must still come from the DB, not the
+        # stale file — preservation must not shadow a real re-export.
+        self.assertIn("draft", after)
+        self.assertEqual(
+            after["draft"]["overview"]["summary"],
+            Topic.objects.get(slug=self.slug).summary,
+        )
+
     def test_round_trip_reproduces_topic(self):
         original = Topic.objects.get(slug=self.slug)
         category = original.primary_category.slug  # real category slug from the DB

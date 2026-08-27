@@ -248,8 +248,13 @@ and keeps working when search is spent — which is why verification is WebFetch
   classes (`synthesis`, `over-hedge`, `due-weight`, `source-misattributed`) are the
   informative ones.
 - **`tally_tokens.py`** → `research/token-ledger.local.md` — output tokens by model.
-- **`lint_draft.py --all`** — corpus-wide mechanical quality; the count collapsed from
-  8–33 per topic to 0 once the rules were encoded.
+- **`lint_draft.py --all`** — corpus-wide mechanical quality. The rules work: every
+  topic authored after they landed lints at 0. They are **not retroactive**, and the
+  claim that the count "collapsed to 0" was a snapshot that aged into a false
+  statement — as of 2026-08-27 the corpus carries **253 judgment findings across 11
+  files (22–33 each)** plus ~330 autofixable strings, because the eight topics
+  authored before the rules were never re-linted. Three of those back published
+  topics. A corpus-wide claim needs re-measuring, not remembering.
 
 ## 11. Known gaps
 
