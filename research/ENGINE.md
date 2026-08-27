@@ -570,7 +570,7 @@ six-section skeleton at every depth; more room adds evidence, never sections).
 | Workflow "could not be resumed" after session restart | background fork checkpoint | relaunch with `resumeFromRunId` + identical args; cached prefix returns |
 | Stage-1 agents error out on a topic | dual-use content policy | path B: external research onto the loader contract, resume at stage 3 |
 | `output schema too large to classify safely` | an output schema over ~3KB (worst with a long prompt) | split the call and merge locally, or move rich sub-objects to JSON-encoded strings (what stage 2's `add_*` does); stage 1's basics is split facts→shape for this reason |
-| `agent type '<name>' not found` mid-run | the custom-agent registry is snapshotted at **session start**; a definition added or renamed during this session is invisible to it | restart the session before running a stage that uses a just-added `.claude/agents/*.md` (confirmed 2026-08-27: an agent file created mid-session did not resolve; one from a previous session did) |
+| `agent type '<name>' not found` mid-run | the custom-agent registry picks up a new `.claude/agents/*.md` on a **lag**, not instantly | wait and retry before doing anything drastic — 2026-08-27: a just-written definition failed to resolve, and the same file resolved later in the same session with its tool restriction intact. Restarting the session also works but is rarely needed |
 | Live site missing a just-published topic | authoring DB ≠ live DB | `DEPLOY.md` §3 docker-exec load; never copy the whole DB |
 
 ## 12. Appendix — REVIEW.md template

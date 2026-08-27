@@ -220,8 +220,9 @@ and keeps working when search is spent — which is why verification is WebFetch
 
 - ~~**The verifier's blindness is honour-system.**~~ *Closed 2026-08-27.* Custom
   `agentType` **does** resolve from a workflow script; the earlier failed probe was the
-  directory-watcher caveat — the registry is snapshotted at **session start**, so a
-  definition added mid-session is invisible until the next one. The ledger verifiers now
+  directory-watcher caveat — the registry picks a new definition up on a lag, so a probe
+  run seconds after writing the file reports "not found" and the same file resolves
+  later in the same session. The ledger verifiers now
   run as `.claude/agents/claim-verifier.md` with `tools: WebFetch, WebSearch`, so they
   have no way to open the draft. Measured on the probe: an agent declaring `tools: Read`
   reported exactly `Read` and no web tools, so the frontmatter genuinely constrains the
