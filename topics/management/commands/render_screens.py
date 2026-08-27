@@ -29,7 +29,10 @@ CHROME_CANDIDATES = [
 # a fixed cap silently clipped the Crux/Actions sections). Expanded captures
 # force every detail layer visible and run far taller still.
 CAPTURE_HEIGHT = 12000
-CAPTURE_HEIGHT_EXPANDED = 45000
+# 45000 silently clipped a 10-position topic's 320px expanded capture
+# (ai-alignment needed ~49000); a clipped capture reaching the view critics
+# looks complete, so the near-cap guard below is a hard error, not a warning.
+CAPTURE_HEIGHT_EXPANDED = 60000
 
 
 def _pretty(path):
@@ -137,12 +140,11 @@ class Command(BaseCommand):
             _trim_bottom(png)
             with Image.open(png) as shot:
                 if shot.size[1] > height - 200:
-                    self.stderr.write(
-                        self.style.WARNING(
-                            f"  {png.name} is within 200px of the {height}px capture "
-                            "window — the page bottom is likely clipped; raise "
-                            "CAPTURE_HEIGHT(_EXPANDED)."
-                        )
+                    raise CommandError(
+                        f"{png.name} is within 200px of the {height}px capture "
+                        "window — the page bottom is likely clipped; raise "
+                        "CAPTURE_HEIGHT(_EXPANDED). A clipped capture handed to "
+                        "the view critics reads as a complete render."
                     )
             self.stdout.write(f"  {slug} [{w}px] -> {_pretty(png)}")
         self.stdout.write(self.style.SUCCESS(f"{len(widths)} screenshot(s) captured."))
