@@ -503,7 +503,18 @@ the main overage lever. Judgment singletons (plan, crux, distribute) inherit.
   verification leans on it; search is for discovery.
 - **Accounting**: `research/workflows/tally_tokens.py` per run. Reference points:
   fable-era topic ~285k opus-equivalent output; first opus+sonnet-only run ~553k
-  (inflated by a resumed double-gate + largest topic yet).
+  (inflated by a resumed double-gate + largest topic yet). Priced from the local
+  ledger, stage 1+2 runs land at **$37–77 per topic** (excludes the orchestrator
+  session and the icon/view side-agents).
+- **The PM gate costs ~$5 on Fable** — 37 requests, 2.27M cache reads, 239k cache
+  writes, 134k peak context; ~$2.60 on opus. Roughly 7–10% of a stage-1+2 run.
+  Measured 2026-08-27 on frontier-ai-regulation, an unfavorable sample: 9 positions
+  and a 45,000px expanded mobile render that the agent tiled and then carried in
+  context. Cost here is **turns × an image-heavy context**, not thinking — output
+  tokens are negligible. **Jeff, 2026-08-27: this is fine, leave it.** The known
+  levers, if that ever changes: run the deterministic pass in the orchestrator and
+  pass results in as text (~11 of the 37 requests), and downsample tall renders
+  instead of tiling them at full resolution.
 - **HARD STOP**: the moment any usage signal shows 90% of weekly limits — cease all
   runs and report.
 
