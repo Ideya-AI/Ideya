@@ -319,10 +319,18 @@ class Command(BaseCommand):
                 # First unused colour, not index-modulo: a refresh that swaps
                 # one position out must not hand the newcomer a colour an
                 # existing card already wears.
-                ck = next(
-                    (k for k in POS_KEYS if k not in assigned_keys),
-                    POS_KEYS[i % len(POS_KEYS)],
-                )
+                ck = next((k for k in POS_KEYS if k not in assigned_keys), None)
+                if ck is None:
+                    # Palette exhausted — wrap, but LOUDLY: duplicate same-page
+                    # position colors reached a render unnoticed once (a 10-camp
+                    # topic vs the old 7-color palette, 2026-08-27).
+                    ck = POS_KEYS[i % len(POS_KEYS)]
+                    self.stderr.write(
+                        self.style.WARNING(
+                            f"position palette EXHAUSTED: '{p.get('name')}' wraps to "
+                            f"duplicate color '{ck}' — extend POS_COLORS/--pos-* tokens"
+                        )
+                    )
                 assigned_keys.append(ck)
             Position.objects.create(
                 section=ps,

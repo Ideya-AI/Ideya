@@ -27,7 +27,10 @@ POS_COLORS = [
     ("rust", "Rust"),
     ("purple", "Purple"),
     ("teal", "Teal"),
-    ("slate", "Slate"),
+    ("berry", "Berry"),
+    ("indigo", "Indigo"),
+    ("cocoa", "Cocoa"),
+    ("slate", "Slate"),  # last resort: gray reads as disabled next to peers
 ]
 
 # Minimum community lean votes before a question's reader-poll bar is displayed
