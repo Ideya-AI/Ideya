@@ -24,6 +24,13 @@ A) and §6 (Runbook B) — the procedure lives here, once.
 
 ## 1. What the engine is
 
+The stages, by what each one owns (Jeff, 2026-08-28): **1 research** ·
+**2 editorial** · **3 iconography** · **4 integration** · **4.5 the PM gate** ·
+**5 the human**. The names are load-bearing — integration ASSEMBLES and verifies
+that the pieces compose; it is not where editorial decisions get audited. When
+stage 4 keeps finding the same class of content defect, the fix belongs in
+stage 2, not in a better stage-4 critic.
+
 A staged pipeline that turns a catalog entry into a publish-ready topic draft
 (authoring), and keeps published topics accurate as the world moves (refresh). AI
 drafts; a human publishes — always. Each stage writes a durable artifact and is
@@ -64,9 +71,9 @@ flowchart TD
 |---|---|---|---|---|
 | 0 Catalog | hand-authored entry + `load_universe` | register the topic stub + taxonomy edges | — | entry in `research/catalog/topic-universe.json` |
 | 1 Research | `research/workflows/research_topic.js` | plan (+icon, prevalence_basis) → parallel section research (basics facts→shape + questions + one agent per position + actions) → crux → **claim ledger + isolated per-claim verification** → 3-critic substance gate → fix loop → verbatim prescribed-fix pass | substance gate 3/3, shape_notes empty, ledger closed | `research/dossiers/<slug>.json` |
-| 2 Distribute | `research/workflows/distribute_topic.js` + `lint_draft.py` | distill compact layer → tier/reveal/fold → reorder → 2-critic presentation gate → whitelisted fix loop | gate 2/2 + lint at 0 findings + loader loads with 0 warnings | `research/topics/<slug>.json` |
+| 2 Editorial | `research/workflows/distribute_topic.js` + `lint_draft.py` + `budgets.py` | distill compact layer → tier/reveal/fold → reorder → 2-critic presentation gate → whitelisted fix loop | gate 2/2 + lint at 0 findings + loader loads with 0 warnings | `research/topics/<slug>.json` |
 | 3 Iconography | brief agent + `research/icons/generate_icons.py` + `postprocess_icon.py` | brief → 4 Nano Banana candidates → pick vs checklist → normalize | checklist pass at 40px | `static/img/topics/<slug>.png` + `research/icons/<slug>.md` |
-| 4 Views | `render_screens/social/poster` + view critics | render all surfaces → critique → content-fix loop (`fix_only`) | poster fit exit 0 + all 3 social formats + no blocking content findings | `research/reviews/<slug>/` + `REVIEW.md` |
+| 4 Integration | `render_screens/social/poster` + view critics | render all surfaces → critique → content-fix loop (`fix_only`) | poster fit exit 0 + all 3 social formats + no blocking content findings | `research/reviews/<slug>/` + `REVIEW.md` |
 | 4.5 PM gate | `.claude/agents/topic-pm.md` | fresh-context read of the FINISHED topic: deterministic pass (lint/links/artifacts) → reads every render → routes findings to the owning stage → writes the packet | every deterministic check green + no open routed finding | `research/reviews/<slug>/REVIEW.md` |
 | 5 Publish | **human** + `publish_topic` | read the packet → `publish_topic --confirm` (preflight → publish → reviewed_at) → commit → live push | human judgment | live topic |
 
@@ -82,6 +89,7 @@ cited old→new changelog → **human approves the diff** → staged load → pu
 | `research/workflows/research_topic.js` | stage 1: substance research + claim ledger + substance gate |
 | `research/workflows/distribute_topic.js` | stage 2: presentation distill/fold + gate; also `fix_only` view-feedback passes |
 | `research/workflows/refresh_topic.js` | upkeep mirror: re-verify + changelog + gate, stops at the human |
+| `research/workflows/budgets.py` | **single source of truth for content length**: db cap (loader slices) / hard bound (lint gates) / target (stage 2 writes to). Mirrored into stage 2's prompt, guarded by `test_workflow_mirrors.py` |
 | `research/workflows/lint_draft.py` | deterministic lint of a draft JSON; `--fix` applies safe rewrites |
 | `research/workflows/seed_defects.py` | gate calibration: inject known defects, score detection |
 | `research/workflows/tally_tokens.py` | per-run token/cost accounting |
@@ -213,7 +221,23 @@ primary prescription. Every such decision is flagged in the packet's "Check in 5
 minutes" for the stage-5 human, who can override before publishing. The run never
 stops to ask.
 
-### Stage 2 — distribute (presentation)
+### Stage 2 — editorial (presentation)
+
+**Stage 2 authors to the render geometry.** `research/workflows/budgets.py` is
+the single source of truth for how long content may be, in three numbers per
+field: the **db cap** (exceed it and the loader silently slices), the **hard
+bound** (where the layout visibly breaks — lint gates on this), and the
+**target** (what the design can actually hold — stage 2 writes to this). The
+targets are mirrored into the distill prompt as `RENDER_BUDGETS`, guarded by
+`test_workflow_mirrors.py`.
+
+*Why it lives here:* stage 2 decides how short everything gets, and it used to
+carry three length numbers against stage 1's fourteen — while stage 1's own rules
+tell it to ignore length and research for substance. The stage told to ignore the
+constraint held it; the stage that had to meet it flew blind, and stage 4
+rediscovered the same overflow topic by topic. Per-field budgets do not settle
+whole-sheet fit — that is a packing problem and the poster's exit-code check
+stays — but meeting them is what keeps that check quiet.
 
 Run `distribute_topic.js` with `{slug, title, today, dossier:<stage-1 return>}`.
 The dossier is 60KB+ — bake it in via the `__ARGS` recipe (§10). Distill → tier
@@ -260,7 +284,7 @@ Loop, capped at ~3 refine rounds (spec: `research/ICONOGRAPHY.md`):
    `static/img/topics/<slug>.png` (1035×690) + 40px thumb; Read the thumb to
    confirm legibility. Keep all candidates for human swaps.
 
-### Stage 4 — views
+### Stage 4 — integration (views)
 
 Dev server up (`DJANGO_DEBUG=true … runserver 8641 --noreload`; **restart after any
 template edit** — the compiled-template cache silently serves stale renders).

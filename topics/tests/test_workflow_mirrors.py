@@ -198,3 +198,58 @@ class PipelineGuardTests(SimpleTestCase):
             self.assertEqual(
                 "ALLOW", self._verdict(command), f"guard falsely blocked: {command!r}"
             )
+
+
+class RenderBudgetMirrorTests(SimpleTestCase):
+    """budgets.py is the single source of truth for how long content may be, and
+    distribute_topic.js mirrors it in a prompt because workflow scripts cannot
+    import. Same hand-mirroring the verdict contract has, same guard.
+
+    The asymmetry this closes: stage 2 decides how short everything gets and
+    carried three budget numbers, while stage 1 — told by its own rules to ignore
+    length and research for substance — carried fourteen. Stage 4 then
+    rediscovered the overflow one topic at a time."""
+
+    def setUp(self):
+        import sys
+
+        wf = str(WF)
+        if wf not in sys.path:
+            sys.path.insert(0, wf)
+        import budgets
+
+        self.budgets = budgets
+
+    def test_db_caps_still_match_the_model(self):
+        """A migration that narrows a column must not leave the table behind —
+        the loader would slice content the lint calls valid."""
+        self.assertEqual(
+            [], self.budgets.check_db_caps(), "budgets.py has drifted from models.py"
+        )
+
+    def test_targets_never_exceed_hard_limits(self):
+        for field, (_, target, hard, _) in self.budgets.BUDGETS.items():
+            if hard is not None:
+                self.assertLessEqual(
+                    target, hard, f"{field}: target {target} above hard limit {hard}"
+                )
+
+    def test_stage_two_carries_the_budget_numbers(self):
+        """Every target must actually reach the stage that writes to it."""
+        src = _read("distribute_topic.js")
+        self.assertIn("RENDER_BUDGETS", src, "stage 2 lost its budget block")
+        for field, (_, target, _, _) in self.budgets.BUDGETS.items():
+            self.assertIn(
+                f"{field}: aim <= {target} chars",
+                src,
+                f"distribute_topic.js is missing the {field} budget — regenerate "
+                "the RENDER_BUDGETS block from budgets.prompt_block()",
+            )
+        self.assertIn(f"<= {self.budgets.LEAN_LABEL_CAP} chars", src)
+        self.assertIn(f"<= {self.budgets.UNIT_CAP} chars", src)
+
+    def test_distill_does_not_contradict_the_anti_template_rule(self):
+        """RULES forbids copying one crux form; the distill prompt used to
+        REQUIRE a rhetorical question, and 11 of 11 published leads ended in "?"."""
+        src = _read("distribute_topic.js")
+        self.assertNotIn("sharp rhetorical question", src)
