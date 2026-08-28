@@ -1,0 +1,812 @@
+{
+ "draft": {
+  "overview": {
+   "summary": "What grounds an animal’s moral standing, and how much its interests can demand when they collide with human ones.",
+   "scope_covered": "The grounds of animal moral status and the weight of animal interests: farming, research, captivity, legal standing, wild suffering.",
+   "scope_excluded": "Diet as health or climate policy, ecosystem and species-level environmental ethics, and moral status debates about humans or machines.",
+   "why_now": "Global farmed-animal numbers keep rising, and the 2024 New York Declaration on Animal Consciousness moved the credible sentience line outward to fishes and many invertebrates, enlarging the set of creatures the question covers.",
+   "icon": "paw-print"
+  },
+  "basics": {
+   "intro": "",
+   "stats": [
+    {
+     "label": "Land animals slaughtered for meat · global, per year",
+     "value": ">80",
+     "unit": " billion",
+     "note": "Mostly chickens, plus pigs, cattle and other land animals; fish are counted separately.",
+     "detail": "The estimate covers land animals slaughtered for meat: primarily chickens, alongside pigs, cattle, sheep, goats, ducks and other species. Fish are counted separately, because they are recorded by catch weight rather than by head. Global meat production, and this total, has grown for decades alongside rising incomes and population.",
+     "tier": 1,
+     "source_label": "Our World in Data — Animal Welfare",
+     "source_url": "https://ourworldindata.org/animal-welfare",
+     "source_published": "2023",
+     "source_accessed": "2026-08-28",
+     "reveal": "condensed",
+     "viz": "bar",
+     "wide": false,
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "range_at": 0,
+     "fill_pct": null
+    },
+    {
+     "label": "Wild fish caught and killed for food · global, per year",
+     "value": "1.1–2.2",
+     "unit": " trillion",
+     "note": "Reconstructed from catch tonnage rather than counted by head; the total dwarfs every land animal category combined.",
+     "detail": "Because fish are traded and recorded by catch weight, not individually, this figure is reconstructed from FAO fisheries production tonnage divided by estimated mean body weight per species; published estimates range from 1.1 to 2.2 trillion fish per year (2000–2019 average), with an earlier calculation (2007–2016 data) of 0.79–2.3 trillion. It excludes farmed fish and other aquatic animals such as crustaceans and molluscs, which are estimated separately.",
+     "tier": 1,
+     "source_label": "Mood & Brooke (2024), Animal Welfare 33, e6",
+     "source_url": "https://doi.org/10.1017/awf.2024.7",
+     "source_published": "2024",
+     "source_accessed": "2026-08-28",
+     "reveal": "condensed",
+     "viz": "bar",
+     "wide": false,
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "range_at": 0,
+     "fill_pct": null
+    },
+    {
+     "label": "Farmed fish slaughtered for food · global, per year",
+     "value": "~124",
+     "unit": " billion",
+     "note": "Farmed finfish deaths now exceed the total for all land animals slaughtered combined.",
+     "detail": "A 2023 study (Mood et al.) put 2019 farmed finfish slaughter at a midpoint of 124 billion, within a range of 78–171 billion; an earlier mid-point estimate (Sentience Institute) put the figure at 77 billion, with a plausible range of 29–149 billion, reflecting uncertainty in species-specific weight and mortality data. Farmed crustaceans and molluscs are counted separately and are not included.",
+     "tier": 1,
+     "source_label": "Our World in Data — Animal Welfare",
+     "source_url": "https://ourworldindata.org/animal-welfare",
+     "source_published": "2023",
+     "source_accessed": "2026-08-28",
+     "reveal": "condensed",
+     "viz": "bar",
+     "wide": false,
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "range_at": 0,
+     "fill_pct": null
+    },
+    {
+     "label": "Scientists signing the New York Declaration on Animal Consciousness · 2024",
+     "value": "605",
+     "unit": " scientists",
+     "note": "A 2024 declaration put a realistic possibility of conscious experience in every vertebrate, and in insects, octopuses and crabs too.",
+     "detail": "Issued after a 2024 New York University conference on the science of animal consciousness and signed by 605 researchers, the declaration states that evidence indicates “at least a realistic possibility of conscious experience” in all vertebrates (including reptiles, amphibians and fishes) and many invertebrates (at minimum cephalopod molluscs, decapod crustaceans and insects), and that this possibility should not be ignored in decisions affecting them. It extends further than the 2012 Cambridge Declaration, which named mammals, birds and octopuses but did not reach fishes, decapod crustaceans or insects.",
+     "tier": 1,
+     "source_label": "New York Declaration on Animal Consciousness",
+     "source_url": "https://sites.google.com/nyu.edu/nydeclaration/declaration",
+     "source_published": "2024",
+     "source_accessed": "2026-08-28",
+     "reveal": "condensed",
+     "viz": "bar",
+     "wide": false,
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "range_at": 0,
+     "fill_pct": null
+    },
+    {
+     "label": "Vertebrate animals used or bred for research · global estimate, per year",
+     "value": "~192",
+     "unit": " million/yr",
+     "note": "A reconstruction from national reports rather than a head count, and it counts animals bred for research and killed without ever being used.",
+     "detail": "The estimate (Taylor & Rego Alvarez, 2019) updates an earlier 2005 calculation and covers animals used in experiments and education, together with the breeding and killing of surplus research animals. A 2005 Nuffield Council on Bioethics report put the global range at 50 to 100 million while noting that such figures were hard to obtain; the gap reflects both a decade of additional reporting and differences in scope. Many countries publish incomplete figures, so every global total is a reconstruction rather than a direct count.",
+     "tier": 1,
+     "source_label": "Taylor & Rego Alvarez (2019), Alternatives to Laboratory Animals",
+     "source_url": "https://journals.sagepub.com/doi/10.1177/0261192919899853",
+     "source_published": "2019",
+     "source_accessed": "2026-08-28",
+     "reveal": "condensed",
+     "viz": "bar",
+     "wide": false,
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "range_at": 0,
+     "fill_pct": null
+    },
+    {
+     "label": "US court rulings granting an animal legal personhood · as of 2026",
+     "value": "0",
+     "unit": " rulings",
+     "note": "US courts have refused every personhood petition; the highest-profile case, for an elephant named Happy, was rejected 5–2 in 2022.",
+     "detail": "The Nonhuman Rights Project’s habeas corpus petitions for chimpanzees (2013–2015) and for an elephant, Happy, at the Bronx Zoo (2018–2022) were all denied, and New York’s highest court ruled 5–2 in 2022 that habeas corpus does not extend to nonhuman animals. Outside the US the record is not uniform: an Argentine court recognized the chimpanzee Cecilia as a nonhuman legal person and she was moved to a sanctuary, and the civil codes of Germany, Switzerland and Quebec each declare that animals are not things. None of that displaces the property framework in practice, and a growing number of jurisdictions recognize animal sentience in statute without changing property status.",
+     "tier": 1,
+     "source_label": "Matter of Nonhuman Rights Project v. Breheny (N.Y. Ct. App. 2022)",
+     "source_url": "https://www.courtlistener.com/opinion/6477380/the-matter-of-nonhuman-rights-project-v-james-j-breheny/",
+     "source_published": "2022",
+     "source_accessed": "2026-08-28",
+     "reveal": "condensed",
+     "viz": "bar",
+     "wide": false,
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "range_at": 0,
+     "fill_pct": null
+    },
+    {
+     "label": "Formal scientific consensus on animal consciousness · Cambridge Declaration",
+     "value": "2012",
+     "unit": " year signed",
+     "note": "Neuroscientists declared that mammals, birds and other animals, octopuses included, have the neural basis for conscious experience.",
+     "detail": "Signed by a group of prominent neuroscientists at a Cambridge University conference on consciousness in non-human animals, the declaration states that convergent evidence indicates non-human animals “possess the neurological substrates that generate consciousness”, naming all mammals and birds and many other creatures, including octopuses. It was the first prominent scientific consensus statement of its kind and remains a reference point in debates over farmed and laboratory animal sentience.",
+     "tier": 2,
+     "source_label": "Cambridge Declaration on Consciousness",
+     "source_url": "https://fcmconference.org/",
+     "source_published": "2012",
+     "source_accessed": "2026-08-28",
+     "reveal": "normal",
+     "viz": "bar",
+     "wide": false,
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "range_at": 0,
+     "fill_pct": null
+    },
+    {
+     "label": "Species legally defined as sentient · UK Sentience Act",
+     "value": "2022",
+     "unit": " year enacted",
+     "note": "UK law counts all vertebrates as sentient, along with octopuses, squid and crustaceans such as crabs and lobsters.",
+     "detail": "Section 5 of the Animal Welfare (Sentience) Act 2022 defines “animal” to include any vertebrate other than Homo sapiens, any cephalopod mollusc, and any decapod crustacean, following a 2021 government-commissioned scientific review of sentience in both invertebrate groups. The Act creates an Animal Sentience Committee that scrutinizes government policy for its welfare impact.",
+     "tier": 2,
+     "source_label": "Animal Welfare (Sentience) Act 2022, s.5",
+     "source_url": "https://www.legislation.gov.uk/ukpga/2022/22/section/5/enacted",
+     "source_published": "2022",
+     "source_accessed": "2026-08-28",
+     "reveal": "normal",
+     "viz": "bar",
+     "wide": false,
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "range_at": 0,
+     "fill_pct": null
+    },
+    {
+     "label": "Animal sentience recognized in treaty law · EU Article 13",
+     "value": "2009",
+     "unit": " year in force",
+     "note": "Since 2009, EU treaty law has required farm, fisheries and research policy to pay full regard to animal welfare as sentient beings.",
+     "detail": "Article 13 of the Treaty on the Functioning of the European Union requires the Union and member states, when formulating policy on agriculture, fisheries, transport, the internal market, research and technology, and space, to pay full regard to animal welfare requirements “since animals are sentient beings”, while respecting member states’ own laws and customs on religious rites, cultural traditions and regional heritage. It creates a policy duty, not an enforceable individual right for animals.",
+     "tier": 2,
+     "source_label": "Treaty on the Functioning of the European Union, Art. 13",
+     "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex%3A12012E013",
+     "source_published": "2009",
+     "source_accessed": "2026-08-28",
+     "reveal": "deep",
+     "viz": "bar",
+     "wide": false,
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "range_at": 0,
+     "fill_pct": null
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "What grounds moral status: the capacity to suffer, rational agency, species membership, or standing in a relationship?",
+    "kind": "value",
+    "why": "Whether status tracks a capacity like sentience or reason, or instead species membership or a relationship with humans, decides who counts at all and by how much.",
+    "detail": "The sentience-based case (Singer’s utilitarianism) holds that the capacity to suffer is the only property that determines whether a being has interests in the first place; rational agency can’t be the criterion because human infants and severely cognitively impaired adults lack it yet plainly have moral status, so any test requiring rationality either excludes them too or is arbitrarily patched to exempt humans alone. That patch is what critics call speciesism, and the argument from marginal cases is the load-bearing move for treating suffering, not reason, as the threshold.\n\nThe agency, species, and relational cases resist a single master criterion. Kantian and human-exceptionalist views tie full status to rational, autonomous agency because that is what grounds duties of respect and reciprocity, and treat species membership as tracking a normal-range capacity even where one individual falls short of it. Relational views ground obligation in the bonds actually formed, domestication, keeping, dependency, rather than in an intrinsic property alone, which is the only way to explain why a companion animal is owed more than a wild member of the same species. Capabilities theorists cut across the divide again, attaching status to having a good of one’s own that can go better or worse, whatever the underlying capacity.",
+    "lean_label_a": "Sentience",
+    "lean_label_b": "Rationality",
+    "lean_pct_a": 55,
+    "tier": 1,
+    "reveal": "condensed"
+   },
+   {
+    "text": "When interests conflict, may human interests count for more simply because they are human?",
+    "kind": "value",
+    "why": "Turns on whether being human is a real moral difference, like kinship or citizenship, or an arbitrary marker with no more justification than race or sex.",
+    "detail": "Equal consideration holds that being human is not itself a morally relevant property, any more than skin color or sex is, so weighting human interests more heavily purely because they’re human is arbitrary discrimination, structurally the same move as racism or sexism. The force of the argument comes from marginal cases again: if a cognitively disabled human’s suffering is never discounted, a nonhuman with comparable capacities can’t be discounted either, so consistency requires weighing like interests alike regardless of species.\n\nHuman exceptionalism and relational views answer that human is not an empty placeholder, it tracks real facts: shared language-mediated agency, culture, reciprocity, and membership in an overlapping moral community. Partiality to one’s own kind, on this view, is structurally like partiality to family or compatriots, not superficial group membership but a real difference in the duties that reciprocity and shared moral agency generate. Treating species-partiality as automatically equivalent to racism, they argue, elides the difference between a group defined by an oppressive hierarchy and one defined by shared capacities and community.",
+    "lean_label_a": "Legitimate",
+    "lean_label_b": "Arbitrary",
+    "lean_pct_a": 60,
+    "tier": 1,
+    "reveal": "condensed"
+   },
+   {
+    "text": "Which animals are sentient, and how much confidence do fishes, cephalopods, decapod crustaceans and insects warrant?",
+    "kind": "empirical",
+    "why": "The behavioral and physical signs used to infer pain are well established in vertebrates, but read very differently as nervous systems get stranger, from octopus to insect.",
+    "detail": "A precautionary reading points to convergent evidence across taxa: nociceptors, motivational trade-off behavior (enduring a cost to avoid a stimulus, not just reflexive withdrawal), analgesic-responsive behavior change, and, for octopuses especially, problem-solving and individual behavioral flexibility that is hard to explain as pure automatism. This reading, reflected in growing regulatory recognition for cephalopods and decapods, argues that demanding certainty before extending concern gets the burden of proof backwards given how costly a false negative is, in the sheer number of these animals used at scale.\n\nSkeptics counter that the same markers also occur in systems with no plausible subjective experience, and that verifying sentience gets scientifically harder as the nervous system diverges further from the vertebrate case researchers can actually check their inferences against: a decentralized cluster of ganglia is not a brain. Confidence genuinely drops moving down the list, substantial for fish, plausible but harder to pin down for cephalopods, contested for decapods, and, for insects, a live minority research program that most of the field still treats as unresolved rather than established.",
+    "lean_label_a": "Probably yes",
+    "lean_label_b": "Unresolved",
+    "lean_pct_a": 50,
+    "tier": 1,
+    "reveal": "condensed"
+   },
+   {
+    "text": "Does moral status forbid using animals as means at all, or only require that the suffering involved be minimized?",
+    "kind": "value",
+    "why": "Rights language says using a sentient being as a resource is wrong however comfortably it is kept; welfare ethics weighs only the suffering caused.",
+    "detail": "Tom Regan’s rights view holds that sentient beings that are subjects-of-a-life, with beliefs, desires, memory, and an experiential welfare, possess inherent value that can’t be traded off against aggregate benefit; using such a being merely as a means to others’ ends is a wrong of a different kind from causing it pain, so however comfortable the confinement, using an animal as food, product, or research tool violates its status regardless of pain levels. That is why abolitionists treat humane farming as a category error rather than an incomplete solution.\n\nThe welfarist tradition that underlies essentially all existing animal-welfare law and voluntary certification holds instead that what makes an act wrong is the suffering it causes: if suffering can be minimized, kept non-gratuitous, and outweighed by the benefit to humans, use itself is permissible. This position can point to a real, measurable record of suffering reductions achieved through regulation and certification. Rights theorists reply that a track record compiled inside a system of use is not the measure in dispute, since what they contest is the use, not its terms.",
+    "lean_label_a": "Suffering",
+    "lean_label_b": "Use is wrong",
+    "lean_pct_a": 75,
+    "tier": 1,
+    "reveal": "condensed"
+   },
+   {
+    "text": "Do welfare reforms reduce total animal suffering, or entrench and legitimize the practices they regulate?",
+    "kind": "empirical",
+    "why": "Welfare campaigns point to measurable near-term gains; abolitionists argue the same reforms make animal use more publicly acceptable, and no experiment settles which effect is larger.",
+    "detail": "Incrementalist and welfarist organizations point to concrete, documented improvements from campaigns, cage-free transitions, improved slaughter methods, bans on some intensive-confinement practices, as suffering reductions achieved at real scale, against abolition’s near-zero record of ending any major use outright. They argue reform builds the public momentum, industry practice, and political infrastructure that later, larger changes depend on, and that withholding reform until full abolition is achievable leaves animals suffering under the status quo in the meantime.\n\nAbolitionists, most associated with the new-welfarism critique, argue reforms function as a pressure valve: a cage-free label lets consumers feel the ethical problem has been handled, lowering the perceived urgency of challenging animal use itself, while industry absorbs modest reforms as a cost of doing business and markets them in ways that can grow demand. The claim is genuinely hard to adjudicate because the counterfactual, what public support for abolition would look like without decades of welfare reform, can’t be directly observed, so the same historical record gets read in opposite directions.",
+    "lean_label_a": "Reduces harm",
+    "lean_label_b": "Entrenches",
+    "lean_pct_a": 68,
+    "tier": 2,
+    "reveal": "normal"
+   },
+   {
+    "text": "Should some animals hold legal rights or personhood, or is property status with welfare duties the right legal form?",
+    "kind": "value",
+    "why": "Tested in real courts: whether welfare duties attached to property status can hold an animal’s core interests against its owner’s, or whether only personhood-style rights can.",
+    "detail": "Rights advocates, notably the habeas corpus litigation brought on behalf of captive chimpanzees and elephants, argue property status is structurally incapable of protecting an animal’s most fundamental interests, liberty and bodily integrity, because an owner’s interests legally trump the property’s interests by definition. Only some form of legal personhood, at least for cognitively complex, autonomous animals, can secure protections that don’t evaporate whenever they’re inconvenient to an owner, and precedent for personhood expanding elsewhere, to corporations and in places to rivers or ecosystems, is invoked to show personhood is a flexible legal tool rather than a category reserved for humans.\n\nThe mainstream legal position across most jurisdictions keeps animals as property while layering on statutory welfare duties, anti-cruelty law and husbandry standards, on the grounds that this delivers real protective force without the doctrinal upheaval of personhood, which raises unresolved questions like who would exercise an animal’s rights on its behalf and where lines would fall among species. Courts in the US and most other jurisdictions have declined to grant it, an Argentine court’s recognition of the chimpanzee Cecilia as a nonhuman legal person being the notable exception, reasoning that legal rights have historically tracked the capacity to bear duties and enter a legal community’s reciprocal obligations, which animals cannot do, leaving legislatures rather than courts as the intended venue for expanding protection.",
+    "lean_label_a": "Personhood",
+    "lean_label_b": "Property",
+    "lean_pct_a": 22,
+    "tier": 2,
+    "reveal": "normal"
+   },
+   {
+    "text": "Do animals have future-directed interests, such as memory, anticipation and a stake in continuing to live, or only moment-to-moment experience?",
+    "kind": "empirical",
+    "why": "Evidence of planning and memory reads to some researchers as a genuine stake in the future and to others as sophisticated reflex, and whether painless killing harms an animal hinges on which is true.",
+    "detail": "Comparative cognition research, caching behavior sensitive to what, where and when food was stored, and evidence of planning for future states in corvids and great apes, is read by many researchers as at least episodic-like memory and anticipation. Regan’s subject-of-a-life criterion explicitly builds in psychological identity over time: if an animal can anticipate and prefer to keep experiencing life, painless killing still frustrates a real interest, which is the philosophical basis for treating humane slaughter as not fully resolving the ethical problem.\n\nSkeptics respond that passing behavioral tests consistent with future-orientation doesn’t establish the harder claim of a subjectively experienced, autobiographical self whose loss could be a harm, one of philosophy of mind’s hardest problems even in the human case, where introspective evidence exists; for animals there are only third-person behavioral proxies. On a presentist reading, animal interests are real and demand protection from suffering, but painless death may not itself harm an animal lacking a robust sense of its own future, the position underlying claims that humane killing can fully satisfy welfare obligations even though it would not for a human.",
+    "lean_label_a": "Future stake",
+    "lean_label_b": "Present only",
+    "lean_pct_a": 45,
+    "tier": 2,
+    "reveal": "deep"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Humane Use",
+    "steelman": "The duty is a decent life and a humane death, not an end to using animals at all.",
+    "description": "Animals have interests, but moral status forbids using them carelessly, not using them at all. Two standards do the work: the Five Freedoms (1979) for how animals are kept, the 3Rs (1959) — replace, reduce, refine — for research use. Both license use while binding it to a floor that moves practice: beef buyers made Grandin’s audit a contract condition, capping cattle vocalizing at the stunning chute at 3 percent.",
+    "detail": "The position traces to two parallel reform lineages rather than one manifesto. Ruth Harrison’s 1964 exposé Animal Machines pushed the UK to convene the Brambell Committee, whose 1965 report on intensive farming became, by 1979, the Farm Animal Welfare Council’s Five Freedoms: from hunger and thirst, discomfort, pain and disease, fear and distress, and the freedom to express normal behavior. In parallel, William Russell and Rex Burch’s 1959 The Principles of Humane Experimental Technique gave laboratory science the 3Rs: replace animal use where possible, reduce the numbers used, refine procedures to cut suffering. The framework was later written into the UK’s Animals (Scientific Procedures) Act and the EU’s Directive 2010/63/EU, and mirrored in US institutional review under the Animal Welfare Act.\n\nThe position does not agree on why use is permissible, only that it is. Carl Cohen’s 1986 New England Journal of Medicine defense grounds the line in moral agency: rights presuppose the capacity to make and honor claims on others, which humans have and animals do not, though the absence of rights still leaves humans obligated to minimize suffering. R.G. Frey argued a different route to a similar place, rejecting rights talk for both humans and animals and weighing suffering directly, which commits him to taking the cases where use might not be justified seriously rather than assuming the answer. Bernard Rollin split from both again: a philosopher working inside veterinary and animal science rather than a rights theorist, he helped draft the 1985 US amendments to the Animal Welfare Act, which require laboratories to minimize pain and to provide for the psychological well-being of primates, on the premise that welfare law, not philosophy, is where the position actually cashes out.\n\nTemple Grandin supplies the position’s empirical answer to the charge that welfare reform just entrenches the practices it regulates. Her handling and stunning audits, scored on measurable proxies like the percentage of cattle vocalizing or requiring more than one prod, were adopted as a purchasing standard by large meat buyers, and plant behavior changed within the audit cycle, not on a philosopher’s schedule. Her own framing of the trade: animals used for food are still owed, in her words, “a decent life” and “a painless death”, a debt the position holds is dischargeable through better practice, not only through non-use.",
+    "tier": 1,
+    "proponents": "R.G. Frey, Carl Cohen, Temple Grandin, Bernard Rollin, Farm Animal Welfare Council (Five Freedoms, 1979), Russell and Burch (3Rs, 1959)",
+    "representative_name": "Temple Grandin",
+    "representative_note": "Animal-welfare scientist whose handling and stunning audits, adopted as a purchasing condition by major meat buyers, turned “humane” into an enforceable line rather than a slogan.",
+    "prevalence_weight": 85,
+    "spectrum_position": -1,
+    "color_key": ""
+   },
+   {
+    "name": "Human Exceptionalist",
+    "steelman": "Rights belong to moral agents; animals are owed kindness, not equal standing.",
+    "description": "Rights rest on moral agency: the capacity to reason about duties and be held responsible, which only humans have. That is a difference in kind, not degree, so human interests may outweigh animal ones in a real conflict, though cruelty remains wrong. Banting and Best isolated insulin in 1921 using dogs, turning a fatal diagnosis into a manageable one.",
+    "detail": "The position’s roots run through Kant, who held that only rational beings can be ends in themselves and that duties regarding animals are indirect: cruelty is wrong because it coarsens human character, not because the animal is owed anything directly. Twentieth-century defenders sharpened this into a rights-theoretic claim. Carl Cohen’s 1986 essay argued that rights are a social and moral category arising only among beings capable of self-legislation and reciprocal obligation: a dog cannot violate anyone’s rights and so cannot hold any, though it can certainly be wronged by cruelty. Peter Carruthers reached a similar destination by a contractualist route: morality is the set of terms rational agents would agree to govern their mutual conduct, and animals, unable to be party to that agreement, fall outside its direct scope even as the agreement itself can still require kindness toward them.\n\nThe camp is not united on how far the humane-treatment duty reaches. Tibor Machan ties the whole framework to rationality and treats welfare obligations as a matter of virtue rather than something owed to the animal as such. Wesley J. Smith, whose National Review blog and books made the phrase ‘human exceptionalism’ a rallying cry for this stance, argues the duty is thicker: humans owe animals respect, kindness and humane care, so gratuitous cruelty or trivial cosmetic testing can be condemned on the position’s own terms without conceding that animals hold rights. What unites both wings is a refusal to let ‘animals suffer too’ collapse into ‘animals therefore count equally’: for this camp, moral status can track a real, non-arbitrary difference the way it does everywhere else in ethics.\n\nThe strongest practical case is what the position permits that strict equal consideration would forbid. The camp points to a research record it reads as underwriting the century’s major medical advances, from insulin to vaccines to transplant immunology, and a framework that weighed a research animal’s interest in bodily integrity as equal to a patient’s interest in survival could authorize that century of trade-offs only on an aggregative calculation this camp regards as unstable, and only if it accepted the same calculation applied to cognitively comparable humans. Human exceptionalism supplies that authorization while still condemning gratuitous cruelty within the same research pipeline, which is why its proponents see it as the only account that matches how medicine, agriculture and law have actually had to choose.",
+    "tier": 1,
+    "proponents": "Carl Cohen, Peter Carruthers, Tibor Machan, Wesley J. Smith",
+    "representative_name": "Carl Cohen",
+    "representative_note": "His 1986 New England Journal of Medicine essay is the position’s canonical text: rights presuppose moral agency, so humans may put their own interests first in genuine conflicts while still owing animals humane treatment.",
+    "prevalence_weight": 70,
+    "spectrum_position": -3,
+    "color_key": ""
+   },
+   {
+    "name": "Equal Consideration",
+    "steelman": "If a being can suffer, that suffering counts the same, whoever is feeling it.",
+    "description": "Moral status tracks one thing: the capacity to suffer, not species or intelligence. Weighing a human’s pain above equally intense pain in a pig, for no reason but species, is prejudice with a biological excuse. The claim is not that every being be treated identically, only that like interests be weighed alike. The 2012 Cambridge Declaration drew that line at sentience, not taxonomy.",
+    "detail": "Speciesism as a named prejudice is younger than the intuition behind it. Jeremy Bentham asked, in 1789, ‘the question is not, can they reason? nor, can they talk? but, can they suffer?’; Richard Ryder gave the prejudice of ignoring that a name, ‘speciesism’, in 1970; and Peter Singer’s Animal Liberation (1975) turned both into a sustained argument that any being with interests deserves those interests weighed, and discounting them for species membership is the same move racism and sexism make with skin color and sex. Singer cast it as the next expansion of the moral circle, following the logic that already dismantled other hierarchies once defended as natural.\n\nEqual consideration does not settle, on its own, what follows next. Singer’s own utilitarianism is aggregative: enough animals with minor interests at stake can, in principle, outweigh fewer humans with serious ones, an implication some proponents embrace and others soften by weighting interests for intensity and complexity rather than simply counting heads. There is a live argument over uncertain cases too: for beings whose sentience is plausible but unproven, such as insects or decapod crustaceans, philosophers like Jeff Sebo argue that equal consideration under moral uncertainty still owes some precautionary weight to their possible interests, rather than withholding any weight until certainty arrives.\n\nThe evidence base has hardened considerably since 1975. A 2021 review commissioned by the UK government from the London School of Economics, led by Jonathan Birch, weighed over 300 studies against a set of neural and behavioral criteria for sentience (including responses to analgesics and flexible, motivation-tradeoff behavior) and concluded that both cephalopod molluscs and decapod crustaceans should be regarded as sentient, a finding parliament then wrote directly into the Animal Welfare (Sentience) Act 2022. That is equal consideration’s method working as designed: settle who can suffer through evidence, not intuition or convenience, and let the circle of moral concern move on its own.",
+    "tier": 1,
+    "proponents": "Peter Singer, Jeremy Bentham, Richard Ryder, Oscar Horta, Jeff Sebo",
+    "representative_name": "Peter Singer",
+    "representative_note": "Animal Liberation (1975) built the case against speciesism into the founding text of the modern animal movement.",
+    "prevalence_weight": 62,
+    "spectrum_position": 2,
+    "color_key": ""
+   },
+   {
+    "name": "Animal Rights Abolitionist",
+    "steelman": "The wrong is owning a sentient being at all, not the conditions of the cage.",
+    "description": "Sentience alone entitles a being to one right: not to be property. Once an animal is property, welfare law can only ask how it may be used, never whether, so cage-free eggs end at the same slaughterhouse. Some 80 billion land animals are killed for food each year, a toll that climbed through decades of ‘humane’ reform. Abolition, through vegan education and law, is what is owed.",
+    "detail": "The line runs from Tom Regan’s 1983 The Case for Animal Rights, which argued that any being who is the ‘subject-of-a-life’, with beliefs, desires, memory and a stake in its own future, holds inherent value that cannot be traded off for human benefit, to Gary Francione’s later, sparer claim: no capacity beyond sentience is needed, because the only right an owned being requires is the right not to be property at all. Once that single right exists, auditing the size of any given cage becomes beside the point, since the wrong was the ownership, not its terms.\n\nThe sharpest fight inside the camp is with reformist allies, not opponents. Francione’s ‘new welfarism’ critique names Peter Singer and groups like the Humane Society directly: campaigns for cage-free eggs or slower slaughter lines, he argues, work as moral permission slips, letting the public believe the industry has been fixed while the killing continues, so the strategy he counterposes is abolition through vegan education and law that ends property status outright, never its incremental terms. Others keep the abolitionist end but pursue it through the courts instead of the diet: Steven Wise’s Nonhuman Rights Project has litigated habeas corpus petitions for chimpanzees and elephants, and its case for Happy the elephant reached New York’s highest court in 2022 and lost 5 to 2, but two judges dissented, arguing that habeas corpus should have been available to Happy and that her confinement violated a right to bodily liberty, a crack the movement is built to widen.",
+    "tier": 1,
+    "proponents": "Gary Francione, Tom Regan, Steven Wise, Nonhuman Rights Project",
+    "representative_name": "Gary Francione",
+    "representative_note": "Rutgers scholar who coined the ‘abolitionist approach’, arguing sentience alone grounds the one right not to be property.",
+    "prevalence_weight": 45,
+    "spectrum_position": 3,
+    "color_key": ""
+   },
+   {
+    "name": "Relational Obligation",
+    "steelman": "Domestication creates a duty of care that a wild animal’s independence never triggers.",
+    "description": "What is owed an animal is fixed by relationship, not by a checklist of traits. Dogs and sheep were bred over generations into forms that cannot fend for themselves, so the humans who made that dependency owe a care no wild animal’s independence calls for. Merino sheep, bred for continuous fleece growth, suffer heat stress and blindness without annual shearing, a dependency humans built.",
+    "detail": "The position grew out of dissatisfaction with both wings of 1970s-80s animal ethics: Peter Singer’s utilitarian calculus and Tom Regan’s rights view each grounded status in an intrinsic property (sentience, or being a ‘subject-of-a-life’) that every qualifying animal holds identically, wherever it lives. Clare Palmer’s Animal Ethics in Context (2010) is the camp’s break with that: on the contextual view she argues for, moral status alone cannot generate positive duties to assist, and only a history in which humans caused an animal’s vulnerability can, which is why intervening to stop wild predation is not obligatory in the way that feeding a chicken is. Sue Donaldson and Will Kymlicka’s Zoopolis (2011) then rebuilt this into a full political theory, borrowing categories from Kymlicka’s earlier work on minority rights: domesticated animals get citizenship-like membership, wild animals get sovereign territory and non-interference, and liminal urban animals (pigeons, rats, urban deer) get a resident ‘denizen’ status short of full citizenship but above indifference.\n\nThe camp splits hardest over the laissez-faire intuition itself. Wild-animal-welfare advocates argue that suffering in nature is vast, morally real, and not excused by humans not having caused it, so refusing to intervene in predation or starvation is moral abdication dressed up as respect for independence; relational theorists reply that unrequested intervention in an ecosystem humans did not create risks paternalism and predictably causes more suffering than it prevents, and that standing to assist, not just capacity to help, is part of what a relationship grounds. The strongest empirical support for the core claim comes from domestication biology itself: broiler chickens bred for rapid weight gain often cannot support their own frames; brachycephalic dog breeds bred for facial structure need surgical intervention to breathe normally. Each is a dependency humans manufactured through selective breeding, which the theory treats as exactly the kind of history that turns an animal’s interest into a human obligation, distinct in kind from whatever is owed to a wolf that was never bred at all.",
+    "tier": 1,
+    "proponents": "Clare Palmer, Sue Donaldson, Will Kymlicka, Elizabeth Anderson",
+    "representative_name": "Sue Donaldson & Will Kymlicka, Zoopolis (2011)",
+    "representative_note": "Proposes a three-tier framework: domesticated animals as co-citizens, wild animals as sovereign communities entitled to non-interference, and urban wildlife as ‘denizens’ with residency rights short of citizenship.",
+    "prevalence_weight": 35,
+    "spectrum_position": 0,
+    "color_key": ""
+   },
+   {
+    "name": "Capabilities Entitlement",
+    "steelman": "A good life means flourishing as its own kind, not just the absence of pain.",
+    "description": "Justice for a sentient creature is not the absence of pain but the chance to do what its own kind of life involves. A theory that stops at suffering can leave an animal pain-free and still deny it the movement, thought and company its nature calls for. What flourishing requires differs by species, so entitlements are set animal by animal and enforced by legal standing in court.",
+    "detail": "Martha Nussbaum built this position by carrying over the capabilities approach she developed with economist Amartya Sen for human development, first sketching an animal version in “Frontiers of Justice” (2006) and setting it out in full in “Justice for Animals: Our Collective Responsibility” (2022). The reframing is deliberate: instead of asking how much a being can suffer, ask what a good life for that kind of creature actually consists of, then hold human practice to that standard rather than to a pain ledger.\n\nThat reframing splits the position from its neighbors on both sides. Against Peter Singer’s utilitarianism, Nussbaum argues that averaging or minimizing suffering misses the positive side of a good life: movement, play, social bonds, and cognitive engagement are things a creature is actively entitled to, not just spared from losing. Against the view that all use of animals is wrong in itself, she holds that some human-animal relationships, a working dog’s partnership or a sanctuary elephant’s care among them, can honor a species’ flourishing rather than violate it, so the target is exploitative confinement and suffering, not relationship as such. Where the camp draws its own line is over scope: the approach requires goal-pursuing, cognitively complex sentience, which comfortably covers mammals and birds but leaves an open, actively debated question over insects, decapod crustaceans, and other simpler nervous systems.\n\nThe case leans on documented cognitive and social complexity: an Asian elephant passed a mirror self-recognition test in a widely cited 2006 study, and separate field research documents elephant social memory across decades and distinctive behavior around the bodies of dead kin, evidence that a purely pain-centered account struggles to explain why the loss of a companion is a harm in itself. Nussbaum turns that into concrete legal proposals: standing for animals represented by human guardians in court, much as children and people with severe cognitive disabilities are represented, plus government agencies dedicated to each type of animal rather than one generic welfare statute. She applies the framework to flashpoints she treats as genuinely hard rather than settled: medical experimentation, meat eating, the hunting practices of threatened traditional cultures, and conflicts over shared land and resources.",
+    "tier": 1,
+    "proponents": "Martha Nussbaum, Frontiers of Justice (2006), Justice for Animals: Our Collective Responsibility (2022)",
+    "representative_name": "Martha Nussbaum",
+    "representative_note": "Justice for Animals (2022): the fullest statement, arguing law should grant animals guardianship and standing, not just kinder confinement.",
+    "prevalence_weight": 28,
+    "spectrum_position": 2,
+    "color_key": ""
+   }
+  ],
+  "crux": {
+   "lead": "Grant that an animal can suffer, and the argument has barely started.",
+   "lead_highlight": "the argument has barely started",
+   "subtitle": "Six answers to what that entitles it to: humane conditions, kindness that never outranks a human’s, equal weight, a life not owned, care a relationship creates, or flourishing as its own kind.",
+   "empirical": "Where sentience stops, and what a sentient life contains. Evidence on fishes, cephalopods, decapods and insects moves the line of who is owed anything; evidence on memory, anticipation and a stake in continuing decides whether death is a harm or only pain is. Whether welfare reform cuts total suffering or entrenches the practice is also on the record.",
+   "values": "No evidence settles whether being human counts in itself, whether owning a sentient being is a wrong apart from any suffering it causes, whether duties are universal or created by the relationships entered into, or whether what is owed is the absence of pain or a life that goes well by the animal’s own measure."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Global Animal Partnership",
+    "description": "A tiered welfare-rating system that certifies farms on a scale toward more natural conditions, treating animal use as legitimate while pushing continuous improvement.",
+    "url": "https://globalanimalpartnership.org",
+    "for_position": "Humane Use",
+    "tier": 1,
+    "reveal": "condensed"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Foundation for Biomedical Research",
+    "description": "Argues that animal research is justified by the human health benefits it produces, provided strict welfare regulations are followed.",
+    "url": "https://www.fbresearch.org/",
+    "for_position": "Human Exceptionalist",
+    "tier": 1,
+    "reveal": "condensed"
+   },
+   {
+    "kind": "donate",
+    "title": "Animal Charity Evaluators",
+    "description": "Directs donations to whichever animal charities its research finds most effective, weighing suffering the same regardless of species.",
+    "url": "https://animalcharityevaluators.org/donate",
+    "for_position": "Equal Consideration",
+    "tier": 1,
+    "reveal": "condensed"
+   },
+   {
+    "kind": "policy",
+    "title": "Nonhuman Rights Project",
+    "description": "Files habeas corpus litigation seeking legal personhood and liberty rights for captive elephants and chimpanzees, arguing property status itself is the wrong.",
+    "url": "https://www.nonhumanrights.org/ways-to-help/",
+    "for_position": "Animal Rights Abolitionist",
+    "tier": 1,
+    "reveal": "condensed"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Best Friends Animal Society",
+    "description": "Runs the nation’s largest no-kill sanctuary and coordinates shelter volunteers, framing domestication as creating a duty to end the killing of dogs and cats.",
+    "url": "https://bestfriends.org/volunteer",
+    "for_position": "Relational Obligation",
+    "tier": 1,
+    "reveal": "condensed"
+   },
+   {
+    "kind": "policy",
+    "title": "Animal Legal Defense Fund",
+    "description": "Litigates to change animals’ legal status, pressing courts to recognize standing so an animal’s own interests can be represented and enforced on its behalf.",
+    "url": "https://aldf.org/issue/animals-legal-status/",
+    "for_position": "Capabilities Entitlement",
+    "tier": 1,
+    "reveal": "condensed"
+   },
+   {
+    "kind": "donate",
+    "title": "Wild Animal Initiative",
+    "description": "Funds welfare science on wild animals, applying the same suffering-based standard to animals humans never domesticated.",
+    "url": "https://www.wildanimalinitiative.org/donate",
+    "for_position": "Equal Consideration",
+    "tier": 2,
+    "reveal": "normal"
+   },
+   {
+    "kind": "submit_view",
+    "title": "Add your view",
+    "description": "Share where you land on the moral status of animals.",
+    "url": "",
+    "for_position": "",
+    "tier": 2,
+    "reveal": "condensed"
+   }
+  ],
+  "categories": [
+   "ethics",
+   "climate-env"
+  ]
+ },
+ "verdicts": [
+  {
+   "critic": "Six camps, and all six are built to the same standard: each has an endorsable one-line steelman, a named canonical text, real proponents, and its own empirical anchor (Grandin's audit thresholds, Banting and Best, the LSE/Birch review, the Happy dissent, merino fleece dependency, elephant mirror self-recognition). No camp is sourced from its opponents' characterizations, and the description fields stay in-voice throughout. Prevalence is honestly non-symmetric (85/70/62/45/35/28) rather than forced to a spread. No house verdict in the overview, the positions, or the crux.\n\nThe crux is the strongest element and I would not block it. \"Grant that an animal can suffer, and the argument has barely started\" is a genuine narrowing: it concedes the premise that most public argument stalls on and moves the disagreement downstream, it is neither a question nor an or-fork (which the corpus check flags as the overcopied move), and the highlight appears verbatim. The subtitle enumerates six diagnoses, one per camp, so nothing is compressed into a binary and every camp can locate itself. The empirical/values split is clean and correctly assigned: sentience boundary, future-directed interests and reform efficacy on the evidence side; species-partiality, ownership-as-wrong, universal-vs-relational duty and pain-vs-flourishing on the values side. It does not say both sides have a point.\n\nMissing-camp check: WebSearch was exhausted at the first call, so I ran the prescribed WebFetch fallback against landscape taxonomies. SEP's entry (Gruen) lists speciesism critique, human exceptionalism, Kantian personhood, sentience/utilitarian, agency, rights, relational/contextual, and virtue/care; IEP splits the field into indirect, direct-but-unequal, and moral-equality theories. The six camps cover all of those except the care-ethics/ecofeminist family, which is half-housed in Relational Obligation and belongs in notes rather than blocking. Wild-animal welfare is represented (Horta as an Equal Consideration proponent, the Wild Animal Initiative action, the intervention split inside Relational's detail). All seven camp-assigned action URLs fetch live and are correctly attributed to the camp they are filed under, including both use-permitting camps.\n\nWhat blocks is narrower and identical in kind in two places: the `why` field is house voice, and in two questions it settles the question it is supposed to frame. Q4's why asserts that welfare campaigns produce measurable gains, which is exactly the half of Q4 that abolitionists deny, and then demotes the abolitionist half to \"argue\". Q7's why asserts that an owner's interests legally override an animal's, which is the rights litigants' premise and is inaccurate as a general statement of law, since anti-cruelty statutes constrain owners against their interests, which is the property-plus-welfare camp's whole answer. Both details attribute these claims correctly; only the framing lines break voice. They lean in opposite directions, so the page does not tilt overall, but each question prejudges its own dispute against one camp. Two one-clause fixes.",
+   "pass": false,
+   "blocking": [
+    {
+     "issue": "The question's own framing line settles half the question in house voice. Q4 asks whether welfare reforms reduce suffering or entrench the practice; the `why` states the reduction as established fact and demotes only the abolitionist half to \"argue\". Francione's new-welfarism critique denies precisely this: he holds the reforms are largely cosmetic, often track production efficiency, and function as permission slips. The draft's own detail attributes the claim correctly (\"Incrementalist and welfarist organizations point to concrete, documented improvements\"), so the framing line is the only place one camp's contested claim is asserted as fact against the other.",
+     "fix": "Attribute both halves symmetrically in the `why`: \"Welfare campaigns point to measurable near-term gains; abolitionists argue the same reforms make the underlying use more publicly acceptable and durable, and the trade-off is hard to test.\" No change needed to the detail, which is already even-handed.",
+     "quote": "Question: \"Do welfare reforms reduce total animal suffering, or entrench and legitimize the practices they regulate?\" — why: \"Welfare campaigns produce measurable near-term gains, but abolitionists argue the same reforms make the underlying use more publicly acceptable and durable, and that trade-off is hard to test.\""
+    },
+    {
+     "issue": "Same defect, opposite direction: the `why` adopts the rights litigants' contested premise in house voice. \"When an owner's interests legally override them\" reads as a general statement of how property law works, and as such it is inaccurate — anti-cruelty statutes, the UK Animal Welfare Act and EU rules all constrain owners against their own interests, which is exactly the property-plus-welfare camp's answer to this question. The detail attributes the claim properly (\"Rights advocates ... argue property status is structurally incapable\"); the framing line asserts it.",
+     "fix": "Strip the assertion from the `why`, e.g. \"Tested in real courts: whether property status carrying welfare duties can secure an animal's core interests against a competing owner interest, or whether only personhood-style rights can.\"",
+     "quote": "Question: \"Should some animals hold legal rights or personhood, or is property status with welfare duties the right legal form?\" — why: \"Tested in real courts: whether property status can ever secure an animal's core interests when an owner's interests legally override them, or whether only personhood-style rights can.\""
+    }
+   ],
+   "notes": [
+    "Basics selection leans one way without stating anything false. Four of nine stats are scale-of-use totals (land animals, wild fish, farmed fish, research animals) and four are sentience recognition (Cambridge, NY Declaration, UK Act, EU Art. 13); the zero-personhood-rulings stat is the only one the property/use-permitting camps would foreground. Nothing in the fact base captures what all camps accept about the other side of the ledger — e.g. the EU's official animal-use statistics under Directive 2010/63 showing the 3Rs-driven trend, or the number of jurisdictions with binding welfare legislation. Swapping or adding one such stat would balance the shared fact base without weakening any existing item.",
+    "why_now editorializes slightly: \"moved the credible sentience line outward\" asserts that credibility shifted, where the declaration itself claims only \"at least a realistic possibility of conscious experience\". Soften to what the declaration says, e.g. \"extended a realistic-possibility claim to fishes and many invertebrates\".",
+    "The care-ethics/ecofeminist wing (Lori Gruen's entangled empathy, Donovan & Adams, Elisa Aaltola; SEP treats it as a standing family alongside relational/contextual) has no named home. Its substance sits nearest Relational Obligation, but that camp as written is defined by causal dependency created through domestication, which care ethicists explicitly do not require — Gruen's account extends to wild animals. Cheapest fix: add Gruen and Donovan to Relational Obligation's proponents plus one clause in the detail marking the wing that grounds obligation in empathetic attention rather than causal history.",
+    "Q1's detail gives the sentience case a full paragraph and compresses agency, species membership, relational and capabilities into a single one. Each is stated fairly and no reader is misled, but the four bundled views get roughly a sentence apiece against the sentience case's five.",
+    "Action distribution: Equal Consideration carries two entries (Animal Charity Evaluators, Wild Animal Initiative) while Humane Use, the highest-prevalence camp at 85, carries one. All seven camp-assigned URLs were fetched and are live and correctly attributed, so this is a count asymmetry only.",
+    "The crux `values` line covers species-partiality, ownership, relational duty and flourishing, but not the legal-form dispute Q7 raises (personhood versus property with welfare duties). Minor — the legal question is arguably downstream of the ownership one already named."
+   ],
+   "checks_run": [
+    {
+     "check": "section tilt / house-voice sweep",
+     "ran": true,
+     "method": "Read every field of overview, basics (label/note/detail), all seven questions (text/why/detail/lean), all six positions (steelman/description/detail/representative_note), crux and actions, marking each claim as house voice or in-camp voice and testing whether any house-voice clause takes a side on a dispute the page itself poses. Two hits, both in `why` fields (Q4, Q7)."
+    },
+    {
+     "check": "per-camp charity and rigor parity",
+     "ran": true,
+     "method": "Compared the six camps on steelman endorsability, canonical text, named proponents, empirical anchor and detail depth; checked that each camp is sourced from its own authoritative texts rather than opponents' characterizations. Parity holds; Abolitionist's detail is the shortest but is not thinner in substance."
+    },
+    {
+     "check": "missing-camp search against scope_covered",
+     "ran": true,
+     "method": "WebSearch was refused at the first call — session budget exhausted (1500/1500) — so I used the prescribed WebFetch fallback on landscape sources: SEP \"The Moral Status of Animals\" (plato.stanford.edu/entries/moral-animal/, Gruen) and IEP \"Animal Ethics\" (iep.utm.edu/anim-eth/, after the /animal-ethics/ slug 404'd). Mapped both taxonomies onto the six camps; every listed family is covered except care/virtue ethics, which is half-housed in Relational Obligation and logged as a note."
+    },
+    {
+     "check": "crux judgment (narrowing vs false balance, binarization, per-camp locatability)",
+     "ran": true,
+     "method": "Tested the lead for house verdict and for the both-sides-have-a-point failure; checked the highlight appears verbatim; checked the lead's form against the corpus-check warning (not a question, no or-fork); mapped each of the subtitle's six clauses to a named camp; checked the empirical/values split against the seven questions for misassignment."
+    },
+    {
+     "check": "action attribution and link parity",
+     "ran": true,
+     "method": "WebFetch on all seven camp-assigned action URLs (Global Animal Partnership, Foundation for Biomedical Research, Animal Charity Evaluators, Nonhuman Rights Project, Best Friends Animal Society, Wild Animal Initiative, Animal Legal Defense Fund). All live and current, all correctly matched to the camp they are filed under, including both use-permitting camps."
+    }
+   ],
+   "key": "neutrality",
+   "stage": "substance"
+  },
+  {
+   "critic": "steelman",
+   "pass": false,
+   "blocking": [
+    {
+     "issue": "Human Exceptionalist detail asserts a contested empirical generalization about the world in the draft's own voice, unsourced. The only sources that make this claim in this form are the camp's own advocacy material (the Foundation for Biomedical Research, this camp's own linked action, states it as '84% of Nobel Prizes in Physiology or Medicine have involved animal research'), and the necessity/translational value of animal models is exactly what opponents contest. Under the section-scoped ladder, camp material supports what the camp believes, never a contested fact about the world. The specific instances the sentence names are verifiable (Banting & Best's pancreatectomized dogs, 1921, are already sourced in the description); the quantifier 'most of the twentieth century's major medical advances' is not.",
+     "fix": "Attribute the quantifier in-voice or drop it. E.g. 'The camp points to a research record it reads as underwriting the century's major medical advances, from insulin to vaccines to transplant immunology, and argues that a framework weighing a research animal's interest in bodily integrity as equal to a patient's interest in survival could authorize those trade-offs only on an aggregative calculation it regards as unstable…'. Do not add a 'verify this' note for the human.",
+     "quote": "Human Exceptionalist, detail, third paragraph: “Animal studies underwrote most of the twentieth century’s major medical advances, from insulin to vaccines to transplant immunology”"
+    },
+    {
+     "issue": "Section tilt in the actions rail, created by the reveal levels. topics/models.py gates each action by `reveal` (an item is shown when the current reading depth >= its reveal; `tier` is explicitly unused for actions — 'Recorded for future tier-driven display; actions currently split by reveal level'). Five of the six camp-aligned actions are reveal 'normal' and are therefore hidden at condensed depth; the Human Exceptionalist action is the only camp-aligned action set to 'condensed'. A reader at the shallowest depth sees exactly one camp's call to action — the animal-research defense — and none for Humane Use, Equal Consideration, Abolitionist, Relational or Capabilities. Every published topic in the corpus (nuclear-energy, vaccine-mandates, climate-tipping-points, ai-alignment) sets essentially all actions to reveal 'condensed', so no single camp is alone above the fold.",
+     "fix": "Put all camp-aligned actions on the same reveal level — set the five 'normal' actions (Global Animal Partnership, Animal Charity Evaluators, Nonhuman Rights Project, Best Friends Animal Society, Wild Animal Initiative, Animal Legal Defense Fund) to reveal 'condensed', matching the corpus norm and the Foundation for Biomedical Research entry. Leave 'Add your view' as is.",
+     "quote": "actions: {\"kind\":\"learn_more\",\"title\":\"Foundation for Biomedical Research\",\"for_position\":\"Human Exceptionalist\",\"tier\":2,\"reveal\":\"condensed\"} against e.g. {\"title\":\"Global Animal Partnership\",\"for_position\":\"Humane Use\",\"tier\":1,\"reveal\":\"normal\"}"
+    }
+   ],
+   "notes": [
+    "Human Exceptionalist: Carruthers' kindness duty is described as flowing from the contract itself (“the agreement itself can still require kindness toward them”). His stated mechanism is indirect: cruelty is wrong because “it betrays an indifference to suffering that may manifest itself… with that person's dealings with other rational agents” (IEP, Animals and Ethics). Sharpening to his own route would make the camp's account more recognizable to it.",
+    "Human Exceptionalist: Cohen's strongest reply to the argument from marginal cases — that rights inhere in the kind of being, not the individual, so a cognitively impaired human still holds them — appears in Question 1 but only faintly in the camp's own section, where it is the camp's central answer to its central objection. Worth a clause in the detail.",
+    "Question 5: the welfarist paragraph closes with a rights-view rebuttal (“Rights theorists reply that a track record compiled inside a system of use is not the measure in dispute”), while the Regan paragraph carries no welfarist reply. Give both sides the same last-word treatment, or drop the trailing rebuttal.",
+    "The wild-animal-suffering strand is voiced only inside Relational Obligation's detail, as the position that camp is answering. Oscar Horta is listed as an Equal Consideration proponent and Wild Animal Initiative is its action, so a line in Equal Consideration's own detail would let the strand speak in its own voice rather than only through an opponent.",
+    "Equal Consideration is the only camp with two actions (Animal Charity Evaluators, Wild Animal Initiative) while Humane Use (prevalence 85) and Human Exceptionalist (70) have one each; in the published corpus the doubled camp is the top-prevalence one.",
+    "The questions block uses straight apostrophes (“Singer's”, “can't”, “one's own”) while the positions use typographic ones; lint_draft.py --fix sweeps this.",
+    "Humane Use: the Grandin vocalization threshold is exact for beef plants with no head restraint (5% where head holders are used for stunning or religious slaughter). The flat “under 3 percent” is defensible but naming the beef-plant context would be tighter.",
+    "“Best Friends Animal Society … Runs the nation's largest no-kill sanctuary” leaves the country unnamed on a globally-scoped page; “the largest no-kill sanctuary in the US” reads better and is the organization's own claim."
+   ],
+   "checks_run": [
+    {
+     "check": "Per-camp endorsement read (would a real proponent sign their own section?)",
+     "ran": true,
+     "method": "Read every steelman, description and detail for all six camps, checking for opponent rebuttals inside a camp's own text, missing best arguments, and last-word asymmetry. All six steelmen are in-voice and endorsable; no camp is rebutted inside its own section (Humane Use, Relational and Abolitionist each get the last word on their internal disputes). Cross-checked camp characterizations against SEP 'The Moral Status of Animals' and IEP 'Animals and Ethics'."
+    },
+    {
+     "check": "Missing-camp search",
+     "ran": true,
+     "method": "Compared the six camps against the standard taxonomy in SEP (moral-animal) and IEP (anim-eth): Kantian/indirect-duty, contractarian, utilitarian equal consideration, rights view, capabilities, relational/contextual/feminist care, welfarist. All are represented; contractarianism sits inside Human Exceptionalist (Carruthers), care ethics inside Relational. No blocking gap. The wild-animal-suffering strand is a downstream implication of sentientism rather than a distinct answer on the topic's axis — filed as a note, not a missing camp."
+    },
+    {
+     "check": "Load-bearing fact verification inside position sections",
+     "ran": true,
+     "method": "WebFetch on primary sources. Verified: Grandin vocalization audit threshold 3% (no head restraint) / 5% (head holders) at grandin.com/auditing.scoring.poor.practices.html; McDonald's-driven 1999 audit effect (1996: 43% of beef plants at ≤3% vocalization → 1999: 71%; single-shot stunning ≥95% in 30% of plants → 90%) at grandin.com/survey/99.audits.beef.pork.html; 1985 AWA amendments (PL 99-198) requiring pain minimization and 'a physical environment adequate to promote the psychological well-being of primates' at law.cornell.edu/uscode/text/7/2143; Rollin credited with helping draft them; Birch-led LSE review 2021, 'over 300 scientific studies', eight criteria incl. analgesics and motivational trade-offs, recommending all cephalopods and decapods be regarded as sentient (LSE report PDF, text-extracted); NY Declaration 605 signatories, 2024, taxa as described; Plotnik, de Waal & Reiss, PNAS 2006, three Asian elephants, one (Happy) passed the mark test; Francione's six principles (sentience necessary and sufficient for the right not to be property; rejection of 'humane' regulation; vegan education) at abolitionistapproach.com; Breheny 38 NY3d 555 (2022) 5-2 with Rivera and Wilson dissenting (nonhumanrights.org, corroborated by the Michigan Court of Appeals 2025 opinion citing 'Wilson, J., dissenting'); Cecilia, 2016 Argentine court, nonhuman legal person, transferred to sanctuary (Wikipedia, Great ape personhood). Cohen 1986 NEJM 'The Case for the Use of Animals in Biomedical Research' confirmed via IEP bibliography (NEJM itself 403s)."
+    },
+    {
+     "check": "Recency pass on the personhood-count claim used by two camps",
+     "ran": true,
+     "method": "CourtListener API search for Nonhuman Rights Project cases surfaced three post-2022 rulings; fetched and text-extracted the Hawaii ICA decision (28 Jan 2026, CAAP-24-0000323: 'elephants are not persons', affirmed dismissal) and the Michigan COA decision (17 Oct 2025: affirmed denial, noting no court has recognized the legal personhood of any nonhuman species). The 'zero US rulings' framing in Basics and in Questions 7 still holds as of today."
+    },
+    {
+     "check": "Action-to-camp mapping and link liveness",
+     "ran": true,
+     "method": "curl status on all eight action and stat URLs (two 403s are bot-blocking, both resolved via WebFetch), plus WebFetch content checks on globalanimalpartnership.org (tiered rating confirmed), fbresearch.org (health-benefit justification plus welfare-regulation stance confirmed) and nonhumanrights.org/ways-to-help (live). Every camp has an action; mapping is faithful. Distribution asymmetry filed as blocking item 2 and a note."
+    },
+    {
+     "check": "Neutrality: house verdict, false balance, crux form",
+     "ran": true,
+     "method": "Read overview, crux and all seven question details. No house verdict; the crux lead is a declarative naming the axis (not the corpus's over-used question-plus-'or'-fork), lead_highlight appears verbatim, and the subtitle lists all six camps without ranking. Prevalence weights (85/70/62/45/35/28) carry the asymmetry rather than forced balance. One minor last-word asymmetry in Question 5 filed as a note."
+    },
+    {
+     "check": "Corpus parity calibration",
+     "ran": true,
+     "method": "Read positions and actions from research/topics/{nuclear-energy,vaccine-mandates,climate-tipping-points,ai-alignment}.json for norms on camp count, prevalence spread, action-per-camp mapping and reveal levels; read topics/models.py for how tier and reveal actually gate display (tier is unused for actions)."
+    },
+    {
+     "check": "WebSearch-based open-ended sweep for softening/strawmanning",
+     "ran": false,
+     "method": "The session's WebSearch budget (1500/1500) was already spent before this review began, so no keyword sweep was possible. Substituted targeted WebFetch on primary and reference sources (SEP, IEP, statutes, court opinions, the LSE report, camp-own texts), which covered every load-bearing claim in the six position sections; only guessed-URL fetches failed. To run the sweep as designed, raise CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION."
+    }
+   ],
+   "key": "steelman",
+   "stage": "substance"
+  },
+  {
+   "critic": "fact-source",
+   "pass": false,
+   "blocking": [
+    {
+     "issue": "The 50–100 million range is real, but it comes from the Nuffield Council on Bioethics' 2005 report 'The ethics of research involving animals', whose text reads: global figures are \"difficult to obtain and range from between 50 to 100 million animals\" (verified in the report PDF at cdn.nuffieldbioethics.org, alongside its UK figure of 2.72 million for 2003). Two problems: (a) Nuffield was reporting the spread of then-available estimates, not producing its own narrower estimate, and (b) the figure is 21 years old but is presented in the present tense, undated, next to a 2015-data figure, with the divergence explained solely as \"differences in scope and reporting standards\". A reader takes it as a contemporaneous rival estimate. This is the one durability defect in an otherwise structurally durable Basics section.",
+     "fix": "Date it and re-attribute it to what the source actually says. Replace with: \"A 2005 Nuffield Council on Bioethics report noted that global figures were hard to obtain and then ranged from 50 to 100 million; the gap reflects both a decade of additional reporting and differences in scope, since many countries publish incomplete figures and all global totals are reconstructions rather than direct counts.\"",
+     "quote": "A narrower estimate from the UK’s Nuffield Council on Bioethics puts the figure at 50–100 million, reflecting differences in scope and reporting standards — stat: \"Vertebrate animals used in research · global estimate, per year\""
+    },
+    {
+     "issue": "COULD NOT VERIFY the property characterization of the two dissents. What is verified: the NY Court of Appeals decided Matter of Nonhuman Rights Project v Breheny 5–2 on 14 June 2022 (CourtListener record; DiFiore majority: habeas corpus is not \"applicable to nonhuman animals\"); Judge Rowan Wilson wrote a dissent arguing the court should not have dismissed the habeas petition; the Nonhuman Rights Project's own timeline describes the pair as \"powerful dissents in support of Happy the elephant's right to liberty\". Nothing I could reach supports the stronger claim that the dissenters \"accepted that a being with Happy's cognitive complexity may not be property at all\" — that is a distinct doctrinal proposition from holding habeas available. The full opinion text (incl. Wilson's dissent, 197 N.E.3d 921, 932–66) was unreachable: nycourts.gov, courts.state.ny.us, law.justia.com, cases.justia.com, caselaw.findlaw.com, casetext, casemine, animallaw.info and CourtListener's HTML view all return 403/404 behind Cloudflare or AWS WAF, and web.archive.org / archive.ph rate-limited (429) on every retry including backoff.",
+     "fix": "Soften to exactly what is supported, which loses nothing rhetorically: \"…and lost 5 to 2, but two judges dissented, arguing that habeas corpus should have been available to Happy and that her confinement violated a right to bodily liberty, a crack the movement is built to widen.\"",
+     "quote": "but the two dissenting judges accepted that a being with Happy’s cognitive complexity may not be property at all, a crack the movement is built to widen — position: Animal Rights Abolitionist, detail"
+    },
+    {
+     "issue": "Mischaracterizes a primary source the draft itself quotes correctly elsewhere. The Cambridge Declaration (verified at fcmconference.org) states that non-human animals \"including all mammals and birds, and many other creatures, including octopuses\" possess the neurological substrates that generate consciousness — and the draft's own Cambridge stat detail renders this accurately as \"naming all mammals and birds and many other creatures, including octopuses\". So the 2012 declaration was not \"confined to\" three groups, and octopuses were named outright rather than hedged. As written the two Basics entries contradict each other, and the contrast with the 2024 declaration is overstated.",
+     "fix": "Replace with a contrast that is true and still sharp: \"It extends further than the 2012 Cambridge Declaration, which named mammals, birds and octopuses but did not reach fishes, decapod crustaceans or insects.\"",
+     "quote": "It extends further than the 2012 Cambridge Declaration, which was confined to mammals, birds and, more tentatively, octopuses. — stat: \"Scientists affirming a realistic possibility of animal consciousness · NY Declaration\""
+    },
+    {
+     "issue": "Threshold and measured population both stated slightly wrong. Grandin's own audit text (grandin.com, AMI audit guidelines) reads: \"an acceptable score of 3% or less of the cattle vocalizing is easily achievable\", and the scored population is \"cattle vocalizing in the stunning chute area, which includes the stunning box, restrainer, lead-up chute, and crowd pen\" — broader than \"restraint and stunning\". The surrounding claims check out: McDonald's audited 26 plants during 1999 and 2000, and Grandin's 1999 audit report documents that one-shot stunning rose from 30% of plants (1996) to 90% (1999) and that vocalization \"has also greatly improved\", with electric prods replaced by flags and bags.",
+     "fix": "Change to: \"plants had to hold cattle vocalizing in the stunning-chute area to 3 percent or less, and documented rough handling fell accordingly.\"",
+     "quote": "plants had to keep cattle vocalizing during restraint and stunning under 3 percent, and documented rough handling fell accordingly — position: Humane Use, description"
+    }
+   ],
+   "notes": [
+    "Basics is otherwise well built for aging: annual slaughter totals, treaty and statute milestones, and declaration years are all structural rather than point-in-time, and the two genuinely reconstructed figures (wild-caught and farmed fish) carry their ranges and data years inside the detail.",
+    "The NY Declaration signatory count (605) matches the live site exactly today, but a signature count is the one number on the page that can drift upward between refreshes; the label and 2024 date already isolate it adequately, so this is a watch-item for the refresh pass rather than a change now.",
+    "Four consecutive Basics entries are legal or declaratory milestones (2012, 2024, 2022, 2009) whose values are years rather than magnitudes; the distribution stage may want to check that the above-fold set does not read as a timeline."
+   ],
+   "checks_run": [
+    {
+     "check": "Basics stat accuracy — all 9 stats against primary sources",
+     "ran": true,
+     "method": "WebFetch + curl to primary sources. Verified: >80bn land animals (OWID: \"more than 80 billion land-based animals\"); 1.1–2.2tn wild fish (Mood & Brooke 2024, Animal Welfare 33 e6 via doi/Cambridge: \"between 1,100 and 2,200 billion\" for 2000–2019, plus the cited earlier \"790–2,300 billion\" for 2007–2016); ~124bn farmed finfish (Mood et al. 2023, awf.2023.4: \"a range of between 78 and 171 billion, with a mid-point of 124 billion\" for 2019, and OWID's Sentience Institute 77bn / 29–149bn); 0 US personhood rulings + Happy 5–2 (CourtListener record for NY Ct App 2022-06-14, majority quote via secondary); Cambridge Declaration 2012 (fcmconference.org); NY Declaration 605 signatories + exact \"realistic possibility\" quote and taxa list (sites.google.com/nyu.edu); UK Sentience Act s.5 definition (legislation.gov.uk, verbatim); TFEU Art. 13 in force 2009 (eur-lex, full text incl. \"since animals are sentient beings\" and the religious-rites proviso); 192m research animals (PubMed efetch PMID 32090616: 79.9m procedures, extrapolated to \"192.1 million\" including tissue-killed, GM-strain-maintenance and bred-but-unused animals)."
+    },
+    {
+     "check": "Source URL liveness and attribution",
+     "ran": true,
+     "method": "curl -sL with browser UA over every source_url and every action url: all 8 action URLs plus eur-lex returned HTTP 200; legislation.gov.uk, fcmconference.org, the NYU declaration page, the two Cambridge DOIs and the OWID page all resolved and carried the cited content; the CourtListener opinion URL resolves to the correct case (verified via CourtListener search API: \"The Matter of Nonhuman Rights Project v. James J. Breheny\", New York Court of Appeals, 2022-06-14). No dead or misattributed links found."
+    },
+    {
+     "check": "Factual claims embedded in position and question detail/proponents text",
+     "ran": true,
+     "method": "Verified against primary/authoritative sources: Harrison Animal Machines 1964 and Brambell 1965 → Five Freedoms formalized in a July 1979 FAWC press statement (Wikipedia Five Freedoms + FAWC est. 1979); Russell & Burch 1959 (OpenLibrary); Cohen 1986 NEJM (Crossref, 2 Oct 1986); Rollin helped draft the 1985 AWA amendments (Wikipedia) and 7 U.S.C. 2143 requires \"a physical environment adequate to promote the psychological well-being of primates\" (Cornell LII); Grandin 3% standard and McDonald's 1999–2000 audits (grandin.com); Bentham 1789 quote verbatim, Ryder coined speciesism 1970, Singer Animal Liberation 1975 (Wikipedia Speciesism); LSE/Defra review led by Jonathan Birch, Nov 2021, \"over 300 scientific studies\", concluding cephalopods and decapods are sentient (lse.ac.uk); Regan 1983, Palmer 2010, Zoopolis 2011, Frontiers of Justice 2006, Justice for Animals 2022 (OpenLibrary); Francione at Rutgers, abolitionist theory, sentience-alone, property status (Wikipedia); Wesley J. Smith's \"Human Exceptionalism\" blog hosted by National Review (Wikipedia); NhRP chimpanzee suits filed 2 Dec 2013, denied July 2015, Happy petition 2018 → 2022; Cecilia recognized as a non-human legal person by an Argentine court in 2016 and ordered transferred to a sanctuary (Wikipedia Great ape personhood); BGB §90a \"Animals are not things\" (gesetze-im-internet.de), Swiss ZGB Art. 641a \"Animals are not objects\" (fedlex), CCQ art. 898.1 \"Animals are not things\" (legisquebec); Plotnik/de Waal/Reiss 2006 PNAS Asian elephant mirror self-recognition; merino heat stress, mobility failure and blindness without annual shearing (Wikipedia Merino); dog domestication at least 15,000 years (Wikipedia Domestication of the dog). Four claims failed and are in 'blocking'."
+    },
+    {
+     "check": "Durability and dating pass on Basics",
+     "ran": true,
+     "method": "Read every stat for perishability: the section rests on structural figures (annual global slaughter totals, treaty/statute/declaration milestones) rather than point-in-time snapshots, and the two reconstructed fish figures carry ranges and data years in-detail. One undated stale figure found (Nuffield 50–100 million, from a 2005 report, presented in the present tense) and blocked."
+    },
+    {
+     "check": "NY Court of Appeals Breheny dissent full text retrieval",
+     "ran": false,
+     "method": "Could not reach the opinion text. Tried nycourts.gov slip-op HTML and ctapps decision PDF (403, Cloudflare), courts.state.ny.us (403), law.justia.com and cases.justia.com (403/404), caselaw.findlaw.com (403), casetext, casemine, animallaw.info (403/404), CourtListener HTML view (AWS WAF challenge) and its v4 opinions API (auth required), web.archive.org and archive.ph snapshots (HTTP 429 on every attempt including curl --retry with 15–20s backoff), and WebFetch on web.archive.org (blocked by the tool). CourtListener's search API confirms case, court, date and that Wilson wrote a dissent spanning 197 N.E.3d 921, 932–66, but returns caption-level snippets only. Would need an authenticated CourtListener token, a law-database subscription, or an uncongested archive mirror. The affected claim is blocked with a soften-to-supported fix, so no unconfirmed assertion remains in the draft."
+    },
+    {
+     "check": "WebSearch spot-checks",
+     "ran": false,
+     "method": "WebSearch returned \"this session has used its web search budget (1500 of 1500 WebSearch calls)\" on the first two attempts and was unavailable for the rest of the review. Substituted direct WebFetch and curl against primary sources (publisher DOIs, legislation portals, Crossref, PubMed efetch, OpenLibrary, CourtListener API, Wikipedia REST/search API), which covered every claim except the Breheny dissent text above. Raising CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION would restore it."
+    }
+   ],
+   "key": "fact-source",
+   "stage": "substance"
+  },
+  {
+   "critic": "claim-ledger",
+   "key": "claim-ledger",
+   "pass": true,
+   "checks_run": [
+    {
+     "check": "per-claim verification",
+     "ran": true,
+     "method": "56/56 claims returned a verdict"
+    }
+   ],
+   "notes": [],
+   "blocking": [],
+   "stage": "substance"
+  },
+  {
+   "critic": "orchestrator-residual-closure",
+   "key": "orchestrator",
+   "pass": true,
+   "blocking": [],
+   "notes": [
+    "Post-gate closure (2026-08-28): all 8 judgment-critic blockings carried exact source-verified prescriptions and were applied verbatim by the orchestrator — two question framing lines re-attributed symmetrically (neutrality); the Human Exceptionalist medical-advances quantifier attributed in-voice; the actions rail normalized so all camp actions surface at condensed depth (one camp had been alone above the fold); the Nuffield 50–100M figure dated to its 2005 source; the Breheny dissent characterization softened to the verified habeas holding; the Cambridge-vs-NY declaration contrast corrected against the primary text; the Grandin vocalization threshold restated per the audit guidelines. No missing camp this run (the plan itself grew to six, adding Capabilities Entitlement).",
+    "Ledger 56/56 closed: 44 supported, 12 resolved-by-revision (staleness check). Nothing open, nothing escalated."
+   ],
+   "checks_run": [
+    {
+     "check": "all 8 blockings applied + verified by text search",
+     "ran": true
+    }
+   ],
+   "stage": "substance"
+  },
+  {
+   "blocking": [
+    {
+     "issue": "Compact register bans bare acronyms, and \"the 3Rs\" is load-bearing here (one of the two standards said to \"do the work\" for this camp) yet is never expanded anywhere in the draft — not in the description, not in the detail. An above-fold reader is told a 1959 research standard binds use but not what it asks for.",
+     "fix": "Humane Use → description: gloss the acronym inline, e.g. \"the Five Freedoms (1979) for how animals are kept, the 3Rs — replace, reduce, refine — for research use.\" Definitional gloss only; no fact, number, name or source changes.",
+     "quote": "Position \"Humane Use\", description: \"Two standards do the work: the Five Freedoms (1979) for how animals are kept, the 3Rs (1959) for research use.\""
+    },
+    {
+     "issue": "Stat label scope is narrower than what the value measures. The label says animals \"used in research\", but the ~192 million figure also counts animals bred for research and killed without ever being used — the note has to walk the label back on the same card. The label should carry the scope, not be corrected by its own note.",
+     "fix": "Stat \"Vertebrate animals used in research · global estimate, per year\" → label: widen to match the value, e.g. \"Vertebrate animals used or bred for research · global estimate, per year\". Value, unit, note, source untouched.",
+     "quote": "Stat label \"Vertebrate animals used in research · global estimate, per year\" (value \"~192\" / \" million/yr\"), note: \"A reconstruction from national reports rather than a head count, and it counts animals bred for research and killed without ever being used.\""
+    }
+   ],
+   "checks_run": [
+    {
+     "check": "SELECTION: are tier-1 sets the most decision-relevant items, with tier boundaries at genuine importance drop-offs?",
+     "ran": true,
+     "method": "Walked the fold preview per section. Basics T1 (3 kill counts + NY Declaration + research animals + 0 personhood rulings) spans scale, science, use and law; T2 is three date-stamped legal/consensus records — a real drop-off. Questions T1 are the four foundational ones (grounds of status, speciesism, who is sentient, use vs suffering); T2 are downstream strategy/legal/metaphysics questions. Positions: all six above fold in prevalence order. No central item stranded below the fold, no marginal item promoted; one composition note logged."
+    },
+    {
+     "check": "COMPACT SELF-SUFFICIENCY: reading only above-fold labels/values/notes, question texts+why, position names+steelmen+descriptions and crux lead+subtitle, does the reader leave with a correct and sufficient picture?",
+     "ran": true,
+     "method": "Read the above-fold layer end to end as a first-time reader, then diffed against each 'detail' and each T2 item to find load-bearing facts or caveats that live only in the hidden layer. Found the 3Rs left undefined in both layers (blocking), the Cambridge Declaration name-dropped above fold but explained only in a T2 stat (note), and legal-recognition context (UK Act, EU Art. 13) sitting entirely below fold (note)."
+    },
+    {
+     "check": "MISLEADS-WITHOUT-EXPANSION: any compact line that reads wrong until its detail is opened?",
+     "ran": true,
+     "method": "Checked each T1 stat note against its detail (fish counts reconstructed vs counted, farmed-fish comparison to land totals, 0 rulings vs the non-US record) and each position description against its detail. Notes generally carry their own caveats; the research stat's caveat is carried by the note but contradicted by its label (blocking above)."
+    },
+    {
+     "check": "STAT LABEL DENOMINATOR/SCOPE matches what the value actually measures",
+     "ran": true,
+     "method": "Checked all nine stats label-vs-value-vs-detail. Land animals (meat, land only, fish excluded), wild fish (excludes farmed), farmed fish (finfish; crustaceans/molluscs excluded), NY Declaration (605 signatories), personhood (US, rulings, to date), and the three T2 date stats all scope correctly. Only 'Vertebrate animals used in research' understates its own scope."
+    }
+   ],
+   "critic": "compact-self-sufficiency (+ selection)",
+   "notes": [
+    "Cambridge Declaration is name-dropped above the fold but explained below it. Equal Consideration's compact description ends \"The 2012 Cambridge Declaration drew that line at sentience, not taxonomy\", while the stat that says what that declaration is sits at T2. The above-fold reader does have the 2024 NY Declaration stat, so the sentence is not incoherent — but the older declaration is doing rhetorical work with no compact anchor. Consider pointing that closing line at the NY Declaration already visible above the fold, or letting it stand as a bare year-plus-name.",
+    "Above the fold, the only legal datum is \"0 rulings\" for US personhood, so law reads as \"animals get nothing\" until the reader opens Go deeper. The counterweight — UK Sentience Act 2022 covering all vertebrates plus cephalopods and decapods, EU treaty law since 2009 — is all T2, and the qualifier that sentience is widely recognized in statute without touching property status lives only in the personhood stat's detail. The label is honestly bounded (\"US court rulings ... legal personhood\"), so this is not a misread, but it is the thinnest part of the compact picture. If a T1 slot ever opens, the UK Sentience Act is the strongest promotion candidate.",
+    "Three of six T1 basics are kill counts (land, wild fish, farmed fish). Each carries a distinct point (fish dwarf land animals; farmed finfish alone exceed all land animals), so none is redundant, and scale is the topic's anchor — kept as-is, flagged only as a composition observation.",
+    "Q3's compact text uses \"cephalopods, decapod crustaceans\" without gloss inside the question itself; the why-line supplies \"octopus to insect\" and the NY Declaration stat note supplies \"insects, octopuses and crabs\", so the mapping is recoverable from the same above-fold screen. Below the flag line, but worth a light touch if the question is ever re-worded.",
+    "Stat 5's unit \" million/yr\" repeats the \"per year\" already in its label, so the card reads \"...per year: ~192 million/yr\". Cosmetic duplication, not a scope error."
+   ],
+   "pass": false,
+   "stage": "presentation"
+  },
+  {
+   "blocking": [
+    {
+     "issue": "Bare acronym in an always-visible position card: \"the 3Rs (1959)\" appears in the Humane Use description with no gloss, and the term is never decoded anywhere else in the draft (the detail says only \"gave laboratory science the 3Rs\"). Its sibling standard in the same sentence, the Five Freedoms, is self-describing in the compact line and fully enumerated in the detail; the 3Rs gets neither. A smart general reader can tell it is a research standard but cannot tell what it asks for. Humane Use is the highest-prevalence position, so this card sits first in the 2-col grid, above the fold.",
+     "fix": "Gloss the term in the EXPANDED layer, matching how the same detail already enumerates the Five Freedoms: in the Humane Use 'detail', change \"gave laboratory science the 3Rs, later written into the UK’s Animals (Scientific Procedures) Act\" to \"gave laboratory science the 3Rs: replace animal use where possible, reduce the numbers used, refine procedures to cut suffering. The framework was later written into the UK’s Animals (Scientific Procedures) Act\". Leave the compact description text as-is if the fixer prefers, but the gloss must exist somewhere.",
+     "quote": "position \"Humane Use\", description: \"Two standards do the work: the Five Freedoms (1979) for how animals are kept, the 3Rs (1959) for research use.\""
+    }
+   ],
+   "notes": [
+    "Q3 compact text stacks two terms of art above the fold: \"Which animals are sentient, and how much confidence do fishes, cephalopods, decapod crustaceans and insects warrant?\" — \"cephalopods\" is recoverable for most readers and \"crustaceans\" carries the sense of \"decapod crustaceans\", so it clears the bar, but it is the densest compact line in the draft. The 'why' beneath it does real work smoothing this (\"as nervous systems get stranger, from octopus to insect\"), which is why it is a note and not a block. If a light touch is wanted: \"…how much confidence do fishes, octopuses, crabs and insects warrant?\" — only if the fixer is satisfied that does not narrow the item's claim.",
+    "Stat 1 (\"Land animals slaughtered for meat\") has the draft's weakest detail-over-compact delta. Note: \"Mostly chickens, plus pigs, cattle and other land animals; fish are counted separately.\" Detail's first two sentences re-say exactly that in longer form; the genuine additions are the reason for separate fish counting (recorded by catch weight, not by head) and the decades-long growth trend. It clears \"merely restates\", but it is the first tile above the fold and reads thin next to stats 2 and 3, whose details carry method and ranges. Consider leading the detail with the catch-weight mechanism instead of the species list.",
+    "Cambridge Declaration (T2) detail is roughly two-thirds restatement of its note; the real adds are the venue, the quoted phrase \"possess the neurological substrates that generate consciousness\", and its status as the first statement of its kind. Acceptable, but the thinnest of the T2 stats.",
+    "Expanded-register discipline is strong overall: the wild-fish detail (FAO tonnage ÷ mean body weight, competing published ranges), the research-animals detail (Nuffield 50–100M vs the 2019 reconstruction, and why the gap exists), the NY Declaration detail (contrast with what Cambridge did not reach), and the Equal Consideration detail (LSE review, 300+ studies, criteria) all add mechanism and precision rather than volume.",
+    "Compact numbers are all retainable as displayed: >80 billion, 1.1–2.2 trillion, ~124 billion, 605 scientists, ~192 million, 0 rulings, and the three year-values. The precise figures and uncertainty ranges are correctly held back to the detail layer in every case.",
+    "\"habeas corpus\" appears in the Nonhuman Rights Project action description and in Q6's detail. In the action description it is effectively glossed by its own sentence (\"seeking legal personhood and liberty rights for captive elephants and chimpanzees\"), so it reads fine at the compact bar; no change needed.",
+    "Position steelmen are the cleanest compact writing in the draft — all six are one plain sentence with zero jargon, and each states the position's claim rather than labeling it."
+   ],
+   "critic": "reading-level-fit",
+   "pass": false,
+   "checks_run": [
+    {
+     "check": "Compact fields (stat label/value/unit/note, question text/why, position name/steelman, position description, crux lead/subtitle, action title/description, rep notes) scanned for unexplained jargon and bare acronyms",
+     "ran": true,
+     "method": "Read every always-visible field in the draft JSON and judged each against the smart-general-reader bar; for each technical term, checked whether the surrounding compact copy decodes it and whether any other field in the topic defines it. Found one term (\"the 3Rs\") with no gloss anywhere in the draft; two borderline terms (\"decapod crustaceans\", \"habeas corpus\") judged recoverable in context and logged as notes."
+    },
+    {
+     "check": "Every 'detail' field compared against its own compact line for genuine addition (mechanism, precise figures, methodology caveats, terms of art) rather than restatement",
+     "ran": true,
+     "method": "Paired each of the 9 stat details with its note, each of the 7 question details with its text+why, and each position detail with its steelman+description; scored the delta. No detail merely restates. Two (stat 1 land animals, stat 7 Cambridge Declaration) run high on restatement with a thin add — logged as notes, not blocking."
+    },
+    {
+     "check": "Numbers in compact fields rounded to what a reader retains, with precise figures and ranges deferred to the expanded layer",
+     "ran": true,
+     "method": "Checked all 9 stat value/unit/note pairs and every number appearing in compact prose; confirmed the compact layer carries rounded/approximate forms (>80 billion, ~124 billion, ~192 million, 5–2) while published ranges and competing estimates (78–171 billion, 0.79–2.3 trillion, 50–100 million) appear only in details. Passed."
+    },
+    {
+     "check": "Expanded-register fields (details, crux if-empirical/if-values, deep-reveal items) permitted terms of art, checked for definition at first use",
+     "ran": true,
+     "method": "Verified that technical vocabulary confined to the expanded layer (cephalopod mollusc, decapod crustacean, subject-of-a-life, new welfarism, nociceptors, motivational trade-off behavior, brachycephalic, episodic-like memory) is either parenthetically defined or decoded by nearby compact copy. All clear except the 3Rs, which is used in the detail without definition — folded into the blocking finding."
+    }
+   ],
+   "stage": "presentation"
+  },
+  {
+   "critic": "orchestrator-presentation-closure",
+   "key": "orchestrator",
+   "stage": "presentation",
+   "pass": true,
+   "blocking": [],
+   "notes": [
+    "Post-gate closure (2026-08-28): all three blockings applied verbatim — the 3Rs glossed in both the compact description and the expanded detail, and the research stat label widened to match what the value measures (a label edit the fix loop cannot land itself: label is whitelist-rejected — the known engine finding).",
+    "View-critic closure (2026-08-28): the Relational Obligation deep layer no longer restates its own card summary (duplicated Merino clause dropped, keeping two examples), and the NY Declaration stat label shortened to three lines so the row’s hero numbers share a baseline (another whitelist-locked label edit). The critic’s third finding — the poster drops the space between value and word units, a code path the earlier internal-spacing fix never covered — is registered as a new site-wide CSS defect for the human."
+   ],
+   "checks_run": [
+    {
+     "check": "prescriptions applied, verified by text search",
+     "ran": true
+    }
+   ]
+  }
+ ],
+ "plan_positions": [
+  {
+   "name": "Humane Use",
+   "prevalence_weight": 85,
+   "prevalence_basis": "The position written into essentially every national animal-welfare statute, veterinary professional code and farm-assurance scheme, and the default of the large majority who eat animals.",
+   "spectrum_position": -1,
+   "sketch": "Using animals is legitimate; what morality requires is that their suffering be prevented, reduced and never gratuitous."
+  },
+  {
+   "name": "Human Exceptionalist",
+   "prevalence_weight": 70,
+   "prevalence_basis": "Backed by Abrahamic and Aristotelian traditions, by animals’ near-universal legal status as property, and by named secular defenders including Carl Cohen and Roger Scruton.",
+   "spectrum_position": -3,
+   "sketch": "Humans are morally different in kind: animals deserve humane treatment, but never claims that outweigh human ones."
+  },
+  {
+   "name": "Equal Consideration",
+   "prevalence_weight": 62,
+   "prevalence_basis": "Dominant frame in academic applied ethics since Singer’s Animal Liberation (1975); carries most philanthropic farm-animal welfare funding and the corporate cage-free campaigns.",
+   "spectrum_position": 2,
+   "sketch": "If a being can suffer, its suffering counts the same as anyone’s; species is no more relevant than race."
+  },
+  {
+   "name": "Animal Rights Abolitionist",
+   "prevalence_weight": 45,
+   "prevalence_basis": "Large organized movement with named proponents (Tom Regan, Gary Francione) and a sustained personhood litigation record, though courts have consistently declined and vegan population share stays in low single digits.",
+   "spectrum_position": 3,
+   "sketch": "Sentient beings are not property; the wrong is the use itself, so it must be abolished, not regulated."
+  },
+  {
+   "name": "Relational Obligation",
+   "prevalence_weight": 35,
+   "prevalence_basis": "Substantial and growing scholarly presence (Clare Palmer, Sue Donaldson and Will Kymlicka, Lori Gruen), and it tracks common intuitions that distinguish pets from livestock from pests; no political movement of its own.",
+   "spectrum_position": 0,
+   "sketch": "What is owed depends on the relationship: domestication creates duties that a wild animal’s independence does not."
+  },
+  {
+   "name": "Capabilities Entitlement",
+   "prevalence_weight": 28,
+   "prevalence_basis": "A distinct academic program with a prominent named proponent in Martha Nussbaum and traction in legal and development ethics, but little organized movement footprint.",
+   "spectrum_position": 2,
+   "sketch": "Every sentient creature is entitled to the conditions for the flourishing characteristic of its own kind of life."
+  }
+ ]
+}
