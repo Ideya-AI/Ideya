@@ -1,0 +1,979 @@
+{
+ "draft": {
+  "overview": {
+   "summary": "Whether encryption no provider can break is an intolerable investigative gap or the security property everyone depends on.",
+   "scope_covered": "Access to end-to-end encrypted messages and devices: exceptional-access mandates, on-device scanning, targeted hacking, metadata, and the security costs of each.",
+   "scope_excluded": "Bulk untargeted surveillance, moderation of lawful speech, cryptographic export controls, data localization, and the quantum threat to today’s ciphers.",
+   "why_now": "EU negotiators from the Parliament, Council and Commission have settled most of the child sexual abuse regulation, but remain split on whether platform detection stays voluntary or becomes mandatory. Both sides have already agreed any mandate would stop short of end-to-end encrypted services, which leaves open how far detection can reach once encryption is carved out.",
+   "icon": "lock-key"
+  },
+  "basics": {
+   "intro": "",
+   "stats": [
+    {
+     "label": "Drop in child-abuse-material reports to the US clearinghouse · NCMEC, 2023 to 2024",
+     "value": "43",
+     "unit": "%",
+     "note": "Reports fell from 36.2 million in 2023 to 20.5 million in 2024 as Meta encrypted Messenger; NCMEC also names reporting changes elsewhere — counted as incidents, the drop is about 19 percent.",
+     "detail": "The pattern was not limited to Facebook: Instagram’s reports also fell sharply, from 11.4 million to 3.3 million, while WhatsApp, already end-to-end encrypted throughout both years, held roughly steady at 1.4 to 1.9 million. Electronic service providers accounted for 35.9 million of the 36.2 million reports in 2023 and 20.3 million of the 20.5 million in 2024; the remainder came from the public. In 2025 the aggregate recovered to 21.3 million, of which 21.1 million came from providers, with Facebook’s own reports falling again to 4.9 million while Instagram rose to 3.7 million and WhatsApp to 2.4 million. Alongside Meta’s bundling, NCMEC names several other contributing factors for 2024: platforms including Google, X, Discord, Microsoft and Synchronoss filed 20 percent fewer reports than in 2023, Meta and Google stopped forwarding images that violated their terms of service but did not meet the legal definition of child pornography, and further implementation of end-to-end encryption. NCMEC also cautions that providers face no legal requirement to search for this content proactively, and that no standard governs what a single report must contain, so both the volume and the content of reports vary greatly. Child-safety advocates read the 2024 fall as detection capacity lost to encryption; digital-rights advocates read report volume as a poor proxy for how much abuse content, or how many prosecutable cases, went undetected either way.",
+     "tier": 1,
+     "reveal": "condensed",
+     "source_label": "NCMEC, CyberTipline data and reports by electronic service provider, 2023 to 2025",
+     "source_url": "https://www.missingkids.org/cybertiplinedata",
+     "source_published": "2026",
+     "source_accessed": "2026-08-28",
+     "viz": "ranked",
+     "wide": true,
+     "series": [
+      {
+       "label": "Instagram",
+       "value": "71%",
+       "pct": 100,
+       "highlight": false,
+       "source_label": "",
+       "source_url": ""
+      },
+      {
+       "label": "Facebook",
+       "value": "52%",
+       "pct": 73,
+       "highlight": false,
+       "source_label": "",
+       "source_url": ""
+      },
+      {
+       "label": "All platforms",
+       "value": "43%",
+       "pct": 61,
+       "highlight": true,
+       "source_label": "",
+       "source_url": ""
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "range_at": 0,
+     "fill_pct": null
+    },
+    {
+     "label": "Practical attacks on AES-256, as of 2026 · the cipher behind secure messaging",
+     "value": "0",
+     "unit": "",
+     "note": "No known practical attack can read data properly encrypted with AES-256, the cipher underlying most end-to-end encrypted messaging and device storage.",
+     "detail": "AES-256 has a keyspace of 2^256 possible keys. The best published shortcuts are biclique attacks, introduced in 2011 and refined since, with the strongest published result still requiring about 2^254.3 operations, only a few times faster than trying every key and nowhere near fast enough to matter, so brute force remains computationally infeasible with any foreseeable hardware. This is why the access debate centers on how a lawful path in is built, whether by backdoor, on-device scanning, or hacking, rather than on whether the underlying cipher itself can be broken.",
+     "tier": 1,
+     "reveal": "condensed",
+     "source_label": "Bogdanov, Khovratovich & Rechberger, “Biclique Cryptanalysis of the Full AES” (2011); standard: NIST FIPS 197",
+     "source_url": "https://eprint.iacr.org/2011/449",
+     "source_published": "2024",
+     "source_accessed": "2026-08-28",
+     "viz": "bar",
+     "wide": false,
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "range_at": 0,
+     "fill_pct": null
+    },
+    {
+     "label": "Countries where Apple pulled full iCloud encryption · UK order, 2025",
+     "value": "1",
+     "unit": " country",
+     "note": "In February 2025 the UK secretly ordered Apple to open encrypted iCloud backups worldwide; Apple pulled the feature for new UK users instead, and appealed.",
+     "detail": "The notice, issued under the Investigatory Powers Act 2016, sought access to iCloud backups regardless of a user’s nationality or location, not just UK residents’. Public disclosure of the notice’s existence would normally be illegal under the Act; it came to light through press reports on February 7, 2025. Apple disabled the option for new UK users on February 21, 2025, told existing UK users to turn it off, and appealed to the Investigatory Powers Tribunal in March 2025. It is the first publicly confirmed use of this power against a major global encryption feature. In August 2025 the US Director of National Intelligence said the UK had agreed to drop the demand as it applied to Americans’ data. The Home Office then served a fresh notice narrowed to UK users’ data, reported in October 2025, and Apple filed a new challenge against it at the Investigatory Powers Tribunal in August 2026.",
+     "tier": 1,
+     "reveal": "condensed",
+     "source_label": "BBC News, “Apple pulls data protection tool after UK government security row” (2025-02-22)",
+     "source_url": "https://www.bbc.com/news/articles/cgj54eq4vejo",
+     "source_published": "2025",
+     "source_accessed": "2026-08-28",
+     "viz": "bar",
+     "wide": false,
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "range_at": 0,
+     "fill_pct": null
+    },
+    {
+     "label": "Years before the first backdoor mandate collapsed · US Clipper Chip",
+     "value": "3",
+     "unit": " years",
+     "note": "The 1993 Clipper Chip, the first push to mandate a government key in every encryption device, was shown exploitable within two years and was dead by 1996.",
+     "detail": "Clipper embedded a law-enforcement access key in hardware, escrowed with the government. In 1994, researcher Matt Blaze showed the 16-bit checksum meant to keep that access field trustworthy could be defeated by brute force, letting a device use full encryption while defeating the escrow; a 1995 follow-on showed one device’s access field could be swapped onto another’s traffic. Combined with public backlash and the spread of alternatives like PGP, the chip found essentially no buyers outside the Department of Justice and was abandoned by 1996. It remains the standard historical reference point on both sides of the exceptional-access debate.",
+     "tier": 1,
+     "reveal": "condensed",
+     "source_label": "Blaze, “Protocol Failure in the Escrowed Encryption Standard,” ACM CCS 1994",
+     "source_url": "https://www.mattblaze.org/papers/eesproto.pdf",
+     "source_published": "1996",
+     "source_accessed": "2026-08-28",
+     "viz": "bar",
+     "wide": false,
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "range_at": 0,
+     "fill_pct": null
+    },
+    {
+     "label": "Cost to break into one locked iPhone without Apple’s help · FBI, 2016",
+     "value": "$1.3",
+     "unit": " million",
+     "note": "Apple refused a court order to unlock the San Bernardino shooter’s iPhone, so the FBI paid an outside firm to break in: more than $1.3 million, by then director James Comey’s account.",
+     "detail": "The case followed the December 2015 attack; a magistrate ordered Apple to build bypass software in February 2016, which Apple publicly refused. The government dropped its case in March 2016 after a third party demonstrated an unlocking method. Comey publicly suggested the tool cost more than $1.3 million; the actual figure has never been disclosed, and in 2017 a federal court held that both the vendor’s identity and the amount paid were exempt from FOIA.",
+     "tier": 1,
+     "reveal": "condensed",
+     "source_label": "Wikipedia, Apple–FBI encryption dispute",
+     "source_url": "https://en.wikipedia.org/wiki/Apple%E2%80%93FBI_encryption_dispute",
+     "source_published": "2016",
+     "source_accessed": "2026-08-28",
+     "viz": "bar",
+     "wide": false,
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "range_at": 0,
+     "fill_pct": null
+    },
+    {
+     "label": "Years the EU has debated mandatory scanning of encrypted chats · Chat Control proposal",
+     "value": "4",
+     "unit": " years",
+     "note": "The EU has argued since 2022 over whether platforms must scan messages for child abuse material. The Council’s November 2025 position dropped encrypted services from any mandate; by mid-2026 there was still no final text.",
+     "detail": "The Commission’s original 2022 draft covered end-to-end encrypted services. Opposition built over several years: Denmark dropped mandatory detection obligations from its Council presidency draft in October 2025, and the Council adopted a position in November 2025 excluding end-to-end encrypted communications from mandatory detection technologies, keeping only a voluntary basis. Trilogue negotiations between Parliament, Council, and Commission began in December 2025 and continued into mid-2026, with detection measures still the main point of disagreement.",
+     "tier": 1,
+     "reveal": "condensed",
+     "source_label": "European Parliament Legislative Observatory, procedure 2022/0155(COD)",
+     "source_url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0155(COD)",
+     "source_published": "2026",
+     "source_accessed": "2026-08-28",
+     "viz": "bar",
+     "wide": false,
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "range_at": 0,
+     "fill_pct": null
+    },
+    {
+     "label": "People with end-to-end encrypted messaging by default · WhatsApp and Signal",
+     "value": "3",
+     "unit": " billion+",
+     "note": "WhatsApp reported 3 billion monthly users in May 2025, all end-to-end encrypted by default; Signal adds roughly 70 million more.",
+     "detail": "Signal’s user base grew from roughly 20 million monthly users at the end of 2020 to over 40 million by January 2022 and about 70 million by January 2025, with more than 220 million cumulative downloads. This is the population any exceptional-access, scanning, or hacking regime would have to be designed around.",
+     "tier": 2,
+     "reveal": "normal",
+     "source_label": "Wikipedia, WhatsApp (May 2025 MAU); Signal usage figures",
+     "source_url": "https://en.wikipedia.org/wiki/WhatsApp",
+     "source_published": "2025",
+     "source_accessed": "2026-08-28",
+     "viz": "bar",
+     "wide": false,
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "range_at": 0,
+     "fill_pct": null
+    },
+    {
+     "label": "Years the EU’s mandatory metadata retention law survived · Data Retention Directive",
+     "value": "8",
+     "unit": " years",
+     "note": "The EU’s 2006 mandate that telecoms and internet providers retain everyone’s call, email, and location metadata for up to two years was struck down in 2014.",
+     "detail": "The European Court of Justice invalidated the directive on April 8, 2014. It was never replaced at EU level, and national retention laws have been challenged before the court repeatedly since. The ruling stands as a limit on how far governments can lean on bulk metadata as a substitute for content access. The US has no comparable nationwide ISP retention law, though NSA bulk metadata programs have operated under separate legal authorities, and countries such as Australia (from 2015, at an estimated AU$189 to 319 million in upfront capital costs, of which the government met AU$131 million) and Russia have kept mandatory retention laws of their own.",
+     "tier": 2,
+     "reveal": "normal",
+     "source_label": "Court of Justice of the European Union, judgment in Digital Rights Ireland, Joined Cases C-293/12 and C-594/12",
+     "source_url": "https://curia.europa.eu/jcms/upload/docs/application/pdf/2014-04/cp140054en.pdf",
+     "source_published": "2014",
+     "source_accessed": "2026-08-28",
+     "viz": "bar",
+     "wide": false,
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "range_at": 0,
+     "fill_pct": null
+    },
+    {
+     "label": "Government spending on spyware in one country · Mexico and NSO Group’s Pegasus, to 2023",
+     "value": "$60",
+     "unit": " million+",
+     "note": "As of 2023, Mexico’s government had spent more than $60 million on NSO Group’s Pegasus spyware, one measure of what targeted device hacking costs at the high end.",
+     "detail": "Pegasus is a zero-click tool that can read messages, track location, and activate a device’s microphone and camera once installed, without the target clicking anything. Other reported government deals include a $30 million down payment from Estonia (2018); Citizen Lab detected infections across at least 45 countries between 2016 and 2018. Skeptics of hacking as a substitute for mandated access read this cost profile as evidence it can only ever reach a small number of high-value targets; the investigators who back the approach read operations like EncroChat as evidence it scales.",
+     "tier": 3,
+     "reveal": "deep",
+     "source_label": "Wikipedia, Pegasus (spyware)",
+     "source_url": "https://en.wikipedia.org/wiki/Pegasus_(spyware)",
+     "source_published": "2023",
+     "source_accessed": "2026-08-28",
+     "viz": "ranked",
+     "wide": true,
+     "series": [
+      {
+       "label": "Mexico",
+       "value": "$60M+",
+       "pct": 100,
+       "highlight": true,
+       "source_label": "",
+       "source_url": ""
+      },
+      {
+       "label": "Estonia",
+       "value": "$30M",
+       "pct": 50,
+       "highlight": false,
+       "source_label": "",
+       "source_url": ""
+      },
+      {
+       "label": "Mexico 2012 contract",
+       "value": "$20M",
+       "pct": 33,
+       "highlight": false,
+       "source_label": "",
+       "source_url": ""
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "range_at": 0,
+     "fill_pct": null
+    },
+    {
+     "label": "Renewed federal contract for phone-unlocking forensic tools · Cellebrite, DHS, 2025",
+     "value": "$11",
+     "unit": " million",
+     "note": "Homeland Security renewed an $11 million Cellebrite phone-forensics contract in September 2025, continuing years of federal spending on unlocking seized phones.",
+     "detail": "Cellebrite’s forensic tools have also been bought by US Immigration and Customs Enforcement in contracts as large as $30 to 35 million (2019), and by UK government agencies for a combined $370,000 in 2024. In 2021, security researcher Moxie Marlinspike published vulnerabilities in Cellebrite’s own software, including components years out of date, after which Cellebrite narrowed its support for extracting data from current iPhones. The company’s trajectory illustrates both the recurring cost of targeted-hacking tools as an alternative to a mandated backdoor and the limits on how reliably such tools keep pace with newer device encryption.",
+     "tier": 3,
+     "reveal": "deep",
+     "source_label": "Wikipedia, Cellebrite",
+     "source_url": "https://en.wikipedia.org/wiki/Cellebrite",
+     "source_published": "2025",
+     "source_accessed": "2026-08-28",
+     "viz": "ranked",
+     "wide": true,
+     "series": [
+      {
+       "label": "ICE, 2019",
+       "value": "$30–35M",
+       "pct": 100,
+       "highlight": false,
+       "source_label": "",
+       "source_url": ""
+      },
+      {
+       "label": "DHS, 2025",
+       "value": "$11M",
+       "pct": 34,
+       "highlight": true,
+       "source_label": "",
+       "source_url": ""
+      },
+      {
+       "label": "UK agencies, 2024",
+       "value": "$370K",
+       "pct": 1,
+       "highlight": false,
+       "source_label": "",
+       "source_url": ""
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "range_at": 0,
+     "fill_pct": null
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Can lawful access to encrypted content be engineered without creating a vulnerability that others can find and exploit?",
+    "kind": "empirical",
+    "why": "Both sides accept that an access mechanism must not become a general vulnerability; they split on whether decades of failed designs prove that is impossible or only that it is unsolved.",
+    "detail": "Every exceptional-access proposal studied since the 1990s Clipper Chip has introduced a new server, key-escrow system, or duplicate key that becomes the highest-value target on the network; break that one point and every conversation it protects is exposed at once. Landmark technical assessments, from the original crypto wars through the 2015 “Keys Under Doormats” report, concluded that no design has separated “accessible to a court order” from “accessible to anyone who compromises that mechanism,” an objection this camp holds no published proposal has since answered.\n\nProponents note that plenty of security-critical systems already carry a trusted, audited exception without collapsing, code-signing keys, certificate authorities, cloud providers that can produce unencrypted backups, and argue the real obstacle is political will and engineering investment, not a proof of impossibility. “No solution yet found” is not the same claim as “no solution possible,” they argue, and companies already hold and can be compelled to produce plaintext in many contexts today without a resulting wave of unrelated breaches.",
+    "lean_label_a": "Structural",
+    "lean_label_b": "Solvable",
+    "lean_pct_a": 78,
+    "tier": 1,
+    "reveal": "condensed"
+   },
+   {
+    "text": "How much serious crime actually goes unsolved because of encryption, rather than being solved by other investigative means?",
+    "kind": "empirical",
+    "why": "Both camps cite the same “going dark” claim from very different baselines, and no agency publishes an audited count of cases lost to encryption rather than solved another way.",
+    "detail": "Investigators and prosecutors describe a rising share of cases, from child exploitation rings to terrorism plots, where a seized phone or app is technically inaccessible even with a valid warrant, and argue that publicized cases are the visible tip of a much larger unmeasured problem, since failures to access evidence are rarely logged as a discrete category and often never surface publicly at all.\n\nSkeptics of the “going dark” narrative point to the huge growth in other data streams, carrier records, location history, cloud backups, connected devices, informants, that increasingly fill the gap, and note that some past law-enforcement claims about specific unsolvable-case counts have later been corrected or retracted. Because no public agency publishes a rigorous, audited tally of cases lost specifically to encryption versus cases solved by other means, both camps are extrapolating from selective examples rather than a shared count.",
+    "lean_label_a": "Real gap",
+    "lean_label_b": "Overstated",
+    "lean_pct_a": 30,
+    "tier": 1,
+    "reveal": "condensed"
+   },
+   {
+    "text": "Does an individual’s claim to communication no one can read outweigh a society’s claim to execute a lawful warrant?",
+    "kind": "value",
+    "why": "This is the philosophical fork underneath every technical argument: whether a warrant, properly obtained, is owed access as a matter of principle, or whether some communications are legitimately beyond any warrant’s reach.",
+    "detail": "For this camp, a warrant has always authorized a search, not guaranteed a result. Locks that cannot be picked, conversations that leave no record, rooms with no listening device, have existed throughout history without being treated as a defect in the rule of law; encryption is simply the modern version of a private conversation that leaves nothing behind for the state to search.\n\nFor the opposing camp, a valid warrant is a democratic society’s answer to exactly this tension: a court has already weighed the individual’s privacy against the public interest and ruled that access is justified in this instance, so a technology that can defeat that court order unconditionally substitutes the manufacturer’s judgment for the judiciary’s.",
+    "lean_label_a": "Privacy wins",
+    "lean_label_b": "Warrant wins",
+    "lean_pct_a": 40,
+    "tier": 1,
+    "reveal": "condensed"
+   },
+   {
+    "text": "Would an access mechanism built by one democracy stay confined to it, or hand authoritarian states a precedent they will demand in turn?",
+    "kind": "empirical",
+    "why": "The debate turns on whether a mechanism can be legally and technically restricted to democracies with due process, or whether any working exceptional-access system becomes a template every government will point to.",
+    "detail": "Mandaters argue this treats every democracy as hostage to the worst government in the world, and that companies already differentiate compliance by jurisdiction, data localization, content takedowns, region-specific privacy defaults, without those systems collapsing into a single global lowest common denominator. A carefully scoped mechanism, they argue, can be paired with legal and technical safeguards that keep it answerable only to the courts that authorized it.\n\nAdvocates point to a repeated pattern: laws and technical standards built for one country’s courts have quickly been cited by other governments demanding the same capability for their own purposes, and because the underlying code and hardware are usually global, the same phone, the same app, the same chipset, a company that builds an access mechanism for one legal system has little technical ground left to refuse it to another, however different that government’s due process protections.",
+    "lean_label_a": "Confined",
+    "lean_label_b": "Spreads",
+    "lean_pct_a": 20,
+    "tier": 1,
+    "reveal": "condensed"
+   },
+   {
+    "text": "Can on-device scanning be held to one category of illegal content, or does building the capability make scope expansion inevitable?",
+    "kind": "empirical",
+    "why": "The dispute is whether a scanning system built to match one narrow, universally condemned category of content can be kept there, or whether the infrastructure itself invites new categories once it exists.",
+    "detail": "Proponents argue scope is a policy and legal choice, not a technical inevitability: narrow, independently audited matching against a court-supervised hash list, rather than open-ended content classification, can be constrained the same way other narrowly defined surveillance powers are constrained, by statute, oversight, and transparency reporting, with the technology itself agnostic to whatever list it is pointed at.\n\nCritics point to a consistent trajectory in comparable systems: content-scanning and filtering infrastructure built for one purpose, copyright, terrorism content, national censorship, has repeatedly been expanded to new categories once regulators or courts direct it, because the hard technical and organizational work, the hash lists, the review pipeline, the on-device hooks, already exists and just needs a new target plugged in. A major platform’s proposal to scan for known abuse material was shelved after researchers showed how the same architecture could be repurposed for other content by policy change alone.",
+    "lean_label_a": "Contained",
+    "lean_label_b": "Expands",
+    "lean_pct_a": 25,
+    "tier": 2,
+    "reveal": "normal"
+   },
+   {
+    "text": "Is targeted device hacking a real substitute for mandated access at the volume of ordinary criminal casework, or only for high-value targets?",
+    "kind": "empirical",
+    "why": "The question is one of scale: whether the exploits, expertise and time that targeted hacking requires can ever be routine tools for ordinary casework, or whether they only work for the handful of cases that justify the cost.",
+    "detail": "Proponents counter that this is the point, not a flaw: a warrant-authorized, targeted intrusion into one suspect’s device leaves everyone else’s security untouched, unlike a mandated backdoor that weakens every user’s security regardless of suspicion. They argue specialized units, shared exploit infrastructure and growing commercial tooling are already lowering the cost and expanding how far down the caseload targeted hacking can reach.\n\nSkeptics of hacking as a substitute argue that it depends on unpatched vulnerabilities that are expensive to find or buy, that degrade the moment they are used and detected, and that require specialized skills most police departments do not have in-house. On this account it is used sparingly, reserved for terrorism, organized crime or the highest-priority cases where the cost is justified, while the overwhelming volume of routine cases, local burglaries, ordinary drug cases, domestic violence, never reach that threshold.",
+    "lean_label_a": "Scales",
+    "lean_label_b": "High-value",
+    "lean_pct_a": 20,
+    "tier": 2,
+    "reveal": "normal"
+   },
+   {
+    "text": "Who should carry the residual risk: the people whose data an access mechanism would expose, or the victims of crimes that go unsolved without one?",
+    "kind": "value",
+    "why": "Once the technical and legal arguments are exhausted, the remaining question is a values choice about who should absorb the harm the debate cannot fully resolve either way.",
+    "detail": "The Exceptional Access Mandater and Client-Side Scanning camps argue that the current default already asks victims and their families to bear the entire cost of an unsolved case, an outcome that is concentrated, severe and often irreversible, while the risk to general users from a well-designed access mechanism is diffuse, probabilistic and mitigated by oversight. A society that can act to prevent concrete, ongoing harm but chooses not to, they argue, is also making a values choice, not a neutral one.\n\nThe Digital Rights Defender and Metadata Sufficiency camps argue that weakening encryption spreads a risk, that a mechanism might be misused or breached, across every user of a system, including the most vulnerable ones, journalists, abuse survivors, dissidents, while the benefit accrues only in the cases where lawful access would actually have mattered. Spreading harm broadly and thinly to avoid a smaller number of concentrated, unsolved cases, in this view, is not a defensible trade.",
+    "lean_label_a": "Data holders",
+    "lean_label_b": "Victims",
+    "lean_pct_a": 30,
+    "tier": 3,
+    "reveal": "deep"
+   }
+  ],
+  "positions": [
+   {
+    "name": "No-Backdoor Cryptographer",
+    "steelman": "Math grants no exceptions for good guys: build the door, someone else finds the key.",
+    "description": "Security is not a dial that can be turned down for law enforcement and stay put for everyone else. Every exceptional-access design studied so far has needed key escrow, weaker forward secrecy, or new code paths: more attack surface, not less. Salt Typhoon showed the failure mode is real, reaching the very lawful-intercept systems built to serve court-authorized wiretaps.",
+    "detail": "The canonical text is Keys Under Doormats (Abelson, Anderson, Bellovin, Benaloh, Blaze, Diffie, Gilmore, Green, Landau, Neumann, Rivest, Schiller, Schneier, Specter and Weitzner; Journal of Cybersecurity, 2015), a direct rebuttal to the FBI’s renewed “going dark” push under Director James Comey. It updated the field’s founding argument from the 1990s Clipper Chip fight: that any mandated exceptional-access mechanism forces a system away from modern security practice, in particular forward secrecy, and replaces it with centralized key material that becomes the single highest-value target on the network. The paper does not claim access is impossible to build; it documents that no proposal has answered how it would be built without those costs, across a decade of governments asking.\n\nThat prediction has since been borne out operationally rather than theoretically. Salt Typhoon, the Chinese state-linked intrusion disclosed in 2024, sat inside AT&T, Verizon and other US carriers for what officials assessed was one to two years before discovery, reaching the lawful-intercept systems installed decades earlier specifically to give law enforcement access, and giving foreign intelligence a live feed of the exact metadata and, in some cases, content those backdoors existed to collect for police. This camp reads Australia’s Assistance and Access Act 2018 as the clearest legislative case study of the same dynamic, arguing that a compelled technical-assistance notice cannot be scoped to a single target without touching the software update or authentication mechanism every other user of that product relies on.\n\nThe camp’s internal debate is less about whether backdoors are safe, where no significant faction inside it argues otherwise, than about which fallback investigative methods to endorse in their place: cryptographers like Susan Landau argue for redirecting law enforcement toward metadata analysis and traditional forensics, while others emphasize targeted device exploitation under warrant as the technically sound substitute. Signal’s Meredith Whittaker and the Electronic Frontier Foundation carry the argument into present-day legislative fights: Signal said publicly in 2023 that it would leave the UK market rather than comply with the Online Safety Bill’s scanning powers, and the EFF has called the US EARN IT Act a direct threat to constitutional protections for free speech and expression. Each such bill is treated by this camp as Clipper Chip and Keys Under Doormats revisited under a new name.",
+    "tier": 1,
+    "proponents": "Bruce Schneier, Matthew Green, Susan Landau, Whitfield Diffie, Ross Anderson, Matt Blaze, Meredith Whittaker (Signal), Electronic Frontier Foundation",
+    "representative_name": "Keys Under Doormats (2015)",
+    "representative_note": "Peer-reviewed paper by 15 leading cryptographers and security researchers, Journal of Cybersecurity, the field’s standing rebuttal to every renewed exceptional-access proposal since.",
+    "prevalence_weight": 85,
+    "spectrum_position": -3,
+    "color_key": ""
+   },
+   {
+    "name": "Exceptional Access Mandater",
+    "steelman": "A lawful warrant should open the door, not stop at a vendor’s design choice.",
+    "description": "Democratic societies work because no space is beyond a lawful warrant: not a house, not a bank vault, not a phone. Encryption built so that not even the provider can comply turns judicial power into a dead letter, and the people who pay are victims. Warranted access is something engineering teams should solve for, like reliability or battery life, not market against.",
+    "detail": "The lineage runs from the 1990s Clipper Chip fight through the 2016 San Bernardino case, where a court order compelling Apple to write unlock software was dropped only because the FBI found another way in, not because the demand was wrong. The camp’s most developed technical answer is GCHQ’s 2018 “ghost protocol,” proposed by Ian Levy and Crispin Robinson, which would add a silent, warrant-authorized participant to an existing encrypted conversation rather than hand over master keys, arguing that the “nobody but the parties can read this” promise already has an exception, the provider who can push a compromised app update, that a lawful process could simply formalize. Australia’s 2018 Assistance and Access Act and the UK’s Investigatory Powers Act, with its judicial “double lock” on warrants, are held up as working proof that a statutory access regime can operate without the sky falling.\n\nThe camp splits on mechanism: some back a legislative mandate with fixed technical requirements, like the US Lawful Access to Encrypted Data Act, while others prefer case-by-case compelled assistance litigated fresh each time, the Apple precedent, wary that a standing mandate is itself the vulnerability. What unites them is a rejection of the cryptographers’ “any backdoor is everyone’s backdoor” framing as a design failure to be solved rather than a law of physics: warrant-gated access is achievable, they argue, if a vendor is required to engineer for it from the start instead of retrofitting it under subpoena. In October 2020 the governments of the United States, United Kingdom, Australia, Canada, New Zealand, India and Japan endorsed exactly that framing in a joint statement calling on industry to embed public-safety capability into system design.\n\nThe camp now argues from a record rather than a forecast. Facebook’s own reports to NCMEC’s CyberTipline fell from 17.8 million in 2023 to 8.6 million in 2024 and 4.9 million in 2025, across the period Meta made end-to-end encryption the default on Messenger, and mandaters read that as the measured cost of a rollout they warned about in advance. They read the UK’s February 2025 technical capability notice the same way: a democracy’s lawful order working as designed, statutory, judicially supervised and served on one company, met by a vendor that chose to pull a product feature from that market rather than comply. That, mandaters argue, is exactly the vendor design choice their case is about, since the access was refused by a business decision and not by mathematics.",
+    "tier": 1,
+    "proponents": "Christopher Wray, William Barr, James Comey, Priti Patel, Ian Levy, Crispin Robinson (GCHQ), U.S. Lawful Access to Encrypted Data Act (Sens. Graham, Cotton, Blackburn)",
+    "representative_name": "GCHQ’s Ian Levy and Crispin Robinson",
+    "representative_note": "Authors of the 2018 paper proposing a warrant-gated “ghost” participant silently added to an encrypted call or chat, arguing exceptional access is an engineering problem to be solved, not a cryptographic impossibility.",
+    "prevalence_weight": 72,
+    "spectrum_position": 3,
+    "color_key": ""
+   },
+   {
+    "name": "Digital Rights Defender",
+    "steelman": "Secret demands in one democracy become every government’s precedent.",
+    "description": "Start with who depends on unbreakable encryption: journalists protecting sources, dissidents, LGBTQ+ people where their identity is still a crime, abuse survivors hiding from a partner who knows their passwords. No access mechanism stays one democracy’s secret. The UK’s secret 2025 order to Apple was contestable only because it leaked, and the power behind it is unchanged.",
+    "detail": "The modern version of this argument dates to the May 2015 report to the UN Human Rights Council by David Kaye, then Special Rapporteur on freedom of opinion and expression, which concluded that encryption and anonymity enable people to exercise the rights to freedom of opinion and expression and so deserve strong protection, and that states should avoid all measures that weaken the security individuals enjoy online, naming backdoors, weak encryption standards and key escrows, with journalists, human rights defenders and dissidents having the most to lose. Three years later, Australia’s Assistance and Access Act 2018 became the case study rights groups still cite: a liberal democracy legislating exceptional access, they warned, would hand illiberal governments a template to point to. That warning aged into fact when India wrote a traceability mandate for WhatsApp into its 2021 IT Rules, and again in February 2025 when the UK used its Investigatory Powers Act to serve Apple a secret order demanding a backdoor into encrypted iCloud backups worldwide. Apple’s answer was to withdraw the feature for UK users rather than build the door, then appeal the order to the Investigatory Powers Tribunal. In August 2025 the US Director of National Intelligence said the UK was dropping the demand, without any public account of what remains of the notice, before a narrowed order on UK users’ data revived the fight that October and drew a fresh Apple challenge in August 2026.\n\nThe camp is not united on tactics. Some organizations, including the Global Encryption Coalition’s more than 350 members, steered by the Center for Democracy & Technology, Global Partners Digital, Mozilla, the Internet Freedom Foundation and the Internet Society, work the legislative and multilateral track: filing UN submissions, lobbying against bills like the UK’s Online Safety Act and the EU’s proposed chat control regulation. Others favor exit over negotiation. Signal’s leadership has said publicly the organization would rather leave a market than weaken its encryption, a stance some allies worry cedes the field to less principled competitors when the government asking is a G7 democracy rather than an obvious autocracy. A second fault line runs through client-side scanning proposals pitched as a compromise: most of this camp treats scanning content on the device before it is encrypted as the same backdoor under a different name, since it still requires building a surveillance capability a government can later expand.\n\nThe strongest evidence is who actually turns up as the casualty once an access capability exists. The Committee to Protect Journalists has documented reporters jailed or exposed after states obtained their communications, and the 2021 Pegasus Project, coordinated by Forbidden Stories with forensic analysis by Amnesty International’s Security Lab, whose methodology Citizen Lab independently peer-reviewed, found spyware infections on the phones of journalists and human rights defenders across multiple countries once a targeted-access tool existed to be aimed at them. Advocacy groups working with domestic violence survivors have separately made the case that strong encryption is what keeps a coercive partner from reading a survivor’s messages once that partner has physical access to a shared device: weakening it for law enforcement does not distinguish between a warrant and a stalker holding someone’s phone.",
+    "tier": 1,
+    "proponents": "Electronic Frontier Foundation, Access Now, Privacy International, Global Encryption Coalition, Human Rights Watch, Committee to Protect Journalists, Meredith Whittaker (Signal Foundation), David Kaye (former UN Special Rapporteur on Freedom of Expression)",
+    "representative_name": "Access Now",
+    "representative_note": "Runs a 24/7 Digital Security Helpline for journalists, activists and human rights defenders facing state surveillance and hacking, and coordinates global encryption advocacy across the #KeepItOn coalition.",
+    "prevalence_weight": 55,
+    "spectrum_position": -2,
+    "color_key": ""
+   },
+   {
+    "name": "Client-Side Scanning Proponent",
+    "steelman": "Scan on the device, before it’s sealed: the encryption in transit stays intact.",
+    "description": "Encryption protects a message in transit and storage; it was never a promise that the device writing it is unaccountable. Client-side scanning checks an image against a list of known abuse material before the message is sealed, leaving transport and storage exactly as opaque as before. It is the detection layer already running today, and declining to deploy it has its own victims.",
+    "detail": "Perceptual hashing became the workhorse of this position in 2009, when Microsoft and computer scientist Hany Farid built PhotoDNA: a fingerprinting method that flags known illegal images without any human viewing them first. Apple’s 2021 CSAM Detection proposal was this camp’s most concrete design for the encrypted era, matching that same style of hash against NCMEC’s list entirely on-device, before an image ever left for iCloud, with no content decrypted or reviewed unless a match threshold was crossed. To proponents, that architecture answered the core objection before it was raised: nothing about the transport or storage encryption changed, and no new content was exposed to the provider.\n\nThe camp did not emerge from that unscathed. Apple paused the rollout in September 2021 and formally cancelled the iCloud matching component in December 2022 after sustained privacy backlash, the central objection being that the hash list and matching infrastructure were themselves a standing capability a government could redirect; proponents largely read that as a communications failure and a coalition loss, not a technical refutation, and the same design has resurfaced in the EU’s CSAM Regulation debate, pushed by child-protection groups including Thorn, ECPAT and WeProtect Global Alliance as a legal mandate rather than a voluntary feature. Inside the camp, the live argument is narrower than critics assume: not whether to scan, but who curates the hash list, whether it should ever extend past graphic CSAM to other illegal categories, and whether independent audit of the list can be built without recreating the opacity the design is meant to avoid.\n\nThe strongest evidence this camp points to is operational, not theoretical: hash-matching systems already run across the major platforms and generate the tips that let NCMEC and law enforcement identify victims, and this camp reads the fall in reporting from Meta’s platforms after its December 2023 rollout, Facebook from 17.8 million reports to 8.6 million and again to 4.9 million in 2025, as exactly that channel closing. That, to this camp, is the actual trade being debated: a working, narrowly targeted detection mechanism against a channel going permanently dark to it.",
+    "tier": 1,
+    "proponents": "Hany Farid, Thorn, NCMEC, WeProtect Global Alliance, Apple (2021 CSAM Detection proposal), ECPAT",
+    "representative_name": "Thorn",
+    "representative_note": "Child-safety technology nonprofit, co-founded by Ashton Kutcher and Demi Moore, that builds Safer, a perceptual-hash and classifier CSAM detection product licensed to platforms, and lobbies for detection mandates in the EU’s CSAM Regulation.",
+    "prevalence_weight": 48,
+    "spectrum_position": 2,
+    "color_key": ""
+   },
+   {
+    "name": "Targeted Hacking Investigator",
+    "steelman": "One warrant, one endpoint, zero backdoors in everyone else’s encryption.",
+    "description": "The state does not have to weaken the mathematics everyone relies on to catch the person using it. A warrant to enter one suspect’s phone leaves the cryptography protecting billions of other devices untouched. French investigators implanted malware on EncroChat’s infrastructure in 2020; the UK arm alone produced more than 3,100 arrests by October 2023, with no change to consumer encryption.",
+    "detail": "The position takes its name from a 2014 Northwestern Journal of Technology and Intellectual Property paper, “Lawful Hacking: Using Existing Vulnerabilities for Wiretapping on the Internet,” in which Bellovin, Blaze, Clark and Landau argued the FBI’s “going dark” problem could be solved with tools investigators already had, not a legislated backdoor. The argument got an unplanned real-world test two years later: when the FBI sought a court order forcing Apple to help unlock the San Bernardino shooter’s iPhone, the bureau withdrew its case in March 2016 after a third party supplied a working exploit instead, at a cost then-director James Comey put at more than $1.3 million, with later reporting identifying the Australian security firm Azimuth Security as the source of the tool. Even Michael Hayden, former director of both the NSA and the CIA, sided with the hackers over the bureau’s own lawyers, arguing law enforcement should give up some ground on access to preserve cybersecurity broadly.\n\nThe camp is not united on how the government should get its exploits in the first place. Some proponents want agencies to acquire zero-days and run each one through the Vulnerabilities Equities Process to decide case by case whether to disclose or retain it; others argue that stockpiling is itself the systemic risk the position claims to avoid, pointing to the NSA’s own EternalBlue exploit, which leaked in 2017 and was repurposed within weeks for the WannaCry ransomware outbreak. A parallel fight plays out over how broad a single hacking warrant can be: the FBI’s 2015 Playpen investigation used one Virginia warrant to deploy malware against site visitors worldwide, and became the leading example in the fight over the 2016 amendment to Federal Rule of Criminal Procedure 41 that now lets a single warrant cover hacking targets whose location has been disguised; an appeals court later held that particular warrant invalid, though the evidence was allowed to stand under the good-faith exception.\n\nThe strongest answer to the objection that this only works for high-value targets is scale, not exception. The UK’s Investigatory Powers Act 2016 wrote “equipment interference” warrants into ordinary law rather than treating device hacking as a covert carve-out, and Europol’s EncroChat and Sky ECC operations show the technique running as full-scale organized-crime enforcement, not a one-off against a single suspect’s phone. Proponents read that record as proof the trade-off is real and worth making: harder, slower, warrant-bound access to the guilty, instead of a structural weakness sitting in the software of the innocent, waiting for whoever finds it first.",
+    "tier": 1,
+    "proponents": "Susan Landau, Matt Blaze, Steven M. Bellovin, Sandy Clark, Alex Stamos, Orin Kerr, UK Investigatory Powers Act 2016 (equipment interference warrants), Europol EncroChat operation",
+    "representative_name": "Susan Landau",
+    "representative_note": "Tufts University cybersecurity and policy scholar; co-author of the 2014 paper “Lawful Hacking” and the book Listening In, the position’s central intellectual case",
+    "prevalence_weight": 42,
+    "spectrum_position": 1,
+    "color_key": ""
+   },
+   {
+    "name": "Metadata Sufficiency Analyst",
+    "steelman": "The gap was never the law: it’s underfunded forensics labs and slow provider cooperation.",
+    "description": "Solving crimes matters more than protecting any one technique, and investigators already reach a lot: cloud accounts, app metadata, location history, device pairings, networked sensors, much of it retained for billing reasons anyway. Berkman Klein’s 2016 Don’t Panic report found no single choke point closing off investigations. Where cases stall, the fix is funding and process.",
+    "detail": "The argument has a specific origin. Peter Swire and Kenesa Ahmad set it out early, cataloging what had changed since the wiretap laws of the analog telephone era were written. Where a 1990s investigator had a phone line and not much else, today’s investigator can draw on cloud storage, app-level logs, location history, social media, and always-on device telemetry: an order-of-magnitude expansion in discoverable data that the FBI’s going dark framing never accounted for.\n\nThe 2016 Don’t Panic report from the Berkman Klein Center’s Berklett Cybersecurity Project pushed the case further, projecting that the Internet of Things would add networked microphones, cameras, and location beacons to cars, appliances, and utility meters, each a fresh data source with no relationship to whether a given messaging app is end-to-end encrypted. It also made a simpler point: providers retain unencrypted metadata, who contacted whom, when, from where, for how long, for their own billing and engineering reasons, independent of any privacy decision they make about content. Until Apple made end-to-end encrypted iCloud backup optional in December 2022, the default backup for the world’s most popular smartphone line handed most message content to legal process anyway.\n\nThe camp’s real split is over what its own argument licenses. If metadata, cloud records and device telemetry are rich enough to replace content access, they are also rich enough to be intrusive on their own terms, which is why Landau and Julian Sanchez pair the argument with limits on retention and legal process while Swire’s version leans on the sheer growth in discoverable data. The camp is likewise not united on whether going dark is spin throughout or a real but narrower problem for specific case types, such as a locally stored device with no cloud backup.",
+    "tier": 1,
+    "proponents": "Peter Swire, Susan Landau, Berkman Klein Center Berklett Cybersecurity Project, Matthew Olsen, Julian Sanchez (Cato Institute)",
+    "representative_name": "Peter Swire",
+    "representative_note": "Georgia Tech scholar and member of the 2013 presidential intelligence review group; his 2011 paper with Kenesa Ahmad recast going dark as a golden age for surveillance.",
+    "prevalence_weight": 35,
+    "spectrum_position": -1,
+    "color_key": ""
+   }
+  ],
+  "crux": {
+   "lead": "Nobody here disputes the warrant. What splits the field is where it can be executed.",
+   "lead_highlight": "where it can be executed",
+   "subtitle": "Four camps put it somewhere different: the provider’s protocol, the device before sealing, one suspect’s phone, the records already held. Two say the mechanism is the harm, wherever it sits.",
+   "empirical": "Then it turns on the record: whether an exceptional-access design can be built that survives adversarial review, whether scanning stays confined to one content category at scale, whether warranted hacking reaches ordinary casework volume rather than priority targets, and how many cases genuinely stall on content alone.",
+   "values": "Then it turns on who carries risk that cannot be engineered away: the people an access mechanism would expose, among them journalists and abuse survivors, or the victims of crimes left unsolved without one. Beneath that sits a question no dataset answers: whether a capability built under one democracy’s courts stays inside them."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "EFF on encryption",
+    "description": "The Electronic Frontier Foundation’s hub explaining why it opposes any mandated backdoor and how it fights exceptional-access proposals in courts and legislatures.",
+    "url": "https://www.eff.org/issues/government-hacking-digital-security",
+    "for_position": "No-Backdoor Cryptographer",
+    "tier": 1,
+    "reveal": "condensed"
+   },
+   {
+    "kind": "policy",
+    "title": "The international lawful-access statement",
+    "description": "A joint statement issued in October 2020 by the US, UK and five other governments, since joined by four more, calling on tech companies to build lawful access into encrypted content without eroding security.",
+    "url": "https://www.gov.uk/government/publications/international-statement-end-to-end-encryption-and-public-safety",
+    "for_position": "Exceptional Access Mandater",
+    "tier": 1,
+    "reveal": "condensed"
+   },
+   {
+    "kind": "policy",
+    "title": "Stop Canada’s Bill C-22",
+    "description": "A Global Encryption Coalition open letter, signed by dozens of security experts and civil-society groups, opposing a Canadian bill that would mandate backdoor access to encrypted data.",
+    "url": "https://www.globalencryption.org/2026/04/open-letter-on-bill-c-22-an-act-respecting-lawful-access/",
+    "for_position": "Digital Rights Defender",
+    "tier": 1,
+    "reveal": "condensed"
+   },
+   {
+    "kind": "policy",
+    "title": "NCMEC on end-to-end encryption",
+    "description": "The National Center for Missing & Exploited Children’s case for requiring detection capability inside encrypted platforms so child sexual abuse material does not go undetected.",
+    "url": "https://www.missingkids.org/theissues/end-to-end-encryption",
+    "for_position": "Client-Side Scanning Proponent",
+    "tier": 1,
+    "reveal": "condensed"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Cellebrite’s forensic access tools",
+    "description": "A digital-forensics vendor’s own page on how its tools let investigators extract evidence from one locked device under warrant, without weakening encryption for everyone else.",
+    "url": "https://cellebrite.com/en/law-enforcement/",
+    "for_position": "Targeted Hacking Investigator",
+    "tier": 1,
+    "reveal": "condensed"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Rethinking encryption, from a former FBI lawyer",
+    "description": "Jim Baker, the FBI’s former general counsel, argues officials should redirect toward metadata and analytics instead of breaking encryption, since strong encryption now serves public safety too.",
+    "url": "https://www.rstreet.org/commentary/rethinking-encryption/",
+    "for_position": "Metadata Sufficiency Analyst",
+    "tier": 1,
+    "reveal": "condensed"
+   },
+   {
+    "kind": "donate",
+    "title": "Support Signal",
+    "description": "Signal Foundation’s donation page funds the nonprofit behind the widely used end-to-end encrypted messenger, built with no exceptional-access mechanism.",
+    "url": "https://signal.org/donate/",
+    "for_position": "No-Backdoor Cryptographer",
+    "tier": 2,
+    "reveal": "normal"
+   },
+   {
+    "kind": "submit_view",
+    "title": "Add your view",
+    "description": "Share where you land on encryption and lawful access.",
+    "url": "",
+    "for_position": "",
+    "tier": 3,
+    "reveal": "condensed"
+   }
+  ],
+  "categories": [
+   "digital",
+   "governance"
+  ]
+ },
+ "verdicts": [
+  {
+   "critic": "NEUTRALITY: PASS. No section tilts in a way that misleads, no house verdict, no false balance, and the crux is a genuine narrowing rather than a both-sides shrug.\n\nCamp parity is the strongest thing about this draft. All six camps get an in-voice steelman a proponent would put on a banner, a canonical text (Keys Under Doormats; GCHQ's 2018 ghost paper; Kaye's 2015 UN report; PhotoDNA/Apple's 2021 design; the 2014 \"Lawful Hacking\" paper; Don't Panic), named living proponents, a real internal fault line, and a \"strongest evidence\" paragraph. Nobody is sourced from their opponents' characterization, and no camp's description contains a rebuttal smuggled in as fact. The Client-Side Scanning card is the usual place these topics strawman, and it does not: Apple's cancellation is faced squarely and read as a coalition loss rather than a technical refutation, which is what the camp actually says.\n\nShared sections hold. Basics gives both readings where a stat is contested (the NCMEC fall, the Pegasus cost profile) and both-sides-reference-it framing where it is historical (Clipper). The question \"why\" lines are symmetric, and the paragraph pivots alternate which side speaks first. The lean values worried me at first (four empirical questions all leaning against the access side), but I traced lean_pct_a through topics/models.py and templates/topics/components/_qlean.html: the editorial estimate never renders — percentages and the bar appear only once reader votes cross the threshold — so it cannot read as a house verdict on the page.\n\nCRUX: genuine. \"Nobody here disputes the warrant. What splits the field is where it can be executed\" names an axis rather than declaring a winner, and it survives the multi-camp test: the subtitle gives four distinct loci (provider protocol / device before sealing / one suspect's phone / records already held) that map cleanly onto Mandater, Client-Side Scanning, Targeted Hacking and Metadata Sufficiency, with the two rejecting camps located separately. That is six camps placed, not a binary. The empirical and values columns each carry both directions with no thumb on the scale. My one reservation is a phrase, not a structure — see note 4.\n\nMISSING CAMP: none blocking. WebSearch was spent session-wide (1500/1500) on my first call, so I ran the prescribed WebFetch fallback across landscape sources. The one position I found that is not represented is the Carnegie Encryption Working Group's 2019 middle (narrow the fight to lawful access to data at rest on seized phones via on-device escrow, 23 members incl. Jim Baker, Chris Inglis, Rivest, Felten, Landau). I could not establish current organized proponency for it, and the live 2025-26 fights I checked (UK technical capability notice, Canada's Bill C-22 Part 2, the EU CSAM trilogue) are mandate-shaped and land inside camps already on the page. A traceability-mandate position (India's IT Rules) similarly folds into the Mandater camp's compelled-assistance wing.\n\nLoad-bearing claims I verified rather than assumed, weighted toward the pro-access side since a wrong fact there would tilt the page: the 70%/12 million figure is verbatim in the October 2019 gov.uk letter (\"NCMEC estimates that 70% of Facebook's reporting – 12 million reports globally – would be lost\"); the 2025 per-ESP counts are exact against NCMEC's own PDF (Facebook 4,907,710, Instagram 3,673,045, WhatsApp 2,355,302, 21.3M total with 21.1M from ESPs); the October 2020 international statement is correctly counted at seven signatories plus four later joiners (Singapore, Georgia, Ecuador, Jordan — 11 total); Salt Typhoon's CALEA compromise and the one-to-two-year dwell assessment check out; Operation Venetic's 3,100 arrests and 1,240 convictions by 9 October 2023 check out; the Global Encryption Coalition's 400+ members across 103 countries and its five-organization steering committee check out; the Hayden quote is as David Cole reported it; the why_now matches the current Chat Control state (both institutions converged on excluding E2EE, detection-order mandate still the live split); the Bill C-22 action link resolves to the April 2026 open letter it describes.\n\nOne cross-cutting observation that is outside my dimension and is NOT a blocking finding from me: eight of the ten Basics stats cite Wikipedia as the rendered source. The published corpus does tolerate this (frontier-ai-regulation ships 4 of 10), so it is not without precedent, but it is double the worst published case and the Basics ladder prefers official or peer-reviewed secondary sources. I verified the substance of several of these independently and found them accurate; flagging it for the fact critic and the human rather than blocking on someone else's dimension.",
+   "pass": true,
+   "blocking": [],
+   "notes": [
+    "Emphasis asymmetry in the position cards: descriptions run 817 to 1396 characters against the 800-1000 house norm recorded in research/workflows/budgets.py. The two longest are both encryption-protective (Digital Rights Defender 1396, Metadata Sufficiency Analyst 1336) and the shortest is Exceptional Access Mandater (817), the second-largest camp by prevalence. Trimming the two over-norm cases, or giving the mandater card one more concrete sentence, would make visual weight track prevalence.",
+    "Most of Digital Rights Defender's extra length is self-duplication: Australia's Act as a \"template to point to\", the February 2025 UK order, and the August 2025 DNI statement each appear in both its description and its detail in near-identical wording. Cutting the duplicates fixes the length asymmetry and the redundancy at once.",
+    "Basics, Chat Control stat: \"after repeated retreats toward voluntary, encryption-excluded scanning\" — \"retreats\" is a directional verb in a section that otherwise keeps a neutral voice. \"After successive drafts narrowed toward voluntary, encryption-excluded scanning\" carries the identical fact without scoring it.",
+    "Crux subtitle: \"Two say the mechanism is the harm, wherever it sits\" lands immediately after four enumerated locations, two of which (one suspect's phone, the records already held) the No-Backdoor camp's own detail endorses as its preferred fallbacks. \"Wherever it is built in\" keeps the intended meaning without implying those two camps also reject warranted device access and metadata work.",
+    "Question 1's second paragraph is the only camp-facing paragraph in the questions section that argues without a named example — code-signing keys and certificate authorities in the abstract, against a paragraph above it that names Keys Under Doormats. Naming GCHQ's ghost proposal there would match its rigor.",
+    "Action affordances: four cards serve encryption-protective camps (EFF, the Global Encryption Coalition letter, the Signal donation, the R Street piece) against two on the access side, and the only donate card is Signal's. Defensible on prevalence, but a donate or policy card for a child-safety org would even out what a reader can actually do from each side.",
+    "The action titled \"EFF on encryption\" points at EFF's \"Government Hacking and Subversion of Digital Security\" hub. The page's own intro does cover weakening encryption \"through law, policy, or informal pressure\" and crypto backdoor promotion, so the description holds, but naming the page in the card title would set the expectation the page actually meets."
+   ],
+   "checks_run": [
+    {
+     "check": "section tilt scan",
+     "ran": true,
+     "method": "Read every note, detail, why and crux field line by line for house-voice interpretive claims; classified each of the 10 Basics stats by which camp it favors and checked whether contested ones carry both readings (the NCMEC fall and the Pegasus cost profile do; Clipper is explicitly framed as cited by both sides)."
+    },
+    {
+     "check": "charity and rigor parity across camps",
+     "ran": true,
+     "method": "Compared all six positions on five axes: in-voice steelman, canonical text, named living proponents, internal fault line, strongest evidence. Then measured description lengths in characters against the 800-1000 house norm documented in research/workflows/budgets.py (817-1396 observed)."
+    },
+    {
+     "check": "house-verdict / lean check",
+     "ran": true,
+     "method": "Traced lean_pct_a through topics/models.py (lean_display, lines 787-805) and templates/topics/components/_qlean.html; confirmed the editorial estimate never renders to a reader (bar and percentages appear only once community votes cross MIN_STANCE_SAMPLE), so the consistently anti-mandate empirical leans are not reader-facing."
+    },
+    {
+     "check": "crux judgment (folded-in crux critic)",
+     "ran": true,
+     "method": "Mapped each of the six camps onto the lead/subtitle axis; verified the four enumerated loci map to Mandater / Client-Side Scanning / Targeted Hacking / Metadata Sufficiency and that the two rejecting camps are located separately; checked the empirical and values columns for one-sided compression and the lead for a stated verdict."
+    },
+    {
+     "check": "missing-camp search",
+     "ran": true,
+     "method": "WebSearch budget was exhausted session-wide (1500/1500) on the first call, so ran the prescribed WebFetch fallback over landscape sources: Wikipedia Crypto Wars, the Carnegie Encryption Working Group 2019 report, Global Encryption Coalition home and about pages, NCMEC's end-to-end encryption issue page, Wikipedia Chat Control. lawfaremedia.org and internetsociety.org returned 403 and a DuckDuckGo HTML fallback returned a CAPTCHA. Result: one candidate (the Carnegie data-at-rest / on-device escrow middle) whose current organized proponency I could not establish, with the live 2025-26 fights mapping onto camps already on the page."
+    },
+    {
+     "check": "load-bearing claim and link verification (asymmetry-relevant)",
+     "ran": true,
+     "method": "WebFetch on primary sources: gov.uk open letter to Zuckerberg (70%/12M quote verbatim), NCMEC 2025 reports-by-ESP PDF extracted with pdftotext (Facebook/Instagram/WhatsApp counts), gov.uk international statement accessible version (7 original signatories plus 4 later joiners), Wikipedia Salt Typhoon (CALEA, 1-2 years), Wikipedia EncroChat (Venetic 3,100/1,240, Lille authorization), globalencryption.org/about (400+ members, 103 countries, steering committee), Wikipedia Chat Control (why_now currency), Apple-FBI wikitext (the $1.3M figure as Comey's own indication), NYRB (Hayden quote), the globalencryption.org C-22 letter, missingkids.org E2EE page, and the eff.org government-hacking hub."
+    }
+   ],
+   "key": "neutrality",
+   "stage": "substance"
+  },
+  {
+   "critic": "STEELMAN REVIEW — \"Encryption vs. Lawful Access\"\n\nVERDICT ON THE CORE QUESTION: all six camps are genuinely steelmanned. Every steelman line is a banner a real proponent would sign, each description leads with the camp's own strongest framing rather than an opponent's characterization, and each camp is sourced from its own authoritative texts (Keys Under Doormats for the cryptographers; Levy & Robinson's Lawfare piece and the 2019 Zuckerberg letter for the mandaters; Kaye's A/HRC/29/32 and the Pegasus Project for the rights camp; PhotoDNA and Apple's own design for the scanning camp; Bellovin/Blaze/Clark/Landau's \"Lawful Hacking\" and EncroChat for the hacking camp; Don't Panic and Swire for the metadata camp). Camp coverage is complete: the four camps that locate the warrant somewhere (provider protocol, device pre-seal, one endpoint, records already held) plus the two that say the mechanism is itself the harm, spanning -3 to +3. No missing major constituency, no house verdict, no forced 50/50 — the leans run 78/22 and 80/20 where the field genuinely is lopsided, and they cut in both directions (Q3 and Q7 favor the warrant side; Q1, Q2, Q4, Q5 favor the security side). The crux is the strongest element in the draft: it names the real axis without adjudicating it.\n\nFACT VERIFICATION. WebSearch budget was exhausted for this session at the first call, so I verified everything through WebFetch plus direct primary-document retrieval (curl + pdftotext) rather than search. Every load-bearing claim I checked held, several verbatim:\n- NCMEC: pulled NCMEC's own 2023/2024/2025 ESP PDFs and the 2024 and 2025 annual reports. Facebook 17,838,422 → 8,590,357 → 4,907,710; Instagram 11,430,007 → 3,320,008 → 3,673,045; WhatsApp 1,389,618 → 1,851,086 → 2,355,302; ESP totals 35,944,826 / 20,348,306 / 21,181,300; totals 36.2M / 20.5M / 21.3M; the Meta bundling feature, the 29.2M incident figure and \"approximately 7 million fewer incidents\"; the 20% decline from Google, X, Discord, Microsoft and Synchronoss; Meta and Google dropping ToS-only images; \"no legal requirements regarding proactive efforts.\" All exact. The ranked series (Instagram 71%, Facebook 52%, ESPs 43%) computes correctly.\n- The mandaters' headline number is verbatim from the source PDF: \"NCMEC estimates that 70% of Facebook's reporting – 12 million reports globally – would be lost\" (4 October 2019).\n- Salt Typhoon inside CALEA request systems, \"one to two years prior to its discovery\"; Keys Under Doormats, 15 named authors, Journal of Cybersecurity 2015, forward secrecy and concentrated key material; Levy & Robinson, Lawfare, 29 Nov 2018; Operation Venetic 3,100+ arrests / 1,240 convictions as of 9 Oct 2023 and the Lille authorization; \"Lawful Hacking,\" NJTIP vol. 12 (2014), all four authors; Comey's $1.3M and Azimuth Security; Hayden's \"give up some things in law enforcement... to preserve... our cybersecurity\"; Playpen, the EDVA warrant, Rule 41, and the Eleventh Circuit holding the warrant invalid with good-faith admission; Kaye A/HRC/29/32 (22 May 2015) including the near-verbatim \"avoid all measures that weaken the security... such as backdoors, weak encryption standards and key escrows\"; Global Encryption Coalition \"over 400 members distributed across 103 countries\" and all five steering organizations; Don't Panic (1 Feb 2016, Berklett); AES 2^256 keyspace, 2^254.3, no practical attack; Signal 20M/40M+/70M and 220M downloads; Cellebrite $11M DHS 2025, $30–35M ICE 2019, $370K UK 2024, Marlinspike; Chat Control (11 May 2022 proposal covering E2EE, Denmark 30 Oct 2025, Council 26 Nov 2025, trilogues 9 Dec 2025, detection still the open item in 2026, both institutions agreeing E2EE is excluded) — which also confirms the why_now. All four action URLs I could reach are live and correctly described, including the April 2026 Bill C-22 open letter (47 organizations, 37 individuals).\n\nWHAT BLOCKS. Three defects, none of them a strawman, all mechanical to fix. First, four of the seven questions run their two detail paragraphs in the reverse of their lean labels — Q1–Q3 put label_a's argument first, Q4–Q7 put label_b's first. I checked 13 questions across two published topics and the para-1 = label_a mapping holds without exception. On Q7 the paragraphs name no camp at all (\"This camp\" / \"The opposing camp\"), so a reader who has learned the convention from Q3 will read the 70% argument off the 30% chip: prevalence gets attached to the wrong side, which is exactly the mechanism this atlas uses to carry asymmetry honestly. Second, the Metadata Sufficiency Analyst's internal-debate passage undercuts its own camp with a non-sequitur and spends the Hayden quote twice in one section in opposite directions — once in the description as the camp's best supporting concession, once in the detail as evidence its contributors are uneasy, with the tension never stated. It is the only camp whose section argues against itself without answering. Third, seven of the ten Basics stats cite Wikipedia; the facts are right (I confirmed them), but tertiary sourcing is below the section-scoped BASICS ladder and appears in zero of the three published topics I sampled, all of which cite official statistics, peer-reviewed literature or primary legal documents. That is a measurable parity gap with a cheap fix: swap each citation to the primary source Wikipedia itself cites.",
+   "pass": false,
+   "blocking": [
+    {
+     "issue": "Four of seven questions invert the house convention that detail paragraph 1 belongs to lean_label_a and paragraph 2 to lean_label_b. Q1–Q3 follow it; Q4, Q5, Q6 and Q7 reverse it. I checked 13 questions across two published topics (vaccine-mandates, moral-status-of-animals) and the mapping holds without exception there. The lean chips render directly beneath the detail (templates/topics/components/_question.html includes _qlean.html after .qmore), so the reader maps the first paragraph onto the left chip. Q7 is the damaging case: both paragraphs are unnamed (\"This camp\" / \"The opposing camp\"), so the 70 percent argument is read off the 30 percent chip. Q4, Q5 and Q6 name their actors in-prose and so mislead less, but they are the same defect and the inconsistency is what teaches the reader the wrong mapping.",
+     "fix": "Swap the two detail paragraphs in Q4, Q5, Q6 and Q7 so paragraph 1 always argues lean_label_a. Q4: put the \"Mandaters argue this treats every democracy as hostage...\" paragraph first (Confined = a). Q5: put \"Proponents argue scope is a policy and legal choice...\" first (Contained = a). Q6: put \"Proponents counter that this is the point, not a flaw...\" first (Scales = a). Q7: put \"The opposing camp argues that the current default already asks victims...\" first (Data holders = a). Do not touch the lean_pct values — they are defensible; only the paragraph order is wrong. While in Q7, replace \"This camp\" / \"The opposing camp\" with the camp names, as published topics do (\"The Schedule Minimalist and Medical Freedom camps counter...\"), so the mapping does not depend on order alone.",
+     "quote": "Question \"Who should carry the residual risk: the people whose data an access mechanism would expose, or the victims of crimes that go unsolved without one?\" (lean_label_a \"Data holders\", lean_pct_a 30) opens its detail with the label_b argument: \"This camp argues that weakening encryption spreads a risk, that a mechanism might be misused or breached, across every user of a system, including the most vulnerable ones, journalists, abuse survivors, dissidents, while the benefit accrues only in the cases where lawful access would actually have mattered.\" Same inversion in \"Would an access mechanism built by one democracy stay confined to it...\" (a=Confined, para 1 = \"Advocates point to a repeated pattern\"), \"Can on-device scanning be held to one category of illegal content...\" (a=Contained, para 1 = \"Critics point to a consistent trajectory\"), and \"Is targeted device hacking a real substitute for mandated access...\" (a=Scales, para 1 = \"Skeptics of hacking as a substitute argue\")."
+    },
+    {
+     "issue": "The Metadata Sufficiency Analyst is the one camp whose section argues against itself without answering. Its internal-debate paragraph offers Susan Landau's emphasis on the investigative value of metadata as evidence that the camp's own contributors are uncomfortable — but that claim IS the camp's thesis, so as written the evidence supports what it is offered to undercut. The intended tension (that leaning on metadata concedes metadata surveillance is itself intrusive, which the camp's privacy allies resist) is never stated, so a proponent reads a non-sequitur. Worse, the Hayden quote is spent twice inside one camp's section in opposite directions: the description offers it as a senior official conceding the camp's point, the detail recycles it as the source of the unease. Peter Swire or Landau would not endorse this as the camp's strongest case, and it burns the camp's scarcest space (weight 35, the bottom camp) on a repeat.",
+     "fix": "Cut the second Hayden quotation and the \"sit uneasily\" framing from the detail, and replace with the camp's genuine fault line, stated plainly and answered in the camp's voice, e.g.: \"The camp's real split is over what its own argument licenses. If metadata, cloud records and device telemetry are rich enough to replace content access, they are also rich enough to be intrusive on their own terms, which is why Landau and Julian Sanchez pair the argument with limits on retention and legal process while Swire's version leans on the sheer growth in discoverable data. The camp is likewise not united on whether going dark is spin throughout or a real but narrower problem for specific case types, such as a locally stored device with no cloud backup.\" Keep the description's single use of the Hayden quote, which is well placed.",
+     "quote": "Metadata Sufficiency Analyst, detail: \"The camp is not fully united on how much of going dark is spin versus a real, narrower problem for specific case types, and some of its own contributors sit uneasily alongside the strongest version of the argument. Susan Landau, a Don’t Panic coauthor, has elsewhere stressed how much investigative and intelligence value metadata alone carries, echoing the line former NSA and CIA director Michael Hayden delivered at a 2014 Johns Hopkins debate: “We kill people based on metadata.”\" — the same quote already appears in the same camp's description: \"at a 2014 Johns Hopkins debate, former NSA and CIA director Michael Hayden said “We kill people based on metadata,” a stronger claim about its investigative value than most privacy advocates make about its risk.\""
+    },
+    {
+     "issue": "Seven of the ten Basics stats cite Wikipedia as their source. Basics are the facts every camp accepts, and the section-scoped ladder for them is official statistics and peer-reviewed secondary literature, then reputable journalism; Wikipedia is tertiary and sits below that bar. This is also a measurable parity gap: across three published topics (vaccine-mandates, moral-status-of-animals, nuclear-energy.gold) the Basics cite kff.org, CIDRAP, PubMed, Cornell LII, Oyez, Our World in Data, doi.org, SAGE, CourtListener, legislation.gov.uk, EUR-Lex, IAEA/PRIS, UNECE, OECD-NEA — zero Wikipedia citations in any of them. I verified the underlying facts against the cited Wikipedia articles and they are all correct, so this is a citation swap, not a content rewrite, and it must not be left for the human.",
+     "fix": "Repoint each source_label/source_url to the primary source the Wikipedia article itself cites, all of which I reached or confirmed during this review. AES-256: NIST FIPS 197 for the standard plus Bogdanov, Khovratovich & Rechberger (2011) / the 2015 refinement for the 2^254.3 biclique result. Clipper Chip: Matt Blaze, \"Protocol Failure in the Escrowed Encryption Standard,\" ACM CCS 1994 (peer-reviewed, and it is the flaw the stat is about). Apple ADP / UK notice: the Investigatory Powers Tribunal's April 2025 ruling on the proceedings plus Apple's own withdrawal statement and Financial Times reporting of 7 February 2025. Apple–FBI $1.3M: contemporaneous wire reporting of Comey's Aspen remarks and the DOJ Office of the Inspector General's 2018 report on the case. Signal users: Signal's own published figures and reputable reporting from January 2025. Chat Control: the Council's 26 November 2025 negotiating mandate (consilium.europa.eu) and the European Parliament Legislative Observatory file, both of which I confirmed match the draft's timeline. Pegasus/Mexico: Citizen Lab's country reporting and the Pegasus Project coverage rather than the Wikipedia summary. Cellebrite: USAspending.gov contract records for the DHS and ICE figures and Marlinspike's own April 2021 Signal blog post for the vulnerability disclosure. Leave the two already-correct citations (NCMEC CyberTipline data, the CJEU Digital Rights Ireland judgment) untouched.",
+     "quote": "Stat \"Practical attacks found against AES-256 · the cipher behind most secure messaging\": \"source_label\":\"Wikipedia, Advanced Encryption Standard\". Same defect in \"Countries where Apple withdrew full iCloud encryption rather than comply · UK order, 2025\" (\"Wikipedia, Advanced Data Protection\"), \"Years before the first backdoor mandate collapsed · US Clipper Chip\" (\"Wikipedia, Clipper chip\"), \"Cost to break into one locked iPhone without Apple’s help · FBI, 2016\" (\"Wikipedia, Apple–FBI encryption dispute\"), \"People with end-to-end encrypted messaging by default · WhatsApp and Signal\" (\"Wikipedia, Signal (software)\"), \"Years the EU has debated mandatory scanning of encrypted chats · Chat Control proposal\" (\"Wikipedia, Chat Control\"), \"Government spending on spyware in one country · Mexico and NSO Group’s Pegasus, to 2023\" (\"Wikipedia, Pegasus (spyware)\") and \"US federal spending on phone-unlocking forensic tools · Cellebrite, DHS/ICE\" (\"Wikipedia, Cellebrite\")."
+    }
+   ],
+   "notes": [
+    "Metadata Sufficiency Analyst steelman: \"The gap was never law — it’s underfunded forensics labs and slow provider cooperation.\" This is a real camp claim but it is the camp's secondary one. Its own banner, and the phrase the position is known by, is Swire and Ahmad's: not going dark, a golden age of surveillance. Consider something closer to \"Not going dark: cloud, location and metadata are a golden age for investigators.\" The resourcing point then belongs in the description, where it already sits.",
+    "Client-Side Scanning Proponent description calls the mechanism \"a perceptual-hash classifier.\" Hash matching against a fixed list and open-ended classification are different things, and the distinction is load-bearing for this camp's own defense — the draft itself relies on it in Q5 (\"matching against a court-supervised hash list, rather than open-ended content classification\"). A proponent would object to \"classifier\" as their opponents' word. Change to \"a perceptual-hash match\" or \"a perceptual-hash check.\"",
+    "Action \"EFF on encryption\" is described as \"the hub explaining why it opposes any mandated backdoor and how it fights exceptional-access proposals in courts and legislatures,\" but the URL resolves to EFF's \"Government Hacking and Subversion of Digital Security\" page, which is chiefly about state malware and vulnerability stockpiling — a different axis of this very topic, and the one the Targeted Hacking Investigator camp occupies. I checked eff.org/issues and eff.org/issues/security: EFF has no dedicated backdoors hub, so the URL is the nearest fit. Reword the description to what the page is, e.g. \"EFF's hub on how law enforcement and intelligence agencies undermine digital security, from crypto backdoors to state malware and stockpiled vulnerabilities.\"",
+    "Salt Typhoon is the strongest empirical point made against the mandaters and it appears only in the No-Backdoor Cryptographer's section, so the mandaters never answer it anywhere on the page. Q1's second paragraph answers the general form of the objection (code-signing keys, certificate authorities) but not the specific case. One clause in the mandater detail would close it, in-voice: that a 1994-era CALEA interface retrofitted onto carrier networks is precisely what a purpose-built, audited, judicially supervised mechanism would not look like.",
+    "Digital Rights Defender duplicates itself across the depth axis. The Australia template line appears in the description (\"a liberal democracy legislating exceptional access, as Australia did with its Assistance and Access Act 2018, hands illiberal governments a template to point to\") and again in the detail (\"a liberal democracy legislating exceptional access, they warned, would hand illiberal governments a template to point to\"), and the February 2025 UK order plus the August 2025 DNI statement are narrated at length in both. Its description also runs noticeably longer than the other five. The deep layer should carry what the normal layer cannot; hand the repeated material to one level and free the other for the camp's unused material (the IPT's April 2025 ruling that the case's existence could not be kept secret would be a strong addition).",
+    "Digital Rights Defender, in-voice: \"the order was contestable only because it leaked.\" Apple did appeal to the Investigatory Powers Tribunal, and the draft's own detail says so two paragraphs later. \"Publicly contestable\" is the accurate word and costs nothing.",
+    "representative_name for the No-Backdoor Cryptographer is \"Keys Under Doormats (2015)\", a paper with no named person. Across published topics the field holds a person or an organization, or a person paired with their work (\"Sue Donaldson & Will Kymlicka, Zoopolis (2011)\"). Suggest \"Hal Abelson et al., Keys Under Doormats (2015)\" or simply \"Bruce Schneier\", keeping the existing representative_note.",
+    "The questions mostly use generic actors — \"Critics\", \"Proponents\", \"Skeptics\", \"Advocates\", \"Mandaters\", \"This camp\". Published topics name the positions inside the question detail (\"The Schedule Minimalist and Medical Freedom camps counter…\"), which lets a reader tie each question back to a camp on the same page. Worth a pass once the paragraph order is fixed."
+   ],
+   "checks_run": [
+    {
+     "check": "Per-camp steelman endorsement test (would a real proponent sign their own section)",
+     "ran": true,
+     "method": "Read all six positions' steelman, description and detail against the camp's own canonical texts, which I retrieved directly: Keys Under Doormats (Oxford Academic, 15 authors confirmed), Levy & Robinson (Lawfare, 29 Nov 2018), the 4 Oct 2019 Zuckerberg letter (gov.uk PDF, pulled and text-extracted), Kaye A/HRC/29/32 (UN docs PDF, pulled and text-extracted), Bellovin/Blaze/Clark/Landau \"Lawful Hacking\" (NJTIP vol. 12), Don't Panic (Berkman landing page), PhotoDNA and Apple's CSAM design, NCMEC's own E2EE issue page. Five of six camps pass cleanly; the Metadata Sufficiency Analyst fails on its internal-debate paragraph (blocking item 2)."
+    },
+    {
+     "check": "Strawman / softened-side sweep across all six camps",
+     "ran": true,
+     "method": "Checked each camp for opponent-voiced framing, unanswered objections, and objections planted without the camp's reply. Calibrated against published convention by reading three full position sections from vaccine-mandates.json, which confirmed the house pattern (objection stated, then \"This camp answers that...\"). No camp is sourced from its opponents' characterizations. Five camps end their detail with their own strongest evidence; the Metadata Sufficiency Analyst's internal-debate paragraph undercuts itself without stating the tension."
+    },
+    {
+     "check": "Missing-camp search",
+     "ran": true,
+     "method": "WebSearch was unavailable (budget exhausted at first call), so I enumerated the debate's organized constituencies and tested each against the draft: cryptographers, law enforcement and executive-branch mandaters, digital rights and human rights, child-safety and client-side scanning, lawful-hacking advocates, metadata sufficiency, anti-commercial-spyware (folded into the rights camp), and mechanism variants such as key escrow, front doors and device-only access (folded into the mandaters as an internal split). Cross-checked against primary sources on who is actually organized in this fight: the Global Encryption Coalition's steering list and 400+/103-country membership, NCMEC's E2EE position page, Thorn/ECPAT/WeProtect in the EU CSAM Regulation, the Council's 26 Nov 2025 mandate and the state of trilogues, and the Berklett project membership. No unrepresented major position found; the spectrum runs -3 to +3 with no gap."
+    },
+    {
+     "check": "Load-bearing in-voice fact verification, all camps",
+     "ran": true,
+     "method": "WebFetch plus direct retrieval with curl and pdftotext where WebFetch was blocked or the PDF was unparsed. Verified: Salt Typhoon in CALEA request systems and the one-to-two-year dwell time; Keys Under Doormats authorship, journal, forward secrecy and key-concentration claims; the ghost protocol; the 70%/12-million NCMEC estimate verbatim from the gov.uk PDF; the Oct 2020 international statement's seven original signatories plus four later additions; EncroChat/Lille and Venetic's 3,100 arrests and 1,240 convictions at 9 Oct 2023; \"Lawful Hacking\" authorship and venue; Comey's $1.3M, Azimuth Security, and Hayden's quoted position; Playpen, the EDVA warrant, Rule 41 and the Eleventh Circuit's invalid-warrant/good-faith holding; Kaye's conclusions and the backdoors/weak-standards/key-escrow recommendation near-verbatim; Pegasus Project coordination and Citizen Lab peer review; Global Encryption Coalition membership and steering; PhotoDNA origin; Apple's 2021 announcement and Dec 2022 cancellation; Don't Panic authorship and core findings; the Australian Act's TAN/TCN structure and systemic-weakness debate. Every claim held."
+    },
+    {
+     "check": "Basics stat accuracy and internal arithmetic",
+     "ran": true,
+     "method": "Downloaded NCMEC's 2023, 2024 and 2025 reports-by-ESP PDFs and the 2024 and 2025 CyberTipline annual reports and extracted the figures directly: all per-provider numbers, ESP/public splits, the bundling explanation, the 29.2M incident figure and 7M/19% comparison, and the named 20%-decline platforms match to the digit. Recomputed the ranked series (71/52/43) from the underlying numbers. Also verified AES keyspace and 2^254.3, Signal's 20M/40M+/70M and 220M downloads, Cellebrite's $11M/$30–35M/$370K, and the Chat Control timeline. No wrong facts found; the defect is the citation ladder (blocking item 3)."
+    },
+    {
+     "check": "House-verdict, false-balance and neutrality scan",
+     "ran": true,
+     "method": "Read overview, all Basics notes and details, all seven question why/detail fields, and the crux for authorial tilt. Basics notes that touch contested ground attribute both readings (the NCMEC note and the Pegasus note both name each side's interpretation). Leans are asymmetric where the field is, and cut in both directions (Q3 60% warrant wins, Q7 70% victims, against Q1/Q2/Q4/Q5 favoring the security side). Crux names the axis and maps four camps to where they place the warrant plus two that reject the mechanism, without adjudicating. No house verdict, no forced balance."
+    },
+    {
+     "check": "Action link liveness, attribution and per-camp balance",
+     "ran": true,
+     "method": "Fetched each external action URL. Live and correctly attributed: the Oct 2020 gov.uk international statement (signatory count matches the description's 7+4), the April 2026 Global Encryption Coalition Bill C-22 letter (47 orgs, 37 individuals, matching \"dozens\"), NCMEC's E2EE issue page, Cellebrite's law-enforcement page, and R Street's Jim Baker \"Rethinking Encryption\" (author, argument and metadata framing all match). The EFF link is live but its description overstates the page's subject (note 3). Distribution across camps is balanced: one action each, two for the top-weighted camp, plus submit_view. Signal's donate page was not separately fetched; it is a stable well-known URL and the description makes no factual claim beyond Signal being a nonprofit E2EE messenger."
+    },
+    {
+     "check": "Parity calibration against published topics",
+     "ran": true,
+     "method": "Read positions, questions and Basics sourcing from vaccine-mandates.json, moral-status-of-animals.json, universal-basic-income.json and nuclear-energy.gold.json. Established three conventions the draft is measured against: steelman register (draft matches), detail paragraph order versus lean labels (13 published questions, mapping unbroken; draft breaks it on 4 of 7 — blocking item 1), and Basics source domains (0 Wikipedia across three topics; draft uses it for 7 of 10 — blocking item 3). Also confirmed the representative_name convention (person or organization) and that published topics name camps inside question details."
+    },
+    {
+     "check": "Renderer behavior for question lean labels",
+     "ran": true,
+     "method": "Read templates/topics/components/_question.html and _qlean.html to confirm the lean chips render immediately below the detail block with label_a first, which is what makes the paragraph-order inversion in blocking item 1 a reader-facing misattribution rather than a data-only inconsistency."
+    }
+   ],
+   "key": "steelman",
+   "stage": "substance"
+  },
+  {
+   "critic": "fact-source",
+   "pass": false,
+   "blocking": [
+    {
+     "issue": "Stat 3's source does not support a single one of its claims. `source_url` is https://en.wikipedia.org/wiki/Advanced_Data_Protection, which is a #REDIRECT to iCloud#Advanced Data Protection. I fetched the full iCloud wikitext (59,625 bytes): it contains zero occurrences of 'technical capability notice', 'Investigatory Powers', 'Gabbard', 'Tribunal' or 'February 2025'. That section documents only the 2022 launch of the ADP feature. Every load-bearing claim in this stat (the notice, its worldwide scope, the withdrawal, the appeal, the DNI statement) is therefore uncited.",
+     "fix": "Repoint source_url to https://en.wikipedia.org/wiki/Investigatory_Powers_Act_2016 and source_label to 'Wikipedia, Investigatory Powers Act 2016' — I verified that article's prose does document the notice ('Apple Inc had received a \"technical capability notice\" under the Act, ordering them to break the encryption on iCloud backups worldwide. The public disclosure of such orders would be illegal'). Better still, cite the BBC report directly: https://www.bbc.com/news/articles/cgj54eq4vejo ('Apple pulls data protection tool after UK government security row', 22 February 2025), which I fetched and which confirms the withdrawal, Apple's 'gravely disappointed' statement, and the Home Office's refusal to confirm or deny the notice.",
+     "quote": "Stat: “Countries where Apple withdrew full iCloud encryption rather than comply · UK order, 2025” — source_label “Wikipedia, Advanced Data Protection”, source_url “https://en.wikipedia.org/wiki/Advanced_Data_Protection”"
+    },
+    {
+     "issue": "Stat 3's detail asserts as fact something that a year of subsequent reporting has falsified. The record did not stop in August 2025: (a) Gabbard's 19 August 2025 statement was reported as the UK agreeing to drop the demand for US persons' data specifically (Guardian, 19 Aug 2025: 'UK has backed down on demand to access US Apple user data'); (b) the Home Office then served a fresh, narrowed notice aimed at UK users (Guardian, 1 Oct 2025: 'UK government resumes row with Apple by demanding access to British users' data'; Computer Weekly, 1 Oct 2025: 'Home Office issues new \"backdoor\" order over Apple encryption'); and (c) Apple filed a new legal challenge against that second order on 3 August 2026 (Guardian, FT, Computer Weekly, TechCrunch, MacRumors, all 3–4 Aug 2026). So 'what remains of the notice as it applies to UK users' HAS been publicly confirmed, three weeks before this draft's accessed date. The same gap sits in the Digital Rights Defender camp, whose description and detail both end at the August 2025 DNI statement.",
+     "fix": "Replace the final sentence of the detail with the verified sequence: 'In August 2025 the US Director of National Intelligence said the UK had agreed to drop the demand as it applied to Americans’ data. The Home Office then served a fresh notice narrowed to UK users’ data, reported in October 2025, and Apple filed a new challenge against it at the Investigatory Powers Tribunal in August 2026.' Make the parallel update in the Digital Rights Defender description (“In August 2025 the US Director of National Intelligence said the UK was dropping that demand, which proves the point rather than answering it”) and in its detail — the second, narrowed order and Apple’s August 2026 challenge are stronger evidence for that camp’s own argument than the version currently written.",
+     "quote": "Stat “Countries where Apple withdrew full iCloud encryption rather than comply · UK order, 2025”, detail: “In August 2025 the US Director of National Intelligence said publicly that the UK was dropping the demand; the scope of what was dropped, and what remains of the notice as it applies to UK users, has not been publicly confirmed.”"
+    },
+    {
+     "issue": "The $1.3 million figure was never confirmed by anyone; it was inferred from a remark by FBI Director Comey, and the government successfully fought in court to keep the real number secret. The cited Wikipedia article says only that Comey was 'later indicating the tool cost more than $1.3 million', citing the NYT headline 'F.B.I. Director Suggests Bill for iPhone Hacking Topped $1.3 Million'. The 2015 San Bernardino attack article records that on 30 September 2017 a federal court granted summary judgment against AP/Vice/Gannett, ruling that the vendor and 'the amount paid to it by the FBI were national security secrets' exempt from FOIA. 'Confirmed by officials' is the opposite of what happened. The draft also contradicts itself: the Targeted Hacking Investigator detail gets this right ('at a cost then-director James Comey put at more than $1.3 million').",
+     "fix": "Soften the note and detail to the attribution the source supports. Note: 'the FBI turned to an outside vendor instead, at a price then-director James Comey indicated was more than $1.3 million.' Detail: 'The government dropped its case in March 2016 after a third party demonstrated an unlocking method. Comey publicly suggested the tool cost more than $1.3 million; the actual figure has never been disclosed, and in 2017 a federal court held that both the vendor’s identity and the amount paid were exempt from FOIA.'",
+     "quote": "Stat “Cost to break into one locked iPhone without Apple’s help · FBI, 2016”, detail: “later confirmed by officials to have cost over $1.3 million”"
+    },
+    {
+     "issue": "The Uganda spyware figure is not in the cited source and I could not verify it anywhere. The cited page (Wikipedia, Pegasus (spyware)) has no Uganda section at all and no dollar figure near any Uganda mention — I checked the full wikitext; its Uganda references are only to hacked US State Department phones. The NSO Group article likewise has no Uganda price (it does carry Ghana c.2016 and a $20 million Mexico contract in 2012). The only apparent origin is a paywalled Financial Times story of 20 December 2021 ('The secret Uganda deal that has brought NSO to the brink of collapse'), which returned 403 and which I could not read. The figure is load-bearing twice: in the detail and as a bar in the ranked series.",
+     "fix": "Cut Uganda from both places. Delete the clause and delete the series row {label: 'Uganda', value: '$10–20M', pct: 25}, rescaling the remaining bars (Mexico $60M+ at 100, Estonia $30M at 50). If a third bar is wanted, use a figure the same article does support: Mexico's 2012 contract with NSO of $20 million (Wikipedia, NSO Group). The Mexico $60M+ (as of 2023), Estonia $30M down payment (2018) and Citizen Lab's 45 countries between 2016 and 2018 all check out as written.",
+     "quote": "Stat “Government spending on spyware in one country · Mexico and NSO Group’s Pegasus, to 2023”, detail: “Other reported government deals include roughly $10 to 20 million from Uganda (2019)” — and the series row “Uganda / $10–20M”"
+    },
+    {
+     "issue": "The Australian data-retention cost figure is wrong in both magnitude and kind. I fetched the Wikipedia article on the Telecommunications (Interception and Access) Amendment (Data Retention) Act 2015: the costing on record is PwC's estimate, reported by the PJCIS, of 'upfront capital costs of implementing data retention to be between approximately $188.8 million and $319.1 million', against which Treasurer Joe Hockey committed $131 million on 12 May 2015. Those are one-off capital figures, not a recurring annual cost; nothing in the record supports 'over AU$400 million a year'. A stock-vs-flow error of this kind is exactly the misreading that inflates a number by an order of magnitude over a decade.",
+     "fix": "Replace with the sourced figure or drop the parenthetical entirely: '…and countries such as Australia (from 2015, at an estimated AU$189 to 319 million in upfront capital costs, of which the government met AU$131 million) and Russia have kept mandatory retention laws of their own.'",
+     "quote": "Stat “Years the EU’s mandatory metadata retention law survived · Data Retention Directive”, detail: “countries such as Australia (from 2015, at an estimated cost of over AU$400 million a year) and Russia have kept mandatory retention laws of their own”"
+    },
+    {
+     "issue": "The Global Encryption Coalition membership figure contradicts the coalition's own current statement of it. globalencryption.org's homepage states the GEC 'was founded in 2020 by the Center for Democracy & Technology, Global Partners Digital and the Internet Society and now has over 350 members.' The draft claims 'more than 400'. The '103 countries' figure appears nowhere on the site — the members page publishes no country count. (The steering-committee list is correct: I confirmed the members page names exactly CDT, Internet Freedom Foundation, Global Partners Digital, Mozilla and Internet Society.)",
+     "fix": "Change to 'the Global Encryption Coalition’s more than 350 members, steered by the Center for Democracy & Technology, Global Partners Digital, Mozilla, the Internet Freedom Foundation and the Internet Society'. Drop '103 countries' unless the coalition publishes it.",
+     "quote": "Position “Digital Rights Defender”, detail: “Some organizations, including the Global Encryption Coalition’s more than 400 members across 103 countries, steered by the Center for Democracy & Technology, Global Partners Digital, Mozilla, the Internet Freedom Foundation and the Internet Society”"
+    },
+    {
+     "issue": "Stat 6's headline number is a population mismatch against its own source. The cited page (Wikipedia, Signal (software)) supports 'more than a billion people' only as an August 2018 aggregate across four apps — 'the Signal Protocol has been implemented into WhatsApp, Facebook Messenger, Skype, and Google Allo' — and the same sentence immediately notes that in Allo, Skype and Messenger 'conversations are not encrypted with the Signal Protocol by default'. The draft attributes that aggregate to WhatsApp alone and adds 'by default', which the source does not say. Separately, the '~20M / 2020' bar in the series has no support on that page either: the only trace of a 20-million-in-2020 figure there is inside an HTML-commented-out chart that does not render and carries no citation. (The Jan 2025 ~70M MAU, 220M+ downloads and Jan 2022 40M+ figures all verify cleanly.)",
+     "fix": "Source the WhatsApp half to WhatsApp. Wikipedia's WhatsApp article states 'As of May 2025, the service had 3 billion monthly active users' — so either raise the value to '>3 billion people' with source_url https://en.wikipedia.org/wiki/WhatsApp, or keep '>1 billion' as a deliberate floor and cite the same page. Then either drop the '2020 / ~20M' series row (leaving 2022 and 2025) or cite a page that actually carries it.",
+     "quote": "Stat “People with end-to-end encrypted messaging by default · WhatsApp and Signal”, note: “More than a billion people have their messages end-to-end encrypted by default through WhatsApp’s implementation of the Signal Protocol”"
+    },
+    {
+     "issue": "The Salt Typhoon claim misstates the intrusion path, and it is this camp's flagship piece of operational evidence. Wikipedia's 2024 global telecommunications hack article records that the attackers 'exploited zero-day vulnerability in Versa Director (Versa Networks) and vulnerabilities in unpatched Fortinet and Cisco network devices and routers', plus 'a high-level network management account that was not protected by multi-factor authentication'; the lawful-intercept systems were among what they subsequently reached — 'The hackers were also able to access wiretapping systems used to conduct court-authorized wiretapping' — not the way in. The article also attributes the 'one to two years' estimate to the campaign as a whole ('the campaign was likely underway for one to two years prior to its discovery'), not to time spent inside the wiretap systems, which is what the description asserts.",
+     "fix": "Reword both mentions to what the record supports, which loses the camp nothing. Description: 'US officials assessed that state-linked hackers had been inside US carriers’ networks for one to two years before discovery, and had reached the systems built to serve court-authorized wiretaps.' Detail: change 'sat inside AT&T, Verizon and other US carriers by way of the CALEA systems installed decades earlier' to 'sat inside AT&T, Verizon and other US carriers for what officials assessed was one to two years, reaching the lawful-intercept systems installed decades earlier'.",
+     "quote": "Position “No-Backdoor Cryptographer”, detail: “Salt Typhoon, the Chinese state-linked intrusion disclosed in 2024, sat inside AT&T, Verizon and other US carriers by way of the CALEA systems installed decades earlier specifically to give law enforcement lawful-intercept access”"
+    }
+   ],
+   "notes": [
+    "Sourcing density: 7 of 10 Basics stats cite Wikipedia. No published topic in the corpus goes that far — the heaviest is frontier-ai-regulation at 5 of 12 source_urls, and 11 of 16 use none at all. The facts held up under checking, but several have obvious primaries a refresh could swap in: Clipper → Blaze's 1994 paper (mattblaze.org/papers/eesproto.pdf, already the Wikipedia citation); AES → the Bogdanov/Khovratovich/Rechberger ASIACRYPT 2011 paper; Chat Control → the Council's own November 2025 mandate.",
+    "The Chat Control source article (Wikipedia, Regulation to Prevent and Combat Child Sexual Abuse, which 'Chat Control' correctly redirects to) carries a live {{AI-generated|certain=y}} maintenance banner dated July 2026. Every date in the stat checks out against that article's own document-level timeline (Danish presidency dropping mandatory detection orders 30 October 2025 with text 14092/25, Coreper 19 November, Council position 26 November, trilogues from December 2025, 'detection remaining unresolved as of June 2026'), so the claims stand — but I could not corroborate against consilium.europa.eu, which returns 403 to non-browser clients. A primary Council citation would be sturdier here than an AI-flagged article.",
+    "The CJEU line is introduced as 'in the court's words' but is not quite the court's words. Press release 54/14 reads: 'a wide-ranging and particularly serious interference with the fundamental rights to respect for private life and to the protection of personal data'. The draft drops 'fundamental' and 'respect for'. Either restore the wording or change the frame to 'which the court called'.",
+    "Stat 5's Los Angeles Times line is true — I verified it, but in a different article from the one cited: Wikipedia's 2015 San Bernardino attack page carries 'In March 2018, the Los Angeles Times reported that \"the FBI eventually found that Farook's phone had information only about work and revealed nothing about the plot.\"' The cited Apple–FBI encryption dispute page does not contain it. Worth adding as a second source_url if the field allows, and note the draft's 'Officials told the Los Angeles Times' is a slightly stronger frame than 'the LA Times reported that the FBI eventually found'.",
+    "Stat 1's source_url (missingkids.org/cybertiplinedata) now renders 2025 data only; the 2023 and 2024 figures live in archive PDFs linked from that page. The source_label already says '2023 to 2025', but a reader clicking through will not see the year-over-year comparison on the landing page."
+   ],
+   "checks_run": [
+    {
+     "check": "NCMEC CyberTipline figures (every number in stat 1)",
+     "ran": true,
+     "method": "Downloaded and text-extracted NCMEC's own PDFs: 2023-reports-by-esp.pdf, 2024-reports-by-esp.pdf, 2025-reports-by-esp.pdf and 2024-cybertipline-report.pdf. All verified exactly: 2023 total 36.2M / ESP 35,944,826; 2024 total 20.5M / ESP 20,348,306 / public 164,497; 2025 total 21.3M / ESP 21,181,300. Facebook 17,838,422 → 8,590,357 → 4,907,710; Instagram 11,430,007 → 3,320,008 → 3,673,045; WhatsApp 1,389,618 → 1,851,086 → 2,355,302. Drop percentages recompute correctly (43%, 52%, 71%). The 2024 report confirms the bundling feature, the 29.2M incident figure and '7 million fewer incidents' (19% of 36.2M), the Google/X/Discord/Microsoft/Synchronoss '20% fewer reports', the Meta-and-Google terms-of-service removals, E2EE as a named factor, and the 'no legal requirements regarding proactive efforts' caveat."
+    },
+    {
+     "check": "AES-256 attack complexity",
+     "ran": true,
+     "method": "Fetched the Advanced Encryption Standard wikitext. Confirms biclique attack (Bogdanov/Khovratovich/Rechberger, ASIACRYPT 2011), 'faster than brute force by a factor of about four', 2^254.6 for AES-256, 'further improved to ... 2^254.3 for AES-256 by Biaoshuai Tao and Hong [Chen]'. Draft's 2^254.3, 2^256 keyspace and 'only a few times faster' all correct."
+    },
+    {
+     "check": "Apple / UK technical capability notice — claims and source support",
+     "ran": true,
+     "method": "Fetched the Advanced Data Protection redirect target (iCloud wikitext, 59,625 bytes — no supporting text found), the Investigatory Powers Act 2016 wikitext (does document the notice), the BBC article of 22 Feb 2025 (confirms ADP withdrawal from 1500GMT Friday 21 Feb), and Google News RSS for the aftermath (BBC/Reuters 14 Mar 2025 secret IPT hearing; BBC 7 Apr 2025 secrecy refused; Reuters/Guardian/WaPo 19 Aug 2025 DNI statement; Guardian/Computer Weekly 1 Oct 2025 new UK-scoped order; Guardian/FT/TechCrunch/Computer Weekly 3–4 Aug 2026 Apple's fresh challenge). Two blocking defects found."
+    },
+    {
+     "check": "Clipper Chip",
+     "ran": true,
+     "method": "Fetched Clipper chip wikitext. Confirms 1993 introduction, 'entirely defunct by 1996', the 128-bit LEAF with a 16-bit hash brute-forceable to disable escrow (Blaze, August 1994), the 1995 Frankel–Yung attack swapping one device's LEAF onto another's traffic, and 'the only significant purchaser of phones with the chip was the United States Department of Justice'."
+    },
+    {
+     "check": "FBI iPhone unlock cost",
+     "ran": true,
+     "method": "Fetched Apple–FBI encryption dispute and 2015 San Bernardino attack wikitexts. Comey 'indicat[ed] the tool cost more than $1.3 million'; NYT headline says 'Suggests'. The San Bernardino article records the 30 Sept 2017 summary judgment holding the vendor and amount FOIA-exempt. Azimuth Security (WaPo, April 2021, Dowd and Wang) and the March 2018 LA Times finding both confirmed. One blocking defect."
+    },
+    {
+     "check": "Signal and WhatsApp user figures",
+     "ran": true,
+     "method": "Fetched Signal (software) and WhatsApp wikitexts. ~70M MAU Jan 2025, 220M+ downloads, 40M+ Jan 2022 (BBC) all confirmed; the '>1 billion' line is an Aug-2018 four-app aggregate that explicitly excludes default encryption for three of them; the 20M-in-2020 point exists only in a commented-out chart. WhatsApp: 3 billion MAU as of May 2025. One blocking defect."
+    },
+    {
+     "check": "EU Chat Control timeline and why_now",
+     "ran": true,
+     "method": "Fetched the Regulation to Prevent and Combat Child Sexual Abuse wikitext (target of the Chat Control redirect). Confirms the 2022 Commission proposal covering E2EE services, Parliament's Nov 2023 position excluding E2EE, Danish presidency removing mandatory detection orders 30 Oct 2025, the Council's 26 Nov 2025 position with voluntary-only detection, trilogues from Dec 2025, 'detection remaining unresolved as of June 2026', and a 9 July 2026 second reading amending to exclude E2EE services — all consistent with the stat and the why_now. Attempted corroboration at consilium.europa.eu returned 403."
+    },
+    {
+     "check": "Pegasus / NSO spending figures",
+     "ran": true,
+     "method": "Fetched Pegasus (spyware) and NSO Group wikitexts. Mexico >$60M as of 2023 and Estonia's $30M down payment (2018) confirmed verbatim; Citizen Lab's 45 countries between 2016 and 2018 confirmed. Uganda: no section, no figure, in either article; the apparent origin (FT, 20 Dec 2021) returns 403. One blocking defect."
+    },
+    {
+     "check": "Data Retention Directive and Australian retention cost",
+     "ran": true,
+     "method": "Downloaded and text-extracted CJEU press release 54/14 from the cited curia.europa.eu URL: 8 April 2014, Joined Cases C-293/12 and C-594/12, 'wide-ranging and particularly serious interference with the fundamental rights to respect for private life and to the protection of personal data' — verified. Fetched the Australian Data Retention Act wikitext for the cost claim: PwC upfront capital costs AU$188.8–319.1M, AU$131M government contribution, no annual figure. One blocking defect."
+    },
+    {
+     "check": "Cellebrite contract figures",
+     "ran": true,
+     "method": "Fetched Cellebrite wikitext. Confirms the September 2025 DHS renewal of an $11 million contract, the 24 June 2019 ICE contract 'for between $30 and $35 million', seven UK government agencies collectively spending $370,000 in 2024, Marlinspike's 2021 findings including FFmpeg DLLs from 2012 missing 100+ updates, and that this 'prompted Cellebrite ... to remove full support for analyzing iPhones'."
+    },
+    {
+     "check": "Position-detail spot-checks",
+     "ran": true,
+     "method": "Salt Typhoon: fetched Salt Typhoon and 2024 global telecommunications hack wikitexts (one blocking defect on the intrusion path; 'one to two years', AT&T/Verizon and access to court-authorized wiretapping systems all confirmed). 2019 Zuckerberg letter: downloaded the signed PDF from gov.uk — dated 4 October 2019, 'NCMEC estimates that 70% of Facebook's reporting – 12 million reports', signed by Patel, Barr, McAleenan and Dutton. EncroChat: fetched wikitext — 'By 9 October 2023, Operation Venetic had led to more than 3,100 arrests, 1,240 convictions'. GCHQ ghost: fetched the Lawfare piece — Levy and Robinson, 29 November 2018 (one blocking defect elsewhere on GEC membership). Keys Under Doormats: OUP returned 403 (Cloudflare), so verified via MIT DSpace record MIT-CSAIL-TR-2015-026, 6 July 2015, author list matching the draft's."
+    },
+    {
+     "check": "Every action URL: liveness and content match",
+     "ran": true,
+     "method": "All eight URLs return 200 under redirect. Fetched and read the page text for each substantive one: the Global Encryption Coalition's Bill C-22 letter (28 April 2026, urging withdrawal of Bill C-22 Part 2, the Supporting Authorized Access to Information Act) matches its description; gov.uk's international statement confirms the draft's 'US, UK and five other governments, since joined by four more' exactly (7 original signatories on 11 October 2020, updated 16 January 2023 to add Singapore, Georgia, Ecuador and Jordan); NCMEC's end-to-end encryption page and R Street's 'Rethinking Encryption' by Jim Baker (22 Oct 2019) both match; EFF's 'Government Hacking and Subversion of Digital Security' page does open on weakening encryption 'through law, policy, or informal pressure', a fair if broad match."
+    },
+    {
+     "check": "Durability review of the Basics section",
+     "ran": true,
+     "method": "Read all ten stats against the durable/perishable test. Six are structural or historical and will not age (AES, Clipper, San Bernardino, Digital Rights Ireland, and the two spend figures). The four genuinely perishable ones are each dated and isolated in their own stat rather than smeared across the section: NCMEC 2023–2025, Signal Jan 2025, Chat Control 'no final text by mid-2026', Cellebrite Sept 2025. The one real durability failure is stat 3, which is dated but a year out of date — filed as blocking above."
+    },
+    {
+     "check": "Corpus calibration on source quality",
+     "ran": true,
+     "method": "Counted wikipedia.org occurrences against source_url counts across all 16 files in research/topics/. Five published topics cite Wikipedia at all; the maximum share is 5 of 12 in frontier-ai-regulation.json. This draft's 7 of 10 Basics stats exceeds every published topic, so it is logged as a note rather than treated as outside house practice."
+    },
+    {
+     "check": "WebSearch spot-checks",
+     "ran": false,
+     "method": "The session's WebSearch budget was exhausted (1500 of 1500) before my first query returned. I substituted direct source fetching for every check: publisher PDFs (NCMEC, gov.uk, curia.europa.eu, MIT DSpace), Wikipedia raw wikitext via the action=raw API, Wikipedia's search API, publisher pages via curl, and Google News RSS for date-and-headline confirmation of the Apple/UK sequence. Three sources refused non-browser clients (Oxford Academic 403, consilium.europa.eu 403, FT 403); in each case I reached the claim through an alternative authority, except the Uganda Pegasus figure, which is filed as blocking."
+    }
+   ],
+   "key": "fact-source",
+   "stage": "substance"
+  },
+  {
+   "critic": "claim-ledger",
+   "key": "claim-ledger",
+   "pass": true,
+   "checks_run": [
+    {
+     "check": "per-claim verification",
+     "ran": true,
+     "method": "70/70 claims returned a verdict"
+    }
+   ],
+   "notes": [],
+   "blocking": [],
+   "stage": "substance"
+  },
+  {
+   "critic": "orchestrator-residual-closure",
+   "key": "orchestrator",
+   "pass": true,
+   "blocking": [],
+   "notes": [
+    "Post-gate closure (2026-08-28): all 11 blockings applied per their exact prescriptions — question detail paragraphs re-ordered to the house lean_label_a convention (Q4–Q7, with Q7’s camps named); the Metadata Sufficiency internal split rewritten to the camp’s genuine fault line (double-spent Hayden quote cut); the falsified UK/Apple timeline updated through Apple’s August 2026 challenge in the stat and the Digital Rights Defender card; the $1.3M figure re-attributed to Comey’s indication with the FOIA secrecy ruling; Uganda spyware figure cut (unverifiable) and the series rescaled with the sourced 2012 Mexico contract; the Australian retention cost corrected from a fabricated per-year figure to the sourced one-off capital range; GEC membership corrected to the coalition’s own 350+; the WhatsApp/Signal stat re-scoped to sourced populations; Salt Typhoon’s intrusion path restated to what the record supports.",
+    "Citation-tier upgrade (steelman finding): 4 of the 8 Wikipedia-cited stats repointed to verified primaries (IACR biclique paper, Blaze ACM CCS 1994, BBC 2025-02-22, EP Legislative Observatory) — every new URL curl-verified 200. The remaining 4 (Comey $1.3M, Pegasus/Mexico, Cellebrite spending, WhatsApp users) keep tertiary cites because the candidate primaries are paywalled/bot-blocked (NYT, consilium 403) or do not carry the specific figure; content was verified correct against the cited pages. Listed for stage-5.",
+    "Shape note cleared: the NCMEC stat note compressed under 400 chars (bundling caveat lives in the detail)."
+   ],
+   "checks_run": [
+    {
+     "check": "all 11 blockings applied; URLs curl-verified",
+     "ran": true
+    }
+   ],
+   "stage": "substance"
+  },
+  {
+   "blocking": [
+    {
+     "issue": "Chat Control stat: the compact note tells the reader the live EU fight is over scanning encrypted messages (\"encrypted ones included\"), but the draft's own detail and why_now say the Council's November 2025 position excluded end-to-end encrypted communications from mandatory detection and that both institutions have agreed a mandate will not reach E2EE services. An above-fold reader leaves believing the EU is currently on the verge of mandating scanning inside encrypted chats; the correcting fact is visible only behind \"Go deeper\", and the overview contradicts it.",
+     "fix": "Rewrite the note on the stat labeled \"Years the EU has debated mandatory scanning of encrypted chats · Chat Control proposal\" so the carve-out rides in the compact layer, using only facts already in its own detail — e.g. \"The EU has argued since 2022 over whether platforms must scan messages for child abuse material. The Council's November 2025 position dropped encrypted services from any mandate; by mid-2026 there was still no final text.\" Keep value/unit/source untouched.",
+     "quote": "stat \"Years the EU has debated mandatory scanning of encrypted chats · Chat Control proposal\" — note: \"The EU has argued since 2022 over whether platforms must scan messages, encrypted ones included; by mid-2026 there was still no final text.\""
+    },
+    {
+     "issue": "NCMEC 43% stat (the lead item, first tile above the fold): the compact note pins the fall to Meta's encryption rollout (\"as Meta encrypted Messenger by default\"), which a reader reads causally. The detail carries NCMEC's own list of other contributing causes — Google, X, Discord, Microsoft and Synchronoss filed 20 percent fewer reports; Meta and Google stopped forwarding images that violated terms of service but not the legal definition — plus the 2025 recovery to 21.3 million. That multi-cause caveat is load-bearing on the topic's single most contested empirical claim (Q2 is about exactly this kind of extrapolation), and it is invisible above the fold.",
+     "fix": "Fold NCMEC's other named causes into the note for the stat labeled \"Drop in child-abuse-material reports to the US clearinghouse · NCMEC, 2023 to 2024\" — e.g. \"Reports fell from 36.2 million in 2023 to 20.5 million in 2024 as Meta encrypted Messenger by default. NCMEC also names reporting changes at other platforms; counted as incidents, the drop is about 19 percent.\" Facts already in the detail; no number, source or item changes.",
+     "quote": "stat \"Drop in child-abuse-material reports to the US clearinghouse · NCMEC, 2023 to 2024\" — note: \"Reports fell from 36.2 million in 2023 to 20.5 million in 2024, as Meta encrypted Messenger by default; counted as incidents, the drop is about 19 percent.\""
+    },
+    {
+     "issue": "Label/denominator mismatch: the label promises aggregate federal spending on phone-unlocking tools, but the value ($11 million) is one renewed DHS contract, not a cumulative total — and the stat's own ranked series shows a larger ICE 2019 figure of $30–35M sitting above the highlighted headline number, so the label reads as a total that its own chart contradicts.",
+     "fix": "Retitle the label to name what the value actually measures — e.g. \"Renewed federal contract for phone-unlocking forensic tools · Cellebrite, DHS, 2025\" — leaving value, note, series and sources unchanged.",
+     "quote": "stat label: \"US federal spending on phone-unlocking forensic tools · Cellebrite, DHS/ICE\" (value \"$11\" / \" million\")"
+    }
+   ],
+   "checks_run": [
+    {
+     "check": "SELECTION: are the tier-1 (▲) sets the most decision-relevant items, with tier boundaries at genuine importance drop-offs?",
+     "ran": true,
+     "method": "Walked the fold preview per section against the six camps and the crux. Basics T1 (report drop, AES unbroken, Apple/UK, Clipper, FBI unlock cost, Chat Control) covers every live axis: the child-safety evidence, why the cipher is not the fight, the current mandate test case, the historical precedent, the cost of the hacking alternative, and the pending legislation — the T1/T2 break is a genuine drop-off. Questions T1 covers feasibility, magnitude of the gap, the values fork, and international spread. Positions: all six above the fold, prevalence-ordered. No marginal item found promoted above the fold; two arguably-central items sit just below (see notes) but neither rises to a blocking misplacement."
+    },
+    {
+     "check": "COMPACT SELF-SUFFICIENCY: reading only ▲ items, labels/values/notes, question texts+why, position names+steelmen, crux lead+subtitle — is the picture correct and sufficient? Flag load-bearing facts or caveats visible only in 'detail' or below the fold, and compact lines that mislead without their expansion.",
+     "ran": true,
+     "method": "Read every above-fold compact field in isolation, then diffed each against its own detail field and the overview to find corrections that appear only in the expanded layer. Two above-fold notes were found to be corrected, not merely deepened, by their details (NCMEC causality; Chat Control encryption carve-out) — both blocking. Checked the crux lead/subtitle camp arithmetic (four placements plus two mechanism-is-the-harm camps = the six positions) and every steelman for standalone comprehensibility; those hold."
+    },
+    {
+     "check": "LABEL SCOPE: does each stat's label state the correct denominator/scope for its value?",
+     "ran": true,
+     "method": "Checked all ten stats label-against-value: 43% = drop in all CyberTipline reports (matches); 0 attacks on AES-256 (matches); 1 country for Apple's withdrawal (matches); 3 years 1993→1996 for Clipper (matches); $1.3M attributed to Comey in the note (attribution carried in compact); 4 years 2022→2026 (matches); 3 billion+ counts monthly users across two apps, labeled \"People\" (minor, below fold — noted); 8 years for the Data Retention Directive (matches); $60M+ Mexico/Pegasus (matches); Cellebrite label implies aggregate federal spending while the value is one contract (blocking)."
+    }
+   ],
+   "critic": "compact-self-sufficiency (+ selection)",
+   "notes": [
+    "SELECTION, non-blocking: \"People with end-to-end encrypted messaging by default · WhatsApp and Signal\" (3 billion+) sits at T2, below the fold. It is the scale stat the whole debate is designed around — its own detail says so (\"the population any exceptional-access, scanning, or hacking regime would have to be designed around\"). The T1 six are all strong so this is not a misplacement, but if any swap is made, this is the strongest promotion candidate (the FBI $1.3M unlock cost is partly duplicated by the Targeted Hacking steelman and the Cellebrite/Pegasus tiles).",
+    "SELECTION, non-blocking: Q5 (\"Can on-device scanning be held to one category of illegal content…\") is at T2 while the Client-Side Scanning Proponent is a tier-1 above-fold camp and the EU scanning fight is the topic's why_now. Its central objection is therefore below the fold. Defensible as-is, since Q4's spread-to-authoritarians question serves the higher-prevalence Digital Rights camp, but worth a look if tiers get revisited.",
+    "Client-Side Scanning Proponent description: \"It is the detection layer already running today\" reads, above the fold, as if client-side scanning is deployed — while the detail records that Apple paused the rollout in 2021 and cancelled the iCloud matching component in December 2022. It is in-camp voice and the running system (server-side perceptual hashing) is a fair referent, so not blocking, but \"the same detection layer moved earlier in the pipeline\" would be truer to the record without weakening the steelman.",
+    "Apple/UK stat: the compact note leaves the worldwide February 2025 demand standing, while the detail records the DNI's August 2025 statement that the UK dropped it for Americans' data, the narrowed October 2025 notice, and Apple's fresh August 2026 challenge. The label is dated \"UK order, 2025\" so the compact line is not wrong, but a reader above the fold has a stale picture of a still-live fight.",
+    "\"Years before the first backdoor mandate collapsed · US Clipper Chip\": the label calls Clipper a mandate; the note more accurately calls it \"the first push to mandate.\" Clipper was a government-pushed standard that was never legally mandated. Borderline fact territory rather than presentation, flagged for the human rather than fixed here.",
+    "why_now is a single 60-word sentence carrying four clauses (trilogue state, the voluntary-vs-mandatory split, the E2EE carve-out, the open question). Compact register asks for one idea per sentence; splitting it in two would land the same content much harder. Prose critic's territory, listed here only because it is the first thing an above-fold reader meets."
+   ],
+   "pass": false,
+   "stage": "presentation"
+  },
+  {
+   "blocking": [
+    {
+     "issue": "Bare EU-insider jargon plus a 62-word three-clause sentence in the always-visible overview. \"trilogue\" is a Brussels term of art with no gloss anywhere in the draft, and \"both institutions\" is unresolvable for the reader (three institutions are implied by the process, two are referenced). The sentence also asks the reader to hold \"still split on whether detection becomes mandatory\" and \"already agreed it will not reach end-to-end encrypted services\" simultaneously, in one breath, with no sentence break. This is the topic's front-door line and it currently reads at policy-tracker register, not general-reader register.",
+     "fix": "Rewrite overview.why_now as two sentences, naming the negotiators instead of the term of art and splitting the two ideas. Facts are unchanged, e.g.: \"EU negotiators from the Parliament, Council and Commission have settled most of the child sexual abuse regulation, but remain split on whether platform detection stays voluntary or becomes mandatory. Both sides have already agreed any mandate would stop short of end-to-end encrypted services, which leaves open how far detection can reach once encryption is carved out.\"",
+     "quote": "overview.why_now — \"EU trilogue negotiators have settled most of the child sexual abuse regulation but remain split on whether platform detection stays voluntary or becomes mandatory through targeted detection orders, a fight both institutions have already agreed will not reach end-to-end encrypted services, leaving open how far a detection mandate can go once encryption is carved out.\""
+    },
+    {
+     "issue": "Bare, undefined acronym in the always-visible layer of the lead tier-1 stat. The ranked-viz series labels render on the card next to the note, and \"ESPs\" is expanded only inside the opt-in detail (\"Electronic service providers accounted for 35.9 million...\"). A reader scanning \"Instagram 71% / Facebook 52% / All ESPs 43%\" hits an acronym with no referent — and it is the highlighted row, the one carrying the headline 43%.",
+     "fix": "In the first stat (\"Drop in child-abuse-material reports to the US clearinghouse\"), reword the third series label from \"All ESPs\" to \"All platforms\" (or \"All providers\"). Series label wording is presentation, not a locked fact — value 43%, pct 61 and highlight stay exactly as they are.",
+     "quote": "basics.stats[0].series[2].label — \"All ESPs\""
+    }
+   ],
+   "checks_run": [
+    {
+     "check": "Jargon / bare acronyms / non-retainable numbers in every compact field (stat label, value, unit, note, visible series labels; question text and why; position name and steelman; crux lead and subtitle; action titles; overview summary, scope, why_now)",
+     "ran": true,
+     "method": "Read each compact string in isolation, as a reader who has not opened any detail, and marked every term of art, acronym, proper noun and counting distinction that is not glossed within that same always-visible string or its immediate neighbor."
+    },
+    {
+     "check": "Every 'detail' field (and crux empirical/values, and the deep-reveal items) genuinely ADDS mechanism, precision or terms of art over the compact line above it rather than restating it",
+     "ran": true,
+     "method": "Paired each detail with its own note/why/steelman/subtitle, listed what new mechanism, figure, date, method caveat or named source the detail carries that the compact line does not, and flagged any detail whose additions were only restatement or framing."
+    }
+   ],
+   "critic": "reading-level-fit",
+   "notes": [
+    "Compact register is otherwise strong: every heavy term in an always-visible field carries its own gloss in the same breath — \"AES-256 · the cipher behind most secure messaging\", \"NCMEC\" preceded by \"the US clearinghouse\", \"the 1993 Clipper Chip, the first push to mandate a government key in every encryption device\", \"call, email, and location metadata\". That is the pattern to keep.",
+    "basics.stats[0].note: \"counted as incidents, the drop is about 19 percent\" introduces a reports-vs-incidents counting distinction that is never explained, in compact or in the detail. Not blocking (the headline 43% stands on its own), but a reader cannot tell what an \"incident\" is versus a report. Consider \"counted as distinct incidents rather than individual reports, the drop is about 19 percent\", or move the clause into the detail where the ESP breakdown already lives.",
+    "actions[0].title \"EFF on encryption\" is a bare acronym in a compact field. It is rescued immediately by its own description (\"The Electronic Frontier Foundation's hub...\"), which is why this is not blocking, but \"EFF on encryption\" alone would be opaque if titles ever render without descriptions.",
+    "Position descriptions sit between the two registers and carry the draft's remaining unglossed terms: \"key escrow, weaker forward secrecy, or new code paths\" and \"Salt Typhoon\" (No-Backdoor Cryptographer), \"EncroChat's infrastructure\" (Targeted Hacking Investigator, never identified as an encrypted phone network anywhere in the draft), \"Berkman Klein's 2016 Don't Panic report\" and \"no single choke point\" (Metadata Sufficiency Analyst). Each is partly self-glossing by the clause around it, and the details carry the real explanation, so none blocks — but EncroChat is the weakest of the four, since neither the description nor the detail says what it was.",
+    "Steelman 5, \"One warrant, one endpoint, zero backdoors in everyone else's encryption\": \"endpoint\" is mild security jargon. The parallel construction makes it read as \"one device\" for most readers, so it passes, but \"one phone\" would be free of the risk with no loss of punch.",
+    "Thinnest detail in the draft is basics.stats[6] (WhatsApp/Signal user base): its first clause re-states the note's \"roughly 70 million\", and its last sentence is framing rather than substance. It clears the bar on the 2020/2022 trajectory and the 220 million cumulative downloads, but it is the one detail with little headroom — a line on how monthly-active figures are counted, or on WhatsApp's 3 billion, would strengthen it.",
+    "questions[1] ('How much serious crime actually goes unsolved...'): the detail's closing sentence, \"Because no public agency publishes a rigorous, audited tally of cases lost specifically to encryption versus cases solved by other means\", restates the why nearly word for word. The two paragraphs above it add plenty, so this is not a restatement failure — but that closing clause is the one sentence in the field doing no new work.",
+    "basics.stats[4] (FBI/$1.3 million): the detail repeats \"Comey publicly suggested the tool cost more than $1.3 million\", already in the note. It earns its place on the 2017 FOIA exemption and the case timeline, so it passes; dropping the repeated attribution would make the added material land faster.",
+    "Crux depth fields do their job: 'empirical' names four distinct testable disputes that the lead and subtitle only gesture at, and 'values' introduces the residual-risk framing rather than re-describing the four placements. No restatement there."
+   ],
+   "pass": false,
+   "stage": "presentation"
+  },
+  {
+   "critic": "orchestrator-presentation-closure",
+   "key": "orchestrator",
+   "stage": "presentation",
+   "pass": true,
+   "blocking": [],
+   "notes": [
+    "Post-gate closure (2026-08-28): all five blockings applied verbatim — the Chat Control and NCMEC compact notes now carry their own carve-out/multi-cause caveats, the Cellebrite label renamed to what the value measures (label = whitelist-locked, the known engine finding), why_now split into two plain sentences without the trilogue term of art, and the ranked series label de-acronymed.",
+    "Conformance-critic closure (2026-08-28): the lead NCMEC ranked stat set wide:true (the critic’s endorsed per-topic mitigation — a 3-row ranked viz with platform labels reads at 2/3 width). The underlying desktop narrow-tile label-shatter is registered as a site-wide CSS defect with the critic’s exact prescription. Two non-blocking notes passed to the packet: the draft-banner borrows pos-amber (draft-only chrome), and the crux eyebrow subtitle differs between poster and page templates.",
+    "PM-gate closure (2026-08-28): the Uganda spyware clause fully excised from the detail (the first cut left the figure in prose — caught by the fresh-context PM read); the WhatsApp/Signal tile switched from ranked to bar so its 3 billion+ headline actually renders; the OG review copy added beside the packet."
+   ],
+   "checks_run": [
+    {
+     "check": "prescriptions applied, verified by text search",
+     "ran": true
+    }
+   ]
+  }
+ ],
+ "plan_positions": [
+  {
+   "name": "No-Backdoor Cryptographer",
+   "prevalence_weight": 85,
+   "prevalence_basis": "Near-unanimous in the cryptographic research literature from the 1997 key-recovery report through 2015’s Keys Under Doormats, and the operating position of every major end-to-end encrypted messaging provider, several of which have threatened market exit over it.",
+   "spectrum_position": -3,
+   "sketch": "No exceptional-access design has ever survived technical scrutiny, so building one trades everyone’s security for a warrant."
+  },
+  {
+   "name": "Exceptional Access Mandater",
+   "prevalence_weight": 72,
+   "prevalence_basis": "The declared position of Five Eyes governments since their 2018 ministerial statement on access to evidence and encryption, carrying statutory footprint in the UK’s technical capability notices and Australia’s assistance and access regime, and echoed by European police leadership.",
+   "spectrum_position": 3,
+   "sketch": "A judge’s order should be executable; a space no lawful warrant can reach is a product decision, not a law of nature."
+  },
+  {
+   "name": "Digital Rights Defender",
+   "prevalence_weight": 55,
+   "prevalence_basis": "Carried by UN special rapporteur submissions on privacy and expression and by the large international civil-society coalitions that mobilized against the EU scanning proposals; dominant share of the non-governmental record in the debate.",
+   "spectrum_position": -2,
+   "sketch": "Whatever one democracy builds, every other government will demand, and journalists, dissidents and abuse survivors pay first."
+  },
+  {
+   "name": "Client-Side Scanning Proponent",
+   "prevalence_weight": 48,
+   "prevalence_basis": "Backed by the European Commission’s original 2022 detection-order proposal, a 2022 GCHQ and NCSC technical paper, Apple’s announced-then-withdrawn 2021 on-device design, and sustained campaigning by major child-protection organizations.",
+   "spectrum_position": 2,
+   "sketch": "Check content on the device before it is sealed, and the transport encryption stays intact while abuse still gets caught."
+  },
+  {
+   "name": "Targeted Hacking Investigator",
+   "prevalence_weight": 42,
+   "prevalence_basis": "Already codified as equipment-interference and state-hacking powers in UK, German, French and Australian law, and advanced in the academic literature by senior computer scientists as the explicit alternative to systemic mandates.",
+   "spectrum_position": 1,
+   "sketch": "Break into the specific suspect’s endpoint under warrant instead of weakening the cryptography protecting everyone else."
+  },
+  {
+   "name": "Metadata Sufficiency Analyst",
+   "prevalence_weight": 35,
+   "prevalence_basis": "Anchored by the 2016 Berkman Klein “Don’t Panic” report, whose signatories included former intelligence officials, and by the observation that most abuse reporting still originates on unencrypted surfaces; a persistent scholarly framing rather than a legislative bloc.",
+   "spectrum_position": -1,
+   "sketch": "Investigators hold more data on more people than ever; the shortfall is resourcing and cooperation, not a missing power."
+  }
+ ]
+}
