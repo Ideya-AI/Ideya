@@ -398,9 +398,11 @@ packet, from the run IDs the orchestrator already holds:
   > research/reviews/<slug>/tokens.md
 ```
 
-Then prepend two header lines (run date + which IDs), append the list-price cost
-(rates in §9) and one line for stage-3 image generation (candidates × rounds —
-a Gemini charge no Anthropic tally sees). Bare `wf_*` IDs are searched for under
+Then prepend two header lines (run date + which IDs) and append one line for
+stage-3 image generation (candidates × rounds — a Gemini call no Anthropic tally
+sees). **Token counts only, no dollar values** (Jeff, 2026-08-28): prices move
+and recomputing from counts is trivial; a stale dollar figure in a committed
+record reads as authoritative long after the rate sheet changed. Bare `wf_*` IDs are searched for under
 this project's session dirs; `@query` matches named agents by
 agentType/name/description, all matches summed — so name a run's ad-hoc agents
 with a common slug prefix. Exemplar: `research/reviews/vaccine-mandates/tokens.md`.
