@@ -54,17 +54,35 @@ the Phosphor glyph. Section agents research basics/questions/positions/actions i
 parallel. A crux agent writes the editorial narrowing. Then verification, then the gate,
 then a capped fix loop. Facts are settled here and nowhere else.
 
-**Stage 2 · distribute (presentation).** Distils the compact layer, assigns tier (the
+**Stage 2 · editorial (presentation).** Distils the compact layer, assigns tier (the
 Go-deeper fold) and reveal (compact vs expanded), and reorders so the most
 decision-relevant items lead. **Display order = array order**; `tier` only marks the
 drop-off *within* that order, so moving an item across the fold means reordering.
 Positions are the exception — they render by `prevalence_weight`. Facts are locked: the
 patch whitelist rejects edits to value/unit/source_*/url/name/text.
 
-**Stages 3–4 · icon and views.** A brief agent writes the art brief from
+**Stage 2 authors to the render geometry** (2026-08-28). It decides how short
+everything gets, yet carried three length numbers against stage 1's fourteen —
+and stage 1's own rules tell it to ignore length and research for substance. The
+stage told to ignore the constraint held it; the stage that had to meet it flew
+blind, and stage 4 rediscovered the same overflow topic by topic.
+`research/workflows/budgets.py` is now the single source (db cap / hard bound /
+target — collapsing any two causes a different bug; its docstring has the
+details), mirrored into the distill prompt and enforced in the patch applier.
+Targets are guidance, hard bounds gate: enforcing targets as bounds produced 357
+corpus findings on first try — a lint that cries wolf stops gating anything.
+
+**Stage 3 · iconography.** The `icon-briefer` agent writes the art brief from
 `ICONOGRAPHY.md`; candidates are generated, scored against the brief, post-processed,
-and checked at 40px. Views render at 1440/390/320 (normal and expanded), three social
-formats, and the poster — whose fit check is a **hard exit-code gate**.
+and checked at 40px.
+
+**Stage 4 · integration.** Renders every surface — 1440/390/320 (normal and
+expanded), three social formats, the poster (fit check is a **hard exit-code
+gate**) — and verifies the pieces compose. `view-critic` agents read for
+design-system conformance only; "is it finished" belongs to the 4.5 PM over the
+same renders, and running both questions in both passes is the duplicated
+judgment loop §6 exists to prevent. When stage 4 keeps finding the same class of
+content defect, the fix belongs in stage 2, not in a better stage-4 critic.
 
 **Stage 4.5 · the PM gate.** A fresh-context agent reads the FINISHED topic — every
 render, the cards, the poster — runs the deterministic pass (lint, links, artifacts),

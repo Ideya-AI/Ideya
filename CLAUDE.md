@@ -15,7 +15,8 @@ Django + HTMX + Alpine. A curated atlas of hard debates; depth is an axis, not a
 ## Invariants
 
 - **Automation drafts; a human publishes.** Never `load_topic_draft --status published`
-  (a hook blocks it). Publishing is stage 5 and belongs to the human.
+  and never `publish_topic` (a hook blocks both). Publishing is stage 5 and belongs
+  to the human.
 - **The pipeline never edits templates or CSS.** Log code/CSS defects in the review
   packet for the human instead.
 - **Content fields are plain text**: write `&`, never `&amp;`; typographic quotes

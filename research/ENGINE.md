@@ -233,13 +233,10 @@ bound** (where the layout visibly breaks — lint gates on this), and the
 targets are mirrored into the distill prompt as `RENDER_BUDGETS`, guarded by
 `test_workflow_mirrors.py`.
 
-*Why it lives here:* stage 2 decides how short everything gets, and it used to
-carry three length numbers against stage 1's fourteen — while stage 1's own rules
-tell it to ignore length and research for substance. The stage told to ignore the
-constraint held it; the stage that had to meet it flew blind, and stage 4
-rediscovered the same overflow topic by topic. Per-field budgets do not settle
-whole-sheet fit — that is a packing problem and the poster's exit-code check
-stays — but meeting them is what keeps that check quiet.
+Per-field budgets do not settle whole-sheet fit — that is a packing problem and
+the poster's exit-code check stays — but meeting them is what keeps that check
+quiet. (Why the budgets live in stage 2: `budgets.py`'s docstring and
+`RESEARCH_PIPELINE.md` §3.)
 
 Run `distribute_topic.js` with `{slug, title, today, dossier:<stage-1 return>}`.
 The dossier is 60KB+ — bake it in via the `__ARGS` recipe (§10). Distill → tier
@@ -304,14 +301,11 @@ Render + critique, capped at ~3 rounds:
    render_social --slug <slug> --formats sq,pt   --base-url <dev> --out research/reviews/<slug>
    ```
 
-   **The `og` call takes no `--out` on purpose.** Its default is
-   `static/img/social/<slug>.png`, which is the file `Topic.social_card` and the
-   page's `og:image` actually serve; a copy in the review folder is a review
-   artifact and reaches no reader. Redirecting all three formats there — as this
-   runbook did until 2026-08-27 — ships every topic with the generic site image
-   for link previews and shares. The three published topics have real cards only
-   because someone installed them by hand. `sq`/`pt` are for manual posting and
-   belong in the packet. The stage-4.5 PM checks for the installed file.
+   **The `og` call takes no `--out` on purpose**: its default,
+   `static/img/social/<slug>.png`, is the file `og:image` actually serves — a
+   review-folder copy reaches no reader, and until 2026-08-27 this runbook
+   shipped every topic with the generic site image that way. `sq`/`pt` are for
+   manual posting and belong in the packet. The 4.5 PM checks the installed file.
 2. `view-critic` agents (Agent tool, `subagent_type: "view-critic"` — model
    pinned in the definition) **Read** every image **for design-system
    conformance only** — against `design/DESIGN_SYSTEM.md` +
@@ -351,18 +345,11 @@ It is the only agent in the engine that sees the topic whole. Every other critic
 reads one slice; a defect that only shows up when the page, the cards and the
 poster are read together has, until now, had no reader but you.
 
-Three properties make it a gate rather than a second opinion:
-
-- **Fresh context.** It did not watch the run. An agent that watched the pipeline
-  work is primed to accept its output — the same reason ledger verifiers are blind
-  to the draft. This is why the PM must NOT also be the orchestrator: a context
-  that ran the pipeline and then certifies it is marking its own homework.
-- **Grounded findings only.** It may file what it can point at — a failed check, a
-  missing artifact, text truncated mid-word, a card contradicting the page. Not
-  "this could be sharper". Judgment findings are capped at one fix round for a
-  reason (`RESEARCH_PIPELINE.md` §6); an unconstrained PM re-opens exactly that loop.
-- **It routes, it does not repair.** Each finding names the owning stage. Its only
-  repair is `lint_draft.py --fix`, which is deterministic and reversible.
+Three properties make it a gate rather than a second opinion (rationale:
+`RESEARCH_PIPELINE.md` §3, stage 4.5): **fresh context** (it never watches the
+run, and must never BE the orchestrator — marking one's own homework);
+**grounded findings only** (a failed check, a missing artifact, truncation — not
+"could be sharper"); **it routes, it does not repair**.
 
 Its deterministic pass is the checklist in the agent definition — lint at 0, links
 0/0, the icon at 1035×690, **the OG card present at `static/img/social/<slug>.png`**
@@ -434,14 +421,11 @@ prints those commands filled in, including a `curl` to confirm the topic actuall
 appears on the live site: a just-published topic missing from live is a known
 failure mode (§11), and nothing used to check for it.
 
-**This is still the hard stop.** `.claude/hooks/pipeline-guard.sh` blocks
-`publish_topic` by name and `load_topic_draft --status published` — collapsing
-nine hand-typed steps into one human-invoked command changes the friction, not
-the rule. Two honest limits on that guard: it is not a sandbox (`manage.py shell`
-can always write `status` directly, as it always could), and it errs toward
-blocking, so a command that merely *quotes* a publish invocation inside a quoted
-argument is refused. Heredoc bodies are exempt, so documentation can print the
-command.
+**This is still the hard stop.** The guard blocks `publish_topic` by name and
+`load_topic_draft --status published`. Limits: it is not a sandbox
+(`manage.py shell` can write `status` directly), it errs toward blocking a
+quoted invocation, and heredoc bodies are exempt so docs can print the command.
+(Why one command doesn't weaken the rule: `RESEARCH_PIPELINE.md` §3, stage 5.)
 
 `--title` and `--category` are optional everywhere now: the loader takes the
 title from the draft or the catalog entry, and the category from
@@ -579,14 +563,11 @@ baked in the scripts — an `args.models` override alone does NOT reliably reach
 script).
 
 **Fable: barred from the workflow scripts, allowed for the PM gate** (Jeff,
-2026-08-27). The 2026-08-13 exhaustion came from putting Fable on the engine's
-highest-call-count work — plan, crux, distribute and the stage-1 gate — not from
-Fable being a poor fit. It is the most capable model and the most expensive
-($10/$50 per MTok, twice opus), so the rule is about **call count, not tier**:
-Fable is for high-level, low-call-count roles only. `topic-pm` is the only agent
-allowlisted, and `topics/tests/test_workflow_mirrors.py` enforces both halves —
-no `?? "fable"` in the scripts, and no un-allowlisted `.claude/agents/*.md` naming
-Fable (the scripts-only check missed agent definitions entirely).
+2026-08-27). The rule is call count, not tier — Fable is for high-level,
+low-call-count roles only (history: `RESEARCH_PIPELINE.md` §9). `topic-pm` is
+the only allowlisted agent; `topics/tests/test_workflow_mirrors.py` enforces
+both halves — no `?? "fable"` in the scripts, no un-allowlisted agent
+definition naming Fable.
 
 **Fable → opus fallback.** If Fable's weekly allowance is spent, re-invoke the PM
 with `model: "opus"` and change nothing else: `topic-pm.md` declares
