@@ -73,7 +73,7 @@ flowchart TD
 | 1 Research | `research/workflows/research_topic.js` | plan (+icon, prevalence_basis) → parallel section research (basics facts→shape + questions + one agent per position + actions) → crux → **claim ledger + isolated per-claim verification** → 3-critic substance gate → fix loop → verbatim prescribed-fix pass | substance gate 3/3, shape_notes empty, ledger closed | `research/dossiers/<slug>.json` |
 | 2 Editorial | `research/workflows/distribute_topic.js` + `lint_draft.py` + `budgets.py` | distill compact layer → tier/reveal/fold → reorder → 2-critic presentation gate → whitelisted fix loop | gate 2/2 + lint at 0 findings + loader loads with 0 warnings | `research/topics/<slug>.json` |
 | 3 Iconography | brief agent + `research/icons/generate_icons.py` + `postprocess_icon.py` | brief → 4 Nano Banana candidates → pick vs checklist → normalize | checklist pass at 40px | `static/img/topics/<slug>.png` + `research/icons/<slug>.md` |
-| 4 Integration | `render_screens/social/poster` + view critics | render all surfaces → critique → content-fix loop (`fix_only`) | poster fit exit 0 + all 3 social formats + no blocking content findings | `research/reviews/<slug>/` + `REVIEW.md` |
+| 4 Integration | `render_screens/social/poster` + design-conformance critics | render every surface → conformance critique → content-fix loop (`fix_only`) | poster fit exit 0 + all 3 social formats + og card installed + no blocking content findings | `research/reviews/<slug>/` renders, cards, poster |
 | 4.5 PM gate | `.claude/agents/topic-pm.md` | fresh-context read of the FINISHED topic: deterministic pass (lint/links/artifacts) → reads every render → routes findings to the owning stage → writes the packet | every deterministic check green + no open routed finding | `research/reviews/<slug>/REVIEW.md` |
 | 5 Publish | **human** + `publish_topic` | read the packet → `publish_topic --confirm` (preflight → publish → reviewed_at) → commit → live push | human judgment | live topic |
 
@@ -308,20 +308,32 @@ Render + critique, capped at ~3 rounds:
    for link previews and shares. The three published topics have real cards only
    because someone installed them by hand. `sq`/`pt` are for manual posting and
    belong in the packet. The stage-4.5 PM checks for the installed file.
-2. `opus` sub-agents **Read** every image against `design/DESIGN_SYSTEM.md` +
-   `design/RESPONSIVE.md`, **with `research/reviews/UI_DEFECTS.md` in hand**.
-   Findings split:
-   - **content-fixable** (overlong text, bad fold, poster overflow) → re-run
-     `distribute_topic.js` with `args.fix_only:[findings]` (runs only the
-     presentation fix loop) → reload → re-render.
+2. `opus` sub-agents **Read** every image **for design-system conformance only** —
+   against `design/DESIGN_SYSTEM.md` + `design/RESPONSIVE.md`, with
+   `research/reviews/UI_DEFECTS.md` in hand. That narrow scope is the point: it is
+   the read that produced 18 of the register's 19 entries, and it is the one thing
+   no other stage does. **Is this on-system?** — not "is this good", which is the
+   stage-4.5 PM's job over the same images. Two unguided judgment passes over one
+   set of renders is the loop `RESEARCH_PIPELINE.md` §6 caps at one round.
+
    - **code/CSS defect** → check the register first: matches an OPEN entry →
      cite it, don't re-report; matches a FIXED entry → report as a REGRESSION;
-     genuinely new and site-wide → log in `REVIEW.md` AND append to the
-     register. Never edit templates/CSS.
+     genuinely new and site-wide → append to the register. Never edit
+     templates/CSS.
+   - **content-fixable** (a bad fold, poster overflow) → `distribute_topic.js`
+     with `args.fix_only:[findings]` → **re-lint** → reload → re-render. Length
+     overruns should be rare now: stage 2 authors to `budgets.py` and its patch
+     applier rejects an over-limit value outright, so a `fix_only` pass cannot
+     reintroduce one. If overlong copy still shows up here, that is a budgets
+     failure to fix in stage 2 — not a stage-4 finding to keep catching.
 3. Pass = poster fit exit 0 + all three social formats + **the og card installed at
    `static/img/social/<slug>.png`** + no blocking content findings.
 
-Assemble `research/reviews/<slug>/REVIEW.md` from the template in §12.
+Stage 4 does NOT write the review packet — that is stage 4.5's output. What
+integration owns is narrow on purpose: **produce every surface, and verify the
+pieces compose.** Per-field fit is stage 2's; "is it finished and coherent" is the
+PM's; what is left here is whole-sheet packing (the poster's fixed height cannot
+be settled by any per-field budget) and design conformance.
 
 ### Stage 4.5 — the PM gate
 

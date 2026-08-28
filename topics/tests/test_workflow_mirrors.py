@@ -248,6 +248,35 @@ class RenderBudgetMirrorTests(SimpleTestCase):
         self.assertIn(f"<= {self.budgets.LEAN_LABEL_CAP} chars", src)
         self.assertIn(f"<= {self.budgets.UNIT_CAP} chars", src)
 
+    def test_patch_applier_enforces_the_hard_limits(self):
+        """The whitelist checks WHICH field may change; HARD_LIMITS checks that
+        the new value still fits. Without it a stage-4 fix_only pass — which runs
+        to fix a rendering complaint — can hand the loader a value it slices."""
+        import re
+
+        src = _read("distribute_topic.js")
+        self.assertIn("HARD_LIMITS", src, "the patch applier lost its length check")
+        # Only fields the whitelist lets stage 2 edit can ever reach the length
+        # check; the rest are rejected on the field name first.
+        pres = {
+            p.strip().strip('"')
+            for p in re.search(
+                r"const PRES_FIELDS = new Set\(\[(.*?)\]\)", src, re.S
+            )
+            .group(1)
+            .split(",")
+            if p.strip()
+        }
+        block = re.search(r"const HARD_LIMITS = \{(.*?)\};", src, re.S).group(1)
+        for field, (_, _, hard, _) in self.budgets.BUDGETS.items():
+            if hard is None or field not in pres:
+                continue
+            self.assertRegex(
+                block,
+                rf"\b{field}: {hard}\b",
+                f"HARD_LIMITS has drifted on {field} (expected {hard} from budgets.py)",
+            )
+
     def test_distill_does_not_contradict_the_anti_template_rule(self):
         """RULES forbids copying one crux form; the distill prompt used to
         REQUIRE a rhetorical question, and 11 of 11 published leads ended in "?"."""
