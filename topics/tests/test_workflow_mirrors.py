@@ -307,7 +307,11 @@ class TallySignatureMirrorTests(SimpleTestCase):
                 "script — a prompt was reworded; update SIGNATURES with it",
             )
 
-    def test_agent_type_map_matches_the_definitions(self):
+    def test_every_agent_definition_is_classifiable(self):
+        """AGENT_TYPES keys are substrings matched against meta.json fields (a
+        named spawn records its NAME as agentType, so exact keys miss them). The
+        guard that matters is the reverse direction: every real agent definition
+        must be covered by some key, or its spend files under "other"."""
         import sys
 
         wf = str(WF)
@@ -315,8 +319,9 @@ class TallySignatureMirrorTests(SimpleTestCase):
             sys.path.insert(0, wf)
         import tally_tokens
 
-        for key in tally_tokens.AGENT_TYPES:
+        for path in AGENTS.glob("*.md"):
             self.assertTrue(
-                (AGENTS / f"{key}.md").exists(),
-                f"tally AGENT_TYPES names {key!r}, which has no agent definition",
+                any(key in path.stem for key in tally_tokens.AGENT_TYPES),
+                f"{path.name}: no AGENT_TYPES substring matches it — its token "
+                "spend would be unclassifiable in the per-phase tally",
             )

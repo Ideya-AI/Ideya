@@ -386,6 +386,27 @@ lint is a routed finding: fix, re-load, re-render, re-run the gate.
 > restriction — it needs Bash for the deterministic pass, and Bash can read
 > anything. Unlike `claim-verifier`, this one is convention.
 
+### Account the run (with the PM gate's exit — every run, no exceptions)
+
+**Every authoring run records its token spend** (Jeff, 2026-08-28) — tracking,
+not optimization. When the PM gate exits clean, write the record beside the
+packet, from the run IDs the orchestrator already holds:
+
+```
+.venv/bin/python research/workflows/tally_tokens.py \
+  stage1=wf_<id> stage2=wf_<id> pm=@topic-pm agents=@<slug-prefix> \
+  > research/reviews/<slug>/tokens.md
+```
+
+Then prepend two header lines (run date + which IDs), append the list-price cost
+(rates in §9) and one line for stage-3 image generation (candidates × rounds —
+a Gemini charge no Anthropic tally sees). Bare `wf_*` IDs are searched for under
+this project's session dirs; `@query` matches named agents by
+agentType/name/description, all matches summed — so name a run's ad-hoc agents
+with a common slug prefix. Exemplar: `research/reviews/vaccine-mandates/tokens.md`.
+The file commits with the packet (the `publish_topic` git-add block already
+covers the directory).
+
 ### Stage 5 — human review & publish (the hard stop)
 
 Read the packet, open the page, decide. Then:
@@ -505,6 +526,11 @@ straight onto the real slug.
 6. **Push to live** per `DEPLOY.md` §3 (`docker exec` loader + `load_universe` +
    `rebuild_search` + `reviewed_at` inside the container).
 
+### Account the refresh
+Same rule as authoring: tally the refresh workflow's run
+(`tally_tokens.py refresh=wf_<id> > research/refresh/<slug>.tokens.<date>.md`)
+and commit it beside the proposal.
+
 ### Cadence
 Links: continuous (weekly scheduled sweep + on change). Full re-research: event-
 driven first (a position obsolesced, a key fact moved a lot), volatility cadence as
@@ -601,7 +627,12 @@ the main overage lever. Judgment singletons (plan, crux, distribute) inherit.
   raised to 1500 in `.claude/settings.json`), shared across the session and all
   subagents. WebFetch draws on a separate pool the search cap does not touch —
   verification leans on it; search is for discovery.
-- **Accounting**: `research/workflows/tally_tokens.py` per run — now **by stage
+- **Accounting — every run, tracked**: the standing record is
+  `research/reviews/<slug>/tokens.md`, written at the PM gate's exit (Runbook A)
+  and committed with the packet; refreshes write
+  `research/refresh/<slug>.tokens.<date>.md`. `token-ledger.local.md` is
+  historical only — its rows predate the 2026-08-28 double-count fix and are
+  ~2.3× inflated. `research/workflows/tally_tokens.py` does the work — **by stage
   and by phase**. `label=path` args name each stage in the output (a path may be
   a run dir or a single `agent-*.jsonl` — the PM's transcript sits next to
   unrelated agents, so its file is passed, not its directory); `--by-phase`
