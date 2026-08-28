@@ -35,6 +35,12 @@
   #main .when-normal.is-flex, #main .when-deep.is-flex { display: flex !important; }
   #main .when-normal.is-grid, #main .when-deep.is-grid { display: grid !important; }
   #main .when-normal.is-inline, #main .when-deep.is-inline { display: inline-flex !important; }
+  /* Alpine alone applies .is-open, so two .sec.is-open layout rules are dead in
+     captures without these: expanded renders showed a phantom dead column and
+     equal-height-stretched cards the live page never has (found 2026-08-28). */
+  #main .basics, #main .pos-grid { align-items: start; }
+  #main .pos-grid .pos-fill-open { grid-column: 1 / -1; }
+  #main .pos-grid .pos-fill-base { grid-column: auto; }
 </style>
 {% endif %}{% endblock %}
 
