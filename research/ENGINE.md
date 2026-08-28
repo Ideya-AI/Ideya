@@ -570,6 +570,25 @@ platform does for you.
 | `refresh_topic.js` | research=sonnet distill=research critique=opus fact=opus crux=opus fix=opus | research=high critique=high fix=high |
 <!-- routing:end -->
 
+The table above covers the three workflow scripts. The **agent-driven stages have
+model choices too**, and they used to live only in runbook prose where nothing
+checked them:
+
+<!-- agents:begin — check_engine.py verifies the `model:` frontmatter -->
+| Stage | Agent | Model | Notes |
+|---|---|---|---|
+| 1 verify | `.claude/agents/claim-verifier.md` | (inherits) | the caller passes `RESEARCH_MODEL` (sonnet) explicitly, so routing stays in the script |
+| 3 icon brief | ad-hoc sub-agent | opus | one judgment call per topic; see Runbook A stage 3 |
+| 4 view critics | ad-hoc sub-agents | opus | design-conformance reads; see Runbook A stage 4 |
+| 4.5 PM gate | `.claude/agents/topic-pm.md` | fable | allowlisted (§9 Fable rule); falls back to opus on a one-line retry |
+<!-- agents:end -->
+
+**Image generation is a separate bill nobody tallies.** Stage 3 calls
+`gemini-3-pro-image` (Nano Banana Pro) for 4 candidates per round, up to ~3
+rounds. That spend appears in no Anthropic token ledger and no run total — it is
+a Gemini API charge. If icon cost ever matters, it has to be measured at the
+Gemini side; `tally_tokens.py` will never see it.
+
 High-volume subtasks pin efforts instead of inheriting the session's (often max) —
 the main overage lever. Judgment singletons (plan, crux, distribute) inherit.
 
@@ -577,7 +596,15 @@ the main overage lever. Judgment singletons (plan, crux, distribute) inherit.
   raised to 1500 in `.claude/settings.json`), shared across the session and all
   subagents. WebFetch draws on a separate pool the search cap does not touch —
   verification leans on it; search is for discovery.
-- **Accounting**: `research/workflows/tally_tokens.py` per run. Reference points:
+- **Accounting**: `research/workflows/tally_tokens.py` per run. It accepts a
+  `wf_*` run directory OR any directory of `agent-*.jsonl` transcripts, so
+  plain Agent-tool subagents (the stage-4.5 PM, icon briefs, view critics) can
+  finally be tallied — they were invisible to it before 2026-08-28.
+  **Older numbers in `token-ledger.local.md` are overstated ~2.3x** (measured
+  range 1.84–2.69 across the 40 runs still on disk): the script summed every
+  streamed usage row per message instead of the final one, double-counting the
+  cache columns, which are most of the bill. Output was barely affected, so the
+  error hid where nobody looked. Divide recorded figures accordingly, or re-tally. Reference points:
   fable-era topic ~285k opus-equivalent output; first opus+sonnet-only run ~553k
   (inflated by a resumed double-gate + largest topic yet). Priced from the local
   ledger, stage 1+2 runs land at **$37–77 per topic** (excludes the orchestrator
