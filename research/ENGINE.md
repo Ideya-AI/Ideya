@@ -97,6 +97,8 @@ cited old→new changelog → **human approves the diff** → staged load → pu
 | `topics/tests/test_workflow_mirrors.py` | guard on the hand-mirrored workflow contracts (run after ANY workflow-script edit: `manage.py test topics.tests.test_workflow_mirrors`) |
 | `.claude/agents/claim-verifier.md` | stage-1 ledger verifier: `tools: WebFetch, WebSearch` only — the blindness is structural, not a prompt |
 | `.claude/agents/topic-pm.md` | stage-4.5 PM gate: verifies the finished topic, routes findings, writes the packet. Fable (allowlisted), falls back to opus |
+| `.claude/agents/icon-briefer.md` | stage-3 brief author; model pinned + verified by `check_engine.py` |
+| `.claude/agents/view-critic.md` | stage-4 design-conformance critic; report-only, model pinned |
 | `.claude/skills/author-topic/SKILL.md` | launcher for Runbook A (user-invoked only) |
 | `.claude/skills/refresh-topic/SKILL.md` | launcher for Runbook B (user-invoked only) |
 | `.claude/hooks/pipeline-guard.sh` | blocks automated publishing (`--status published` AND `publish_topic`) + dev-server-on-8642; heredoc bodies exempt so docs can quote the command |
@@ -267,9 +269,11 @@ Then, in order:
 ### Stage 3 — iconography
 
 Loop, capped at ~3 refine rounds (spec: `research/ICONOGRAPHY.md`):
-1. An `opus` sub-agent writes `research/icons/<slug>.md` from the spec +
-   `research/icons/categories.md` + existing briefs as exemplars (match their
-   headings; the `## Generation prompt` blockquote is what the generator reads).
+1. The `icon-briefer` agent (Agent tool, `subagent_type: "icon-briefer"` —
+   model pinned in its definition, verified by `check_engine.py`) writes
+   `research/icons/<slug>.md` from the spec + `research/icons/categories.md` +
+   existing briefs as exemplars (match their headings; the `## Generation
+   prompt` blockquote is what the generator reads).
 2. `python research/icons/generate_icons.py --slug <slug> --n 4` → candidates in
    `research/icons/candidates/<slug>/`.
 3. **Read** the candidates; score against the checklist (uniform monoline stroke,
@@ -308,9 +312,10 @@ Render + critique, capped at ~3 rounds:
    for link previews and shares. The three published topics have real cards only
    because someone installed them by hand. `sq`/`pt` are for manual posting and
    belong in the packet. The stage-4.5 PM checks for the installed file.
-2. `opus` sub-agents **Read** every image **for design-system conformance only** —
-   against `design/DESIGN_SYSTEM.md` + `design/RESPONSIVE.md`, with
-   `research/reviews/UI_DEFECTS.md` in hand. That narrow scope is the point: it is
+2. `view-critic` agents (Agent tool, `subagent_type: "view-critic"` — model
+   pinned in the definition) **Read** every image **for design-system
+   conformance only** — against `design/DESIGN_SYSTEM.md` +
+   `design/RESPONSIVE.md`, with `research/reviews/UI_DEFECTS.md` in hand. That narrow scope is the point: it is
    the read that produced 18 of the register's 19 entries, and it is the one thing
    no other stage does. **Is this on-system?** — not "is this good", which is the
    stage-4.5 PM's job over the same images. Two unguided judgment passes over one
@@ -578,8 +583,8 @@ checked them:
 | Stage | Agent | Model | Notes |
 |---|---|---|---|
 | 1 verify | `.claude/agents/claim-verifier.md` | (inherits) | the caller passes `RESEARCH_MODEL` (sonnet) explicitly, so routing stays in the script |
-| 3 icon brief | ad-hoc sub-agent | opus | one judgment call per topic; see Runbook A stage 3 |
-| 4 view critics | ad-hoc sub-agents | opus | design-conformance reads; see Runbook A stage 4 |
+| 3 icon brief | `.claude/agents/icon-briefer.md` | opus | one judgment call per topic |
+| 4 view critics | `.claude/agents/view-critic.md` | opus | design-conformance reads only |
 | 4.5 PM gate | `.claude/agents/topic-pm.md` | fable | allowlisted (§9 Fable rule); falls back to opus on a one-line retry |
 <!-- agents:end -->
 
@@ -596,10 +601,25 @@ the main overage lever. Judgment singletons (plan, crux, distribute) inherit.
   raised to 1500 in `.claude/settings.json`), shared across the session and all
   subagents. WebFetch draws on a separate pool the search cap does not touch —
   verification leans on it; search is for discovery.
-- **Accounting**: `research/workflows/tally_tokens.py` per run. It accepts a
-  `wf_*` run directory OR any directory of `agent-*.jsonl` transcripts, so
-  plain Agent-tool subagents (the stage-4.5 PM, icon briefs, view critics) can
-  finally be tallied — they were invisible to it before 2026-08-28.
+- **Accounting**: `research/workflows/tally_tokens.py` per run — now **by stage
+  and by phase**. `label=path` args name each stage in the output (a path may be
+  a run dir or a single `agent-*.jsonl` — the PM's transcript sits next to
+  unrelated agents, so its file is passed, not its directory); `--by-phase`
+  breaks a workflow run down into plan/research/crux/verify/gate/fix per model,
+  classified by the sibling `meta.json` agentType first, else by a verbatim
+  prompt fragment (`SIGNATURES`, mirror-guarded — reword a prompt without
+  updating it and the test fails rather than the phase silently filing under
+  "other"). Post-run, one command answers "where did the tokens go":
+
+  ```
+  tally_tokens.py --by-phase <stage1-wf-dir>
+  tally_tokens.py stage1=<wf> stage2=<wf> pm=<agent-….jsonl>
+  ```
+
+  First real measurement (ai-alignment stage 1): **the gate phase was ~85% of
+  opus cache reads** (47.8M of 56.3M) — critics re-reading the full draft each
+  round dominate the bill, not research and not the fix loop. That is where any
+  future cost work should aim first.
   **Older numbers in `token-ledger.local.md` are overstated ~2.3x** (measured
   range 1.84–2.69 across the 40 runs still on disk): the script summed every
   streamed usage row per message instead of the final one, double-counting the

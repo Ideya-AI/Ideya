@@ -282,3 +282,41 @@ class RenderBudgetMirrorTests(SimpleTestCase):
         REQUIRE a rhetorical question, and 11 of 11 published leads ended in "?"."""
         src = _read("distribute_topic.js")
         self.assertNotIn("sharp rhetorical question", src)
+
+
+class TallySignatureMirrorTests(SimpleTestCase):
+    """tally_tokens.py classifies workflow subagents into phases by matching a
+    verbatim fragment of each prompt. Reword a prompt and the fragment stops
+    matching — the agent silently files under "other" and the phase breakdown
+    quietly rots. Same hand-mirror problem as the verdict contract, same guard."""
+
+    def test_every_signature_appears_in_a_workflow_script(self):
+        import sys
+
+        wf = str(WF)
+        if wf not in sys.path:
+            sys.path.insert(0, wf)
+        import tally_tokens
+
+        sources = "".join(_read(n) for n in SCRIPTS)
+        for needle, phase in tally_tokens.SIGNATURES:
+            self.assertIn(
+                needle,
+                sources,
+                f"tally signature {needle!r} (phase {phase}) matches no workflow "
+                "script — a prompt was reworded; update SIGNATURES with it",
+            )
+
+    def test_agent_type_map_matches_the_definitions(self):
+        import sys
+
+        wf = str(WF)
+        if wf not in sys.path:
+            sys.path.insert(0, wf)
+        import tally_tokens
+
+        for key in tally_tokens.AGENT_TYPES:
+            self.assertTrue(
+                (AGENTS / f"{key}.md").exists(),
+                f"tally AGENT_TYPES names {key!r}, which has no agent definition",
+            )
