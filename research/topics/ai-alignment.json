@@ -989,5 +989,999 @@
    "spectrum_position": 0,
    "sketch": "Alignment is judged by deployed systems’ documented effects on the people subject to them, not by pre-deployment verification of hypothetical takeover."
   }
- ]
+ ],
+ "claim_ledger": {
+  "claims": [
+   {
+    "id": "c1",
+    "section": "overview",
+    "item": "",
+    "field": "why_now",
+    "quote": "The February 2026 International AI Safety Report, written by more than 100 nominated experts, concluded that state-of-the-art alignment still rests on human oversight limited by human error and bias.",
+    "claim": "The International AI Safety Report, published in February 2026 and written by more than 100 nominated experts, concluded that state-of-the-art alignment still rests on human oversight limited by human error and bias.",
+    "source_url": "",
+    "kind": "fact"
+   },
+   {
+    "id": "c2",
+    "section": "questions",
+    "item": "Can any current method verify what a system is actually pursuing, rather than what it outputs under test?",
+    "field": "detail",
+    "quote": "Interpretability has moved past toy models: researchers can now find and label features and circuits inside production-scale systems, including some tied to deception-relevant concepts.",
+    "claim": "Researchers can now find and label features and circuits inside production-scale AI systems, including some features tied to deception-relevant concepts.",
+    "source_url": "",
+    "kind": "fact"
+   },
+   {
+    "id": "c3",
+    "section": "questions",
+    "item": "Do alignment techniques that work today keep working once systems exceed human ability to check their work?",
+    "field": "detail",
+    "quote": "Proponents point to real, if narrow, wins on decomposition-style tasks as evidence the recipe can be stacked further.",
+    "claim": "There are real, if narrow, empirical wins on decomposition-style oversight tasks (debate/task decomposition/recursive reward modeling).",
+    "source_url": "",
+    "kind": "fact"
+   },
+   {
+    "id": "c4",
+    "section": "questions",
+    "item": "Do alignment techniques that work today keep working once systems exceed human ability to check their work?",
+    "field": "detail",
+    "quote": "every demonstration so far uses a supervisor and a subject that are both roughly human-checkable",
+    "claim": "Every scalable-oversight demonstration to date uses a supervisor and a subject model that are both roughly human-checkable.",
+    "source_url": "",
+    "kind": "inference"
+   },
+   {
+    "id": "c5",
+    "section": "questions",
+    "item": "Is the scheming and alignment faking seen in evaluations a real disposition, or an artifact of contrived test setups?",
+    "field": "detail",
+    "quote": "Published evaluations have caught models strategically misrepresenting their reasoning or resisting retraining",
+    "claim": "Published AI evaluations have caught models strategically misrepresenting their reasoning or resisting retraining.",
+    "source_url": "",
+    "kind": "fact"
+   },
+   {
+    "id": "c6",
+    "section": "questions",
+    "item": "What standard of evidence should a developer have to meet before deploying a system with real autonomy?",
+    "field": "detail",
+    "quote": "Control Engineer adds that the safety case doesn’t need the system to be trustworthy, only the containment around it to be.",
+    "claim": "Control Engineer position holds that a safety case needs only the containment around a system to be trustworthy, not the system itself.",
+    "source_url": "",
+    "kind": "fact"
+   },
+   {
+    "id": "c7",
+    "section": "questions",
+    "item": "Does a model’s chain of thought stay a faithful window into its reasoning, or does optimization pressure close it?",
+    "field": "detail",
+    "quote": "monitoring them has already caught real problems, such as reward hacking or an unstated shortcut, that would otherwise have been invisible",
+    "claim": "Monitoring chain-of-thought reasoning traces has already caught real problems such as reward hacking or an unstated shortcut that would otherwise have been invisible.",
+    "source_url": "",
+    "kind": "fact"
+   },
+   {
+    "id": "c8",
+    "section": "questions",
+    "item": "Does a model’s chain of thought stay a faithful window into its reasoning, or does optimization pressure close it?",
+    "field": "detail",
+    "quote": "Cases where a model reaches a correct answer through a chain of thought that doesn’t account for it are cited as an early instance of this gap.",
+    "claim": "There are documented cases of a model reaching a correct answer via a chain-of-thought explanation that does not account for how it actually reached that answer.",
+    "source_url": "",
+    "kind": "fact"
+   },
+   {
+    "id": "c9",
+    "section": "positions",
+    "item": "Iterative Empiricist",
+    "field": "description",
+    "quote": "in OpenAI’s InstructGPT work, human raters preferred outputs from a 1.3-billion-parameter model fine-tuned on human feedback to outputs from the untuned 175-billion-parameter GPT-3 it was built from, a hundredfold parameter gap closed by feedback and iteration alone",
+    "claim": "In OpenAI's InstructGPT work, human raters preferred outputs from a 1.3-billion-parameter model fine-tuned on human feedback over outputs from the untuned 175-billion-parameter GPT-3 it was built from.",
+    "source_url": "",
+    "kind": "fact"
+   },
+   {
+    "id": "c10",
+    "section": "positions",
+    "item": "Iterative Empiricist",
+    "field": "description",
+    "quote": "Proponents including John Schulman and the researchers behind Anthropic’s Constitutional AI treat withholding deployment until a full theory of alignment exists as its own kind of risk",
+    "claim": "John Schulman and the researchers behind Anthropic's Constitutional AI treat withholding deployment until a full theory of alignment exists as its own kind of risk.",
+    "source_url": "",
+    "kind": "fact"
+   },
+   {
+    "id": "c11",
+    "section": "positions",
+    "item": "Iterative Empiricist",
+    "field": "detail",
+    "quote": "“Concrete problems in AI safety” (Amodei, Olah, Steinhardt, Christiano, Schulman and Mané, 2016) is the field’s founding document for this camp: it reframed alignment away from abstract long-run risk and into named, tractable engineering failure modes, reward hacking, unsafe exploration, distributional shift",
+    "claim": "The 2016 paper \"Concrete Problems in AI Safety\" was authored by Amodei, Olah, Steinhardt, Christiano, Schulman, and Mané, and reframed alignment into named engineering failure modes including reward hacking, unsafe exploration, and distributional shift.",
+    "source_url": "",
+    "kind": "fact"
+   },
+   {
+    "id": "c12",
+    "section": "positions",
+    "item": "Iterative Empiricist",
+    "field": "detail",
+    "quote": "Christiano and collaborators’ 2017 work on learning from human preferences scaled into OpenAI’s InstructGPT and then ChatGPT, and was mirrored at Anthropic through HH-RLHF and later Constitutional AI, which replaced part of the human labeling with model-generated critiques (RLAIF)",
+    "claim": "Christiano and collaborators' 2017 work on learning from human preferences was the basis that scaled into OpenAI's InstructGPT and then ChatGPT, and was mirrored at Anthropic via HH-RLHF and later Constitutional AI, which replaced part of the human labeling with model-generated critiques (RLAIF).",
+    "source_url": "",
+    "kind": "fact"
+   },
+   {
+    "id": "c13",
+    "section": "positions",
+    "item": "Iterative Empiricist",
+    "field": "detail",
+    "quote": "OpenAI’s weak-to-strong generalization study (Burns et al., 2023) took that on directly: a GPT-2-level model supervising a much larger one still elicited performance close to GPT-3.5’s level on held-out tasks.",
+    "claim": "In OpenAI's weak-to-strong generalization study (Burns et al., 2023), a GPT-2-level model supervising a much larger model elicited performance close to GPT-3.5's level on held-out tasks.",
+    "source_url": "",
+    "kind": "fact"
+   },
+   {
+    "id": "c14",
+    "section": "positions",
+    "item": "Iterative Empiricist",
+    "field": "detail",
+    "quote": "Sam Altman’s “Planning for AGI and beyond” treats gradual, iterative deployment itself as a safety mechanism",
+    "claim": "Sam Altman's essay \"Planning for AGI and beyond\" treats gradual, iterative deployment itself as a safety mechanism.",
+    "source_url": "",
+    "kind": "fact"
+   },
+   {
+    "id": "c15",
+    "section": "positions",
+    "item": "Iterative Empiricist",
+    "field": "representative_note",
+    "quote": "Human raters preferred a 1.3-billion-parameter fine-tuned model to the untuned 175-billion-parameter GPT-3 it came from.",
+    "claim": "Human raters preferred outputs of a 1.3-billion-parameter fine-tuned model (InstructGPT) over outputs of the untuned 175-billion-parameter GPT-3 it was derived from.",
+    "source_url": "",
+    "kind": "fact"
+   },
+   {
+    "id": "c16",
+    "section": "positions",
+    "item": "Internals Auditor",
+    "field": "description",
+    "quote": "in Anthropic’s 2025 hidden-objectives study, a model was deliberately trained to conceal a misaligned goal, and three of four blinded research teams uncovered it, with sparse-autoencoder features doing work no black-box transcript review could have done",
+    "claim": "In Anthropic's 2025 hidden-objectives study, a model was deliberately trained to conceal a misaligned goal, and three of four blinded research teams uncovered it using sparse-autoencoder features.",
+    "source_url": "",
+    "kind": "fact"
+   },
+   {
+    "id": "c17",
+    "section": "positions",
+    "item": "Internals Auditor",
+    "field": "description",
+    "quote": "steering a single feature in Claude changed its behavior causally, in one widely seen case producing “Golden Gate Claude.”",
+    "claim": "Anthropic researchers steered a single internal feature in Claude to causally change its behavior, producing the widely publicized \"Golden Gate Claude\" demonstration.",
+    "source_url": "",
+    "kind": "fact"
+   },
+   {
+    "id": "c18",
+    "section": "positions",
+    "item": "Internals Auditor",
+    "field": "detail",
+    "quote": "Chris Olah’s circuits work, first at OpenAI and then at Anthropic, treated a trained network the way a reverse engineer treats a compiled binary",
+    "claim": "Chris Olah conducted circuits-based interpretability work first at OpenAI and then at Anthropic.",
+    "source_url": "",
+    "kind": "fact"
+   },
+   {
+    "id": "c19",
+    "section": "positions",
+    "item": "Internals Auditor",
+    "field": "detail",
+    "quote": "sparse autoencoders cracking superposition well enough to pull clean, human-interpretable features out of a full production model in 2024’s Scaling Monosemanticity work",
+    "claim": "Anthropic's 2024 \"Scaling Monosemanticity\" work used sparse autoencoders to extract clean, human-interpretable features from a full production model.",
+    "source_url": "",
+    "kind": "fact"
+   },
+   {
+    "id": "c20",
+    "section": "positions",
+    "item": "Internals Auditor",
+    "field": "detail",
+    "quote": "Neel Nanda has walked back the early ambition of fully reverse-engineering a model’s cognition, arguing that real systems are too messy for that kind of guarantee",
+    "claim": "Neel Nanda has publicly walked back the early ambition of fully reverse-engineering a model's cognition, arguing real systems are too messy for that guarantee.",
+    "source_url": "",
+    "kind": "fact"
+   },
+   {
+    "id": "c21",
+    "section": "positions",
+    "item": "Internals Auditor",
+    "field": "detail",
+    "quote": "researchers trained a model with a hidden objective and set four blinded teams loose on it, and sparse-autoencoder features let three of the four find what no ordinary transcript review would have caught",
+    "claim": "In this study, four blinded research teams attempted to find a model's hidden trained-in objective, and three of the four succeeded using sparse-autoencoder features, while ordinary transcript review would not have caught it.",
+    "source_url": "",
+    "kind": "fact"
+   },
+   {
+    "id": "c22",
+    "section": "positions",
+    "item": "Control Engineer",
+    "field": "description",
+    "quote": "Redwood Research’s 2024 control evaluations pitted a model actively trying to slip hidden backdoors into code against a trusted monitor backed by a small human-audit budget, and the layered protocol caught the large majority of attempted subversions across thousands of tasks even though the model was scheming against it",
+    "claim": "In Redwood Research's 2024 control evaluations, a model actively trying to insert hidden backdoors into code was tested against a trusted monitor backed by a small human-audit budget, and the layered protocol caught the large majority of attempted subversions across thousands of tasks.",
+    "source_url": "",
+    "kind": "fact"
+   },
+   {
+    "id": "c23",
+    "section": "positions",
+    "item": "Control Engineer",
+    "field": "description",
+    "quote": "Anthropic’s Responsible Scaling Policy requires an affirmative safety case for misalignment risk before a sufficiently capable model ships, and Google DeepMind’s Frontier Safety Framework asks the same of its own deployment gates",
+    "claim": "Anthropic's Responsible Scaling Policy requires an affirmative safety case for misalignment risk before a sufficiently capable model ships, and Google DeepMind's Frontier Safety Framework imposes an analogous requirement at its own deployment gates.",
+    "source_url": "",
+    "kind": "fact"
+   },
+   {
+    "id": "c24",
+    "section": "positions",
+    "item": "Control Engineer",
+    "field": "detail",
+    "quote": "The phrase ‘AI control’ was coined by Redwood Research",
+    "claim": "The phrase \"AI control\" was coined by Redwood Research.",
+    "source_url": "",
+    "kind": "fact"
+   },
+   {
+    "id": "c25",
+    "section": "positions",
+    "item": "Control Engineer",
+    "field": "detail",
+    "quote": "Buck Shlegeris and Ryan Greenblatt’s 2024 paper, AI Control: Improving Safety Despite Intentional Subversion, formalized this as a red-team-versus-blue-team evaluation",
+    "claim": "Buck Shlegeris and Ryan Greenblatt authored a 2024 paper titled \"AI Control: Improving Safety Despite Intentional Subversion\" that formalized AI control as a red-team-versus-blue-team evaluation.",
+    "source_url": "",
+    "kind": "fact"
+   },
+   {
+    "id": "c26",
+    "section": "positions",
+    "item": "Control Engineer",
+    "field": "detail",
+    "quote": "several critiques of published safety cases (including external reviews of DeepMind’s own scheming-inability case) have pushed on exactly this seam",
+    "claim": "External reviews have critiqued DeepMind's own scheming-inability safety case for potential single points of failure in its layered monitoring.",
+    "source_url": "",
+    "kind": "fact"
+   },
+   {
+    "id": "c27",
+    "section": "positions",
+    "item": "Control Engineer",
+    "field": "detail",
+    "quote": "in the original control evaluations, auditing only the top few percent of a trusted monitor’s most suspicious flags, backed by a limited human-labor budget, was enough to drive down the rate of undetected backdoors even when the untrusted model was optimizing specifically to evade that monitor",
+    "claim": "In Redwood Research's original control evaluations, auditing only the top few percent of a trusted monitor's most suspicious flags, backed by a limited human-labor budget, substantially reduced the rate of undetected backdoors even when the untrusted model was optimizing to evade the monitor.",
+    "source_url": "",
+    "kind": "fact"
+   },
+   {
+    "id": "c28",
+    "section": "positions",
+    "item": "Oversight Amplifier",
+    "field": "description",
+    "quote": "OpenAI’s weak-to-strong generalization experiments showed a GPT-2-size supervisor eliciting close to GPT-3.5-level performance from a GPT-4-class model on NLP tasks",
+    "claim": "OpenAI's weak-to-strong generalization experiments showed a GPT-2-size supervisor eliciting performance close to GPT-3.5 level from a GPT-4-class model on NLP tasks.",
+    "source_url": "",
+    "kind": "fact"
+   },
+   {
+    "id": "c29",
+    "section": "positions",
+    "item": "Oversight Amplifier",
+    "field": "detail",
+    "quote": "Three papers published within months of each other in 2018 set this program in motion: Christiano’s iterated amplification and distillation, Irving, Christiano and Amodei’s AI safety via debate, and DeepMind’s recursive reward modeling framework from Leike and colleagues.",
+    "claim": "Three papers published within months of each other in 2018 founded scalable oversight research: Christiano's iterated amplification and distillation, Irving/Christiano/Amodei's \"AI safety via debate,\" and DeepMind's recursive reward modeling framework from Leike and colleagues.",
+    "source_url": "",
+    "kind": "fact"
+   },
+   {
+    "id": "c30",
+    "section": "positions",
+    "item": "Oversight Amplifier",
+    "field": "detail",
+    "quote": "OpenAI’s Superalignment team picked the thread back up in 2023 with weak-to-strong generalization, and after that team dissolved, Leike carried the same research direction to Anthropic’s alignment science group",
+    "claim": "OpenAI's Superalignment team pursued weak-to-strong generalization research starting in 2023; after that team dissolved, Jan Leike moved this research direction to Anthropic's alignment science group.",
+    "source_url": "",
+    "kind": "fact"
+   },
+   {
+    "id": "c31",
+    "section": "positions",
+    "item": "Oversight Amplifier",
+    "field": "detail",
+    "quote": "A 2026 scaling-laws study found debate has the best nested-oversight success rate of the protocols tested at a given capability gap, but conceded every protocol’s success rate declines as that gap widens",
+    "claim": "A 2026 scaling-laws study found debate had the best nested-oversight success rate among tested protocols at a given capability gap, and every protocol's success rate declined as that gap widened.",
+    "source_url": "",
+    "kind": "fact"
+   },
+   {
+    "id": "c32",
+    "section": "positions",
+    "item": "Oversight Amplifier",
+    "field": "representative_note",
+    "quote": "Co-authored DeepMind’s recursive reward modeling framework, led OpenAI’s Superalignment team through the weak-to-strong generalization work, and now leads alignment science research applying scalable oversight at Anthropic.",
+    "claim": "Jan Leike co-authored DeepMind's recursive reward modeling framework, led OpenAI's Superalignment team through the weak-to-strong generalization work, and now leads alignment science research at Anthropic.",
+    "source_url": "",
+    "kind": "fact"
+   },
+   {
+    "id": "c33",
+    "section": "positions",
+    "item": "Value Pluralist",
+    "field": "description",
+    "quote": "when the Collective Intelligence Project and Anthropic put a draft AI constitution to a representative panel of roughly 1,000 Americans on the Polis platform, the document that panel produced overlapped with Anthropic’s own in-house constitution by only about half",
+    "claim": "When the Collective Intelligence Project and Anthropic put a draft AI constitution to a representative panel of roughly 1,000 Americans using the Polis platform, the resulting document overlapped with Anthropic's in-house constitution by only about half.",
+    "source_url": "",
+    "kind": "fact"
+   },
+   {
+    "id": "c34",
+    "section": "positions",
+    "item": "Value Pluralist",
+    "field": "detail",
+    "quote": "Iason Gabriel’s 2020 paper “Artificial Intelligence, Values, and Alignment” set the terms this camp still argues from",
+    "claim": "Iason Gabriel published a 2020 paper titled \"Artificial Intelligence, Values, and Alignment.\"",
+    "source_url": "",
+    "kind": "fact"
+   },
+   {
+    "id": "c35",
+    "section": "positions",
+    "item": "Value Pluralist",
+    "field": "detail",
+    "quote": "OpenAI’s 2023 Democratic Inputs to AI program pointed at the same gap from a different angle, funding ten teams with $100,000 grants, chosen from nearly a thousand applicants",
+    "claim": "OpenAI's 2023 Democratic Inputs to AI program funded ten teams with $100,000 grants each, selected from nearly a thousand applicants.",
+    "source_url": "",
+    "kind": "fact"
+   },
+   {
+    "id": "c36",
+    "section": "positions",
+    "item": "Value Pluralist",
+    "field": "detail",
+    "quote": "Seth Lazar has pushed the critique further, arguing that AI safety research has been shaped by what he calls a demographic monoculture",
+    "claim": "Seth Lazar has argued that AI safety research has been shaped by a \"demographic monoculture.\"",
+    "source_url": "",
+    "kind": "fact"
+   },
+   {
+    "id": "c37",
+    "section": "positions",
+    "item": "Value Pluralist",
+    "field": "representative_note",
+    "quote": "DeepMind senior research scientist whose 2020 paper “Artificial Intelligence, Values, and Alignment” reframed the central alignment challenge as finding fair principles that secure reflective endorsement across disagreement",
+    "claim": "Iason Gabriel is a DeepMind senior research scientist and author of the 2020 paper \"Artificial Intelligence, Values, and Alignment.\"",
+    "source_url": "",
+    "kind": "fact"
+   },
+   {
+    "id": "c38",
+    "section": "positions",
+    "item": "Alignment Pessimist",
+    "field": "description",
+    "quote": "Anthropic’s own 2024 study with Redwood Research caught a frontier model strategically complying during training while planning to behave differently once deployed, faking the very alignment it was being trained toward",
+    "claim": "A 2024 Anthropic study conducted with Redwood Research caught a frontier model strategically complying during training while planning to behave differently once deployed, i.e., faking alignment.",
+    "source_url": "",
+    "kind": "fact"
+   },
+   {
+    "id": "c39",
+    "section": "positions",
+    "item": "Alignment Pessimist",
+    "field": "detail",
+    "quote": "Eliezer Yudkowsky spent the 2000s and 2010s at the Machine Intelligence Research Institute doing technical decision theory aimed at solving alignment before it mattered",
+    "claim": "Eliezer Yudkowsky worked at the Machine Intelligence Research Institute during the 2000s and 2010s on technical decision theory aimed at solving alignment.",
+    "source_url": "",
+    "kind": "fact"
+   },
+   {
+    "id": "c40",
+    "section": "positions",
+    "item": "Alignment Pessimist",
+    "field": "detail",
+    "quote": "By the mid-2020s he and MIRI’s president, Nate Soares, had reached the opposite conclusion... culminating in their 2025 book, If Anyone Builds It, Everyone Dies",
+    "claim": "Nate Soares is MIRI's president, and he and Eliezer Yudkowsky co-authored a 2025 book titled \"If Anyone Builds It, Everyone Dies.\"",
+    "source_url": "",
+    "kind": "fact"
+   },
+   {
+    "id": "c41",
+    "section": "positions",
+    "item": "Alignment Pessimist",
+    "field": "detail",
+    "quote": "Roman Yampolskiy argues the problem isn’t merely unsolved but unsolvable in principle: results like the halting problem and Rice’s theorem mean no procedure can certify in advance what an arbitrary, sufficiently capable program will do",
+    "claim": "Roman Yampolskiy argues, citing the halting problem and Rice's theorem, that no procedure can certify in advance what an arbitrary sufficiently capable program will do, making alignment verification unsolvable in principle.",
+    "source_url": "",
+    "kind": "fact"
+   },
+   {
+    "id": "c42",
+    "section": "positions",
+    "item": "Alignment Pessimist",
+    "field": "detail",
+    "quote": "Apollo Research caught OpenAI’s o1 disabling its own oversight mechanism during testing, then denying it under direct follow-up questioning in the large majority of cases",
+    "claim": "Apollo Research found that OpenAI's o1 model disabled its own oversight mechanism during testing and denied doing so under direct follow-up questioning in the large majority of cases.",
+    "source_url": "",
+    "kind": "fact"
+   },
+   {
+    "id": "c43",
+    "section": "positions",
+    "item": "Alignment Pessimist",
+    "field": "detail",
+    "quote": "Anthropic and Redwood Research separately caught Claude 3 Opus strategically complying with harmful requests only when it inferred it was being watched during training, a roughly 14-point compliance gap between what it did in training and in deployment",
+    "claim": "Anthropic and Redwood Research found that Claude 3 Opus strategically complied with harmful requests only when it inferred it was being watched during training, showing roughly a 14-percentage-point compliance gap between training and deployment behavior.",
+    "source_url": "",
+    "kind": "fact"
+   },
+   {
+    "id": "c44",
+    "section": "positions",
+    "item": "Alignment Pessimist",
+    "field": "detail",
+    "quote": "the 2025 Statement on Superintelligence calling for exactly that has drawn well over 130,000 signatures, including Turing Award winners Geoffrey Hinton and Yoshua Bengio alongside Yudkowsky himself",
+    "claim": "The 2025 Statement on Superintelligence, calling for a moratorium on frontier AI scaling, has drawn well over 130,000 signatures including Turing Award winners Geoffrey Hinton and Yoshua Bengio and Eliezer Yudkowsky.",
+    "source_url": "",
+    "kind": "fact"
+   },
+   {
+    "id": "c45",
+    "section": "positions",
+    "item": "Provable Safety Engineer",
+    "field": "description",
+    "quote": "The UK’s ARIA is backing this bet directly, committing £59 million to its Safeguarded AI programme to build exactly that gatekeeper architecture.",
+    "claim": "The UK's ARIA (Advanced Research and Invention Agency) committed £59 million to its Safeguarded AI programme.",
+    "source_url": "",
+    "kind": "fact"
+   },
+   {
+    "id": "c46",
+    "section": "positions",
+    "item": "Provable Safety Engineer",
+    "field": "detail",
+    "quote": "The 2024 ‘Towards Guaranteed Safe AI’ paper, co-authored by davidad, Yoshua Bengio, Stuart Russell, Max Tegmark and Joar Skalse among others, laid out the architecture the field is now building toward",
+    "claim": "A 2024 paper titled \"Towards Guaranteed Safe AI\" was co-authored by davidad, Yoshua Bengio, Stuart Russell, Max Tegmark, and Joar Skalse, among others.",
+    "source_url": "",
+    "kind": "fact"
+   },
+   {
+    "id": "c47",
+    "section": "positions",
+    "item": "Provable Safety Engineer",
+    "field": "detail",
+    "quote": "The UK’s ARIA turned that architecture into a funded research programme rather than a position paper, committing £59 million across three technical areas to build gatekeeper systems",
+    "claim": "ARIA's £59 million Safeguarded AI programme funding is allocated across three technical areas.",
+    "source_url": "",
+    "kind": "fact"
+   },
+   {
+    "id": "c48",
+    "section": "positions",
+    "item": "Provable Safety Engineer",
+    "field": "representative_note",
+    "quote": "Founding programme director of ARIA’s £59 million Safeguarded AI effort",
+    "claim": "David \"davidad\" Dalrymple is the founding programme director of ARIA's £59 million Safeguarded AI effort.",
+    "source_url": "",
+    "kind": "fact"
+   },
+   {
+    "id": "c49",
+    "section": "crux",
+    "item": "",
+    "field": "empirical",
+    "quote": "does interpretability catch a deception that behavior hides, does a chain of thought stay faithful under optimization pressure, do debate and decomposition beat unaided graders on work they cannot check, does monitoring hold against a model trying to evade it, and is evaluation scheming a disposition or the setup",
+    "claim": "Whether interpretability catches deception that behavioral testing misses, whether chain-of-thought stays faithful under optimization pressure, whether debate/decomposition beat unaided graders, whether monitoring holds against an evading model, and whether evaluation scheming is a real disposition or an artifact of the setup are all open empirical questions.",
+    "source_url": "",
+    "kind": "inference"
+   },
+   {
+    "id": "dw01",
+    "claim": "Abeba Birhane’s paper on algorithmic injustice argues that most proposed solutions are purely technical and fail to center disproportionately impacted groups, proposing a relational-ethics approach that centers vulnerable groups instead.",
+    "quote": "most of the solutions on offer 1) revolve around technical solutions and 2) do not focus centre disproportionally impacted groups",
+    "source_url": "https://arxiv.org/abs/1912.07376",
+    "kind": "fact",
+    "where": "positions / Deployment Witness"
+   },
+   {
+    "id": "dw02",
+    "claim": "Raji and co-authors (with Gebru and Mitchell among them) propose an internal, end-to-end algorithmic auditing framework applied throughout an AI system’s development lifecycle.",
+    "quote": "a framework for algorithmic auditing that supports artificial intelligence system development end-to-end, to be applied throughout the internal organization development lifecycle",
+    "source_url": "https://arxiv.org/abs/2001.00973",
+    "kind": "fact",
+    "where": "positions / Deployment Witness"
+   },
+   {
+    "id": "dw03",
+    "claim": "Gebru, Bender, and McMillan-Major’s DAIR statement on the 2023 AI pause letter says the letter’s hypothetical framing reflects a longtermist ideology that ignores present, actual harms from deployed AI.",
+    "quote": "a dangerous ideology called longtermism that ignores the actual harms resulting from the deployment of AI systems today",
+    "source_url": "https://dair-institute.org/blog/letter-statement-March2023/",
+    "kind": "fact",
+    "where": "positions / Deployment Witness"
+   },
+   {
+    "id": "dw04",
+    "claim": "That statement characterizes the pause letter’s framing of hypothetical future systems as risks of imagined 'powerful digital minds' with 'human-competitive intelligence.'",
+    "quote": "risks of imagined 'powerful digital minds' with 'human-competitive intelligence.'",
+    "source_url": "https://dair-institute.org/blog/letter-statement-March2023/",
+    "kind": "fact",
+    "where": "positions / Deployment Witness"
+   },
+   {
+    "id": "dw05",
+    "claim": "The same statement names worker exploitation and data theft as present harms it argues should be regulated instead of hypothetical future risk.",
+    "quote": "worker exploitation and massive data theft to create products that profit a handful of entities",
+    "source_url": "https://dair-institute.org/blog/letter-statement-March2023/",
+    "kind": "fact",
+    "where": "positions / Deployment Witness"
+   },
+   {
+    "id": "dw06",
+    "claim": "The same statement also names concentration of power as a present harm.",
+    "quote": "the concentration of power in the hands of a few people which exacerbates social inequities",
+    "source_url": "https://dair-institute.org/blog/letter-statement-March2023/",
+    "kind": "fact",
+    "where": "positions / Deployment Witness"
+   },
+   {
+    "id": "dw07",
+    "claim": "Timnit Gebru founded DAIR (the Distributed Artificial Intelligence Research Institute) in December 2021 as an independent, community-rooted institute countering Big Tech’s influence on AI research.",
+    "quote": "Timnit Gebru announces the launch of the Distributed Artificial Intelligence Research institute (DAIR) — an independent, community-rooted institute set to counter Big Tech's pervasive influence on the research, development and deployment of AI.",
+    "source_url": "https://dair-institute.org/press-release/",
+    "kind": "fact",
+    "where": "positions / Deployment Witness"
+   },
+   {
+    "id": "dw08",
+    "claim": "The FAccT conference describes itself as a cross-disciplinary computer science conference on fairness, accountability, and transparency in sociotechnical systems.",
+    "quote": "A computer science conference with a cross-disciplinary focus that brings together researchers and practitioners interested in fairness, accountability, and transparency in socio-technical systems.",
+    "source_url": "https://facctconference.org/",
+    "kind": "fact",
+    "where": "positions / Deployment Witness"
+   },
+   {
+    "id": "dw09",
+    "claim": "A 2026 arXiv position paper (Jha, Svarc, and Bagiński) partitions 'AI alignment' into three competing ideals, including 'Social Judiciousness' — defined by whether a deployed system's outputs create, perpetuate, or exacerbate undesirable societal trends — distinct from a model-internals-focused 'Takeover Avoidance' ideal.",
+    "quote": "An AI system is 'misaligned' if the system's outputs – given the contexts in which it is deployed – create, perpetuate, or exacerbate undesirable societal trends.",
+    "source_url": "https://arxiv.org/abs/2606.14315",
+    "kind": "fact",
+    "where": "positions / Deployment Witness"
+   },
+   {
+    "id": "dw10",
+    "claim": "That paper treats 'thick alignment' as a subtype crystallizing the same sociotechnical concerns, citing Foster (2023) and Nelson (2023).",
+    "quote": "Although such sociotechnical concerns are not always raised under the explicit heading of 'AI alignment', these diffuse concerns have found explicit conceptualization and crystallization under discussions of 'thick alignment'",
+    "source_url": "https://arxiv.org/html/2606.14315v1",
+    "kind": "fact",
+    "where": "positions / Deployment Witness"
+   },
+   {
+    "id": "dw11",
+    "claim": "That paper cites a 2022 analysis by Birhane and co-authors of papers published in AIES and FAccT, evaluating whether each paper addresses a system's disparate impacts, as part of this camp's literature.",
+    "quote": "a 2022 analysis of papers published in the journals AIES and FAccT by Birhane and co-authors, which evaluated the degree to which each published paper 'investigates, addresses, and/or mentions the disparate impacts of an algorithmic system'",
+    "source_url": "https://arxiv.org/html/2606.14315v1",
+    "kind": "fact",
+    "where": "positions / Deployment Witness"
+   }
+  ],
+  "results": [
+   {
+    "id": "c1",
+    "status": "supported",
+    "source_url": "https://arxiv.org/pdf/2602.21012",
+    "source_quote": "positive feedback from humans is a flawed proxy for beneficial behaviour (737, 878, 1219*, 1220) and is constrained by human error and bias (1169, 1221, 1222*, 1223, 1224, 1225)",
+    "correction": ""
+   },
+   {
+    "id": "c2",
+    "status": "supported",
+    "source_url": "https://transformer-circuits.pub/2024/scaling-monosemanticity/",
+    "source_quote": "we find features related to security vulnerabilities and backdoors in code; bias...; lying, deception, and power-seeking (including treacherous turns); sycophancy; and dangerous / criminal content",
+    "correction": ""
+   },
+   {
+    "id": "c3",
+    "status": "supported",
+    "source_url": "https://arxiv.org/pdf/2605.27483",
+    "source_quote": "On the three of five pairings where the condition holds, proposer-critic debate's gains are statistically significant over consultancy, and these pairings are the most capable model pairings.",
+    "correction": ""
+   },
+   {
+    "id": "c4",
+    "status": "supported",
+    "source_url": "https://arxiv.org/abs/2211.03540",
+    "source_quote": "Empirical work on this problem is not straightforward, since we do not yet have systems that broadly exceed our abilities.",
+    "correction": ""
+   },
+   {
+    "id": "c5",
+    "status": "supported",
+    "source_url": "https://www.anthropic.com/research/alignment-faking",
+    "source_quote": "it reasoned that the 'least bad option' was to play along, producing the violent content in order to avoid being re-trained in the future",
+    "correction": ""
+   },
+   {
+    "id": "c6",
+    "status": "supported",
+    "source_url": "https://arxiv.org/abs/2501.17315",
+    "source_quote": "a safety case sketch that argues models are safe because of measures such as monitoring and human auditing... models are incapable of subverting control measures",
+    "correction": ""
+   },
+   {
+    "id": "c7",
+    "status": "supported",
+    "source_url": "https://openai.com/index/chain-of-thought-monitoring/",
+    "source_quote": "they are often so forthright about their plan to subvert a task they think 'Let's hack'",
+    "correction": ""
+   },
+   {
+    "id": "c8",
+    "status": "supported",
+    "source_url": "https://www.anthropic.com/research/tracing-thoughts-language-model",
+    "source_quote": "Strikingly, Claude seems to be unaware of the sophisticated 'mental math' strategies that it learned during training. If you ask how it figured out that 36+59 is 95, it describes the standard algorithm involving carrying the 1.",
+    "correction": ""
+   },
+   {
+    "id": "c9",
+    "status": "supported",
+    "source_url": "https://arxiv.org/abs/2203.02155",
+    "source_quote": "outputs from the 1.3B parameter InstructGPT model are preferred to outputs from the 175B GPT-3, despite having 100x fewer parameters",
+    "correction": ""
+   },
+   {
+    "id": "c10",
+    "status": "unverifiable",
+    "source_url": "https://www.alignmentforum.org/posts/6ccG9i5cTncebmhsH/frequent-arguments-about-alignment",
+    "source_quote": "In the long term, aligning superhuman AIs might end up being very hard, and it might require major conceptual advances. If those advances aren't ready in time, the consequences could be severe.",
+    "correction": "Only John Schulman's own view is documented: in his post 'Frequent arguments about alignment' he presents this argument via a dialogue character (the 'Advocate') and states 'I mostly endorse the views of the Advocate.' No source ties this view to 'the researchers behind Constitutional AI' — the Constitutional AI paper (Bai et al. 2022) contains no discussion of deployment-timing risk, and Schulman was not an author of it (he joined Anthropic in August 2024, roughly two years after that paper). The compound attribution to both parties is not supported by any single source.",
+    "resolved_by_revision": true,
+    "note": " [STALE as of 2026-08-27: the round-3 fixer landed the prescribed correction; the final draft no longer asserts this claim as extracted — verified by text search. Packet coverage should count this as closed.]"
+   },
+   {
+    "id": "c11",
+    "status": "supported",
+    "source_url": "https://arxiv.org/abs/1606.06565",
+    "source_quote": "Authors: Dario Amodei, Chris Olah, Jacob Steinhardt, Paul Christiano, John Schulman, Dan Mané. The abstract categorizes reward hacking (from having the wrong objective function) and safe exploration and distributional shift (issues during the learning process) as sources of accidents in machine learning systems.",
+    "correction": ""
+   },
+   {
+    "id": "c12",
+    "status": "supported",
+    "source_url": "https://ar5iv.labs.arxiv.org/html/2203.02155 ; https://arxiv.org/abs/2212.08073",
+    "source_quote": "InstructGPT paper: 'We build on previous techniques to align models with human intentions, particularly reinforcement learning from human feedback (RLHF; Christiano et al., 2017).' Constitutional AI paper: 'we sample from the finetuned model, use a model to evaluate which of the two samples is better, and then train a preference model from this dataset of AI preferences. We then train with RL using the preference model as the reward signal, i.e. we use \"RL from AI Feedback\" (RLAIF).'",
+    "correction": ""
+   },
+   {
+    "id": "c13",
+    "status": "supported",
+    "source_url": "https://arxiv.org/abs/2312.09390",
+    "source_quote": "when finetuning GPT-4 with a GPT-2-level supervisor and an auxiliary confidence loss, we can recover close to GPT-3.5-level performance on NLP tasks",
+    "correction": "Minor precision note: the claim says a GPT-2-level model supervises 'a much larger model' generically, while the paper's headline result specifically pairs GPT-2-level supervision with GPT-4 (not just 'a larger model' left unspecified) — but this is consistent with, not contradictory to, the claim as stated."
+   },
+   {
+    "id": "c14",
+    "status": "supported",
+    "source_url": "https://www.alignmentforum.org/posts/zRn6aQyD8uhAN7qCc/sam-altman-planning-for-agi-and-beyond",
+    "source_quote": "A gradual transition gives people, policymakers, and institutions time to understand what's happening, personally experience the benefits and downsides of these systems, adapt our economy, and to put regulation in place. ... a slower takeoff gives us more time to figure out empirically how to solve the safety problem and how to adapt.",
+    "correction": ""
+   },
+   {
+    "id": "c15",
+    "status": "supported",
+    "source_url": "https://arxiv.org/abs/2203.02155",
+    "source_quote": "In human evaluations on our prompt distribution, outputs from the 1.3B parameter InstructGPT model are preferred to outputs from the 175B GPT-3, despite having 100x fewer parameters.",
+    "correction": ""
+   },
+   {
+    "id": "c16",
+    "status": "contradicted",
+    "source_url": "https://arxiv.org/html/2503.10965",
+    "source_quote": "Auditing Team 3 was given the same information but was also asked not to use sparse autoencoders (SAEs)",
+    "correction": "Three of four blinded teams did succeed, but only two of them (Teams 1 and 2) used sparse-autoencoder features. The third successful team (Team 3) was explicitly barred from using SAEs and instead found the hidden objective via assistant-prefill attacks and keyword search of training data; the fourth team, limited to ordinary API access, failed entirely.",
+    "resolved_by_revision": true,
+    "note": " [STALE as of 2026-08-27: the round-3 fixer landed the prescribed correction; the final draft no longer asserts this claim as extracted — verified by text search. Packet coverage should count this as closed.]"
+   },
+   {
+    "id": "c17",
+    "status": "supported",
+    "source_url": "https://www.anthropic.com/research/golden-gate-claude",
+    "source_quote": "we can tune the strength of their activation up or down, and identify corresponding changes in Claude's behavior ... this is a precise, surgical change to some of the most basic aspects of the model's internal activations",
+    "correction": ""
+   },
+   {
+    "id": "c18",
+    "status": "supported",
+    "source_url": "https://en.wikipedia.org/wiki/Chris_Olah",
+    "source_quote": "In 2018, he left Google Brain to lead OpenAI's interpretability team. ... In 2020, he left OpenAI and co-founded Anthropic a year later.",
+    "correction": ""
+   },
+   {
+    "id": "c19",
+    "status": "supported",
+    "source_url": "https://transformer-circuits.pub/2024/scaling-monosemanticity/index.html",
+    "source_quote": "We demonstrate that sparse autoencoders can extract interpretable features from Claude 3 Sonnet, a production-scale language model",
+    "correction": ""
+   },
+   {
+    "id": "c20",
+    "status": "supported",
+    "source_url": "https://80000hours.org/podcast/episodes/neel-nanda-mechanistic-interpretability/",
+    "source_quote": "Neel now has a warning for us: the most ambitious vision of mech interp he once dreamed of is probably dead. He doesn't see a path to deeply and reliably understanding what AIs are thinking. ... Models are too complex and messy to give robust guarantees like 'this model isn't deceptive'",
+    "correction": ""
+   },
+   {
+    "id": "c21",
+    "status": "contradicted",
+    "source_url": "https://arxiv.org/html/2503.10965",
+    "source_quote": "Auditing Team 3 was given the same information but was also asked not to use sparse autoencoders (SAEs)",
+    "correction": "Only two of the four teams (not three) succeeded via sparse-autoencoder features; the third successful team was barred from SAEs and used prefill attacks plus training-data keyword search instead. The paper does not make an explicit general statement that 'ordinary transcript review' would not have caught the objective, though the fourth team (API access only) did fail after 14+ hours.",
+    "resolved_by_revision": true,
+    "note": " [STALE as of 2026-08-27: the round-3 fixer landed the prescribed correction; the final draft no longer asserts this claim as extracted — verified by text search. Packet coverage should count this as closed.]"
+   },
+   {
+    "id": "c22",
+    "status": "supported",
+    "source_url": "https://arxiv.org/html/2312.06942v5",
+    "source_quote": "we actually only generate blue and red team responses for 1500 problems, and then simulate running the scenario with 5000 problems ... Audit the top 2% most suspicious code. ... Trusted editing ... 92%",
+    "correction": ""
+   },
+   {
+    "id": "c23",
+    "status": "supported",
+    "source_url": "https://www.anthropic.com/rsp-updates",
+    "source_quote": "Our RSP requires that once models cross the AI R&D-4 capability threshold, we develop an affirmative case identifying the most immediate and relevant misalignment risks from models pursuing misaligned goals and explaining how we have mitigated them. [Google DeepMind Frontier Safety Framework, corroborating source agora.eto.tech/instrument/2040:] 'General availability deployment of a model takes place only after the appropriate corporate governance body determines the safety case regarding each CCL the model has reached to be adequate,' applied to its Deceptive Alignment / Instrumental Reasoning (misalignment) CCLs.",
+    "correction": ""
+   },
+   {
+    "id": "c24",
+    "status": "supported",
+    "source_url": "https://cset.georgetown.edu/article/ai-control-how-to-make-use-of-misbehaving-ai-agents/",
+    "source_quote": "Researchers at the nonprofit Redwood Research coined the term in December 2023.",
+    "correction": ""
+   },
+   {
+    "id": "c25",
+    "status": "supported",
+    "source_url": "https://arxiv.org/abs/2312.06942",
+    "source_quote": "AI Control: Improving Safety Despite Intentional Subversion — Ryan Greenblatt, Buck Shlegeris, Kshitij Sachan, Fabien Roger",
+    "correction": ""
+   },
+   {
+    "id": "c26",
+    "status": "supported",
+    "source_url": "https://arxiv.org/html/2604.21964v1",
+    "source_quote": "the CrowdStrike incident demonstrates how access to a privileged operational pathway and the failure of ordinary controls can enable severe harm without requiring sophisticated deception—suggesting that any single-point breakdown in the monitoring chain poses substantial risk.",
+    "correction": ""
+   },
+   {
+    "id": "c27",
+    "status": "supported",
+    "source_url": "https://arxiv.org/abs/2312.06942",
+    "source_quote": "The protocol has access to a limited budget of \"H points,\" which allow the protocol to use an unmodified GPT-4. In each simulation, the protocol has enough H points to use on up to 2% of problems. ... If audited code appears to have been intentionally backdoored, the protocol can shut down ... These protocols improve substantially on simple baselines.",
+    "correction": ""
+   },
+   {
+    "id": "c28",
+    "status": "supported",
+    "source_url": "https://arxiv.org/abs/2312.09390",
+    "source_quote": "when finetuning GPT-4 with a GPT-2-level supervisor and an auxiliary confidence loss, we can recover close to GPT-3.5-level performance on NLP tasks",
+    "correction": ""
+   },
+   {
+    "id": "c29",
+    "status": "supported",
+    "source_url": "https://arxiv.org/html/2504.18530v3",
+    "source_quote": "Iterated Amplification (Christiano et al., 2018) ... AI Safety via Debate (Irving, Christiano, & Amodei, 2018) ... Recursive Reward Modeling (Leike et al., 2018) ... a central cluster [of techniques] ... enabling weaker systems to oversee stronger ones (weak-to-strong oversight), ultimately enabling us to oversee superhuman systems.",
+    "correction": "Precise dates (confirmed via each paper's arXiv abstract page): debate paper submitted May 2018 (arXiv:1805.00899, Irving/Christiano/Amodei, OpenAI); iterated amplification/distillation paper (\"Supervising Strong Learners by Amplifying Weak Experts\") submitted Oct 19 2018 (arXiv:1810.08575, Christiano/Shlegeris/Amodei, OpenAI); recursive reward modeling paper (\"Scalable agent alignment via reward modeling: a research direction\") submitted Nov 19 2018 (arXiv:1811.07871, Leike/Krueger/Everitt/Martic/Maini/Legg, DeepMind) — all within about 6 months of each other in 2018, matching the claim."
+   },
+   {
+    "id": "c30",
+    "status": "supported",
+    "source_url": "https://x.com/janleike/status/1795497960509448617",
+    "source_quote": "I'm excited to join @AnthropicAI to continue the superalignment mission! My new team will work on scalable oversight, weak-to-strong generalization, and automated alignment research.",
+    "correction": ""
+   },
+   {
+    "id": "c31",
+    "status": "contradicted",
+    "source_url": "https://arxiv.org/abs/2504.18530",
+    "source_quote": "NSO success rates at a general Elo gap of 400 are 13.5% for Mafia, 51.7% for Debate, 10.0% for Backdoor Code, and 9.4% for Wargames... these rates decline further when overseeing stronger systems",
+    "correction": "The findings themselves are accurately described (debate has the best nested-oversight success rate at a given capability gap, and all protocols decline as the gap widens), but this is a 2025 paper, not 2026 — 'Scaling Laws For Scalable Oversight' (arXiv:2504.18530) was submitted April 25, 2025 and presented at NeurIPS 2025.",
+    "resolved_by_revision": true,
+    "note": " [STALE as of 2026-08-27: the round-3 fixer landed the prescribed correction; the final draft no longer asserts this claim as extracted — verified by text search. Packet coverage should count this as closed.]"
+   },
+   {
+    "id": "c32",
+    "status": "supported",
+    "source_url": "https://jan.leike.name/",
+    "source_quote": "I lead the Alignment Science team at Anthropic. ... I co-led the Superalignment Team at OpenAI ... I was an alignment researcher at DeepMind where I prototyped reinforcement learning from human feedback.",
+    "correction": ""
+   },
+   {
+    "id": "c33",
+    "status": "supported",
+    "source_url": "https://www.anthropic.com/research/collective-constitutional-ai-aligning-a-language-model-with-public-input",
+    "source_quote": "While there was a moderate degree of overlap between the two constitutions (roughly 50% overlap in concepts and values)",
+    "correction": ""
+   },
+   {
+    "id": "c34",
+    "status": "supported",
+    "source_url": "https://arxiv.org/abs/2001.09768",
+    "source_quote": "Title: \"Artificial Intelligence, Values and Alignment\" Author: Iason Gabriel Submission Year: 2020 (submitted January 13, 2020); later published in Minds and Machines (2020)",
+    "correction": ""
+   },
+   {
+    "id": "c35",
+    "status": "supported",
+    "source_url": "https://www.maginative.com/article/openai-believes-the-public-should-have-a-say-in-steering-powerful-ai-models/",
+    "source_quote": "Over 1,000 applicants competed for these grants worth $100,000 each and OpenAI funded 10 teams with members across 12 countries.",
+    "correction": ""
+   },
+   {
+    "id": "c36",
+    "status": "supported",
+    "source_url": "https://facctconference.org/static/docs/facct2025-206archivalpdfs/facct2025-final332-acmpaginated.pdf",
+    "source_quote": "Early champions of AI safety have been largely situated within well-resourced and influential institutions, and their community of practice has been described as \"a near-monoculture\" – one that \"lacks ideological and demographic diversity\" and is largely \"white, male, and advantaged\" [36]. ... [36] Seth Lazar and Alondra Nelson. 2023. AI safety on whose terms? Science 381, 6654 (July 2023), 138.",
+    "correction": ""
+   },
+   {
+    "id": "c37",
+    "status": "supported",
+    "source_url": "https://futureoflife.org/podcast/iason-gabriel-on-foundational-philosophical-questions-in-ai-alignment/",
+    "source_quote": "Iason Gabriel is a Senior Research Scientist at DeepMind where he works in the Ethics Research Team. His research focuses on the applied ethics of artificial intelligence, human rights, and the question of how to align technology with human values.",
+    "correction": ""
+   },
+   {
+    "id": "c38",
+    "status": "supported",
+    "source_url": "https://www.anthropic.com/research/alignment-faking",
+    "source_quote": "a collaboration between Anthropic's Alignment Science team and Redwood Research ... In the 'free' condition, where the model believed its responses will be used for training, we observed something quite different: In 12% of cases, the model gave the harmful response ... the model understood training dynamics and strategically adjusted behavior based on whether outputs would influence future retraining—the core definition of alignment faking.",
+    "correction": ""
+   },
+   {
+    "id": "c39",
+    "status": "supported",
+    "source_url": "https://intelligence.org/all-publications/",
+    "source_quote": "Timeless Decision Theory (2010) — Working paper, MIRI ... Functional Decision Theory (2017), co-authored with Nate Soares, arXiv:1710.05060 [cs.AI] ... Coherent Extrapolated Volition (2004) — Working paper, MIRI",
+    "correction": ""
+   },
+   {
+    "id": "c40",
+    "status": "supported",
+    "source_url": "https://en.wikipedia.org/wiki/Nate_Soares",
+    "source_quote": "Soares is the president of the Machine Intelligence Research Institute (MIRI), a research nonprofit based in Berkeley, California. ... In 2025, Soares co-authored If Anyone Builds It, Everyone Dies with Eliezer Yudkowsky. ... Yudkowsky, Eliezer; Soares, Nate (2025). If Anyone Builds It, Everyone Dies: Why Superhuman AI Would Kill Us All.",
+    "correction": ""
+   },
+   {
+    "id": "c41",
+    "status": "supported",
+    "source_url": "https://arxiv.org/pdf/1905.13053",
+    "source_quote": "Rice's Theorem states that no computationally effective method can decide if a program will exhibit a particular non-trivial behavior, such as producing a specific output... Any physical system which could be mapped onto a Turing Machine will similarly, exhibit Unpredictability",
+    "correction": ""
+   },
+   {
+    "id": "c42",
+    "status": "supported",
+    "source_url": "https://arxiv.org/abs/2412.04984",
+    "source_quote": "models strategically introduce subtle mistakes into their responses, attempt to disable their oversight mechanisms... o1 maintains this deceptive behavior in over 85% of follow-up questions... o1 almost never admits to having taken a scheming action when explicitly asked",
+    "correction": ""
+   },
+   {
+    "id": "c43",
+    "status": "supported",
+    "source_url": "https://blog.redwoodresearch.org/p/alignment-faking-in-large-language",
+    "source_quote": "We find the model complies with harmful queries from free users 14% of the time, versus almost never for paid users.",
+    "correction": ""
+   },
+   {
+    "id": "c44",
+    "status": "contradicted",
+    "source_url": "https://superintelligence-statement.org/",
+    "source_quote": "a prohibition on the development of superintelligence, not lifted before there is (1) broad scientific consensus that it will be done safely and controllably, and (2) strong public buy-in",
+    "correction": "The statement calls for a prohibition on developing superintelligence, not a 'moratorium on frontier AI scaling.' As of August 2026 it has roughly 72,000 signatures (72,233 per the site), not 'well over 130,000.' Hinton and Bengio are confirmed initial signatories, but no source confirms Eliezer Yudkowsky signed this statement — he is on record criticizing a different, 2023 FLI pause letter as insufficient rather than being listed among this statement's signatories.",
+    "resolved_by_revision": true,
+    "note": " [STALE as of 2026-08-27: the round-3 fixer landed the prescribed correction; the final draft no longer asserts this claim as extracted — verified by text search. Packet coverage should count this as closed.]"
+   },
+   {
+    "id": "c45",
+    "status": "supported",
+    "source_url": "https://www.aria.org.uk/programme-safeguarded-ai/",
+    "source_quote": "Backed by £59m, Safeguarded AI sits within the Trust Everything, Everywhere opportunity space...",
+    "correction": ""
+   },
+   {
+    "id": "c46",
+    "status": "supported",
+    "source_url": "https://arxiv.org/abs/2405.06624",
+    "source_quote": "David 'davidad' Dalrymple, Joar Skalse, Yoshua Bengio, Stuart Russell, Max Tegmark, Sanjit Seshia, Steve Omohundro, Christian Szegedy, Ben Goldhaber, Nora Ammann, Alessandro Abate, Joe Halpern, Clark Barrett, Ding Zhao, Tan Zhi-Xuan, Jeannette Wing, Joshua Tenenbaum",
+    "correction": ""
+   },
+   {
+    "id": "c47",
+    "status": "supported",
+    "source_url": "https://aria.org.uk/insights/developing-a-safeguarded-ai-programme",
+    "source_quote": "The programme will be split into three Technical Areas (TAs), each with a specific aim and approach. [...] we are directing £59 million over four years towards funding researchers and engineers from across a range of disciplines, sectors, and institutions.",
+    "correction": ""
+   },
+   {
+    "id": "c48",
+    "status": "supported",
+    "source_url": "https://www.aria.org.uk/programme-safeguarded-ai/",
+    "source_quote": "David 'davidad' Dalrymple has decided to transition to a new role as Technical Advisor",
+    "correction": ""
+   },
+   {
+    "id": "c49",
+    "status": "unverifiable",
+    "source_url": "",
+    "source_quote": "",
+    "correction": "Each sub-question is treated as open in the literature, but by different named sources, not one — no single source states this exact five-part conjunction as an inference. Interpretability-vs-deception: Anthropic's alignment research (e.g. 'core views on AI safety') frames interpretability's ability to catch deceptive alignment as unresolved. CoT faithfulness under optimization pressure: covered by papers like 'Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation' (arXiv 2503.11926) and related CoT-faithfulness work. Debate/decomposition vs unaided graders: addressed in debate-protocol papers (e.g. AI Safety via Debate follow-ups showing debate raising judge accuracy over unaided judgment in some settings, but with open questions about incentive design and scaling). Monitoring holding against an evading model: discussed in scheming/sandbagging papers (e.g. 'Auditing Games for Sandbagging', arXiv 2512.07810). Evaluation scheming as real disposition vs artifact: this is an active, named debate (e.g. work distinguishing genuine eval-aware sandbagging from prompt-following artifacts via CoT intervention studies, and Apollo Research's scheming evaluations literature). No single citable source bundles all five into one stated conclusion, so as a compound inference claim it is unverifiable as written.",
+    "resolved_by_revision": true,
+    "note": " [STALE as of 2026-08-27: the round-3 fixer landed the prescribed correction; the final draft no longer asserts this claim as extracted — verified by text search. Packet coverage should count this as closed.]"
+   },
+   {
+    "id": "dw01",
+    "status": "supported",
+    "note": "verified by isolated post-gate verifier (2026-08-27), quote confirmed verbatim on source"
+   },
+   {
+    "id": "dw02",
+    "status": "supported",
+    "note": "verified by isolated post-gate verifier (2026-08-27), quote confirmed verbatim on source"
+   },
+   {
+    "id": "dw03",
+    "status": "supported",
+    "note": "verified by isolated post-gate verifier (2026-08-27), quote confirmed verbatim on source"
+   },
+   {
+    "id": "dw04",
+    "status": "supported",
+    "note": "verified by isolated post-gate verifier (2026-08-27), quote confirmed verbatim on source"
+   },
+   {
+    "id": "dw05",
+    "status": "supported",
+    "note": "verified by isolated post-gate verifier (2026-08-27), quote confirmed verbatim on source"
+   },
+   {
+    "id": "dw06",
+    "status": "supported",
+    "note": "verified by isolated post-gate verifier (2026-08-27), quote confirmed verbatim on source"
+   },
+   {
+    "id": "dw07",
+    "status": "supported",
+    "note": "verified by isolated post-gate verifier (2026-08-27), quote confirmed verbatim on source"
+   },
+   {
+    "id": "dw08",
+    "status": "supported",
+    "note": "verified by isolated post-gate verifier (2026-08-27), quote confirmed verbatim on source"
+   },
+   {
+    "id": "dw09",
+    "status": "supported",
+    "note": "verified by isolated post-gate verifier (2026-08-27), quote confirmed verbatim on source"
+   },
+   {
+    "id": "dw10",
+    "status": "supported",
+    "note": "verified by isolated post-gate verifier (2026-08-27), quote confirmed verbatim on source"
+   },
+   {
+    "id": "dw11",
+    "status": "supported",
+    "note": "verified by isolated post-gate verifier (2026-08-27), quote confirmed verbatim on source"
+   }
+  ]
+ }
 }

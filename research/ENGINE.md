@@ -62,7 +62,8 @@ flowchart TD
     Q -->|HUMAN reviews + publishes| P[stage 5 · published topic]
     P -->|DEPLOY.md §3 docker exec| L[(live container DB)]
     P -.->|export_topic re-syncs| J
-    J -->|refresh_topic.js, upkeep mirror| J
+    J -->|refresh_topic.js, upkeep mirror| RF[refresh proposal<br/>HUMAN approves the diff]
+    RF -->|lint --json + distribute_topic.js fix_only| J
 ```
 
 ## 3. Order of operations
@@ -70,8 +71,8 @@ flowchart TD
 | Stage | Engine piece | Does | Gate | Artifact |
 |---|---|---|---|---|
 | 0 Catalog | hand-authored entry + `load_universe` | register the topic stub + taxonomy edges | — | entry in `research/catalog/topic-universe.json` |
-| 1 Research | `research/workflows/research_topic.js` | plan (+icon, prevalence_basis) → parallel section research (basics facts→shape + questions + one agent per position + actions) → crux → **claim ledger + isolated per-claim verification** → 3-critic substance gate → fix loop → verbatim prescribed-fix pass | substance gate 3/3, shape_notes empty, ledger closed | `research/dossiers/<slug>.json` |
-| 2 Editorial | `research/workflows/distribute_topic.js` + `lint_draft.py` + `budgets.py` | distill compact layer → tier/reveal/fold → reorder → 2-critic presentation gate → whitelisted fix loop | gate 2/2 + lint at 0 findings + loader loads with 0 warnings | `research/topics/<slug>.json` |
+| 1 Research | `research/workflows/research_topic.js` | plan (+icon, prevalence_basis) → parallel section research (basics facts→shape + questions + one agent per position + actions) → crux → **claim ledger + isolated per-claim verification** → 3-critic substance gate + shape + ledger, every round → fix loop → verbatim prescribed-fix pass → **closing ledger pass on the final draft** | substance gate 5/5 (3 critics + ledger + shape), shape_notes empty, ledger closed **on the shipped draft** | `research/dossiers/<slug>.json` |
+| 2 Editorial | `research/workflows/distribute_topic.js` + `lint_draft.py` + `budgets.py` | typography autofix → distill compact layer → **fold as a budget to spend**: reorder + tier + reveal → gate = 2 critics + **deterministic editorial check** + **claim fidelity** → whitelisted fix loop (1 round unless grounded) | gate pass + lint at 0 findings + loader loads with 0 warnings | `research/topics/<slug>.json` |
 | 3 Iconography | brief agent + `research/icons/generate_icons.py` + `postprocess_icon.py` | brief → 4 Nano Banana candidates → pick vs checklist → normalize | checklist pass at 40px | `static/img/topics/<slug>.png` + `research/icons/<slug>.md` |
 | 4 Integration | `render_screens/social/poster` + design-conformance critics | render every surface → conformance critique → content-fix loop (`fix_only`) | poster fit exit 0 + all 3 social formats + og card installed + no blocking content findings | `research/reviews/<slug>/` renders, cards, poster |
 | 4.5 PM gate | `.claude/agents/topic-pm.md` | fresh-context read of the FINISHED topic: deterministic pass (lint/links/artifacts) → reads every render → routes findings to the owning stage → writes the packet | every deterministic check green + no open routed finding | `research/reviews/<slug>/REVIEW.md` |
@@ -89,7 +90,7 @@ cited old→new changelog → **human approves the diff** → staged load → pu
 | `research/workflows/research_topic.js` | stage 1: substance research + claim ledger + substance gate |
 | `research/workflows/distribute_topic.js` | stage 2: presentation distill/fold + gate; also `fix_only` view-feedback passes |
 | `research/workflows/refresh_topic.js` | upkeep mirror: re-verify + changelog + gate, stops at the human |
-| `research/workflows/budgets.py` | **single source of truth for content length**: db cap (loader slices) / hard bound (lint gates) / target (stage 2 writes to). Mirrored into stage 2's prompt, guarded by `test_workflow_mirrors.py` |
+| `research/workflows/budgets.py` | **single source of truth for content length**: db cap (loader slices) / hard bound (lint + stage 2's `presentationCheck` gate) / target (stage 2 writes to). Mirrored into stage 2's prompt AND its `BUDGET_LIMITS` table, guarded by `test_workflow_mirrors.py` |
 | `research/workflows/lint_draft.py` | deterministic lint of a draft JSON; `--fix` applies safe rewrites |
 | `research/workflows/seed_defects.py` | gate calibration: inject known defects, score detection |
 | `research/workflows/tally_tokens.py` | per-run token/cost accounting |
@@ -212,9 +213,50 @@ packet says so). *Why:* the loop is capped and judgment findings get one round,
 so a prescription could expire unapplied and reach the human as a blocking defect
 with its own fix printed beside it — democratic-backsliding, then ai-alignment.
 
+**The ledger closes on the draft that SHIPS, not the one it was extracted from.**
+After the fix loop and the prescribed-fix pass, a **closing pass** re-extracts on
+the final draft, carries forward by atomic claim text every result that is still
+`supported` (that verification stands and costs nothing to keep), and verifies
+only what is new or rewritten — including content the fixer ADDED, which was
+never swept before. If it finds blocking claims it gets one grounded repair
+round, then re-verifies. *Why:* the ledger used to be extracted before the fix
+loop and never re-run, so every sentence the loop rewrote left the run unverified
+while still counting as coverage. Measured across the four topics carrying
+ledgers: of 259 claims, only **129 were still asserted verbatim** in stage 1's
+own final draft, and 25% of the ledger closed as `resolved-by-revision` (18 of 73
+on vaccine-mandates, 22 of 70 on encryption) — which means the REPLACEMENT prose,
+the sentence written to repair a wrong claim, was the least-checked text in the
+topic. The packet reported that as "0 open".
+
+**Every source scores every round.** The gate is critics + ledger + shape, rebuilt
+from the current draft each round by `fullGate()`. Shape used to be computed once
+and concatenated once, so after round 1 it vanished from the verdict set: its
+blocking count went with it, and keep-best could select a draft that still
+carried the defect. Because all three sources are always present, the verdict set
+keeps a stable size and pass/block counts stay comparable across rounds.
+
 **Fact residuals are the pipeline's to close, never the human's.** Stage 1's
 `applyPatch` has no field whitelist, so fact fields are fixable here. Re-run the
 fact critic or apply its prescribed resolution (cut / soften / attribute in-voice).
+
+**Stage 1 ranks; stage 2 folds.** `tier` is a RANKING — a new tier at each genuine
+drop-off — and nothing else. `reveal` is no longer stage 1's to set at all: it is a
+fold decision, three research agents were each assigning a display layer with no
+knowledge of the display, and stage 2 reassigned it anyway. Two deterministic
+rules keep the ranking usable: a section that comes back entirely one tier is a
+blocking shape defect (an ungraded ranking tells stage 2 nothing), and stage 1 now
+owns the geometry checks for every field stage 2's whitelist forbids it to touch —
+`unit`, `label`, `source_label`, `source_published`, `lean_label_a/b`,
+`proponents`, `representative_note`. Those were previously caught by lint after
+both stages had finished, which left them with no owner.
+
+**A seeded lean needs a named poll.** The questions call has no web tools (by
+design — the search-agent distraction was making it miss its schema), yet it was
+asked for `lean_pct_a` "grounded in real polling". It now returns `-1` unless a
+real poll is in hand, names it in `lean_basis`, and a seeded percentage with an
+empty basis is a blocking shape defect. `prevalence_basis` and any seeded lean are
+also swept into the claim ledger as `inference` claims — both are numbers the
+atlas publishes and neither had ever been checked.
 
 **Nothing escalates mid-run (Jeff, 2026-08-27) — the engine decides editorial
 forks itself**, by its own rules: a verified genuine missing camp is ADDED
@@ -228,10 +270,13 @@ stops to ask.
 **Stage 2 authors to the render geometry.** `research/workflows/budgets.py` is
 the single source of truth for how long content may be, in three numbers per
 field: the **db cap** (exceed it and the loader silently slices), the **hard
-bound** (where the layout visibly breaks — lint gates on this), and the
-**target** (what the design can actually hold — stage 2 writes to this). The
-targets are mirrored into the distill prompt as `RENDER_BUDGETS`, guarded by
-`test_workflow_mirrors.py`.
+bound** (where the layout visibly breaks), and the **target** (what the design can
+actually hold — stage 2 writes to this). Both bounds are now enforced inside stage
+2 as well as by lint: `BUDGET_LIMITS` mirrors the same numbers in a form the
+deterministic check can read, and the patch applier rejects an over-limit value
+outright. The targets are also mirrored into the distill prompt as
+`RENDER_BUDGETS`. All of it is guarded by `test_workflow_mirrors.py` — stage 2 was
+handed these numbers in prose and no code ever compared its output to them.
 
 Per-field budgets do not settle whole-sheet fit — that is a packing problem and
 the poster's exit-code check stays — but meeting them is what keeps that check
@@ -239,21 +284,97 @@ quiet. (Why the budgets live in stage 2: `budgets.py`'s docstring and
 `RESEARCH_PIPELINE.md` §3.)
 
 Run `distribute_topic.js` with `{slug, title, today, dossier:<stage-1 return>}`.
-The dossier is 60KB+ — bake it in via the `__ARGS` recipe (§10). Distill → tier
-(the "Go deeper" fold) → reveal → reorder (most decision-relevant first) → 2-critic
-gate (compact-self-sufficiency incl. above-fold selection; reading-level fit).
+**`dossier` must include `claim_ledger`** — stage 2 rewrites the prose stage 1
+verified, and the fidelity check is what stops a rewrite from moving a claim. The
+dossier is 60KB+ — bake it in via the `__ARGS` recipe (§10). Typography autofix →
+distill → reorder + tier + reveal → gate → whitelisted fix loop.
 **Display order = array order; `tier` marks the drop-off — move an item across the
 fold by REORDERING. Positions are the exception: they render by `prevalence_weight`
 (locked); steer their fold with `tier`.** Facts are whitelist-locked here.
 
+**The fold is a budget to spend, not a threshold to clear.** Each section has room
+for a set number of items above "Go deeper" (`budgets.FOLD`, mirrored from
+`models.py`: basics 3/9, questions 3/6, positions 2/6). Measured across the 16
+published topics, that room was going systematically unused: **Questions showed 4
+of 7 on 14 of 16 topics** while the design had room for 6, and Basics showed 63%
+of its stats against room for 9 (UBI showed 5 of 14). The fold was landing at the
+first drop-off in the ranking rather than at the best cutoff the space affords, so
+a third of the research sat behind a click and every page of the atlas broke in
+the same place. The fold preview now states the capacity and the unused slots, and
+a section that hides 3+ items while leaving slots empty is a blocking finding.
+**The caps themselves are not the constraint and were left alone** — positions run
+at 89% of capacity and the cap genuinely binds on big topics; it was the tier
+grading that had collapsed.
+
+**Stage 2's gate has three sources — four verdicts — scored every round**
+(`fullGate`), matching stage 1:
+1. **Two judgment critics** — compact-self-sufficiency (incl. above-fold
+   selection) and reading-level fit.
+2. **`presentationCheck`, the deterministic editorial check.** Budgets (hard
+   limits, plus a gross 1.5x overrun of the target — targets stay guidance,
+   because enforcing a "~" as a bound produced 357 corpus findings), plain-text
+   invariants, editorial "we" scoped to the neutral voice, the two-register
+   contract (a `detail` whose opening restates its compact line by bigram overlap
+   adds nothing for the click it costs), paragraph structure, at least 3 condensed
+   items per section, one condensed action per camp, order/tier agreement, and
+   fold underfill. **It reports only what stage 2 can fix** — a deterministic
+   finding on a whitelist-locked field is a finding the fixer can never close, and
+   the loop would spend every round on it.
+3. **`fidelityVerdict`, claim fidelity.** Stage 1 verifies against the world;
+   stage 2 verifies against stage 1's record. For every `supported` claim whose
+   verbatim sentence this stage rewrote, a **no-web** agent is given the stored
+   `source_quote` and asked whether the new text still asserts what the source
+   supports. Drift is blocking; a dropped claim is fine (nothing unsupported is
+   being said); an unjudged claim is blocking, never a pass. *Why:* 31 verified
+   claims across four topics were rewritten here with no re-check, every one of
+   them previously `supported`.
+
+Rounds are asymmetric here too now: **one round unless a grounded finding remains**
+(`editorial-shape` or `claim-fidelity`). Until this stage had those, every finding
+it had was judgment and it was spending three unanchored rounds on them — the
+exact pattern `RESEARCH_PIPELINE.md` §6 exists to prevent, running in the stage
+that writes the file that ships. Keep-best now breaks ties on blocking count, as
+stage 1 has since the democratic-backsliding run.
+
+Straight quotes, HTML entities and double spaces are **autofixed in code** on entry
+and exit — the same rewrite `lint_draft.py` applies, moved to where the text is
+written. They used to be fixed only after the workflow returned, so the critics and
+the renders all saw the unfixed text.
+
 Persist the return as `research/topics/<slug>.json` (`{draft, verdicts,
-plan_positions}`; verdicts stage-tagged). Before persisting, write
-`draft.categories = [primary_category_slug, ...secondary_category_slugs]` from the
-catalog — the workflows don't emit it and the loader would drop secondaries.
+plan_positions}`; verdicts stage-tagged) **plus the dossier's `claim_ledger` as a
+top-level key**. The loader ignores it and `export_topic` carries it forward, and it
+is what lets a stage-4 `fix_only` pass run the fidelity check: those passes exist to
+rewrite compact prose, which is exactly where a verified claim moves. Without it
+stage 2 reports fidelity as not-run — never as a pass — and says so in the log.
+
+**No `draft.categories` hand-step** — the
+loader reads `secondary_category_slugs` off the catalog entry when the draft has no
+`categories` key, and prints which source it used. That step was manual and its only
+failure mode was silent: an audit on 2026-08-28 found two topics whose categories
+disagreed with the catalog (`wildfires` missing `global-risk` and `economy`,
+`housing-affordability-crisis` missing `society`), both drafts, both repaired.
+`load_universe` cannot fix this — it skips any slug that already exists, by design,
+so it never clobbers a topic. To re-audit:
+
+```
+manage.py shell -c "import json; from topics.models import Topic; \
+cat={e['slug']:e for e in json.load(open('research/catalog/topic-universe.json'))['catalog']}; \
+print([t.slug for t in Topic.objects.all() if (e:=cat.get(t.slug)) and \
+{c.slug for c in t.categories.all()}!={e['primary_category_slug']}|set(e.get('secondary_category_slugs') or [])])"
+```
 
 Then, in order:
-1. `lint_draft.py research/topics/<slug>.json --fix` — drive to **0 findings**
-   (exits 1 while judgment findings remain; it catches what eyeballing misses).
+1. `lint_draft.py research/topics/<slug>.json --fix` — drive to **0 findings**.
+   `--fix` closes the autofixable strings; for the judgment findings that remain
+   (briticisms, weasel phrasing, loaded verbs, relative time — the register rules
+   that need a call about proper nouns, and the single source for which is
+   `lint_draft.py`), pipe them back through stage 2 rather than hand-editing:
+   ```
+   lint_draft.py research/topics/<slug>.json --json > <scratch>/lint.json
+   # then re-run distribute_topic.js with args.fix_only = <that array>
+   ```
+   Hand-editing is the one repair path that leaves no record and passes no gate.
 2. Load and confirm zero loader warnings:
    `manage.py load_topic_draft --file research/topics/<slug>.json --slug <slug>
    --title "<Title>" --category <cat> --status draft`
@@ -357,7 +478,7 @@ Its deterministic pass is the checklist in the agent definition — lint at 0, l
 renders. Anything failing there is decidable and must never reach you.
 
 Re-run the routed stages, then re-run the PM. Exit: every deterministic check
-green and no open routed finding. It returns **CHECKS** (a fixed six-line
+green and no open routed finding. It returns **CHECKS** (a fixed seven-line
 PASS/FAIL block with the real numbers — the same "an unperformed check is not a
 pass" rule the gate critics follow, in a shape you can read at a glance), then
 ROUTING, then the packet markdown; the orchestrator writes
@@ -486,10 +607,23 @@ and destroy the version you wanted to diff against. For an unpublished topic, lo
 straight onto the real slug.
 
 ### 5 · Review & publish
-1. **Compare** staging vs live as staff. If the changelog added/removed items or
-   grew compact-layer text, run `distribute_topic.js` with `args.fix_only` first —
-   refresh preserves tier/reveal but never re-balances the fold.
-2. **Publish** onto the canonical slug (atomic in-place rebuild; participation
+1. **Re-lint and re-fold. Not optional, and not conditional.** `refresh_topic.js`
+   writes `research/topics/<slug>.json` directly, so a refresh bypasses every gate
+   stage 2 owns: it has no deterministic editorial check, no budget enforcement, no
+   two-register check, and no claim-fidelity check, while its whole job is rewriting
+   the prose those gates guard. It also preserves tier/reveal without ever
+   re-balancing the fold, so a changelog that adds or drops an item leaves the fold
+   where the *old* item count put it.
+   ```
+   lint_draft.py research/topics/<slug>.json --fix     # then --json for the rest
+   # re-run distribute_topic.js with args.fix_only = [<lint findings>, <any view findings>]
+   ```
+   The `fix_only` pass runs the full stage-2 gate (deterministic check + claim
+   fidelity + the two critics), and the topic JSON carries `claim_ledger`, so the
+   fidelity check works here without stage 1 being re-run. Skip this only for a
+   light path that changed no prose.
+2. **Compare** staging vs live as staff.
+3. **Publish** onto the canonical slug (atomic in-place rebuild; participation
    re-attaches by exact question text / position name, with a warning for dropped
    rows), then delete staging:
    ```
@@ -500,16 +634,16 @@ straight onto the real slug.
    ```
    Or for light changes: Django admin (`TopicAdmin` → Publish action — sets status
    only, still set `reviewed_at` yourself).
-3. **Set `reviewed_at`** — pass `--reviewed` to the publishing load above and it
+4. **Set `reviewed_at`** — pass `--reviewed` to the publishing load above and it
    is stamped in the same transaction (the loader sets `researched_at`, the
    machine's clock; `reviewed_at` records human approval and resets the cadence).
    Doing it afterwards was a separate `shell -c` that is easy to forget, and
    forgetting it is silent: `topics_due` just re-queues the topic early.
-4. **`check_links --topic <slug>`** — 0 dead / 0 placeholder. Non-optional; a
+5. **`check_links --topic <slug>`** — 0 dead / 0 placeholder. Non-optional; a
    piecemeal admin apply is exactly how the 2026-07-03 nuclear refresh shipped `#`
    placeholders live.
-5. **Commit** the JSON — the diff is the content history.
-6. **Push to live** per `DEPLOY.md` §3 (`docker exec` loader + `load_universe` +
+6. **Commit** the JSON — the diff is the content history.
+7. **Push to live** per `DEPLOY.md` §3 (`docker exec` loader + `load_universe` +
    `rebuild_search` + `reviewed_at` inside the container).
 
 ### Account the refresh
@@ -634,6 +768,18 @@ the main overage lever. Judgment singletons (plan, crux, distribute) inherit.
   opus cache reads** (47.8M of 56.3M) — critics re-reading the full draft each
   round dominate the bill, not research and not the fix loop. That is where any
   future cost work should aim first.
+
+  **What the 2026-08-28 changes cost.** Stage 1 gained a closing ledger pass: one
+  extraction (sonnet, low effort) plus verifier batches for whatever is new or
+  rewritten, and at most one repair round. It is bounded by design — results are
+  carried forward by atomic claim text, so only genuinely changed claims are
+  re-verified. Stage 2 gained one no-web fidelity call per gate round, and only
+  when a verified claim's sentence actually changed. Both are cheap against the
+  gate phase, and both replace an unpriced cost that was being paid elsewhere: a
+  wrong claim reaching the human, or reaching a reader. Against that, the round
+  caps now bite in stage 2 and refresh (three unanchored judgment rounds became
+  one), which removes two full re-gates from the common case — the single most
+  expensive thing either script did.
   **Older numbers in `token-ledger.local.md` are overstated ~2.3x** (measured
   range 1.84–2.69 across the 40 runs still on disk): the script summed every
   streamed usage row per message instead of the final one, double-counting the
@@ -671,14 +817,27 @@ the main overage lever. Judgment singletons (plan, crux, distribute) inherit.
 A ledger `result.status` is `supported` | `contradicted` | `unverifiable` |
 `resolved-by-revision` (the fix loop removed the sentence the claim was extracted
 from, so it is closed rather than checked). A claim that got **no** result at all
-is filed as blocking, never passed.
+is filed as blocking, never passed. The ledger persisted here is the **closing**
+one, extracted from the final draft — so `claims` describes the text that ships,
+and the packet's supported/total is a statement about that text rather than about
+an intermediate draft. Draft positions carry `prevalence_basis`, and questions
+carry `lean_basis`; both are swept into the ledger as `inference` claims. Stage 1
+no longer emits `reveal` on stats/questions/actions — stage 2 seeds it from the
+ranking.
 ```
 ```
 `draft` is substance-complete, presentation-provisional (stage 2 finalizes
 tier/reveal).
 
+**Stage-2 args**: `{slug, title, today, dossier:{draft, verdicts, plan_positions,
+plan, claim_ledger}}`. `claim_ledger` is required for the fidelity check — without
+it stage 2 reports the check as not-run (never as a pass) and logs that its
+rewrites are unchecked for that run.
+
 **Loader contract** `research/topics/<slug>.json`: `{draft, verdicts,
 plan_positions}` (bare `draft` also works; refresh adds a top-level `changelog`).
+`draft.categories` is optional: the loader falls back to the catalog entry's
+`secondary_category_slugs`.
 The loader stores verdicts opaquely on `Topic.research_dossier`; the additive
 `stage:` tag is harmless everywhere. Per-item fields the loader actually maps:
 
@@ -728,8 +887,13 @@ catalog.
 > `nuclear-energy-pipeline.json`.
 
 **Presentation-patch whitelist (stage 2).** Edits allowed only on `{tier, reveal,
-wide, note, why, steelman, description, detail, intro, lead, subtitle, summary}` —
-anything else (value/unit/source_*/url/kind/name/text/label) is rejected. `reorder`
+wide, note, why, steelman, description, detail, intro, lead, lead_highlight,
+empirical, values, subtitle, summary}` — anything else
+(value/unit/source_*/url/kind/name/text/label/proponents/representative_note/
+lean_label_*) is rejected. **The whitelist also defines what stage 2 may be told
+about**: its deterministic check reports only on these fields, because a finding
+on a locked field can never be closed here. Those fields' geometry is stage 1's
+(`shapeCheck`). `reorder`
 takes a per-section full order of item ids (omitted items append). Stats/questions/
 actions cross the fold by reorder; positions by `tier` (prevalence is locked).
 
@@ -753,7 +917,9 @@ import json, re
 dj = json.load(open("research/dossiers/<slug>.json"))
 run_args = {"slug": "<slug>", "title": "<Title>", "today": "YYYY-MM-DD",
             "dossier": {"draft": dj["draft"], "verdicts": dj["verdicts"],
-                        "plan_positions": dj["plan_positions"], "plan": dj["plan"]}}
+                        "plan_positions": dj["plan_positions"], "plan": dj["plan"],
+                        # required: stage 2 rewrites the prose stage 1 verified
+                        "claim_ledger": dj.get("claim_ledger", {})}}
 body = open("research/workflows/distribute_topic.js").read()
 runner = re.sub(r"\bargs\b", "__ARGS", body)                 # rewire the global
 idx = runner.index("};\n") + 3                               # after meta
@@ -788,7 +954,7 @@ six-section skeleton at every depth; more room adds evidence, never sections).
 | Poster stamp/fit silently wrong | render commands default to dead `localhost:8000` | `--base-url` is required on all three render commands |
 | Fact errors surviving a clean 4/4 gate | wrong claims hide in unsourced position/question prose | the claim ledger exists for this; check its coverage number in the packet |
 | A `research/topics/*.json` key vanishes after a refresh | `export_topic` writes only `draft` + `verdicts`; Runbook B step 1 exports onto the same path step 4 wrote | fixed 2026-08-27 — the export now carries forward every top-level key it does not itself produce (`changelog`, `plan_positions`) and names them in its output line |
-| A lint rule is on the books but the corpus still violates it | `lint_draft.py` runs at stage 2, so it only ever sees topics authored AFTER the rule landed | re-lint the corpus when a rule is added: `lint_draft.py --all`. As of 2026-08-27 the eight pre-rule topics carry 253 judgment findings between them |
+| A lint rule is on the books but the corpus still violates it | `lint_draft.py` runs at stage 2, so it only ever sees topics authored AFTER the rule landed | re-lint the corpus when a rule is added: `lint_draft.py --all`. Re-measured 2026-08-28: **254 findings across 11 files** (4-33 each; nuclear-energy and its gold copy carry 33). The six topics authored since the rules landed lint at 0, which is the check that the rules work |
 | Packet lists ledger defects the run already fixed | a failing claim was re-verified against its SOURCE each round but never against the REVISED draft | fixed 2026-08-27 — a claim whose verbatim quote is gone from the draft is `resolved-by-revision`; if stale items reappear, check that the fixer edited the quoted sentence rather than adding a second one |
 | Workflow "could not be resumed" after session restart | background fork checkpoint | relaunch with `resumeFromRunId` + identical args; cached prefix returns |
 | `render_screens` dies "within 200px of the capture window" | the page is taller than the capture height (long topics at 320px expanded) | raise `CAPTURE_HEIGHT_EXPANDED` in `render_screens.py` and re-capture — the hard error exists because a clipped capture handed to the view critics reads as a complete render (ai-alignment, 2026-08-27) |
@@ -798,6 +964,11 @@ six-section skeleton at every depth; more room adds evidence, never sections).
 | Link previews show the generic Ideya mark | the og card was rendered into the review folder, not `static/img/social/` | stage 4 runs the `og` format with NO `--out`; the review-folder copy is not what `og:image` serves |
 | `reviewed_at` never set, topic re-queues early | it was a separate `shell -c` after the publish, easy to forget and silent when missed | `--reviewed` on the loader (or `publish_topic`, which passes it) stamps it in the same transaction |
 | Live site missing a just-published topic | authoring DB ≠ live DB | `DEPLOY.md` §3 docker-exec load; never copy the whole DB |
+| Packet reports a clean ledger but the prose was rewritten after verification | the ledger was extracted pre-fix-loop and never re-run | fixed 2026-08-28 — stage 1's closing pass re-extracts on the final draft, stage 2's fidelity check catches rewrites there. If it reappears, check that `claim_ledger` is actually reaching stage 2's args |
+| A deterministic defect disappears from the gate after fix round 1 | the verdict was computed once and concatenated once, so the re-gate dropped it | both stages rebuild every verdict source each round via `fullGate()`; guarded by `test_deterministic_findings_are_gate_input_every_round` |
+| Stage 2's fix loop spins on a finding it can never close | a deterministic finding named a field the presentation whitelist rejects | the check is scoped to `PRES_FIELDS`; a geometry defect on a locked field belongs to stage 1's `shapeCheck` |
+| The same sections fold in the same place on every topic | tier 1 came back a habitual size, so the fold landed at the first drop-off rather than filling the space | the underfill check + the capacity line in the fold preview; stage 1's flat-ranking shape rule. Caps in `models.py` are NOT the constraint — positions run at 89% of theirs |
+| A topic is missing from a category page it belongs on | `draft.categories` was a hand-step and forgetting it is silent | fixed 2026-08-28 — the loader falls back to the catalog's `secondary_category_slugs`. The four topics that predate the fix need a repair load |
 
 ## 12. Appendix — REVIEW.md template
 
@@ -824,7 +995,8 @@ Fold above "Go deeper": basics <n>/<N> · questions <n>/<N> · positions <n>/<N>
 <the first two need the dev server up on 8641>
 
 ## Run
-substance <n>/3 · presentation <n>/2 · ledger <supported>/<total> · lint 0 · links 0/0 · poster fits (<n>px)
+substance <n>/5 (critics + ledger + shape) · presentation <n>/4 (critics + editorial-shape + claim-fidelity)
+ledger <supported>/<total> closed on the shipped draft · fidelity <n> rewritten claim(s) checked · lint 0 · links 0/0 · poster fits (<n>px)
 Rounds: research <n> · distribute <n> · icon <n> · views <n> · PM <n> (<n> routed, all closed)
 
 ## Decided for you

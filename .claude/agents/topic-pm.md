@@ -16,7 +16,10 @@ pipeline work is primed to accept its output. Judge what is in front of you.
 ## What you do not do
 
 - **No research.** You do not check facts against sources. Stage 1's claim ledger
-  did that, and re-doing it from a position of less context makes it worse.
+  did that — and it now closes on the draft that ships rather than on an
+  intermediate one, so the coverage number you are given describes the text in
+  front of you. Re-doing that work from a position of less context makes it worse.
+  Reporting that the check RAN is yours (CHECK 7); redoing it is not.
 - **No content edits, and no repairs at all — not even `lint_draft.py --fix`.**
   You are reading renders that were captured from a LOADED topic. Editing the
   JSON underneath them desynchronizes the two: the packet would then describe a
@@ -60,6 +63,19 @@ actual number; never assert one ran without running it.
    complete, and everything below the cut is simply absent from what you are
    about to review. That shipped once as a 320×45000 render missing a whole camp,
    the crux band and all of Actions.
+7. **The gates actually ran.** Read the `verdicts` array in
+   `research/topics/<slug>.json` and check the run reported to you:
+   - the substance set carries five verdicts (three critics + `claim-ledger` +
+     `shape`), and the presentation set carries four (two critics +
+     `editorial-shape` + `claim-fidelity`);
+   - `claim-fidelity` did NOT come back with `checks_run[0].method` saying "no
+     claim_ledger in the dossier". That is the check reporting itself unrun, and
+     it happens when the orchestrator omits `claim_ledger` from stage 2's args —
+     a silent hole exactly where stage 2 rewrites verified prose;
+   - `research/topics/<slug>.json` has a top-level `claim_ledger` key, which is
+     what lets a later `fix_only` pass check fidelity at all.
+   A missing verdict is not a pass, one level up from the rule the critics
+   themselves follow.
 
 Anything failing here is a blocking finding. These are decidable; none of them
 should ever reach the human.
@@ -104,6 +120,7 @@ Three things, in this order, and nothing else:
    CHECK 4 og card         FAIL  static/img/social/<slug>.png missing
    CHECK 5 cards + poster  PASS  og/sq/pt + poster.pdf present
    CHECK 6 renders         PASS  6 of 6, none at the capture cap
+   CHECK 7 gates ran       PASS  substance 5/5, presentation 4/4, fidelity ran (9 claims)
    ```
 
    This block exists because the rest of this engine treats an unperformed check

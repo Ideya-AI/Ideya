@@ -29,7 +29,7 @@ the model may or may not be attending to on round 14 of a fix loop.
 |---|---|---|
 | `research/catalog/topic-universe.json` | human / stage 0 | skeleton: title, slug, summary, why_now, categories, position names, `related_slugs` |
 | `research/dossiers/<slug>.json` | stage 1 | substance record: draft, plan, verdicts, `claim_ledger`, shape notes |
-| `research/topics/<slug>.json` | stage 2 | **the loader contract and a topic's source of truth** |
+| `research/topics/<slug>.json` | stage 2 | **the loader contract and a topic's source of truth**; also carries `claim_ledger` forward so a stage-4 `fix_only` pass can still check that its rewrites did not move a verified claim |
 | `static/img/topics/<slug>.png` + `research/icons/<slug>.md` | stage 3 | hero art + the brief it was generated from |
 | `research/reviews/<slug>/` | stage 4 | screenshots, cards, poster, `REVIEW.md` |
 
@@ -60,6 +60,31 @@ decision-relevant items lead. **Display order = array order**; `tier` only marks
 drop-off *within* that order, so moving an item across the fold means reordering.
 Positions are the exception — they render by `prevalence_weight`. Facts are locked: the
 patch whitelist rejects edits to value/unit/source_*/url/name/text.
+
+**The fold is a budget, and the budget was going unspent** (2026-08-28). Measured
+across the 16 published topics: Questions showed **4 of 7 on 14 of them** while the
+design has room for 6, and Basics showed 63% of its stats against room for 9 (UBI:
+5 of 14). Tier 1 had collapsed to a habitual size, so `_tier_lead_count` — which
+takes the smallest whole-tier prefix reaching the minimum — put the fold at the
+first drop-off rather than at the best cutoff the space affords. A third of the
+research sat behind a click most readers never make, and the same page shape
+repeated across the atlas. Two changes: stage 1's `tier` is stated as a RANKING and
+nothing else (an all-one-tier section is now a blocking defect, because an ungraded
+ranking gives stage 2 nothing to fold on), and stage 2 is handed the capacity — the
+fold preview names the unused slots, and a section hiding 3+ items while leaving
+slots empty is blocking. *The caps were examined and left alone*: positions run at
+89% of theirs and it genuinely binds on the big topics. The constraint was never the
+number; it was the grading.
+
+**Stage 2 was a weaker copy of stage 1's architecture** (2026-08-28). Nearly every
+guard stage 1 earned through a named failure was missing from the stage that
+produces the file that ships: no deterministic check feeding its gate, no
+blocking-count tie-break in keep-best (the democratic-backsliding failure, fixed in
+stage 1 and kept here), and three unanchored fix rounds on findings that were *all*
+judgment — the exact pattern §6 exists to prevent. All three are closed and pinned
+by `GateSymmetryTests`. The general rule this leaves behind: **a guard earned in one
+stage is a claim about the engine, not about that stage** — mirror it, or write down
+why it is waived.
 
 **Stage 2 authors to the render geometry** (2026-08-28). It decides how short
 everything gets, yet carried three length numbers against stage 1's fourteen —
@@ -156,6 +181,28 @@ Four properties carry the weight:
    an agentType that did not resolve, a killed agent — would otherwise read as a clean
    ledger. Same shape as the `checks_run` rule, one layer down.
 
+7. **Verification terminates on the draft that SHIPS.** The ledger was extracted once,
+   before the fix loop, and never re-run — so it certified a draft that no longer
+   existed. Measured 2026-08-28 across the four topics carrying ledgers: of **259
+   claims, only 129 were still asserted verbatim** in stage 1's own final draft, and
+   of those 129, **31 were rewritten again by stage 2**, every one previously
+   `supported`. Roughly 38% of the ledger reached `research/topics/<slug>.json`
+   unchanged. Worse, ~25% of it closed as `resolved-by-revision` (18 of 73 on
+   vaccine-mandates, 22 of 70 on encryption) — that is the *replacement* prose, the
+   sentence written to repair a wrong claim, and therefore the least-checked text in
+   the topic. The packet reported all of it as "0 open". Two closures:
+   - **Stage 1 closes its ledger on the final draft.** Re-extract, carry forward by
+     atomic claim text every result still `supported`, verify only what is new or
+     rewritten (which sweeps fixer-ADDED content for the first time), then one
+     grounded repair round.
+   - **Stage 2 checks fidelity, not facts.** Rewriting is its whole job, and the
+     whitelist locks fact *fields* while a claim lives in a *sentence*. So for every
+     verified claim whose sentence it rewrote, a no-web agent is given stage 1's
+     stored `source_quote` and asked whether the new text still asserts what the
+     source supports. Stage 1 verifies against the world; stage 2 verifies against
+     stage 1's record — which is why the check needs no web tools and is not a second
+     opinion about the facts.
+
 *Why it exists:* only stats carry `source_*` fields — position and question prose carries
 none, so it is unsourced by construction. Two wrong claims shipped through a 4/4 gate in
 exactly that prose. On its first calibration the ledger flagged six claims nobody had
@@ -213,10 +260,21 @@ Anything decidable must never cost critic attention or reach the human.
 
 | Check | Where | Catches |
 |---|---|---|
-| `lint_draft.py` | before the gate; `--fix` for safe rewrites | typography, entities, over-cap fields, wrapped lean chips, one-paragraph details, poster-band units, Words-to-Watch classes |
-| `shapeCheck` | inside stage 1, **as gate input** | minimum counts, tiering, missing detail, near-cap prose |
+| `shapeCheck` | inside stage 1, **as gate input, every round** | minimum counts, ungraded tiering, missing detail, near-cap prose, and the geometry of every field stage 2's whitelist locks (unit, label, source_*, lean chips, proponents, representative_note) |
+| `presentationCheck` | inside stage 2, **as gate input, every round** | budgets, plain-text invariants, neutral-voice "we", a `detail` that restates its compact line, paragraph structure, condensed-layer coverage, one action per camp, order/tier agreement, **fold underfill** |
+| `typographic()` | inside stage 2, entry and exit | straight quotes, entities, double spaces — autofixed, never reported |
+| `lint_draft.py` | after stage 2; `--fix`, then `--json` into a `fix_only` pass | the register rules that need a call about proper nouns: briticisms, weasel phrasing, loaded verbs, relative time |
 | poster `?fit=1` | stage 4 | pixel overflow of a fixed 18×24in sheet |
 | `pipeline-guard.sh` | `PreToolUse` | publishing; the live container's port |
+
+**Two rules about where a deterministic check lives**, both learned the same week.
+*It must be gate input, recomputed every round*: computed once and concatenated
+once, a verdict silently leaves the set after the first fix round, taking its
+blocking count with it, and keep-best can then select a draft that still carries the
+defect. *It must report only what its own stage can fix*: the first version of
+`presentationCheck` flagged units and lean chips, which the presentation whitelist
+rejects — findings the fixer could never close, on which the loop would have spent
+every round. Those defects are real; they belong to stage 1, which has no whitelist.
 
 Words to Watch is **scoped by voice**: editorialising adverbs and loaded attribution
 verbs are exempt in a camp's own voice (a steelman is meant to sound committed), while
@@ -281,12 +339,15 @@ and keeps working when search is spent — which is why verification is WebFetch
   informative ones.
 - **`tally_tokens.py`** → `research/token-ledger.local.md` — output tokens by model.
 - **`lint_draft.py --all`** — corpus-wide mechanical quality. The rules work: every
-  topic authored after they landed lints at 0. They are **not retroactive**, and the
-  claim that the count "collapsed to 0" was a snapshot that aged into a false
-  statement — as of 2026-08-27 the corpus carries **253 judgment findings across 11
-  files (22–33 each)** plus ~330 autofixable strings, because the eight topics
-  authored before the rules were never re-linted. Three of those back published
-  topics. A corpus-wide claim needs re-measuring, not remembering.
+  topic authored after they landed lints at 0 (six of them now). They are **not
+  retroactive**, and the claim that the count "collapsed to 0" was a snapshot that
+  aged into a false statement — re-measured 2026-08-28, the corpus carries **254
+  judgment findings across 11 files**, ranging 4 to 33 rather than the "22–33" a
+  previous revision of this line asserted. Three of those files back published
+  topics. A corpus-wide claim needs re-measuring, not remembering — and this line
+  has now been wrong twice in the same way, which is the argument for
+  `lint_draft.py --json` feeding a `fix_only` pass instead of a human promising to
+  get to it.
 
 ## 11. Known gaps
 
@@ -299,11 +360,16 @@ and keeps working when search is spent — which is why verification is WebFetch
   have no way to open the draft. Measured on the probe: an agent declaring `tools: Read`
   reported exactly `Read` and no web tools, so the frontmatter genuinely constrains the
   tool set rather than merely advertising it.
-- **`prevalence_weight` has no stated basis and no critic judges it**, while the rules
-  push only toward inclusion (omitting a camp is a failure) with no counter-pressure —
-  so the engine ratchets toward over-inclusion, and equal-sized cards assert a parity the
-  weight only weakly corrects. Wikipedia's DUE is the prior art; a `prevalence_basis`
-  routed through the ledger would make it checkable.
+- ~~**`prevalence_weight` has no stated basis and no critic judges it.**~~ *Closed
+  2026-08-28.* `prevalence_basis` is now carried onto the draft position (it lived only
+  in `plan`, where nothing downstream could see it) and swept into the claim ledger as
+  an `inference` claim, so the evidence behind a weight is checked like any other
+  published assertion. The same route now covers a seeded `lean_pct_a`, which was
+  worse: the questions call has no web tools and was nonetheless asked for a figure
+  "grounded in real polling". It returns -1 unless a poll is genuinely in hand, and
+  names it in `lean_basis`. *Residual:* the ratchet toward over-inclusion is unchanged —
+  the rules still push only toward adding camps, and a checked basis constrains the
+  weight, not the decision to include.
 - **The refresh changelog is generated and discarded at load**, so corrections never
   reach the reader. `last_touched` exists on the model and no template renders it.
 - **Corpus-level quality is unmeasured by the engine** — the mode-collapse scan was

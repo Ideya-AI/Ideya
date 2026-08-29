@@ -241,11 +241,30 @@ class Command(BaseCommand):
             # topic's existing secondaries (same rule as icon/volatility).
             extra_cats = [c for c in topic.categories.all() if c.pk != cat.pk]
         else:
+            # The catalog is the source of truth for a topic's categories, and
+            # it is right here. The workflows do not emit `draft.categories`, so
+            # the runbook asked the orchestrator to hand-copy the catalog's
+            # secondary_category_slugs onto the draft before loading — a manual
+            # step whose only failure mode is silent. Four published topics
+            # (housing-affordability-crisis, universal-basic-income, wildfires,
+            # nuclear-energy-pipeline) carry no categories key at all, which is
+            # what forgetting it looks like. Falling back to the catalog makes
+            # the hand-step unnecessary rather than merely recommended.
+            cslugs = d.get("categories")
+            source = "draft"
+            if not cslugs:
+                cslugs = entry.get("secondary_category_slugs") or []
+                source = "catalog"
             extra_cats = [
                 c
-                for cslug in d.get("categories") or []
+                for cslug in cslugs
                 if (c := Category.objects.filter(slug=cslug).first()) and c.pk != cat.pk
             ]
+            if extra_cats:
+                self.stdout.write(
+                    f"  secondary categories ({source}): "
+                    + ", ".join(c.slug for c in extra_cats)
+                )
         topic.categories.set([cat] + extra_cats)
 
         # Participation survives a reload: the rebuild cascades Vote/QuestionLean

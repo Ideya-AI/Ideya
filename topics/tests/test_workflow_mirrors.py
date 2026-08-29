@@ -248,6 +248,59 @@ class RenderBudgetMirrorTests(SimpleTestCase):
         self.assertIn(f"<= {self.budgets.LEAN_LABEL_CAP} chars", src)
         self.assertIn(f"<= {self.budgets.UNIT_CAP} chars", src)
 
+    def test_stage_two_budget_table_is_machine_readable_and_matches(self):
+        """The prompt block tells the AGENTS the budgets; BUDGET_LIMITS is the
+        same numbers in a form the deterministic check can read. Stage 2 was
+        told the budgets in prose and no code ever compared its output to them,
+        which is how "stage 2 authors to the geometry" stayed true of the prompt
+        and of nothing else."""
+        src = _read("distribute_topic.js")
+        m = re.search(r"const BUDGET_LIMITS = \{(.*?)\n\};", src, re.S)
+        self.assertTrue(m, "distribute_topic.js lost BUDGET_LIMITS")
+        js = dict(
+            (f, (int(a), None if h == "null" else int(h)))
+            for f, a, h in re.findall(
+                r"(\w+): \[(\d+), (\d+|null)\]", m.group(1)
+            )
+        )
+        for field, (_, target, hard, _) in self.budgets.BUDGETS.items():
+            self.assertIn(field, js, f"BUDGET_LIMITS is missing {field}")
+            self.assertEqual(
+                (target, hard),
+                js[field],
+                f"BUDGET_LIMITS[{field}] has drifted from budgets.py",
+            )
+
+    def test_fold_capacity_is_mirrored_everywhere(self):
+        """The fold caps live in models.py, are mirrored into budgets.py, and are
+        now mirrored again into stage 2 — which needs them as numbers, because
+        choosing the fold WITHIN the available space is the editorial decision
+        and it was being made without knowing the space."""
+        from topics.models import Section
+
+        for name, (mn, mx) in self.budgets.FOLD.items():
+            self.assertEqual(
+                (
+                    getattr(Section, f"{name.upper()}_MIN_SHOWN"),
+                    getattr(Section, f"{name.upper()}_MAX_SHOWN"),
+                ),
+                (mn, mx),
+                f"budgets.FOLD[{name}] has drifted from models.py",
+            )
+        src = _read("distribute_topic.js")
+        m = re.search(r"const FOLD = \{(.*?)\};", src, re.S)
+        self.assertTrue(m, "distribute_topic.js lost its FOLD table")
+        js = {
+            k: (int(a), int(b))
+            for k, a, b in re.findall(r"(\w+): \[(\d+), (\d+)\]", m.group(1))
+        }
+        self.assertEqual(
+            {k: tuple(v) for k, v in self.budgets.FOLD.items()},
+            js,
+            "stage 2's FOLD mirror has drifted from budgets.py",
+        )
+
+
     def test_patch_applier_enforces_the_hard_limits(self):
         """The whitelist checks WHICH field may change; HARD_LIMITS checks that
         the new value still fits. Without it a stage-4 fix_only pass — which runs
@@ -282,6 +335,124 @@ class RenderBudgetMirrorTests(SimpleTestCase):
         REQUIRE a rhetorical question, and 11 of 11 published leads ended in "?"."""
         src = _read("distribute_topic.js")
         self.assertNotIn("sharp rhetorical question", src)
+
+
+class GateSymmetryTests(SimpleTestCase):
+    """Stage 2 was a weaker copy of stage 1's architecture. Nearly every guard
+    stage 1 earned through a named failure was absent from the stage that
+    produces the file that actually ships. These pin the ones that were closed,
+    so the asymmetry cannot quietly come back."""
+
+    def test_both_gates_break_ties_on_blocking_count(self):
+        """A round that closes 3 of 4 blocking findings but still fails the
+        critic scores equal on passes. Without the tie-break it is DISCARDED and
+        the unfixed draft ships — the democratic-backsliding failure, which
+        stage 1 fixed and stage 2 kept for another two months."""
+        for name in ("research_topic.js", "distribute_topic.js"):
+            src = _read(name)
+            self.assertIn(
+                "const blockCount =",
+                src,
+                f"{name} has no blocking-count tie-break in keep-best",
+            )
+            self.assertRegex(
+                src,
+                r"pc === best\.passes && bc < best\.blocks|p === best\.passes && b < best\.blocks",
+                f"{name} computes blockCount but does not use it to break ties",
+            )
+
+    def test_both_gates_cap_unguided_judgment_rounds(self):
+        """Rounds are asymmetric: externally-grounded findings are worth
+        iterating on, a critic's round-2 opinion is not (arXiv 2310.01798).
+        Stage 2 ran three unanchored rounds on findings that were ALL judgment
+        until it had deterministic and fidelity checks to ground them, and
+        refresh ran three on the same footing."""
+        for name in SCRIPTS:
+            src = _read(name)
+            self.assertIn(
+                "const grounded = failing.some(",
+                src,
+                f"{name} does not distinguish grounded findings from judgment ones",
+            )
+            self.assertIn(
+                "if (round > 1 && !grounded)",
+                src,
+                f"{name} lets unguided judgment findings run past one round",
+            )
+
+    def test_deterministic_findings_are_gate_input_every_round(self):
+        """Computed once and concatenated once, a deterministic verdict drops out
+        of the verdict set after the first fix round: its blocking count vanishes
+        whether or not the defect was fixed, so keep-best can select a draft that
+        still carries it. Both stages must rebuild the verdict from the CURRENT
+        draft on every round."""
+        for name, fn in (
+            ("research_topic.js", "shapeVerdict"),
+            ("distribute_topic.js", "presentationVerdict"),
+        ):
+            src = _read(name)
+            self.assertIn(
+                f"function {fn}(d)",
+                src,
+                f"{name}'s deterministic check is not a function of the draft",
+            )
+            self.assertRegex(
+                src,
+                r"async function fullGate\(d\)",
+                f"{name} has no single gate that scores every source each round",
+            )
+            self.assertIn(
+                f"{fn}(d)",
+                src.split("async function fullGate(d)")[1][:400],
+                f"{name}'s fullGate does not include {fn}",
+            )
+            self.assertIn(
+                "await fullGate(draft)",
+                src,
+                f"{name}'s fix loop does not re-gate through fullGate",
+            )
+
+    def test_verification_terminates_on_the_shipped_draft(self):
+        """The ledger was extracted before the fix loop and never re-run, so
+        every sentence the loop rewrote left the run unverified while still
+        counting as coverage: of 259 claims across four topics, only 129 were
+        still asserted verbatim in stage 1's own final draft. Stage 1 must close
+        its ledger on the final draft; stage 2 must check that its rewrites did
+        not move a verified claim."""
+        self.assertIn(
+            "async function closeLedger(",
+            _read("research_topic.js"),
+            "stage 1 no longer closes its ledger on the final draft",
+        )
+        src = _read("distribute_topic.js")
+        self.assertIn(
+            "async function fidelityVerdict(",
+            src,
+            "stage 2 no longer checks that its rewrites preserved verified claims",
+        )
+        self.assertIn(
+            "dossier.claim_ledger",
+            src,
+            "stage 2 does not read the ledger it is supposed to protect",
+        )
+
+    def test_reveal_belongs_to_stage_two(self):
+        """`reveal` is a fold decision. Three stage-1 research agents were each
+        assigning a display layer with no knowledge of the display, and stage 2
+        reassigned it anyway — schema budget spent on a field whose value was
+        discarded, in schemas that have twice hit the classifier's size limit."""
+        self.assertNotIn(
+            '"condensed", "normal", "deep"',
+            _read("research_topic.js"),
+            "stage 1 is emitting `reveal` again — it is stage 2's to assign",
+        )
+        self.assertIn(
+            'x.reveal = (x.tier ?? 1) === 1 ? "condensed" : "normal"',
+            _read("distribute_topic.js"),
+            "stage 2 does not seed `reveal`; unset means the loader defaults "
+            "every item to condensed and the whole topic lands in the "
+            "always-visible layer",
+        )
 
 
 class TallySignatureMirrorTests(SimpleTestCase):
