@@ -372,13 +372,24 @@ and keeps working when search is spent — which is why verification is WebFetch
   weight, not the decision to include.
 - **The refresh changelog is generated and discarded at load**, so corrections never
   reach the reader. `last_touched` exists on the model and no template renders it.
+- **Refresh is scoped, and scoping trades coverage for cost.** Since 2026-09-01 a
+  refresh re-verifies only what `refresh_scan` and the scout flag; everything else is
+  reported as not-checked. The backstop is the staleness floor (2x the review
+  interval), which is only as good as `source_accessed` — so the rule that
+  confirmations and edits both stamp it is load-bearing, not hygiene. The residual
+  risk is a fact that goes wrong without any signal the scan or the scout can see:
+  nothing catches that until the floor comes round.
 - **Corpus-level quality is unmeasured by the engine** — the mode-collapse scan was
   manual. Every gate reads one topic.
-- **One output schema is still over the classifier's budget.** `refresh_topic.js`'s
-  `reverify(BASICS_SCHEMA)` serializes to ~4.7KB, past the ~3KB the rest of the engine
-  now holds to. It has not fired yet because refresh edits an existing Basics rather
-  than researching one, so its prompt is smaller — but it is the same trap stage 1's
-  basics call sprang twice, and the same split (facts, then chart shape) closes it.
+- ~~**One output schema is still over the classifier's budget.**~~ *Closed
+  2026-09-01.* `reverify(BASICS_SCHEMA)` is gone with whole-section returns; the
+  re-verify calls emit `SECTION_PATCH` (~1.5KB) instead. The size win was incidental —
+  the reason for the change was that whole-section regeneration is what let two
+  nuclear-energy refreshes delete and flatten content nobody asked them to touch. It
+  also retires a quieter version of the same bug: a field missing from the section
+  schema was silently wiped from the draft (the 2026-07-03 run lost `detail` on every
+  stat and `lean_*` on every question this way), and a patch cannot omit what it does
+  not name.
 - **CSS defects** remain the standing list in each review packet; the pipeline is
   forbidden from touching templates.
 

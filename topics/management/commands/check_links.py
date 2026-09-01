@@ -230,6 +230,67 @@ def check_one(url: str, timeout: float, cache: Optional[dict] = None) -> LinkChe
     return result
 
 
+def _topic_of(section) -> tuple[str, Optional[str]]:
+    if section.topic_id:
+        return section.topic.title, section.topic.slug
+    if section.category_id:
+        return f"{section.category.name} (category)", None
+    return "(orphan)", None
+
+
+def collect_links(topic_slug: Optional[str]) -> list[LinkItem]:
+    """Gather every URL-bearing row. External actions are always listed (an
+    empty/# url is a placeholder to author) — the internal submit-view CTA is
+    skipped; Stats only when a source URL is set — a stat with no source is a
+    content choice, not a broken link.
+
+    Module-level so other commands can reuse the collection without reaching
+    into the Command class (`refresh_scan` does)."""
+    items: list[LinkItem] = []
+
+    # submit_view is the internal "Add your view" CTA — no external URL by
+    # design, so it is not a link to check.
+    actions = Action.objects.exclude(kind=Action.SUBMIT_VIEW).select_related(
+        "section__topic", "section__category"
+    )
+    stats = Stat.objects.select_related("section__topic", "section__category")
+    if topic_slug:
+        actions = actions.filter(section__topic__slug=topic_slug)
+        stats = stats.filter(section__topic__slug=topic_slug)
+
+    for a in actions:
+        label, slug = _topic_of(a.section)
+        items.append(
+            LinkItem(
+                label, slug, "Action", a.title or f"Action #{a.pk}", a.url or ""
+            )
+        )
+    for s in stats:
+        label, slug = _topic_of(s.section)
+        if (s.source_url or "").strip():
+            items.append(
+                LinkItem(
+                    label, slug, "Source", s.label or f"Stat #{s.pk}", s.source_url
+                )
+            )
+        # Ranked rows may carry their own source when it differs from the
+        # stat-level one (added 2026-08-02) — the pre-publish gate must
+        # cover those too.
+        for row in s.series or []:
+            url = (row.get("source_url") or "").strip() if isinstance(row, dict) else ""
+            if url:
+                items.append(
+                    LinkItem(
+                        label,
+                        slug,
+                        "Source",
+                        f"{s.label or f'Stat #{s.pk}'} · row {row.get('label', '?')}",
+                        url,
+                    )
+                )
+    return items
+
+
 class Command(BaseCommand):
     help = (
         "Check external links (Action.url, Stat.source_url) for dead/placeholder URLs."
@@ -297,61 +358,11 @@ class Command(BaseCommand):
     # -- collection ----------------------------------------------------------
 
     def _collect(self, topic_slug: Optional[str]) -> list[LinkItem]:
-        """Gather every URL-bearing row. External actions are always listed (an
-        empty/# url is a placeholder to author) — the internal submit-view CTA is
-        skipped; Stats only when a source URL is set — a stat with no source is a
-        content choice, not a broken link."""
-        items: list[LinkItem] = []
-
-        # submit_view is the internal "Add your view" CTA — no external URL by
-        # design, so it is not a link to check.
-        actions = Action.objects.exclude(kind=Action.SUBMIT_VIEW).select_related(
-            "section__topic", "section__category"
-        )
-        stats = Stat.objects.select_related("section__topic", "section__category")
-        if topic_slug:
-            actions = actions.filter(section__topic__slug=topic_slug)
-            stats = stats.filter(section__topic__slug=topic_slug)
-
-        for a in actions:
-            label, slug = self._topic_of(a.section)
-            items.append(
-                LinkItem(
-                    label, slug, "Action", a.title or f"Action #{a.pk}", a.url or ""
-                )
-            )
-        for s in stats:
-            label, slug = self._topic_of(s.section)
-            if (s.source_url or "").strip():
-                items.append(
-                    LinkItem(
-                        label, slug, "Source", s.label or f"Stat #{s.pk}", s.source_url
-                    )
-                )
-            # Ranked rows may carry their own source when it differs from the
-            # stat-level one (added 2026-08-02) — the pre-publish gate must
-            # cover those too.
-            for row in s.series or []:
-                url = (row.get("source_url") or "").strip() if isinstance(row, dict) else ""
-                if url:
-                    items.append(
-                        LinkItem(
-                            label,
-                            slug,
-                            "Source",
-                            f"{s.label or f'Stat #{s.pk}'} · row {row.get('label', '?')}",
-                            url,
-                        )
-                    )
-        return items
+        return collect_links(topic_slug)
 
     @staticmethod
     def _topic_of(section) -> tuple[str, Optional[str]]:
-        if section.topic_id:
-            return section.topic.title, section.topic.slug
-        if section.category_id:
-            return f"{section.category.name} (category)", None
-        return "(orphan)", None
+        return _topic_of(section)
 
     # -- rendering -----------------------------------------------------------
 

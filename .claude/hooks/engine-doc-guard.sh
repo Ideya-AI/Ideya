@@ -15,15 +15,24 @@ case "$FILE" in
     ;;
 esac
 
-# A workflow-script edit also gets the mirrored-contract guard (the three
-# scripts duplicate rules/schemas by hand; drift there was consequential).
+# A workflow-script edit gets the mirrored-contract guard (the three scripts
+# duplicate rules/schemas by hand; drift there was consequential). Editing
+# refresh ALSO runs its own guards: those live in a separate module so weekly
+# authoring work is not carrying them, which means the hook has to ask for them
+# by name or a refresh edit would go unguarded.
 case "$FILE" in
+  */research/workflows/refresh_topic.js)
+    SUITES="topics.tests.test_workflow_mirrors topics.tests.test_refresh_guards"
+    ;;
   */research/workflows/*.js)
-    OUT=$(DJANGO_DEBUG=true .venv/bin/python manage.py test topics.tests.test_workflow_mirrors -v 0 2>&1) || {
-      echo "workflow mirror-contract guard FAILED:" >&2
-      echo "$OUT" | tail -20 >&2
-      exit 2
-    }
+    SUITES="topics.tests.test_workflow_mirrors"
     ;;
 esac
+if [ -n "$SUITES" ]; then
+  OUT=$(DJANGO_DEBUG=true .venv/bin/python manage.py test $SUITES -v 0 2>&1) || {
+    echo "workflow contract guard FAILED:" >&2
+    echo "$OUT" | tail -20 >&2
+    exit 2
+  }
+fi
 exit 0
