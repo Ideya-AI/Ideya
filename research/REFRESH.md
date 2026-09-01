@@ -82,7 +82,7 @@ and is reported as not-checked rather than padded with re-confirmations. Each
 returns a PATCH, never a section.
 
 Bake the export in as `args.current` and the scan as `args.scan` (the `__ARGS`
-recipe, §10), plus `args.today` and `args.findings` for anything the editor wants
+recipe, ENGINE.md §10), plus `args.today` and `args.findings` for anything the editor wants
 verified this run. Grunt research on cheaper models; judgment on the strong model
 (`args.models` / `args.efforts`).
 
@@ -118,7 +118,7 @@ only evidence the locks held.
 Inside the script: typography autofix on what the run wrote, a deterministic
 check (plain text, register, `lead_highlight` verbatim, placeholder URLs) rebuilt
 from the current draft every round, and **one** fact-source critic that reads the
-**diff**, not the draft. The judgment dimensions moved to the reader in step 6 —
+**diff**, not the draft. The judgment dimensions moved to the reader in step 7.5 —
 they need the whole topic, which no critic in the script ever sees.
 
 Fix loop: one round, a second only for externally-grounded findings, keep-best
@@ -131,25 +131,20 @@ the pre-refresh export beside it. **No DB writes yet.** The proposal carries
 scout_assessment, refused, shipped}`. `shipped: false` means the run produced no
 surviving change — a legitimate and common result.
 
-### 6 · Read — is it still honest? (Q3, part 2)
-Re-lint, then read the topic whole:
+### 6 · Re-lint and re-fold — the JSON work
 ```
 lint_draft.py research/topics/<slug>.json --fix     # then --json for the rest
 # route what is left, plus any view findings, through stage 2:
 #   re-run distribute_topic.js with args.fix_only = [<findings>]
 ```
-Run the `fix_only` pass when the refresh rewrote prose or changed an item count —
-it owns the budgets, the two-register check, claim fidelity, and the fold, and
-**refresh never moves the fold itself** (its `reorder` is dropped and `tier` is
-locked, so an added or removed item leaves the fold where the old count put it).
-Skip it for a run that changed no prose.
+Run the `fix_only` pass when the refresh rewrote prose or changed an item count.
+Stage 2 owns the budgets, the two-register check, claim fidelity, and the fold,
+and **refresh never moves the fold itself** — its `reorder` is dropped and `tier`
+is locked, so an added or removed item leaves the fold where the old item count
+put it. Skip this step only for a run that changed no prose.
 
-Then load to staging (step 7), render only if the item count or fold moved
-(`render_screens --base-url …`, desktop + mobile-320), and spawn `topic-pm` on
-the result. Its fourth question in a refresh is the one the critics cannot ask:
-**did this lose anything the authored version had?** — judged against the
-pre-refresh snapshot. Its packet goes to
-`research/refresh/<slug>.REVIEW.<date>.md`.
+This is JSON work and it has to happen BEFORE the load: everything after this
+point reads a loaded topic.
 
 > `claim_ledger` is absent from every topic authored before 2026-08-28, which is
 > all three published ones. Stage 2's fidelity check reports itself **not run**
@@ -158,7 +153,7 @@ pre-refresh snapshot. Its packet goes to
 > time.
 
 ### 7 · Apply — staged load
-Commit the stage-1 export FIRST ("checkpoint: live state") so the final diff is
+Commit the step-1 export FIRST ("checkpoint: live state") so the final diff is
 exactly this refresh. Write the merged content to `research/topics/<slug>.json`
 in loader shape, including the workflow's `changelog` array as a top-level key
 (the loader ignores it; it is the refresh's durable provenance).
@@ -172,6 +167,19 @@ Why: the loader upserts by slug and rebuilds sections atomically — loading ont
 the live slug with `--status draft` would flip the published topic to draft
 (offline) and destroy the version you wanted to diff against. For an unpublished
 topic, load straight onto the real slug.
+
+### 7.5 · Read — is it still honest? (Q3, part 2)
+The PM gate, in its refresh form — numbered 7.5 for the same reason authoring's
+is stage 4.5: it is the one pass that reads the finished thing whole, after the
+pieces are assembled and before a human spends time on it.
+Now that the topic is loaded, render it — **only if the item count or the fold
+moved** (`render_screens --base-url …`, desktop + mobile-320; a run that changed
+no shape has nothing new to look at) — and spawn `topic-pm` on the result.
+
+Its fourth question in a refresh is the one no critic in the script can ask,
+because none of them sees the topic whole: **did this lose anything the authored
+version had?** — judged against the pre-refresh snapshot from step 5. Its packet
+goes to `research/refresh/<slug>.REVIEW.<date>.md`.
 
 ### 8 · Review & publish
 1. **Compare** staging vs live as staff.
@@ -209,7 +217,7 @@ A refresh is scoped, so its bill is proportional to what moved: 1 scout + one
 agent per flagged section (0–5) + 1 diff-scoped critic + at most 1 fixer —
 **typically 4–8 calls, mostly sonnet**, against the old fixed 10–22 with four
 opus critics re-reading the whole draft every round. The gate phase is ~85% of a
-run's cache reads (§9), which is why the panel is one critic reading a diff.
+run's cache reads (ENGINE.md §9), which is why the panel is one critic reading a diff.
 
 ### Cadence
 Links: continuous (weekly scheduled sweep + on change). Full re-research: event-
@@ -227,17 +235,8 @@ world moved" makes the human's diff unreadable.
 
 | Symptom | Cause | Fix |
 |---|---|---|
-| `research/workflows/refresh_topic.js` | upkeep mirror: re-verify + changelog + gate, stops at the human |
-| `.claude/skills/refresh-topic/SKILL.md` | launcher for Runbook B (user-invoked only) |
-| `topics/management/commands/topics_due.py` | refresh queue by volatility cadence |
-| `topics/management/commands/refresh_scan.py` | refresh stage 0: clock + links + lint + staleness → the work order everything downstream is scoped to (`--json` feeds the run) |
-| `research/refresh/` | refresh proposals + pre-refresh snapshots (`<slug>.refresh-proposal.<date>.json`) |
-| `research/REFRESH.md` | the refresh engine's operator manual — deliberately separate from this one (different clocks) |
-| `research/workflows/check_refresh_drift.py` | what refresh has fallen behind on; Runbook B step 0, and NOT in the authoring test path |
-| `topics/tests/test_refresh_guards.py` | guards on refresh's three locks; runs independently of the authoring mirror tests |
-| `refresh_topic.js` | research=sonnet scout=research distill=research critique=opus fact=opus crux=opus fix=opus | research=high critique=high fix=high |
 | Published topic went offline during refresh | loaded onto the live slug with `--status draft` | always stage at `<slug>-draft`; publish by re-running onto the canonical slug |
-| A `research/topics/*.json` key vanishes after a refresh | `export_topic` writes only `draft` + `verdicts`; Runbook B step 1 exports onto the same path step 4 wrote | fixed 2026-08-27 — the export now carries forward every top-level key it does not itself produce (`changelog`, `plan_positions`) and names them in its output line |
+| A `research/topics/*.json` key vanishes after a refresh | `export_topic` writes only `draft` + `verdicts`; step 1 exports onto the same path step 7 wrote | fixed 2026-08-27 — the export now carries forward every top-level key it does not itself produce (`changelog`, `plan_positions`) and names them in its output line |
 | A refresh returns fewer stats, a flattened viz, or thinner prose | an agent was asked to re-emit a whole section, so it emitted ITS section | fixed 2026-09-01 — re-verify is patch-only behind three locks (whitelist / grounding / regression gate). If it reappears, check `refused` and `reverted` in the proposal FIRST: a lock that fired is working, a lock that did not is the bug. `RefreshCannotRewriteTests` pins the shape |
 | A refresh's changelog is padded with re-confirmations, or claims a change that did not happen | the changelog was self-reported alongside the draft, and a reverted item kept its `updated` row | fixed 2026-09-01 — rows are derived from what applied; no-op edits are discarded and a revert scrubs the rows it undoes |
 | Every scan re-flags the same stats as undated | a `verified_current` verdict wrote no date | fixed 2026-09-01 — confirmations AND edits stamp `source_accessed`. nuclear-energy carried 5 of 12 undated stats through two refreshes this way |
