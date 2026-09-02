@@ -110,6 +110,7 @@ body .sec.is-open .when-normal.is-inline, body .sec.is-open .when-deep.is-inline
   transition: color var(--dur) var(--ease), border-color var(--dur) var(--ease);
 }
 .deeper:hover { color: var(--accent-strong); border-color: var(--border-hover); }
+.deeper-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
 .deeper i { font-size: 14px; }
 .sec.is-open .deeper { color: var(--accent-strong); border-color: color-mix(in srgb, var(--green-500) 35%, var(--ink-100)); }
 
@@ -370,7 +371,7 @@ body .sec.is-open .when-normal.is-inline, body .sec.is-open .when-deep.is-inline
 .pos {
   position: relative; overflow: hidden; background: var(--surface);
   border: 1px solid var(--border); border-radius: var(--radius);
-  padding: 18px 18px 16px 22px; display: flex; flex-direction: column;
+  padding: 18px 18px 16px 79px; display: flex; flex-direction: column;
   transition: border-color var(--dur) var(--ease);
 }
 .pos:hover { border-color: var(--border-hover); }
@@ -382,15 +383,13 @@ body .sec.is-open .when-normal.is-inline, body .sec.is-open .when-deep.is-inline
 .pdesc { margin: 12px 0 0; font-size: var(--text-sm); color: var(--fg2); line-height: var(--leading-normal); }
 .pprop { margin: 12px 0 0; font-size: var(--text-xs); color: var(--fg3); }
 .pprop b { color: var(--fg2); font-weight: var(--weight-semibold); }
-.pimp { display: inline-flex; align-items: center; gap: 6px; font-size: var(--text-sm); color: var(--fg2); }
+/* upvote: the same 48px top-left column as .qvote, at the same offsets (17px + 48 + 14 gap = the card’s left padding) */
+.pvote { position: absolute; left: 17px; top: 17px; width: 48px; display: flex; justify-content: center; }
+.pimp { display: flex; flex-direction: column; align-items: center; gap: 2px; padding-top: 2px; font-size: var(--text-sm); color: var(--fg2); }
 .pimp i { font-size: 22px; color: var(--ink-400); padding: 3px; border: 1px solid var(--border); background: var(--surface); border-radius: 8px; transition: color var(--dur) var(--ease), background var(--dur) var(--ease), border-color var(--dur) var(--ease); }
 .pimp i:hover { background: var(--ink-100); border-color: var(--border-hover); color: var(--fg2); }
 .pimp i.up, .pimp i.ph-fill.ph-caret-up { color: var(--accent); }
-.pimp b { font-family: var(--font-tabular); color: var(--fg1); }
-/* participation foot pinned to the card base; only the vote control and a
-   small halo around it are click-isolated from the expand */
-.pfoot { margin-top: auto; padding-top: 12px; display: flex; align-items: center; }
-.pfoot-hit { display: inline-flex; align-items: center; padding: 6px 10px; margin: -6px -10px; }
+.pimp b { font-family: var(--font-tabular); font-weight: var(--weight-bold); font-size: var(--text-sm); color: var(--fg1); }
 /* mobile card meta row (display-only importance + tap hint) */
 /* positions two-axis: axis 2 = per-card click-to-expand (mirrors .tile-x),
    axis 1 = breadth — is_extra cards hidden until the section's Go-deeper opens. */
@@ -442,6 +441,10 @@ body .sec.is-open .when-normal.is-inline, body .sec.is-open .when-deep.is-inline
 .xtoggle i { font-size: 14px; transition: transform var(--dur) var(--ease); }
 .xtoggle[aria-expanded="true"] { color: var(--accent-strong); }
 .xtoggle[aria-expanded="true"] i { transform: rotate(180deg); }
+/* respond: the foot of an expanded body, as quiet as the caret at its head */
+.respond { display: flex; margin-left: auto; margin-right: -6px; margin-top: 12px; align-items: center; gap: 5px; padding: 4px 8px 4px 6px; border: none; background: none; border-radius: 7px; font: inherit; font-size: var(--text-xs); font-weight: var(--weight-semibold); color: var(--ink-300); cursor: pointer; transition: color var(--dur) var(--ease), background var(--dur) var(--ease); }
+.respond:hover { color: var(--fg2); background: var(--ink-100); }
+.respond i { font-size: 14px; }
 .tsrc-plain { cursor: default; color: var(--fg3); }
 /* open state: subtle border + the expanded card spans its full grid row (P1-6) */
 .tile.tile-open, .pos.pos-open { border-color: var(--border-hover); }
@@ -813,6 +816,8 @@ a.sp-cat:hover { text-decoration: none; box-shadow: inset 0 0 0 1px color-mix(in
     display: flex; flex-direction: column;
     border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
   .sheet .modal-tab-body { flex: 1; height: auto; min-height: 0; }
+  .sheet-follow { height: auto; }
+  .sheet-follow .follow-body { flex: 1; min-height: 0; overflow-y: auto; }
 }
 
 /* ============================================================================
@@ -861,6 +866,14 @@ a.sp-cat:hover { text-decoration: none; box-shadow: inset 0 0 0 1px color-mix(in
   .qvote { position: absolute; top: 13px; right: 13px; flex-direction: row; align-items: center; gap: 6px; border: 1px solid var(--border); border-radius: var(--radius-pill); padding: 3px 9px; background: var(--surface); }
   .qvote i { font-size: 13px; padding: 0; }
   .qvote .qc { font-size: var(--text-xs); }
+  /* positions: the same pill, top-right; the caret toggle hides as on questions */
+  .pos { padding-left: 22px; }
+  .pos .xtoggle { display: none; }
+  .pos .phead { padding-right: 60px; }
+  .pvote { left: auto; right: 13px; top: 13px; width: auto; }
+  .pimp { flex-direction: row; gap: 6px; padding: 3px 9px; border: 1px solid var(--border); border-radius: var(--radius-pill); background: var(--surface); }
+  .pimp i { font-size: 13px; padding: 0; }
+  .pimp b { font-size: var(--text-xs); }
   .qb .qtag { max-width: calc(100% - 96px); }
 
   /* positions: whole card taps to expand .pmore inline (same as desktop) */
@@ -965,7 +978,9 @@ a.sp-cat:hover { text-decoration: none; box-shadow: inset 0 0 0 1px color-mix(in
 .ps-note { margin: 9px 0 0; font-size: var(--text-xs); color: var(--fg3); }
 
 /* child-attached prompts rendered under their position / question */
-.prompt-attach { margin-top: 18px; }
-.prompt-attach-for { display: flex; align-items: center; gap: 7px; font-size: var(--text-xs); font-weight: var(--weight-semibold); color: var(--fg3); margin-bottom: 9px; }
-.prompt-attach-for .pdot { width: 10px; height: 10px; border-radius: var(--radius-pill); flex: none; }
-.prompt-attach-for i { font-size: 14px; color: var(--accent-strong); }
+/* vote follow-up modal: the upvoted item, then its prompts as cards */
+.follow-body { margin-top: 18px; }
+.follow-for { display: flex; align-items: baseline; gap: 9px; font-size: var(--text-base); font-weight: var(--weight-semibold); color: var(--fg1); line-height: var(--leading-snug); margin-bottom: 14px; }
+.follow-for .pdot { transform: translateY(-1px); }
+.follow-for i { font-size: 18px; color: var(--accent-strong); flex: none; transform: translateY(2px); }
+.follow-foot { margin-top: 18px; display: flex; justify-content: flex-end; }

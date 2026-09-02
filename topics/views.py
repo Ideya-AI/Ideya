@@ -1,12 +1,10 @@
-from collections import defaultdict
-
 import qrcode
 import qrcode.image.svg
 
 from django.conf import settings
 from django.contrib.contenttypes.models import ContentType
 from django.db import transaction
-from django.db.models import Count, F, Prefetch, Q
+from django.db.models import Count, F, Prefetch
 from django.http import HttpResponse, HttpResponseBadRequest
 from django.shortcuts import get_object_or_404, render
 from django.views.decorators.http import require_POST
@@ -36,6 +34,7 @@ from .models import (
     Action,
     Category,
     InputSummary,
+    ParticipationEvent,
     Position,
     Prompt,
     Question,
@@ -130,6 +129,38 @@ def _participant(request) -> dict:
     return {"session_key": _participant_key(request)}
 
 
+def _log_event(request, kind, action, target, payload=None, prompt=None):
+    """Append one ParticipationEvent — the permanent record of a participation
+    action (the current-state rows above it get edited, retracted and reset).
+    `target` is the Topic / Section / Stat / Question / Position acted on (None
+    for a prompt that is not attached to anything)."""
+    if target is None:
+        slug, text = "", ""
+    elif isinstance(target, Topic):
+        slug, text = target.slug, target.title
+    elif isinstance(target, Section):
+        slug, text = target.topic.slug, f"{target.get_kind_display()} section"
+    else:
+        slug = target.section.topic.slug
+        text = getattr(target, "text", None) or getattr(target, "name", None) or target.label
+    ParticipationEvent.objects.create(
+        kind=kind,
+        action=action,
+        topic_slug=slug,
+        target_kind=type(target).__name__.lower() if target else "",
+        target_id=target.id if target else None,
+        target_text=text[:400],
+        prompt_id=prompt.id if prompt else None,
+        prompt_text=prompt.text if prompt else "",
+        trigger=prompt.trigger if prompt else "",
+        payload=payload or {},
+        user=request.user if request.user.is_authenticated else None,
+        session_key=request.session.session_key or "",
+        ip=ratelimit.client_ip(request),
+        user_agent=request.META.get("HTTP_USER_AGENT", "")[:300],
+    )
+
+
 # Minimum responses before a prompt's live aggregate surfaces (mirrors the
 # stance gate in spirit — avoids "1 vote = 100%" noise on the open layer).
 MIN_PROMPT_SAMPLE = 5
@@ -149,53 +180,17 @@ def _decorate_prompt(prompt):
     return prompt
 
 
-def _attach_prompts(request, topic, sections):
-    """Load the active prompts attached to a topic and its sub-pieces, attach to
-    each the participant's saved Response (`user_response`) and the latest
-    approved InputSummary (`summary`), and hang the child-attached ones off their
-    object (`question.prompts` / `position.prompts` / `section.prompts`). Returns
-    the topic-level prompts as a list. One query per concern — no per-prompt N+1."""
-    question_ids, position_ids = [], []
-    for s in sections:
-        if s.kind == Section.QUESTIONS:
-            question_ids += [q.id for q in s.questions.all()]
-        elif s.kind == Section.POSITIONS:
-            position_ids += [p.id for p in s.positions.all()]
-
-    ct = ContentType.objects.get_for_model
-    topic_ct = ct(Topic)
-    section_ct = ct(Section)
-    question_ct = ct(Question)
-    position_ct = ct(Position)
-    scopes = [
-        (topic_ct.id, {topic.id}),
-        (section_ct.id, {s.id for s in sections}),
-        (question_ct.id, set(question_ids)),
-        (position_ct.id, set(position_ids)),
-    ]
-    selector = Q()
-    for ct_id, ids in scopes:
-        if ids:
-            selector |= Q(content_type_id=ct_id, object_id__in=ids)
-    if not selector:
-        return []
-
-    prompts = list(
-        Prompt.objects.filter(active=True)
-        .filter(selector)
-        .prefetch_related("options", "responses")
-    )
-    pids = [p.id for p in prompts]
-
-    # Latest approved summary per prompt (the public "what readers think").
+def _hydrate_prompts(request, prompts):
+    """Attach to each prompt the participant's saved Response (`user_response`)
+    and the latest approved InputSummary (`summary`), then decorate. One query
+    for the summaries; responses are read off the prefetched rows so passive
+    readers don't trigger a session (mirrors topic_detail's `who`)."""
     summary_map = {}
     for s in InputSummary.objects.filter(
-        prompt_id__in=pids, status=InputSummary.APPROVED
+        prompt_id__in=[p.id for p in prompts], status=InputSummary.APPROVED
     ).order_by("-generated_at"):
         summary_map.setdefault(s.prompt_id, s)
 
-    # The participant's own response — read off the prefetched rows so passive
-    # readers don't trigger a session (mirrors topic_detail's `who`).
     user_id = request.user.id if request.user.is_authenticated else None
     skey = "" if user_id else (request.session.session_key or "")
     for p in prompts:
@@ -210,32 +205,45 @@ def _attach_prompts(request, topic, sections):
         p.user_response = ur
         p.summary = summary_map.get(p.id)
         _decorate_prompt(p)
+    return prompts
 
-    topic_prompts = []
-    by_section, by_question, by_position = (
-        defaultdict(list),
-        defaultdict(list),
-        defaultdict(list),
+
+def _prompts_for(request, obj, trigger=""):
+    """The active prompts attached to one object for one trigger (blank = the
+    Add-your-view modal on a Topic; vote / lean_a / lean_b = the follow-up
+    modal on a Question or Position), hydrated for rendering."""
+    prompts = list(
+        Prompt.objects.filter(
+            active=True,
+            trigger=trigger,
+            content_type=ContentType.objects.get_for_model(obj),
+            object_id=obj.id,
+        ).prefetch_related("options", "responses")
     )
-    for p in prompts:
-        if p.content_type_id == topic_ct.id:
-            topic_prompts.append(p)
-        elif p.content_type_id == question_ct.id:
-            by_question[p.object_id].append(p)
-        elif p.content_type_id == position_ct.id:
-            by_position[p.object_id].append(p)
-        elif p.content_type_id == section_ct.id:
-            by_section[p.object_id].append(p)
+    return _hydrate_prompts(request, prompts)
 
-    for s in sections:
-        s.prompts = by_section.get(s.id, [])
-        if s.kind == Section.QUESTIONS:
-            for q in s.questions.all():
-                q.prompts = by_question.get(q.id, [])
-        elif s.kind == Section.POSITIONS:
-            for p in s.positions.all():
-                p.prompts = by_position.get(p.id, [])
-    return topic_prompts
+
+def _with_follow_up(request, response, target, obj, trigger, eyebrow, icon):
+    """Append the follow-up modal's body (and eyebrow) to a fragment response
+    as out-of-band swaps and fire the "follow-up" event that opens it. A
+    no-op when the item has no prompts for this trigger."""
+    prompts = _prompts_for(request, obj, trigger)
+    if prompts:
+        body = render(
+            request,
+            "topics/components/_follow_body.html",
+            {
+                "target": target,
+                "item": obj,
+                "prompts": prompts,
+                "eyebrow": eyebrow,
+                "icon": icon,
+                "min_prompt_sample": MIN_PROMPT_SAMPLE,
+            },
+        )
+        response.content += body.content
+        response["HX-Trigger"] = "follow-up"
+    return response
 
 
 # --------------------------------------------------------------------------- #
@@ -381,7 +389,7 @@ def topic_detail(request, slug):
         elif s.kind == "positions":
             for p in s.positions.all():
                 p.user_vote = voted_p.get(p.id, 0)
-    topic_prompts = _attach_prompts(request, topic, sections)
+    topic_prompts = _prompts_for(request, topic)
     return render(
         request,
         "topics/detail.html",
@@ -603,6 +611,7 @@ def vote(request, target, pk):
             Vote.objects.create(**who, value=direction, **lookup)
             delta, user_vote = direction, direction
         type(obj).objects.filter(pk=obj.pk).update(**{counter: F(counter) + delta})
+        _log_event(request, ParticipationEvent.VOTE, "cast" if delta > 0 else "retract", obj)
     obj.refresh_from_db(fields=[counter])
     obj.user_vote = user_vote
     obj.votes_cast = Vote.objects.filter(**lookup).count()
@@ -611,7 +620,14 @@ def vote(request, target, pk):
     context = {ctx: obj}
     if target == "position" and prefix in ("pimp", "spimp"):
         context["prefix"] = prefix
-    return render(request, template, context)
+    response = render(request, template, context)
+    # A cast (not a retract) opens the follow-up modal.
+    if delta > 0:
+        response = _with_follow_up(
+            request, response, target, obj, Prompt.TRIGGER_VOTE,
+            "Thanks for the upvote", "caret-up",
+        )
+    return response
 
 
 @require_POST
@@ -630,14 +646,55 @@ def question_lean(request, pk):
     if existing and existing.value == value:
         existing.delete()
         question.user_lean = ""
+        action = "retract"
     elif existing:
         existing.value = value
         existing.save(update_fields=["value", "updated_at"])
         question.user_lean = value
+        action = "switch"
     else:
         QuestionLean.objects.create(question=question, value=value, **who)
         question.user_lean = value
-    return render(request, "topics/components/_qlean.html", {"q": question})
+        action = "cast"
+    label = question.lean_label_a if value == QuestionLean.A else question.lean_label_b
+    _log_event(
+        request, ParticipationEvent.LEAN, action, question,
+        {"value": value, "label": label},
+    )
+    response = render(request, "topics/components/_qlean.html", {"q": question})
+    # A cast or switch (not a retract) opens the follow-up modal for that pole.
+    if question.user_lean:
+        label = question.lean_label_a if value == QuestionLean.A else question.lean_label_b
+        response = _with_follow_up(
+            request, response, "question", question, f"lean_{value}",
+            f"You lean “{label}”", "arrows-left-right",
+        )
+    return response
+
+
+FOLLOW_UP_TARGETS = {
+    "stat": Stat,
+    "question": Question,
+    "position": Position,
+    "section": Section,
+}
+
+
+def follow_up(request, target, pk):
+    """Open the follow-up modal for one item from its respond button (no vote
+    involved): an empty body whose out-of-band parts fill the modal."""
+    model = FOLLOW_UP_TARGETS.get(target)
+    if model is None:
+        return HttpResponseBadRequest("unknown target")
+    obj = get_object_or_404(model, pk=pk)
+    if target == "section":
+        trigger, eyebrow = Prompt.TRIGGER_MISSING, "Something missing?"
+    else:
+        noun = "fact" if target == "stat" else target
+        trigger, eyebrow = Prompt.TRIGGER_RESPOND, f"Respond to this {noun}"
+    return _with_follow_up(
+        request, HttpResponse(""), target, obj, trigger, eyebrow, "chat-teardrop-text"
+    )
 
 
 def _response_payload(request, prompt):
@@ -720,6 +777,22 @@ def respond(request, pk):
         else:
             Response.objects.filter(prompt=prompt, **who).delete()
             response = None
+        # The permanent record carries option labels, not ids, so it reads
+        # without the (reseedable) PromptOption rows.
+        labels = {o.id: o.label for o in prompt.options.all()}
+        payload = {k: v for k, v in defaults.items() if v not in ("", None, [], {})}
+        if "selected_ids" in payload:
+            payload["selected"] = [labels.get(i, i) for i in payload.pop("selected_ids")]
+        if "ranking" in payload:
+            payload["ranking"] = [labels.get(i, i) for i in payload["ranking"]]
+        if "option_texts" in payload:
+            payload["notes"] = {
+                labels.get(int(i), i): t for i, t in payload.pop("option_texts").items()
+            }
+        _log_event(
+            request, ParticipationEvent.RESPONSE, "save" if keep else "clear",
+            prompt.target, payload, prompt,
+        )
 
     prompt.user_response = response
     prompt.summary = (

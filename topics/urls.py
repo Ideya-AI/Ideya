@@ -11,6 +11,7 @@ urlpatterns = [
     path("vote/<str:target>/<int:pk>/", views.vote, name="vote"),
     path("qlean/<int:pk>/", views.question_lean, name="question_lean"),
     path("respond/<int:pk>/", views.respond, name="respond"),
+    path("follow-up/<str:target>/<int:pk>/", views.follow_up, name="follow_up"),
     path("category/<slug:slug>/", views.category_detail, name="category"),
     path("category/<slug:slug>/share/", views.category_share, name="category_share"),
     path("<slug:slug>/poster/", views.poster, name="poster"),

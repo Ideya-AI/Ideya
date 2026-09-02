@@ -522,7 +522,7 @@ class Command(BaseCommand):
         # positions/questions (prior reader Responses to them reset with it).
         from .seed_example_prompts import seed_topic_prompts
 
-        seed_topic_prompts(topic)
+        n_prompts = seed_topic_prompts(topic)
 
         # Re-attach the snapshotted participation to the rebuilt rows.
         if saved_qv or saved_pv or saved_leans:
@@ -625,6 +625,6 @@ class Command(BaseCommand):
                 f"loaded '{topic.title}' [{o['slug']}] status={o['status']} — "
                 f"{bs.stats.count()} stats, {qs.questions.count()} questions, "
                 f"{ps.positions.count()} positions, {acts.actions.count()} actions, "
-                f"3 prompts"
+                f"{n_prompts} prompts"
             )
         )

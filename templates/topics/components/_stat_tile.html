@@ -47,6 +47,7 @@ spans a trailing orphan across the row.{% endcomment %}
   <div class="tmore" x-show="open[{{ stat.id }}]" x-cloak>
     {% if stat.detail %}<div class="tdetail">{{ stat.detail|sup_exp|linebreaks }}</div>{% endif %}
     {% if stat.source_label %}{% if stat.source_url %}<a class="tsrc" href="{{ stat.source_url }}" target="_blank" rel="noopener" @click.stop><i class="ph-duotone ph-link-simple"></i>{{ stat.source_label }}{% if stat.source_published %} · {{ stat.source_published }}{% endif %}</a>{% else %}<span class="tsrc tsrc-plain"><i class="ph-duotone ph-link-simple"></i>{{ stat.source_label }}{% if stat.source_published %} · {{ stat.source_published }}{% endif %}</span>{% endif %}{% endif %}
+    <button type="button" class="respond" @click.stop hx-get="{% url 'topics:follow_up' 'stat' stat.id %}" hx-swap="none" aria-label="Respond to this fact"><i class="ph-duotone ph-chat-teardrop-text"></i>Respond</button>
   </div>
   {% endif %}
 </div>

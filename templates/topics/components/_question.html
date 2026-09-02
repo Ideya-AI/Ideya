@@ -12,6 +12,7 @@ section's Go-deeper is open.{% endcomment %}
     {% if q.detail %}
     <div class="qmore" x-show="more" x-cloak>
       <div class="qdetail">{{ q.detail|linebreaks }}</div>
+      <button type="button" class="respond" @click.stop hx-get="{% url 'topics:follow_up' 'question' q.id %}" hx-swap="none" aria-label="Respond to this question"><i class="ph-duotone ph-chat-teardrop-text"></i>Respond</button>
     </div>
     {% endif %}
     {% if q.lean_label_a and q.lean_label_b %}<div class="qfoot" @click.stop>{% include "topics/components/_qlean.html" %}</div>{% endif %}

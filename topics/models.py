@@ -1104,6 +1104,55 @@ class QuestionLean(ParticipationBase):
 # scale, with GenAI summaries that publish only after editorial approval.
 # Distinct from the core Question/Position votes above.
 # --------------------------------------------------------------------------- #
+class ParticipationEvent(models.Model):
+    """Append-only log of every participation action — each vote, lean and
+    prompt response as it happened, including retracts, switches and edits.
+    Everything is denormalized (topic slug, item text, prompt text, option
+    labels) and nothing cascades, so the record survives content reloads and
+    prompt reseeds that reset the current-state tables. Read later; never
+    updated."""
+
+    VOTE, LEAN, RESPONSE = "vote", "lean", "response"
+    KIND_CHOICES = [(VOTE, "Vote"), (LEAN, "Lean"), (RESPONSE, "Response")]
+
+    kind = models.CharField(max_length=8, choices=KIND_CHOICES)
+    action = models.CharField(
+        max_length=8, help_text="cast / retract / switch (votes, leans); save / clear (responses)."
+    )
+    topic_slug = models.CharField(max_length=200, blank=True, db_index=True)
+    target_kind = models.CharField(
+        max_length=12, blank=True, help_text="topic / stat / question / position"
+    )
+    target_id = models.PositiveIntegerField(null=True, blank=True)
+    target_text = models.CharField(max_length=400, blank=True)
+    prompt_id = models.PositiveIntegerField(null=True, blank=True)
+    prompt_text = models.CharField(max_length=300, blank=True)
+    trigger = models.CharField(max_length=8, blank=True)
+    payload = models.JSONField(
+        default=dict,
+        blank=True,
+        help_text="The answer: value / selected labels / notes / rating / ranking / text.",
+    )
+
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="+",
+    )
+    session_key = models.CharField(max_length=40, blank=True, db_index=True)
+    ip = models.CharField(max_length=45, blank=True)
+    user_agent = models.CharField(max_length=300, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True, db_index=True)
+
+    class Meta:
+        ordering = ["-created_at"]
+
+    def __str__(self) -> str:
+        return f"{self.kind} {self.action} · {self.target_text[:40]}"
+
+
 class Prompt(models.Model):
     """A reader-input prompt — free-form or structured (choose/rate/rank) — that can
     attach to anything at any scale (a Topic overall, or a sub-piece: Section,
@@ -1124,7 +1173,26 @@ class Prompt(models.Model):
         (RANK, "Ranking"),
     ]
 
+    # What surfaces this prompt. Blank = the Add-your-view modal (topic level);
+    # the rest open the follow-up modal after that interaction on the target.
+    TRIGGER_VOTE = "vote"
+    TRIGGER_LEAN_A = "lean_a"
+    TRIGGER_LEAN_B = "lean_b"
+    TRIGGER_RESPOND = "respond"
+    TRIGGER_MISSING = "missing"
+    TRIGGER_CHOICES = [
+        ("", "None"),
+        (TRIGGER_VOTE, "After an upvote"),
+        (TRIGGER_LEAN_A, "After leaning to pole A"),
+        (TRIGGER_LEAN_B, "After leaning to pole B"),
+        (TRIGGER_RESPOND, "From the item's respond button"),
+        (TRIGGER_MISSING, "From a section's Something-missing button"),
+    ]
+
     kind = models.CharField(max_length=12, choices=KIND_CHOICES, default=FREE_TEXT)
+    trigger = models.CharField(
+        max_length=8, choices=TRIGGER_CHOICES, default="", blank=True
+    )
     text = models.CharField(max_length=300, help_text="The prompt shown to readers.")
     help_text = models.CharField(max_length=300, blank=True)
     allow_text = models.BooleanField(

@@ -16,6 +16,10 @@
     // "Add your view" input modal open state.
     Alpine.store("input", { open: false });
 
+    // Vote follow-up modal open state (opened by the "follow-up" event the
+    // vote response triggers; its body arrives out of band — see _follow_modal).
+    Alpine.store("follow", { open: false });
+
     // Row-synced expandable grid (positions, basics) — expansion state lives
     // on the grid (keyed by data-xid) so a click opens/closes every card
     // sharing the visual row: the CSS grid stretches row partners anyway, and

@@ -1,0 +1,21 @@
+{% comment %}Vote follow-up modal — opens when a reader upvotes a question or a
+position, leans to one of a question's poles, or taps the respond button under
+an expanded fact / question / position. The shell is static; the response fills #follow-eyebrow and #follow-body out of band (_follow_body.html
+via hx-swap-oob) and fires the "follow-up" event that opens it. Nothing is required; closing (X / Done / scrim
+/ Esc) just dismisses — saved answers persist.{% endcomment %}
+<div x-data x-show="$store.follow.open" x-cloak style="display:none"
+     @follow-up.window="$store.follow.open = true"
+     x-effect="document.body.style.overflow = $store.follow.open ? 'hidden' : ''">
+  <div class="scrim" @click="$store.follow.open = false"></div>
+  <div class="sheet sheet-follow overlay-card" role="dialog" aria-modal="true" aria-label="Tell us more"
+       x-ref="sheet" tabindex="-1"
+       x-effect="$store.follow.open &amp;&amp; $nextTick(() =&gt; $refs.sheet.focus())"
+       @keydown.escape.window="$store.follow.open = false"
+       @keydown.tab="const f = [...$refs.sheet.querySelectorAll('a[href],button:not([disabled]),input:not([disabled]),textarea:not([disabled]),select:not([disabled]),[tabindex]:not([tabindex=&quot;-1&quot;])')].filter(el =&gt; el.offsetParent !== null); if (!f.length) return; const first = f[0], last = f[f.length - 1]; if ($event.shiftKey &amp;&amp; document.activeElement === first) { $event.preventDefault(); last.focus(); } else if (!$event.shiftKey &amp;&amp; document.activeElement === last) { $event.preventDefault(); first.focus(); }">
+    <header class="sheet-head">
+      <div class="sheet-eyebrow" id="follow-eyebrow"></div>
+      <button type="button" class="sheet-close" @click="$store.follow.open = false" aria-label="Close"></button>
+    </header>
+    <div id="follow-body" class="follow-body"></div>
+  </div>
+</div>

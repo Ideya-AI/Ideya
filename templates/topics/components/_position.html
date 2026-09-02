@@ -5,12 +5,13 @@ Axis 1 (breadth): `is_extra` cards appear only when the section's Go-deeper is o
 Axis 2 (depth): glance = name + steelman; tapping the card expands `.pmore`
 (description, detail, representative, proponents) inline on every viewport, with
 the caret toggle as the visible affordance on all viewports (mirroring
-_stat_tile). The participation foot is click-isolated so voting never toggles
-the expand.{% endcomment %}
+_stat_tile). The upvote sits in the same top-left column as the question card's
+and is click-isolated so voting never toggles the expand.{% endcomment %}
 <div class="pos{% if p.is_extra %} pos-xtra{% endif %}{% if p.has_more %} pos-x{% endif %}{% if p.fill_base %} pos-fill-base{% endif %}{% if p.fill_open %} pos-fill-open{% endif %}" data-xid="{{ p.id }}"
      {% if p.has_more %}:class="{ 'pos-open': open[{{ p.id }}] }" @click="toggle($el)"{% endif %}>
   <span class="prail" style="background:{{ p.color_var }}"></span>
   {% if p.has_more %}<button type="button" class="xtoggle" @click.stop="toggle($el.closest('.pos'))" :aria-expanded="!!open[{{ p.id }}]" aria-label="Toggle detail"><i class="ph-duotone ph-caret-down"></i></button>{% endif %}
+  <span class="pvote" @click.stop>{% include "topics/components/_pimp.html" %}</span>
   <div class="phead"><span class="pdot" style="background:{{ p.color_var }}"></span><span class="pn">{{ p.name }}</span></div>
   <p class="psteel">“{{ p.steelman }}”</p>
   {% if p.has_more %}
@@ -19,9 +20,7 @@ the expand.{% endcomment %}
     {% if p.detail %}<div class="pdetail">{{ p.detail|sup_exp|linebreaks }}</div>{% endif %}
     {% if p.representative_name %}<p class="prep"><i class="ph-duotone ph-user-focus"></i><span><b>{{ p.representative_name }}</b> — {{ p.representative_note }}</span></p>{% endif %}
     {% if p.proponents %}<p class="pprop"><b>Proponents:</b> {{ p.proponent_list|join:" · " }}</p>{% endif %}
+    <button type="button" class="respond" @click.stop hx-get="{% url 'topics:follow_up' 'position' p.id %}" hx-swap="none" aria-label="Respond to this position"><i class="ph-duotone ph-chat-teardrop-text"></i>Respond</button>
   </div>
   {% endif %}
-  <div class="pfoot">
-    <span class="pfoot-hit" @click.stop>{% include "topics/components/_pimp.html" %}</span>
-  </div>
 </div>

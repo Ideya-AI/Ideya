@@ -5,6 +5,7 @@ from .models import (
     Category,
     Crux,
     InputSummary,
+    ParticipationEvent,
     Position,
     Prompt,
     PromptOption,
@@ -267,6 +268,26 @@ class ResponseAdmin(admin.ModelAdmin):
     def text_preview(self, obj):
         t = (obj.text or "").strip()
         return (t[:70] + "…") if len(t) > 70 else (t or "—")
+
+
+@admin.register(ParticipationEvent)
+class ParticipationEventAdmin(admin.ModelAdmin):
+    """The append-only participation record — browse and search, never edit."""
+
+    list_display = (
+        "created_at", "kind", "action", "topic_slug", "target_kind",
+        "target_text", "prompt_text", "session_key", "ip",
+    )
+    list_filter = ("kind", "action", "target_kind", "trigger", "topic_slug")
+    search_fields = ("target_text", "prompt_text", "session_key", "ip", "payload")
+    date_hierarchy = "created_at"
+    readonly_fields = [f.name for f in ParticipationEvent._meta.fields]
+
+    def has_add_permission(self, request):
+        return False
+
+    def has_change_permission(self, request, obj=None):
+        return False
 
 
 @admin.register(InputSummary)
