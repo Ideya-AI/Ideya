@@ -111,6 +111,7 @@ to re-author a topic. `research/REFRESH.md`.
 | `.claude/agents/view-critic.md` | stage-4 design-conformance critic; report-only, model pinned |
 | `.claude/skills/author-topic/SKILL.md` | launcher for Runbook A (user-invoked only) |
 | `.claude/skills/refresh-topic/SKILL.md` | launcher for `research/REFRESH.md` (user-invoked only) |
+| `.claude/skills/participation-review/SKILL.md` | launcher for `research/PARTICIPATION.md` §5: per-topic reader-participation report whose proposal feeds a refresh as `args.findings` (user-invoked only) |
 | `.claude/hooks/pipeline-guard.sh` | blocks automated publishing (`--status published` AND `publish_topic`) + dev-server-on-8642; heredoc bodies exempt so docs can quote the command |
 | `.claude/hooks/engine-doc-guard.sh` | runs check_engine.py after engine-file edits |
 | `topics/management/commands/load_topic_draft.py` | the loader: JSON → DB topic; wires catalog edges; idempotent |
@@ -133,6 +134,9 @@ to re-author a topic. `research/REFRESH.md`.
 | `research/refresh/` | refresh proposals, packets, token records + pre-refresh snapshots |
 | `research/icons/` | briefs, exemplars, candidates |
 | `research/REFRESH.md` | the refresh engine's operator manual — separate from this one because the two run on different clocks |
+| `research/PARTICIPATION.md` | the participation record's operator manual: what readers' actions write, the digest, when to read it |
+| `topics/management/commands/participation_report.py` | Markdown digest of reader participation from the append-only `ParticipationEvent` log (`--topic`, `--since`, `--out`) |
+| `topics/management/commands/seed_example_prompts.py` | seeds every topic's reader prompts (Add-your-view + the vote / lean / respond / missing follow-ups); the loader calls it each load |
 | `research/RESEARCH_PIPELINE.md` | design rationale + decision history (the "why") |
 | `research/ICONOGRAPHY.md` | icon visual spec |
 | `design/` | locked design system (authoritative over any prompt) |
@@ -581,6 +585,19 @@ honest** (deterministic floor + one diff-scoped critic + `topic-pm` reading it
 whole). Three code locks make it structurally unable to re-author a topic.
 Automation opens a proposal; a human approves every content change.
 
+## 6a. Runbook B2 — read the participation
+
+**Lives in `research/PARTICIPATION.md`.** Every reader action (upvote, lean,
+prompt answer — including undo, switch and edit) is an append-only
+`ParticipationEvent` row with the item and prompt text copied in, so it
+survives reloads. `manage.py participation_report [--topic] [--since] [--out]`
+turns it into a per-item Markdown digest, and `/participation-review <slug>`
+(`PARTICIPATION.md` §5) turns that into a saved report — what readers did,
+light fact-checking of what they claimed, and a proposal in the
+editor-findings shape a refresh takes as `args.findings`. Run it before a
+stage-5 review or a refresh of that topic. It informs the human — it changes
+nothing by itself.
+
 ## 7. Runbook C — resume & recover
 
 - **A workflow died or was checkpointed mid-run:** relaunch with
@@ -801,7 +818,7 @@ The loader stores verdicts opaquely on `Topic.research_dossier`; the additive
 }
 ```
 A rich viz arriving without its data falls back to `bar` with a warning. The loader
-(re)seeds the 3 Add-your-view prompts each load, warns on placeholder action URLs
+(re)seeds the 3 Add-your-view prompts plus the vote/lean follow-ups on every question and position, the respond-button prompts on every fact, question and position, and a Something-missing prompt on each Basics/Questions/Positions section each load, warns on placeholder action URLs
 and truncated stat units/notes, and wires this slug's related-topic edges from the
 catalog.
 

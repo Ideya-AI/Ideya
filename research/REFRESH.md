@@ -59,6 +59,12 @@ Costs nothing and scopes everything downstream.
 Run `manage.py export_topic --slug <slug> --out research/topics/<slug>.json`
 first if the scan reports drift — admin edits do not reach the JSON on their own.
 
+Then read what readers did: `/participation-review <slug>` (or the latest
+`research/refresh/<slug>.PARTICIPATION.*.md` if it is recent). Its part 3,
+once the human has ticked the decisions, goes into the run as `args.findings`
+alongside any editor findings — proposals, not instructions: the locks below
+still decide what a refresh may change. Manual: `research/PARTICIPATION.md`.
+
 **Light path.** `deterministic_verdict: "clean"` and a scout that finds nothing
 material is a complete refresh: stamp `reviewed_at` and stop. "Checked, nothing
 changed" is the expected outcome on most runs, and forcing a load to show effort

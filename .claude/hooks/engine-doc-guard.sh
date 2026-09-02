@@ -6,7 +6,7 @@
 # surfaces as feedback telling the session to update the manual in this change.
 FILE=$(jq -r '.tool_input.file_path // empty')
 case "$FILE" in
-  */research/workflows/*|*/research/ENGINE.md|*/.claude/skills/author-topic/*|*/.claude/skills/refresh-topic/*|*/.claude/hooks/*)
+  */research/workflows/*|*/research/ENGINE.md|*/.claude/skills/author-topic/*|*/.claude/skills/refresh-topic/*|*/.claude/skills/participation-review/*|*/.claude/hooks/*)
     cd "$CLAUDE_PROJECT_DIR" || exit 0
     OUT=$(.venv/bin/python research/workflows/check_engine.py 2>&1) || {
       echo "$OUT" >&2
