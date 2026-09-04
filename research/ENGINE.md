@@ -250,6 +250,19 @@ blocking count went with it, and keep-best could select a draft that still
 carried the defect. Because all three sources are always present, the verdict set
 keeps a stable size and pass/block counts stay comparable across rounds.
 
+**The fact-source critic owns the sourced stats, not the whole draft** (2026-09-02).
+It is handed only `{overview, basics}` (its `view` in `CRITICS`) and told that prose
+claims belong to the claim ledger. *Why:* it was sweeping position/question prose too,
+which duplicated the ledger — measured on economic-inequality it cost **50.9M cache
+reads against the ledger's 20.0M** for the entire per-claim sweep, because it re-read
+the full draft on each of ~64 web turns. The ledger verifies prose claims **blind and
+one at a time**, which is the stronger check; what only this critic can do is judge a
+stat against its own cited source — attribution, vintage, precision, durability. The
+Basics slice is ~27% of a draft, so its per-turn context drops by about three quarters.
+It also now must verify any replacement figure it prescribes and name the source: a
+prescription is applied verbatim once the loop is spent, so an unchecked replacement
+ships as fact.
+
 **Fact residuals are the pipeline's to close, never the human's.** Stage 1's
 `applyPatch` has no field whitelist, so fact fields are fixable here. Re-run the
 fact critic or apply its prescribed resolution (cut / soften / attribute in-voice).
@@ -272,6 +285,29 @@ real poll is in hand, names it in `lean_basis`, and a seeded percentage with an
 empty basis is a blocking shape defect. `prevalence_basis` and any seeded lean are
 also swept into the claim ledger as `inference` claims — both are numbers the
 atlas publishes and neither had ever been checked.
+
+**An orchestrator closure is not done until it is re-verified.** When the fix loop is
+spent, remaining blocking findings are closed by applying the critic's prescription
+directly (recorded in `prescribed_fixes` as `by: orchestrator-closure`). The script's
+own closing ledger has already run by then, so **nothing in the engine checks that
+text**. On economic-inequality, 2026-09-02, **three of three** prescribed replacement
+facts spot-checked at this step did not verify — the Auten-Splinter magnitudes, CBO's
+"top 0.01% grew more than sevenfold", and one finding quoting a superseded revision.
+All three would have shipped as asserted fact.
+
+So: every factual assertion a closure adds or rewrites must be verified before the
+dossier is persisted, and the result appended to the ledger (see `d21b` on
+economic-inequality for the shape). Dispatch the blind `claim-verifier` agent rather
+than checking it yourself — the orchestrator marking its own homework is the exact
+failure `claim-verifier`'s tool restriction exists to prevent. A closure that cannot
+be verified follows the same three outcomes as any other claim: cut, soften, or
+attribute in-voice.
+
+> **This one is a rule, not a lock** — unlike the whitelist or the publish guard,
+> nothing in code enforces it. The code version (a `close_only` entry point that
+> re-runs `closeLedger` on a hand-closed draft) needs `closeLedger` to take its priors
+> as parameters instead of closing over module state; worth doing when something else
+> next opens that file.
 
 **Nothing escalates mid-run (Jeff, 2026-08-27) — the engine decides editorial
 forks itself**, by its own rules: a verified genuine missing camp is ADDED
@@ -517,13 +553,18 @@ packet, from the run IDs the orchestrator already holds:
 
 ```
 .venv/bin/python research/workflows/tally_tokens.py \
-  stage1=wf_<id> stage2=wf_<id> pm=@topic-pm agents=@<slug-prefix> \
+  stage1=wf_<id> stage2=wf_<id> stage2fix=wf_<id> \
+  icon=<agent-*.jsonl> views=<agent-*.jsonl> pm=<agent-*.jsonl> \
   > research/reviews/<slug>/tokens.md
 ```
 
 Then prepend two header lines (run date + which IDs) and append one line for
 stage-3 image generation (candidates × rounds — a Gemini call no Anthropic tally
-sees). **Token counts only, no dollar values** (Jeff, 2026-08-28): prices move
+sees). **Label stages 3, 4 and 4.5 separately** (Jeff, 2026-09-02): collapsing
+them into one `agents=@<prefix>` line hid the single most variable non-stage-1
+cost, and answering "where did the money go" meant reconstructing the split from
+raw transcripts. Name each run's ad-hoc agents with a common slug prefix anyway,
+so they are findable. **Token counts only, no dollar values** (Jeff, 2026-08-28): prices move
 and recomputing from counts is trivial; a stale dollar figure in a committed
 record reads as authoritative long after the rate sheet changed. Bare `wf_*` IDs are searched for under
 this project's session dirs; `@query` matches named agents by
@@ -926,6 +967,10 @@ six-section skeleton at every depth; more room adds evidence, never sections).
 | Stage 2's fix loop spins on a finding it can never close | a deterministic finding named a field the presentation whitelist rejects | the check is scoped to `PRES_FIELDS`; a geometry defect on a locked field belongs to stage 1's `shapeCheck` |
 | The same sections fold in the same place on every topic | tier 1 came back a habitual size, so the fold landed at the first drop-off rather than filling the space | the underfill check + the capacity line in the fold preview; stage 1's flat-ranking shape rule. Caps in `models.py` are NOT the constraint — positions run at 89% of theirs |
 | A topic is missing from a category page it belongs on | `draft.categories` was a hand-step and forgetting it is silent | fixed 2026-08-28 — the loader falls back to the catalog's `secondary_category_slugs`. **Verified against the DB 2026-09-01: all three published topics carry the edges the catalog specifies.** A missing `draft.categories` in the JSON is not evidence of a missing edge — the fallback covers it — so check `Topic.categories` before concluding anything from the file |
+| A topic's stored `verdicts` show a critic FAILING that actually passed | the array holds **one record per critic**, so a later `fix_only` re-gate overwrites the main gate's record. A pass followed by a disproved or since-closed failure ends up on file as the failure, and a cold reader of `research/topics/<slug>.json` sees only the FAIL | **open** (economic-inequality, 2026-09-02: main-gate `claim-fidelity` PASS was overwritten by a `fix_only` FAIL that was then disproved and closed as ledger `d21b` = supported). Do **not** hand-edit the verdict to make it look right — it is a gate record. State the sequence in the packet's Run line, which is what the 4.5 PM did unprompted. A real fix means keeping verdicts per gate round rather than per critic |
+| A view critic cites a mobile defect "by construction" instead of seeing it | the expanded mobile captures run 38,000-49,000px tall and reach an agent downsampled to roughly **13-77px wide** — unreadable. The `CAPTURE_HEIGHT_EXPANDED` guard stops a capture being silently *clipped*, but an unclipped render nobody can resolve is barely better | **open** (economic-inequality, 2026-09-02). We pay to render the tall captures and pay an opus critic to read them, and get no real mobile coverage; the critic named the limit rather than implying coverage it lacked, which is the behavior to keep. Shape of the fix, not yet built: per-section captures at the mobile breakpoints (one image per `.sec`) put each at a readable scale without changing what is rendered, and would make the <=360px ranked-row entry visible instead of inferable |
+| `check_links` reports a live, correctly-cited source as **dead** | two separate causes, both false positives: (a) some hosts answer **HEAD with 404** on a page that GETs 200 — ourworldindata.org grapher pages do this; (b) a host that refuses scripted clients at the network level is only forgiven when it is `.gov` or listed in `_BOT_WALLED_HOSTS`, and that match is by **exact hostname**, not registrable domain | fixed 2026-09-02 (economic-inequality): 404 joined `_GET_FALLBACK_CODES` so a HEAD 404 is retried with GET, and `fred.stlouisfed.org` was listed explicitly. A false dead blocks the 4.5 gate and sends a human chasing a working link, so one wasted GET per genuinely-dead link is the cheaper trade. When adding a bot-walled host, list the **exact subdomain** |
+| A source URL silently rots into a redirect | the publisher renames a slug and 301s; `check_links` reports it as `redirect` with the final URL, which is easy to skim past because it is a WARNING, not an error | repoint `source_url` at the reported final URL after confirming the target is the same data (OWID retired `income-share-top-1-before-tax-wid` → `incomes-of-the-richest?quantile=richest_1pct&welfare_type=before_tax`). `source_url` is stage-1-owned — stage 2's whitelist rejects it |
 
 Refresh has its own failure-mode table in `research/REFRESH.md` — the two
 systems run on different clocks and their symptoms do not overlap.

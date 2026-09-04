@@ -51,12 +51,26 @@ _HEADERS = {
 # browsers. A network-level failure (or 403) to one of these is "needs manual
 # check", not "dead". The .gov suffix already covers these two; they are listed
 # for documentation and as a home for any future non-.gov additions.
-_BOT_WALLED_HOSTS = {"regulations.gov", "nrc.gov", "mckinsey.com"}
+_BOT_WALLED_HOSTS = {
+    "regulations.gov",
+    "nrc.gov",
+    "mckinsey.com",
+    # Refuses scripted clients at the network level (connect times out even
+    # from a browser UA); the series pages are live. Matching here is by exact
+    # hostname, not registrable domain, so subdomains are listed individually.
+    "fred.stlouisfed.org",
+}
 
 # HEAD outcomes that mean "the server didn't really answer" — retry with GET.
-# (A clean 2xx, a 404/410, a 429, or a timeout are trusted as-is: retrying would
+# (A clean 2xx, a 410, a 429, or a timeout are trusted as-is: retrying would
 # be wasteful or would worsen rate limiting.)
-_GET_FALLBACK_CODES = {400, 403, 405, 406, 500, 501, 502, 503, 504}
+# 404 IS retried: some hosts answer HEAD with 404 on a page that GETs 200 —
+# ourworldindata.org grapher pages do exactly this, and trusting the HEAD sent a
+# live, correctly-cited source to the packet as "dead" (economic-inequality,
+# 2026-09-02). One wasted GET per genuinely-dead link is far cheaper than a false
+# dead verdict, which blocks the stage-4.5 gate and sends a human chasing a
+# working link.
+_GET_FALLBACK_CODES = {400, 403, 404, 405, 406, 500, 501, 502, 503, 504}
 
 # status -> Django style attribute. placeholder + dead use ERROR so they stand
 # out; redirect + blocked use WARNING (attention, not failure).
