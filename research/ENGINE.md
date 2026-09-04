@@ -102,6 +102,7 @@ to re-author a topic. `research/REFRESH.md`.
 | `research/workflows/seed_defects.py` | gate calibration: inject known defects, score detection |
 | `research/workflows/tally_tokens.py` | per-run token/cost accounting |
 | `research/workflows/check_engine.py` | verifies this manual against the code (routing + inventory) |
+| `research/workflows/salvage_run.py` | rebuilds a stage-1 dossier from a run's `journal.jsonl` when the orchestrator never persisted it; `--scan` lists orphaned runs |
 | `research/workflows/check_refresh_drift.py` | what the refresh engine has fallen behind on; `REFRESH.md` step 0, deliberately NOT in the authoring test path |
 | `topics/tests/test_workflow_mirrors.py` | guard on the hand-mirrored workflow contracts (run after ANY workflow-script edit: `manage.py test topics.tests.test_workflow_mirrors`) |
 | `topics/tests/test_refresh_guards.py` | guard on refresh's three locks; runs on refresh edits only, so authoring work does not carry it |
@@ -173,6 +174,27 @@ Pull the catalog entry and run `research_topic.js` via the Workflow tool with in
 args `{title, slug, summary, why_now, category, suggested_icon, positionNames,
 questionsSeed:[], today:"YYYY-MM-DD"}` (map `primary_category_slug`→`category`,
 `position_names`→`positionNames`). Stage-1 args are small — no baking needed.
+
+**Persist the return the moment it arrives — before judging it.** The workflow's
+agent results live in `journal.jsonl`, but the only path from there to
+`research/dossiers/` runs through the orchestrator, so a session that ends
+mid-run loses the topic even though every result is on disk. `wf_c56be1fa-390`
+(2026-08-29, immigration-borders-restriction) spent **175.7M cache reads across
+131 agents and left nothing**: no dossier, no topic JSON, a DB stub with zero
+sections. It was the most expensive run in the corpus and it was invisible until
+a token audit went looking. Write the file first, record the gate status in it,
+assess after. A failed gate on disk is recoverable; nothing on disk is not.
+
+**Before starting a topic, check for orphans:** `salvage_run.py --scan` lists
+every stage-1 run and whether a dossier exists for it. An orphan is unfinished
+work worth more than the next new topic. To recover one:
+`salvage_run.py --run-dir <wf_dir> --slug <slug>` rebuilds the dossier from the
+journal into `<slug>.salvaged.json`, marked `gate_status: "salvaged"`. It
+recovers agent results verbatim but **cannot apply the fixer's patches** — the
+journal stores patches, not the patched draft — so a salvaged draft needs its
+gate re-run, which costs a fraction of re-researching. `resumeFromRunId` is the
+in-session recovery path and is **same-session only**; once the session is gone,
+the journal is the only route back.
 
 Persist the return (`{draft, plan, verdicts, shape_notes, plan_positions,
 claim_ledger}`) to `research/dossiers/<slug>.json` wrapped as `{dossier_version:1,
