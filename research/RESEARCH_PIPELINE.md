@@ -54,6 +54,23 @@ the Phosphor glyph. Section agents research basics/questions/positions/actions i
 parallel. A crux agent writes the editorial narrowing. Then verification, then the gate,
 then a capped fix loop. Facts are settled here and nowhere else.
 
+**Stage 1 is four checkpointed phases, not one run** (2026-09-04). `plan` →
+`research` (sections + crux) → `verify` (the ledger) → `gate` (critics, fix loop,
+closing pass), each a separate invocation of the same script with `prior` (what is
+already done) and `stop_after` (where to return), and the dossier on disk as the
+checkpoint between them. *Why:* the principle that every stage writes a durable
+artifact and is independently re-runnable was true between stages and false inside
+the one that is 95% of a run. Stage 1's only durable output arrived at the very end
+of 60–130 agents and 1–8 hours; `resumeFromRunId` is same-session only; so a
+usage-limit death re-ran the expensive gate and a session death lost the topic.
+Measured: the three most expensive runs in the corpus (130M, 148M, 176M cache reads)
+were the three that hit a limit, against 27–74M for clean runs — the dominant cost
+variable was re-work, not topic difficulty — and the 176M run (immigration,
+2026-08-29) left no artifact at all until `salvage_run.py` rebuilt it from the
+journal six days later. Phases bound the loss to one phase and make the dossier,
+not the session, the thing that has to survive. The single-run shape is still
+available (`--phase all`) and is byte-for-byte the old behaviour.
+
 **Stage 2 · editorial (presentation).** Distils the compact layer, assigns tier (the
 Go-deeper fold) and reveal (compact vs expanded), and reorders so the most
 decision-relevant items lead. **Display order = array order**; `tier` only marks the
@@ -392,6 +409,34 @@ and keeps working when search is spent — which is why verification is WebFetch
   not name.
 - **CSS defects** remain the standing list in each review packet; the pipeline is
   forbidden from touching templates.
+- **A critic's prescribed replacement fact is not evidence** (2026-09-02/04). Across
+  two topics, every critic-prescribed replacement fact that was blind-verified before
+  being applied failed: Auten–Splinter magnitudes, CBO's "sevenfold", a stale quote;
+  then the AADC ruling inverted (five of six provisions *remain* enjoined), SB 976
+  "upheld" (partly reversed), Meta "47 states" (51). **0 for 6.** In every case the
+  critic's editorial *judgment* was right — the neutrality critic correctly found a
+  coherent tilt against the design camp — and its *facts* were wrong. The rule now
+  is that a replacement fact routes through a blind `claim-verifier` before it enters
+  the draft (ENGINE.md §5), enforced as a runbook step, not yet as code. The design
+  consequence is the v2 direction: critics judge, and the ledger owns facts.
+- **The gate reads everything, every round.** Gate cost is critics × rounds × context
+  × turns, and nothing in that product is bounded by what changed. The ledger already
+  solved this for itself (`closeLedger` carries forward by claim text and verifies
+  only what is new); the critics never adopted it. Scoping `fact-source` to Basics
+  took it from 50.9M to 7.4M within a run — the saving came more from **turns**
+  (64 → 31 per instance) than from payload (113k → 81k per call), because accumulated
+  WebFetch results dominate a web critic's context. Carry-forward gating on rounds 2+
+  and no-web scoping for `steelman` are the next two steps of the same idea.
+- **The verdict record is per critic, keyed by the model.** A `fix_only` re-gate
+  overwrites the main gate's verdict for the same critic, so a pass followed by a
+  since-disproved failure is on file as the failure; and two substance verdicts on
+  social-media-youth-mental-health carry their whole report in `critic` with no name,
+  so tooling that looks verdicts up by name cannot find them. Both resolve with
+  verdicts stored per gate round with a script-written `key`.
+- **A view critic cannot see the mobile captures.** Expanded 320px renders run
+  38,000–49,000px and reach the agent downsampled to ~13–77px wide; its ≤360px
+  findings are reasoned from the CSS, not seen, and the critic said so. Per-section
+  captures at the mobile breakpoints are the shape of the fix.
 
 ---
 # Part II · Decision history (archive)
