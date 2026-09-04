@@ -28,7 +28,10 @@ CHROME_CANDIDATES = [
 # trim the dead background below the content in post (these pages run long —
 # a fixed cap silently clipped the Crux/Actions sections). Expanded captures
 # force every detail layer visible and run far taller still.
-CAPTURE_HEIGHT = 12000
+# 12000 clipped a 9-position / 10-action topic's 320px capture
+# (social-media-youth-mental-health, 2026-09-04); the near-cap guard fired as
+# designed. The unexpanded page scales with position count too.
+CAPTURE_HEIGHT = 20000
 # 45000 silently clipped a 10-position topic's 320px expanded capture
 # (ai-alignment needed ~49000); a clipped capture reaching the view critics
 # looks complete, so the near-cap guard below is a hard error, not a warning.
