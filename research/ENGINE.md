@@ -102,6 +102,7 @@ to re-author a topic. `research/REFRESH.md`.
 | `research/workflows/seed_defects.py` | gate calibration: inject known defects, score detection |
 | `research/workflows/tally_tokens.py` | per-run token/cost accounting |
 | `research/workflows/check_engine.py` | verifies this manual against the code (routing + inventory) |
+| `research/workflows/bake.py` | bakes a runner (script + `__ARGS`) for either workflow; knows stage 1's phases, builds `prior`/`stop_after` from the dossier, refuses a phase whose inputs are missing |
 | `research/workflows/salvage_run.py` | rebuilds a stage-1 dossier from a run's `journal.jsonl` when the orchestrator never persisted it; `--scan` lists orphaned runs |
 | `research/workflows/check_refresh_drift.py` | what the refresh engine has fallen behind on; `REFRESH.md` step 0, deliberately NOT in the authoring test path |
 | `topics/tests/test_workflow_mirrors.py` | guard on the hand-mirrored workflow contracts (run after ANY workflow-script edit: `manage.py test topics.tests.test_workflow_mirrors`) |
@@ -170,10 +171,33 @@ slug once left a dangling reference that silently created no edge).
 
 ### Stage 1 — research (substance)
 
-Pull the catalog entry and run `research_topic.js` via the Workflow tool with inline
-args `{title, slug, summary, why_now, category, suggested_icon, positionNames,
-questionsSeed:[], today:"YYYY-MM-DD"}` (map `primary_category_slug`→`category`,
-`position_names`→`positionNames`). Stage-1 args are small — no baking needed.
+**Stage 1 runs as four checkpointed phases** (2026-09-04). One script, invoked up
+to four times; each invocation reads what the previous one persisted and returns
+as soon as its phase completes. The dossier file is the checkpoint.
+
+```
+for phase in plan research verify gate; do
+  R=$(.venv/bin/python research/workflows/bake.py research_topic.js --slug <slug> --phase $phase | tail -1)
+  # Workflow({scriptPath: R})  → persist the return over research/dossiers/<slug>.json
+done
+```
+
+| phase | needs in prior | adds | typical cost |
+|---|---|---|---|
+| `plan` | — | `plan` | 0.3M |
+| `research` | plan | `draft` (sections + crux) | 3–5M |
+| `verify` | plan, draft | `claim_ledger` | 8–20M |
+| `gate` | plan, draft, ledger | verdicts, fixed draft, closed ledger | 6–25M |
+
+`--phase all` is the old single run. **Persist after every return, before judging
+it** — merge the returned keys over the dossier on disk and record `phase_done`.
+A usage-limit death then costs one phase; a session death costs nothing that
+`--phase <next>` cannot pick up, because `prior` comes from the file, not the
+session. A salvaged dossier enters at `--phase gate --prior <slug>.salvaged.json`.
+*Why:* stage 1 was one atomic unit whose only durable output arrived at the end;
+`resumeFromRunId` is same-session only; and 175.7M once evaporated that way
+(immigration-borders-restriction, 2026-08-29).
+
 
 **Persist the return the moment it arrives — before judging it.** The workflow's
 agent results live in `journal.jsonl`, but the only path from there to
@@ -359,7 +383,7 @@ quiet. (Why the budgets live in stage 2: `budgets.py`'s docstring and
 Run `distribute_topic.js` with `{slug, title, today, dossier:<stage-1 return>}`.
 **`dossier` must include `claim_ledger`** — stage 2 rewrites the prose stage 1
 verified, and the fidelity check is what stops a rewrite from moving a claim. The
-dossier is 60KB+ — bake it in via the `__ARGS` recipe (§10). Typography autofix →
+dossier is 60KB+ — bake it: `bake.py distribute_topic.js --slug <slug>` (§10). Typography autofix →
 distill → reorder + tier + reveal → gate → whitelisted fix loop.
 **Display order = array order; `tier` marks the drop-off — move an item across the
 fold by REORDERING. Positions are the exception: they render by `prevalence_weight`
@@ -913,27 +937,24 @@ topics.tests.test_workflow_mirrors`; run it after any workflow-script edit). (Th
 the older per-element `{pass, issues, fixes}` shape from manual refresh verdicts;
 the loader stores either opaquely, so both round-trip.)
 
-**The `__ARGS` recipe** (workflow scripts can't read files; 60KB+ args must be
-baked into a run script):
-```python
-import json, re
-dj = json.load(open("research/dossiers/<slug>.json"))
-run_args = {"slug": "<slug>", "title": "<Title>", "today": "YYYY-MM-DD",
-            "dossier": {"draft": dj["draft"], "verdicts": dj["verdicts"],
-                        "plan_positions": dj["plan_positions"], "plan": dj["plan"],
-                        # required: stage 2 rewrites the prose stage 1 verified
-                        "claim_ledger": dj.get("claim_ledger", {})}}
-body = open("research/workflows/distribute_topic.js").read()
-runner = re.sub(r"\bargs\b", "__ARGS", body)                 # rewire the global
-idx = runner.index("};\n") + 3                               # after meta
-runner = runner[:idx] + "\nconst __ARGS = " + json.dumps(run_args) + ";\n" + runner[idx:]
-open("<scratch>/run_distribute_<slug>.js", "w").write(runner)
+**Baking runners** (workflow scripts can't read files; anything past a 1KB
+skeleton must be baked into the script as `__ARGS`). `research/workflows/bake.py`
+does it — rewires `\bargs\b` to `__ARGS`, splices the JSON after `meta`, writes
+`research/workflows/.runners/<slug>.<stage>.<phase>.js` (gitignored), and
+`node --check`s the result wrapped in an async function (top-level `await` and
+`return` won't parse bare). Then `Workflow({scriptPath: <printed path>})`.
+
 ```
-Then `Workflow({scriptPath: "<scratch>/run_…js"})`. To syntax-check: strip the
-leading `export` AND wrap the body in an **async** function (top-level `return`
-won't parse bare; `export` won't parse inside a function; the scripts `await` at
-top level, so a plain function won't parse either). For a view-feedback pass add
-`"fix_only": [<findings>]` — skips distill/distribute, runs only the fix loop.
+bake.py research_topic.js  --slug <slug> --phase plan|research|verify|gate|all [--prior <dossier>]
+bake.py distribute_topic.js --slug <slug> [--fix-only <lint.json>]
+```
+
+For stage 1 it builds `prior` and `stop_after` from the dossier on disk and refuses
+a phase whose inputs are missing. For stage 2 it carries the dossier's
+`claim_ledger` (required for the fidelity check) and, with `--fix-only`, runs against
+the current `research/topics/<slug>.json` rather than the dossier. It replaced a
+hand recipe that lived here until 2026-09-04 and was the runbook's most error-prone
+step.
 
 **Refresh args** (`refresh_topic.js`): `{current: {overview,basics,questions,
 positions,crux,actions}, title, slug, category, today, scan, findings?}`. `scan`
