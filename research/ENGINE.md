@@ -111,7 +111,7 @@ to re-author a topic. `research/REFRESH.md`.
 | `.claude/agents/topic-pm.md` | stage-4.5 PM gate: verifies the finished topic, routes findings, writes the packet. Fable (allowlisted), falls back to opus |
 | `.claude/agents/icon-briefer.md` | stage-3 brief author; model pinned + verified by `check_engine.py` |
 | `.claude/agents/view-critic.md` | stage-4 design-conformance critic; report-only, model pinned |
-| `.claude/agents/topic-critic.md` | stage-1 judgment critics (neutrality, steelman): `disallowedTools` strips Bash, web and filesystem — judgment on the inline slice only; model pinned |
+| `.claude/agents/topic-critic.md` | stage-1 judgment critics (neutrality, steelman): `tools: SendMessage` allowlist — no Bash, web, browser or filesystem; judgment on the inline slice only; model pinned |
 | `.claude/agents/camp-scout.md` | stage-1 missing-camp web scout: `tools: WebSearch, WebFetch`, sonnet; its report is the neutrality critic's input, never its verdict |
 | `.claude/skills/author-topic/SKILL.md` | launcher for Runbook A (user-invoked only) |
 | `.claude/skills/refresh-topic/SKILL.md` | launcher for `research/REFRESH.md` (user-invoked only) |
@@ -318,8 +318,11 @@ ships as fact.
 
 **The judgment critics run tool-less; steelman sees positions only** (2026-09-05).
 `neutrality` and `steelman` run as `.claude/agents/topic-critic.md`, whose
-`disallowedTools` removes Bash, web and filesystem — they get their slice inline and
-return a verdict, nothing else. `steelman`'s `view` is `{positions}`; `neutrality`
+`tools:` allowlist names only `SendMessage` — no Bash, web, browser or filesystem;
+they get their slice inline and return a verdict, nothing else. (A `disallowedTools`
+denylist was tried first and probed: it left every MCP tool, including Chrome browser
+automation, in the critic's reach. Allowlists exclude MCP tools; an empty allowlist
+fails to launch.) `steelman`'s `view` is `{positions}`; `neutrality`
 keeps the whole draft because tilt is judged across sections. The one thing
 `neutrality` needed the web for — is a genuine, active camp missing? — is now a
 separate **camp scout** (`.claude/agents/camp-scout.md`, sonnet, WebSearch/WebFetch
@@ -780,7 +783,7 @@ checked them:
 | Stage | Agent | Model | Notes |
 |---|---|---|---|
 | 1 verify | `.claude/agents/claim-verifier.md` | (inherits) | the caller passes `RESEARCH_MODEL` (sonnet) explicitly, so routing stays in the script |
-| 1 gate | `.claude/agents/topic-critic.md` | opus | neutrality + steelman; the script also passes `CRITIQUE_MODEL` (opus). Tool-less by `disallowedTools`, so a critic cannot spend turns browsing |
+| 1 gate | `.claude/agents/topic-critic.md` | opus | neutrality + steelman; the script also passes `CRITIQUE_MODEL` (opus). Tool-less by allowlist (a `disallowedTools` denylist left the browser MCP tools in reach — probed 2026-09-05), so a critic cannot spend turns browsing |
 | 1 gate | `.claude/agents/camp-scout.md` | sonnet | the neutrality critic's missing-camp lookup, split out; the script passes `RESEARCH_MODEL` (sonnet) |
 | 3 icon brief | `.claude/agents/icon-briefer.md` | opus | one judgment call per topic |
 | 4 view critics | `.claude/agents/view-critic.md` | opus | design-conformance reads only |
@@ -1030,7 +1033,7 @@ six-section skeleton at every depth; more room adds evidence, never sections).
 | `render_screens` dies "within 200px of the capture window" | the page is taller than the capture height (long topics at 320px — expanded, or now unexpanded too: a 9-position / 10-action topic runs 12,349px unexpanded) | raise `CAPTURE_HEIGHT` or `CAPTURE_HEIGHT_EXPANDED` in `render_screens.py` (12,000→20,000 and 60,000 as of 2026-09-04) and re-capture — the hard error exists because a clipped capture handed to the view critics reads as a complete render (ai-alignment, 2026-08-27) |
 | Stage-1 agents error out on a topic | dual-use content policy | path B: external research onto the loader contract, resume at stage 3 |
 | `output schema too large to classify safely` | an output schema over ~3KB (worst with a long prompt) | split the call and merge locally, or move rich sub-objects to JSON-encoded strings (what stage 2's `add_*` does); stage 1's basics is split facts→shape for this reason |
-| `agent type '<name>' not found` mid-run | the custom-agent registry picks up a new `.claude/agents/*.md` on a **lag**, not instantly | wait and retry before doing anything drastic — 2026-08-27: a just-written definition failed to resolve, and the same file resolved later in the same session with its tool restriction intact. Restarting the session also works but is rarely needed |
+| `agent type '<name>' not found` mid-run | the custom-agent registry picks up a new `.claude/agents/*.md` on a **lag**, not instantly | wait and retry before doing anything drastic — the lag is **~20 minutes** (2026-09-05, measured twice, with no user turn in between); probe with the Agent tool before launching a workflow that names the type. 2026-08-27: a just-written definition failed to resolve, and the same file resolved later in the same session with its tool restriction intact. Restarting the session also works but is rarely needed |
 | Link previews show the generic Ideya mark | the og card was rendered into the review folder, not `static/img/social/` | stage 4 runs the `og` format with NO `--out`; the review-folder copy is not what `og:image` serves |
 | `reviewed_at` never set, topic re-queues early | it was a separate `shell -c` after the publish, easy to forget and silent when missed | `--reviewed` on the loader (or `publish_topic`, which passes it) stamps it in the same transaction |
 | Live site missing a just-published topic | authoring DB ≠ live DB | `DEPLOY.md` §3 docker-exec load; never copy the whole DB |

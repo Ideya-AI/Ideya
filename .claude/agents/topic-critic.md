@@ -1,7 +1,10 @@
 ---
 name: topic-critic
 description: Stage-1 judgment critic for the Ideya authoring engine (neutrality, steelman). Reads the draft slice it is handed and returns a verdict. No web, no filesystem, no shell by design — judgment on the text in front of it is the whole job; facts belong to the claim ledger and the fact-source critic.
-disallowedTools: Bash, Read, Write, Edit, MultiEdit, NotebookEdit, Glob, Grep, WebFetch, WebSearch, Agent, Skill, ToolSearch, Artifact
+# An allowlist, like claim-verifier: a denylist left every MCP tool (browser
+# automation, docs) in reach, and an empty list fails to launch. SendMessage is
+# the most inert tool a subagent has; the verdict goes out via StructuredOutput.
+tools: SendMessage
 model: opus
 ---
 
