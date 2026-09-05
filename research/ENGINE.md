@@ -337,7 +337,10 @@ tool uses**, and the critics' blocking lists were mostly re-verified figures and
 (Borjas percentages, IRCC and WHA dates) that the ledger had already checked blind —
 duplicated work at whole-draft-per-turn prices. A judgment critic's round-2 opinion
 was already treated as ungrounded by the fix loop; giving it a browser only made the
-opinion expensive.
+opinion expensive. *Measured* (same dossier, same phase, 2026-09-05): **39.2M → 17.7M
+cache reads**, 1,009 → 703 tool uses, 99 → 84 min; the tool-less critics returned
+full verdicts in one turn each, and the scout's one candidate was the camp the old
+neutrality critic had asked for across three rounds.
 
 **Fact residuals are the pipeline's to close, never the human's.** Stage 1's
 `applyPatch` has no field whitelist, so fact fields are fixable here. Re-run the

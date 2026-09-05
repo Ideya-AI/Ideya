@@ -430,8 +430,13 @@ and keeps working when search is spent — which is why verification is WebFetch
   *No-web scoping landed 2026-09-05:* `steelman` and `neutrality` run as a tool-less
   `topic-critic` agent (`steelman` sees positions only), and `neutrality`'s one web
   need — is a genuine camp missing? — is a sonnet `camp-scout` whose report the critic
-  judges inline. The baseline it is measured against is the immigration gate of the
-  same day: 36.6M opus + 2.6M sonnet cache reads, 1,009 tool uses, 34 agents.
+  judges inline. Measured on the same dossier, same day, same gate phase: **39.2M →
+  17.7M cache reads** (opus 36.6M → 12.0M; sonnet 2.6M → 5.7M, the scout and the
+  closing ledger), 1,009 → 703 tool uses, 99 → 84 minutes. The gate result was the
+  same 3/5 with 6 blockers open before and 2 after, both narrow and both new in the
+  final round. *Residual:* the over-inclusion ratchet showed its teeth — the fixer
+  added three camps in three rounds (9 → 12 positions) because each round's neutrality
+  read found a new absence; nothing in the rules says when a topic has enough camps.
 - **The verdict record is per critic, keyed by the model.** A `fix_only` re-gate
   overwrites the main gate's verdict for the same critic, so a pass followed by a
   since-disproved failure is on file as the failure; and two substance verdicts on
