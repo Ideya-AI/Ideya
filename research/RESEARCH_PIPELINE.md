@@ -427,6 +427,11 @@ and keeps working when search is spent — which is why verification is WebFetch
   (64 → 31 per instance) than from payload (113k → 81k per call), because accumulated
   WebFetch results dominate a web critic's context. Carry-forward gating on rounds 2+
   and no-web scoping for `steelman` are the next two steps of the same idea.
+  *No-web scoping landed 2026-09-05:* `steelman` and `neutrality` run as a tool-less
+  `topic-critic` agent (`steelman` sees positions only), and `neutrality`'s one web
+  need — is a genuine camp missing? — is a sonnet `camp-scout` whose report the critic
+  judges inline. The baseline it is measured against is the immigration gate of the
+  same day: 36.6M opus + 2.6M sonnet cache reads, 1,009 tool uses, 34 agents.
 - **The verdict record is per critic, keyed by the model.** A `fix_only` re-gate
   overwrites the main gate's verdict for the same critic, so a pass followed by a
   since-disproved failure is on file as the failure; and two substance verdicts on

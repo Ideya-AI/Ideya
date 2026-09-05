@@ -111,6 +111,8 @@ to re-author a topic. `research/REFRESH.md`.
 | `.claude/agents/topic-pm.md` | stage-4.5 PM gate: verifies the finished topic, routes findings, writes the packet. Fable (allowlisted), falls back to opus |
 | `.claude/agents/icon-briefer.md` | stage-3 brief author; model pinned + verified by `check_engine.py` |
 | `.claude/agents/view-critic.md` | stage-4 design-conformance critic; report-only, model pinned |
+| `.claude/agents/topic-critic.md` | stage-1 judgment critics (neutrality, steelman): `disallowedTools` strips Bash, web and filesystem — judgment on the inline slice only; model pinned |
+| `.claude/agents/camp-scout.md` | stage-1 missing-camp web scout: `tools: WebSearch, WebFetch`, sonnet; its report is the neutrality critic's input, never its verdict |
 | `.claude/skills/author-topic/SKILL.md` | launcher for Runbook A (user-invoked only) |
 | `.claude/skills/refresh-topic/SKILL.md` | launcher for `research/REFRESH.md` (user-invoked only) |
 | `.claude/skills/participation-review/SKILL.md` | launcher for `research/PARTICIPATION.md` §5: per-topic reader-participation report whose proposal feeds a refresh as `args.findings` (user-invoked only) |
@@ -313,6 +315,26 @@ Basics slice is ~27% of a draft, so its per-turn context drops by about three qu
 It also now must verify any replacement figure it prescribes and name the source: a
 prescription is applied verbatim once the loop is spent, so an unchecked replacement
 ships as fact.
+
+**The judgment critics run tool-less; steelman sees positions only** (2026-09-05).
+`neutrality` and `steelman` run as `.claude/agents/topic-critic.md`, whose
+`disallowedTools` removes Bash, web and filesystem — they get their slice inline and
+return a verdict, nothing else. `steelman`'s `view` is `{positions}`; `neutrality`
+keeps the whole draft because tilt is judged across sections. The one thing
+`neutrality` needed the web for — is a genuine, active camp missing? — is now a
+separate **camp scout** (`.claude/agents/camp-scout.md`, sonnet, WebSearch/WebFetch
+only) that runs once per distinct position set and whose report is appended to the
+critic's prompt; the critic judges it, the scout never blocks. The critic preamble is
+built per critic: a tool-less critic is told a check is *run* when it has read the
+slice and judged it, and that facts are the ledger's — the web-era text ("exhaust
+WebFetch before declaring a check impossible", "unverifiable is not a pass") would
+otherwise make it fail its own checks. *Why:* on immigration-borders-restriction the
+gate phase alone cost **36.6M opus + 2.6M sonnet cache reads over 34 agents and 1,009
+tool uses**, and the critics' blocking lists were mostly re-verified figures and dates
+(Borjas percentages, IRCC and WHA dates) that the ledger had already checked blind —
+duplicated work at whole-draft-per-turn prices. A judgment critic's round-2 opinion
+was already treated as ungrounded by the fix loop; giving it a browser only made the
+opinion expensive.
 
 **Fact residuals are the pipeline's to close, never the human's.** Stage 1's
 `applyPatch` has no field whitelist, so fact fields are fixable here. Re-run the
@@ -758,6 +780,8 @@ checked them:
 | Stage | Agent | Model | Notes |
 |---|---|---|---|
 | 1 verify | `.claude/agents/claim-verifier.md` | (inherits) | the caller passes `RESEARCH_MODEL` (sonnet) explicitly, so routing stays in the script |
+| 1 gate | `.claude/agents/topic-critic.md` | opus | neutrality + steelman; the script also passes `CRITIQUE_MODEL` (opus). Tool-less by `disallowedTools`, so a critic cannot spend turns browsing |
+| 1 gate | `.claude/agents/camp-scout.md` | sonnet | the neutrality critic's missing-camp lookup, split out; the script passes `RESEARCH_MODEL` (sonnet) |
 | 3 icon brief | `.claude/agents/icon-briefer.md` | opus | one judgment call per topic |
 | 4 view critics | `.claude/agents/view-critic.md` | opus | design-conformance reads only |
 | 4.5 PM gate | `.claude/agents/topic-pm.md` | fable | allowlisted (§9 Fable rule); falls back to opus on a one-line retry |
