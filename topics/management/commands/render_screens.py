@@ -35,7 +35,7 @@ CAPTURE_HEIGHT = 20000
 # 45000 silently clipped a 10-position topic's 320px expanded capture
 # (ai-alignment needed ~49000); a clipped capture reaching the view critics
 # looks complete, so the near-cap guard below is a hard error, not a warning.
-CAPTURE_HEIGHT_EXPANDED = 60000
+CAPTURE_HEIGHT_EXPANDED = 80000
 
 
 def _pretty(path):
