@@ -437,6 +437,13 @@ and keeps working when search is spent — which is why verification is WebFetch
   final round. *Residual:* the over-inclusion ratchet showed its teeth — the fixer
   added three camps in three rounds (9 → 12 positions) because each round's neutrality
   read found a new absence; nothing in the rules says when a topic has enough camps.
+  *Carry-forward gating landed 2026-09-05* (`admitFindings` in both stages): rounds 2+
+  hand each critic its own open findings plus the changed fields, and code demotes any
+  new finding on unchanged text. The same day added the two checks the loop lacked:
+  `fit_check.py` measures the poster after the stage-2 load, and `render_screens
+  --sections` gives the critics and the PM readable per-section captures. All three
+  were the shape of the immigration run's overrun — nine stage-2 passes, a poster
+  measured two stages late, and mobile renders nobody could read.
 - **The verdict record is per critic, keyed by the model.** A `fix_only` re-gate
   overwrites the main gate's verdict for the same critic, so a pass followed by a
   since-disproved failure is on file as the failure; and two substance verdicts on

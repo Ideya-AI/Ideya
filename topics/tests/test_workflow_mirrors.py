@@ -361,24 +361,34 @@ class GateSymmetryTests(SimpleTestCase):
                 f"{name} computes blockCount but does not use it to break ties",
             )
 
-    def test_both_gates_cap_unguided_judgment_rounds(self):
-        """Rounds are asymmetric: externally-grounded findings are worth
-        iterating on, a critic's round-2 opinion is not (arXiv 2310.01798).
-        Stage 2 ran three unanchored rounds on findings that were ALL judgment
-        until it had deterministic and fidelity checks to ground them, and
-        refresh ran three on the same footing."""
-        for name in SCRIPTS:
+    def test_authoring_gates_converge_by_scoping_later_rounds(self):
+        """A critic re-reading the whole draft cold each round raises two or
+        three new findings every time, so a capped loop ships with fresh
+        blockers on file (immigration-borders-restriction, 2026-09-05: nine
+        stage-2 passes for ~20 lines of change). Rounds 2+ must hand each critic
+        its own open findings plus the changed fields, and code must demote any
+        new finding that quotes neither. Refresh keeps the older asymmetric rule
+        (it has its own locks and was not part of this change)."""
+        for name in ("research_topic.js", "distribute_topic.js"):
             src = _read(name)
-            self.assertIn(
-                "const grounded = failing.some(",
-                src,
-                f"{name} does not distinguish grounded findings from judgment ones",
-            )
-            self.assertIn(
+            for needle in (
+                "function changedFields(",
+                "function admitFindings(",
+                "function scopeBlock(",
+                "SCOPED RE-READ",
+                "changed: changedFields(priorDraft, draft)"
+                if name == "research_topic.js"
+                else "const changed = changedFields(priorDraft, draft)",
+            ):
+                self.assertIn(needle, src, f"{name} lost the scoped re-gate: {needle!r}")
+            self.assertNotIn(
                 "if (round > 1 && !grounded)",
                 src,
-                f"{name} lets unguided judgment findings run past one round",
+                f"{name} still stops judgment findings after one round; scoping replaced that rule",
             )
+        src = _read("refresh_topic.js")
+        self.assertIn("const grounded = failing.some(", src)
+        self.assertIn("if (round > 1 && !grounded)", src)
 
     def test_deterministic_findings_are_gate_input_every_round(self):
         """Computed once and concatenated once, a deterministic verdict drops out
@@ -398,12 +408,12 @@ class GateSymmetryTests(SimpleTestCase):
             )
             self.assertRegex(
                 src,
-                r"async function fullGate\(d\)",
+                r"async function fullGate\(d(, scope = null)?\)",
                 f"{name} has no single gate that scores every source each round",
             )
             self.assertIn(
                 f"{fn}(d)",
-                src.split("async function fullGate(d)")[1][:400],
+                src.split("async function fullGate(d")[1][:500],
                 f"{name}'s fullGate does not include {fn}",
             )
             self.assertIn(

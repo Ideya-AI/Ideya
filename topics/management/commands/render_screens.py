@@ -8,8 +8,13 @@ PATH required); output feeds the stage-4 view-verification critics.
   manage.py render_screens --slug x --widths 1440,390
 """
 
+import asyncio
+import base64
+import json
 import shutil
 import subprocess
+import tempfile
+import time
 from pathlib import Path
 
 from django.conf import settings
@@ -36,6 +41,84 @@ CAPTURE_HEIGHT = 20000
 # (ai-alignment needed ~49000); a clipped capture reaching the view critics
 # looks complete, so the near-cap guard below is a hard error, not a warning.
 CAPTURE_HEIGHT_EXPANDED = 80000
+# Per-section captures (--sections): one image per `section.sec` (plus the
+# header above the first), each tiled to at most SECTION_TILE px tall. A full
+# 320px expanded page runs 50,000-70,000px and reaches an agent downsampled to
+# ~10px wide — unreadable — so the view critics and the PM read these instead.
+SECTION_TILE = 2000
+
+
+def _capture_sections(chrome, url, width, out_dir):
+    """Drive headless Chrome over the DevTools protocol and screenshot each
+    `.sec` element (tiled) at `width`. Returns the list of files written."""
+    import requests
+    import websockets
+
+    port = 9500 + int(time.time()) % 400
+    td = tempfile.mkdtemp()
+    proc = subprocess.Popen(
+        [chrome, "--headless=new", "--disable-gpu", "--hide-scrollbars",
+         f"--remote-debugging-port={port}", f"--user-data-dir={td}", "about:blank"],
+        stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+    )
+
+    async def run():
+        tabs = None
+        for _ in range(100):
+            try:
+                tabs = requests.get(f"http://127.0.0.1:{port}/json", timeout=2).json()
+                break
+            except Exception:
+                time.sleep(0.2)
+        if not tabs:
+            raise CommandError("render_screens: Chrome did not open its debugging port")
+        ws_url = [t for t in tabs if t["type"] == "page"][0]["webSocketDebuggerUrl"]
+        files = []
+        async with websockets.connect(ws_url, max_size=None) as ws:
+            n = [0]
+
+            async def call(method, **params):
+                n[0] += 1
+                await ws.send(json.dumps({"id": n[0], "method": method, "params": params}))
+                while True:
+                    m = json.loads(await ws.recv())
+                    if m.get("id") == n[0]:
+                        if "error" in m:
+                            raise CommandError(f"CDP {method}: {m['error']}")
+                        return m
+
+            await call("Emulation.setDeviceMetricsOverride", width=width, height=1200,
+                       deviceScaleFactor=1, mobile=width < 1024)
+            await call("Page.enable")
+            await call("Page.navigate", url=url)
+            await asyncio.sleep(4)  # load + fonts + Alpine
+            r = await call("Runtime.evaluate", returnByValue=True, expression=r"""
+                (() => { const secs=[...document.querySelectorAll('section.sec')];
+                  const out=[]; let top=secs.length? secs[0].getBoundingClientRect().top+scrollY : document.body.scrollHeight;
+                  if (top>0) out.push({id:'top', x:0, y:0, w:innerWidth, h:Math.round(top)});
+                  for (const s of secs){ const r=s.getBoundingClientRect(); out.push({id:s.id||'sec', x:0, y:Math.round(r.top+scrollY), w:innerWidth, h:Math.round(r.height)}); }
+                  return JSON.stringify(out); })()""")
+            regions = json.loads(r["result"]["result"]["value"])
+            for i, reg in enumerate(regions):
+                tiles = max(1, -(-reg["h"] // SECTION_TILE))
+                for k in range(tiles):
+                    y = reg["y"] + k * SECTION_TILE
+                    h = min(SECTION_TILE, reg["y"] + reg["h"] - y)
+                    if h <= 0:
+                        continue
+                    shot = await call("Page.captureScreenshot", format="png", captureBeyondViewport=True,
+                                      clip={"x": 0, "y": y, "width": reg["w"], "height": h, "scale": 1})
+                    name = f"{i:02d}-{reg['id']}" + (f"-{k + 1}" if tiles > 1 else "") + ".png"
+                    path = out_dir / name
+                    path.write_bytes(base64.b64decode(shot["result"]["data"]))
+                    files.append(path)
+        return files
+
+    try:
+        return asyncio.run(run())
+    finally:
+        proc.terminate()
+        shutil.rmtree(td, ignore_errors=True)
 
 
 def _pretty(path):
@@ -91,6 +174,13 @@ class Command(BaseCommand):
             "--out",
             default=None,
             help="Output dir (default: research/reviews/<slug>/).",
+        )
+        parser.add_argument(
+            "--sections",
+            action="store_true",
+            help="Also capture one image per page section (tiled at "
+            f"{SECTION_TILE}px) into <out>/sections/<tag>-<width>[-expanded]/ — "
+            "the readable form the view critics and the PM consume.",
         )
         parser.add_argument(
             "--expanded",
@@ -150,4 +240,12 @@ class Command(BaseCommand):
                         "the view critics reads as a complete render."
                     )
             self.stdout.write(f"  {slug} [{w}px] -> {_pretty(png)}")
+            if opts["sections"]:
+                sec_dir = out_dir / "sections" / f"{tag}-{w}{suffix}"
+                if sec_dir.exists():
+                    for old_file in sec_dir.glob("*.png"):
+                        old_file.unlink()
+                sec_dir.mkdir(parents=True, exist_ok=True)
+                files = _capture_sections(chrome, f"{base}/{slug}/{query}", w, sec_dir)
+                self.stdout.write(f"  {slug} [{w}px] sections -> {_pretty(sec_dir)} ({len(files)} image(s))")
         self.stdout.write(self.style.SUCCESS(f"{len(widths)} screenshot(s) captured."))

@@ -82,7 +82,11 @@ should ever reach the human.
 
 ## The reading pass
 
-**Read** every render. Look at the page as a reader meeting this topic cold:
+**Read** every render — through the per-section captures in
+`research/reviews/<slug>/sections/<tag>-<width>[-expanded]/` (one image per page
+section, tiled, numbered in page order), because the full-page files reach you
+downsampled past reading. CHECK 6 still counts the six full-page files; the reading
+pass uses the sections. Look at the page as a reader meeting this topic cold:
 
 - Does it read as finished — no truncation mid-word, no empty section, no
   placeholder text, no item duplicated across the fold.

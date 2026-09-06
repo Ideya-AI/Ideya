@@ -103,6 +103,7 @@ to re-author a topic. `research/REFRESH.md`.
 | `research/workflows/tally_tokens.py` | per-run token/cost accounting |
 | `research/workflows/check_engine.py` | verifies this manual against the code (routing + inventory) |
 | `research/workflows/bake.py` | bakes a runner (script + `__ARGS`) for either workflow; knows stage 1's phases, builds `prior`/`stop_after` from the dossier, refuses a phase whose inputs are missing |
+| `research/workflows/fit_check.py` | measures the poster's fit on the LOADED topic (headless Chrome over the DevTools protocol, per-element lines and chars/line) and, when it overflows, writes the `fix_only` findings with sized trims — the stage-2 exit check that used to be discoverable only at stage 4 |
 | `research/workflows/salvage_run.py` | rebuilds a stage-1 dossier from a run's `journal.jsonl` when the orchestrator never persisted it; `--scan` lists orphaned runs |
 | `research/workflows/check_refresh_drift.py` | what the refresh engine has fallen behind on; `REFRESH.md` step 0, deliberately NOT in the authoring test path |
 | `topics/tests/test_workflow_mirrors.py` | guard on the hand-mirrored workflow contracts (run after ANY workflow-script edit: `manage.py test topics.tests.test_workflow_mirrors`) |
@@ -342,6 +343,23 @@ cache reads**, 1,009 → 703 tool uses, 99 → 84 min; the tool-less critics ret
 full verdicts in one turn each, and the scout's one candidate was the camp the old
 neutrality critic had asked for across three rounds.
 
+**The gate converges by construction: rounds 2+ are scoped to the diff** (2026-09-05,
+both stages). On every re-gate after a fix round, each critic is handed its own open
+findings plus every field the fixer changed (path, item, was → now) and told that text
+it did not flag and that did not change is passed. Code enforces it — `admitFindings`
+keeps a new blocking finding only if it quotes a changed field (or names a changed
+item) or overlaps one of that critic's prior findings; anything else is demoted to a
+note tagged with the round. `scoped: {round, carried, demoted}` is written onto the
+verdict and the log line reads "Re-gate rN: scoped to K changed field(s) — X kept, Y
+demoted". This replaces the old "judgment findings get one round" stop: a judgment
+finding that survives a scoped re-read is anchored to a specific prior finding or a
+specific edit, which is the grounding that rule was missing. In stage 2's `fix_only`
+mode the entering draft is already gated, so even the first re-gate is scoped: its
+prior is the presentation verdicts on file. *Why:* immigration-borders-restriction
+took nine stage-2 passes for ~20 lines of change because every pass closed what it
+was handed and its critic, re-reading the whole draft cold, found two or three new
+things; the cap made the loop stop, not converge.
+
 **Fact residuals are the pipeline's to close, never the human's.** Stage 1's
 `applyPatch` has no field whitelist, so fact fields are fixable here. Re-run the
 fact critic or apply its prescribed resolution (cut / soften / attribute in-voice).
@@ -508,6 +526,17 @@ Then, in order:
 2. Load and confirm zero loader warnings:
    `manage.py load_topic_draft --file research/topics/<slug>.json --slug <slug>
    --title "<Title>" --category <cat> --status draft`
+3. **Poster fit, here, not at stage 4** (2026-09-05):
+   `.venv/bin/python research/workflows/fit_check.py --slug <slug> --json <scratch>/fit.json`
+   Exit 0 prints the slack and you move on. Exit 1 prints the per-element table
+   and writes ONE `fix_only` finding with measured trims (which field, from N to
+   at most M characters, saving P px; question text is locked, so its lever is a
+   reorder) — bake it with `--fix-only`, re-lint, re-load, re-run `fit_check`.
+   *Why:* the poster's sheet is a packing problem no per-field budget settles, and
+   until now it was measured only by `render_poster` two stages later: on
+   immigration a stage-2 note lengthened to satisfy one critic broke the poster,
+   and four passes went by trimming the wrong fields before the sheet was
+   measured element by element.
    (no `--image-brief` yet — the brief doesn't exist until stage 3 and the loader
    hard-errors on a missing path). Use the real slug for a new topic; use
    `<slug>-draft` only when a published version must stay online. The loader wires
@@ -541,9 +570,14 @@ Loop, capped at ~3 refine rounds (spec: `research/ICONOGRAPHY.md`):
 Dev server up (`DJANGO_DEBUG=true … runserver 8641 --noreload`; **restart after any
 template edit** — the compiled-template cache silently serves stale renders).
 Render + critique, capped at ~3 rounds:
-1. `render_screens --slug <slug> --base-url <dev>` plus an `--expanded` run
-   (`?expanded=1` forces every Go-deeper extra visible — the depth layers get no
-   coverage otherwise); then social in **two** calls, and
+1. `render_screens --slug <slug> --base-url <dev> --sections` plus an `--expanded
+   --sections` run (`?expanded=1` forces every Go-deeper extra visible — the depth
+   layers get no coverage otherwise). `--sections` also writes one image per page
+   section, tiled at 2,000px, into `research/reviews/<slug>/sections/<tag>-<w>[-expanded]/`
+   — **that is what the view critics and the PM read**; the full-page captures stay
+   for the capture-cap check and the packet links, but a 320px expanded page runs
+   50,000–70,000px and reaches an agent at ~10px wide (2026-09-05). Then social in
+   **two** calls, and
    `render_poster --slug <slug> --base-url <dev> --out research/reviews/<slug>`.
    `--base-url` is required on all three.
 
@@ -558,8 +592,8 @@ Render + critique, capped at ~3 rounds:
    shipped every topic with the generic site image that way. `sq`/`pt` are for
    manual posting and belong in the packet. The 4.5 PM checks the installed file.
 2. `view-critic` agents (Agent tool, `subagent_type: "view-critic"` — model
-   pinned in the definition) **Read** every image **for design-system
-   conformance only** — against `design/DESIGN_SYSTEM.md` +
+   pinned in the definition) **Read** every section image under `sections/` (and
+   the cards and poster) **for design-system conformance only** — against `design/DESIGN_SYSTEM.md` +
    `design/RESPONSIVE.md`, with `research/reviews/UI_DEFECTS.md` in hand. That narrow scope is the point: it is
    the read that produced 18 of the register's 19 entries, and it is the one thing
    no other stage does. **Is this on-system?** — not "is this good", which is the
@@ -1046,9 +1080,11 @@ six-section skeleton at every depth; more room adds evidence, never sections).
 | The same sections fold in the same place on every topic | tier 1 came back a habitual size, so the fold landed at the first drop-off rather than filling the space | the underfill check + the capacity line in the fold preview; stage 1's flat-ranking shape rule. Caps in `models.py` are NOT the constraint — positions run at 89% of theirs |
 | A topic is missing from a category page it belongs on | `draft.categories` was a hand-step and forgetting it is silent | fixed 2026-08-28 — the loader falls back to the catalog's `secondary_category_slugs`. **Verified against the DB 2026-09-01: all three published topics carry the edges the catalog specifies.** A missing `draft.categories` in the JSON is not evidence of a missing edge — the fallback covers it — so check `Topic.categories` before concluding anything from the file |
 | Two substance verdicts on file have their whole report in the `critic` field and no name | the critic returned its prose in `critic` (the schema's free-text slot) and the writer keyed by index, so the stored record is identifiable only by content — a later `fix_only` or tooling pass that looks verdicts up by name will not find them | **open** (social-media-youth-mental-health, 2026-09-04, found by the 4.5 PM). Same family as the per-critic overwrite row above: the verdict record needs a stable `key` written by the script, not the model, on every entry. Fix with the verdicts-per-round change |
+| Every fix round closes what it was handed and the critic raises 2–3 new findings; the loop hits its cap with fresh blockers on file | each re-gate re-read the whole draft cold, so the finding supply was unbounded | fixed 2026-09-05 — rounds 2+ are scoped to the diff (`admitFindings`); out-of-scope findings are demoted to notes, not blockers. If a run still spins, check the log's "Re-gate rN: scoped to K changed field(s)" line — K=0 means the fixer changed nothing |
+| The poster overflows at stage 4 after a clean stage 2 | stage 2 never measured the sheet; a note lengthened to satisfy a critic costs a poster line | `fit_check.py` runs after the load in the stage-2 runbook and writes sized `fix_only` trims; stage 4's `render_poster` is now a confirmation, not the first measurement |
 | A dossier sentence carries a literal “...” or a doubled period after the gate | the post-loop verbatim prescription swap applied a critic's ELIDED replacement (“...have been found to…”) or a replacement that closed a sentence the target did not | `prescriptionOf` rejects both shapes (2026-09-05); the finding then reaches the packet as a blocking defect with its fix beside it, which is the documented fallback |
 | A topic's stored `verdicts` show a critic FAILING that actually passed | the array holds **one record per critic**, so a later `fix_only` re-gate overwrites the main gate's record. A pass followed by a disproved or since-closed failure ends up on file as the failure, and a cold reader of `research/topics/<slug>.json` sees only the FAIL | **open** (economic-inequality, 2026-09-02: main-gate `claim-fidelity` PASS was overwritten by a `fix_only` FAIL that was then disproved and closed as ledger `d21b` = supported). Do **not** hand-edit the verdict to make it look right — it is a gate record. State the sequence in the packet's Run line, which is what the 4.5 PM did unprompted. A real fix means keeping verdicts per gate round rather than per critic |
-| A view critic cites a mobile defect "by construction" instead of seeing it | the expanded mobile captures run 38,000-49,000px tall and reach an agent downsampled to roughly **13-77px wide** — unreadable. The `CAPTURE_HEIGHT_EXPANDED` guard stops a capture being silently *clipped*, but an unclipped render nobody can resolve is barely better | **open** (economic-inequality, 2026-09-02). We pay to render the tall captures and pay an opus critic to read them, and get no real mobile coverage; the critic named the limit rather than implying coverage it lacked, which is the behavior to keep. Shape of the fix, not yet built: per-section captures at the mobile breakpoints (one image per `.sec`) put each at a readable scale without changing what is rendered, and would make the <=360px ranked-row entry visible instead of inferable |
+| A view critic cites a mobile defect "by construction" instead of seeing it | the expanded mobile captures run 38,000-49,000px tall and reach an agent downsampled to roughly **13-77px wide** — unreadable. The `CAPTURE_HEIGHT_EXPANDED` guard stops a capture being silently *clipped*, but an unclipped render nobody can resolve is barely better | **fixed 2026-09-05** — `render_screens --sections` captures one image per `section.sec` (tiled at 2,000px) over the DevTools protocol into `research/reviews/<slug>/sections/`; the critics and the PM read those. The full-page capture and its cap guard remain for the packet links |
 | `check_links` reports a live, correctly-cited source as **dead** | two separate causes, both false positives: (a) some hosts answer **HEAD with 404** on a page that GETs 200 — ourworldindata.org grapher pages do this; (b) a host that refuses scripted clients at the network level is only forgiven when it is `.gov` or listed in `_BOT_WALLED_HOSTS`, and that match is by **exact hostname**, not registrable domain | fixed 2026-09-02 (economic-inequality): 404 joined `_GET_FALLBACK_CODES` so a HEAD 404 is retried with GET, and `fred.stlouisfed.org` was listed explicitly. A false dead blocks the 4.5 gate and sends a human chasing a working link, so one wasted GET per genuinely-dead link is the cheaper trade. When adding a bot-walled host, list the **exact subdomain** |
 | A source URL silently rots into a redirect | the publisher renames a slug and 301s; `check_links` reports it as `redirect` with the final URL, which is easy to skim past because it is a WARNING, not an error | repoint `source_url` at the reported final URL after confirming the target is the same data (OWID retired `income-share-top-1-before-tax-wid` → `incomes-of-the-richest?quantile=richest_1pct&welfare_type=before_tax`). `source_url` is stage-1-owned — stage 2's whitelist rejects it |
 

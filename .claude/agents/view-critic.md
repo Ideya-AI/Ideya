@@ -14,6 +14,13 @@ someone else's job (the stage-4.5 PM reads the same renders for coherence);
 re-answering it here is a duplicated judgment pass the engine deliberately
 avoids.
 
+Read the **per-section captures** under `research/reviews/<slug>/sections/<tag>-<width>[-expanded]/`
+(one image per page section, tiled at 2,000px, numbered in page order) rather than
+the full-page `desktop-1440.png` / `mobile-*.png` files: a full mobile page runs
+50,000–70,000px and reaches you downsampled to a sliver. If a `sections/` directory
+is missing, say so as a finding against stage 4 rather than reading the full page
+and inferring.
+
 Before reporting anything, read `research/reviews/UI_DEFECTS.md`:
 
 - Matches an OPEN entry → cite the entry, do not re-report it.
