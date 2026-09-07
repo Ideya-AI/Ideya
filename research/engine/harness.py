@@ -119,7 +119,9 @@ class Harness:
             permission_mode="dontAsk",
         )
         async with self.sem:
-            for attempt in range(6):
+            attempt = -1
+            while attempt < 5:
+                attempt += 1
                 t0 = time.time()
                 result = None
                 res_msg = None
@@ -127,7 +129,13 @@ class Harness:
                     async for msg in query(prompt=prompt, options=options):
                         if type(msg).__name__ == "ResultMessage":
                             res_msg = msg
-                except Exception as e:  # CLI died, JSON decode, connection
+                except Exception as e:  # CLI died, JSON decode, connection — or a limit raised as an exception
+                    delay = _reset_delay(str(e))
+                    if delay:
+                        self.log(f"  [{label}] usage limit — sleeping {delay / 60:.0f} min until the reset")
+                        await asyncio.sleep(delay)
+                        attempt -= 1  # a limit wait does not count as a failed attempt
+                        continue
                     self.log(f"  [{label}] attempt {attempt + 1}: {type(e).__name__}: {str(e)[:160]}")
                     await asyncio.sleep(20 * (attempt + 1))
                     continue
@@ -138,6 +146,7 @@ class Harness:
                     if delay:
                         self.log(f"  [{label}] usage limit — sleeping {delay / 60:.0f} min until the reset")
                         await asyncio.sleep(delay)
+                        attempt -= 1
                         continue
                     self.log(f"  [{label}] attempt {attempt + 1} failed: {(text or errs)[:200]}")
                     await asyncio.sleep(30 * (attempt + 1))
