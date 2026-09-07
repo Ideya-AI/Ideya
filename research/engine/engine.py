@@ -459,7 +459,7 @@ class Run:
                 u["cache_write"] += int(us.get("cache_creation_input_tokens") or 0)
             usage[step_dir.name] = u
         tot = {k: sum(v.get(k, 0) for v in usage.values()) for k in ("calls", "cached", "input", "output", "cache_read", "cache_write")}
-        lines = [f"# {self.slug} — token record", "", f"Authoring run {self.state['started'][:10]} → {now()[:16]} (engine v2, subscription; per-call journal under research/runs/{self.slug}/).", "",
+        lines = [f"# {self.slug} — token record", "", f"Authoring run {self.state['started'][:10]} → {now()[:16]} (engine v3, subscription; per-call journal under research/runs/{self.slug}/).", "",
                  "| step | calls | cached | input | output | cache read | cache write |", "|---|---|---|---|---|---|---|"]
         for k, v in usage.items():
             lines.append(f"| {k} | {v.get('calls', 0)} | {v.get('cached', 0)} | {v.get('input', 0):,} | {v.get('output', 0):,} | {v.get('cache_read', 0):,} | {v.get('cache_write', 0):,} |")
