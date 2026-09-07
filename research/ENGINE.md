@@ -288,7 +288,10 @@ the final draft, carries forward by atomic claim text every result that is still
 `supported` (that verification stands and costs nothing to keep), and verifies
 only what is new or rewritten — including content the fixer ADDED, which was
 never swept before. If it finds blocking claims it gets one grounded repair
-round, then re-verifies. *Why:* the ledger used to be extracted before the fix
+round, then **re-extracts on the repaired draft** (2026-09-06): re-verifying the
+old claim ids cannot see the sentences the repair wrote, and on
+immigration-borders-restriction the sentence that replaced claim c41 shipped
+with no verdict until the 4.5 PM caught it. *Why:* the ledger used to be extracted before the fix
 loop and never re-run, so every sentence the loop rewrote left the run unverified
 while still counting as coverage. Measured across the four topics carrying
 ledgers: of 259 claims, only **129 were still asserted verbatim** in stage 1's

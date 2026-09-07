@@ -371,24 +371,93 @@ class Run:
             raise RuntimeError("PM returned nothing")
         jdump(self.dir / "pm.json", r)
         (self.review_dir / "REVIEW.md").write_text(r["packet_markdown"].rstrip() + "\n", encoding="utf-8")
-        routed = [x for x in r["routing"] if x["stage"] == "2"]
-        if routed and not self.state.get("pm_rerouted"):
-            self.log(f"  PM routed {len(routed)} finding(s) to stage 2 — one fix_only pass, then re-run the PM")
+        if r["routing"] and not self.state.get("pm_rerouted"):
             self.state["pm_rerouted"] = True
-            await self.fix_only("s5.reroute", [{"issue": x["finding"], "fix": x["closes_when"], "quote": x["finding"][:200]} for x in routed])
-            if self.lint():
-                await self.fix_only("s5.reroute.lint", self.lint())
-            self.load()
-            self.s4_render()
+            self.save()
+            changed = await self.route(r["routing"])
+            if changed:
+                if self.lint():
+                    await self.fix_only("s5.reroute.lint", self.lint())
+                self.load()
+                self.s4_render()
+            self.log("  routes handled — re-running the PM once")
             return await self.s5_pm()
-        return f"PM: {len(r['routing'])} routed"
+        return f"PM: {len(r['routing'])} routed" + (" (second read; left for the human)" if r["routing"] else "")
+
+    async def route(self, routing):
+        """Close what the PM routed, by the engine's own rules. Returns True if
+        the draft changed (so it must be re-linted, re-loaded, re-rendered)."""
+        changed = False
+        s2, s1, reg = [], [], []
+        for x in routing:
+            (s2 if x["stage"] == "2" else s1 if x["stage"] == "1" else reg if x["stage"] == "register" else []).append(x)
+        for x in reg:
+            self.register_row(x)
+        for x in s1:
+            changed |= await self.verify_routed_claim(x)
+        if s2:
+            await self.fix_only("s5.reroute", [{"issue": x["finding"], "fix": x["closes_when"], "quote": x["finding"][:200]} for x in s2])
+            changed = True
+        for x in routing:
+            if x["stage"] in ("3", "4"):
+                self.log(f"  route to stage {x['stage']} left for the human: {x['finding'][:120]}")
+        return changed
+
+    def register_row(self, x):
+        reg = REPO / "research" / "reviews" / "UI_DEFECTS.md"
+        text = reg.read_text(encoding="utf-8")
+        anchor = "## By design"
+        i = text.index(anchor)
+        cell = lambda t: t.replace("|", "／").replace("\n", " ").strip()
+        row = f"| {cell(x['finding'])} | see finding | {self.slug} ({self.today}, stage-4.5 PM) | {cell(x['closes_when'])} |\n\n"
+        head = text[:i].rstrip("\n") + "\n"
+        reg.write_text(head + row + text[i:], encoding="utf-8")
+        self.log(f"  register: appended — {x['finding'][:100]}")
+
+    async def verify_routed_claim(self, x):
+        """A fact the PM found asserted without a ledger result: verify it blind
+        (claim-verifier), append the verdict to the ledger, and if it is not
+        supported, soften it through one stage-2 fix_only (cut / soften /
+        attribute in-voice — the same three outcomes every claim gets)."""
+        import re as _re
+        q = _re.search(r'"([^"]{20,})"', x["finding"]) or _re.search(r"“([^”]{20,})”", x["finding"])
+        quote = q.group(1) if q else x["finding"][:300]
+        schema = {"type": "object", "additionalProperties": False, "required": ["status", "source_url", "source_quote", "note"],
+                  "properties": {"status": {"type": "string", "enum": ["supported", "contradicted", "unverifiable"]}, "source_url": {"type": "string"}, "source_quote": {"type": "string"}, "note": {"type": "string"}}}
+        prompt = (f"Verify this claim in isolation against real sources. A verdict with no verbatim source_quote from a page you read is unverifiable. Never answer from memory.\n\nCLAIM: {quote}\n\nContext from the reviewer (not evidence): {x['finding'][:600]}")
+        v = await self.agent("s5.route", prompt, schema=schema, label="verify:routed", agentType="claim-verifier", model="sonnet", effort="high")
+        if not v:
+            v = {"status": "unverifiable", "source_url": "", "source_quote": "", "note": "verifier returned nothing"}
+        if not v.get("source_quote"):
+            v["status"] = "unverifiable"
+        cid = f"r{sum(1 for c in jload(self.dossier_path)['claim_ledger']['claims'] if str(c.get('id', '')).startswith('r')) + 1}"
+        for path in (self.dossier_path, self.topic_path):
+            d = jload(path)
+            d["claim_ledger"]["claims"].append({"id": cid, "claim": quote, "quote": quote, "section": "routed", "item": "", "kind": "fact", "source_url": v.get("source_url", "")})
+            d["claim_ledger"]["results"].append({"id": cid, **v, "note": f"PM-routed, verified blind at stage 5: {v.get('note', '')}"})
+            jdump(path, d)
+        self.log(f"  routed claim {cid}: {v['status']}")
+        if v["status"] == "supported":
+            return False
+        await self.fix_only("s5.route.fix", [{"issue": f"A claim on the page is {v['status']} (blind verifier at stage 5): {quote}", "fix": "Cut it, soften it to exactly what a source supports, or attribute it in-voice to whoever asserts it — presentation edit on the description/detail that carries it; never assert a figure you cannot source.", "quote": quote}])
+        return True
 
     def s5_packet(self):
         usage = {}
-        for step_dir in sorted(self.dir.iterdir()):
-            u = step_dir / "usage.json"
-            if u.exists():
-                usage[step_dir.name] = jload(u)
+        for step_dir in sorted(p for p in self.dir.iterdir() if p.is_dir()):
+            j = step_dir / "journal"
+            if not j.exists():
+                continue
+            u = {"calls": 0, "cached": 0, "input": 0, "output": 0, "cache_read": 0, "cache_write": 0}
+            for f in j.glob("*.json"):
+                e = jload(f)
+                us = e.get("usage") or {}
+                u["calls"] += 1
+                u["input"] += int(us.get("input_tokens") or 0)
+                u["output"] += int(us.get("output_tokens") or 0)
+                u["cache_read"] += int(us.get("cache_read_input_tokens") or 0)
+                u["cache_write"] += int(us.get("cache_creation_input_tokens") or 0)
+            usage[step_dir.name] = u
         tot = {k: sum(v.get(k, 0) for v in usage.values()) for k in ("calls", "cached", "input", "output", "cache_read", "cache_write")}
         lines = [f"# {self.slug} — token record", "", f"Authoring run {self.state['started'][:10]} → {now()[:16]} (engine v2, subscription; per-call journal under research/runs/{self.slug}/).", "",
                  "| step | calls | cached | input | output | cache read | cache write |", "|---|---|---|---|---|---|---|"]
