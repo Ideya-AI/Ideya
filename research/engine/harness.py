@@ -111,6 +111,10 @@ class Harness:
             system_prompt=system,
             output_format={"type": "json_schema", "schema": schema} if schema else None,
             max_turns=60,
+            # An agent that Reads a 1440px section image gets a tool result over
+            # the SDK's default 1MB message cap and dies with CLIJSONDecodeError
+            # (immigration s5.pm, 2026-09-06). Images are the point of stages 3-5.
+            max_buffer_size=64 * 1024 * 1024,
             cwd=str(REPO),
             permission_mode="dontAsk",
         )
