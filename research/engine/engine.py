@@ -469,6 +469,40 @@ class Run:
         return f"packet + tokens written to {self.review_dir.relative_to(REPO)}"
 
     # ---- driver ----------------------------------------------------------
+    def step_fn(self, step):
+        return {
+            "s1.plan": lambda: self.s1_phase("plan"), "s1.research": lambda: self.s1_phase("research"),
+            "s1.verify": lambda: self.s1_phase("verify"), "s1.gate": lambda: self.s1_phase("gate"),
+            "s2.distribute": self.s2_distribute, "s2.lint": self.s2_lint, "s2.load": self.load, "s2.fit": self.s2_fit,
+            "s3.brief": self.s3_brief, "s3.generate": self.s3_generate, "s3.select": self.s3_select, "s3.postprocess": self.s3_postprocess,
+            "s4.render": self.s4_render, "s4.links": self.s4_links, "s4.views": self.s4_views,
+            "s5.pm": self.s5_pm, "s5.packet": self.s5_packet,
+        }[step]
+
+    async def run_one(self, step):
+        """Run exactly one step now, regardless of its recorded status (the
+        manual walkthrough and the way to redo a step after a fix)."""
+        self.mark(step, "running")
+        t0 = time.time()
+        try:
+            note = self.step_fn(step)()
+            if asyncio.iscoroutine(note):
+                note = await note
+        except Exception as e:
+            self.mark(step, "failed", str(e)[:500])
+            self.log(f"[{step}] FAILED after {time.time() - t0:.0f}s: {str(e)[:500]}")
+            raise
+        self.mark(step, "done", str(note)[:300])
+        self.log(f"[{step}] done in {time.time() - t0:.0f}s — {note}")
+
+    def reset(self, step):
+        """Forget a step (and everything after it) so `author` re-runs them.
+        Journals are kept: identical agent calls replay for free."""
+        for s in STEPS[STEPS.index(step):]:
+            self.state["steps"].pop(s, None)
+        self.state.pop("pm_rerouted", None)
+        self.save()
+
     async def run(self, start_at=None):
         if start_at:
             for s in STEPS[: STEPS.index(start_at)]:
@@ -482,15 +516,7 @@ class Run:
             self.log(f"[{step}] running")
             t0 = time.time()
             try:
-                fn = {
-                    "s1.plan": lambda: self.s1_phase("plan"), "s1.research": lambda: self.s1_phase("research"),
-                    "s1.verify": lambda: self.s1_phase("verify"), "s1.gate": lambda: self.s1_phase("gate"),
-                    "s2.distribute": self.s2_distribute, "s2.lint": self.s2_lint, "s2.load": self.load, "s2.fit": self.s2_fit,
-                    "s3.brief": self.s3_brief, "s3.generate": self.s3_generate, "s3.select": self.s3_select, "s3.postprocess": self.s3_postprocess,
-                    "s4.render": self.s4_render, "s4.links": self.s4_links, "s4.views": self.s4_views,
-                    "s5.pm": self.s5_pm, "s5.packet": self.s5_packet,
-                }[step]
-                note = fn()
+                note = self.step_fn(step)()
                 if asyncio.iscoroutine(note):
                     note = await note
             except Exception as e:
@@ -504,9 +530,10 @@ class Run:
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("cmd", choices=["author", "status"])
+    ap.add_argument("cmd", choices=["author", "status", "step", "reset"])
     ap.add_argument("slug")
-    ap.add_argument("--start-at", choices=STEPS)
+    ap.add_argument("step", nargs="?", choices=STEPS, help="for `step` (run one) and `reset` (forget it and everything after)")
+    ap.add_argument("--start-at", choices=STEPS, help="author: mark earlier steps skipped (artifacts must already exist)")
     ap.add_argument("--concurrency", type=int)
     a = ap.parse_args()
     run = Run(a.slug, a.concurrency)
@@ -514,6 +541,12 @@ def main():
         for s in STEPS:
             st = run.state["steps"].get(s, {})
             print(f"{s:16} {st.get('status', 'pending'):8} {st.get('note', '')[:100]}")
+        return
+    if a.cmd == "reset":
+        if not a.step:
+            ap.error("reset needs a step")
+        run.reset(a.step)
+        print(f"reset {a.step} and everything after it")
         return
     log_path = run.dir / "engine.log"
 
@@ -524,6 +557,11 @@ def main():
             f.write(line + "\n")
 
     run.log = log
+    if a.cmd == "step":
+        if not a.step:
+            ap.error("step needs a step name")
+        asyncio.run(run.run_one(a.step))
+        return
     asyncio.run(run.run(a.start_at))
 
 
