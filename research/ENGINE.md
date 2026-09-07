@@ -74,11 +74,11 @@ flowchart TD
 | Stage | Engine piece | Does | Gate | Artifact |
 |---|---|---|---|---|
 | 0 Catalog | hand-authored entry + `load_universe` | register the topic stub + taxonomy edges | — | entry in `research/catalog/topic-universe.json` |
-| 1 Research | `research/workflows/research_topic.js` | plan (+icon, prevalence_basis) → parallel section research (basics facts→shape + questions + one agent per position + actions) → crux → **claim ledger + isolated per-claim verification** → 3-critic substance gate + shape + ledger, every round → fix loop → verbatim prescribed-fix pass → **closing ledger pass on the final draft** | substance gate 5/5 (3 critics + ledger + shape), shape_notes empty, ledger closed **on the shipped draft** | `research/dossiers/<slug>.json` |
-| 2 Editorial | `research/workflows/distribute_topic.js` + `lint_draft.py` + `budgets.py` | typography autofix → distill compact layer → **fold as a budget to spend**: reorder + tier + reveal → gate = 2 critics + **deterministic editorial check** + **claim fidelity** → whitelisted fix loop (1 round unless grounded) | gate pass + lint at 0 findings + loader loads with 0 warnings | `research/topics/<slug>.json` |
-| 3 Iconography | brief agent + `research/icons/generate_icons.py` + `postprocess_icon.py` | brief → 4 Nano Banana candidates → pick vs checklist → normalize | checklist pass at 40px | `static/img/topics/<slug>.png` + `research/icons/<slug>.md` |
-| 4 Integration | `render_screens/social/poster` + design-conformance critics | render every surface → conformance critique → content-fix loop (`fix_only`) | poster fit exit 0 + all 3 social formats + og card installed + no blocking content findings | `research/reviews/<slug>/` renders, cards, poster |
-| 4.5 PM gate | `.claude/agents/topic-pm.md` | fresh-context read of the FINISHED topic: deterministic pass (lint/links/artifacts) → reads every render → routes findings to the owning stage → writes the packet | every deterministic check green + no open routed finding | `research/reviews/<slug>/REVIEW.md` |
+| 1 Research | `engine.py` steps `s1.plan/research/verify/gate` → `research_topic.js` (unchanged, via the harness) | plan (+icon, prevalence_basis) → parallel section research (basics facts→shape + questions + one agent per position + actions) → crux → **claim ledger + isolated per-claim verification** → 3-critic substance gate + shape + ledger, every round → fix loop → verbatim prescribed-fix pass → **closing ledger pass on the final draft** | substance gate 5/5 (3 critics + ledger + shape), shape_notes empty, ledger closed **on the shipped draft** | `research/dossiers/<slug>.json` |
+| 2 Editorial | `engine.py` steps `s2.distribute/lint/load/fit` → `distribute_topic.js` + `lint_draft.py` + `fit_check.py` | typography autofix → distill compact layer → **fold as a budget to spend**: reorder + tier + reveal → gate = 2 critics + **deterministic editorial check** + **claim fidelity** → whitelisted fix loop (1 round unless grounded) | gate pass + lint at 0 findings + loader loads with 0 warnings | `research/topics/<slug>.json` |
+| 3 Iconography | `engine.py` steps `s3.brief/generate/select/postprocess` → briefer agent + `generate_icons.py` + vision pick + `postprocess_icon.py` | brief → 4 Nano Banana candidates → pick vs checklist → normalize | checklist pass at 40px | `static/img/topics/<slug>.png` + `research/icons/<slug>.md` |
+| 4 Integration | `engine.py` steps `s4.render/links/views` → `render_screens --sections`, `render_social`, `render_poster`, `check_links` + three design critics on the section images | render every surface → conformance critique → content-fix loop (`fix_only`) | poster fit exit 0 + all 3 social formats + og card installed + no blocking content findings | `research/reviews/<slug>/` renders, cards, poster |
+| 4.5 PM gate | `engine.py` steps `s5.pm/packet` → the driver runs the 7 CHECKS, `topic-pm` reads and routes, routes are closed by rule, one re-read | fresh-context read of the FINISHED topic: deterministic pass (lint/links/artifacts) → reads every render → routes findings to the owning stage → writes the packet | every deterministic check green + no open routed finding | `research/reviews/<slug>/REVIEW.md` |
 | 5 Publish | **human** + `publish_topic` | read the packet → `publish_topic --confirm` (preflight → publish → reviewed_at) → commit → live push | human judgment | live topic |
 
 Refresh (`refresh_scan` + `refresh_topic.js`) is the upkeep mirror, shaped around
@@ -103,6 +103,7 @@ to re-author a topic. `research/REFRESH.md`.
 | `research/workflows/tally_tokens.py` | per-run token/cost accounting |
 | `research/workflows/check_engine.py` | verifies this manual against the code (routing + inventory) |
 | `research/workflows/bake.py` | bakes a runner (script + `__ARGS`) for either workflow; knows stage 1's phases, builds `prior`/`stop_after` from the dossier, refuses a phase whose inputs are missing |
+| `research/engine/README.md` | **the operator's guide to engine v3**: files, the 17 steps, resume/limits/failures, the rules it decides by, tool policy, a hand walkthrough, reading a failure |
 | `research/engine/engine.py` | **the engine**: `author <slug>` runs stages 1–5 as a 17-step checkpointed state machine; `status <slug>` prints the step table. State in `research/runs/<slug>/state.json` |
 | `research/engine/harness.py` | serves the stage scripts' `agent()` calls through the Claude Agent SDK on the subscription: per-call journal (free replay), usage-limit sleep-until-reset, tool policy by agentType, concurrency semaphore |
 | `research/engine/bridge.mjs` | runs `research_topic.js` / `distribute_topic.js` unchanged, supplying agent/parallel/pipeline/phase/log/args over JSON-lines RPC to the harness |
@@ -788,18 +789,29 @@ nothing by itself.
 
 ## 7. Runbook C — resume & recover
 
-- **A workflow died or was checkpointed mid-run:** relaunch with
-  `Workflow({scriptPath, resumeFromRunId})` and the SAME args — the unchanged
-  prefix of agent calls returns cached. Inspect `journal.jsonl` in the transcript
-  dir before assuming a cached result is non-empty.
-- **A gate critic reported a check it could not run** (search pool spent): re-run
-  that critic alone in a fresh workflow invocation — a new run gets a fresh pool.
-  Verification should lean on WebFetch of primary sources anyway (separate,
-  uncapped pool); search is for discovery.
-- **A stage already has its artifact:** it is skipped on re-run; redo deliberately
-  by regenerating the artifact.
+Since engine v3 (2026-09-06) recovery is one rule: **run `engine.py author <slug>`
+again.** Done steps are skipped; a `running` or `failed` step re-runs; inside it,
+every agent call whose prompt is unchanged replays from
+`research/runs/<slug>/<step>/journal/` at zero cost, so a death in the middle of a
+gate re-runs only the agents that had not returned. The operator's guide is
+`research/engine/README.md` §4 and §8.
+
+- **A usage limit hit:** nothing to do. The harness parses "resets 7pm", sleeps until
+  then, and retries the same call; the wait does not count as an attempt. Expect one
+  per run.
+- **A step failed** (dead link, poster still over after two measured trims, lint still
+  failing after two passes, an agent null six times): `engine.py status <slug>` names
+  the cause, `engine.log` has the detail. Fix the cause; `author` re-runs the step, or
+  `engine.py step <slug> <step>` runs just that one.
+- **Redo a step deliberately** (a prompt, template or rule changed):
+  `engine.py reset <slug> <step>` forgets it and everything after; journals are kept,
+  so unchanged calls stay free.
 - **Renders look stale after a template edit:** restart the dev server; the
-  compiled-template cache does not invalidate under `--noreload`.
+  compiled-template cache does not invalidate under `--noreload`. Then
+  `reset <slug> s4.render`.
+- **The pre-v3 path** (Workflow tool + `bake.py` runners + `resumeFromRunId`) is kept
+  in-tree for reference only; `salvage_run.py --scan` still finds any orphaned run
+  from that era.
 
 ## 8. Runbook D — calibrate the gate
 
@@ -1040,8 +1052,10 @@ topics.tests.test_workflow_mirrors`; run it after any workflow-script edit). (Th
 the older per-element `{pass, issues, fixes}` shape from manual refresh verdicts;
 the loader stores either opaquely, so both round-trip.)
 
-**Baking runners** (workflow scripts can't read files; anything past a 1KB
-skeleton must be baked into the script as `__ARGS`). `research/workflows/bake.py`
+**Baking runners — pre-v3, reference only** (the engine now passes args to the
+scripts through `research/engine/bridge.mjs`; `bake.py`'s `skeleton()`, `load_prior()`
+and the stage-2 arg shape are what `engine.py` imports and reuses). Workflow scripts
+can't read files; anything past a 1KB skeleton had to be baked into the script as `__ARGS`. `research/workflows/bake.py`
 does it — rewires `\bargs\b` to `__ARGS`, splices the JSON after `meta`, writes
 `research/workflows/.runners/<slug>.<stage>.<phase>.js` (gitignored), and
 `node --check`s the result wrapped in an async function (top-level `await` and
@@ -1116,6 +1130,10 @@ six-section skeleton at every depth; more room adds evidence, never sections).
 | Two substance verdicts on file have their whole report in the `critic` field and no name | the critic returned its prose in `critic` (the schema's free-text slot) and the writer keyed by index, so the stored record is identifiable only by content — a later `fix_only` or tooling pass that looks verdicts up by name will not find them | **open** (social-media-youth-mental-health, 2026-09-04, found by the 4.5 PM). Same family as the per-critic overwrite row above: the verdict record needs a stable `key` written by the script, not the model, on every entry. Fix with the verdicts-per-round change |
 | Every fix round closes what it was handed and the critic raises 2–3 new findings; the loop hits its cap with fresh blockers on file | each re-gate re-read the whole draft cold, so the finding supply was unbounded | fixed 2026-09-05 — rounds 2+ are scoped to the diff (`admitFindings`); out-of-scope findings are demoted to notes, not blockers. If a run still spins, check the log's "Re-gate rN: scoped to K changed field(s)" line — K=0 means the fixer changed nothing |
 | The poster overflows at stage 4 after a clean stage 2 | stage 2 never measured the sheet; a note lengthened to satisfy a critic costs a poster line | `fit_check.py` runs after the load in the stage-2 runbook and writes sized `fix_only` trims; stage 4's `render_poster` is now a confirmation, not the first measurement |
+| An image-reading agent (view critic, PM, icon pick) dies with `CLIJSONDecodeError … exceeded maximum buffer size of 1048576` | a `Read` of a 1440px section image returns a tool result over the Agent SDK's 1MB default message buffer | the harness sets `max_buffer_size=64MB` (2026-09-06); if a new agent path bypasses the harness, set it there too |
+| The harness burns six attempts in seven minutes on "You've hit your session limit" and returns null | the SDK raised the limit as a `ResultError` exception, not an error result, so it took the generic retry path | fixed 2026-09-06 — both paths parse the reset time and sleep; a limit wait never counts as an attempt. Log line: `usage limit — sleeping N min until the reset` |
+| Print-mode agent returns prose, no structured output | `--agent <name>` on `claude -p` drops the `--json-schema` | agent definitions are passed as system prompts by the harness (`POLICY`), never by name |
+| Print-mode call hangs on a large prompt | a ~200KB prompt on CLI stdin never completes; `--bare` also drops the login | the harness uses the SDK channel (fine at 200KB) and never `--bare` |
 | A dossier sentence carries a literal “...” or a doubled period after the gate | the post-loop verbatim prescription swap applied a critic's ELIDED replacement (“...have been found to…”) or a replacement that closed a sentence the target did not | `prescriptionOf` rejects both shapes (2026-09-05); the finding then reaches the packet as a blocking defect with its fix beside it, which is the documented fallback |
 | A topic's stored `verdicts` show a critic FAILING that actually passed | the array holds **one record per critic**, so a later `fix_only` re-gate overwrites the main gate's record. A pass followed by a disproved or since-closed failure ends up on file as the failure, and a cold reader of `research/topics/<slug>.json` sees only the FAIL | **open** (economic-inequality, 2026-09-02: main-gate `claim-fidelity` PASS was overwritten by a `fix_only` FAIL that was then disproved and closed as ledger `d21b` = supported). Do **not** hand-edit the verdict to make it look right — it is a gate record. State the sequence in the packet's Run line, which is what the 4.5 PM did unprompted. A real fix means keeping verdicts per gate round rather than per critic |
 | A view critic cites a mobile defect "by construction" instead of seeing it | the expanded mobile captures run 38,000-49,000px tall and reach an agent downsampled to roughly **13-77px wide** — unreadable. The `CAPTURE_HEIGHT_EXPANDED` guard stops a capture being silently *clipped*, but an unclipped render nobody can resolve is barely better | **fixed 2026-09-05** — `render_screens --sections` captures one image per `section.sec` (tiled at 2,000px) over the DevTools protocol into `research/reviews/<slug>/sections/`; the critics and the PM read those. The full-page capture and its cap guard remain for the packet links |
