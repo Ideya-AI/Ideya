@@ -52,5 +52,6 @@ Django + HTMX + Alpine. A curated atlas of hard debates; depth is an axis, not a
 
 ## Pipeline
 
-Authoring: `/author-topic <slug>`. Upkeep: `/refresh-topic <slug>`. Both are
-human-invoked only — they are long, expensive, and side-effectful.
+Authoring: `/author-topic <slug>` → `research/engine/engine.py author <slug>`, one
+automated, resumable run to a loaded draft + packet (engine v3, 2026-09-06). Upkeep:
+`/refresh-topic <slug>`. Both are human-invoked only — long, expensive, side-effectful.

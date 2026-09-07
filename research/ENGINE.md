@@ -103,6 +103,9 @@ to re-author a topic. `research/REFRESH.md`.
 | `research/workflows/tally_tokens.py` | per-run token/cost accounting |
 | `research/workflows/check_engine.py` | verifies this manual against the code (routing + inventory) |
 | `research/workflows/bake.py` | bakes a runner (script + `__ARGS`) for either workflow; knows stage 1's phases, builds `prior`/`stop_after` from the dossier, refuses a phase whose inputs are missing |
+| `research/engine/engine.py` | **the engine**: `author <slug>` runs stages 1–5 as a 17-step checkpointed state machine; `status <slug>` prints the step table. State in `research/runs/<slug>/state.json` |
+| `research/engine/harness.py` | serves the stage scripts' `agent()` calls through the Claude Agent SDK on the subscription: per-call journal (free replay), usage-limit sleep-until-reset, tool policy by agentType, concurrency semaphore |
+| `research/engine/bridge.mjs` | runs `research_topic.js` / `distribute_topic.js` unchanged, supplying agent/parallel/pipeline/phase/log/args over JSON-lines RPC to the harness |
 | `research/workflows/fit_check.py` | measures the poster's fit on the LOADED topic (headless Chrome over the DevTools protocol, per-element lines and chars/line) and, when it overflows, writes the `fix_only` findings with sized trims — the stage-2 exit check that used to be discoverable only at stage 4 |
 | `research/workflows/salvage_run.py` | rebuilds a stage-1 dossier from a run's `journal.jsonl` when the orchestrator never persisted it; `--scan` lists orphaned runs |
 | `research/workflows/check_refresh_drift.py` | what the refresh engine has fallen behind on; `REFRESH.md` step 0, deliberately NOT in the authoring test path |
@@ -148,6 +151,34 @@ to re-author a topic. `research/REFRESH.md`.
 <!-- inventory:end -->
 
 ## 5. Runbook A — author a topic
+
+**Since 2026-09-06 the runbook is one command** (engine v3, `research/engine/`):
+
+```
+.venv/bin/python research/engine/engine.py author <slug>      # start or resume
+.venv/bin/python research/engine/engine.py status <slug>      # the 17-step table
+```
+
+The driver executes every stage below itself: stage 1 in four checkpointed phases,
+stage 2 with lint → load → `fit_check`, stage 3 brief → candidates → vision pick →
+postprocess, stage 4 renders with per-section captures → links → three design
+critics, stage 5 the `topic-pm` read, routes closed by rule (a fact with no ledger
+result is verified blind and appended; register items are appended to
+`UI_DEFECTS.md`; presentation items go through `fix_only`), then one PM re-read,
+then `REVIEW.md` + `tokens.md`. The stage scripts run **unchanged** through
+`research/engine/harness.py` on the user's subscription (Claude Agent SDK); every
+agent call is journaled under `research/runs/<slug>/<step>/journal/` keyed by its
+prompt, so a dead process or a usage limit resumes at the last call — run the same
+command again. A limit inside a call is slept through by the harness (it parses
+"resets 7pm"); expect one per run. Nothing is baked, nothing is launched by hand,
+and the Workflow tool is no longer in the path. *Why:* the previous engine was three
+good agent scripts joined by ~60 hand steps per topic; the joints were where the
+time and the defects went (immigration, 2026-09-05: ~11 hours, nine stage-2 passes).
+
+The sections that follow describe **what the driver does at each stage and why** —
+the contracts, the gates, the reasoning — and remain the reference for reading a
+failure, changing a stage, or (rarely) running one stage by hand.
+
 
 One run = one topic through stages 0–4, then the stage-5 human hard stop. Run from
 the repo root; always `.venv/bin/python`. Category slugs: `global-risk · ai ·

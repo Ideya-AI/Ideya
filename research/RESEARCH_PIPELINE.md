@@ -634,3 +634,62 @@ human prompts specific changes directly, and each run's own adversarial gates ca
 the quality bar. Kept from that era: the `--expanded` render mode (stage 4), required
 `--base-url` on render commands, and `refresh_topic.js`'s `args.findings` seed for
 human-flagged items.
+
+## 14. Engine v3 — one automated run (2026-09-06)
+
+**Decision (Jeff).** The engine is one command from a catalog entry to a loaded
+draft and a ≤1-page packet; the human publishes and otherwise expects to
+rubber-stamp. It must run on the subscription, survive one usage limit per run,
+and be built from small checkpointed steps rather than a monolith. The research,
+critics, gates and design system stay; the orchestration is rebuilt.
+
+**Why a rebuild of the joints, not the stages.** Immigration (2026-09-05) took ~11
+hours: stage runs were ~5 of them, the rest was the orchestrator hand-sequencing
+~60 steps (persist, lint, load, bake, launch, slice, measure, repoint, re-render)
+and two defects came from exactly those joints (a closure lost to a later distill,
+a runner baked before a URL repoint). The stage scripts themselves produced a
+well-sourced, genuinely steelmanned topic — the third in a row.
+
+**Shape.** `research/engine/engine.py author <slug>` is a 17-step state machine with
+artifact-guarded idempotent steps; `harness.py` serves the unchanged stage scripts'
+`agent()` calls through the Claude Agent SDK with a per-call journal (free replay),
+limit sleep-until-reset, and a tool policy by agent type; `bridge.mjs` is the
+50-line RPC shim. Print-mode facts that shaped it: `--bare` drops the login;
+`--agent <name>` silently drops the JSON schema (so agent definitions are passed as
+system prompts); a 200KB prompt hangs on CLI stdin but works through the SDK; an
+image Read exceeds the SDK's 1MB default message buffer; a limit arrives as a
+`ResultError` exception, not an error result.
+
+**What the field does, and where we already were (research pass, 2026-09-06).**
+- *Orchestrator–worker research* (Anthropic's multi-agent research system): a lead
+  plans and delegates with explicit objectives, output formats and boundaries;
+  effort scales with query complexity (1 agent / 3–10 calls for a fact, 10+ agents
+  for a survey); checkpoints and retries over restarts; end-state evaluation with an
+  LLM judge on factual accuracy, citation accuracy, completeness, source quality;
+  token spend explains ~80% of quality variance. Ours: stage 1's planner → per-section
+  researchers → critics is that shape; the new driver adds the checkpoints.
+- *Perspective-guided research* (Stanford STORM / Co-STORM): discover perspectives
+  from related topics, then interrogate the topic as each of them, simulating
+  writer–expert conversations grounded in sources; +25pt organization, +10pt
+  coverage over outline-then-retrieve. Ours: positions ARE the perspectives, one
+  researcher per camp in its own voice, and the camp scout is the "discover missing
+  perspectives" step.
+- *Decompose → retrieve → verify* (SAFE, FActScore, VeriScore, FaStfact 2025): atomic
+  claim extraction, per-claim search, per-claim support verdict, aggregate. Ours: the
+  claim ledger with a blind verifier that cannot see the draft — the field's
+  "confirmation bias" result (evaluators grow more confident in wrong answers after
+  their own research) is the reason the blindness is structural.
+- *Critique–revise loops*: most edits land in the first iterations and recursive
+  refinement relaxes toward a model-preferred fixed point rather than improving;
+  loops only converge with external, checkable feedback (tests, linters, measured
+  bounds). Ours: the scoped re-gate (a critic may only re-judge its prior findings
+  and the diff), plus deterministic checks (budgets, fold, lint, poster fit) as the
+  grounding.
+- Sources: Anthropic engineering post on the multi-agent research system; Stanford
+  OVAL STORM (github.com/stanford-oval/storm); LangChain open_deep_research;
+  arXiv 2406.19276 (VeriScore), 2510.12839 (FaStfact), 2507.19486 (confirmation
+  bias), 2607.22653 (recursive self-refinement as textual relaxation).
+
+**Acceptance.** One fresh topic (`antimicrobial-resistance`) end to end with nothing
+run by hand, one usage-limit pause survived, packet ≤1 page, PM 7/7. Then the
+Workflow-tool path and baked runners are retired from the runbook (kept in-tree).
