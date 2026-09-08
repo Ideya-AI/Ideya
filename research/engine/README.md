@@ -10,6 +10,8 @@ poster, icon, and a one-page review packet. A human publishes; nothing else does
 .venv/bin/python research/engine/engine.py reset  <slug> <step>   # forget a step and everything after it
 ```
 
+For what each step does and why, in run order, read `FLOW.md` first.
+
 Always `.venv/bin/python`, always from the repo root. The topic must be in
 `research/catalog/topic-universe.json`. Nothing else is required up front: the
 driver starts the dev server itself if 8641 is not answering.

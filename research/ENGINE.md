@@ -103,6 +103,7 @@ to re-author a topic. `research/REFRESH.md`.
 | `research/workflows/tally_tokens.py` | per-run token/cost accounting |
 | `research/workflows/check_engine.py` | verifies this manual against the code (routing + inventory) |
 | `research/workflows/bake.py` | bakes a runner (script + `__ARGS`) for either workflow; knows stage 1's phases, builds `prior`/`stop_after` from the dossier, refuses a phase whose inputs are missing |
+| `research/engine/FLOW.md` | **the engine end to end** — flowchart from `engine.py author` to publish, then every step in run order with its what, how and why |
 | `research/engine/README.md` | **the operator's guide to engine v3**: files, the 17 steps, resume/limits/failures, the rules it decides by, tool policy, a hand walkthrough, reading a failure |
 | `research/engine/engine.py` | **the engine**: `author <slug>` runs stages 1–5 as a 17-step checkpointed state machine; `status <slug>` prints the step table. State in `research/runs/<slug>/state.json` |
 | `research/engine/harness.py` | serves the stage scripts' `agent()` calls through the Claude Agent SDK on the subscription: per-call journal (free replay), usage-limit sleep-until-reset, tool policy by agentType, concurrency semaphore |
@@ -794,7 +795,7 @@ again.** Done steps are skipped; a `running` or `failed` step re-runs; inside it
 every agent call whose prompt is unchanged replays from
 `research/runs/<slug>/<step>/journal/` at zero cost, so a death in the middle of a
 gate re-runs only the agents that had not returned. The operator's guide is
-`research/engine/README.md` §4 and §8.
+`research/engine/README.md` §4 and §8; the end-to-end what/how/why is `research/engine/FLOW.md`.
 
 - **A usage limit hit:** nothing to do. The harness parses "resets 7pm", sleeps until
   then, and retries the same call; the wait does not count as an attempt. Expect one
