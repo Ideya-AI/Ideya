@@ -1,0 +1,162 @@
+{
+ "claim_ledger": {},
+ "verdicts": [
+  {
+   "critic": "neutrality",
+   "pass": true,
+   "blocking": [],
+   "notes": [
+    "Camp coverage: the five positions span the real spectrum (Sentinel / Continuum Realist / Framing Critic / Fat-Tail Insurer / Threshold Skeptic) and each is argued in its own voice with real named proponents. The one arguably absent camp is the \"already locked in, adaptation-first\" doomer position (Jem Bendell's Deep Adaptation; the strongest-claims side of Hansen's recent locked-in-warming papers). Its scientific proponents are thin enough that omitting a sixth card is a defensible editorial call, and the draft partially absorbs it (Hansen under Sentinel; the fatalism question; the \"Already committed\" pole of the ice-sheet question), so this is not a blocking omission — but worth a conscious editor decision rather than a silent one. Note: the session's web-search budget was exhausted, so this check relied on model knowledge plus targeted link verification rather than a fresh search.",
+    "Both load-bearing contested-camp links verified live and correctly attributed: Kopp et al., \"'Tipping points' confuse and can distract from urgent climate action,\" Nature Climate Change, published 3 Dec 2024 (Oppenheimer and Kopp both confirmed authors), and arXiv 2604.20341 (Morr, Ben-Yami, ... Boers, Apr 2026) which does show collapse-timing uncertainty stretching to millennia as the action description claims.",
+    "The Threshold Skeptic action links a preprint authored by mainstream tipping-point researchers (Boers, Ben-Yami et al.), not by skeptics. The content genuinely supports the camp's claim and the position text already frames corrections as \"arriving from inside the mainstream,\" so this is fine — but the action description could name the authors so readers don't infer skeptic authorship.",
+    "Actions asymmetry: Tipping Point Sentinel gets two actions (report + Fossil Fuel Treaty policy campaign) while every other camp gets one. Roughly tracks prevalence and does not mislead, but distribution could rebalance or make the second Sentinel action serve the topic generally.",
+    "Basics stats lean toward proximity-to-threshold framing (that is the topic's substance), and the detail fields consistently carry the stabilizing counter-evidence (WMO single-year caveat, Feb 2025 high-resolution AMOC study, millennial ice-sheet timescales, model-only nature of the cascade figure). One visual to check at distribution: the Amazon range viz (range_at 89) reads as nearly-at-threshold while the note says the combined cleared+degraded 26% already exceeds the low end of the 20-25% threshold band — make sure the rendered bar and the note tell the same story.",
+    "Question lean seeds place the more-alarmed pole below 50% on almost every question (25/35/35/25/35/45); if these are research-derived that is fine, but confirm they reflect surveyed prevalence rather than a systematic dampening in one direction.",
+    "Cosmetic: the Framing Critic steelman lacks terminal punctuation and runs ~110 chars, slightly over the ~90-char banner target; distribution-stage compression candidate."
+   ],
+   "stage": "substance"
+  },
+  {
+   "critic": "steelman",
+   "pass": true,
+   "blocking": [],
+   "notes": [
+    "Framing Critic steelman line has no terminal punctuation and runs past the ~90-char banner target; the other four end with periods and fit. Distribution can compress, but a period should be added now.",
+    "Threshold Skeptic is the strongest-written skeptic case in the set (leads with Edwards 2019, MICI non-observation, AMOC model-bias studies rather than with Curry/Lomborg rhetoric) — genuinely endorsable. Its proponents list is thin at two names, though; if a third credentialed voice exists (e.g. a named author of the 2022 AMOC-bias studies who self-identifies with this reading), it would strengthen the roster without misattributing Edwards, who the detail correctly keeps out of the camp.",
+    "Continuum Realist and Framing Critic sit close together on the spectrum (0 and 1) and share the 'every tenth of a degree' / 'anchor to cumulative emissions' move; each still has a distinct core claim (physics timescales vs. language effects), so no merge needed, but distribution should keep their above-fold lines from converging.",
+    "Continuum Realist steelman uses an em dash in a one-liner; a colon would carry it as well and match the punctuation guidance.",
+    "Sentinel's 'today's roughly 1.2 to 1.4C of warming' vs. the Basics 1.55°C single-year figure is consistent (multi-decade vs. calendar-year), but a reader may see a mismatch; a two-word gloss like 'multi-year average' inside the Sentinel description would preempt it."
+   ],
+   "stage": "substance"
+  },
+  {
+   "critic": "fact-source",
+   "pass": false,
+   "blocking": [
+    {
+     "issue": "The tipping-cascade Basics stat inverts the source. Its value/fill_pct of 39 and the note (\"39% produced a cascade of two or more elements even with warming capped at 2°C\") misread Wunderling et al. 2021. The paper's Table 3 and body text say the opposite: at maximum interaction strength 1.0 and 2.0°C, \"61 % of all ensemble members contain a tipping event or cascade, whereas 39 % do not.\" 39% is the NO-tipping share. The actual cascade share is smaller: Table 3's size distribution at d=1.0 is 57/36/7/1 across 1/2/3/4 tipping elements, so cascades of two or more are 44% of the 61%, i.e. roughly 27% of all ensemble members. The stat therefore overstates modelled cascade risk by about 1.5x and attaches a number to the exact opposite of what it measures. (The confusion is understandable — at d=0.2 the split really is 61% no-tipping / 39% event — but the stat is scoped to the full interaction range.)",
+     "fix": "Set value and fill_pct to 27 and rewrite the note as: \"Across about 3.7 million simulations of four interacting tipping elements, a cascade of two or more elements occurred in roughly 27% of runs even with warming capped at 2°C; a tipping event of any size occurred in 61%.\" In the detail, replace \"The 39% counts the full assumed range of interaction strengths\" with wording tied to the corrected number, e.g. \"The 27% is derived at the strongest assumed coupling, where 61% of runs tip at all and 44% of those tipping runs involve two or more elements; large cascades become rarer as the assumed coupling is weakened, and at the weakest coupling tested no multi-element cascades occur at all.\""
+    },
+    {
+     "issue": "The AMOC stat's headline value is not supported by its cited URL. The value 0.46 Sverdrups/decade comes from Pontes & Menviel (2024), Nature Geoscience 17, 1291–1298, doi 10.1038/s41561-024-01568-1 — correctly named in source_label as \"Nature Geoscience (2024) trend estimate\" but given no URL. The only source_url is https://www.ipcc.ch/report/ar6/wg1/, a report landing page that supports the secondary confidence-downgrade claim but contains nothing about a 0.46 Sv/decade trend. The stat's primary number is effectively unsourced to a clickable, checkable location, which is the one thing a reader is most likely to follow the link for.",
+     "fix": "Change source_url to https://www.nature.com/articles/s41561-024-01568-1 (Pontes & Menviel 2024, Nature Geoscience), and reorder source_label to lead with the source of the headline figure: \"Pontes & Menviel, Nature Geoscience (2024) trend estimate; IPCC AR6 WG1 (2021) for collapse confidence\". Set source_published to \"2024\" or keep \"2021-2024\" if the range is intentional."
+    }
+   ],
+   "notes": [
+    "Durability: the warming stat leads with 1.55°C, a single El Niño-boosted calendar year, and the range_at=78 renders it as \"roughly three-quarters of the way to 2°C\". The detail does date and caveat it and cites IPCC's 1.09°C decadal figure, so it is properly isolated — but the same WMO page also gives long-term warming of about 1.3°C for 2024, which is the durable structural number and would age better as the headline, with 1.55 moved into the detail as the single-year peak.",
+    "Threshold Skeptic detail: \"A 2023 reanalysis of Last Interglacial sea level put the rise at around 2.7 metres\" is the only precise figure in that position with no study named, unlike Edwards (Nature 2019) and Ditlevsen alongside it. The likely referent is Barnett, Austermann, Dyer et al., Science Advances (2023), but the 2.7 m value could not be confirmed against the paper and published LIG estimates span roughly 1–7 m. Name the study or drop the specific number.",
+    "Apparent tension between two correct claims: Basics says 4 of 16 elements have best-estimate thresholds at or below 1.5°C, while the Sentinel position says five are already within reach at today's warming. Both are right under different criteria — Armstrong McKay's best estimates vs. current warming lying within the lower end of five uncertainty ranges. Adding \"within the lower end of five uncertainty ranges\" to the position sentence would remove the apparent conflict.",
+    "Greenland's full-loss sea-level contribution is given as 7.2 m while the source_label cites IPCC AR6, which uses 7.4 m. 7.2 m is the older widely-cited value and is defensible, but aligning to 7.4 m would match the cited assessment. The 3.3 m for West Antarctica (Bamber et al. 2009, marine-based collapse) and ~53 m for East Antarctica are standard.",
+    "Fat-Tail Insurer: \"Munich Re data showing weather-catastrophe payouts running roughly five times higher than the 1980s average\" is stated in the present tense in the steelman. It traces to Carney's September 2015 Lloyd's speech (annual average ~$10bn in the 1980s vs ~$50bn over the then-preceding decade), which the detail does attribute. Adding \"as of 2015\" to the steelman would stop an eleven-year-old comparison reading as current.",
+    "The coral stat's mortality figure (up to 93% at some sites off Mexico's Pacific coast) is attributed to ICRI in the detail, but the cited NOAA NESDIS page carries only the 84% and 83-countries figures and no mortality number. The attribution is honest; ICRI simply has no URL of its own in the stat.",
+    "science.org, ipcc.ch and stand.earth all return HTTP 403 to automated fetches. These are Cloudflare bot blocks, not dead links — all three resolve normally in a browser. Worth knowing so a future automated check_links run does not flag them as broken.",
+    "\"both polar ice sheets\" in the 25% stat means Greenland and West Antarctica; East Antarctica is also polar and is discussed two stats later. \"the Greenland and West Antarctic ice sheets\" would be unambiguous."
+   ],
+   "post_run_fixes_applied": "Both blocking issues fixed per the critic's prescriptions before persisting (2026-08-13): cascade stat corrected from the inverted 39% (the no-tipping share) to the true ~27% cascade share with corrected mechanism; AMOC trend figure re-sourced to Pontes & Menviel 2024 directly.",
+   "stage": "substance"
+  },
+  {
+   "blocking": [],
+   "critic": "crux",
+   "pass": true,
+   "notes": [
+    "The lead is binary (strongest case vs weakest) but the subtitle does the de-binarizing work well: all five camps are explicitly enumerable in its clause list — emergency (Sentinel), insurance premium (Fat-Tail Insurer), per-tenth-of-a-degree math (Continuum Realist), a calmer forecast (Threshold Skeptic), different words entirely (Framing Critic). Each camp can locate itself on the axis.",
+    "The 'or the weakest' pole is slightly imprecise for the Threshold Skeptic, whose actual diagnosis is that the evidence points to slow change, not that unknowability itself weakens the case for action; the camp closest to 'uncertainty cannot license unbounded action' is the Nordhaus-style critic mentioned only inside the Fat-Tail Insurer detail. A reader will still map the Skeptic to that pole without being misled, so this is polish, not a defect.",
+    "The Continuum Realist's position is really 'the threshold question is secondary to cumulative warming', which sits slightly orthogonal to the lead's axis of what unknowability licenses; the subtitle's 'per-tenth-of-a-degree math' phrase covers them, but a future edit could sharpen that their move is to route around the unknowability question rather than answer it.",
+    "The values field's second stake ('whether public language should be tuned for accuracy or for motion') is a strong, non-obvious narrowing that gives the Framing Critic a genuine seat at the crux rather than leaving them as a meta-commentary camp — worth preserving through distribution.",
+    "No house verdict and no both-sides-have-a-point filler: both directions of the lead question are live, and the empirical/values split correctly separates what observation can resolve (AMOC distance, early-warning lead time, committed ice loss, framing effects) from genuine value forks (irreversibility as moral category, tail pricing)."
+   ],
+   "stage": "substance"
+  },
+  {
+   "critic": "compact-self-sufficiency",
+   "pass": false,
+   "blocking": [
+    {
+     "issue": "BASICS stat 2 (\"Tipping elements with a threshold within 1.5°C\", value 25%) is the topic's load-bearing \"how alarming is right now\" number, and its compact note carries only the alarming half: \"Four of the 16 elements, both polar ice sheets, warm-water coral reefs and abrupt permafrost thaw, have best-estimate thresholds at or below 1.5°C of warming.\" Both neutralizing caveats — that the best estimates carry very wide ranges (Greenland put at 1.5°C but plausibly 0.8-3°C) and that a crossed threshold does not mean instant change (shifts play out over decades to millennia) — exist ONLY in the detail field. Read above the fold next to stat 1 (1.55°C, plotted 78% of the way to the 2°C ceiling), the compact layer says: four thresholds are being crossed at the warming already reached, full stop. That is not the picture the draft itself holds, and the correction is behind an opt-in click. Note that the abrupt/slow caveat does appear above the fold, but only inside two position steelmen (Continuum Realist, Threshold Skeptic), so a scanner reads it as a contested camp claim rather than as the shared scientific baseline it is.",
+     "fix": "Fold the two caveats already written in that stat's detail into its `note`, keeping the fact set identical. E.g. note → \"Four of the 16 elements, both polar ice sheets, warm-water coral reefs and abrupt permafrost thaw, have best-estimate thresholds at or below 1.5°C of warming. Those best estimates carry wide ranges, and crossing a threshold starts a shift that can take decades to millennia to play out.\" Then trim the now-duplicated opening of the detail so the expansion still adds over the note: keep the Greenland 0.8-3°C range and the source specificity, drop the generic restatement."
+    },
+    {
+     "issue": "QUESTIONS item 1 is the topic's lead question and mentions \"the Atlantic overturning circulation\" twice above the fold (text and why) with no gloss anywhere in the compact layer. The stat that would explain it (\"Atlantic overturning circulation (AMOC) · observed slowdown\") is T2, behind \"Go deeper\", and the position layer only supplies name + steelman, none of which mention it. An above-fold reader therefore gets the dispute (\"closer to a critical slowdown than official assessments allow\") and the lean labels (\"Imminent risk\" / \"Not this century\") with zero sense of what the thing is or why its collapse would matter — the compact register's no-unexplained-jargon rule applied to the single most load-bearing term in the draft. \"Not this century\" reads as reassurance about an unnamed stake.",
+     "fix": "Add a short definitional gloss to that question's `why` (presentation re-wording only, no new fact or source). E.g. why → \"Proxy and observational signals hint the Atlantic current system that carries warm water north sits closer to a critical slowdown than official assessments allow, but those assessments rest on models that critics say are biased toward stability.\" Alternatively carry the gloss in the question `text` itself; either way it must land in a compact field, not in `detail`."
+    }
+   ],
+   "notes": [
+    "Stat 2's label names a count concept (\"Tipping elements with a threshold within 1.5°C\") while the value is a share (25%), and the denominator (\"of the 16 identified\") appears only in the note. The note is above the fold so the reader is not left wrong, but a scan of label+value alone leaves \"25% of what?\" open. Cheap presentation fix if touched anyway: \"Share of tipping elements with a threshold within 1.5°C · of 16 identified\".",
+    "Stat 4's label says \"Coral reefs exposed to bleaching-level heat\" while the value measures 84% of global reef AREA, not 84% of reefs. The note states the correct denominator, so this is a nit rather than a scope error; the label handles the harder trap well by saying \"exposed to bleaching-level heat\" rather than \"bleached\".",
+    "Cross-layer arithmetic wobble visible entirely above the fold: stat 2's note says four of 16 elements have thresholds at or below 1.5°C, while the top position (Tipping Point Sentinel, first card) says \"five of sixteen tipping elements ... within reach at today's roughly 1.2 to 1.4°C\". The two criteria differ (threshold ≤1.5°C vs within reach at current warming) so they are reconcilable, but a reader who notices reads it as sloppiness. Facts are locked, so no change is proposed; flagging for awareness only.",
+    "Stat 3 (Amazon): the compact note gives the threshold as \"20-25% deforestation\" against 20% cleared, which reads as being effectively at the edge. The detail discloses that this threshold assumes climate-driven drying and fire on top, and that deforestation alone would need roughly 40%. The compact line is a fair rendering of the standard headline figure, so not blocking, but it is the next-most-exposed compact/detail asymmetry after stat 2 if you want to harden one more.",
+    "Stat 1 handles its hardest caveat well and inside the compact layer: the note explicitly separates the single warmest year (1.55°C, El Niño-boosted) from the Paris multi-decade average that \"has not yet been passed\". Good model for the fix to stat 2. The note is dense at three sentences, but it earns the length.",
+    "Definition ordering: \"tipping elements\" is used in stat 2 (row 1 of the 3-col grid) but defined in stat 5's note (\"large-scale parts of the Earth system ... capable of shifting into a new, self-sustaining state once a threshold is crossed\"), which lands in row 2. Both are above the fold so the reader does get the definition; moving the defining stat earlier would let the term land defined on first use.",
+    "The five position steelmen are individually self-sufficient and mutually distinguishable above the fold — in particular Framing Critic (language problem) vs Threshold Skeptic (physics claim) do not blur, and the Fat-Tail Insurer's jargon name is fully carried by its fire-insurance steelman. No fix needed.",
+    "Crux lead + subtitle stand on their own and the subtitle's five-way list maps cleanly onto the five position cards. \"what not knowing licenses\" is the one slightly writerly phrase in the compact layer; it survives, but it is the spot to touch if a plainer register is wanted."
+   ],
+   "stage": "presentation"
+  },
+  {
+   "critic": "Reading-level fit is broadly at parity with a strong published topic. The compact layer does the hard work well: the coral, Amazon, ice-sheet and 16-elements notes are all retainable and jargon-free, every steelman is a plain-English one-liner (the Fat-Tail Insurer's fire-insurance analogy carries the whole concept without the reader needing \"fat tail\"), and the crux lead is the cleanest compact line in the draft. Expanded fields genuinely add rather than restate: the cascades detail (coupling strengths, 61%/44% decomposition, initiator/mediator mechanism), the Greenland detail (1,000-15,000 year unfolding), and the Amazon detail (40% deforestation-alone figure, Nobre/Lovejoy method) all clear the bar comfortably, as do all seven question details, which supply mechanism (freshwater-forcing bias, critical slowing down, dismal theorem) the compact \"why\" only gestures at. Nothing rises to a blocking presentation defect. The weakest compact field is the AMOC stat: \"0.46 Sverdrups/decade\" is an unretainable headline figure and the sentence about IPCC confidence is hard to parse in one pass — but the note glosses Sverdrups on first use and leads with the retainable \"15-20% weaker\", so the reader is not stranded, and the stat sits at tier 2 behind \"Go deeper\". The remaining items (a bare \"AMOC\" in a tier-2 action title, \"proxy\" and \"coupling strengths\" in question why-lines, \"hysteresis\" in the Sentinel description, and a first detail sentence in the warming stat that recaps its own note) are trims, not failures.",
+   "pass": true,
+   "blocking": [],
+   "notes": [
+    "AMOC stat (basics, tier 2), note: \"IPCC AR6 dropped from high to medium its confidence that a collapse before 2100 can be ruled out\" packs a bare acronym (AR6) and a double-negative into one compact sentence. Suggest: \"The IPCC's 2021 assessment lowered its confidence that a collapse before 2100 can be ruled out, from high to medium.\"",
+    "AMOC stat, value/unit: \"0.46 Sverdrups/decade\" is the large display figure but is not a number a general reader retains; the retainable one (15-20% weaker since the mid-20th century) sits in the note. The gloss on first use is present so it reads acceptably, but consider whether the percentage would serve better as the headline figure with the Sverdrup rate carried in the note.",
+    "Action \"AMOC Collapse Timing Uncertainty\" (tier 2, compact title): bare acronym. Above the fold the current is only ever spelled out (\"Atlantic overturning circulation\") in the question text; the (AMOC) expansion lives in a below-fold stat. Suggest retitling \"Atlantic Overturning Collapse Timing\".",
+    "Question 1 why: \"Proxy and observational signals hint...\" — \"proxy\" is a term of art unexplained in the compact layer (its detail does gloss it as sea-surface-temperature proxies). Suggest \"Indirect evidence from ocean temperatures and past climates hints...\".",
+    "Question 6 why: \"the coupling strengths driving that result come from simplified models\" — \"coupling strengths\" is compact-layer jargon. Suggest \"the strength of the links driving that result\". Same field, question 5 why: \"paleoclimate data\" reads as \"evidence from past climates\" with no loss.",
+    "Question 3 text (T1, above the fold): \"far above their expected-value harm\" is a term of art in the headline question. The why-line immediately below does gloss it (\"weights a catastrophe by its small probability\"), so it is survivable, but \"far above what their odds alone would justify\" would carry the same idea with no jargon.",
+    "Tipping Point Sentinel description: \"switches with hysteresis built in\" and \"hysteresis-locked change\" use an unexplained term twice at a fairly visible layer. The surrounding metaphor (\"a switch, once thrown, does not un-throw itself\") already does the work, so the term could be dropped or moved to the detail, where it can be defined properly.",
+    "Fat-Tail Insurer description: \"equilibrium climate sensitivity well above its 2.5 to 4°C best-estimate range\" is undefined until the detail (\"the amount of warming per doubling of CO2\"). A three-word inline gloss in the description would fix it.",
+    "Warming stat detail: the first sentence (El Niño, single calendar year, multi-decade average) restates the note almost point for point; the added value starts at \"IPCC AR6 put the more conservative 2011-2020 decadal average at 1.09°C\". Trimming the recap would make the detail read as pure depth. This is the only detail in the draft with meaningful overlap.",
+    "Questions 1 and 5 details use \"bifurcation\" as a term of art without defining it at first use, which the expanded register asks for. \"Critical transition\" appears nearby and could absorb it, or a four-word parenthetical would settle it."
+   ],
+   "stage": "presentation"
+  },
+  {
+   "critic": "above-fold-selection",
+   "pass": true,
+   "blocking": [],
+   "notes": [
+    "Basics T1 set is coherent and decision-relevant: current warming vs the Paris frame, how many elements sit within 1.5°C, Amazon (closest land threshold), coral (the live, already-crossing case carrying why_now), and the 16-element frame. The boundary falls at a genuine drop: everything below the fold (AMOC trend, ice-sheet SLR potential, model-cascade share) is a supporting magnitude or a model-behaviour result, not a headline the reader needs to orient.",
+    "Worth watching, not blocking: the AMOC slowdown stat sits at T2 while AMOC is the topic's most contested element — it drives the T1 lead question, both Continuum Realist and Threshold Skeptic descriptions, and the crux empirical field. It is defensible below the fold because its compact value carries a term of art (Sverdrups) needing a parenthetical to land, and because a reader who never opens 'Go deeper' still meets AMOC as the first question. If any T1 basic were ever dropped, this is the obvious promotion candidate.",
+    "Mild redundancy inside the T1 basics set: 'Tipping elements with a threshold within 1.5°C' already says 'Four of the 16 elements' in its note, so 'Identified tipping elements · Earth system' partly restates a number just seen. It still earns the slot by supplying the core-vs-regional split the percentage stat does not, and it completes the 3-col grid cleanly (3 narrow, then 1 narrow + 1 wide). Note that demoting it would leave the remaining five narrow tiles with a trailing gap.",
+    "Questions T1 set is well balanced for the fold: two empirical (AMOC distance, ice-sheet commitment), one values (tail weighting), and the framing question — the right call, since Framing Critic is a T1 position and would otherwise appear above the fold with no question behind it.",
+    "Small crux/fold mismatch: the crux 'values' field leads with the irreversibility-vs-severity question, but that question is T3 (deep reveal), two layers below the fold. The tail-weighting values question at T1 covers the other half of that crux sentence, so the fold is not left values-empty; still, the crux opens on a fork the reader has to dig twice to reach.",
+    "Positions: all five above the fold is correct here — the spread runs -3 to +3 with a 32/28/15/13/12 prevalence tail, and hiding the 12-13 weight camps (Threshold Skeptic, Fat-Tail Insurer) behind 'Go deeper' would tilt the visible set toward the alarm side. No marginal promotion."
+   ],
+   "stage": "presentation"
+  }
+ ],
+ "prevalence_basis": [
+  {
+   "name": "Tipping Point Sentinel",
+   "prevalence_weight": 32,
+   "spectrum_position": -3,
+   "sketch": "Several thresholds sit at or near today’s warming; crossing them is irreversible, so this is a planetary emergency demanding immediate action."
+  },
+  {
+   "name": "Continuum Realist",
+   "prevalence_weight": 28,
+   "spectrum_position": 0,
+   "sketch": "Thresholds are real but diffuse, regional and slow-unfolding; every tenth of a degree matters more than any single cliff-edge."
+  },
+  {
+   "name": "Framing Critic",
+   "prevalence_weight": 15,
+   "spectrum_position": 1,
+   "sketch": "The tipping metaphor lumps unlike phenomena, confuses policy benchmarks with physics, and risks paralysis rather than action."
+  },
+  {
+   "name": "Fat-Tail Insurer",
+   "prevalence_weight": 13,
+   "spectrum_position": -1,
+   "sketch": "Precisely because thresholds can’t be pinned down, catastrophic tails dominate the risk calculus and justify paying heavily for insurance."
+  },
+  {
+   "name": "Threshold Skeptic",
+   "prevalence_weight": 12,
+   "spectrum_position": 3,
+   "sketch": "Evidence for imminent global-scale tipping is thin; models overstate abruptness and change will be gradual enough to adapt to."
+  }
+ ],
+ "findings": []
+}

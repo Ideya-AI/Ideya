@@ -23,7 +23,9 @@ def topics_dir():
 
 
 def path_for(slug):
-    return topics_dir() / f"{slug}.json"
+    """A topic is a directory; `topic.json` in it is the product the loader reads.
+    Its evidence, icon brief, packet and run artifacts are its siblings."""
+    return topics_dir() / slug / "topic.json"
 
 
 def set_status(topic, status, **extra_fields):
@@ -38,7 +40,9 @@ def set_status(topic, status, **extra_fields):
         )
     doc = json.loads(path.read_text(encoding="utf-8"))
     doc["status"] = status
-    path.write_text(json.dumps(doc, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    path.write_text(
+        json.dumps(doc, ensure_ascii=False, indent=1) + "\n", encoding="utf-8"
+    )
 
     topic.status = status
     for k, v in extra_fields.items():

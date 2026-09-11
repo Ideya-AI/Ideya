@@ -23,7 +23,7 @@ from django.core.management.base import BaseCommand, CommandError
 
 from topics.models import Topic
 
-TOPICS = Path("research/topics")
+TOPICS = Path("research/topics")  # a topic is a directory; topic.json is the product
 
 # Written by readers, never by the file.
 IGNORE = {"votes", "importance"}

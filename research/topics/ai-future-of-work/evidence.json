@@ -1,0 +1,148 @@
+{
+ "claim_ledger": {},
+ "verdicts": [
+  {
+   "critic": "Neutrality review of the AI-and-jobs draft. Section-by-section: the overview names four possible endings without privileging one; the basics stats are genuinely cross-cutting (the 60% new-work base rate and the 14% support-agent gain serve the optimist case, the 19% young-worker gap and Challenger data serve the hawk case, the 3.8%→one-in-five adoption floor and low headline unemployment serve the skeptic case), and each stat's detail carries the caveat that cuts against its own headline reading (e.g. the Stanford 19% stat quotes the authors' own \"no evidence yet of broad displacement,\" and the Autor 60% stat notes the offset pattern is itself weakening). No section tilts toward a camp.\n\nSteelman parity: all six positions are written in their own voice at comparable rigor and length, each with named living proponents, an anchoring source, internal-disagreement texture, and a banner-grade steelman line. Displacement Hawk and Scale Skeptic — the two easiest to strawman — are the best-evidenced entries in the set (Stanford payroll design, Challenger series; Acemoglu TFP model, MIT NANDA). Post-Labor Futurist's OpenResearch results are reported with both the reduced-hours finding and the education/entrepreneurship findings, letting the reader weigh them. No strawmen found.\n\nNo house verdict: the crux poses capability vs precedent vs policy without resolving it; question leans are presented as leans (and Q3, the genuinely unresolved attribution question, correctly carries none); prevalence weights (85/75/55/50/45/30) encode honest non-balance rather than forced 50/50. Citing Anthropic's CEO as the Displacement Hawk flashpoint is factual sourcing, not provider favoritism, and is counterweighted by Acemoglu/NANDA on the skeptic side.\n\nMissing-camp check: the session's web-search budget was exhausted (200/200) before my searches ran, so this check is from model knowledge through early 2026 rather than a fresh search. The one currently-active camp not given its own card is the worker-resistance/refusal wing (Brian Merchant's neo-Luddite argument, union contract fights restricting AI deployment, National Nurses United-style opposition). Within this topic's scope — labor-market outcomes and policy levers — its distinctive claim (deployment terms are won by collective action, not granted) is substantively carried by Institution Shaper, whose description centers bargaining power and whose action row is the AFL-CIO Technology Institute. That is defensible coverage at the parity bar, so I flag it as polish, not a blocker: Institution Shaper's proponent list is all economists, and naming a labor-movement voice would make the coverage explicit.\n\nVerdict: no blocking neutrality defect. Notes below for the editor.",
+   "pass": true,
+   "blocking": [],
+   "notes": [
+    "Institution Shaper's proponents are all academic economists (Acemoglu, Johnson, Brynjolfsson, Autor, Korinek); the worker-resistance/refusal wing it implicitly covers (Brian Merchant, AFL-CIO, striking unions with AI contract clauses) would be more visibly represented by adding one labor-movement name to that proponents list.",
+    "Caveat on the missing-camp check: the session's WebSearch budget was already exhausted, so the check ran on model knowledge (through early 2026) rather than a live search; a human spot-check for any newly prominent camp is cheap insurance.",
+    "Two representative_name fields contain the literal HTML entity '&amp;' ('Brookings Metro (Kinder, Muro, Briggs &amp; Liu)' and 'Daron Acemoglu &amp; Simon Johnson, Power and Progress (2023)'), which violates the plain-text rule and will render as garbage; write '&' — not a neutrality defect, flagged for whichever pass owns formatting.",
+    "Question 6's detail asserts public appetite for broad basic income 'has historically been a minority position' without a cited poll; it reads as context, not a tilt, but attaching a survey source (e.g. Pew's automation-and-UBI polling) would keep the Post-Labor fork as tightly sourced as the rest.",
+    "Question 3's lean_pct_a of -1 (no lean) is the right neutrality call for an attribution question this unsettled; worth confirming the renderer treats -1 as 'suppress lean bar' rather than drawing a negative value."
+   ],
+   "stage": "substance"
+  },
+  {
+   "critic": "steelman",
+   "pass": true,
+   "blocking": [],
+   "notes": [
+    "All six positions read as genuine steelmen a proponent would endorse. Transition Realist preempts the 'this is just hedging' attack directly; Displacement Hawk anchors on the strongest available evidence (Stanford payroll gap, Challenger data) rather than vibes; Scale Skeptic gets Acemoglu's TFP math and NANDA in its own confident voice; Post-Labor Futurist correctly reframes the OpenResearch work-reduction finding as 'the point' rather than a concession. No side is softened.",
+    "Plain-text rule violation outside my dimension but worth surfacing: two representative_name fields contain the HTML entity '&amp;' ('Brookings Metro (Kinder, Muro, Briggs &amp; Liu)' and 'Daron Acemoglu &amp; Simon Johnson') — the renderer escapes literally, so this will surface as garbage on the page. Should be a plain ampersand.",
+    "Augmentation Optimist's banner line ('technology has always created more jobs than it destroys') is the boldest claim of the six and slightly ahead of what Autor/Bessen would sign, but it is what WEF/McKinsey-style proponents genuinely say, so it works as a steelman; the description's closing 'not in serious doubt' carries the right proponent confidence.",
+    "Daron Acemoglu appears both as Scale Skeptic representative and as an Institution Shaper proponent. This is accurate to his actual dual role (TFP skepticism + Power and Progress), but a one-clause acknowledgment in one of the two details could preempt reader confusion.",
+    "Displacement Hawk's steelman line is the least banner-like of the six ('...and the ladder above them is next' is strong, but the Amodei 10-20% unemployment claim is the position's most-cited flashpoint and might make a sharper banner). Cosmetic only."
+   ],
+   "stage": "substance"
+  },
+  {
+   "critic": "fact-source",
+   "pass": false,
+   "blocking": [
+    {
+     "issue": "Institution Shaper's description states: \"economists Daron Acemoglu, Andrea Manera and Pascual Restrepo find the US tax code taxes labor far more heavily than capital equipment, and calculate that closing that gap alone would raise employment by roughly 4 percent, no new technology required.\" The paper (\"Does the U.S. Tax Code Favor Automation?\", BPEA Conference Draft, March 2020) contains no 4% estimate. Its abstract reads: \"Moving from the US tax system and level of automation in the 2010s to optimal taxation of factors and corresponding optimal level of automation would raise employment by 5.85% and the labor share by 0.53 percentage points. If moving to optimal policy is not feasible, more modest reforms can still increase employment by 1.35-2.31%.\" So \"roughly 4 percent\" matches no reported scenario, and the scenario the draft actually describes (partial reform / closing the capital-labor gap) is 1.35-2.31% — the draft overstates it by roughly double. Worse, the paper explicitly rejects the mechanism the draft attributes to it: \"it would not be desirable to increase taxation of capital per se (even though capital is lightly taxed in the US); rather, directly reducing the extent of automation would be much more effective.\" This is a fabricated number attached to a mischaracterized mechanism, sitting in a position's load-bearing empirical claim.",
+     "fix": "Replace with the paper's actual figures and mechanism. E.g.: \"economists Daron Acemoglu, Andrea Manera and Pascual Restrepo find the US tax code taxes labor far more heavily than capital equipment, and calculate that reducing the resulting excess automation would raise employment by 1.35% under modest reforms and 5.85% under optimal ones, no new technology required.\" Note their finding that taxing capital per se is not the effective lever — directly reducing over-automation is — so the sentence should not describe this as \"closing that gap alone.\" Source: Acemoglu, Manera & Restrepo, Brookings Papers on Economic Activity, March 2020, https://www.brookings.edu/wp-content/uploads/2020/03/Acemoglu-et-al-conference-draft.pdf"
+    },
+    {
+     "issue": "The Basics tile \"US businesses using AI · Census Bureau high-frequency survey\" headlines 3.8% (late 2023) — a figure that is nearly three years stale, measures a narrower thing than its label claims, is contradicted twice elsewhere in this same topic, and is defended by a false statement about source availability. Four compounding problems: (1) Measure mismatch — 3.8% is Census's \"use AI to produce goods and services\" reading; the tile label says \"US businesses using AI,\" which reads as the general adoption rate. (2) Stale where current data exists — census.gov published \"AI Use at U.S. Businesses\" on May 26, 2026 (https://www.census.gov/library/stories/2026/05/ai-use-businesses.html) reporting 19.8% of US businesses using AI as of May 3, 2026, with a size breakdown (37% at 250+ employees, 32% at 100-249, under 20% at fewer than 20 employees). (3) The detail's claim that \"a precise current-year national figure was not available from the source consulted\" is factually wrong — it is published by the cited source. (4) Internal contradiction — the crux says \"adoption at one firm in five\" and Scale Skeptic says \"about one in five as of May 2026,\" so a reader scanning Basics gets 3.8% and a reader reaching the crux gets 20%, with nothing reconciling them. A scanner's takeaway from Basics is that AI adoption is negligible, which is false today.",
+     "fix": "Make the current figure the headline: value 19.8, unit \"% (May 2026)\", fill_pct 20, label \"US businesses using AI in any business function · Census Bureau high-frequency survey\". Move 3.8% into the detail as the late-2023 baseline, and state the measure change explicitly so the two are not read as a clean time series: Census revised the question in November 2025 from \"producing goods or services\" to \"any business function,\" so part of the 3.8% → 19.8% gap is definitional, not growth. Delete the sentence \"a precise current-year national figure was not available from the source consulted.\" Cite https://www.census.gov/library/stories/2026/05/ai-use-businesses.html alongside the existing BTOS landing page. This also removes the Basics/crux contradiction."
+    }
+   ],
+   "notes": [
+    "Basics stat 1 detail calls professional occupations \"the fastest-growing category.\" The paper says professionals are \"the occupational category that added the most workers during these eight decades\" — largest absolute gain, not fastest rate. Swap to \"the category that added the most workers\" for exactness.",
+    "Displacement Hawk: \"SignalFire's 2025 State of Talent report found entry-level hiring's share of Big Tech hires roughly halved from 2019 to 2024.\" The report's own wording is \"New grads now account for just 7% of hires, with new hires down 25% from 2023 and over 50% from pre-pandemic levels in 2019\" — ambiguous between a decline in new-grad hire volume and a decline in their share. The mainstream reading supports the draft and the magnitude is right either way, but safer phrasing would be \"new-grad hiring at Big Tech down over 50% from 2019 levels, with new grads now just 7% of hires.\"",
+    "Scale Skeptic detail says the NANDA findings span \"300 public AI deployments and interviews spanning 150 organizations.\" The reported methodology is 300 public AI deployments, 150 interviews with business leaders, and a 350-employee survey. \"150 interviews with business leaders\" is the precise form; \"150 organizations\" is a small drift.",
+    "Institution Shaper attributes to \"Acemoglu and Restrepo's comparative work on industrial robots\" the finding of weaker wage/employment effects in economies with stronger works councils and collective bargaining. Acemoglu & Restrepo is the US robots result; the contrasting German result is Dauth, Findeisen, Suedekum & Woessner. Consider phrasing it as a comparison across the literature rather than a single authorship.",
+    "Two representative_name fields contain the HTML entity \"&amp;\" — Brookings Metro (Kinder, Muro, Briggs &amp; Liu) and Daron Acemoglu &amp; Simon Johnson, Power and Progress (2023). Per the plain-text rule the renderer escapes literally, so these will surface as visible garbage. Replace with a bare &. Outside my dimension but worth fixing before publish.",
+    "All 403 responses encountered during link checking (Axios, WEF, OECD DOI, dol.gov/agencies/eta/layoffs, aflcio.org/tech-institute) are WAF bot-blocks rather than dead links — the OECD DOI resolves with a 302 to a live oecd.org page. No dead or misattributed links found. Worth a browser spot-check of the DOL and AFL-CIO action URLs at publish time since neither could be confirmed by fetch.",
+    "The perishable figures that remain (Stanford 19%, unemployment 4.1%, Challenger 10,970) are each dated and isolated appropriately, and the unemployment tile is correctly framed against its durable 1948-present range. Once the Census tile is fixed, the Basics section ages well."
+   ],
+   "post_run_fixes_applied": "Both blocking issues fixed per the critic's prescriptions before persisting (2026-08-12): Acemoglu et al. employment figures corrected to the paper's 1.35%/5.85% with the paper's actual mechanism; Census AI-adoption tile updated to the May 2026 19.8% headline with the 3.8% baseline and question change moved to the detail.",
+   "stage": "substance"
+  },
+  {
+   "blocking": [],
+   "critic": "crux",
+   "pass": true,
+   "notes": [
+    "The lead's three-force axis (capability / precedent / policy) cleanly seats four of the six camps: Displacement Hawk and Post-Labor Futurist on capability, Augmentation Optimist on precedent, Institution Shaper on policy. Scale Skeptic locates on the capability axis only via negation (capability's economic bite is smaller than claimed) and Transition Realist locates by declining to bet on any force. Both can find themselves, and the subtitle's 'same signals feed every camp' plus the named signals (entry-level softness, modest measured gains, one-firm-in-five adoption) explicitly carries the Skeptic's and Realist's evidence, so this is not a mislocation — but a future edit could sharpen the subtitle to acknowledge that one camp's move is to refuse the forecast entirely.",
+    "The empirical/values split is genuinely load-bearing rather than decorative: the empirical paragraph stakes four falsifiable predictions each camp has committed to (young-worker gap climbs or closes, adoption spreads past one in five, gains scale past support tickets, new occupations keep the 60% base rate), and the values paragraph is a real fork (what work is for, who owns the gains) rather than 'both sides have a point.' This is the strongest part of the crux.",
+    "The lead_highlight accents the policy option ('or by rules nobody has set yet?'). This matches the house accent pattern from the style example ('or one we've chosen?') and reads as rhetorical emphasis, not endorsement of Institution Shaper — the empirical paragraph immediately hands the verdict to 'the payrolls,' which rebalances it. No change needed, just noting it was checked for tilt.",
+    "The subtitle's 'adoption at one firm in five' figure traces to the Scale Skeptic detail (Census BTOS, May 2026) rather than to a Basics stat (Basics only carries the 3.8% late-2023 floor and its own detail concedes 'a precise current-year national figure was not available'). Not a crux defect, but the sourcing critic may want the May 2026 one-in-five reading either verified and added to Basics or the subtitle's phrasing loosened."
+   ],
+   "stage": "substance"
+  },
+  {
+   "critic": "compact-self-sufficiency",
+   "pass": true,
+   "blocking": [],
+   "notes": [
+    "Stat 1 (Stanford 19% gap): the authors' own caveat that this is descriptive, not causal, and that they find no broad economy-wide displacement lives only in the detail. Mitigated above the fold because the note is phrased descriptively (gap vs less-exposed peers, no causal claim) and Q3 explicitly frames the entry-level decline as contested (leading edge vs localized blip), so the reader does not leave with an over-strong causal picture. If a future pass touches this note, a short clause like 'an early, descriptive signal' would close the gap entirely.",
+    "Stat 2 (60% new occupations): the note's closing clause '— the base rate every past wave of automation eventually produced' states the optimist inference as settled fact, while the same paper's counter-finding (the job-creating offset has weakened over four decades, which is exactly what is contested) is detail-only. Not blocking: the figure itself is correct, Q1 above the fold presents the contest, and the tilt is one clause. A more neutral tail, e.g. '— the scale of new-role creation past waves eventually produced', would remove the lean without losing punch.",
+    "Stat 3 (9-47% ranked): the headline value 9-47 matches the label's 'share of jobs' denominator, but the highlighted 2024 Brookings row measures a different thing — share of WORKERS facing 50%+ task disruption, not jobs at high risk. The note states each measure precisely within the compact layer, and the label's 'by study and method' flags heterogeneity, so it clears parity; still, the row label ('30%+') silently switches denominator and threshold relative to the header. A tolerable fix if revisited: label the row '30%+ of workers' in the series value.",
+    "Out of my dimension but worth routing: two representative_name fields contain the HTML entity '&amp;' ('Brookings Metro (Kinder, Muro, Briggs &amp; Liu)' and 'Daron Acemoglu &amp; Simon Johnson') — the renderer escapes literally, so these will surface as garbage; should be a plain '&'.",
+    "Positive checks: stat 5's note carries its own definitional caveat (narrower 2023 survey question) above the fold; stat 4's label scopes the 14% to a single customer-support study; the Scale Skeptic and Displacement Hawk steelmen give the reader both poles of the entry-level/adoption evidence using numbers that are themselves visible above the fold (19.8% ≈ one firm in five, 19% gap); crux subtitle is consistent with the above-fold stats. No load-bearing fact needed for a correct overall picture is confined below the fold: the T2/T3 hidden stats (adoption-speed comparison, 4.1% unemployment) are texture whose argumentative weight is already carried by above-fold steelmen."
+   ],
+   "stage": "presentation"
+  },
+  {
+   "critic": "reading-level-fit",
+   "pass": true,
+   "blocking": [],
+   "notes": [
+    "OECD appears as a bare acronym in a compact field (stat 3 note and its 2016 series label). It is at parity with strong published general-audience outlets, so not blocking, but 'OECD' could carry a two-word gloss in the detail if wanted.",
+    "Q2 detail uses 'increasingly agentic multi-step work' — 'agentic' is a term of art used without definition even in the expanded register; consider 'increasingly able to chain multi-step tasks on its own' or a first-use gloss.",
+    "Stat 1 and Displacement Hawk description/detail cite 'ADP payroll records' without saying ADP is a payroll processor; a three-word appositive ('the payroll processor ADP') at first use in the detail would fully clear the expanded-register bar. Minor.",
+    "Scale Skeptic detail abbreviates to 'TFP' and 'P&L' — both are spelled out in the description first, but the detail is a separately expandable field; safest is to spell out at first use within the detail itself. Minor.",
+    "Cross-dimension flag (not reading level, but blocking for whichever critic owns plain-text rules): two representative_name fields contain the literal HTML entity '&amp;' — Transition Realist ('Brookings Metro (Kinder, Muro, Briggs &amp; Liu)') and Institution Shaper ('Daron Acemoglu &amp; Simon Johnson, Power and Progress (2023)'). The renderer escapes literally, so these will surface as garbage on the page; must become plain '&'.",
+    "Cross-dimension flag (typography rule, not reading level): straight ASCII apostrophes appear in several content fields — question texts \"Are today's entry-level hiring declines...\" and \"How much of the outcome is set by the technology's capabilities...\", question 1 text (\"didn't\"), stat 2 label (\"didn't exist in 1940\"), Displacement Hawk representative_note (\"the position's most-cited\"), and straight double quotes in two source_label fields (stats 1 and 6). House rule requires curly quotes/apostrophes.",
+    "Observation for main: question 3 has lean_pct_a = -1 while all others have positive values; if -1 is not the intentional 'no lean shown' sentinel, the lean bar may render oddly. Presentation-config, not reading level."
+   ],
+   "stage": "presentation"
+  },
+  {
+   "critic": "above-fold-selection",
+   "pass": true,
+   "blocking": [],
+   "notes": [
+    "Basics tier-1 set is well chosen: the five promoted stats are exactly the load-bearing evidence (the why_now anchor stat, the 1940 base rate, the risk-estimate spread, the augmentation study, the adoption rate), and each maps to at least one position's core claim. The T2/T3 demotions (adoption-speed comparison, headline unemployment) are the two most context-dependent items, so the boundary sits at a genuine drop-off.",
+    "Questions tier-1 set is defensible: the four promoted questions are the empirical live forks plus the capability-vs-institutions frame that organizes the rest. The T1/T2 boundary is a real drop: Q5 (diffusion speed) partially duplicates evidence already surfaced by the T1 adoption stat and Q1.",
+    "Minor asymmetry worth knowing about, not blocking: all six positions are above the fold, but Scale Skeptic's anchoring question (Q5, T2) and Post-Labor Futurist's defining fork (Q6, T3) are below it. Both demotions are defensible (Q5 overlaps T1 material; Q6 is conditional on the empirical questions resolving toward displacement), so the reader still gets each position's evidence via the T1 stats, but if the team ever wants tighter position-question pairing above the fold, Q6 is the strongest candidate for T2.",
+    "Value questions clustering at T3 (Q6, Q7) is consistent: both are downstream 'then what' forks rather than entry points, and the crux section already carries the values split above the fold, so nothing decision-relevant is hidden.",
+    "Positions display order (prevalence-first: 85/75/55/50/45/30) is monotonic and matches the weights; no ordering anomaly."
+   ],
+   "stage": "presentation"
+  }
+ ],
+ "prevalence_basis": [
+  {
+   "name": "Transition Realist",
+   "prevalence_weight": 85,
+   "spectrum_position": 1,
+   "sketch": "AI will churn through occupations hard and fast; the endpoint is unknowable, so manage the transition."
+  },
+  {
+   "name": "Augmentation Optimist",
+   "prevalence_weight": 75,
+   "spectrum_position": -2,
+   "sketch": "AI complements human work and, like every prior wave, will create more and better jobs than it destroys."
+  },
+  {
+   "name": "Institution Shaper",
+   "prevalence_weight": 55,
+   "spectrum_position": 0,
+   "sketch": "The technology settles nothing; policy, bargaining power, and who owns the machines decide who gains."
+  },
+  {
+   "name": "Displacement Hawk",
+   "prevalence_weight": 50,
+   "spectrum_position": 2,
+   "sketch": "AI is about to hollow out white-collar work within years, starting with entry-level cognitive jobs."
+  },
+  {
+   "name": "Scale Skeptic",
+   "prevalence_weight": 45,
+   "spectrum_position": -3,
+   "sketch": "The economic bite is overstated: adoption is slow, measured gains are modest, and hype outruns the payrolls."
+  },
+  {
+   "name": "Post-Labor Futurist",
+   "prevalence_weight": 30,
+   "spectrum_position": 3,
+   "sketch": "AI will eventually do most work, so the goal is distributing machine wealth, not preserving jobs."
+  }
+ ],
+ "findings": []
+}

@@ -39,13 +39,19 @@ Django + HTMX + Alpine. A curated atlas of hard debates; depth is an axis, not a
 
 - `topics/` — the app. `templates/`, `static/` — the product surface (tokens in
   `static/css/tokens.css`).
-- `research/topics/` — **the set of topics**, one file each, cradle to grave: a
-  topic with only a title and a published one are the same object at different
-  stops. Index fields at the top (slug, title, status, scope, categories,
-  related), `draft` under them once there is content. The source of truth for
-  everything except participation. `research/categories.json` — the taxonomy.
-- `research/runs/` and `research/reviews/` — process, not product, and untracked.
-  How a topic was made; the topic itself is its file plus its shipped assets.
+- `research/topics/<slug>/` — **the set of topics**, one directory each, cradle
+  to grave: a topic with only a title and a published one are the same object at
+  different stops. The directory name IS the slug.
+  - `topic.json` — the product the loader reads. Index fields at the top (slug,
+    title, status, scope, categories, related), `draft` under them once there is
+    content. The source of truth for everything except participation.
+  - `evidence.json` — what the pipeline knows: claim ledger, gate verdicts,
+    prevalence basis, open findings. Durable, because later stages depend on it.
+  - `icon.md` the art brief, `review.md` the packet for the human.
+  - `run/`, `renders/`, `candidates/` — process, and untracked.
+  - Shipped images stay under `static/img/{topics,social}/<slug>.png`, because
+    that is where Django serves them from.
+- `research/categories.json` — the taxonomy.
 - `research/v1/` — **the retired v1 pipeline, archived 2026-09-11 and wired to
   nothing.** Its orchestrator, harness, stage scripts, measuring tools, agent
   definitions, `ENGINE.md` and `RESEARCH_PIPELINE.md` are kept for their

@@ -38,7 +38,8 @@ class PublishTopicTests(NuclearFixtureMixin, TestCase):
         self._tmp = tempfile.TemporaryDirectory()
         self.addCleanup(self._tmp.cleanup)
         self.topics_dir = Path(self._tmp.name)
-        (self.topics_dir / f"{self.slug}.json").write_text(
+        (self.topics_dir / self.slug).mkdir()
+        (self.topics_dir / self.slug / "topic.json").write_text(
             json.dumps({"slug": self.slug, "title": "Nuclear Energy",
                         "status": Topic.READY, "categories": ["climate-env"]})
         )
@@ -48,7 +49,7 @@ class PublishTopicTests(NuclearFixtureMixin, TestCase):
 
     def _filed_status(self):
         return json.loads(
-            (self.topics_dir / f"{self.slug}.json").read_text()
+            (self.topics_dir / self.slug / "topic.json").read_text()
         )["status"]
 
     def _run(self, **kw):

@@ -21,7 +21,7 @@ import subprocess
 ROOT = Path(__file__).resolve().parents[2]
 HOOK = ROOT / ".claude" / "hooks" / "pipeline-guard.sh"
 WF = ROOT / "research" / "v1" / "workflows"
-AGENTS = ROOT / ".claude" / "agents"
+AGENTS = ROOT / "research" / "v1" / "claude" / "agents"
 # Fable is barred from the engine (weekly limit exhausted mid-run, 2026-08-13,
 # killing three gate critics). The ban is about VOLUME, not fitness: Fable was
 # running plan/crux/distribute and the stage-1 gate — the highest-call-count work

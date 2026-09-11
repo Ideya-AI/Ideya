@@ -72,7 +72,9 @@ class Command(BaseCommand):
             )
 
         files = (
-            [TOPICS / f"{o['slug']}.json"] if o["slug"] else sorted(TOPICS.glob("*.json"))
+            [TOPICS / o["slug"] / "topic.json"]
+            if o["slug"]
+            else sorted(TOPICS.glob("*/topic.json"))
         )
         if o["slug"] and not files[0].exists():
             raise CommandError(f"no topic file at {files[0]}")
@@ -85,15 +87,17 @@ class Command(BaseCommand):
                 call_command(
                     "load_topic_draft",
                     file=str(path),
-                    slug=path.stem,
+                    slug=path.parent.name,  # the directory IS the slug
                     allow_published=True,
                     verbosity=0,
                 )
                 loaded += 1
             except Exception as exc:  # noqa: BLE001 — report, then keep going
-                failed.append((path.stem, str(exc).splitlines()[0][:120]))
+                failed.append((path.parent.name, str(exc).splitlines()[0][:120]))
 
-        self.stdout.write(f"categories: {Category.objects.count()} · topics loaded: {loaded}")
+        self.stdout.write(
+            f"categories: {Category.objects.count()} · topics loaded: {loaded}"
+        )
         for slug, why in failed:
             self.stderr.write(self.style.WARNING(f"  {slug}: {why}"))
         if failed:

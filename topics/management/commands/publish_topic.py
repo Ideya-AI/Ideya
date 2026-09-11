@@ -71,9 +71,7 @@ class Command(BaseCommand):
         target = Topic.READY if o["off"] else Topic.PUBLISHED
         verb = "take private" if o["off"] else "make public"
         if topic.status == target:
-            raise CommandError(
-                f"'{slug}' is already {target}. Nothing to do."
-            )
+            raise CommandError(f"'{slug}' is already {target}. Nothing to do.")
 
         # The one thing the switch checks, and it checks the status rather than
         # the topic: readiness is earned upstream and recorded by `mark_ready`.
@@ -134,10 +132,10 @@ class Command(BaseCommand):
                 "--off --confirm\n"
             )
         artifacts = [
-            f"research/topics/{slug}.json",
-            f"research/runs/{slug}/record.json",
-            f"research/icons/{slug}.md",
-            f"research/reviews/{slug}/",
+            f"research/topics/{slug}/topic.json",
+            f"research/topics/{slug}/evidence.json",
+            f"research/topics/{slug}/icon.md",
+            f"research/topics/{slug}/review.md",
             f"static/img/topics/{slug}.png",
             f"static/img/social/{slug}.png",
         ]
@@ -150,7 +148,7 @@ class Command(BaseCommand):
             "last build,\n"
             "  # then load the content into the live DB and throw the switch there:\n"
             f"  docker exec ideya python manage.py load_topic_draft "
-            f"--file research/topics/{slug}.json --slug {slug}\n"
+            f"--file research/topics/{slug}/topic.json --slug {slug}\n"
             f"  docker exec ideya python manage.py publish_topic --slug {slug} --confirm\n"
             "  docker exec ideya python manage.py load_universe\n"
             "  # confirm it actually landed — a just-published topic missing from\n"

@@ -1,0 +1,163 @@
+{
+ "claim_ledger": {},
+ "verdicts": [
+  {
+   "critic": "neutrality",
+   "pass": true,
+   "blocking": [],
+   "notes": [
+    "Web search could not be run for the missing-camp check (session search budget exhausted), so camp coverage was assessed from existing knowledge of the field. On that basis the six camps cover the genuinely active positions: child-safety/duty-of-care, speech maximalist, proceduralist, common-carrier right, jawboning hawks, and the civil-rights/harm-accountability left, and each is steelmanned in its own voice with real named proponents and its internal fault lines acknowledged, which is a strong parity signal.",
+    "Closest call on omission: the decentralization/'protocols not platforms' camp (Masnick's protocols essay, Bluesky/fediverse, Fukuyama's middleware) is distributed across other camps rather than named — Masnick fronts Speech Maximalist and middleware appears inside Due-Process Reformer's detail. Its answer to the title question ('nobody decides centrally; users pick their own moderation layer') is distinct enough that a one-line acknowledgment in scope_covered or the Due-Process detail would close the gap cleanly. Not blocking because its actual proponents are all represented.",
+    "Question 2 detail ends by characterizing concern about private power as 'steady' and concern about state pressure as tracking 'whichever party currently controls government' — a subtle asymmetry that mildly delegitimizes the state-power-threat side as partisan-motivated, in a question whose whole point is that the two fears are weighed differently in good faith. Consider either sourcing that claim or cutting the sentence; the Jawboning Hawk section itself documents the cross-partisan counterexample (NRA v. Vullo).",
+    "Question 3 detail: 'political appetite for repeal remains bipartisan and largely untethered from that scholarship' — reporting the scholarship lean is legitimate honest non-balance, but 'untethered' editorializes against repeal advocates. A flatter phrasing ('repeal advocates dispute or discount that prediction') carries the same information without the jab.",
+    "Actions asymmetry: five camps get advocacy-flavored actions (donate/policy/learn-more at an aligned org) while Common-Carrier Regulator's sole action is a neutral SCOTUSblog case tracker. If an appropriate advocacy or scholarship link exists (e.g. a Volokh/Candeub explainer), parity would improve; minor because the tracker is still on-side.",
+    "The platform-industry status-quo voice (NetChoice, CCIA, trade groups arguing current private moderation plus Section 230 works fine) never appears as its own camp and is the implicit defendant in every position's narrative; its policy substance is essentially covered by Speech Maximalist plus Due-Process Reformer, so this is acceptable, but a strong published topic might name that overlap explicitly in one of those two details."
+   ],
+   "stage": "substance"
+  },
+  {
+   "critic": "steelman",
+   "pass": true,
+   "blocking": [],
+   "notes": [
+    "Speech Maximalist: the description's opening claim that 'the state and dominant platforms alike should stay out of policing what is merely unpopular' does not fit the named representative. Mike Masnick and EFF emphatically defend platforms' right to moderate at their own discretion (that is the point of their Section 230 advocacy); their target is mandates and liability-induced over-removal, not platform moderation itself. The detail paragraph and the closing lines ('transparency, appeals, and user-side filtering tools are welcome') correct this, and the internal Musk-vs-Strossen fault line is acknowledged, so a proponent would endorse the section overall — but tightening the opening to target removal mandates rather than platform discretion would make Masnick's endorsement unreserved.",
+    "The platform-industry position itself (NetChoice/CCIA: moderation is our protected editorial speech, Section 230 works as designed, leave the current regime alone) has no dedicated section. Its substance is distributed across Speech Maximalist, Due-Process Reformer, and the 'platform's speech' question, so no major argument is actually missing, but a reader may notice the parties with the most at stake have no camp of their own. Worth a deliberate editorial call rather than an accident.",
+    "Duty-of-Care Reformer is the strongest steelman in the set: it leads with the proponents' best evidence (internal research, CDC trendline, product-design framing), names its own tactical disagreements, and answers the speech objection the way real proponents do. Harm-Accountability Advocate, the position most often strawmanned elsewhere, is likewise given its genuine strongest case (amplification-as-business-decision, the Vullo-style distinction between private and state pressure implied via 'First Amendment restrains government'), including honest treatment of the Meta 2025 rollback as their own proof point.",
+    "Jawboning Hawk earns cross-partisan credibility with NRA v. Vullo and the Knight tracker as representative, which is exactly how the strongest proponents (Mchangama, Knight Institute) frame it; a movement-partisan version would have been weaker. No change needed.",
+    "Common-Carrier Regulator: a real proponent would endorse it, including the honest Volokh-vs-structural split. One small strengthening option: proponents often add the network-effects/lock-in economic argument (no exit means no market discipline), which appears only in the crux question detail, not in the position itself."
+   ],
+   "stage": "substance"
+  },
+  {
+   "critic": "fact-source",
+   "pass": false,
+   "blocking": [
+    {
+     "issue": "why_now overstates the legal holding. It says juries held Meta liable in March 2026 \"despite Section 230 defenses, cracking the shield that has defined online speech law for thirty years.\" The two March 2026 verdicts are real and correctly dated (K.G.M. v. Meta, Los Angeles Superior Court jury, Meta and Google/YouTube liable; New Mexico v. Meta, state-court jury, consumer-protection violations and enabling child exploitation, ~$375m + $372m in penalties). But Meta raised Section 230 and the defense was NOT adjudicated in either decision — the record is that the claim \"was not considered in both decisions,\" with the shield question expected to surface only on appeal. No court cracked the shield; the verdicts simply routed around it on a product-design theory.",
+     "fix": "Rewrite to what actually happened, e.g.: \"In March 2026 juries in Los Angeles and New Mexico held Meta liable for design and algorithm harms on a product-defect theory that never reached its Section 230 defense, teeing up the shield's first real test on appeal.\" Keeps the hook, drops the unearned holding."
+    },
+    {
+     "issue": "Tier-1 Basics stat \"6% of global revenue\" is sourced to a page that does not contain the figure. The cited URL (digital-strategy.ec.europa.eu/en/policies/digital-services-act-package) loads fine and does support the 45-million-user threshold, but a full-text check found no mention of any maximum fine percentage anywhere on it — its only penalty reference is the €550m AliExpress fine. The 6% cap is correct on the merits (Art. 74(1), Regulation (EU) 2022/2065), but the headline number is not on the cited page.",
+     "fix": "Repoint source_url to a page that states the cap — the EUR-Lex text of Regulation (EU) 2022/2065 Article 74 (https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32022R2065) — or keep the package page as source and move the 6% support to a Commission Q&A page that states it. Update source_published/source_accessed to match."
+    },
+    {
+     "issue": "Both DSA point-in-time counts are wrong and stale. (a) Basics stat 4 detail: \"records 26 services as of August 2026, 25 of them currently in scope after Stripchat's designation was terminated in May 2025.\" The Commission's designated-VLOP/VLOSE list (page last updated 24 July 2026) carries roughly 28-31 designated services, not 26 — the figure appears to be a 2024-era snapshot. The \"25 in scope\" arithmetic is also wrong: Stripchat's designation was terminated 27 May 2025 and obligations ceased four months later, so it is not among current designations and should not be netted out of an August 2026 count. (b) Due-Process Reformer detail: \"nine certified reviewer bodies already operating\" — the Commission's Article 21 out-of-court dispute settlement page (updated 2 July 2026) lists 11 certified bodies. Both are exactly the kind of perishable roster count this atlas is supposed to avoid, sitting next to durable structural figures that already carry the point.",
+     "fix": "Preferred: drop both counts. Stat 4's detail already has the durable facts it needs (45m-user threshold ≈ 10% of EU population, named platforms in scope, most developed duty-of-care model), and the Due-Process detail is just as strong as \"a growing roster of certified out-of-court reviewer bodies now operating across the EU.\" If a count is kept, recount both against the Commission pages as of the access date and state the as-of date inline, accepting they will need re-checking at every review."
+    },
+    {
+     "issue": "Spliced quotation attributed to Justice Brandeis. Speech Maximalist detail renders the Whitney v. California concurrence as: \"the fitting remedy for evil counsels is good ones, not enforced silence.\" Those are two separate sentences from two different paragraphs. Brandeis wrote \"the fitting remedy for evil counsels is good ones\" in one passage, and \"If there be time to expose through discussion the falsehood and fallacies, to avert the evil by the processes of education, the remedy to be applied is more speech, not enforced silence\" in another. Presenting the join inside one set of quotation marks is a misquotation of a canonical source.",
+     "fix": "Quote one or the other. Cleanest: \"...through Justice Brandeis's concurrence in Whitney v. California: the remedy to be applied is more speech, not enforced silence.\" Or keep \"the fitting remedy for evil counsels is good ones\" and end the quotation there."
+    }
+   ],
+   "notes": [
+    "VERIFIED CLEAN (no action needed): Pew 2024 tech-companies stat matches the source exactly — 83% overall (up from 77% in 2022), 93% Republicans, 74% Democrats (up from 66% in 2022), 78% too much political power, 51% favor more regulation (60% D / 45% R). Pew teens 2024: 48% almost constantly, up from 24%, n=1,391, fielded Sept 18-Oct 10 2024. Pew teens 2023: TikTok 63 / Snapchat 60 / Instagram 59, n=1,453, Sept 26-Oct 23 2023. DataReportal: 5.79bn user identities, April 2026, 'more than 2 in 3 people', accounts-not-individuals caveat all verbatim-accurate. NERA 2017: 425,000 jobs and $44bn confirmed. Section 230 carve-out list confirmed. Facebook 38% / YouTube 35% for news confirmed against Pew's social-media-and-news fact sheet (fielded Aug 18-24, 2025). Court votes and dates all correct: Moody 9-0 July 1 2024 (docket 22-277), Murthy 6-3 June 26 2024 (23-411), FSC v. Paxton 6-3 June 27 2025 (23-1122) — Oyez docket paths in the draft are correct. Barrett's 'dearth of facts' confirmed. KIDS Act confirmed: H.R. 7757, passed House June 29 2026 by 267-117, drops KOSA's duty of care, adds age verification, preempts certain state child-safety laws. KOSA Senate 91-3 on July 30 2024 confirmed. Santa Clara Principles confirmed: began 2018 out of the Content Moderation at Scale conferences, 2.0 after consultation with 50+ organizations, endorsed by Apple, Meta, Google, Reddit, Twitter/X, GitHub. CCDH STAR framework confirmed (Sept 19 2024; 'consequences for harmful content algorithmically amplified or monetized'). Stripchat termination date (27 May 2025) confirmed. DSA 45m threshold ≈10% of EU population and 6% cap both correct on the merits.",
+    "The Aug 5, 2026 Senate Commerce claim is half-confirmed and worth a human check before publish. The committee site does show an Aug 5, 2026 executive session and a Cantwell opening statement 'at Markup of Kids Online Safety Bills', so the event is real and correctly dated. What I could not independently confirm is the specific characterization — 'advanced KOSA by voice vote with the duty of care intact'. Nothing contradicts it, but it is a one-week-old procedural detail doing real work in the Duty-of-Care position (it is what makes the fight 'ongoing, not lost'). Confirm the vote method and whether the reported text retained the duty of care.",
+    "Oversight Board overturn rate: 'roughly seven of every ten cases it decided in its earliest rulings' is soft. The one precisely checkable early anchor is the first tranche (Jan 28, 2021): five cases, four overturned — 80%. ~70% is a defensible characterization of the early cumulative rate and is widely reported, but since this number is carrying the evidentiary weight of the steelman ('evidence that the underlying decisions were often simply wrong'), consider anchoring it to a specific tranche, e.g. 'overturned Meta in four of its first five rulings.'",
+    "CDC teen-girls figure is accurate as written (36% in 2011 to 57% in 2021) and properly dated, but 2021 is now the peak rather than the latest reading — the 2023 YRBS put female students reporting persistent sadness or hopelessness at 53%. A reader could take 57% as current. Consider a four-word parenthetical ('easing slightly to 53% by 2023') so the trend claim survives a later update without a reader feeling misled.",
+    "Pew censorship measure loses a word. Pew's item is 'social media sites intentionally censor political viewpoints they find objectionable'; the draft's series label and detail both drop 'political' ('censor viewpoints they find objectionable' / 'viewpoints they object to'). Same-measure precision — restore 'political' in both places.",
+    "Alito paraphrase drifts one notch. He called Murthy 'one of the most important free speech cases to reach this Court in years'; the draft quotes the fragment accurately but completes it outside the quotation marks as 'in decades'. Change to 'in years' to match.",
+    "Pew 2023 YouTube figure: the report's prose says 'roughly nine-in-ten', and the draft's 93% headline comes from the topline table (with the Dec 2024 update at 90%, which the draft correctly distinguishes). The three sibling figures all matched exactly, so the source is right; just worth a glance at the topline PDF to confirm 93% rather than 92% before publish.",
+    "nclalegal.org/take-action/ returned 403 to automated fetching — almost certainly bot blocking rather than a dead link (the domain is live), but it is the one action URL I could not confirm renders. Worth a manual browser check. The other action links I tested all load and support their descriptions: 5rightsfoundation.com/eaca/en-eu/ (a real petition for binding design standards, four demands, correctly characterized) and the CCDH STAR framework page."
+   ],
+   "post_run_fixes_applied": "All 4 blocking issues fixed per the critic's prescriptions before persisting (2026-08-12): why_now legal-holding rewrite; DSA 6% cap re-sourced to EUR-Lex Art. 74; both perishable roster counts dropped; Brandeis quotation unspliced.",
+   "stage": "substance"
+  },
+  {
+   "critic": "crux",
+   "pass": true,
+   "blocking": [],
+   "notes": [
+    "The subtitle's tally (\"five name a different captor of lawful speech, one says the harm left standing is the damage\") arguably misassigns the Duty-of-Care Reformer: that camp's own steelman (\"Platforms knew the harm and shipped it anyway\") is a harm-first diagnosis, explicitly disclaiming speech as its target (\"the target is design, not expression\"), so the honest count is closer to four captor-naming camps and two harm-first camps (Duty-of-Care and Harm-Accountability). The lead's axis still works for all six, and no position's substance is distorted, so this is polish, not a blocker — but sharpening to \"four … two\" (or a formulation that avoids the count entirely, e.g. \"camps that cannot even agree whether the danger is who holds the veto or what the feed leaves standing\") would make the subtitle strictly accurate.",
+    "The lead does real narrowing work: \"Every fix for the feed hands power to someone — so whose hands scare you least?\" locates the live disagreement at trust allocation over speech power rather than at \"is harm real,\" and every camp can answer it in its own voice (courts, users, process, legislatures, no-one-in-government, civil society/advertisers). No house verdict, no both-sides mush, no binary compression of a six-camp field.",
+    "The empirical/values split is clean and matches the questions section: the empirical paragraph lists genuinely testable claims (displacement, over-removal, process outcomes, age-gating), and the values paragraph correctly frames the fear-ranking, speech-vs-infrastructure, and persuasion-vs-coercion questions as judgments evidence cannot settle. \"Evidence can’t rank the fears\" is a strong, neutral bridge line."
+   ],
+   "stage": "substance"
+  },
+  {
+   "critic": "compact-self-sufficiency",
+   "pass": true,
+   "blocking": [],
+   "notes": [
+    "Above-fold picture is sound: the four T1 stats (shield's age, public sentiment, SCOTUS votes, DSA fine) plus the four T1 questions and all six steelmen give a correct map of the debate without needing any detail field; no load-bearing caveat lives only below the fold.",
+    "Stat 3 (SCOTUS votes): headline value 9-0 is only Moody, but the wide ranked series shows all three vote counts and the note explicitly says the rulings left the core questions open, which prevents the false 'settled law' reading. Good compact hygiene.",
+    "Jargon: 'jawboning' first appears above the fold cold, in the Murthy series label ('dismissed jawboning claims for lack of standing'), before any definition; the Jawboning Hawk steelman defines the concept only implicitly. A reader scanning Basics first meets an unexplained term of art. Consider rewording the series label to 'dismissed government-pressure claims' or similar (presentation-only change).",
+    "Q4 text uses a straight ASCII apostrophe ('platform's own protected speech') where every other content field uses curly; typographic-punctuation rule violation in an above-fold compact field. Fix: replace with ’ in questions[3].text (fold preview shows the same in the crux/preview line).",
+    "Crux subtitle says 'one says the harm left standing is the damage', but two camps fit that description (Duty-of-Care Reformer and Harm-Accountability Advocate both argue the standing harm is the injury); the five-vs-one split is arguable. Not misleading enough to block, but worth a second look.",
+    "Denominator scope, minor: stats 5 and 6 are labeled 'Teens' without the US qualifier (values are % of US teens 13-17); the notes say 'US teens' / the details clarify, and both are below the fold, so acceptable, but adding 'US' to the labels would be tighter.",
+    "Stat 7 label 'People worldwide who use social media' sits in slight tension with the value's true denominator (accounts, not unique people); the unit string 'billion accounts' and the note's caveat resolve it in the compact layer, so no mislead survives.",
+    "questions[5].lean_pct_a is -1 (presumably a 'no lean shown' sentinel for the T2 jawboning question); confirm the renderer treats it as hidden rather than drawing a negative bar."
+   ],
+   "stage": "presentation"
+  },
+  {
+   "blocking": [
+    {
+     "issue": "BASICS stat \"Supreme Court votes in recent platform-speech rulings\" (T1, above fold), series[2] label: \"Murthy v. Missouri (dismissed jawboning claims for lack of standing)\" uses \"jawboning\" as bare jargon in a compact field. This is the first place a reader meets the word, before the Jawboning Hawk position card defines it, and the stat's note does not gloss it either. Fails the zero-unexplained-jargon bar for the compact register.",
+     "fix": "Reword that series label only, keeping the case name and outcome intact: \"Murthy v. Missouri (dismissed claims of government pressure on platforms, for lack of standing)\". No fact changes: same case, same disposition."
+    },
+    {
+     "issue": "ACTIONS item \"Back NCLA's jawboning fight\" (T1, condensed): the compact title stacks a bare acronym (NCLA, never expanded anywhere in the action, the description also opens with bare \"NCLA\") on top of the same unexplained jargon (\"jawboning\"). A smart general reader scanning action cards gets neither word.",
+     "fix": "Retitle to \"Back the fight against government pressure\" (or \"Back the New Civil Liberties Alliance\") and open the description with the expanded name: \"The New Civil Liberties Alliance litigates against government pressure on platforms to moderate lawful speech, including in Murthy v. Missouri.\" Same org, same fact set, same url."
+    }
+   ],
+   "critic": "reading-level-fit",
+   "pass": false,
+   "notes": [
+    "Overall the draft holds the compact/expanded split well: every stat detail genuinely adds figures, methodology, or caveats over its note (e.g. the Pew censorship stat's partisan breakdown, the DataReportal accounts-vs-people caveat), and no question detail merely restates its why. No restatement flags.",
+    "Stat 1 detail: \"the DMCA\" is a bare acronym in the expanded register with no first-use definition. Suggest \"...Section 230 and the DMCA (copyright's safe-harbor law)...\". Note-level since expanded readers tolerate more, but the register rules ask for definition at first use.",
+    "Stat 3 series labels also carry \"vacated\" and \"lack of standing\": legal terms of art, though common in news coverage, and the stat's note does translate the upshot in plain language. Acceptable at parity; \"threw out lower rulings\" would be plainer for Moody if edited anyway.",
+    "Position name \"Jawboning Hawk\" is jargon, but its steelman (\"Government pressure on platforms is censorship laundered through a private middleman\") defines the concept immediately below the name, and question 6's text/why cover the same ground jargon-free. Acceptable as-is; no change needed once the two blocking instances are fixed, since the position card then becomes the reader's first proper introduction.",
+    "Cross-dimension observation (typography, not reading level): several straight ASCII apostrophes survive in content fields, e.g. question 4 text (\"the platform's own protected speech\"), its lean label \"Platform's speech\", action titles \"Back Fairplay's campaigns\" and \"Support the ACLU's speech work\", and the Jawboning Hawk proponents/representative_name (\"Knight First Amendment Institute's\"). House rule requires curly apostrophes; flagging for whichever critic owns punctuation.",
+    "Crux subtitle runs three clauses in one sentence and is the densest compact line in the draft; it parses on a second read and the lead above it is excellent, so note-level only. A lighter cut: \"Six camps, five fearing a different hand on the veto, one insisting the harm left standing is the damage.\"",
+    "Compact numbers are consistently retainable: \"more than two in three people on Earth\", \"nearly half... roughly double a decade earlier\", \"30 years\". Good calibration against the example bar."
+   ],
+   "stage": "presentation"
+  },
+  {
+   "critic": "above-fold-selection",
+   "pass": true,
+   "blocking": [],
+   "notes": [
+    "BASICS tiering is sound: the four T1 stats map one-to-one onto the topic's structural core (the liability shield's age, public sentiment on platform power, the open SCOTUS doctrine, and the DSA as the working duty-of-care alternative), and the drop to teen-usage context stats at T2 is a genuine importance drop-off. Global-accounts backdrop at T3 is correctly the least decision-relevant.",
+    "QUESTIONS T1 set is the right four: each anchors a major fault line (displacement evidence, private vs state power, Section 230 reform, feed-as-speech), and the last directly serves the why_now (Moody left it open). Boundary at T2 is defensible.",
+    "Mild asymmetry worth knowing about, not fixing: the transparency/appeals question sits at T3 while its companion position (Due-Process Reformer, prevalence 15, T1) is above the fold. Questions and positions need not mirror, and the process question is genuinely the least gripping of the seven, but if the human ever wants tighter coupling, swapping it with the T2 jawboning question would pair each below-fold question with a below-median-prevalence position. Current arrangement is within parity.",
+    "Similarly, the jawboning question at T2 while Jawboning Hawk is T1 is acceptable: all six positions render above the fold by design (6/6), so every position's companion question cannot also be T1 with only four slots.",
+    "POSITIONS: 6/6 above the fold in real prevalence order; no promotion/demotion issue possible on this dimension."
+   ],
+   "stage": "presentation"
+  }
+ ],
+ "prevalence_basis": [
+  {
+   "name": "Duty-of-Care Reformer",
+   "prevalence_weight": 30,
+   "spectrum_position": 2,
+   "sketch": "Platforms design for engagement and profit from foreseeable harm; the law should make them answer for it, especially where minors are concerned."
+  },
+  {
+   "name": "Speech Maximalist",
+   "prevalence_weight": 25,
+   "spectrum_position": -3,
+   "sketch": "Lawful speech stays up: the cure for bad speech is more speech, and moderation beyond illegality is censorship by another name."
+  },
+  {
+   "name": "Due-Process Reformer",
+   "prevalence_weight": 18,
+   "spectrum_position": 0,
+   "sketch": "Private moderation is legitimate; opaque, unappealable moderation is not — mandate transparency, appeals, and user-controlled filters."
+  },
+  {
+   "name": "Common-Carrier Regulator",
+   "prevalence_weight": 14,
+   "spectrum_position": -2,
+   "sketch": "Dominant platforms are the modern public square; law, not corporate discretion, should bar viewpoint discrimination in what they carry."
+  },
+  {
+   "name": "Jawboning Hawk",
+   "prevalence_weight": 13,
+   "spectrum_position": -1,
+   "sketch": "The real censor is the state working through platforms; police government pressure on moderation no matter which party holds power."
+  }
+ ],
+ "findings": []
+}

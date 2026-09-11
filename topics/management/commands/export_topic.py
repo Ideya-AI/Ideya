@@ -12,7 +12,7 @@ Writes the same ``{ "draft": {...} }`` envelope the loader reads
 (``payload.get("draft", payload)``), pretty
 (indent=1, ascii-escaped) to match the existing research/topics JSON style.
 
-  manage.py export_topic --slug nuclear-energy           # -> research/topics/nuclear-energy.json
+  manage.py export_topic --slug nuclear-energy           # -> research/topics/nuclear-energy/topic.json
   manage.py export_topic --slug nuclear-energy --out -   # -> stdout
 
 The draft mirrors the loader field-for-field, and is a superset: fields the
@@ -124,7 +124,7 @@ class Command(BaseCommand):
         p.add_argument(
             "--out",
             default=None,
-            help="Output path; '-' for stdout. Default research/topics/<slug>.json.",
+            help="Output path; '-' for stdout. Default research/topics/<slug>/topic.json.",
         )
 
     def handle(self, *args, **o):
@@ -198,7 +198,7 @@ class Command(BaseCommand):
         if out == "-":
             self.stdout.write(json.dumps(payload, indent=1, ensure_ascii=True))
             return
-        path = Path(out) if out else Path("research/topics") / f"{topic.slug}.json"
+        path = Path(out) if out else Path("research/topics") / topic.slug / "topic.json"
 
         # Carry forward top-level keys the DB cannot regenerate — anything in the
         # file that the export does not produce is by definition unrecoverable,

@@ -41,7 +41,7 @@ class NuclearFixtureMixin:
             )
         call_command(
             "load_topic_draft",
-            file=str(Path(settings.BASE_DIR) / "research/topics/nuclear-energy.json"),
+            file=str(Path(settings.BASE_DIR) / "research/topics/nuclear-energy/topic.json"),
             slug="nuclear-energy",
             title="Nuclear Energy",
             category="climate-env",

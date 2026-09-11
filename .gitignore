@@ -34,8 +34,10 @@ research/token-ledger.local.md
 research/engine-scorecard.local.md
 research/participation/
 
-# Pipeline process, not product (2026-09-11): the run record and the review
-# packet are how a topic was made, not the topic. The product in git is the
-# topic file plus its shipped assets.
-research/runs/
-research/reviews/
+# A topic is a directory (2026-09-11). Its product is tracked — topic.json,
+# evidence.json, icon.md, review.md — and its process is not. Drawing the line
+# inside the topic directory is what keeps an untracked sweep from swallowing
+# something load-bearing, the way the claim ledger nearly went with runs/.
+research/topics/*/run/
+research/topics/*/renders/
+research/topics/*/candidates/

@@ -1,0 +1,154 @@
+{
+ "claim_ledger": {},
+ "verdicts": [
+  {
+   "critic": "neutrality",
+   "pass": true,
+   "blocking": [],
+   "notes": [
+    "Missing-camp check caveat: the session's web-search budget was exhausted before this review ran, so the active-camp scan relied on model knowledge (current to Jan 2026) rather than fresh search. Within that limit, no missing MAJOR camp found: the five positions span the fast/slow x decisive/drift/never space, and PauseAI-style halt advocacy is carried by the Hard Takeoff Hawk entry (MIRI halt call). Three genuine-but-minor stances are unnamed and worth a mention rather than a sixth position: (a) capability skeptics who dispute that superhuman AI is coming at all on the current paradigm (Yann LeCun, Melanie Mitchell, Gary Marcus) — the substantive view is covered by Normal Technology Skeptic, but its most prominent public faces are not listed as proponents; (b) d/acc / defensive accelerationism (Vitalik Buterin) — accepts real takeoff risk but answers with accelerating defensive tech rather than pausing or trusting markets; one line in the e/acc or Gradualist detail would cover it; (c) successionists (Rich Sutton) who dispute the premise that losing control is bad — relevant to the value question on bet-sizing, one clause would suffice.",
+    "Narrator-voice evidence adjudications appear in three question details: Q2 'Course-Correction Gradualists have the stronger track record to point to' and Q6 'Normal Technology Skeptics have the more concrete evidence' both credit the slow/skeptic side, though each is defensible as description of the evidential record and is followed by a charitable hawk rebuttal; Q5's framing presses hardest against gradualists, so the pattern is mixed rather than one-directional. Not misleading, but rephrasing as attributed claims ('point to a stronger track record') would keep the narrator fully out of adjudication.",
+    "Position-detail closings are slightly asymmetric: Normal Technology Skeptic, Gradual Disempowerment, and Effective Accelerationist details all end on an internal tension or unanswered criticism, while the Hard Takeoff Hawk detail ends on the position's own strongest line ('the absence of that technique is itself the emergency'). The Yudkowsky-vs-Bostrom certainty split already in that paragraph could close it for symmetry.",
+    "Actions: Course-Correction Gradualist gets two actions (AI Safety Camp, Encode) while every other position gets one, and AI Safety Camp is generic AI-safety rather than distinctly gradualist; consider reassigning or trimming.",
+    "Encoding artifact: '&amp;' appears in two representative_name fields (Narayanan & Kapoor; Yudkowsky & Soares).",
+    "Sourcing (other critic's dimension, flagged in passing): two Basics stats cite Wikipedia as the source (IEA data-centre projection, Bletchley Declaration) where primary IEA / gov.uk sources exist and would be stronger.",
+    "The e/acc description states the DeepSeek 'fraction of the training cost' claim as flat fact; it is contested accounting, but since it sits inside the position's own-voice description this is acceptable steelman practice — a hedge could live in the detail if desired."
+   ],
+   "stage": "substance"
+  },
+  {
+   "blocking": [],
+   "critic": "steelman",
+   "pass": true,
+   "notes": [
+    "Normal Technology Skeptic detail closes on a critics'-eye framing (\"bet against fast takeoff rather than rebutted it\"). The essay itself concedes this, so it is defensible, but flipping the last sentence back into the proponents' own confidence (why they think the bet is a good one) would end the section on their strongest note.",
+    "Course-Correction Gradualist attributes a \"roughly 30%\" fast-takeoff probability to Christiano's 2018 essay; that figure comes from his later self-reports rather than the essay text itself. Worth softening the attribution to \"Christiano has put fast takeoff at roughly 30%\" so a pedantic proponent can't quibble.",
+    "Hard Takeoff Hawk's representative is a book title rather than a person; consistent with the camp's center of gravity (MIRI institutional position), but note the asymmetry with other positions' named representatives.",
+    "Effective Accelerationist steelman line uses an em dash where a colon would serve (\"Slowing down doesn't stop the race — it just hands the lead...\"); register nit for the distribution pass, not a steelman defect.",
+    "Question 1's framing gives Hard Takeoff Hawks their existence proof but the strongest hawk reply to the physical-bottleneck objection (software-only gains on existing hardware) appears only in Question 6; a cross-reference or slight rebalance would let hawks feel fully answered in both places."
+   ],
+   "stage": "substance"
+  },
+  {
+   "critic": "fact-source",
+   "pass": false,
+   "blocking": [
+    {
+     "issue": "Basics stat 8 (\"Frontier AI computing power by company · concentration\", 49%) misreads the Epoch source. Epoch's computing-capacity insight (Oct 9 2024) splits Google into two rows — Google NVIDIA ~320k H100e and Google TPU ~920k H100e — so Google's total is ~1.24M, not 920k. The draft's series row labelled plainly \"Google — 920,000 H100-eq\" is the TPU fleet only, which drops ~320k from the four-firm sum: the stated combined ~2.27M should be ~2.59M. The headline 49% is therefore understated (~55% against a 4.67M denominator; more if the denominator is the ~4.0M the page's medians actually sum to), and the ranked bars (Microsoft 72%, Meta 43%, Amazon 32%) are all scaled against the wrong Google baseline. The 4.67M total also isn't reproduced by the page — its listed medians (320k + 660k + 400k + 290k + 1.4M other + 920k TPU) sum to ~3.99M.",
+     "fix": "Either relabel the row \"Google (TPUs)\" and add a second Google row for its ~320k NVIDIA H100e, or use Google's ~1.24M combined figure; recompute the four-firm sum to ~2.59M and the headline share accordingly (~55% if Epoch's total is 4.67M), and rescale the ranked bars against the corrected Google value. Quote the total exactly as Epoch states it at https://epoch.ai/data-insights/computing-capacity, or drop the denominator claim and present the four absolute figures."
+    },
+    {
+     "issue": "Elon Musk is listed in the Effective Accelerationist `proponents` field (and in the detail as someone who \"historically\" pitched the accelerationist case). This misattributes the position to its most prominent public counterexample: Musk signed the March 2023 FLI letter calling for a six-month pause on frontier training runs, publicly endorsed California's SB 1047 in August 2024 (which e/acc campaigned against), and repeatedly puts double-digit probability on AI catastrophe. Wikipedia's e/acc article names Andreessen, Tan, Levie and Pincus as adherents and does not describe Musk as one. A named proponent who publicly holds the opposite view on the pause-vs-accelerate axis undercuts the steelman's claim to be in a real proponent's voice.",
+     "fix": "Remove Elon Musk from the `proponents` list (Verdon, Andreessen, Tan, Levie stand on their own) and drop the \"and, historically, Elon Musk\" clause from the detail, or replace it with a proponent who actually holds the position — e.g. Mark Pincus, or Verdon's Extropic co-founders — keeping the strategic-race register the sentence needs."
+    }
+   ],
+   "notes": [
+    "Two of nine Basics stats are sourced to Wikipedia where a primary source exists. The IEA figures (415 TWh 2024 → ~945 TWh 2030) are accurate and Wikipedia cites them to the IEA's 2025 \"Energy and AI\" report — cite that directly (https://www.iea.org/reports/energy-and-ai; it 403s bots but is live in a browser). Same for Bletchley: the declaration text is on gov.uk. Honest labelling (\"via Wikipedia\") keeps this out of blocking, but it reads below the atlas's own primary/official-first rule.",
+    "Bletchley stat label \"Countries committing to AI safety oversight\" overstates what 28 countries + the EU actually signed — a non-binding statement of shared concern. The detail corrects this in the next breath; consider \"Countries signing the first joint statement on frontier AI risk\" so the label doesn't need the walk-back.",
+    "Stat 2's headline value \"4–5×\" is a notch below Epoch's own central estimate: the trends dashboard states 5× per year since 2020 (90% CI 4×–6×, doubling 5.2 months). The detail correctly gives the 4–6× interval. Setting the value to \"5\" would match the source's headline exactly and still support the \"~5 months\" doubling claim in the note.",
+    "METR's paper contains a second figure that is material to this specific topic and is omitted: fitting only 2024–2025 data yields a substantially faster doubling (roughly 4 months), shortening the month-long-task extrapolation by about 2.5 years. Since the whole topic turns on whether the curve is bending, one clause on the recent-subset acceleration would strengthen the stat rather than dilute it. Also worth a recency check — the ~7-month figure is from March 2025 and METR has continued adding models to the time-horizon trend.",
+    "Course-Correction Gradualist detail refers to \"the UK and US AI Safety Institutes\". Both have been renamed: the UK body became the AI Security Institute (February 2025) and the US body became the Center for AI Standards and Innovation / CAISI (June 2025). The substantive claim (they run pre-deployment evaluations) still holds; the names are stale.",
+    "The Gradual Disempowerment quote is one word off from the paper: it reads \"no one has a concrete plausible plan for stopping gradual human disempowerment\". Restore \"human\" inside the quotation marks.",
+    "Course-Correction Gradualist detail credits \"Ajeya Cotra's biological-anchors work\" with refining takeoff speed into quantitative form. Bio-anchors is a timelines model (when transformative AI arrives), not a takeoff-speed model; Tom Davidson's compute-centric takeoff report is the one that does the takeoff-speed work. Either drop Cotra from that sentence or attribute her separately for timelines.",
+    "The AI Safety Camp action description ends \"...alongside other participants, evals and iteration in practice.\" The program is a research incubator built around framing a genuinely confusing research question, with lightning talks and one-on-ones; it is not evals-focused. Trim the trailing clause.",
+    "Hard Takeoff Hawk detail: the AI 2027 numbers check out (Agent-4, September 2027: 300,000 copies at ~50x human thinking speed, \"a year passes every week\", overall algorithmic progress sped up \"by about 50x\" because of compute bottlenecks). \"Within about a year\" is loose — the scenario reaches that point roughly six months after its superhuman-coder milestone. Pinning it to the milestone rather than an unanchored year would be tighter.",
+    "Verified clean and needing no change: METR 7-month doubling over 6 years; Epoch cost growth 2.4x/year since 2016 with $1B runs by 2027 (and the hardware+energy-only scoping); AI Impacts 2,778 respondents, 10% by 2027, 50% by 2047, 13 years earlier than 2060, 15% response rate, median 5% on extinction-or-severe-disempowerment, 38–51% at 10%+; AI Incident Database at 1,600+ (recent IDs ~1631); Christiano's \"I'm around 30% of fast takeoff\" against 70–90%; Narayanan/Kapoor's 40% of US adults, 0.5–3.5% of work hours, Epic sepsis missing two-thirds of cases, ~40 years for electrification, and \"most speculative of the risks\"; Kulveit et al. authorship, January 2025, three systems, feedback loop; Yudkowsky/Soares 2025 title, halt call, and Stockfish analogy; Verdon/Forbes December 2023, Google X, Extropic; Encode as youth-founded and behind SB 53 and the RAISE Act. All fourteen cited URLs return HTTP 200."
+   ],
+   "post_run_fixes_applied": "Both blocking issues fixed per the critic's prescribed corrections before persisting (2026-08-12): concentration stat rebuilt on absolute per-firm figures with Google's fleets combined; Musk removed from e/acc proponents/detail. 2 HTML entities scrubbed.",
+   "stage": "substance"
+  },
+  {
+   "critic": "crux",
+   "pass": true,
+   "blocking": [],
+   "notes": [
+    "The lead's three-way axis (all at once / by inches / never at all) is genuinely multi-camp, not a binary compression: Hard Takeoff Hawks locate at 'all at once', Gradual Disempowerment Theorists at 'by inches', Normal Technology Skeptics and Effective Accelerationists at 'never at all', and Course-Correction Gradualists at 'never, conditional on steering'. That last placement is the least crisp — a gradualist's diagnosis is 'the window stays open because we act on warning shots', which the lead only accommodates implicitly. Not misleading, but worth knowing it's the loosest fit.",
+    "The empirical crux narrows to the takeoff-speed question (research loop vs physical bottlenecks) and its 'warning shots arrive in time to matter' branch quietly embeds an assumption Gradual Disempowerment Theorists dispute: their claim is that warning shots can arrive AND be normalized, so continuity does not save you. The draft covers this well in the tier-2 question on normalization, so no reader is misled, but a phrasing like 'warning shots arrive in time to be usable' vs 'arrive and get acted on' could fold their diagnosis into the empirical crux itself rather than leaving it to the values side and the questions section.",
+    "The subtitle ('the bets don't hedge each other') is a strong, verdict-free narrowing — it names why the disagreement is decision-relevant without ranking the camps. No house verdict and no 'both sides have a point' filler anywhere in the crux block.",
+    "Minor: the values crux does double duty (bet-sizing under uncertainty + who decides), which slightly dilutes its sharpness; the 'who decides' clause duplicates the tier-3 governance question and could be trimmed at distribution time if space is tight."
+   ],
+   "stage": "substance"
+  },
+  {
+   "blocking": [
+    {
+     "issue": "Basics stat 4 label scope: the label \"Median extinction-risk probability · AI researcher survey\" is narrower than what the 5% value actually measures. The survey question (per the note and detail) is extinction OR a similarly severe and permanent disempowerment of humanity, so labeling the value as pure extinction risk overstates the narrow outcome for a grid-scanning reader who takes in only label + value. This is exactly the label/scope mismatch class that misleads even though the note clarifies it, and it sits on the topic's single most-quoted number.",
+     "fix": "Reword the stat's 'label' field to match the measured quantity, e.g. \"Median risk of AI extinction or permanent disempowerment · AI researcher survey\" (or, if length-constrained, \"Median AI catastrophe probability · AI researcher survey\"). Leave value, note, and detail unchanged; the note already carries the full definition."
+    }
+   ],
+   "critic": "compact-self-sufficiency",
+   "pass": false,
+   "notes": [
+    "Overall the above-fold layer is strong: every T1 stat note carries its own key caveat in compact (50% reliability and benchmark scope on the METR stat, survey population on both survey stats, 2024-vs-2030 framing on the IEA stat), and the six visible stats balance four acceleration signals against two physical-constraint signals, so the fold does not tilt hawk or skeptic.",
+    "Stats 2 and 5: the label suffix \"· per year\" duplicates the unit \"× per year\", so the rendered line reads roughly \"growth · per year — 4–5× per year\". Dropping \"· per year\" from the two labels would tighten the grid; not misleading, just redundant.",
+    "Basics stat 8 (below fold): headline value ~2.6M H100-equivalents is the four-company TOTAL while the label says \"by company\" and the viz ranks individual companies. The note's first words (\"Four US companies together\") rescue it, and it is behind Go deeper, so note-level only; consider a label like \"Frontier AI computing power · top four US companies\".",
+    "\"Warning shots\" in question 3 is mild jargon, but the sentence itself defines it by contrast (\"continuous enough to produce... or a decisive jump without one\") and the why reinforces it, so it clears the compact bar.",
+    "Load-bearing caveats are correctly placed: nothing essential to the above-fold picture lives only in a detail field. The strongest candidates (METR's trend-could-bend caveat, survey response rates ~15-17%, Epoch cost scope covering only final training runs) are all methodology depth that genuinely belongs in the expanded register, since the compact notes never over-claim beyond them.",
+    "Crux lead punctuation (\"all at once, by inches — or never at all?\") mixes comma and em dash in a three-item list; a consistent \"all at once, by inches, or never at all?\" would scan cleaner, but the current form is a defensible punch choice."
+   ],
+   "stage": "presentation"
+  },
+  {
+   "critic": "reading-level-fit",
+   "pass": true,
+   "blocking": [],
+   "notes": [
+    "Tier-3 compute-concentration stat: the always-visible unit is 'M H100-equivalents', a bare chip model code at the compact bar. The note rescues it by glossing 'H100-equivalent AI chips', so it clears parity, but a friendlier unit ('M top-end AI chips') with H100-equivalents kept to the detail would read cleaner for a general reader.",
+    "T1 compute-growth stat note leads with 'Training compute', an industry mass-noun. Context ('for top AI models has grown 4-5x') makes it parseable, so not blocking, but 'Computing power used to train top AI models' would hit the compact bar more squarely.",
+    "Expanded register asks terms of art be defined at first use: 'evals' appears undefined in question 1's detail ('generate evals') and in Course-Correction Gradualist's detail; a one-word gloss ('evals, internal capability tests') would fix both.",
+    "Hard Takeoff Hawk detail references 'Stockfish' without a gloss; the chess context carries most readers, but 'the superhuman chess engine Stockfish' would close the gap.",
+    "Position descriptions carry academic parenthetical citations (Bick et al., 2024; David, 1990; Karabarbounis & Neiman, 2014). Fine if the description renders in the opt-in layer (the compact spec covers only name/steelman); if descriptions are ever surfaced above the fold they are denser than the compact bar.",
+    "Details genuinely add throughout: every stat detail brings source, methodology caveat, or mechanism beyond its note, and question details map which position leans on which evidence rather than restating the why line. No restatement failures found.",
+    "Nice compact-register touches worth keeping: 'median even-odds year' as a plain gloss of 50% probability, and the energy stat pairing 415 to 945 terawatt-hours as 'more than doubling' so the reader retains the shape, not the digits."
+   ],
+   "stage": "presentation"
+  },
+  {
+   "critic": "above-fold-selection",
+   "pass": true,
+   "blocking": [],
+   "notes": [
+    "Basics T1 set is well chosen: the two capability-trend stats (task-length doubling, compute growth) plus the two survey headline numbers (2047 median, 5% extinction risk) are exactly the four a reader needs to weigh the takeoff bet. The 6-above-fold cut also lands on two clean rows of the 3-col grid.",
+    "The fold boundary in basics splits tier 2, but the within-tier order is right: cost growth and electricity demand are bottleneck evidence feeding the T1 empirical crux, while Bletchley is governance context adjacent to scope_excluded material, so it is correctly the T2 item that drops below.",
+    "Questions: all four above-fold items are empirical and jointly map onto the crux's empirical dimension; the values crux (Q5, how much benefit to forgo) sits below the fold, leaving zero value questions visible in the questions section. Not blocking because the crux band itself surfaces the values dimension above the fold, and none of the four T1 empirical questions is clearly less central than Q5. If a future pass wants a value question visible, Q5 is the promotion candidate, at the cost of a 5/7 fold.",
+    "T1 compute growth (4-5x/yr) and T2 training-cost growth (2.4x/yr) partially overlap as signals; the tier split correctly ranks the more fundamental one higher, and both show above the fold, so no display consequence.",
+    "Positions 5/5 above fold with all five tier 1 is correct: each is a genuinely distinct bet (diffusion skeptic, gradualist, hard takeoff, structural disempowerment, accelerationist) and prevalence-first ordering reads naturally.",
+    "T3 placements (company compute snapshot, incident database, who-decides question) are the right deep-reveal items: dated snapshot, contested-interpretation registry, and a governance-legitimacy question bordering the excluded scope."
+   ],
+   "stage": "presentation"
+  }
+ ],
+ "prevalence_basis": [
+  {
+   "name": "Normal Technology Skeptic",
+   "prevalence_weight": 32,
+   "spectrum_position": 2,
+   "sketch": "AI diffuses like past general-purpose technologies, bottlenecked by the real world; control is an engineering and policy problem, not an existential cliff."
+  },
+  {
+   "name": "Course-Correction Gradualist",
+   "prevalence_weight": 28,
+   "spectrum_position": -1,
+   "sketch": "Capabilities grow fast but continuously; iterative deployment, evals, and warning shots give society repeated chances to steer before any decisive moment."
+  },
+  {
+   "name": "Hard Takeoff Hawk",
+   "prevalence_weight": 18,
+   "spectrum_position": -3,
+   "sketch": "Recursive self-improvement produces a rapid capability jump; the first misaligned superintelligence is decisive, and no one currently knows how to control it."
+  },
+  {
+   "name": "Gradual Disempowerment Theorist",
+   "prevalence_weight": 12,
+   "spectrum_position": -2,
+   "sketch": "No takeover needed: ordinary competition steadily shifts economic, cultural, and political power to AI systems until humans lose the levers that keep institutions serving them."
+  },
+  {
+   "name": "Effective Accelerationist",
+   "prevalence_weight": 10,
+   "spectrum_position": 3,
+   "sketch": "Faster development is safer development: slowing down cedes the future to worse actors, and open competition prevents any single system or lab from becoming a singleton."
+  }
+ ],
+ "findings": []
+}
