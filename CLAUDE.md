@@ -60,15 +60,20 @@ Django + HTMX + Alpine. A curated atlas of hard debates; depth is an axis, not a
   reviewing rendered topics. `design/` — the locked design system; treat it as
   authoritative over any prompt that contradicts it.
 
-## Pipeline
+## The authoring pipeline
 
 **Being rebuilt (v2, from 2026-09-11).** Nothing authors a topic right now. v2
-keeps five stages in the same order with the same goals; how each stage works is
-being redesigned against the bookends below, stage by stage.
+keeps five stages in the same order with the same goals; how each works is being
+redesigned stage by stage.
+
+- `research/PIPELINE.md` — **the design so far and the rules every stage is built
+  against**: scope, how it reaches Claude, orchestration, state, budget,
+  storage, schema decisions, and stage 4 in full. Read it before designing a
+  stage. Stages 1, 2, 3 and 5 are not written yet.
 
 The bookends are fixed and are the pipeline's whole contract: it takes a topic
-file from `not_started` to `ready`, and nothing else. Before it is the file.
-After it is `publish_topic`, which is a switch a human throws.
+from `not_started` to `ready`, and nothing else. Before it is the topic
+directory. After it is `publish_topic`, a switch a human throws.
 
 There is **no upkeep engine**. A published topic stays as published until a human
 deliberately edits its content file and reloads it.
