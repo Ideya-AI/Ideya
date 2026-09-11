@@ -10,7 +10,7 @@ Django + HTMX + Alpine. A curated atlas of hard debates; depth is an axis, not a
 - **Restart the dev server after any template edit.** Django caches compiled templates
   even under DEBUG, and with `--noreload` nothing invalidates the cache — renders
   silently serve the pre-edit template. This has cost real debugging time twice.
-- Lint a topic draft before rendering: `.venv/bin/python research/workflows/lint_draft.py <file> --fix`.
+- Lint a topic draft before rendering: `.venv/bin/python research/v1/workflows/lint_draft.py <file> --fix`.
 
 ## Invariants
 
@@ -44,24 +44,25 @@ Django + HTMX + Alpine. A curated atlas of hard debates; depth is an axis, not a
   stops. Index fields at the top (slug, title, status, scope, categories,
   related), `draft` under them once there is content. The source of truth for
   everything except participation. `research/categories.json` — the taxonomy.
-  `research/runs/<slug>/record.json` — everything the engine produced getting
-  there. `research/reviews/<slug>/` — the human's review packet.
-- `research/workflows/` — the engine: the two Workflow scripts plus `lint_draft.py`,
-  `topic_ids.py`, `seed_defects.py` (gate calibration), `tally_tokens.py`, and
-  `check_engine.py`.
-- `research/ENGINE.md` — **the engine's operator manual and single source of truth
-  for operations** (structure, runbooks, routing, contracts, failure modes). Any
-  commit that changes the engine updates it in the same commit; `check_engine.py`
-  verifies the checkable parts (hook-enforced on engine-file edits).
-- `research/RESEARCH_PIPELINE.md` — the engine's design rationale + decision history
-  (the "why"). `design/` — the locked design system; treat it as authoritative over
-  any prompt that contradicts it.
+- `research/runs/` and `research/reviews/` — process, not product, and untracked.
+  How a topic was made; the topic itself is its file plus its shipped assets.
+- `research/v1/` — **the retired v1 pipeline, archived 2026-09-11 and wired to
+  nothing.** Its orchestrator, harness, stage scripts, measuring tools, agent
+  definitions, `ENGINE.md` and `RESEARCH_PIPELINE.md` are kept for their
+  rationale while v2 is built. Read it for why a rule exists; do not run it.
+- `research/UI_DEFECTS.md` — the live register of code/CSS defects found while
+  reviewing rendered topics. `design/` — the locked design system; treat it as
+  authoritative over any prompt that contradicts it.
 
 ## Pipeline
 
-Authoring: `/author-topic <slug>` → `research/engine/engine.py author <slug>`, one
-automated, resumable run to a loaded draft + packet (engine v3, 2026-09-06).
-Human-invoked only — long, expensive, side-effectful.
+**Being rebuilt (v2, from 2026-09-11).** Nothing authors a topic right now. v2
+keeps five stages in the same order with the same goals; how each stage works is
+being redesigned against the bookends below, stage by stage.
+
+The bookends are fixed and are the pipeline's whole contract: it takes a topic
+file from `not_started` to `ready`, and nothing else. Before it is the file.
+After it is `publish_topic`, which is a switch a human throws.
 
 There is **no upkeep engine**. A published topic stays as published until a human
-deliberately edits its content file and reloads it, or re-runs the engine on it.
+deliberately edits its content file and reloads it.
