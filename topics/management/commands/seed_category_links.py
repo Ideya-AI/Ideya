@@ -1,6 +1,6 @@
 """Seed the 'Connects to' adjacency between categories (idempotent).
 
-The catalog (`topic-universe.json`) leaves category relationships null, and the
+The taxonomy (`research/categories.json`) leaves category relationships null, and the
 9 top-level categories are peers (no parent hierarchy), so the adjacency is an
 editorial graph of intellectual neighbours — the pairs a reader browsing one
 category would plausibly cross into. `Category.connects_to` is symmetrical, so

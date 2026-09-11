@@ -1,6 +1,6 @@
 # The Ideya authoring engine (v3) — operator's guide
 
-One command turns a catalog entry into a loaded draft topic, its renders, cards,
+One command turns a topic file into a loaded draft topic, its renders, cards,
 poster, icon, and a one-page review packet. A human publishes; nothing else does.
 
 ```
@@ -12,9 +12,11 @@ poster, icon, and a one-page review packet. A human publishes; nothing else does
 
 For what each step does and why, in run order, read `FLOW.md` first.
 
-Always `.venv/bin/python`, always from the repo root. The topic must be in
-`research/catalog/topic-universe.json`. Nothing else is required up front: the
-driver starts the dev server itself if 8641 is not answering.
+Always `.venv/bin/python`, always from the repo root. The topic must have a file
+at `research/topics/<slug>.json` carrying six fields: slug, title, status, a
+one-line `scope`, its categories and its related topics. Nothing else is required
+up front — the topic name is the whole input, and the driver starts the dev server
+itself if 8641 is not answering.
 
 ---
 
@@ -44,7 +46,8 @@ research/runs/<slug>/
   pm.json                 the PM's routing + packet, verbatim
   devserver.log           if the driver started the server
 
-research/dossiers/<slug>.json      stage 1's output (substance) — the topic's source of truth for facts
+research/runs/<slug>/record.json   the engine's own record: plan, stage-1 draft, verdicts, claim ledger,
+                                  prescriptions. Process, never product — nothing here is loaded or shipped.
 research/topics/<slug>.json        stage 2's output (presentation) — what the loader loads
 research/reviews/<slug>/           renders, sections/, cards, poster, views.json, REVIEW.md, tokens.md
 research/icons/<slug>.md           the icon brief (+ ## Selection)
@@ -59,11 +62,11 @@ agent calls from the journal for free). "Skips if" is the artifact guard.
 
 | Step | Does | Reads | Writes | Skips if |
 |---|---|---|---|---|
-| `s1.plan` | stage 1 phase 1: scope, questions, positions, icon hint | catalog entry | dossier `plan` | — |
-| `s1.research` | phase 2: parallel section research + crux | dossier `plan` | dossier `draft` | — |
-| `s1.verify` | phase 3: claim ledger extraction + blind per-claim verification | `plan`, `draft` | dossier `claim_ledger` | — |
-| `s1.gate` | phase 4: three critics + shape + ledger, scoped fix loop, prescriptions, closing ledger (re-extracted after its repair) | `plan`, `draft`, `claim_ledger` | dossier `verdicts`, fixed `draft`, `gate_status` | — |
-| `s2.distribute` | distill → order/tier/reveal → editorial critics + deterministic checks + fidelity, scoped fix loop | dossier | `research/topics/<slug>.json` | — |
+| `s1.plan` | stage 1 phase 1: scope, questions, positions, icon | topic file (slug, title, scope, categories) | record `plan` | — |
+| `s1.research` | phase 2: parallel section research + crux | record `plan` | record `draft` | — |
+| `s1.verify` | phase 3: claim ledger extraction + blind per-claim verification | `plan`, `draft` | record `claim_ledger` | — |
+| `s1.gate` | phase 4: three critics + shape + ledger, scoped fix loop, prescriptions, closing ledger (re-extracted after its repair) | `plan`, `draft`, `claim_ledger` | record `verdicts`, fixed `draft`, `gate_status` | — |
+| `s2.distribute` | distill → order/tier/reveal → editorial critics + deterministic checks + fidelity, scoped fix loop | record | `research/topics/<slug>.json` (content only) | — |
 | `s2.lint` | `lint_draft.py --fix`; remaining judgment findings go through `fix_only` (≤2 passes) | topic JSON | topic JSON | lint already 0 |
 | `s2.load` | `manage.py load_topic_draft … --status draft`; records loader warnings | topic JSON | the DB | — (cheap, always runs) |
 | `s2.fit` | `fit_check.py`: measures the poster; if over, `fix_only` with sized trims, re-lint, re-load (≤2 loops) | loaded topic | topic JSON, DB | poster already fits |
@@ -143,10 +146,10 @@ The same run, one step at a time, so you can look at each artifact as it lands:
 
 ```
 E=".venv/bin/python research/engine/engine.py"
-$E step antimicrobial-resistance s1.plan        # ~1 min   → look at dossier.plan (positions, questions, icon hint)
-$E step antimicrobial-resistance s1.research    # ~10 min  → dossier.draft (every section, in voice)
-$E step antimicrobial-resistance s1.verify      # ~15 min  → dossier.claim_ledger (claims + blind verdicts)
-$E step antimicrobial-resistance s1.gate        # ~60 min  → dossier.verdicts, gate_status; watch "Re-gate rN: scoped to K changed field(s)"
+$E step antimicrobial-resistance s1.plan        # ~1 min   → look at record.plan (positions, questions, icon hint)
+$E step antimicrobial-resistance s1.research    # ~10 min  → record.draft (every section, in voice)
+$E step antimicrobial-resistance s1.verify      # ~15 min  → record.claim_ledger (claims + blind verdicts)
+$E step antimicrobial-resistance s1.gate        # ~60 min  → record.verdicts, gate_status; watch "Re-gate rN: scoped to K changed field(s)"
 $E step antimicrobial-resistance s2.distribute  # ~15 min  → research/topics/<slug>.json, fold in the log
 $E step antimicrobial-resistance s2.lint
 $E step antimicrobial-resistance s2.load        # then open http://127.0.0.1:8641/<slug>/
@@ -163,7 +166,7 @@ $E step antimicrobial-resistance s5.packet      # tokens.md
 ```
 
 `status <slug>` between steps shows what is done. To run a stage script outside the
-driver (for example against a scratch dossier), the harness is a CLI too:
+driver (for example against a scratch record), the harness is a CLI too:
 
 ```
 .venv/bin/python research/engine/harness.py research/workflows/distribute_topic.js <args.json> <run_dir>
@@ -193,8 +196,9 @@ SDK's message buffer raised (the harness sets 64MB); a usage limit can arrive as
 loaded as `draft`, and `status` all green. Then:
 
 ```
-manage.py publish_topic --slug <slug> --dry-run
-manage.py publish_topic --slug <slug> --confirm
+manage.py publish_topic --slug <slug> --dry-run          # say what would change
+manage.py publish_topic --slug <slug> --confirm          # private -> public
+manage.py publish_topic --slug <slug> --off --confirm    # public -> private
 ```
 
 The engine never runs those. A hook blocks it from trying.

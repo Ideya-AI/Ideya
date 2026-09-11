@@ -1,10 +1,15 @@
-"""Export a DB topic back to the canonical TopicDraft JSON that load_topic_draft
-consumes — the inverse of that loader. A topic round-trips: export then load
-reproduces its sections, typed children, and key fields, so the per-topic JSON
-can become the single source of truth (edit the JSON, reload it).
+"""Export a DB topic back to the TopicDraft JSON that load_topic_draft consumes —
+the inverse of that loader.
 
-Writes the same ``{ "draft": {...}, "verdicts": [...] }`` envelope the loader
-reads (``payload.get("draft", payload)`` + ``payload.get("verdicts")``), pretty
+**This is a recovery tool, not a step in any routine.** The per-topic JSON is the
+source of truth and the database is what the site renders it into, so the normal
+direction is file -> load. Reach for this only to rebuild a file that was lost, or
+to adopt a direct database edit on purpose. To find out whether the two have
+parted company, run `check_topic_drift` rather than exporting over the file and
+hoping.
+
+Writes the same ``{ "draft": {...} }`` envelope the loader reads
+(``payload.get("draft", payload)``), pretty
 (indent=1, ascii-escaped) to match the existing research/topics JSON style.
 
   manage.py export_topic --slug nuclear-energy           # -> research/topics/nuclear-energy.json
@@ -31,6 +36,7 @@ def _date(d):
 
 def _stat(s):
     return {
+        "id": s.item_id,
         "label": s.label,
         "tier": s.tier,
         "value": s.value,
@@ -54,6 +60,7 @@ def _stat(s):
 
 def _question(q):
     return {
+        "id": q.item_id,
         "text": q.text,
         "tier": q.tier,
         "kind": q.kind,
@@ -69,6 +76,7 @@ def _question(q):
 
 def _position(p):
     return {
+        "id": p.item_id,
         "name": p.name,
         "tier": p.tier,
         "color_key": p.color_key,
@@ -86,6 +94,7 @@ def _position(p):
 
 def _action(a):
     return {
+        "id": a.item_id,
         "kind": a.kind,
         "tier": a.tier,
         "title": a.title,
@@ -143,17 +152,10 @@ class Command(BaseCommand):
 
         draft = {
             # Topic-level meta. The loader takes title/slug/status/category from
-            # CLI args and ignores these, but they make the export self-describing
-            # (and a future loader could read them).
-            "slug": topic.slug,
-            "title": topic.title,
-            "status": topic.status,
+            # Identity, placement and lifecycle live at the TOP of the file, not
+            # in here — `draft` is content. Volatility and the art prompt are
+            # engine-produced attributes of that content, so they stay.
             "volatility": topic.volatility,
-            "icon": topic.icon,
-            "primary_category": (
-                topic.primary_category.slug if topic.primary_category_id else None
-            ),
-            "categories": [c.slug for c in topic.categories.order_by("slug")],
             "primary_image_prompt": topic.primary_image_prompt,
             "overview": {
                 "summary": topic.summary,
@@ -170,9 +172,26 @@ class Command(BaseCommand):
             "crux": _crux(crux_obj) if crux_obj is not None else {},
             "actions": children(Section.ACTIONS, "actions", _action),
         }
+        # One file per topic, cradle to grave: the index fields the loader reads
+        # sit at the top, `draft` is the content under them.
+        cats = [topic.primary_category.slug] if topic.primary_category_id else []
+        cats += [
+            c.slug
+            for c in topic.categories.order_by("slug")
+            if c.pk != topic.primary_category_id
+        ]
         payload = {
+            "slug": topic.slug,
+            "title": topic.title,
+            "status": topic.status,
+            "scope": topic.scope,
+            "icon": topic.icon,
+            "categories": cats,
+            "related": [
+                e.target.slug
+                for e in topic.outgoing_edges.select_related("target").order_by("id")
+            ],
             "draft": draft,
-            "verdicts": (topic.research_dossier or {}).get("verdicts", []),
         }
 
         out = o["out"]
@@ -181,13 +200,10 @@ class Command(BaseCommand):
             return
         path = Path(out) if out else Path("research/topics") / f"{topic.slug}.json"
 
-        # Carry forward top-level keys the DB cannot regenerate. `changelog` is
-        # the refresh's durable provenance and lives ONLY in this file — the
-        # loader ignores it, so a re-export would silently erase the history the
-        # previous refresh wrote. Refresh Runbook B opens with an export onto
-        # this exact path, so step 1 of each refresh was destroying step 4 of the
-        # last one. Generic rather than a `changelog` special case: anything here
-        # that the export does not produce is by definition unrecoverable.
+        # Carry forward top-level keys the DB cannot regenerate — anything in the
+        # file that the export does not produce is by definition unrecoverable,
+        # and writing over it would destroy it silently. Generic rather than a
+        # per-key special case, because the next such key is unknowable here.
         preserved = []
         if path.exists():
             try:

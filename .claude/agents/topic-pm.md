@@ -30,7 +30,7 @@ pipeline work is primed to accept its output. Judge what is in front of you.
 - **No re-litigating editorial calls.** The engine resolves editorial forks by its
   own rules and records them. Your job is to report those decisions to the human,
   not to reopen them. A camp you would have weighted differently is not a finding.
-- **You do not read `research/dossiers/<slug>.json` or the sources.** Your inputs
+- **You do not read `research/runs/<slug>/record.json` or the sources.** Your inputs
   are the rendered views, the topic JSON, and the numbers handed to you.
 
 ## Findings must be grounded

@@ -1,17 +1,31 @@
 {
+ "slug": "ai-future-of-work",
+ "title": "AI & the Future of Work",
+ "status": "in_progress",
+ "scope": "AI and employment: displacement, augmentation, and what work remains.",
+ "categories": [
+  "economy",
+  "ai"
+ ],
+ "related": [
+  "agi-timelines-scaling",
+  "gig-work-classification",
+  "stagnant-wages-productivity-gap",
+  "economic-inequality",
+  "industrial-policy"
+ ],
  "draft": {
   "overview": {
-   "summary": "Whether AI taking on cognitive work ends in augmentation, mass displacement, a post-labor economy \u2014 or a choice institutions make.",
+   "summary": "Whether AI taking on cognitive work ends in augmentation, mass displacement, a post-labor economy — or a choice institutions make.",
    "scope_covered": "AI automation of cognitive work: displacement vs new-role creation, transition speed, entry-level effects, wages, and the policy levers.",
    "scope_excluded": "Existential AI risk and alignment, physical-robot automation, offshoring and immigration, and the design details of safety nets such as UBI.",
-   "why_now": "An August 2026 update to a closely watched payroll analysis puts employment of the youngest workers in AI-exposed occupations 19% below their peers\u2019 trend, making entry-level hiring the debate\u2019s live test.",
-   "icon": "briefcase"
+   "why_now": "An August 2026 update to a closely watched payroll analysis puts employment of the youngest workers in AI-exposed occupations 19% below their peers’ trend, making entry-level hiring the debate’s live test."
   },
   "basics": {
    "intro": "",
    "stats": [
     {
-     "label": "Young-worker employment gap \u00b7 AI-exposed jobs",
+     "label": "Young-worker employment gap · AI-exposed jobs",
      "value": "19",
      "unit": "% below trend",
      "viz": "bar",
@@ -22,16 +36,17 @@
      "range_at": 0,
      "fill_pct": null,
      "note": "Workers aged 22-25 in the most AI-exposed occupations are employed 19% below the trend set by their less-exposed same-age peers; more experienced workers show no comparable gap.",
-     "detail": "Stanford Digital Economy Lab researchers (Brynjolfsson, Chandar, Chen) analyzed ADP payroll records covering millions of US workers through June 2026. The gap is driven mainly by employers hiring fewer young workers into AI-exposed roles, not by increased layoffs of workers already in those jobs. The authors describe these as early, descriptive indicators, \u201ccanaries in the coal mine\u201d, not causal proof, and explicitly find no evidence yet of broad, economy-wide job displacement.",
+     "detail": "Stanford Digital Economy Lab researchers (Brynjolfsson, Chandar, Chen) analyzed ADP payroll records covering millions of US workers through June 2026. The gap is driven mainly by employers hiring fewer young workers into AI-exposed roles, not by increased layoffs of workers already in those jobs. The authors describe these as early, descriptive indicators, “canaries in the coal mine”, not causal proof, and explicitly find no evidence yet of broad, economy-wide job displacement.",
      "tier": 1,
-     "source_label": "Brynjolfsson, Chandar & Chen, Stanford Digital Economy Lab, \u201cCanaries in the Coal Mine?\u201d",
+     "source_label": "Brynjolfsson, Chandar & Chen, Stanford Digital Economy Lab, “Canaries in the Coal Mine?”",
      "source_url": "https://digitaleconomy.stanford.edu/publications/canaries-in-the-coal-mine/",
      "source_published": "revised August 2026 (data through June 2026)",
      "source_accessed": "2026-08-12",
-     "reveal": "condensed"
+     "reveal": "condensed",
+     "id": "young-worker-employment-gap-ai-exposed"
     },
     {
-     "label": "Share of jobs that didn\u2019t exist in 1940 \u00b7 Census",
+     "label": "Share of jobs that didn’t exist in 1940 · Census",
      "value": "60",
      "unit": "%",
      "viz": "radial",
@@ -41,17 +56,18 @@
      "range_max": "",
      "range_at": 0,
      "fill_pct": 60,
-     "note": "Roughly 60% of US employment in 2018 was in job titles that did not exist in 1940 \u2014 the base rate every past wave of automation eventually produced.",
-     "detail": "David Autor and coauthors tracked new occupational titles added to the Census Bureau\u2019s official occupation index across eight decades (1940-2018) and matched them to employment data. The new-work share varies sharply by sector: about 74% for professional occupations, the fastest-growing category, versus 46% for production work. The same paper found that the job-destroying effect of automation innovations has intensified over the last four decades while the job-creating effect of complementary innovations has not \u2014 meaning the historical offset pattern is itself weakening, which is exactly what is contested for the AI era.",
+     "note": "Roughly 60% of US employment in 2018 was in job titles that did not exist in 1940 — the base rate every past wave of automation eventually produced.",
+     "detail": "David Autor and coauthors tracked new occupational titles added to the Census Bureau’s official occupation index across eight decades (1940-2018) and matched them to employment data. The new-work share varies sharply by sector: about 74% for professional occupations, the fastest-growing category, versus 46% for production work. The same paper found that the job-destroying effect of automation innovations has intensified over the last four decades while the job-creating effect of complementary innovations has not — meaning the historical offset pattern is itself weakening, which is exactly what is contested for the AI era.",
      "tier": 1,
      "source_label": "Autor, Chin, Salomons & Seegmiller, NBER Working Paper 30389 / Quarterly Journal of Economics",
      "source_url": "https://www.nber.org/papers/w30389",
      "source_published": "2022 (NBER); 2024 (QJE)",
      "source_accessed": "2026-08-12",
-     "reveal": "condensed"
+     "reveal": "condensed",
+     "id": "share-of-jobs-that-didn-t"
     },
     {
-     "label": "US businesses using AI in any function \u00b7 Census survey",
+     "label": "US businesses using AI in any function · Census survey",
      "value": "19.8",
      "unit": "%",
      "viz": "radial",
@@ -62,16 +78,17 @@
      "range_at": 0,
      "fill_pct": 20,
      "note": "19.8% of US businesses reported using AI in some business function as of May 2026, up from a 3.8% reading in late 2023 under a narrower survey question.",
-     "detail": "From the Census Bureau\u2019s Business Trends and Outlook Survey: 19.8% of US businesses used AI as of May 3, 2026, skewing strongly by size (about 37% at 250+ employees, 32% at 100-249, under 20% below 20 employees). The oft-quoted 3.8% figure is the late-2023 baseline under the survey\u2019s earlier, narrower question (AI used \u2018to produce goods and services\u2019); Census revised the question in November 2025 to cover any business function, so part of the 3.8% \u2192 19.8% jump is definitional rather than growth.",
+     "detail": "From the Census Bureau’s Business Trends and Outlook Survey: 19.8% of US businesses used AI as of May 3, 2026, skewing strongly by size (about 37% at 250+ employees, 32% at 100-249, under 20% below 20 employees). The oft-quoted 3.8% figure is the late-2023 baseline under the survey’s earlier, narrower question (AI used ‘to produce goods and services’); Census revised the question in November 2025 to cover any business function, so part of the 3.8% → 19.8% jump is definitional rather than growth.",
      "tier": 1,
-     "source_label": "US Census Bureau, \u201cAI Use at U.S. Businesses\u201d / BTOS",
+     "source_label": "US Census Bureau, “AI Use at U.S. Businesses” / BTOS",
      "source_url": "https://www.census.gov/library/stories/2026/05/ai-use-businesses.html",
      "source_published": "May 2026",
      "source_accessed": "2026-08-12",
-     "reveal": "condensed"
+     "reveal": "condensed",
+     "id": "us-businesses-using-ai-in-any"
     },
     {
-     "label": "Productivity gain from an AI assistant \u00b7 support study",
+     "label": "Productivity gain from an AI assistant · support study",
      "value": "14",
      "unit": "%",
      "viz": "bar",
@@ -81,17 +98,18 @@
      "range_max": "",
      "range_at": 0,
      "fill_pct": null,
-     "note": "An AI assistant raised customer-support agents\u2019 issues resolved per hour by 14% on average, with novices gaining 34% and the most experienced agents almost nothing.",
-     "detail": "Brynjolfsson, Li & Raymond (NBER Working Paper 31161) studied 5,179 customer support agents during a staggered rollout of a generative AI conversational assistant. The tool also improved customer satisfaction and agent retention, and appeared to help newer agents pick up techniques from top performers faster. Because the study covers one occupation at one company, it illustrates a mechanism \u2014 AI narrows the gap between novice and expert workers \u2014 more than it proves an economy-wide productivity number.",
+     "note": "An AI assistant raised customer-support agents’ issues resolved per hour by 14% on average, with novices gaining 34% and the most experienced agents almost nothing.",
+     "detail": "Brynjolfsson, Li & Raymond (NBER Working Paper 31161) studied 5,179 customer support agents during a staggered rollout of a generative AI conversational assistant. The tool also improved customer satisfaction and agent retention, and appeared to help newer agents pick up techniques from top performers faster. Because the study covers one occupation at one company, it illustrates a mechanism — AI narrows the gap between novice and expert workers — more than it proves an economy-wide productivity number.",
      "tier": 1,
      "source_label": "Brynjolfsson, Li & Raymond, NBER Working Paper 31161",
      "source_url": "https://www.nber.org/papers/w31161",
      "source_published": "April 2023 (revised November 2023)",
      "source_accessed": "2026-08-12",
-     "reveal": "condensed"
+     "reveal": "condensed",
+     "id": "productivity-gain-from-an-ai-assistant"
     },
     {
-     "label": "Time to reach mass-market scale \u00b7 by technology",
+     "label": "Time to reach mass-market scale · by technology",
      "value": "4",
      "unit": " months",
      "viz": "ranked",
@@ -129,14 +147,15 @@
      "note": "ChatGPT reached 1 billion monthly visits about four months after its November 2022 launch; the personal computer took roughly 20 years to reach comparable scale, the smartphone 6-7 years.",
      "detail": "Speed of adoption is not the same as speed of economic impact: PCs and smartphones took years to fully reshape workplaces even after people started using them, and a similar lag is plausible (though contested) for generative AI. Brookings cites this gap as one reason labor-market effects could compound faster than past technology transitions, though the comparison says nothing on its own about how many jobs are ultimately affected.",
      "tier": 2,
-     "source_label": "Brookings, \u201cGenerative AI, the American worker, and the future of work\u201d",
+     "source_label": "Brookings, “Generative AI, the American worker, and the future of work”",
      "source_url": "https://www.brookings.edu/articles/generative-ai-the-american-worker-and-the-future-of-work/",
      "source_published": "October 10, 2024",
      "source_accessed": "2026-08-12",
-     "reveal": "normal"
+     "reveal": "normal",
+     "id": "time-to-reach-mass-market-scale"
     },
     {
-     "label": "Jobs at high risk from AI \u00b7 by study and method",
+     "label": "Jobs at high risk from AI · by study and method",
      "value": "9-47",
      "unit": "%",
      "viz": "ranked",
@@ -172,16 +191,17 @@
      "range_at": 0,
      "fill_pct": null,
      "note": "Estimates of jobs at high risk run from 9% (OECD, scoring tasks) to 47% (Frey & Osborne, scoring whole occupations), and a 2024 estimate for generative AI puts at least 30% of workers at risk of half their tasks being disrupted.",
-     "detail": "The spread is mostly methodological. Frey & Osborne (2013) classified whole occupations as automatable or not using expert judgment across 702 job titles. The OECD\u2019s Arntz, Gregory & Zierahn (2016) argued tasks within an occupation vary enough that task-based estimates run far lower, averaging 9% across 21 countries (from 6% in South Korea to 12% in Austria). The 2024 Brookings estimate covers generative AI specifically and finds exposure skews toward higher-wage, white-collar, and female-dominated occupations (36% of women vs. 25% of men face 50%+ task disruption), a different pattern from earlier automation waves, which mainly displaced routine blue-collar and clerical work.",
+     "detail": "The spread is mostly methodological. Frey & Osborne (2013) classified whole occupations as automatable or not using expert judgment across 702 job titles. The OECD’s Arntz, Gregory & Zierahn (2016) argued tasks within an occupation vary enough that task-based estimates run far lower, averaging 9% across 21 countries (from 6% in South Korea to 12% in Austria). The 2024 Brookings estimate covers generative AI specifically and finds exposure skews toward higher-wage, white-collar, and female-dominated occupations (36% of women vs. 25% of men face 50%+ task disruption), a different pattern from earlier automation waves, which mainly displaced routine blue-collar and clerical work.",
      "tier": 1,
      "source_label": "See per-row sources",
      "source_url": "https://www.brookings.edu/articles/generative-ai-the-american-worker-and-the-future-of-work/",
      "source_published": "2013 / 2016 / 2024",
      "source_accessed": "2026-08-12",
-     "reveal": "condensed"
+     "reveal": "condensed",
+     "id": "jobs-at-high-risk-from-ai"
     },
     {
-     "label": "US unemployment rate \u00b7 vs its post-1948 historical range",
+     "label": "US unemployment rate · vs its post-1948 historical range",
      "value": "4.1",
      "unit": "%",
      "viz": "range",
@@ -191,14 +211,15 @@
      "range_max": "14.8% (2020 peak)",
      "range_at": 13,
      "fill_pct": null,
-     "note": "US unemployment stood at 4.1% in July 2026, near the low end of its range since 1948 (average 5.7%), despite AI\u2019s spread through white-collar work.",
+     "note": "US unemployment stood at 4.1% in July 2026, near the low end of its range since 1948 (average 5.7%), despite AI’s spread through white-collar work.",
      "detail": "Aggregate unemployment is a blunt, lagging instrument: it does not capture underemployment, discouraged workers leaving the labor force, or effects concentrated in specific slices of the labor market, such as entry-level hiring in AI-exposed occupations, which shows measurable strain even while the headline rate stays low. It also reflects the whole economy, not just AI-exposed sectors, and moves for reasons unrelated to AI, such as interest rates and immigration policy.",
      "tier": 3,
      "source_label": "Trading Economics, using Bureau of Labor Statistics data",
      "source_url": "https://tradingeconomics.com/united-states/unemployment-rate",
      "source_published": "July 2026 (BLS)",
      "source_accessed": "2026-08-12",
-     "reveal": "deep"
+     "reveal": "deep",
+     "id": "us-unemployment-rate-vs-its-post"
     }
    ]
   },
@@ -206,13 +227,14 @@
    {
     "text": "Will AI eliminate jobs faster than the economy creates new ones, or will new roles offset losses as in past technology waves?",
     "kind": "empirical",
-    "why": "Past automation waves destroyed occupations and the economy eventually absorbed the workers into new ones; the live question is whether AI\u2019s breadth across many cognitive tasks at once outruns that absorption.",
-    "detail": "The strongest case for offsetting job creation is the base rate itself: agriculture, manufacturing, clerical computing and the internet each eliminated large occupational categories while total employment kept rising, as demand shifted into roles the prior technology made possible. Augmentation Optimist leans hard on that track record. The counter-case, made by Transition Realist and more sharply by Displacement Hawk, is that AI does not automate one sector\u2019s tasks the way a loom or a spreadsheet did; it reaches across law, writing, analysis, coding and customer service simultaneously, and reallocation frictions (retraining time, licensing, geography, hiring freezes) may not keep pace with a compressed timeline. Scale Skeptic pushes back with observed slow enterprise adoption as evidence the disruption is not moving fast enough to overwhelm normal churn. No dataset yet settles this because the current wave is too recent to show multi-decade net-employment effects the way past waves can be measured in hindsight.",
+    "why": "Past automation waves destroyed occupations and the economy eventually absorbed the workers into new ones; the live question is whether AI’s breadth across many cognitive tasks at once outruns that absorption.",
+    "detail": "The strongest case for offsetting job creation is the base rate itself: agriculture, manufacturing, clerical computing and the internet each eliminated large occupational categories while total employment kept rising, as demand shifted into roles the prior technology made possible. Augmentation Optimist leans hard on that track record. The counter-case, made by Transition Realist and more sharply by Displacement Hawk, is that AI does not automate one sector’s tasks the way a loom or a spreadsheet did; it reaches across law, writing, analysis, coding and customer service simultaneously, and reallocation frictions (retraining time, licensing, geography, hiring freezes) may not keep pace with a compressed timeline. Scale Skeptic pushes back with observed slow enterprise adoption as evidence the disruption is not moving fast enough to overwhelm normal churn. No dataset yet settles this because the current wave is too recent to show multi-decade net-employment effects the way past waves can be measured in hindsight.",
     "lean_label_a": "This time differs",
     "lean_label_b": "Pattern holds",
     "lean_pct_a": 55,
     "tier": 1,
-    "reveal": "condensed"
+    "reveal": "condensed",
+    "id": "will-ai-eliminate-jobs-faster-than"
    },
    {
     "text": "Is this wave different in kind: can AI eventually perform most cognitive work, leaving no durable human niche?",
@@ -223,29 +245,32 @@
     "lean_label_b": "Human core endures",
     "lean_pct_a": 35,
     "tier": 1,
-    "reveal": "condensed"
+    "reveal": "condensed",
+    "id": "is-this-wave-different-in-kind"
    },
    {
-    "text": "Are today\u2019s entry-level hiring declines the leading edge of broad displacement or a localized, temporary adjustment?",
+    "text": "Are today’s entry-level hiring declines the leading edge of broad displacement or a localized, temporary adjustment?",
     "kind": "empirical",
     "why": "Softness in junior hiring, concentrated in tech and professional services, reads either as the first visible sign of AI substituting for entry-level work or as ordinary macro noise mislabeled.",
-    "detail": "Displacement Hawk treats reported cuts to entry-level postings and rounds of white-collar layoffs as causal evidence that AI is already substituting for junior analysts, coders and support staff. The countervailing view is that isolating AI\u2019s causal contribution from simultaneous macro pressures, interest-rate driven cost cutting, post-pandemic hiring correction, and offshoring is genuinely hard, and that firm-level anecdotes cluster in a few sectors rather than showing up broadly across the labor market. Attribution is the crux: employers who cut junior headcount often cite AI directly, but that self-report is not the same as an isolated causal test, and the data series is too short to distinguish a trend from a blip.",
+    "detail": "Displacement Hawk treats reported cuts to entry-level postings and rounds of white-collar layoffs as causal evidence that AI is already substituting for junior analysts, coders and support staff. The countervailing view is that isolating AI’s causal contribution from simultaneous macro pressures, interest-rate driven cost cutting, post-pandemic hiring correction, and offshoring is genuinely hard, and that firm-level anecdotes cluster in a few sectors rather than showing up broadly across the labor market. Attribution is the crux: employers who cut junior headcount often cite AI directly, but that self-report is not the same as an isolated causal test, and the data series is too short to distinguish a trend from a blip.",
     "lean_label_a": "Leading edge",
     "lean_label_b": "Isolated blip",
     "lean_pct_a": -1,
     "tier": 1,
-    "reveal": "condensed"
+    "reveal": "condensed",
+    "id": "are-today-s-entry-level-hiring"
    },
    {
-    "text": "How much of the outcome is set by the technology\u2019s capabilities versus policy, bargaining power, and who owns the gains?",
+    "text": "How much of the outcome is set by the technology’s capabilities versus policy, bargaining power, and who owns the gains?",
     "kind": "value",
     "why": "Institution Shaper calls the labor-market outcome a contingent political choice, not a technological fate; Displacement Hawk and Augmentation Optimist alike treat capability as the dominant force that policy can only soften.",
-    "detail": "The case for institutions mattering most rests on historical parallels where the same technology produced very different labor outcomes depending on labor law, union strength, antitrust enforcement and who captured the productivity gains, from the industrial revolution\u2019s divergent national paths to the different ways countries absorbed computerization. The case for capability as the dominant force is that a technology able to substitute for a task will eventually be adopted regardless of policy friction, because the cost advantage is too large to resist, leaving policy to shape only the transition\u2019s speed and fairness rather than its endpoint. This question sits underneath most of the others: it is really about whether the coming years are a fixed trajectory being narrated after the fact, or a set of choices still open to be made.",
+    "detail": "The case for institutions mattering most rests on historical parallels where the same technology produced very different labor outcomes depending on labor law, union strength, antitrust enforcement and who captured the productivity gains, from the industrial revolution’s divergent national paths to the different ways countries absorbed computerization. The case for capability as the dominant force is that a technology able to substitute for a task will eventually be adopted regardless of policy friction, because the cost advantage is too large to resist, leaving policy to shape only the transition’s speed and fairness rather than its endpoint. This question sits underneath most of the others: it is really about whether the coming years are a fixed trajectory being narrated after the fact, or a set of choices still open to be made.",
     "lean_label_a": "Tech decides",
     "lean_label_b": "Institutions decide",
     "lean_pct_a": 35,
     "tier": 1,
-    "reveal": "condensed"
+    "reveal": "condensed",
+    "id": "how-much-of-the-outcome-is"
    },
    {
     "text": "How fast will AI adoption actually diffuse through firms, and do measured productivity gains justify the disruption forecasts?",
@@ -256,7 +281,8 @@
     "lean_label_b": "Disruption is coming",
     "lean_pct_a": 55,
     "tier": 2,
-    "reveal": "normal"
+    "reveal": "normal",
+    "id": "how-fast-will-ai-adoption-actually"
    },
    {
     "text": "If machines can do most work, should societies fight to preserve jobs or shift to distributing machine-generated wealth?",
@@ -267,106 +293,114 @@
     "lean_label_b": "Distribute wealth",
     "lean_pct_a": 62,
     "tier": 3,
-    "reveal": "normal"
+    "reveal": "normal",
+    "id": "if-machines-can-do-most-work"
    },
    {
     "text": "Who should bear the costs of transition: displaced workers, the firms automating, or the state?",
     "kind": "value",
     "why": "Agreeing that a costly transition is coming does not settle who absorbs it: the positions split between leaving adjustment to individuals, taxing or regulating the firms that automate, and building state-funded safety nets.",
-    "detail": "The case for firms or the state bearing costs is that the entities capturing automation\u2019s gains, whether through profits or tax revenue on a larger economic pie, are best placed to fund retraining, wage insurance or transition support, and that leaving displaced workers to absorb the cost alone is both inequitable and politically unstable. The case for leaving more of the adjustment to individuals and markets is that safety nets funded through taxation or mandates can slow adoption, misallocate support toward workers who would have adapted anyway, and that historically most labor-market transitions have been absorbed through ordinary reallocation rather than large bespoke compensation schemes. This question is downstream of the capabilities-versus-institutions question above: how it gets answered depends heavily on how much political leverage displaced workers retain.",
+    "detail": "The case for firms or the state bearing costs is that the entities capturing automation’s gains, whether through profits or tax revenue on a larger economic pie, are best placed to fund retraining, wage insurance or transition support, and that leaving displaced workers to absorb the cost alone is both inequitable and politically unstable. The case for leaving more of the adjustment to individuals and markets is that safety nets funded through taxation or mandates can slow adoption, misallocate support toward workers who would have adapted anyway, and that historically most labor-market transitions have been absorbed through ordinary reallocation rather than large bespoke compensation schemes. This question is downstream of the capabilities-versus-institutions question above: how it gets answered depends heavily on how much political leverage displaced workers retain.",
     "lean_label_a": "Workers adapt",
     "lean_label_b": "Firms and state",
     "lean_pct_a": 58,
     "tier": 3,
-    "reveal": "deep"
+    "reveal": "deep",
+    "id": "who-should-bear-the-costs-of"
    }
   ],
   "positions": [
    {
     "name": "Transition Realist",
-    "steelman": "The churn is certain, the ending isn\u2019t: build for the transition, not the forecast.",
-    "description": "The pace of disruption isn\u2019t seriously in dispute: Brookings Metro finds more than 30% of US workers are in occupations where generative AI could disrupt at least half their tasks, and 85% face some exposure, concentrated for the first time in cognitive and white-collar work rather than the manual jobs past automation waves hit hardest. What comes after that churn (new occupations absorbing the displaced, a hollowed-out middle, something else entirely) is genuinely unknown, and treating either the rosy or the bleak version as settled science is its own failure. So the priority is adjustment infrastructure: wage insurance, portable benefits, faster retraining pipelines, built to work no matter which future arrives. Hedging across forecasts beats betting policy on one.",
-    "detail": "This reads like hedging only if you haven\u2019t lived through the last thirty years of automation research. David Autor and the MIT Work of the Future task force spent years documenting what actually happened after robots hit factory floors and computers hit routine clerical work: aggregate employment recovered, but the transition for specific workers and places, non-college men in manufacturing regions, the generation that graduated into the China-trade-shock years, did not. Wages stayed depressed for a decade or more in the hardest-hit local labor markets. That is the pattern this camp expects to repeat, just compressed onto a faster clock and aimed, for the first time, at cognitive and white-collar work instead of the shop floor.\n\nThe internal argument in this camp isn\u2019t about whether disruption is coming, it\u2019s about how fast and how confidently anyone can describe where it lands. Exposure estimates keep climbing: Brookings Metro\u2019s October 2024 analysis puts 85% of US workers in occupations with at least some generative AI task exposure, and the World Economic Forum\u2019s employer surveys point to churn on both sides of the ledger, jobs both displaced and created, by 2030. But transition realists deliberately stop short of both the Displacement Hawk\u2019s near-term collapse timeline and the Augmentation Optimist\u2019s confidence that new jobs simply appear on schedule, on the grounds that a few years into a general-purpose technology\u2019s deployment curve is far too early to know which history it ends up rhyming with.\n\nWhere this position gets concrete is policy: wage insurance and portable benefits that follow workers instead of jobs, retraining pipelines that operate on a timescale of months rather than the multi-year lag of the last trade shock, and public funding for the transition on the argument that neither the workers being displaced nor most of the firms doing the automating chose the pace of this rollout, so neither should have to absorb its full cost alone.",
+    "steelman": "The churn is certain, the ending isn’t: build for the transition, not the forecast.",
+    "description": "The pace of disruption isn’t seriously in dispute: Brookings Metro finds more than 30% of US workers are in occupations where generative AI could disrupt at least half their tasks, and 85% face some exposure, concentrated for the first time in cognitive and white-collar work rather than the manual jobs past automation waves hit hardest. What comes after that churn (new occupations absorbing the displaced, a hollowed-out middle, something else entirely) is genuinely unknown, and treating either the rosy or the bleak version as settled science is its own failure. So the priority is adjustment infrastructure: wage insurance, portable benefits, faster retraining pipelines, built to work no matter which future arrives. Hedging across forecasts beats betting policy on one.",
+    "detail": "This reads like hedging only if you haven’t lived through the last thirty years of automation research. David Autor and the MIT Work of the Future task force spent years documenting what actually happened after robots hit factory floors and computers hit routine clerical work: aggregate employment recovered, but the transition for specific workers and places, non-college men in manufacturing regions, the generation that graduated into the China-trade-shock years, did not. Wages stayed depressed for a decade or more in the hardest-hit local labor markets. That is the pattern this camp expects to repeat, just compressed onto a faster clock and aimed, for the first time, at cognitive and white-collar work instead of the shop floor.\n\nThe internal argument in this camp isn’t about whether disruption is coming, it’s about how fast and how confidently anyone can describe where it lands. Exposure estimates keep climbing: Brookings Metro’s October 2024 analysis puts 85% of US workers in occupations with at least some generative AI task exposure, and the World Economic Forum’s employer surveys point to churn on both sides of the ledger, jobs both displaced and created, by 2030. But transition realists deliberately stop short of both the Displacement Hawk’s near-term collapse timeline and the Augmentation Optimist’s confidence that new jobs simply appear on schedule, on the grounds that a few years into a general-purpose technology’s deployment curve is far too early to know which history it ends up rhyming with.\n\nWhere this position gets concrete is policy: wage insurance and portable benefits that follow workers instead of jobs, retraining pipelines that operate on a timescale of months rather than the multi-year lag of the last trade shock, and public funding for the transition on the argument that neither the workers being displaced nor most of the firms doing the automating chose the pace of this rollout, so neither should have to absorb its full cost alone.",
     "tier": 1,
     "proponents": "David Autor, Mark Muro, Molly Kinder, Susan Lund",
     "representative_name": "Brookings Metro (Kinder, Muro, Briggs & Liu)",
-    "representative_note": "Their October 2024 report finds over 30% of US workers in occupations where generative AI could disrupt at least half the job\u2019s tasks (85% with some exposure), but stresses radical uncertainty about whether exposure becomes augmentation or job loss \u2014 arguing for worker protections now.",
+    "representative_note": "Their October 2024 report finds over 30% of US workers in occupations where generative AI could disrupt at least half the job’s tasks (85% with some exposure), but stresses radical uncertainty about whether exposure becomes augmentation or job loss — arguing for worker protections now.",
     "prevalence_weight": 85,
     "spectrum_position": 1,
-    "color_key": "green"
+    "color_key": "green",
+    "id": "transition-realist"
    },
    {
     "name": "Augmentation Optimist",
     "steelman": "AI makes novices work like veterans, and new work has always outrun the old.",
-    "description": "AI\u2019s real promise is augmentation: extending what a person can do, not replacing them outright. In a Stanford-MIT study of over 5,000 customer support agents, access to an AI assistant raised productivity by 14% on average and 34% for the least experienced workers, closing the gap between rookies and veterans rather than replacing either. History backs the pattern: research on US occupations finds a majority of today\u2019s jobs sit in job titles that did not exist in 1940, because innovations that complement work create more new roles than they erase, and every prior general-purpose technology, from electrification to computers to the internet, destroyed specific tasks while expanding overall employment and raising wages. The World Economic Forum\u2019s 2025 employer survey projects the same net-positive shape for AI, roughly 170 million jobs created against 92 million displaced by 2030, a net gain of 78 million; managing that transition well is real work, but the direction of travel is not in serious doubt.",
-    "detail": "The augmentation thesis has deep roots in labor economics. James Bessen\u2019s research on historical automation (bank tellers and ATMs, textile workers and power looms) found that machines which take over narrow tasks usually expand output and demand enough to grow total employment in the occupation rather than shrink it: after ATMs spread in the 1990s, the number of US bank tellers kept rising for years because banks opened more branches once each one got cheaper to staff. David Autor and coauthors\u2019 \u201cNew Frontier\u201d research goes further, showing that most net job growth since 1940 has come from occupations that did not previously exist, and that occupations created since 1980 have skewed toward high-paid professional and technical roles, not just low-wage service work.\n\nThe strongest live evidence is what generative AI is already doing inside firms. Brynjolfsson, Li, and Raymond\u2019s study of a Fortune 500 customer support operation found the AI assistant\u2019s biggest effect was on the least skilled workers, who saw a 34% productivity jump versus almost none for the most experienced agents, effectively diffusing the tacit know-how of top performers to everyone else. Optimists read this as the pattern to expect more broadly: AI compresses the gap between novice and expert, functioning less like a robot that replaces a worker and more like a tool, similar to spreadsheets or CAD software, that lets more people do higher-value work.\n\nThe position does not deny disruption. Its proponents, including Brynjolfsson, who has warned against the \u201cTuring Trap\u201d of building AI purely to imitate and replace humans rather than to extend their capabilities, and the World Economic Forum\u2019s employer surveys, acknowledge churn: specific roles, especially rote clerical and entry-level tasks, will shrink or vanish, and workers will need to reskill into the new roles that open up. Where this position differs from pessimists is in trusting that market incentives push firms toward building AI that complements workers, because complementary AI is where the profit is, and in reading the historical base rate, roughly two centuries of technological change without a sustained rise in structural unemployment, as the best guide to what comes next.",
+    "description": "AI’s real promise is augmentation: extending what a person can do, not replacing them outright. In a Stanford-MIT study of over 5,000 customer support agents, access to an AI assistant raised productivity by 14% on average and 34% for the least experienced workers, closing the gap between rookies and veterans rather than replacing either. History backs the pattern: research on US occupations finds a majority of today’s jobs sit in job titles that did not exist in 1940, because innovations that complement work create more new roles than they erase, and every prior general-purpose technology, from electrification to computers to the internet, destroyed specific tasks while expanding overall employment and raising wages. The World Economic Forum’s 2025 employer survey projects the same net-positive shape for AI, roughly 170 million jobs created against 92 million displaced by 2030, a net gain of 78 million; managing that transition well is real work, but the direction of travel is not in serious doubt.",
+    "detail": "The augmentation thesis has deep roots in labor economics. James Bessen’s research on historical automation (bank tellers and ATMs, textile workers and power looms) found that machines which take over narrow tasks usually expand output and demand enough to grow total employment in the occupation rather than shrink it: after ATMs spread in the 1990s, the number of US bank tellers kept rising for years because banks opened more branches once each one got cheaper to staff. David Autor and coauthors’ “New Frontier” research goes further, showing that most net job growth since 1940 has come from occupations that did not previously exist, and that occupations created since 1980 have skewed toward high-paid professional and technical roles, not just low-wage service work.\n\nThe strongest live evidence is what generative AI is already doing inside firms. Brynjolfsson, Li, and Raymond’s study of a Fortune 500 customer support operation found the AI assistant’s biggest effect was on the least skilled workers, who saw a 34% productivity jump versus almost none for the most experienced agents, effectively diffusing the tacit know-how of top performers to everyone else. Optimists read this as the pattern to expect more broadly: AI compresses the gap between novice and expert, functioning less like a robot that replaces a worker and more like a tool, similar to spreadsheets or CAD software, that lets more people do higher-value work.\n\nThe position does not deny disruption. Its proponents, including Brynjolfsson, who has warned against the “Turing Trap” of building AI purely to imitate and replace humans rather than to extend their capabilities, and the World Economic Forum’s employer surveys, acknowledge churn: specific roles, especially rote clerical and entry-level tasks, will shrink or vanish, and workers will need to reskill into the new roles that open up. Where this position differs from pessimists is in trusting that market incentives push firms toward building AI that complements workers, because complementary AI is where the profit is, and in reading the historical base rate, roughly two centuries of technological change without a sustained rise in structural unemployment, as the best guide to what comes next.",
     "tier": 1,
     "proponents": "Erik Brynjolfsson, James Bessen, World Economic Forum, McKinsey Global Institute",
     "representative_name": "Erik Brynjolfsson",
-    "representative_note": "Director, Stanford Digital Economy Lab. Co-author of the NBER customer-support study showing AI gains concentrated among novices \u2014 the empirical signature of augmentation \u2014 and originator of the \u201cTuring Trap\u201d critique of automation-only AI design.",
+    "representative_note": "Director, Stanford Digital Economy Lab. Co-author of the NBER customer-support study showing AI gains concentrated among novices — the empirical signature of augmentation — and originator of the “Turing Trap” critique of automation-only AI design.",
     "prevalence_weight": 75,
     "spectrum_position": -2,
-    "color_key": "blue"
+    "color_key": "blue",
+    "id": "augmentation-optimist"
    },
    {
     "name": "Institution Shaper",
     "steelman": "The technology never decides who wins; the rules built around it do.",
-    "description": "What AI does to jobs was never fixed by the technology itself, it\u2019s fixed by who holds power when the technology gets deployed: tax rules, labor law, bargaining strength, and who owns the models. The same automating force can be built to replace workers or to extend them, and Stanford\u2019s Erik Brynjolfsson has shown the drift toward the former reflects incentive failures among technologists, executives and policymakers, not an engineering necessity. Those incentives are concrete and correctable: economists Daron Acemoglu, Andrea Manera and Pascual Restrepo find the US tax code taxes labor far more heavily than capital equipment, and calculate that reducing the resulting excess automation would raise employment by 1.35% under modest reforms and 5.85% under optimal ones, with the effective lever being less over-automation directly rather than higher capital taxes per se. Industrial-era productivity gains took decades of organizing and political reform, not the machinery itself, to reach ordinary workers\u2019 wages, so the fight that matters isn\u2019t people versus machines but over who writes the rules, and it is still wide open.",
-    "detail": "This view has deep roots in economic history, most fully argued in Daron Acemoglu and Simon Johnson\u2019s Power and Progress (2023), which traces a thousand years of technological change and finds no case where a new technology automatically shared its gains. Steam power, electrification and computerization all produced years of wage stagnation before institutions (guilds giving way to unions, the expansion of suffrage, factory acts, antitrust) forced a redistribution the technology itself never guaranteed. Acemoglu shared the 2024 Nobel Memorial Prize in Economic Sciences, with Johnson and James Robinson, for exactly this line of research: institutions, not resources or technology, are what determine whether societies prosper broadly or narrowly.\n\nInside this camp, the disagreement is over which lever matters most and how urgently it needs pulling. Some, following Acemoglu and Restrepo\u2019s tax work, focus on correcting the subsidy for automation baked into corporate tax codes; others, in Brynjolfsson\u2019s Turing Trap framing, focus on the research and product choices AI labs make well upstream of deployment, arguing that once a human-replacing model ships, tax fixes arrive too late. A further split concerns speed: some think existing institutions (courts, regulators, collective bargaining) can adapt fast enough if pushed; others argue labor law and union density are already too weakened, and that new instruments (data dividends, sectoral bargaining for AI-exposed work, an automation tax) are needed before the technology outruns the policy process.\n\nThe strongest empirical support is that similar technologies have produced different labor outcomes across otherwise comparable economies, which only institutional differences can explain: Acemoglu and Restrepo\u2019s comparative work on industrial robots finds weaker effects on wages and employment in economies with stronger works councils, apprenticeship systems and collective bargaining than in the more lightly unionized US. David Autor has made a parallel argument specifically about AI: deployed as a tool that extends expert judgment to less-credentialed workers rather than replacing them, AI could restore the kind of middle-skill, middle-wage work that earlier automation waves hollowed out, but only if firms and policy choose that path. That conditional, if firms and policy choose it, is the whole argument: the same models, trained the same way, could concentrate expertise in a few employers\u2019 hands or spread it widely, and which happens is a live fight over ownership, standards and bargaining power, not a technical fact already settled by the code.",
+    "description": "What AI does to jobs was never fixed by the technology itself, it’s fixed by who holds power when the technology gets deployed: tax rules, labor law, bargaining strength, and who owns the models. The same automating force can be built to replace workers or to extend them, and Stanford’s Erik Brynjolfsson has shown the drift toward the former reflects incentive failures among technologists, executives and policymakers, not an engineering necessity. Those incentives are concrete and correctable: economists Daron Acemoglu, Andrea Manera and Pascual Restrepo find the US tax code taxes labor far more heavily than capital equipment, and calculate that reducing the resulting excess automation would raise employment by 1.35% under modest reforms and 5.85% under optimal ones, with the effective lever being less over-automation directly rather than higher capital taxes per se. Industrial-era productivity gains took decades of organizing and political reform, not the machinery itself, to reach ordinary workers’ wages, so the fight that matters isn’t people versus machines but over who writes the rules, and it is still wide open.",
+    "detail": "This view has deep roots in economic history, most fully argued in Daron Acemoglu and Simon Johnson’s Power and Progress (2023), which traces a thousand years of technological change and finds no case where a new technology automatically shared its gains. Steam power, electrification and computerization all produced years of wage stagnation before institutions (guilds giving way to unions, the expansion of suffrage, factory acts, antitrust) forced a redistribution the technology itself never guaranteed. Acemoglu shared the 2024 Nobel Memorial Prize in Economic Sciences, with Johnson and James Robinson, for exactly this line of research: institutions, not resources or technology, are what determine whether societies prosper broadly or narrowly.\n\nInside this camp, the disagreement is over which lever matters most and how urgently it needs pulling. Some, following Acemoglu and Restrepo’s tax work, focus on correcting the subsidy for automation baked into corporate tax codes; others, in Brynjolfsson’s Turing Trap framing, focus on the research and product choices AI labs make well upstream of deployment, arguing that once a human-replacing model ships, tax fixes arrive too late. A further split concerns speed: some think existing institutions (courts, regulators, collective bargaining) can adapt fast enough if pushed; others argue labor law and union density are already too weakened, and that new instruments (data dividends, sectoral bargaining for AI-exposed work, an automation tax) are needed before the technology outruns the policy process.\n\nThe strongest empirical support is that similar technologies have produced different labor outcomes across otherwise comparable economies, which only institutional differences can explain: Acemoglu and Restrepo’s comparative work on industrial robots finds weaker effects on wages and employment in economies with stronger works councils, apprenticeship systems and collective bargaining than in the more lightly unionized US. David Autor has made a parallel argument specifically about AI: deployed as a tool that extends expert judgment to less-credentialed workers rather than replacing them, AI could restore the kind of middle-skill, middle-wage work that earlier automation waves hollowed out, but only if firms and policy choose that path. That conditional, if firms and policy choose it, is the whole argument: the same models, trained the same way, could concentrate expertise in a few employers’ hands or spread it widely, and which happens is a live fight over ownership, standards and bargaining power, not a technical fact already settled by the code.",
     "tier": 1,
     "proponents": "Simon Johnson, Anton Korinek, AFL-CIO Technology Institute",
     "representative_name": "Daron Acemoglu & Simon Johnson, Power and Progress (2023)",
     "representative_note": "MIT economists; Acemoglu shared the 2024 Nobel Memorial Prize in Economic Sciences with Johnson and James Robinson for showing institutions, not technology, determine who a new technology enriches.",
     "prevalence_weight": 55,
     "spectrum_position": 0,
-    "color_key": "slate"
+    "color_key": "slate",
+    "id": "institution-shaper"
    },
    {
     "name": "Displacement Hawk",
     "steelman": "White-collar entry-level jobs are already vanishing, and the ladder above them is next.",
-    "description": "Entry-level cognitive work is the leading indicator because it is the easiest work for a language model to match: first-draft memos, junior code review, first-pass customer support, paralegal research. Independent payroll data already shows the effect: Stanford\u2019s Digital Economy Lab finds employment for 22-to-25-year-olds in the most AI-exposed occupations now sits 19 percent below where it would be had it kept pace with their less-exposed same-age peers, on ADP payroll records through June 2026, even as overall employment kept growing. Anthropic CEO Dario Amodei put a number on where this goes, warning that AI could eliminate half of entry-level white-collar roles and push unemployment to 10-20 percent within one to five years. Telling workers and policymakers that now, rather than waiting for a recession-sized unemployment spike to confirm it, is the whole point.",
-    "detail": "The warning has a longer history than this AI wave. Kai-Fu Lee argued in 2018\u2019s AI Superpowers that 40-50 percent of jobs would be automatable within fifteen years; the difference now is that large language models generalize across cognitive tasks the way earlier automation never did. Geoffrey Hinton left Google in 2023 citing job displacement among the risks he could no longer stay quiet about. The generative-AI wave of 2022-2025 turned that into a concrete, dated claim: hiring managers, not just researchers, started saying the quiet part out loud.\n\nThe strongest evidence is in hiring data, not forecasts. SignalFire\u2019s 2025 State of Talent report found entry-level hiring\u2019s share of Big Tech hires roughly halved from 2019 to 2024. Challenger, Gray & Christmas now logs AI as the single leading stated reason for announced job cuts, five months running as of July 2026, at 10,970 cuts in that month alone, a category that barely registered in their reporting before 2025. Multiple executive surveys through 2024-2025 found large majorities of companies planning to shrink or freeze entry-level hiring as AI tools absorb the tasks new graduates used to cut their teeth on. None of these numbers alone proves the case, which is why the position leans on the Stanford payroll study as its anchor: it compares same-age workers across levels of AI exposure, so an ordinary downturn hitting all young workers alike cannot account for the gap.\n\nInside the camp there is real disagreement about pace and shape. Amodei\u2019s one-to-five-year window is more cautious than the AI 2027 scenario from Daniel Kokotajlo, Eli Lifland and Scott Alexander, which sketches a much faster capability curve. Others argue the pattern will not be a single cliff but a rolling grind, occupation by occupation, with coding, document review and analyst work going first and physically grounded or high-trust roles going last. What unites the position is not a shared date but a shared claim: the mechanism is already visible in the data, and it is a category error to wait for it to show up in the aggregate unemployment rate before treating it as real.",
+    "description": "Entry-level cognitive work is the leading indicator because it is the easiest work for a language model to match: first-draft memos, junior code review, first-pass customer support, paralegal research. Independent payroll data already shows the effect: Stanford’s Digital Economy Lab finds employment for 22-to-25-year-olds in the most AI-exposed occupations now sits 19 percent below where it would be had it kept pace with their less-exposed same-age peers, on ADP payroll records through June 2026, even as overall employment kept growing. Anthropic CEO Dario Amodei put a number on where this goes, warning that AI could eliminate half of entry-level white-collar roles and push unemployment to 10-20 percent within one to five years. Telling workers and policymakers that now, rather than waiting for a recession-sized unemployment spike to confirm it, is the whole point.",
+    "detail": "The warning has a longer history than this AI wave. Kai-Fu Lee argued in 2018’s AI Superpowers that 40-50 percent of jobs would be automatable within fifteen years; the difference now is that large language models generalize across cognitive tasks the way earlier automation never did. Geoffrey Hinton left Google in 2023 citing job displacement among the risks he could no longer stay quiet about. The generative-AI wave of 2022-2025 turned that into a concrete, dated claim: hiring managers, not just researchers, started saying the quiet part out loud.\n\nThe strongest evidence is in hiring data, not forecasts. SignalFire’s 2025 State of Talent report found entry-level hiring’s share of Big Tech hires roughly halved from 2019 to 2024. Challenger, Gray & Christmas now logs AI as the single leading stated reason for announced job cuts, five months running as of July 2026, at 10,970 cuts in that month alone, a category that barely registered in their reporting before 2025. Multiple executive surveys through 2024-2025 found large majorities of companies planning to shrink or freeze entry-level hiring as AI tools absorb the tasks new graduates used to cut their teeth on. None of these numbers alone proves the case, which is why the position leans on the Stanford payroll study as its anchor: it compares same-age workers across levels of AI exposure, so an ordinary downturn hitting all young workers alike cannot account for the gap.\n\nInside the camp there is real disagreement about pace and shape. Amodei’s one-to-five-year window is more cautious than the AI 2027 scenario from Daniel Kokotajlo, Eli Lifland and Scott Alexander, which sketches a much faster capability curve. Others argue the pattern will not be a single cliff but a rolling grind, occupation by occupation, with coding, document review and analyst work going first and physically grounded or high-trust roles going last. What unites the position is not a shared date but a shared claim: the mechanism is already visible in the data, and it is a category error to wait for it to show up in the aggregate unemployment rate before treating it as real.",
     "tier": 1,
     "proponents": "Dario Amodei, Geoffrey Hinton, Daniel Kokotajlo, Kai-Fu Lee, Mustafa Suleyman",
     "representative_name": "Dario Amodei",
-    "representative_note": "Anthropic CEO; his May 2025 Axios interview warning of 10-20 percent unemployment within one to five years is the position\u2019s most-cited flashpoint claim.",
+    "representative_note": "Anthropic CEO; his May 2025 Axios interview warning of 10-20 percent unemployment within one to five years is the position’s most-cited flashpoint claim.",
     "prevalence_weight": 50,
     "spectrum_position": 2,
-    "color_key": "rust"
+    "color_key": "rust",
+    "id": "displacement-hawk"
    },
    {
     "name": "Scale Skeptic",
     "steelman": "Most pilots fail and one firm in five uses AI: the hype has outrun the payrolls.",
-    "description": "Follow the data, not the demo reel: this rollout is slow and its payoff is thin. Total factor productivity gains from AI over the next decade come out to well under 1 percent even under generous assumptions, per MIT economist Daron Acemoglu\u2019s task-based modeling: 0.66% initially, revised down toward 0.53% once harder-to-automate tasks are weighted properly. Enterprise deployments mostly aren\u2019t clearing the bar either, with MIT\u2019s NANDA initiative finding roughly 95% of generative AI pilots at companies failed to produce measurable profit-and-loss impact. Displacement forecasts extrapolate from lab benchmarks and press releases, not from payrolls, output, or the diffusion curves every prior general-purpose technology actually followed, so mass-displacement timelines are a hypothesis, not a fact to legislate around.",
-    "detail": "This skepticism sits in a long line of technology-hype critiques. Economists made near-identical arguments about the internet in the late 1990s (Robert Solow\u2019s line that computers show up everywhere except in the productivity statistics) and about cloud computing and smartphones, each of which took the better part of a decade to register in aggregate output data despite breathless claims at the time. The same pattern is showing up again: capability benchmarks keep climbing, but the Census Bureau\u2019s own Business Trends and Outlook Survey still puts firms using AI in any business function at about one in five as of May 2026, and at under a fifth among firms with fewer than 20 employees, more than three years after ChatGPT\u2019s release.\n\nAcemoglu\u2019s modeling is deliberately conservative and mechanical: it takes AI labs\u2019 own task-exposure estimates, runs them through standard growth accounting, and still can\u2019t clear roughly half a percentage point of TFP growth over a decade, an order of magnitude below the 7% global GDP boost Goldman Sachs analysts projected AI could deliver over ten years in their widely cited 2023 forecast. MIT\u2019s NANDA findings tell a similar story from the enterprise side: across 300 public AI deployments and interviews spanning 150 organizations, only about 5% of generative AI pilots reached the kind of rapid, measurable P&L impact executives were promised, with most stalling on integration and workflow fit rather than model quality.\n\nSkeptics don\u2019t claim AI is useless. They concede real, task-level speedups in narrow, well-scoped work (support tickets, coding boilerplate, first-draft writing) while insisting those gains haven\u2019t aggregated into occupation-level displacement or macro productivity growth. The internal debate is mostly about timeline, not direction: some expect diffusion to simply take the usual general-purpose-technology lag and catch up later, while others suspect the ceiling on judgment-heavy cognitive work is lower than boosters assume. Either way, the standard they set is the same: show the payroll data, the output data, the P&L data, before restructuring policy around a jobs apocalypse the numbers haven\u2019t produced yet.",
+    "description": "Follow the data, not the demo reel: this rollout is slow and its payoff is thin. Total factor productivity gains from AI over the next decade come out to well under 1 percent even under generous assumptions, per MIT economist Daron Acemoglu’s task-based modeling: 0.66% initially, revised down toward 0.53% once harder-to-automate tasks are weighted properly. Enterprise deployments mostly aren’t clearing the bar either, with MIT’s NANDA initiative finding roughly 95% of generative AI pilots at companies failed to produce measurable profit-and-loss impact. Displacement forecasts extrapolate from lab benchmarks and press releases, not from payrolls, output, or the diffusion curves every prior general-purpose technology actually followed, so mass-displacement timelines are a hypothesis, not a fact to legislate around.",
+    "detail": "This skepticism sits in a long line of technology-hype critiques. Economists made near-identical arguments about the internet in the late 1990s (Robert Solow’s line that computers show up everywhere except in the productivity statistics) and about cloud computing and smartphones, each of which took the better part of a decade to register in aggregate output data despite breathless claims at the time. The same pattern is showing up again: capability benchmarks keep climbing, but the Census Bureau’s own Business Trends and Outlook Survey still puts firms using AI in any business function at about one in five as of May 2026, and at under a fifth among firms with fewer than 20 employees, more than three years after ChatGPT’s release.\n\nAcemoglu’s modeling is deliberately conservative and mechanical: it takes AI labs’ own task-exposure estimates, runs them through standard growth accounting, and still can’t clear roughly half a percentage point of TFP growth over a decade, an order of magnitude below the 7% global GDP boost Goldman Sachs analysts projected AI could deliver over ten years in their widely cited 2023 forecast. MIT’s NANDA findings tell a similar story from the enterprise side: across 300 public AI deployments and interviews spanning 150 organizations, only about 5% of generative AI pilots reached the kind of rapid, measurable P&L impact executives were promised, with most stalling on integration and workflow fit rather than model quality.\n\nSkeptics don’t claim AI is useless. They concede real, task-level speedups in narrow, well-scoped work (support tickets, coding boilerplate, first-draft writing) while insisting those gains haven’t aggregated into occupation-level displacement or macro productivity growth. The internal debate is mostly about timeline, not direction: some expect diffusion to simply take the usual general-purpose-technology lag and catch up later, while others suspect the ceiling on judgment-heavy cognitive work is lower than boosters assume. Either way, the standard they set is the same: show the payroll data, the output data, the P&L data, before restructuring policy around a jobs apocalypse the numbers haven’t produced yet.",
     "tier": 1,
     "proponents": "Daron Acemoglu, Jim Covello (Goldman Sachs Research), MIT NANDA research initiative (Aditya Challapally et al.), Robert Gordon, Gary Smith",
     "representative_name": "Daron Acemoglu",
-    "representative_note": "MIT economist; \u201cThe Simple Macroeconomics of AI\u201d (NBER working paper, 2024) models AI\u2019s decade-out total factor productivity gain at under 1%, using AI labs\u2019 own task-exposure estimates.",
+    "representative_note": "MIT economist; “The Simple Macroeconomics of AI” (NBER working paper, 2024) models AI’s decade-out total factor productivity gain at under 1%, using AI labs’ own task-exposure estimates.",
     "prevalence_weight": 45,
     "spectrum_position": -3,
-    "color_key": "purple"
+    "color_key": "purple",
+    "id": "scale-skeptic"
    },
    {
     "name": "Post-Labor Futurist",
-    "steelman": "Don\u2019t save jobs machines do better \u2014 fight for a share of what they produce.",
-    "description": "Work was never the goal, only a means to income and status, so once machines can generate that income without human labor, insisting people keep jobs for their own sake makes no sense. The point is to secure everyone a direct, unconditional claim on the wealth AI creates, not to invent make-work so people feel useful. Sam Altman\u2019s own proposal for an American Equity Fund, taxing large companies and land to pay every citizen a dividend, models exactly this shift from wages to ownership, projecting roughly $13,500 a year per adult within a decade. Economist Daniel Susskind makes the parallel academic case in A World Without Work: stop asking how to save jobs and start asking how to fairly distribute the output of an economy that needs less and less human labor to run.",
-    "detail": "The idea has a long pedigree. John Maynard Keynes predicted in 1930 that his grandchildren would work fifteen-hour weeks as machines absorbed drudgery; the post-labor camp treats that prediction as merely delayed, not wrong. Andrew Yang built his 2020 presidential run around a $1,000-a-month Freedom Dividend explicitly justified by automation, and Elon Musk has said for years that as AI and robots take over, universal basic income will not just be possible but necessary because there will not be enough jobs for people to do. Daniel Susskind\u2019s 2020 book A World Without Work reframed the debate for economists: the real question is not whether enough jobs will exist but whether it is worth organizing society around the assumption that they should.\n\nThe strongest empirical support comes obliquely, from unconditional cash experiments rather than AI-specific trials. OpenResearch, the basic income lab Altman funded, ran a three-year study (November 2020 to October 2023) giving roughly 1,000 low-income participants $1,000 a month with no strings attached against a control group receiving $50. Recipients worked slightly less (about 1.3 fewer hours a week) and were marginally less likely to be employed, but they searched for work more deliberately, were 14% more likely to pursue further education, and, among Black recipients, started businesses at a 26% higher rate than controls. To post-labor advocates this is not a warning sign, it is the point: freed from the pressure to take any job, people redirect the time toward education, care, and ventures they actually choose.\n\nThe camp splits mainly on mechanism and timing. Yang and writers like Scott Santens favor an immediate, flat cash dividend funded through a VAT or data tax, arguing the technology is already displacing enough work to justify starting now. Altman and Susskind favor a more gradual, capital-linked dividend tied to AI-driven productivity gains as they materialize (Altman\u2019s Worldcoin project is an attempt to build the distribution rail itself, using biometric iris verification to hand out crypto-based UBI ahead of the wealth it is meant to distribute). A further-left wing argues dividends are not enough without public or worker ownership stakes in the AI systems themselves, since a dividend alone still leaves the decisions about automation in private hands.",
+    "steelman": "Don’t save jobs machines do better — fight for a share of what they produce.",
+    "description": "Work was never the goal, only a means to income and status, so once machines can generate that income without human labor, insisting people keep jobs for their own sake makes no sense. The point is to secure everyone a direct, unconditional claim on the wealth AI creates, not to invent make-work so people feel useful. Sam Altman’s own proposal for an American Equity Fund, taxing large companies and land to pay every citizen a dividend, models exactly this shift from wages to ownership, projecting roughly $13,500 a year per adult within a decade. Economist Daniel Susskind makes the parallel academic case in A World Without Work: stop asking how to save jobs and start asking how to fairly distribute the output of an economy that needs less and less human labor to run.",
+    "detail": "The idea has a long pedigree. John Maynard Keynes predicted in 1930 that his grandchildren would work fifteen-hour weeks as machines absorbed drudgery; the post-labor camp treats that prediction as merely delayed, not wrong. Andrew Yang built his 2020 presidential run around a $1,000-a-month Freedom Dividend explicitly justified by automation, and Elon Musk has said for years that as AI and robots take over, universal basic income will not just be possible but necessary because there will not be enough jobs for people to do. Daniel Susskind’s 2020 book A World Without Work reframed the debate for economists: the real question is not whether enough jobs will exist but whether it is worth organizing society around the assumption that they should.\n\nThe strongest empirical support comes obliquely, from unconditional cash experiments rather than AI-specific trials. OpenResearch, the basic income lab Altman funded, ran a three-year study (November 2020 to October 2023) giving roughly 1,000 low-income participants $1,000 a month with no strings attached against a control group receiving $50. Recipients worked slightly less (about 1.3 fewer hours a week) and were marginally less likely to be employed, but they searched for work more deliberately, were 14% more likely to pursue further education, and, among Black recipients, started businesses at a 26% higher rate than controls. To post-labor advocates this is not a warning sign, it is the point: freed from the pressure to take any job, people redirect the time toward education, care, and ventures they actually choose.\n\nThe camp splits mainly on mechanism and timing. Yang and writers like Scott Santens favor an immediate, flat cash dividend funded through a VAT or data tax, arguing the technology is already displacing enough work to justify starting now. Altman and Susskind favor a more gradual, capital-linked dividend tied to AI-driven productivity gains as they materialize (Altman’s Worldcoin project is an attempt to build the distribution rail itself, using biometric iris verification to hand out crypto-based UBI ahead of the wealth it is meant to distribute). A further-left wing argues dividends are not enough without public or worker ownership stakes in the AI systems themselves, since a dividend alone still leaves the decisions about automation in private hands.",
     "tier": 1,
     "proponents": "Sam Altman, Daniel Susskind, Andrew Yang, Elon Musk, Scott Santens",
     "representative_name": "Sam Altman",
-    "representative_note": "OpenAI CEO; his 2021 essay \u201cMoore\u2019s Law for Everything\u201d proposed taxing AI-driven capital and land to fund a national dividend, an idea he later tried to operationalize through Worldcoin\u2019s biometric universal basic income project.",
+    "representative_note": "OpenAI CEO; his 2021 essay “Moore’s Law for Everything” proposed taxing AI-driven capital and land to fund a national dividend, an idea he later tried to operationalize through Worldcoin’s biometric universal basic income project.",
     "prevalence_weight": 30,
     "spectrum_position": 3,
-    "color_key": "teal"
+    "color_key": "teal",
+    "id": "post-labor-futurist"
    }
   ],
   "crux": {
-   "lead": "Is work\u2019s ending written by the tech, by history \u2014 or by rules nobody has set yet?",
+   "lead": "Is work’s ending written by the tech, by history — or by rules nobody has set yet?",
    "lead_highlight": "or by rules nobody has set yet?",
-   "subtitle": "Every camp reads the same signals. The split is which force gets the last word \u2014 capability, precedent, or policy.",
-   "empirical": "Whether the leading indicators generalize: does the young-worker gap climb the ladder or close, does adoption spread past the one firm in five that has it, do productivity gains scale past assisted support tickets, and do new occupations keep arriving at the rate that built 60% of today\u2019s jobs? Each camp has staked a prediction the payrolls will grade within years.",
-   "values": "Then no dataset closes it, because the fight is over what work is for. If a machine does a job better, is the job still worth defending as income, identity, and bargaining power \u2014 or is defending it the real failure? Who owns the gains and who carries the displaced are not measurements but choices; a commitment about work\u2019s place in a life decides."
+   "subtitle": "Every camp reads the same signals. The split is which force gets the last word — capability, precedent, or policy.",
+   "empirical": "Whether the leading indicators generalize: does the young-worker gap climb the ladder or close, does adoption spread past the one firm in five that has it, do productivity gains scale past assisted support tickets, and do new occupations keep arriving at the rate that built 60% of today’s jobs? Each camp has staked a prediction the payrolls will grade within years.",
+   "values": "Then no dataset closes it, because the fight is over what work is for. If a machine does a job better, is the job still worth defending as income, identity, and bargaining power — or is defending it the real failure? Who owns the gains and who carries the displaced are not measurements but choices; a commitment about work’s place in a life decides."
   },
   "actions": [
    {
@@ -376,7 +410,8 @@
     "url": "https://www.dol.gov/agencies/eta/layoffs",
     "for_position": "Transition Realist",
     "tier": 1,
-    "reveal": "condensed"
+    "reveal": "condensed",
+    "id": "dol-rapid-response-services"
    },
    {
     "kind": "learn_more",
@@ -385,25 +420,28 @@
     "url": "https://www.weforum.org/publications/the-future-of-jobs-report-2025/in-full/2-jobs-outlook/",
     "for_position": "Augmentation Optimist",
     "tier": 1,
-    "reveal": "condensed"
+    "reveal": "condensed",
+    "id": "wef-future-of-jobs-report-2025"
    },
    {
     "kind": "policy",
     "title": "AFL-CIO Technology Institute",
-    "description": "The labor federation\u2019s initiative pushing for worker voice, bargaining rights, and guardrails over how AI is deployed in the workplace.",
+    "description": "The labor federation’s initiative pushing for worker voice, bargaining rights, and guardrails over how AI is deployed in the workplace.",
     "url": "https://aflcio.org/tech-institute",
     "for_position": "Institution Shaper",
     "tier": 1,
-    "reveal": "condensed"
+    "reveal": "condensed",
+    "id": "afl-cio-technology-institute"
    },
    {
     "kind": "learn_more",
-    "title": "Amodei\u2019s White-Collar Warning",
-    "description": "Anthropic CEO Dario Amodei\u2019s on-record warning that AI could eliminate half of entry-level white-collar jobs and spike unemployment to 10 to 20 percent within one to five years.",
+    "title": "Amodei’s White-Collar Warning",
+    "description": "Anthropic CEO Dario Amodei’s on-record warning that AI could eliminate half of entry-level white-collar jobs and spike unemployment to 10 to 20 percent within one to five years.",
     "url": "https://www.axios.com/2025/05/28/ai-jobs-white-collar-unemployment-anthropic",
     "for_position": "Displacement Hawk",
     "tier": 1,
-    "reveal": "condensed"
+    "reveal": "condensed",
+    "id": "amodei-s-white-collar-warning"
    },
    {
     "kind": "learn_more",
@@ -412,7 +450,8 @@
     "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/",
     "for_position": "Scale Skeptic",
     "tier": 1,
-    "reveal": "condensed"
+    "reveal": "condensed",
+    "id": "mit-95-of-ai-pilots-fail"
    },
    {
     "kind": "volunteer",
@@ -421,7 +460,8 @@
     "url": "https://basicincome.org/",
     "for_position": "Post-Labor Futurist",
     "tier": 1,
-    "reveal": "condensed"
+    "reveal": "condensed",
+    "id": "basic-income-earth-network"
    },
    {
     "kind": "learn_more",
@@ -430,7 +470,8 @@
     "url": "https://www.anthropic.com/economic-index",
     "for_position": "",
     "tier": 2,
-    "reveal": "normal"
+    "reveal": "normal",
+    "id": "anthropic-economic-index"
    },
    {
     "kind": "submit_view",
@@ -439,156 +480,10 @@
     "url": "",
     "for_position": "",
     "tier": 3,
-    "reveal": "condensed"
+    "reveal": "condensed",
+    "id": "add-your-view"
    }
-  ],
-  "categories": [
-   "economy",
-   "ai"
   ]
  },
- "verdicts": [
-  {
-   "critic": "Neutrality review of the AI-and-jobs draft. Section-by-section: the overview names four possible endings without privileging one; the basics stats are genuinely cross-cutting (the 60% new-work base rate and the 14% support-agent gain serve the optimist case, the 19% young-worker gap and Challenger data serve the hawk case, the 3.8%\u2192one-in-five adoption floor and low headline unemployment serve the skeptic case), and each stat's detail carries the caveat that cuts against its own headline reading (e.g. the Stanford 19% stat quotes the authors' own \"no evidence yet of broad displacement,\" and the Autor 60% stat notes the offset pattern is itself weakening). No section tilts toward a camp.\n\nSteelman parity: all six positions are written in their own voice at comparable rigor and length, each with named living proponents, an anchoring source, internal-disagreement texture, and a banner-grade steelman line. Displacement Hawk and Scale Skeptic \u2014 the two easiest to strawman \u2014 are the best-evidenced entries in the set (Stanford payroll design, Challenger series; Acemoglu TFP model, MIT NANDA). Post-Labor Futurist's OpenResearch results are reported with both the reduced-hours finding and the education/entrepreneurship findings, letting the reader weigh them. No strawmen found.\n\nNo house verdict: the crux poses capability vs precedent vs policy without resolving it; question leans are presented as leans (and Q3, the genuinely unresolved attribution question, correctly carries none); prevalence weights (85/75/55/50/45/30) encode honest non-balance rather than forced 50/50. Citing Anthropic's CEO as the Displacement Hawk flashpoint is factual sourcing, not provider favoritism, and is counterweighted by Acemoglu/NANDA on the skeptic side.\n\nMissing-camp check: the session's web-search budget was exhausted (200/200) before my searches ran, so this check is from model knowledge through early 2026 rather than a fresh search. The one currently-active camp not given its own card is the worker-resistance/refusal wing (Brian Merchant's neo-Luddite argument, union contract fights restricting AI deployment, National Nurses United-style opposition). Within this topic's scope \u2014 labor-market outcomes and policy levers \u2014 its distinctive claim (deployment terms are won by collective action, not granted) is substantively carried by Institution Shaper, whose description centers bargaining power and whose action row is the AFL-CIO Technology Institute. That is defensible coverage at the parity bar, so I flag it as polish, not a blocker: Institution Shaper's proponent list is all economists, and naming a labor-movement voice would make the coverage explicit.\n\nVerdict: no blocking neutrality defect. Notes below for the editor.",
-   "pass": true,
-   "blocking": [],
-   "notes": [
-    "Institution Shaper's proponents are all academic economists (Acemoglu, Johnson, Brynjolfsson, Autor, Korinek); the worker-resistance/refusal wing it implicitly covers (Brian Merchant, AFL-CIO, striking unions with AI contract clauses) would be more visibly represented by adding one labor-movement name to that proponents list.",
-    "Caveat on the missing-camp check: the session's WebSearch budget was already exhausted, so the check ran on model knowledge (through early 2026) rather than a live search; a human spot-check for any newly prominent camp is cheap insurance.",
-    "Two representative_name fields contain the literal HTML entity '&amp;' ('Brookings Metro (Kinder, Muro, Briggs &amp; Liu)' and 'Daron Acemoglu &amp; Simon Johnson, Power and Progress (2023)'), which violates the plain-text rule and will render as garbage; write '&' \u2014 not a neutrality defect, flagged for whichever pass owns formatting.",
-    "Question 6's detail asserts public appetite for broad basic income 'has historically been a minority position' without a cited poll; it reads as context, not a tilt, but attaching a survey source (e.g. Pew's automation-and-UBI polling) would keep the Post-Labor fork as tightly sourced as the rest.",
-    "Question 3's lean_pct_a of -1 (no lean) is the right neutrality call for an attribution question this unsettled; worth confirming the renderer treats -1 as 'suppress lean bar' rather than drawing a negative value."
-   ],
-   "stage": "substance"
-  },
-  {
-   "critic": "steelman",
-   "pass": true,
-   "blocking": [],
-   "notes": [
-    "All six positions read as genuine steelmen a proponent would endorse. Transition Realist preempts the 'this is just hedging' attack directly; Displacement Hawk anchors on the strongest available evidence (Stanford payroll gap, Challenger data) rather than vibes; Scale Skeptic gets Acemoglu's TFP math and NANDA in its own confident voice; Post-Labor Futurist correctly reframes the OpenResearch work-reduction finding as 'the point' rather than a concession. No side is softened.",
-    "Plain-text rule violation outside my dimension but worth surfacing: two representative_name fields contain the HTML entity '&amp;' ('Brookings Metro (Kinder, Muro, Briggs &amp; Liu)' and 'Daron Acemoglu &amp; Simon Johnson') \u2014 the renderer escapes literally, so this will surface as garbage on the page. Should be a plain ampersand.",
-    "Augmentation Optimist's banner line ('technology has always created more jobs than it destroys') is the boldest claim of the six and slightly ahead of what Autor/Bessen would sign, but it is what WEF/McKinsey-style proponents genuinely say, so it works as a steelman; the description's closing 'not in serious doubt' carries the right proponent confidence.",
-    "Daron Acemoglu appears both as Scale Skeptic representative and as an Institution Shaper proponent. This is accurate to his actual dual role (TFP skepticism + Power and Progress), but a one-clause acknowledgment in one of the two details could preempt reader confusion.",
-    "Displacement Hawk's steelman line is the least banner-like of the six ('...and the ladder above them is next' is strong, but the Amodei 10-20% unemployment claim is the position's most-cited flashpoint and might make a sharper banner). Cosmetic only."
-   ],
-   "stage": "substance"
-  },
-  {
-   "critic": "fact-source",
-   "pass": false,
-   "blocking": [
-    {
-     "issue": "Institution Shaper's description states: \"economists Daron Acemoglu, Andrea Manera and Pascual Restrepo find the US tax code taxes labor far more heavily than capital equipment, and calculate that closing that gap alone would raise employment by roughly 4 percent, no new technology required.\" The paper (\"Does the U.S. Tax Code Favor Automation?\", BPEA Conference Draft, March 2020) contains no 4% estimate. Its abstract reads: \"Moving from the US tax system and level of automation in the 2010s to optimal taxation of factors and corresponding optimal level of automation would raise employment by 5.85% and the labor share by 0.53 percentage points. If moving to optimal policy is not feasible, more modest reforms can still increase employment by 1.35-2.31%.\" So \"roughly 4 percent\" matches no reported scenario, and the scenario the draft actually describes (partial reform / closing the capital-labor gap) is 1.35-2.31% \u2014 the draft overstates it by roughly double. Worse, the paper explicitly rejects the mechanism the draft attributes to it: \"it would not be desirable to increase taxation of capital per se (even though capital is lightly taxed in the US); rather, directly reducing the extent of automation would be much more effective.\" This is a fabricated number attached to a mischaracterized mechanism, sitting in a position's load-bearing empirical claim.",
-     "fix": "Replace with the paper's actual figures and mechanism. E.g.: \"economists Daron Acemoglu, Andrea Manera and Pascual Restrepo find the US tax code taxes labor far more heavily than capital equipment, and calculate that reducing the resulting excess automation would raise employment by 1.35% under modest reforms and 5.85% under optimal ones, no new technology required.\" Note their finding that taxing capital per se is not the effective lever \u2014 directly reducing over-automation is \u2014 so the sentence should not describe this as \"closing that gap alone.\" Source: Acemoglu, Manera & Restrepo, Brookings Papers on Economic Activity, March 2020, https://www.brookings.edu/wp-content/uploads/2020/03/Acemoglu-et-al-conference-draft.pdf"
-    },
-    {
-     "issue": "The Basics tile \"US businesses using AI \u00b7 Census Bureau high-frequency survey\" headlines 3.8% (late 2023) \u2014 a figure that is nearly three years stale, measures a narrower thing than its label claims, is contradicted twice elsewhere in this same topic, and is defended by a false statement about source availability. Four compounding problems: (1) Measure mismatch \u2014 3.8% is Census's \"use AI to produce goods and services\" reading; the tile label says \"US businesses using AI,\" which reads as the general adoption rate. (2) Stale where current data exists \u2014 census.gov published \"AI Use at U.S. Businesses\" on May 26, 2026 (https://www.census.gov/library/stories/2026/05/ai-use-businesses.html) reporting 19.8% of US businesses using AI as of May 3, 2026, with a size breakdown (37% at 250+ employees, 32% at 100-249, under 20% at fewer than 20 employees). (3) The detail's claim that \"a precise current-year national figure was not available from the source consulted\" is factually wrong \u2014 it is published by the cited source. (4) Internal contradiction \u2014 the crux says \"adoption at one firm in five\" and Scale Skeptic says \"about one in five as of May 2026,\" so a reader scanning Basics gets 3.8% and a reader reaching the crux gets 20%, with nothing reconciling them. A scanner's takeaway from Basics is that AI adoption is negligible, which is false today.",
-     "fix": "Make the current figure the headline: value 19.8, unit \"% (May 2026)\", fill_pct 20, label \"US businesses using AI in any business function \u00b7 Census Bureau high-frequency survey\". Move 3.8% into the detail as the late-2023 baseline, and state the measure change explicitly so the two are not read as a clean time series: Census revised the question in November 2025 from \"producing goods or services\" to \"any business function,\" so part of the 3.8% \u2192 19.8% gap is definitional, not growth. Delete the sentence \"a precise current-year national figure was not available from the source consulted.\" Cite https://www.census.gov/library/stories/2026/05/ai-use-businesses.html alongside the existing BTOS landing page. This also removes the Basics/crux contradiction."
-    }
-   ],
-   "notes": [
-    "Basics stat 1 detail calls professional occupations \"the fastest-growing category.\" The paper says professionals are \"the occupational category that added the most workers during these eight decades\" \u2014 largest absolute gain, not fastest rate. Swap to \"the category that added the most workers\" for exactness.",
-    "Displacement Hawk: \"SignalFire's 2025 State of Talent report found entry-level hiring's share of Big Tech hires roughly halved from 2019 to 2024.\" The report's own wording is \"New grads now account for just 7% of hires, with new hires down 25% from 2023 and over 50% from pre-pandemic levels in 2019\" \u2014 ambiguous between a decline in new-grad hire volume and a decline in their share. The mainstream reading supports the draft and the magnitude is right either way, but safer phrasing would be \"new-grad hiring at Big Tech down over 50% from 2019 levels, with new grads now just 7% of hires.\"",
-    "Scale Skeptic detail says the NANDA findings span \"300 public AI deployments and interviews spanning 150 organizations.\" The reported methodology is 300 public AI deployments, 150 interviews with business leaders, and a 350-employee survey. \"150 interviews with business leaders\" is the precise form; \"150 organizations\" is a small drift.",
-    "Institution Shaper attributes to \"Acemoglu and Restrepo's comparative work on industrial robots\" the finding of weaker wage/employment effects in economies with stronger works councils and collective bargaining. Acemoglu & Restrepo is the US robots result; the contrasting German result is Dauth, Findeisen, Suedekum & Woessner. Consider phrasing it as a comparison across the literature rather than a single authorship.",
-    "Two representative_name fields contain the HTML entity \"&amp;\" \u2014 Brookings Metro (Kinder, Muro, Briggs &amp; Liu) and Daron Acemoglu &amp; Simon Johnson, Power and Progress (2023). Per the plain-text rule the renderer escapes literally, so these will surface as visible garbage. Replace with a bare &. Outside my dimension but worth fixing before publish.",
-    "All 403 responses encountered during link checking (Axios, WEF, OECD DOI, dol.gov/agencies/eta/layoffs, aflcio.org/tech-institute) are WAF bot-blocks rather than dead links \u2014 the OECD DOI resolves with a 302 to a live oecd.org page. No dead or misattributed links found. Worth a browser spot-check of the DOL and AFL-CIO action URLs at publish time since neither could be confirmed by fetch.",
-    "The perishable figures that remain (Stanford 19%, unemployment 4.1%, Challenger 10,970) are each dated and isolated appropriately, and the unemployment tile is correctly framed against its durable 1948-present range. Once the Census tile is fixed, the Basics section ages well."
-   ],
-   "post_run_fixes_applied": "Both blocking issues fixed per the critic's prescriptions before persisting (2026-08-12): Acemoglu et al. employment figures corrected to the paper's 1.35%/5.85% with the paper's actual mechanism; Census AI-adoption tile updated to the May 2026 19.8% headline with the 3.8% baseline and question change moved to the detail.",
-   "stage": "substance"
-  },
-  {
-   "blocking": [],
-   "critic": "crux",
-   "pass": true,
-   "notes": [
-    "The lead's three-force axis (capability / precedent / policy) cleanly seats four of the six camps: Displacement Hawk and Post-Labor Futurist on capability, Augmentation Optimist on precedent, Institution Shaper on policy. Scale Skeptic locates on the capability axis only via negation (capability's economic bite is smaller than claimed) and Transition Realist locates by declining to bet on any force. Both can find themselves, and the subtitle's 'same signals feed every camp' plus the named signals (entry-level softness, modest measured gains, one-firm-in-five adoption) explicitly carries the Skeptic's and Realist's evidence, so this is not a mislocation \u2014 but a future edit could sharpen the subtitle to acknowledge that one camp's move is to refuse the forecast entirely.",
-    "The empirical/values split is genuinely load-bearing rather than decorative: the empirical paragraph stakes four falsifiable predictions each camp has committed to (young-worker gap climbs or closes, adoption spreads past one in five, gains scale past support tickets, new occupations keep the 60% base rate), and the values paragraph is a real fork (what work is for, who owns the gains) rather than 'both sides have a point.' This is the strongest part of the crux.",
-    "The lead_highlight accents the policy option ('or by rules nobody has set yet?'). This matches the house accent pattern from the style example ('or one we've chosen?') and reads as rhetorical emphasis, not endorsement of Institution Shaper \u2014 the empirical paragraph immediately hands the verdict to 'the payrolls,' which rebalances it. No change needed, just noting it was checked for tilt.",
-    "The subtitle's 'adoption at one firm in five' figure traces to the Scale Skeptic detail (Census BTOS, May 2026) rather than to a Basics stat (Basics only carries the 3.8% late-2023 floor and its own detail concedes 'a precise current-year national figure was not available'). Not a crux defect, but the sourcing critic may want the May 2026 one-in-five reading either verified and added to Basics or the subtitle's phrasing loosened."
-   ],
-   "stage": "substance"
-  },
-  {
-   "critic": "compact-self-sufficiency",
-   "pass": true,
-   "blocking": [],
-   "notes": [
-    "Stat 1 (Stanford 19% gap): the authors' own caveat that this is descriptive, not causal, and that they find no broad economy-wide displacement lives only in the detail. Mitigated above the fold because the note is phrased descriptively (gap vs less-exposed peers, no causal claim) and Q3 explicitly frames the entry-level decline as contested (leading edge vs localized blip), so the reader does not leave with an over-strong causal picture. If a future pass touches this note, a short clause like 'an early, descriptive signal' would close the gap entirely.",
-    "Stat 2 (60% new occupations): the note's closing clause '\u2014 the base rate every past wave of automation eventually produced' states the optimist inference as settled fact, while the same paper's counter-finding (the job-creating offset has weakened over four decades, which is exactly what is contested) is detail-only. Not blocking: the figure itself is correct, Q1 above the fold presents the contest, and the tilt is one clause. A more neutral tail, e.g. '\u2014 the scale of new-role creation past waves eventually produced', would remove the lean without losing punch.",
-    "Stat 3 (9-47% ranked): the headline value 9-47 matches the label's 'share of jobs' denominator, but the highlighted 2024 Brookings row measures a different thing \u2014 share of WORKERS facing 50%+ task disruption, not jobs at high risk. The note states each measure precisely within the compact layer, and the label's 'by study and method' flags heterogeneity, so it clears parity; still, the row label ('30%+') silently switches denominator and threshold relative to the header. A tolerable fix if revisited: label the row '30%+ of workers' in the series value.",
-    "Out of my dimension but worth routing: two representative_name fields contain the HTML entity '&amp;' ('Brookings Metro (Kinder, Muro, Briggs &amp; Liu)' and 'Daron Acemoglu &amp; Simon Johnson') \u2014 the renderer escapes literally, so these will surface as garbage; should be a plain '&'.",
-    "Positive checks: stat 5's note carries its own definitional caveat (narrower 2023 survey question) above the fold; stat 4's label scopes the 14% to a single customer-support study; the Scale Skeptic and Displacement Hawk steelmen give the reader both poles of the entry-level/adoption evidence using numbers that are themselves visible above the fold (19.8% \u2248 one firm in five, 19% gap); crux subtitle is consistent with the above-fold stats. No load-bearing fact needed for a correct overall picture is confined below the fold: the T2/T3 hidden stats (adoption-speed comparison, 4.1% unemployment) are texture whose argumentative weight is already carried by above-fold steelmen."
-   ],
-   "stage": "presentation"
-  },
-  {
-   "critic": "reading-level-fit",
-   "pass": true,
-   "blocking": [],
-   "notes": [
-    "OECD appears as a bare acronym in a compact field (stat 3 note and its 2016 series label). It is at parity with strong published general-audience outlets, so not blocking, but 'OECD' could carry a two-word gloss in the detail if wanted.",
-    "Q2 detail uses 'increasingly agentic multi-step work' \u2014 'agentic' is a term of art used without definition even in the expanded register; consider 'increasingly able to chain multi-step tasks on its own' or a first-use gloss.",
-    "Stat 1 and Displacement Hawk description/detail cite 'ADP payroll records' without saying ADP is a payroll processor; a three-word appositive ('the payroll processor ADP') at first use in the detail would fully clear the expanded-register bar. Minor.",
-    "Scale Skeptic detail abbreviates to 'TFP' and 'P&L' \u2014 both are spelled out in the description first, but the detail is a separately expandable field; safest is to spell out at first use within the detail itself. Minor.",
-    "Cross-dimension flag (not reading level, but blocking for whichever critic owns plain-text rules): two representative_name fields contain the literal HTML entity '&amp;' \u2014 Transition Realist ('Brookings Metro (Kinder, Muro, Briggs &amp; Liu)') and Institution Shaper ('Daron Acemoglu &amp; Simon Johnson, Power and Progress (2023)'). The renderer escapes literally, so these will surface as garbage on the page; must become plain '&'.",
-    "Cross-dimension flag (typography rule, not reading level): straight ASCII apostrophes appear in several content fields \u2014 question texts \"Are today's entry-level hiring declines...\" and \"How much of the outcome is set by the technology's capabilities...\", question 1 text (\"didn't\"), stat 2 label (\"didn't exist in 1940\"), Displacement Hawk representative_note (\"the position's most-cited\"), and straight double quotes in two source_label fields (stats 1 and 6). House rule requires curly quotes/apostrophes.",
-    "Observation for main: question 3 has lean_pct_a = -1 while all others have positive values; if -1 is not the intentional 'no lean shown' sentinel, the lean bar may render oddly. Presentation-config, not reading level."
-   ],
-   "stage": "presentation"
-  },
-  {
-   "critic": "above-fold-selection",
-   "pass": true,
-   "blocking": [],
-   "notes": [
-    "Basics tier-1 set is well chosen: the five promoted stats are exactly the load-bearing evidence (the why_now anchor stat, the 1940 base rate, the risk-estimate spread, the augmentation study, the adoption rate), and each maps to at least one position's core claim. The T2/T3 demotions (adoption-speed comparison, headline unemployment) are the two most context-dependent items, so the boundary sits at a genuine drop-off.",
-    "Questions tier-1 set is defensible: the four promoted questions are the empirical live forks plus the capability-vs-institutions frame that organizes the rest. The T1/T2 boundary is a real drop: Q5 (diffusion speed) partially duplicates evidence already surfaced by the T1 adoption stat and Q1.",
-    "Minor asymmetry worth knowing about, not blocking: all six positions are above the fold, but Scale Skeptic's anchoring question (Q5, T2) and Post-Labor Futurist's defining fork (Q6, T3) are below it. Both demotions are defensible (Q5 overlaps T1 material; Q6 is conditional on the empirical questions resolving toward displacement), so the reader still gets each position's evidence via the T1 stats, but if the team ever wants tighter position-question pairing above the fold, Q6 is the strongest candidate for T2.",
-    "Value questions clustering at T3 (Q6, Q7) is consistent: both are downstream 'then what' forks rather than entry points, and the crux section already carries the values split above the fold, so nothing decision-relevant is hidden.",
-    "Positions display order (prevalence-first: 85/75/55/50/45/30) is monotonic and matches the weights; no ordering anomaly."
-   ],
-   "stage": "presentation"
-  }
- ],
- "plan_positions": [
-  {
-   "name": "Transition Realist",
-   "prevalence_weight": 85,
-   "spectrum_position": 1,
-   "sketch": "AI will churn through occupations hard and fast; the endpoint is unknowable, so manage the transition."
-  },
-  {
-   "name": "Augmentation Optimist",
-   "prevalence_weight": 75,
-   "spectrum_position": -2,
-   "sketch": "AI complements human work and, like every prior wave, will create more and better jobs than it destroys."
-  },
-  {
-   "name": "Institution Shaper",
-   "prevalence_weight": 55,
-   "spectrum_position": 0,
-   "sketch": "The technology settles nothing; policy, bargaining power, and who owns the machines decide who gains."
-  },
-  {
-   "name": "Displacement Hawk",
-   "prevalence_weight": 50,
-   "spectrum_position": 2,
-   "sketch": "AI is about to hollow out white-collar work within years, starting with entry-level cognitive jobs."
-  },
-  {
-   "name": "Scale Skeptic",
-   "prevalence_weight": 45,
-   "spectrum_position": -3,
-   "sketch": "The economic bite is overstated: adoption is slow, measured gains are modest, and hype outruns the payrolls."
-  },
-  {
-   "name": "Post-Labor Futurist",
-   "prevalence_weight": 30,
-   "spectrum_position": 3,
-   "sketch": "AI will eventually do most work, so the goal is distributing machine wealth, not preserving jobs."
-  }
- ]
+ "icon": "briefcase"
 }

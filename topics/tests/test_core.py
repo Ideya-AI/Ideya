@@ -1,3 +1,4 @@
+import json
 from io import StringIO
 from pathlib import Path
 
@@ -27,13 +28,17 @@ class NuclearFixtureMixin:
     @classmethod
     def setUpTestData(cls):
         super().setUpTestData()
-        Category.objects.get_or_create(
-            slug="climate-env",
-            defaults={
-                "name": "Climate, Energy & Environment",
-                "color_key": "energy",
-            },
-        )
+        # Seed the REAL taxonomy, not one category: a topic file names its
+        # secondaries too, and the loader (rightly) refuses a category it cannot
+        # find. Hand-picking one here meant the fixture broke the moment a topic
+        # gained a second category.
+        for c in json.loads(
+            (Path(settings.BASE_DIR) / "research/categories.json").read_text()
+        ):
+            Category.objects.get_or_create(
+                slug=c["slug"],
+                defaults={"name": c["name"], "color_key": "energy"},
+            )
         call_command(
             "load_topic_draft",
             file=str(Path(settings.BASE_DIR) / "research/topics/nuclear-energy.json"),
@@ -127,7 +132,7 @@ class ContentManagementTests(NuclearFixtureMixin, TestCase):
 
     def setUp(self):
         self.draft = Topic.objects.create(
-            title="Carbon Capture", slug="carbon-capture", status=Topic.DRAFT
+            title="Carbon Capture", slug="carbon-capture", status=Topic.IN_PROGRESS
         )
 
     def test_draft_gets_coming_soon_stub_not_content(self):
@@ -147,7 +152,7 @@ class ContentManagementTests(NuclearFixtureMixin, TestCase):
         self.client.force_login(staff)
         resp = self.client.get("/carbon-capture/")
         self.assertEqual(resp.status_code, 200)
-        self.assertContains(resp, "Draft — not publicly visible.")
+        self.assertContains(resp, "In progress — not publicly visible.")
 
     def test_seeded_topics_are_published(self):
         self.assertEqual(Topic.published.count(), Topic.objects.count() - 1)
@@ -211,7 +216,7 @@ class SearchAndSeoTests(NuclearFixtureMixin, TestCase):
         self.assertContains(robots, "Sitemap:")
 
     def test_sitemap_excludes_drafts(self):
-        Topic.objects.create(title="Hidden", slug="hidden-draft", status=Topic.DRAFT)
+        Topic.objects.create(title="Hidden", slug="hidden-draft", status=Topic.IN_PROGRESS)
         self.assertNotContains(self.client.get("/sitemap.xml"), "hidden-draft")
 
     def test_custom_404_page(self):

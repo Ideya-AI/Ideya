@@ -147,9 +147,21 @@ class PublishedTopicManager(models.Manager):
 
 
 class Topic(models.Model):
-    DRAFT = "draft"
+    # A topic's core status — where it is in its life, one value, four stops.
+    # NOT_STARTED is a topic file with nothing authored against it yet;
+    # IN_PROGRESS is being worked on and not fit to publish; READY is the
+    # engine's certification that it passed everything; PUBLISHED is live.
+    # Only the last is visible to the public.
+    NOT_STARTED = "not_started"
+    IN_PROGRESS = "in_progress"
+    READY = "ready"
     PUBLISHED = "published"
-    STATUS_CHOICES = [(DRAFT, "Draft"), (PUBLISHED, "Published")]
+    STATUS_CHOICES = [
+        (NOT_STARTED, "Not started"),
+        (IN_PROGRESS, "In progress"),
+        (READY, "Ready to publish"),
+        (PUBLISHED, "Published"),
+    ]
 
     FAST = "fast"
     MEDIUM = "medium"
@@ -164,10 +176,21 @@ class Topic(models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200, unique=True)
     status = models.CharField(
-        max_length=10,
+        max_length=12,
         choices=STATUS_CHOICES,
-        default=DRAFT,
-        help_text="Drafts are invisible everywhere except to staff.",
+        default=NOT_STARTED,
+        db_index=True,
+        help_text="Where this topic is in its life. Only PUBLISHED is visible "
+        "to the public; everything else is staff-only. READY means the engine "
+        "certified it — loading content withdraws that, because what was "
+        "verified is then no longer what is loaded.",
+    )
+    scope = models.TextField(
+        blank=True,
+        help_text="One line fixing what this topic covers, written when it is "
+        "added and used to brief the research planner. A SEED, never reader "
+        "copy — nothing renders it. The public summary is written by the "
+        "engine and lives on `summary`.",
     )
     summary = models.CharField(
         max_length=400,
@@ -214,11 +237,6 @@ class Topic(models.Model):
     )
     reviewed_at = models.DateTimeField(
         null=True, blank=True, help_text="When a human last reviewed/approved this."
-    )
-    research_dossier = models.JSONField(
-        default=dict,
-        blank=True,
-        help_text="Pipeline dossier — sources, raw research, notes. Reviewer-facing, not public.",
     )
     volatility = models.CharField(
         max_length=10,
@@ -611,6 +629,12 @@ class Stat(models.Model):
     ]
 
     section = models.ForeignKey(Section, related_name="stats", on_delete=models.CASCADE)
+    item_id = models.SlugField(
+        max_length=80,
+        blank=True,
+        db_index=True,
+        help_text="Stable identity, assigned once and never changed. Reader votes, leans and prompts attach to this, so rewording an item keeps them.",
+    )
     order = models.PositiveSmallIntegerField(default=0)
     tier = models.PositiveSmallIntegerField(
         default=1,
@@ -665,6 +689,13 @@ class Stat(models.Model):
     )
 
     class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=["section", "item_id"],
+                condition=~models.Q(item_id=""),
+                name="unique_stat_item_id",
+            ),
+        ]
         ordering = ["order", "id"]
 
     def __str__(self) -> str:
@@ -707,6 +738,12 @@ class Question(models.Model):
     section = models.ForeignKey(
         Section, related_name="questions", on_delete=models.CASCADE
     )
+    item_id = models.SlugField(
+        max_length=80,
+        blank=True,
+        db_index=True,
+        help_text="Stable identity, assigned once and never changed. Reader votes, leans and prompts attach to this, so rewording an item keeps them.",
+    )
     order = models.PositiveSmallIntegerField(default=0)
     tier = models.PositiveSmallIntegerField(
         default=1,
@@ -731,6 +768,13 @@ class Question(models.Model):
     )
 
     class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=["section", "item_id"],
+                condition=~models.Q(item_id=""),
+                name="unique_question_item_id",
+            ),
+        ]
         # Research order by default; the view layer switches to vote order once
         # a topic's questions pass MIN_VOTES_REORDER real votes.
         ordering = ["order", "id"]
@@ -809,6 +853,12 @@ class Position(models.Model):
     section = models.ForeignKey(
         Section, related_name="positions", on_delete=models.CASCADE
     )
+    item_id = models.SlugField(
+        max_length=80,
+        blank=True,
+        db_index=True,
+        help_text="Stable identity, assigned once and never changed. Reader votes, leans and prompts attach to this, so rewording an item keeps them.",
+    )
     order = models.PositiveSmallIntegerField(default=0)
     tier = models.PositiveSmallIntegerField(
         default=1,
@@ -849,6 +899,13 @@ class Position(models.Model):
     )
 
     class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=["section", "item_id"],
+                condition=~models.Q(item_id=""),
+                name="unique_position_item_id",
+            ),
+        ]
         # Prevalence-seeded (research) by default; the view layer switches to
         # importance-vote order once the topic's positions pass
         # MIN_VOTES_REORDER real votes (supersedes decision 2026-06-17).
@@ -932,6 +989,12 @@ class Action(models.Model):
     section = models.ForeignKey(
         Section, related_name="actions", on_delete=models.CASCADE
     )
+    item_id = models.SlugField(
+        max_length=80,
+        blank=True,
+        db_index=True,
+        help_text="Stable identity, assigned once and never changed. Reader votes, leans and prompts attach to this, so rewording an item keeps them.",
+    )
     order = models.PositiveSmallIntegerField(default=0)
     tier = models.PositiveSmallIntegerField(
         default=1,
@@ -955,6 +1018,13 @@ class Action(models.Model):
     )
 
     class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=["section", "item_id"],
+                condition=~models.Q(item_id=""),
+                name="unique_action_item_id",
+            ),
+        ]
         ordering = ["order", "id"]
 
     def __str__(self) -> str:

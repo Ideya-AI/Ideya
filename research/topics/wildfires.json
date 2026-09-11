@@ -1,17 +1,30 @@
 {
+ "slug": "wildfires",
+ "title": "Living With Wildfire",
+ "status": "in_progress",
+ "scope": "Living with wildfire: fuels, ignition, and hardening communities.",
+ "categories": [
+  "climate-env",
+  "economy",
+  "global-risk"
+ ],
+ "related": [
+  "climate-tipping-points",
+  "net-zero-pace",
+  "housing-affordability-crisis"
+ ],
  "draft": {
   "overview": {
-   "summary": "Worsening wildfires demand action \u2014 the split is over the decisive lever: landscape, built edge, firefight, or climate.",
+   "summary": "Worsening wildfires demand action — the split is over the decisive lever: landscape, built edge, firefight, or climate.",
    "scope_covered": "Worsening wildfire destruction: fuels and good fire, home hardening and edge land use, insurance, suppression capacity, cultural burning, the climate driver.",
    "scope_excluded": "Smoke-health policy, post-disaster relief mechanics, broader climate mitigation design, and non-fire forest economics.",
-   "why_now": "With insurers retreating from fire country, a sweeping bipartisan forest-management overhaul awaiting its full Senate vote has become the test of which theory of the wildfire crisis prevails.",
-   "icon": "fire"
+   "why_now": "With insurers retreating from fire country, a sweeping bipartisan forest-management overhaul awaiting its full Senate vote has become the test of which theory of the wildfire crisis prevails."
   },
   "basics": {
-   "intro": "Three drivers, three levers \u2014 the numbers each camp argues from.",
+   "intro": "Three drivers, three levers — the numbers each camp argues from.",
    "stats": [
     {
-     "label": "Fuel aridity driven by warming \u00b7 share since 1970s",
+     "label": "Fuel aridity driven by warming · share since 1970s",
      "value": ">50",
      "unit": "%",
      "viz": "radial",
@@ -22,17 +35,18 @@
      "range_at": 0,
      "fill_pct": 55,
      "note": "Human-caused warming drove more than half the rise in fuel dryness since the 1970s, and roughly doubled the cumulative forest area burned since 1984.",
-     "detail": "The finding comes from Abatzoglou & Williams (2016, PNAS), which used climate models to isolate the human-caused warming signal from natural variability in temperature and vapor-pressure deficit \u2014 the atmosphere's drying power over vegetation, the standard measure of fuel aridity \u2014 then linked that aridity to burned-area records. It is one of the most-cited attribution studies in wildfire science and has been broadly reproduced since. It does not claim climate change caused any single fire \u2014 only that it has systematically dried fuels and expanded the area burned relative to a world without human-caused warming.",
+     "detail": "The finding comes from Abatzoglou & Williams (2016, PNAS), which used climate models to isolate the human-caused warming signal from natural variability in temperature and vapor-pressure deficit — the atmosphere's drying power over vegetation, the standard measure of fuel aridity — then linked that aridity to burned-area records. It is one of the most-cited attribution studies in wildfire science and has been broadly reproduced since. It does not claim climate change caused any single fire — only that it has systematically dried fuels and expanded the area burned relative to a world without human-caused warming.",
      "tier": 1,
      "source_label": "Abatzoglou & Williams, PNAS",
      "source_url": "https://www.pnas.org/doi/10.1073/pnas.1607171113",
      "source_published": "2016",
      "source_accessed": "2026-07-31",
-     "reveal": "condensed"
+     "reveal": "condensed",
+     "id": "fuel-aridity-driven-by-warming-share"
     },
     {
-     "label": "Home ignitions caused by embers \u00b7 not flames",
-     "value": "60\u201390",
+     "label": "Home ignitions caused by embers · not flames",
+     "value": "60–90",
      "unit": "%",
      "viz": "range",
      "wide": false,
@@ -41,17 +55,18 @@
      "range_max": "100",
      "range_at": 75,
      "fill_pct": 75,
-     "note": "60-90% of homes lost in wildfires ignite from wind-blown embers landing on roofs, in vents, or in gutters \u2014 often before the main fire front arrives.",
+     "note": "60-90% of homes lost in wildfires ignite from wind-blown embers landing on roofs, in vents, or in gutters — often before the main fire front arrives.",
      "detail": "The range comes from post-fire forensic studies, including analysis of the 2007 Witch Creek Fire, where two of every three destroyed homes were traced to ember ignition rather than direct flame contact. Embers can travel over a mile ahead of a fire front in high winds. This finding underlies the entire home-hardening and defensible-space case: because most homes burn from embers rather than the flame wall itself, small changes to roofs, vents, and the nearest 5 feet of a property can matter more than the size of the approaching fire.",
      "tier": 1,
      "source_label": "Insurance Institute for Business & Home Safety (IBHS)",
      "source_url": "https://ibhs.org/risk-research/wildfire/",
      "source_published": "2024",
      "source_accessed": "2026-07-31",
-     "reveal": "condensed"
+     "reveal": "condensed",
+     "id": "home-ignitions-caused-by-embers-not"
     },
     {
-     "label": "Homes in the wildland-urban interface \u00b7 US, 2020",
+     "label": "Homes in the wildland-urban interface · US, 2020",
      "value": "32",
      "unit": "%",
      "viz": "radial",
@@ -61,17 +76,18 @@
      "range_max": "",
      "range_at": 0,
      "fill_pct": 32,
-     "note": "44 million US homes, about a third of the national housing stock, now sit in the wildland-urban interface \u2014 up 47% since 1990.",
+     "note": "44 million US homes, about a third of the national housing stock, now sit in the wildland-urban interface — up 47% since 1990.",
      "detail": "The WUI is where houses meet or intermingle with wildland vegetation; it covers just 9.4% of the contiguous US land area but holds nearly a third of its homes. Growth was fastest 1990-2010 and slowed after the 2008 recession, but 2.6 million more WUI homes were still built 2010-2020. Every WUI home is a structure that can carry embers and flame into a neighborhood, and one that suppression crews must weigh when deciding how aggressively to fight a fire.",
      "tier": 1,
      "source_label": "USDA Forest Service (2020 Census-based WUI mapping)",
      "source_url": "https://research.fs.usda.gov/nrs/articles/where-humans-and-forests-meet-rapidly-growing-wildland-urban-interface",
      "source_published": "2025",
      "source_accessed": "2026-07-31",
-     "reveal": "condensed"
+     "reveal": "condensed",
+     "id": "homes-in-the-wildland-urban-interface"
     },
     {
-     "label": "Beneficial fire scale \u00b7 pre-colonial vs. California's 2025 goal",
+     "label": "Beneficial fire scale · pre-colonial vs. California's 2025 goal",
      "value": "400,000",
      "unit": "acres/yr",
      "viz": "ranked",
@@ -95,17 +111,18 @@
      "range_at": 0,
      "fill_pct": 9,
      "note": "Indigenous and early land management burned an est. 4.5M California acres a year before 1800; the state's 2025 goal for beneficial fire is 400,000.",
-     "detail": "California outlawed cultural burning in 1850 and the federal government followed in the early 1900s; both bans have only partially been reversed. The 400,000-acre target comes from the state's 2022 strategic plan for expanding beneficial fire, part of a broader goal to treat 1 million acres/yr (thinning plus burning) by 2025. Actual prescribed-fire acreage has run below target, at roughly 200,000-260,000 acres/yr in recent years \u2014 itself a live question in how much authority and funding Indigenous fire practitioners and agencies each hold.",
+     "detail": "California outlawed cultural burning in 1850 and the federal government followed in the early 1900s; both bans have only partially been reversed. The 400,000-acre target comes from the state's 2022 strategic plan for expanding beneficial fire, part of a broader goal to treat 1 million acres/yr (thinning plus burning) by 2025. Actual prescribed-fire acreage has run below target, at roughly 200,000-260,000 acres/yr in recent years — itself a live question in how much authority and funding Indigenous fire practitioners and agencies each hold.",
      "tier": 1,
      "source_label": "CA Wildfire & Forest Resilience Task Force",
      "source_url": "https://wildfiretaskforce.org/wp-content/uploads/2022/05/californias-strategic-plan-for-expanding-the-use-of-beneficial-fire.pdf",
      "source_published": "2022",
      "source_accessed": "2026-07-31",
-     "reveal": "condensed"
+     "reveal": "condensed",
+     "id": "beneficial-fire-scale-pre-colonial-vs"
     },
     {
-     "label": "Fire deficit \u00b7 Pacific Northwest forests, 1984\u20132015",
-     "value": "13\u201319",
+     "label": "Fire deficit · Pacific Northwest forests, 1984–2015",
+     "value": "13–19",
      "unit": " million hectares",
      "viz": "bar",
      "wide": false,
@@ -114,17 +131,18 @@
      "range_max": "",
      "range_at": 0,
      "fill_pct": null,
-     "note": "A century of fire exclusion left these forests missing 13-19M hectares of fire relative to historical rates \u2014 mostly in dry, frequent-fire types.",
-     "detail": "Haugo et al. (2019, Ecosphere) compared 1984-2015 fire records against historical reference rates reconstructed from tree rings and land-survey records. Only 1.6 million hectares actually burned over that period in Pacific Northwest forests, far short of what was expected. The gap is largest in dry ponderosa-pine-type forests built to burn every 5-25 years; wetter, high-severity-adapted forest types show little or no deficit \u2014 a distinction central to how broadly thinning and prescribed fire should be applied.",
+     "note": "A century of fire exclusion left these forests missing 13-19M hectares of fire relative to historical rates — mostly in dry, frequent-fire types.",
+     "detail": "Haugo et al. (2019, Ecosphere) compared 1984-2015 fire records against historical reference rates reconstructed from tree rings and land-survey records. Only 1.6 million hectares actually burned over that period in Pacific Northwest forests, far short of what was expected. The gap is largest in dry ponderosa-pine-type forests built to burn every 5-25 years; wetter, high-severity-adapted forest types show little or no deficit — a distinction central to how broadly thinning and prescribed fire should be applied.",
      "tier": 1,
      "source_label": "Haugo et al., Ecosphere",
      "source_url": "https://esajournals.onlinelibrary.wiley.com/doi/10.1002/ecs2.2702",
      "source_published": "2019",
      "source_accessed": "2026-07-31",
-     "reveal": "condensed"
+     "reveal": "condensed",
+     "id": "fire-deficit-pacific-northwest-forests-1984"
     },
     {
-     "label": "Wildfires stopped while small \u00b7 initial attack success rate",
+     "label": "Wildfires stopped while small · initial attack success rate",
      "value": "98",
      "unit": "% contained",
      "viz": "radial",
@@ -135,16 +153,17 @@
      "range_at": 0,
      "fill_pct": 98,
      "note": "The Forest Service suppresses ~98% of fires while small, but the 1-2% that escape consume 30%+ of annual suppression costs.",
-     "detail": "USDA's own accounting (2015) found the small minority of fires that escape initial attack drive the great majority of cost and damage. The ~98% success rate has stayed remarkably stable \u2014 the Forest Service reported 98% initial-attack success nationally for 2025, its best in 12 years (98.9% in the Pacific Northwest) \u2014 while a 2025 Colorado analysis (1990-2023 data) found the top 1% of fires by size accounted for roughly half of all acres burned. This is the statistical basis for both sides of the suppression debate: Suppression Modernizers read it as proof faster, harder initial attack pays off; Landscape Restorers and Thinning Skeptics read the same pattern as proof suppression alone can't solve the tail risk once fuel and weather take over.",
+     "detail": "USDA's own accounting (2015) found the small minority of fires that escape initial attack drive the great majority of cost and damage. The ~98% success rate has stayed remarkably stable — the Forest Service reported 98% initial-attack success nationally for 2025, its best in 12 years (98.9% in the Pacific Northwest) — while a 2025 Colorado analysis (1990-2023 data) found the top 1% of fires by size accounted for roughly half of all acres burned. This is the statistical basis for both sides of the suppression debate: Suppression Modernizers read it as proof faster, harder initial attack pays off; Landscape Restorers and Thinning Skeptics read the same pattern as proof suppression alone can't solve the tail risk once fuel and weather take over.",
      "tier": 1,
      "source_label": "USDA Forest Service",
      "source_url": "https://www.fs.usda.gov/sites/default/files/2015-Fire-Budget-Report.pdf",
      "source_published": "2015",
      "source_accessed": "2026-07-31",
-     "reveal": "condensed"
+     "reveal": "condensed",
+     "id": "wildfires-stopped-while-small-initial-attack"
     },
     {
-     "label": "Acres burned \u00b7 US wildfires, 2024",
+     "label": "Acres burned · US wildfires, 2024",
      "value": "8.9",
      "unit": " million acres",
      "viz": "bar",
@@ -154,17 +173,18 @@
      "range_max": "",
      "range_at": 0,
      "fill_pct": null,
-     "note": "About 65,000 fires burned 8.9 million acres in 2024 \u2014 both above the 10-year average, a season typical of the last decade.",
-     "detail": "NIFC's national totals \u2014 64,897 fires in 2024 \u2014 count every reported wildfire regardless of cause or land ownership, blending remote wildland fires with fires that threaten towns. Acreage swings enormously year to year with weather \u2014 2024 sits mid-pack against 2020's 10.1 million acres and other recent record years. Fire counts have stayed roughly flat for decades even as burned acreage climbed, meaning today's fires tend to grow larger, not more numerous.",
+     "note": "About 65,000 fires burned 8.9 million acres in 2024 — both above the 10-year average, a season typical of the last decade.",
+     "detail": "NIFC's national totals — 64,897 fires in 2024 — count every reported wildfire regardless of cause or land ownership, blending remote wildland fires with fires that threaten towns. Acreage swings enormously year to year with weather — 2024 sits mid-pack against 2020's 10.1 million acres and other recent record years. Fire counts have stayed roughly flat for decades even as burned acreage climbed, meaning today's fires tend to grow larger, not more numerous.",
      "tier": 2,
      "source_label": "National Interagency Fire Center",
      "source_url": "https://www.nifc.gov/fire-information/statistics",
      "source_published": "2024",
      "source_accessed": "2026-07-31",
-     "reveal": "normal"
+     "reveal": "normal",
+     "id": "acres-burned-us-wildfires-2024"
     },
     {
-     "label": "Structures destroyed \u00b7 Jan 2025 LA firestorm (Palisades & Eaton)",
+     "label": "Structures destroyed · Jan 2025 LA firestorm (Palisades & Eaton)",
      "value": "16,251",
      "unit": " structures",
      "viz": "bar",
@@ -175,16 +195,17 @@
      "range_at": 0,
      "fill_pct": null,
      "note": "A single wind-driven firestorm destroyed 16,251 homes and businesses and killed 31 people; insured losses run $25-30B a year later.",
-     "detail": "The Palisades and Eaton fires struck under extreme Santa Ana wind conditions after an unusually dry start to the rainy season, burning through dense, mature neighborhoods rather than remote wildland \u2014 the scenario Built-Edge Reformers and Suppression Modernizers each point to as their strongest case. Damage estimates vary by methodology: CoreLogic's initial property-loss estimate was $35-45 billion, while UCLA researchers put total economic and capital losses as high as $131 billion. This is a single, dated event, not an annual baseline \u2014 cited as the clearest recent illustration of what fire reaching a dense WUI edge can do.",
+     "detail": "The Palisades and Eaton fires struck under extreme Santa Ana wind conditions after an unusually dry start to the rainy season, burning through dense, mature neighborhoods rather than remote wildland — the scenario Built-Edge Reformers and Suppression Modernizers each point to as their strongest case. Damage estimates vary by methodology: CoreLogic's initial property-loss estimate was $35-45 billion, while UCLA researchers put total economic and capital losses as high as $131 billion. This is a single, dated event, not an annual baseline — cited as the clearest recent illustration of what fire reaching a dense WUI edge can do.",
      "tier": 2,
      "source_label": "Moody's (one-year retrospective)",
      "source_url": "https://www.moodys.com/web/en/us/insights/insurance/one-year-after-the-2025-los-angeles-fires.html",
      "source_published": "2026",
      "source_accessed": "2026-07-31",
-     "reveal": "normal"
+     "reveal": "normal",
+     "id": "structures-destroyed-jan-2025-la-firestorm"
     },
     {
-     "label": "Structure-loss reduction \u00b7 defensible space alone",
+     "label": "Structure-loss reduction · defensible space alone",
      "value": "17",
      "unit": "%",
      "viz": "radial",
@@ -195,16 +216,17 @@
      "range_at": 0,
      "fill_pct": 17,
      "note": "Clearing flammable vegetation within 5 feet of a home cut structure loss 17% on its own; paired with hardening, the two roughly double survival odds.",
-     "detail": "UC Berkeley's Fire Research Lab paired wildfire-spread simulations with Cal Fire's damage inspections from five of California's most destructive fires (2017-2020), then modeled how much each mitigation layer changed outcomes. Distance to neighboring structures, siding material, and year built were also strong predictors of survival alongside the treatments \u2014 meaning individual home upgrades help most when a whole neighborhood acts together, not just one house at a time.",
+     "detail": "UC Berkeley's Fire Research Lab paired wildfire-spread simulations with Cal Fire's damage inspections from five of California's most destructive fires (2017-2020), then modeled how much each mitigation layer changed outcomes. Distance to neighboring structures, siding material, and year built were also strong predictors of survival alongside the treatments — meaning individual home upgrades help most when a whole neighborhood acts together, not just one house at a time.",
      "tier": 2,
      "source_label": "UC Berkeley Fire Research Lab, Nature Communications",
      "source_url": "https://news.berkeley.edu/2025/08/28/california-communities-can-reduce-wildfire-damage-by-half-heres-how/",
      "source_published": "2025",
      "source_accessed": "2026-07-31",
-     "reveal": "normal"
+     "reveal": "normal",
+     "id": "structure-loss-reduction-defensible-space-alone"
     },
     {
-     "label": "California FAIR Plan premiums \u00b7 state insurer of last resort",
+     "label": "California FAIR Plan premiums · state insurer of last resort",
      "value": "1.4",
      "unit": "$B premium",
      "viz": "ranked",
@@ -228,16 +250,17 @@
      "range_at": 0,
      "fill_pct": 100,
      "note": "California's insurer-of-last-resort premiums rose 15-fold, from $87.2M (2018) to $1.4B (2024), as private insurers retreated from high-fire-risk areas.",
-     "detail": "The FAIR Plan exists to cover homes private insurers won't \u2014 its growth is a direct measure of private-market retreat from wildfire risk, not of new construction; policy count grew 276% over the same 2018-2024 span. Los Angeles County alone accounted for roughly a quarter of the statewide FAIR Plan portfolio by late 2024, before the January 2025 fires. The plan's exposure is backstopped by assessments on regular insurers \u2014 and ultimately policyholders statewide \u2014 if its reserves run short in a bad fire year, the crux of the 'who pays when it burns' debate.",
+     "detail": "The FAIR Plan exists to cover homes private insurers won't — its growth is a direct measure of private-market retreat from wildfire risk, not of new construction; policy count grew 276% over the same 2018-2024 span. Los Angeles County alone accounted for roughly a quarter of the statewide FAIR Plan portfolio by late 2024, before the January 2025 fires. The plan's exposure is backstopped by assessments on regular insurers — and ultimately policyholders statewide — if its reserves run short in a bad fire year, the crux of the 'who pays when it burns' debate.",
      "tier": 2,
      "source_label": "AM Best data via Carrier Management",
      "source_url": "https://www.carriermanagement.com/news/2025/02/10/271636.htm",
      "source_published": "2025",
      "source_accessed": "2026-07-31",
-     "reveal": "normal"
+     "reveal": "normal",
+     "id": "california-fair-plan-premiums-state-insurer"
     },
     {
-     "label": "Fire season length increase \u00b7 western US, 1970s to 2010s",
+     "label": "Fire season length increase · western US, 1970s to 2010s",
      "value": "84",
      "unit": " days longer",
      "viz": "bar",
@@ -254,10 +277,11 @@
      "source_url": "https://royalsocietypublishing.org/doi/10.1098/rstb.2015.0178",
      "source_published": "2016",
      "source_accessed": "2026-07-31",
-     "reveal": "normal"
+     "reveal": "normal",
+     "id": "fire-season-length-increase-western-us"
     },
     {
-     "label": "US Forest Service budget consumed by fire \u00b7 share spent on wildfire",
+     "label": "US Forest Service budget consumed by fire · share spent on wildfire",
      "value": "52",
      "unit": "% of budget",
      "viz": "ranked",
@@ -281,13 +305,14 @@
      "range_at": 0,
      "fill_pct": 100,
      "note": "Fire spending hit half the Forest Service's budget in 2015, up from 16% in 1995, squeezing the fuel-treatment work meant to prevent future fires.",
-     "detail": "Non-fire Forest Service staffing fell 39% from 1998-2015 as fire staffing more than doubled, and the agency projected fire could reach two-thirds of its budget by 2025 if the trend continued unchecked. A 2018 congressional funding fix moved a portion of catastrophic suppression costs into a separate disaster-cap fund specifically to break this crowding-out dynamic, so today's share is not a straight continuation of the pre-2018 trend \u2014 but the underlying tension, funding suppression now versus the fuel treatments meant to reduce suppression need later, remains unresolved.",
+     "detail": "Non-fire Forest Service staffing fell 39% from 1998-2015 as fire staffing more than doubled, and the agency projected fire could reach two-thirds of its budget by 2025 if the trend continued unchecked. A 2018 congressional funding fix moved a portion of catastrophic suppression costs into a separate disaster-cap fund specifically to break this crowding-out dynamic, so today's share is not a straight continuation of the pre-2018 trend — but the underlying tension, funding suppression now versus the fuel treatments meant to reduce suppression need later, remains unresolved.",
      "tier": 3,
      "source_label": "USDA Forest Service",
      "source_url": "https://www.fs.usda.gov/sites/default/files/2015-Fire-Budget-Report.pdf",
      "source_published": "2015",
      "source_accessed": "2026-07-31",
-     "reveal": "deep"
+     "reveal": "deep",
+     "id": "us-forest-service-budget-consumed-by"
     }
    ]
   },
@@ -296,160 +321,173 @@
     "text": "How much of the destruction is climate, how much a century of fuel buildup, and how much homes built into fire country?",
     "kind": "empirical",
     "why": "Every position agrees losses are worsening, but the split is over cause: Climate-First blames fire weather, Landscape Restorers a fuel-load bill coming due, Built-Edge Reformers homes built into harm's way.",
-    "detail": "This is the master attribution question underneath the whole topic, and it's genuinely hard to answer cleanly because the three forces compound rather than act independently. Climate-First Advocates point to longer fire seasons, drier fuels, and more frequent extreme fire-weather days as the driver that makes everything else worse \u2014 treated or untreated, hardened or not, a hotter and drier atmosphere means more days when any ignition can become unstoppable. Landscape Restorers point to a century of aggressive fire suppression that let fuel accumulate far beyond historical norms, arguing that even under today's climate, healthier fuel structure would burn very differently. Built-Edge Reformers point to the simplest mechanical fact: decades of subdivision growth pushed far more homes into the wildland-urban interface, so the same fire behavior now destroys vastly more structures than it would have a few decades ago, independent of climate or fuels. None of these is wrong; the honest disagreement is about relative weight and about which lever, pulled hardest, buys the most reduction in destroyed homes and lost lives per dollar or per year of effort \u2014 and that allocation question is exactly what divides the positions on this topic.",
+    "detail": "This is the master attribution question underneath the whole topic, and it's genuinely hard to answer cleanly because the three forces compound rather than act independently. Climate-First Advocates point to longer fire seasons, drier fuels, and more frequent extreme fire-weather days as the driver that makes everything else worse — treated or untreated, hardened or not, a hotter and drier atmosphere means more days when any ignition can become unstoppable. Landscape Restorers point to a century of aggressive fire suppression that let fuel accumulate far beyond historical norms, arguing that even under today's climate, healthier fuel structure would burn very differently. Built-Edge Reformers point to the simplest mechanical fact: decades of subdivision growth pushed far more homes into the wildland-urban interface, so the same fire behavior now destroys vastly more structures than it would have a few decades ago, independent of climate or fuels. None of these is wrong; the honest disagreement is about relative weight and about which lever, pulled hardest, buys the most reduction in destroyed homes and lost lives per dollar or per year of effort — and that allocation question is exactly what divides the positions on this topic.",
     "tier": 1,
     "reveal": "condensed",
     "lean_label_a": "",
     "lean_label_b": "",
-    "lean_pct_a": null
+    "lean_pct_a": null,
+    "id": "how-much-of-the-destruction-is"
    },
    {
-    "text": "Can thinning and prescribed fire actually blunt wind-driven megafires \u2014 and can they scale before the fires arrive?",
+    "text": "Can thinning and prescribed fire actually blunt wind-driven megafires — and can they scale before the fires arrive?",
     "kind": "empirical",
     "why": "Landscape Restorers say scaled thinning and burning can blunt fire behavior; Thinning Skeptics counter the worst fires are wind-driven blowups that outrun any treatment, and enough acreage can't be treated fast enough to matter.",
-    "detail": "The Landscape Restorer case rests on the idea that fuel treatment changes fire behavior at the stand level \u2014 thinned, burned forest tends to carry lower flame lengths and slower spread, giving firefighters anchor points and a fighting chance, and a century of fire exclusion has left an unusually loaded, continuous fuel bed that a sustained thin-and-burn program can work back down. The Thinning Skeptic case is that this holds mainly on 'normal' fire days, while the events that actually destroy communities are extreme wind-driven runs \u2014 the fire simply outruns, jumps, or burns through any treated buffer, so the acres that matter most for loss prevention are exactly the ones fuel treatment can't help. Layered on top is a pure pace problem: treatment has to be redone every decade or so as fuels regrow, funding and workforce are limited, smoke tolerance constrains burn windows, and skeptics argue the backcountry-thinning push is shaped as much by timber economics as by fire science. The genuine crux is less 'does treatment ever work' \u2014 there's real agreement it can moderate fire behavior under many conditions \u2014 than whether a program can be funded, staffed, and executed at landscape scale fast enough to matter before the next extreme fire-weather event, and whether treatment dollars are better spent nearer homes than deep in the backcountry.",
+    "detail": "The Landscape Restorer case rests on the idea that fuel treatment changes fire behavior at the stand level — thinned, burned forest tends to carry lower flame lengths and slower spread, giving firefighters anchor points and a fighting chance, and a century of fire exclusion has left an unusually loaded, continuous fuel bed that a sustained thin-and-burn program can work back down. The Thinning Skeptic case is that this holds mainly on 'normal' fire days, while the events that actually destroy communities are extreme wind-driven runs — the fire simply outruns, jumps, or burns through any treated buffer, so the acres that matter most for loss prevention are exactly the ones fuel treatment can't help. Layered on top is a pure pace problem: treatment has to be redone every decade or so as fuels regrow, funding and workforce are limited, smoke tolerance constrains burn windows, and skeptics argue the backcountry-thinning push is shaped as much by timber economics as by fire science. The genuine crux is less 'does treatment ever work' — there's real agreement it can moderate fire behavior under many conditions — than whether a program can be funded, staffed, and executed at landscape scale fast enough to matter before the next extreme fire-weather event, and whether treatment dollars are better spent nearer homes than deep in the backcountry.",
     "tier": 1,
     "reveal": "condensed",
     "lean_label_a": "Can blunt them",
     "lean_label_b": "Fires outrun it",
-    "lean_pct_a": null
+    "lean_pct_a": null,
+    "id": "can-thinning-and-prescribed-fire-actually"
    },
    {
     "text": "Does ever-stronger suppression save communities now at the price of deeper fire debt later?",
     "kind": "empirical",
     "why": "Suppression Modernizers say fast, overwhelming attack saves lives and property now; critics counter that snuffing every small fire also snuffs the process that would consume fuel gradually, banking a larger reckoning later.",
-    "detail": "Suppression Modernizers make an immediate, hard-to-dispute case: rapid detection and overwhelming initial attack demonstrably save lives, homes, and property in the moment, and any strategy that deliberately lets more fires burn accepts real losses today in exchange for uncertain future benefit. The fire-debt case, associated with the broader fire-exclusion critique, argues that near-total suppression success is itself the mechanism that built up today's fuel loads \u2014 every small fire successfully stopped is fuel left standing for the next one \u2014 so decades of highly effective suppression have quietly been trading manageable, low-intensity fires now for larger, harder-to-stop fires later, and the fires that do eventually escape initial attack do so under worse conditions and burn more severely as a result. The two claims aren't strictly opposed \u2014 most credible positions accept some version of both \u2014 so the live disagreement is really about balance and sequencing: how much suppression capacity to keep funding at full strength versus how much of that same effort and money to redirect toward prescribed and managed fire, and whether a region can afford the short-term risk of intentionally holding back suppression anywhere while its fuel debt is still being paid down.",
+    "detail": "Suppression Modernizers make an immediate, hard-to-dispute case: rapid detection and overwhelming initial attack demonstrably save lives, homes, and property in the moment, and any strategy that deliberately lets more fires burn accepts real losses today in exchange for uncertain future benefit. The fire-debt case, associated with the broader fire-exclusion critique, argues that near-total suppression success is itself the mechanism that built up today's fuel loads — every small fire successfully stopped is fuel left standing for the next one — so decades of highly effective suppression have quietly been trading manageable, low-intensity fires now for larger, harder-to-stop fires later, and the fires that do eventually escape initial attack do so under worse conditions and burn more severely as a result. The two claims aren't strictly opposed — most credible positions accept some version of both — so the live disagreement is really about balance and sequencing: how much suppression capacity to keep funding at full strength versus how much of that same effort and money to redirect toward prescribed and managed fire, and whether a region can afford the short-term risk of intentionally holding back suppression anywhere while its fuel debt is still being paid down.",
     "tier": 2,
     "reveal": "condensed",
     "lean_label_a": "Worth it now",
     "lean_label_b": "Debt comes due",
-    "lean_pct_a": null
+    "lean_pct_a": null,
+    "id": "does-ever-stronger-suppression-save-communities"
    },
    {
-    "text": "Should anyone be underwritten to live \u2014 and rebuild \u2014 in the highest-risk fire zones, and who pays when they burn?",
+    "text": "Should anyone be underwritten to live — and rebuild — in the highest-risk fire zones, and who pays when they burn?",
     "kind": "value",
     "why": "Pricing insurance and rebuilding rules to true fire risk could price out longtime and lower-income residents; continuing to subsidize rebuilding in the highest-risk zones socializes the loss and funds the next disaster.",
-    "detail": "The evidence landscape here is less about whether risk is rising in the highest-hazard zones \u2014 that's broadly accepted \u2014 and more about who should bear the cost of that risk and what fairness requires. Insurers pulling back or sharply repricing coverage in fire-prone areas, and states standing up backstop insurers of last resort to fill the gap, effectively shifts risk from private markets onto public or quasi-public balance sheets, which Built-Edge Reformers argue mutes the price signal that would otherwise discourage building and rebuilding in the worst locations \u2014 a moral-hazard argument. Set against that is an equity case: many residents of high-risk areas are longtime, lower-income, rural, or historically underserved communities who didn't choose to be exposed to escalating risk and can't simply relocate, and pricing them out through 'true risk' premiums or rebuilding restrictions effectively evicts people through the market rather than through policy debate. There's also a harder question of newer, higher-value development deliberately built deep into fire country, where the fairness case for public subsidy is much weaker. This is fundamentally a value question about who deserves protection, who counts as having chosen the risk, and whether continued rebuilding in the same footprint is compassion or a subsidized invitation to lose it all again.",
+    "detail": "The evidence landscape here is less about whether risk is rising in the highest-hazard zones — that's broadly accepted — and more about who should bear the cost of that risk and what fairness requires. Insurers pulling back or sharply repricing coverage in fire-prone areas, and states standing up backstop insurers of last resort to fill the gap, effectively shifts risk from private markets onto public or quasi-public balance sheets, which Built-Edge Reformers argue mutes the price signal that would otherwise discourage building and rebuilding in the worst locations — a moral-hazard argument. Set against that is an equity case: many residents of high-risk areas are longtime, lower-income, rural, or historically underserved communities who didn't choose to be exposed to escalating risk and can't simply relocate, and pricing them out through 'true risk' premiums or rebuilding restrictions effectively evicts people through the market rather than through policy debate. There's also a harder question of newer, higher-value development deliberately built deep into fire country, where the fairness case for public subsidy is much weaker. This is fundamentally a value question about who deserves protection, who counts as having chosen the risk, and whether continued rebuilding in the same footprint is compassion or a subsidized invitation to lose it all again.",
     "tier": 2,
     "reveal": "condensed",
     "lean_label_a": "Underwrite them",
     "lean_label_b": "Price the risk",
-    "lean_pct_a": null
+    "lean_pct_a": null,
+    "id": "should-anyone-be-underwritten-to-live"
    },
    {
     "text": "Once embers reach a neighborhood, can hardened homes and defensible space stop a conflagration?",
     "kind": "empirical",
     "why": "Built-Edge Reformers treat hardening as the provable, controllable lever, but skeptics note even hardened homes fail once embers cascade structure-to-structure in the most extreme events.",
-    "detail": "Built-Edge Reformers point to a recurring pattern in post-fire investigations: individual homes with ember-resistant vents, noncombustible roofing and siding, and cleared defensible space are disproportionately found standing amid neighborhoods that otherwise burned, which reads as strong evidence that structure-level choices are the most directly controllable variable in the whole system \u2014 unlike climate or regional fuel loads, a homeowner or a building code can change them directly. The countercase is that this evidence is strongest for ember-cast ignition from wildland fire reaching the edge of a community, and weaker once a fire has already ignited enough structures that it becomes a structure-to-structure urban conflagration, spreading through radiant heat and short-range embers between houses regardless of the surrounding wildland fuel \u2014 at that point the relevant unit isn't the individual home but the whole block's collective hardening and spacing. The genuine open question is where that tipping point sits: how much hardening and clearance, done at what scale across a neighborhood, is enough to prevent the cascade from starting, versus how much is simply overwhelmed once ignition density crosses some threshold in the most extreme wind-driven events.",
+    "detail": "Built-Edge Reformers point to a recurring pattern in post-fire investigations: individual homes with ember-resistant vents, noncombustible roofing and siding, and cleared defensible space are disproportionately found standing amid neighborhoods that otherwise burned, which reads as strong evidence that structure-level choices are the most directly controllable variable in the whole system — unlike climate or regional fuel loads, a homeowner or a building code can change them directly. The countercase is that this evidence is strongest for ember-cast ignition from wildland fire reaching the edge of a community, and weaker once a fire has already ignited enough structures that it becomes a structure-to-structure urban conflagration, spreading through radiant heat and short-range embers between houses regardless of the surrounding wildland fuel — at that point the relevant unit isn't the individual home but the whole block's collective hardening and spacing. The genuine open question is where that tipping point sits: how much hardening and clearance, done at what scale across a neighborhood, is enough to prevent the cascade from starting, versus how much is simply overwhelmed once ignition density crosses some threshold in the most extreme wind-driven events.",
     "tier": 3,
     "reveal": "normal",
     "lean_label_a": "Can stop it",
     "lean_label_b": "Overwhelmed",
-    "lean_pct_a": null
+    "lean_pct_a": null,
+    "id": "once-embers-reach-a-neighborhood-can"
    },
    {
     "text": "Should remote fires be allowed to burn for ecological benefit, accepting the smoke and the escape risk?",
     "kind": "value",
     "why": "Cultural Fire Stewards and ecologists see unsuppressed remote burns as the cheapest way to restore fire-adapted land; the tradeoff is smoke for downwind communities and the risk a monitored burn escapes containment.",
-    "detail": "The ecological case for managed or monitored wildland fire is that many of these landscapes evolved with frequent, low-to-moderate intensity fire, and letting remote, low-threat ignitions burn under monitored conditions is by far the cheapest and most landscape-scale way to reduce fuel loads, recycle nutrients, and maintain habitat that depends on periodic burning \u2014 cheaper and faster than any crew-driven treatment program could achieve. Set against that are two real costs: smoke exposure for downwind communities, which falls disproportionately on people who had no say in the decision to let a fire burn and who may face real health impacts, especially vulnerable populations; and the risk, however carefully managed, that a monitored fire crosses containment lines under a wind shift and becomes the destructive event that suppression policy exists to prevent. Past escaped prescribed or managed fires tend to have an outsized chilling effect on this whole strategy, because a single high-profile escape can erode public and political trust in let-burn policy for years, even if the underlying risk-managed approach is sound on average. This is a values tradeoff between diffuse, delayed ecological and fire-risk benefits and concentrated, immediate costs to people nearby \u2014 with genuine disagreement about how much escape risk and smoke burden is acceptable in exchange for landscape-scale restoration.",
+    "detail": "The ecological case for managed or monitored wildland fire is that many of these landscapes evolved with frequent, low-to-moderate intensity fire, and letting remote, low-threat ignitions burn under monitored conditions is by far the cheapest and most landscape-scale way to reduce fuel loads, recycle nutrients, and maintain habitat that depends on periodic burning — cheaper and faster than any crew-driven treatment program could achieve. Set against that are two real costs: smoke exposure for downwind communities, which falls disproportionately on people who had no say in the decision to let a fire burn and who may face real health impacts, especially vulnerable populations; and the risk, however carefully managed, that a monitored fire crosses containment lines under a wind shift and becomes the destructive event that suppression policy exists to prevent. Past escaped prescribed or managed fires tend to have an outsized chilling effect on this whole strategy, because a single high-profile escape can erode public and political trust in let-burn policy for years, even if the underlying risk-managed approach is sound on average. This is a values tradeoff between diffuse, delayed ecological and fire-risk benefits and concentrated, immediate costs to people nearby — with genuine disagreement about how much escape risk and smoke burden is acceptable in exchange for landscape-scale restoration.",
     "tier": 3,
     "reveal": "normal",
     "lean_label_a": "Let them burn",
     "lean_label_b": "Put them out",
-    "lean_pct_a": null
+    "lean_pct_a": null,
+    "id": "should-remote-fires-be-allowed-to"
    },
    {
-    "text": "Who should hold the authority to put fire on the land \u2014 agencies, states, or the Indigenous nations that burned it first?",
+    "text": "Who should hold the authority to put fire on the land — agencies, states, or the Indigenous nations that burned it first?",
     "kind": "value",
     "why": "Centralized agency control offers uniform liability and safety standards but has historically excluded the cultural burning that shaped these landscapes; devolving authority raises its own liability and coordination questions.",
-    "detail": "This is a governance and sovereignty question layered on top of all the technical ones. Federal and state fire agencies built their authority over more than a century of an exclusion-first policy that actively suppressed the cultural burning practices Indigenous nations had used to tend these landscapes long before colonization, and centralized control still offers advantages \u2014 uniform safety and liability standards, coordinated resourcing, and accountability structures suited to interstate and federal land. Cultural Fire Stewards argue this centralization is itself part of why fuel loads and fire risk have grown: traditional burning was calibrated over generations to specific ecosystems and was deliberately suppressed, and returning burning authority \u2014 not just consultation, but actual decision rights over when and where to burn \u2014 to the nations that hold that knowledge is both a restoration of sovereignty and a practical fire-management improvement. The friction is real on both sides: liability law in many places still exposes anyone who authorizes a burn that escapes to catastrophic financial and legal risk, which chills devolved authority regardless of who holds it, and coordinating burn authority across multiple jurisdictions \u2014 federal, state, tribal, private landowner \u2014 raises genuine questions about consistency and accountability that centralized agency control was partly built to solve. The disagreement is less about whether cultural fire knowledge is valuable, which is now widely acknowledged, than about how much actual legal and operational authority should move, to whom, and how fast.",
+    "detail": "This is a governance and sovereignty question layered on top of all the technical ones. Federal and state fire agencies built their authority over more than a century of an exclusion-first policy that actively suppressed the cultural burning practices Indigenous nations had used to tend these landscapes long before colonization, and centralized control still offers advantages — uniform safety and liability standards, coordinated resourcing, and accountability structures suited to interstate and federal land. Cultural Fire Stewards argue this centralization is itself part of why fuel loads and fire risk have grown: traditional burning was calibrated over generations to specific ecosystems and was deliberately suppressed, and returning burning authority — not just consultation, but actual decision rights over when and where to burn — to the nations that hold that knowledge is both a restoration of sovereignty and a practical fire-management improvement. The friction is real on both sides: liability law in many places still exposes anyone who authorizes a burn that escapes to catastrophic financial and legal risk, which chills devolved authority regardless of who holds it, and coordinating burn authority across multiple jurisdictions — federal, state, tribal, private landowner — raises genuine questions about consistency and accountability that centralized agency control was partly built to solve. The disagreement is less about whether cultural fire knowledge is valuable, which is now widely acknowledged, than about how much actual legal and operational authority should move, to whom, and how fast.",
     "tier": 4,
     "reveal": "normal",
     "lean_label_a": "Central agencies",
     "lean_label_b": "Indigenous nations",
-    "lean_pct_a": null
+    "lean_pct_a": null,
+    "id": "who-should-hold-the-authority-to"
    }
   ],
   "positions": [
    {
     "name": "Landscape Restorer",
-    "steelman": "A century of fire exclusion loaded the land \u2014 thin, burn, and restore it at scale.",
-    "description": "Fire built these forests \u2014 low-intensity burns once returned every 7 to 12 years in the Sierra Nevada, thinning fuels and favoring the big, fire-resistant trees. A century of aggressive suppression broke that cycle, so fuel that would have burned off in a hundred small fires now stands all at once, ready to carry flame into the canopy. The fix is to put fire's job back in human hands at scale: mechanical thinning followed by prescribed and cultural burning across millions of acres, not thousands. The evidence holds under real fire: a 2024 meta-analysis across the Western US found thinning-plus-burning cut subsequent wildfire severity by 62 to 72 percent, and when the Caldor Fire hit treated stands above Lake Tahoe in 2021, trees there were three times more likely to survive, with no homes lost in the community they protected.",
-    "detail": "The clearest long-run evidence comes from Blodgett Forest Research Station in the Sierra Nevada, where UC Berkeley's Scott Stephens and colleagues have run paired burn-only, thin-only, and thin-plus-burn plots since 1999 as part of the national Fire Surrogate Study. When the Mosquito Fire hit the property in 2022, the untreated control plot lost more than 60 percent of its trees to crown scorch while the combination-treated plots came through resilient \u2014 the kind of unplanned, real-world test the position treats as more convincing than any model. The internal debate inside the movement is over durability and sequencing: thinning alone removes ladder fuels but leaves slash and surface fuel behind, so Stephens, Malcolm North, and most fire scientists insist mechanical work has to be followed by burning to get the full effect \u2014 and that effect isn't permanent, fading by more than half once a decade passes without a return fire, which is why proponents frame this as a maintenance regime, not a one-time fix. North has pushed the field past what he calls the \"pace and scale challenge\": isolated demonstration plots and small defensible-space projects around individual towns can't keep up with a landscape that needs fire on a rotation measured in single digits of years across tens of millions of acres \u2014 the logic behind the US Forest Service's 2022 Wildfire Crisis Strategy, a $50 billion, ten-year commitment to treat 50 million acres that the position points to as proof its case has finally been heard in Washington, even as implementation still lags the acreage targets on the ground. Where it answers critics who say weather, not fuel, drives megafires: proponents don't dispute that fire weather is worsening, only that treated forests measurably burn less severely even in the worst of it, and that waiting for the climate problem to resolve first just means leaving a century of accumulated fuel to keep compounding while nothing gets done.",
+    "steelman": "A century of fire exclusion loaded the land — thin, burn, and restore it at scale.",
+    "description": "Fire built these forests — low-intensity burns once returned every 7 to 12 years in the Sierra Nevada, thinning fuels and favoring the big, fire-resistant trees. A century of aggressive suppression broke that cycle, so fuel that would have burned off in a hundred small fires now stands all at once, ready to carry flame into the canopy. The fix is to put fire's job back in human hands at scale: mechanical thinning followed by prescribed and cultural burning across millions of acres, not thousands. The evidence holds under real fire: a 2024 meta-analysis across the Western US found thinning-plus-burning cut subsequent wildfire severity by 62 to 72 percent, and when the Caldor Fire hit treated stands above Lake Tahoe in 2021, trees there were three times more likely to survive, with no homes lost in the community they protected.",
+    "detail": "The clearest long-run evidence comes from Blodgett Forest Research Station in the Sierra Nevada, where UC Berkeley's Scott Stephens and colleagues have run paired burn-only, thin-only, and thin-plus-burn plots since 1999 as part of the national Fire Surrogate Study. When the Mosquito Fire hit the property in 2022, the untreated control plot lost more than 60 percent of its trees to crown scorch while the combination-treated plots came through resilient — the kind of unplanned, real-world test the position treats as more convincing than any model. The internal debate inside the movement is over durability and sequencing: thinning alone removes ladder fuels but leaves slash and surface fuel behind, so Stephens, Malcolm North, and most fire scientists insist mechanical work has to be followed by burning to get the full effect — and that effect isn't permanent, fading by more than half once a decade passes without a return fire, which is why proponents frame this as a maintenance regime, not a one-time fix. North has pushed the field past what he calls the \"pace and scale challenge\": isolated demonstration plots and small defensible-space projects around individual towns can't keep up with a landscape that needs fire on a rotation measured in single digits of years across tens of millions of acres — the logic behind the US Forest Service's 2022 Wildfire Crisis Strategy, a $50 billion, ten-year commitment to treat 50 million acres that the position points to as proof its case has finally been heard in Washington, even as implementation still lags the acreage targets on the ground. Where it answers critics who say weather, not fuel, drives megafires: proponents don't dispute that fire weather is worsening, only that treated forests measurably burn less severely even in the worst of it, and that waiting for the climate problem to resolve first just means leaving a century of accumulated fuel to keep compounding while nothing gets done.",
     "tier": 1,
     "proponents": "Scott Stephens, Malcolm North, Craig Thomas, The Nature Conservancy, USDA Forest Service",
     "representative_name": "Scott Stephens",
     "representative_note": "UC Berkeley fire scientist behind the 20-year Blodgett Forest study, the field's longest-running test of thin-and-burn treatment.",
     "prevalence_weight": 85,
-    "spectrum_position": -2
+    "spectrum_position": -2,
+    "id": "landscape-restorer"
    },
    {
     "name": "Built-Edge Reformer",
     "steelman": "The fire that kills a neighborhood is decided in the last 100 feet, not the backcountry.",
-    "description": "A home doesn't have to lose to a wildfire \u2014 it has to lose to embers, and that's a fight architecture and landscaping can win. Jack Cohen's home-ignition research reframed wildland-urban fire as a structure problem: most homes burn from wind-driven embers landing on a vulnerable roof, vent, or woodpile within the first 100 feet, not from a flame front out of the wildland. After the 2018 Camp Fire, homes built to California's 2008 ember- and flame-resistant code survived at more than three times the rate of older construction. Hardening to that standard, or to IBHS's Wildfire Prepared Home program, adds well under 3% to construction cost, and certified homes now earn 5-20% premium discounts from carriers like State Farm and Mercury.",
+    "description": "A home doesn't have to lose to a wildfire — it has to lose to embers, and that's a fight architecture and landscaping can win. Jack Cohen's home-ignition research reframed wildland-urban fire as a structure problem: most homes burn from wind-driven embers landing on a vulnerable roof, vent, or woodpile within the first 100 feet, not from a flame front out of the wildland. After the 2018 Camp Fire, homes built to California's 2008 ember- and flame-resistant code survived at more than three times the rate of older construction. Hardening to that standard, or to IBHS's Wildfire Prepared Home program, adds well under 3% to construction cost, and certified homes now earn 5-20% premium discounts from carriers like State Farm and Mercury.",
     "detail": "The Home Ignition Zone framework traces to Jack Cohen's Forest Service experiments in the 1990s, when he found homes igniting even where the wildfire itself never reached the structure -- it was embers landing on debris-choked gutters, wood decks, and vent openings that did the damage. That finding recast wildfire loss as a building-and-landscaping problem, and it has held up: studies of the 2018 Camp Fire in Paradise found Class A roofs, enclosed eaves, multi-pane windows, and ember-resistant vents among the strongest predictors of which houses survived, at times outweighing the surrounding vegetation entirely. There's a real internal debate here -- a 2019 analysis of 40,000 structures by Syphard and Keeley found defensible-space distance a weaker predictor of survival than structural characteristics, while other work on the same fire seasons found defensible space and hardening act synergistically, together cutting structure loss by roughly half. Either way, reformers converge on the same fix: California's Zone 0 rule (AB 3074, SB 504), pushed into final rulemaking after the 2025 Los Angeles fires, would mandate a noncombustible 5-foot ember-resistant ring around every home in the highest-risk zones, and IBHS's Wildfire Prepared Home standard -- now written into underwriting at State Farm, Mercury, Allstate, Farmers, and USAA -- turns that science into a certification insurers will actually price. The honest endgame, in this view, is parcel-level codes and land-use rules backed by insurance that charges what the risk actually costs, rather than a system that quietly asks everyone else to underwrite building in fire country. R Street Institute and Headwaters Economics (Kimiko Barrett) push the companion argument -- that risk-based premiums and reformed permitting, not an ever-larger insurer-of-last-resort pool like California's FAIR Plan (which had grown past 600,000 policies by late 2025), are what finally make hardening pay off for the individual homeowner, not just the neighborhood.",
     "tier": 1,
     "proponents": "Jack Cohen (USDA Forest Service, Home Ignition Zone), Alexandra Syphard (fire ecologist), IBHS (Insurance Institute for Business & Home Safety), Kimiko Barrett / Headwaters Economics, R Street Institute, Molly Mowery / Community Wildfire Planning Center, California Board of Forestry and Fire Protection",
     "representative_name": "IBHS Wildfire Prepared Home program",
     "representative_note": "A science-based roof/vents/siding/defensible-space standard now written into insurer underwriting and premium discounts -- the position's ask (harden structures, then let insurance price the result) turned into an operating program.",
     "prevalence_weight": 72,
-    "spectrum_position": 1
+    "spectrum_position": 1,
+    "id": "built-edge-reformer"
    },
    {
     "name": "Climate-First Advocate",
     "steelman": "The atmosphere is the accelerant: without cutting emissions, every other fix is triage.",
     "description": "Fire weather (heat, aridity, wind) is the force multiplier that turns an ignition into a megafire, and it intensifies as long as the planet keeps warming. Thinning, home hardening, and stronger suppression all matter, but they're chasing a target that moves faster than treatment can scale. Anthropogenic warming and atmospheric drying roughly doubled the cumulative forest area burned across the western US between 1984 and 2015, and a 2023 attribution study traced 37% of that increase to the historical emissions of 88 major fossil fuel and cement producers. Cut the emissions driving that curve, or every acre thinned and every home hardened is buying time, not solving the problem.",
-    "detail": "The field's turning point was Abatzoglou and Williams' 2016 PNAS paper, which used climate models to separate human-caused warming from natural variability and found it had driven fuel aridity high enough to roughly double burned forest area since 1984 \u2014 the first study to put a number on climate's fingerprint rather than just note the correlation. Follow-up work made the mechanism explicit: a NOAA-funded 2021 study identified vapor pressure deficit, not fuel load, as the leading driver of the rise in fire weather itself, and rapid-attribution teams (World Weather Attribution) have since shown specific disasters \u2014 the 2023 Canadian fire season, the January 2025 Los Angeles firestorm \u2014 were made dramatically more likely by roughly 1.3\u00b0C of warming to date (35% more likely for the hot, dry, windy conditions behind the LA fires alone). Advocates are careful to frame this as necessary-but-not-sufficient rather than fuels-versus-climate: the internal debate isn't whether thinning or home hardening help \u2014 most agree they do \u2014 it's whether treating them as the primary fix lets policymakers dodge the harder problem, since the IPCC's AR6 assessment finds fire weather will keep worsening for decades under any near-term emissions path, meaning even aggressive mitigation buys adaptation time rather than a ceiling. The 2023 \"carbon majors\" study (Dahl, Abatzoglou et al., Environmental Research Letters) pushed the accountability argument further, tracing 48% of the long-term VPD rise and 37% of burned area to 88 identifiable corporate emitters \u2014 work now cited in wildfire-damage litigation and the evidentiary basis for treating this as a liability question, not just a land-management one.",
+    "detail": "The field's turning point was Abatzoglou and Williams' 2016 PNAS paper, which used climate models to separate human-caused warming from natural variability and found it had driven fuel aridity high enough to roughly double burned forest area since 1984 — the first study to put a number on climate's fingerprint rather than just note the correlation. Follow-up work made the mechanism explicit: a NOAA-funded 2021 study identified vapor pressure deficit, not fuel load, as the leading driver of the rise in fire weather itself, and rapid-attribution teams (World Weather Attribution) have since shown specific disasters — the 2023 Canadian fire season, the January 2025 Los Angeles firestorm — were made dramatically more likely by roughly 1.3°C of warming to date (35% more likely for the hot, dry, windy conditions behind the LA fires alone). Advocates are careful to frame this as necessary-but-not-sufficient rather than fuels-versus-climate: the internal debate isn't whether thinning or home hardening help — most agree they do — it's whether treating them as the primary fix lets policymakers dodge the harder problem, since the IPCC's AR6 assessment finds fire weather will keep worsening for decades under any near-term emissions path, meaning even aggressive mitigation buys adaptation time rather than a ceiling. The 2023 \"carbon majors\" study (Dahl, Abatzoglou et al., Environmental Research Letters) pushed the accountability argument further, tracing 48% of the long-term VPD rise and 37% of burned area to 88 identifiable corporate emitters — work now cited in wildfire-damage litigation and the evidentiary basis for treating this as a liability question, not just a land-management one.",
     "tier": 1,
     "proponents": "John Abatzoglou, A. Park Williams, Daniel Swain, Michael Mann, Kristina Dahl, Union of Concerned Scientists, World Weather Attribution",
     "representative_name": "Union of Concerned Scientists",
     "representative_note": "Science-advocacy nonprofit whose research (with scientists including John Abatzoglou and Kristina Dahl) quantified fossil-fuel producers' share of the fire-weather and burned-area increase, work since cited in climate-liability litigation over wildfire damages.",
     "prevalence_weight": 60,
-    "spectrum_position": 3
+    "spectrum_position": 3,
+    "id": "climate-first-advocate"
    },
    {
     "name": "Suppression Modernizer",
     "steelman": "Find it in minutes, hit it with everything you have, before the wind gets a vote.",
-    "description": "The one thing anyone fully controls once a fire starts is how fast it's found and how hard it's hit \u2014 the weather and terrain that day are already decided. Catch a start in its first burning period and it stays a footnote; miss that window and no amount of downstream fuel work saves the town. That's not a hope: CAL FIRE has held a standing benchmark of keeping 95% of fires to 10 acres or less for years, and a peer-reviewed study found initial attack cut burn probability by 78% against a no-suppression baseline. The tools to run that doctrine at scale have arrived: AI-triaged cameras, night-flying helicopters, and purpose-built detection satellites. They belong in the field, not stuck in pilots.",
-    "detail": "This is not the US Forest Service's old \"10 a.m. policy,\" the 1935 mandate to have every fire out by the next morning that later got blamed for a century of fuel buildup \u2014 modern suppression advocates draw a sharper line, treating fuel reduction as a separate, slower lever and speed-of-response as the fast one they actually control. The doctrine gets tested in public every fire season. In January 2025, night-flying aircraft \u2014 an LAFD AW139, an LA County Fire Sikorsky Firehawk, night-vision goggles paired with infrared \u2014 held the Palisades Fire out of Mandeville Canyon and off the 405, work that wasn't possible a decade earlier when agencies grounded aircraft at dusk. By August 2025 California had retired its Vietnam-era Huey fleet for sixteen S-70i Firehawks \u2014 the world's largest civilian firefighting helicopter fleet, each carrying nearly triple the water and flying round the clock \u2014 built explicitly, in Governor Newsom's framing, to backfill capacity as federal firefighting budgets were cut that year. Detection has moved just as fast: UC San Diego's ALERTCalifornia, with over 1,200 AI-triaged mountaintop cameras built with CAL FIRE and DigitalPath, and Pano AI's network across 50 million-plus acres (735 fire alerts in 2025, first known alert more than half the time) now routinely spot smoke before the first 911 call. In July 2026 the first operational FireSat satellites launched, aiming \u2014 per CAL FIRE Director Joe Tyler \u2014 to deliver \"space-enabled wildfire intelligence\" that resolves fires as small as 5x5 meters anywhere on Earth within 20 minutes. The internal argument isn't whether to modernize but how far: whether AI dispatch and autonomous aircraft should be trusted to launch a first response without a human in the loop, and whether state-funded technology quietly lets federal agencies keep shrinking their own capacity. The evidence proponents lean on hardest isn't any one dramatic save; it's the base rate. A peer-reviewed burn-probability analysis of initial attack (Kootenay National Park) found a 78% reduction in burn probability versus a no-suppression counterfactual, and CAL FIRE has held its 95%-under-10-acres benchmark for years. Advocates are candid that the acreage burned by the small share that escape initial attack is disproportionate \u2014 that's precisely the gap this next wave of detection and airpower is built to close.",
+    "description": "The one thing anyone fully controls once a fire starts is how fast it's found and how hard it's hit — the weather and terrain that day are already decided. Catch a start in its first burning period and it stays a footnote; miss that window and no amount of downstream fuel work saves the town. That's not a hope: CAL FIRE has held a standing benchmark of keeping 95% of fires to 10 acres or less for years, and a peer-reviewed study found initial attack cut burn probability by 78% against a no-suppression baseline. The tools to run that doctrine at scale have arrived: AI-triaged cameras, night-flying helicopters, and purpose-built detection satellites. They belong in the field, not stuck in pilots.",
+    "detail": "This is not the US Forest Service's old \"10 a.m. policy,\" the 1935 mandate to have every fire out by the next morning that later got blamed for a century of fuel buildup — modern suppression advocates draw a sharper line, treating fuel reduction as a separate, slower lever and speed-of-response as the fast one they actually control. The doctrine gets tested in public every fire season. In January 2025, night-flying aircraft — an LAFD AW139, an LA County Fire Sikorsky Firehawk, night-vision goggles paired with infrared — held the Palisades Fire out of Mandeville Canyon and off the 405, work that wasn't possible a decade earlier when agencies grounded aircraft at dusk. By August 2025 California had retired its Vietnam-era Huey fleet for sixteen S-70i Firehawks — the world's largest civilian firefighting helicopter fleet, each carrying nearly triple the water and flying round the clock — built explicitly, in Governor Newsom's framing, to backfill capacity as federal firefighting budgets were cut that year. Detection has moved just as fast: UC San Diego's ALERTCalifornia, with over 1,200 AI-triaged mountaintop cameras built with CAL FIRE and DigitalPath, and Pano AI's network across 50 million-plus acres (735 fire alerts in 2025, first known alert more than half the time) now routinely spot smoke before the first 911 call. In July 2026 the first operational FireSat satellites launched, aiming — per CAL FIRE Director Joe Tyler — to deliver \"space-enabled wildfire intelligence\" that resolves fires as small as 5x5 meters anywhere on Earth within 20 minutes. The internal argument isn't whether to modernize but how far: whether AI dispatch and autonomous aircraft should be trusted to launch a first response without a human in the loop, and whether state-funded technology quietly lets federal agencies keep shrinking their own capacity. The evidence proponents lean on hardest isn't any one dramatic save; it's the base rate. A peer-reviewed burn-probability analysis of initial attack (Kootenay National Park) found a 78% reduction in burn probability versus a no-suppression counterfactual, and CAL FIRE has held its 95%-under-10-acres benchmark for years. Advocates are candid that the acreage burned by the small share that escape initial attack is disproportionate — that's precisely the gap this next wave of detection and airpower is built to close.",
     "tier": 1,
     "proponents": "CAL FIRE, Gavin Newsom, Joe Tyler, Kate Dargan Marquis, Sonia Kastner / Pano AI, Neal Driscoll / ALERTCalifornia (UC San Diego), Earth Fire Alliance / FireSat (Muon Space), Los Angeles Fire Department, Los Angeles County Fire Department",
     "representative_name": "CAL FIRE",
     "representative_note": "California's fire agency: a 16-Firehawk night-flying helicopter fleet (the world's largest civilian firefighting fleet, completed August 2025) plus the 1,200-camera ALERTCalifornia AI network, run against a standing benchmark of holding 95% of fires to 10 acres or less.",
     "prevalence_weight": 55,
-    "spectrum_position": -3
+    "spectrum_position": -3,
+    "id": "suppression-modernizer"
    },
    {
     "name": "Cultural Fire Steward",
-    "steelman": "These are fire-tended lands \u2014 give the authority to burn back to those who kept them whole.",
-    "description": "Fire was never the enemy of this land \u2014 it was the tool our ancestors used to keep it whole, and a century of exclusion is the wound, not the fix. For thousands of years the Karuk, Yurok, Miwok, and other peoples burned on a cultural calendar to tend food, medicine, and basket-weaving plants; researchers estimate 4.4 to 12 million acres burned across California each year before colonization outlawed it. Where that knowledge is allowed back on the ground it still works: a 2021 global synthesis in PNAS found Indigenous fire stewardship raises biodiversity across every biome studied, and Aboriginal-led early-season burning in Australia's Arnhem Land has shrunk the ground lost to severe late-season wildfire while anchoring a carbon-abatement economy. This is not a request for a seat at the agency's table \u2014 it's the return of authority to decide when, where, and how fire goes back on land we never stopped knowing how to tend.",
-    "detail": "For most of the 20th century, cultural burning wasn't just discouraged, it was criminal: California's 1850 Act for the Government and Protection of Indians and the total-suppression, Smokey-Bear-era policy that followed it treated any fire lit on the land as a threat to be put out, not a practice to be protected. The cost of that exclusion shows up in the record \u2014 a study of British Columbia found that a low-severity fire regime tied to Indigenous winter villages and travel corridors collapsed abruptly after the 1870s smallpox epidemic and forced relocation onto reserves, and the same landscapes that had burned frequently and gently for centuries began burning rarely and catastrophically instead. The return has been built by practitioners first, policy second: Margo Robbins and Elizabeth Azzuz founded the Yurok Tribe's Cultural Fire Management Council in 2013, and with Bill Tripp of the Karuk Tribe and practitioners from the Hupa Tribe launched the Indigenous Peoples Burning Network in 2015, training a new generation through Training Exchanges (TREX) years before state law caught up. Tripp \u2014 who has since advised the federal Wildland Fire Mitigation and Management Commission \u2014 and the Karuk Tribe's Department of Natural Resources pushed California's AB 642 (2021) and SB 332, which for the first time defined \"cultural fire practitioner\" in state law and extended liability protection, then SB 310 (2024), under which the Karuk Tribe signed the state's first cultural burn agreement on March 7, 2025 \u2014 burning under its own traditional protocols and belief systems rather than folding cultural fire into the state's standard prescribed-fire permit box. That last point is itself a live debate inside the movement: some practitioners treat agreements like SB 310 as a hard-won opening; others argue that any burn still requiring a state agency's countersignature is sovereignty on loan, not sovereignty restored, and that the real fix is land and jurisdiction returned outright \u2014 landback, not just burn-back \u2014 plus funding, since recognition without capacity just shifts the paperwork. On the evidence, the case doesn't hang on any one number: Frank Lake, a Karuk-descended USDA Forest Service research ecologist, and coauthors point to the 2021 PNAS synthesis finding roughly four in five studies of Indigenous fire stewardship show increased biodiversity; pyrogeographer Don Hankins has run cultural burns at Big Chico Creek since 2009 that suppress invasive grass and cut fuel loads on a two-to-five-year cultural cycle; and Australia's Western Arnhem Land Fire Abatement project, active since 2006, has both reduced the area burned by destructive late-dry-season fire and generated a verified, income-producing carbon-credit stream for its Traditional Owners \u2014 proof, proponents say, that Indigenous fire authority isn't nostalgia but a working, exportable model for managing land in a hotter world.",
+    "steelman": "These are fire-tended lands — give the authority to burn back to those who kept them whole.",
+    "description": "Fire was never the enemy of this land — it was the tool our ancestors used to keep it whole, and a century of exclusion is the wound, not the fix. For thousands of years the Karuk, Yurok, Miwok, and other peoples burned on a cultural calendar to tend food, medicine, and basket-weaving plants; researchers estimate 4.4 to 12 million acres burned across California each year before colonization outlawed it. Where that knowledge is allowed back on the ground it still works: a 2021 global synthesis in PNAS found Indigenous fire stewardship raises biodiversity across every biome studied, and Aboriginal-led early-season burning in Australia's Arnhem Land has shrunk the ground lost to severe late-season wildfire while anchoring a carbon-abatement economy. This is not a request for a seat at the agency's table — it's the return of authority to decide when, where, and how fire goes back on land we never stopped knowing how to tend.",
+    "detail": "For most of the 20th century, cultural burning wasn't just discouraged, it was criminal: California's 1850 Act for the Government and Protection of Indians and the total-suppression, Smokey-Bear-era policy that followed it treated any fire lit on the land as a threat to be put out, not a practice to be protected. The cost of that exclusion shows up in the record — a study of British Columbia found that a low-severity fire regime tied to Indigenous winter villages and travel corridors collapsed abruptly after the 1870s smallpox epidemic and forced relocation onto reserves, and the same landscapes that had burned frequently and gently for centuries began burning rarely and catastrophically instead. The return has been built by practitioners first, policy second: Margo Robbins and Elizabeth Azzuz founded the Yurok Tribe's Cultural Fire Management Council in 2013, and with Bill Tripp of the Karuk Tribe and practitioners from the Hupa Tribe launched the Indigenous Peoples Burning Network in 2015, training a new generation through Training Exchanges (TREX) years before state law caught up. Tripp — who has since advised the federal Wildland Fire Mitigation and Management Commission — and the Karuk Tribe's Department of Natural Resources pushed California's AB 642 (2021) and SB 332, which for the first time defined \"cultural fire practitioner\" in state law and extended liability protection, then SB 310 (2024), under which the Karuk Tribe signed the state's first cultural burn agreement on March 7, 2025 — burning under its own traditional protocols and belief systems rather than folding cultural fire into the state's standard prescribed-fire permit box. That last point is itself a live debate inside the movement: some practitioners treat agreements like SB 310 as a hard-won opening; others argue that any burn still requiring a state agency's countersignature is sovereignty on loan, not sovereignty restored, and that the real fix is land and jurisdiction returned outright — landback, not just burn-back — plus funding, since recognition without capacity just shifts the paperwork. On the evidence, the case doesn't hang on any one number: Frank Lake, a Karuk-descended USDA Forest Service research ecologist, and coauthors point to the 2021 PNAS synthesis finding roughly four in five studies of Indigenous fire stewardship show increased biodiversity; pyrogeographer Don Hankins has run cultural burns at Big Chico Creek since 2009 that suppress invasive grass and cut fuel loads on a two-to-five-year cultural cycle; and Australia's Western Arnhem Land Fire Abatement project, active since 2006, has both reduced the area burned by destructive late-dry-season fire and generated a verified, income-producing carbon-credit stream for its Traditional Owners — proof, proponents say, that Indigenous fire authority isn't nostalgia but a working, exportable model for managing land in a hotter world.",
     "tier": 1,
     "proponents": "Bill Tripp (Karuk Tribe DNR), Margo Robbins (Yurok Tribe, Cultural Fire Management Council), Elizabeth Azzuz (Cultural Fire Management Council), Frank Kanawha Lake (USDA Forest Service research ecologist), Don Hankins (CSU Chico, pyrogeographer), Karuk Tribe, Yurok Tribe, Indigenous Peoples Burning Network",
     "representative_name": "Bill Tripp / Karuk Tribe Department of Natural Resources",
     "representative_note": "Karuk fire practitioner and DNR director who helped drive California's AB 642, SB 332, and SB 310, and whose tribe signed the state's first cultural-burn authority agreement under SB 310 on March 7, 2025.",
     "prevalence_weight": 38,
-    "spectrum_position": 0
+    "spectrum_position": 0,
+    "id": "cultural-fire-steward"
    },
    {
     "name": "Thinning Skeptic",
-    "steelman": "Fire weather drives megafires, not backcountry fuel \u2014 defend homes, don't log the forest.",
-    "description": "We're for spending scarce fire dollars exactly where they save lives (the home and the hundred feet around it), and for letting fire back onto the land as the ecological force it's always been, not for logging the backcountry under a fire-safety label. Jack Cohen's home-ignition-zone research found homes burn overwhelmingly from wind-blown embers igniting the structure itself, not from flame fronts out of distant forest \u2014 so the safety case for miles of backcountry thinning evaporates the moment you test it. A 23-million-acre study of the West's frequent-fire forests found the land most protected from logging burned no more severely, and often less, than land that had been \"thinned\" (Bradley, Hanson & DellaSala, Ecosphere 2016), and industrial timberland in the 2013 Douglas Complex fire burned hotter than neighboring federal forest once severe weather took over (Zald & Dunn, Ecological Applications 2018). Call it thinning, fuel reduction, or \"active management\" \u2014 dragging commercial timber out of the backcountry is logging, sold with a wildfire label it hasn't earned.",
-    "detail": "This position crystallized in opposition to the post-2000 \"fuel reduction\" era \u2014 the National Fire Plan, the 2003 Healthy Forests Restoration Act, and now the Fix Our Forests Act (H.R. 471/S. 1462), which cleared the House and sits on the Senate calendar in 2026 with rare bipartisan support. Skeptics like Chad Hanson (John Muir Project), George Wuerthner, and Dominick DellaSala (Wild Heritage) argue these bills use fire-safety language to fast-track logging \u2014 the pending bill would raise the acreage exempt from full NEPA/ESA review from 3,000 to 10,000 acres per project \u2014 on public land far from any home, and that mechanical thinning left unburned just piles flashy slash on the ground, worsening near-term fire behavior rather than easing it. The debate inside the camp is over how much treatment is legitimate, not whether backcountry logging is: Timothy Ingalsbee and FUSEE (Firefighters United for Safety, Ethics, and Ecology) back prescribed and cultural burning plus defensible-space work right at the home ignition zone, and want remote fires managed for ecological benefit rather than suppressed on sight, while Hanson's John Muir Project opposes nearly all mechanical \"thinning\" \u2014 including post-fire salvage logging of standing dead trees, which it argues destroys habitat that burns no more severely than green forest. Their strongest evidence is scale, not anecdote: the Bradley/Hanson/DellaSala 2016 Ecosphere study spans three decades and 23 million acres of frequent-fire forest across California, Oregon, Washington, Arizona, and New Mexico; Zald & Dunn's 2018 Ecological Applications study isolates management as the variable by comparing adjoining private-industrial and federal land under identical fire weather in Oregon's 2013 Douglas Complex fire; and Abatzoglou & Williams (PNAS 2016) found anthropogenic warming drove over half the rise in fuel aridity since the 1970s and had roughly doubled the West's cumulative forest-fire area by 2015 \u2014 proof, skeptics argue, that no acreage of backcountry treatment substitutes for cutting emissions and hardening homes. They don't claim the science is settled \u2014 more than 100 fire scientists, across a set of papers in Ecological Applications, have pushed back hard on Hanson's methods and conclusions \u2014 but they read that pushback as the timber-and-suppression establishment protecting a multibillion-dollar fuels-treatment budget, not as disinterested science.",
+    "steelman": "Fire weather drives megafires, not backcountry fuel — defend homes, don't log the forest.",
+    "description": "We're for spending scarce fire dollars exactly where they save lives (the home and the hundred feet around it), and for letting fire back onto the land as the ecological force it's always been, not for logging the backcountry under a fire-safety label. Jack Cohen's home-ignition-zone research found homes burn overwhelmingly from wind-blown embers igniting the structure itself, not from flame fronts out of distant forest — so the safety case for miles of backcountry thinning evaporates the moment you test it. A 23-million-acre study of the West's frequent-fire forests found the land most protected from logging burned no more severely, and often less, than land that had been \"thinned\" (Bradley, Hanson & DellaSala, Ecosphere 2016), and industrial timberland in the 2013 Douglas Complex fire burned hotter than neighboring federal forest once severe weather took over (Zald & Dunn, Ecological Applications 2018). Call it thinning, fuel reduction, or \"active management\" — dragging commercial timber out of the backcountry is logging, sold with a wildfire label it hasn't earned.",
+    "detail": "This position crystallized in opposition to the post-2000 \"fuel reduction\" era — the National Fire Plan, the 2003 Healthy Forests Restoration Act, and now the Fix Our Forests Act (H.R. 471/S. 1462), which cleared the House and sits on the Senate calendar in 2026 with rare bipartisan support. Skeptics like Chad Hanson (John Muir Project), George Wuerthner, and Dominick DellaSala (Wild Heritage) argue these bills use fire-safety language to fast-track logging — the pending bill would raise the acreage exempt from full NEPA/ESA review from 3,000 to 10,000 acres per project — on public land far from any home, and that mechanical thinning left unburned just piles flashy slash on the ground, worsening near-term fire behavior rather than easing it. The debate inside the camp is over how much treatment is legitimate, not whether backcountry logging is: Timothy Ingalsbee and FUSEE (Firefighters United for Safety, Ethics, and Ecology) back prescribed and cultural burning plus defensible-space work right at the home ignition zone, and want remote fires managed for ecological benefit rather than suppressed on sight, while Hanson's John Muir Project opposes nearly all mechanical \"thinning\" — including post-fire salvage logging of standing dead trees, which it argues destroys habitat that burns no more severely than green forest. Their strongest evidence is scale, not anecdote: the Bradley/Hanson/DellaSala 2016 Ecosphere study spans three decades and 23 million acres of frequent-fire forest across California, Oregon, Washington, Arizona, and New Mexico; Zald & Dunn's 2018 Ecological Applications study isolates management as the variable by comparing adjoining private-industrial and federal land under identical fire weather in Oregon's 2013 Douglas Complex fire; and Abatzoglou & Williams (PNAS 2016) found anthropogenic warming drove over half the rise in fuel aridity since the 1970s and had roughly doubled the West's cumulative forest-fire area by 2015 — proof, skeptics argue, that no acreage of backcountry treatment substitutes for cutting emissions and hardening homes. They don't claim the science is settled — more than 100 fire scientists, across a set of papers in Ecological Applications, have pushed back hard on Hanson's methods and conclusions — but they read that pushback as the timber-and-suppression establishment protecting a multibillion-dollar fuels-treatment budget, not as disinterested science.",
     "tier": 1,
     "proponents": "Chad Hanson (John Muir Project), Dominick DellaSala (Wild Heritage), George Wuerthner, Timothy Ingalsbee (FUSEE), Jack Cohen (retired USFS fire scientist)",
     "representative_name": "Chad Hanson",
     "representative_note": "Ecologist and director of the John Muir Project; his book Smokescreen (2021) is the position's most widely read synthesis, arguing wildfire behavior is driven by weather and climate rather than fuel loads, and that most \"thinning\" is commercial logging marketed as fire safety.",
     "prevalence_weight": 22,
-    "spectrum_position": 2
+    "spectrum_position": 2,
+    "id": "thinning-skeptic"
    }
   ],
   "crux": {
-   "lead": "Do we still get a vote on the fire itself \u2014 or only on what it finds when it arrives?",
+   "lead": "Do we still get a vote on the fire itself — or only on what it finds when it arrives?",
    "lead_highlight": "or only on what it finds when it arrives?",
-   "subtitle": "Four camps would change the fire \u2014 on the land, in the sky, or at first smoke; two say the fire is a given and only the doorstep is ours.",
-   "empirical": "Whether fuel treatment and good fire still bend the behavior of wind-driven, ember-cast fires \u2014 the ones that take neighborhoods \u2014 or only the mild ones; and how much of the loss ledger traces to landscape condition versus home ignitability versus a climate-dried fuel bed.",
-   "values": "Whether fire is an enemy to extinguish or a process to readmit \u2014 and who absorbs the cost either way: whether living in fire country is underwritten or priced out, how much smoke and escape risk today is worth relief from fire debt tomorrow, and whose hands hold the drip torch."
+   "subtitle": "Four camps would change the fire — on the land, in the sky, or at first smoke; two say the fire is a given and only the doorstep is ours.",
+   "empirical": "Whether fuel treatment and good fire still bend the behavior of wind-driven, ember-cast fires — the ones that take neighborhoods — or only the mild ones; and how much of the loss ledger traces to landscape condition versus home ignitability versus a climate-dried fuel bed.",
+   "values": "Whether fire is an enemy to extinguish or a process to readmit — and who absorbs the cost either way: whether living in fire country is underwritten or priced out, how much smoke and escape risk today is worth relief from fire debt tomorrow, and whose hands hold the drip torch."
   },
   "actions": [
    {
@@ -459,7 +497,8 @@
     "url": "https://www.fs.usda.gov/managing-land/wildfire-crisis/press-kit",
     "for_position": "Landscape Restorer",
     "tier": 1,
-    "reveal": "condensed"
+    "reveal": "condensed",
+    "id": "see-the-federal-wildfire-crisis-strategy"
    },
    {
     "kind": "local",
@@ -468,25 +507,28 @@
     "url": "https://wildfireprepared.org/",
     "for_position": "Built-Edge Reformer",
     "tier": 1,
-    "reveal": "condensed"
+    "reveal": "condensed",
+    "id": "get-your-home-certified-wildfire-prepared"
    },
    {
     "kind": "learn_more",
     "title": "Read the case that climate is the driver",
-    "description": "Union of Concerned Scientists lays out the science linking hotter, drier conditions to worsening fire activity and argues that curbing fossil-fuel emissions is essential alongside forest and fire management \u2014 not optional.",
+    "description": "Union of Concerned Scientists lays out the science linking hotter, drier conditions to worsening fire activity and argues that curbing fossil-fuel emissions is essential alongside forest and fire management — not optional.",
     "url": "https://www.ucs.org/resources/climate-change-and-wildfires",
     "for_position": "Climate-First Advocate",
     "tier": 1,
-    "reveal": "condensed"
+    "reveal": "condensed",
+    "id": "read-the-case-that-climate-is"
    },
    {
     "kind": "learn_more",
     "title": "See the AI camera network built to catch fires in minutes",
-    "description": "ALERTCalifornia's 1,200+ AI-linked cameras, run out of UC San Diego with CAL FIRE, flagged roughly 3,600 incidents in a year, over half before the first 911 call \u2014 the live model for detect-fast, hit-hard suppression.",
+    "description": "ALERTCalifornia's 1,200+ AI-linked cameras, run out of UC San Diego with CAL FIRE, flagged roughly 3,600 incidents in a year, over half before the first 911 call — the live model for detect-fast, hit-hard suppression.",
     "url": "https://alertcalifornia.org",
     "for_position": "Suppression Modernizer",
     "tier": 1,
-    "reveal": "condensed"
+    "reveal": "condensed",
+    "id": "see-the-ai-camera-network-built"
    },
    {
     "kind": "learn_more",
@@ -495,7 +537,8 @@
     "url": "https://firenetworks.org/ipbn/",
     "for_position": "Cultural Fire Steward",
     "tier": 1,
-    "reveal": "condensed"
+    "reveal": "condensed",
+    "id": "learn-how-indigenous-fire-practitioners-are"
    },
    {
     "kind": "donate",
@@ -504,16 +547,18 @@
     "url": "https://johnmuirproject.org/donate/",
     "for_position": "Thinning Skeptic",
     "tier": 1,
-    "reveal": "condensed"
+    "reveal": "condensed",
+    "id": "fund-the-case-against-thinning-as"
    },
    {
     "kind": "volunteer",
     "title": "Train at a Prescribed Fire Training Exchange (TREX)",
-    "description": "TREX events put agency staff, landowners, tribes and volunteers on the fireline together to learn hands-on prescribed and cultural burning \u2014 the workforce bottleneck behind scaling any \"more good fire\" strategy.",
+    "description": "TREX events put agency staff, landowners, tribes and volunteers on the fireline together to learn hands-on prescribed and cultural burning — the workforce bottleneck behind scaling any \"more good fire\" strategy.",
     "url": "https://firenetworks.org/trex",
     "for_position": "",
     "tier": 2,
-    "reveal": "normal"
+    "reveal": "normal",
+    "id": "train-at-a-prescribed-fire-training"
    },
    {
     "kind": "submit_view",
@@ -522,145 +567,10 @@
     "url": "",
     "for_position": "",
     "tier": 3,
-    "reveal": "condensed"
+    "reveal": "condensed",
+    "id": "add-your-view"
    }
   ]
  },
- "verdicts": [
-  {
-   "critic": "neutrality",
-   "pass": true,
-   "blocking": [],
-   "notes": [
-    "The Thinning Skeptic detail is the only position section carrying an external scientific rebuttal inside its own body ('more than 100 fire scientists... have pushed back hard on Hanson's methods'). It is paired with the skeptics' in-voice response, so it doesn't strawman \u2014 but for symmetry consider either noting that the Landscape Restorer evidence base is equally contested (by Hanson/DellaSala et al.) in that section, or letting the contest live only in the questions, as it does for every other pairing.",
-    "Action-kind asymmetry: the Thinning Skeptic's sole action is a 'donate' link (John Muir Project) while every other position gets a learn/policy/local link. A donate CTA reads either as stronger promotion or as 'this camp is only an advocacy shop' depending on the reader \u2014 consider a learn_more (e.g., FUSEE or the Ecosphere study) for parity.",
-    "Pre-colonial burn figure differs between sections: Basics stat says '~4.5M acres/yr' while the Cultural Fire Steward steelman says '4.4 to 12 million acres.' Both are defensible from the literature, but aligning on one attributed range avoids the appearance of lowballing the stat and highballing the steelman.",
-    "Crux subtitle 'two say the fire is a given and only the doorstep is ours' slightly flattens the Thinning Skeptic, who (via Ingalsbee/FUSEE) also backs prescribed fire, cultural burning, and managed wildfire \u2014 i.e., they would change the fire too, just not by backcountry thinning. A small rephrase ('only the doorstep is worth buying') would keep the four/two contrast without misdescribing them.",
-    "Question details occasionally adjudicate in the editorial voice \u2014 Q2's 'None of these is wrong' and Q6's 'most credible positions accept some version of both.' These describe genuine shared ground rather than pick a winner, so they don't breach neutrality, but attributing them ('all camps accept...') would be cleaner than asserting them.",
-    "The Jan-2025 LA firestorm Basics detail names Built-Edge Reformers and Suppression Modernizers as the camps who claim it as their strongest case; Climate-First Advocates also lean on that event (the WWA attribution cited in their own section). Adding them to that sentence would complete the triangulation.",
-    "No separate steelman for the timber-industry / regulatory-streamlining camp (the 'cut litigation, log more' case behind Fix Our Forests, e.g., AFRC and House sponsors) \u2014 its policy vehicle appears in why_now and, critically framed, inside the Thinning Skeptic section, while its nearest steelman is the science-flavored Landscape Restorer. This is within parity for a strong published topic since the fuels-side case is robustly carried, but an editor may want to decide deliberately whether it is a variant or a missing voice."
-   ],
-   "stage": "substance"
-  },
-  {
-   "blocking": [],
-   "critic": "steelman",
-   "pass": true,
-   "notes": [
-    "Thinning Skeptic deep detail: 'They don't claim the science is settled \u2014 more than 100 fire scientists... have pushed back hard on Hanson's methods' reads slightly outside the proponent's voice (Hanson does claim his findings are robust). The passage recovers by giving the skeptics' own reading of the pushback, so it is not a softening \u2014 but rephrasing from their perspective ('the pushback comes from the same establishment whose budgets his findings threaten, and he has answered it point by point') would be more fully in-voice.",
-    "Crux subtitle 'two say the fire is a given and only the doorstep is ours' compresses the Thinning Skeptic a bit hard \u2014 the FUSEE/Ingalsbee wing actively wants MORE fire on the land (prescribed, cultural, managed remote burns), not just doorstep defense. The compression is defensible for the megafire claim it summarizes, but a proponent might bristle at reading as pure fatalism.",
-    "Minor internal inconsistency: the beneficial-fire basics stat anchors pre-colonial California burning at '~4.5M acres/yr' while the Cultural Fire Steward section cites the full 4.4-12M acre estimate. Both trace to the same Stephens et al. range; labeling the basics figure explicitly as the low-end estimate would prevent a sharp reader seeing a contradiction.",
-    "Built-Edge Reformer's representative is a program (IBHS Wildfire Prepared Home) while the other five positions have named people or named institutions with a human anchor; Kimiko Barrett or Jack Cohen would match the pattern if a human face is preferred. Not a defect \u2014 the note explains the choice well.",
-    "Positive verification: the two freshest steelman-embedded claims both check out \u2014 FireSat's first three operational satellites launched July 7, 2026 (Muon Space/Earth Fire Alliance announcements), and the 62-72% severity-reduction figure matches the 2024 Tamm review meta-analysis (Davis et al., Forest Ecology and Management), correctly attributed to thin-plus-burn rather than thinning alone."
-   ],
-   "stage": "substance"
-  },
-  {
-   "critic": "fact-source",
-   "pass": true,
-   "blocking": [],
-   "notes": [
-    "LA firestorm stat: the headline figures (16,251 structures destroyed, 31 deaths) are the CAL FIRE/AP one-year tallies and are accurate (AP's retrospective uses 16,246; tallies vary by a few structures), but the sole cited source (Moody's) itself says 'over 18,000 structures destroyed or damaged' and 'as many as 32 fatalities officially reported'. The $25-30B insured-loss figure does match Moody's exactly. Consider adding CAL FIRE/AP as a co-source or aligning the note's numbers with the cited page.",
-    "Initial-attack stat detail: the 98% national and 98.9% Pacific Northwest 2025 figures are confirmed on the USFS accomplishments page, but I could not directly confirm the 'best in 12 years' phrasing; soften or source it if it can't be pinned to a USFS statement.",
-    "Beneficial-fire scale stat anchors pre-colonial California burning at ~4.5M acres/yr, the low end of the Stephens et al. (2007) 4.4-11.8M acre range; the Cultural Fire Steward description correctly gives the full range. Labeling the basics figure as a low-end estimate would be extra-careful.",
-    "Karuk SB 310 agreement: the first-in-state agreement is confirmed, but the state task force describes it as signed in February 2025 while the draft says March 7, 2025 (the Karuk Tribe's announcement date); double-check the exact date against the tribe's press release.",
-    "Berkeley 17% defensible-space stat cites the Berkeley News article; the primary paper is 'Fire risk to structures in California's Wildland-Urban Interface', Nature Communications (2025), https://www.nature.com/articles/s41467-025-63386-2 \u2014 worth citing directly at deep level.",
-    "IBHS premium-discount range in the Built-Edge description is '5-20%'; current reporting most often says 10-20% (varying by carrier and applying to the catastrophe-fire portion for Mercury). Minor.",
-    "Three source URLs (PNAS, Wiley/Ecosphere, Royal Society) return 403 to scripted requests but are publisher bot-blocks, not dead links \u2014 all three DOIs resolve to the correct papers (Abatzoglou & Williams 2016; Haugo et al. 2019; Westerling 2016)."
-   ],
-   "stage": "substance"
-  },
-  {
-   "critic": "crux",
-   "pass": true,
-   "blocking": [],
-   "notes": [
-    "The subtitle's four-vs-two mapping ('four camps would change the fire... two say the fire is a given') slightly flattens the Thinning Skeptic, who also backs good fire and emissions cuts; their distinctive claim (weather, not backcountry fuel, decides the destructive fires) does support the framing, but 'two say the destructive fires are decided by weather, and only the doorstep is ours' would be more precisely endorsable by Hanson or DellaSala.",
-    "In the subtitle, 'in the sky' is presumably the Climate-First camp (the atmosphere), but a reader may map it to Suppression Modernizer aircraft and then find only three of the 'four camps' accounted for \u2014 consider a phrase that unambiguously points at climate, e.g. 'in the atmosphere'.",
-    "The empirical crux line is dense (two long clauses joined by a semicolon); splitting the treatment-effectiveness question from the attribution-ledger question would scan better in the atlas register, though distribution may handle this."
-   ],
-   "stage": "substance"
-  },
-  {
-   "critic": "compact-self-sufficiency",
-   "pass": true,
-   "blocking": [],
-   "notes": [
-    "Above-fold coverage is genuinely self-sufficient: all six positions have a compact evidence anchor above the fold (fire deficit \u2192 Landscape Restorer, embers/WUI \u2192 Built-Edge Reformer, fuel aridity \u2192 Climate-First, 98% initial attack \u2192 Suppression Modernizer, beneficial-fire gap \u2192 Cultural Fire Steward, aridity+embers \u2192 Thinning Skeptic), and every above-fold stat note carries its own key caveat (the 98% note carries the escaped-fire cost tail; the fire-deficit note carries the 'mostly dry, frequent-fire types' scope limit; the LA firestorm label frames it as a single event).",
-    "'Wildland-urban interface' (stat 3 label+note) is the one above-fold term whose definition lives only in the detail field; it is largely self-decoding, but a 3\u20134 word gloss in the note (e.g. 'where homes meet wild vegetation') would remove all doubt for a general reader.",
-    "Stat 7 (Acres burned 2024) note reads mildly self-contradictory in compact: 'both above the 10-year average, a season typical of the last decade.' Consider 'slightly above the 10-year average \u2014 a season typical of the last decade' to resolve the tension in one pass.",
-    "Crux subtitle: 'in the sky' is ambiguous \u2014 it most naturally reads as aircraft (Suppression Modernizer) but must mean the atmosphere (Climate-First) for the four/two mapping to work, since 'at first smoke' already covers suppression. The mapping still decodes against the six visible steelmen, so not blocking, but 'in the atmosphere' or 'in the emissions curve' would be unambiguous.",
-    "Beneficial-fire stat (stat 4): the fact that actual prescribed-fire acreage runs at roughly half the 400,000-acre goal is detail-only; the compact picture (goal \u2248 9% of the historic rate) is correct without it, so this is fine \u2014 just noting the strongest detail-only fact on the board.",
-    "Q4 (insurance/underwriting) is the only above-fold question whose anchor stat (FAIR Plan premiums) sits below the fold; the overview why_now ('insurers retreating from fire country') supplies compact grounding, so the question stands on its own.",
-    "The Cultural Fire Steward's central governance question (T4, burn authority) is below the fold, but the position's above-fold steelman ('give the authority to burn back...') carries the tension in compact, so the position is not hollowed out above the fold."
-   ],
-   "stage": "presentation"
-  },
-  {
-   "critic": "reading-level-fit",
-   "pass": true,
-   "blocking": [],
-   "notes": [
-    "Compact/expanded split is working: every stat, question, and position 'detail' genuinely adds mechanism, precise figures, or methodology over its compact line \u2014 no restatement found. Compact jargon is consistently glossed in-tile ('fire deficit', 'defensible space', 'initial attack', 'FAIR Plan \u00b7 state insurer of last resort', 'wildland-urban interface' spelled out).",
-    "Stat 2 unit 'M ha missing' uses the bare abbreviation 'ha' in the compact layer, and hectares in an otherwise acres-denominated topic; the note spells out 'hectares' so it parses, but rendering the unit as 'M hectares missing' would remove the stumble without touching the fact.",
-    "Stat 1 label 'Fuel aridity increase from warming \u00b7 share attributable, since 1970s' is the most technical compact phrasing above the fold ('fuel aridity', 'share attributable'); the note immediately glosses it as 'fuel dryness', which keeps it at parity \u2014 a label like 'Fuel drying from warming' would hit the compact bar more cleanly if easy.",
-    "Action 2 description opens with bare 'IBHS's' at its point of use; the acronym is expanded in stat 5's source label but not here \u2014 a one-time gloss ('the insurance industry's research institute IBHS') would fix it.",
-    "Thinning Skeptic detail uses 'NEPA/ESA review' as bare acronyms without the define-at-first-use gloss the expanded register calls for \u2014 a two-word insert ('full environmental-review (NEPA/ESA)') suffices. Similarly, Climate-First detail spells out 'vapor pressure deficit' but never tags it '(VPD)' before switching to the acronym later in the paragraph.",
-    "Question details Q1 and Q2 carry several 50\u201380-word sentences; expanded register tolerates density but a tightening pass would improve scannability. Not a fit violation.",
-    "Built-Edge Reformer and Thinning Skeptic descriptions carry inline academic citations ('(Bradley, Hanson & DellaSala, Ecosphere 2016)', '(Zald & Dunn, Ecological Applications 2018)') \u2014 expanded-register citation density in the always-visible description layer, heavier than the sibling positions; the description field isn't in the strict compact list, so noted rather than flagged."
-   ],
-   "stage": "presentation"
-  },
-  {
-   "blocking": [],
-   "critic": "above-fold-selection",
-   "pass": true,
-   "notes": [
-    "Basics T1 selection logic is strong: exactly one core stat per position (aridity\u2192Climate-First, fire deficit\u2192Landscape Restorer, WUI share\u2192Built-Edge, beneficial-fire gap\u2192Cultural Fire Steward, embers\u2192Built-Edge/Skeptic, initial-attack 98%\u2192Suppression debate), so the T1/T2 boundary sits at a genuine drop-off from argument-cores to context.",
-    "Weakest above-fold basic is 'Acres burned \u00b7 US wildfires, 2024' \u2014 its own note calls the season 'typical of the last decade,' so it carries the least decision weight of the eight. If any swap is worth considering, it is with 'California FAIR Plan premiums,' which directly substantiates the why_now hook (insurer retreat) and the above-fold underwriting question. Not blocking: the LA-firestorm stat's note already surfaces insured losses ($25-30B) above the fold, and a topline annual-scale number has legitimate orientation value.",
-    "Questions fold (4/7) is well chosen: the master attribution question and the thinning-vs-skeptic question at T1, the suppression fire-debt tradeoff and who-pays at T2 \u2014 those four span all six positions' central disputes. The drop-off to Q5-Q7 (mechanism detail, let-burn, burn authority) is real.",
-    "Minor asymmetry: Cultural Fire Steward is a T1 position whose signature question (burn authority) is the sole T4, below fold. This tracks its prevalence weight (38) and its stat (beneficial-fire gap) is above the fold, so the camp is still represented; T4 vs T3 only affects ordering behind 'Go deeper,' not the fold itself.",
-    "Positions 6/6 above the fold in true prevalence order (85/72/60/55/38/22) is correct honest-non-balance presentation \u2014 hiding any camp behind the fold would have been the defect, and there is none."
-   ],
-   "stage": "presentation"
-  }
- ],
- "plan_positions": [
-  {
-   "name": "Landscape Restorer",
-   "prevalence_weight": 85,
-   "spectrum_position": -2,
-   "sketch": "A century of fire exclusion loaded the land; thin, burn, and restore fire-adapted forests at scale."
-  },
-  {
-   "name": "Built-Edge Reformer",
-   "prevalence_weight": 72,
-   "spectrum_position": 1,
-   "sketch": "Losses happen where homes meet fuel \u2014 harden structures, rethink edge land use, and let insurance price the risk."
-  },
-  {
-   "name": "Climate-First Advocate",
-   "prevalence_weight": 60,
-   "spectrum_position": 3,
-   "sketch": "Fire weather is the driver; without cutting emissions, every acre treated and home hardened is triage."
-  },
-  {
-   "name": "Suppression Modernizer",
-   "prevalence_weight": 55,
-   "spectrum_position": -3,
-   "sketch": "Detect every start in minutes and hit it with overwhelming, round-the-clock force before it grows."
-  },
-  {
-   "name": "Cultural Fire Steward",
-   "prevalence_weight": 38,
-   "spectrum_position": 0,
-   "sketch": "These are fire-tended lands; return burning authority to the Indigenous stewards who kept them in balance."
-  },
-  {
-   "name": "Thinning Skeptic",
-   "prevalence_weight": 22,
-   "spectrum_position": 2,
-   "sketch": "Weather, not backcountry fuel, drives megafires; thinning is logging by another name \u2014 defend the home zone and let wildland fire work."
-  }
- ]
+ "icon": "fire"
 }

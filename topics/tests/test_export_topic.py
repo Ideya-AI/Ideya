@@ -38,13 +38,20 @@ class ExportTopicTests(NuclearFixtureMixin, TestCase):
         call_command("export_topic", slug=self.slug, out="-", stdout=buf)
         return json.loads(buf.getvalue())
 
-    def test_envelope_wraps_draft_and_verdicts(self):
+    def test_envelope_is_the_topic_file_shape(self):
+        """One file per topic: index fields at the top, `draft` under them. Gate
+        verdicts, the claim ledger and prescribed fixes are process and live in
+        research/runs/<slug>/, never here."""
         payload = self._export_payload()
-        self.assertIn("draft", payload)
-        self.assertIn("verdicts", payload)
-        d = payload["draft"]
-        self.assertEqual(d["slug"], self.slug)
-        self.assertTrue(d["overview"]["summary"])
+        self.assertNotIn("verdicts", payload)
+        self.assertNotIn("claim_ledger", payload)
+        for key in ("slug", "title", "status", "scope", "categories", "related"):
+            self.assertIn(key, payload, f"the index lost {key!r}")
+        self.assertEqual(payload["slug"], self.slug)
+        # identity is not duplicated inside the content
+        for key in ("slug", "title", "status", "categories"):
+            self.assertNotIn(key, payload["draft"], f"{key!r} is duplicated in draft")
+        self.assertTrue(payload["draft"]["overview"]["summary"])
 
     def test_export_has_expected_anchors(self):
         d = self._export_payload()["draft"]
@@ -58,10 +65,10 @@ class ExportTopicTests(NuclearFixtureMixin, TestCase):
         self.assertTrue(d["actions"])
 
     def test_export_preserves_unregenerable_top_level_keys(self):
-        """A refresh writes `changelog` into research/topics/<slug>.json as its
-        durable provenance; the loader ignores it, so the DB cannot regenerate it.
-        Refresh Runbook B opens by exporting onto that same path — so step 1 of
-        each refresh was erasing step 4 of the previous one."""
+        """A topic file may carry top-level keys the DB never stores, such as
+        `plan_positions` from an older loader contract. The DB cannot regenerate
+        them, so an export onto the file's own path must not drop them. It used
+        to."""
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / "ne.json"
             call_command("export_topic", slug=self.slug, out=str(path))
@@ -77,7 +84,7 @@ class ExportTopicTests(NuclearFixtureMixin, TestCase):
         self.assertEqual(
             after.get("changelog"),
             [{"section": "basics", "change": "old -> new"}],
-            "re-export dropped `changelog` — the refresh history is unrecoverable",
+            "re-export dropped `changelog` — that history is unrecoverable",
         )
         self.assertEqual(after.get("plan_positions"), ["Cost Skeptic"])
         # The keys the export DOES produce must still come from the DB, not the
@@ -102,7 +109,7 @@ class ExportTopicTests(NuclearFixtureMixin, TestCase):
                 slug="nuclear-energy-rt",
                 title="RT",
                 category=category,
-                status="draft",
+                status="in_progress",
             )
 
         rt = Topic.objects.get(slug="nuclear-energy-rt")

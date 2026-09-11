@@ -6,11 +6,11 @@ participation record (`ParticipationEvent`), for the editor.
   manage.py participation_report --since 2026-09-01 --out research/participation/2026-09-02.md
 
 The digest is built from the append-only event log, not the current-state
-tables, so it survives topic reloads (which reset Response rows) and reads
-the same before and after a republish. "Current" answers are each
+tables, so it reads the same before and after a republish and covers readers
+whose current-state row was later retired. "Current" answers are each
 participant's LAST action per item + prompt: a retract or clear drops it, a
-switch or re-save replaces it. Items are keyed by their text, which is what
-stays stable across the loader's id churn.
+switch or re-save replaces it. Items are keyed by their text: the log is
+denormalized at write time, so it records what the reader actually saw.
 
 Runbook: research/PARTICIPATION.md.
 """

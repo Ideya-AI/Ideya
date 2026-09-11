@@ -47,7 +47,7 @@ class CategoryPageTests(TestCase):
             slug="draft-topic",
             title="Draft Topic",
             summary="Should not show.",
-            status="draft",
+            status="in_progress",
             primary_category=self.cat,
         ).categories.add(self.cat)
         body = self.client.get(self.url).content.decode()

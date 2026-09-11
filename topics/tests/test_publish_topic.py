@@ -1,4 +1,4 @@
-"""Tests for the stage-5 `publish_topic` command.
+"""Tests for the stage-5 `publish_topic` switch.
 
 These exist because the command CANNOT be smoke-tested by hand from an agent
 session: `.claude/hooks/pipeline-guard.sh` blocks `manage.py publish_topic` by
@@ -6,19 +6,20 @@ name, which is exactly what it should do. That leaves the test suite as the only
 way to verify a command that writes to the DB, so the usual "no new test files"
 rule is waived here deliberately.
 
-What matters is the preflight: it must refuse to publish when a stage-4/4.5
-artifact is missing, and it must never write anything without --confirm.
+What matters now is that the switch is only a switch: it reads the readiness
+flag, flips `status`, stamps the approval clock on the way public, writes
+nothing without --confirm, and touches no content. Readiness itself is earned
+upstream; here it is only an input.
 """
 
 import json
 import tempfile
 from io import StringIO
 from pathlib import Path
-from unittest import mock
 
 from django.core.management import call_command
 from django.core.management.base import CommandError
-from django.test import TestCase
+from django.test import TestCase, override_settings
 
 from topics.models import Topic
 from topics.tests.test_core import NuclearFixtureMixin
@@ -30,100 +31,126 @@ class PublishTopicTests(NuclearFixtureMixin, TestCase):
     def setUp(self):
         super().setUp()
         Topic.objects.filter(slug=self.slug).update(
-            status=Topic.DRAFT, reviewed_at=None
+            status=Topic.READY, reviewed_at=None
         )
-
-    def _export(self, tmp):
-        path = Path(tmp) / f"{self.slug}.json"
-        call_command("export_topic", slug=self.slug, out=str(path))
-        return path
-
-    def _run(self, path, exists=True, links_clean=True, **kw):
-        """Run publish_topic with artifact existence and the link check stubbed:
-        the real ones touch the working tree and the network."""
-        link_line = (
-            "Summary: 3 links  ·  3 ok  ·  0 placeholder  ·  0 dead"
-            if links_clean
-            else "Summary: 3 links  ·  2 ok  ·  0 placeholder  ·  1 dead"
+        # The switch writes the topic FILE as well as the row, so point it at a
+        # throwaway: a test must never publish a real topic in the working tree.
+        self._tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self._tmp.cleanup)
+        self.topics_dir = Path(self._tmp.name)
+        (self.topics_dir / f"{self.slug}.json").write_text(
+            json.dumps({"slug": self.slug, "title": "Nuclear Energy",
+                        "status": Topic.READY, "categories": ["climate-env"]})
         )
+        patch = override_settings(TOPICS_DIR=str(self.topics_dir))
+        patch.enable()
+        self.addCleanup(patch.disable)
 
-        def fake_check_links(*a, **k):
-            k["stdout"].write(link_line)
+    def _filed_status(self):
+        return json.loads(
+            (self.topics_dir / f"{self.slug}.json").read_text()
+        )["status"]
 
-        real = call_command
-        real_exists = Path.exists
+    def _run(self, **kw):
+        out = StringIO()
+        call_command("publish_topic", slug=self.slug, stdout=out, stderr=out, **kw)
+        return out.getvalue()
 
-        def artifact_exists(self):
-            # The topic JSON must always resolve — `exists` here controls only
-            # the stage-3/4 artifacts (icon brief, primary art, OG card).
-            if self.suffix == ".json":
-                return real_exists(self)
-            return exists
-
-        with mock.patch.object(Path, "exists", artifact_exists), mock.patch(
-            "topics.management.commands.publish_topic.call_command"
-        ) as cc:
-            cc.side_effect = lambda name, *a, **k: (
-                fake_check_links(*a, **k)
-                if name == "check_links"
-                else real(name, *a, **k)
-            )
-            out = StringIO()
-            call_command(
-                "publish_topic", slug=self.slug, file=str(path), stdout=out, **kw
-            )
-            return out.getvalue(), cc
+    def _topic(self):
+        return Topic.objects.get(slug=self.slug)
 
     def test_refuses_without_confirm_and_writes_nothing(self):
-        with tempfile.TemporaryDirectory() as tmp:
-            path = self._export(tmp)
-            with self.assertRaises(CommandError):
-                self._run(path)
-        self.assertEqual(Topic.objects.get(slug=self.slug).status, Topic.DRAFT)
-        self.assertIsNone(Topic.objects.get(slug=self.slug).reviewed_at)
+        with self.assertRaises(CommandError):
+            self._run()
+        self.assertEqual(self._topic().status, Topic.READY)
+        self.assertIsNone(self._topic().reviewed_at)
 
-    def test_dry_run_shows_the_plan_and_changes_nothing(self):
-        with tempfile.TemporaryDirectory() as tmp:
-            path = self._export(tmp)
-            out, _ = self._run(path, dry_run=True)
-        self.assertIn("Would run:", out)
-        self.assertIn("--reviewed", out)
-        self.assertEqual(Topic.objects.get(slug=self.slug).status, Topic.DRAFT)
-
-    def test_missing_artifact_blocks_the_publish(self):
-        """A missing OG card or icon is a stage-4 defect; it must stop the
-        publish rather than ship a topic whose link previews are the generic
-        site image."""
-        with tempfile.TemporaryDirectory() as tmp:
-            path = self._export(tmp)
-            with self.assertRaises(CommandError) as ctx:
-                self._run(path, exists=False, confirm=True)
-        self.assertIn("not publishing", str(ctx.exception).lower())
-        self.assertEqual(Topic.objects.get(slug=self.slug).status, Topic.DRAFT)
-
-    def test_dead_link_blocks_the_publish(self):
-        """Links are checked BEFORE the publish. Checking afterwards means
-        finding a dead link on a topic that is already live."""
-        with tempfile.TemporaryDirectory() as tmp:
-            path = self._export(tmp)
-            with self.assertRaises(CommandError):
-                self._run(path, links_clean=False, confirm=True)
-        self.assertEqual(Topic.objects.get(slug=self.slug).status, Topic.DRAFT)
+    def test_dry_run_shows_the_change_and_makes_none(self):
+        out = self._run(dry_run=True)
+        self.assertIn("Would make public", out)
+        self.assertEqual(self._topic().status, Topic.READY)
+        self.assertIsNone(self._topic().reviewed_at)
 
     def test_confirm_publishes_and_stamps_reviewed_at(self):
-        with tempfile.TemporaryDirectory() as tmp:
-            path = self._export(tmp)
-            out, _ = self._run(path, confirm=True)
-        topic = Topic.objects.get(slug=self.slug)
+        out = self._run(confirm=True)
+        topic = self._topic()
         self.assertEqual(topic.status, Topic.PUBLISHED)
-        self.assertIsNotNone(
-            topic.reviewed_at, "reviewed_at not stamped — topics_due will re-queue it"
+        self.assertEqual(
+            self._filed_status(), Topic.PUBLISHED,
+            "the switch changed the row but not the file, so a rebuild would undo it",
         )
-        self.assertIn("docker exec", out, "the live-push commands were not printed")
+        self.assertIsNotNone(topic.reviewed_at, "the approval clock was not stamped")
+        self.assertIn("docker exec", out, "the live commands were not printed")
+
+    def test_off_takes_it_private_without_touching_the_approval_clock(self):
+        self._run(confirm=True)
+        stamped = self._topic().reviewed_at
+        self._run(off=True, confirm=True)
+        topic = self._topic()
+        self.assertEqual(topic.status, Topic.READY)
+        self.assertEqual(
+            topic.reviewed_at, stamped, "taking a topic private re-dated its approval"
+        )
+
+    def test_a_no_op_flip_is_refused(self):
+        self._run(confirm=True)
+        with self.assertRaises(CommandError):
+            self._run(confirm=True)
+
+    def test_an_uncertified_topic_cannot_be_made_public(self):
+        Topic.objects.filter(slug=self.slug).update(status=Topic.IN_PROGRESS)
+        with self.assertRaises(CommandError) as ctx:
+            self._run(confirm=True)
+        self.assertIn("only a topic", str(ctx.exception))
+        self.assertEqual(self._topic().status, Topic.IN_PROGRESS)
+
+    def test_off_returns_it_to_ready_not_to_in_progress(self):
+        """Taking a page off the site says nothing about whether its content is
+        still verified, so it must stay publishable."""
+        self._run(confirm=True)
+        self._run(off=True, confirm=True)
+        self.assertEqual(self._topic().status, Topic.READY)
+
+    def test_loading_reproduces_the_status_the_file_states(self):
+        """The file is the source of truth, so rebuilding the database from the
+        directory must not quietly demote a certified topic. Withdrawing
+        readiness belongs to whatever CHANGES the content, because that is what
+        invalidates the certification."""
+        import json
+        import tempfile
+        from pathlib import Path
+
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "t.json"
+            call_command("export_topic", slug=self.slug, out=str(path))
+            doc = json.loads(path.read_text())
+            self.assertEqual(doc["status"], Topic.READY, "the export lost the status")
+            Topic.objects.filter(slug=self.slug).update(status=Topic.IN_PROGRESS)
+            call_command("load_topic_draft", file=str(path), slug=self.slug)
+        self.assertEqual(self._topic().status, Topic.READY)
 
     def test_unloaded_slug_is_refused(self):
-        with tempfile.TemporaryDirectory() as tmp:
-            path = self._export(tmp)
-            Topic.objects.filter(slug=self.slug).delete()
-            with self.assertRaises(CommandError):
-                self._run(path, confirm=True)
+        Topic.objects.filter(slug=self.slug).delete()
+        with self.assertRaises(CommandError):
+            self._run(confirm=True)
+
+    def test_the_switch_does_not_touch_content(self):
+        """A publish must not reload, re-render or otherwise rewrite the topic —
+        the thing being made public is exactly the thing that was reviewed."""
+        before = {
+            "title": self._topic().title,
+            "summary": self._topic().summary,
+            "stats": self._topic().sections.get(kind="basics").stats.count(),
+            "questions": self._topic().sections.get(kind="questions").questions.count(),
+        }
+        self._run(confirm=True)
+        topic = self._topic()
+        self.assertEqual(topic.title, before["title"])
+        self.assertEqual(topic.summary, before["summary"])
+        self.assertEqual(
+            topic.sections.get(kind="basics").stats.count(), before["stats"]
+        )
+        self.assertEqual(
+            topic.sections.get(kind="questions").questions.count(),
+            before["questions"],
+        )

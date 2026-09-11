@@ -259,7 +259,7 @@ def collect_links(topic_slug: Optional[str]) -> list[LinkItem]:
     content choice, not a broken link.
 
     Module-level so other commands can reuse the collection without reaching
-    into the Command class (`refresh_scan` does)."""
+    into the Command class."""
     items: list[LinkItem] = []
 
     # submit_view is the internal "Add your view" CTA — no external URL by

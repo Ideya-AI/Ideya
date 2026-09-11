@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""The Ideya authoring engine, v2: one command from catalog entry to a loaded
+"""The Ideya authoring engine, v2: one command from a topic file to a loaded
 draft and a one-page packet, with nothing run by hand in between.
 
     .venv/bin/python research/engine/engine.py author <slug> [--start-at STEP] [--concurrency N]
@@ -28,7 +28,8 @@ REPO = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(REPO))
 sys.path.insert(0, str(REPO / "research" / "workflows"))
 from research.engine.harness import Harness  # noqa: E402
-import bake  # noqa: E402  (catalog_entry, skeleton, load_prior, PHASE_NEEDS, PHASE_STOP)
+from topics.item_ids import ensure_ids  # noqa: E402
+import bake  # noqa: E402  (topic_entry, skeleton, load_prior, PHASE_NEEDS, PHASE_STOP)
 
 PY = str(REPO / ".venv" / "bin" / "python")
 WF = REPO / "research" / "workflows"
@@ -70,19 +71,46 @@ def jdump(p, o):
 class Run:
     def __init__(self, slug, concurrency=None, log=print):
         self.slug = slug
-        self.entry = bake.catalog_entry(slug)
+        self.entry = bake.topic_entry(slug)
         self.title = self.entry["title"]
+        cats = self.entry.get("categories") or []
+        self.category = cats[0] if cats else ""
+        self.secondary = cats[1:]
         self.dir = REPO / "research" / "runs" / slug
-        self.dir.mkdir(parents=True, exist_ok=True)
         self.state_path = self.dir / "state.json"
         self.state = jload(self.state_path) if self.state_path.exists() else {"slug": slug, "title": self.title, "started": now(), "steps": {}}
         self.concurrency = concurrency
         self.log = log
-        self.dossier_path = REPO / "research" / "dossiers" / f"{slug}.json"
+        self.record_path = self.dir / "record.json"
         self.topic_path = REPO / "research" / "topics" / f"{slug}.json"
         self.review_dir = REPO / "research" / "reviews" / slug
-        self.review_dir.mkdir(parents=True, exist_ok=True)
         self.today = dt.date.today().isoformat()
+
+    def ensure_dirs(self):
+        """Only a run that is actually about to DO something creates its
+        directories. Constructing a Run used to make them, so `status` — a
+        read-only query — left an empty run and review folder behind, and the
+        run directory stopped being a reliable answer to what had been attempted.
+        """
+        self.dir.mkdir(parents=True, exist_ok=True)
+        self.review_dir.mkdir(parents=True, exist_ok=True)
+
+    def refuse_if_live(self):
+        """The engine never touches a published topic.
+
+        `load_topic_draft` enforces this too, but it would not fire until stage
+        2 — after stage 1 has spent an hour and real money. Checking here costs
+        one shell call and fails in the first second instead."""
+        r = sh([PY, "manage.py", "shell", "-c",
+                "from topics.models import Topic;"
+                f"t=Topic.objects.filter(slug='{self.slug}').first();"
+                "print(t.status if t else 'absent')"], env=DJ, check=False)
+        if (r.stdout or "").strip().endswith("published"):
+            raise RuntimeError(
+                f"{self.slug} is PUBLISHED — the engine does not run on a live "
+                f"topic. Take it off the site first: manage.py publish_topic "
+                f"--slug {self.slug} --off --confirm"
+            )
 
     # ---- state -----------------------------------------------------------
     def save(self):
@@ -113,13 +141,15 @@ class Run:
     async def s1_phase(self, phase):
         step = f"s1.{phase}"
         args = bake.skeleton(self.entry, self.today)
-        args["prior"] = bake.load_prior(self.dossier_path, bake.PHASE_NEEDS[phase], self.slug) if bake.PHASE_NEEDS[phase] else {}
+        args["prior"] = bake.load_prior(self.record_path, bake.PHASE_NEEDS[phase], self.slug) if bake.PHASE_NEEDS[phase] else {}
         args["stop_after"] = bake.PHASE_STOP[phase]
         r = await self.script(step, "research_topic.js", args)
         if not isinstance(r, dict):
             raise RuntimeError(f"{step}: script returned {type(r).__name__}")
-        d = jload(self.dossier_path) if self.dossier_path.exists() else {"dossier_version": 1, "slug": self.slug, "input": self.entry}
-        d.update({k: v for k, v in r.items()})
+        d = jload(self.record_path) if self.record_path.exists() else {"record_version": 1, "slug": self.slug, "input": self.entry}
+        d.update({k: v for k, v in r.items() if k != "prescribed_fixes"})
+        if "prescribed_fixes" in r:
+            d.setdefault("prescribed_fixes", {})["substance"] = r["prescribed_fixes"]
         d["generated"] = now()
         d["phase_done"] = phase
         d.setdefault("runs", {})[step] = str(self.dir / step)
@@ -128,29 +158,42 @@ class Run:
             passes = sum(1 for v in vs if v.get("pass"))
             blocks = sum(len(v.get("blocking") or []) for v in vs)
             d["gate_status"] = "pass" if passes == len(vs) and not r.get("shape_notes") else f"{passes}/{len(vs)} pass, {blocks} blocking open"
-        jdump(self.dossier_path, d)
+        jdump(self.record_path, d)
         return d.get("gate_status", f"{phase} persisted")
 
     # ---- stage 2 ---------------------------------------------------------
     def s2_args(self, fix_only=None):
-        d = jload(self.dossier_path)
+        d = jload(self.record_path)
         a = {"slug": self.slug, "title": self.title, "today": self.today,
              "dossier": {"draft": d["draft"], "verdicts": d.get("verdicts", []), "plan_positions": d.get("plan_positions", []),
                          "plan": d["plan"], "claim_ledger": d["claim_ledger"]}}
         if fix_only is not None:
-            t = jload(self.topic_path)
-            a["dossier"]["draft"] = t["draft"]
-            a["dossier"]["verdicts"] = t.get("verdicts", [])
-            a["dossier"]["plan_positions"] = t.get("plan_positions", [])
+            # the run record already carries the presentation verdicts; only the
+            # draft comes from the content file, which is what fix_only edits
+            a["dossier"]["draft"] = jload(self.topic_path)["draft"]
             a["fix_only"] = fix_only
         return a
 
     def persist_topic(self, r, tag):
+        """Content to the topic file, everything else to the run record. The
+        content file is what the loader reads, what a human diffs and what
+        ships; the gate's own output is process and never rides in it."""
         t = jload(self.topic_path) if self.topic_path.exists() else {}
-        d = jload(self.dossier_path)
-        t.update({"draft": r["draft"], "verdicts": r["verdicts"], "plan_positions": r.get("plan_positions", []), "claim_ledger": d["claim_ledger"], "fold": r.get("fold", t.get("fold"))})
-        t.setdefault("runs", {})[tag] = now()
+        # New content withdraws any certification: what was verified is no longer
+        # what the file says. The file is the source of truth, so the withdrawal
+        # is written HERE, not inferred by the loader.
+        t.update({"draft": r["draft"], "fold": r.get("fold", t.get("fold")),
+                  "status": "in_progress"})
+        # Identity is assigned here, once, and frozen: reader votes attach to it,
+        # so it must be in the file before the first load and never move after.
+        ensure_ids(t["draft"])
         jdump(self.topic_path, t)
+        d = jload(self.record_path)
+        d["verdicts"] = r["verdicts"]
+        d["plan_positions"] = r.get("plan_positions", d.get("plan_positions", []))
+        d.setdefault("prescribed_fixes", {})["presentation"] = r.get("prescribed_fixes", [])
+        d.setdefault("runs", {})[tag] = now()
+        jdump(self.record_path, d)
 
     async def s2_distribute(self):
         r = await self.script("s2.distribute", "distribute_topic.js", self.s2_args())
@@ -181,8 +224,8 @@ class Run:
         raise RuntimeError("lint still failing after 2 fix_only passes")
 
     def load(self):
-        r = sh([PY, "manage.py", "load_topic_draft", "--file", str(self.topic_path), "--slug", self.slug, "--title", self.title,
-                "--category", self.entry["primary_category_slug"], "--status", "draft"], env=DJ)
+        r = sh([PY, "manage.py", "load_topic_draft", "--file", str(self.topic_path),
+                "--slug", self.slug], env=DJ)
         warn = [l for l in (r.stdout + r.stderr).splitlines() if "warn" in l.lower() or "EXHAUSTED" in l]
         self.state.setdefault("loader_warnings", warn)
         return (r.stdout.strip().splitlines() or [""])[-1]
@@ -222,10 +265,10 @@ class Run:
             return "brief already present"
         schema = {"type": "object", "additionalProperties": False, "required": ["brief_markdown", "concept"],
                   "properties": {"brief_markdown": {"type": "string"}, "concept": {"type": "string"}}}
-        d = jload(self.dossier_path)
+        d = jload(self.record_path)
         prompt = (f"Write the icon brief for the Ideya topic below. Return it as `brief_markdown` (the complete file content for research/icons/{self.slug}.md, matching the headings of the existing briefs exactly, with a complete self-contained `## Generation prompt` blockquote) and one line in `concept` naming the visual concept and why it survives at 40px.\n\n"
-                  f"slug: {self.slug}\ntitle: {self.title}\nprimary category: {self.entry['primary_category_slug']} (secondary: {', '.join(self.entry.get('secondary_category_slugs') or [])})\n"
-                  f"summary: {self.entry.get('summary', '')}\noverview line: {d['draft']['overview'].get('summary', '')}\nstage-1 Phosphor icon hint: {d['draft']['overview'].get('icon', '')} (a hint only)\n\n"
+                  f"slug: {self.slug}\ntitle: {self.title}\nprimary category: {self.category} (secondary: {', '.join(self.secondary)})\n"
+                  f"scope line: {self.entry.get('scope', '')}\noverview line: {d['draft']['overview'].get('summary', '')}\nstage-1 Phosphor icon hint: {d['draft']['overview'].get('icon', '')} (a hint only)\n\n"
                   "Ground yourself first by reading research/ICONOGRAPHY.md, research/icons/categories.md and two or three existing briefs in research/icons/*.md as exemplars.")
         r = await self.agent("s3.brief", prompt, schema=schema, label="icon-brief", agentType="icon-briefer", model="opus", effort="high")
         if not r or not r.get("brief_markdown"):
@@ -297,7 +340,7 @@ class Run:
     async def s4_views(self):
         sec = self.review_dir / "sections"
         common = ("Judge ONLY on-system vs off-system against design/DESIGN_SYSTEM.md and design/RESPONSIVE.md, with research/reviews/UI_DEFECTS.md in hand: cite an OPEN entry rather than re-reporting it; a FIXED entry recurring is a REGRESSION, say so; a new site-wide defect gets the template/CSS location if you can name it. Read every image with the Read tool. Do not comment on content quality.\n"
-                  f"Topic: {self.title} ({self.slug}), category {self.entry['primary_category_slug']}.\n")
+                  f"Topic: {self.title} ({self.slug}), category {self.category}.\n")
         schema = {"type": "object", "additionalProperties": False, "required": ["findings", "blocking", "notes"],
                   "properties": {"findings": {"type": "array", "items": {"type": "object", "additionalProperties": False, "required": ["where", "what", "on_system", "register", "severity"],
                                  "properties": {"where": {"type": "string"}, "what": {"type": "string"}, "on_system": {"type": "boolean"}, "register": {"type": "string"}, "severity": {"type": "string", "enum": ["blocking", "note"]}}}},
@@ -320,6 +363,7 @@ class Run:
         from PIL import Image
         Image.MAX_IMAGE_PIXELS = None
         t = jload(self.topic_path)
+        d = jload(self.record_path)
         lint = self.lint()
         icon = REPO / "static" / "img" / "topics" / f"{self.slug}.png"
         og = REPO / "static" / "img" / "social" / f"{self.slug}.png"
@@ -332,8 +376,8 @@ class Run:
         except Exception:
             pass
         heights = [Image.open(p).size[1] if p.exists() else None for p in renders]
-        sub = [v for v in t["verdicts"] if v.get("stage") == "substance"]
-        pres = [v for v in t["verdicts"] if v.get("stage") == "presentation"]
+        sub = [v for v in d.get("verdicts", []) if v.get("stage") == "substance"]
+        pres = [v for v in d.get("verdicts", []) if v.get("stage") == "presentation"]
         fid = next((v for v in pres if v.get("key") == "claim-fidelity"), None)
         lines = [
             f"CHECK 1 lint            {'PASS' if not lint else 'FAIL'}  {len(lint)} findings",
@@ -342,14 +386,14 @@ class Run:
             f"CHECK 4 og card         {'PASS' if og.exists() else 'FAIL'}  {og.relative_to(REPO) if og.exists() else 'missing'}",
             f"CHECK 5 cards + poster  {'PASS' if all((self.review_dir / n).exists() for n in (f'{self.slug}-sq.png', f'{self.slug}-pt.png', f'{self.slug}.pdf')) else 'FAIL'}  sq/pt/pdf",
             f"CHECK 6 renders         {'PASS' if all(h and h < cap - 200 for h in heights) else 'FAIL'}  {sum(1 for h in heights if h)} of 6; cap {cap}; tallest {max(h or 0 for h in heights)}",
-            f"CHECK 7 gates ran       {'PASS' if len(sub) == 5 and len(pres) == 4 and fid and 'no claim_ledger' not in json.dumps(fid) and 'claim_ledger' in t else 'FAIL'}  substance {sum(1 for v in sub if v.get('pass'))}/{len(sub)}, presentation {sum(1 for v in pres if v.get('pass'))}/{len(pres)}, fidelity {'ran' if fid else 'missing'}",
+            f"CHECK 7 gates ran       {'PASS' if len(sub) == 5 and len(pres) == 4 and fid and 'no claim_ledger' not in json.dumps(fid) and 'claim_ledger' in d else 'FAIL'}  substance {sum(1 for v in sub if v.get('pass'))}/{len(sub)}, presentation {sum(1 for v in pres if v.get('pass'))}/{len(pres)}, fidelity {'ran' if fid else 'missing'}",
         ]
         return lines
 
     async def s5_pm(self):
         checks = self.checks()
         t = jload(self.topic_path)
-        d = jload(self.dossier_path)
+        d = jload(self.record_path)
         from collections import Counter
         led = Counter(r.get("status") for r in d["claim_ledger"]["results"])
         views = jload(self.review_dir / "views.json") if (self.review_dir / "views.json").exists() else {}
@@ -359,12 +403,12 @@ class Run:
                                  "packet_markdown": {"type": "string"}}}
         counts = {k: len(t["draft"].get(k) or (t["draft"].get("basics", {}).get("stats") if k == "stats" else [])) for k in ("questions", "positions", "actions")}
         counts["stats"] = len(t["draft"]["basics"]["stats"])
-        prompt = (f"Stage 4.5 PM gate for the Ideya topic \"{self.title}\" (slug {self.slug}, category {self.entry['primary_category_slug']}), loaded as DRAFT at {BASE_URL}/{self.slug}/ (and ?expanded=1). Today is {self.today}.\n\n"
+        prompt = (f"Stage 4.5 PM gate for the Ideya topic \"{self.title}\" (slug {self.slug}, category {self.category}), loaded as DRAFT at {BASE_URL}/{self.slug}/ (and ?expanded=1). Today is {self.today}.\n\n"
                   f"Counts: {counts['stats']} stats · {counts['questions']} questions · {counts['positions']} positions · {counts['actions']} actions. Fold: {json.dumps(t.get('fold'))}.\n\n"
                   "The deterministic pass was run by the engine; its lines are below — report them as given, and verify any you doubt by reading the files (you may Read, not run):\n" + "\n".join(checks) + "\n\n"
-                  f"Run: substance verdicts {[(v.get('key'), v.get('pass'), len(v.get('blocking') or [])) for v in t['verdicts'] if v.get('stage') == 'substance']}; presentation verdicts {[(v.get('key'), v.get('pass'), len(v.get('blocking') or [])) for v in t['verdicts'] if v.get('stage') == 'presentation']}; ledger {dict(led)} of {len(d['claim_ledger']['claims'])}; prescribed fixes on file: {len(d.get('prescribed_fixes') or [])} (stage 1) + {len(t.get('prescribed_fixes') or [])} (stage 2); loader warnings: {self.state.get('loader_warnings')}; links: {self.state.get('links')}.\n\n"
+                  f"Run: substance verdicts {[(v.get('key'), v.get('pass'), len(v.get('blocking') or [])) for v in d['verdicts'] if v.get('stage') == 'substance']}; presentation verdicts {[(v.get('key'), v.get('pass'), len(v.get('blocking') or [])) for v in d['verdicts'] if v.get('stage') == 'presentation']}; ledger {dict(led)} of {len(d['claim_ledger']['claims'])}; prescribed fixes on file: {len((d.get('prescribed_fixes') or {}).get('substance') or [])} (stage 1) + {len((d.get('prescribed_fixes') or {}).get('presentation') or [])} (stage 2); loader warnings: {self.state.get('loader_warnings')}; links: {self.state.get('links')}.\n\n"
                   f"Stage-4 view-critic findings (design conformance): {json.dumps(views)[:6000]}\n\n"
-                  f"Renders to read: research/reviews/{self.slug}/sections/<set>/*.png (per-section, in page order; sets desktop-1440, desktop-1440-expanded, mobile-390, mobile-320, mobile-390-expanded, mobile-320-expanded), the poster research/reviews/{self.slug}/{self.slug}.pdf, cards research/reviews/{self.slug}/{self.slug}-sq.png and -pt.png, og static/img/social/{self.slug}.png. Topic JSON: research/topics/{self.slug}.json. Do not read the dossier.\n\n"
+                  f"Renders to read: research/reviews/{self.slug}/sections/<set>/*.png (per-section, in page order; sets desktop-1440, desktop-1440-expanded, mobile-390, mobile-320, mobile-390-expanded, mobile-320-expanded), the poster research/reviews/{self.slug}/{self.slug}.pdf, cards research/reviews/{self.slug}/{self.slug}-sq.png and -pt.png, og static/img/social/{self.slug}.png. Topic JSON: research/topics/{self.slug}.json (content only). Do not read the run record under research/runs/.\n\n"
                   "Return `routing` (empty on a healthy run) and `packet_markdown` — the one-page packet per research/ENGINE.md §12 (links first; Run; Decided for you; Check in 5 minutes with at most three items; Engineering; Publish).")
         r = await self.agent("s5.pm", prompt, schema=schema, label="pm", agentType="topic-pm", model="fable", effort="max")
         if not r:
@@ -430,12 +474,11 @@ class Run:
             v = {"status": "unverifiable", "source_url": "", "source_quote": "", "note": "verifier returned nothing"}
         if not v.get("source_quote"):
             v["status"] = "unverifiable"
-        cid = f"r{sum(1 for c in jload(self.dossier_path)['claim_ledger']['claims'] if str(c.get('id', '')).startswith('r')) + 1}"
-        for path in (self.dossier_path, self.topic_path):
-            d = jload(path)
-            d["claim_ledger"]["claims"].append({"id": cid, "claim": quote, "quote": quote, "section": "routed", "item": "", "kind": "fact", "source_url": v.get("source_url", "")})
-            d["claim_ledger"]["results"].append({"id": cid, **v, "note": f"PM-routed, verified blind at stage 5: {v.get('note', '')}"})
-            jdump(path, d)
+        d = jload(self.record_path)
+        cid = f"r{sum(1 for c in d['claim_ledger']['claims'] if str(c.get('id', '')).startswith('r')) + 1}"
+        d["claim_ledger"]["claims"].append({"id": cid, "claim": quote, "quote": quote, "section": "routed", "item": "", "kind": "fact", "source_url": v.get("source_url", "")})
+        d["claim_ledger"]["results"].append({"id": cid, **v, "note": f"PM-routed, verified blind at stage 5: {v.get('note', '')}"})
+        jdump(self.record_path, d)
         self.log(f"  routed claim {cid}: {v['status']}")
         if v["status"] == "supported":
             return False
@@ -482,6 +525,8 @@ class Run:
     async def run_one(self, step):
         """Run exactly one step now, regardless of its recorded status (the
         manual walkthrough and the way to redo a step after a fix)."""
+        self.refuse_if_live()
+        self.ensure_dirs()
         self.mark(step, "running")
         t0 = time.time()
         try:
@@ -504,6 +549,8 @@ class Run:
         self.save()
 
     async def run(self, start_at=None):
+        self.refuse_if_live()
+        self.ensure_dirs()
         if start_at:
             for s in STEPS[: STEPS.index(start_at)]:
                 if not self.done(s):

@@ -16,7 +16,9 @@ Django + HTMX + Alpine. A curated atlas of hard debates; depth is an axis, not a
 
 - **Automation drafts; a human publishes.** Never `load_topic_draft --status published`
   and never `publish_topic` (a hook blocks both). Publishing is stage 5 and belongs
-  to the human.
+  to the human. A topic's core status is one field with four stops —
+  `not_started` → `in_progress` → `ready` → `published`. The engine's job ends at
+  `ready`; only Jeff crosses the last line, and only `published` is public.
 - **The pipeline never edits templates or CSS.** Log code/CSS defects in the review
   packet for the human instead.
 - **Content fields are plain text**: write `&`, never `&amp;`; typographic quotes
@@ -37,11 +39,16 @@ Django + HTMX + Alpine. A curated atlas of hard debates; depth is an axis, not a
 
 - `topics/` — the app. `templates/`, `static/` — the product surface (tokens in
   `static/css/tokens.css`).
-- `research/topics/<slug>.json` — a topic's source of truth (the loader contract).
-  `research/dossiers/` — stage-1 substance records. `research/reviews/<slug>/` — the
-  human's review packet.
-- `research/workflows/` — the engine: the three Workflow scripts plus `lint_draft.py`,
-  `seed_defects.py` (gate calibration), `tally_tokens.py`, and `check_engine.py`.
+- `research/topics/` — **the set of topics**, one file each, cradle to grave: a
+  topic with only a title and a published one are the same object at different
+  stops. Index fields at the top (slug, title, status, scope, categories,
+  related), `draft` under them once there is content. The source of truth for
+  everything except participation. `research/categories.json` — the taxonomy.
+  `research/runs/<slug>/record.json` — everything the engine produced getting
+  there. `research/reviews/<slug>/` — the human's review packet.
+- `research/workflows/` — the engine: the two Workflow scripts plus `lint_draft.py`,
+  `topic_ids.py`, `seed_defects.py` (gate calibration), `tally_tokens.py`, and
+  `check_engine.py`.
 - `research/ENGINE.md` — **the engine's operator manual and single source of truth
   for operations** (structure, runbooks, routing, contracts, failure modes). Any
   commit that changes the engine updates it in the same commit; `check_engine.py`
@@ -53,5 +60,8 @@ Django + HTMX + Alpine. A curated atlas of hard debates; depth is an axis, not a
 ## Pipeline
 
 Authoring: `/author-topic <slug>` → `research/engine/engine.py author <slug>`, one
-automated, resumable run to a loaded draft + packet (engine v3, 2026-09-06). Upkeep:
-`/refresh-topic <slug>`. Both are human-invoked only — long, expensive, side-effectful.
+automated, resumable run to a loaded draft + packet (engine v3, 2026-09-06).
+Human-invoked only — long, expensive, side-effectful.
+
+There is **no upkeep engine**. A published topic stays as published until a human
+deliberately edits its content file and reloads it, or re-runs the engine on it.

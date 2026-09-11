@@ -10,8 +10,8 @@ This command therefore NEVER creates an approved summary.
 This runs OUT-OF-BAND, not in the request path. Structured participation
 (votes, stances, question leans) is captured and shown live in the app; the
 free-text input is aggregated here on an occasional cadence — an editor runs
-this by hand or on a schedule, same "AI drafts → human publishes" shape as the
-refresh-topic workflow. Nothing on the reader-facing pages waits on it.
+this by hand or on a schedule, the same "AI drafts → human publishes" shape as
+the authoring engine. Nothing on the reader-facing pages waits on it.
 
   manage.py summarize_input                       # every active text-collecting prompt
   manage.py summarize_input --prompt 12           # just one prompt

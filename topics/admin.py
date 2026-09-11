@@ -1,4 +1,5 @@
-from django.contrib import admin
+from django.contrib import admin, messages
+from django.utils import timezone
 
 from .models import (
     Action,
@@ -49,12 +50,17 @@ class TopicAdmin(admin.ModelAdmin):
         "updated_at",
     )
     list_filter = ("status", "volatility", "categories", "primary_category")
+    # Readiness is set upstream and cleared by any content load; never editable here.
     search_fields = ("title", "summary")
     prepopulated_fields = {"slug": ("title",)}
     filter_horizontal = ("categories",)
     inlines = [TopicSectionInline]
     actions = ("publish", "unpublish", "mark_reviewed", "scaffold_sections")
-    readonly_fields = ("researched_at", "research_dossier", "review_due_display")
+    # `status` is deliberately NOT editable here. Publishing is one command with
+    # one gate; a free-text dropdown beside it would be a second, ungated way to
+    # do the same thing, and the ungated one always wins. Use the Publish action,
+    # `manage.py publish_topic`, or `manage.py mark_ready`.
+    readonly_fields = ("researched_at", "status", "review_due_display")
     fieldsets = (
         (
             None,
@@ -96,7 +102,6 @@ class TopicAdmin(admin.ModelAdmin):
                     "reviewed_at",
                     "review_due_display",
                     "researched_at",
-                    "research_dossier",
                 ),
             },
         ),
@@ -109,13 +114,27 @@ class TopicAdmin(admin.ModelAdmin):
 
     @admin.action(description="Publish selected topics")
     def publish(self, request, queryset):
-        updated = queryset.update(status=Topic.PUBLISHED)
-        self.message_user(request, f"{updated} topic(s) published.")
+        """Same gate as `manage.py publish_topic`: only a topic the engine
+        certified READY can be made public, from here or anywhere, or the admin
+        would be the hole in the rule."""
+        ready = queryset.filter(status=Topic.READY)
+        blocked = [t.slug for t in queryset.exclude(status=Topic.READY)]
+        updated = ready.update(status=Topic.PUBLISHED, reviewed_at=timezone.now())
+        if updated:
+            self.message_user(request, f"{updated} topic(s) published.")
+        if blocked:
+            self.message_user(
+                request,
+                "Not published — not READY: " + ", ".join(blocked),
+                level=messages.WARNING,
+            )
 
-    @admin.action(description="Unpublish selected topics (back to draft)")
+    @admin.action(description="Take selected topics off the site (back to ready)")
     def unpublish(self, request, queryset):
-        updated = queryset.update(status=Topic.DRAFT)
-        self.message_user(request, f"{updated} topic(s) back to draft.")
+        """Back to READY, not to IN_PROGRESS: taking a page off the site says
+        nothing about whether its content is still verified."""
+        updated = queryset.filter(status=Topic.PUBLISHED).update(status=Topic.READY)
+        self.message_user(request, f"{updated} topic(s) taken off the site.")
 
     @admin.display(description="Review")
     def review_status(self, obj):

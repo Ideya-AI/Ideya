@@ -154,68 +154,72 @@ this: `.venv/bin/python manage.py runserver` on port 8000 with the repo's dev
 ## 3. Seed the content
 
 A fresh database has schema only — content lives outside migrations, in
-`research/catalog/topic-universe.json` (taxonomy + draft universe) and
-`research/topics/<slug>.json` (full topics, the single source of truth;
-`export_topic` regenerates them from the DB). Two ways to populate production:
+`research/topics/<slug>.json` — one file per topic, cradle to grave, the single
+source of truth — plus `research/categories.json` for the taxonomy. Two ways to
+populate production:
 
-- **Ship your curated state (simplest):** copy your local `db.sqlite3` onto the
-  volume at `DJANGO_DB_PATH`. It holds exactly what you see locally. The public
-  only ever sees *published* topics, so the draft experiments in your local DB
-  stay invisible — they're just harmless rows.
+- **Already done on the launch box (simplest):** there is one database, at
+  `/srv/ideya-data/db.sqlite3`, shared by the authoring session and the container.
+  Nothing needs shipping. The public only ever sees *published* topics, so
+  everything still being worked on stays invisible — just harmless rows.
 - **Reproducible seed from scratch:** after `migrate`, run
 
   ```
-  python manage.py load_universe
-  python manage.py load_topic_draft --file research/topics/nuclear-energy.json \
-      --slug nuclear-energy --title 'Nuclear Energy' --category climate-env --status published
-  python manage.py load_topic_draft --file research/topics/universal-basic-income.json \
-      --slug universal-basic-income --title 'Universal Basic Income' --category economy --status published
+  python manage.py load_universe          # taxonomy + every topic file
   python manage.py seed_category_overviews
   python manage.py seed_category_links
-  python manage.py seed_example_prompts
   python manage.py rebuild_search
   ```
 
-  This rebuilds the taxonomy, catalog (as drafts), both published topics, the
-  category overviews + adjacency graph, participation prompts, and the search
-  index. (Vote counts, reader submissions, and the historical related-topic
-  edges of the original seed are local-DB state — they don't reproduce.)
+  `load_universe` reads `research/categories.json` and then every file in
+  `research/topics/`, so it rebuilds the taxonomy and all 136 topics at whatever
+  stop each one's file records — including which are published. Participation
+  prompts are seeded per topic by the loader as it goes.
+
+  The database is derived by design: delete it, migrate, run the above, and the
+  atlas is back. The one thing that does not reproduce is reader participation,
+  which exists only in the database.
 
 ### Publish one topic to the live site (the standing flow)
 
-The live DB (`/srv/ideya-data/db.sqlite3`) is separate from the repo's authoring DB and
-holds real reader participation — **never copy the whole local DB over it after launch**.
-To put a newly-authored or refreshed topic live, run the same loader surgically inside
-the container (the image carries `research/topics/*.json`; rebuild + redeploy first if
-the JSON changed since the last image build):
+**There is one database.** The authoring session and the live container share
+`/srv/ideya-data/db.sqlite3` — the container mounts it at `/data/db.sqlite3`, and
+the repo's `.env` points local Django at the same file. So a topic you publish
+locally is live the moment you flip the switch: there is no content push, no
+second loader run, and nothing to keep in sync.
 
 ```sh
-docker exec ideya python manage.py load_topic_draft \
-  --file research/topics/<slug>.json --slug <slug> \
-  --status published --image-brief research/icons/<slug>.md --reviewed
-docker exec ideya python manage.py load_universe   # wires related-topic edges
-docker exec ideya python manage.py rebuild_search  # refresh the FTS index
+manage.py publish_topic --slug <slug> --confirm     # that is the whole thing
+```
+
+**The one thing that still needs a redeploy is artwork.** `collectstatic` bakes
+static files into the image, so a topic whose primary art and OG card are new
+needs the image rebuilt before those images resolve. Content does not.
+
+```sh
+git add research/topics/<slug>.json research/runs/<slug>/record.json \
+    research/icons/<slug>.md research/reviews/<slug>/ \
+    static/img/topics/<slug>.png static/img/social/<slug>.png
+git commit -m 'Publish <slug>'
+docker build -t ideya . && docker restart ideya     # only when static files changed
 
 # Confirm it actually landed. A just-published topic missing from the live site
 # is a known failure mode (ENGINE.md §11) and nothing used to check for it.
 curl -s -o /dev/null -w '%{http_code}\n' https://<live-host>/<slug>/   # expect 200
 ```
 
-`--title` and `--category` are no longer needed: the loader resolves the title
-from the draft or the catalog entry, and the category from the draft's own
-`primary_category`/`categories`, printing what it resolved. `--reviewed` stamps
-the human-approval clock in the same transaction, replacing the separate
-`shell -c` that had to be run inside the container afterwards.
+**Taking a topic back down** is the same switch: `publish_topic --slug <slug>
+--off --confirm`. It needs no readiness, because pulling something off the site is
+always allowed.
 
-Run `manage.py publish_topic --slug <slug> --confirm` locally FIRST — it
-preflights the artifacts and links, publishes, and prints these commands filled
-in for you.
+**Editing a topic that is already live** needs `--allow-published` on the loader:
+it refuses by default to overwrite a page readers are on, and nothing re-certifies
+the topic afterwards. Prefer taking it off the site, editing, then publishing again.
 
-Reloading an existing published topic rebuilds its sections; the loader preserves that
-topic's votes/leans by re-attaching them to matching question text / position name
-(rows whose text changed lose their votes — that is the honest outcome). Verify with a
-curl of the live page, then set `reviewed_at` via the same `docker exec` shell if this
-was a refresh.
+Reloading a topic updates its rows in place: every stat, question, position and
+action is matched by the frozen `id` its content file carries, so votes, leans and
+reader responses survive any amount of rewording. Only an item the file no longer
+carries is retired, and its participation goes with it.
 
 To use the local Django admin (optional — you publish/update locally), create a
 superuser: `python manage.py createsuperuser`.

@@ -148,6 +148,10 @@ WSGI_APPLICATION = "ideya.wsgi.application"
 
 # SQLite by default. Point DJANGO_DB_PATH at a persistent volume in production
 # (e.g. /data/db.sqlite3) so the atlas survives container/instance restarts.
+# The set of topics: one file each, cradle to grave. Overridden in tests so they
+# never write into the working tree.
+TOPICS_DIR = BASE_DIR / "research" / "topics"
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",

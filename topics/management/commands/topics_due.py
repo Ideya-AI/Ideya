@@ -2,8 +2,11 @@
 
 A topic falls due `review_interval_days` (fast 90 / medium 180 / slow 365) after
 it was last touched (`reviewed_at`, else `researched_at`). Never-touched topics
-are always due. This drives the refresh queue — pair it with `check_links` for
-the link half of staleness, and feed both into the `refresh-topic` workflow.
+are always due.
+
+This is a REPORT, not a queue: nothing consumes it. A due topic is a note to the
+human, who decides whether it is worth editing its content file or re-running the
+engine on it. Pair it with `check_links` for the link half of staleness.
 """
 
 import json
@@ -22,7 +25,7 @@ class Command(BaseCommand):
         )
         p.add_argument(
             "--status",
-            choices=[Topic.DRAFT, Topic.PUBLISHED],
+            choices=[c for c, _ in Topic.STATUS_CHOICES],
             help="Limit to one status (draft|published).",
         )
         p.add_argument(
@@ -34,8 +37,8 @@ class Command(BaseCommand):
         if o.get("status"):
             qs = qs.filter(status=o["status"])
         else:
-            # The catalog's ~130 unauthored stubs are drafts and "always due" —
-            # they drowned the queue (132 rows of noise). The refresh queue is
+            # The ~118 unauthored topics are "always due" —
+            # they drowned the report (132 rows of noise). Staleness is about
             # published topics unless a status is asked for explicitly.
             qs = qs.filter(status=Topic.PUBLISHED)
         # Most overdue first; never-touched (large sentinel) sort to the top.

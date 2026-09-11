@@ -52,6 +52,6 @@ Stack: Django + HTMX + Alpine, token-native CSS, SQLite.
 - `topics/` — the app: models, views, and the management commands that load, export, render (posters/social cards), and maintain content.
 - `templates/`, `static/` — the product surface (design tokens in `static/css/tokens.css`).
 - `design/` — the locked design system: foundations, component specs, responsive rules, data model.
-- `research/` — the content pipeline: topic universe catalog, per-topic JSON (source of truth), icon briefs + generator, authoring/refresh workflows, and the governing docs `RESEARCH_PIPELINE.md` (the authoring engine + editorial quality bar) and `ICONOGRAPHY.md` (the locked icon style).
+- `research/` — the content pipeline: one JSON per topic (the source of truth, cradle to grave), the category taxonomy, icon briefs + generator, the authoring workflows, and the governing docs `RESEARCH_PIPELINE.md` (the authoring engine + editorial quality bar) and `ICONOGRAPHY.md` (the locked icon style).
 - `DEPLOY.md` — how the site goes live (env vars, container, content seeding).
 - `accounts/` — shelved accounts app (kept by decision; no public entry points).

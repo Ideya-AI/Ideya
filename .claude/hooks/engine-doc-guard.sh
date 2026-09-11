@@ -6,7 +6,7 @@
 # surfaces as feedback telling the session to update the manual in this change.
 FILE=$(jq -r '.tool_input.file_path // empty')
 case "$FILE" in
-  */research/workflows/*|*/research/ENGINE.md|*/.claude/skills/author-topic/*|*/.claude/skills/refresh-topic/*|*/.claude/skills/participation-review/*|*/.claude/hooks/*)
+  */research/workflows/*|*/research/ENGINE.md|*/.claude/skills/author-topic/*|*/.claude/skills/participation-review/*|*/.claude/hooks/*)
     cd "$CLAUDE_PROJECT_DIR" || exit 0
     OUT=$(.venv/bin/python research/workflows/check_engine.py 2>&1) || {
       echo "$OUT" >&2
@@ -15,15 +15,9 @@ case "$FILE" in
     ;;
 esac
 
-# A workflow-script edit gets the mirrored-contract guard (the three scripts
-# duplicate rules/schemas by hand; drift there was consequential). Editing
-# refresh ALSO runs its own guards: those live in a separate module so weekly
-# authoring work is not carrying them, which means the hook has to ask for them
-# by name or a refresh edit would go unguarded.
+# A workflow-script edit gets the mirrored-contract guard (the two scripts
+# duplicate rules/schemas by hand; drift there was consequential).
 case "$FILE" in
-  */research/workflows/refresh_topic.js)
-    SUITES="topics.tests.test_workflow_mirrors topics.tests.test_refresh_guards"
-    ;;
   */research/workflows/*.js)
     SUITES="topics.tests.test_workflow_mirrors"
     ;;

@@ -27,8 +27,8 @@ the model may or may not be attending to on round 14 of a fix loop.
 
 | Artifact | Written by | Contract |
 |---|---|---|
-| `research/catalog/topic-universe.json` | human / stage 0 | skeleton: title, slug, summary, why_now, categories, position names, `related_slugs` |
-| `research/dossiers/<slug>.json` | stage 1 | substance record: draft, plan, verdicts, `claim_ledger`, shape notes |
+| `research/topics/<slug>.json` | human at stage 0, then the engine | the topic, cradle to grave: slug, title, status, one-line `scope`, categories, related — plus `draft` once there is content |
+| `research/runs/<slug>/record.json` | the engine | the whole process record: plan, stage-1 draft, verdicts, `claim_ledger`, prescriptions. Never loaded, never shipped |
 | `research/topics/<slug>.json` | stage 2 | **the loader contract and a topic's source of truth**; also carries `claim_ledger` forward so a stage-4 `fix_only` pass can still check that its rewrites did not move a verified claim |
 | `static/img/topics/<slug>.png` + `research/icons/<slug>.md` | stage 3 | hero art + the brief it was generated from |
 | `research/reviews/<slug>/` | stage 4 | screenshots, cards, poster, `REVIEW.md` |
@@ -152,9 +152,16 @@ mistakes already paid for here:
 typing. It was nine hand-typed steps: three near-identical loader invocations with
 hand-typed `--title`/`--category` and two raw `shell -c` one-liners, with the link
 check running *after* the publish so a dead link was discovered on a topic that
-was already live. `publish_topic` collapses the local half into one command
-(preflight → publish → `reviewed_at` → print the live-push commands), and the
-preflight runs before anything is written.
+was already live.
+
+**Reshaped 2026-09-09 into one core status.** A topic sits at exactly one of four
+stops — `not_started` → `in_progress` → `ready` → `published` — and everything
+that decides whether it is fit to publish converges on reaching `ready`, which is
+what the engine builds toward. `publish_topic` then does nothing but cross the
+last line. Publishing carries no checks of its own, because a publish step that
+re-derives readiness is a second, weaker copy of the gates that already ran.
+Loading content sends a topic back to `in_progress`, so the thing made public is
+always the thing that was verified.
 
 *Why that does not weaken the iron rule:* the rule is that a human decides and
 initiates, not that a human types nine commands. `publish_topic` refuses to write
@@ -387,26 +394,19 @@ and keeps working when search is spent — which is why verification is WebFetch
   names it in `lean_basis`. *Residual:* the ratchet toward over-inclusion is unchanged —
   the rules still push only toward adding camps, and a checked basis constrains the
   weight, not the decision to include.
-- **The refresh changelog is generated and discarded at load**, so corrections never
-  reach the reader. `last_touched` exists on the model and no template renders it.
-- **Refresh is scoped, and scoping trades coverage for cost.** Since 2026-09-01 a
-  refresh re-verifies only what `refresh_scan` and the scout flag; everything else is
-  reported as not-checked. The backstop is the staleness floor (2x the review
-  interval), which is only as good as `source_accessed` — so the rule that
-  confirmations and edits both stamp it is load-bearing, not hygiene. The residual
-  risk is a fact that goes wrong without any signal the scan or the scout can see:
-  nothing catches that until the floor comes round.
+- **Nothing keeps a published topic current.** A fact that goes wrong after
+  publication stays wrong until a human notices. `topics_due` says which topics
+  have gone stale and `check_links` catches rot, but both only report, and
+  nothing acts on them. This is the largest open gap in the system, and it is
+  deliberate while authoring is still being settled.
 - **Corpus-level quality is unmeasured by the engine** — the mode-collapse scan was
   manual. Every gate reads one topic.
 - ~~**One output schema is still over the classifier's budget.**~~ *Closed
-  2026-09-01.* `reverify(BASICS_SCHEMA)` is gone with whole-section returns; the
-  re-verify calls emit `SECTION_PATCH` (~1.5KB) instead. The size win was incidental —
-  the reason for the change was that whole-section regeneration is what let two
-  nuclear-energy refreshes delete and flatten content nobody asked them to touch. It
-  also retires a quieter version of the same bug: a field missing from the section
-  schema was silently wiped from the draft (the 2026-07-03 run lost `detail` on every
-  stat and `lean_*` on every question this way), and a patch cannot omit what it does
-  not name.
+  2026-09-01.* Every schema now sits under the ~3KB operating budget. The lesson
+  worth keeping is why the oversized one existed: it asked an agent to re-emit a
+  whole section. Whole-section regeneration silently drops what it does not
+  re-emit, and a field missing from the schema is wiped from the draft. A patch
+  cannot omit what it does not name.
 - **CSS defects** remain the standing list in each review packet; the pipeline is
   forbidden from touching templates.
 - **A critic's prescribed replacement fact is not evidence** (2026-09-02/04). Across
@@ -480,7 +480,7 @@ A draft Topic populated across the fixed spine, matching the existing data model
 - **Actions** — 6–12 (learn / donate / policy / volunteer / local / submit-view), optionally aligned to a position.
 - Plus a **research dossier** (sources, key facts, roads-not-taken) attached for the reviewer.
 
-Input = a universe catalog entry (title, summary, why_now, position names, category, related, icon). The pipeline *deepens* the skeleton; it doesn't start cold.
+Input = a universe catalog entry (slug, title, one-line scope, categories, related). The pipeline researches the topic from that; the entry frames it, it does not seed the content.
 
 ## 2. The quality bar (this is the hard part, and the whole point)
 Published content carries the product's promise, so three non-negotiables:
@@ -528,8 +528,7 @@ And the **Crux** must be genuinely insightful — narrowing to where disagreemen
 - **Position ordering — DECIDED 2026-06-17:** seed default order by prevalence/influence (mainstream leads; don't open with fringe), then importance votes reorder live, gated at low volume. This makes Positions vote-orderable like Questions — a change from the current "importance reorders Questions but never Positions" rule. Neither prevalence nor votes claims correctness (both descriptive), so neutrality holds. Left↔right spectrum kept as metadata (can drive color/grouping or an optional "view by spectrum" later), NOT the default order — it conflicts with a prevalence list.
 - **Freshness — durable by default ("more Buffett than day-trader").** The atlas is a deliberate *lagging* source: it maps enduring debates and long-term change, not the day-to-day. Ideas (positions/questions/crux) are stable and shouldn't chase a news cadence. So:
   1. **Prefer durable facts.** In Basics, favor structural / long-run figures that age well; when a genuinely perishable fact is needed, isolate + date it as the exception — so pages don't rot. Minimize perishable surface area; lean on durable framing.
-  2. **Accuracy at authoring still matters.** Run the recency pass when a topic is authored/refreshed to get genuinely-current data (fixes the LLM "good-but-slightly-stale baked in" failure — never trust first-pass recollection); record source publication date + access date.
-  3. **Refresh is event-driven, not periodic.** Revisit a topic only when something MATERIALLY changes its shape (a position obsolesced, a key fact moved a lot) — plus an occasional light review for the few truly fast-moving topics (e.g., AI). No refresh treadmill.
+  2. **Accuracy at authoring still matters.** Run the recency pass when a topic is authored to get genuinely-current data (fixes the LLM "good-but-slightly-stale baked in" failure — never trust first-pass recollection); record source publication date + access date.
   4. **Display:** "as of {date}" on the dated facts + a light "Updated {month}" on the page.
   - Small data-model adds: source publication + access dates on Stats; researched_at / reviewed_at on Topic.
 - **Sources** — tiered (primary/official + peer-reviewed > reputable journalism/research > advocacy/opinion); Basics prefers cross-accepted sources; Positions attributed to real proponents/works (the proponent is the idea's source); everything in a reviewer dossier; UI stays tertiary.
@@ -537,7 +536,7 @@ And the **Crux** must be genuinely insightful — narrowing to where disagreemen
 ## 9. The research session — concrete spec (design locked 2026-06-17)
 One session = one topic, end to end. **Input:** a universe catalog entry. **Output:** a structured `TopicDraft` mapping 1:1 to the data model, loaded as a DRAFT topic + a reviewer dossier. Orchestrated as a per-topic Workflow.
 
-**Stage 0 · Scope & spine plan** (1 agent). Lock durable framing (definition, scope in/out, why_now). Finalize the contested space: the load-bearing Questions (empirical|value, ordered by centrality) and the genuine named Positions (refine the catalog's sketch). Assign each Position a **prevalence/influence weight** (default-order seed) and a **spectrum position** (metadata). Everyone builds against this plan.
+**Stage 0 · Scope & spine plan** (1 agent). Lock durable framing (definition, scope in/out, why_now). Finalize the contested space: the load-bearing Questions (empirical|value, ordered by centrality) and the genuine named Positions (found in the live debate — the catalog seeds none). Assign each Position a **prevalence/influence weight** (default-order seed) and a **spectrum position** (metadata). Everyone builds against this plan.
 
 **Stage 1 · Parallel section research** (fan-out, web-enabled, recency-aware):
 - *Basics* — 6–8 stats; **prefer durable facts**, cross-accepted across positions; each with value, viz kind, note, source (title/url/publication-date) + accessed-date; run the recency pass on any time-sensitive figure (latest as of today, never first-pass) and mark it perishable → "as of" display. Layer: headline number → note → source/context.
@@ -593,7 +592,7 @@ as the design record. The five stages:
 1. **Research (substance)** — `research/workflows/research_topic.js`: plan (now also emits
    the Phosphor `icon`) → parallel section research → crux → the four-critic **substance
    gate** (neutrality / steelman / fact-source / crux) → keep-best fix loop. Judges
-   substance on the full, un-compressed draft. Artifact: `research/dossiers/<slug>.json`.
+   substance on the full, un-compressed draft. Artifact: `research/runs/<slug>/record.json`.
 2. **Distribute (presentation)** — `research/workflows/distribute_topic.js`: distill the
    compact layer → assign tier (the "Go deeper" fold), reveal (compact vs expanded), and
    item **order** → the three-critic **presentation gate** (compact-self-sufficiency,
@@ -632,8 +631,8 @@ they now live as code and prompts. With the pipelines hardened, the standing loo
 deliberately retired (decision 2026-08-03): topic pages are close enough that the
 human prompts specific changes directly, and each run's own adversarial gates carry
 the quality bar. Kept from that era: the `--expanded` render mode (stage 4), required
-`--base-url` on render commands, and `refresh_topic.js`'s `args.findings` seed for
-human-flagged items.
+`--base-url` on render commands, and the editor-findings shape for human-flagged
+items.
 
 ## 14. Engine v3 — one automated run (2026-09-06)
 

@@ -10,7 +10,7 @@ failure it exists to prevent, usually one we paid for). Companion to `README.md`
 flowchart TD
   CMD["engine.py author &lt;slug&gt;"] --> ST["state.json · idempotent 17-step loop"]
   ST --> S1P["s1.plan"] --> S1R["s1.research"] --> S1V["s1.verify"] --> S1G["s1.gate"]
-  S1G -->|dossier| S2D["s2.distribute"] --> S2L["s2.lint"] --> S2LD["s2.load"] --> S2F["s2.fit"]
+  S1G -->|record| S2D["s2.distribute"] --> S2L["s2.lint"] --> S2LD["s2.load"] --> S2F["s2.fit"]
   S2F -->|topic JSON loaded as draft| S3B["s3.brief"] --> S3G["s3.generate"] --> S3S["s3.select"] --> S3P["s3.postprocess"]
   S3P -->|icon| S4R["s4.render"] --> S4L["s4.links"] --> S4V["s4.views"]
   S4V --> S5C["7 CHECKS (driver)"] --> S5PM["s5.pm — topic-pm reads"]
@@ -46,11 +46,11 @@ flowchart TD
 
 ## Stage 1 — research (substance). `research_topic.js`, four phases
 
-Output: `research/dossiers/<slug>.json` — the topic's source of truth for facts. Everything here is written for substance, not length.
+Output: `research/runs/<slug>/record.json` — the engine's own record, and the source of truth for facts. It is process, not product: the content file the loader reads carries the topic and nothing else (split 2026-09-09).
 
 ### s1.plan — the scope & spine planner
 - **What:** lock scope covered/excluded, why-now, the questions, the positions with prevalence weights and their basis, a spectrum order, an icon hint.
-- **How:** one opus agent with web search, high effort, structured `PLAN_SCHEMA`. The driver persists the returned `plan` into the dossier and stops (`stop_after: plan`).
+- **How:** one opus agent with web search, high effort, structured `PLAN_SCHEMA`. The driver persists the returned `plan` into the run record and stops (`stop_after: plan`).
 - **Why:** research without a spine drifts into whatever the first sources say. Prevalence weights set here are how the page carries honest non-balance without a house verdict; `prevalence_basis` is recorded so the ledger can later verify it like any claim.
 
 ### s1.research — parallel section research, then the crux
@@ -169,7 +169,7 @@ Output: `REVIEW.md` (≤1 page) and `tokens.md`.
 ## The human (stage 5 proper)
 
 - **What:** read `REVIEW.md` (links first, the run line, what was decided for you, at most three things to check), then publish.
-- **How:** `manage.py publish_topic --slug <slug> --dry-run`, then `--confirm`; it stamps `reviewed_at`, commits the artifacts, prints the live-push commands.
+- **How:** `manage.py publish_topic --slug <slug> --dry-run`, then `--confirm`. It is a switch: `status` flips, `reviewed_at` is stamped, the search index moves, and the live commands are printed. It reads no files and checks nothing — readiness was settled at 4.5.
 - **Why:** automation drafts; a human publishes. A hook blocks the engine from ever calling it.
 
 ---

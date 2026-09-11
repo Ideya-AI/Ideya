@@ -1,9 +1,8 @@
 # Participation — reading what readers did
 
 The operator manual for the participation record. The authoring engine
-(`ENGINE.md`) makes topics; the refresh engine (`REFRESH.md`) keeps them
-current; this one turns what readers do on the pages into something an editor
-can read. It is deliberately small: one durable table, one command, and the
+(`ENGINE.md`) makes topics; this one turns what readers do on the pages into
+something an editor can read. It is deliberately small: one durable table, one command, and the
 existing editor-gated text digest. How the data is *used* is still an open
 decision (Jeff, 2026-09-01: "we'll decide how to utilize them later") — this
 manual only makes it legible.
@@ -30,13 +29,17 @@ an upvote), `lean_a` / `lean_b` (after picking that pole), `respond` (the
 Respond button under an expanded fact / question / position), `missing`
 (Something missing? beside a section's Show less), blank (the Add-your-view
 modal). Prompts themselves are templated in
-`topics/management/commands/seed_example_prompts.py` and reseeded on every load.
+`topics/management/commands/seed_example_prompts.py` and upserted on every load —
+in place, so the `Response` rows hanging off them survive it.
 
 The **current-state** tables (`Vote`, `QuestionLean`, `Response`) drive what the
 page shows — counts, lean bars, a reader's saved answers. They are a cache of
-the event log's latest state, with two caveats: a topic reload re-attaches
-votes and leans by item text but drops `Response` rows, and reveal gates
-(numbers at 5, bars at 10, reorder at 25) hide small samples on the page.
+the event log's latest state, with one caveat: reveal gates (numbers at 5, bars
+at 10, reorder at 25) hide small samples on the page. A content reload no longer
+costs anything — every question, position, stat and action carries a frozen `id`
+in its content file, the loader updates those rows in place, and votes, leans and
+responses stay attached through any amount of rewording. Only removing an item
+from the file retires it, and its participation goes with it.
 When the two disagree, the event log is the truth.
 
 ## 2. The digest
@@ -70,11 +73,9 @@ kind / action / topic / trigger, search text / IP / session).
 
 ## 3. When to run it
 
-- **Before a stage-5 review or a refresh of a topic**: `--topic <slug>`. What
-  readers flagged (Disagree, Reword + note, Remove, Something missing) is
-  reviewer input alongside the PM packet — it does not edit anything by
-  itself. A refresh work order may cite it; the three refresh locks still
-  apply.
+- **Before a stage-5 review of a topic**: `--topic <slug>`. What readers
+  flagged (Disagree, Reword + note, Remove, Something missing) is reviewer
+  input alongside the PM packet — it does not edit anything by itself.
 - **Periodically (with the weekly `check_links` sweep once the site is up)**:
   `--since <last run> --out research/participation/<date>.md` for a
   site-wide read.
@@ -84,8 +85,7 @@ kind / action / topic / trigger, search text / IP / session).
 ## 4. What it is not (yet)
 
 - No automation acts on responses: no reordering, no rewording, no removal.
-  Every content change still goes through the human at stage 5 or the refresh
-  proposal.
+  Every content change goes through the human at stage 5.
 - No retention or anonymization policy: IPs and user agents are stored
   indefinitely. Decide before the public flip and record it here.
 - No reader-facing view beyond the existing gated aggregates on the page.
@@ -93,10 +93,10 @@ kind / action / topic / trigger, search text / IP / session).
 ## 5. Runbook — participation review (`/participation-review <slug>`)
 
 The skill at `.claude/skills/participation-review/SKILL.md` launches this.
-Usually run as part of a refresh (REFRESH.md step 1 points here) and before a
-stage-5 review; runnable on its own. It produces one saved report per topic.
-**It recommends; a human decides every line; the refresh engine makes any
-edit.** The skill never touches topic JSON or the DB. Runs inline in the
+Run before a stage-5 review, or whenever a topic's participation looks worth
+reading. It produces one saved report per topic. **It recommends; a human
+decides every line and makes any edit.** The skill never touches topic JSON or
+the DB. Runs inline in the
 invoking session — no subagents, no workflow.
 
 ### 1 · Digest
@@ -111,9 +111,9 @@ below, parts 1–3 collapsed to one line each) and stop. Not a failed run.
 ### 2 · Read
 - the digest;
 - `research/topics/<slug>.json` — what the items readers touched actually say;
-- `research/dossiers/<slug>*` — the sources behind them;
-- any `research/refresh/<slug>.*` from earlier runs, so the proposal does not
-  re-raise what a refresh already handled.
+- `research/runs/<slug>/record.json` — the sources behind them;
+- any earlier participation review of this topic in `research/reviews/<slug>/`,
+  so the proposal does not re-raise what has already been decided.
 
 ### 3 · What readers did (report part 1)
 Narrate, do not dump: volume and window; where attention clustered; lean
@@ -127,36 +127,36 @@ committed and the repo is public; the verbatim digest is the gitignored file.
 Light — the fact-checking an ordinary question gets, more or less as the claim
 needs. Only claims that, if true, would change the topic: a disputed figure, a
 "missing" fact / question / position, a reword that asserts something. Check
-each against the dossier and the cited source first; WebFetch a primary source
+each against the run record and the cited source first; WebFetch a primary source
 only when the claim turns on one. Verdict per claim: **holds / does not hold /
 cannot tell**, with the evidence in one or two lines. Leans, agree/disagree
 verdicts and importance votes are signal, not claims — weigh them, do not
 research them. Then the noise: single-session pile-ons, off-topic, samples
-under the reveal gates, duplicates of earlier refresh findings.
+under the reveal gates, duplicates of earlier findings.
 
 ### 5 · Proposal (report part 3)
-Per item touched: **incorporate / decline / defer**, each with a reason.
-Incorporate lines are written in the editor-findings shape that
-`refresh_topic.js` takes as `args.findings` (see
-`research/refresh/nuclear-energy.findings.2026-09-01.md`): what the topic says,
-what readers said, what the evidence says, source. The refresh's locks still
-apply — a reader "Reword" is only proposed when a claim or lint reason backs
-it, never as re-authoring. Reorder asks: positions render by
-`prevalence_weight` (reader votes cannot move them — say so if asked);
-questions / stats order is array order and a refresh may reorder with a
-reason. "Nothing to change" is a valid proposal.
+Per item touched: **incorporate / decline / defer**, each with a reason. Each
+incorporate line says what the topic says, what readers said, what the evidence
+says, and the source. A reader "Reword" is only proposed when a claim or a lint
+reason backs it, never as re-authoring. Reorder asks: positions render by
+`prevalence_weight` (reader votes cannot move them — say so if asked); questions
+and stats render in array order. "Nothing to change" is a valid proposal, and
+the common one.
+
+Nothing consumes this proposal automatically. It is a note to the human, who
+decides whether a topic is worth editing at all.
 
 ### 6 · Save and stop
-`research/refresh/<slug>.PARTICIPATION.<today>.md`, from the template. Print
-the path. The human ticks the decisions; the refresh reads the proposal. Do
-not edit the topic; do not open a refresh.
+`research/reviews/<slug>/PARTICIPATION.<today>.md`, from the template — beside
+that topic's engine packet, and committed, which `research/participation/` is
+not. Print the path. The human ticks the decisions. Do not edit the topic.
 
 ### Report template
 ```
 # <slug> — participation review <today>
 
 Window: <first> → <last> · <n> events · <k> participants · digest: research/participation/<slug>.<today>.md
-Previous participation review: <path or none> · last refresh: <date or none>
+Previous participation review: <path or none>
 
 ## 1 · What readers did
 <narrative, paraphrased, n everywhere, cited by session stub + date>
@@ -167,8 +167,7 @@ Topic says: … · Readers said (n=…): … · Evidence: … (source)
 ### Noise
 …
 
-## 3 · Proposal for the next refresh
-(Feed this section to refresh_topic.js as args.findings.)
+## 3 · Proposal
 ### P1 · <section> · <item> — incorporate | decline | defer
 Topic says: … · Readers: … · Evidence: … · Recommendation: … · Source: …
 ### P2 · …

@@ -1,10 +1,10 @@
-"""The three Workflow scripts deliberately duplicate their editorial rules and
+"""The two Workflow scripts deliberately duplicate their editorial rules and
 verdict contract, because workflow scripts cannot import anything.
 
-That duplication has already drifted once with consequences: `refresh_topic.js`
-carried the "an unperformed check is not a pass" rule in its prompt while having
-no `checks_run` field to enforce it, and trusted the critic's self-reported
-`pass` outright. The rule read as enforced and was inert.
+That duplication has drifted before with consequences: a script once carried the
+"an unperformed check is not a pass" rule in its prompt while having no
+`checks_run` field to enforce it, and trusted the critic's self-reported `pass`
+outright. The rule read as enforced and was inert.
 
 These tests are the cheap standing guard on that. They do not check the content
 of the rules — only that the copies have not diverged.
@@ -29,11 +29,8 @@ AGENTS = ROOT / ".claude" / "agents"
 # only. Every agent allowed to name Fable is listed here, so the exception stays
 # a decision instead of an oversight.
 FABLE_ALLOWED_AGENTS = {"topic-pm"}
-SCRIPTS = ["research_topic.js", "distribute_topic.js", "refresh_topic.js"]
-GATED = [
-    "research_topic.js",
-    "refresh_topic.js",
-]  # distribute has its own shorter rules
+SCRIPTS = ["research_topic.js", "distribute_topic.js"]
+GATED = ["research_topic.js"]  # distribute has its own shorter rules
 
 
 def _read(name):
@@ -41,9 +38,9 @@ def _read(name):
 
 
 # Rules that must exist verbatim in every script that authors or edits content.
-# Not the whole RULES block — the scripts legitimately differ in emphasis
-# (refresh leads with DISTILL HARD). These are the invariants; drift here means
-# one script was updated and its mirror was not, which has already happened.
+# Not the whole RULES block — the scripts legitimately differ in emphasis. These
+# are the invariants; drift here means one script was updated and its mirror was
+# not, which has already happened.
 ALL_SCRIPTS_RULES = [
     "US spelling throughout",
     "Neutral by intention",
@@ -367,8 +364,7 @@ class GateSymmetryTests(SimpleTestCase):
         blockers on file (immigration-borders-restriction, 2026-09-05: nine
         stage-2 passes for ~20 lines of change). Rounds 2+ must hand each critic
         its own open findings plus the changed fields, and code must demote any
-        new finding that quotes neither. Refresh keeps the older asymmetric rule
-        (it has its own locks and was not part of this change)."""
+        new finding that quotes neither."""
         for name in ("research_topic.js", "distribute_topic.js"):
             src = _read(name)
             for needle in (
@@ -386,9 +382,6 @@ class GateSymmetryTests(SimpleTestCase):
                 src,
                 f"{name} still stops judgment findings after one round; scoping replaced that rule",
             )
-        src = _read("refresh_topic.js")
-        self.assertIn("const grounded = failing.some(", src)
-        self.assertIn("if (round > 1 && !grounded)", src)
 
     def test_deterministic_findings_are_gate_input_every_round(self):
         """Computed once and concatenated once, a deterministic verdict drops out

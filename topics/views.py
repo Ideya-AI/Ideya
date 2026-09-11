@@ -290,9 +290,9 @@ def home(request):
         ]
         by_slug = {
             t.slug: t
-            for t in Topic.objects.filter(
-                slug__in=teasers, status=Topic.DRAFT
-            ).select_related("primary_category")
+            for t in Topic.objects.filter(slug__in=teasers)
+            .exclude(status=Topic.PUBLISHED)
+            .select_related("primary_category")
         }
         soon = [by_slug[s] for s in teasers if s in by_slug][: 4 - len(bench)]
 

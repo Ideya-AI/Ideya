@@ -105,23 +105,36 @@ POSITION_FOLLOW_UPS = [
 ]
 
 
-def _seed_item_prompts(ct, objs, trigger, specs, labels=lambda obj: {}):
+def _upsert_prompt(kept, ct, object_id, order, **fields):
+    """One prompt, identified by where it hangs and its slot — never recreated.
+    A reader Response points at the Prompt row, so replacing the row destroys
+    the answer. Options carry no reader data and are rewritten freely."""
+    options = fields.pop("options", [])
+    prompt, _ = Prompt.objects.update_or_create(
+        content_type=ct, object_id=object_id, order=order,
+        trigger=fields.pop("trigger", ""),
+        defaults={"active": True, **fields},
+    )
+    kept.add(prompt.pk)
+    prompt.options.all().delete()
+    for j, label in enumerate(options):
+        PromptOption.objects.create(prompt=prompt, label=label, order=j)
+    return prompt
+
+
+def _seed_item_prompts(kept, ct, objs, trigger, specs, labels=lambda obj: {}):
     n = 0
     for obj in objs:
         fmt = labels(obj)
         for i, spec in enumerate(specs):
-            prompt = Prompt.objects.create(
-                content_type=ct,
-                object_id=obj.id,
+            _upsert_prompt(
+                kept, ct, obj.id, i + 1,
                 kind=spec["kind"],
                 trigger=trigger,
                 text=spec["text"].format(**fmt),
                 help_text=spec.get("help_text", ""),
-                active=True,
-                order=i + 1,
+                options=spec.get("options", []),
             )
-            for j, label in enumerate(spec.get("options", [])):
-                PromptOption.objects.create(prompt=prompt, label=label, order=j)
             n += 1
     return n
 
@@ -131,11 +144,11 @@ def seed_topic_prompts(topic) -> int:
     vote follow-ups on each of its questions and positions. Returns the number
     of prompts created.
 
-    Deletes the topic's prior prompts first — which cascades any reader
-    Responses to them — so on a content reload the prompt options track the
-    rebuilt positions/questions instead of dangling. Item prompts whose
-    question/position no longer exists (the loader rebuilds sections, so ids
-    change) are swept too: a GenericForeignKey does not cascade.
+    Idempotent, and deliberately so: prompts are upserted in place and only the
+    ones this run did not produce are removed. Deleting and recreating them
+    instead would cascade every reader Response, on every content reload. Item
+    prompts whose question/position is gone are still swept, because a
+    GenericForeignKey does not cascade.
     """
     ct = ContentType.objects.get_for_model
     topic_ct, question_ct, position_ct, stat_ct, section_ct = (
@@ -160,90 +173,64 @@ def seed_topic_prompts(topic) -> int:
         ).order_by("-votes", "order", "id")
     )
 
-    Prompt.objects.filter(content_type=topic_ct, object_id=topic.id).delete()
-    Prompt.objects.filter(content_type=topic_ct).exclude(
-        object_id__in=Topic.objects.values("id")
-    ).delete()
-    Prompt.objects.filter(
-        content_type=question_ct, object_id__in=[q.id for q in questions]
-    ).delete()
-    Prompt.objects.filter(
-        content_type=position_ct, object_id__in=[p.id for p in positions]
-    ).delete()
-    Prompt.objects.filter(
-        content_type=stat_ct, object_id__in=[st.id for st in stats]
-    ).delete()
-    Prompt.objects.filter(content_type=question_ct).exclude(
-        object_id__in=Question.objects.values("id")
-    ).delete()
-    Prompt.objects.filter(content_type=stat_ct).exclude(
-        object_id__in=Stat.objects.values("id")
-    ).delete()
-    Prompt.objects.filter(
-        content_type=section_ct, object_id__in=[sec.id for sec in sections]
-    ).delete()
-    Prompt.objects.filter(content_type=section_ct).exclude(
-        object_id__in=Section.objects.values("id")
-    ).delete()
-    Prompt.objects.filter(content_type=position_ct).exclude(
-        object_id__in=Position.objects.values("id")
-    ).delete()
+    # Orphan sweep: a GenericForeignKey does not cascade, so prompts whose
+    # target row is gone would linger for ever.
+    for target_ct, model in (
+        (topic_ct, Topic), (question_ct, Question), (position_ct, Position),
+        (stat_ct, Stat), (section_ct, Section),
+    ):
+        Prompt.objects.filter(content_type=target_ct).exclude(
+            object_id__in=model.objects.values("id")
+        ).delete()
+
+    kept = set()
 
     # 1 — Align: multi-select across the mapped positions.
-    align = Prompt.objects.create(
-        content_type=topic_ct,
-        object_id=topic.id,
+    align = _upsert_prompt(
+        kept, topic_ct, topic.id, 1,
         kind=Prompt.CHOOSE_MANY,
         text="Which of these positions do you align with?",
         help_text="",
         allow_text=True,
-        active=True,
-        order=1,
     )
     for i, pos in enumerate(positions):
         PromptOption.objects.create(prompt=align, label=pos.name, position=pos, order=i)
 
     # 2 — Questions: multi-select across the open questions.
-    qprompt = Prompt.objects.create(
-        content_type=topic_ct,
-        object_id=topic.id,
+    qprompt = _upsert_prompt(
+        kept, topic_ct, topic.id, 2,
         kind=Prompt.CHOOSE_MANY,
         text="Which of these questions are most important to you?",
         help_text="",
-        active=True,
-        order=2,
     )
     for i, q in enumerate(questions):
         PromptOption.objects.create(prompt=qprompt, label=q.text, order=i)
 
     # 3 — Your take: open text.
-    Prompt.objects.create(
-        content_type=topic_ct,
-        object_id=topic.id,
+    _upsert_prompt(
+        kept, topic_ct, topic.id, 3,
         kind=Prompt.FREE_TEXT,
         text="Anything the positions and questions miss?",
         help_text="",
-        active=True,
-        order=3,
     )
 
     # 4 — Follow-ups: upvote on every question and position; each lean pole on
     # the questions that have poles.
     n = 3
     n += _seed_item_prompts(
-        question_ct, questions, Prompt.TRIGGER_VOTE, QUESTION_VOTE_FOLLOW_UPS
+        kept, question_ct, questions, Prompt.TRIGGER_VOTE, QUESTION_VOTE_FOLLOW_UPS
     )
     poled = [q for q in questions if q.lean_label_a and q.lean_label_b]
     n += _seed_item_prompts(
-        question_ct, poled, Prompt.TRIGGER_LEAN_A, QUESTION_LEAN_FOLLOW_UPS,
+        kept, question_ct, poled, Prompt.TRIGGER_LEAN_A, QUESTION_LEAN_FOLLOW_UPS,
         lambda q: {"a": q.lean_label_a, "b": q.lean_label_b},
     )
     n += _seed_item_prompts(
-        question_ct, poled, Prompt.TRIGGER_LEAN_B, QUESTION_LEAN_FOLLOW_UPS,
+        kept, question_ct, poled, Prompt.TRIGGER_LEAN_B, QUESTION_LEAN_FOLLOW_UPS,
         lambda q: {"a": q.lean_label_b, "b": q.lean_label_a},
     )
     n += _seed_item_prompts(
-        position_ct, positions, Prompt.TRIGGER_VOTE, POSITION_FOLLOW_UPS
+        kept, position_ct, positions, Prompt.TRIGGER_VOTE, POSITION_FOLLOW_UPS
     )
 
     # 5 — Respond button on every expandable fact, question and position.
@@ -253,15 +240,27 @@ def seed_topic_prompts(topic) -> int:
         (position_ct, positions, "position"),
     ):
         n += _seed_item_prompts(
-            target_ct, objs, Prompt.TRIGGER_RESPOND, RESPOND_FOLLOW_UPS,
+            kept, target_ct, objs, Prompt.TRIGGER_RESPOND, RESPOND_FOLLOW_UPS,
             lambda obj, key=key: {"verdict": RESPOND_VERDICTS[key]},
         )
 
     # 6 — Something missing? on each Basics / Questions / Positions section.
     for sec in sections:
         n += _seed_item_prompts(
-            section_ct, [sec], Prompt.TRIGGER_MISSING, MISSING_FOLLOW_UPS[sec.kind]
+            kept, section_ct, [sec], Prompt.TRIGGER_MISSING, MISSING_FOLLOW_UPS[sec.kind]
         )
+
+    # Anything this run did not produce no longer belongs to the topic (a lean
+    # pole dropped, a follow-up retired). Scoped to this topic's own targets.
+    stale = Prompt.objects.filter(content_type=topic_ct, object_id=topic.id)
+    for target_ct, objs in (
+        (question_ct, questions), (position_ct, positions),
+        (stat_ct, stats), (section_ct, sections),
+    ):
+        stale = stale | Prompt.objects.filter(
+            content_type=target_ct, object_id__in=[o.id for o in objs]
+        )
+    stale.exclude(pk__in=kept).delete()
     return n
 
 

@@ -9,8 +9,6 @@ constants), wired to run automatically after engine-file edits.
 
 Which doc do I want?
 - **Operate the engine** (run, resume, calibrate, debug) → this file.
-- **Refresh a published topic** (the upkeep engine, on its own clock) →
-  `research/REFRESH.md`.
 - **Understand or change the design** (why the gates are shaped this way, decision
   history) → `research/RESEARCH_PIPELINE.md`.
 - **The invariants** (publish rule, plain-text fields, fact locking…) →
@@ -19,8 +17,8 @@ Which doc do I want?
 - **Design system** (tokens, type, color discipline) → `design/`. **Icon spec** →
   `research/ICONOGRAPHY.md`.
 
-The skills `/author-topic` and `/refresh-topic` are thin launchers into §5 (Runbook
-A) and `research/REFRESH.md` — the procedure lives in one place, once.
+The skill `/author-topic` is a thin launcher into §5 (Runbook A) — the procedure
+lives in one place, once.
 
 ---
 
@@ -33,8 +31,7 @@ that the pieces compose; it is not where editorial decisions get audited. When
 stage 4 keeps finding the same class of content defect, the fix belongs in
 stage 2, not in a better stage-4 critic.
 
-A staged pipeline that turns a catalog entry into a publish-ready topic draft
-(authoring), and keeps published topics accurate as the world moves (refresh). AI
+A staged pipeline that turns a catalog entry into a publish-ready topic draft. AI
 drafts; a human publishes — always. Each stage writes a durable artifact and is
 independently re-runnable; a stage that already has its artifact is skipped unless
 redone deliberately.
@@ -54,9 +51,9 @@ Iron rules (enforced, not advisory — see `CLAUDE.md` Invariants for the full l
 
 ```mermaid
 flowchart TD
-    C[research/catalog/topic-universe.json<br/>stage 0 · catalog entry] -->|research_topic.js| D[research/dossiers/slug.json<br/>stage 1 · substance dossier]
+    C[research/topics/slug.json<br/>stage 0 · title, scope, categories] -->|research_topic.js| D[research/runs/slug/record.json<br/>stage 1 · substance record]
     D -->|distribute_topic.js + lint_draft.py| J[research/topics/slug.json<br/>stage 2 · loader contract]
-    J -->|load_topic_draft| DB[(authoring DB · DRAFT)]
+    J -->|load_topic_draft| DB[(the database · in_progress)]
     D -->|icon brief + generate + postprocess| I[static/img/topics/slug.png<br/>stage 3 · primary icon]
     DB -->|render_screens / social / poster + view critics| R[research/reviews/slug/<br/>stage 4 · rendered views]
     R -->|topic-pm: verify, route back, write the packet| Q[REVIEW.md<br/>stage 4.5 · one-page packet]
@@ -64,30 +61,25 @@ flowchart TD
     Q -->|HUMAN reviews + publishes| P[stage 5 · published topic]
     P -->|DEPLOY.md §3 docker exec| L[(live container DB)]
     P -.->|export_topic re-syncs| J
-    P -->|refresh_scan · clock/links/lint/staleness| WO[work order]
-    WO -->|refresh_topic.js: scout → targeted re-verify → 3 locks| RF[refresh proposal<br/>HUMAN approves the diff]
-    RF -->|lint --json + distribute_topic.js fix_only + topic-pm read| J
 ```
 
 ## 3. Order of operations
 
 | Stage | Engine piece | Does | Gate | Artifact |
 |---|---|---|---|---|
-| 0 Catalog | hand-authored entry + `load_universe` | register the topic stub + taxonomy edges | — | entry in `research/catalog/topic-universe.json` |
-| 1 Research | `engine.py` steps `s1.plan/research/verify/gate` → `research_topic.js` (unchanged, via the harness) | plan (+icon, prevalence_basis) → parallel section research (basics facts→shape + questions + one agent per position + actions) → crux → **claim ledger + isolated per-claim verification** → 3-critic substance gate + shape + ledger, every round → fix loop → verbatim prescribed-fix pass → **closing ledger pass on the final draft** | substance gate 5/5 (3 critics + ledger + shape), shape_notes empty, ledger closed **on the shipped draft** | `research/dossiers/<slug>.json` |
+| 0 The file | hand-authored + `load_universe` | give the topic a file: title, scope, categories, related | — | `research/topics/<slug>.json` at `not_started` (6 fields) |
+| 1 Research | `engine.py` steps `s1.plan/research/verify/gate` → `research_topic.js` (unchanged, via the harness) | plan (+icon, prevalence_basis) → parallel section research (basics facts→shape + questions + one agent per position + actions) → crux → **claim ledger + isolated per-claim verification** → 3-critic substance gate + shape + ledger, every round → fix loop → verbatim prescribed-fix pass → **closing ledger pass on the final draft** | substance gate 5/5 (3 critics + ledger + shape), shape_notes empty, ledger closed **on the shipped draft** | `research/runs/<slug>/record.json` |
 | 2 Editorial | `engine.py` steps `s2.distribute/lint/load/fit` → `distribute_topic.js` + `lint_draft.py` + `fit_check.py` | typography autofix → distill compact layer → **fold as a budget to spend**: reorder + tier + reveal → gate = 2 critics + **deterministic editorial check** + **claim fidelity** → whitelisted fix loop (1 round unless grounded) | gate pass + lint at 0 findings + loader loads with 0 warnings | `research/topics/<slug>.json` |
 | 3 Iconography | `engine.py` steps `s3.brief/generate/select/postprocess` → briefer agent + `generate_icons.py` + vision pick + `postprocess_icon.py` | brief → 4 Nano Banana candidates → pick vs checklist → normalize | checklist pass at 40px | `static/img/topics/<slug>.png` + `research/icons/<slug>.md` |
 | 4 Integration | `engine.py` steps `s4.render/links/views` → `render_screens --sections`, `render_social`, `render_poster`, `check_links` + three design critics on the section images | render every surface → conformance critique → content-fix loop (`fix_only`) | poster fit exit 0 + all 3 social formats + og card installed + no blocking content findings | `research/reviews/<slug>/` renders, cards, poster |
 | 4.5 PM gate | `engine.py` steps `s5.pm/packet` → the driver runs the 7 CHECKS, `topic-pm` reads and routes, routes are closed by rule, one re-read | fresh-context read of the FINISHED topic: deterministic pass (lint/links/artifacts) → reads every render → routes findings to the owning stage → writes the packet | every deterministic check green + no open routed finding | `research/reviews/<slug>/REVIEW.md` |
-| 5 Publish | **human** + `publish_topic` | read the packet → `publish_topic --confirm` (preflight → publish → reviewed_at) → commit → live push | human judgment | live topic |
+| 5 Publish | **human** + `publish_topic` | read the packet → `publish_topic --confirm` (status switch + reviewed_at) → commit → live push | human judgment | live topic |
 
-Refresh (`refresh_scan` + `refresh_topic.js`) is the upkeep mirror, shaped around
-three questions: **is there new information** (the scout), **what needs updating,
-refining or deprecating** (the scan's work order → targeted re-verify), **is it
-still accurate, fair and honest** (deterministic floor + one grounded critic +
-the reader). Scoped, not exhaustive: a section nothing flagged is reported as
-not-checked rather than re-verified. Three code locks make it structurally unable
-to re-author a topic. `research/REFRESH.md`.
+There is no stage after 5. A published topic stays as published until a human
+deliberately replaces it by re-running the engine or editing its content file and
+reloading. `topics_due` still reports which published topics have gone stale
+against their volatility clock, but nothing consumes that queue: it is a signal
+for the human, not a trigger.
 
 ## 4. Parts inventory
 
@@ -96,23 +88,20 @@ to re-author a topic. `research/REFRESH.md`.
 |---|---|
 | `research/workflows/research_topic.js` | stage 1: substance research + claim ledger + substance gate |
 | `research/workflows/distribute_topic.js` | stage 2: presentation distill/fold + gate; also `fix_only` view-feedback passes |
-| `research/workflows/refresh_topic.js` | the upkeep engine: scout → targeted re-verify behind three locks → changelog + gate, stops at the human. Its manual is `research/REFRESH.md` |
 | `research/workflows/budgets.py` | **single source of truth for content length**: db cap (loader slices) / hard bound (lint + stage 2's `presentationCheck` gate) / target (stage 2 writes to). Mirrored into stage 2's prompt AND its `BUDGET_LIMITS` table, guarded by `test_workflow_mirrors.py` |
 | `research/workflows/lint_draft.py` | deterministic lint of a draft JSON; `--fix` applies safe rewrites |
 | `research/workflows/seed_defects.py` | gate calibration: inject known defects, score detection |
 | `research/workflows/tally_tokens.py` | per-run token/cost accounting |
 | `research/workflows/check_engine.py` | verifies this manual against the code (routing + inventory) |
-| `research/workflows/bake.py` | bakes a runner (script + `__ARGS`) for either workflow; knows stage 1's phases, builds `prior`/`stop_after` from the dossier, refuses a phase whose inputs are missing |
+| `research/workflows/bake.py` | bakes a runner (script + `__ARGS`) for either workflow; knows stage 1's phases, builds `prior`/`stop_after` from the run record, refuses a phase whose inputs are missing |
 | `research/engine/FLOW.md` | **the engine end to end** — flowchart from `engine.py author` to publish, then every step in run order with its what, how and why |
 | `research/engine/README.md` | **the operator's guide to engine v3**: files, the 17 steps, resume/limits/failures, the rules it decides by, tool policy, a hand walkthrough, reading a failure |
 | `research/engine/engine.py` | **the engine**: `author <slug>` runs stages 1–5 as a 17-step checkpointed state machine; `status <slug>` prints the step table. State in `research/runs/<slug>/state.json` |
 | `research/engine/harness.py` | serves the stage scripts' `agent()` calls through the Claude Agent SDK on the subscription: per-call journal (free replay), usage-limit sleep-until-reset, tool policy by agentType, concurrency semaphore |
 | `research/engine/bridge.mjs` | runs `research_topic.js` / `distribute_topic.js` unchanged, supplying agent/parallel/pipeline/phase/log/args over JSON-lines RPC to the harness |
 | `research/workflows/fit_check.py` | measures the poster's fit on the LOADED topic (headless Chrome over the DevTools protocol, per-element lines and chars/line) and, when it overflows, writes the `fix_only` findings with sized trims — the stage-2 exit check that used to be discoverable only at stage 4 |
-| `research/workflows/salvage_run.py` | rebuilds a stage-1 dossier from a run's `journal.jsonl` when the orchestrator never persisted it; `--scan` lists orphaned runs |
-| `research/workflows/check_refresh_drift.py` | what the refresh engine has fallen behind on; `REFRESH.md` step 0, deliberately NOT in the authoring test path |
+| `research/workflows/salvage_run.py` | rebuilds a stage-1 record from a run's `journal.jsonl` when the orchestrator never persisted it; `--scan` lists orphaned runs |
 | `topics/tests/test_workflow_mirrors.py` | guard on the hand-mirrored workflow contracts (run after ANY workflow-script edit: `manage.py test topics.tests.test_workflow_mirrors`) |
-| `topics/tests/test_refresh_guards.py` | guard on refresh's three locks; runs on refresh edits only, so authoring work does not carry it |
 | `.claude/agents/claim-verifier.md` | stage-1 ledger verifier: `tools: WebFetch, WebSearch` only — the blindness is structural, not a prompt |
 | `.claude/agents/topic-pm.md` | stage-4.5 PM gate: verifies the finished topic, routes findings, writes the packet. Fable (allowlisted), falls back to opus |
 | `.claude/agents/icon-briefer.md` | stage-3 brief author; model pinned + verified by `check_engine.py` |
@@ -120,30 +109,31 @@ to re-author a topic. `research/REFRESH.md`.
 | `.claude/agents/topic-critic.md` | stage-1 judgment critics (neutrality, steelman): `tools: SendMessage` allowlist — no Bash, web, browser or filesystem; judgment on the inline slice only; model pinned |
 | `.claude/agents/camp-scout.md` | stage-1 missing-camp web scout: `tools: WebSearch, WebFetch`, sonnet; its report is the neutrality critic's input, never its verdict |
 | `.claude/skills/author-topic/SKILL.md` | launcher for Runbook A (user-invoked only) |
-| `.claude/skills/refresh-topic/SKILL.md` | launcher for `research/REFRESH.md` (user-invoked only) |
-| `.claude/skills/participation-review/SKILL.md` | launcher for `research/PARTICIPATION.md` §5: per-topic reader-participation report whose proposal feeds a refresh as `args.findings` (user-invoked only) |
+| `.claude/skills/participation-review/SKILL.md` | launcher for `research/PARTICIPATION.md` §5: per-topic reader-participation report for the human (user-invoked only) |
 | `.claude/hooks/pipeline-guard.sh` | blocks automated publishing (`--status published` AND `publish_topic`) + dev-server-on-8642; heredoc bodies exempt so docs can quote the command |
 | `.claude/hooks/engine-doc-guard.sh` | runs check_engine.py after engine-file edits |
-| `topics/management/commands/load_topic_draft.py` | the loader: JSON → DB topic; wires catalog edges; idempotent |
+| `topics/management/commands/load_topic_draft.py` | the loader: JSON → DB topic; upserts every child by its frozen `id` so reader votes and responses survive; wires catalog edges; idempotent |
+| `topics/management/commands/check_topic_drift.py` | asserts the DB still matches the content file (`--slug` / `--all`). The file is the source of truth; this is how that stops being an assumption |
+| `topics/item_ids.py` + `research/workflows/topic_ids.py` | the stable item-id rule, and the CLI that backfills a file missing them |
 | `topics/management/commands/load_universe.py` | catalog → DB stubs + taxonomy + all related edges |
-| `topics/management/commands/publish_topic.py` | stage 5: preflight → publish → reviewed_at → prints the live-push commands. Human-only (hook-blocked) |
-| `topics/management/commands/export_topic.py` | DB → canonical JSON re-sync; preserves top-level keys it cannot regenerate (`changelog`) |
+| `topics/management/commands/publish_topic.py` | stage 5: the public/private switch. Requires `ready`, moves `status` to `published`, stamps `reviewed_at`, prints the live commands. Human-only (hook-blocked) |
+| `topics/management/commands/mark_ready.py` | moves a topic to `ready` (`--clear` sends it back to `in_progress`). The engine's intended output and `publish_topic`'s only input — wiring the engine to set it is open work |
+| `topics/management/commands/export_topic.py` | DB → canonical JSON; a recovery tool, not a routine step. Preserves top-level keys it cannot regenerate |
 | `topics/management/commands/check_links.py` | dead/placeholder/redirect audit (stat sources + action URLs + series rows); `collect_links()` is the public seam other commands reuse |
-| `topics/management/commands/topics_due.py` | refresh queue by volatility cadence |
-| `topics/management/commands/refresh_scan.py` | refresh step 1: clock + links + lint + staleness → the work order the whole run is scoped to (`--json` feeds it in) |
+| `topics/management/commands/topics_due.py` | which published topics have gone stale against their volatility clock. A report for the human; nothing consumes it |
 | `topics/management/commands/render_screens.py` | full-height page renders (1440/390/320, `--expanded`) |
 | `topics/management/commands/render_social.py` | OG / square / portrait share cards |
 | `topics/management/commands/render_poster.py` | print one-sheet; fit-check exit code is a hard gate |
 | `research/icons/generate_icons.py` | Nano Banana candidate generation (`--edit` refines) |
 | `research/icons/postprocess_icon.py` | winner → 1035×690 white-ground PNG + 40px thumb |
-| `research/catalog/topic-universe.json` | stage 0: taxonomy + draft universe (edges' source of truth) |
-| `research/dossiers/` | stage-1 substance records |
-| `research/topics/` | canonical per-topic JSON (the loader contract) |
+| `research/categories.json` | the nine-category taxonomy — the one thing that is not per-topic |
+| `research/fixtures/` | `nuclear-energy.gold.json` (the editorial quality bar) and `nuclear-energy-pipeline.json` (loadable-shape example). Not topics, so they are kept out of `research/topics/` where the directory is the definitive list |
+| `research/topic-history.json` | why the original pool collapsed to 116 entries: duplicates merged, items dropped. Read before adding a topic that looks like a near-neighbour of an existing one |
+| `research/runs/` | per-topic run state: `record.json` (the engine's whole process record), `state.json`, the per-call journal (gitignored) |
+| `research/topics/` | **the set of topics.** One file each, cradle to grave: index fields at the top (slug, title, status, scope, categories, related), `draft` under them once there is content. The source of truth for everything except participation |
 | `research/reviews/` | per-topic human review packets |
 | `research/reviews/UI_DEFECTS.md` | standing site-wide UI-defect register (critics consult; human burns down) |
-| `research/refresh/` | refresh proposals, packets, token records + pre-refresh snapshots |
 | `research/icons/` | briefs, exemplars, candidates |
-| `research/REFRESH.md` | the refresh engine's operator manual — separate from this one because the two run on different clocks |
 | `research/PARTICIPATION.md` | the participation record's operator manual: what readers' actions write, the digest, when to read it |
 | `topics/management/commands/participation_report.py` | Markdown digest of reader participation from the append-only `ParticipationEvent` log (`--topic`, `--since`, `--out`) |
 | `topics/management/commands/seed_example_prompts.py` | seeds every topic's reader prompts (Add-your-view + the vote / lean / respond / missing follow-ups); the loader calls it each load |
@@ -191,30 +181,73 @@ digital · climate-env · bio-health · economy · governance · society · ethi
 > external-research path onto the same `research/topics/<slug>.json` contract
 > ("path B") and resume at stage 3.
 
-### Stage 0 — catalog entry (only if not yet cataloged)
+### Stage 0 — the topic file (only if it does not exist yet)
 
-Author an entry in `research/catalog/topic-universe.json` matching the existing
-shape: `{title, slug, summary, why_now, primary_category_slug,
-secondary_category_slugs, suggested_icon, position_names, related_slugs}`.
-`related_slugs` is this topic's **best 3–5 related topics, from its own
-perspective** — the site shows **outgoing** edges only, and asymmetry is deliberate
-(decided 2026-08-26): a niche topic may point at a hub without being one of the
-hub's own best five, so never force reciprocity. When adding a new entry, also
-review 1–2 neighboring entries and add this slug there only where it genuinely
-belongs in *their* best 3–5. Then `manage.py load_universe` (idempotent) registers
-the stub; it warns on any `related_slugs` entry that matches no topic (a renamed
-slug once left a dangling reference that silently created no edge).
+**`research/topics/` IS the set of topics.** One file per topic, cradle to grave:
+a topic with only a title is the same object as a published one, earlier. There
+is no separate catalog — it was fanned out into these files on 2026-09-09,
+because a topic's identity, placement and lifecycle wanted one home, not two.
+
+A new topic starts as six fields:
+
+```json
+{ "slug": "assisted-dying", "title": "Legalized Assisted Dying",
+  "status": "not_started",
+  "scope": "one line fixing what this covers",
+  "categories": ["ethics", "bio-health"],
+  "related": ["right-to-die", "..."] }
+```
+
+`draft` appears under those once stage 2 has content to put there, and `status`
+walks `not_started` → `in_progress` → `ready` → `published`. Nothing else belongs
+at the top: everything a reader sees is stage 1's to research.
+
+`scope` is ONE short line whose only job is to tell the engine WHICH topic this
+is. If the title were "Nuclear Threats", the scope line says whether that means
+reactors or bombs. Nothing more: it is a seed, nothing renders it, and stage 1
+writes the durable summary, scope_covered/excluded, why_now, the questions, the
+positions and the icon from the live debate.
+
+The form, rewritten across all 136 on 2026-09-09 for consistency: **name the
+subject, then draw the boundary against whichever neighbour it could be confused
+with.** Not a research summary, not a question, no "whether" — 40–115 characters.
+
+```
+nuclear-energy   Fission reactors for electricity. Civilian power, not weapons.
+right-to-die     The moral and legal right to end one's own life. The right itself; policy design is assisted-dying.
+geoengineering   Solar radiation management to cool the planet. Not carbon removal.
+```
+
+The second clause is only there when a neighbour needs it — a topic nothing else
+resembles gets the first sentence alone. Position names and an icon hint were
+removed on 2026-09-09: seeded camps anchor the planner toward a guess instead of
+the debate, and the plan re-derived both anyway.
+
+`categories` is primary first, from `research/categories.json` — the one thing
+that is not per-topic. `related` is this topic's **best 3–5 related topics, from
+its own perspective**: the site shows **outgoing** edges only, and asymmetry is
+deliberate (decided 2026-08-26). A niche topic may point at a hub without being
+one of the hub's own best five, so never force reciprocity. When adding a topic,
+review one or two neighbors and add this slug there only where it genuinely
+belongs in *their* best 3–5.
+
+Then `manage.py load_universe` (idempotent) builds the database from the whole
+directory — it warns on any `related` entry that matches no topic, which a
+renamed slug once turned into a silently missing edge.
+
+Category slugs: `global-risk · ai · digital · climate-env · bio-health · economy ·
+governance · society · ethics`.
 
 ### Stage 1 — research (substance)
 
 **Stage 1 runs as four checkpointed phases** (2026-09-04). One script, invoked up
 to four times; each invocation reads what the previous one persisted and returns
-as soon as its phase completes. The dossier file is the checkpoint.
+as soon as its phase completes. The run record is the checkpoint.
 
 ```
 for phase in plan research verify gate; do
   R=$(.venv/bin/python research/workflows/bake.py research_topic.js --slug <slug> --phase $phase | tail -1)
-  # Workflow({scriptPath: R})  → persist the return over research/dossiers/<slug>.json
+  # Workflow({scriptPath: R})  → persist the return over research/runs/<slug>/record.json
 done
 ```
 
@@ -226,10 +259,10 @@ done
 | `gate` | plan, draft, ledger | verdicts, fixed draft, closed ledger | 6–25M |
 
 `--phase all` is the old single run. **Persist after every return, before judging
-it** — merge the returned keys over the dossier on disk and record `phase_done`.
+it** — merge the returned keys over the run record on disk and record `phase_done`.
 A usage-limit death then costs one phase; a session death costs nothing that
 `--phase <next>` cannot pick up, because `prior` comes from the file, not the
-session. A salvaged dossier enters at `--phase gate --prior <slug>.salvaged.json`.
+session. A salvaged record enters at `--phase gate --prior record.salvaged.json`.
 *Why:* stage 1 was one atomic unit whose only durable output arrived at the end;
 `resumeFromRunId` is same-session only; and 175.7M once evaporated that way
 (immigration-borders-restriction, 2026-08-29).
@@ -237,7 +270,7 @@ session. A salvaged dossier enters at `--phase gate --prior <slug>.salvaged.json
 
 **Persist the return the moment it arrives — before judging it.** The workflow's
 agent results live in `journal.jsonl`, but the only path from there to
-`research/dossiers/` runs through the orchestrator, so a session that ends
+`research/runs/` runs through the orchestrator, so a session that ends
 mid-run loses the topic even though every result is on disk. `wf_c56be1fa-390`
 (2026-08-29, immigration-borders-restriction) spent **175.7M cache reads across
 131 agents and left nothing**: no dossier, no topic JSON, a DB stub with zero
@@ -249,7 +282,7 @@ assess after. A failed gate on disk is recoverable; nothing on disk is not.
 every stage-1 run and whether a dossier exists for it. An orphan is unfinished
 work worth more than the next new topic. To recover one:
 `salvage_run.py --run-dir <wf_dir> --slug <slug>` rebuilds the dossier from the
-journal into `<slug>.salvaged.json`, marked `gate_status: "salvaged"`. It
+journal into `research/runs/<slug>/record.salvaged.json`, marked `gate_status: "salvaged"`. It
 recovers agent results verbatim but **cannot apply the fixer's patches** — the
 journal stores patches, not the patched draft — so a salvaged draft needs its
 gate re-run, which costs a fraction of re-researching. `resumeFromRunId` is the
@@ -257,7 +290,7 @@ in-session recovery path and is **same-session only**; once the session is gone,
 the journal is the only route back.
 
 Persist the return (`{draft, plan, verdicts, shape_notes, plan_positions,
-claim_ledger}`) to `research/dossiers/<slug>.json` wrapped as `{dossier_version:1,
+claim_ledger}`) to `research/runs/<slug>/record.json` wrapped as `{dossier_version:1,
 generated, slug, input, ...}`. Check: gate 3/3, `shape_notes` empty. Verdicts carry
 `checks_run`; a check with `ran=false` fails its critic and re-runs once — a clean
 gate means the checks actually happened.
@@ -270,9 +303,7 @@ code, and an unmatched label defaults to `bar`; both are logged, never silent.
 *Why:* one whole-section schema carrying both halves serialized to ~4.5KB and
 the safety classifier refused it twice in `[basics]` on a large topic
 ("output schema too large to classify safely"). **Operating budget: keep any one
-output schema under ~3KB.** Every schema in the engine now sits under that except
-`refresh_topic.js`'s `reverify(BASICS_SCHEMA)` (~4.7KB) — the same trap, unsprung
-so far because refresh edits an existing Basics rather than researching one.
+output schema under ~3KB.** Every schema in the engine sits under that.
 
 The plan emits the Phosphor `icon` and, per position, `prevalence_weight` **with a
 one-line `prevalence_basis`** (the evidence behind the weight — capture only, no
@@ -310,7 +341,7 @@ the swap would paste the dots onto the page) or where only one side closes a
 sentence (the swap doubles the period). Both happened at once on
 immigration-borders-restriction (2026-09-05): “…public spending: ...have been
 found to devote…depends on..” shipped into the dossier. Applied swaps are
-recorded in the dossier's `prescribed_fixes` (no fixer agent authored them, so the
+recorded in the run record's `prescribed_fixes.substance` (no fixer agent authored them, so the
 packet says so). *Why:* the loop is capped and judgment findings get one round,
 so a prescription could expire unapplied and reach the human as a blocking defect
 with its own fix printed beside it — democratic-backsliding, then ai-alignment.
@@ -532,21 +563,13 @@ is what lets a stage-4 `fix_only` pass run the fidelity check: those passes exis
 rewrite compact prose, which is exactly where a verified claim moves. Without it
 stage 2 reports fidelity as not-run — never as a pass — and says so in the log.
 
-**No `draft.categories` hand-step** — the
-loader reads `secondary_category_slugs` off the catalog entry when the draft has no
-`categories` key, and prints which source it used. That step was manual and its only
-failure mode was silent: an audit on 2026-08-28 found two topics whose categories
-disagreed with the catalog (`wildfires` missing `global-risk` and `economy`,
-`housing-affordability-crisis` missing `society`), both drafts, both repaired.
-`load_universe` cannot fix this — it skips any slug that already exists, by design,
-so it never clobbers a topic. To re-audit:
-
-```
-manage.py shell -c "import json; from topics.models import Topic; \
-cat={e['slug']:e for e in json.load(open('research/catalog/topic-universe.json'))['catalog']}; \
-print([t.slug for t in Topic.objects.all() if (e:=cat.get(t.slug)) and \
-{c.slug for c in t.categories.all()}!={e['primary_category_slug']}|set(e.get('secondary_category_slugs') or [])])"
-```
+**Placement has one home.** A topic's `categories` live at the top of its file,
+primary first, and the loader reads nothing else — the separate catalog it used to
+fall back to is gone, so the two can no longer disagree. An audit on 2026-08-28
+found exactly that failure while there were still two sources (`wildfires` missing
+`global-risk` and `economy`, `housing-affordability-crisis` missing `society`).
+`manage.py check_topic_drift --all` now catches the whole class, because
+categories are compared like any other field.
 
 Then, in order:
 1. `lint_draft.py research/topics/<slug>.json --fix` — drive to **0 findings**.
@@ -727,25 +750,56 @@ covers the directory).
 Read the packet, open the page, decide. Then:
 
 ```
-manage.py publish_topic --slug <slug> --dry-run     # preflight + the plan
-manage.py publish_topic --slug <slug> --confirm     # do it
+manage.py publish_topic --slug <slug> --dry-run          # say what would change
+manage.py publish_topic --slug <slug> --confirm          # private -> public
+manage.py publish_topic --slug <slug> --off --confirm    # public -> private
 ```
 
-`publish_topic` runs the whole local half: preflight (icon brief, primary art,
-**the OG card at `static/img/social/<slug>.png`**, links 0 dead / 0 placeholder)
-→ publish → `reviewed_at` → `rebuild_search` → print the live-push commands. It
-refuses to write anything without `--confirm`, and a failed preflight aborts
-before the publish rather than after it.
+**One core status, four stops.** `Topic.status` is where a topic is in its life,
+and it is the only thing anything needs to ask:
 
-**Links are checked BEFORE the publish, not after.** The old order checked them
-afterwards, which finds a dead link on a topic that is already live.
+| Status | Means | Set by |
+|---|---|---|
+| `not_started` | a catalog entry with nothing authored against it | `load_universe` |
+| `in_progress` | content exists; nothing has certified it | `load_topic_draft` — any content load lands here, and withdraws `ready` |
+| `ready` | passed everything; may be made public | `manage.py mark_ready --slug <slug>` — **the target the engine builds to.** Not yet wired: today a human runs it after reading the packet |
+| `published` | live | `publish_topic --confirm`, the human's decision. `--off` returns it to `ready` |
 
-Then commit the artifacts and push to live — the live DB is separate; follow
-"Publish one topic to the live site" in `DEPLOY.md` §3 (a `docker exec` load
-against the live container — never copy the whole DB over it). `publish_topic`
-prints those commands filled in, including a `curl` to confirm the topic actually
-appears on the live site: a just-published topic missing from live is a known
-failure mode (§11), and nothing used to check for it.
+Only `published` is visible to the public. The engine's job ends at `ready`;
+crossing the last line is Jeff's command, always.
+
+**A published topic is closed to the engine.** `load_topic_draft` refuses to
+overwrite the content of a published topic without `--allow-published`, and the
+engine never passes it — it also checks the status up front, so a run against a
+live slug fails in the first second rather than after stage 1 has spent an hour.
+Take the topic off the site first (`publish_topic --off --confirm`) and it is
+editable again. The flag exists for the one case that needs it: correcting a page
+that is already live, from the deploy flow.
+
+**Publishing is a switch and nothing else.** It requires `ready`, moves `status`
+to `published`, stamps `reviewed_at`, moves the search index, and prints the live
+commands. It
+reads no files, loads no content, and judges no quality — every check that
+decides readiness happened upstream and is already summarized in that one flag.
+A topic that was never certified cannot be made public, from this command or from
+the Django admin. Taking a topic private needs no readiness: pulling something
+off the site is always allowed.
+
+If what is loaded is not what you want public, reload it with
+`load_topic_draft` — which sends the topic back to `in_progress` — and have it
+certified again.
+
+Because the switch checks nothing itself, **elapsed time is yours to judge**: if a
+while has passed since stage 4.5, re-run `check_links --topic <slug>` before
+flipping. Nothing else about the topic can have moved on its own.
+
+**There is one database**, shared by this session and the live container
+(`/srv/ideya-data/db.sqlite3`), so the switch IS the deploy: a topic is live the
+moment it is published. Commit the artifacts, and rebuild the image only when the
+topic's static art is new — `collectstatic` bakes static files in, so a new icon
+or OG card needs a redeploy even though its content does not. `publish_topic`
+prints all of it filled in, including a `curl` to confirm the page answers:
+a just-published topic missing from live is a known failure mode (§11).
 
 **This is still the hard stop.** The guard blocks `publish_topic` by name and
 `load_topic_draft --status published`. Limits: it is not a sandbox
@@ -759,21 +813,19 @@ title from the draft or the catalog entry, and the category from
 what it resolved and errors when nothing supplies it — hand-typing them across
 three near-identical invocations was the most likely thing to get wrong.
 
-## 6. Runbook B — refresh a topic
+## 6. Runbook B — after publishing
 
-**Moved to `research/REFRESH.md`.** Refresh runs a few times a year while this
-engine is under weekly development; keeping its runbook in this file meant
-authoring edits and a frozen upkeep system sharing a document. They are now
-apart, and `research/workflows/check_refresh_drift.py` is what keeps the split
-honest — it reports what refresh has fallen behind on and gates the refresh run,
-not the authoring work.
+There is no upkeep engine. A published topic is finished until a human decides
+otherwise, and the two ways to change one are deliberate:
 
-In one line: a refresh answers **is there new information** (a scout), **what
-needs updating, refining or deprecating** (`refresh_scan`'s work order → a
-targeted re-verify of only what it flags), and **is it still accurate, fair and
-honest** (deterministic floor + one diff-scoped critic + `topic-pm` reading it
-whole). Three code locks make it structurally unable to re-author a topic.
-Automation opens a proposal; a human approves every content change.
+- **Edit the content file and reload it.** `research/topics/<slug>.json` is the
+  source of truth; `load_topic_draft` updates the DB rows in place, keeping the
+  reader participation attached by each item's frozen `id`.
+- **Re-run the engine** on the slug, which rebuilds the topic from stage 1.
+
+`manage.py check_topic_drift --slug <slug>` says whether the loaded topic still
+matches its file; `manage.py topics_due` says which published topics have gone
+stale against their volatility clock. Both report. Neither triggers anything.
 
 ## 6a. Runbook B2 — read the participation
 
@@ -784,8 +836,8 @@ survives reloads. `manage.py participation_report [--topic] [--since] [--out]`
 turns it into a per-item Markdown digest, and `/participation-review <slug>`
 (`PARTICIPATION.md` §5) turns that into a saved report — what readers did,
 light fact-checking of what they claimed, and a proposal in the
-editor-findings shape a refresh takes as `args.findings`. Run it before a
-stage-5 review or a refresh of that topic. It informs the human — it changes
+editor-findings shape. Run it before a stage-5 review of that topic, or whenever
+a topic's participation looks worth reading. It informs the human — it changes
 nothing by itself.
 
 ## 7. Runbook C — resume & recover
@@ -856,10 +908,9 @@ platform does for you.
 |---|---|---|
 | `research_topic.js` | plan=opus research=sonnet crux=opus critique=opus fact=opus fix=opus | research=high critique=high fix=high |
 | `distribute_topic.js` | distill=opus distribute=opus critique=opus fix=sonnet | distill=high critique=high fix=low |
-| `refresh_topic.js` | research=sonnet scout=research distill=research critique=opus fact=opus crux=opus fix=opus | research=high critique=high fix=high |
 <!-- routing:end -->
 
-The table above covers the three workflow scripts. The **agent-driven stages have
+The table above covers the two workflow scripts. The **agent-driven stages have
 model choices too**, and they used to live only in runbook prose where nothing
 checked them:
 
@@ -889,8 +940,7 @@ the main overage lever. Judgment singletons (plan, crux, distribute) inherit.
   verification leans on it; search is for discovery.
 - **Accounting — every run, tracked**: the standing record is
   `research/reviews/<slug>/tokens.md`, written at the PM gate's exit (Runbook A)
-  and committed with the packet; refreshes write
-  `research/refresh/<slug>.tokens.<date>.md`. `token-ledger.local.md` is
+  and committed with the packet. `token-ledger.local.md` is
   historical only — its rows predate the 2026-08-28 double-count fix and are
   ~2.3× inflated. `research/workflows/tally_tokens.py` does the work — **by stage
   and by phase**. `label=path` args name each stage in the output (a path may be
@@ -920,9 +970,9 @@ the main overage lever. Judgment singletons (plan, crux, distribute) inherit.
   when a verified claim's sentence actually changed. Both are cheap against the
   gate phase, and both replace an unpriced cost that was being paid elsewhere: a
   wrong claim reaching the human, or reaching a reader. Against that, the round
-  caps now bite in stage 2 and refresh (three unanchored judgment rounds became
-  one), which removes two full re-gates from the common case — the single most
-  expensive thing either script did.
+  caps now bite in stage 2 (three unanchored judgment rounds became one), which
+  removes two full re-gates from the common case — the single most expensive
+  thing the script did.
   **Older numbers in `token-ledger.local.md` are overstated ~2.3x** (measured
   range 1.84–2.69 across the 40 runs still on disk): the script summed every
   streamed usage row per message instead of the final one, double-counting the
@@ -946,16 +996,19 @@ the main overage lever. Judgment singletons (plan, crux, distribute) inherit.
 
 ## 10. Contracts & shapes
 
-**Stage-1 dossier** `research/dossiers/<slug>.json`:
+**Run record** `research/runs/<slug>/record.json` — everything the engine
+produced on the way to the topic. It is process, not product: nothing here is
+loaded, rendered or shipped, and the content file never carries any of it
+(split 2026-09-09).
 ```
-{ "dossier_version": 1, "generated": "YYYY-MM-DD", "slug": "...",
+{ "record_version": 1, "generated": "YYYY-MM-DD", "slug": "...",
   "input": { "title": "...", "category": "..." },
   "draft": { overview, basics, questions, positions, crux, actions },
   "plan": { ...planner output incl. icon + positions (prevalence_basis lives here) },
   "verdicts": [ {critic, pass, blocking, notes, checks_run} ],
   "shape_notes": [], "plan_positions": [...],
   "claim_ledger": { claims, results },
-  "prescribed_fixes": [ {critic, from, to, fields} ] }
+  "prescribed_fixes": { "substance": [...], "presentation": [ {critic, from, to, fields} ] } }
 ```
 A ledger `result.status` is `supported` | `contradicted` | `unverifiable` |
 `resolved-by-revision` (the fix loop removed the sentence the claim was extracted
@@ -973,16 +1026,19 @@ ranking.
 tier/reveal).
 
 **Stage-2 args**: `{slug, title, today, dossier:{draft, verdicts, plan_positions,
-plan, claim_ledger}}`. `claim_ledger` is required for the fidelity check — without
+plan, claim_ledger}}`, built by the driver from the run record (the arg key is
+still named `dossier`). `claim_ledger` is required for the fidelity check — without
 it stage 2 reports the check as not-run (never as a pass) and logs that its
 rewrites are unchecked for that run.
 
-**Loader contract** `research/topics/<slug>.json`: `{draft, verdicts,
-plan_positions}` (bare `draft` also works; refresh adds a top-level `changelog`).
+**Loader contract** `research/topics/<slug>.json`: `{draft}` — content only,
+plus `fold` (bare `draft` also works). Unknown top-level keys are ignored by the
+loader and carried through by the exporter.
 `draft.categories` is optional: the loader falls back to the catalog entry's
-`secondary_category_slugs`.
-The loader stores verdicts opaquely on `Topic.research_dossier`; the additive
-`stage:` tag is harmless everywhere. Per-item fields the loader actually maps:
+`secondary_category_slugs`. Nothing the gate produced enters this file or the
+database: `Topic.research_dossier` was removed 2026-09-09 (migration 0029) because
+it was written by the loader, rendered by nothing, and read only by the exporter
+that put it back. Per-item fields the loader actually maps:
 
 ```jsonc
 {
@@ -1047,11 +1103,10 @@ wide spans 2), QUESTIONS 3/6 (1-col), POSITIONS 2/6 (2-col). The workflows'
 **Verdict contract:** each pipeline critic returns `{critic, pass, blocking, notes,
 checks_run}`; `pass=false` only on a blocking defect ("parity with a strong
 published topic, not perfection"); an unperformed check is filed as blocking, never
-passed with a caveat. VERDICT_SCHEMA is hand-mirrored across the three scripts —
-**change it in all three or the guard test fails** (`manage.py test
+passed with a caveat. VERDICT_SCHEMA is hand-mirrored across both scripts —
+**change it in both or the guard test fails** (`manage.py test
 topics.tests.test_workflow_mirrors`; run it after any workflow-script edit). (The loader sample above shows
-the older per-element `{pass, issues, fixes}` shape from manual refresh verdicts;
-the loader stores either opaquely, so both round-trip.)
+an older per-element `{pass, issues, fixes}` shape from hand-run verdicts.)
 
 **Baking runners — pre-v3, reference only** (the engine now passes args to the
 scripts through `research/engine/bridge.mjs`; `bake.py`'s `skeleton()`, `load_prior()`
@@ -1067,31 +1122,12 @@ bake.py research_topic.js  --slug <slug> --phase plan|research|verify|gate|all [
 bake.py distribute_topic.js --slug <slug> [--fix-only <lint.json>]
 ```
 
-For stage 1 it builds `prior` and `stop_after` from the dossier on disk and refuses
+For stage 1 it builds `prior` and `stop_after` from the run record on disk and refuses
 a phase whose inputs are missing. For stage 2 it carries the dossier's
 `claim_ledger` (required for the fidelity check) and, with `--fix-only`, runs against
 the current `research/topics/<slug>.json` rather than the dossier. It replaced a
 hand recipe that lived here until 2026-09-04 and was the runbook's most error-prone
 step.
-
-**Refresh args** (`refresh_topic.js`): `{current: {overview,basics,questions,
-positions,crux,actions}, title, slug, category, today, scan, findings?}`. `scan`
-is `manage.py refresh_scan --slug <slug> --json` verbatim — its `work_order` is
-what the run scopes itself to, and every id on it (`w1`, `d3`, `editor`) is a
-warrant an edit must cite in `because` or be dropped. Omitting `scan` leaves the
-work order empty, so only the scout's developments can justify a change.
-
-**Refresh proposal** `research/refresh/<slug>.refresh-proposal.<date>.json`:
-`{draft, changelog, verdicts, unverified, not_flagged, developments,
-scout_assessment, refused, shipped}`. `changelog` rows are **derived in code**
-from what was actually applied, never self-reported by the agent that made the
-change — the two used to be separate fields of one response and could disagree.
-`change` is one of `updated | added | removed | link_fixed | verified_current |
-reverted | refused | unverified`. The last three are the load-bearing ones:
-`refused` and `reverted` are what the locks declined to do, `unverified` is a
-section that had work and whose agent died. `not_flagged` names the sections
-nothing flagged — scoped verification is only honest if what was skipped is
-named. `shipped: false` means nothing survived, which is a normal result.
 
 **Editorial rules** (the bar all content must meet; rationale in
 `RESEARCH_PIPELINE.md` §8): neutral by intention; genuine steelman in each side's
@@ -1113,7 +1149,7 @@ six-section skeleton at every depth; more room adds evidence, never sections).
 | Empty topic loaded, no error | fed an export-shape file (gold) to the loader | loader wants `{draft:{overview,…}}`; use a pipeline-emitted file |
 | Poster stamp/fit silently wrong | render commands default to dead `localhost:8000` | `--base-url` is required on all three render commands |
 | Fact errors surviving a clean 4/4 gate | wrong claims hide in unsourced position/question prose | the claim ledger exists for this; check its coverage number in the packet |
-| A lint rule is on the books but the corpus still violates it | `lint_draft.py` runs at stage 2, so it only ever sees topics authored AFTER the rule landed | re-lint the corpus when a rule is added: `lint_draft.py --all`. Re-measured 2026-09-01, unchanged: **254 findings across 11 files** (4-33 each; nuclear-energy and its gold copy carry 33). Two of the 11 are not real topics — `nuclear-energy.gold.json` (export shape, the quality bar) and `nuclear-energy-pipeline.json` (the loadable-shape example). The six topics authored since the rules landed lint at 0, which is the check that the rules work. This debt is NOT refresh's to burn down (`REFRESH.md`, end) |
+| A lint rule is on the books but the corpus still violates it | `lint_draft.py` runs at stage 2, so it only ever sees topics authored AFTER the rule landed | re-lint the corpus when a rule is added: `lint_draft.py --all`. Re-measured 2026-09-01, unchanged: **254 findings across 11 files** (4-33 each; nuclear-energy and its gold copy carry 33). Two of the 11 are not real topics — `nuclear-energy.gold.json` (export shape, the quality bar) and `nuclear-energy-pipeline.json` (the loadable-shape example). The six topics authored since the rules landed lint at 0, which is the check that the rules work. |
 | Packet lists ledger defects the run already fixed | a failing claim was re-verified against its SOURCE each round but never against the REVISED draft | fixed 2026-08-27 — a claim whose verbatim quote is gone from the draft is `resolved-by-revision`; if stale items reappear, check that the fixer edited the quoted sentence rather than adding a second one |
 | Workflow "could not be resumed" after session restart | background fork checkpoint | relaunch with `resumeFromRunId` + identical args; cached prefix returns |
 | `render_screens` dies "within 200px of the capture window" | the page is taller than the capture height (long topics at 320px — expanded, or now unexpanded too: a 9-position / 10-action topic runs 12,349px unexpanded) | raise `CAPTURE_HEIGHT` or `CAPTURE_HEIGHT_EXPANDED` in `render_screens.py` (12,000→20,000 and 60,000→80,000 as of 2026-09-05: a 12-position topic runs 68,601px at 320px expanded) and re-capture — the hard error exists because a clipped capture handed to the view critics reads as a complete render (ai-alignment, 2026-08-27) |
@@ -1122,7 +1158,7 @@ six-section skeleton at every depth; more room adds evidence, never sections).
 | `agent type '<name>' not found` mid-run | the custom-agent registry picks up a new `.claude/agents/*.md` on a **lag**, not instantly | wait and retry before doing anything drastic — the lag is **~20 minutes** (2026-09-05, measured twice, with no user turn in between); probe with the Agent tool before launching a workflow that names the type. 2026-08-27: a just-written definition failed to resolve, and the same file resolved later in the same session with its tool restriction intact. Restarting the session also works but is rarely needed |
 | Link previews show the generic Ideya mark | the og card was rendered into the review folder, not `static/img/social/` | stage 4 runs the `og` format with NO `--out`; the review-folder copy is not what `og:image` serves |
 | `reviewed_at` never set, topic re-queues early | it was a separate `shell -c` after the publish, easy to forget and silent when missed | `--reviewed` on the loader (or `publish_topic`, which passes it) stamps it in the same transaction |
-| Live site missing a just-published topic | authoring DB ≠ live DB | `DEPLOY.md` §3 docker-exec load; never copy the whole DB |
+| Live site missing a just-published topic | was: authoring DB ≠ live DB | **closed 2026-09-09** — there is one database, shared by this session and the container, so publishing IS the deploy. A page whose *images* 404 is a different thing: `collectstatic` bakes static files into the image, so new art needs a rebuild |
 | Packet reports a clean ledger but the prose was rewritten after verification | the ledger was extracted pre-fix-loop and never re-run | fixed 2026-08-28 — stage 1's closing pass re-extracts on the final draft, stage 2's fidelity check catches rewrites there. If it reappears, check that `claim_ledger` is actually reaching stage 2's args |
 | A deterministic defect disappears from the gate after fix round 1 | the verdict was computed once and concatenated once, so the re-gate dropped it | both stages rebuild every verdict source each round via `fullGate()`; guarded by `test_deterministic_findings_are_gate_input_every_round` |
 | Stage 2's fix loop spins on a finding it can never close | a deterministic finding named a field the presentation whitelist rejects | the check is scoped to `PRES_FIELDS`; a geometry defect on a locked field belongs to stage 1's `shapeCheck` |
@@ -1140,9 +1176,6 @@ six-section skeleton at every depth; more room adds evidence, never sections).
 | A view critic cites a mobile defect "by construction" instead of seeing it | the expanded mobile captures run 38,000-49,000px tall and reach an agent downsampled to roughly **13-77px wide** — unreadable. The `CAPTURE_HEIGHT_EXPANDED` guard stops a capture being silently *clipped*, but an unclipped render nobody can resolve is barely better | **fixed 2026-09-05** — `render_screens --sections` captures one image per `section.sec` (tiled at 2,000px) over the DevTools protocol into `research/reviews/<slug>/sections/`; the critics and the PM read those. The full-page capture and its cap guard remain for the packet links |
 | `check_links` reports a live, correctly-cited source as **dead** | two separate causes, both false positives: (a) some hosts answer **HEAD with 404** on a page that GETs 200 — ourworldindata.org grapher pages do this; (b) a host that refuses scripted clients at the network level is only forgiven when it is `.gov` or listed in `_BOT_WALLED_HOSTS`, and that match is by **exact hostname**, not registrable domain | fixed 2026-09-02 (economic-inequality): 404 joined `_GET_FALLBACK_CODES` so a HEAD 404 is retried with GET, and `fred.stlouisfed.org` was listed explicitly. A false dead blocks the 4.5 gate and sends a human chasing a working link, so one wasted GET per genuinely-dead link is the cheaper trade. When adding a bot-walled host, list the **exact subdomain** |
 | A source URL silently rots into a redirect | the publisher renames a slug and 301s; `check_links` reports it as `redirect` with the final URL, which is easy to skim past because it is a WARNING, not an error | repoint `source_url` at the reported final URL after confirming the target is the same data (OWID retired `income-share-top-1-before-tax-wid` → `incomes-of-the-richest?quantile=richest_1pct&welfare_type=before_tax`). `source_url` is stage-1-owned — stage 2's whitelist rejects it |
-
-Refresh has its own failure-mode table in `research/REFRESH.md` — the two
-systems run on different clocks and their symptoms do not overlap.
 
 ## 12. Appendix — REVIEW.md template
 
@@ -1185,7 +1218,7 @@ Rounds: research <n> · distribute <n> · icon <n> · views <n> · PM <n> (<n> r
 <new site-wide defects, or "none — <n> open entries cited from UI_DEFECTS.md">
 
 ## Publish
-manage.py publish_topic --slug <slug> --dry-run    # preflight + plan
-manage.py publish_topic --slug <slug> --confirm    # publish + reviewed_at
+manage.py publish_topic --slug <slug> --dry-run    # say what would change
+manage.py publish_topic --slug <slug> --confirm    # public + reviewed_at
 → it prints the commit and DEPLOY.md §3 live-push commands, filled in.
 ```

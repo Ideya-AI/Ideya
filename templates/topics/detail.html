@@ -66,11 +66,11 @@
 
     <!-- CONTENT -->
     <div class="content">
-      {% if topic.status == "draft" and can_preview %}
+      {% if topic.status != "published" and can_preview %}
       <div class="stub-note card draft-note">
         <i class="ph-duotone ph-eye-slash"></i>
-        <div><b>Draft — not publicly visible.</b>
-        Publish it to make it live.</div>
+        <div><b>{{ topic.get_status_display }} — not publicly visible.</b>
+        {% if topic.status == "ready" %}Publish it to make it live.{% else %}It cannot be published until it is marked ready.{% endif %}</div>
       </div>
       {% endif %}
       {% if not sections %}
