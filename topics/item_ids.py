@@ -9,7 +9,7 @@ An id is assigned ONCE, from the item's text at the time, and then frozen: it is
 the item's identity, not a slug of its current wording. Rewording never changes
 it. Reordering never changes it. Only removing the item retires it.
 
-Plain Python on purpose — `research/workflows/topic_ids.py` is the CLI over this
+Plain Python on purpose — `research/v1/workflows/topic_ids.py` is the CLI over this
 same rule, so the engine and the loader can never disagree about identity.
 """
 
