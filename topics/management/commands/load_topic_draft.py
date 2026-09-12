@@ -127,7 +127,7 @@ class Command(BaseCommand):
         p.add_argument(
             "--image-brief",
             default="",
-            help="path to research/icons/<slug>.md; its '## Generation prompt' "
+            help="path to research/topics/<slug>/icon.md; its '## Generation prompt' "
             "blockquote is stored as Topic.primary_image_prompt for provenance.",
         )
 
@@ -298,7 +298,7 @@ class Command(BaseCommand):
         # switch: attaching this used to be a flag only the publish step passed.
         image_prompt = d.get("primary_image_prompt", "")
         brief_path = Path(o["image_brief"]) if o["image_brief"] else Path(
-            f"research/icons/{o['slug']}.md"
+            f"research/topics/{o['slug']}/icon.md"
         )
         if o["image_brief"] and not brief_path.exists():
             raise CommandError(f"--image-brief not found: {brief_path}")
