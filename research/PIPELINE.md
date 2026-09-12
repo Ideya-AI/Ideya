@@ -1,8 +1,8 @@
 # The authoring pipeline — v2
 
 What it is, how it runs, and the rules every stage is built against. Started
-2026-09-11 after v1 was archived to `research/v1/`. Stages 4 and 5 are designed
-and written up below; 1, 2 and 3 are not.
+2026-09-11 after v1 was archived to `research/v1/`. Stages 3, 4 and 5 are designed
+and written up below; 1 and 2 are not.
 
 Read `research/v1/RESEARCH_PIPELINE.md` for why a v1 rule existed. Do not treat
 v1 as a baseline — it is evidence about the problem, not a constraint on the
@@ -240,6 +240,141 @@ This does not conflict with "the engine decides, never escalates" (Jeff,
 2026-08-27). That rule is about resolving editorial forks mid-run by the
 engine's own rules rather than asking. It was never about continuing when
 something is actually broken.
+
+---
+
+# Stage 3 — iconography
+
+**Make the topic's two icons, and prove the art before finishing.**
+
+Stages 4 and 5 ask almost nothing of stage 3 — the art present, and art that
+composes into a card without breaking it. So the obligation is narrow: produce
+art that is right, and do not hand on art that is not.
+
+## Contract
+
+**Requires:** title, category, scope, overview summary, and the position names,
+all from `topic.json`. Position names matter because one summary line cannot
+tell a brief-writer what the topic's tension actually is.
+
+**Produces:** `static/img/topics/<slug>.png` at 1035×690 on white; the Phosphor
+glyph written into `topic.json`; `icon.md` with the brief, the generation
+prompt and the selection note; every candidate kept under `candidates/` so a
+human can override the pick.
+
+**Satisfied when:** the art passes the judge and the glyph resolves to a real
+Phosphor name.
+
+The brief living at `research/topics/<slug>/icon.md` means the next load picks
+up its generation prompt into `Topic.primary_image_prompt` with no flag. v1
+recorded that provenance as unfixable because stage 2 loaded before the brief
+existed; stage 4 loading the topic itself after stage 3 has run closes it.
+
+## The prompt is assembled, not written
+
+The style paragraphs in every existing brief are the same text with the hue
+swapped. Every brief re-derives boilerplate it cannot improve and can only get
+subtly wrong. So split it:
+
+| Constant template | Per-topic slot |
+|---|---|
+| monoline, one stroke weight, rounded caps | the scene and its elements |
+| duotone, 16–18% fill on every mass | the category hex, substituted |
+| frameless, white ground, no text | what this topic's domain contains |
+| universal negatives: gradients, 3D, texture, shadow | topic negatives |
+| the composition rules below | |
+
+The briefing agent then writes only the scene, which is the only part it is
+qualified to invent. Style cannot drift, briefs get short and comparable, and
+changing a style rule updates every future icon at once.
+
+The **category hex is supplied, not hunted**: `color_key` maps to a `--cat-*`
+token in `tokens.css`. v1 asked the agent to find it by reading prose.
+
+## Composition — what makes a scene rather than a lineup
+
+Measured against the two worked examples. Nuclear does five things immigration
+does not, and immigration's brief explicitly forbade all five: *"all standing on
+a single ground line"*, *"placed symmetrically on either side"*, *"about the
+same height as each other"*, *"equal visual weight"*, *"a single thin, straight
+horizontal ground line… no landscape, no hill"*. The model complied exactly. It
+produced a shelf of three objects because it was asked for one.
+
+- **One dominant focal mass.** Not equal-weight objects.
+- **At least one overlap.** Occlusion is what creates depth.
+- **A shaped ground.** A curve, not a rule. A flat line makes a shelf.
+- **Scale hierarchy.** Big, medium, small.
+- **Something connective crossing the frame.** Power lines, steam, a horizon.
+
+## Neutrality is a negative constraint
+
+**The icon's job is recognition.** On a wall of 38 tiles it says which topic
+this is. That is the primary and usually the whole job.
+
+**Do not advocate.** No mushroom cloud, no sunlit meadow. Showing the domain
+plainly is already neutral, and it is far easier to satisfy than balance.
+
+**Opposing elements are welcome when the domain supplies them, never
+manufactured.** Nuclear works because a real plant site plausibly holds cooling
+towers and a waste drum; nobody invented the opposition. Immigration's brief
+manufactured one — a door leaf covering exactly half its opening — and its own
+notes admit the leaf kept drifting shut or wide and had to be measured against
+the frame. A symbol was asked to carry an argument it could not carry.
+
+**Never express neutrality as symmetry.** That is the trap a careful
+brief-writer falls into by trying hard, and it is what produced the lineup.
+Balance what the scene depicts, not the sizes and spacing of things in it.
+Nuclear holds promise and peril while being wildly asymmetric.
+
+## The loop
+
+**Generation decides composition; refinement only fixes rendering.** Edit mode
+preserves composition by design, which is why the spec prefers it — so editing
+a lineup yields a better-rendered lineup. No number of refinement rounds would
+have saved the immigration icon.
+
+That makes four samples of one prompt the wrong first move: it buys four
+near-identical compositions. The variation that matters is in the prompt, not
+the seed.
+
+- **Round 1** generates two or three genuinely different scene compositions,
+  two samples each. Six images at $0.134 is about $0.80.
+- **Later rounds** use edit mode on the incumbent, for rendering fixes the judge
+  names in words — "the steam strokes are thinner than everything else" is
+  exactly the note a human wrote by hand on nuclear.
+
+**No measurement gate.** Fill weight, stroke uniformity, cohesion and hue are
+the prompt's job, judged by eye. A cohesion metric based on connected components
+would have flagged nuclear, whose atom floats free in the negative space beside
+the towers — the exemplar fails the proxy. What stays mechanical is sanity, not
+quality: the file is not blank or corrupt, it is 1035×690 on white, no text
+crept in. Those catch API failures.
+
+**The judge's job is therefore small**: is this the right scene for this topic,
+and does it sit correctly beside its neighbours. Neighbours means *same
+category*, because a shared hue is where a clash shows; v1 handed it the first
+three PNGs alphabetically.
+
+**Stops.** No cap on rounds. Stop on a pass. Stop when a round's best fails to
+beat the incumbent, which says more rolls of this prompt will not converge and
+the brief itself is the problem. **Hard stop at $3.00 per topic** — about five
+rounds — as the backstop against a brief that never converges. Either stop
+blocks the topic per §10, which hands a human a folder of candidates and a
+brief to edit, exactly as the spec already intends. Spend is logged per round;
+this is a separate bill on a separate account and nothing currently tallies it.
+
+**Costs** (Gemini 3 Pro Image at 1K, confirmed against Google's pricing page):
+$0.134 per image standard, $0.067 batch. Flash is half the price but the spec
+chose Pro because it adheres best to the style constraints, so a cheaper model
+fails more rounds. Batch halves the cost but needs submit-and-poll for a saving
+of pennies on a topic that usually needs one round.
+
+## The glyph
+
+Stage 3 owns both icons. Stage 1 still emits a Phosphor hint, because the
+planner knows the topic best, but the hint stops being authoritative: stage 3
+validates it against the shipped Phosphor set and only reaches for an agent when
+it does not resolve. v1 validated nothing, so a wrong name rendered as nothing.
 
 ---
 
