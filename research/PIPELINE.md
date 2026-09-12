@@ -241,6 +241,93 @@ This does not conflict with "the engine decides, never escalates" (Jeff,
 engine's own rules rather than asking. It was never about continuing when
 something is actually broken.
 
+## 11. Machine-level findings that apply to every stage
+
+From the 2026-09-12 meta-research. Stage-specific findings live in
+`research/STAGE1_RESEARCH.md`; these are cross-cutting and belong here.
+
+### WebSearch cannot ground a claim
+
+**Claude Code's WebSearch returns titles and URLs only.** The CLI maps results
+to `{title, url}` and discards the snippets; verified by probe against this
+install. The API's web search returns cited text spans, and Claude Code throws
+them away.
+
+So it is a discovery tool. Any stage that must quote or verify needs a second
+fetch:
+
+| Step | Tool |
+|---|---|
+| discovery | WebSearch, with `allowed_domains` |
+| grounding | Bash + curl to disk — raw bytes, no intermediating model, and the file persists for a checker |
+| cheap triage | WebFetch prompted to quote verbatim (it is a local fetch plus a small model, so it summarizes unless told otherwise) |
+| attribution | a separate citation pass over stored files plus the draft — the citer can only cite what it was handed |
+
+Measured limits on this install: 200 searches per session
+(`CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION`), 8 `max_uses` per call,
+`allowed_domains` and `blocked_domains` mutually exclusive.
+
+### Rate limits come as typed events, not exception strings
+
+`RateLimitEvent` arrives in the message stream with `status`, `resets_at`,
+`rate_limit_type` and a raw dict carrying both windows' utilization under
+`unifiedWindows`. v1 regexed a wait time out of an exception string, which only
+fired *after* a failure. `allowed_warning` lets a run stop dispatching before it
+is rejected. `ResultMessage.api_error_status` is the clean retry signal.
+
+### Separate `query()` calls per stage, not `AgentDefinition` subagents
+
+`output_format` is a session-level option, so a code-defined subagent cannot
+carry its own JSON schema. Separate calls also give a journal key and
+independent replay, and rate-limit events arrive on the parent stream so one
+worker can be slept and resumed. Concurrency cap is 20
+(`CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS`). Default buffer is 1MB; image-reading
+agents need it raised.
+
+### Fan out on retrieval, never on synthesis
+
+Multi-agent is documented as a poor fit where workers need shared context or
+have dependencies between them, and one open-source team abandoned parallel
+section-writers because "the reports were disjoint." Parallel workers return
+**structured, pruned findings**; one writer composes. Prose hand-back is what
+produces disjointness.
+
+### Prompt register is causal
+
+"An anxious prompt produces a cautious, hedging model." Prohibitions backfire —
+"a prohibition against a failure the model wasn't going to make can anchor it
+toward that failure." So instructions of the form *do not hedge, never
+both-sides* are the wrong shape.
+
+### Conservatism instructions in a gate suppress recall
+
+Documented across four model generations: a review prompt saying "only report
+high-severity issues" or "be conservative" is followed literally and the gate
+reports less. Ask for everything, filter in a separate pass. A gate can lose
+recall on a model upgrade purely from prompt text.
+
+### Checkers get the sources, and are blind to provenance
+
+Blind to the author's reasoning and to any "this passed gate N" label, because
+self-preference and label deference are triggered by exposure to provenance.
+**Not** blind to the sources: a checker denied the sources cannot verify, only
+opine, and an opinion-generating checker produces confident passes.
+
+### Scaffolds to delete
+
+Prefill (a hard 400 on current models), "think step by step", `<thinking>`
+scaffolds, "output ONLY valid JSON" plus regex extraction, and required
+reasoning sections. Also: **remove** "verify your own work" from a writer's
+prompt on Opus 5 rather than rewriting it — it causes over-verification.
+
+### The meta-lesson
+
+Anthropic dropped context resets from its own harness when a model made them
+unnecessary, and wrote: "every component in a harness encodes an assumption
+about what the model can't do on its own, and those assumptions are worth stress
+testing." v1's scaffolding should be re-tested against the current model rather
+than carried forward.
+
 ---
 
 # Stage 3 — iconography

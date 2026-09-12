@@ -67,9 +67,13 @@ keeps five stages in the same order with the same goals; how each works is being
 redesigned stage by stage.
 
 - `research/PIPELINE.md` — **the design so far and the rules every stage is built
-  against**: scope, how it reaches Claude, orchestration, state, budget,
-  storage, schema decisions, and stage 4 in full. Read it before designing a
-  stage. Stages 1, 2, 3 and 5 are not written yet.
+  against**: scope, how it reaches Claude, orchestration, state, budget, storage,
+  schema, failure semantics, machine-level findings, and stages 3, 4 and 5 in
+  full. Read it before designing a stage. Stages 1 and 2 are not written yet.
+- `research/STAGE1_RESEARCH.md` — **meta-research for stage 1, findings only.**
+  How people do this well (enumerating camps, weighting, steelmanning, cruxes,
+  sourcing, stopping) and what is measured about how machines do it badly. It
+  reports and does not conclude; where sources conflict, both are recorded.
 
 The bookends are fixed and are the pipeline's whole contract: it takes a topic
 from `not_started` to `ready`, and nothing else. Before it is the topic
