@@ -1,8 +1,8 @@
 # The authoring pipeline — v2
 
 What it is, how it runs, and the rules every stage is built against. Started
-2026-09-11 after v1 was archived to `research/v1/`. Stages 1, 2, 3 and 5 are not
-designed yet; stage 4 is, and is written up below.
+2026-09-11 after v1 was archived to `research/v1/`. Stages 4 and 5 are designed
+and written up below; 1, 2 and 3 are not.
 
 Read `research/v1/RESEARCH_PIPELINE.md` for why a v1 rule existed. Do not treat
 v1 as a baseline — it is evidence about the problem, not a constraint on the
@@ -214,6 +214,33 @@ it writes, so there is nothing to route. Same move as `tier` and `fold`: stop
 routing a finding around a loop and make the producer get it right the first
 time.
 
+**The exception, and it is the reason stage 5 exists.** Taken literally the
+principle makes a final review pointless. It is not, because every other stage
+reads a *slice* and stage 5 reads the *whole*. No amount of strengthening a
+slice-reader's criteria catches a property that only exists across slices. Stage
+5 does not catch what earlier stages missed; it owns something they structurally
+cannot see.
+
+That gives a sharp test for where a finding belongs: **could any single-slice
+reader have seen it?** If yes, it is an upstream gap and the note says so. If
+no, it is stage 5's by right.
+
+## 10. Failure semantics
+
+A stage that cannot satisfy itself **stops the run and marks the topic blocked**,
+naming the stage its failure implicates. No retry, no routing, no continuing to
+the next stage.
+
+The reasoning is §9. If a stage fails, some earlier stage's criteria were too
+weak to prevent it, which is a pipeline bug rather than a task for this topic.
+Absorbing it silently would fix the symptom and hide the bug. Stopping makes it
+loud, and the human decides whether to fix the topic by hand or fix the stage.
+
+This does not conflict with "the engine decides, never escalates" (Jeff,
+2026-08-27). That rule is about resolving editorial forks mid-run by the
+engine's own rules rather than asking. It was never about continuing when
+something is actually broken.
+
 ---
 
 # Stage 4 — integration
@@ -224,7 +251,12 @@ Stage 4 is the first point at which content and icon both exist, which is what
 makes it an integration stage in the ordinary sense. It is not a review. It
 produces the files that ship and proves the contract held.
 
-## What it produces
+## Contract
+
+**Requires:** `topic.json` complete; the icon present at
+`static/img/topics/<slug>.png`.
+
+**Produces:**
 
 | Output | Where |
 |---|---|
@@ -233,6 +265,15 @@ produces the files that ship and proves the contract held.
 | poster PDF | print-ready 18×24in |
 
 Plus a pass, or a list of measured failures.
+
+**Satisfied when:** all four files exist and every assertion below passed.
+
+**Environment.** Stage 4 renders from the loaded site rather than from files, so
+it needs the topic in the database and a server running. It does both itself —
+loading the topic is its first act — which keeps it self-contained and
+idempotent, and means no stage depends on another having left the server in some
+state. Stage 5 is the same. Both need headless Chrome, the pipeline's only
+non-Python dependency.
 
 ## The surface manifest
 
@@ -252,6 +293,23 @@ emits. Adding a surface is adding a row, not writing another command.
 
 Category and site share cards fit the same shape and should be covered; one of
 the standing defect-register entries is a share-card defect.
+
+**`?expanded=1` is an artificial state, and only stage 4 may use it.** It is a
+DEBUG-only flag that forces every Go-deeper layer open at once, built so a
+capture rig could photograph deep content without clicking. It is gated on
+`DEBUG`, so it does not exist on the live site, and no reader has ever been in
+that state. For measuring individual elements it is a convenience — one page
+load instead of N clicks — and the artificiality does not matter, because
+per-element overflow does not care what else is open.
+
+It does mean **stage 4 must never assert anything about total page height in
+that state**, because nobody is ever in it and the number means nothing.
+Measured on a real topic: a 320px expanded page runs 68,603px, and mobile
+expanded 52,894px.
+
+The deep content is in the served HTML all along, hidden by Alpine rather than
+fetched, so the flag is not needed to read the text either. One page load and a
+DOM walk gets every word in reading order, each block tagged with its layer.
 
 ## Two classes, two failure modes
 
@@ -335,14 +393,123 @@ capture that stops happening; and the stage-4-to-stage-2 fix loop.
 
 ---
 
+# Stage 5 — the read
+
+**One reader sees the finished topic the way a person would, and makes the
+ready determination.**
+
+Not a check — everything mechanical was settled upstream and stage 5 requires
+stage 4 to have passed, so unlike v1's gate it needs no check lines and no
+shell. It reads.
+
+Its justification is the exception in §9: every other stage reads a slice, and
+this is the only reader that sees the whole. Tone drift across sections, the
+same argument made twice by two camps, a crux that does not follow from the
+questions above it, the icon working alone but not composed with copy on a
+card — none of those are visible to any slice-reader, at any strength of exit
+criteria.
+
+## Contract
+
+**Requires:** stage 4 passed.
+
+**Produces:** a determination, and at most three notes.
+
+**Satisfied when:** the determination is recorded. If ready, the orchestrator
+calls `mark_ready`.
+
+## What it is handed
+
+**The text, once.** All of it, condensed and deep, in reading order, each block
+tagged with its layer. One page load and a DOM walk; the deep content is in the
+HTML already. About 78k characters on a full topic. The text does not vary by
+viewport, so it is read once, not per view.
+
+**Screenshots of every view, at native resolution.** Not downscaled: a person
+reads type at real size, and that is how a bad line break, an over-dense card
+or a heading that reads as a label become visible. Downscaling destroys exactly
+what is being judged.
+
+| View | Shots |
+|---|---|
+| desktop 1440 | ~8, scrolled |
+| mobile 390 | ~14, scrolled |
+| og, square, portrait cards | 1 each |
+| poster | 1 |
+
+About 26 images. Deep-layer shots come from clicking a section open, not from
+`?expanded=1`, because that is the state a person is actually in.
+
+**320 is not read.** The design system names its design widths as desktop 1180
+content max and mobile 390. There is no 320 mock, so "does this read well at
+320" has no target to judge against. 320 is a must-not-break width, which is
+measurement, which is stage 4's. And if 320 reads badly it reads badly on all
+136 topics, which makes it site-wide and not a per-topic judgment.
+
+**Fixed screenshots rather than a live browser.** What a browser adds is
+interaction — the expand, the depth control, sticky chrome — and all of it is
+template behavior identical on every topic, so it is the conformance suite's by
+the same rule that moved design conformance out. And handing over 26 images at
+once is a design wall: stage 5 exists to see everything together, which
+sequential browsing is precisely not.
+
+**It must be one agent, and it must not have watched the run.** One, because
+the whole-artifact judgment cannot be split across parallel critics. Fresh,
+because an agent that watched the run is primed to accept its output. No
+verdicts, no ledger, no plan — the finished thing as a reader meets it.
+
+Model and effort at the top of the range. This is the single call that gates
+the pipeline; being cheap here is false economy.
+
+## What it reads for
+
+**Structure and flow.** Does the condensed layer stand alone or only make sense
+once expanded. Does Go-deeper add or restate. Does the crux follow from the
+questions. Does reading order work on mobile, where the layout differs.
+
+**Consistency.** Do two positions argue the same thing. Does a figure in Basics
+sit oddly beside a claim in a position. Does a card promise what the page does
+not. Is one camp written with more energy than another.
+
+**Plausibility, not verification.** Does this hold together. No sources, no
+fact-checking, no web — that was stage 1's, and re-doing it here is the
+duplicated judgment the pipeline caps.
+
+## The determination
+
+| Outcome | Meaning |
+|---|---|
+| ready, no notes | publish |
+| ready, with notes | publish, and here is what you might change |
+| not ready | a reader would be misled or confused |
+
+The line between a note and a block is **whether the page would actively
+mislead someone.** That is a bar an agent can apply consistently, unlike "is
+this good enough."
+
+Not-ready stops the run per §10. It does not route back, because a finding
+stage 5 can make is either something no upstream stage could have owned, or
+evidence that an upstream stage's criteria are too weak — and in the second
+case the fix belongs there permanently, not in this topic.
+
+**The bar for a note.** A stage told to check whether something "flows well"
+will find something to say forever. So: a note must name **what the reader
+experiences.** Not "the transition could be smoother" but "positions four and
+seven argue the same thing, so a reader meets the same case twice." If you
+cannot say what a reader does or thinks differently, it is not a note.
+
+Capped at three. Brief only means something if it is enforced, and a cap forces
+ranking instead of listing.
+
+---
+
 ## Open questions
 
 - The per-field ownership and locking table (§8).
-- Failure semantics: does a stage that cannot satisfy itself halt the run, or
-  mark itself blocked while other eligible work proceeds? The independence in §5
-  points at the second.
 - Concurrency: parallel units against one file, and against a burn rate that is
   only sampled once per call.
+- Where stage 5's determination and notes are recorded — `evidence.json`,
+  `review.md`, or both.
 - Where the rules live and how a stage's prompt is assembled. v1 scattered this
   across agent definitions, inline strings and the manual, and grew a hook to
   check for drift. One home, decided once.
