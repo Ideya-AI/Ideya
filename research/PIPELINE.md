@@ -1,12 +1,15 @@
 # The authoring pipeline — v2
 
 What it is, how it runs, and the rules every stage is built against. Started
-2026-09-11 after v1 was archived to `research/v1/`. Stages 3, 4 and 5 are designed
-and written up below; 1 and 2 are not.
+2026-09-11 as a ground-up redesign; the previous pipeline is archived under
+`research/v1/` and is not a baseline for anything here. All five stages are
+designed and written up below.
 
-Read `research/v1/RESEARCH_PIPELINE.md` for why a v1 rule existed. Do not treat
-v1 as a baseline — it is evidence about the problem, not a constraint on the
-solution.
+**The goals it is built to.** Present each topic honestly to a general adult
+reader, at about the depth a good encyclopedia entry reaches. Make a good-faith
+effort that facts and figures are accurate, most of all in Basics. Present
+every position and idea in its strongest and most honest light, without it
+reading as advertising. Automation drafts, a human publishes.
 
 ---
 
@@ -126,6 +129,17 @@ reordering never change them (`topics/item_ids.py`). All 591 items across all
 Findings live in the file too, as a work queue, so routing needs nobody to
 remember anything.
 
+**Agents never write the product files.** Each unit returns structured output
+that the orchestrator writes to `run/<stage>/<unit>.json`; code merges into
+`topic.json` and `evidence.json` at phase end. Parallel units therefore never
+contend for a file, and "is this unit done" is "does its return file exist
+and validate".
+
+**A stage's gate verdict is recorded with a hash of the fields it certified**
+(in `evidence.json`), and a later write to any of those fields invalidates
+it — the mechanism `mark_ready` already uses. "Requires: stage N" is then a
+file assertion rather than a memory of run order.
+
 ## 6. Budget and usage limits
 
 The subscription is the budget, and it is a shared resource — an interactive
@@ -139,7 +153,7 @@ threshold crossings. The useful data is nested in the raw dict under
 
 | Window | What it costs to hit |
 |---|---|
-| `five_hour` | a nap; v1 proved a run can sleep through one and finish |
+| `five_hour` | a nap; a run can sleep through one and finish |
 | `seven_day` | the better part of three days |
 
 That asymmetry is why the guards are asymmetric: **pause at 80% of the weekly
@@ -166,7 +180,7 @@ A topic is a directory, and the directory name is the slug.
 ```
 research/topics/<slug>/
   topic.json      product; the only thing the loader reads
-  evidence.json   claim ledger, gate verdicts, prevalence basis, open findings
+  evidence.json   map, claim ledger, crux placement, cut record, gate verdicts
   icon.md         art brief + generation prompt
   review.md       the packet for the human
   run/ renders/ candidates/     process, untracked
@@ -192,13 +206,45 @@ row-snapping logic goes too. That removes two fields, one render algorithm, and
 one stage 2 decision, and it lets every downstream surface *assert* a layout
 instead of deriving one.
 
+**The counts (decided 2026-09-13).** Before Go-deeper is hard and a multiple
+of the section's column count; the total is a guideline stage 2 applies topic
+by topic. A section with fewer items than its show-count shows them all and
+gets no Go-deeper.
+
+| Section | Shows before Go-deeper | Total, guideline | Layout |
+|---|---|---|---|
+| Basics | 6 cells (a wide tile is 2) | 8–12 | three columns |
+| Questions | 4 | 5–8 | one column |
+| Positions | 4 | 3–8 | two columns |
+| Actions | 4 | 6–10 | two columns |
+
+The totals sit on the corpus medians (10, 7, 6, 8 across 18 drafted topics);
+the tails — twelve positions, fifteen actions — are what the editor cuts, and
+a two-camp topic ships two. Four questions is one screen; the reader chooses
+to see more, which is what Go-deeper is for.
+
+**Out: `prevalence_weight`, `prevalence_basis`, `spectrum_position`,
+`importance`, `reveal`, and the rule that positions render by prevalence
+(decided 2026-09-13).** Every section renders in file order, most important
+first; that is the whole mechanism for weight. `reveal` only ever decided
+which side of Go-deeper an item fell on, which the show-count above now does
+from array order.
+
+**Site delta this implies**, to be built before stage 2's checks are written
+against it: `Position.Meta.ordering` and the view's position sort become
+`order` only; `Section._tier_lead_count`, `_basics_base_count` and the
+`has_layer_*` properties reduce to the fixed show-counts over array order;
+the loader stops reading `tier` and `reveal`; a migration drops `tier`,
+`reveal`, `prevalence_weight`, `spectrum_position` and `importance`; the
+`when-normal`/`when-deep` classes are replaced by one before/after Go-deeper
+class. The CLAUDE.md invariant about positions rendering by
+`prevalence_weight` is retired with it.
+
 **In and already working:** stable item ids; the six sections and their fields
 as the loader enforces them.
 
-**Still open:** the per-field ownership and locking table — which stage writes
-each field, and what freezes after which stage. v1 had the rule ("facts lock
-after stage 1") but buried it in a patch whitelist. It belongs in the schema,
-because that is what makes a stage's contract checkable rather than trusted.
+**The per-field ownership table** is under stage 1. It is what makes a stage's
+contract checkable rather than trusted; stage 2's lock check is derived from it.
 
 ## 9. The exit-criteria principle
 
@@ -208,9 +254,9 @@ If a later stage legitimately catches something, some earlier stage's criteria
 are too weak. The fix is always to strengthen those, never to patch this topic.
 That is a permanent fix instead of a recurring one.
 
-It follows that **inter-stage fix loops should not exist.** v1 routed findings
-from stage 4 back to stage 2; the right answer is for stage 2 to measure before
-it writes, so there is nothing to route. Same move as `tier` and `fold`: stop
+It follows that **inter-stage fix loops should not exist.** Routing a stage 4
+finding back to stage 2 is the wrong shape; the right answer is for stage 2 to
+measure before it writes, so there is nothing to route. Same move as `tier` and `fold`: stop
 routing a finding around a loop and make the producer get it right the first
 time.
 
@@ -228,8 +274,16 @@ no, it is stage 5's by right.
 ## 10. Failure semantics
 
 A stage that cannot satisfy itself **stops the run and marks the topic blocked**,
-naming the stage its failure implicates. No retry, no routing, no continuing to
-the next stage.
+naming the stage its failure implicates. No routing, no continuing to the next
+stage.
+
+**Two kinds of failure, treated differently.** A *transport* failure — a rate
+limit, a killed process, a malformed structured output — is retried a fixed
+number of times (§11 names the clean retry signal), then blocks. A *criteria*
+failure — the stage ran and its exit check failed — blocks at once. Stage 1
+has one named exception: a ledger claim still open after its repair round is
+cut and logged rather than blocking, because it is a source that did not say
+what the writer remembered, not a pipeline bug.
 
 The reasoning is §9. If a stage fails, some earlier stage's criteria were too
 weak to prevent it, which is a pipeline bug rather than a task for this topic.
@@ -271,8 +325,8 @@ Measured limits on this install: 200 searches per session
 
 `RateLimitEvent` arrives in the message stream with `status`, `resets_at`,
 `rate_limit_type` and a raw dict carrying both windows' utilization under
-`unifiedWindows`. v1 regexed a wait time out of an exception string, which only
-fired *after* a failure. `allowed_warning` lets a run stop dispatching before it
+`unifiedWindows`. Reading the event beats parsing an exception, which only
+fires *after* a failure. `allowed_warning` lets a run stop dispatching before it
 is rejected. `ResultMessage.api_error_status` is the clean retry signal.
 
 ### Separate `query()` calls per stage, not `AgentDefinition` subagents
@@ -325,8 +379,694 @@ prompt on Opus 5 rather than rewriting it — it causes over-verification.
 Anthropic dropped context resets from its own harness when a model made them
 unnecessary, and wrote: "every component in a harness encodes an assumption
 about what the model can't do on its own, and those assumptions are worth stress
-testing." v1's scaffolding should be re-tested against the current model rather
-than carried forward.
+testing." Every scaffold in this design is an assumption of that kind and
+should be re-tested against the current model before it is kept.
+
+---
+
+# Stage 1 — research
+
+**Find out what the debate actually is, write every section at research grade,
+and prove every hard claim before handing on.**
+
+Designed 2026-09-13 against `STAGE1_RESEARCH.md` and Anthropic's published
+research-agent guidance, and revised the same day after two independent cold
+reviews. Stage 1 is the heaviest stage and is decomposed furthest (§5):
+roughly sixty calls, most of them small, every one resumable from its own
+return file.
+
+## Contract
+
+**Requires:** the index fields of `topic.json` — slug, title, scope, categories.
+
+**Produces:** every content field of `draft`, with item ids assigned; in
+`evidence.json`, the **map**, the **claim ledger**, the **crux placement**,
+and stage 1's gate verdict; under `run/sources/`, the fetched pages and their
+extracted text (process — the ledger carries the quotes, so it survives
+without them).
+
+**Satisfied when:** stats, questions and actions are at or above the §8
+minimum and positions cover every ranked camp in the map; the map check
+passes; the coverage check passes; every hard claim in the ledger is closed
+as supported, attributed, or cut-and-logged; every URL resolved when written;
+lint is clean. Anything else blocks the topic per §10.
+
+## Three principles that shape the stage
+
+**Depth is Wikipedia's, not a literature review's.** The goal is an honest
+presentation to a general reader. Sources are the encyclopedic and journalistic
+layer: reference sites, major explainers, the camps' own public statements,
+official and statistical bodies. Academic work appears when an explainer points
+at it. "Cite reviews, don't write them." This also answers Anthropic's finding
+that research agents "consistently chose SEO-optimized content farms over
+authoritative but less highly-ranked sources": the allowed source classes are
+named up front.
+
+**Sourcing is two-tier, because accuracy matters most in some places and
+intellectual honesty is the higher rule everywhere else** (Jeff, 2026-09-12).
+A **hard claim** — a number, a date, a named event, a quote, any sentence of
+the form "X said" or "X found", and the existence of a camp's adherents — gets
+a fetched source and a check. Basics is entirely hard claims, which is where
+the accuracy effort concentrates. **Everything else is written from the
+model's own knowledge under the honesty rule**: how a camp reasons, what it
+values, what is common knowledge in the debate, and the page's own voice in
+questions and crux. The certainty bar for that tier is the one a good
+encyclopedia entry or a good LLM answer meets today (Jeff, 2026-09-13, when
+per-argument sourcing was proposed and declined: that is literature-review
+certainty, and it would cut real arguments adherents make but no fetched page
+happens to state). The one free guard: the position writer receives its
+camp's adherent quotes from the map, which are checked against fetched pages,
+and its case must be consistent with them.
+
+**When a hard claim's check fails, the writer has three moves**: cut it,
+soften it to what the source supports, or attribute it to whoever asserts it.
+The good-faith standard is that a figure the page states in its own voice has
+a source behind it; it is not that every sentence carries a footnote.
+
+**Stage 1 writes research grade, stage 2 writes for the reader.** Length budgets
+here are loose ceilings — about twice the render budget — not targets. A
+position says everything the camp's case needs and stage 2 cuts; the crux unit
+writes where the disagreement sits and stage 2 makes the lead line sing. The
+one thing stage 1 must leave in a durable form is what each hard claim's
+source actually said, because stage 2 will reword almost every sentence and
+needs something to check its rewording against. That is stage 2's fidelity
+check, and it needs the ledger's stored quotes — the one dependency this
+stage creates.
+
+## Open research first, and its output is a map
+
+Every tradition in the meta-research converged on not asking "what are the
+positions?" — that is the generative mode, and a model can always construct a
+defensible camp. Ask instead who has publicly said what, and where. So the
+stage opens with an unmotivated harvest whose output is a **map**, not prose,
+and the section writers are required to build against it: a writer may not
+introduce a camp, a fact or a source that is not in the map. If it needs one,
+it adds it to the map with a fetched source first. That dissolves the
+open-versus-directed question — open research is what the writers are allowed
+to know, so it can be neither skipped nor overridden by a section's convenience.
+
+STORM's ablation is the warrant: removing the perspective-discovery step nearly
+halved unique references.
+
+## How units interact
+
+**Nothing talks to anything, and no agent writes the product files.** Every
+unit is a separate SDK call that reads files and returns structured output;
+the orchestrator (code, §4) writes each return to `run/<phase>/<unit>.json`
+and merges into `topic.json` and `evidence.json` at the end of each phase.
+Source ids are namespaced by the unit that fetched them (`s-crit-03`). That
+is what makes parallel units safe and every unit resumable: "is this unit
+done" is "does its return file exist and validate".
+
+Two shared artifacts:
+
+- **The map**, in `evidence.json`: ranked camps with adherents, agreed facts,
+  the stat list, controversial statements, gaps.
+- **The sources store**, `run/sources/<id>.{raw,txt}`: every fetched page as
+  raw bytes plus text extracted by a deterministic extractor (PDF included),
+  with HTTP status, title and fetch date in the index. **"Fetched" means
+  extracted text over a floor length with a 200 status**; a bot wall, a
+  paywall stub or a JS shell is not a source.
+
+Retrieval units return structure, writing units return content, checking units
+return verdicts. No unit returns prose to another agent — prose hand-back is
+what produces disjointness (§11). **Every unit is blind to something on
+purpose**, and the "sees" column below is part of the contract.
+
+No unit gets the Agent tool (Opus 5 delegates readily, and the unit count is
+the orchestrator's), and no writer's prompt carries "verify your work" (§11).
+Rules in prompts are stated affirmatively — what a camp is, what a question
+looks like — and the things to refuse are enforced by lint and code checks,
+which cannot be anchored (§11, prompt register).
+
+## Phase A — the map
+
+| Unit | Count | Model, effort | Sees | Returns |
+|---|---|---|---|---|
+| Framer | 1 | Opus 5, medium | index fields | dimensions of variation, affected populations, the frame-rejection question, seed sources |
+| Scouts | 4, parallel | Sonnet 5, medium | the frame, one **source class** each | claimants (name, org, verbatim claim, source id, date), facts with quotes, everyone each document argues against by name |
+| Camp scout | 1, after the four | Sonnet 5, medium | the four returns' `argues_against` and claimant orgs | same shape, from the camps' own organizations |
+| Cartographer | 1 | Opus 5, high | all scout returns, nothing else | the map, with a **gap list** |
+| Gap scout | 1 | Sonnet 5, medium | the gap list only | same shape as a scout |
+| Cartographer, final | 1 | Opus 5, high | map plus gap return | final map; gaps closed or recorded unfilled |
+
+**The framer** names the dimensions along which views vary before any position
+is named (SEP's move: you cannot see a missing camp in a list, you can see an
+empty cell), lists the populations materially affected, asks whether a camp
+rejects the question, and seeds the scouts with the Wikipedia article and two
+or three landmark explainers.
+
+**Scouts divide by source class, not by section** — encyclopedic and reference;
+explainers and journalism; official and statistical bodies; critiques. That is
+the context-centric split Anthropic recommends, and it is what makes the
+harvest unmotivated: no scout is looking for support for a section. The
+highest-yield single operation is harvesting everyone a document argues
+against by name — critics have an incentive to find every opponent. **The
+camp-class scout runs after the other four**, because its domain list cannot
+exist before the camps do; it is seeded from the names the others harvested,
+with `blocked_domains` for content farms. **Saturation is computed by code**,
+not reported by the scout: distinct claimant names per returned source, base
+four, run two, under 5% new ends the class, with a floor of six sources.
+Scouts run at medium because a model at low effort searches less and answers
+from memory, the one behaviour a scout must not have.
+
+**The cartographer** is the highest-stakes judgment in the stage. It groups
+claimants into camps under rules it does not get to relax, stated in the
+prompt as what a camp *is*:
+
+- **A camp exists when two independent, named adherents, at least one
+  institutional, assert its claim in their own published words.** Wikipedia's
+  version: a significant view is one where it is "easy to name prominent
+  adherents". Adherence, not coherence — the model cannot construct two
+  adherents with fetched pages.
+- **Two camps are distinct when there is a proposition one affirms and the
+  other denies** — "not merely emphasizes differently". Camps that differ only
+  in instrument, magnitude or sequencing are **merged before any writer
+  runs**, with the variation recorded. This is where the position count is
+  controlled: not by a cap, but by refusing secondary-aspect splits.
+- **A hybrid position and a reject-the-question position are looked for
+  explicitly**, because the page title presupposes a frame.
+- **Camps are named by what they want.** All camps in the same grammatical
+  form; a name passes if the camp's strongest advocate and strongest critic
+  would both call it *accurate*. (Skeptic, Realist, Pragmatist, Alarmist are
+  posture labels — the nuclear file gave both pro camps Pragmatist and Advocate
+  and both anti camps Skeptic. That check is lint.)
+- **Camps are ranked most to least important, with a one-line reason each.**
+  Decided (Jeff, 2026-09-13): order is the whole mechanism for weight, in
+  every section — the most important basics first, the most central questions
+  first, the camps most people hold first, the way an answer about US parties
+  starts with the two big ones. No prevalence band, no population, no scalar,
+  no display of weight; the rank is a seed and stage 2 makes the final order.
+  Every camp gets equal length.
+
+It also emits the agreed facts (cited across camps; the basics stat list is
+chosen from these), and the controversial statements that questions will come
+from (Kunz & Rittel: "the origins of issues are controversial statements").
+
+**The map is a checked artifact.** Before Phase B, code runs the quote check
+over every adherent quote, agreed fact and controversial statement, and
+asserts per camp: two adherents with distinct source ids, one institutional,
+a `wants` line, a `distinguishing` proposition, a rank. A map that fails
+blocks the topic — a cartographer that invents an adherent is the failure the
+whole phase exists to prevent.
+
+**The gap round runs once.** It is Co-STORM's moderator move — search for what
+the map says is missing (a second adherent, an affected population with no
+voice, a camp on one source), not for more of what it has. A second round is
+where loops start.
+
+**Decoy calibration is a fixture test, not a run step.** A recorded scout
+return with fabricated camps mixed in, run against the cartographer whenever
+its prompt changes; if a decoy survives the adherence rule, the prompt is
+broken. Prompt register is causal (§11), so prompt edits need a regression
+test, and this is the only test of the cartographer.
+
+## Phase B — the sections
+
+| Unit | Count | Model, effort | Sees | Returns |
+|---|---|---|---|---|
+| Stat writers | 1 per source | Sonnet 5, low | the stat entries that cite one source, that source's text | stat fields, verbatim quote per stat |
+| Questions | 1 | Opus 5, medium | controversial statements, dimensions, agreed facts with quotes and ids, the stat entries | the question set, hard-claim sidecar |
+| Position writers | 1 per camp | Opus 5, medium | own map entry with adherent quotes, own sources, agreed facts, a shared style sheet | position fields, hard-claim sidecar |
+| Crux | 1 | Opus 5, high | positions, questions, agreed facts with quotes and ids | crux substance, camp placement, hard-claim sidecar |
+| Overview, actions | 1 | Sonnet 5, medium | map, the explainer-class scout return, WebFetch for action URLs only | overview, why_now, glyph hint, actions, hard-claim sidecar |
+
+Before Phase B, code assigns item ids to the draft (`topics/item_ids.py` is
+plain Python; the loader no longer has to be first). Stats, questions and
+positions run in parallel; crux after them; overview last.
+
+**Stat writers** have the text on disk and no search, so the task is read and
+transcribe; grouping by source is one call per page instead of one per
+number. A stat with no fetched source does not exist. Value, unit, note,
+detail, source fields and the quote all come from that text. Presentation
+numbers — `series[].pct`, `fill_pct`, `range_at` — are derived by code from
+the values, never written by a model.
+
+**Questions** are written under Conklin's rules — open, no embedded solution,
+no "should we do X", no benefits — and each names the controversial statement
+it came from. Kind is decided by the taboo test: ban the contested word and see
+whether the disagreement survives; if it evaporates it was definitional. The
+nuclear file carries a question whose own `why` contradicts its `kind`, so this
+is a check, not a hope. Questions carry numbers, so the unit gets the agreed
+facts with their quotes and ids and emits a sidecar like a position writer.
+`lean_pct_a` is written only when the map holds a poll source; otherwise null,
+which the model and template already handle.
+
+**Position writers do not see the other camps' text.** A camp's own sources
+already tell it what it argues against, and hiding the others is what keeps
+"critics counter" and "the argument goes" out of a camp's voice. The writer
+uses its own knowledge plus the camp's sources and its verified adherent
+quotes; the pass condition is the ideological Turing test — would an adherent
+say "yes, that is our case". The prompt says it affirmatively: state the
+camp's case as its adherents make it, including what they say about the
+alternatives. Self-rebuttal ("but the model's fragility is real too") is what
+lint catches, not mention of other camps. Every number and every "X said" in
+the prose goes in the sidecar with a source id and quote, which closes the
+audit finding of thirteen unsourced figures in 1,133 words. Register symmetry
+across camps comes from the same style sheet and the same ceiling, not from
+seeing each other. Opus 5 rather than Sonnet because in-voice writing is what
+it is for; medium rather than high because a page of prose does not need
+over-deliberation.
+
+**The crux** uses subtraction (what nobody holds — SEP's "no one defends the
+status quo") and root divergence (the earliest point of conflict, which the
+measured data says is usually definitional, causal or a forecast, and rarely
+moral). It must place every camp relative to the crux, so nuclear's orphaned
+camp cannot recur; the placement is an `evidence.json` artifact for the map
+check, not page content. Highest effort in the stage: the hardest single write.
+
+**Overview and actions** are short and low-stakes. The unit has WebFetch for
+one purpose, resolving action URLs at the moment they are written, and every
+URL is code-checked again. The meta-research questioned whether Actions
+belongs on a contested topic. Decided (Jeff, 2026-09-13): it stays. Every
+topic has actions; where an action set is split by the contest, each side's
+actions appear, mapped to the position via `for_position`.
+
+## Phase C — the ledger and the checks
+
+| Unit | Count | Model, effort | Sees | Returns |
+|---|---|---|---|---|
+| Extractor | 1 per section | Sonnet 5, low | section text, sidecar | hard claims: verbatim quote, self-contained restatement, kind, source id |
+| Coverage check | code | — | draft, ledger | every hard-claim pattern in the text falls inside some ledger quote |
+| Quote and URL check | code | — | ledger, store | pass or fail per claim |
+| Verifiers | 1 per source | Sonnet 5, low | the claims citing one source, that source's text, nothing else | per claim: supported, partial, unsupported, attributed |
+| Repairers | 1 per failure | Opus 5, medium | claim, verdict, source text, the field's text | a patch: cut, soften, or attribute |
+| Lint | code | — | draft | defects |
+
+**Extraction recall is checked by code, because a claim the extractor skipped
+would otherwise pass every gate.** Every numeric token, four-digit year,
+quoted span and "Proper Noun said/found/estimates" pattern in each section's
+text must fall inside some ledger claim's quote span. Unmatched spans fail
+the stage.
+
+**Code checks before any model judges.** The cited quote must be in the cited
+source's extracted text, by normalised string match, and every URL must
+resolve. This makes a hallucinated URL or an invented quote structurally
+impossible. It does not make a true quote support a false claim impossible —
+citation laundering, "linked to" cited as "causes" — which is what the
+verifier stands against.
+
+**Verifiers are blind to the draft and to provenance, not to the source.** A
+checker denied the source can only opine, and opinion produces confident passes
+(§11). "Does this quote support this claim" is a task a 770M model matched
+GPT-4 on, so Sonnet at low is right-sized, and it is a different model from
+the writers — cross-family is not available on the subscription, cross-model is
+the nearest substitute. All claims citing one source are checked in one call,
+which loses no blindness and cuts the call count by most of an order of
+magnitude. A **fact** is checked against the source; an **inference** —
+causal, comparative, predictive — is checked against who draws it. `partial`
+is a failure. Verifiers run in batches under the concurrency cap; a limit
+event on the parent stream pauses the batch.
+
+**A camp's own number is attributed, not asserted.** A fact whose only source
+is in the camp or critique class is written as "the X camp cites…" unless a
+reference or official source corroborates it. The verifier confirms the quote;
+nothing else asks whether an advocacy site's statistic is fit to state in the
+page's voice, so the remedy is built into the rule.
+
+**One repair round, grounded.** The remedies are the three above: cut, soften
+to what the source supports, or attribute. Attribution
+means different things by voice: inside a position, the camp is the
+attribution; in basics, questions and crux the page speaks, so the remedy
+names the proponent in the sentence and that claim goes in the ledger, or the
+sentence is cut or softened. Changed fields go back through extract, coverage,
+check and verify. **A claim still open after that is cut and logged** in
+`evidence.json`, and the topic blocks only if
+the cut drops a section below its §8 minimum. Decided (Jeff, 2026-09-13):
+an open claim is a source that did not say what the writer remembered, not a
+pipeline bug, and blocking on it would block most topics on every run. A
+wrong repair is worse than none, hence Opus.
+
+**Lint** is code, not a judge: hedge phrases ("the argument goes", "from this
+view"), self-rebuttal patterns inside positions ("but… is real too", "critics
+counter"), posture labels in camp names, UK spellings, HTML entities and
+straight quotes, camp-name register, section minimums. A phrase list is cheap
+and cannot be gamed. Whether one camp reads with more energy than another
+needs the whole and is stage 5's.
+
+**The gate verdict.** When everything above passes, code writes stage 1's
+verdict to `evidence.json` with a hash of the fields it certified. A later
+write to any of those fields invalidates it (the mechanism `mark_ready`
+already uses), which is how stages 2 through 4 can require "stage 1 valid" as
+a file assertion.
+
+## Model mix
+
+Fable is reserved for stage 5. The split here is judgment versus handling:
+Opus 5 where the output changes the topic (framer, cartographer, questions,
+positions, crux, repairs — about fifteen calls), Sonnet 5 where the task is
+search, parse, transcribe, decompose or check (about forty, all small, after
+batching stat writers and verifiers by source). No unit runs at low effort
+except the ones whose input is already on disk. Effort names do not map to
+the same thinking across models, so these are starting points; the sweeps
+worth running once a topic goes through are cartographer and crux at medium
+versus high, and position writers at low versus medium.
+
+## What this stage deliberately lacks
+
+**No critic panel.** Neutrality and steelman are enforced by construction —
+own sources, no sight of other camps, a lint for self-rebuttal — and by
+stage 5's whole read, not by a judge-shaped call, which the meta-research says
+takes a side even when the same model hedges as a generator.
+
+**No planner that locks positions before research.** Camps come out of the
+harvest; deciding the positions first and then researching them is the
+generative mode.
+
+**No fix loop.** One grounded repair round, then cut and log.
+
+**No prevalence field.** Rank is a seed for stage 2's order, nothing more.
+
+**No orchestrator model.** Every branch is a file assertion (§4).
+
+## The shapes the units share
+
+Decided once, before any prompt, because a unit's output format is half its
+prompt and these cross unit boundaries. Sketches, not schemas yet; the field
+names are the decision.
+
+**A source** (the store index, in `evidence.json`):
+
+```
+{ "id": "s-ref-03", "url": "…", "title": "…", "publisher": "…", "published": "2025-03-01",
+  "fetched": "2026-09-13", "status": 200, "class": "reference|explainer|camp|official|critique",
+  "raw": "run/sources/s-ref-03.raw", "text": "run/sources/s-ref-03.txt", "text_chars": 18400 }
+```
+
+**A scout return** (scouts, the camp scout, the gap scout):
+
+```
+{ "class": "critique",
+  "claimants": [ { "name": "…", "org": "…", "claim": "verbatim sentence",
+                   "source": "s-crit-01", "date": "…", "argues_against": ["…"] } ],
+  "facts":     [ { "statement": "…", "quote": "verbatim", "source": "s-crit-01" } ],
+  "sources": [ …store entries fetched… ] }
+```
+
+Saturation is not in the return; code computes it from `claimants[].name`
+per source.
+
+**The map** (in `evidence.json`; the cartographer owns it, writers read it):
+
+```
+{ "dimensions": [ { "axis": "…", "poles": ["…", "…"] } ],
+  "affected": [ "…" ],
+  "frame_rejection": { "exists": false, "note": "…" },
+  "camps": [ { "key": "…", "name": "…", "wants": "one sentence, in the affirmative",
+               "distinguishing": "a proposition this camp affirms and another denies",
+               "rank": 1, "rank_reason": "one line",
+               "adherents": [ { "name": "…", "org": "…", "kind": "institution|person",
+                                "quote": "…", "source": "s-camp-02" } ],
+               "sources": ["s-camp-02", "s-ref-03"],
+               "variation": "secondary-aspect differences merged here, recorded, not split" } ],
+  "agreed_facts": [ { "statement": "…", "quote": "…", "source": "s-ref-03",
+                      "cited_by_camps": ["…", "…"] } ],
+  "stat_list":   [ { "label": "…", "viz": "…", "from_fact": 3 } ],
+  "controversial_statements": [ { "statement": "…", "held_by": ["…"], "denied_by": ["…"] } ],
+  "gaps": [ { "kind": "second_adherent|affected_unvoiced|single_source|empty_cell",
+              "about": "…", "filled": false } ] }
+```
+
+**Crux placement** (in `evidence.json`, for the map check):
+
+```
+{ "crux": "one line", "placement": [ { "camp": "<key>", "side": "empirical|values|both", "note": "…" } ] }
+```
+
+**A ledger claim** (the sidecar a writer attaches is this minus `verdict`):
+
+```
+{ "id": "c17", "section": "positions", "item": "<item id>", "field": "detail",
+  "quote": "the sentence as it appears in the draft",
+  "claim": "self-contained restatement",
+  "kind": "fact|inference", "source": "s-ref-03", "source_quote": "verbatim from the text",
+  "verdict": "supported|partial|unsupported|attributed|cut", "note": "…" }
+```
+
+**Per-field ownership.** Stage 2 rewords freely but does not change specific
+facts (Jeff, 2026-09-13), so the fields that *are* the fact — values, units,
+source fields, URLs — are marked locked and code checks they left stage 1
+unchanged; everything else stage 2 may reword under the fidelity rule. `tier`, `fold`,
+`prevalence_weight`, `prevalence_basis`, `spectrum_position`, `importance`
+and `reveal` are gone (§8).
+
+| Field | Owner | Note |
+|---|---|---|
+| slug, title, categories, scope, related, status, icon | index / human / stage 3 | before the pipeline; `icon` is stage 3's, stage 1 emits a hint |
+| overview.summary, scope_covered, scope_excluded, why_now; volatility | stage 1 writes, stage 2 may reword | `why_now` is a hard claim; stage 2's own extraction covers it |
+| basics.stats[].value, unit, series[].value, range_*, source_* | stage 1, **locked** | every one a ledger claim |
+| basics.stats[].series[].pct, fill_pct, range_at | code | derived from values |
+| basics.stats[].label, note, detail, viz, wide | stage 1 writes, stage 2 may reword | fidelity check on reworded text |
+| basics.intro | stage 2, overview editor | |
+| questions[].text, kind, why, detail, lean_label_*, lean_pct_a | stage 1 writes, stage 2 may reword | `lean_pct_a` null unless the map holds a poll |
+| questions[].votes | participation | never the pipeline's |
+| positions[].name, steelman, description, detail, representative_*, proponents | stage 1 writes, stage 2 may reword | a name may get shorter or friendlier, never change what the camp wants; the map's `wants` line is the check |
+| positions[].color_key | code | assigned from order at load |
+| crux.* | stage 1 writes, stage 2 may reword | `lead_highlight` is stage 2's |
+| actions[].title, description, url, kind, for_position | stage 1, url **locked** | url resolved when written |
+| array order, every section | stage 2 | seeded by stage 1's rank; the site renders every section in file order |
+| id | code | assigned before Phase B, frozen |
+
+---
+
+# Stage 2 — editorial
+
+**Turn research-grade text into the page a general reader meets, without
+changing what it says.**
+
+Designed 2026-09-13, revised the same day after two independent cold
+reviews. Stage 1 owns substance; stage 2 owns the reader's experience: how much, in what order, at
+what length, in what words. It does no research, and that is a mechanism
+rather than a rule — its units can read the topic directory and nothing else.
+
+## Contract
+
+**Requires:** stage 1's gate verdict valid — `draft` at research grade with
+ids, the map, the ledger with stored quotes.
+
+**Produces:** the shipped text of every content field, the array order and
+item count of every section, a **cut record** in `evidence.json`, and stage
+2's gate verdict.
+
+**Satisfied when:** every field is within its hard bound; every ledger claim
+whose field changed passed fidelity; stage 2's own extraction and coverage
+check found no hard claim that is not in the ledger; every item passed the
+continuation test; every locked field is byte-identical to stage 1's; lint is
+clean. Anything else blocks the topic per §10.
+
+## What the reader actually sees
+
+Every item has two tiers, and the templates fix what goes where:
+
+| Item | Condensed — always visible | Expanded — appended on open |
+|---|---|---|
+| stat | value, unit, note | detail, source |
+| question | text, why it is contested | detail |
+| position | name, steelman line | description, detail, representative, proponents |
+| crux | lead, subtitle | empirical branch, values branch |
+| action | title, description | — (description hides on mobile until Go-deeper; no open state) |
+
+**The expanded tier builds on the condensed tier.** When an item is open both
+are on screen, the expanded text directly below the condensed, so the expanded
+text is read as a continuation and never as a replacement. A description that
+restates the steelman, or a detail that reopens with "the X camp believes",
+is the failure. Two tests, both promptable:
+
+- **The continuation test.** Concatenate condensed and expanded and read them
+  as one passage. It must read without repetition or reintroduction.
+- **The standalone test.** The condensed tier alone must make sense, because
+  share cards, the poster and print show nothing else.
+
+**There is no global depth control, and no `reveal`.** The Brief/Normal/Deep
+toggle the design system described is gone from the product. What the page
+has is two states per section — before Go-deeper and after — and which items
+fall on which side is the §8 show-count applied to array order. The `reveal`
+field is deleted along with `tier`; the site delta is listed in §8.
+
+## Order is the whole mechanism for weight
+
+Decided (Jeff, 2026-09-13). Every section displays in file order, most
+important first: the basics that matter most, the most central questions, the
+camps most people hold, the actions a reader would most want. Stage 1's rank
+seeds it; stage 2 makes the final call and may depart from the seed with a
+recorded reason. Nothing else encodes weight — no prevalence number, no band,
+no size difference, and every camp gets equal length. The site's rule that
+sorted positions by `prevalence_weight` goes (§8).
+
+**Count is a judgment against guidelines, not a rule.** How many items show
+before Go-deeper is the fixed per-section constant in §8; the total per
+section is the editor's, topic by topic, against the §8 guideline range. The
+position count is mostly settled upstream — the cartographer merges
+near-duplicate camps before anything is written — so stage 2 orders the camps
+and may drop from the bottom of the ranking when the topic does not need
+them, never from the middle.
+
+**Every cut is recorded.** The cut record names the item, its id, and the
+reason, so a human can restore one and so the decision is visible. This is
+PRISMA's near-miss rule: a wrongly kept item gets caught downstream, a wrongly
+cut one is invisible forever.
+
+## Fidelity — the one rule that matters most
+
+Stage 2 will cut, condense and reword almost everything, and none of it may
+change what stage 1 established. The rule, made checkable:
+
+**A restatement may lose precision. It may never change direction, magnitude
+class, or attribution.** 52% may become "about half" or "over half". It may
+not become "under half", "a large majority", or lose who measured it.
+
+The check is small and grounded. For every ledger claim whose field changed,
+a no-web unit is handed the claim, its stored source quote, and **the whole
+new text of that field** — after condensing, the claim may have moved or
+merged, so "the sentence" has no referent — and returns where the claim now
+lives and whether it is faithful, drifted, or absent. Stage 1 verified against
+the world; stage 2 verifies against stage 1's record. This is the dependency
+stage 1's design named, and the reason the ledger's quotes are durable.
+
+**Stage 2 may not introduce a fact, and that is checked, not trusted.** The
+overview editor writes `why_now` fresh, and condensing two sentences can mint a
+number ("a fourfold gap") that was never a ledger sentence. So stage 1's
+extractor and coverage check run again over stage 2's output; any hard claim
+that does not map to an existing ledger claim fails the stage.
+
+**Locked fields are asserted, not trusted.** Code diffs every field the
+ownership table marks locked (stat values, units, series values, source
+fields; action URLs) against stage 1's output. A byte differs, the stage fails.
+
+**A camp may be renamed** to something shorter or friendlier, never to
+something that changes what it wants. The map's `wants` line goes to the
+fidelity checker with the new name.
+
+**The same honesty applies to what is not a fact.** A position condensed to
+its steelman line is still the strongest honest version of that camp's case,
+not the most quotable. Cutting a camp's best argument to fit a budget is a
+fidelity failure the continuation reader cannot see, which is why the
+positions editor sees every camp at once: symmetry of length and register
+across camps is exactly what an editor is for, and it is the one place in the
+pipeline where seeing all camps together is the point rather than the hazard.
+Length symmetry is code (a ratio across camps); register is one Sonnet read
+of all the steelmen together.
+
+## Length and reading level
+
+**Two numbers per field, kept in one table.** We know roughly how much text
+each slot holds (Jeff, 2026-09-13). So each field gets a **hard bound**, the
+length at which the design visibly breaks or the loader truncates, and a
+**target**, the length to write to. Hard bounds gate; targets are guidance,
+because a lint that fails on guidance stops gating anything. The table is
+derived from the templates and lives in one place; the editors' prompts are
+assembled from it. The poster's longest-word bound is in the table, so stage
+2's exit can guarantee stage 4's sheet checks rather than leaving overflow
+for stage 4 to discover.
+
+**Reading level is measured, reported, and never a gate.** The audience is
+adults, not all of them patient. Guideline: Flesch-Kincaid grade 10–11 for
+condensed text, 12–13 for expanded. Code computes it per section and the
+number goes in the packet as one line. The style sheet carries the
+qualitative version — "a great textbook or an Our World in Data explainer" —
+which is what the editor actually writes to.
+
+## Units
+
+| Unit | Count | Model, effort | Sees | Returns |
+|---|---|---|---|---|
+| Section editor | 1 per section, parallel | Opus 5, medium | stage 1's section, the map, the budget table, count guidelines, style sheet | order, count, both tiers of every kept item, cut record |
+| Crux editor | 1 | Opus 5, high | stage 1's crux, position names and steelmen | lead, highlight, subtitle, both branches |
+| Overview editor | 1, last | Opus 5, medium | the whole condensed layer | summary, scope lines, why_now, basics intro |
+| Budget, count, lock check | code | — | draft, stage 1's draft | hard-bound failures, locked-field diffs |
+| Extractor + coverage check | Sonnet 5, low + code | | stage 2's text | hard claims not in the ledger |
+| Fidelity checker | 1 per changed claim | Sonnet 5, low | claim, stored source quote, the field's new text | faithful, drifted or absent, and how |
+| Continuation reader | 1 per section | Sonnet 5, low | each item's tiers, concatenated | per item: stands alone, continues, restates |
+| Register reader | 1 | Sonnet 5, low | all steelmen and descriptions | per camp: same register or not, and how |
+| Repairer | 1 per failure | Opus 5, medium | the item, the finding, stage 1's text | a patch |
+| Readability, lint, verdict | code | — | draft | grades reported, defects, gate verdict with hash |
+
+Sections run in parallel; the crux after positions and questions, because its
+lead must not contradict a steelman it sits beside; the overview last, because
+the summary describes the page that now exists. Then code checks, extraction,
+fidelity, continuation and register in parallel, one repair round, recheck,
+lint, verdict. About nine Opus calls and thirty small Sonnet calls.
+
+**The crux gets the highest effort in the stage.** Its lead is the poster's
+dark band and the share card's one line; it is the most-read sentence on the
+page and the one stage 1 deliberately left for the editor.
+
+## The shapes the units share
+
+**A section editor's return** — the section as it will ship, plus what left it:
+
+```
+{ "section": "positions",
+  "items": [ { "id": "<frozen id>", "name": "…",
+               "condensed": { "steelman": "…" },
+               "expanded":  { "description": "…", "detail": "…",
+                              "representative_name": "…", "representative_note": "…",
+                              "proponents": "…" } } ],
+  "order_reason": "only if the order departs from stage 1's rank",
+  "cuts": [ { "id": "<frozen id>", "name": "…", "reason": "…" } ] }
+```
+
+`condensed` and `expanded` carry exactly the fields the tier table above
+assigns; the loader flattens them. Locked fields are absent — the editor never
+emits them, and code copies them forward from stage 1 and diffs the result.
+
+**A fidelity verdict**, one per ledger claim whose field changed:
+
+```
+{ "claim": "c17", "now_in": "positions/<id>/description", "verdict": "faithful|drifted|absent",
+  "lost": "precision|direction|magnitude|attribution|none", "note": "…" }
+```
+
+**A continuation verdict**, one per item in a section:
+
+```
+{ "id": "<frozen id>", "standalone": true, "continues": "continues|restates|reintroduces" }
+```
+
+**The cut record** in `evidence.json` is the union of every editor's `cuts`.
+
+## The budget table
+
+One file, derived from the templates and the model's field lengths, with a
+check that fails when a template or a field length changes so the table cannot
+go stale silently. Each row: field, hard bound, target, and one line on which
+render slot sets it. The §8 counts are not in it; they are a separate decision.
+
+## The style sheet
+
+The one document every editor reads. Its contents are decided; its prose is
+written with the other prompts so all five stages share a voice.
+
+- The design system's tone line: calm, precise, intellectually serious but
+  plainspoken; explanatory, not persuasive; a great textbook or an Our World
+  in Data explainer.
+- The two reading-level targets, as intent rather than number.
+- The fidelity rule: precision may go, direction, magnitude and attribution
+  may not.
+- What a steelman line is: the camp's case in one breath, the sentence an
+  adherent would put on the banner — not a slogan, not a summary of the
+  description.
+- Every camp in the same register, to the same length. Weight is order, and
+  only order.
+- The continuation rule: expanded text continues the condensed text and never
+  restates or reintroduces it; condensed text stands alone.
+- Plain text only: `&`, typographic quotes, no markup; US spelling.
+
+## What this stage deliberately lacks
+
+**No web tools, on any unit.** "No new research" enforced by the tool surface.
+
+**No critic panel.** Fidelity, continuation and register are the three checks,
+all groundable, all cheap. Neutrality was enforced by construction in stage 1
+and is read for whole in stage 5.
+
+**No fix loop.** One grounded repair round, then block.
+
+**No `reveal`, no `tier`, no `fold`, no prevalence.** Order, and the §8
+show-count applied to it.
+
+**No length decisions of its own.** The budget table is the single source;
+stage 2 authors to it and stage 4 measures the result.
 
 ---
 
@@ -340,8 +1080,9 @@ art that is right, and do not hand on art that is not.
 
 ## Contract
 
-**Requires:** title, category, scope, overview summary, and the position names,
-all from `topic.json`. Position names matter because one summary line cannot
+**Requires:** stage 2's gate verdict valid, so the summary and position names
+are the ones that ship; title, the first category's `color_key`, scope,
+overview summary and position names from `topic.json`. Position names matter because one summary line cannot
 tell a brief-writer what the topic's tension actually is.
 
 **Produces:** `static/img/topics/<slug>.png` at 1035×690 on white; the Phosphor
@@ -353,9 +1094,8 @@ human can override the pick.
 Phosphor name.
 
 The brief living at `research/topics/<slug>/icon.md` means the next load picks
-up its generation prompt into `Topic.primary_image_prompt` with no flag. v1
-recorded that provenance as unfixable because stage 2 loaded before the brief
-existed; stage 4 loading the topic itself after stage 3 has run closes it.
+up its generation prompt into `Topic.primary_image_prompt` with no flag; stage
+4 loads the topic after stage 3 has run, so the provenance is always present.
 
 ## The prompt is assembled, not written
 
@@ -376,7 +1116,7 @@ qualified to invent. Style cannot drift, briefs get short and comparable, and
 changing a style rule updates every future icon at once.
 
 The **category hex is supplied, not hunted**: `color_key` maps to a `--cat-*`
-token in `tokens.css`. v1 asked the agent to find it by reading prose.
+token in `tokens.css`; the agent is never asked to find it by reading prose.
 
 ## Composition — what makes a scene rather than a lineup
 
@@ -438,9 +1178,10 @@ quality: the file is not blank or corrupt, it is 1035×690 on white, no text
 crept in. Those catch API failures.
 
 **The judge's job is therefore small**: is this the right scene for this topic,
-and does it sit correctly beside its neighbours. Neighbours means *same
-category*, because a shared hue is where a clash shows; v1 handed it the first
-three PNGs alphabetically.
+and does it sit correctly beside its neighbours. It sees the candidates and
+the neighbours only — not the brief, not the round notes, not which candidate
+is the incumbent (§11: checkers are blind to provenance). Neighbours means *same
+category*, because a shared hue is where a clash shows.
 
 **Stops.** No cap on rounds. Stop on a pass. Stop when a round's best fails to
 beat the incumbent, which says more rolls of this prompt will not converge and
@@ -461,7 +1202,7 @@ of pennies on a topic that usually needs one round.
 Stage 3 owns both icons. Stage 1 still emits a Phosphor hint, because the
 planner knows the topic best, but the hint stops being authoritative: stage 3
 validates it against the shipped Phosphor set and only reaches for an agent when
-it does not resolve. v1 validated nothing, so a wrong name rendered as nothing.
+it does not resolve; an unvalidated name renders as nothing.
 
 ---
 
@@ -475,7 +1216,7 @@ produces the files that ship and proves the contract held.
 
 ## Contract
 
-**Requires:** `topic.json` complete; the icon present at
+**Requires:** stage 2's and stage 3's gate verdicts valid; the icon present at
 `static/img/topics/<slug>.png`.
 
 **Produces:**
@@ -540,7 +1281,7 @@ different things with one lens.
 
 **Flow** surfaces scroll and reflow, so there is no canvas to overflow. Assert:
 no horizontal page scroll; no element wider than its container; no clipped text
-where overflow is hidden; the declared fold counts exactly match what is above
+where overflow is hidden; the §8 show-counts exactly match what is above
 Go-deeper; every interactive element clears 44px at ≤640px; no orphaned grid
 row.
 
@@ -621,8 +1362,7 @@ capture that stops happening; and the stage-4-to-stage-2 fix loop.
 ready determination.**
 
 Not a check — everything mechanical was settled upstream and stage 5 requires
-stage 4 to have passed, so unlike v1's gate it needs no check lines and no
-shell. It reads.
+stage 4 to have passed, so it needs no check lines and no shell. It reads.
 
 Its justification is the exception in §9: every other stage reads a slice, and
 this is the only reader that sees the whole. Tone drift across sections, the
@@ -635,7 +1375,8 @@ criteria.
 
 **Requires:** stage 4 passed.
 
-**Produces:** a determination, and at most three notes.
+**Produces:** a determination, everything it saw, and the three notes code
+ranks to the top for the packet.
 
 **Satisfied when:** the determination is recorded. If ready, the orchestrator
 calls `mark_ready`.
@@ -685,17 +1426,23 @@ the pipeline; being cheap here is false economy.
 
 ## What it reads for
 
-**Structure and flow.** Does the condensed layer stand alone or only make sense
-once expanded. Does Go-deeper add or restate. Does the crux follow from the
-questions. Does reading order work on mobile, where the layout differs.
+Only what no slice-reader can see (§9). Stage 2's continuation reader owns
+"does Go-deeper restate"; stage 4's assertions own "does the card match the
+page"; the cartographer owns duplicate camps. What is left is the whole:
 
-**Consistency.** Do two positions argue the same thing. Does a figure in Basics
-sit oddly beside a claim in a position. Does a card promise what the page does
-not. Is one camp written with more energy than another.
+**Structure and flow.** Does the crux follow from the questions. Does reading
+order work on mobile, where the layout differs. Does the page, read top to
+bottom, tell one story.
+
+**Consistency.** Does a figure in Basics sit oddly beside a claim in a
+position. Is one camp written with more energy than another. Is a camp given
+prominence its place in the order does not explain.
 
 **Plausibility, not verification.** Does this hold together. No sources, no
 fact-checking, no web — that was stage 1's, and re-doing it here is the
-duplicated judgment the pipeline caps.
+duplicated judgment the pipeline caps. "Misled" therefore means internal
+inconsistency, and the packet says so, so nobody reads a stage 5 pass as a
+factual review.
 
 ## The determination
 
@@ -720,20 +1467,19 @@ experiences.** Not "the transition could be smoother" but "positions four and
 seven argue the same thing, so a reader meets the same case twice." If you
 cannot say what a reader does or thinks differently, it is not a note.
 
-Capped at three. Brief only means something if it is enforced, and a cap forces
-ranking instead of listing.
+Three reach the packet. The reader reports everything it sees — a gate told
+to say little says less than it saw (§11, conservatism suppresses recall) —
+and code ranks and truncates to three, with the rest kept in `evidence.json`.
 
 ---
 
 ## Open questions
 
-- The per-field ownership and locking table (§8).
-- Concurrency: parallel units against one file, and against a burn rate that is
-  only sampled once per call.
+- Concurrency against a burn rate that is only sampled once per call (the
+  one-file problem is settled in §5).
 - Where stage 5's determination and notes are recorded — `evidence.json`,
   `review.md`, or both.
-- Where the rules live and how a stage's prompt is assembled. v1 scattered this
-  across agent definitions, inline strings and the manual, and grew a hook to
-  check for drift. One home, decided once.
+- Where the rules live and how a stage's prompt is assembled. One home,
+  decided once, so a rule cannot drift between copies.
 - Deliberate re-runs over a finished topic. The satisfied-when check handles the
   accident; deliberate regeneration is what killed refresh.
