@@ -12,7 +12,7 @@ participant's LAST action per item + prompt: a retract or clear drops it, a
 switch or re-save replaces it. Items are keyed by their text: the log is
 denormalized at write time, so it records what the reader actually saw.
 
-Runbook: docs/PARTICIPATION.md.
+Runbook: docs/DEPLOY.md §5.
 """
 
 from collections import Counter, OrderedDict, defaultdict
