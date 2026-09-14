@@ -90,12 +90,12 @@ kind / action / topic / trigger, search text / IP / session).
   indefinitely. Decide before the public flip and record it here.
 - No reader-facing view beyond the existing gated aggregates on the page.
 
-## 5. Runbook — participation review (`/participation-review <slug>`)
+## 5. Runbook — participation review
 
-The skill at `.claude/skills/participation-review/SKILL.md` launches this.
-Run before a stage-5 review, or whenever a topic's participation looks worth
-reading. It produces one saved report per topic. **It recommends; a human
-decides every line and makes any edit.** The skill never touches topic JSON or
+Run by hand for one `<slug>` (the `/participation-review` launcher skill was
+removed 2026-09-14; this runbook is the whole procedure). Run before a stage-5
+review, or whenever a topic's participation looks worth reading. It produces one saved report per topic. **It recommends; a human
+decides every line and makes any edit.** The review never touches topic JSON or
 the DB. Runs inline in the
 invoking session — no subagents, no workflow.
 
