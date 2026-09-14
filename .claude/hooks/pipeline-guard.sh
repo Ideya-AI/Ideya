@@ -32,12 +32,12 @@ SCAN=$(printf '%s\n' "$CMD" | awk '
 # Anchored to a manage.py/django-admin invocation so that grepping for the word,
 # or editing the file that defines it, is not mistaken for running it.
 if grep -qE '(manage\.py|django-admin)[[:space:]]+publish_topic\b' <<<"$SCAN"; then
-  echo "BLOCKED: publish_topic is stage 5 and belongs to the human (ENGINE.md §5). Run the pipeline to stage 4.5 and hand over the review packet instead." >&2
+  echo "BLOCKED: publish_topic belongs to the human (PIPELINE.md §2). The pipeline ends at ready." >&2
   exit 2
 fi
 
 if grep -q 'load_topic_draft' <<<"$SCAN" && grep -qE -- '--status[= ]+published' <<<"$SCAN"; then
-  echo "BLOCKED: publishing is a human step (author-topic stage 5). Load with --status draft and write the review packet instead." >&2
+  echo "BLOCKED: publishing is a human step (PIPELINE.md §2). Load without --status published." >&2
   exit 2
 fi
 
