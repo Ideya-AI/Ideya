@@ -6,7 +6,7 @@ Django + HTMX + Alpine. A curated atlas of hard debates; depth is an axis, not a
 
 - Always `.venv/bin/python`, run from the repo root.
 - Dev server: `DJANGO_DEBUG=true .venv/bin/python manage.py runserver 8641 --noreload`.
-  **Never 8642** — that is the live container (a hook blocks it).
+  **Never 8642** — that is the live container.
 - **Restart the dev server after any template edit.** Django caches compiled templates
   even under DEBUG, and with `--noreload` nothing invalidates the cache — renders
   silently serve the pre-edit template. This has cost real debugging time twice.
@@ -14,7 +14,7 @@ Django + HTMX + Alpine. A curated atlas of hard debates; depth is an axis, not a
 ## Invariants
 
 - **Automation drafts; a human publishes.** Never `load_topic_draft --status published`
-  and never `publish_topic` (a hook blocks both). Publishing is stage 5 and belongs
+  and never `publish_topic`. Publishing is stage 5 and belongs
   to the human. A topic's core status is one field with four stops —
   `not_started` → `in_progress` → `ready` → `published`. The engine's job ends at
   `ready`; only Jeff crosses the last line, and only `published` is public.

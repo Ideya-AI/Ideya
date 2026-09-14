@@ -34,7 +34,6 @@ directory and is disposable.
 withdraws that certification, because what was verified is no longer what the
 file says. `publish_topic` is a switch that refuses anything not sitting at
 `ready`; it re-derives no readiness and knows nothing about how it was earned.
-A hook blocks automation from ever calling it.
 
 Automation drafts; a human publishes.
 
