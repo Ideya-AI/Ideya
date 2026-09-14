@@ -1,6 +1,6 @@
 # Vaccine Mandates & Public Health Authority — primary icon art brief
 
-Handoff brief for an illustrator or image/vector tool. Full style theme: `../ICONOGRAPHY.md`.
+Handoff brief for an illustrator or image/vector tool. Full style theme: `docs/DESIGN.md` (Topic art).
 Template siblings: `nuclear-energy.md` (the tuned reference), `ai-alignment.md` and
 `frontier-ai-regulation.md` (most recent), `birth-rate-decline-pronatalism.md`.
 First topic in **Bio, Health & the Human Body** — sets the rose reference.

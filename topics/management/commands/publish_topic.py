@@ -123,11 +123,11 @@ class Command(BaseCommand):
     def _live_block(self, slug, off):
         """The live site is a different database on another host, so the switch
         has to be thrown there too. Printing the exact commands beats retyping
-        them out of DEPLOY.md."""
+        them out of docs/DEPLOY.md."""
         if off:
             return (
                 "\nThe live site is a separate database — take it private there too "
-                "(DEPLOY.md §3):\n"
+                "(docs/DEPLOY.md §3):\n"
                 f"  docker exec ideya python manage.py publish_topic --slug {slug} "
                 "--off --confirm\n"
             )
@@ -141,7 +141,7 @@ class Command(BaseCommand):
         ]
         present = " ".join(a for a in artifacts if Path(a).exists())
         return (
-            "\nNext — commit, then put it live (DEPLOY.md §3):\n"
+            "\nNext — commit, then put it live (docs/DEPLOY.md §3):\n"
             f"  git add {present}\n"
             f"  git commit -m 'Publish {slug}'\n"
             "  # rebuild + redeploy the image first if the JSON changed since the "

@@ -1,6 +1,6 @@
 # Moral Status of Animals — primary icon art brief
 
-Handoff brief for an illustrator or image/vector tool. Full style theme: `../ICONOGRAPHY.md`.
+Handoff brief for an illustrator or image/vector tool. Full style theme: `docs/DESIGN.md` (Topic art).
 Template siblings: `nuclear-energy.md` (the tuned reference), `vaccine-mandates.md` and
 `ai-alignment.md` (most recent), `birth-rate-decline-pronatalism.md`.
 First topic in **Ethics & Philosophy** — sets the terracotta reference.

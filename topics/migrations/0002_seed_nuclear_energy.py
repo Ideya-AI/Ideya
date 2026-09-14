@@ -8,7 +8,7 @@ has a single source of truth outside migrations:
   - full topics: research/topics/<slug>.json
     (loaded by `manage.py load_topic_draft`, exported by `manage.py export_topic`)
 
-Fresh databases bootstrap via the recipe in DEPLOY.md §3 instead of this
+Fresh databases bootstrap via the recipe in docs/DEPLOY.md §3 instead of this
 migration. The file itself must remain (empty) so the migration chain that
 existing databases already recorded stays intact.
 """

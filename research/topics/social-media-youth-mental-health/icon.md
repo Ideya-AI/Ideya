@@ -1,6 +1,6 @@
 # Smartphones, Social Media & Youth Mental Health — primary icon art brief
 
-Handoff brief for an illustrator or image/vector tool. Full style theme: `../ICONOGRAPHY.md`.
+Handoff brief for an illustrator or image/vector tool. Full style theme: `docs/DESIGN.md` (Topic art).
 Template siblings: `nuclear-energy.md` (the tuned reference),
 `birth-rate-decline-pronatalism.md` — the other **Society, Culture & Identity** topic and
 the olive reference, this icon's nearest neighbor on the wall —

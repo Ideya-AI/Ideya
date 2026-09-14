@@ -1,6 +1,6 @@
 # Birth-Rate Decline & Pronatalism — primary icon art brief
 
-Handoff brief for an illustrator or image/vector tool. Full style theme: `../ICONOGRAPHY.md`.
+Handoff brief for an illustrator or image/vector tool. Full style theme: `docs/DESIGN.md` (Topic art).
 Template siblings: `nuclear-energy.md` (the tuned reference), `climate-tipping-points.md`,
 `content-moderation-free-speech.md`, `housing-affordability-crisis.md`.
 First topic in **Society, Culture & Identity** — sets the olive reference.

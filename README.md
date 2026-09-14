@@ -39,7 +39,7 @@ The goal is not agreement. It's that two people who disagree can point at the sa
 
 ## How it's made
 
-Content moves through a staged pipeline: substance research with an adversarial gate (neutrality, steelman, fact-source, and crux critics), then a separate presentation stage, then a review packet a human editor approves before anything publishes. Every statistic carries its source and two dates — when the data is from, and when it was verified. A freshness system flags topics as they go stale, and each topic's content lives as a single reviewable JSON file under `research/topics/`.
+Content moves through a staged pipeline: research that maps every camp and checks every hard claim against a fetched source, a separate writing stage that rewords but never changes facts, rendering and review, and a packet a human editor approves before anything publishes. Every statistic carries its source and two dates — when the data is from, and when it was verified. Each topic lives as one reviewable directory under `research/topics/`, from first title to published page.
 
 Reader participation is anonymous by design (no accounts): votes, leans, and written responses feed back into the maps behind reveal gates, so small early samples never masquerade as consensus. Curation leads; participation refines.
 
@@ -49,9 +49,9 @@ This repository is public for clarity of intentions — so the editorial rules, 
 
 Stack: Django + HTMX + Alpine, token-native CSS, SQLite.
 
-- `topics/` — the app: models, views, and the management commands that load, export, render (posters/social cards), and maintain content.
-- `templates/`, `static/` — the product surface (design tokens in `static/css/tokens.css`).
-- `design/` — the locked design system: foundations, component specs, responsive rules, data model.
-- `research/` — the content pipeline: one JSON per topic (the source of truth, cradle to grave), the category taxonomy, icon briefs + generator, the authoring workflows, and the governing docs `RESEARCH_PIPELINE.md` (the authoring engine + editorial quality bar) and `ICONOGRAPHY.md` (the locked icon style).
-- `DEPLOY.md` — how the site goes live (env vars, container, content seeding).
-- `accounts/` — shelved accounts app (kept by decision; no public entry points).
+- `ideya/`, `topics/`, `templates/`, `static/` — the web app: settings, the content models and views, the management commands that load, render, and check content, and the product surface (design tokens in `static/css/tokens.css`).
+- `accounts/` — the email-keyed user model that participation rows and the admin point at. No public entry points.
+- `research/topics/<slug>/` — the set of topics, one directory each, cradle to grave. `topic.json` is the source of truth for everything except participation. `categories.json` is the taxonomy.
+- `research/pipeline/` — the authoring pipeline: `PIPELINE.md` (the design).
+- `research/UI_DEFECTS.md` — the register of code/CSS defects found while reviewing rendered topics.
+- `docs/` — `DESIGN.md` (the locked design system), `DEPLOY.md` (how the site goes live), `PARTICIPATION.md` (reading what readers did).

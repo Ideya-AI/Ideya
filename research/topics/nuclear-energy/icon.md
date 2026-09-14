@@ -1,6 +1,6 @@
 # Nuclear Energy — primary icon art brief
 
-Handoff brief for an illustrator or image/vector tool. Full style theme: `../ICONOGRAPHY.md`.
+Handoff brief for an illustrator or image/vector tool. Full style theme: `docs/DESIGN.md` (Topic art).
 
 ## Use
 The topic's **primary hero image** (later: slide 1 of the topic's image carousel). Shows large on the topic page, poster, and social cards; also reduced into a rounded-square tinted tile and shown on a dark band. So it must read both large and small, on light and dark.

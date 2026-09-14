@@ -297,7 +297,7 @@ something is actually broken.
 ## 11. Machine-level findings that apply to every stage
 
 From the 2026-09-12 meta-research. Stage-specific findings live in
-`research/STAGE1_RESEARCH.md`; these are cross-cutting and belong here.
+`STAGE1_RESEARCH.md` (deleted 2026-09-14 once folded into §5; in git history); these are cross-cutting and belong here.
 
 ### WebSearch cannot ground a claim
 

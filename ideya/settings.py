@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # --------------------------------------------------------------------------- #
 # Environment (12-factor). A local .env (gitignored) is loaded if present so
-# `manage.py runserver` works with no exports; DEPLOY.md documents every
+# `manage.py runserver` works with no exports; docs/DEPLOY.md documents every
 # variable. Production sets real environment variables.
 # --------------------------------------------------------------------------- #
 def _load_dotenv(path):
@@ -105,9 +105,6 @@ INSTALLED_APPS = [
 
 AUTH_USER_MODEL = "accounts.User"
 
-LOGIN_URL = "accounts:login"
-LOGIN_REDIRECT_URL = "/"
-LOGOUT_REDIRECT_URL = "/"
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",

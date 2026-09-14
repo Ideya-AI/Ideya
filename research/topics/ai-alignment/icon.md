@@ -1,6 +1,6 @@
 # AI Alignment Approaches — primary icon art brief
 
-Handoff brief for an illustrator or image/vector tool. Full style theme: `../ICONOGRAPHY.md`.
+Handoff brief for an illustrator or image/vector tool. Full style theme: `docs/DESIGN.md` (Topic art).
 Template siblings: `nuclear-energy.md` (the tuned reference),
 `frontier-ai-regulation.md` (most recent), `ai-takeoff-loss-of-control.md`
 and `ai-future-of-work.md` (the other AI-category scenes — this one must not echo them).

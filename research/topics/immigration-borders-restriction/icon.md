@@ -1,6 +1,6 @@
 # Immigration: Open Borders vs. Restriction — primary icon art brief
 
-Handoff brief for an illustrator or image/vector tool. Full style theme: `../ICONOGRAPHY.md`.
+Handoff brief for an illustrator or image/vector tool. Full style theme: `docs/DESIGN.md` (Topic art).
 Template siblings: `nuclear-energy.md` (the tuned reference),
 `democratic-backsliding-populism.md` — the other **Governance & Political Order** topic,
 the gov-purple reference and this icon's nearest neighbor on the wall —

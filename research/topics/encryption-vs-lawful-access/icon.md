@@ -1,6 +1,6 @@
 # Encryption vs. Lawful Access — primary icon art brief
 
-Handoff brief for an illustrator or image/vector tool. Full style theme: `../ICONOGRAPHY.md`.
+Handoff brief for an illustrator or image/vector tool. Full style theme: `docs/DESIGN.md` (Topic art).
 Template siblings: `nuclear-energy.md` (the tuned reference), `moral-status-of-animals.md`,
 `vaccine-mandates.md` and `ai-alignment.md` (most recent),
 `content-moderation-free-speech.md` (the other **Digital Society** scene — this one must

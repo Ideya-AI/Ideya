@@ -28,7 +28,7 @@ Django + HTMX + Alpine. A curated atlas of hard debates; depth is an axis, not a
 - **Order is the whole mechanism for weight.** Every section lists its items most
   important first, and that is array order in `topic.json`. No prevalence numbers,
   no tiers. (The site still sorts positions by `prevalence_weight` until the §8 site
-  delta in `PIPELINE.md` is built; the pipeline design already assumes file order.)
+  delta in `research/pipeline/PIPELINE.md` is built; the pipeline design already assumes file order.)
 - **Stage 2 rewords, it does not change facts.** Stat values, units, source fields and
   URLs leave stage 1 unchanged; everything else may be reworded so long as a
   restatement loses only precision, never direction, magnitude or attribution.
@@ -57,7 +57,7 @@ Django + HTMX + Alpine. A curated atlas of hard debates; depth is an axis, not a
     that is where Django serves them from.
 - `research/categories.json` — the taxonomy.
 - `research/UI_DEFECTS.md` — the live register of code/CSS defects found while
-  reviewing rendered topics. `design/` — the locked design system; treat it as
+  reviewing rendered topics. `docs/DESIGN.md` — the locked design system; treat it as
   authoritative over any prompt that contradicts it.
 
 ## The authoring pipeline
@@ -66,13 +66,9 @@ Django + HTMX + Alpine. A curated atlas of hard debates; depth is an axis, not a
 right now. The previous pipeline was deleted on 2026-09-14; it is in git history
 only and is not a baseline for anything.
 
-- `research/PIPELINE.md` — **the design**: goals, scope, how it reaches Claude,
+- `research/pipeline/PIPELINE.md` — **the design**: goals, scope, how it reaches Claude,
   orchestration, state, budget, storage, schema, failure semantics, machine-level
   findings, and all five stages in full. Read it before touching the pipeline.
-- `research/STAGE1_RESEARCH.md` — **meta-research for stage 1, findings only.**
-  How people do this well (enumerating camps, weighting, steelmanning, cruxes,
-  sourcing, stopping) and what is measured about how machines do it badly. It
-  reports and does not conclude; where sources conflict, both are recorded.
 
 The bookends are fixed and are the pipeline's whole contract: it takes a topic
 from `not_started` to `ready`, and nothing else. Before it is the topic

@@ -1,6 +1,6 @@
 # Living With Wildfire — primary icon art brief
 
-Handoff brief for an illustrator or image/vector tool. Full style theme: `../ICONOGRAPHY.md`.
+Handoff brief for an illustrator or image/vector tool. Full style theme: `docs/DESIGN.md` (Topic art).
 Template siblings: `nuclear-energy.md` (the tuned reference), `universal-basic-income.md`,
 `housing-affordability-crisis.md`.
 

@@ -1,6 +1,6 @@
 # Causes & Cures of Economic Inequality — primary icon art brief
 
-Handoff brief for an illustrator or image/vector tool. Full style theme: `../ICONOGRAPHY.md`.
+Handoff brief for an illustrator or image/vector tool. Full style theme: `docs/DESIGN.md` (Topic art).
 Template siblings: `nuclear-energy.md` (the tuned reference), `universal-basic-income.md`,
 `housing-affordability-crisis.md`, `ai-future-of-work.md` — the other **Economy & Work**
 topics, and this icon's nearest neighbors on the wall.
