@@ -84,10 +84,6 @@ PARTICIPATION_RATELIMIT = "test" not in sys.argv
 # origin of the request that rendered the artifact (fine in dev, wrong in print).
 PUBLIC_ORIGIN = os.environ.get("PUBLIC_ORIGIN", "").rstrip("/")
 
-# Google Analytics 4 measurement id (e.g. G-XXXXXXXXXX). Empty → no analytics
-# markup is rendered at all. Set it in prod.env and restart to enable.
-GA_MEASUREMENT_ID = os.environ.get("GA_MEASUREMENT_ID", "")
-
 
 # Application definition
 
