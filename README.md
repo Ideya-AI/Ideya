@@ -53,5 +53,4 @@ Stack: Django + HTMX + Alpine, token-native CSS, SQLite.
 - `accounts/` — the email-keyed user model that participation rows and the admin point at. No public entry points.
 - `research/topics/<slug>/` — the set of topics, one directory each, cradle to grave. `topic.json` is the source of truth for everything except participation. `categories.json` is the taxonomy.
 - `research/pipeline/` — the authoring pipeline: `PIPELINE.md` (the design).
-- `research/UI_DEFECTS.md` — the register of code/CSS defects found while reviewing rendered topics.
 - `docs/` — `DESIGN.md` (the locked design system), `DEPLOY.md` (how the site goes live), `PARTICIPATION.md` (reading what readers did).

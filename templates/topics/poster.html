@@ -53,6 +53,7 @@
      unit's internal spaces in Chrome's print path with Plus Jakarta Sans
      ("3.7 M homes" → "3.7Mhomes"); the unit needs normal tracking. */
   .tv small{font-size:22pt;font-weight:700;color:var(--ink-400);letter-spacing:0}
+  .tv small.u-word{margin-left:.18em}
   .vrow{margin-top:auto;padding-top:14px}
   .rank{display:flex;flex-direction:column;gap:9px}
   .rrow{display:grid;grid-template-columns:0.9in 1fr 0.66in;align-items:center;gap:12px}
@@ -142,9 +143,9 @@
           </div></div>
           <div class="tnote">{{ stat.note }}</div>
           {% else %}
-          <div class="tv">{{ stat.value }}{% if stat.unit %}<small>{{ stat.unit }}</small>{% endif %}</div>
+          <div class="tv">{{ stat.value }}{% if stat.unit %}<small{% if stat.unit|slice:":1" == " " %} class="u-word"{% endif %}>{{ stat.unit }}</small>{% endif %}</div>
           {# Meter only when there is a true share to show — an empty track under a bare number reads as "zero" (mirrors _stat_tile's guard). #}
-          <div class="vrow">{% if stat.fill_pct is not None %}<div class="pbar"><i style="width:{{ stat.fill_pct }}%"></i></div>{% endif %}<div class="tnote">{{ stat.note }}</div></div>
+          <div class="vrow">{% if stat.fill_pct %}<div class="pbar"><i style="width:{{ stat.fill_pct }}%"></i></div>{% endif %}<div class="tnote">{{ stat.note }}</div></div>
           {% endif %}
         </div>
         {% endfor %}

@@ -252,8 +252,8 @@ body .sec.is-open .when-normal.is-inline, body .sec.is-open .when-deep.is-inline
 
 /* Stub topic — on the map, not yet written */
 .stub-note { display: flex; gap: 13px; margin-top: 26px; padding: 18px 20px; border-style: dashed; background: var(--ink-50); }
-.stub-note.draft-note { margin: 0 0 10px; border-color: color-mix(in srgb, var(--pos-amber) 45%, var(--ink-100)); }
-.stub-note.draft-note i { color: var(--pos-amber); }
+.stub-note.draft-note { margin: 0 0 10px; border-color: color-mix(in srgb, var(--notice) 45%, var(--ink-100)); }
+.stub-note.draft-note i { color: var(--notice); }
 .stub-note i { font-size: 22px; color: var(--accent-strong); flex: none; margin-top: 1px; }
 .stub-note div { font-size: var(--text-sm); line-height: var(--leading-normal); color: var(--fg2); }
 .stub-note b { display: block; color: var(--fg1); font-weight: var(--weight-semibold); margin-bottom: 3px; }
@@ -293,7 +293,7 @@ body .sec.is-open .when-normal.is-inline, body .sec.is-open .when-deep.is-inline
 /* ranked bars */
 .rank { display: flex; flex-direction: column; gap: 9px; }
 /* label column: fixed share of the tile (same for every row, so bars stay aligned) — a hard 64px wrapped long labels into slivers on wide tiles and narrow viewports */
-.rrow { display: grid; grid-template-columns: minmax(64px, 28%) 1fr minmax(52px, 12ch); align-items: center; gap: 12px; font-size: var(--text-sm); }
+.rrow { display: grid; grid-template-columns: minmax(88px, 28%) minmax(36px, 1fr) minmax(52px, 10ch); align-items: center; gap: 12px; font-size: var(--text-sm); }
 .rrow .rk2 { color: var(--fg2); min-width: 0; overflow-wrap: break-word; hyphens: auto; }
 .rrow .rbar { height: 9px; background: var(--ink-100); border-radius: var(--radius-pill); overflow: hidden; }
 .rrow .rbar i { display: block; height: 100%; background: var(--ink-300); border-radius: var(--radius-pill); }
@@ -479,7 +479,6 @@ body .sec.is-open .when-normal.is-inline, body .sec.is-open .when-deep.is-inline
 /* narrow phones: the kind + position labels can't share one row */
 @media (max-width: 360px) { .atop { flex-direction: column; align-items: flex-start; gap: 4px; } }
 /* under 360px a ~40px bar track encodes nothing — label + value carry the row */
-@media (max-width: 360px) { .rrow { grid-template-columns: minmax(96px, 1fr) minmax(44px, max-content); } .rrow .rbar { display: none; } }
 
 /* ============================================================================
    HOME
@@ -748,7 +747,9 @@ a.sp-cat:hover { text-decoration: none; box-shadow: inset 0 0 0 1px color-mix(in
 }
 
 /* Vote buttons (reset wrapper around the caret icons) */
-.vbtn { display: inline-flex; padding: 0; line-height: 0; }
+.vbtn { display: inline-flex; padding: 0; line-height: 0; position: relative; }
+/* 44px touch target without growing the visual control */
+.vbtn::after { content: ""; position: absolute; left: 50%; top: 50%; width: 44px; height: 44px; transform: translate(-50%, -50%); }
 .vbtn:disabled { cursor: default; }
 
 /* Position representative (deep) */
@@ -984,3 +985,16 @@ a.sp-cat:hover { text-decoration: none; box-shadow: inset 0 0 0 1px color-mix(in
 .follow-for .pdot { transform: translateY(-1px); }
 .follow-for i { font-size: 18px; color: var(--accent-strong); flex: none; transform: translateY(2px); }
 .follow-foot { margin-top: 18px; display: flex; justify-content: flex-end; }
+
+/* ranked rows at very narrow widths: two columns, bar hidden. Lives after the
+   640px block so it wins at equal specificity. */
+@media (max-width: 360px) { .rrow { grid-template-columns: minmax(96px, 1fr) minmax(44px, max-content); } .rrow .rbar { display: none; } }
+
+/* touch: the Go-deeper chip stays 34px visually but takes a 44px hit area; the
+   nav search collapses to an icon that opens the full-screen overlay */
+@media (max-width: 640px) {
+  .deeper { position: relative; }
+  .deeper::after { content: ""; position: absolute; left: 0; right: 0; top: -6px; bottom: -6px; }
+  .search { flex: none; width: 42px; height: 42px; padding: 0; margin-inline: auto 0; justify-content: center; }
+  .search .kbd { display: none; }
+}

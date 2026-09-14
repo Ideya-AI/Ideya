@@ -18,8 +18,8 @@ Django + HTMX + Alpine. A curated atlas of hard debates; depth is an axis, not a
   to the human. A topic's core status is one field with four stops —
   `not_started` → `in_progress` → `ready` → `published`. The engine's job ends at
   `ready`; only Jeff crosses the last line, and only `published` is public.
-- **The pipeline never edits templates or CSS.** Log code/CSS defects in the review
-  packet for the human instead.
+- **The pipeline never edits templates or CSS.** Log code/CSS defects in the topic's
+  review packet for the human instead.
 - **Content fields are plain text**: write `&`, never `&amp;`; typographic quotes
   (’ “ ”), never straight; no markdown, no HTML. The renderer escapes literally, so
   markup surfaces as garbage on the page.
@@ -56,9 +56,8 @@ Django + HTMX + Alpine. A curated atlas of hard debates; depth is an axis, not a
   - Shipped images stay under `static/img/{topics,social}/<slug>.png`, because
     that is where Django serves them from.
 - `research/categories.json` — the taxonomy.
-- `research/UI_DEFECTS.md` — the live register of code/CSS defects found while
-  reviewing rendered topics. `docs/DESIGN.md` — the locked design system; treat it as
-  authoritative over any prompt that contradicts it.
+- `docs/DESIGN.md` — the locked design system; treat it as authoritative over any
+  prompt that contradicts it.
 
 ## The authoring pipeline
 

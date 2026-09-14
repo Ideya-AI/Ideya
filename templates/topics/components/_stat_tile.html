@@ -38,7 +38,7 @@ spans a trailing orphan across the row.{% endcomment %}
 
   {% else %}{# bar / sparkline #}
     <div class="tv">{{ stat.value|sup_exp }}{% if stat.unit %}<small{% if stat.unit|slice:":1" == " " %} class="u-word"{% endif %}>{{ stat.unit }}</small>{% endif %}</div>
-    {% if stat.fill_pct is not None %}<div class="vrow"><div class="pbar"><i style="width:{{ stat.fill_pct }}%"></i></div></div>{% endif %}
+    {% if stat.fill_pct %}<div class="vrow"><div class="pbar"><i style="width:{{ stat.fill_pct }}%"></i></div></div>{% endif %}
   {% endif %}
 
   {% if stat.note %}<div class="tnote">{{ stat.note|sup_exp }}</div>{% endif %}
