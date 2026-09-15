@@ -437,7 +437,6 @@ def site_share(request):
         "topics/site_share.html",
         {
             "categories": Category.objects.all(),
-            "topics_total": Topic.objects.count(),
             "render_card": request.GET.get("render") == "og",
         },
     )
@@ -459,7 +458,6 @@ def category_share(request, slug):
         {
             "category": category,
             "topics": topics,
-            "topics_total": category.topics(manager="published").count(),
             "render_card": request.GET.get("render") == "og",
         },
     )
@@ -625,7 +623,7 @@ def vote(request, target, pk):
     if delta > 0:
         response = _with_follow_up(
             request, response, target, obj, Prompt.TRIGGER_VOTE,
-            "Thanks for the upvote", "caret-up",
+            "", "",
         )
     return response
 

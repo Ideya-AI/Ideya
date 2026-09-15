@@ -217,20 +217,9 @@ class Migration(migrations.Migration):
                 (
                     "color_key",
                     models.CharField(
-                        choices=[
-                            ("energy", "Green (energy/climate)"),
-                            ("tech", "Blue (AI/tech)"),
-                            ("gov", "Purple (governance)"),
-                            ("econ", "Amber (economy)"),
-                            ("ethics", "Rust (ethics)"),
-                            ("risk", "Slate (global risk)"),
-                            ("digital", "Teal (digital society)"),
-                            ("bio", "Rose (bio/health)"),
-                            ("society", "Olive (society/culture)"),
-                        ],
-                        default="energy",
-                        help_text="Maps to a --cat-* token. Used in discovery tiers only.",
-                        max_length=10,
+                        blank=True,
+                        help_text="Equals the slug: maps to the --cat-<slug> token. Discovery tiers only.",
+                        max_length=40,
                     ),
                 ),
                 (

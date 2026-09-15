@@ -1,6 +1,6 @@
 {% comment %}Position importance control — upvote only (downvotes retired
 2026-08-01). POST casts; the same participant again retracts. HTMX-swapped.
-Expects `p` with `.user_vote` (1 or 0) and `.importance` (upvote count);
+Expects `p` with `.user_vote` (1 or 0) and `.importance` (upvote count, shown once nonzero);
 `prefix` ("pimp" / "spimp") keeps the id unique across the card and the mobile
 sheet.{% endcomment %}
 {% with pi=prefix|default:"pimp" %}
@@ -11,6 +11,6 @@ sheet.{% endcomment %}
     aria-label="Upvote this position" aria-pressed="{% if p.user_vote == 1 %}true{% else %}false{% endif %}">
     <i class="ph-{% if p.user_vote == 1 %}fill ph-caret-up up{% else %}duotone ph-caret-up{% endif %}"></i>
   </button>
-  <b>{% if p.show_count %}{{ p.importance }}{% else %}·{% endif %}</b>
+  <b>{% if p.importance %}{{ p.importance }}{% endif %}</b>
 </span>
 {% endwith %}

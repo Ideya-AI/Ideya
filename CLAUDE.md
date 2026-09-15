@@ -46,8 +46,8 @@ Django + HTMX + Alpine. A curated atlas of hard debates; depth is an axis, not a
   to grave: a topic with only a title and a published one are the same object at
   different stops. The directory name IS the slug.
   - `topic.json` — the product the loader reads. Index fields at the top (slug,
-    title, status, scope, categories, related), `draft` under them once there is
-    content. The source of truth for everything except participation.
+    title, status, scope, primary_category, categories, related), `draft` under
+    them once there is content. The source of truth for everything except participation.
   - `evidence.json` — what the pipeline knows: the map, the claim ledger, the cut
     record, gate verdicts. Durable, because later stages depend on it. (Not yet
     present on any topic; the v2 pipeline writes it.)

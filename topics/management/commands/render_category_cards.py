@@ -3,7 +3,7 @@ behind `Category.social_card` / og:image. Mirrors `render_social` (topics), but
 for categories: one 1200x630 card each, captured at 2x (2400x1260) to
 static/img/social/cat-<slug>.png. Needs a running dev server + Chrome on PATH.
 
-  manage.py render_category_cards --slug climate-env
+  manage.py render_category_cards --slug climate-energy
   manage.py render_category_cards --all
 """
 

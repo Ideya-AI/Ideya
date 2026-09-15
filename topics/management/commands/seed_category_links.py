@@ -1,7 +1,7 @@
 """Seed the 'Connects to' adjacency between categories (idempotent).
 
 The taxonomy (`research/categories.json`) leaves category relationships null, and the
-9 top-level categories are peers (no parent hierarchy), so the adjacency is an
+10 top-level categories are peers (no parent hierarchy), so the adjacency is an
 editorial graph of intellectual neighbours — the pairs a reader browsing one
 category would plausibly cross into. `Category.connects_to` is symmetrical, so
 each undirected edge is declared once. Declarative: clears all links first, then
@@ -19,7 +19,7 @@ from topics.models import Category
 EDGES = [
     ("global-risk", "ai"),
     ("global-risk", "bio-health"),
-    ("global-risk", "climate-env"),
+    ("global-risk", "climate-energy"),
     ("global-risk", "governance"),
     ("ai", "digital"),
     ("ai", "economy"),
@@ -27,13 +27,19 @@ EDGES = [
     ("ai", "governance"),
     ("digital", "society"),
     ("digital", "governance"),
-    ("climate-env", "economy"),
-    ("climate-env", "governance"),
+    ("climate-energy", "economy"),
+    ("climate-energy", "governance"),
+    ("climate-energy", "food-land"),
+    ("food-land", "ethics"),
+    ("food-land", "bio-health"),
+    ("food-land", "economy"),
+    ("food-land", "global-risk"),
     ("bio-health", "ethics"),
     ("bio-health", "society"),
     ("economy", "governance"),
     ("economy", "society"),
     ("society", "ethics"),
+    ("society", "governance"),
     ("governance", "ethics"),
 ]
 

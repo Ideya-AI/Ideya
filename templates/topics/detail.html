@@ -28,6 +28,7 @@
      or the extra questions collapse to a sliver column in mobile captures */
   @media (max-width: 640px) { #main .q-xtra { display: block !important; } }
   #main .pos-xtra { display: flex !important; }
+  #main .act-xtra { display: flex !important; }
   #main .tmore, #main .qmore, #main .pmore { display: block !important; }
   #main .csplit { display: grid !important; }
   /* reveal layers (mobile gates these behind each section's Go-deeper) */
@@ -39,8 +40,6 @@
      captures without these: expanded renders showed a phantom dead column and
      equal-height-stretched cards the live page never has (found 2026-08-28). */
   #main .basics, #main .pos-grid { align-items: start; }
-  #main .pos-grid .pos-fill-open { grid-column: 1 / -1; }
-  #main .pos-grid .pos-fill-base { grid-column: auto; }
 </style>
 {% endif %}{% endblock %}
 
@@ -76,12 +75,12 @@
       {% if not sections %}
       <section class="sec" id="overview">
         <div class="ov-badges">
-          {% for cat in topic.category_badges %}
+          {% with cat=topic.color_category %}{% if cat %}
           <a class="ov-badge" href="{{ cat.get_absolute_url }}"
              style="--cat: {{ cat.color_var }}; --cat-tint: {{ cat.tint_var }};">
             <i class="ph-duotone ph-{{ cat.icon|default:'squares-four' }}"></i>{{ cat.name }}
           </a>
-          {% endfor %}
+          {% endif %}{% endwith %}
         </div>
         {% if topic.primary_art %}
         <figure class="ov-art">
@@ -118,12 +117,12 @@
           </figure>
           <div class="ov-hero-text">
             <div class="ov-badges">
-              {% for cat in topic.category_badges %}
-              <a class="ov-badge{% if not forloop.first %} when-normal is-inline{% endif %}" href="{{ cat.get_absolute_url }}"
+              {% with cat=topic.color_category %}{% if cat %}
+              <a class="ov-badge" href="{{ cat.get_absolute_url }}"
                  style="--cat: {{ cat.color_var }}; --cat-tint: {{ cat.tint_var }};">
                 <i class="ph-duotone ph-{{ cat.icon|default:'squares-four' }}"></i>{{ cat.name }}
               </a>
-              {% endfor %}
+              {% endif %}{% endwith %}
             </div>
             <h1 class="ov-title">{{ topic.title }}</h1>
             {% if topic.summary %}<p class="ov-desc ov-desc--art">{{ topic.summary }}</p>{% endif %}
@@ -131,12 +130,12 @@
         </div>
         {% else %}
         <div class="ov-badges">
-          {% for cat in topic.category_badges %}
-          <a class="ov-badge{% if not forloop.first %} when-normal is-inline{% endif %}" href="{{ cat.get_absolute_url }}"
+          {% with cat=topic.color_category %}{% if cat %}
+          <a class="ov-badge" href="{{ cat.get_absolute_url }}"
              style="--cat: {{ cat.color_var }}; --cat-tint: {{ cat.tint_var }};">
             <i class="ph-duotone ph-{{ cat.icon|default:'squares-four' }}"></i>{{ cat.name }}
           </a>
-          {% endfor %}
+          {% endif %}{% endwith %}
         </div>
         <div class="ov-head">
           <span class="ov-icon"><i class="ph-duotone ph-{{ topic.icon|default:'circle' }}"></i></span>
@@ -156,9 +155,12 @@
           {% endif %}
         </div>
         {% endif %}
-        {% if related %}
+        {% if related or topic.secondary_categories %}
         <div class="ov-related">
           <span class="rk">Connects to</span>
+          {% for cat in topic.secondary_categories %}
+          <a class="rchip" href="{{ cat.get_absolute_url }}" style="--cat: {{ cat.color_var }}; --cat-tint: {{ cat.tint_var }};"><i class="ph-duotone ph-{{ cat.icon|default:'squares-four' }}"></i>{{ cat.name }}</a>
+          {% endfor %}
           {% for edge in related %}
           <a class="rchip" href="{{ edge.target.get_absolute_url }}" target="_blank" rel="noopener"{% if edge.target.color_category %} style="--cat: {{ edge.target.color_category.color_var }}; --cat-tint: {{ edge.target.color_category.tint_var }};"{% endif %}><i class="ph-duotone ph-{{ edge.target.icon|default:'circle' }}"></i>{{ edge.target.title }}</a>
           {% endfor %}
@@ -176,7 +178,6 @@
         </button>
         <div class="sec-body">
           <div class="eyebrow"><i class="ph-duotone ph-{{ section.eyebrow_icon }}"></i>Basics <span class="sub">· {{ section.eyebrow_sub }}</span><span class="stepn">{{ section.step }}</span></div>
-          {% if section.intro %}<p class="prose">{{ section.intro }}</p>{% endif %}
           <div class="basics" x-data="rowGrid()">
             {% for stat in section.basics_tiles %}{% include "topics/components/_stat_tile.html" %}{% endfor %}
           </div>
@@ -294,9 +295,9 @@
         <div class="sec-body">
           <div class="eyebrow"><i class="ph-duotone ph-{{ section.eyebrow_icon }}"></i>Actions <span class="sub">· {{ section.eyebrow_sub }}</span><span class="stepn">{{ section.step }}</span></div>
           <div class="act-grid">
-            {% for a in section.actions.all %}{% include "topics/components/_action.html" %}{% endfor %}
+            {% for a in section.actions_tiles %}{% include "topics/components/_action.html" %}{% endfor %}
           </div>
-          {% include "topics/components/_deeper.html" %}
+          {% include "topics/components/_deeper.html" with has_extra=section.actions_has_extra %}
         </div>
       </section>
       {% endif %}

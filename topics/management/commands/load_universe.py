@@ -19,33 +19,23 @@ from django.core.management import call_command
 from django.core.management.base import BaseCommand, CommandError
 from django.db import transaction
 
-from topics.models import Category
+from topics.management.commands.load_topic_draft import wire_related
+from topics.models import Category, Topic
 
 CATEGORIES = Path("research/categories.json")
 TOPICS = Path("research/topics")
 
-# Category slug -> --cat-* colour key (see tokens.css / CAT_COLORS).
-COLOR = {
-    "global-risk": "risk",
-    "ai": "tech",
-    "digital": "digital",
-    "climate-env": "energy",
-    "bio-health": "bio",
-    "economy": "econ",
-    "governance": "gov",
-    "society": "society",
-    "ethics": "ethics",
-}
 # Phosphor icon per category (discovery-tier glyph).
 CAT_ICON = {
-    "global-risk": "warning-octagon",
-    "ai": "cpu",
-    "digital": "globe-hemisphere-west",
-    "climate-env": "leaf",
-    "bio-health": "heartbeat",
-    "economy": "chart-line-up",
-    "governance": "bank",
-    "society": "users-three",
+    "global-risk": "radioactive",
+    "ai": "brain",
+    "digital": "broadcast",
+    "climate-energy": "sun-horizon",
+    "food-land": "cow",
+    "bio-health": "dna",
+    "economy": "coins",
+    "governance": "gavel",
+    "society": "handshake",
     "ethics": "scales",
 }
 
@@ -66,10 +56,15 @@ class Command(BaseCommand):
                 defaults={
                     "name": c["name"],
                     "description": c.get("description", ""),
-                    "color_key": COLOR.get(c["slug"], "gov"),
+                    "color_key": c["slug"],
                     "icon": CAT_ICON.get(c["slug"], "squares-four"),
                 },
             )
+
+        # The file is the taxonomy: a category it no longer lists is gone.
+        Category.objects.exclude(
+            slug__in=[c["slug"] for c in json.loads(CATEGORIES.read_text())]
+        ).delete()
 
         files = (
             [TOPICS / o["slug"] / "topic.json"]
@@ -95,8 +90,17 @@ class Command(BaseCommand):
             except Exception as exc:  # noqa: BLE001 — report, then keep going
                 failed.append((path.parent.name, str(exc).splitlines()[0][:120]))
 
+        # Second pass: a topic's related edges point at slugs that may not have
+        # existed when its own file loaded, so wire them once every topic does.
+        edges = 0
+        for path in files:
+            topic = Topic.objects.filter(slug=path.parent.name).first()
+            if topic:
+                edges += wire_related(topic, json.loads(path.read_text()), self.stderr)
+
         self.stdout.write(
             f"categories: {Category.objects.count()} · topics loaded: {loaded}"
+            f" · related edges wired late: {edges}"
         )
         for slug, why in failed:
             self.stderr.write(self.style.WARNING(f"  {slug}: {why}"))

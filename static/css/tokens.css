@@ -44,8 +44,9 @@
   --agree:    var(--green-500);
   --disagree: #b5614a;
   --danger:   #b5614a;            /* downvotes, errors, destructive buttons */
-  --pole-a:   #3b7ea1;            /* question direction poles (A / B) */
-  --pole-b:   #b5614a;            /* unified with the value/rust axis (was slate) */
+  --pole-a:   var(--ink-700);     /* question direction poles (A / B): neutral ink, dark/light —
+  --pole-b:   var(--ink-400);        they are directions, not identities; sharing the empirical/values
+                                     hues read as "pole A is the empirical answer". The chosen pole fills accent. */
   --axis-empirical: #3b7ea1;      /* the "empirical" question / crux axis */
   --axis-values:    #b5614a;      /* the "values" question / crux axis */
   --axis-empirical-on-dark: #8ec5e6;  /* legible on the dark Crux band (>=7:1) */
@@ -103,16 +104,17 @@
      showcase + directory, Category page header/badge) and as the Topic page's
      header identity chips — everywhere else on a Topic page, color = positions. Desaturated so they read as quiet
      identity, not alarm. The --pos-* family is deliberately deeper/more saturated so the two systems never read as one, even side by side on the topic header and share cards.
-     A category's --catN-tint is its pale fill. */
-  --cat-energy:   #4a9d6c;  --cat-energy-tint:   #e7f3ec;  /* Energy & Environment */
-  --cat-tech:     #3b7ea1;  --cat-tech-tint:     #e6f0f5;  /* AI & Technology */
-  --cat-gov:      #7a6aa8;  --cat-gov-tint:      #efecf6;  /* Political & Governance */
-  --cat-econ:     #b98a35;  --cat-econ-tint:     #f6efdf;  /* Economic & Social */
-  --cat-ethics:   #b5614a;  --cat-ethics-tint:   #f6e9e4;  /* Ethics & Philosophy */
-  --cat-risk:     #b0454e;  --cat-risk-tint:     #f7e7ea;  /* Existential & Global Risk */
-  --cat-digital:  #2f8f86;  --cat-digital-tint:  #e4f1ef;  /* Digital Society & Information */
-  --cat-bio:      #b0567f;  --cat-bio-tint:      #f7e8ef;  /* Bio, Health & the Human Body */
-  --cat-society:  #7d8a4e;  --cat-society-tint:  #eef1e4;  /* Society, Culture & Identity */
+     Tokens are keyed by category slug; --cat-<slug>-tint is the pale fill. */
+  --cat-climate-energy:     #3f9a6a;  --cat-climate-energy-tint:     #e5f3ea;  /* Climate & Energy · green */
+  --cat-food-land:          #7d8a4e;  --cat-food-land-tint:          #eef1e4;  /* Food, Land & the Living World · olive */
+  --cat-ai:                 #3b7ea1;  --cat-ai-tint:                 #e6f0f5;  /* AI & Machine Intelligence · blue */
+  --cat-digital:            #2f8f86;  --cat-digital-tint:            #e4f1ef;  /* Digital Society & Information · teal */
+  --cat-governance:         #6a62b0;  --cat-governance-tint:         #ecebf6;  /* Governance & Political Order · indigo */
+  --cat-society:            #9459a2;  --cat-society-tint:            #f2e9f4;  /* Society, Culture & Identity · violet */
+  --cat-bio-health:         #b0567f;  --cat-bio-health-tint:         #f7e8ef;  /* Bio, Health & the Human Body · rose */
+  --cat-global-risk:        #b3404f;  --cat-global-risk-tint:        #f7e6e9;  /* Existential & Global Catastrophic Risk · crimson */
+  --cat-ethics:             #b8653f;  --cat-ethics-tint:             #f6ebe4;  /* Ethics & Philosophy · rust */
+  --cat-economy:            #b48f2c;  --cat-economy-tint:            #f5efdc;  /* Economy & Work · amber */
   --link: var(--ink-900);          /* links read as bold ink, underlined on hover */
   --focus-ring: var(--green-600);  /* keyboard focus — the brand green */
   --notice: var(--axis-values);   /* editorial notices (draft banner) — chrome, not a position hue */

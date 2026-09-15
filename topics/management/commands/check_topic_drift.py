@@ -113,7 +113,7 @@ def _normalize(doc):
 
 def drift(slug):
     """Field paths where the database and the file disagree, as (path, file, db)."""
-    path = TOPICS / f"{slug}.json"
+    path = TOPICS / slug / "topic.json"
     if not path.exists():
         return [("<file>", "missing", str(path))]
     disk = json.loads(path.read_text())
@@ -129,16 +129,17 @@ def drift(slug):
         disk.pop("draft", None)
         db.pop("draft", None)
 
-    # `categories` beyond the primary, and `related`, are unordered in the
+    # `categories` (the secondaries) and `related` are unordered in the
     # database: secondaries are a plain many-to-many and edges carry no rank. So
-    # compare them as sets, and the primary category — which IS ordered, being
-    # its own column — exactly. Any order the file keeps is for the reader of the
-    # file; the loader cannot promise to give it back.
+    # compare them as sets, and `primary_category` — its own column — exactly.
+    # Any order the file keeps is for the reader of the file; the loader cannot
+    # promise to give it back.
     unordered = []
     for doc in (disk, db):
+        primary = doc.pop("primary_category", "") or ""
         cats = doc.pop("categories", None) or []
         rel = doc.pop("related", None) or []
-        unordered.append((cats[:1], sorted(cats[1:]), sorted(rel)))
+        unordered.append((primary, sorted(cats), sorted(rel)))
     rows = []
     if unordered[0] != unordered[1]:
         for i, label in enumerate(("primary category", "secondary categories", "related")):
@@ -164,8 +165,8 @@ class Command(BaseCommand):
     def handle(self, *a, **o):
         if o["all"]:
             slugs = sorted(
-                p.stem for p in TOPICS.glob("*.json")
-                if Topic.objects.filter(slug=p.stem).exists()
+                p.parent.name for p in TOPICS.glob("*/topic.json")
+                if Topic.objects.filter(slug=p.parent.name).exists()
             )
         elif o["slug"]:
             slugs = [o["slug"]]

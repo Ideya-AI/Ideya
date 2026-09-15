@@ -44,7 +44,7 @@ class NuclearFixtureMixin:
             file=str(Path(settings.BASE_DIR) / "research/topics/nuclear-energy/topic.json"),
             slug="nuclear-energy",
             title="Nuclear Energy",
-            category="climate-env",
+            category="climate-energy",
             status="published",
             stdout=StringIO(),
             stderr=StringIO(),
@@ -119,7 +119,7 @@ class ParticipationTests(NuclearFixtureMixin, TestCase):
 class PageTests(NuclearFixtureMixin, TestCase):
     def test_core_pages_render(self):
         # /about/ retired at pre-launch cleanup — About is a home anchor now.
-        for url in ["/", "/nuclear-energy/", "/category/climate-env/"]:
+        for url in ["/", "/nuclear-energy/", "/category/climate-energy/"]:
             self.assertEqual(self.client.get(url).status_code, 200, url)
 
     def test_stub_topic_renders_empty_state(self):

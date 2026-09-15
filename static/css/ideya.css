@@ -332,16 +332,14 @@ body .sec.is-open .when-normal.is-inline, body .sec.is-open .when-deep.is-inline
 .qw b { color: var(--fg1); font-weight: var(--weight-semibold); }
 .qfoot { margin-top: 14px; }
 /* direction bar: the two poles double as vote buttons and sit directly over the
-   split bar they drive (.a = left pole, blue; .b = right pole, slate). Equal-width
+   split bar they drive (.a = left pole, dark ink; .b = right pole, light ink). Equal-width
    chips keep the pair symmetric; the % on each flanks the centre, label to the edge. */
 .lean .lt { display: flex; align-items: stretch; gap: 8px; margin-bottom: 8px; }
 .lean .lt .lp { flex: 1 1 0; min-width: 0; display: inline-flex; align-items: baseline; justify-content: space-between; gap: 8px; background: var(--surface); border: 1px solid var(--border); padding: 6px 12px; border-radius: var(--radius-pill); font: inherit; font-size: var(--text-xs); font-weight: var(--weight-semibold); color: var(--fg2); cursor: pointer; white-space: normal; overflow-wrap: break-word; hyphens: auto; transition: border-color var(--dur) var(--ease), background var(--dur) var(--ease), color var(--dur) var(--ease); }
 .lean .lt .lp b { font-family: var(--font-tabular); }
-.lean .lt .lp.a, .lean .lt .lp.a b { color: var(--pole-a); }
-.lean .lt .lp.b, .lean .lt .lp.b b { color: var(--pole-b); }
+.lean .lt .lp, .lean .lt .lp b { color: var(--fg1); }
 .lean .lt .lp:hover { border-color: var(--border-hover); background: var(--surface-sunk); }
-.lean .lt .lp.a.on { background: var(--pole-a); border-color: var(--pole-a); }
-.lean .lt .lp.b.on { background: var(--pole-b); border-color: var(--pole-b); }
+.lean .lt .lp.on { background: var(--accent); border-color: var(--accent); }
 .lean .lt .lp.on, .lean .lt .lp.on b { color: #fff; }
 .lean .lbar { display: flex; height: 9px; border-radius: var(--radius-pill); overflow: hidden; background: var(--ink-100); }
 .lean .lbar .la { background: var(--pole-a); }
@@ -367,7 +365,8 @@ body .sec.is-open .when-normal.is-inline, body .sec.is-open .when-deep.is-inline
 }
 
 /* ---- POSITIONS ---- */
-.pos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+/* one card per row, like Questions: order reads as weight. */
+.pos-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
 .pos {
   position: relative; overflow: hidden; background: var(--surface);
   border: 1px solid var(--border); border-radius: var(--radius);
@@ -401,11 +400,6 @@ body .sec.is-open .when-normal.is-inline, body .sec.is-open .when-deep.is-inline
 .pdetail p:last-child { margin-bottom: 0; }
 .pos-grid .pos-xtra { display: none; }
 .sec.is-open .pos-grid .pos-xtra { display: flex; }
-/* odd-count grids: the trailing card spans the full row instead of leaving a
-   dead column (fill_base = collapsed state's orphan, fill_open = expanded's) */
-.sec:not(.is-open) .pos-grid .pos-fill-base { grid-column: 1 / -1; }
-.sec.is-open .pos-grid .pos-fill-open { grid-column: 1 / -1; }
-.pos-fill-base .psteel, .pos-fill-open .psteel, .pos-fill-base .pmore, .pos-fill-open .pmore { max-width: 68ch; }
 
 /* ---- CRUX (the dark band) ---- */
 .crux {
@@ -467,6 +461,10 @@ body .sec.is-open .when-normal.is-inline, body .sec.is-open .when-deep.is-inline
 /* ---- ACTIONS ---- */
 .act-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px; }
 .act-grid > .act:last-child:nth-child(odd) { grid-column: 1 / -1; }
+/* breadth axis: actions beyond the fold appear when the section's Go-deeper opens */
+/* scoped to body so it out-specifies the when-normal.is-flex layer rule */
+body .act-grid .act-xtra { display: none; }
+body .sec.is-open .act-grid .act-xtra { display: flex; }
 .act { display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px 16px; transition: border-color var(--dur) var(--ease), transform var(--dur) var(--ease); }
 .act:hover { border-color: var(--border-hover); transform: translateY(-1px); text-decoration: none; }
 .atop { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 10px; }
@@ -631,10 +629,9 @@ a.sp-cat:hover { text-decoration: none; box-shadow: inset 0 0 0 1px color-mix(in
 .cov-head { display: flex; align-items: center; gap: 22px; }
 .cov-icon { flex: none; width: 92px; height: 92px; border-radius: 24px; background: var(--cat-tint, var(--green-tint)); border: 1px solid color-mix(in srgb, var(--cat, var(--green-500)) 22%, #fff); display: flex; align-items: center; justify-content: center; color: var(--cat, var(--accent-strong)); }
 .cov-icon i { font-size: 52px; }
-/* Raster hero art sits on a neutral tile (its soft duotone fill needs a light
-   ground, not the category tint) and fills the rounded square with breathing room. */
-.cov-icon--art { background: #fff; padding: 8px; overflow: hidden; }
-.cov-icon--art img { width: 100%; height: 100%; object-fit: contain; }
+/* with primary art the header is the topic page's .ov-hero; the kicker margin
+   is redundant inside its flex column */
+.ov-hero .cov-kicker { margin-bottom: 0; }
 .cov-kicker { display: inline-flex; align-items: center; gap: 8px; font-weight: 800; font-size: var(--text-xs); text-transform: uppercase; letter-spacing: .06em; color: var(--cat, var(--accent-strong)); background: var(--cat-tint, var(--green-tint)); border-radius: var(--radius-pill); padding: 5px 13px; margin-bottom: 12px; }
 .cov-kicker i { font-size: 14px; }
 .cov-title { font-weight: 800; font-size: 58px; letter-spacing: -.035em; line-height: .95; margin: 0; }
@@ -677,7 +674,10 @@ a.sp-cat:hover { text-decoration: none; box-shadow: inset 0 0 0 1px color-mix(in
 /* ============================================================================
    OVERLAYS — search dropdown, modal / bottom sheet (the only shadows)
    ===================================================================== */
-.scrim { position: fixed; inset: 0; background: rgba(20,24,19,.32); z-index: 60; }
+.scrim { position: fixed; inset: 0; background: rgba(20,24,19,.32); z-index: 60; animation: fade-in 160ms var(--ease); }
+/* modals fade in rather than pop; a CSS animation on the overlay pieces keeps
+   Alpine's show/hide out of layout entirely */
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
 .pop { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--shadow-pop); }
 .overlay-card { background: var(--surface); border-radius: var(--radius-lg); box-shadow: var(--shadow-overlay); }
 /* transient confirmation toast (e.g. "Saved") */
@@ -766,6 +766,7 @@ a.sp-cat:hover { text-decoration: none; box-shadow: inset 0 0 0 1px color-mix(in
    ===================================================================== */
 .sheet {
   position: fixed; z-index: 70; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  animation: fade-in 160ms var(--ease);
   width: min(clamp(540px, 52vw, 820px), calc(100vw - 32px)); max-height: calc(100dvh - 48px);
   overflow: auto; padding: 22px 24px;
 }

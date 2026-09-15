@@ -142,7 +142,6 @@ class Command(BaseCommand):
             # JSON is stable and the loader re-derives the same `order` field.
             return [fn(x) for x in getattr(sec, related).order_by("order", "id")]
 
-        basics = secs.get(Section.BASICS)
         crux_sec = secs.get(Section.CRUX)
         crux_obj = (
             Crux.objects.filter(section=crux_sec).first()
@@ -163,10 +162,7 @@ class Command(BaseCommand):
                 "scope_excluded": topic.scope_excluded,
                 "why_now": topic.why_now,
             },
-            "basics": {
-                "intro": basics.intro if basics is not None else "",
-                "stats": children(Section.BASICS, "stats", _stat),
-            },
+            "basics": {"stats": children(Section.BASICS, "stats", _stat)},
             "questions": children(Section.QUESTIONS, "questions", _question),
             "positions": children(Section.POSITIONS, "positions", _position),
             "crux": _crux(crux_obj) if crux_obj is not None else {},
@@ -174,8 +170,7 @@ class Command(BaseCommand):
         }
         # One file per topic, cradle to grave: the index fields the loader reads
         # sit at the top, `draft` is the content under them.
-        cats = [topic.primary_category.slug] if topic.primary_category_id else []
-        cats += [
+        cats = [
             c.slug
             for c in topic.categories.order_by("slug")
             if c.pk != topic.primary_category_id
@@ -186,6 +181,9 @@ class Command(BaseCommand):
             "status": topic.status,
             "scope": topic.scope,
             "icon": topic.icon,
+            "primary_category": topic.primary_category.slug
+            if topic.primary_category_id
+            else "",
             "categories": cats,
             "related": [
                 e.target.slug

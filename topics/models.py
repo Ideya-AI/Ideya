@@ -38,10 +38,9 @@ POS_COLORS = [
 # Also gates the bar itself: below the sample, poles render without % or bar.
 MIN_STANCE_SAMPLE = 10
 
-# Importance-vote reveal gates (questions + positions). Both count votes CAST
-# (Vote rows), not the net score. Research seeds the initial experience; the
-# community takes over in stages as real participation accrues.
-MIN_VOTES_SHOW_COUNT = 5  # per item: the net number appears
+# Importance-vote reorder gate (questions + positions). Counts votes CAST
+# (Vote rows), not the net score. Research seeds the initial order; vote order
+# takes over once real participation accrues. Counts themselves always show.
 MIN_VOTES_REORDER = 25  # per list: vote order replaces research order
 
 # Reading-depth at which an item first appears. Shown when current depth >= reveal.
@@ -60,17 +59,6 @@ def _reveal_class(value: str) -> str:
 
 
 # Category palette — keys map to --cat-* tokens. Discovery tiers only.
-CAT_COLORS = [
-    ("energy", "Green (energy/climate)"),
-    ("tech", "Blue (AI/tech)"),
-    ("gov", "Purple (governance)"),
-    ("econ", "Amber (economy)"),
-    ("ethics", "Rust (ethics)"),
-    ("risk", "Slate (global risk)"),
-    ("digital", "Teal (digital society)"),
-    ("bio", "Rose (bio/health)"),
-    ("society", "Olive (society/culture)"),
-]
 
 
 class Category(models.Model):
@@ -81,10 +69,9 @@ class Category(models.Model):
         max_length=80, blank=True, help_text="Phosphor icon name, e.g. 'leaf'."
     )
     color_key = models.CharField(
-        max_length=10,
-        choices=CAT_COLORS,
-        default="energy",
-        help_text="Maps to a --cat-* token. Used in discovery tiers only.",
+        max_length=40,
+        blank=True,
+        help_text="Equals the slug: maps to the --cat-<slug> token. Discovery tiers only.",
     )
     parent = models.ForeignKey(
         "self",
@@ -317,12 +304,17 @@ class Topic(models.Model):
 
     @property
     def category_badges(self):
-        """Primary category first, then the rest — for the Overview badges."""
+        """Primary category first, then the rest."""
         cats = list(self.categories.all())
         primary = self.primary_category
         if primary:
             cats = [primary] + [c for c in cats if c.pk != primary.pk]
         return cats
+
+    @property
+    def secondary_categories(self):
+        """Everything but the primary — the Overview's chip row, not the header."""
+        return self.category_badges[1:]
 
 
 class Section(models.Model):
@@ -465,151 +457,92 @@ class Section(models.Model):
             return any(a.reveal == "deep" for a in self.actions.all())
         return False
 
-    @staticmethod
-    def _tier_lead_count(items, cols, min_show, max_show):
-        """How many leading (rank-ordered) items show before Go-deeper.
-
-        The research picks the natural cutoff: items carry a quality `tier`
-        (a new tier starts at a clear drop-off), and the lead set is the
-        smallest whole-tier prefix that reaches `min_show`, capped at
-        `max_show`. The display then snaps to full desktop rows (visual only):
-        round down, unless that would demote a tier-1 item or dip below the
-        minimum — then promote the next-ranked item(s) to complete the row
-        (tier 1 of 3 in a 2-up grid grabs a 4th; a 7-item lead set drops to 6).
-        """
-        total = len(items)
-        if total <= min_show:
-            return total
-        boundaries = [
-            i
-            for i in range(1, total)
-            if getattr(items[i], "tier", 1) != getattr(items[i - 1], "tier", 1)
-        ] + [total]
-        raw = next((b for b in boundaries if b >= min_show), total)
-        raw = min(raw, max_show, total)
-        if cols > 1 and raw % cols and raw != total:
-            floor = min(max(min_show, boundaries[0]), raw)
-            down = raw - raw % cols
-            up = min(raw + cols - raw % cols, total)
-            raw = down if down >= floor else up
-        return raw
-
-    BASICS_MIN_SHOWN = 3  # at least one full desktop row
-    BASICS_MAX_SHOWN = 9  # three desktop rows before Go-deeper takes over
-
-    def _basics_base_count(self, stats):
-        """How many leading tiles to show before Go-deeper: the research tiers
-        pick the cutoff (via _tier_lead_count), then the count is snapped to a
-        clean desktop cell boundary (wide tiles span 2 of the 3 columns) so the
-        default never orphans."""
-        cols = 3
-        n = self._tier_lead_count(
-            stats, 1, self.BASICS_MIN_SHOWN, self.BASICS_MAX_SHOWN
-        )
-        if n >= len(stats):
-            return len(stats)
-
-        def cells(k):
-            return sum(2 if s.wide else 1 for s in stats[:k])
-
-        # Snap to a full row (same rule as _tier_lead_count): round down unless
-        # that demotes a tier-1 tile or dips below the minimum, else promote
-        # next-ranked tiles to complete the row.
-        first_tier = getattr(stats[0], "tier", 1)
-        tier1 = next(
-            (i for i, s in enumerate(stats) if getattr(s, "tier", 1) != first_tier),
-            len(stats),
-        )
-        floor = min(max(self.BASICS_MIN_SHOWN, tier1), n)
-        down = n
-        while down > 0 and cells(down) % cols != 0:
-            down -= 1
-        if down >= floor:
-            return down
-        up = n
-        while up < len(stats) and cells(up) % cols != 0:
-            up += 1
-        return up if cells(up) % cols == 0 else len(stats)
+    BASICS_ROWS_SHOWN = 3  # desktop rows before Go deeper
 
     @property
     def basics_tiles(self):
         """Importance-ordered Stats annotated for the two-axis Basics grid:
         `is_extra` (revealed only when Go-deeper is open) and `fill_row` (a
-        trailing orphan spans the full row so rows stay clean)."""
+        trailing orphan spans the full row so rows stay clean). Fixed fold:
+        the first BASICS_ROWS_SHOWN packed rows show; the rest is Go deeper."""
         stats = list(self.stats.all())
-        base_n = self._basics_base_count(stats)
+        # Pack into desktop rows of 3 cells. A cell count that is a multiple of
+        # 3 does not guarantee the rows pack (1,1,W,W is six cells but leaves
+        # the right column empty twice), so a tile that does not fit the open
+        # row is deferred and the next one that fits is pulled forward. The
+        # first BASICS_ROWS_SHOWN rows are the fold.
+        rows, pending = [], list(stats)
+        while pending:
+            row, cells = [], 0
+            i = 0
+            while i < len(pending) and cells < 3:
+                w = 2 if pending[i].wide else 1
+                if cells + w <= 3:
+                    row.append(pending.pop(i))
+                    cells += w
+                else:
+                    i += 1
+            rows.append(row)
+        stats = [s for row in rows for s in row]
+        shown = sum(len(row) for row in rows[: self.BASICS_ROWS_SHOWN])
         for i, s in enumerate(stats):
-            s.is_extra = i >= base_n
+            s.is_extra = i >= shown
             s.fill_row = False
-        if stats and sum(2 if s.wide else 1 for s in stats) % 3 == 1:
-            stats[-1].fill_row = True
+        if rows and sum(2 if s.wide else 1 for s in rows[-1]) < 3:
+            rows[-1][-1].fill_row = True
         return stats
 
     @property
     def basics_has_extra(self):
-        stats = list(self.stats.all())
-        return self._basics_base_count(stats) < len(stats)
+        return any(s.is_extra for s in self.basics_tiles)
 
-    QUESTIONS_MIN_SHOWN = 3
-    QUESTIONS_MAX_SHOWN = 6
-
-    def _questions_base_count(self, questions):
-        # Single-column list — the tier cutoff needs no row snapping.
-        return self._tier_lead_count(
-            questions, 1, self.QUESTIONS_MIN_SHOWN, self.QUESTIONS_MAX_SHOWN
-        )
+    QUESTIONS_SHOWN = 4  # fixed fold; the rest is Go deeper
 
     @property
     def questions_tiles(self):
         """Ranked Questions annotated for the two-axis list: `is_extra`
-        questions (beyond the tier cutoff) appear only when Go-deeper is open.
+        questions (beyond QUESTIONS_SHOWN) appear only when Go-deeper is open.
         Uses the prefetched queryset (research order, or vote order once the
         list passes MIN_VOTES_REORDER)."""
         questions = list(self.questions.all())
-        base_n = self._questions_base_count(questions)
         for i, q in enumerate(questions):
-            q.is_extra = i >= base_n
+            q.is_extra = i >= self.QUESTIONS_SHOWN
         return questions
 
     @property
     def questions_has_extra(self):
-        questions = list(self.questions.all())
-        return self._questions_base_count(questions) < len(questions)
+        return self.questions.count() > self.QUESTIONS_SHOWN
 
     POSITIONS_DEFAULT_SHOWN = 4  # fixed-layout surfaces (share cards, spotlight)
-    POSITIONS_MIN_SHOWN = 2
-    POSITIONS_MAX_SHOWN = 6
-
-    def _positions_base_count(self, positions):
-        # 2-column desktop grid — snap the tier cutoff to full rows.
-        return self._tier_lead_count(
-            positions, 2, self.POSITIONS_MIN_SHOWN, self.POSITIONS_MAX_SHOWN
-        )
+    POSITIONS_SHOWN = 4  # fixed fold; the rest is Go deeper
 
     @property
     def positions_tiles(self):
-        """Ranked Positions annotated for the two-axis grid: `is_extra` cards
-        (revealed only when the section's Go-deeper is open) come after the
-        tier cutoff. Mirrors basics_tiles (breadth axis), including the
-        trailing-orphan fill: `fill_base` spans the last card when the
-        collapsed count is odd, `fill_open` when the full count is odd."""
+        """Ranked Positions, one per row: `is_extra` cards (beyond
+        POSITIONS_SHOWN) are revealed only when the section's Go-deeper is open."""
         positions = list(self.positions.all())
-        base_n = self._positions_base_count(positions)
         for i, p in enumerate(positions):
-            p.is_extra = i >= base_n
-            p.fill_base = False
-            p.fill_open = False
-        if positions:
-            if base_n % 2 == 1:
-                positions[base_n - 1].fill_base = True
-            if len(positions) % 2 == 1:
-                positions[-1].fill_open = True
+            p.is_extra = i >= self.POSITIONS_SHOWN
         return positions
 
     @property
     def positions_has_extra(self):
-        positions = list(self.positions.all())
-        return self._positions_base_count(positions) < len(positions)
+        return self.positions.count() > self.POSITIONS_SHOWN
+
+    ACTIONS_SHOWN = 6  # fixed fold; the rest is Go deeper
+
+    @property
+    def actions_tiles(self):
+        """Actions in file order: `is_extra` cards (beyond ACTIONS_SHOWN) are
+        revealed only when the section's Go-deeper is open."""
+        actions = list(self.actions.all())
+        for i, a in enumerate(actions):
+            a.is_extra = i >= self.ACTIONS_SHOWN
+        return actions
+
+    @property
+    def actions_has_extra(self):
+        return self.actions.count() > self.ACTIONS_SHOWN
 
 
 class Stat(models.Model):
@@ -783,16 +716,6 @@ class Question(models.Model):
         return self.text
 
     @property
-    def show_count(self):
-        """Gate the net number behind real participation (MIN_VOTES_SHOW_COUNT
-        votes cast). Uses the `votes_cast` annotation when the queryset
-        provides it; falls back to a query for HTMX fragments."""
-        n = getattr(self, "votes_cast", None)
-        if n is None:
-            n = self.importance_votes.count()
-        return n >= MIN_VOTES_SHOW_COUNT
-
-    @property
     def tag_icon(self) -> str:
         return "flask" if self.kind == self.EMPIRICAL else "heart"
 
@@ -913,15 +836,6 @@ class Position(models.Model):
 
     def __str__(self) -> str:
         return self.name
-
-    @property
-    def show_count(self):
-        """Gate the net number behind real participation (MIN_VOTES_SHOW_COUNT
-        votes cast). Mirrors Question.show_count."""
-        n = getattr(self, "votes_cast", None)
-        if n is None:
-            n = self.importance_votes.count()
-        return n >= MIN_VOTES_SHOW_COUNT
 
     @property
     def color_var(self) -> str:

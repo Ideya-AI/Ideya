@@ -8,5 +8,5 @@ Expects `q` with `.user_vote` (1 or 0) and `.votes` (upvote count).{% endcomment
     aria-label="Upvote this question" aria-pressed="{% if q.user_vote == 1 %}true{% else %}false{% endif %}">
     <i class="ph-{% if q.user_vote == 1 %}fill ph-caret-up up{% else %}duotone ph-caret-up{% endif %}"></i>
   </button>
-  <span class="qc">{% if q.show_count %}{{ q.votes }}{% else %}·{% endif %}</span>
+  <span class="qc">{% if q.votes %}{{ q.votes }}{% endif %}</span>
 </div>

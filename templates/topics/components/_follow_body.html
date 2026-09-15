@@ -2,7 +2,7 @@
 topics:vote / topics:question_lean / topics:follow_up. Expects `target` ("stat" /
 "question" / "position" / "section"), `item`, `eyebrow` + `icon` (what the reader just did)
 and `prompts` (the item's hydrated prompts for that trigger).{% endcomment %}
-<div class="sheet-eyebrow" id="follow-eyebrow" hx-swap-oob="true"><i class="ph-duotone ph-{{ icon }}"></i>{{ eyebrow }}</div>
+<div class="sheet-eyebrow" id="follow-eyebrow" hx-swap-oob="true">{% if eyebrow %}<i class="ph-duotone ph-{{ icon }}"></i>{{ eyebrow }}{% endif %}</div>
 <div id="follow-body" class="follow-body" hx-swap-oob="true">
   <div class="follow-for">
     {% if target == "position" %}<span class="pdot" style="background:{{ item.color_var }}"></span>{{ item.name }}

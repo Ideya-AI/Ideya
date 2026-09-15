@@ -24,8 +24,6 @@
   .headline .hl{color:var(--accent-strong)}
   .desc{margin:24px 0 0;font-size:27px;line-height:1.4;color:var(--ink-600);max-width:40ch;text-wrap:pretty}
   .foot{margin-top:auto;display:flex;align-items:flex-start;gap:18px;padding-top:24px;border-top:1px solid var(--ink-100)}
-  .foot .cnt{flex:none;display:inline-flex;align-items:center;gap:9px;font-weight:800;font-size:20px;color:var(--ink-900);padding-top:5px}
-  .foot .cnt i{color:var(--accent-strong);font-size:24px}
   .cchips{display:flex;gap:8px;flex-wrap:wrap;overflow:hidden;max-height:118px}
   .cchip{display:inline-flex;align-items:center;gap:7px;font-size:14.5px;font-weight:600;color:var(--ink-700);background:var(--ink-50);border:1px solid var(--ink-100);border-radius:9999px;padding:5px 12px;white-space:nowrap}
   .cchip .dot{width:9px;height:9px;border-radius:9999px;flex:none}
@@ -38,7 +36,6 @@
     <h1 class="headline">Make the shape of hard issues <span class="hl">legible.</span></h1>
     <p class="desc">Every topic on one page: the shared facts, the strongest case for every position, and the crux where the disagreement actually lives.</p>
     <div class="foot">
-      <span class="cnt"><i class="ph-duotone ph-infinity"></i>{{ topics_total }} topics</span>
       <div class="cchips">
         {% for cat in categories %}<span class="cchip"><span class="dot" style="background:{{ cat.color_var }}"></span>{{ cat.name }}</span>{% endfor %}
       </div>

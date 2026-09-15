@@ -9,7 +9,7 @@ via hx-swap-oob) and fires the "follow-up" event that opens it. Nothing is requi
   <div class="scrim" @click="$store.follow.open = false"></div>
   <div class="sheet sheet-follow overlay-card" role="dialog" aria-modal="true" aria-label="Tell us more"
        x-ref="sheet" tabindex="-1"
-       x-effect="$store.follow.open &amp;&amp; $nextTick(() =&gt; $refs.sheet.focus())"
+       x-effect="$store.follow.open &amp;&amp; $nextTick(() =&gt; $refs.sheet.focus({ preventScroll: true }))"
        @keydown.escape.window="$store.follow.open = false"
        @keydown.tab="const f = [...$refs.sheet.querySelectorAll('a[href],button:not([disabled]),input:not([disabled]),textarea:not([disabled]),select:not([disabled]),[tabindex]:not([tabindex=&quot;-1&quot;])')].filter(el =&gt; el.offsetParent !== null); if (!f.length) return; const first = f[0], last = f[f.length - 1]; if ($event.shiftKey &amp;&amp; document.activeElement === first) { $event.preventDefault(); last.focus(); } else if (!$event.shiftKey &amp;&amp; document.activeElement === last) { $event.preventDefault(); first.focus(); }">
     <header class="sheet-head">

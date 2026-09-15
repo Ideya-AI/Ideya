@@ -7,7 +7,7 @@ Axis 2 (depth): glance = name + steelman; tapping the card expands `.pmore`
 the caret toggle as the visible affordance on all viewports (mirroring
 _stat_tile). The upvote sits in the same top-left column as the question card's
 and is click-isolated so voting never toggles the expand.{% endcomment %}
-<div class="pos{% if p.is_extra %} pos-xtra{% endif %}{% if p.has_more %} pos-x{% endif %}{% if p.fill_base %} pos-fill-base{% endif %}{% if p.fill_open %} pos-fill-open{% endif %}" data-xid="{{ p.id }}"
+<div class="pos{% if p.is_extra %} pos-xtra{% endif %}{% if p.has_more %} pos-x{% endif %}" data-xid="{{ p.id }}"
      {% if p.has_more %}:class="{ 'pos-open': open[{{ p.id }}] }" @click="toggle($el)"{% endif %}>
   <span class="prail" style="background:{{ p.color_var }}"></span>
   {% if p.has_more %}<button type="button" class="xtoggle" @click.stop="toggle($el.closest('.pos'))" :aria-expanded="!!open[{{ p.id }}]" aria-label="Toggle detail"><i class="ph-duotone ph-caret-down"></i></button>{% endif %}

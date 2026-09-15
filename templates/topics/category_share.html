@@ -26,8 +26,6 @@
   .cname{font-weight:800;font-size:56px;letter-spacing:-.035em;line-height:1.02;margin:0}
   .cdesc{margin:26px 0 0;font-size:27px;line-height:1.4;color:var(--ink-600);max-width:32ch;text-wrap:pretty}
   .foot{margin-top:auto;display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding-top:26px;border-top:1px solid var(--ink-100)}
-  .foot .cnt{display:inline-flex;align-items:center;gap:9px;font-weight:800;font-size:20px;color:var(--ink-900)}
-  .foot .cnt i{color:var(--cat);font-size:22px}
   .tchips{display:flex;gap:10px;flex-wrap:wrap;overflow:hidden;max-height:42px}
   .tchip{display:inline-flex;align-items:center;gap:7px;font-size:18px;font-weight:600;color:var(--ink-700);background:var(--ink-50);border:1px solid var(--ink-100);border-radius:9999px;padding:7px 15px;white-space:nowrap}
   .tchip i{font-size:17px;color:var(--cat)}
@@ -43,7 +41,6 @@
     </div>
     {% if category.description %}<p class="cdesc">{{ category.description }}</p>{% endif %}
     <div class="foot">
-      <span class="cnt"><i class="ph-duotone ph-squares-four"></i>{{ topics_total }} topic{{ topics_total|pluralize }}</span>
       {% if topics %}
       <div class="tchips">
         {% for t in topics %}<span class="tchip"><i class="ph-duotone ph-{{ t.icon|default:'circle' }}"></i>{{ t.title }}</span>{% endfor %}

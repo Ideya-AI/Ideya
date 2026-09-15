@@ -15,17 +15,24 @@
   <div class="cwrap">
 
     <section class="cov">
+      {% if category.primary_art %}
+      {# same hero as the topic page: art left in a surface card, text right #}
+      <div class="ov-hero">
+        <figure class="ov-art"><img src="{% static category.primary_art %}" alt="" width="512" height="512"></figure>
+        <div class="ov-hero-text">
+          <span class="cov-kicker"><i class="ph-duotone ph-folders"></i>Category</span>
+          <h1 class="cov-title">{{ category.name }}</h1>
+        </div>
+      </div>
+      {% else %}
       <div class="cov-head">
-        {% if category.primary_art %}
-        <span class="cov-icon cov-icon--art"><img src="{% static category.primary_art %}" alt="" width="256" height="256"></span>
-        {% else %}
         <span class="cov-icon"><i class="ph-duotone ph-{{ category.icon|default:'squares-four' }}"></i></span>
-        {% endif %}
         <div>
           <span class="cov-kicker"><i class="ph-duotone ph-folders"></i>Category</span>
           <h1 class="cov-title">{{ category.name }}</h1>
         </div>
       </div>
+      {% endif %}
       <p class="cov-desc">{{ sec.overview.body|default:category.description }}</p>
       {% if category.parent or category.connects_to.all %}
       <div class="cov-connects">

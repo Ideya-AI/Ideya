@@ -15,7 +15,7 @@ class CategoryPageTests(TestCase):
             slug="test-cat",
             name="Test Category",
             description="A category description that should appear in the hero.",
-            color_key="energy",
+            color_key="climate-energy",
             icon="leaf",
         )
         self.topic = Topic.objects.create(
@@ -68,7 +68,7 @@ class CategoryPageTests(TestCase):
 
     def test_connects_to_chip_renders(self):
         other = Category.objects.create(
-            slug="neighbour", name="Neighbour Category", color_key="tech"
+            slug="neighbour", name="Neighbour Category", color_key="ai"
         )
         self.cat.connects_to.add(other)  # symmetrical
         body = self.client.get(self.url).content.decode()
@@ -102,11 +102,11 @@ class SeedCategoryOverviewsTests(TestCase):
     the page in place of the one-line description) and is safely idempotent."""
 
     def test_seeds_overview_and_is_idempotent(self):
-        cat = Category.objects.create(slug="ai", name="AI", color_key="tech")
+        cat = Category.objects.create(slug="ai", name="AI", color_key="ai")
 
         call_command("seed_category_overviews")
         ov = Section.objects.get(category=cat, kind=Section.OVERVIEW)
-        self.assertIn("Artificial intelligence", ov.body)
+        self.assertIn("How advanced AI is built", ov.body)
 
         # Re-running updates in place — no duplicate rows (unique constraint).
         call_command("seed_category_overviews")
@@ -116,8 +116,8 @@ class SeedCategoryOverviewsTests(TestCase):
 
     def test_overview_overrides_description_on_page(self):
         Category.objects.create(
-            slug="ai", name="AI", color_key="tech", description="short blurb"
+            slug="ai", name="AI", color_key="ai", description="short blurb"
         )
         call_command("seed_category_overviews")
         body = self.client.get(reverse("topics:category", args=["ai"])).content.decode()
-        self.assertIn("Artificial intelligence has gone", body)
+        self.assertIn("How advanced AI is built", body)

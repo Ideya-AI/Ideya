@@ -4,7 +4,8 @@ position colours, prevalence/spectrum, source dates, and the dossier. Idempotent
 rebuilds the topic's sections on each run. Use a distinct --slug to keep a gold
 standard (e.g. nuclear-energy) intact while comparing.
 
-Reads one topic file: `{slug, title, status, scope, categories, related}` plus
+Reads one topic file: `{slug, title, status, scope, primary_category,
+categories, related}` plus
 `draft` once there is content. That file is the topic, cradle to grave — a topic
 with only a title is the same object, earlier — and it is the ONLY source for a
 topic's identity, placement and lifecycle. The engine's own output (gate
@@ -73,6 +74,28 @@ def image_prompt_from_brief(path: Path) -> str:
             break
     return "\n".join(block).strip()
 
+
+
+def wire_related(topic, doc, stderr=None):
+    """Sync a topic's OUTGOING related edges to its file. Returns the number
+    created. A target that does not exist yet is skipped (with a warning when
+    `stderr` is given); `load_universe` runs a second pass once every topic
+    exists, so forward references settle."""
+    want = {r for r in (doc.get("related") or []) if r != topic.slug}
+    have = {e.target.slug: e for e in topic.outgoing_edges.select_related("target")}
+    edges = 0
+    for rel in want - set(have):
+        tgt = Topic.objects.filter(slug=rel).first()
+        if tgt:
+            TopicEdge.objects.get_or_create(
+                source=topic, target=tgt, kind=TopicEdge.RELATES_TO
+            )
+            edges += 1
+        elif stderr is not None:
+            stderr.write(f"  related '{rel}' matches no topic — no edge created")
+    for gone in set(have) - want:
+        have[gone].delete()
+    return edges
 
 class Command(BaseCommand):
     help = "Load a research-pipeline TopicDraft JSON into the DB as a topic."
@@ -170,15 +193,19 @@ class Command(BaseCommand):
 
     @staticmethod
     def _resolve_categories(doc):
-        """Primary first, then the rest. The topic file is the only source: the
+        """`primary_category` (shown in the header) then `categories` (the
+        secondaries). The topic file is the only source: the
         separate catalog it used to fall back to is gone, so placement has one
         home and cannot disagree with itself."""
-        slugs = [c for c in (doc.get("categories") or []) if c]
-        if not slugs:
+        primary = doc.get("primary_category") or ""
+        if not primary:
             raise CommandError(
-                f"no categories in {doc.get('slug')!r}. Every topic sits "
-                "somewhere; add at least a primary."
+                f"no primary_category in {doc.get('slug')!r}. Every topic sits "
+                "somewhere; the header shows exactly one category."
             )
+        slugs = [primary] + [
+            c for c in (doc.get("categories") or []) if c and c != primary
+        ]
         found = {c.slug: c for c in Category.objects.filter(slug__in=slugs)}
         missing = [c for c in slugs if c not in found]
         if missing:
@@ -373,7 +400,7 @@ class Command(BaseCommand):
 
         # Basics
         b = d.get("basics", {})
-        bs = sec(Section.BASICS, intro=b.get("intro", ""))
+        bs = sec(Section.BASICS)  # Basics carries no intro; the tiles are the read
         for i, s in enumerate(b.get("stats", [])):
             acc = s.get("source_accessed")
             # A non-ISO date would abort the whole atomic load — degrade and
@@ -647,24 +674,7 @@ class Command(BaseCommand):
         # at a hub without being one of the hub's own best five. Incoming edges
         # are wired when the pointing topic is itself loaded, so `load_universe`
         # over the whole directory settles the graph.
-        want = {r for r in (doc.get("related") or []) if r != o["slug"]}
-        have = {e.target.slug: e for e in topic.outgoing_edges.select_related("target")}
-        edges = 0
-        for rel in want - set(have):
-            tgt = Topic.objects.filter(slug=rel).first()
-            if tgt:
-                TopicEdge.objects.get_or_create(
-                    source=topic, target=tgt, kind=TopicEdge.RELATES_TO
-                )
-                edges += 1
-            else:
-                self.stderr.write(
-                    self.style.WARNING(
-                        f"  related '{rel}' matches no topic — no edge created"
-                    )
-                )
-        for gone in set(have) - want:
-            have[gone].delete()
+        edges = wire_related(topic, doc, self.stderr)
         if edges:
             self.stdout.write(f"related edges wired: {edges}")
 

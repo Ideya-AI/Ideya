@@ -41,7 +41,7 @@ class PublishTopicTests(NuclearFixtureMixin, TestCase):
         (self.topics_dir / self.slug).mkdir()
         (self.topics_dir / self.slug / "topic.json").write_text(
             json.dumps({"slug": self.slug, "title": "Nuclear Energy",
-                        "status": Topic.READY, "categories": ["climate-env"]})
+                        "status": Topic.READY, "categories": ["climate-energy"]})
         )
         patch = override_settings(TOPICS_DIR=str(self.topics_dir))
         patch.enable()

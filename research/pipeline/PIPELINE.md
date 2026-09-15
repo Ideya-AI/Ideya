@@ -396,7 +396,7 @@ return file.
 
 ## Contract
 
-**Requires:** the index fields of `topic.json` — slug, title, scope, categories.
+**Requires:** the index fields of `topic.json` — slug, title, scope, primary_category, categories.
 
 **Produces:** every content field of `draft`, with item ids assigned; in
 `evidence.json`, the **map**, the **claim ledger**, the **crux placement**,
@@ -811,7 +811,7 @@ and `reveal` are gone (§8).
 
 | Field | Owner | Note |
 |---|---|---|
-| slug, title, categories, scope, related, status, icon | index / human / stage 3 | before the pipeline; `icon` is stage 3's, stage 1 emits a hint |
+| slug, title, primary_category, categories, scope, related, status, icon | index / human / stage 3 | before the pipeline; `icon` is stage 3's, stage 1 emits a hint |
 | overview.summary, scope_covered, scope_excluded, why_now; volatility | stage 1 writes, stage 2 may reword | `why_now` is a hard claim; stage 2's own extraction covers it |
 | basics.stats[].value, unit, series[].value, range_*, source_* | stage 1, **locked** | every one a ledger claim |
 | basics.stats[].series[].pct, fill_pct, range_at | code | derived from values |
@@ -1097,6 +1097,14 @@ up its generation prompt into `Topic.primary_image_prompt` with no flag; stage
 4 loads the topic after stage 3 has run, so the provenance is always present.
 
 ## The prompt is assembled, not written
+
+*First cut built 2026-09-14 as `research/pipeline/icon_prompt.py`: the constant
+style template, `brief` (assemble a prompt from a brief's Scene and Negatives
+sections plus the `--cat-<slug>` hex), `generate` (Gemini 3 Pro Image via REST,
+generate or edit mode, candidates and per-round spend under `candidates/`), and
+`normalize` (trim, 8% pad, fit ratio on white). Proven on the ten category
+briefs under `research/categories/<slug>/icon.md`; the judge is still a human.*
+
 
 The style paragraphs in every existing brief are the same text with the hue
 swapped. Every brief re-derives boilerplate it cannot improve and can only get
