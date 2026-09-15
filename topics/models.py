@@ -312,6 +312,14 @@ class Topic(models.Model):
         return cats
 
     @property
+    def glyph(self):
+        """The Phosphor name every small slot draws: the topic's own icon
+        (stage 3's), else its primary category's, so an unauthored topic wears
+        its category rather than a bullet."""
+        cat = self.color_category
+        return self.icon or (cat.icon if cat else "") or "squares-four"
+
+    @property
     def secondary_categories(self):
         """Everything but the primary — the Overview's chip row, not the header."""
         return self.category_badges[1:]

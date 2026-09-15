@@ -56,7 +56,7 @@
         {% for t in topics %}
         <a class="node" href="{{ t.get_absolute_url }}">
           <span class="ntop"></span>
-          <div class="nhead"><span class="nicon"><i class="ph-duotone ph-{{ t.icon|default:'circle' }}"></i></span><span class="nname">{{ t.title }}</span></div>
+          <div class="nhead"><span class="nicon"><i class="ph-duotone ph-{{ t.glyph }}"></i></span><span class="nname">{{ t.title }}</span></div>
           <p class="ndesc">{{ t.summary }}</p>
           <div class="nsig">
             <span class="narrow"><i class="ph-duotone ph-arrow-right"></i></span>

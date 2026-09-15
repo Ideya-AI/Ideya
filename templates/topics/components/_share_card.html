@@ -4,7 +4,7 @@
   {% if cc %}<span class="cat"><i class="ph-duotone ph-{{ cc.icon|default:'squares-four' }}"></i>{{ cc.name }}</span>{% endif %}
   <div class="ttlrow">
     {% if topic.primary_art %}<span class="ticon tart"><img src="{% static topic.primary_art %}" alt="" /></span>
-    {% else %}<span class="ticon"><i class="ph-duotone ph-{{ topic.icon|default:'circle' }}"></i></span>{% endif %}
+    {% else %}<span class="ticon"><i class="ph-duotone ph-{{ topic.glyph }}"></i></span>{% endif %}
     <h1 class="ttl">{{ topic.title }}</h1>
   </div>
   <p class="summary">{{ topic.summary }}</p>

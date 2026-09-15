@@ -811,7 +811,8 @@ and `reveal` are gone (§8).
 
 | Field | Owner | Note |
 |---|---|---|
-| slug, title, primary_category, categories, scope, related, status, icon | index / human / stage 3 | before the pipeline; `icon` is stage 3's, stage 1 emits a hint |
+| slug, title, primary_category, categories, scope, related, status | index / human | before the pipeline |
+| icon | stage 3 | the Phosphor glyph; blank until stage 3 writes it, and the page wears the category's glyph meanwhile |
 | overview.summary, scope_covered, scope_excluded, why_now; volatility | stage 1 writes, stage 2 may reword | `why_now` is a hard claim; stage 2's own extraction covers it |
 | basics.stats[].value, unit, series[].value, range_*, source_* | stage 1, **locked** | every one a ledger claim |
 | basics.stats[].series[].pct, fill_pct, range_at | code | derived from values |
@@ -1206,10 +1207,13 @@ of pennies on a topic that usually needs one round.
 
 ## The glyph
 
-Stage 3 owns both icons. Stage 1 still emits a Phosphor hint, because the
-planner knows the topic best, but the hint stops being authoritative: stage 3
-validates it against the shipped Phosphor set and only reaches for an agent when
-it does not resolve; an unvalidated name renders as nothing.
+Stage 3 owns both icons (decided 2026-09-14; stage 1 no longer emits a hint).
+The glyph is the topic's `icon` in the index, and it has to satisfy two checks
+the loader enforces: the name resolves in the shipped Phosphor set, and it is
+unique within the topic's primary category, because that is where topics sit
+in a column and a repeated glyph stops aiding recognition. Until stage 3 writes
+it the field is blank and every small slot wears the category's glyph, never a
+bullet. A hand-set value is allowed and survives; the same checks apply.
 
 ---
 

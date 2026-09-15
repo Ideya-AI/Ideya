@@ -103,6 +103,11 @@ class ExportTopicTests(NuclearFixtureMixin, TestCase):
             path = Path(tmp) / "ne.json"
             call_command("export_topic", slug=self.slug, out=str(path))
             self.assertTrue(path.exists())
+            # A clone in the same category may not reuse the original's glyph
+            # (the loader enforces uniqueness within a category), so drop it.
+            doc = json.loads(path.read_text())
+            doc.pop("icon", None)
+            path.write_text(json.dumps(doc))
             call_command(
                 "load_topic_draft",
                 file=str(path),

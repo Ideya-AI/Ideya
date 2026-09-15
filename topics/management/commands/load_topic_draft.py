@@ -15,6 +15,7 @@ research/runs/<slug>/record.json, and never enters the database.
 
 import datetime
 import json
+import re
 from pathlib import Path
 
 from django.core.management.base import BaseCommand, CommandError
@@ -75,6 +76,26 @@ def image_prompt_from_brief(path: Path) -> str:
     return "\n".join(block).strip()
 
 
+
+
+
+def _index_of(path):
+    """Top-level fields of a sibling topic file (cheap: the draft is skipped
+    by never touching it)."""
+    try:
+        return json.loads(path.read_text())
+    except (OSError, ValueError):
+        return {}
+
+_PHOSPHOR = None
+
+
+def _phosphor_has(name):
+    global _PHOSPHOR
+    if _PHOSPHOR is None:
+        css = Path("static/vendor/phosphor-duotone.css").read_text()
+        _PHOSPHOR = set(re.findall(r"\.ph-duotone\.ph-([a-z0-9-]+):before", css))
+    return name in _PHOSPHOR
 
 def wire_related(topic, doc, stderr=None):
     """Sync a topic's OUTGOING related edges to its file. Returns the number
@@ -145,7 +166,7 @@ class Command(BaseCommand):
         p.add_argument(
             "--icon",
             default="",
-            help="Phosphor icon name; falls back to the draft's overview.icon, else 'atom'.",
+            help="Phosphor icon name (overrides the file's top-level `icon`).",
         )
         p.add_argument(
             "--image-brief",
@@ -304,20 +325,33 @@ class Command(BaseCommand):
                 cat, extra_cats = picked, [c for c in extra_cats if c.pk != picked.pk]
 
         ov = d.get("overview", {})
-        # Icon: explicit --icon wins, then whatever stage 1 just produced
-        # (draft root, or overview.icon), then the file's own top-level icon,
-        # then the existing topic's on a reload, else 'atom'. The top-level entry
-        # is what lets an UNAUTHORED topic carry a glyph at all — it has no
-        # draft to hold one, and its stub page still renders an icon.
+        # Icon: the file's top-level `icon`, which stage 3 writes (an explicit
+        # --icon overrides). Blank is allowed — the page then wears the
+        # category's glyph — but a name must be a real Phosphor glyph and must
+        # not repeat within the primary category, where topics sit in a column.
         existing = Topic.objects.filter(slug=o["slug"]).first()
-        icon = (
-            o["icon"]
-            or d.get("icon")
-            or ov.get("icon")
-            or doc.get("icon")
-            or (existing.icon if existing else "")
-            or "atom"
-        )
+        icon = o["icon"] or doc.get("icon") or ""
+        if icon:
+            if not _phosphor_has(icon):
+                raise CommandError(f"icon '{icon}' is not a Phosphor glyph")
+            # Judged against the sibling FILES, not database rows: the
+            # directory is the truth, and a rebuild loads in directory order,
+            # so a row from the previous state must not count as a clash.
+            clash = next(
+                (
+                    sib.parent.name
+                    for sib in topics_dir().glob("*/topic.json")
+                    if sib.parent.name != o["slug"]
+                    and _index_of(sib).get("icon") == icon
+                    and _index_of(sib).get("primary_category") == cat.slug
+                ),
+                None,
+            )
+            if clash:
+                raise CommandError(
+                    f"icon '{icon}' already used by '{clash}' in category "
+                    f"'{cat.slug}' — glyphs must be unique within a category"
+                )
         # Primary-art generation prompt: from --image-brief if given, else the
         # topic's own brief at the standard path, else keep what the topic
         # already had (never blow away provenance on a reload), else what the

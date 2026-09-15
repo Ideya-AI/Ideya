@@ -43,7 +43,7 @@
     <div class="foot">
       {% if topics %}
       <div class="tchips">
-        {% for t in topics %}<span class="tchip"><i class="ph-duotone ph-{{ t.icon|default:'circle' }}"></i>{{ t.title }}</span>{% endfor %}
+        {% for t in topics %}<span class="tchip"><i class="ph-duotone ph-{{ t.glyph }}"></i>{{ t.title }}</span>{% endfor %}
       </div>
       {% endif %}
     </div>

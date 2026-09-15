@@ -89,7 +89,7 @@
         <h1 class="ov-title ov-title--art">{{ topic.title }}</h1>
         {% else %}
         <div class="ov-head">
-          <span class="ov-icon"><i class="ph-duotone ph-{{ topic.icon|default:'circle' }}"></i></span>
+          <span class="ov-icon"><i class="ph-duotone ph-{{ topic.glyph }}"></i></span>
           <h1 class="ov-title">{{ topic.title }}</h1>
         </div>
         {% endif %}
@@ -138,7 +138,7 @@
           {% endif %}{% endwith %}
         </div>
         <div class="ov-head">
-          <span class="ov-icon"><i class="ph-duotone ph-{{ topic.icon|default:'circle' }}"></i></span>
+          <span class="ov-icon"><i class="ph-duotone ph-{{ topic.glyph }}"></i></span>
           <h1 class="ov-title">{{ topic.title }}</h1>
         </div>
         {% if topic.summary %}<p class="ov-desc">{{ topic.summary }}</p>{% endif %}
@@ -162,7 +162,7 @@
           <a class="rchip" href="{{ cat.get_absolute_url }}" style="--cat: {{ cat.color_var }}; --cat-tint: {{ cat.tint_var }};"><i class="ph-duotone ph-{{ cat.icon|default:'squares-four' }}"></i>{{ cat.name }}</a>
           {% endfor %}
           {% for edge in related %}
-          <a class="rchip" href="{{ edge.target.get_absolute_url }}" target="_blank" rel="noopener"{% if edge.target.color_category %} style="--cat: {{ edge.target.color_category.color_var }}; --cat-tint: {{ edge.target.color_category.tint_var }};"{% endif %}><i class="ph-duotone ph-{{ edge.target.icon|default:'circle' }}"></i>{{ edge.target.title }}</a>
+          <a class="rchip" href="{{ edge.target.get_absolute_url }}" target="_blank" rel="noopener"{% if edge.target.color_category %} style="--cat: {{ edge.target.color_category.color_var }}; --cat-tint: {{ edge.target.color_category.tint_var }};"{% endif %}><i class="ph-duotone ph-{{ edge.target.glyph }}"></i>{{ edge.target.title }}</a>
           {% endfor %}
         </div>
         {% endif %}

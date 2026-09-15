@@ -8,7 +8,7 @@
   <div class="sp-group">Topics</div>
   {% for t in topics %}{% with cc=t.color_category %}
   <a class="sr" href="{{ t.get_absolute_url }}" {% if cc %}style="--cat: {{ cc.color_var }}; --cat-tint: {{ cc.tint_var }};"{% endif %}>
-    <span class="sicon"><i class="ph-duotone ph-{{ t.icon|default:'circle' }}"></i></span>
+    <span class="sicon"><i class="ph-duotone ph-{{ t.glyph }}"></i></span>
     <span><span class="sname">{{ t.title|highlight:q }}</span><br><span class="smeta">{{ t.summary|truncatewords:12 }}</span></span>
   </a>
   {% endwith %}{% endfor %}
