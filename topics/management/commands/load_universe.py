@@ -74,6 +74,12 @@ class Command(BaseCommand):
         if o["slug"] and not files[0].exists():
             raise CommandError(f"no topic file at {files[0]}")
 
+        # The directory is the set: a topic whose directory is gone is gone.
+        if not o["slug"]:
+            Topic.objects.exclude(
+                slug__in=[p.parent.name for p in files]
+            ).delete()
+
         loaded, failed = 0, []
         for path in files:
             try:
