@@ -87,7 +87,7 @@ def _ordered_sections(parent_field, parent):
         >= MIN_VOTES_REORDER
     ):
         q_order = ["-votes", "order", "id"]
-    p_order = ["-prevalence_weight", "order", "id"]
+    p_order = ["order", "id"]
     if (
         Vote.objects.filter(**{f"position__section__{parent_field}": parent}).count()
         >= MIN_VOTES_REORDER

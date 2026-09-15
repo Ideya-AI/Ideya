@@ -76,32 +76,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   letter-spacing: 0; color: var(--ink-200); font-size: var(--text-sm);
 }
 
-/* ============================================================================
-   LAYERED READING (decision A)
-   The medium sets the base depth: poster/social are separate condensed
-   surfaces; desktop reads the normal layer by default; mobile starts tight.
-   Each section's "Go deeper" (.sec.is-open) reveals the remaining layers in
-   place. when-normal = normal layer · when-deep = deep layer; hidden items
-   carry is-flex / is-grid / is-inline to declare their shown display.
-   ===================================================================== */
-/* hide rules are scoped to `body` so they out-specify component display rules
-   (.tile{display:flex} etc.); the show rules below win in turn. */
-body .when-normal, body .when-deep { display: none; }
-/* desktop base: the normal layer is part of the read */
-@media (min-width: 641px) {
-  body .when-normal { display: block; }
-  body .when-normal.is-flex { display: flex; }
-  body .when-normal.is-grid { display: grid; }
-  body .when-normal.is-inline { display: inline-flex; }
-}
-/* an opened section reveals everything scoped to it (mobile: normal + deep) */
-body .sec.is-open .when-normal, body .sec.is-open .when-deep { display: block; }
-body .sec.is-open .when-normal.is-flex, body .sec.is-open .when-deep.is-flex { display: flex; }
-body .sec.is-open .when-normal.is-grid, body .sec.is-open .when-deep.is-grid { display: grid; }
-body .sec.is-open .when-normal.is-inline, body .sec.is-open .when-deep.is-inline { display: inline-flex; }
-
-/* Per-section expander. .m-only = section has no deep layer, so the control
-   only exists on mobile where it reveals the normal layer. */
+/* Per-section expander: reveals the items beyond the section's fixed fold
+   (the *-xtra cards). Every item's own content always shows. */
 .deeper {
   display: inline-flex; align-items: center; gap: 7px; margin-top: 18px;
   font-size: var(--text-xs); font-weight: var(--weight-bold);
@@ -462,7 +438,6 @@ body .sec.is-open .when-normal.is-inline, body .sec.is-open .when-deep.is-inline
 .act-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px; }
 .act-grid > .act:last-child:nth-child(odd) { grid-column: 1 / -1; }
 /* breadth axis: actions beyond the fold appear when the section's Go-deeper opens */
-/* scoped to body so it out-specifies the when-normal.is-flex layer rule */
 body .act-grid .act-xtra { display: none; }
 body .sec.is-open .act-grid .act-xtra { display: flex; }
 .act { display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px 16px; transition: border-color var(--dur) var(--ease), transform var(--dur) var(--ease); }

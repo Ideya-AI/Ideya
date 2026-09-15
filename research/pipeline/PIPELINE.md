@@ -229,8 +229,9 @@ first; that is the whole mechanism for weight. `reveal` only ever decided
 which side of Go-deeper an item fell on, which the show-count above now does
 from array order.
 
-**Site delta this implies**, to be built before stage 2's checks are written
-against it: `Position.Meta.ordering` and the view's position sort become
+**Site delta this implies** (built 2026-09-15: the fields, the layer classes and
+the tier logic are gone; the loader ignores the old keys and the migration
+dropped the columns), as it was specified: `Position.Meta.ordering` and the view's position sort become
 `order` only; `Section._tier_lead_count`, `_basics_base_count` and the
 `has_layer_*` properties reduce to the fixed show-counts over array order;
 the loader stops reading `tier` and `reveal`; a migration drops `tier`,

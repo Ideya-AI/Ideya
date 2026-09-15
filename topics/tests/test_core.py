@@ -178,8 +178,7 @@ class LayeredReadingTests(NuclearFixtureMixin, TestCase):
     def test_sections_without_layers_get_no_expander(self):
         topic = Topic.objects.create(title="Bare", slug="bare", status=Topic.PUBLISHED)
         section = Section.objects.create(topic=topic, kind=Section.QUESTIONS)
-        self.assertFalse(section.has_layer_normal)
-        self.assertFalse(section.has_layer_deep)
+        self.assertFalse(section.questions_has_extra)
         resp = self.client.get("/bare/")
         self.assertNotContains(resp, "Go deeper")
 

@@ -27,8 +27,8 @@ Django + HTMX + Alpine. A curated atlas of hard debates; depth is an axis, not a
   Governance of AI" keeps its spelling).
 - **Order is the whole mechanism for weight.** Every section lists its items most
   important first, and that is array order in `topic.json`. No prevalence numbers,
-  no tiers. (The site still sorts positions by `prevalence_weight` until the §8 site
-  delta in `research/pipeline/PIPELINE.md` is built; the pipeline design already assumes file order.)
+  no tiers, no reveal levels: the site renders file order and a fixed count per
+  section before Go deeper (§8 of `research/pipeline/PIPELINE.md`, built 2026-09-15).
 - **Stage 2 rewords, it does not change facts.** Stat values, units, source fields and
   URLs leave stage 1 unchanged; everything else may be reworded so long as a
   restatement loses only precision, never direction, magnitude or attribution.

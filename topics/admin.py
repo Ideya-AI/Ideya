@@ -198,8 +198,6 @@ class PositionInline(admin.TabularInline):
         "name",
         "color_key",
         "steelman",
-        "prevalence_weight",
-        "spectrum_position",
         "importance",
     )
 

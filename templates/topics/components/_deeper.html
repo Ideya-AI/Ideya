@@ -1,11 +1,9 @@
-{% comment %}Per-section Go-deeper expander (decision A). Expects `section` and
-an enclosing Alpine scope with `deeper`. m-only = the section has no deep
-layer, so the control only exists on mobile to reveal the normal layer;
-d_only = the section handles depth differently on mobile (positions use the
-bottom sheet), so the control is desktop-only; has_extra = items beyond the
-section's fixed fold exist, so the control shows everywhere.{% endcomment %}
-{% if section.has_layer_deep or section.has_layer_normal or has_extra %}
-<button type="button" class="deeper{% if not section.has_layer_deep and not has_extra %} m-only{% endif %}{% if d_only %} d-only{% endif %}"
+{% comment %}Per-section Go-deeper expander. Expects `section`, an enclosing
+Alpine scope with `deeper`, and `has_extra` = items beyond the section's fixed
+fold exist (the one thing Go-deeper reveals, §8). d_only = the section handles
+depth differently on mobile, so the control is desktop-only.{% endcomment %}
+{% if has_extra %}
+<button type="button" class="deeper{% if d_only %} d-only{% endif %}"
         :aria-expanded="deeper" @click="deeper = !deeper; if (!deeper) anchorCollapse($el)">
   <i class="ph-duotone" :class="deeper ? 'ph-minus-circle' : 'ph-plus-circle'"></i>
   <span x-text="deeper ? 'Show less' : 'Go deeper'"></span>

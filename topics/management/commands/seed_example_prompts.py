@@ -165,7 +165,7 @@ def seed_topic_prompts(topic) -> int:
     positions = list(
         Position.objects.filter(
             section__topic=topic, section__kind="positions"
-        ).order_by("-prevalence_weight", "order", "id")
+        ).order_by("order", "id")
     )
     questions = list(
         Question.objects.filter(

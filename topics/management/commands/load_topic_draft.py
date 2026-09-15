@@ -1,6 +1,6 @@
 """Load a research-pipeline draft (a TopicDraft JSON) into the DB as a topic:
-Sections + typed children (Stat/Question/Position/Crux/Action), with reveal levels,
-position colours, prevalence/spectrum, source dates, and the dossier. Idempotent —
+Sections + typed children (Stat/Question/Position/Crux/Action), with position
+colours, source dates, and the dossier. Items render in file order (§8). Idempotent —
 rebuilds the topic's sections on each run. Use a distinct --slug to keep a gold
 standard (e.g. nuclear-energy) intact while comparing.
 
@@ -486,7 +486,6 @@ class Command(BaseCommand):
                     Stat, bs, s.get("id", ""), ("label", s.get("label", "")[:120]),
                     dict(
                         order=i,
-                        tier=max(1, int(s.get("tier") or 1)),
                         label=s.get("label", "")[:120],
                         value=s.get("value", "")[:24],
                         unit=s.get("unit", "")[:24],
@@ -510,7 +509,6 @@ class Command(BaseCommand):
                             s.get("label", ""),
                         ),
                         source_accessed=acc_date,
-                        reveal=s.get("reveal", "condensed"),
                     ),
                 ).pk
             )
@@ -528,7 +526,6 @@ class Command(BaseCommand):
                     Question, qs, q.get("id", ""), ("text", q_text),
                     dict(
                         order=i,
-                        tier=max(1, int(q.get("tier") or 1)),
                         text=q_text,
                         kind=(
                             q.get("kind", "empirical")
@@ -540,7 +537,6 @@ class Command(BaseCommand):
                         lean_label_a=q.get("lean_label_a", "")[:40],
                         lean_label_b=q.get("lean_label_b", "")[:40],
                         lean_pct_a=_pct(q.get("lean_pct_a")),
-                        reveal=q.get("reveal", "condensed"),
                     ),
                 ).pk
             )
@@ -549,7 +545,7 @@ class Command(BaseCommand):
 
         # Positions — honour an explicit colour when the draft carries one (so an
         # exported topic round-trips its palette); else assign per index as
-        # pipeline drafts have always relied on. Carry prevalence + spectrum.
+        # pipeline drafts have always relied on.
         ps = sec(Section.POSITIONS)
         assigned_keys = [
             p.get("color_key")
@@ -580,7 +576,6 @@ class Command(BaseCommand):
                     Position, ps, p.get("id", ""), ("name", p.get("name", "")[:120]),
                     dict(
                         order=i,
-                        tier=max(1, int(p.get("tier") or 1)),
                         name=p.get("name", "")[:120],
                         color_key=ck,
                         steelman=self._cap(
@@ -598,8 +593,6 @@ class Command(BaseCommand):
                             "representative_note",
                             p.get("name", ""),
                         ),
-                        prevalence_weight=p.get("prevalence_weight") or 0,
-                        spectrum_position=p.get("spectrum_position"),
                     ),
                 ).pk
             )
@@ -643,7 +636,6 @@ class Command(BaseCommand):
                     Action, acts, a.get("id", ""), ("title", a.get("title", "")[:200]),
                     dict(
                         order=i,
-                        tier=max(1, int(a.get("tier") or 1)),
                         kind=kind if kind in ACTION_KINDS else "learn_more",
                         title=a.get("title", "")[:200],
                         description=self._cap(
@@ -651,7 +643,6 @@ class Command(BaseCommand):
                         ),
                         url=a.get("url", "") or "",
                         position=Position_ref,
-                        reveal=a.get("reveal", "condensed"),
                     ),
                 ).pk
             )

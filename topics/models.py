@@ -43,23 +43,6 @@ MIN_STANCE_SAMPLE = 10
 # takes over once real participation accrues. Counts themselves always show.
 MIN_VOTES_REORDER = 25  # per list: vote order replaces research order
 
-# Reading-depth at which an item first appears. Shown when current depth >= reveal.
-REVEAL_CHOICES = [
-    ("condensed", "Always"),
-    ("normal", "Normal+"),
-    ("deep", "Deep only"),
-]
-
-
-def _reveal_class(value: str) -> str:
-    """CSS class that makes an element appear at the right reading depth."""
-    return {"condensed": "", "normal": "when-normal", "deep": "when-deep"}.get(
-        value, ""
-    )
-
-
-# Category palette — keys map to --cat-* tokens. Discovery tiers only.
-
 
 class Category(models.Model):
     name = models.CharField(max_length=120)
@@ -421,50 +404,6 @@ class Section(models.Model):
         except Crux.DoesNotExist:
             return None
 
-    @property
-    def has_layer_normal(self) -> bool:
-        """Any normal-layer content — part of the base read on desktop, behind
-        the section's Go-deeper on mobile (decision A: medium sets the base)."""
-        if self.kind == self.BASICS:
-            # Breadth axis only: extra tiles tagged to appear at normal depth.
-            # The lead note now always shows; per-tile detail is its own axis.
-            return any(s.reveal == "normal" for s in self.stats.all())
-        if self.kind == self.QUESTIONS:
-            return any(q.why or q.reveal == "normal" for q in self.questions.all())
-        if self.kind == self.POSITIONS:
-            return any(p.description for p in self.positions.all())
-        if self.kind == self.CRUX:
-            crux = self._crux_or_none()
-            return bool(crux and crux.subtitle)
-        if self.kind == self.ACTIONS:
-            return any(
-                a.description or a.reveal == "normal" for a in self.actions.all()
-            )
-        return False
-
-    @property
-    def has_layer_deep(self) -> bool:
-        """Any deep-layer content — always behind the section's Go-deeper."""
-        if self.kind == self.BASICS:
-            # Breadth axis only: extra tiles tagged to appear at deep depth.
-            # Source moved into the per-tile More expander.
-            return any(s.reveal == "deep" for s in self.stats.all())
-        if self.kind == self.QUESTIONS:
-            return any(
-                q.lean_pct_a is not None or q.reveal == "deep"
-                for q in self.questions.all()
-            )
-        if self.kind == self.POSITIONS:
-            return any(
-                p.representative_name or p.proponents for p in self.positions.all()
-            )
-        if self.kind == self.CRUX:
-            crux = self._crux_or_none()
-            return bool(crux and (crux.empirical or crux.values))
-        if self.kind == self.ACTIONS:
-            return any(a.reveal == "deep" for a in self.actions.all())
-        return False
-
     BASICS_ROWS_SHOWN = 3  # desktop rows before Go deeper
 
     @property
@@ -577,11 +516,6 @@ class Stat(models.Model):
         help_text="Stable identity, assigned once and never changed. Reader votes, leans and prompts attach to this, so rewording an item keeps them.",
     )
     order = models.PositiveSmallIntegerField(default=0)
-    tier = models.PositiveSmallIntegerField(
-        default=1,
-        help_text="Quality tier from research (1 = leading). A new tier starts at a "
-        "natural drop-off; tier 1 leads the section before Go-deeper.",
-    )
     label = models.CharField(max_length=120, help_text="The metric, not a sentence.")
     viz = models.CharField(max_length=12, choices=VIZ_CHOICES, default=BAR)
     wide = models.BooleanField(default=False, help_text="Span two columns (ranked).")
@@ -624,9 +558,6 @@ class Stat(models.Model):
         null=True,
         blank=True,
         help_text="When the figure was last verified during research.",
-    )
-    reveal = models.CharField(
-        max_length=10, choices=REVEAL_CHOICES, default="condensed"
     )
 
     class Meta:
@@ -686,10 +617,6 @@ class Question(models.Model):
         help_text="Stable identity, assigned once and never changed. Reader votes, leans and prompts attach to this, so rewording an item keeps them.",
     )
     order = models.PositiveSmallIntegerField(default=0)
-    tier = models.PositiveSmallIntegerField(
-        default=1,
-        help_text="Quality tier from research (1 = leading); drives the Go-deeper split.",
-    )
     text = models.CharField(max_length=400)
     kind = models.CharField(max_length=12, choices=KIND_CHOICES, default=EMPIRICAL)
     why = models.TextField(blank=True, help_text="Why this question is contested.")
@@ -704,9 +631,6 @@ class Question(models.Model):
     lean_label_a = models.CharField(max_length=40, blank=True)
     lean_label_b = models.CharField(max_length=40, blank=True)
     lean_pct_a = models.PositiveSmallIntegerField(null=True, blank=True)
-    reveal = models.CharField(
-        max_length=10, choices=REVEAL_CHOICES, default="condensed"
-    )
 
     class Meta:
         constraints = [
@@ -791,10 +715,6 @@ class Position(models.Model):
         help_text="Stable identity, assigned once and never changed. Reader votes, leans and prompts attach to this, so rewording an item keeps them.",
     )
     order = models.PositiveSmallIntegerField(default=0)
-    tier = models.PositiveSmallIntegerField(
-        default=1,
-        help_text="Quality tier from research (1 = leading); drives the Go-deeper split.",
-    )
     name = models.CharField(max_length=120)
     color_key = models.CharField(
         max_length=10,
@@ -818,16 +738,6 @@ class Position(models.Model):
     importance = models.IntegerField(
         default=0, help_text="Net importance (upvotes minus downvotes)."
     )
-    prevalence_weight = models.PositiveSmallIntegerField(
-        default=0,
-        help_text="How widely held / influential (0–100). Seeds default order so the "
-        "mainstream leads; importance votes reorder over time.",
-    )
-    spectrum_position = models.SmallIntegerField(
-        null=True,
-        blank=True,
-        help_text="Optional ordinal on the debate's main axis (metadata, not the default order).",
-    )
 
     class Meta:
         constraints = [
@@ -837,10 +747,10 @@ class Position(models.Model):
                 name="unique_position_item_id",
             ),
         ]
-        # Prevalence-seeded (research) by default; the view layer switches to
-        # importance-vote order once the topic's positions pass
-        # MIN_VOTES_REORDER real votes (supersedes decision 2026-06-17).
-        ordering = ["-prevalence_weight", "order", "id"]
+        # File order is the whole mechanism for weight (§8); the view layer
+        # switches to importance-vote order once the topic's positions pass
+        # MIN_VOTES_REORDER real votes.
+        ordering = ["order", "id"]
 
     def __str__(self) -> str:
         return self.name
@@ -918,11 +828,6 @@ class Action(models.Model):
         help_text="Stable identity, assigned once and never changed. Reader votes, leans and prompts attach to this, so rewording an item keeps them.",
     )
     order = models.PositiveSmallIntegerField(default=0)
-    tier = models.PositiveSmallIntegerField(
-        default=1,
-        help_text="Quality tier from research (1 = leading). Recorded for future "
-        "tier-driven display; actions currently split by reveal level.",
-    )
     kind = models.CharField(max_length=20, choices=KIND_CHOICES, default=LEARN_MORE)
     title = models.CharField(max_length=200)
     description = models.CharField(max_length=400, blank=True)
@@ -934,9 +839,6 @@ class Action(models.Model):
         null=True,
         blank=True,
         help_text="Optional alignment to a specific position.",
-    )
-    reveal = models.CharField(
-        max_length=10, choices=REVEAL_CHOICES, default="condensed"
     )
 
     class Meta:
@@ -951,10 +853,6 @@ class Action(models.Model):
 
     def __str__(self) -> str:
         return self.title
-
-    @property
-    def reveal_class(self) -> str:
-        return _reveal_class(self.reveal)
 
     @property
     def phosphor_icon(self) -> str:

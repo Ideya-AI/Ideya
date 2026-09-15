@@ -38,7 +38,6 @@ def _stat(s):
     return {
         "id": s.item_id,
         "label": s.label,
-        "tier": s.tier,
         "value": s.value,
         "unit": s.unit,
         "viz": s.viz,
@@ -54,7 +53,6 @@ def _stat(s):
         "source_url": s.source_url,
         "source_published": s.source_published,
         "source_accessed": _date(s.source_accessed),
-        "reveal": s.reveal,
     }
 
 
@@ -62,7 +60,6 @@ def _question(q):
     return {
         "id": q.item_id,
         "text": q.text,
-        "tier": q.tier,
         "kind": q.kind,
         "why": q.why,
         "detail": q.detail,
@@ -70,7 +67,6 @@ def _question(q):
         "lean_label_a": q.lean_label_a,
         "lean_label_b": q.lean_label_b,
         "lean_pct_a": q.lean_pct_a,
-        "reveal": q.reveal,
     }
 
 
@@ -78,7 +74,6 @@ def _position(p):
     return {
         "id": p.item_id,
         "name": p.name,
-        "tier": p.tier,
         "color_key": p.color_key,
         "steelman": p.steelman,
         "description": p.description,
@@ -87,8 +82,6 @@ def _position(p):
         "representative_note": p.representative_note,
         "proponents": p.proponents,
         "importance": p.importance,
-        "prevalence_weight": p.prevalence_weight,
-        "spectrum_position": p.spectrum_position,
     }
 
 
@@ -96,13 +89,11 @@ def _action(a):
     return {
         "id": a.item_id,
         "kind": a.kind,
-        "tier": a.tier,
         "title": a.title,
         "description": a.description,
         "url": a.url,
         # The loader re-links by position name; null when unaligned.
         "for_position": a.position.name if a.position_id else None,
-        "reveal": a.reveal,
     }
 
 

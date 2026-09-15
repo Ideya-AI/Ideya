@@ -32,12 +32,9 @@ IGNORE = {"votes", "importance"}
 # database will still hold something sensible.
 DERIVED = (".icon", ".volatility", ".primary_image_prompt")
 
-# Carried for the engine's own use; the topic tables have no column for them, so
-# a round-trip legitimately drops them.
-FILE_ONLY = (".prevalence_basis", ".lean_basis", ".positions[].reveal")
-
-# Stage 2's fold record: the file keeps it, the database has no column for it.
-FILE_ONLY_TOP = ".fold"
+# Carried for the engine's own use; the topic tables have no column for it, so
+# a round-trip legitimately drops it.
+FILE_ONLY = (".lean_basis",)
 
 
 def _flat(node, prefix=""):
@@ -90,8 +87,6 @@ def _derived(path, disk, db):
     if disk == "<absent>" and generic.endswith(DERIVED):
         return True
     if db == "<absent>" and generic.endswith(FILE_ONLY):
-        return True
-    if db == "<absent>" and generic.startswith(FILE_ONLY_TOP):
         return True
     return False
 
