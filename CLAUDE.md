@@ -32,13 +32,15 @@ Django + HTMX + Alpine. A curated atlas of hard debates; depth is an axis, not a
 - **Rewording never changes a fact.** A restatement may lose precision; it may not
   change direction, magnitude or attribution. Stat values, units, source fields and
   URLs are not reworded at all.
-- **Wikipedia grade, with verifiability.** The bar is public understanding, not
-  research. A number, date, quote or "X said" in the page's own voice names a
-  source a reader can follow, and the URL resolves. Everything else is written
-  from model knowledge at encyclopedia-level certainty. Per-claim machine proof
-  was tried twice and found nothing: 541 checked claims, zero wrong numbers
-  (`research/pipeline/BRIEF.md`). What does reach a page is a stale figure, so
-  anything dated gets checked against a current source.
+- **A number, date, quote or "X said" in the page's own voice names a source a
+  reader can follow, and the URL resolves.** Anything dated is checked against a
+  current source, because a stale figure is the error that reaches a page.
+  Everything else is written from model knowledge at encyclopedia-level
+  certainty. Why this bar and not per-claim proof: `research/pipeline/BRIEF.md`.
+- **A run never stops to ask.** Editorial forks are resolved by the pipeline's
+  own rules mid-run, never escalated (Jeff, 2026-08-27: "This should be
+  something the engine decides. Not something that is elevated to me."). The two
+  human touch points are naming the topic and publishing it.
 
 ## Where things live
 
