@@ -62,10 +62,5 @@ Django + HTMX + Alpine. A curated atlas of hard debates; depth is an axis, not a
 
 ## The authoring pipeline
 
-**Nothing authors a topic right now.** v1 was deleted 2026-09-14, v2 on
-2026-09-18; neither is a baseline. The rebuild starts from
-`research/pipeline/BRIEF.md`. v2's design is archived inert at
-`research/archive/PIPELINE-v2.md`.
-
-There is no upkeep engine: a published topic stays as it is until a human
-edits its file and reloads it.
+**Nothing authors a topic right now.** Being rebuilt from
+`research/pipeline/BRIEF.md`; v1 and v2 are gone and neither is a baseline.
