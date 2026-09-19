@@ -1,6 +1,7 @@
 # Ideya
 
-Django + HTMX + Alpine. A curated atlas of hard debates; depth is an axis, not a page.
+Django + HTMX + Alpine. One page per issue: Overview, Basics, Questions,
+Positions, Crux, Actions, each opening at a glance and expanding in place.
 
 ## Commands
 

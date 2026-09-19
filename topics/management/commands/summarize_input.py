@@ -42,7 +42,7 @@ DEFAULT_MIN_NEW = 5
 _SYSTEM = (
     'You write an Amazon-review-style "what readers think" digest summarizing '
     "the free-text opinions readers submitted in response to a single prompt on "
-    "a curated atlas of hard topics.\n\n"
+    "a page about a contested issue.\n\n"
     "Rules:\n"
     "- Be fair and neutral. Represent each side in its own strongest terms "
     "(steelman); do not editorialize or fact-check the readers.\n"
