@@ -28,48 +28,51 @@ Django + HTMX + Alpine. A curated atlas of hard debates; depth is an axis, not a
 - **Order is the whole mechanism for weight.** Every section lists its items most
   important first, and that is array order in `topic.json`. No prevalence numbers,
   no tiers, no reveal levels: the site renders file order and a fixed count per
-  section before Go deeper (§8 of `research/pipeline/PIPELINE.md`, built 2026-09-15).
-- **Stage 2 rewords, it does not change facts.** Stat values, units, source fields and
-  URLs leave stage 1 unchanged; everything else may be reworded so long as a
-  restatement loses only precision, never direction, magnitude or attribution.
-- **Hard claims get a source and a check.** A number, date, quote or "X said" in the
-  page's own voice has a fetched source behind it. If the check fails it is cut,
-  softened to what the source supports, or attributed to whoever asserts it — never
-  handed to the human as "please verify this". Everything else is written from
-  model knowledge at encyclopedia-level certainty.
+  section before Go deeper (`research/SCHEMA.md`).
+- **Rewording never changes a fact.** A restatement may lose precision; it may not
+  change direction, magnitude or attribution. Stat values, units, source fields and
+  URLs are not reworded at all.
+- **Wikipedia grade, with verifiability.** The bar is public understanding, not
+  research. A number, date, quote or "X said" in the page's own voice names a
+  source a reader can follow, and the URL resolves. Everything else is written
+  from model knowledge at encyclopedia-level certainty. Per-claim machine proof
+  was tried twice and found nothing: 541 checked claims, zero wrong numbers
+  (`research/pipeline/BRIEF.md`). What does reach a page is a stale figure, so
+  anything dated gets checked against a current source.
 
 ## Where things live
 
 - `topics/` — the app. `templates/`, `static/` — the product surface (tokens in
   `static/css/tokens.css`).
-- `pipeline/` — the authoring pipeline as code (`python -m pipeline author <slug>`);
-  prompts under `pipeline/prompts/`, shared rule blocks under `pipeline/prompts/shared/`.
 - `research/topics/<slug>/` — **the set of topics**, one directory each, cradle
   to grave: a topic with only a title and a published one are the same object at
   different stops. The directory name IS the slug.
   - `topic.json` — the product the loader reads. Index fields at the top (slug,
     title, status, authored_at, published_at, reviewed_at, scope, primary_category,
     categories, related), `content` under them once there is content. The source of truth for everything except participation.
-  - `evidence.json` — what the pipeline knows: the map, the claim ledger, the cut
-    record, gate verdicts. Durable, because later stages depend on it. (Not yet
-    present on any topic; the v2 pipeline writes it.)
+  - `evidence.json` — whatever the rebuilt pipeline needs to keep. Nothing writes
+    it today; v2's ledger is not a template for it.
   - `icon.md` the art brief; `review.md` the packet for the human, written by stage 5.
   - `run/`, `renders/`, `candidates/` — process, and untracked.
   - Shipped images stay under `static/img/{topics,social}/<slug>.png`, because
     that is where Django serves them from.
-- `research/categories.json` — the taxonomy.
+- `research/categories.json` — the taxonomy, including each category's page copy.
+- `research/SCHEMA.md` — **the topic file schema**. Authoritative.
 - `docs/DESIGN.md` — the locked design system; treat it as authoritative over any
   prompt that contradicts it.
 
 ## The authoring pipeline
 
-**v2, designed 2026-09-11 to 2026-09-14, not yet built.** Nothing authors a topic
-right now. The previous pipeline was deleted on 2026-09-14; it is in git history
-only and is not a baseline for anything.
+**Being rebuilt, 2026-09-18. Nothing authors a topic right now.** v1 was deleted
+2026-09-14; v2's stage 1 ran three times on nuclear-energy and was removed the
+same way. Neither is a baseline for anything.
 
-- `research/pipeline/PIPELINE.md` — **the design**: goals, scope, how it reaches Claude,
-  orchestration, state, budget, storage, schema, failure semantics, machine-level
-  findings, and all five stages in full. Read it before touching the pipeline.
+- `research/pipeline/BRIEF.md` — **read this first.** What the rebuild is for,
+  what v1 and v2 measured, and what it must not do again. The headline: across
+  541 checked claims the v2 ledger found zero wrong numbers, and a two-minute
+  Opus call matched a $38 pipeline run on everything but camps.
+- `research/archive/PIPELINE-v2.md` — the v2 design, inert. Its camp rules, its
+  machine-level findings and its stage 5 read are the parts worth re-reading.
 
 The bookends are fixed and are the pipeline's whole contract: it takes a topic
 from `not_started` to `ready`, and nothing else. Before it is the topic

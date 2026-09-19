@@ -1,5 +1,0 @@
-A camp exists when two independent, named adherents, at least one of them an institution, assert its claim in their own published words. Adherence, not coherence: a camp is a group of people who actually say this, and the proof is the fetched page where they say it.
-Two camps are distinct when there is a proposition one affirms and the other denies. Camps that differ only in instrument, magnitude or sequencing are one camp; record that variation inside it.
-Look explicitly for a hybrid position and for a camp that rejects the question as posed, because the page title presupposes a frame.
-Camps are named by what they want, all in the same grammatical form, and a name passes when the camp’s strongest advocate and its strongest critic would both call it accurate. “Build more reactors” is a name; “Nuclear skeptics” is a posture.
-Camps are ranked most to least important, with a one-line reason each. The camps most people hold come first, the way an answer about US parties starts with the two big ones.

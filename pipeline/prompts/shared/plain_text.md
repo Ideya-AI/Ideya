@@ -1,1 +1,0 @@
-Every text field you return is plain text that is rendered literally. Write an ampersand as &, use typographic quotes (’ “ ”) and never straight ones, and use no markdown, no HTML, no bullet characters. US spelling throughout, except inside a proper noun that spells itself otherwise.
