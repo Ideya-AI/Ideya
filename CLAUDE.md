@@ -62,20 +62,10 @@ Django + HTMX + Alpine. A curated atlas of hard debates; depth is an axis, not a
 
 ## The authoring pipeline
 
-**Being rebuilt, 2026-09-18. Nothing authors a topic right now.** v1 was deleted
-2026-09-14; v2's stage 1 ran three times on nuclear-energy and was removed the
-same way. Neither is a baseline for anything.
+**Nothing authors a topic right now.** v1 was deleted 2026-09-14, v2 on
+2026-09-18; neither is a baseline. The rebuild starts from
+`research/pipeline/BRIEF.md`. v2's design is archived inert at
+`research/archive/PIPELINE-v2.md`.
 
-- `research/pipeline/BRIEF.md` — **read this first.** What the rebuild is for,
-  what v1 and v2 measured, and what it must not do again. The headline: across
-  541 checked claims the v2 ledger found zero wrong numbers, and a two-minute
-  Opus call matched a $38 pipeline run on everything but camps.
-- `research/archive/PIPELINE-v2.md` — the v2 design, inert. Its camp rules, its
-  machine-level findings and its stage 5 read are the parts worth re-reading.
-
-The bookends are fixed and are the pipeline's whole contract: it takes a topic
-from `not_started` to `ready`, and nothing else. Before it is the topic
-directory. After it is `publish_topic`, a switch a human throws.
-
-There is **no upkeep engine**. A published topic stays as published until a human
-deliberately edits its content file and reloads it.
+There is no upkeep engine: a published topic stays as it is until a human
+edits its file and reloads it.
