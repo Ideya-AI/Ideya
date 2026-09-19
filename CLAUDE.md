@@ -55,8 +55,10 @@ Django + HTMX + Alpine. A curated atlas of hard debates; depth is an axis, not a
     that is where Django serves them from.
 - `research/categories.json` — the taxonomy, including each category's page copy.
 - `research/SCHEMA.md` — **the topic file schema**. Authoritative.
-- `docs/DESIGN.md` — the locked design system; treat it as authoritative over any
-  prompt that contradicts it.
+- `docs/DESIGN.md` — the design system as notes: useful context, not a rule that
+  overrides anything. The app itself is the real spec — `templates/` and
+  `static/css/tokens.css` are closer to the truth than the doc, and what Jeff
+  asks for wins over both.
 
 ## The authoring pipeline
 
