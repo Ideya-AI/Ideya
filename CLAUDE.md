@@ -33,10 +33,9 @@ Django + HTMX + Alpine. A curated atlas of hard debates; depth is an axis, not a
   change direction, magnitude or attribution. Stat values, units, source fields and
   URLs are not reworded at all.
 - **A number, date, quote or "X said" in the page's own voice names a source a
-  reader can follow, and the URL resolves.** Anything dated is checked against a
-  current source, because a stale figure is the error that reaches a page.
-  Everything else is written from model knowledge at encyclopedia-level
-  certainty. Why this bar and not per-claim proof: `research/pipeline/BRIEF.md`.
+  reader can follow, and the URL resolves.** Everything else — how a camp
+  reasons, what it values, what is common knowledge in the debate — is written
+  without a source.
 
 ## Where things live
 
