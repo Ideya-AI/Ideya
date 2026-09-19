@@ -2,6 +2,9 @@
  "slug": "nuclear-energy",
  "title": "Nuclear Energy",
  "status": "ready",
+ "authored_at": "2026-08-11T00:00:00+00:00",
+ "published_at": null,
+ "reviewed_at": [],
  "scope": "Fission reactors for electricity. Civilian power, not weapons.",
  "primary_category": "climate-energy",
  "categories": [
@@ -13,8 +16,8 @@
   "net-zero-pace",
   "critical-minerals"
  ],
- "draft": {
-  "volatility": "medium",
+ "icon": "atom",
+ "content": {
   "overview": {
    "summary": "Fission-based electricity: among the lowest-carbon, lowest-death sources, in a debate that scrambles partisan lines.",
    "scope_covered": "Civilian fission for grid power: cost, safety, waste, the climate case.",
@@ -25,7 +28,6 @@
    "stats": [
     {
      "label": "Deaths per unit of electricity",
-     "tier": 1,
      "value": "",
      "unit": "",
      "viz": "ranked",
@@ -66,12 +68,10 @@
      "source_url": "https://ourworldindata.org/safest-sources-of-energy",
      "source_published": "",
      "source_accessed": "",
-     "reveal": "condensed",
      "id": "deaths-per-unit-of-electricity"
     },
     {
      "label": "Share of global power",
-     "tier": 1,
      "value": "9",
      "unit": "%",
      "viz": "bar",
@@ -87,12 +87,10 @@
      "source_url": "",
      "source_published": "",
      "source_accessed": "",
-     "reveal": "condensed",
      "id": "share-of-global-power"
     },
     {
      "label": "Time at full power",
-     "tier": 1,
      "value": "83",
      "unit": "%",
      "viz": "radial",
@@ -108,12 +106,10 @@
      "source_url": "https://world-nuclear.org/our-association/publications/world-nuclear-performance-report/global-nuclear-industry-performance",
      "source_published": "2025",
      "source_accessed": "2026-07-08",
-     "reveal": "condensed",
      "id": "time-at-full-power"
     },
     {
      "label": "Lifecycle CO₂ emissions",
-     "tier": 1,
      "value": "~6",
      "unit": " g per kWh",
      "viz": "range",
@@ -129,12 +125,10 @@
      "source_url": "https://unece.org/climate-change/press/international-climate-objectives-will-not-be-met-if-nuclear-power-excluded",
      "source_published": "2021",
      "source_accessed": "2026-07-08",
-     "reveal": "normal",
      "id": "lifecycle-co-emissions"
     },
     {
      "label": "Build cost · West vs Korea",
-     "tier": 1,
      "value": "~4",
      "unit": "× costlier",
      "viz": "bar",
@@ -150,12 +144,10 @@
      "source_url": "",
      "source_published": "",
      "source_accessed": "",
-     "reveal": "normal",
      "id": "build-cost-west-vs-korea"
     },
     {
      "label": "Nuclear waste ever produced",
-     "tier": 1,
      "value": "~448,000",
      "unit": " tonnes",
      "viz": "bar",
@@ -171,12 +163,10 @@
      "source_url": "https://www.iaea.org/newscenter/news/iaea-releases-first-public-tool-to-map-the-worlds-spent-nuclear-fuel",
      "source_published": "2026",
      "source_accessed": "2026-07-08",
-     "reveal": "normal",
      "id": "nuclear-waste-ever-produced"
     },
     {
      "label": "Operating reactors worldwide",
-     "tier": 2,
      "value": "~417",
      "unit": "",
      "viz": "range",
@@ -192,12 +182,10 @@
      "source_url": "https://pris-stats.iaea.org/",
      "source_published": "2026",
      "source_accessed": "2026-07-08",
-     "reveal": "condensed",
      "id": "operating-reactors-worldwide"
     },
     {
      "label": "Reactors under construction",
-     "tier": 2,
      "value": "~77",
      "unit": "",
      "viz": "bar",
@@ -213,12 +201,10 @@
      "source_url": "https://pris-stats.iaea.org/",
      "source_published": "2026",
      "source_accessed": "2026-07-08",
-     "reveal": "condensed",
      "id": "reactors-under-construction"
     },
     {
      "label": "Top producers · share of world nuclear",
-     "tier": 2,
      "value": "30",
      "unit": "%",
      "viz": "ranked",
@@ -265,12 +251,10 @@
      "source_url": "https://world-nuclear.org/information-library/facts-and-figures/nuclear-generation-by-country",
      "source_published": "2025",
      "source_accessed": "2026-07-08",
-     "reveal": "condensed",
      "id": "top-producers-share-of-world-nuclear"
     },
     {
      "label": "Average reactor age",
-     "tier": 2,
      "value": "~32",
      "unit": " years",
      "viz": "range",
@@ -286,12 +270,10 @@
      "source_url": "https://www.worldnuclearreport.org/All-the-figures-from-the-2025-report",
      "source_published": "2025",
      "source_accessed": "2026-07-08",
-     "reveal": "condensed",
      "id": "average-reactor-age"
     },
     {
      "label": "Operating life · design vs extended",
-     "tier": 2,
      "value": "60",
      "unit": " years",
      "viz": "range",
@@ -307,12 +289,10 @@
      "source_url": "",
      "source_published": "",
      "source_accessed": "",
-     "reveal": "condensed",
      "id": "operating-life-design-vs-extended"
     },
     {
      "label": "Uranium reserves",
-     "tier": 2,
      "value": "~90",
      "unit": " years",
      "viz": "bar",
@@ -328,7 +308,6 @@
      "source_url": "https://oecd-nea.org",
      "source_published": "",
      "source_accessed": "",
-     "reveal": "condensed",
      "id": "uranium-reserves"
     }
    ]
@@ -336,173 +315,107 @@
   "questions": [
    {
     "text": "Are runaway Western nuclear costs fixable, or structural?",
-    "tier": 1,
     "kind": "empirical",
     "why": "South Korea builds at roughly a quarter of Vogtle's now-final $36.8bn cost. If the gap reflects lost supply chains, standardised build programmes could close it — if democratic safety preferences, no reform will.",
     "detail": "The 'fixable' case reads the cost gap as execution, not physics: South Korea and China deliver reactors at a fraction of Western cost by repeating one standardised design with a stable workforce and supply chain, and historic US and French builds were far cheaper before the industry stalled. Georgia's Vogtle units 3 and 4, both now in commercial operation, are the definitive cautionary data point: final cost near $36.8 billion, roughly 2.5 times the original estimate. The 'structural' case argues those higher costs encode durable democratic preferences — stringent safety review, litigation rights, public consultation, high labour and financing costs — that won't be repealed. The crux: could a sustained, standardised build programme actually be sustained politically here, or would the first overrun headline collapse support again?",
-    "votes": 0,
     "lean_label_a": "Fixable",
     "lean_label_b": "Structural",
-    "lean_pct_a": 61,
-    "reveal": "condensed",
     "id": "are-runaway-western-nuclear-costs-fixable"
    },
    {
     "text": "Is the waste problem solved in principle, but unsolved in practice?",
-    "tier": 1,
     "kind": "value",
     "why": "Deep geological disposal is settled science: Onkalo ran its 2026 trial and a licence/first-waste decision is due by early 2027. Yet most countries still lack a sited repository — the gap is political, not technical.",
     "detail": "Technically, deep geological disposal is mature: Finland's Onkalo completed a trial run in 2026, with regulator STUK due to rule on an operating licence and receipt of the first spent fuel possible as early as late 2026 or 2027 — turning 'geological disposal works' from theory into an operating fact. Isolating waste in stable rock over the required timescales is broadly settled science. The unresolved part is social and political: Sweden broke ground on its own repository in 2025 but won't begin disposal until the 2030s, France's licence and first operation have slipped to roughly 2027-2035, and Canada has only just selected a site, with no shovels in the ground. Almost no country has actually opened one, because 'who hosts a multi-millennia hazard?' triggers local opposition, intergenerational-equity arguments, and policy that flips with each government. Calling it a value question is deliberate: whether you count the problem as 'solved' depends on whether you weigh technical feasibility or actual deployment, and on how much risk a community can fairly be asked to bear for others and for the distant future. Interim on-site storage is safe for decades but quietly defers the decision rather than resolving it.",
-    "votes": 0,
     "lean_label_a": "Solved",
     "lean_label_b": "Not in practice",
-    "lean_pct_a": 43,
-    "reveal": "condensed",
     "id": "is-the-waste-problem-solved-in"
    },
    {
     "text": "Can new nuclear deploy fast enough to matter for 2050?",
-    "tier": 1,
     "kind": "empirical",
     "why": "AI data centres are the sharpest current test: demand is projected to nearly double by 2030, met mostly by gas, solar and storage — because new reactors still can't be built fast enough to bid for it.",
     "detail": "The skeptical case is arithmetic: even optimistic nuclear build rates add capacity over years-to-decades per plant, while solar and storage grow exponentially and keep getting cheaper, so a dollar often abates more carbon sooner in renewables. The advocate case is that deep decarbonisation needs firm, dispatchable, low-carbon power for the hours and seasons when wind and solar underdeliver, and that grids leaning entirely on variable sources face rising integration and storage costs. The AI data-centre boom has sharpened this fight rather than settled it: hyperscalers are signing long-term nuclear power-purchase deals and funding SMR projects, but because new reactors won't be ready until the early 2030s at the earliest, most of the immediate demand growth is still being served by gas and renewables. Much of the disagreement turns on assumptions about storage-cost curves, grid flexibility, and whether 'firm' power must be nuclear or could come from geothermal, hydro, or gas-with-capture. It's empirical, but the answer hinges on which 2050 scenario you find credible.",
-    "votes": 0,
     "lean_label_a": "Can matter",
     "lean_label_b": "Too slow",
-    "lean_pct_a": 42,
-    "reveal": "normal",
     "id": "can-new-nuclear-deploy-fast-enough"
    },
    {
     "text": "Should we extend old reactors or build new ones?",
-    "tier": 1,
     "kind": "empirical",
     "why": "By mid-2026 over a dozen US reactors are approved to run to 80 years — the cheapest clean power there is. But Germany's dismantled plants show extension only works if the licence never lapses.",
     "detail": "Extending existing reactors to 60 or 80 years is usually the cheapest clean power available, since construction cost is sunk and components can be refurbished; by mid-2026 more than a dozen US reactors, including Browns Ferry, Peach Bottom, Surry and Turkey Point, have been approved for 80-year operation. But the fleet is aging, inspection and upkeep costs climb, and an extension-only strategy eventually runs out of reactors to extend. Germany's phase-out is the cautionary counter-case: once its last three reactors were shut and partly dismantled in 2023, restarting them stopped being a matter of paperwork — former plant managers now say it's technically feasible, but doing it means rebuilding large sections of the facilities, at a cost and timeline extension would have avoided entirely. New build keeps the supply chain and workforce alive and adds firm capacity, yet in the West it stays slow and costly. Most credible plans do both: extend aggressively now to buy time while rebuilding the ability to construct new plants affordably.",
-    "votes": 0,
     "lean_label_a": "Extend",
     "lean_label_b": "Build new",
-    "lean_pct_a": 55,
-    "reveal": "condensed",
     "id": "should-we-extend-old-reactors-or"
    },
    {
     "text": "Are small modular reactors a breakthrough or overhyped?",
-    "tier": 2,
     "kind": "empirical",
     "why": "China's Linglong One is on track to become the world's first operating commercial SMR in 2026, years ahead of Western rivals still in licensing — but one demonstrator doesn't prove the factory economics the whole case rests on.",
     "detail": "Small modular reactors aim to fix nuclear's cost problem by mass-producing standardised units in factories instead of building each plant first-of-a-kind on site. China's Linglong One (ACP100), a 125 MWe unit in Hainan, completed its final pre-nuclear tests in late 2025 and is targeting grid connection and commercial operation in 2026 — poised to beat every Western competitor to the first working commercial SMR. In the US, the NRC is expected to rule on the first commercial SMR construction permits during 2026, and the DOE committed $800 million in late 2025 to back TVA's and Holtec's projects, but none of the Western designs will operate before the early 2030s. Skeptics note that a single demonstrator proves the reactor works, not that it can be mass-produced cheaply — shrinking a reactor sacrifices the per-kWh economies that favoured large plants, and first-of-a-kind units are still expensive. Whether SMRs are transformative or a distraction hinges on whether order books get large enough, and fast enough, to unlock the promised factory economics.",
-    "votes": 0,
     "lean_label_a": "Breakthrough",
     "lean_label_b": "Overhyped",
-    "lean_pct_a": 40,
-    "reveal": "condensed",
     "id": "are-small-modular-reactors-a-breakthrough"
    },
    {
     "text": "Is public fear of nuclear the real barrier, not its actual risk?",
-    "tier": 2,
     "kind": "value",
     "why": "US favourability hit a record 77% in 2026 — yet safety and waste remain the top reasons for opposition, and Germany's political class stays split on exactly that basis.",
     "detail": "By measured deaths per unit of electricity nuclear ranks among the safest sources, and public perception is catching up: a May 2026 Bisconti survey put US favourability at a record 77%, with strongly-favourable outnumbering strongly-opposed six to one. If perception was the real barrier, that shift should matter — yet safety, waste and accidents remain the top reasons the remaining opponents give, and in Germany, where three reactors were permanently shut and partly dismantled in 2023, the governing coalition is still split on reviving nuclear, with skeptics citing unresolved waste and safety concerns against advocates pushing to reconsider. Others argue the concern is legitimate: low-probability high-consequence accidents, millennia-long waste stewardship, and proliferation are real and not captured by an average-deaths statistic or a topline approval number. Framing it as a value question keeps both the safety data and the legitimacy of public risk tolerance in view.",
-    "votes": 0,
     "lean_label_a": "Perception",
     "lean_label_b": "Real risk",
-    "lean_pct_a": 64,
-    "reveal": "condensed",
     "id": "is-public-fear-of-nuclear-the"
    }
   ],
   "positions": [
    {
     "name": "Climate Pragmatist",
-    "tier": 1,
     "color_key": "green",
     "steelman": "The only zero-carbon source already proven to run a grid around the clock at scale - and the climate clock is too tight to take it off the table.",
-    "description": "Nuclear is the only dispatchable, zero-carbon power proven at national scale: France still draws about 69% of its electricity from nuclear, and reactors deliver firm output around the clock at capacity factors above 90%. IPCC mitigation pathways lean on expanding it, and one PwC analysis found Germany's power sector could be 94% emissions-free today had it kept its reactors running instead of leaning harder on coal and gas after its 2023 phase-out.",
-    "detail": "From this view, the decisive fact is that deep decarbonisation needs firm power that runs whatever the weather, and nuclear is the only low-carbon source that has actually delivered it at scale for decades. Its lifecycle emissions sit alongside wind, its land and materials footprint is tiny per unit of energy, and the historical record is real: France and Sweden cut their grid carbon faster than any wind-and-solar build has yet matched. Treating a working, proven technology as off-limits, the argument goes, only raises the cost and the risk of hitting climate targets on time - a risk Hansen sharpened further in 2025 by declaring the 2°C goal itself already out of reach.",
-    "representative_name": "James Hansen",
-    "representative_note": "climate scientist who broke with much of the green movement to back nuclear.",
     "proponents": "James Hansen, Stewart Brand, Clean Air Task Force",
-    "importance": 0,
-    "prevalence_weight": 85,
-    "spectrum_position": 0,
-    "id": "climate-pragmatist"
+    "id": "climate-pragmatist",
+    "detail": "Nuclear is the only dispatchable, zero-carbon power proven at national scale: France still draws about 69% of its electricity from nuclear, and reactors deliver firm output around the clock at capacity factors above 90%. IPCC mitigation pathways lean on expanding it, and one PwC analysis found Germany's power sector could be 94% emissions-free today had it kept its reactors running instead of leaning harder on coal and gas after its 2023 phase-out.\n\nFrom this view, the decisive fact is that deep decarbonisation needs firm power that runs whatever the weather, and nuclear is the only low-carbon source that has actually delivered it at scale for decades. Its lifecycle emissions sit alongside wind, its land and materials footprint is tiny per unit of energy, and the historical record is real: France and Sweden cut their grid carbon faster than any wind-and-solar build has yet matched. Treating a working, proven technology as off-limits, the argument goes, only raises the cost and the risk of hitting climate targets on time - a risk Hansen sharpened further in 2025 by declaring the 2°C goal itself already out of reach."
    },
    {
     "name": "Cost Skeptic",
-    "tier": 1,
     "color_key": "blue",
     "steelman": "Climate is a race against time, and slow, over-budget reactors buy less carbon abatement per dollar, and far later, than renewables we can build today.",
-    "description": "Vogtle's two new US reactors finally entered service in 2023-24, seven years late and about $21 billion over budget at a total cost near $35 billion; Hinkley Point C's price has since climbed further, to roughly £48 billion in today's money with first power now pushed to 2030 - nearly triple its original 2016 estimate. Solar, wind and batteries, meanwhile, have fallen by about 70-90% over the past decade on a steady learning curve, and battery storage hit fresh record lows in 2025.",
-    "detail": "The case here is about opportunity cost and time. Climate is a cumulative problem, so what matters is tonnes of CO2 avoided per dollar per year, and a reactor that takes a decade or more and arrives far over budget compares poorly with renewables that can be financed and built in a fraction of that time. Defenders blame Western dysfunction, but the skeptic notes that even China, the world's fastest nuclear builder, added only 3.9 GW of nuclear in 2024 against 370 GW of wind, solar and hydro combined - and that 'negative learning' has dogged the industry for decades regardless of who is building. Pouring scarce capital and political attention into slow megaprojects, on this view, crowds out the faster, cheaper wins already on the table.",
-    "representative_name": "Amory Lovins",
-    "representative_note": "physicist and advocate of the efficiency-and-renewables path.",
     "proponents": "Amory Lovins, BNEF analysts, Mark Z. Jacobson",
-    "importance": 0,
-    "prevalence_weight": 72,
-    "spectrum_position": 1,
-    "id": "cost-skeptic"
+    "id": "cost-skeptic",
+    "detail": "Vogtle's two new US reactors finally entered service in 2023-24, seven years late and about $21 billion over budget at a total cost near $35 billion; Hinkley Point C's price has since climbed further, to roughly £48 billion in today's money with first power now pushed to 2030 - nearly triple its original 2016 estimate. Solar, wind and batteries, meanwhile, have fallen by about 70-90% over the past decade on a steady learning curve, and battery storage hit fresh record lows in 2025.\n\nThe case here is about opportunity cost and time. Climate is a cumulative problem, so what matters is tonnes of CO2 avoided per dollar per year, and a reactor that takes a decade or more and arrives far over budget compares poorly with renewables that can be financed and built in a fraction of that time. Defenders blame Western dysfunction, but the skeptic notes that even China, the world's fastest nuclear builder, added only 3.9 GW of nuclear in 2024 against 370 GW of wind, solar and hydro combined - and that 'negative learning' has dogged the industry for decades regardless of who is building. Pouring scarce capital and political attention into slow megaprojects, on this view, crowds out the faster, cheaper wins already on the table."
    },
    {
     "name": "New-Nuclear Advocate",
-    "tier": 1,
     "color_key": "amber",
     "steelman": "Stop building bespoke megaprojects: freeze one design, build it in series, and nuclear's costs fall the way every mature manufacturing industry's do.",
-    "description": "Small modular and Gen-IV reactors aim to replace one-off gigawatt megaprojects with standardised, factory-built units - and in 2026 the bet started moving from paper to steel. TerraPower broke ground on its Natrium reactor in Wyoming, America's first advanced commercial reactor construction start, while Kairos Power and X-energy began building demonstration plants backed by Google and Amazon. Korea's KHNP also won its first nuclear export contract in 15 years, an $18 billion deal to build APR-1400s in the Czech Republic.",
-    "detail": "Advocates argue the West's cost problem is a failure of method, not physics: it stopped building, lost its supply chain and skilled crews, then attempted complex first-of-a-kind plants from a standing start. The fix is serial production - freeze a licensed design, build it dozens of times, and capture the learning curve that every mature industry shows, as Korea's fleet and France's 1970s-80s programme did. The 2020s added a new financing twist: AI companies, not utility ratepayers, are now bankrolling first-of-a-kind risk - Google, Amazon, Meta and Microsoft have together committed close to 10 GW of nuclear offtake, capital that is what let TerraPower, Kairos Power and X-energy start pouring concrete. But the model's fragility is real too: NuScale's flagship US project in Idaho collapsed in 2023 when its cost more than doubled to $9.3 billion, and none of the current builds has yet delivered a working reactor, so the learning-curve bet remains unproven at Western labor costs and safety standards.",
-    "representative_name": "TerraPower",
-    "representative_note": "Gen-IV developer that broke ground on its first US reactor, Natrium, in April 2026.",
     "proponents": "TerraPower, Kairos Power, X-energy, NuScale, DOE",
-    "importance": 0,
-    "prevalence_weight": 74,
-    "spectrum_position": 2,
-    "id": "new-nuclear-advocate"
+    "id": "new-nuclear-advocate",
+    "detail": "Small modular and Gen-IV reactors aim to replace one-off gigawatt megaprojects with standardised, factory-built units - and in 2026 the bet started moving from paper to steel. TerraPower broke ground on its Natrium reactor in Wyoming, America's first advanced commercial reactor construction start, while Kairos Power and X-energy began building demonstration plants backed by Google and Amazon. Korea's KHNP also won its first nuclear export contract in 15 years, an $18 billion deal to build APR-1400s in the Czech Republic.\n\nAdvocates argue the West's cost problem is a failure of method, not physics: it stopped building, lost its supply chain and skilled crews, then attempted complex first-of-a-kind plants from a standing start. The fix is serial production - freeze a licensed design, build it dozens of times, and capture the learning curve that every mature industry shows, as Korea's fleet and France's 1970s-80s programme did. The 2020s added a new financing twist: AI companies, not utility ratepayers, are now bankrolling first-of-a-kind risk - Google, Amazon, Meta and Microsoft have together committed close to 10 GW of nuclear offtake, capital that is what let TerraPower, Kairos Power and X-energy start pouring concrete. But the model's fragility is real too: NuScale's flagship US project in Idaho collapsed in 2023 when its cost more than doubled to $9.3 billion, and none of the current builds has yet delivered a working reactor, so the learning-curve bet remains unproven at Western labor costs and safety standards."
    },
    {
     "name": "Risk-First Skeptic",
-    "tier": 1,
     "color_key": "rust",
     "steelman": "Some risks - meltdowns, proliferation, waste outlasting civilisation - are too catastrophic and irreversible to accept when safer options now exist.",
-    "description": "Meltdowns, weapons proliferation and waste that stays dangerous for tens of thousands of years are not ordinary, insurable risks - they are low-probability, high-consequence hazards that outlast the institutions meant to contain them. Chernobyl and Fukushima displaced whole regions for years, and the 2025-26 US-Israeli strikes on Iran's nuclear sites - which left Rosatom warning of mounting risk to the still-operating Bushehr reactor - showed how fast civilian nuclear infrastructure gets drawn into military conflict. A decentralised renewable grid fails gracefully and locally; a reactor, a waste store, or a war zone can fail catastrophically and irreversibly.",
-    "detail": "This position weighs tail risk and time differently from a simple cost comparison. Even if accidents are rare, their consequences - exclusion zones, contaminated land, the spread of fissile material - are so severe and long-lived that ordinary expected-value math understates them. Civilian programmes remain entangled with weapons capability: IAEA chief Rafael Grossi has warned a nuclear-armed Iran could trigger a wider regional proliferation cascade, with Saudi Arabia already saying it would seek weapons in response. And while Finland's Onkalo became the first repository to begin sealing test canisters in 2026, the skeptic reads that as proof of how rare and slow even a working solution is - no society has yet completed operation of a deep geological repository over the full lifetime of its waste. With genuinely cheap, modular renewables now available, the skeptic argues there is no longer a compelling reason to accept those irreversible, intergenerational hazards.",
-    "representative_name": "Naomi Oreskes",
-    "representative_note": "historian of science writing on risk and trust.",
     "proponents": "Naomi Oreskes, anti-nuclear NGOs",
-    "importance": 0,
-    "prevalence_weight": 45,
-    "spectrum_position": 3,
-    "id": "risk-first-skeptic"
+    "id": "risk-first-skeptic",
+    "detail": "Meltdowns, weapons proliferation and waste that stays dangerous for tens of thousands of years are not ordinary, insurable risks - they are low-probability, high-consequence hazards that outlast the institutions meant to contain them. Chernobyl and Fukushima displaced whole regions for years, and the 2025-26 US-Israeli strikes on Iran's nuclear sites - which left Rosatom warning of mounting risk to the still-operating Bushehr reactor - showed how fast civilian nuclear infrastructure gets drawn into military conflict. A decentralised renewable grid fails gracefully and locally; a reactor, a waste store, or a war zone can fail catastrophically and irreversibly.\n\nThis position weighs tail risk and time differently from a simple cost comparison. Even if accidents are rare, their consequences - exclusion zones, contaminated land, the spread of fissile material - are so severe and long-lived that ordinary expected-value math understates them. Civilian programmes remain entangled with weapons capability: IAEA chief Rafael Grossi has warned a nuclear-armed Iran could trigger a wider regional proliferation cascade, with Saudi Arabia already saying it would seek weapons in response. And while Finland's Onkalo became the first repository to begin sealing test canisters in 2026, the skeptic reads that as proof of how rare and slow even a working solution is - no society has yet completed operation of a deep geological repository over the full lifetime of its waste. With genuinely cheap, modular renewables now available, the skeptic argues there is no longer a compelling reason to accept those irreversible, intergenerational hazards."
    },
    {
     "name": "Go all-in: a fast, standardised build-out",
-    "tier": 2,
     "color_key": "purple",
     "steelman": "Firm, clean power at scale is non-negotiable for deep decarbonisation — commit to one design and build it relentlessly until costs fall.",
-    "description": "Treat nuclear as essential baseload for a net-zero grid and fix the cost problem the way Korea did: one standard design, a steady pipeline, and an intact workforce and supply chain. Korea's 2025 win of an $18 billion contract to build APR-1400s in the Czech Republic - its first nuclear export in 15 years - is the model's latest proof point.",
-    "detail": "Proponents argue variable renewables alone leave a firm-power gap storage can't yet close affordably, and that the West's high costs are a self-inflicted wound from stop-start building, not a law of nature. A sustained programme around a single licensed design drives costs down each unit, as France's 1970s-80s build, Korea's fleet, and now its export wins show. AI-driven capital is also accelerating the model in the US, with TerraPower, Kairos Power and X-energy all breaking ground in 2025-26. The risk is political durability: such programmes need decades of stable policy and public consent, and one high-profile overrun can collapse support.",
-    "representative_name": "",
-    "representative_note": "",
     "proponents": "",
-    "importance": 0,
-    "prevalence_weight": 17,
-    "spectrum_position": 4,
-    "id": "go-all-in-a-fast-standardised"
+    "id": "go-all-in-a-fast-standardised",
+    "detail": "Treat nuclear as essential baseload for a net-zero grid and fix the cost problem the way Korea did: one standard design, a steady pipeline, and an intact workforce and supply chain. Korea's 2025 win of an $18 billion contract to build APR-1400s in the Czech Republic - its first nuclear export in 15 years - is the model's latest proof point.\n\nProponents argue variable renewables alone leave a firm-power gap storage can't yet close affordably, and that the West's high costs are a self-inflicted wound from stop-start building, not a law of nature. A sustained programme around a single licensed design drives costs down each unit, as France's 1970s-80s build, Korea's fleet, and now its export wins show. AI-driven capital is also accelerating the model in the US, with TerraPower, Kairos Power and X-energy all breaking ground in 2025-26. The risk is political durability: such programmes need decades of stable policy and public consent, and one high-profile overrun can collapse support."
    },
    {
     "name": "Keep existing plants, bet new money on renewables",
-    "tier": 2,
     "color_key": "teal",
     "steelman": "Every dollar should buy the most carbon abatement per year — and right now that's overwhelmingly solar, wind and storage, not slow, costly new reactors.",
-    "description": "Extend safe existing reactors for their cheap firm power, but direct new investment to renewables and storage, which deploy faster and cheaper per tonne of CO2 avoided.",
-    "detail": "This position accepts nuclear's value as existing firm capacity - so it opposes premature shutdowns - while arguing new reactors are too slow and costly to be the marginal climate dollar's best use. Battery storage costs hit fresh record lows in 2025, though solar and wind benchmark costs ticked up for the first time in years - a wrinkle proponents say doesn't undo a decade-long downward trend. Critics counter that deep decarbonisation eventually needs firm low-carbon power for dark, windless stretches, and that the wave of AI-driven capital now flowing into new reactors shows big buyers no longer see this as an either/or bet.",
-    "representative_name": "",
-    "representative_note": "",
     "proponents": "",
-    "importance": 0,
-    "prevalence_weight": 10,
-    "spectrum_position": 5,
-    "id": "keep-existing-plants-bet-new-money"
+    "id": "keep-existing-plants-bet-new-money",
+    "detail": "Extend safe existing reactors for their cheap firm power, but direct new investment to renewables and storage, which deploy faster and cheaper per tonne of CO2 avoided.\n\nThis position accepts nuclear's value as existing firm capacity - so it opposes premature shutdowns - while arguing new reactors are too slow and costly to be the marginal climate dollar's best use. Battery storage costs hit fresh record lows in 2025, though solar and wind benchmark costs ticked up for the first time in years - a wrinkle proponents say doesn't undo a decade-long downward trend. Critics counter that deep decarbonisation eventually needs firm low-carbon power for dark, windless stretches, and that the wave of AI-driven capital now flowing into new reactors shows big buyers no longer see this as an either/or bet."
    }
   ],
   "crux": {
@@ -515,55 +428,44 @@
   "actions": [
    {
     "kind": "learn_more",
-    "tier": 1,
     "title": "Our World in Data — energy",
     "description": "Interactive charts comparing every power source on lifecycle emissions, death rates and the global generation mix — a neutral baseline to ground yourself in before picking a camp.",
     "url": "https://ourworldindata.org/energy",
     "for_position": null,
-    "reveal": "condensed",
     "id": "our-world-in-data-energy"
    },
    {
     "kind": "donate",
-    "tier": 1,
     "title": "Good Energy Collective",
     "description": "Policy research building the progressive case for nuclear: community consent, environmental justice, and deployment policy for new builds. 4-star rated.",
     "url": "https://goodenergycollective.givevirtuous.org/donate/donate",
     "for_position": "New-Nuclear Advocate",
-    "reveal": "condensed",
     "id": "good-energy-collective"
    },
    {
     "kind": "donate",
-    "tier": 1,
     "title": "Rocky Mountain Institute",
     "description": "Research and implementation work betting decarbonisation on renewables, storage and efficiency — the natural home for support if the cost-skeptic case convinces you.",
     "url": "https://rmi.org/get-involved/donate-to-rmi/",
     "for_position": "Cost Skeptic",
-    "reveal": "condensed",
     "id": "rocky-mountain-institute"
    },
    {
     "kind": "policy",
-    "tier": 2,
     "title": "Comment on NRC reform",
     "description": "Advanced-reactor licensing rules are being rewritten now. The NRC's open dockets take comments from anyone, and each submission enters the formal rulemaking record.",
     "url": "https://www.regulations.gov/docket/NRC-2025-0975",
     "for_position": null,
-    "reveal": "normal",
     "id": "comment-on-nrc-reform"
    },
    {
     "kind": "local",
-    "tier": 2,
     "title": "Relicensing hearing",
     "description": "When an aging plant applies to run longer, the NRC holds public meetings near the site — the direct venue for safety and economic concerns from the communities that host them.",
     "url": "https://www.nrc.gov/about-nrc/regulatory/licensing/pub-involve",
     "for_position": "Risk-First Skeptic",
-    "reveal": "normal",
     "id": "relicensing-hearing"
    }
   ]
- },
- "icon": "atom"
+ }
 }

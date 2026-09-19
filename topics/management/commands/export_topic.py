@@ -8,17 +8,14 @@ to adopt a direct database edit on purpose. To find out whether the two have
 parted company, run `check_topic_drift` rather than exporting over the file and
 hoping.
 
-Writes the same ``{ "draft": {...} }`` envelope the loader reads
-(``payload.get("draft", payload)``), pretty
+Writes the same ``{ "content": {...} }`` envelope the loader reads, pretty
 (indent=1, ascii-escaped) to match the existing research/topics JSON style.
 
   manage.py export_topic --slug nuclear-energy           # -> research/topics/nuclear-energy/topic.json
   manage.py export_topic --slug nuclear-energy --out -   # -> stdout
 
-The draft mirrors the loader field-for-field, and is a superset: fields the
-loader does not (yet) read — e.g. stat series/range, question votes/lean,
-position importance/detail — are exported too, so the JSON captures the whole
-topic. The loader ignores keys it doesn't know, so the round-trip stays safe.
+`content` mirrors the loader field-for-field. Participation (votes, leans,
+prompt responses) is never exported: it lives in the database, keyed by item id.
 """
 
 import json
@@ -63,10 +60,8 @@ def _question(q):
         "kind": q.kind,
         "why": q.why,
         "detail": q.detail,
-        "votes": q.votes,
         "lean_label_a": q.lean_label_a,
         "lean_label_b": q.lean_label_b,
-        "lean_pct_a": q.lean_pct_a,
     }
 
 
@@ -76,12 +71,8 @@ def _position(p):
         "name": p.name,
         "color_key": p.color_key,
         "steelman": p.steelman,
-        "description": p.description,
         "detail": p.detail,
-        "representative_name": p.representative_name,
-        "representative_note": p.representative_note,
         "proponents": p.proponents,
-        "importance": p.importance,
     }
 
 
@@ -141,12 +132,8 @@ class Command(BaseCommand):
         )
 
         draft = {
-            # Topic-level meta. The loader takes title/slug/status/category from
-            # Identity, placement and lifecycle live at the TOP of the file, not
-            # in here — `draft` is content. Volatility and the art prompt are
-            # engine-produced attributes of that content, so they stay.
-            "volatility": topic.volatility,
-            "primary_image_prompt": topic.primary_image_prompt,
+            # Identity, placement, lifecycle and the art prompt live at the TOP
+            # of the file, not in here — `content` is only what the page renders.
             "overview": {
                 "summary": topic.summary,
                 "scope_covered": topic.scope_covered,
@@ -160,7 +147,7 @@ class Command(BaseCommand):
             "actions": children(Section.ACTIONS, "actions", _action),
         }
         # One file per topic, cradle to grave: the index fields the loader reads
-        # sit at the top, `draft` is the content under them.
+        # sit at the top, `content` is what the page renders, under them.
         cats = [
             c.slug
             for c in topic.categories.order_by("slug")
@@ -170,6 +157,12 @@ class Command(BaseCommand):
             "slug": topic.slug,
             "title": topic.title,
             "status": topic.status,
+            "authored_at": topic.authored_at.isoformat() if topic.authored_at else None,
+            "published_at": (
+                topic.published_at.isoformat() if topic.published_at else None
+            ),
+            "reviewed_at": list(topic.reviewed_at or []),
+            "primary_image_prompt": topic.primary_image_prompt,
             "scope": topic.scope,
             "icon": topic.icon,
             "primary_category": topic.primary_category.slug
@@ -180,7 +173,7 @@ class Command(BaseCommand):
                 e.target.slug
                 for e in topic.outgoing_edges.select_related("target").order_by("id")
             ],
-            "draft": draft,
+            "content": draft,
         }
 
         out = o["out"]

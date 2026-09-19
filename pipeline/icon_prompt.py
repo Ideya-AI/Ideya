@@ -1,15 +1,15 @@
 """Stage 3 tooling, first cut: the generation prompt is assembled, not written.
 
-    .venv/bin/python research/pipeline/icon_prompt.py brief research/categories/ai/icon.md
+    .venv/bin/python pipeline/icon_prompt.py brief research/categories/ai/icon.md
         Print the assembled prompt for a brief (style template + the brief's
         Scene and Negatives sections + the category hex from tokens.css).
 
-    .venv/bin/python research/pipeline/icon_prompt.py normalize in.png out.png [--ratio 1:1] [--size 512]
+    .venv/bin/python pipeline/icon_prompt.py normalize in.png out.png [--ratio 1:1] [--size 512]
         Trim a generated image to its content, pad ~8%, fit the ratio on white,
         save an optimized PNG. Framing is fixed here, never trusted from the
         generator.
 
-    .venv/bin/python research/pipeline/icon_prompt.py generate research/categories/ai/icon.md [--n 2] [--round 1]
+    .venv/bin/python pipeline/icon_prompt.py generate research/categories/ai/icon.md [--n 2] [--round 1]
                                                        [--edit candidates/r1-a.png --note "make the wires thicker"]
         Call the Gemini image API (GEMINI_API_KEY from the environment or .env)
         with the assembled prompt, or in edit mode with an incumbent image plus
@@ -29,7 +29,7 @@ import sys
 import urllib.request
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[1]
 TOKENS = ROOT / "static" / "css" / "tokens.css"
 MODEL = "gemini-3-pro-image"
 COST_PER_IMAGE = 0.134  # USD, 1K standard, per the design's budget table

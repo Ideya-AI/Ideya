@@ -7,7 +7,7 @@ refuses to make anything public that is not sitting there. It does not re-derive
 readiness, and it knows nothing about how it was earned.
 
 So the whole command is: check the status, move it to `published` in the topic's
-file and its row, stamp `reviewed_at` (the human-approval clock), move the search
+file and its row, stamp `published_at`, move the search
 index. It reads no
 files, loads no content, and judges no quality. If the topic in the database is
 not the one you want public, fix that with `load_topic_draft` — which clears the
@@ -44,7 +44,7 @@ class Command(BaseCommand):
         p.add_argument(
             "--off",
             action="store_true",
-            help="take a public topic private again (does not touch reviewed_at).",
+            help="take a public topic private again (does not touch published_at).",
         )
         p.add_argument(
             "--confirm",
@@ -89,7 +89,7 @@ class Command(BaseCommand):
             self.stdout.write(
                 f"Would {verb} '{topic.title}' [{slug}]: "
                 f"status {topic.status} -> {target}"
-                + ("" if o["off"] else ", reviewed_at stamped")
+                + ("" if o["off"] else ", published_at stamped")
             )
 
             self.stdout.write(self._live_block(slug, o["off"]))
@@ -101,7 +101,7 @@ class Command(BaseCommand):
             # Status is written to the topic FILE first and then to its row: the
             # file is the source of truth, and a publish that lived only in the
             # database would be undone by the next rebuild from the directory.
-            extra = {} if o["off"] else {"reviewed_at": timezone.now()}
+            extra = {} if o["off"] else {"published_at": timezone.now()}
             path = set_status(topic, target, **extra)
         # The search index only carries published topics, so the switch has to
         # move it too or a live topic is unfindable (and a hidden one findable).
@@ -113,7 +113,7 @@ class Command(BaseCommand):
                 + (
                     ""
                     if o["off"]
-                    else f" · reviewed_at={timezone.localtime(topic.reviewed_at):%Y-%m-%d %H:%M}"
+                    else f" · published_at={timezone.localtime(topic.published_at):%Y-%m-%d %H:%M}"
                 )
             )
         )

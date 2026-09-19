@@ -31,7 +31,7 @@ class PublishTopicTests(NuclearFixtureMixin, TestCase):
     def setUp(self):
         super().setUp()
         Topic.objects.filter(slug=self.slug).update(
-            status=Topic.READY, reviewed_at=None
+            status=Topic.READY, published_at=None
         )
         # The switch writes the topic FILE as well as the row, so point it at a
         # throwaway: a test must never publish a real topic in the working tree.
@@ -64,15 +64,15 @@ class PublishTopicTests(NuclearFixtureMixin, TestCase):
         with self.assertRaises(CommandError):
             self._run()
         self.assertEqual(self._topic().status, Topic.READY)
-        self.assertIsNone(self._topic().reviewed_at)
+        self.assertIsNone(self._topic().published_at)
 
     def test_dry_run_shows_the_change_and_makes_none(self):
         out = self._run(dry_run=True)
         self.assertIn("Would make public", out)
         self.assertEqual(self._topic().status, Topic.READY)
-        self.assertIsNone(self._topic().reviewed_at)
+        self.assertIsNone(self._topic().published_at)
 
-    def test_confirm_publishes_and_stamps_reviewed_at(self):
+    def test_confirm_publishes_and_stamps_published_at(self):
         out = self._run(confirm=True)
         topic = self._topic()
         self.assertEqual(topic.status, Topic.PUBLISHED)
@@ -80,17 +80,19 @@ class PublishTopicTests(NuclearFixtureMixin, TestCase):
             self._filed_status(), Topic.PUBLISHED,
             "the switch changed the row but not the file, so a rebuild would undo it",
         )
-        self.assertIsNotNone(topic.reviewed_at, "the approval clock was not stamped")
+        self.assertIsNotNone(topic.published_at, "the publish date was not stamped")
         self.assertIn("docker exec", out, "the live commands were not printed")
 
-    def test_off_takes_it_private_without_touching_the_approval_clock(self):
+    def test_off_takes_it_private_without_touching_the_publish_date(self):
         self._run(confirm=True)
-        stamped = self._topic().reviewed_at
+        stamped = self._topic().published_at
         self._run(off=True, confirm=True)
         topic = self._topic()
         self.assertEqual(topic.status, Topic.READY)
         self.assertEqual(
-            topic.reviewed_at, stamped, "taking a topic private re-dated its approval"
+            topic.published_at,
+            stamped,
+            "taking a topic private re-dated its first publication",
         )
 
     def test_a_no_op_flip_is_refused(self):

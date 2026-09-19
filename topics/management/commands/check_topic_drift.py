@@ -30,7 +30,7 @@ IGNORE = {"votes", "importance"}
 
 # Engine-produced attributes with model defaults: the file may omit them and the
 # database will still hold something sensible.
-DERIVED = (".icon", ".volatility", ".primary_image_prompt")
+DERIVED = (".icon", ".primary_image_prompt")
 
 # Carried for the engine's own use; the topic tables have no column for it, so
 # a round-trip legitimately drops it.
@@ -77,13 +77,6 @@ def _derived(path, disk, db):
     # range_at is only kept for a range viz; elsewhere the loader drops it
     if path.endswith(".range_at") and disk in (0, "", None) and db is None:
         return True
-    # the workflow schemas cannot emit null, so -1 is their unset sentinel
-    if (
-        path.endswith(".lean_pct_a")
-        and not (isinstance(disk, int) and 0 <= disk <= 100)
-        and db is None
-    ):
-        return True
     if disk == "<absent>" and generic.endswith(DERIVED):
         return True
     if db == "<absent>" and generic.endswith(FILE_ONLY):
@@ -94,10 +87,10 @@ def _derived(path, disk, db):
 def _normalize(doc):
     """The file is input; the database holds what the loader made of it. Fold the
     one structural difference so the rest compares like for like: stage 1 writes
-    the Phosphor glyph inside the draft's `overview`, but the icon is an index
-    field — an unauthored topic has no draft and still needs one — so it settles
+    the Phosphor glyph inside the content's `overview`, but the icon is an index
+    field — an unauthored topic has no content and still needs one — so it settles
     at the top of the file."""
-    draft = doc.get("draft")
+    draft = doc.get("content")
     if isinstance(draft, dict):
         ov = draft.get("overview") or {}
         found = draft.pop("icon", None) or ov.pop("icon", None)
@@ -119,10 +112,10 @@ def drift(slug):
         db = json.loads(out.read_text())
 
     # A topic with no content is not "empty content" — the export builds a
-    # hollow draft skeleton for it, and comparing that to nothing is noise.
-    if not disk.get("draft"):
-        disk.pop("draft", None)
-        db.pop("draft", None)
+    # hollow content skeleton for it, and comparing that to nothing is noise.
+    if not disk.get("content"):
+        disk.pop("content", None)
+        db.pop("content", None)
 
     # `categories` (the secondaries) and `related` are unordered in the
     # database: secondaries are a plain many-to-many and edges carry no rank. So

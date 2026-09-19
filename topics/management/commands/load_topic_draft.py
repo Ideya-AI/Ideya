@@ -6,7 +6,7 @@ standard (e.g. nuclear-energy) intact while comparing.
 
 Reads one topic file: `{slug, title, status, scope, primary_category,
 categories, related}` plus
-`draft` once there is content. That file is the topic, cradle to grave — a topic
+`content` once there is content. That file is the topic, cradle to grave — a topic
 with only a title is the same object, earlier — and it is the ONLY source for a
 topic's identity, placement and lifecycle. The engine's own output (gate
 verdicts, the claim ledger, prescribed fixes) is process, lives in
@@ -21,6 +21,7 @@ from pathlib import Path
 from django.core.management.base import BaseCommand, CommandError
 from django.db import transaction
 from django.utils import timezone
+from django.utils.dateparse import parse_datetime
 from django.utils.text import slugify
 
 from topics.item_ids import ensure_ids
@@ -43,13 +44,6 @@ from topics.models import (
 
 POS_KEYS = [k for k, _ in POS_COLORS]
 ACTION_KINDS = {k for k, _ in Action.KIND_CHOICES}
-
-
-def _pct(v):
-    """A valid 0-100 integer or None — the workflow schemas use -1 as their
-    'unset' sentinel (structured output can't emit null), which must never
-    reach the PositiveSmallIntegerField."""
-    return v if isinstance(v, int) and 0 <= v <= 100 else None
 
 
 def image_prompt_from_brief(path: Path) -> str:
@@ -76,9 +70,6 @@ def image_prompt_from_brief(path: Path) -> str:
     return "\n".join(block).strip()
 
 
-
-
-
 def _index_of(path):
     """Top-level fields of a sibling topic file (cheap: the draft is skipped
     by never touching it)."""
@@ -86,6 +77,7 @@ def _index_of(path):
         return json.loads(path.read_text())
     except (OSError, ValueError):
         return {}
+
 
 _PHOSPHOR = None
 
@@ -96,6 +88,7 @@ def _phosphor_has(name):
         css = Path("static/vendor/phosphor-duotone.css").read_text()
         _PHOSPHOR = set(re.findall(r"\.ph-duotone\.ph-([a-z0-9-]+):before", css))
     return name in _PHOSPHOR
+
 
 def wire_related(topic, doc, stderr=None):
     """Sync a topic's OUTGOING related edges to its file. Returns the number
@@ -117,6 +110,7 @@ def wire_related(topic, doc, stderr=None):
     for gone in set(have) - want:
         have[gone].delete()
     return edges
+
 
 class Command(BaseCommand):
     help = "Load a research-pipeline TopicDraft JSON into the DB as a topic."
@@ -257,7 +251,7 @@ class Command(BaseCommand):
             return filed
         if existing is not None:
             return existing.status
-        return Topic.IN_PROGRESS if doc.get("draft") else Topic.NOT_STARTED
+        return Topic.IN_PROGRESS if doc.get("content") else Topic.NOT_STARTED
 
     def _upsert(self, model, section, item_id, natural, fields):
         """One child row, found by its frozen id. Falling back to the natural
@@ -310,7 +304,7 @@ class Command(BaseCommand):
         # One file per topic, cradle to grave: the index fields sit at the top
         # and `draft` appears once there is content. A topic with only a title
         # is the same object, earlier.
-        d = doc.get("draft") or {}
+        d = doc.get("content") or {}
         # Identity before anything else: every item must have a frozen id, so
         # the rows below are updated in place rather than rebuilt under the
         # reader participation that points at them.
@@ -358,8 +352,10 @@ class Command(BaseCommand):
         # draft carries. The path fallback is what lets publishing stay a pure
         # switch: attaching this used to be a flag only the publish step passed.
         image_prompt = d.get("primary_image_prompt", "")
-        brief_path = Path(o["image_brief"]) if o["image_brief"] else Path(
-            f"research/topics/{o['slug']}/icon.md"
+        brief_path = (
+            Path(o["image_brief"])
+            if o["image_brief"]
+            else Path(f"research/topics/{o['slug']}/icon.md")
         )
         if o["image_brief"] and not brief_path.exists():
             raise CommandError(f"--image-brief not found: {brief_path}")
@@ -372,11 +368,7 @@ class Command(BaseCommand):
         # gate gets no say, because the topic never crosses back through it. So
         # overwriting live content is opt-in, which also keeps the authoring
         # engine (which never passes the flag) from ever touching a live page.
-        if (
-            existing
-            and existing.status == Topic.PUBLISHED
-            and not o["allow_published"]
-        ):
+        if existing and existing.status == Topic.PUBLISHED and not o["allow_published"]:
             raise CommandError(
                 f"'{o['slug']}' is PUBLISHED — refusing to overwrite live "
                 "content. Take it off the site first "
@@ -395,20 +387,22 @@ class Command(BaseCommand):
             "scope_excluded": ov.get("scope_excluded", ""),
             "why_now": ov.get("why_now", ""),
             "icon": icon,
-            "researched_at": timezone.now(),
+            # The file's own lifecycle stamps: the authoring skill writes
+            # authored_at, the human's publish writes published_at, and the
+            # review skill appends to reviewed_at. The loader mirrors them.
+            "authored_at": parse_datetime(str(doc.get("authored_at") or "")) or None,
+            "published_at": parse_datetime(str(doc.get("published_at") or "")) or None,
+            "reviewed_at": [s for s in (doc.get("reviewed_at") or []) if s],
         }
         if image_prompt:
             defaults["primary_image_prompt"] = image_prompt
-        # Volatility drives the review cadence; the export carries it — a
-        # round-trip must not silently reset it to the model default.
-        if d.get("volatility") in dict(Topic.VOLATILITY_CHOICES):
-            defaults["volatility"] = d["volatility"]
-        # reviewed_at is the HUMAN-approval clock (researched_at above is the
-        # machine's). Stamping it here puts it in the same atomic transaction as
-        # the load, so a publish cannot half-succeed into a state where the topic
-        # is live but its review cadence still reads "never reviewed".
+        # --reviewed appends a review stamp in the same atomic transaction as the
+        # load, so a publish cannot half-succeed into a state where the topic is
+        # live but its review cadence still reads "never reviewed".
         if o["reviewed"]:
-            defaults["reviewed_at"] = timezone.now()
+            defaults["reviewed_at"] = defaults["reviewed_at"] + [
+                timezone.now().isoformat()
+            ]
         topic, _ = Topic.objects.update_or_create(
             slug=o["slug"],
             defaults=defaults,
@@ -483,7 +477,10 @@ class Command(BaseCommand):
                 )
             stat_keep.append(
                 self._upsert(
-                    Stat, bs, s.get("id", ""), ("label", s.get("label", "")[:120]),
+                    Stat,
+                    bs,
+                    s.get("id", ""),
+                    ("label", s.get("label", "")[:120]),
                     dict(
                         order=i,
                         label=s.get("label", "")[:120],
@@ -496,10 +493,15 @@ class Command(BaseCommand):
                         range_max=str(s.get("range_max") or "")[:40],
                         range_at=s.get("range_at") if viz == "range" else None,
                         fill_pct=s.get("fill_pct"),
-                        note=self._cap(s.get("note", ""), 400, "note", s.get("label", "")),
+                        note=self._cap(
+                            s.get("note", ""), 400, "note", s.get("label", "")
+                        ),
                         detail=s.get("detail", ""),
                         source_label=self._cap(
-                            s.get("source_label", ""), 120, "source_label", s.get("label", "")
+                            s.get("source_label", ""),
+                            120,
+                            "source_label",
+                            s.get("label", ""),
                         ),
                         source_url=s.get("source_url", "") or "",
                         source_published=self._cap(
@@ -523,7 +525,10 @@ class Command(BaseCommand):
             )
             question_keep.append(
                 self._upsert(
-                    Question, qs, q.get("id", ""), ("text", q_text),
+                    Question,
+                    qs,
+                    q.get("id", ""),
+                    ("text", q_text),
                     dict(
                         order=i,
                         text=q_text,
@@ -536,7 +541,6 @@ class Command(BaseCommand):
                         detail=q.get("detail", ""),
                         lean_label_a=q.get("lean_label_a", "")[:40],
                         lean_label_b=q.get("lean_label_b", "")[:40],
-                        lean_pct_a=_pct(q.get("lean_pct_a")),
                     ),
                 ).pk
             )
@@ -573,7 +577,10 @@ class Command(BaseCommand):
                 assigned_keys.append(ck)
             position_keep.append(
                 self._upsert(
-                    Position, ps, p.get("id", ""), ("name", p.get("name", "")[:120]),
+                    Position,
+                    ps,
+                    p.get("id", ""),
+                    ("name", p.get("name", "")[:120]),
                     dict(
                         order=i,
                         name=p.get("name", "")[:120],
@@ -581,16 +588,11 @@ class Command(BaseCommand):
                         steelman=self._cap(
                             p.get("steelman", ""), 400, "steelman", p.get("name", "")
                         ),
-                        description=p.get("description", ""),
                         detail=p.get("detail", ""),
                         proponents=self._cap(
-                            p.get("proponents", ""), 400, "proponents", p.get("name", "")
-                        ),
-                        representative_name=p.get("representative_name", "")[:120],
-                        representative_note=self._cap(
-                            p.get("representative_note", ""),
-                            300,
-                            "representative_note",
+                            p.get("proponents", ""),
+                            400,
+                            "proponents",
                             p.get("name", ""),
                         ),
                     ),
@@ -633,13 +635,19 @@ class Command(BaseCommand):
                 )
             action_keep.append(
                 self._upsert(
-                    Action, acts, a.get("id", ""), ("title", a.get("title", "")[:200]),
+                    Action,
+                    acts,
+                    a.get("id", ""),
+                    ("title", a.get("title", "")[:200]),
                     dict(
                         order=i,
                         kind=kind if kind in ACTION_KINDS else "learn_more",
                         title=a.get("title", "")[:200],
                         description=self._cap(
-                            a.get("description", ""), 400, "description", a.get("title", "")
+                            a.get("description", ""),
+                            400,
+                            "description",
+                            a.get("title", ""),
                         ),
                         url=a.get("url", "") or "",
                         position=Position_ref,
@@ -686,7 +694,10 @@ class Command(BaseCommand):
             Position.objects.filter(pk=pos.pk).update(
                 importance=Vote.objects.filter(position=pos).count()
             )
-        kept_votes = Vote.objects.filter(question__section__topic=topic).count() + Vote.objects.filter(position__section__topic=topic).count()
+        kept_votes = (
+            Vote.objects.filter(question__section__topic=topic).count()
+            + Vote.objects.filter(position__section__topic=topic).count()
+        )
         kept_leans = QuestionLean.objects.filter(question__section__topic=topic).count()
         if kept_votes or kept_leans or retired:
             self.stdout.write(

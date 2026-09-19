@@ -7,6 +7,7 @@ from django.contrib.contenttypes.models import ContentType
 from django.db import models
 from django.urls import reverse
 from django.utils import timezone
+from django.utils.dateparse import parse_datetime
 
 # Fixed render order of a topic's (and category's) section spine.
 SECTION_ORDER = [
@@ -133,15 +134,9 @@ class Topic(models.Model):
         (PUBLISHED, "Published"),
     ]
 
-    FAST = "fast"
-    MEDIUM = "medium"
-    SLOW = "slow"
-    VOLATILITY_CHOICES = [
-        (FAST, "Fast — review ~quarterly"),
-        (MEDIUM, "Medium — review ~twice a year"),
-        (SLOW, "Slow — review ~yearly"),
-    ]
-    REVIEW_INTERVAL_DAYS = {FAST: 90, MEDIUM: 180, SLOW: 365}
+    # One cadence for every topic. Per-topic volatility was a field the author
+    # guessed and nothing validated; a single interval says the same thing.
+    REVIEW_INTERVAL_DAYS = 180
 
     title = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200, unique=True)
@@ -199,20 +194,19 @@ class Topic(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    # --- research provenance (pipeline) ---
-    researched_at = models.DateTimeField(
+    # --- lifecycle, mirrored from the topic file ---
+    authored_at = models.DateTimeField(
         null=True,
         blank=True,
-        help_text="When the research pipeline last authored this.",
+        help_text="When the authoring skill last finished this topic.",
     )
-    reviewed_at = models.DateTimeField(
-        null=True, blank=True, help_text="When a human last reviewed/approved this."
+    published_at = models.DateTimeField(
+        null=True, blank=True, help_text="When a human published this topic."
     )
-    volatility = models.CharField(
-        max_length=10,
-        choices=VOLATILITY_CHOICES,
-        default=MEDIUM,
-        help_text="How fast this topic's content goes stale — drives the review cadence.",
+    reviewed_at = models.JSONField(
+        default=list,
+        blank=True,
+        help_text="One ISO 8601 timestamp per review-skill run, oldest first.",
     )
 
     objects = models.Manager()
@@ -236,12 +230,21 @@ class Topic(models.Model):
     # --- content freshness / review cadence ---
     @property
     def review_interval_days(self) -> int:
-        return self.REVIEW_INTERVAL_DAYS.get(self.volatility, 180)
+        return self.REVIEW_INTERVAL_DAYS
+
+    @property
+    def last_reviewed_at(self):
+        """The most recent review-skill run, as a datetime, else None."""
+        stamps = [s for s in (self.reviewed_at or []) if s]
+        if not stamps:
+            return None
+        parsed = [d for d in (parse_datetime(str(s)) for s in stamps) if d]
+        return max(parsed) if parsed else None
 
     @property
     def last_touched(self):
-        """The clock staleness runs from: most recent human review, else research."""
-        return self.reviewed_at or self.researched_at
+        """The clock staleness runs from: most recent review, else authoring."""
+        return self.last_reviewed_at or self.authored_at
 
     @property
     def review_due_at(self):
@@ -351,12 +354,6 @@ class Section(models.Model):
         blank=True,
     )
     kind = models.CharField(max_length=20, choices=KIND_CHOICES)
-    intro = models.TextField(
-        blank=True, help_text="Lead-in copy for sections that have typed children."
-    )
-    body = models.TextField(
-        blank=True, help_text="Content body for Overview when used as free text."
-    )
 
     class Meta:
         constraints = [
@@ -630,7 +627,6 @@ class Question(models.Model):
     # Optional aggregated lean (shown at deep depth).
     lean_label_a = models.CharField(max_length=40, blank=True)
     lean_label_b = models.CharField(max_length=40, blank=True)
-    lean_pct_a = models.PositiveSmallIntegerField(null=True, blank=True)
 
     class Meta:
         constraints = [
@@ -666,8 +662,8 @@ class Question(models.Model):
 
     @property
     def lean_stats(self):
-        """Community direction-vote aggregate (the reader poll) — distinct from the
-        editorial lean_pct_a. Counts QuestionLean rows for poles a/b."""
+        """Community direction-vote aggregate (the reader poll). Counts
+        QuestionLean rows for poles a/b."""
         a = getattr(self, "lean_a_count", None)
         b = getattr(self, "lean_b_count", None)
         if a is None or b is None:
@@ -686,7 +682,7 @@ class Question(models.Model):
     @property
     def lean_display(self):
         """The single direction bar: community % once reader votes reach the
-        threshold, otherwise the research/editorial estimate (lean_pct_a)."""
+        threshold, otherwise an even split (the page asserts no editorial lean)."""
         ls = self.lean_stats
         if ls["shown"]:
             return {
@@ -695,13 +691,7 @@ class Question(models.Model):
                 "source": "community",
                 "total": ls["total"],
             }
-        pa = self.lean_pct_a if self.lean_pct_a is not None else 50
-        return {
-            "pct_a": pa,
-            "pct_b": 100 - pa,
-            "source": "research",
-            "total": ls["total"],
-        }
+        return {"pct_a": 50, "pct_b": 50, "source": "research", "total": ls["total"]}
 
 
 class Position(models.Model):
@@ -725,13 +715,10 @@ class Position(models.Model):
     steelman = models.CharField(
         max_length=400, help_text="One-line strongest case, in the side's own voice."
     )
-    description = models.TextField(blank=True)
     detail = models.TextField(
         blank=True,
-        help_text="Deeper detail revealed when the position is expanded.",
+        help_text="The camp's case in its own voice, revealed when the position is expanded.",
     )
-    representative_name = models.CharField(max_length=120, blank=True)
-    representative_note = models.CharField(max_length=300, blank=True)
     proponents = models.CharField(
         max_length=400, blank=True, help_text="Comma-separated notable proponents."
     )
@@ -766,12 +753,7 @@ class Position(models.Model):
     @property
     def has_more(self) -> bool:
         """Any expandable detail behind the card's click-to-expand (axis 2)."""
-        return bool(
-            self.description
-            or self.detail
-            or self.representative_name
-            or self.proponents
-        )
+        return bool(self.detail or self.proponents)
 
 
 class Crux(models.Model):
@@ -1007,7 +989,8 @@ class ParticipationEvent(models.Model):
 
     kind = models.CharField(max_length=8, choices=KIND_CHOICES)
     action = models.CharField(
-        max_length=8, help_text="cast / retract / switch (votes, leans); save / clear (responses)."
+        max_length=8,
+        help_text="cast / retract / switch (votes, leans); save / clear (responses).",
     )
     topic_slug = models.CharField(max_length=200, blank=True, db_index=True)
     target_kind = models.CharField(

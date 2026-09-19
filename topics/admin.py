@@ -44,12 +44,11 @@ class TopicAdmin(admin.ModelAdmin):
     list_display = (
         "title",
         "status",
-        "volatility",
         "review_status",
         "spine",
         "updated_at",
     )
-    list_filter = ("status", "volatility", "categories", "primary_category")
+    list_filter = ("status", "categories", "primary_category")
     # Readiness is set upstream and cleared by any content load; never editable here.
     search_fields = ("title", "summary")
     prepopulated_fields = {"slug": ("title",)}
@@ -60,7 +59,7 @@ class TopicAdmin(admin.ModelAdmin):
     # one gate; a free-text dropdown beside it would be a second, ungated way to
     # do the same thing, and the ungated one always wins. Use the Publish action,
     # `manage.py publish_topic`, or `manage.py mark_ready`.
-    readonly_fields = ("researched_at", "status", "review_due_display")
+    readonly_fields = ("authored_at", "status", "review_due_display")
     fieldsets = (
         (
             None,
@@ -98,10 +97,9 @@ class TopicAdmin(admin.ModelAdmin):
                     "last research. Surfaced by the topics_due command."
                 ),
                 "fields": (
-                    "volatility",
-                    "reviewed_at",
-                    "review_due_display",
-                    "researched_at",
+                                "review_due_display",
+                    "authored_at",
+                    "published_at",
                 ),
             },
         ),
@@ -119,7 +117,7 @@ class TopicAdmin(admin.ModelAdmin):
         would be the hole in the rule."""
         ready = queryset.filter(status=Topic.READY)
         blocked = [t.slug for t in queryset.exclude(status=Topic.READY)]
-        updated = ready.update(status=Topic.PUBLISHED, reviewed_at=timezone.now())
+        updated = ready.update(status=Topic.PUBLISHED, published_at=timezone.now())
         if updated:
             self.message_user(request, f"{updated} topic(s) published.")
         if blocked:
@@ -154,7 +152,12 @@ class TopicAdmin(admin.ModelAdmin):
     def mark_reviewed(self, request, queryset):
         from django.utils import timezone
 
-        updated = queryset.update(reviewed_at=timezone.now())
+        stamp = timezone.now().isoformat()
+        updated = 0
+        for topic in queryset:
+            topic.reviewed_at = list(topic.reviewed_at or []) + [stamp]
+            topic.save(update_fields=["reviewed_at"])
+            updated += 1
         self.message_user(request, f"{updated} topic(s) marked reviewed.")
 
     @admin.action(description="Create missing spine sections")

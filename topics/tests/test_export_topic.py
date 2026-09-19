@@ -39,7 +39,7 @@ class ExportTopicTests(NuclearFixtureMixin, TestCase):
         return json.loads(buf.getvalue())
 
     def test_envelope_is_the_topic_file_shape(self):
-        """One file per topic: index fields at the top, `draft` under them. Gate
+        """One file per topic: index fields at the top, `content` under them. Gate
         verdicts, the claim ledger and prescribed fixes are process and live in
         research/runs/<slug>/, never here."""
         payload = self._export_payload()
@@ -50,11 +50,13 @@ class ExportTopicTests(NuclearFixtureMixin, TestCase):
         self.assertEqual(payload["slug"], self.slug)
         # identity is not duplicated inside the content
         for key in ("slug", "title", "status", "categories"):
-            self.assertNotIn(key, payload["draft"], f"{key!r} is duplicated in draft")
-        self.assertTrue(payload["draft"]["overview"]["summary"])
+            self.assertNotIn(
+                key, payload["content"], f"{key!r} is duplicated in content"
+            )
+        self.assertTrue(payload["content"]["overview"]["summary"])
 
     def test_export_has_expected_anchors(self):
-        d = self._export_payload()["draft"]
+        d = self._export_payload()["content"]
         # crux lead is non-empty
         self.assertTrue(d["crux"]["lead"])
         # at least one position, carrying a colour
@@ -89,9 +91,9 @@ class ExportTopicTests(NuclearFixtureMixin, TestCase):
         self.assertEqual(after.get("plan_positions"), ["Cost Skeptic"])
         # The keys the export DOES produce must still come from the DB, not the
         # stale file — preservation must not shadow a real re-export.
-        self.assertIn("draft", after)
+        self.assertIn("content", after)
         self.assertEqual(
-            after["draft"]["overview"]["summary"],
+            after["content"]["overview"]["summary"],
             Topic.objects.get(slug=self.slug).summary,
         )
 

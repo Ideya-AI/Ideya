@@ -33,7 +33,7 @@
         </div>
       </div>
       {% endif %}
-      <p class="cov-desc">{{ sec.overview.body|default:category.description }}</p>
+      <p class="cov-desc">{{ category.description }}</p>
       {% if category.parent or category.connects_to.all %}
       <div class="cov-connects">
         <div class="ck">Connects to</div>
@@ -51,7 +51,6 @@
 
     <section class="ctopics">
       <div class="eyebrow"><i class="ph-duotone ph-squares-four"></i>Topics<span class="count">{{ topics|length }} topic{{ topics|length|pluralize }}</span></div>
-      {% if topics and sec.topics.body %}<p class="topics-lead">{{ sec.topics.body }}</p>{% endif %}
       <div class="nodes">
         {% for t in topics %}
         <a class="node" href="{{ t.get_absolute_url }}">

@@ -321,6 +321,17 @@ Measured limits on this install: 200 searches per session
 (`CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION`), 8 `max_uses` per call,
 `allowed_domains` and `blocked_domains` mutually exclusive.
 
+### Large tool results reach the agent as a 2KB preview
+
+Claude Code persists any tool result over a size ceiling to a file and shows
+the agent a preview with a note that the rest is on disk. Found 2026-09-15 on
+the first Phase A run: every scout reported that fetched pages were "truncated
+to a roughly 2KB preview", and the reference scout quoted from memory. An
+in-process tool raises its own ceiling with
+`ToolAnnotations(maxResultSizeChars=N)`; the fetch tool now declares one above
+its return cap (60k characters), verified by a probe that quoted from the 59k
+mark. Any future in-process tool that returns text must do the same.
+
 ### Rate limits come as typed events, not exception strings
 
 `RateLimitEvent` arrives in the message stream with `status`, `resets_at`,
@@ -1100,7 +1111,7 @@ up its generation prompt into `Topic.primary_image_prompt` with no flag; stage
 
 ## The prompt is assembled, not written
 
-*First cut built 2026-09-14 as `research/pipeline/icon_prompt.py`: the constant
+*First cut built 2026-09-14 as `pipeline/icon_prompt.py` (moved into the `pipeline/` package 2026-09-15): the constant
 style template, `brief` (assemble a prompt from a brief's Scene and Negatives
 sections plus the `--cat-<slug>` hex), `generate` (Gemini 3 Pro Image via REST,
 generate or edit mode, candidates and per-round spend under `candidates/`), and

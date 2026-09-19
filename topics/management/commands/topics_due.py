@@ -1,7 +1,7 @@
-"""Report topics whose content is due for review, by the volatility cadence.
+"""Report topics whose content is due for review, on the shared cadence.
 
 A topic falls due `review_interval_days` (fast 90 / medium 180 / slow 365) after
-it was last touched (`reviewed_at`, else `researched_at`). Never-touched topics
+it was last touched (latest `reviewed_at`, else `authored_at`). Never-touched topics
 are always due.
 
 This is a REPORT, not a queue: nothing consumes it. A due topic is a note to the
@@ -17,7 +17,7 @@ from topics.models import Topic
 
 
 class Command(BaseCommand):
-    help = "List topics whose content is due for review (by the volatility cadence)."
+    help = "List topics whose content is due for review."
 
     def add_arguments(self, p):
         p.add_argument(
@@ -54,7 +54,6 @@ class Command(BaseCommand):
                     "slug": t.slug,
                     "title": t.title,
                     "status": t.status,
-                    "volatility": t.volatility,
                     "last_touched": lt.date().isoformat() if lt else None,
                     "review_due": (
                         t.review_due_at.date().isoformat() if t.review_due_at else None
@@ -85,7 +84,7 @@ class Command(BaseCommand):
                 age = f"{od}d overdue" if od >= 0 else f"due in {-od}d"
             line = (
                 f"  • {r['slug']:<30} "
-                f"[{r['status']:<9} {r['volatility']:<6}] "
+                f"[{r['status']:<9}] "
                 f"{when:<20} {age}"
             )
             self.stdout.write(self.style.WARNING(line) if r["due"] else line)

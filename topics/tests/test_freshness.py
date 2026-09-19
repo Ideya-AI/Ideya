@@ -1,5 +1,5 @@
-"""Topic content-freshness cadence: volatility intervals, review-due logic, and
-the `topics_due` report command."""
+"""Topic content-freshness cadence: the shared review interval, review-due
+logic, and the `topics_due` report command."""
 
 import datetime
 from io import StringIO
@@ -15,16 +15,8 @@ class FreshnessCadenceTests(TestCase):
     def _topic(self, slug, **kw):
         return Topic.objects.create(title=slug.title(), slug=slug, **kw)
 
-    def test_interval_by_volatility(self):
-        self.assertEqual(
-            self._topic("f", volatility=Topic.FAST).review_interval_days, 90
-        )
-        self.assertEqual(
-            self._topic("m", volatility=Topic.MEDIUM).review_interval_days, 180
-        )
-        self.assertEqual(
-            self._topic("s", volatility=Topic.SLOW).review_interval_days, 365
-        )
+    def test_shared_interval(self):
+        self.assertEqual(self._topic("f").review_interval_days, 180)
 
     def test_never_touched_is_always_due(self):
         t = self._topic("never")
@@ -34,33 +26,34 @@ class FreshnessCadenceTests(TestCase):
         self.assertGreater(t.days_overdue, 100_000)
 
     def test_recent_review_not_due(self):
-        t = self._topic("fresh", volatility=Topic.MEDIUM, reviewed_at=timezone.now())
+        t = self._topic("fresh", reviewed_at=[timezone.now().isoformat()])
         self.assertFalse(t.is_review_due)
         self.assertLess(t.days_overdue, 0)
 
     def test_old_review_is_due(self):
         old = timezone.now() - datetime.timedelta(days=200)
-        t = self._topic("stale", volatility=Topic.MEDIUM, reviewed_at=old)
-        self.assertTrue(t.is_review_due)  # 200 > 180-day medium interval
+        t = self._topic("stale", reviewed_at=[old.isoformat()])
+        self.assertTrue(t.is_review_due)  # 200 > the 180-day interval
         self.assertGreater(t.days_overdue, 0)
 
-    def test_reviewed_at_overrides_researched_at(self):
+    def test_latest_review_overrides_authored_at(self):
         now = timezone.now()
+        older = now - datetime.timedelta(days=300)
         t = self._topic(
             "both",
-            volatility=Topic.FAST,
-            researched_at=now - datetime.timedelta(days=200),
-            reviewed_at=now,
+            authored_at=now - datetime.timedelta(days=200),
+            reviewed_at=[older.isoformat(), now.isoformat()],
         )
-        # The clock runs from the most recent human review, not old research.
-        self.assertEqual(t.last_touched, t.reviewed_at)
+        # The clock runs from the most recent review, not the oldest or the
+        # authoring date.
+        self.assertEqual(t.last_touched, t.last_reviewed_at)
         self.assertFalse(t.is_review_due)
 
-    def test_falls_back_to_researched_at(self):
+    def test_falls_back_to_authored_at(self):
         old = timezone.now() - datetime.timedelta(days=400)
-        t = self._topic("researched-only", volatility=Topic.SLOW, researched_at=old)
-        self.assertEqual(t.last_touched, t.researched_at)
-        self.assertTrue(t.is_review_due)  # 400 > 365-day slow interval
+        t = self._topic("authored-only", authored_at=old)
+        self.assertEqual(t.last_touched, t.authored_at)
+        self.assertTrue(t.is_review_due)  # 400 > the 180-day interval
 
 
 class TopicsDueCommandTests(TestCase):
@@ -77,13 +70,13 @@ class TopicsDueCommandTests(TestCase):
         self.assertIn("due-one", out.getvalue())
 
     def test_hides_fresh_topic_by_default(self):
-        self._topic("fresh-one", volatility=Topic.SLOW, reviewed_at=timezone.now())
+        self._topic("fresh-one", reviewed_at=[timezone.now().isoformat()])
         out = StringIO()
         call_command("topics_due", stdout=out)
         self.assertNotIn("fresh-one", out.getvalue())
 
     def test_all_flag_shows_fresh_topic(self):
-        self._topic("fresh-two", volatility=Topic.SLOW, reviewed_at=timezone.now())
+        self._topic("fresh-two", reviewed_at=[timezone.now().isoformat()])
         out = StringIO()
         call_command("topics_due", "--all", stdout=out)
         self.assertIn("fresh-two", out.getvalue())
