@@ -37,10 +37,6 @@ Django + HTMX + Alpine. A curated atlas of hard debates; depth is an axis, not a
   current source, because a stale figure is the error that reaches a page.
   Everything else is written from model knowledge at encyclopedia-level
   certainty. Why this bar and not per-claim proof: `research/pipeline/BRIEF.md`.
-- **A run never stops to ask.** Editorial forks are resolved by the pipeline's
-  own rules mid-run, never escalated (Jeff, 2026-08-27: "This should be
-  something the engine decides. Not something that is elevated to me."). The two
-  human touch points are naming the topic and publishing it.
 
 ## Where things live
 
