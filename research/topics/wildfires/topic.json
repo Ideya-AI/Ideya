@@ -1,8 +1,8 @@
 {
  "slug": "wildfires",
  "title": "Living With Wildfire",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-09-21T22:46:00+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Living with wildfire: fuels, ignition, and hardening communities.",
@@ -16,5 +16,671 @@
   "climate-tipping-points",
   "net-zero-pace",
   "housing-affordability-crisis"
- ]
+ ],
+ "icon": "fire",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: a forested ridge as the dominant focal mass, a curved hillside carrying a stand of simple conifers; a low line of small flames running along the base of the stand; a broad band of smoke lifting from the ridge and drifting across the whole frame as the connective element; a medium single-gable house at the lower right, overlapping the foot of the ridge, with a cleared curved apron of open ground around it; a small lookout tower on a far shoulder of the hill; the ground is the curve of the slope falling toward the house, never a flat line.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #7d8a4e, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: orange or red glow, an inferno or wall of flame, firefighters, fire trucks, helicopters, sirens, burning globes or burning earth, charred skeletons of trees, skulls, warning or hazard signs, smoky faces, a bear or any mascot, matches, campfires, thermometers, graphs.",
+ "content": {
+  "overview": {
+   "summary": "Fire is not new in these landscapes; the scale of the loss is. The fight is over which lever actually shrinks it, and who is obliged to pull it.",
+   "scope_covered": "United States policy above all: fuels and prescribed fire, ignition sources, home hardening, where housing is allowed, suppression cost, insurance.",
+   "scope_excluded": "How fast to decarbonize. Burning to clear tropical forest.",
+   "why_now": "Oregon shattered its all-time record this summer, burning more than 2.5 million acres, and national preparedness sat at its maximum through most of August. On August 19, 2026, California adopted emergency Zone 0 rules requiring an ember-resistant strip of ground against houses in hazard zones."
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "US acres burned, year to date",
+     "viz": "ranked",
+     "wide": true,
+     "unit": "M acres",
+     "series": [
+      {
+       "label": "2020",
+       "value": "10.12",
+       "highlight": false
+      },
+      {
+       "label": "2024",
+       "value": "8.92",
+       "highlight": false
+      },
+      {
+       "label": "2026 to date",
+       "value": "8.54",
+       "highlight": true
+      },
+      {
+       "label": "Ten-year average",
+       "value": "7.48",
+       "highlight": false
+      },
+      {
+       "label": "2025",
+       "value": "5.13",
+       "highlight": false
+      }
+     ],
+     "note": "About 8.5 million acres have burned in the United States in the first nine months of 2026, against a ten-year average of 7.5 million for a full year.",
+     "detail": "The national tally through September 21 also counts 56,651 separate fires. Acres burned is the oldest wildfire number and the weakest: a million acres of Great Basin rangeland and a hundred thousand acres in the Sierra foothills are not the same event, and most of the swing from year to year is weather. The federal series starts only in 1983, because agencies did not use today’s reporting process before then, so comparisons with the 1930s are not like for like. What the trend inside the swings reflects is fuel, ignitions and a drier atmosphere.",
+     "source_label": "National Interagency Fire Center, Fire Information Statistics",
+     "source_url": "https://www.nifc.gov/fire-information/statistics",
+     "source_published": "2026",
+     "value": "",
+     "range_min": "",
+     "range_max": "",
+     "source_accessed": "2026-09-21",
+     "id": "us-acres-burned-year-to-date"
+    },
+    {
+     "label": "Structures destroyed since 2005",
+     "viz": "bar",
+     "value": "130,600",
+     "unit": "structures",
+     "note": "Wildfires have destroyed more than 130,600 homes, businesses and other structures in the United States since 2005, an average above 8,000 a year in the past decade.",
+     "detail": "The count comes from federal damage-inspection records and is probably low, since not every fire is inspected. Structure loss tracks the social cost of fire far better than acreage does, and it is extraordinarily concentrated: a handful of wind-driven fires at the edge of towns produce most of the loss in most years, and a single event can exceed the annual average several times over. The 2018 Camp Fire destroyed 18,804 structures by itself. California has lost the most over time, but nearly every state has lost some.",
+     "source_label": "Headwaters Economics, Wildfires destroy thousands of structures each year",
+     "source_url": "https://headwaterseconomics.org/natural-hazards/structures-destroyed-by-wildfire/",
+     "source_published": "2025",
+     "wide": false,
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "source_accessed": "2026-09-21",
+     "id": "structures-destroyed-since-2005"
+    },
+    {
+     "label": "Homes in the wildland-urban interface",
+     "viz": "ranked",
+     "wide": true,
+     "unit": "M homes",
+     "series": [
+      {
+       "label": "2020",
+       "value": "44.1",
+       "highlight": true
+      },
+      {
+       "label": "1990",
+       "value": "30.1",
+       "highlight": false
+      }
+     ],
+     "note": "Forty-four million US homes, 32 percent of all housing, sit in the wildland-urban interface, on 9.4 percent of the land area of the lower 48.",
+     "detail": "The interface is where houses and wildland vegetation meet or intermingle. Between 1990 and 2020 its housing grew 47 percent and its land area grew 31 percent, adding about 179,000 square kilometers, roughly the area of Washington State. Ninety-seven percent of the new interface came from new houses rather than from vegetation growing back toward old ones. Growth was fastest before the 2008 recession, and 2.6 million homes were still added between 2010 and 2020. This is the main reason losses have climbed faster than acreage: more of what burns now has people and buildings in it.",
+     "source_label": "US Forest Service Northern Research Station, Wildland-Urban Interface Growth in the US",
+     "source_url": "https://research.fs.usda.gov/nrs/projects/wuigrowth",
+     "source_published": "2020",
+     "value": "",
+     "range_min": "",
+     "range_max": "",
+     "source_accessed": "2026-09-21",
+     "id": "homes-in-the-wildland-urban-interface"
+    },
+    {
+     "label": "Western US forest fire area attributed to warming",
+     "viz": "bar",
+     "value": "2",
+     "unit": "× area",
+     "note": "Human-caused warming roughly doubled the area of western US forest that burned between 1984 and 2015, adding about 4.2 million hectares.",
+     "detail": "The same work attributes more than half of the rise in fuel aridity since the 1970s to human-caused warming. A separate attribution analysis of the January 2025 Los Angeles fires found the fire weather behind them about 35 percent more likely and 6 percent more intense at 1.3 degrees Celsius of warming, and dry Southern California winters now 2.4 times as likely as in the pre-industrial climate. Attribution answers a narrow question, how much warming changed the odds of a set of conditions, and not the question of what to do about them. The 2016 result concerns fuel dryness in forests, the mechanism most sensitive to warming, and says comparatively little about grass and chaparral fires driven by wind and by the timing of an ignition.",
+     "source_label": "Abatzoglou and Williams, PNAS",
+     "source_url": "https://www.pnas.org/doi/10.1073/pnas.1607171113",
+     "source_published": "2016",
+     "wide": false,
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "source_accessed": "2026-09-21",
+     "id": "western-us-forest-fire-area-attributed"
+    },
+    {
+     "label": "Home survival in the Camp Fire, by build year",
+     "viz": "ranked",
+     "wide": true,
+     "unit": "% survived",
+     "series": [
+      {
+       "label": "Built 2008-2018",
+       "value": "44.0",
+       "highlight": false
+      },
+      {
+       "label": "Built 1997-2007",
+       "value": "37.0",
+       "highlight": false
+      },
+      {
+       "label": "Built before 1997",
+       "value": "11.5",
+       "highlight": true
+      }
+     ],
+     "note": "In the fire that destroyed Paradise, California, 11.5 percent of homes built before 1997 survived, against 44 percent of those built from 2008 on.",
+     "detail": "Build year was not, however, the strongest predictor of anything. The variables that mattered most were distance to the nearest destroyed structure, how many structures burned within 100 meters, and canopy cover before the fire. Homes more than 18 meters from a destroyed building, with less than 53 percent canopy cover 30 to 100 meters out, survived at much higher rates, and 73.6 percent of Paradise homes were within 18 meters of another structure. The gap between houses finished just before and just after the state’s 2008 wildland-urban code, 37 against 44 percent, was not statistically significant, so the gain reflects a long run of incremental improvement rather than one rule. Most damage to surviving homes came from radiant heat off a neighboring building or from something burning against the wall, not from the wildland fire front.",
+     "source_label": "Knapp, Valachovic, Quarles and Johnson, Fire Ecology",
+     "source_url": "https://link.springer.com/article/10.1186/s42408-021-00117-0",
+     "source_published": "2021",
+     "value": "",
+     "range_min": "",
+     "range_max": "",
+     "source_accessed": "2026-09-21",
+     "id": "home-survival-in-the-camp-fire"
+    },
+    {
+     "label": "Ember-resistant zone, effect on ignition risk",
+     "viz": "radial",
+     "value": "50",
+     "unit": "% lower",
+     "note": "A noncombustible buffer in the first five feet around a house roughly halves its chance of igniting in a wildfire.",
+     "detail": "Up to 90 percent of building ignitions are attributed to ember exposure, and two of every three homes destroyed in the 2007 Witch Creek Fire were lost that way. What the buffer excludes is specific: bark mulch, woody shrubs, stored firewood, door mats and combustible fencing that touches the wall. Much of that is established landscaping, and the objections raised to California’s rule are about what it costs to tear out and replace a mature yard, and about how a five-foot strip gets inspected on millions of parcels with staffing that varies county by county. Enforcement is also what the measure’s own logic asks for, because a cleared house beside an uncleared one is still exposed to its neighbor’s radiant heat. That is why California wrote the requirement as a rule for everyone in a hazard zone rather than as advice.",
+     "source_label": "Insurance Institute for Business & Home Safety",
+     "source_url": "https://ibhs.org/ibhs-news-releases/ibhs-research-shows-creating-ember-resistant-buffer-around-a-home-cuts-its-risk-of-igniting-from-a-wildfire-in-half/",
+     "source_published": "2025",
+     "wide": false,
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "source_accessed": "2026-09-21",
+     "id": "ember-resistant-zone-effect-on-ignition"
+    },
+    {
+     "label": "Wildfires started by people",
+     "viz": "radial",
+     "value": "85",
+     "unit": "%",
+     "note": "Eighty-five percent of US wildfires with a known cause are started by people; counting the fires whose cause was never determined, the share is 77 percent.",
+     "detail": "Balch and colleagues, working from 1.6 million fires between 1992 and 2012, put the human share at 84 percent and showed that people tripled the length of the fire season, because they start fires in months when lightning does not. The causes are not moving together. Debris and open burning is still the leading human cause and shows no downward trend; equipment and vehicle starts are drifting up; arson has fallen sharply, from a peak of 14,000 to 20,000 fires a year to 4,300 to 5,300. Lightning is a small minority of starts but a large share of acres in the interior West and the boreal forest, which is why the 2026 Oregon season was mostly lightning.",
+     "source_label": "Headwaters Economics, Lessons from 30 years of wildfire ignition data",
+     "source_url": "https://headwaterseconomics.org/natural-hazards/wildfire/lessons-from-30-years-of-wildfire-ignition-data/",
+     "source_published": "1992-2024",
+     "wide": false,
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "source_accessed": "2026-09-21",
+     "id": "wildfires-started-by-people"
+    },
+    {
+     "label": "Cut in later fire severity from fuel treatment",
+     "viz": "bar",
+     "value": "62-72",
+     "unit": "% lower",
+     "note": "Treatments that remove surface fuels cut the severity of a later wildfire by 62 to 72 percent; ten years on, thinning plus burning still delivers 49 percent.",
+     "detail": "The finding comes from a 2024 review of 220 earlier studies, and it cuts both ways. It supports treatment: the reductions held across forest types and across a wide range of fire weather. It also constrains treatment. Thinning without a follow-up burn, the politically easier half, was markedly weaker, and the effect decays by roughly half over a decade, so every treated acre carries a retreatment obligation. That is what turns an acreage target into a permanent budget line, and it is why acres treated is a poor measure of progress on its own. The review covers conifer-dominated forests of the western United States and does not transfer automatically to chaparral, sagebrush or the southeastern pine belt.",
+     "source_label": "Davis and colleagues, Tamm Review, Forest Ecology and Management",
+     "source_url": "https://www.sciencedirect.com/science/article/pii/S037811272400197X",
+     "source_published": "2024",
+     "wide": false,
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "source_accessed": "2026-09-21",
+     "id": "cut-in-later-fire-severity-from"
+    },
+    {
+     "label": "Insured losses, January 2025 Los Angeles fires",
+     "viz": "bar",
+     "value": "40",
+     "unit": "$ billion",
+     "note": "The January 2025 Palisades and Eaton fires killed 31 people and produced about $40 billion in insured losses and about $65 billion in total economic losses.",
+     "detail": "It is the costliest wildfire event recorded anywhere. Early industry estimates were lower and rose as claims developed: Verisk put combined insured losses at $28 billion to $35 billion in late January 2025. The two loss figures are different accounting bases and should not be added, since the economic total includes uninsured property, business interruption and cleanup; neither includes the health cost of the smoke or the long tail of displacement. More than 16,000 structures were destroyed. Both fires started in chaparral in extreme Santa Ana winds at the end of an exceptionally dry winter, and both spread mainly from building to building once they reached dense neighborhoods.",
+     "source_label": "Wikipedia, January 2025 Southern California wildfires",
+     "source_url": "https://en.wikipedia.org/wiki/January_2025_Southern_California_wildfires",
+     "source_published": "2025",
+     "wide": false,
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "source_accessed": "2026-09-21",
+     "id": "insured-losses-january-2025-los-angeles"
+    },
+    {
+     "label": "California FAIR Plan policies in force",
+     "viz": "ranked",
+     "wide": true,
+     "unit": "policies",
+     "series": [
+      {
+       "label": "June 2026",
+       "value": "696,562",
+       "highlight": true
+      },
+      {
+       "label": "December 2025",
+       "value": "668,000",
+       "highlight": false
+      },
+      {
+       "label": "September 2022",
+       "value": "271,000",
+       "highlight": false
+      }
+     ],
+     "note": "California’s insurer of last resort held 696,562 policies and $768 billion of exposure in June 2026, up 157 percent in policies since September 2022.",
+     "detail": "The FAIR Plan is a syndicated pool that admitted carriers are required to backstop, and it exists to write basic fire coverage for property no private insurer will take. Its growth is the clearest available index of private insurance withdrawing from fire-prone California, because every added policy is a house a carrier declined or refused to renew. The plan names both drivers: wildfire itself, and rate regulation that has lagged modeled risk. If its losses outrun reserves and reinsurance, admitted carriers are assessed, and since 2025 part of those assessments can be passed through to policyholders across the state. That is the mechanism by which risk in the interface reaches people who do not live there.",
+     "source_label": "California FAIR Plan Association, Key Statistics & Data",
+     "source_url": "https://www.cfpnet.com/key-statistics-data/",
+     "source_published": "2026",
+     "value": "",
+     "range_min": "",
+     "range_max": "",
+     "source_accessed": "2026-09-21",
+     "id": "california-fair-plan-policies-in-force"
+    },
+    {
+     "label": "Deaths a year from wildfire smoke",
+     "viz": "bar",
+     "value": "11,415",
+     "unit": "deaths/yr",
+     "note": "Long-term exposure to wildfire smoke is associated with about 11,400 US deaths a year, on an estimate whose own range runs from 6,754 to 16,075 and which rival methods put lower.",
+     "detail": "About 4,512 of those deaths are cardiovascular. The number comes from modeling long-term exposure to fine particles from wildland fire across the contiguous United States between 2007 and 2020. Estimates move a great deal with method: a separate 2024 analysis in Science Advances put the eleven-year toll at 52,480 to 55,710 premature deaths, a materially lower figure per year, and the confidence intervals on all of them are wide. What is not contested is the direction. Smoke is now a leading and growing source of fine-particle exposure in North America, it travels thousands of kilometers from the fire that made it, and it is the exposure almost everyone shares while flames threaten comparatively few.",
+     "source_label": "Ma and colleagues, PNAS, via Yale ISPS",
+     "source_url": "https://isps.yale.edu/research/publications/isps24-22",
+     "source_published": "2024",
+     "wide": false,
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "source_accessed": "2026-09-21",
+     "id": "deaths-a-year-from-wildfire-smoke"
+    },
+    {
+     "label": "Forest Service acres treated for hazardous fuels",
+     "viz": "ranked",
+     "wide": true,
+     "unit": "M acres",
+     "series": [
+      {
+       "label": "2024",
+       "value": "4.1",
+       "highlight": false
+      },
+      {
+       "label": "2025",
+       "value": "2.6",
+       "highlight": true
+      }
+     ],
+     "note": "The Forest Service treated 2.6 million acres for hazardous fuels in 2025, 35 percent fewer than the year before.",
+     "detail": "The declines were steepest in states that do the most of this work: Florida fell 68 percent to 124,372 acres, Oregon 47 percent to 228,411, California 40 percent to 205,358. The southeastern drop matters out of proportion to its size, because that is where most American prescribed fire actually happens. The decline also runs against the agency’s own ten-year Wildfire Crisis Strategy, announced in January 2022, which committed to treating up to 50 million acres, 20 million of them on National Forest System land, concentrated in mapped firesheds of roughly 250,000 acres each. The acreage comes from Forest Service reporting; the analysis is by a conservation advocacy group, which attributes the fall to workforce cuts.",
+     "source_label": "Center for Western Priorities analysis of Forest Service data",
+     "source_url": "https://westernpriorities.org/2026/05/new-analysis-finds-u-s-forest-service-treated-35-fewer-acres-for-wildfire-risk-in-2025/",
+     "source_published": "2025",
+     "value": "",
+     "range_min": "",
+     "range_max": "",
+     "source_accessed": "2026-09-21",
+     "id": "forest-service-acres-treated-for-hazardous"
+    },
+    {
+     "label": "Prescribed burns that go as planned",
+     "viz": "radial",
+     "value": "99.84",
+     "unit": "%",
+     "note": "About one Forest Service prescribed burn in 625 escapes control: roughly 7 of some 4,500 lit in a year.",
+     "detail": "The review that produced the figure was ordered after two burns in the Santa Fe National Forest escaped in April 2022, merged, and became the Hermit’s Peak and Calf Canyon Fire, the largest and most destructive wildfire in New Mexico history, burning more than 340,000 acres and destroying at least 160 homes. The chief paused prescribed fire nationally on May 20, 2022 for a 90-day review, and Congress later created a compensation fund that now totals $5.45 billion. The episode is the standing argument on both sides: one points at the 99.84 percent, the other at the remainder and its price. It is also why an agency’s risk calculus is asymmetric, since the fire it lights is attributed to it in a way a lightning fire never is.",
+     "source_label": "USDA Forest Service, National Prescribed Fire Program Review",
+     "source_url": "https://www.frames.gov/documents/usfs/USFS_20220908_National-Prescribed-Fire-Program-Review.pdf",
+     "source_published": "2022",
+     "wide": false,
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "source_accessed": "2026-09-21",
+     "id": "prescribed-burns-that-go-as-planned"
+    },
+    {
+     "label": "Wildfires started by power lines",
+     "viz": "ranked",
+     "wide": true,
+     "unit": "fires/yr",
+     "series": [
+      {
+       "label": "Recent years",
+       "value": "2,500",
+       "highlight": true
+      },
+      {
+       "label": "Early 1990s",
+       "value": "200",
+       "highlight": false
+      }
+     ],
+     "note": "Power line ignitions have risen roughly thirteenfold since the early 1990s, and at an average of 125 acres they start the largest fires of any human cause.",
+     "detail": "Utility equipment causes well under a tenth of reported wildfires but a very large share of the catastrophic ones, because lines fail in exactly the high-wind, low-humidity conditions in which fire spreads fastest, and roughly half of California’s most destructive fires are attributed to them. The Camp, Thomas, Kincade, Dixie and Eaton fires were all blamed on or alleged against utility equipment. The responses are undergrounding, which runs to millions of dollars a mile; fast-trip settings and covered conductor; and public safety power shutoffs, which trade fire risk against cutting power to people on medical equipment. Liability is the other lever: PG&E’s bankruptcy followed the Camp Fire, and Southern California Edison had offered more than $750 million through its Eaton Fire compensation program by July 2026.",
+     "source_label": "Headwaters Economics, Lessons from 30 years of wildfire ignition data",
+     "source_url": "https://headwaterseconomics.org/natural-hazards/wildfire/lessons-from-30-years-of-wildfire-ignition-data/",
+     "source_published": "1992-2024",
+     "value": "",
+     "range_min": "",
+     "range_max": "",
+     "source_accessed": "2026-09-21",
+     "id": "wildfires-started-by-power-lines"
+    },
+    {
+     "label": "California acres burned in an average year before 1800",
+     "viz": "range",
+     "value": "4.4M",
+     "unit": "acres/yr",
+     "range_min": "0",
+     "range_max": "11.9M high estimate",
+     "note": "Before 1800 roughly 4.4 million acres burned in California in an average year, from lightning and Indigenous burning; estimates run as high as 11.9 million.",
+     "detail": "This is the empirical backbone of the fire deficit argument: a century of near-total suppression removed an amount of burning that even California’s worst modern years barely match, and the fuel that did not burn is still standing. California’s record modern year, 2020, burned 4,197,628 acres. The comparison is not like for like, though. Historical fire was mostly low-intensity surface fire moving through forests that were far more open, while a large share of modern fire is high-severity crown fire that kills the stand outright and can convert forest to brush. The central estimate is one of several in a literature whose range spans nearly a factor of three.",
+     "source_label": "Stephens, Martin and Clinton, Forest Ecology and Management, via FRAMES",
+     "source_url": "https://www.frames.gov/catalog/46785",
+     "source_published": "2007",
+     "wide": false,
+     "series": [],
+     "source_accessed": "2026-09-21",
+     "id": "california-acres-burned-in-an-average"
+    },
+    {
+     "label": "Added cost of building to wildfire-resistant standards",
+     "viz": "ranked",
+     "wide": true,
+     "unit": "$ added",
+     "series": [
+      {
+       "label": "Wildfire Prepared Plus",
+       "value": "15,000",
+       "highlight": false
+      },
+      {
+       "label": "CA Code Chapter 7A",
+       "value": "13,000",
+       "highlight": false
+      },
+      {
+       "label": "Wildfire Prepared Home",
+       "value": "9,000",
+       "highlight": true
+      }
+     ],
+     "note": "Building a new 1,750-square-foot home to a wildfire-resistant standard added $9,000 to $15,000, or 2 to 3 percent, in a Southern California model.",
+     "detail": "The model home is single-story, priced at about $286 a square foot and sited in Altadena. The comparison is for new construction, which is the caveat that matters: retrofitting a standing house with a Class A roof, ember-resistant vents, multi-pane tempered windows and noncombustible siding costs far more, and retrofit is the actual situation of the tens of millions of homes already in the interface. The figures also assume the builder is already building, and say nothing about land cost or insurance. The practical claim is that resistance is cheap enough that codes are not the binding constraint on affordability, which homebuilder associations dispute in higher-cost and lower-margin markets.",
+     "source_label": "Headwaters Economics and IBHS, Construction Costs for Wildfire-Resistant Homes",
+     "source_url": "https://headwaterseconomics.org/natural-hazards/wildfire/construction-costs-for-wildfire-resistant-homes/",
+     "source_published": "2025",
+     "value": "",
+     "range_min": "",
+     "range_max": "",
+     "source_accessed": "2026-09-21",
+     "id": "added-cost-of-building-to-wildfire"
+    },
+    {
+     "label": "Federal wildfire suppression spending",
+     "viz": "ranked",
+     "wide": true,
+     "unit": "$ billion",
+     "series": [
+      {
+       "label": "2021",
+       "value": "4.39",
+       "highlight": false
+      },
+      {
+       "label": "2022",
+       "value": "3.55",
+       "highlight": false
+      },
+      {
+       "label": "2023",
+       "value": "3.17",
+       "highlight": true
+      },
+      {
+       "label": "Ten-year average",
+       "value": "2.52",
+       "highlight": false
+      },
+      {
+       "label": "2019",
+       "value": "1.59",
+       "highlight": false
+      }
+     ],
+     "note": "Federal wildfire suppression cost $3.17 billion in 2023, against a ten-year average of $2.52 billion.",
+     "detail": "This counts the Forest Service and the Interior Department only. It excludes state and local firefighting, post-fire recovery, the health cost of smoke and private property losses, all of which are larger. It is nonetheless the number that crowds out everything else inside agency budgets, because suppression is an obligation that must be met while fuels work is a discretionary line that can be deferred. The UN Environment Programme argued in 2022 for what it called a Fire Ready Formula: roughly two thirds of wildfire money on planning, prevention, preparedness and recovery and one third on response, which is close to the inverse of what most countries do now.",
+     "source_label": "National Interagency Fire Center, Suppression Costs",
+     "source_url": "https://www.nifc.gov/fire-information/statistics/suppression-costs",
+     "source_published": "2023",
+     "value": "",
+     "range_min": "",
+     "range_max": "",
+     "source_accessed": "2026-09-21",
+     "id": "federal-wildfire-suppression-spending"
+    },
+    {
+     "label": "Fall in global burned area, 1998-2015",
+     "viz": "bar",
+     "value": "24.3",
+     "unit": "% lower",
+     "note": "Total global area burned fell about 24 percent between 1998 and 2015, give or take 8.8 points, while the most extreme fire events roughly doubled in frequency from 2003 to 2023.",
+     "detail": "Both facts are true and are routinely used against each other. The decline is real and concentrated in African and South American savannas and grasslands, where farming has replaced the vegetation that carried fire: less burning, but through habitat conversion rather than good news. The rise in extreme events is concentrated in temperate conifer and boreal forest, which is where the people, the carbon and the smoke are, and the seven years to 2023 contained six of the most extreme fire events ever recorded. A 2025 follow-up in the same journal argued that the increase is driven mainly by fire size and simultaneity rather than by rising intensity per unit area, a real methodological dispute that does not overturn the frequency finding.",
+     "source_label": "Andela and colleagues, Science; Cunningham and colleagues, Nature Ecology & Evolution",
+     "source_url": "https://www.science.org/doi/10.1126/science.aal4108",
+     "source_published": "1998-2023",
+     "wide": false,
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "source_accessed": "2026-09-21",
+     "id": "fall-in-global-burned-area-1998"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "With a fixed budget, does the next dollar prevent more loss on the house or on the land?",
+    "kind": "empirical",
+    "why": "Both interventions have measured effects, but almost nothing puts them on a common scale of dollars per structure saved, and the agencies holding the money manage the land while millions of private owners hold the houses.",
+    "detail": "The case for the house is unusually direct. Jack Cohen’s experimental and forensic work defines the wildland-urban fire as a structure ignition problem rather than a wildfire control problem, and finds no reliable link between how intense a wildfire was and whether a community burned. Embers travel kilometers ahead of a front and defeat any fuel break. Hardening is also cheap at the moment of construction, at a few percent of build cost, and the first few feet of ground cost nothing but effort. Landscape treatment, by contrast, has to be maintained forever and has to be in the right place at the right time to matter at all.\n\nThe case for the land is that a hardened house in a landscape primed for megafire is still a house in a burning town, without power, water, escape routes, hospital access or an insurable future, and hardening does nothing for watersheds, air quality, carbon or the forest itself. Treated ground also changes what suppression can do, giving crews anchor points and keeping evacuation feasible. And fuel is the part of the system public action can actually change at scale: retrofitting tens of millions of private homes has no delivery mechanism, no funding stream and no enforcement.",
+    "lean_label_a": "Harden the house",
+    "lean_label_b": "Treat the land",
+    "id": "with-a-fixed-budget-does-the"
+   },
+   {
+    "text": "Should people be stopped from building, or rebuilding, in the highest-hazard places?",
+    "kind": "value",
+    "why": "The fastest growth in fire-prone counties is in states with the worst housing shortages, so restricting it trades wildfire risk against housing supply, property rights and local tax bases. After a fire the question gets personal.",
+    "detail": "One side holds that every new house in a high-hazard area is a permanent obligation: on the firefighters who must defend it, on the neighbors whose own risk rises when a house next door can ignite theirs, and on insurance pools that spread the loss to people who never chose it. Hazard is one of the few things a general plan can still decide before anything is built, and the weeks after a fire are the single moment when rebuilding somewhere safer is physically possible. Let that moment pass and the exposure is locked in for another century, because houses last that long.\n\nThe other side answers that telling Americans where they may not live is politically dead and morally contested, and that it lands hardest on the people already priced out of safer places; in states that cannot build enough housing anywhere, a hazard overlay becomes one more exclusionary tool. Houses built to the modern standard survive at several times the rate of older ones, for a marginal cost measured in low single-digit percentages, so if a house can be built to survive, banning it is the cruder instrument. Managed retreat, meanwhile, has almost no successful precedent at community scale in the United States.",
+    "lean_label_a": "Restrict and retreat",
+    "lean_label_b": "Build, but build right",
+    "id": "should-people-be-stopped-from-building"
+   },
+   {
+    "text": "How much of the rise in destructive fire is climate, how much fuel, how much exposure?",
+    "kind": "empirical",
+    "why": "All three are rising at once and each is measured a different way. Getting the shares wrong sends money to the wrong lever: if it is mostly climate, fuels work is a treadmill; if it is mostly fuel and exposure, emissions cuts cannot arrive in time to help.",
+    "detail": "The climate reading points to warming that dries fuels and lengthens the season at both ends, which simultaneously adds days on which fire can spread and subtracts days on which a planned burn is safe. Its strongest card is geography: boreal Canada and Siberia have had no century of American-style fire exclusion, so a fuel-deficit story cannot explain what is happening there, and the sharpest recent seasons are in exactly those forests.\n\nThe land-and-building reading points out that the global area burned has fallen while the climate warmed, because land use, not weather, decides where fire can carry at all. It reads the catastrophic losses of the past decade as a story about what was built and where: the damage function is exposure, not hazard, and a fire in an empty canyon is not a disaster. The attribution scientists who studied the January 2025 Los Angeles fires said so themselves, concluding that how much had been built in the path mattered at least as much as the climate signal. Most researchers hold some mix of the two; the fight is over the weights, and the weights decide the budget.",
+    "lean_label_a": "Mostly fire weather",
+    "lean_label_b": "Mostly fuels and exposure",
+    "id": "how-much-of-the-rise-in"
+   },
+   {
+    "text": "Can prescribed and cultural burning be scaled to the size of the fire deficit?",
+    "kind": "empirical",
+    "why": "The deficit is the gap between what these landscapes burned in an ordinary year before 1800 and what burns now. Targets for closing it and delivered acres stay far apart, and the block may be fixable law and staffing or a hard ceiling on burn windows.",
+    "detail": "California and the Forest Service committed in 2020 to a combined million treated acres a year by 2025, with 400,000 of that to be beneficial fire; 188,881 acres of beneficial fire were delivered in 2024, about 47 percent of that sub-goal.\n\nThe optimistic reading is that this is already done at scale: roughly nine million acres a year are burned deliberately in the United States, the large majority on state and private land in the southeastern pine belt, under looser liability rules and a culture of routine burning. Nothing physical stops the West from following: the constraints are burn windows agencies decline to use, liability exposure that six states have already addressed with gross-negligence standards, air permits that treat planned smoke worse than unplanned smoke, and a workforce hired to put fires out. California’s SB 310 and the Karuk Tribe’s cultural burning agreement of September 2025 show that legal barriers can come down. The pessimistic reading is that the interior West’s window — fuels dry enough to carry fire, wet enough not to escape — is narrow and narrowing at both ends, that the crews who burn are the crews who suppress, that planned smoke lands on communities that vote, and that a scale-up of that size needs a workforce that does not exist and cannot be recruited quickly.",
+    "lean_label_a": "It can scale now",
+    "lean_label_b": "It has a hard ceiling",
+    "id": "can-prescribed-and-cultural-burning-be"
+   },
+   {
+    "text": "Should the cost of power-line fires and their prevention fall on the utility, or be spread?",
+    "kind": "value",
+    "why": "Utility equipment starts a small share of fires and an outsized share of the catastrophic ones. Every fix for it — hardened lines, fast trips, preemptive outages, court judgments — is paid by shareholders, by captive customers, or by whoever sits in the dark.",
+    "detail": "Make the utility pay, one side argues, because these are monopolies with guaranteed returns whose fires trace to maintenance their managers deferred and their shareholders profited from. Uncapped liability is the only force that has ever moved them quickly: covered conductor, vegetation crews, fast-trip settings and the first serious undergrounding programs all followed the Camp Fire, not the rulemaking before it. And victims of a corporate failure should be made whole by the corporation, not by a fund they themselves pay into every month with the bill.\n\nSpread it, the other answers, because a bankrupt utility pays victims slowly, in litigation and at a discount, while its borrowing costs rise and its customers fund the higher interest for decades. A standing state fund pays faster and keeps the company solvent enough to do the hardening that prevents the next one. Utilities also do not control the weather, the brush beside the right-of-way, or the decision to approve a town at the end of a distribution line. And the cheapest prevention of all, switching the line off when the wind comes up, is charged to households in the dark: spoiled medicine, dead well pumps, an oxygen concentrator running on battery.",
+    "lean_label_a": "The utility pays",
+    "lean_label_b": "Spread the cost",
+    "id": "should-the-cost-of-power-line"
+   },
+   {
+    "text": "Should wildfire insurance be priced at the full modeled risk, even where that leaves homes uninsurable?",
+    "kind": "value",
+    "why": "Price is the strongest available signal for where people build and whether they harden, and it is also the mechanism by which an ordinary family loses its home’s value and its mortgage. The growth of the insurer of last resort can be read either way.",
+    "detail": "Price it fully, says one side, because suppressed rates are a subsidy paid by people in safer places to people in riskier ones, and they mute the single strongest incentive to harden or to build elsewhere. When a state pool absorbs the risk and its assessments can be passed through to everyone, a hazard created by individual choices is quietly socialized. Accurate prices make mitigation pay: if clearing and hardening visibly cut a premium, millions of private decisions move at once, with no regulator inspecting a single yard. And a pool that cannot charge for its risk eventually cannot pay its claims.\n\nPool it, says the other, because insurance exists to spread exactly the risks individuals cannot carry, and this hazard is largely inherited: most people in the interface bought a legally built house under rules that permitted it, often decades ago. Full pricing relocates nobody; it strands people, destroying the equity of those who can neither sell nor afford to leave, and the loss falls hardest on the old and the poor. Modeled risk is also not observed risk — catastrophe models are proprietary, unaudited and disagree with one another — and pooling buys the years in which hardening and land-use change can actually happen.",
+    "lean_label_a": "Price the risk",
+    "lean_label_b": "Pool the risk",
+    "id": "should-wildfire-insurance-be-priced-at"
+   },
+   {
+    "text": "Is putting out nearly every fire still the right default?",
+    "kind": "empirical",
+    "why": "Initial attack catches the overwhelming majority of fires while they are small, and that success is exactly what builds the fuel load that makes the few escapes catastrophic. The call is made under uncertainty by an officer who carries the downside personally.",
+    "detail": "The case for the default is that fires which escape initial attack are the ones that kill people and destroy towns, and the cheapest fire to stop is a small one. CAL FIRE holds about 95 percent of its fires to ten acres or less. Smoke from a fire an agency chooses to let burn is a real health cost imposed on people who did not consent to it. And as the interface has filled in, the geography of managed fire has shrunk: there are fewer places far enough from people to let a fire run, and a wind event can carry a managed fire into a community in hours.\n\nThe case against is that a century of catching nearly everything is precisely how the fuel arrived. The only mechanism that has ever held western forests at a survivable fuel load is frequent fire, and a lightning fire in remote terrain under moderate conditions is a free burn nobody has to light, permit or pay for. Managed wildfire also works at the scale of the deficit, treating hundreds of thousands of acres in a season, which no crew program matches. And suppression is an obligation that eats the budget prevention needs.",
+    "lean_label_a": "Put them all out",
+    "lean_label_b": "Let more burn",
+    "id": "is-putting-out-nearly-every-fire"
+   },
+   {
+    "text": "Is smoke from planned burning an acceptable trade for less smoke from wildfire?",
+    "kind": "value",
+    "why": "Since 2016 wildfire smoke has slowed or reversed the decline of fine-particle pollution in 35 of the lower 48 states. A planned burn reduces future wildfire smoke but makes smoke now, on a date an agency chose, over people who can name whom to blame.",
+    "detail": "Accept the planned dose, one side argues, because it is chosen. Burns are lit in conditions selected for dispersion, at lower intensity, in cooler and wetter seasons, and can be scheduled around schools, hospitals and vulnerable neighborhoods, while the alternative arrives in August with no notice and lasts for weeks. The comparison is not smoke against clean air; it is a smaller chosen dose now against a larger unchosen one later. The regulatory treatment of the two is backwards: wildfire smoke is written off as an exceptional event while a planned burn counts against a permit, which penalizes the only action that lowers the total.\n\nProtect the air now, the other answers, because particulate damage is real today and falls hardest on children, the elderly, outdoor workers and people with asthma, none of whom consented to a trade made on their behalf. The claim that this burn prevents that wildfire is probabilistic and site-specific: the treated acre may never see fire, in which case the smoke was pure cost. Air quality standards exist because voluntary trades of this kind were historically made badly, and by the people least affected by them.",
+    "lean_label_a": "Accept planned smoke",
+    "lean_label_b": "Protect air now",
+    "id": "is-smoke-from-planned-burning-an"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Put fire back on the land, deliberately",
+    "color_key": "green",
+    "steelman": "These lands burned every few years for millennia. The only choice left is whether they burn on a cool morning under a crew’s watch or in September at forty miles an hour.",
+    "detail": "Western landscapes are not overgrown by accident. They are the product of a deliberate century-long project to exclude fire from ecosystems that were shaped by burning every few years, much of it lit by the people who lived in them. Take the fire out and the fuel simply accumulates until the weather decides the date. Planned and cultural fire is the only treatment that reaches the surface fuels that actually carry a flame, the only one that works at anything like the scale of the deficit, and the only one that pays for itself in suppression never mounted, smoke never breathed and forest still standing afterward. The fastest available move is not more money; it is lifting the barriers — liability, permits, air rules, and the long exclusion of Indigenous practitioners from their own ground.\n\nThe objection we hear is the escaped burn: one prescription that slips can cost billions and a community’s trust for a generation. Our answer is that the comparison uses the wrong baseline. The counterfactual is never zero fire; it is the wildfire that takes the same ground later under worse conditions, and measured that way the escapes are a rounding error against the losses avoided. The fix is better burn planning, a trained year-round burning workforce, state claims funds that pay victims quickly, and liability standards that do not leave a line officer personally ruinable for an outcome inside the prescription. Fewer burns is not a safety measure. It is a deferral.",
+    "proponents": "The Nature Conservancy, Scott Stephens, Karuk Tribe",
+    "id": "put-fire-back-on-the-land"
+   },
+   {
+    "name": "Harden the house and the first five feet",
+    "color_key": "blue",
+    "steelman": "Towns do not burn because wildfire is unstoppable. They burn because houses are built to catch embers and then set each other alight.",
+    "detail": "A firebrand that lands in a gutter full of pine needles, under a wooden deck, or in mulch against a wall does not care how intense the front was two miles away. Walk any burned subdivision and the forensic record is the same: green vegetation still standing beside concrete slabs where houses used to be. The fate of a house is decided within about thirty meters of its walls, and above all in the first few feet of ground, which is the cheapest intervention in the entire field and needs no permit, no contractor and no appropriation. The parcel-by-parcel inspections that follow these fires keep landing on the same handful of variables, and not one of them is how the fire behaved out in the wildland. Treating this as a forest problem sends billions to landscapes that may never see fire while the actual point of failure goes untouched.\n\nThe objection we take seriously is that a hardened house in a burned-over town is still uninhabitable: no power, no water, no schools, no insurance, no neighbors. That is an argument for hardening at community scale, not for abandoning it. Parcel-by-parcel work fails precisely because houses sit close enough to ignite each other, so the standard has to be a rule for everyone in the hazard zone, paired with hardened infrastructure and evacuation routes. What we will not concede is that landscape fuel work can substitute. No achievable amount of treatment stops ember cast in a wind event.",
+    "proponents": "Insurance Institute for Business & Home Safety, Jack Cohen, Headwaters Economics",
+    "id": "harden-the-house-and-the-first"
+   },
+   {
+    "name": "Thin and harvest federal forests faster",
+    "color_key": "amber",
+    "steelman": "Federal forests carry several times the tree density they evolved with, and what stops us fixing that is not science or money. It is process.",
+    "detail": "The Forest Service is the most-litigated agency in the federal government. A thinning project that would take a season to execute takes five to ten years to clear analysis and appeal, and the stand often burns before the paperwork clears — treatment fell by a third in a single year while the agency’s own ten-year strategy called for a historic increase. Prescribed fire is not available at scale in these stands anyway: burn a century of ingrowth without first removing it and you kill the overstory you were trying to save. Mechanical entry is therefore the necessary first step across most of the interior West, and it is the only treatment that can be done next to towns, under smoke-sensitive airsheds and on the many days when no burn window exists. Harvest also pays for itself and sustains the mills and rural crews that a grant-funded program never will.\n\nWe are told that thinning alone is weakly supported and that forest health is a cover for logging big, fire-resistant trees. We do not claim thinning alone is sufficient. We claim it is the required first entry, and that the follow-up burn is blocked by the same process problems — the same review our critics cite found thinning plus burning the most durable treatment of all, still cutting severity by nearly half a decade later. On large trees, most of us now accept diameter guidance and old-growth protection in exchange for speed, which is why senators from California and Colorado signed on to the Fix Our Forests Act. The alternative to imperfect management is not a pristine forest; it is high-severity fire that takes the old trees permanently.",
+    "proponents": "American Forest Resource Council, John Curtis, Alex Padilla, John Hickenlooper, Tim Sheehy",
+    "id": "thin-and-harvest-federal-forests-faster"
+   },
+   {
+    "name": "Steer new building away from hazard, price the risk",
+    "color_key": "rust",
+    "steelman": "The hazard has not changed in kind for a century. What changed is how much we built in its path, and how little the price of living there says about it.",
+    "detail": "Fourteen million more homes went into the wildland-urban interface in thirty years, and the single reliable predictor of a billion-dollar fire is not fuel load or wind speed but how much had been built in the path. Nothing in the fuels or hardening strategies stops the next subdivision from being approved at the end of a single-egress road in a chaparral canyon. The tools for that are ordinary planning tools, used on floodplains for decades: hazard mapping with teeth, subdivision standards, second-access requirements, disclosure at sale, declining to extend water and power, and above all prices that tell people the truth. When the insurer of last resort carries three quarters of a trillion dollars of exposure and can pass its assessments to policyholders statewide, the risk is being quietly socialized and the signal that would change behavior is being suppressed.\n\nThe objection is that this strands ordinary people and hands exclusionary politics one more instrument. We answer it in two halves. On new development we hold the line: a house approved today is a ninety-year obligation, and there is no equity case for manufacturing new exposure. On homes that already exist we do not favor abandonment. We favor mitigation-linked pricing, so that hardening visibly lowers a premium; catastrophe models that are transparent and auditable rather than proprietary black boxes; public money for retrofits in low-income households; and a residual pool priced to its risk, with any subsidy made explicit instead of hidden in cross-subsidies. A risk nobody can see the price of is a risk that keeps growing.",
+    "proponents": "Resources for the Future, Dave Jones",
+    "id": "steer-new-building-away-from-hazard"
+   },
+   {
+    "name": "Cut the emissions driving the fire weather",
+    "color_key": "purple",
+    "steelman": "Fuels work and home hardening are adaptations to a hazard that is still growing. Adaptation to a moving target eventually loses.",
+    "detail": "Warming has already roughly doubled the area of western forest that burns, chiefly by drying out what grows there, and it takes away the very days on which a planned burn is safe to light — it makes the other strategies harder at the same time as it makes them more necessary. Canada’s 2023 season burned about six times its long-run average and more than double its previous record, in a boreal forest with no century of American-style suppression to blame, and it forced the largest evacuation in modern Canadian history. The UN Environment Programme projects up to 30 percent more extreme fires by 2050 and 50 percent by 2100 on current trajectories. Every additional tenth of a degree raises the ceiling that fuels and hardening have to work under, and neither of them touches the hazard itself.\n\nThe objection is timing: emissions cuts affect the 2060s, not this fire season, and the global area burned has fallen even as the climate warmed. That global total is a grassland number, and it is silent on the conifer and boreal forests where the damage, the smoke and the released carbon come from. Mitigation was never offered as a substitute for this year’s fuel break. It is what decides whether adaptation is a finite project with an end state or a permanent, escalating tax. We do not oppose treating fuels or hardening houses. We deny that they can be the whole answer.",
+    "proponents": "Union of Concerned Scientists, World Weather Attribution",
+    "id": "cut-the-emissions-driving-the-fire"
+   },
+   {
+    "name": "Build out suppression, detection and aviation",
+    "color_key": "teal",
+    "steelman": "Almost every fire that matters was small once. What keeps most of them small is crews and aircraft arriving in minutes, and we are running short of both.",
+    "detail": "The reason most ignitions never become news is an initial-attack system that puts engines, crews and aircraft on scene fast. The catastrophic few are the ones that outran it, because resources were committed elsewhere, because detection was slow, or because the aircraft were the wrong ones in the wrong place. In 2026 the country ran at maximum national preparedness for weeks, with roughly 63 percent of national firefighting resources committed to Oregon and Washington at one point and new fires competing for what was left. That is a capacity problem, and capacity is solvable with money: crews on permanent rather than seasonal terms, pay that stops the workforce hemorrhaging, satellite and camera detection that cuts time-to-report to minutes, night-flying helicopters, and one federal agency instead of five with different pay scales and radios. A decade of federal suppression spending costs less than the economic loss of a single January in Los Angeles.\n\nThe objection is the fire paradox: putting everything out is what built the fuel load. That is an argument about where and when to suppress, not about whether to have the capacity. The choice to let a remote lightning fire run for resource benefit is only available to an agency that could have put it out; restraint without capacity is just helplessness. And the paradox is largely a forest story. In chaparral, grassland and the interface, more fire is not ecologically needed, and the only question worth asking is how fast it can be stopped.",
+    "proponents": "US Department of the Interior, US Department of Agriculture",
+    "id": "build-out-suppression-detection-and-aviation"
+   }
+  ],
+  "crux": {
+   "lead": "When a town burns, was the outcome decided by the fire or by the town?",
+   "lead_highlight": "by the fire or by the town?",
+   "subtitle": "Every camp on this page is answering that underneath. Four of them would spend the next dollar making the fire smaller, cooler, later or easier to stop. Two would spend it on the roof, the ground against the wall, the spacing between houses and the second road out.",
+   "empirical": "The empirical form of the question is marginal: per dollar, how much structure loss does a hardening program avert compared with a landscape fuel program in the same place? Nobody has measured that, because the two literatures use different outcome measures and different units, severity on acres against survival of houses. Post-fire inspections now record, parcel by parcel, what was built how and what survived, making the comparison tractable.",
+   "values": "Evidence cannot settle what the policy is for. Landscape fire buys what hardening cannot at any price: forests that persist rather than convert to brush, reservoirs unfilled with ash, breathable August air, Indigenous practice. Hardening buys what land work cannot: a home kept insurable by a household waiting on no agency and no burn window. Which of those wildfire policy owes is a judgment. So is whether fire should be normal here, or kept out."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Look up your own address in Wildfire Risk to Communities",
+    "description": "The Forest Service’s national map, built for the public: wildfire likelihood, intensity and exposure for any US community, with a guide to what lowers risk locally.",
+    "url": "https://wildfirerisk.org/",
+    "for_position": null,
+    "id": "look-up-your-own-address-in"
+   },
+   {
+    "kind": "local",
+    "title": "Clear the first five feet around your house",
+    "description": "Nothing flammable against the wall: no mulch or shrubs in the bed, no firewood under the eaves, no wooden fence meeting the siding. It costs a weekend, and California now requires it in hazard zones.",
+    "url": "https://ibhs.org/wildfire/",
+    "for_position": "Harden the house and the first five feet",
+    "id": "clear-the-first-five-feet-around"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Join a prescribed burn association or fire council",
+    "description": "Landowner-led cooperatives pool people, equipment and training so members can burn each other’s land safely. The Coalition of Prescribed Fire Councils lists councils by state.",
+    "url": "https://www.prescribedfire.net/",
+    "for_position": "Put fire back on the land, deliberately",
+    "id": "join-a-prescribed-burn-association-or"
+   },
+   {
+    "kind": "policy",
+    "title": "Track the Fix Our Forests Act and tell your senators where you stand",
+    "description": "The main federal vehicle for fireshed designations, expedited review, litigation reform and a Wildfire Intelligence Center. It passed the House and cleared Senate committee 18-5.",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/471",
+    "for_position": "Thin and harvest federal forests faster",
+    "id": "track-the-fix-our-forests-act"
+   },
+   {
+    "kind": "local",
+    "title": "Ask your insurer what mitigation actually earns you",
+    "description": "Several states now require or allow wildfire mitigation discounts. Asking in writing, and asking which standard the insurer recognizes, is how mitigation gets priced at all.",
+    "url": "https://headwaterseconomics.org/natural-hazards/wildfire/solutions/insurance-wildfire-home-development/",
+    "for_position": "Steer new building away from hazard, price the risk",
+    "id": "ask-your-insurer-what-mitigation-actually"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Check the AirNow Fire and Smoke Map during smoke events",
+    "description": "The EPA and Forest Service map combines regulatory monitors, low-cost sensors and satellite plumes, and says plainly who should stay indoors at each air quality level.",
+    "url": "https://fire.airnow.gov/",
+    "for_position": null,
+    "id": "check-the-airnow-fire-and-smoke"
+   },
+   {
+    "kind": "donate",
+    "title": "Support the Cultural Fire Management Council",
+    "description": "A Yurok-led organization on the Klamath River that restores Indigenous cultural burning, trains practitioners and hosts prescribed fire training exchanges.",
+    "url": "https://www.culturalfire.org/donate",
+    "for_position": "Put fire back on the land, deliberately",
+    "id": "support-the-cultural-fire-management-council"
+   },
+   {
+    "kind": "local",
+    "title": "Start or join a Firewise USA site in your neighborhood",
+    "description": "NFPA’s program for neighborhoods that assess their risk, make a plan and do the work together. Because houses ignite each other, it operates at the scale that decides outcomes.",
+    "url": "https://www.nfpa.org/education-and-research/wildfire/firewise-usa/become-a-firewise-usa-site",
+    "for_position": "Harden the house and the first five feet",
+    "id": "start-or-join-a-firewise-usa"
+   },
+   {
+    "kind": "policy",
+    "title": "Apply for or back a Community Wildfire Defense Grant",
+    "description": "The federal program funding Community Wildfire Protection Plans and mitigation projects. Local governments, Tribes and nonprofits can apply, with priority for underserved communities.",
+    "url": "https://www.fs.usda.gov/managing-land/fire/grants/cwdg",
+    "for_position": null,
+    "id": "apply-for-or-back-a-community"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Train with Team Rubicon for post-fire response",
+    "description": "A veteran-led disaster response organization that deploys volunteers for sawyer work, debris removal and rebuilding after fires. Training is free and open to civilians too.",
+    "url": "https://teamrubiconusa.org/",
+    "for_position": null,
+    "id": "train-with-team-rubicon-for-post"
+   }
+  ]
+ }
 }

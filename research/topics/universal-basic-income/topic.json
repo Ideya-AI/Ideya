@@ -1,8 +1,8 @@
 {
  "slug": "universal-basic-income",
  "title": "Universal Basic Income",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-09-22T10:13:20+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Unconditional cash for everyone versus targeted transfers or guaranteed jobs.",
@@ -16,5 +16,717 @@
   "ai-future-of-work",
   "economic-inequality",
   "labor-power"
- ]
+ ],
+ "icon": "hand-coins",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: a large mailbox on a post as the dominant focal mass, its door open and a plain envelope emerging; three identical coin discs, unmarked, stacked and leaning at the foot of the post and overlapping it; a curved row of small identical houses on the rise behind; a small wall calendar with a plain grid at the right, resting on the rise; one path curving unbroken across the whole frame from the lower left, behind the post, up past the houses as the connective element; the ground is the gentle curve of a low rise.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #b48f2c, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: dollar signs, currency symbols, banknotes, wallets stuffed with bills, piggy banks, hands, open palms, scales of justice, charity ribbons, shopping carts, arrows going up or down.",
+ "content": {
+  "overview": {
+   "summary": "A recurring payment to everyone, with no means test and no work test, set against targeted benefits or a guaranteed job.",
+   "scope_covered": "The design question, the trial evidence, the cost arithmetic, and what unconditional cash does to work.",
+   "scope_excluded": "How large the welfare state should be, the minimum wage, in-kind benefits on their own merits, and cash transfers judged as development policy.",
+   "why_now": "On 20 November 2025 Cook County, Illinois made guaranteed income a permanent budget line, the first US government to do so; by 1 January 2026 Texas had shut every local program in that state. On 20 February 2026 the Supreme Court voided the tariffs behind President Donald Trump’s promised $2,000-a-person dividend."
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "Gross cost of $1,000 a month for every US adult",
+     "viz": "ranked",
+     "wide": true,
+     "value": "2.8",
+     "unit": "$ trillion",
+     "series": [
+      {
+       "label": "Federal outlays, 2025",
+       "value": "7.0",
+       "highlight": false
+      },
+      {
+       "label": "Mandatory outlays, 2025",
+       "value": "4.2",
+       "highlight": false
+      },
+      {
+       "label": "$1,000 a month, 2019",
+       "value": "2.8",
+       "highlight": true
+      },
+      {
+       "label": "Discretionary, 2025",
+       "value": "1.9",
+       "highlight": false
+      },
+      {
+       "label": "Net interest, 2025",
+       "value": "0.97",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "A $12,000 annual payment to each of the roughly 236 million US adult citizens counted in 2019 would cost about $2.8 trillion a year gross, in 2019 dollars; the same design costs more today.",
+     "detail": "The figure is gross: it counts every dollar paid out, before the taxes that would claw some of it back from higher earners and before subtracting any program a basic income replaced. Net cost is much lower and depends entirely on design. The Tax Foundation estimated that the five tax increases in Andrew Yang’s 2020 campaign plan, including a 10 percent value-added tax, would raise about $1.3 trillion a year, and that making the plan revenue-neutral would require a 22 percent VAT and a benefit cut to $9,000 a year. The budget figures beside it are six years later. Of the $7.0 trillion the federal government spent in fiscal 2025, or 23.1 percent of GDP, $4.2 trillion was mandatory spending, $1.9 trillion discretionary and $970 billion net interest.",
+     "source_label": "Tax Foundation analysis of the Freedom Dividend; Congressional Budget Office",
+     "source_url": "https://taxfoundation.org/blog/andrew-yang-value-added-tax-universal-basic-income/",
+     "source_published": "2019 and 2025",
+     "source_accessed": "2026-09-20",
+     "id": "gross-cost-of-1-000-a"
+    },
+    {
+     "label": "Effect of $1,000 a month on earnings, largest US trial",
+     "viz": "bar",
+     "wide": false,
+     "value": "-1,900",
+     "unit": "$/yr",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a three-year randomized trial, 1,000 low-income people who received $1,000 a month earned about $1,900 a year less than the control group and were 4.2 points less likely to be in the labor market.",
+     "detail": "This is the OpenResearch Unconditional Cash Study, funded largely by Sam Altman and run in Texas and Illinois against a control group of 2,000 people receiving $50 a month. It is the largest randomized trial of unconditional cash ever conducted in the United States, and it cuts both ways. Recipients did reduce work: hours fell by one to two a week, their partners cut hours by a comparable amount, and the biggest increase in time use was leisure. They did not move into better jobs, and the authors say their confidence intervals rule out even small improvements in job quality. Recipients also spent more, moved house more often, reported better financial resilience, and a companion paper published 20 July 2025 found clearer improvements in parenting. These numbers come from the August 2026 revision; the original July 2024 working paper reported about $1,500 a year and a 2.0 percentage point participation drop, so anyone citing the study should say which version.",
+     "source_label": "Vivalt, Rhodes, Bartik, Broockman, Krause & Miller, NBER Working Paper 32719",
+     "source_url": "https://www.nber.org/papers/w32719",
+     "source_published": "2020-2023, revised 2026",
+     "source_accessed": "2026-09-20",
+     "id": "effect-of-1-000-a-month"
+    },
+    {
+     "label": "US child poverty, Supplemental Poverty Measure",
+     "viz": "ranked",
+     "wide": true,
+     "value": "5.2",
+     "unit": "% in 2021",
+     "series": [
+      {
+       "label": "2020",
+       "value": "9.7",
+       "highlight": false
+      },
+      {
+       "label": "2021",
+       "value": "5.2",
+       "highlight": true
+      },
+      {
+       "label": "2022",
+       "value": "12.4",
+       "highlight": false
+      },
+      {
+       "label": "2023",
+       "value": "13.7",
+       "highlight": false
+      },
+      {
+       "label": "2024",
+       "value": "13.4",
+       "highlight": false
+      },
+      {
+       "label": "2025",
+       "value": "13.4",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Child poverty fell to a record 5.2 percent in 2021, when the expanded Child Tax Credit paid monthly, then more than doubled to 12.4 percent in 2022 after the expansion lapsed.",
+     "detail": "The 2021 expanded Child Tax Credit is the closest the United States has come to a near-universal unconditional payment: up to $300 a month per young child, paid to families with no earnings at all, arriving automatically. The single-year swing in child poverty is the largest on record in either direction, and both camps use it. Supporters read it as proof that unconditional cash ends poverty by arithmetic the moment a government decides to. Critics read the same episode as showing the effect lasts exactly as long as the money does, and point to research disputing whether the expansion had detectable effects on work. The series needs care: the Bureau of Labor Statistics found errors in the threshold calculations for 2019 through 2024 and the Census Bureau reissued corrected estimates in August 2026, so figures published before that date may differ slightly.",
+     "source_label": "US Census Bureau, Poverty in the United States: 2025",
+     "source_url": "https://www2.census.gov/library/publications/2026/demo/p60-290.pdf",
+     "source_published": "2020 to 2025",
+     "source_accessed": "2026-09-20",
+     "id": "us-child-poverty-supplemental-poverty-measure"
+    },
+    {
+     "label": "Income gain in the Kenyan trial’s lump-sum arm",
+     "viz": "bar",
+     "wide": false,
+     "value": "50",
+     "unit": "% vs control",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "After two years, the Kenyan households handed a single $500 lump sum had incomes about 50 percent above the control group; no arm of the trial, the twelve-year one included, worked less.",
+     "detail": "This is the world’s largest and longest basic income experiment: about 23,000 people in 195 Kenyan villages, with 100 more villages as controls, split between a twelve-year monthly payment of $22.50, a two-year monthly payment of the same size and a one-time $500 lump sum, against a local extreme-poverty line of about $33 a month. The comparison is informative because at the two-year mark all three treatment arms had received roughly the same total money. The lump sum and the long-term guarantee produced large gains in enterprise formation and savings; the short-term monthly payment did much less, which the authors read as evidence that people need either enough money at once or a long enough horizon to invest rather than consume. Nor did recipients drink more, which the study measured rather than assumed. The result sits in tension with the US trial, and the most common explanation is that in extreme poverty with thin credit markets, cash relieves a capital constraint rather than buying leisure.",
+     "source_label": "GiveDirectly, with Banerjee, Faye, Krueger, Niehaus & Suri",
+     "source_url": "https://www.givedirectly.org/2023-ubi-results",
+     "source_published": "2023",
+     "source_accessed": "2026-09-20",
+     "id": "income-gain-in-the-kenyan-trial"
+    },
+    {
+     "label": "Who moves into poverty under a budget-neutral basic income",
+     "viz": "ranked",
+     "wide": true,
+     "value": "7",
+     "unit": "% newly poor",
+     "series": [
+      {
+       "label": "United Kingdom",
+       "value": "7",
+       "highlight": true
+      },
+      {
+       "label": "France",
+       "value": "5",
+       "highlight": false
+      },
+      {
+       "label": "Italy",
+       "value": "4",
+       "highlight": false
+      },
+      {
+       "label": "Finland",
+       "value": "3",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In the OECD’s simulation, a budget-neutral basic income would push 7 percent of working-age Britons into poverty and lift 2 percent out; more move in than out in France and Finland too.",
+     "detail": "This is the strongest technical objection to a basic income in countries that already run dense welfare states, and the OECD states it plainly: a basic income is not an efficient tool for reducing poverty where existing benefits are well targeted. People who currently receive unemployment insurance, early retirement pensions or several stacked means-tested benefits lose more than the flat payment gives back. Italy is the exception in the simulation, at 4 percent moving each way. The countervailing finding in the same exercise is that people entitled to benefits who never claim them gain, and that the UK’s aggregate poverty gap narrows even as the headcount rises, because a flat payment reaches the very poorest, who are often the people missing from the claiming system. The simulation assumes disability and housing support is retained and that pensioners are unaffected, which makes it a relatively generous test of the idea.",
+     "source_label": "OECD, Basic Income as a Policy Option, technical background note, Table 6",
+     "source_url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-sub-issues/income-support-redistribution-and-work-incentives/basic-income-policy-option-2017-brackground-technical-note.pdf",
+     "source_published": "2017",
+     "source_accessed": "2026-09-20",
+     "id": "who-moves-into-poverty-under-a"
+    },
+    {
+     "label": "Net cost of a federal job guarantee",
+     "viz": "range",
+     "wide": false,
+     "value": "0.8-2.0",
+     "unit": "% of GDP",
+     "series": [],
+     "range_min": "0",
+     "range_max": "10% of GDP",
+     "note": "A job guarantee paying $15 an hour plus benefits to 11 to 16 million people would cost 0.8 to 2 percent of GDP, net of benefit savings and the added tax revenue.",
+     "detail": "This is the main rival proposal, and the cost gap is the reason it keeps its supporters. A job guarantee pays only the people who show up, so its cost scales with take-up rather than with population, and the Levy authors argue the program pays for part of itself through reduced unemployment insurance, food assistance and Medicaid, and through the taxes its workers pay. The same design feature is what basic income advocates object to: it excludes carers, the disabled, students and anyone who cannot or should not work, and it requires the state to invent millions of useful jobs. The estimate also assumes the program permanently raises private employment by up to four million and real GDP by $313 billion to $560 billion a year, assumptions critics at the Niskanen Center and elsewhere dispute.",
+     "source_label": "Levy Economics Institute, Public Service Employment",
+     "source_url": "https://www.levyinstitute.org/pubs/rpr_4_18.pdf",
+     "source_published": "2018",
+     "source_accessed": "2026-09-20",
+     "id": "net-cost-of-a-federal-job"
+    },
+    {
+     "label": "Employment effect across randomized US pilots",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "pp",
+     "series": [
+      {
+       "label": "Four largest, fell",
+       "value": "3.2",
+       "highlight": false
+      },
+      {
+       "label": "All 30 pilots, rose",
+       "value": "0.8",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Across 30 randomized US guaranteed income pilots, employment rose 0.8 points on average; across the four largest alone, which hold 55 percent of participants, it fell 3.2.",
+     "detail": "Between 2017 and 2025 at least 122 US pilots across 33 states and the District of Columbia distributed $481 million to more than 40,000 recipients. This paper, by two authors at a think tank skeptical of unconditional cash, is nonetheless the most complete inventory of that wave, and its own framing is cautious in both directions. The gap between the two averages is a sample-size story: most pilots enrolled a few hundred people at most, are underpowered to detect an employment effect of a few percentage points, and suffered heavy attrition, so their individual estimates scatter around zero. The four largest imply an income elasticity of labor supply of about -0.18, close to the academic literature, and the paper does not claim either average settles the question.",
+     "source_label": "Corinth & Mayhew, American Enterprise Institute",
+     "source_url": "https://www.aei.org/wp-content/uploads/2026/02/Corinth-and-Mayhew-Guaranteed-Basic-Income-Pilots.pdf",
+     "source_published": "2026, covering 2017-2025",
+     "source_accessed": "2026-09-20",
+     "id": "employment-effect-across-the-us-pilot"
+    },
+    {
+     "label": "Iran’s national unconditional cash transfer",
+     "viz": "bar",
+     "wide": false,
+     "value": "28",
+     "unit": "% of median",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Iran’s 2010 energy subsidy reform replaced fuel subsidies with a universal monthly cash payment reaching more than 70 million people, worth about 28 percent of median per capita household expenditure.",
+     "detail": "This is the largest real-world approximation of a national basic income, and it happened by accident: the government intended to target poorer families, could not identify them reliably, and made the payment universal instead. The study found no evidence that the transfer reduced hours worked or labor force participation overall, with positive effects on hours and participation for women and on hours for self-employed men. The program has since been eroded by inflation and partially means-tested, which is itself evidence about the political durability of a universal payment in a country without indexation.",
+     "source_label": "Salehi-Isfahani & Mostafavi-Dehzooei, Journal of Development Economics",
+     "source_url": "https://theforum.erf.org.eg/2017/11/19/energy-subsidies-universal-basic-income-lessons-iran/",
+     "source_published": "2011",
+     "source_accessed": "2026-09-20",
+     "id": "iran-s-national-unconditional-cash-transfer"
+    },
+    {
+     "label": "What a budget-neutral basic income would pay in Europe",
+     "viz": "ranked",
+     "wide": true,
+     "value": "527",
+     "unit": "€ a month",
+     "series": [
+      {
+       "label": "Finland",
+       "value": "527",
+       "highlight": true
+      },
+      {
+       "label": "France",
+       "value": "456",
+       "highlight": false
+      },
+      {
+       "label": "United Kingdom (pounds)",
+       "value": "230",
+       "highlight": false
+      },
+      {
+       "label": "Italy",
+       "value": "158",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Replacing working-age benefits and tax-free allowances with a flat payment, at constant budget, would fund about €527 a month per adult in Finland, €456 in France, £230 in the UK and €158 in Italy.",
+     "detail": "This is the arithmetic that constrains every rich-country proposal. The OECD took existing non-pension working-age benefit spending, added the revenue from abolishing income-tax personal allowances, spread the total evenly across everyone below retirement age, and reported what each adult would get. In no country does the result reach the national poverty line for a single person. The UK figure is 28 percent below that country’s existing guaranteed minimum income benefit, meaning a budget-neutral British basic income would pay the poorest less than the current system does. Advocates answer that budget neutrality is the wrong constraint and that new revenue, from carbon, land, wealth or a value-added tax, is the whole point; the OECD’s own reading is that a basic income at a socially meaningful level requires higher taxes rather than a reshuffle of existing spending.",
+     "source_label": "OECD, Basic Income as a Policy Option, technical background note, Table 3",
+     "source_url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-sub-issues/income-support-redistribution-and-work-incentives/basic-income-policy-option-2017-brackground-technical-note.pdf",
+     "source_published": "2017",
+     "source_accessed": "2026-09-20",
+     "id": "what-a-budget-neutral-basic-income"
+    },
+    {
+     "label": "Take-up of means-tested US benefits among eligible people",
+     "viz": "ranked",
+     "wide": true,
+     "value": "88",
+     "unit": "% eligible",
+     "series": [
+      {
+       "label": "SNAP",
+       "value": "88",
+       "highlight": true
+      },
+      {
+       "label": "Earned Income Tax Credit",
+       "value": "78",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "SNAP reached 88 percent of eligible individuals in fiscal 2022, its highest rate in nearly 50 years of estimates, and the Earned Income Tax Credit reached 78 percent of eligible taxpayers.",
+     "detail": "Take-up is the heart of the targeting argument, and both sides read these numbers as their own. Advocates of unconditional cash point out that 12 percent of eligible SNAP individuals and 22 percent of eligible EITC filers get nothing, that the missing are disproportionately the most isolated and the least practiced at bureaucratic process, and that a universal payment has take-up near 100 percent by construction. Defenders of targeting point out that 88 percent is high and rising, that it was achieved by simplifying applications rather than by abandoning the means test, and that the remaining gap is cheaper to close directly than by paying everyone. State SNAP rates vary widely around the national figure.",
+     "source_label": "USDA Food and Nutrition Service; Internal Revenue Service",
+     "source_url": "https://www.fna.usda.gov/research/snap/national-participation-rates/fy20and22",
+     "source_published": "2022",
+     "source_accessed": "2026-09-20",
+     "id": "take-up-of-means-tested-us"
+    },
+    {
+     "label": "Alaska Permanent Fund Dividend, per resident",
+     "viz": "ranked",
+     "wide": true,
+     "value": "1,200",
+     "unit": "$ in 2026",
+     "series": [
+      {
+       "label": "2020",
+       "value": "992",
+       "highlight": false
+      },
+      {
+       "label": "2022",
+       "value": "3,284",
+       "highlight": false
+      },
+      {
+       "label": "2024",
+       "value": "1,702",
+       "highlight": false
+      },
+      {
+       "label": "2025",
+       "value": "1,000",
+       "highlight": false
+      },
+      {
+       "label": "2026",
+       "value": "1,200",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Every eligible Alaskan receives $1,200 in 2026, a $1,000 dividend plus a one-time $200 energy relief payment, with distribution starting 1 October.",
+     "detail": "Alaska has paid an unconditional annual dividend to nearly every resident since 1982, funded by investment returns on oil royalties, and it is the closest thing in the world to a long-running universal basic income in a rich country. The economists Damon Jones and Ioana Marinescu found it did not reduce aggregate employment, though part-time work rose. The amount is contested every year: Governor Mike Dunleavy asked for $3,650 a person under the statutory formula for 2026 and the legislature approved $1,000 plus relief instead, having departed from the formula every year since 2016 in order to fund state services. The record payment was $3,284 in 2022. The dividend is small relative to living costs, which is why it is better evidence about how people respond to modest unconditional income than about whether a livable basic income would work.",
+     "source_label": "Anchorage Daily News; Alaska Permanent Fund Dividend Division",
+     "source_url": "https://www.adn.com/alaska-news/2026/09/19/alaskans-will-start-getting-1200-permanent-fund-dividend-energy-relief-payments-on-oct-1/",
+     "source_published": "2026",
+     "source_accessed": "2026-09-20",
+     "id": "alaska-permanent-fund-dividend-per-resident"
+    },
+    {
+     "label": "Administrative cost as a share of program spending",
+     "viz": "ranked",
+     "wide": true,
+     "value": "0.5",
+     "unit": "%",
+     "series": [
+      {
+       "label": "SSI, means-tested",
+       "value": "7-8",
+       "highlight": false
+      },
+      {
+       "label": "Social Security",
+       "value": "0.5",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Social Security spends about 0.5 percent of benefits on administration; Supplemental Security Income, which means-tests and verifies disability, spends about 7 to 8 percent.",
+     "detail": "The roughly fifteenfold gap is the clearest US illustration of what conditionality costs to run, and it is one of the few claims in this debate that almost nobody disputes. The caveat is that SSI’s administrative burden comes mostly from disability determination rather than from the income test alone, so the comparison overstates the cost of means-testing by itself. It is also a cost borne partly by claimants rather than by the agency, in time, paperwork and denied claims, which appears in neither figure. Against it, a basic income’s simplicity is bought by paying money to people who do not need it, and the tax system that claws it back has administrative costs of its own. The SSI figure is given as about 8 percent in the agency’s 2024 annual report and about 7 percent in its fiscal 2025 congressional justification.",
+     "source_label": "Social Security Administration",
+     "source_url": "https://www.ssa.gov/budget/assets/materials/2025/2025SSI.pdf",
+     "source_published": "2023 to 2025",
+     "source_accessed": "2026-09-20",
+     "id": "administrative-cost-as-a-share-of"
+    },
+    {
+     "label": "American support for a federal basic income",
+     "viz": "ranked",
+     "wide": true,
+     "value": "45",
+     "unit": "% in favor",
+     "series": [
+      {
+       "label": "Black adults",
+       "value": "73",
+       "highlight": false
+      },
+      {
+       "label": "Adults 18 to 34",
+       "value": "67",
+       "highlight": false
+      },
+      {
+       "label": "Hispanic adults",
+       "value": "63",
+       "highlight": false
+      },
+      {
+       "label": "All adults",
+       "value": "45",
+       "highlight": true
+      },
+      {
+       "label": "White adults",
+       "value": "35",
+       "highlight": false
+      },
+      {
+       "label": "Adults 65 and over",
+       "value": "26",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Asked whether the federal government should provide about $1,000 a month to all adult citizens whether or not they work, 45 percent of Americans were in favor and 54 percent opposed.",
+     "detail": "The partisan split is the widest of any cut of the data: 78 percent of Republicans and Republican leaners opposed, while 66 percent of Democrats and Democratic leaners were in favor, and the age and race gradients persist within both parties. A separate Gallup and Northeastern University poll that asked specifically about a basic income for workers displaced by artificial intelligence found 48 percent in support and 52 percent opposed, with 65 percent support among Democrats and 28 percent among Republicans. Framing moves the number: polls that mention automation or job loss tend to find more support than polls that describe an unconditional payment to everyone. This reading is the most-cited US benchmark but is now six years old, and no equally large survey has repeated the identical question since.",
+     "source_label": "Pew Research Center, survey of 11,001 US adults",
+     "source_url": "https://www.pewresearch.org/short-reads/2020/08/19/more-americans-oppose-than-favor-the-government-providing-a-universal-basic-income-for-all-adult-citizens/",
+     "source_published": "2020",
+     "source_accessed": "2026-09-20",
+     "id": "american-support-for-a-federal-basic"
+    },
+    {
+     "label": "Cost of a basic income at a quarter of median income",
+     "viz": "ranked",
+     "wide": true,
+     "value": "6.5",
+     "unit": "% of GDP",
+     "series": [
+      {
+       "label": "Advanced economies",
+       "value": "6.5",
+       "highlight": true
+      },
+      {
+       "label": "Emerging economies",
+       "value": "3.8",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "A universal payment set at 25 percent of median per capita market income would cost about 6.5 percent of GDP in rich countries and 3.8 percent in developing ones.",
+     "detail": "The IMF simulated the same benchmark design across a range of countries, which makes the cost comparable in a way national estimates are not. It also estimated what that money buys: a fall of roughly five points in the Gini coefficient almost everywhere, and a poverty reduction of 7.5 percentage points on average in advanced economies against 10.4 in emerging ones. The paper’s own conclusion is neither for nor against. It argues that whether a basic income beats existing transfers depends on three measurable properties of the current system, its generosity, its coverage and its progressivity, and that in countries where existing transfers are generous, well covered and well targeted, a basic income at the same cost does worse.",
+     "source_label": "International Monetary Fund Working Paper 18/273",
+     "source_url": "https://www.imf.org/-/media/Files/Publications/WP/2018/wp18273.ashx",
+     "source_published": "2018",
+     "source_accessed": "2026-09-20",
+     "id": "cost-of-a-basic-income-at"
+    },
+    {
+     "label": "Referendum results where voters decided directly",
+     "viz": "ranked",
+     "wide": true,
+     "value": "37.3",
+     "unit": "% in favor",
+     "series": [
+      {
+       "label": "Hamburg, 2025",
+       "value": "37.3",
+       "highlight": true
+      },
+      {
+       "label": "Switzerland, 2016",
+       "value": "23.1",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Hamburg voters rejected a publicly funded three-year basic income pilot 62.7 percent to 37.3 percent in October 2025; Swiss voters rejected an unconditional basic income 76.9 to 23.1 percent in 2016.",
+     "detail": "The Hamburg initiative was modest by comparison with the Swiss one: a scientifically monitored trial paying €1,346 a month plus health insurance to 2,000 residents for three years, not a permanent citywide entitlement, and it still lost by nearly two to one on 43.7 percent turnout. The Swiss initiative proposed a permanent unconditional income without specifying an amount, though campaigners talked about 2,500 francs a month, and was defeated far more heavily. Every direct popular vote on basic income to date has gone against it, by margins much wider than opinion polling on the abstract idea would predict. Supporters attribute the gap to concrete financing questions surfacing during a campaign; opponents read it as the considered public verdict.",
+     "source_label": "2025 Hamburg referendums; Library of Congress on the Swiss vote",
+     "source_url": "https://en.wikipedia.org/wiki/2025_Hamburg_referendums",
+     "source_published": "2016 and 2025",
+     "source_accessed": "2026-09-20",
+     "id": "referendum-results-where-voters-decided-directly"
+    },
+    {
+     "label": "Stockton pilot, change in full-time employment",
+     "viz": "ranked",
+     "wide": true,
+     "value": "+12",
+     "unit": "pp",
+     "series": [
+      {
+       "label": "Recipients",
+       "value": "+12",
+       "highlight": true
+      },
+      {
+       "label": "Control group",
+       "value": "+5",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Full-time employment among Stockton recipients rose from 28 to 40 percent in a year, against a rise from 32 to 37 percent in the control group.",
+     "detail": "SEED gave $500 a month for 24 months to 125 randomly selected residents of neighborhoods at or below Stockton’s median income, starting in February 2019, and it is the pilot that launched the American wave. Its first-year result became the movement’s headline finding, and it points the opposite way from the OpenResearch trial: recipients got more full-time work, not less. The usual caveats are heavy. The sample is 125 people, small enough that the confidence interval is wide; the treatment and control groups started at different employment levels; and the second year ran into the pandemic, which makes the later results hard to read. Recipients also reported large falls in anxiety and depression, and spent most of the money on food, merchandise, utilities and car repairs, with less than one percent going to alcohol or tobacco.",
+     "source_label": "Stockton Economic Empowerment Demonstration, West & Castro",
+     "source_url": "https://www.stocktondemonstration.org/employment",
+     "source_published": "2021",
+     "source_accessed": "2026-09-20",
+     "id": "stockton-pilot-change-in-full-time"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Does unconditional cash reduce how much people work, and by enough to matter?",
+    "kind": "empirical",
+    "why": "The trials disagree. Each measured a different payment, in a different place, for a different length of time, and no government has ever run a permanent universal one, so every estimate extrapolates from a temporary payment to a selected group.",
+    "detail": "The case that the effect is small: across four US negative income tax experiments in the 1970s, married men cut work by about two weeks a year, and much of the larger reduction among wives and young people went into childcare and schooling. Iran’s universal transfer, the largest real-world case, showed no aggregate fall in hours or participation and gains for women and the self-employed. Alaska’s forty-year dividend has not cut aggregate employment. Even the US trial with the clearest reduction found one to two hours a week, about a tenth of a work week, which is what an income effect of that size predicts.\n\nThe case that it is large: the trials big enough to detect a change of a few percentage points do detect one, and it points down; the small ones cannot rule anything out in either direction. Trial payments are also modest next to an income a person could live on, and the response to money that changes what someone can afford for good need not be proportional to the response to a top-up. A permanent program would be financed by taxes that carry a work disincentive of their own, and every hour not worked shrinks the base paying for it.",
+    "lean_label_a": "Work barely moves",
+    "lean_label_b": "Work falls sharply",
+    "id": "does-unconditional-cash-reduce-how-much"
+   },
+   {
+    "text": "Per dollar spent, does a universal payment cut poverty more than a targeted one?",
+    "kind": "empirical",
+    "why": "The answer depends almost entirely on how good the existing targeting is, and that varies enormously between a Scandinavian welfare state and a low-income country with no benefit registry. Both sides are often describing different countries.",
+    "detail": "For universal: means tests leak in both directions. Eligible people go unclaimed even in the best-run programs, and those who miss out are disproportionately the ones least able to navigate a claim. Verification is expensive, and means tests impose effective marginal tax rates that can exceed 80 percent as benefits taper, punishing exactly the earnings they claim to encourage. In low-income countries, where only a small minority of people have any social protection at all, there is no targeting infrastructure to be more efficient than. Even the OECD’s simulation found a flat payment narrows the UK poverty gap while raising the headcount, because it reaches the very poorest, who are often missing from the claiming system.\n\nFor targeting: the arithmetic is unforgiving. Money that goes to the comfortable has to come from somewhere, and in a fixed budget it comes from the households the current system was built around: the disabled, the long-term unemployed, lone parents, anyone stacking several benefits at once. That is where the European simulations of a budget-neutral swap concentrate their losses. Take-up problems are real, and the way they have actually been narrowed is by simplifying applications, not by paying everyone.",
+    "lean_label_a": "Universal wins",
+    "lean_label_b": "Targeting wins",
+    "id": "per-dollar-spent-does-a-universal"
+   },
+   {
+    "text": "Is public support rightly conditional on working or looking for work?",
+    "kind": "value",
+    "why": "This is the oldest fault line in welfare policy and it is not an empirical one. Two people can agree on every number about labor supply and still part company here, because they disagree about what citizens owe each other in return for support.",
+    "detail": "For reciprocity: a society is a scheme of cooperation, and the claim to a share of its product is grounded in contributing to it. Conditionality on this view is not cruelty but the expression of a norm most people hold, that able adults contribute what they can and that support is a bridge back to contribution rather than a permanent alternative to it. Work is also the main route by which adults acquire skills, structure, social contact and standing. And public support for redistribution rests on the same norm: it collapses when a benefit is described as going to people who could work and choose not to.\n\nFor unconditionality: the state cannot tell who deserves support. Someone caring for a disabled parent, raising a child, studying, recovering from illness or living in a town with no jobs is doing something no work test recognizes, and the test pushes them into whatever work is nearest. Unconditional income also changes the balance of power in the labor market, because a worker who can afford to say no is negotiating and a worker who cannot is not. Conditionality carries its own costs in surveillance, stigma and the humiliation of proving need. The deepest version of the claim is that in an economy built on inherited capital and accumulated public knowledge, a basic share is owed to every member rather than earned from scratch.",
+    "lean_label_a": "Support is earned",
+    "lean_label_b": "Support is owed",
+    "id": "is-public-support-rightly-conditional-on"
+   },
+   {
+    "text": "Is cash or a guaranteed job the better answer to economic insecurity?",
+    "kind": "value",
+    "why": "The two proposals are usually costed against each other as if they solved the same problem, but they rest on different views of what work is for: a means to income, or a source of meaning and standing that money cannot buy.",
+    "detail": "For cash: it is the only transfer that respects the recipient’s judgment about their own life, and the evidence is that people spend it on food, rent, transport and their children rather than the vices opponents predict. A job guarantee cannot reach the people most in need of support, because the reason many of them are poor is that they cannot work: carers, the chronically ill, the disabled, people in places with no transport. It also requires the state to manufacture millions of genuinely useful jobs and supervise the people doing them, an administrative undertaking with its own coercion built in, since the offer is only as voluntary as the alternative to refusing it.\n\nFor jobs: unemployment damages people in ways that income replacement does not repair, and the harm is about identity, routine and social connection rather than money. A job guarantee delivers those alongside the wage, sets an effective floor across the whole labor market by giving every worker an outside option, and produces care work, maintenance and environmental restoration that markets undersupply. It is also far cheaper, because only the people who take it up are paid, and it keeps faith with the reciprocity norm that public support depends on, which is why unions and much of the labor movement prefer it.",
+    "lean_label_a": "Cash and freedom",
+    "lean_label_b": "Jobs and purpose",
+    "id": "is-cash-or-a-guaranteed-job"
+   },
+   {
+    "text": "Should a basic income replace existing benefits or sit on top of them?",
+    "kind": "value",
+    "why": "The same words describe two policies with opposite distributional effects, and camps on both left and right call their version a basic income. A libertarian design that folds in the welfare state and one that adds to it share a name and little else.",
+    "detail": "For replacement: the case is coherence and honesty. The current US system is dozens of programs with different eligibility rules, different agencies and phase-out schedules that interact to produce marginal tax rates nobody designed, with an administrative apparatus whose cost and intrusiveness falls on the poorest. Collapsing it into one payment removes the caseworker’s discretion, the stigma, the paperwork and the cliff effects in a single step, and lets recipients decide what they need rather than receive housing aid they cannot convert into childcare. It is also the only version affordable without a large new tax.\n\nFor a floor: replacement is where the poorest lose. A flat payment cannot do the work of programs that vary with need, and needs vary: a wheelchair user, a dialysis patient and a family in an expensive city all cost more to keep out of poverty than the average person. The OECD simulated exactly this swap in four European countries, and the households that lose are the ones whose unemployment insurance or disability payment is larger than any flat rate a fixed budget could afford. A basic income built as a floor keeps categorical support for categorical needs and adds unconditional security underneath, which is what the US pilots actually do.",
+    "lean_label_a": "Replace the system",
+    "lean_label_b": "Add a floor",
+    "id": "should-a-basic-income-replace-existing"
+   },
+   {
+    "text": "Will artificial intelligence displace enough work to make a basic income necessary?",
+    "kind": "empirical",
+    "why": "Two centuries of automation destroyed occupations without lasting unemployment. The first labor data from the generative AI period shows a gap opening for the youngest workers alone, and three years is too short to tell which pattern it belongs to.",
+    "detail": "For displacement: Stanford’s Digital Economy Lab found that employment of workers aged 22 to 25 in the most AI-exposed occupations fell about 13 percent between late 2022 and late 2025 relative to less-exposed peers, with no comparable gap for experienced workers, and the mechanism was reduced hiring rather than layoffs. The people building the systems say so themselves: Sam Altman argued in 2016 that a basic income would become necessary, then funded the largest US trial of one. If the entry rungs of the career ladder are removed, the problem is not a mismatch that retraining fixes but a change in who the economy has use for, and cash is the only instrument that works regardless of which jobs go.\n\nFor adaptation: there is still no evidence of economy-wide displacement. Aggregate employment has not fallen and AI-attributed layoffs are a small share of announced cuts. Mechanized agriculture, containerized shipping, spreadsheets and industrial robots each eliminated large categories of work and each was followed by higher total employment. Entry-level weakness is real but confounded with a post-pandemic hiring correction, high interest rates and a white-collar market that was overbuilt in 2021 and 2022. If displacement does arrive, wage insurance and adjustment assistance are better matched to a transition than a permanent payment to everyone.",
+    "lean_label_a": "Work disappears",
+    "lean_label_b": "Markets adapt",
+    "id": "will-artificial-intelligence-displace-enough-work"
+   },
+   {
+    "text": "Do time-limited pilots tell us anything about a permanent national program?",
+    "kind": "empirical",
+    "why": "The entire modern evidence base is pilots, and the features that make a pilot feasible, being small, temporary and funded by philanthropy, are exactly the features a national basic income would not have.",
+    "detail": "For generalizing: the American pilots are only part of the record. They sit alongside national-scale evidence from Iran, four decades of Alaskan dividends, the four 1970s negative income tax experiments and a fifth in Manitoba, and the largest and longest trial in Kenya. The findings are broadly consistent across very different designs and decades: people spend the money on necessities, mental health improves, labor supply moves a little and not much. That convergence is what external validity looks like; refusing to generalize demands the one experiment nobody will ever be allowed to run.\n\nFor treating them as a poor guide: a payment that ends in two years is not the same good as one that never ends. People treat it as a windfall rather than a permanent change in what they can afford, which is what the Kenyan study found when its two-year and twelve-year arms diverged on identical money. Pilots are financed by philanthropy, so there is no tax behind them and none of the economy-wide effects that dominate cost estimates, and nobody around the recipient is affected. Most had small samples and heavy attrition, and nearly every high-quality US pilot ran during or just after the pandemic. The two models that tried to project a national program from this evidence, Penn Wharton’s and the Roosevelt Institute’s, came out 16 points of GDP apart.",
+    "lean_label_a": "Pilots generalize",
+    "lean_label_b": "Pilots cannot",
+    "id": "do-time-limited-pilots-tell-us"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Pay a basic income on top of the safety net",
+    "color_key": "green",
+    "steelman": "Give people cash with no strings and put it underneath everything else, so that a car repair or a sick week does not turn into an eviction.",
+    "detail": "The point is a floor: an amount below which nobody in a rich country falls, paid automatically, without a caseworker deciding who deserves it. We are not proposing to take away anyone’s disability payment or housing assistance, and any proposal that does is a welfare cut using our language. What the evidence from our own pilots shows is not that people stop working; it is that people who could not previously take an unpaid training course, turn down a shift that clashed with childcare, or leave a job that was making them ill can now do those things. Stockton’s recipients ended their first year likelier to hold a full-time job than the people who got nothing, and the money went where anyone who has ever been short of it would expect: groceries, rent, the utility bill, the car that gets you to the shift. Almost none of it went to drink. The twelve-year Kenyan trial found no reduction in labor supply in any arm. Iran paid more than 70 million people with no fall in aggregate hours. Alaska has paid every resident since 1982.\n\nThe cost is the objection that lands, and our answer has three parts. The headline $2.8 trillion is gross: a payment recovered through the tax system from people who do not need it costs a fraction of that, which is why serious designs pair the payment with a tax schedule rather than quoting the payment alone. The comparison should be against what poverty already costs in emergency rooms, child protection and lost human capital, not against zero. And we are not asking for the whole program tomorrow: the route runs through the city and county programs that have moved from pilot to permanent budget line, and through the federal pilot now before Congress, so that the design questions are answered before the money is committed.",
+    "proponents": "Economic Security Project, Michael Tubbs, Mayors for a Guaranteed Income, Basic Income Earth Network",
+    "id": "pay-a-basic-income-on-top"
+   },
+   {
+    "name": "Expand targeted transfers instead of paying everyone",
+    "color_key": "blue",
+    "steelman": "We are not against cash. We are against arithmetic that does not work: spread a fixed budget evenly and you take from the bottom fifth to pay people who are comfortable.",
+    "detail": "A country has a finite amount it will spend on transfers, and the question is where that money lands. Robert Greenstein put it plainly: redirecting dollars currently targeted at the poorest into payments across the whole income scale is redistribution upward, and it would increase poverty rather than reduce it. The existing system is not elegant, but it was built program by program because needs differ. A disabled adult, a lone parent in an expensive city and a healthy single person with a job do not need the same amount of money, and a flat payment that ignores the difference is not fairer, only simpler. The OECD ran that arithmetic on four European welfare states at constant budget, and in three of the four more working-age people fall below the poverty line than climb above it. The losers are the households the current system was built around.\n\nEvery real problem the basic income movement names is one we agree exists and know how to fix without dismantling anything. Simplify applications and enroll people automatically from records the government already holds, so that fewer of the eligible are lost to paperwork. Smooth the benefit cliffs where a raise of a few hundred dollars costs a family more than it gains, because that is the work disincentive nobody defends. Extend coverage to the people the categories skip, above all adults without children, who can work full time and still be taxed into poverty. These are unglamorous reforms with large and measurable returns, and they are costed in billions rather than trillions. On dignity, we would only note that the basic income answer to a means test that misses people is to hand the poorest less money and call it respect.",
+    "proponents": "Robert Greenstein, Center on Budget and Policy Priorities, OECD",
+    "id": "expand-targeted-transfers-instead-of-paying"
+   },
+   {
+    "name": "Require work as a condition of public support",
+    "color_key": "amber",
+    "steelman": "Work is not a cost that welfare policy should minimize. It is what lifts people out of poverty and keeps them out, and support should be a bridge back to it.",
+    "detail": "Work is also how adults acquire skills, structure, self-respect and a place in a community. The 1996 welfare reform proved the point: when benefits came with a work expectation, caseloads fell, employment among single mothers rose and child poverty fell. Unconditional cash reverses that lesson at exactly the wrong moment, with open jobs going unfilled and a labor force that has still not recovered its pre-pandemic participation. Under a basic income, for the first time, an adult who refuses to work is entitled to the same public support as one who works two jobs, and the message that sends is not a technicality; it is the whole meaning of the policy. We also object to how this is being done. City councils and county boards are spending taxpayer money on redistribution schemes their legislatures never authorized, and states are right to stop them, as Arkansas, Idaho, Iowa, South Dakota and Texas have.\n\nThe evidence has caught up with the enthusiasm. The largest randomized trial of unconditional cash in the United States found recipients cut labor market participation by 4.2 percentage points and earned about $1,900 a year less, with the freed time going mainly to leisure and no detectable improvement in job quality. Weight the American pilot wave by how many people each study actually enrolled, rather than counting every small pilot as one vote, and its average employment effect turns negative; the studies that found nothing are mostly the ones too small to find anything. The objection that a work requirement punishes carers, the sick and the disabled describes a badly designed requirement, not ours: every serious program exempts them, and the requirement applies to able-bodied adults without dependents, who are the group where the behavioral response is largest.",
+    "proponents": "The Heritage Foundation, Foundation for Government Accountability",
+    "id": "require-work-as-a-condition-of"
+   },
+   {
+    "name": "Guarantee a job rather than an income",
+    "color_key": "rust",
+    "steelman": "The problem is not how to distribute checks. It is that the economy does not produce enough decent work, and no amount of cash fixes that.",
+    "detail": "The research on unemployment is unambiguous: the harm is overwhelmingly non-financial, and it comes from the loss of structure, purpose, standing and social contact. Hand an unemployed person money and you have addressed the small part of it. Offer them a job at a living wage doing work their community needs, in care, maintenance or environmental restoration, and you address all of it, and the work gets done. A job guarantee also sets a wage floor across the entire labor market, because no private employer can hire below the public option, which does more for low-wage workers than a payment they would receive whether or not they were being exploited. And it is affordable in a way a basic income is not, because only the people who want it take it up: the Levy Institute puts a $15-an-hour guarantee for 11 to 16 million workers at 2 percent of GDP or less, a small fraction of the cost of making the same promise to every adult in the country. Full-time earnings under it, a median around $32,500 a year, exceed what any politically realistic basic income could pay.\n\nWe are told we would exclude the people least able to work and require the state to invent millions of jobs it cannot supervise. We are not proposing to abolish anything: disability payments, pensions, child benefits and income support stay, and the guarantee sits alongside them for people who want work and cannot find it. The claim that there is nothing useful to do is refuted by any walk through an American city, with its unmet care needs, deferred maintenance and degraded land. We answer the design question with locally proposed, federally funded projects rather than a central jobs bureau, and on coercion, an offer is not a requirement: the guarantee obliges the government, not the worker.",
+    "proponents": "Pavlina Tcherneva, Levy Economics Institute, William Darity Jr., Darrick Hamilton, Mark Paul",
+    "id": "guarantee-a-job-rather-than-an"
+   },
+   {
+    "name": "Pay unconditional allowances to broad categories",
+    "color_key": "purple",
+    "steelman": "The interesting part of this idea is unconditionality, not universality, and you can have the first without paying for the second: send the money by category.",
+    "detail": "A flat monthly payment to every family with a child, or every adult over 65, or every disabled adult, with no work test, no means test and no caseworker, buys almost all of the simplicity, all of the automatic take-up and all of the dignity at a fraction of the cost, because it does not pay working-age adults without dependents, the group most likely to reduce their work in response. Category is doing the targeting a means test used to do, and doing it with information the government already holds. This is also the only version of the idea with a real political coalition: the Family Security Act came from a Republican senator and the expanded Child Tax Credit from a Democratic Congress, and both did the same thing. The United States spends 0.1 percent of GDP on cash benefits to families, the lowest in the OECD, and has the highest child poverty rate in the developed world. That is the gap to close first.\n\nThe 2021 expanded credit is the proof of concept: near-universal, monthly, unconditional on earnings, it cut child poverty to the lowest rate ever recorded in a single year, and then Congress declined to renew it and gave the whole gain back. It reached families with no earnings, which the old credit did not, and research found no large employment response over the period it operated. Basic income advocates call this half a loaf that entrenches the idea that only some people deserve unconditional money; we would say it is the loaf that can be bought. The objection from the other side, that allowances pay people to have children they cannot support, is answered by the data: payments of this size have small effects on fertility and large effects on the children who already exist.",
+    "proponents": "Samuel Hammond, Robert Orr, Niskanen Center, Mitt Romney",
+    "id": "pay-unconditional-allowances-to-broad-categories"
+   },
+   {
+    "name": "Replace the welfare system with one unconditional payment",
+    "color_key": "teal",
+    "steelman": "Scrap the maze of programs and send every adult a fixed sum for life: a citizen with cash in hand makes better decisions than an agency makes on their behalf.",
+    "detail": "The case is not generosity, it is liberty and honesty about what the current system costs. Government transfers run to trillions of dollars administered through dozens of programs, each with its own eligibility rules, agency and phase-out schedule, and the combined effect is a maze that punishes work through marginal tax rates nobody intended and treats poor adults as wards rather than citizens. Charles Murray’s proposal is to scrap the lot, including Social Security and Medicare, and pay every American over 21 a fixed grant, with a surtax clawing back half of it from higher earners. Andrew Yang’s was gentler: $1,000 a month, with recipients choosing between the dividend and their existing benefits, funded by a value-added tax on the companies capturing the gains from automation. The money currently spent deciding for people is the waste.\n\nThe administrative comparison is stark and largely uncontested: writing a check to everyone by rule costs a small fraction of what it costs to decide, case by case, who qualifies. Even that understates it, because the hours spent proving need are paid for by the person proving it, and appear on nobody’s budget line. People entitled to food assistance and to the earned income credit go without them every year because the system is too complicated to navigate, and the ones who go without have the least capacity to fight it. The strongest objection is that the poorest lose when a flat payment replaces benefits that vary with need. Our answer is that the European simulation behind that objection holds the budget fixed, while we set the grant at a level we specify and fund it, and that we would accept a transitional design in which nobody is forced to give up an existing benefit.",
+    "proponents": "Charles Murray, Milton Friedman, Andrew Yang",
+    "id": "replace-the-welfare-system-with-one"
+   }
+  ],
+  "crux": {
+   "lead": "Does a guaranteed income free people to do more, or let them do less?",
+   "lead_highlight": "do more, or let them do less",
+   "subtitle": "Everyone here wants people kept out of destitution, and the money comes from taxes on the same society that receives it. How much of it comes back decides what the policy costs, whether a guaranteed job is the better offer, and how far a short trial can be trusted.",
+   "empirical": "Settling it needs what nobody has: a payment that is permanent, goes to everyone, is big enough to live on, is paid for by the taxes that would really fund it, and runs long enough to show what happens to work, earnings, new businesses, study, health and children. Every figure available instead comes from money that was temporary, small, paid to a chosen few, or given by donors rather than raised in tax, and those differences change behavior.",
+   "values": "No number says whether less paid work is a loss. A parent cutting hours to be home when the school bus arrives, a worker quitting a job that was wrecking their health, and a neighbor who takes the money and turns down the shift all look alike in the data. Which of them the policy is for depends on what a society thinks work is for, and on whether a share of what it produces is earned from scratch each generation or owed to everyone in it."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Guaranteed Income Pilots Dashboard",
+    "description": "A Stanford Basic Income Lab and University of Pennsylvania project that pools evaluation data from more than 30 US pilots, showing what recipients spent the money on and what each study measured.",
+    "url": "https://guaranteedincome.us/",
+    "for_position": null,
+    "id": "guaranteed-income-pilots-dashboard"
+   },
+   {
+    "kind": "learn_more",
+    "title": "OpenResearch Unconditional Cash Study",
+    "description": "Every published result from the largest US randomized trial of unconditional cash, covering employment, health, consumption and parenting, plus a public dataset of 39 survey waves anyone can analyze.",
+    "url": "https://www.openresearchlab.org/findings/project/unconditional-cash-study",
+    "for_position": null,
+    "id": "openresearch-unconditional-cash-study"
+   },
+   {
+    "kind": "donate",
+    "title": "GiveDirectly",
+    "description": "The charity running the twelve-year Kenyan basic income trial, delivering unconditional cash to people in extreme poverty, with published costs, independent evaluations and a designated basic income fund.",
+    "url": "https://www.givedirectly.org/ubi",
+    "for_position": "Pay a basic income on top of the safety net",
+    "id": "givedirectly"
+   },
+   {
+    "kind": "volunteer",
+    "title": "IRS Volunteer Income Tax Assistance",
+    "description": "Free training to become a certified volunteer preparing tax returns for low-income households, the main practical route by which people claim the tax credits they are eligible for and currently missing.",
+    "url": "https://www.irs.gov/individuals/irs-tax-volunteers",
+    "for_position": "Expand targeted transfers instead of paying everyone",
+    "id": "irs-volunteer-income-tax-assistance"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Why States Should Ban Universal Basic Income Schemes",
+    "description": "The Foundation for Government Accountability’s case against guaranteed income pilots, the argument that has passed into law in Arkansas, Idaho, Iowa, South Dakota and Texas, with its own cost estimates.",
+    "url": "https://thefga.org/research/why-states-should-ban-universal-basic-income-schemes/",
+    "for_position": "Require work as a condition of public support",
+    "id": "why-states-should-ban-universal-basic"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Public Service Employment: A Path to Full Employment",
+    "description": "The Levy Economics Institute’s full costing and design of a federal job guarantee, the main rival proposal to a basic income, with its wage, its employment projections and its net cost to the budget.",
+    "url": "https://www.levyinstitute.org/pubs/rpr_4_18.pdf",
+    "for_position": "Guarantee a job rather than an income",
+    "id": "public-service-employment-a-path-to"
+   },
+   {
+    "kind": "policy",
+    "title": "Guaranteed Income Pilot Program Act of 2025",
+    "description": "Representative Bonnie Watson Coleman’s bill, reintroduced 24 October 2025, for a three-year federally funded pilot covering 20,000 people; the page lists cosponsors and how to reach your own representative.",
+    "url": "https://watsoncoleman.house.gov/newsroom/press-releases/rep-watson-coleman-reintroduces-bill-to-establish-a-guaranteed-income",
+    "for_position": "Pay a basic income on top of the safety net",
+    "id": "guaranteed-income-pilot-program-act-of"
+   },
+   {
+    "kind": "learn_more",
+    "title": "OECD, Basic Income as a Policy Option",
+    "description": "The technical note behind much of the cost argument: it takes existing benefit spending in four European countries, spreads it evenly across every adult, and reports the result household by household.",
+    "url": "https://www.oecd.org/content/dam/oecd/en/topics/policy-sub-issues/income-support-redistribution-and-work-incentives/basic-income-policy-option-2017-brackground-technical-note.pdf",
+    "for_position": null,
+    "id": "oecd-basic-income-as-a-policy"
+   },
+   {
+    "kind": "learn_more",
+    "title": "The Conservative Case for a Child Allowance",
+    "description": "Samuel Hammond and Robert Orr’s argument for unconditional cash to families with children rather than to everyone, the report behind Senator Mitt Romney’s Family Security Act.",
+    "url": "https://www.niskanencenter.org/report-the-conservative-case-for-a-child-allowance/",
+    "for_position": "Pay unconditional allowances to broad categories",
+    "id": "the-conservative-case-for-a-child"
+   },
+   {
+    "kind": "learn_more",
+    "title": "In Our Hands: A Plan to Replace the Welfare State",
+    "description": "Charles Murray’s proposal to abolish every income transfer program, including Social Security and Medicare, and replace them with a single annual grant paid to every adult.",
+    "url": "https://www.aei.org/research-products/book/in-our-hands-a-plan-to-replace-the-welfare-state/",
+    "for_position": "Replace the welfare system with one unconditional payment",
+    "id": "in-our-hands-a-plan-to"
+   }
+  ]
+ }
 }

@@ -1,8 +1,8 @@
 {
  "slug": "nuclear-energy",
  "title": "Nuclear Energy",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-09-22T23:16:39+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Fission reactors for electricity. Civilian power, not weapons.",
@@ -15,5 +15,758 @@
   "net-zero-pace",
   "critical-minerals",
   "fossil-fuel-phaseout"
- ]
+ ],
+ "icon": "nuclear-plant",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: a tall hyperbolic cooling tower as the dominant focal mass, waisted, with a soft curl of steam rising from its rim; a domed containment building of medium size overlapping the foot of the tower so the dome sits in front of it; a row of three small dry-cask cylinders low at the right; a transmission pylon at the left edge with power lines strung across the whole frame as the connective element; the ground is the curve of a riverbank with a low hill behind.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #3f9a6a, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: mushroom clouds, radiation trefoils, hazard or warning signs, skulls, the atom-with-orbits symbol, green glow, leaking barrels, smoke, fire, cracked or ruined buildings, protest signs.",
+ "content": {
+  "overview": {
+   "summary": "Fission makes about a tenth of the world’s electricity. Cost is the central argument, with accidents, waste and the fuel chain close behind.",
+   "scope_covered": "Civilian fission for grid power: cost, construction, safety, waste and the fuel chain.",
+   "scope_excluded": "Weapons and proliferation as a security question in its own right, fusion, naval and space reactors.",
+   "why_now": "On 8 September 2026 the US Department of Energy closed a loan of up to $1.9 billion to restart Iowa’s Duane Arnold reactor, with Google contracting for the output for 25 years. It is the third shuttered US reactor to get such financing, and none has generated yet: Palisades has loaded fuel but is not back on the grid."
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "Levelized cost of new-build electricity, United States",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "$/MWh",
+     "series": [
+      {
+       "label": "Nuclear",
+       "value": "215",
+       "highlight": true
+      },
+      {
+       "label": "Gas",
+       "value": "90",
+       "highlight": false
+      },
+      {
+       "label": "Solar",
+       "value": "69",
+       "highlight": false
+      },
+      {
+       "label": "Wind",
+       "value": "68",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Lazard puts unsubsidized new US nuclear at $175 to $255 per MWh, against $37 to $99 for onshore wind and $40 to $98 for utility solar.",
+     "detail": "The bars are midpoints of wide ranges; the gas combined cycle range is $51 to $129. Lazard also publishes midpoints of $210 for gas peaking and $136 for offshore wind, which sit between nuclear and gas. Lazard derives the nuclear figure from Vogtle 3 and 4, the only completed US project with observable data. Every technology’s cost rose year over year in the 2026 edition on higher capital costs, interest rates and tariffs. A levelized cost compares energy produced, not a reliable system: it does not price the storage, transmission or backup that variable sources need, which is why Lazard publishes a separate cost-of-firming analysis, and it does not price the revenue a reactor gives up on a grid where midday power is already cheap.",
+     "source_label": "Lazard, Levelized Cost of Energy+ version 19.0",
+     "source_url": "https://www.lazard.com/research-insights/levelized-cost-of-energyplus-lcoeplus/",
+     "source_published": "2026",
+     "source_accessed": "2026-09-20",
+     "id": "levelized-cost-of-new-build-electricity"
+    },
+    {
+     "label": "Running cost of an existing US reactor",
+     "viz": "range",
+     "wide": false,
+     "value": "26–36",
+     "unit": "$/MWh",
+     "series": [],
+     "range_min": "0",
+     "range_max": "255 new build",
+     "note": "Running a fully depreciated US reactor costs $26 to $36 per MWh, roughly a seventh of what the same electricity costs from a new one.",
+     "detail": "This gap means the case for keeping a reactor open and the case for building one are almost entirely different arguments. Lazard’s figure covers fuel, variable and fixed operations and maintenance, and decommissioning provisions, for a plant whose construction debt is already paid off. It sits below new gas combined cycle and in the same band as existing coal. It is also why the three US restart projects at Palisades, Crane and Duane Arnold pencil out at an illustrative $71 per MWh in Lazard’s 2026 analysis: they buy back an existing asset, site, grid connection and licensed design rather than building one. That restart figure comes from a chart footnote and should be treated as approximate.",
+     "source_label": "Lazard, Levelized Cost of Energy+ version 19.0",
+     "source_url": "https://www.lazard.com/research-insights/levelized-cost-of-energyplus-lcoeplus/",
+     "source_published": "2026",
+     "source_accessed": "2026-09-20",
+     "id": "running-cost-of-an-existing-us"
+    },
+    {
+     "label": "Lifecycle greenhouse gas emissions by source",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "gCO2eq/kWh",
+     "series": [
+      {
+       "label": "Coal",
+       "value": "820",
+       "highlight": false
+      },
+      {
+       "label": "Solar",
+       "value": "48",
+       "highlight": false
+      },
+      {
+       "label": "Nuclear",
+       "value": "12",
+       "highlight": true
+      },
+      {
+       "label": "Wind",
+       "value": "11",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The IPCC’s median for nuclear is 12 gCO2eq per kWh, about the same as onshore wind and a sixty-eighth of coal.",
+     "detail": "These are medians across many published lifecycle assessments, covering mining, fuel processing, construction, operation and decommissioning rather than just what comes out of a stack. The coal bar is pulverized coal, the solar bar utility-scale PV and the wind bar onshore turbines; combined-cycle gas, not shown, has a median of 490. The ranges around them are wide: nuclear spans roughly 4 to 110 gCO2eq per kWh across studies, depending mainly on the assumed uranium ore grade and on whether enrichment runs on fossil or low-carbon electricity. The table is now more than a decade old and predates most of the fall in solar manufacturing emissions; the 2021 UNECE assessment, which Our World in Data uses, gives broadly similar orderings with lower solar figures. The mainstream assessments place nuclear in the low-emissions group either way; the live argument is about cost and speed rather than carbon intensity.",
+     "source_label": "IPCC Fifth Assessment Report, Working Group III, Annex III",
+     "source_url": "https://www.ipcc.ch/site/assets/uploads/2018/02/ipcc_wg3_ar5_annex-iii.pdf",
+     "source_published": "2014",
+     "source_accessed": "2026-09-20",
+     "id": "lifecycle-greenhouse-gas-emissions-by-source"
+    },
+    {
+     "label": "Nuclear share of world electricity",
+     "viz": "radial",
+     "wide": false,
+     "value": "8.9",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Nuclear supplied 8.9 percent of the world’s electricity in 2025, just ahead of solar at 8.7 percent and wind at 8.5 percent.",
+     "detail": "The share has fallen steadily from a peak near 17 percent in the mid-1990s, not because output fell but because total world electricity demand roughly doubled while the fleet stayed about the same size. In absolute terms 2025 was a record year. Low-carbon sources together made up 43 percent of world generation in 2025, so nuclear is about a fifth of the world’s clean electricity and the second-largest single low-carbon source after hydropower at 14 percent. Counting conventions vary slightly: the World Nuclear Industry Status Report puts the 2025 share at 8.8 percent and the World Nuclear Association rounds to about 9 percent.",
+     "source_label": "Ember, Global Electricity Review 2026",
+     "source_url": "https://ember-energy.org/latest-insights/global-electricity-review-2026/",
+     "source_published": "2025",
+     "source_accessed": "2026-09-20",
+     "id": "nuclear-share-of-world-electricity"
+    },
+    {
+     "label": "Death rate per unit of electricity",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "deaths/TWh",
+     "series": [
+      {
+       "label": "Brown coal",
+       "value": "32.72",
+       "highlight": false
+      },
+      {
+       "label": "Coal",
+       "value": "24.62",
+       "highlight": false
+      },
+      {
+       "label": "Gas",
+       "value": "2.82",
+       "highlight": false
+      },
+      {
+       "label": "Wind",
+       "value": "0.035",
+       "highlight": false
+      },
+      {
+       "label": "Nuclear",
+       "value": "0.03",
+       "highlight": true
+      },
+      {
+       "label": "Solar",
+       "value": "0.019",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Counting both accidents and air pollution, nuclear causes about 0.03 deaths per TWh, roughly 800 times fewer than coal; a higher Chernobyl toll puts it near 0.07.",
+     "detail": "These figures combine accident deaths with deaths attributed to air pollution from routine operation, which is where almost all of the fossil-fuel toll comes from. The fossil numbers are based on European plants and Our World in Data notes they are conservative; a global average could be four to nine times higher. The nuclear figure is sensitive to how Chernobyl is counted: it rests on confirmed and strongly attributable deaths, and Our World in Data’s own 2024 recalculation, on a higher Chernobyl toll, puts nuclear at about 0.07 deaths per TWh, still below gas.",
+     "source_label": "Our World in Data, from Markandya & Wilkinson (2007), Sovacool et al. (2016) and UNSCEAR",
+     "source_url": "https://ourworldindata.org/grapher/death-rates-from-energy-production-per-twh",
+     "source_published": "2021",
+     "source_accessed": "2026-09-20",
+     "id": "death-rate-per-unit-of-electricity"
+    },
+    {
+     "label": "China’s share of capacity under construction",
+     "viz": "radial",
+     "wide": false,
+     "value": "46",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "62 reactors totaling 64.5 GW were under construction in 15 countries at the end of 2024, with China accounting for nearly half the capacity.",
+     "detail": "The World Nuclear Association’s September 2026 count is higher, 80 reactors and about 87 GW gross, reflecting a different cut-off and a gross rather than net basis. Either way the geography is lopsided. China connected 38 reactors and 39 GW to its grid in the decade to 2024 and has been starting roughly six to ten new units a year; almost everywhere else, construction starts are rare events, and the World Nuclear Industry Status Report counted only 11 countries building in mid-2025, two fewer than the year before. This is the single largest fact separating the optimistic and pessimistic readings of nuclear’s future: whether China’s build rate shows that reactors can be built quickly and cheaply, or that they can only be built quickly and cheaply under Chinese state financing and permitting.",
+     "source_label": "IAEA, Reference Data Series No. 2, 2025 edition",
+     "source_url": "https://www-pub.iaea.org/MTCD/publications/PDF/RDS-2-45_web.pdf",
+     "source_published": "2024",
+     "source_accessed": "2026-09-20",
+     "id": "china-s-share-of-capacity-under"
+    },
+    {
+     "label": "Time from construction start to grid connection",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "years",
+     "series": [
+      {
+       "label": "World, 2024 startups",
+       "value": "9.6",
+       "highlight": false
+      },
+      {
+       "label": "China, recent average",
+       "value": "6.2",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The seven reactors that started up worldwide in 2024 took 9.6 years on average from first concrete to grid connection.",
+     "detail": "Construction time is the lever that matters most for cost, because interest accrues on the capital for every year the plant produces nothing. The global average is pulled up by long-stalled projects: Flamanville 3 in France connected in December 2024 after 17 years of construction, and Olkiluoto 3 in Finland took about 18 years. The UAE’s Barakah station, four Korean APR-1400 units, ran from first concrete in 2012 to full operation in 2024 and is the most-cited counterexample outside China. Chinese durations of roughly 74 months are the current benchmark, and China’s SNPTC targets 56 months under its fleet model; that Chinese figure is an industry compilation rather than an official statistic and should be treated as approximate.",
+     "source_label": "World Nuclear Industry Status Report 2025; Chinese average from industry construction-duration data",
+     "source_url": "https://www.worldnuclearreport.org/World-Nuclear-Industry-Status-Report-2025",
+     "source_published": "2024",
+     "source_accessed": "2026-09-20",
+     "id": "time-from-construction-start-to-grid"
+    },
+    {
+     "label": "Operating power reactors worldwide",
+     "viz": "bar",
+     "wide": false,
+     "value": "417",
+     "unit": "reactors",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "At the end of 2024 there were 417 operational power reactors in 31 countries, totaling 377 GW of net capacity, plus 23 licensed but suspended.",
+     "detail": "Capacity has barely moved in a decade, from 353.9 GW in 2014 to 377 GW in 2024, because new connections have roughly offset retirements. Counts differ between sources according to how reactors in long-term shutdown are treated: the World Nuclear Association listed 441 operable reactors and 404 GW in September 2026, counting Japanese units that have not restarted, while the World Nuclear Industry Status Report counted 413 as operating in August 2026, excluding them. Of the 19 suspended Japanese reactors, several are still working through post-Fukushima restart approvals more than a decade later.",
+     "source_label": "IAEA, Reference Data Series No. 2, 2025 edition",
+     "source_url": "https://www-pub.iaea.org/MTCD/publications/PDF/RDS-2-45_web.pdf",
+     "source_published": "2024",
+     "source_accessed": "2026-09-20",
+     "id": "operating-power-reactors-worldwide"
+    },
+    {
+     "label": "Vogtle 3 and 4, final cost against original estimate",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "$ billion",
+     "series": [
+      {
+       "label": "Final cost",
+       "value": "35",
+       "highlight": true
+      },
+      {
+       "label": "Certified estimate, 2009",
+       "value": "14",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The two AP1000 reactors at Vogtle cost about $35 billion against a $14 billion estimate and came online seven years late.",
+     "detail": "Vogtle 3 entered commercial operation on 31 July 2023 and Unit 4 on 29 April 2024, against original targets of 2016 and 2017. The 2,234 MW they add are the only new US reactors completed since 1996. Westinghouse, the designer, went bankrupt in 2017 partly because of the project, and the parallel VC Summer project in South Carolina was abandoned mid-construction with its two AP1000 units never finished. Reported totals for Vogtle itself vary between about $30 and $37 billion depending on whether financing costs, the owners’ share and the Toshiba settlement payments are included.",
+     "source_label": "Wikipedia, Vogtle Electric Generating Plant, citing Georgia PSC construction monitoring reports",
+     "source_url": "https://en.wikipedia.org/wiki/Vogtle_Electric_Generating_Plant",
+     "source_published": "2024",
+     "source_accessed": "2026-09-20",
+     "id": "vogtle-3-and-4-final-cost"
+    },
+    {
+     "label": "World reactor capacity older than 30 years",
+     "viz": "radial",
+     "wide": false,
+     "value": "67",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "298 reactors representing 67 percent of world nuclear capacity had been running more than 30 years at the end of 2024, and 35 percent more than 40 years.",
+     "detail": "Most reactors were licensed for 40 years, a figure that came from accounting and antitrust conventions rather than from an engineering limit. Regulators in the United States have granted 20-year renewals widely and are now approving 80-year licenses for reactors including Turkey Point, Peach Bottom, Surry, North Anna, Browns Ferry and Oconee. Utilities seeking renewals argue that nothing else adds low-carbon output as cheaply, and the age profile is also why nuclear’s global share can decline without a single policy decision: if the fleet ages out faster than replacements arrive, the share falls by arithmetic. Which of those two facts dominates the next 20 years depends almost entirely on whether license renewals keep being granted.",
+     "source_label": "IAEA, Reference Data Series No. 2, 2025 edition",
+     "source_url": "https://www-pub.iaea.org/MTCD/publications/PDF/RDS-2-45_web.pdf",
+     "source_published": "2024",
+     "source_accessed": "2026-09-20",
+     "id": "world-reactor-capacity-older-than-30"
+    },
+    {
+     "label": "US capacity factor by generation source",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Nuclear",
+       "value": "91.0",
+       "highlight": true
+      },
+      {
+       "label": "Gas, combined cycle",
+       "value": "58.4",
+       "highlight": false
+      },
+      {
+       "label": "Coal",
+       "value": "48.7",
+       "highlight": false
+      },
+      {
+       "label": "Wind",
+       "value": "34.2",
+       "highlight": false
+      },
+      {
+       "label": "Solar PV, utility",
+       "value": "24.4",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "US reactors ran at 91 percent of nameplate capacity in 2025, the highest of any generation source.",
+     "detail": "A capacity factor is actual output divided by what the plant would produce running flat out all year. High capacity factors are why 8 percent of US generating capacity produces 17 percent of US electricity. The number is the product of decades of operational improvement: US capacity factors were near 60 percent in the 1980s. The global median load factor in 2024 was lower, 86.4 percent, with the best quartile averaging 93.7 percent, partly because French reactors follow demand rather than running flat. The figure cuts both ways in the argument: it makes nuclear’s fixed costs easier to spread, but it also means a reactor in a grid with a lot of cheap midday solar either sells into low prices or runs at a lower factor and raises its own cost per MWh.",
+     "source_label": "US Energy Information Administration",
+     "source_url": "https://www.eia.gov/energyexplained/nuclear/us-nuclear-industry.php",
+     "source_published": "2025",
+     "source_accessed": "2026-09-20",
+     "id": "us-capacity-factor-by-generation-source"
+    },
+    {
+     "label": "World data center electricity demand in 2030",
+     "viz": "bar",
+     "wide": false,
+     "value": "945",
+     "unit": "TWh per year",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The IEA projects data center electricity consumption roughly doubling to about 945 TWh by 2030, just under 3 percent of world electricity.",
+     "detail": "This is the demand shock that reopened the nuclear question commercially rather than politically. Data centers want power that is firm, carbon-free and available on a 20-year contract at a known price, an unusual combination that nuclear fits, and nuclear already supplies about 15 percent of the electricity data centers consume. Microsoft contracted the full 835 MW output of the reopening Crane Clean Energy Center for 20 years, and Meta agreed in January 2026 to develop up to eight 345 MW TerraPower Natrium plants, starting early work on two units and taking rights to six more. Critics note that most of these contracts are for power that arrives at the end of this decade or later, while the demand is arriving now, and that gas turbines are what is actually being ordered in the meantime.",
+     "source_label": "IEA, Energy and AI",
+     "source_url": "https://www.iea.org/reports/energy-and-ai/executive-summary",
+     "source_published": "2025",
+     "source_accessed": "2026-09-20",
+     "id": "world-data-center-electricity-demand-in"
+    },
+    {
+     "label": "Nuclear share of national electricity",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "France",
+       "value": "67.3",
+       "highlight": false
+      },
+      {
+       "label": "Slovakia",
+       "value": "64.4",
+       "highlight": false
+      },
+      {
+       "label": "Ukraine",
+       "value": "52.0",
+       "highlight": false
+      },
+      {
+       "label": "United States",
+       "value": "17",
+       "highlight": true
+      },
+      {
+       "label": "China",
+       "value": "4",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "France gets about two-thirds of its electricity from nuclear; the United States, with the world’s largest fleet, gets about 17 percent.",
+     "detail": "France built 56 reactors in roughly 15 years from the mid-1970s, standardizing on a handful of designs, and is the standing proof that a country can decarbonize its grid with fission quickly. It is also a cautionary case: the fleet is aging, corrosion problems cut French output sharply in 2022, and EDF took on heavy debt finishing its first new reactor in a generation. China’s share is about 4 percent because its electricity system is enormous, even though it has the world’s third-largest fleet in absolute output. The United States has 96 operating reactors at 57 plants with 98.4 GW of net summer capacity, and an average reactor age of about 44 years.",
+     "source_label": "IAEA Reference Data Series No. 2 (France); World Nuclear Association country data; EIA (United States)",
+     "source_url": "https://world-nuclear.org/information-library/current-and-future-generation/nuclear-power-in-the-world-today",
+     "source_published": "2024 to 2025",
+     "source_accessed": "2026-09-20",
+     "id": "nuclear-share-of-national-electricity"
+    },
+    {
+     "label": "Capacity of the world’s first spent fuel repository",
+     "viz": "bar",
+     "wide": false,
+     "value": "6,500",
+     "unit": "tonnes",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Finland’s Onkalo, the first deep geological repository for spent fuel anywhere, holds 6,500 tonnes at over 400 meters depth and cost about 1 billion euros.",
+     "detail": "Global spent fuel output to date is on the order of 400,000 tonnes. Roughly 30 percent of it has been reprocessed, mainly in France, Russia and the UK; the rest sits in cooling pools and dry casks at reactor sites, which is a stable arrangement for decades but not a permanent one. Onkalo, built into bedrock at Olkiluoto since 2004, is the first repository anywhere to reach the point of emplacing fuel, and Sweden has licensed a similar facility at Forsmark. The United States has none: Yucca Mountain was defunded in 2010 after $15 billion of work, and the federal government pays utilities damages for failing to take title to the fuel. Defenders of nuclear point out that the waste is small in volume, fully contained and now demonstrably disposable; critics point out that Onkalo took 40 years from siting to operation in an unusually consensual country, and that no other nation has matched it.",
+     "source_label": "Euronews, on Finland’s Onkalo repository; IAEA for the global inventory",
+     "source_url": "https://www.euronews.com/2026/04/09/in-finland-the-worlds-first-facility-to-bury-nuclear-waste-is-set-to-begin-operations",
+     "source_published": "2026",
+     "source_accessed": "2026-09-20",
+     "id": "capacity-of-the-world-s-first"
+    },
+    {
+     "label": "Chernobyl and Fukushima death tolls",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "deaths",
+     "series": [
+      {
+       "label": "Chernobyl, est. cancers",
+       "value": "4000",
+       "highlight": false
+      },
+      {
+       "label": "Fukushima, evacuation",
+       "value": "2313",
+       "highlight": true
+      },
+      {
+       "label": "Chernobyl, acute doses",
+       "value": "30",
+       "highlight": false
+      },
+      {
+       "label": "Chernobyl, thyroid",
+       "value": "15",
+       "highlight": false
+      },
+      {
+       "label": "Fukushima, radiation",
+       "value": "1",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Chernobyl killed 30 people immediately and 15 later from thyroid cancer, with long-term estimates from 300 to about 4,000; Fukushima produced one death from radiation and 2,313 from the evacuation.",
+     "detail": "Chernobyl’s long-term toll is genuinely contested. A Chernobyl Forum report co-authored by UNSCEAR cited an estimate of around 4,000 eventual cancer deaths among the most exposed groups; some independent researchers have put the figure in the tens of thousands by applying linear-no-threshold risk to very low doses across large populations, a method UNSCEAR and the ICRP explicitly advise against. Our World in Data’s own best approximation is 300 to 500 confirmed and strongly attributable deaths.\n\nThe Fukushima number is the one that changes minds in both directions: no member of the public is known to have died from radiation, but the evacuation of about 160,000 people, and the stress and disruption it caused among elderly and hospitalized residents, killed thousands. That raises a question the industry and its critics answer differently, about whether the harm is the radiation or the response to it.",
+     "source_label": "Our World in Data, summarizing UNSCEAR, WHO and Japanese government figures",
+     "source_url": "https://ourworldindata.org/what-was-the-death-toll-from-chernobyl-and-fukushima",
+     "source_published": "2005 to 2020",
+     "source_accessed": "2026-09-20",
+     "id": "chernobyl-and-fukushima-death-tolls"
+    },
+    {
+     "label": "Americans wanting more emphasis on nuclear energy",
+     "viz": "radial",
+     "wide": false,
+     "value": "46",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "46 percent of Americans said the country should put more emphasis on nuclear energy, the highest Gallup has recorded, while 53 percent opposed a new plant in their own area.",
+     "detail": "The same poll found support for more emphasis on solar down 7 points from 2021 to 66 percent and wind down 11 points to 55 percent, so nuclear’s rise is partly a shift in relative rather than absolute enthusiasm. Pew found 59 percent of US adults favoring more nuclear plants in an April to May 2025 survey, up about 15 points in both parties since 2020, with Republicans at 69 percent and Democrats at 52 percent. The gap between the national number and the local one is the practical constraint: a technology can poll well in the abstract and still face an organized objection at every proposed site, which is the same pattern that slows transmission lines and wind farms.",
+     "source_label": "Gallup, Environment poll, fielded 2 to 18 March 2026",
+     "source_url": "https://news.gallup.com/poll/708620/less-support-solar-wind-energy-nuclear.aspx",
+     "source_published": "2026",
+     "source_accessed": "2026-09-20",
+     "id": "americans-wanting-more-emphasis-on-nuclear"
+    },
+    {
+     "label": "Annual global investment by power source",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "$ billion",
+     "series": [
+      {
+       "label": "Solar",
+       "value": "365",
+       "highlight": false
+      },
+      {
+       "label": "Wind",
+       "value": "200",
+       "highlight": false
+      },
+      {
+       "label": "Nuclear",
+       "value": "80",
+       "highlight": true
+      },
+      {
+       "label": "Hydropower",
+       "value": "75",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Nuclear investment is expected to hold above $80 billion in 2026, against $365 billion for solar.",
+     "detail": "Capital flows to nuclear have grown roughly 50 percent over five years, from about $50 billion, which is a real reversal after two decades of decline. It is also less than a quarter of what goes into solar alone. Both sides use the same pair of numbers: expansionists point to the growth rate and to the fact that a dollar of nuclear capital buys far more annual energy than a dollar of solar capital; skeptics point to the absolute gap and argue that capital is voting, and has been for fifteen years. Total global energy investment is set to reach a record $3.4 trillion in 2026, of which about $2.2 trillion goes to clean energy, grids and efficiency.",
+     "source_label": "IEA, World Energy Investment 2026",
+     "source_url": "https://www.iea.org/reports/world-energy-investment-2026",
+     "source_published": "2026",
+     "source_accessed": "2026-09-20",
+     "id": "annual-global-investment-by-power-source"
+    },
+    {
+     "label": "Countries signed up to triple nuclear capacity",
+     "viz": "bar",
+     "wide": false,
+     "value": "38",
+     "unit": "countries",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "38 countries have endorsed the COP28 declaration to triple world nuclear capacity by 2050, up from 25 at its launch in December 2023.",
+     "detail": "The declaration is a statement of aspiration, not a binding commitment or a financing mechanism. The goal is measured from a 2020 baseline of roughly 390 GW, a declaration figure that is not on the same basis as the IAEA net capacity counted in the operating-reactor tile and does not line up with it. Meeting the goal would mean building well over 700 GW of new capacity in 25 years, more than the world has ever built. Belgium, Brazil, China and Italy joined at the Nuclear Energy Summit in Paris in 2026, and Belgium and Italy had both previously legislated phase-outs. The World Nuclear Association’s September 2026 outlook projects 1,457 GW by 2050 in its high case, which would exceed the goal, but notes that more than 550 GW of the capacity governments have announced is not represented by any project under construction, planned or proposed.",
+     "source_label": "Declaration to Triple Nuclear Energy, signatory list compiled by the World Nuclear Association",
+     "source_url": "https://en.wikipedia.org/wiki/Declaration_to_Triple_Nuclear_Energy",
+     "source_published": "2026",
+     "source_accessed": "2026-09-21",
+     "id": "countries-signed-up-to-triple-nuclear"
+    },
+    {
+     "label": "Russia’s share of world uranium enrichment capacity",
+     "viz": "radial",
+     "wide": false,
+     "value": "40",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Rosatom controls roughly 40 percent of world uranium enrichment capacity and about 17 percent of fuel fabrication.",
+     "detail": "Enrichment is the chokepoint in the nuclear fuel chain, and it is more concentrated than uranium mining. Russia supplies enriched uranium to more than 30 utilities in 16 countries, and roughly one reactor in four worldwide is Russian-designed, Russian-built or Russian-fueled. The United States banned Russian enriched uranium imports from 11 August 2024, with waivers available until 1 January 2028, and is funding domestic capacity, including the high-assay low-enriched uranium that most advanced reactor designs require and that Russia is currently the only commercial supplier of. Estimates of Russia’s share vary between about 40 and 46 percent depending on whether capacity or actual deliveries are measured. For the security-minded on both sides, this is either an argument for building Western fuel capacity or an argument that nuclear brings a dependency renewables do not.",
+     "source_label": "Stimson Center and World Nuclear Association fuel-cycle data",
+     "source_url": "https://world-nuclear.org/information-library/nuclear-fuel-cycle/conversion-enrichment-and-fabrication/uranium-enrichment",
+     "source_published": "2024",
+     "source_accessed": "2026-09-20",
+     "id": "russia-s-share-of-world-uranium"
+    },
+    {
+     "label": "Identified uranium resources",
+     "viz": "bar",
+     "wide": false,
+     "value": "8.1",
+     "unit": "Mt",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Identified uranium resources recoverable below $260 per kilogram exceed 8.1 million tonnes, enough to meet even high-growth demand through 2050.",
+     "detail": "Fuel supply is rarely the binding constraint people assume it is. At current consumption the identified resource base covers well over a century; the Red Book projects cumulative demand exceeding it around the 2080s under low growth and the 2110s under high growth, and identified resources have historically grown as exploration follows price. What is constrained is the middle of the chain — conversion, enrichment and fabrication capacity, and particularly high-assay low-enriched uranium — and near-term mine production, which fell well behind reactor requirements after the post-Fukushima price collapse stopped investment. Ore is also a small share of the cost of nuclear electricity: Lazard assumes nuclear fuel at $0.85 per MMBTU against $3.45 for gas, which is why fuel price shocks affect nuclear far less than they affect gas generation.",
+     "source_label": "OECD Nuclear Energy Agency and IAEA, Uranium: Resources, Production and Demand",
+     "source_url": "https://www.oecd-nea.org/jcms/pl_28569/uranium-resources-production-and-demand-red-book",
+     "source_published": "2026",
+     "source_accessed": "2026-09-20",
+     "id": "identified-uranium-resources"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Can the cost of building a new reactor in the West come down far enough to matter?",
+    "kind": "empirical",
+    "why": "Everyone agrees the price of Vogtle — Georgia’s two new reactors, finished in 2023 and 2024 at about $35 billion — is too expensive to repeat. The disagreement is whether that price belongs to the technology or to having built almost nothing for thirty years.",
+    "detail": "The learning-curve case says construction cost is dominated by labor productivity, rework and financing time, all of which improve with repetition. The nth unit of a standard design has always cost a fraction of the first, and China currently builds at roughly $2,000 to $3,000 per kilowatt on six-year schedules. On this reading the West does not have an expensive technology; it has an atrophied supply chain, a regulator geared to one-off review, and no order book long enough to justify investment in either.\n\nThe structural case answers that nuclear is the only large energy technology whose real costs have risen over time in most countries that have built it, France included, where the later reactors cost more than the earlier ones. Reactors are large, safety-critical, site-built objects that cannot be factory-produced the way solar modules are, so they capture little of the learning that mass manufacturing delivers; regulatory ratchets follow each accident; and liberalized markets will not finance a fifteen-year payback without a guaranteed price. China and Korea build cheaply under state financing, state land assembly and state liability, which describes a political system as much as an industry. No country outside Asia has built enough units in sequence recently to settle it.",
+    "lean_label_a": "Fixable",
+    "lean_label_b": "Structural",
+    "id": "can-the-cost-of-building-a"
+   },
+   {
+    "text": "Does a decarbonized grid need firm low-carbon power, or can renewables and storage do it alone?",
+    "kind": "empirical",
+    "why": "Every energy-system model answers this, and the answers differ mainly over long-duration storage costs, transmission buildout and how bad the worst wind-and-solar drought is. No large grid has yet run a year on variable renewables alone.",
+    "detail": "The firm-power case starts from the fact that wind and solar output varies by week and season, not just by hour. Northern Europe has multi-day winter wind lulls under high pressure, when demand peaks and solar contributes almost nothing; covering those with batteries means storing energy for days, and lithium-ion economics degrade sharply past about eight hours. The models part company over the final slice of emissions, because removing it without a firm resource means building three or four times peak renewable capacity plus storage for a week of bad weather, and no system has yet been run that way to price it.\n\nThe other side answers that the cost of the alternatives keeps falling faster than the models assume. Solar fell about 90 percent in a decade and is still being installed at record scale; battery costs have fallen comparably, and long-duration chemistries, demand response, interconnection across weather regions and overbuilding with curtailment all attack the same hours from different directions. Several detailed studies find fully renewable systems feasible at costs comparable to mixed ones, and each year’s study tends to find the renewable path cheaper than the last. Committing to a fifteen-year project to insure against a gap that cheaper technologies may close in the meantime is, on this view, a bet on today’s cost curves being wrong.",
+    "lean_label_a": "Firm power needed",
+    "lean_label_b": "Renewables suffice",
+    "id": "does-a-decarbonized-grid-need-firm"
+   },
+   {
+    "text": "Should public money underwrite new nuclear construction?",
+    "kind": "value",
+    "why": "Almost no new reactor anywhere has been financed on purely commercial terms. Whether that is a market failure worth correcting or a verdict worth accepting is a judgment about what governments are for, not a fact about reactors.",
+    "detail": "The case for public backing is that electricity systems are public infrastructure and always have been: governments already shape them through carbon prices, renewable mandates, capacity markets, transmission planning and liability caps for every technology. Nuclear’s particular problem is that its costs are almost all upfront while its benefits — reliability, emissions avoided, fuel security, a domestic industrial base — are spread across decades and partly not captured by the builder. That is a textbook case for public risk-sharing. The World Bank reached that conclusion in June 2025 when it ended its ban on nuclear lending.\n\nThe case against is that subsidy shifts risk from investors to taxpayers and ratepayers, and the record of that transfer is bad: South Carolina customers are still paying for the $9 billion VC Summer project, which produced nothing. Public support has been continuous since the 1950s — research funding, loan guarantees, the Price-Anderson liability cap, waste management, now production tax credits — and each round was defended as the one that would carry the industry to standing on its own. At some point continued support stops being an infant-industry argument and becomes a standing transfer, and whether to keep making it is a political judgment about how much construction risk the public should absorb for a benefit it cannot verify in advance.",
+    "lean_label_a": "Public backing",
+    "lean_label_b": "Let markets decide",
+    "id": "should-public-money-underwrite-new-nuclear"
+   },
+   {
+    "text": "How should the risk of a severe accident weigh against the routine harms of the alternatives?",
+    "kind": "value",
+    "why": "The ordering is not disputed: per unit of energy, nuclear kills far fewer people than fossil fuels. What is disputed is whether a small chance of displacing a hundred thousand people is the same kind of harm as a steady toll of air pollution deaths.",
+    "detail": "One side argues that expected-value arithmetic flattens distinctions people care about. A reactor accident is involuntary, concentrated, irreversible on a human timescale and imposed on a specific place rather than spread thinly. Fukushima produced almost no radiation deaths but emptied a region, and what killed people there was the evacuation rather than the release; Chernobyl’s exclusion zone is still closed forty years later. Populations reasonably pay a premium to avoid tail risks in insurance, finance and medicine, and it is not irrational to do the same here, particularly since the harm falls on the host community while the benefits are spread across a grid.\n\nThe other side argues that air pollution from coal and gas kills millions of people a year, quietly, and nobody evacuates. If the standard is lives lost, nuclear is among the safest sources ever measured, and a reactor not built is in practice replaced by something that kills more. The dread premium is not free: it is paid in cancers and heart disease in the towns downwind of coal plants, which are usually poorer than the towns near reactors. It may also be partly self-inflicted, since the Fukushima evacuation was driven by radiation-protection standards built on linear-no-threshold assumptions that UNSCEAR itself warns against extrapolating to low doses.",
+    "lean_label_a": "Catastrophe differs",
+    "lean_label_b": "Total harm counts",
+    "id": "how-should-the-risk-of-a"
+   },
+   {
+    "text": "Are small modular reactors a break from the cost problem, or the same problem in smaller units?",
+    "kind": "empirical",
+    "why": "No small modular reactor is operating commercially in a Western country, so the whole case rests on projections, and the first units being built will not produce a cost figure anyone can check until about 2030.",
+    "detail": "The case for a break says what makes reactors expensive is building an enormous one-of-a-kind object outdoors, under weather and labor-market conditions nobody controls. Shrink the unit until it fits on a truck and the work moves into a factory, where aviation and shipbuilding learning rates apply and unit 20 is genuinely cheaper than unit 1. Smaller units also cut the financing problem: a $1 billion commitment with a four-year build is a decision a utility board can make, where a $15 billion commitment with a twelve-year build is not.\n\nThe case against says economies of scale are real and run the other way: per kilowatt, a small reactor needs more containment, more staff, more security and more regulatory attention per unit of output. Every published cost estimate, including vendors’ own, shows higher capital cost per installed kilowatt than a large reactor, and the bet rests entirely on serial manufacturing beating that penalty, which requires hundreds of orders that do not exist. NuScale’s Carbon Free Power Project, the furthest-advanced US effort, was cancelled in 2023 after its target price rose more than 50 percent, and Ontario’s four-unit Darlington project is budgeted at CAD 20.9 billion, roughly CAD 17,000 per kW. Small reactors were built in the 1950s and 1960s, and the industry moved to large units precisely because they were cheaper per kilowatt.",
+    "lean_label_a": "Factory build works",
+    "lean_label_b": "Same economics",
+    "id": "are-small-modular-reactors-a-break"
+   },
+   {
+    "text": "Should aging reactors have their licenses extended to 60 or 80 years?",
+    "kind": "value",
+    "why": "The original 40-year terms were not engineering limits, but the components that cannot be replaced are the subject of genuine technical uncertainty. How much residual uncertainty is acceptable is not a purely technical judgment.",
+    "detail": "The case for extending is that a renewal buys twenty more years of carbon-free output from an asset whose construction debt is long since paid, at a small fraction of what replacing it would cost, and that retiring a working reactor almost always means burning more gas in its place. The US process is not a rubber stamp: it requires aging-management programs, inspections and component replacement, and much of the world fleet is already decades past its first license and running with excellent load factors. Refusing to extend is choosing higher emissions and higher prices in exchange for a risk reduction nobody has quantified.\n\nThe case for retiring on schedule is that every component was qualified against a design life, and running to 80 years means operating machinery outside the envelope in which its materials behavior was characterized. Embrittlement of the reactor pressure vessel by decades of neutron flux, concrete degradation, cable insulation and corrosion under insulation are known aging mechanisms with limited operating experience at these durations, and the economic pressure on regulators to approve extensions is enormous and growing as demand rises. The Palisades restart has already drawn scrutiny over steam generator weld documentation. A fleet whose average age keeps climbing is a fleet whose failure probability is rising against a baseline nobody can validate.",
+    "lean_label_a": "Extend the licenses",
+    "lean_label_b": "Retire on schedule",
+    "id": "should-aging-reactors-have-their-licenses"
+   },
+   {
+    "text": "Who should decide whether a reactor gets built, the host community or the national government?",
+    "kind": "value",
+    "why": "Nuclear polls well nationally and worse locally, and the costs and benefits fall on different populations. Every country that has built successfully has had to resolve that split, and they have resolved it differently.",
+    "detail": "The case for local consent is that the community hosts the risk, the construction, the waste and the emergency planning zone, while the electricity and the climate benefit go to everyone. Consent-based siting is not only fairer, it works better: Eurajoki volunteered to host Finland’s repository and it is now taking fuel, while Nevada refused and the federal site there was abandoned after decades of spending. Imposing facilities produces litigation, delay and cost, which is the opposite of what a fast buildout needs.\n\nThe case for national decision is that grid reliability and emissions are national problems, and a veto held by every potential host is a veto on the whole program — the same dynamic that has stalled transmission lines, wind farms and housing. Local opposition is systematically unrepresentative, drawing on the minority with time and money to object, and it often rests on risk perceptions that regulators have examined and rejected. France built its fleet, and Ontario is building its small reactors, on the strength of national decisions with local consultation rather than local consent. A country that grants a veto to every neighborhood has decided, in effect, not to build anything.",
+    "lean_label_a": "Local consent",
+    "lean_label_b": "National interest",
+    "id": "who-should-decide-whether-a-reactor"
+   },
+   {
+    "text": "Does building civilian nuclear power meaningfully raise the risk of weapons proliferation?",
+    "kind": "empirical",
+    "why": "Several weapons programs grew out of civilian infrastructure and several never needed it. What is disputed is whether the next wave of newcomer countries, and the fuel capacity built to serve them, changes those odds.",
+    "detail": "The case that it is a real channel starts from enrichment and reprocessing being the same technologies whether the output is fuel or weapons material, and from a civilian program bringing the expertise and the political cover with it. India’s first device used plutonium from a research reactor supplied for peaceful use; Iran’s enrichment program is nominally civilian; North Korea’s reactor was built on a research design. As power spreads to states with weaker institutions and unresolved regional rivalries, and as advanced designs create demand for fuel enriched closer to weapons grade, the safeguards burden grows.\n\nThe case that it is separable answers that most states which pursued weapons did so through dedicated military programs, because power reactors are conspicuous, safeguarded and produce poor-quality plutonium. Light-water reactors fueled with low-enriched uranium and safeguarded internationally offer almost no practical route to a weapon, and the UAE built a large program under a binding commitment not to enrich or reprocess. The binding constraint is political will and access to enrichment, which the non-proliferation regime addresses directly through safeguards, export controls and fuel-supply guarantees. Declining to build reactors for countries that want clean power does not stop a determined state; it only gives up the leverage that comes with being the supplier.",
+    "lean_label_a": "A real channel",
+    "lean_label_b": "A separable problem",
+    "id": "does-building-civilian-nuclear-power-meaningfully"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Build new reactors with public backing",
+    "color_key": "green",
+    "steelman": "We already know how to decarbonize a grid with fission, because France did it in fifteen years; what we lost was the industry, and industries come back by ordering.",
+    "detail": "What we lost was not the technology but the capacity to deliver it — the welders, the forgings, the project managers, a regulator geared to serial rather than one-off review. Vogtle is what it costs to rebuild all of that from a standing start on a single order; it is not what the tenth unit costs, and Unit 4 already came in about 30 percent below Unit 3. So order proven designs in fleets, on the same sites, with the same crews, backed by the long-horizon public financing that every piece of national infrastructure has always required.\n\nDemand is rising again after twenty flat years, and it is rising in a form — always-on data centers and electrified industry — that wants firm, carbon-free, price-stable power on twenty-year terms. Nuclear supplies that today, at scale, on a few hundred acres, with a fuel cost so small that gas crises pass it by. On the objection that the West cannot build on budget: we do not dispute the record, we dispute the diagnosis. The projects that blew up were first-of-a-kind units built by consortia that had not built a reactor in decades, under regulators reviewing a novel design while it was being poured. Every one of those conditions is absent by the fourth unit of a standard design. And the alternative to a cancelled reactor is not a cheaper clean firm resource. It is gas.",
+    "proponents": "US Department of Energy, World Nuclear Association, Électricité de France, Government of France, Government of Canada, Government of South Korea, Government of Poland, Government of the Czech Republic",
+    "id": "build-new-reactors-with-public-backing"
+   },
+   {
+    "name": "Phase out nuclear and build renewables instead",
+    "color_key": "blue",
+    "steelman": "Climate is a race against a clock, and a source that takes ten years to build and doubles or triples its budget loses that race to wind and solar every time.",
+    "detail": "Solar and wind arrive in one to three years, at a third of the cost per unit of energy delivered, and they got cheaper every year while nuclear got more expensive. Money spent on a reactor is money not spent on the technologies that would cut more carbon sooner, which makes nuclear not merely unhelpful but actively counterproductive. Nuclear is at 8.8 percent of world electricity on our own count, and falling, global capacity has been flat for a decade, and solar added a record 647 GW in 2025. This is a declining industry asking to be rescued.\n\nIt also carries costs that never appear on a balance sheet: a class of accident that renders territory uninhabitable and displaces whole populations, a waste stream that stays dangerous for longer than any institution has ever survived, a fuel chain that concentrates strategic dependence on a handful of states, and a permanent overlap with the technology of weapons. We are told that a fully renewable grid needs firm power only nuclear can supply. That gap keeps shrinking, and it is being closed by things that can be deployed in the time a reactor takes to permit — batteries, demand flexibility, long-duration storage, geothermal, continental-scale interconnection — all with cost curves pointing down rather than up. The grid nuclear is supposed to firm does not exist yet either.",
+    "proponents": "Greenpeace, Mycle Schneider, World Nuclear Industry Status Report, Sierra Club, Beyond Nuclear, Friends of the Earth, Government of Austria",
+    "id": "phase-out-nuclear-and-build-renewables"
+   },
+   {
+    "name": "Run the existing fleet and stop there",
+    "color_key": "amber",
+    "steelman": "Closing a working reactor is almost always a mistake, and building a new one is almost always a bad investment; those two sentences are about different things.",
+    "detail": "An existing reactor is a paid-for asset producing carbon-free electricity at $26 to $36 per MWh. When one closes early, gas fills the gap, emissions rise and prices rise, which is what happened in Germany, in Japan after 2011 and at Indian Point. So we support license renewals where the safety case holds, we support payments that reflect the low-carbon value these plants provide, and we have supported specific restarts where the grid case is real. What we will not do is hand tens of billions in construction risk to ratepayers and taxpayers for new plants, because the industry has had seventy years of public support and still cannot deliver a project on budget.\n\nThe right policy here is not a nuclear policy at all. Price carbon, or set a low-carbon electricity standard, make any support temporary and conditional, require companies seeking it to open their books, and let the fleet earn what its carbon-free output is worth. Told that this is a policy with no future because the fleet ages out, we answer that it is a policy with a horizon, which is not the same thing: eighty-year licenses carry the current fleet most of the way to mid-century, the period that matters for the carbon budget, at a fraction of the cost of new construction. Demonstrate a new reactor delivered on time and on budget without a public guarantee and we will update. Evidence before capital is the normal order.",
+    "proponents": "Union of Concerned Scientists, Natural Resources Defense Council, State of Illinois, State of New York, State of New Jersey",
+    "id": "run-the-existing-fleet-and-stop"
+   },
+   {
+    "name": "Rebuild the industry around new reactor designs",
+    "color_key": "rust",
+    "steelman": "The problem was never fission, it was assembling a bespoke megaproject outdoors for a decade; make the unit small enough to come off a factory line and the economics change category.",
+    "detail": "Ordering more gigawatt-scale megaprojects in fleets only spreads that failure mode across more sites. A unit manufactured in a factory and shipped gives real serial learning, controlled quality, a four-year build instead of twelve, and a capital commitment a utility board can approve without betting the company. Passive safety designs remove whole classes of active systems, pumps and backup power, which removes both cost and the accident sequences that frightened people in the first place. Some of these designs run hot enough to serve industrial heat, and some can run on used fuel.\n\nThe customers exist already and are signing twenty-year contracts. Ontario Power Generation took a construction license for the first Darlington BWRX-300 in April 2025 and targets grid connection by the end of 2030; the NRC issued a construction permit for TerraPower’s Kemmerer Unit 1 on 4 March 2026, targeting 2031. On the objection that small reactors cost more per kilowatt and that no serial production exists: both are true today and neither is a verdict. Per-kilowatt capital cost is the wrong metric for a product whose thesis is learning rate rather than unit scale. The comparison that matters is the twentieth unit, and there has never been a twentieth unit because there has never been an order book. The first units will be expensive. Judge the program on what the line turns out after them, and that evidence starts arriving around 2030.",
+    "proponents": "TerraPower, X-energy, Kairos Power, Rolls-Royce SMR, GE Vernova Hitachi, Ontario Power Generation, Nuclear Innovation Alliance",
+    "id": "rebuild-the-industry-around-new-reactor"
+   },
+   {
+    "name": "Set clean firm targets and let technologies compete",
+    "color_key": "purple",
+    "steelman": "Asking how much nuclear to build is the wrong question; write the requirement as clean firm capacity, set the quantity and the date, and let the technologies bid.",
+    "detail": "What a deeply decarbonized grid actually needs is generation that is clean, dispatchable and not dependent on the weather, because the last 10 to 20 percent of emissions is far more expensive to remove without it. That requirement is technology-agnostic. Nuclear can fill it; so can enhanced geothermal, gas with carbon capture, hydrogen or ammonia combustion, and long-duration storage. Which of them wins should be settled by procurement and cost, not by ideology inherited from the 1970s — and writing it as an attribute stops the argument from being a referendum on nuclear’s symbolism and turns it into an auction with a number at the end.\n\nSystem models across many research groups converge on the finding that adding a clean firm resource to a wind, solar and storage system lowers total system cost substantially, and that the identity of that resource matters much less than its availability. The same models show nuclear’s optimal share swinging from near zero to very large depending on its assumed capital cost, which nobody knows in advance: that is an argument for competitive procurement, not for picking a winner. Told that this dodges the decision while the clock runs, we answer that a standard with a quantity and a date is a commitment, and it forces exactly the tradeoffs that arguing about nuclear in the abstract lets people avoid. If the real claim is that nuclear needs a guaranteed order book to get cheap, then the argument is about industrial policy for one technology and should be defended in those terms.",
+    "proponents": "Princeton ZERO Lab, Jesse Jenkins, Clean Air Task Force",
+    "id": "set-clean-firm-targets-and-let"
+   }
+  ],
+  "crux": {
+   "lead": "Is nuclear expensive because of what it is, or because of how rarely we build it?",
+   "lead_highlight": "because of what it is, or because of how rarely we build it",
+   "subtitle": "Almost every other argument here resolves into an answer to this one. If the price of a new reactor is what fission costs, the sensible course is to run what exists and spend the money elsewhere; if it is the cost of starting from cold, the cheapest reactor is the one built after the last one.",
+   "empirical": "This half can be settled by building. The claim to test is that the price falls when the same design is built again and again, by crews who have just done it and for a regulator that has already approved it. Watch the slope, not the headline: whether the second and third reactors of a design arrive cheaper and faster than the first, and whether the next Western projects converge on the construction times achieved elsewhere.",
+   "values": "No number settles how much a society should pay for power that is there whatever the weather, or who carries the risk of being wrong. Suppose the numbers land in between: costlier, but steady and immune to fuel prices. Whether that premium is worth paying turns on the weight given to supply security against price, to the town hosting a plant against the grid it feeds, and to a small chance of concentrated harm against a certainty of diffuse harm."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Our World in Data — Nuclear Energy",
+    "description": "A data-first overview of nuclear generation, capacity, safety and public attitudes, every chart sourced and downloadable, with companion pages on death rates and land use per energy source.",
+    "url": "https://ourworldindata.org/nuclear-energy",
+    "for_position": null,
+    "id": "our-world-in-data-nuclear-energy"
+   },
+   {
+    "kind": "learn_more",
+    "title": "IAEA Power Reactor Information System",
+    "description": "The official international register of every power reactor — operating, under construction, shut down — with capacity, load factor and construction dates. Most sides of this argument start from its numbers.",
+    "url": "https://pris-stats.iaea.org/",
+    "for_position": null,
+    "id": "iaea-power-reactor-information-system"
+   },
+   {
+    "kind": "learn_more",
+    "title": "World Nuclear Association information library",
+    "description": "The industry association’s reference library: country profiles, fuel-cycle explainers, cost and safety papers. The most complete pro-nuclear source that still cites its data.",
+    "url": "https://world-nuclear.org/information-library",
+    "for_position": "Build new reactors with public backing",
+    "id": "world-nuclear-association-information-library"
+   },
+   {
+    "kind": "learn_more",
+    "title": "World Nuclear Industry Status Report",
+    "description": "The annual independent audit of the global fleet, free in full, tracking construction delays, cancellations and nuclear’s share against renewables. The standard reference for the case that the industry is in decline.",
+    "url": "https://www.worldnuclearreport.org/",
+    "for_position": "Phase out nuclear and build renewables instead",
+    "id": "world-nuclear-industry-status-report"
+   },
+   {
+    "kind": "local",
+    "title": "Take part in an NRC public meeting or hearing",
+    "description": "The Nuclear Regulatory Commission holds public meetings on license renewals, restarts and new reactor applications, most of them open and many near the affected plant. The calendar is on the agency site.",
+    "url": "https://www.nrc.gov/public-involve.html",
+    "for_position": null,
+    "id": "take-part-in-an-nrc-public"
+   },
+   {
+    "kind": "donate",
+    "title": "Union of Concerned Scientists",
+    "description": "A science advocacy organization that supports keeping safe reactors running as low-carbon capacity while opposing large public subsidies for new construction, and publishes the research behind that position.",
+    "url": "https://www.ucs.org/",
+    "for_position": "Run the existing fleet and stop there",
+    "id": "union-of-concerned-scientists"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Generation Atomic",
+    "description": "A grassroots pro-nuclear nonprofit that trains volunteers to testify at hearings, canvass in plant communities and lobby state legislatures on license renewals and new build.",
+    "url": "https://www.generationatomic.org/",
+    "for_position": "Build new reactors with public backing",
+    "id": "generation-atomic"
+   },
+   {
+    "kind": "donate",
+    "title": "Greenpeace",
+    "description": "The longest-running international campaign against nuclear power, arguing for phasing out existing plants and directing the money to renewables, with national offices that organize locally.",
+    "url": "https://www.greenpeace.org/usa/",
+    "for_position": "Phase out nuclear and build renewables instead",
+    "id": "greenpeace"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Nuclear Innovation Alliance",
+    "description": "A nonprofit policy organization working to get advanced and small modular reactors licensed and built, publishing detailed analysis of licensing pathways, fuel supply and demonstration programs.",
+    "url": "https://www.nuclearinnovationalliance.org/",
+    "for_position": "Rebuild the industry around new reactor designs",
+    "id": "nuclear-innovation-alliance"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Clean Air Task Force on clean firm generation",
+    "description": "A primer on dispatchable zero-carbon resources — advanced geothermal, nuclear, carbon capture, long-duration storage — and the argument for procuring by attribute rather than by technology.",
+    "url": "https://www.catf.us/resource/clean-firm-electricity-technologies-why-what-how/",
+    "for_position": "Set clean firm targets and let technologies compete",
+    "id": "clean-air-task-force-on-clean"
+   }
+  ]
+ }
 }

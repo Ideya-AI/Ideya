@@ -1,8 +1,8 @@
 {
  "slug": "assisted-dying",
  "title": "Assisted Dying",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-09-23T06:24:14+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "The right to end one's own life, and how to legalize physician-assisted death: eligibility lines and safeguards. Not the value of long life.",
@@ -10,11 +10,625 @@
  "categories": [
   "ethics"
  ],
+ "icon": "bed",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: A hospital bed with a raised, gently curved headboard and a rounded pillow, dominant at center-left and seen from the side; an IV stand at its head with a small hanging bag, its slender tube curving down and across the bed; a low bedside table to the right overlapping the foot of the bed, carrying a covered medicine cup and one small capped vial; a single sheet of paper with a signature rule and a small check box leaning against the table leg, overlapping it; a long curtain rail running the full width of the frame behind everything with one soft curtain fold gathered at the left; the ground a gentle shallow curve running the whole width behind every element.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #b0567f, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: no people, no hands, no faces, no bodies or figures under the covers, no skulls, no skeletons, no scythes or hooded shapes, no gravestones, no crosses or religious symbols, no angel wings, no doves, no praying hands, no hearts, no flatlining ECG traces, no hourglasses or sand timers, no wilting or falling flowers, no candles, no scales of justice, no gavels, no syringes with drips, no spilled pills, no clocks striking, no arrows, no text, letters or numbers",
  "related": [
   "treating-aging-as-disease",
   "moral-status-of-the-unborn",
   "crime-punishment-reform",
   "gender-transition-minors",
   "organ-procurement-markets"
- ]
+ ],
+ "content": {
+  "overview": {
+   "summary": "Medical help to die at a person’s own request: where the eligibility line belongs, and whether the request can be kept the person’s own.",
+   "scope_covered": "Assisted suicide and voluntary euthanasia under law: eligibility lines, capacity and coercion checks, waiting periods, conscientious objection, oversight.",
+   "scope_excluded": "Suicide prevention generally, withdrawing life-sustaining treatment, do-not-resuscitate orders, and any killing of a patient who has not asked.",
+   "why_now": "On 11 September 2026 the House of Commons rejected the Terminally Ill Adults (End of Life) Bill at second reading, 286 to 270, reversing two years of movement toward legalization. France went the other way, enacting a right to assistance in dying on 18 August 2026."
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "Assisted deaths as a share of all deaths",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% of deaths",
+     "series": [
+      {
+       "label": "Netherlands",
+       "value": "6.0",
+       "highlight": true
+      },
+      {
+       "label": "Canada",
+       "value": "5.1",
+       "highlight": false
+      },
+      {
+       "label": "Belgium",
+       "value": "4.0",
+       "highlight": false
+      },
+      {
+       "label": "Switzerland",
+       "value": "2.5",
+       "highlight": false
+      },
+      {
+       "label": "Australia",
+       "value": "2.0",
+       "highlight": false
+      },
+      {
+       "label": "Oregon",
+       "value": "1.0",
+       "highlight": false
+      },
+      {
+       "label": "Spain",
+       "value": "0.13",
+       "highlight": false
+      }
+     ],
+     "note": "In the Netherlands about one death in seventeen is now an assisted death; in Spain, where the law is also permissive, it is about one in 770.",
+     "detail": "The rows are not measuring quite the same thing. The Netherlands, Belgium, Canada, Switzerland and Spain allow assistance for conditions that are not terminal, while Australia and Oregon require a prognosis, usually six months. The laws are of very different ages — 1997 in Oregon, 2002 in the Netherlands and Belgium, 2016 in Canada, 2021 in Spain — and uptake rises for many years after a law starts. Counting differs too: the Swiss figure is derived by dividing 1,774 assisted suicides among residents in 2024 by an estimated 71,100 deaths, and Health Canada warns that its 5.1 percent should not be read as a cause-of-death share, because the death certificate records the underlying disease. Nothing in the order tracks how permissive a law is on paper.",
+     "source_label": "Official reports of each jurisdiction, compiled",
+     "source_url": "https://www.euthanasiecommissie.nl/cijfers-2021-2025",
+     "source_published": "2024-2025",
+     "source_accessed": "2026-09-22",
+     "id": "assisted-deaths-as-a-share-of"
+    },
+    {
+     "label": "Assisted deaths in Canada",
+     "viz": "bar",
+     "wide": false,
+     "value": "16,499",
+     "unit": "in 2024",
+     "note": "16,499 people received medical assistance in dying in Canada in 2024, and 76,475 in total since it was legalized in 2016.",
+     "detail": "Health Canada received 22,535 reports of requests that year: 4,017 people died of another cause first, 1,327 were found ineligible and 692 withdrew. Growth is slowing sharply — 36.8 percent between 2019 and 2020, 6.9 percent between 2023 and 2024 — which the department reads as the beginning of a plateau while cautioning that several more years are needed to know. Provision is also concentrated: Quebec, Ontario and British Columbia together account for nearly 85 percent of cases, and of 2,266 practitioners, 102 performed 38 percent of all provisions for people whose death was foreseeable. Canada is the fastest and largest adoption anywhere, which is why both sides reach for it as their example.",
+     "source_label": "Health Canada, Sixth Annual Report on Medical Assistance in Dying",
+     "source_url": "https://www.canada.ca/content/dam/hc-sc/documents/services/publications/health-system-services/annual-report-medical-assistance-dying-2024/annual-report-medical-assistance-dying-2024.pdf",
+     "source_published": "2024",
+     "source_accessed": "2026-09-22",
+     "id": "assisted-deaths-in-canada"
+    },
+    {
+     "label": "Concerns Oregon patients cited when requesting",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% of cases",
+     "series": [
+      {
+       "label": "Losing autonomy",
+       "value": "89",
+       "highlight": true
+      },
+      {
+       "label": "Less able to enjoy life",
+       "value": "89",
+       "highlight": false
+      },
+      {
+       "label": "Loss of dignity",
+       "value": "65",
+       "highlight": false
+      },
+      {
+       "label": "Burden on others",
+       "value": "40",
+       "highlight": false
+      },
+      {
+       "label": "Pain or fear of pain",
+       "value": "37",
+       "highlight": false
+      },
+      {
+       "label": "Cost of treatment",
+       "value": "6",
+       "highlight": false
+      }
+     ],
+     "note": "The concerns named most often in 2025 were losing autonomy and being less able to enjoy life, each 89 percent; pain or fear of it was named by 37 percent and cost by 6 percent.",
+     "detail": "Patients may name more than one concern, so the figures do not sum to 100. Supporters cite the ranking as evidence that these requests are not mainly about uncontrolled pain. It is also the evidence both sides use on coercion: 40 percent named being a burden on family, friends or caregivers, which opponents read as social pressure showing up in the data, while supporters note that the concern is reported by the patient rather than by a relative, that feeling like a burden is a documented feature of serious illness generally, and that financial pressure specifically is named by 6 percent. Health Canada found the same pattern in another form: people citing self-perceived burden reported more sources of suffering on average than those who did not, and burden was the sole source of suffering in fewer than five cases nationally in 2024.",
+     "source_label": "Oregon Health Authority, Death with Dignity Act 2025 Data Summary",
+     "source_url": "https://www.oregon.gov/oha/PH/PROVIDERPARTNERRESOURCES/EVALUATIONRESEARCH/DEATHWITHDIGNITYACT/Documents/year28.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-09-22",
+     "id": "concerns-oregon-patients-cited-when-requesting"
+    },
+    {
+     "label": "Quebec’s share of deaths by assisted dying",
+     "viz": "radial",
+     "wide": false,
+     "value": "7.9",
+     "unit": "% of deaths",
+     "note": "6,268 people in Quebec received medical assistance in dying in the year to 31 March 2025 — 7.9 percent of all deaths, the highest rate reported anywhere.",
+     "detail": "Quebec legislated before the rest of Canada, in 2014, and its rate has risen every year, from 7.3 percent the year before. The commission’s own report finds wide variation inside the province, reaching 13.4 percent of deaths in one region, Lanaudière, with no obvious explanation — the most-cited evidence that practice is shaped by local medical culture and not by patient need alone. The profile is otherwise unremarkable: 75 percent were 70 or older, 58 percent had cancer, 90 percent had a prognosis under a year or were judged to be at the end of life, and 0.4 percent had a severe physical disability as their principal diagnosis. The average interval from signed request to administration was 44 days, and the commission judged 99.7 percent of administrations compliant with the law. Continuous palliative sedation, which holds a dying patient unconscious until death, accounted for 2.7 percent of Quebec deaths in the same year.",
+     "source_label": "Commission sur les soins de fin de vie, Rapport annuel d’activités",
+     "source_url": "https://csfv.gouv.qc.ca/fileadmin/docs/rapports_annuels/csfv_rapport_activites_2024-2025.pdf",
+     "source_published": "2024-25",
+     "source_accessed": "2026-09-22",
+     "id": "quebec-s-share-of-deaths-by"
+    },
+    {
+     "label": "Dutch euthanasia notifications by year",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "per year",
+     "series": [
+      {
+       "label": "2021",
+       "value": "7,666",
+       "highlight": false
+      },
+      {
+       "label": "2022",
+       "value": "8,720",
+       "highlight": false
+      },
+      {
+       "label": "2023",
+       "value": "9,068",
+       "highlight": false
+      },
+      {
+       "label": "2024",
+       "value": "9,958",
+       "highlight": false
+      },
+      {
+       "label": "2025",
+       "value": "10,341",
+       "highlight": true
+      }
+     ],
+     "note": "Notifications to the Dutch review committees rose from 7,666 in 2021 to 10,341 in 2025, an increase of about a third in four years.",
+     "detail": "The law took effect in 2002 and the committees received 1,882 notifications in that first year, so the practice is roughly five and a half times more common now than when it began — the single most quoted series in the argument that these laws drift. Defenders answer that the 2002 figure understates the baseline, because euthanasia was already being carried out under prosecutorial guidelines before it was codified and reporting was patchy; Dutch death-certificate studies put reporting at around 80 percent in 2010, rising since. The 2025 cases by condition: cancer 5,355, multiple physical conditions 1,908, nervous system disorders 719, heart and vascular disease 509, dementia 499, accumulated age-related conditions 475, lung disease 335, psychiatric conditions 174, physical and psychiatric conditions combined 80, other 287.",
+     "source_label": "Regionale Toetsingscommissies Euthanasie, figures 2021-2025",
+     "source_url": "https://www.euthanasiecommissie.nl/cijfers-2021-2025",
+     "source_published": "2025",
+     "source_accessed": "2026-09-22",
+     "id": "dutch-euthanasia-notifications-by-year"
+    },
+    {
+     "label": "Assisted deaths where death was not foreseeable",
+     "viz": "radial",
+     "wide": false,
+     "value": "4.4",
+     "unit": "% of cases",
+     "note": "732 of Canada’s assisted deaths in 2024 — 4.4 percent — were under Track 2, for people whose natural death was not reasonably foreseeable.",
+     "detail": "Track 2 was created by Bill C-7 in 2021, after a Quebec court held that restricting assistance to the dying was unconstitutional, and it is what separates Canada from Australia, New Zealand and the US states. The group is different in kind from the rest: median age 75.9 against 78.0, 56.7 percent women against 47.8 percent, and 34.1 percent had lived with their condition for more than ten years against 7.4 percent. It is also where refusals concentrate, at 4.4 percent of provisions but 24.2 percent of all requests found ineligible, and its growth is slowing, from 33.3 percent in a year to 17.1 percent. A separate provision, for people whose sole underlying condition is a mental illness, has been postponed three times and is currently due to take effect on 17 March 2027.",
+     "source_label": "Health Canada, Sixth Annual Report on Medical Assistance in Dying",
+     "source_url": "https://www.canada.ca/content/dam/hc-sc/documents/services/publications/health-system-services/annual-report-medical-assistance-dying-2024/annual-report-medical-assistance-dying-2024.pdf",
+     "source_published": "2024",
+     "source_accessed": "2026-09-22",
+     "id": "assisted-deaths-where-death-was-not"
+    },
+    {
+     "label": "Palliative care before an assisted death, Canada",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% receiving",
+     "series": [
+      {
+       "label": "Death foreseeable",
+       "value": "76.4",
+       "highlight": false
+      },
+      {
+       "label": "All recipients",
+       "value": "74.1",
+       "highlight": true
+      },
+      {
+       "label": "Death not foreseeable",
+       "value": "23.2",
+       "highlight": false
+      }
+     ],
+     "note": "74.1 percent of Canadians given an assisted death in 2024 had already received palliative care; 2.5 percent needed it and went without, though 91.2 percent of them were recorded as having access.",
+     "detail": "Both sides cite this table and read different rows. Supporters point to the top two: three in four recipients were already receiving palliative care when they asked, and among those whose death was foreseeable it was higher still. Opponents concentrate on the bottom row, where fewer than a quarter had it. On disability supports the pattern is similar but weaker: 32.5 percent of recipients received them, 45.5 percent among those whose death was not foreseeable, with 0.1 percent needing them and not getting them.",
+     "source_label": "Health Canada, Sixth Annual Report on Medical Assistance in Dying",
+     "source_url": "https://www.canada.ca/content/dam/hc-sc/documents/services/publications/health-system-services/annual-report-medical-assistance-dying-2024/annual-report-medical-assistance-dying-2024.pdf",
+     "source_published": "2024",
+     "source_accessed": "2026-09-22",
+     "id": "palliative-care-before-an-assisted-death"
+    },
+    {
+     "label": "Oregon prescriptions that were taken",
+     "viz": "radial",
+     "wide": false,
+     "value": "67",
+     "unit": "% taken",
+     "note": "Since 1997, 5,520 people in Oregon have received a lethal prescription and 3,691 of them — 67 percent — have died from taking it.",
+     "detail": "About a third of the people who complete the process never use what they obtained; in 2025, 100 of 637 recipients died of natural causes without ingesting the medication. Supporters read that as the strongest evidence the law works as insurance rather than as a push: people want the option in the drawer, and having it appears to relieve the fear that drove the request. Critics read the same number as a sign that the six-month prognosis is unreliable, and the report supplies the matching figure — 24 patients, 6 percent of that year’s deaths under the Act, outlived the prognosis they had been given. Prescribing is uneven: 155 physicians wrote the 637 prescriptions, 71 percent of them only one or two, while one wrote 101.",
+     "source_label": "Oregon Health Authority, Death with Dignity Act 2025 Data Summary",
+     "source_url": "https://www.oregon.gov/oha/PH/PROVIDERPARTNERRESOURCES/EVALUATIONRESEARCH/DEATHWITHDIGNITYACT/Documents/year28.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-09-22",
+     "id": "oregon-prescriptions-that-were-taken"
+    },
+    {
+     "label": "Recipients who identified as having a disability",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% of cases",
+     "series": [
+      {
+       "label": "Death not foreseeable",
+       "value": "61.5",
+       "highlight": false
+      },
+      {
+       "label": "All recipients",
+       "value": "32.9",
+       "highlight": true
+      },
+      {
+       "label": "Death foreseeable",
+       "value": "31.6",
+       "highlight": false
+      }
+     ],
+     "note": "Of the Canadians given an assisted death in 2024, 32.9 percent identified as having a disability, rising to 61.5 percent where death was not foreseeable.",
+     "detail": "Health Canada attaches unusually strong caveats here: definitions of disability varied, provinces collect the data differently, and self-identification is unreliable even though more than 97 percent of cases answered. The department also reports findings that cut against the reading that deprivation is driving these deaths: recipients did not disproportionately come from lower-income or disadvantaged neighborhoods, and were less likely to live in remote areas. It cautions in the same breath that both measures describe neighborhoods and not individuals, so whether any particular person had enough help at home is not in the table at all.",
+     "source_label": "Health Canada, Sixth Annual Report on Medical Assistance in Dying",
+     "source_url": "https://www.canada.ca/content/dam/hc-sc/documents/services/publications/health-system-services/annual-report-medical-assistance-dying-2024/annual-report-medical-assistance-dying-2024.pdf",
+     "source_published": "2024",
+     "source_accessed": "2026-09-22",
+     "id": "recipients-who-identified-as-having-a"
+    },
+    {
+     "label": "Dutch cases failing the due care criteria",
+     "viz": "bar",
+     "wide": false,
+     "value": "7",
+     "unit": "cases, 2025",
+     "note": "The Dutch review committees found 7 cases in 2025 — about 0.07 percent of the notifications they received — where the physician had not met the statutory due care criteria.",
+     "detail": "Findings run at this level year after year: 7 in 2021, 13 in 2022, 5 in 2023, 6 in 2024. Supporters cite the record as proof that a mature system is being followed. Opponents make two replies. The review is retrospective and rests on the reporting physician’s own account, so it can only catch what is reported, and Dutch death-certificate research has long estimated that some cases are never notified at all. And a near-perfect compliance rate measures conformity to the criteria, not whether the criteria are the right ones: a case can be fully compliant and still be one that critics think should never have happened. Oregon, for its part, made no referrals to its medical board for reporting failures in 2025.",
+     "source_label": "Regionale Toetsingscommissies Euthanasie, 2025 annual figures",
+     "source_url": "https://www.euthanasiecommissie.nl/actueel/nieuws/2026/03/26/jaarcijfers-rte-2025-bijna-4-meer-meldingen-van-euthanasie",
+     "source_published": "2025",
+     "source_accessed": "2026-09-22",
+     "id": "dutch-cases-failing-the-due-care"
+    },
+    {
+     "label": "US public support for assisted dying",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% of adults",
+     "series": [
+      {
+       "label": "End life, painless means",
+       "value": "71",
+       "highlight": true
+      },
+      {
+       "label": "Assist a suicide",
+       "value": "66",
+       "highlight": false
+      },
+      {
+       "label": "Morally acceptable",
+       "value": "49",
+       "highlight": false
+      }
+     ],
+     "note": "71 percent of Americans said doctors should be allowed to end a patient’s life by painless means and 66 percent to assist a suicide, but only 49 percent called it morally acceptable.",
+     "detail": "The gap between the two legality questions is a durable finding about wording, not noise: describing the same act as ending life by painless means draws roughly five to twenty points more support than describing it as assisting a suicide, and Gallup has tracked that gap since 1996. The morality question, asked annually, has been drifting down — 53 percent in 2025, 49 percent in 2026 — while the legality numbers have been broadly flat for a decade. The partisan split is wide, with Democrats favoring legal euthanasia by 79 percent against 61 percent of Republicans, and weekly churchgoers are the most opposed group on every version of the question. British support runs higher: 79 percent in the March 2025 British Social Attitudes survey, and 73 percent in a May 2025 YouGov poll on the specific terms of the Westminster bill.",
+     "source_label": "Gallup, Values and Beliefs polls",
+     "source_url": "https://news.gallup.com/poll/648215/americans-favor-legal-euthanasia.aspx",
+     "source_published": "2024 and 2026",
+     "source_accessed": "2026-09-22",
+     "id": "us-public-support-for-assisted-dying"
+    },
+    {
+     "label": "People needing palliative care who receive it",
+     "viz": "radial",
+     "wide": false,
+     "value": "14",
+     "unit": "% worldwide",
+     "note": "An estimated 56.8 million people a year need palliative care, including 25.7 million in their last year of life, and about 14 percent receive it.",
+     "detail": "This is the background condition for the whole argument, and both sides invoke it. Opponents of legalization say that offering an assisted death before securing decent end-of-life care puts a false choice to people whose suffering has an untried remedy; the same fact sheet reports that in 2018, 79 percent of the world’s population consumed 13 percent of the morphine used for pain relief. Supporters answer that the two are not substitutes and in practice run together, and that the number of people whose suffering palliative care cannot reach is not zero however good the service is. The fact sheet dates from August 2020 and its underlying estimates from 2017 to 2019, which makes this the oldest figure on the page.",
+     "source_label": "World Health Organization, palliative care fact sheet",
+     "source_url": "https://www.who.int/news-room/fact-sheets/detail/palliative-care",
+     "source_published": "2020",
+     "source_accessed": "2026-09-22",
+     "id": "people-needing-palliative-care-who-receive"
+    },
+    {
+     "label": "Assisted suicide prosecutions, England and Wales",
+     "viz": "bar",
+     "wide": false,
+     "value": "6",
+     "unit": "of 209 cases",
+     "note": "Between April 2009 and March 2026 the police referred 209 assisted suicide cases to the Crown Prosecution Service; 6 were prosecuted successfully and 2 ended in acquittal.",
+     "detail": "Section 2 of the Suicide Act 1961 makes encouraging or assisting a suicide an offense carrying up to 14 years in prison, and it has never been repealed. What changed was enforcement: after the House of Lords ruled in Purdy in 2009, the Director of Public Prosecutions published a policy listing factors for and against prosecution, and assistance given out of compassion is now rarely charged — 131 of the referred cases were not proceeded with and 42 were withdrawn. Many involve relatives who accompanied someone abroad. Both sides use the record. Those who want change say a law on the books but almost never enforced leaves families under investigation during bereavement and sends away those who can afford the journey. Those who do not say it shows a system already exercising mercy case by case while keeping the prohibition that protects everyone else.",
+     "source_label": "Crown Prosecution Service, assisted suicide case outcomes",
+     "source_url": "https://www.cps.gov.uk/publications/performance-management-and-case-outcomes/assisted-suicide",
+     "source_published": "2026",
+     "source_accessed": "2026-09-22",
+     "id": "assisted-suicide-prosecutions-england-and-wales"
+    },
+    {
+     "label": "Assisted suicides in Switzerland",
+     "viz": "bar",
+     "wide": false,
+     "value": "1,774",
+     "unit": "in 2024",
+     "note": "1,071 women and 703 men resident in Switzerland died by assisted suicide in 2024, at average ages of 80.0 and 79.1.",
+     "detail": "Switzerland is the oldest and the least medicalized system: nothing in its law requires a doctor’s authorization, a terminal prognosis or a waiting period, and a physician is needed only to prescribe the drug. The work is done by non-profit associations, chiefly EXIT and DIGNITAS, and DIGNITAS is the only provider that accepts non-residents, which is why Britons and Germans travel there. For contrast, 996 Swiss residents died by unassisted suicide in 2024, and that rate has fallen by roughly 40 to 50 percent since the late 1990s, against the prediction that permissiveness would raise it. Assisted deaths are heavily concentrated in old age: more than 90 percent of the 2023 cases were people aged 65 or over.",
+     "source_label": "Swiss Federal Statistical Office, specific causes of death",
+     "source_url": "https://www.bfs.admin.ch/bfs/en/home/statistics/health/state-health/mortality-causes-death/specific.html",
+     "source_published": "2024",
+     "source_accessed": "2026-09-22",
+     "id": "assisted-suicides-in-switzerland"
+    },
+    {
+     "label": "What UK doctors wanted their association to do",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% of members",
+     "series": [
+      {
+       "label": "Actively oppose change",
+       "value": "40",
+       "highlight": true
+      },
+      {
+       "label": "Support change",
+       "value": "30",
+       "highlight": false
+      },
+      {
+       "label": "Stay neutral",
+       "value": "23",
+       "highlight": false
+      }
+     ],
+     "note": "In the British Medical Association’s 2020 survey of nearly 29,000 members, 40 percent wanted it to oppose a change in the law, 30 percent to support one and 23 percent to be neutral.",
+     "detail": "The survey is the largest of its kind and produced two findings that pull apart: doctors are more evenly split than the public on whether the law should change, and they are markedly less willing to take part than to permit it. Half of the respondents personally supported a law allowing doctors to prescribe life-ending drugs, but only 26 percent said they would be willing to administer them and 54 percent said they would not — a gap that matters for any scheme whose delivery depends on volunteers. The association dropped its opposition for a neutral position in September 2021, as the Royal College of Physicians had in 2019, and the Royal College of General Practitioners council moved to neither supporting nor opposing on 14 March 2025. Others went the other way: the Association for Palliative Medicine remains opposed, the Royal College of Psychiatrists said in May 2025 that it could not support the Westminster bill, and the World Medical Association reaffirmed its opposition in 2019. The survey is now six years old.",
+     "source_label": "British Medical Association, physician-assisted dying survey",
+     "source_url": "https://www.bma.org.uk/advice-and-support/ethics/end-of-life/physician-assisted-dying/physician-assisted-dying-survey",
+     "source_published": "2020",
+     "source_accessed": "2026-09-22",
+     "id": "what-uk-doctors-wanted-their-association"
+    },
+    {
+     "label": "People living where assisted dying is legal",
+     "viz": "bar",
+     "wide": false,
+     "value": "300",
+     "unit": "million",
+     "note": "More than 300 million people, on a campaign group’s approximate count, live where some form of assisted dying is legal: 13 US jurisdictions, every Australian state and ten European countries.",
+     "detail": "Adding France in August 2026 to Canada, Spain, Germany, the Netherlands, Belgium, Austria, Portugal, Switzerland, Luxembourg, Colombia, Ecuador, Uruguay, Australia, New Zealand and the US states puts the true total well above the figure. US counts differ by one or two depending on how Montana is treated, since assistance there rests on a 2009 state supreme court decision rather than a statute. The jurisdictions split into two families. The terminal-illness model — Oregon from 1997, the US states that copied it, the Australian states, New Zealand and Jersey — requires a prognosis, usually six months, and usually requires the person to act for themselves. The unbearable-suffering model — the Netherlands and Belgium from 2002, Canada, Spain, Austria, Portugal and France — turns on the severity of suffering rather than nearness to death, and generally lets a clinician administer.",
+     "source_label": "Dignity in Dying, assisted dying around the world",
+     "source_url": "https://www.dignityindying.org.uk/assisted-dying/assisted-dying-around-the-world/",
+     "source_published": "2026",
+     "source_accessed": "2026-09-22",
+     "id": "people-living-where-assisted-dying-is"
+    },
+    {
+     "label": "Minutes from taking the drug to death, Oregon",
+     "viz": "range",
+     "wide": false,
+     "value": "46",
+     "unit": "minutes",
+     "range_min": "3 min",
+     "range_max": "7,380 min",
+     "note": "Among the 291 Oregon deaths in 2025 with data available, the time from ingestion to death ran from 3 minutes to 123 hours, with a median of 46 minutes.",
+     "detail": "The long tail is the point of contention. Since 1998 the state has recorded 66 cases of difficulty ingesting or regurgitating the medication, 5 seizures and 9 people who regained consciousness after taking it — but complications are reported only when a clinician is present, and a prescribing physician attended just 14 percent of the 2025 deaths, so the true rate is unknown and the state calculates no percentage. Median times lengthened after secobarbital and pentobarbital became hard to obtain and were replaced by multi-drug combinations; one such mix, of diazepam, digoxin, morphine, amitriptyline and phenobarbital, was used in 75 percent of 2025 cases. This is the technical argument some clinicians make for letting a clinician administer intravenously instead, which is faster and more predictable.",
+     "source_label": "Oregon Health Authority, Death with Dignity Act 2025 Data Summary",
+     "source_url": "https://www.oregon.gov/oha/PH/PROVIDERPARTNERRESOURCES/EVALUATIONRESEARCH/DEATHWITHDIGNITYACT/Documents/year28.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-09-22",
+     "id": "minutes-from-taking-the-drug-to"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Does a law written for a narrow group stay narrow?",
+    "kind": "empirical",
+    "why": "Every jurisdiction that legalized has seen its numbers rise for years afterward, and several widened their criteria. Whether that is drift or a new service reaching the people it was written for cannot be read off the numbers alone.",
+    "detail": "The case that the line holds: Oregon’s law is 28 years old and has never been widened beyond terminal illness and self-administration; the 2023 removal of its residency requirement loosened access, not eligibility. Every Australian state and territory, New Zealand and every US jurisdiction have kept the terminal-illness frame, and rising numbers there look like a service reaching the people it names. Where criteria did widen, as in Canada, the mechanism was a court finding that restricting assistance to the dying breached a constitutional equality guarantee — a fact about one country’s constitution rather than a property of these laws.\n\nThe case that the line moves: the Netherlands went from euthanasia being exceptional to it being a routine share of all deaths, extending in practice to dementia, psychiatric illness, the tired of life and children. Belgium removed its age limit entirely in 2014. Canada wrote a law for the dying in 2016, added the non-dying in 2021, and legislated mental illness as a qualifying condition. The argument that gets a bill passed — that it is cruel to refuse relief to someone suffering unbearably — contains no stopping point at the prognosis line, which is why the line keeps moving.",
+    "lean_label_a": "The line holds",
+    "lean_label_b": "The line moves",
+    "id": "does-a-law-written-for-a"
+   },
+   {
+    "text": "Can an assessment tell a settled wish from a pressured one?",
+    "kind": "empirical",
+    "why": "Coercion by a relative is rare, criminal and usually visible. The harder case is the pressure nobody applies: a person who believes their care is exhausting their family, or whose support at home is thin, and who turns that into a wish to die.",
+    "detail": "The case that safeguards can tell: two independent clinicians assess every request in every jurisdiction, with a capacity test, a waiting period and a duty to explore the alternatives, and refusals are real — thousands of requests a year end in a finding of ineligibility or a withdrawal. Where monitoring data exist they do not look like a picture of the poorest being pushed. And the comparison is not with a pressure-free world: people already refuse treatment, stop eating and drinking, or end their lives violently and alone, with no assessment at all.\n\nThe case that no test can tell: the assessment has no instrument that separates a wish arising from a person’s own values from one produced by inadequate care, and the reporting records what the assessor concluded rather than auditing it. The people best placed to notice are those who live with constant low-level messaging that lives like theirs are worse, and they are the ones warning loudest. A system that certifies its own compliance at close to a hundred percent, on the reporting clinician’s account of a conversation nobody else witnessed, is not built to find the cases it missed.",
+    "lean_label_a": "Safeguards can tell",
+    "lean_label_b": "No test can tell",
+    "id": "can-an-assessment-tell-a-settled"
+   },
+   {
+    "text": "Should eligibility turn on how close death is, or how bad the suffering is?",
+    "kind": "value",
+    "why": "This is the choice that separates the two families of law, and both lines are defensible and arbitrary at the edges. A prognosis is administrable but unreliable; unbearable suffering tracks the real reason for a request but cannot be measured from outside.",
+    "detail": "The case for the prognosis line: restricting assistance to people who are already dying keeps the decision inside a situation everyone recognizes — the question is not whether to die but how — and it sharply limits the population in which a mistake is possible. It makes the safeguard workable, because a person with weeks to live cannot be talked into forgoing decades. It is also the rule that allowed legalization to pass in more than a dozen US jurisdictions, six Australian states and New Zealand, none of which has moved off it. That a small share of patients outlive their prognosis is an argument for humility about medicine, not for abandoning the line.\n\nThe case for the suffering line: a prognosis rule gives the wrong answer in exactly the cases that motivated the law. Someone with advanced multiple sclerosis, locked-in syndrome or severe treatment-resistant illness may face a decade of what a dying patient faces for a month, and telling them to wait until they are dying enough is a rule about paperwork rather than about mercy. The Canadian court in Truchon found the reasonable-foreseeability requirement unconstitutional on exactly this ground: it made the severity of a person’s suffering irrelevant, and used nearness to death as a proxy for it.",
+    "lean_label_a": "Prognosis line",
+    "lean_label_b": "Suffering line",
+    "id": "should-eligibility-turn-on-how-close"
+   },
+   {
+    "text": "Is helping a patient die compatible with being a doctor?",
+    "kind": "value",
+    "why": "Medicine’s self-understanding is at stake as much as any patient’s interest, which is why professional bodies have split and several retreated to neutrality. The same act is either the last service a physician renders or the one a physician must never do.",
+    "detail": "The case that it is part of care: a physician’s job is to relieve suffering for a patient whose own values define what relief means, and medicine already accepts that a competent patient may refuse a ventilator and die of the refusal. Sedation that holds a dying patient unconscious until death is legal, used and largely uncontroversial. Drawing the ethical line at the doctor’s intention rather than at the patient’s outcome asks doctors to step back at the point of greatest need in order to keep their own hands clean, and the bodies closest to general practice have stopped opposing.\n\nThe case that it breaks the role: the prohibition on doctors killing patients is not an arbitrary rule but the thing that makes it safe to be a patient, and it has held since the Hippocratic tradition for reasons that have not changed. Withdrawing a treatment and administering a lethal drug differ in what the doctor is trying to bring about, and intent is the basis of most moral and legal distinctions we already accept. Doctors’ own behavior tracks the distinction: far fewer say they would administer life-ending drugs than say the law should permit them.",
+    "lean_label_a": "Part of care",
+    "lean_label_b": "Breaks the role",
+    "id": "is-helping-a-patient-die-compatible"
+   },
+   {
+    "text": "Does legal assisted dying weaken or strengthen palliative care?",
+    "kind": "empirical",
+    "why": "Both causal stories are plausible and neither has a clean test, because the countries that legalized were mostly rich, mostly had palliative services already, and reformed both at once. The quality of palliative care is also poorly measured.",
+    "detail": "The case that it crowds care out: once a quick and certain option exists, the pressure to fund a slow, staff-intensive one falls away, and a choice offered inside a system with waiting lists is not a free choice. The jurisdiction with the highest assisted-death rate in the world reports that its own data cannot describe the state of palliative care on its territory, and asks for reliable indicators — a striking gap in a system that monitors assisted dying case by case. Where eligibility reaches beyond the dying, palliative care reaches only a minority of the people who use it.\n\nThe case that it pulls care up: legalization has been accompanied by more attention and money for end-of-life care, not less, because the debate forces legislatures to look at how people actually die. Victoria funded palliative care alongside its law, and the Westminster bill was paired with a palliative care commission. The usage figures do not look like substitution: most people who use these laws were already in palliative or hospice care, so for most the two are sequential rather than alternative. Belgium, an early adopter, built one of Europe’s denser palliative networks over the same period, and the countries with the worst provision are overwhelmingly countries where assisted dying is illegal.",
+    "lean_label_a": "Crowds care out",
+    "lean_label_b": "Pulls care up",
+    "id": "does-legal-assisted-dying-weaken-or"
+   },
+   {
+    "text": "Can a mental illness be judged irremediable?",
+    "kind": "empirical",
+    "why": "Eligibility everywhere requires that a condition cannot be relieved in a way the person finds acceptable. For cancer that is routine. For treatment-resistant depression there is no biomarker, late recovery happens, and the wish to die can itself be a symptom.",
+    "detail": "The case that it can be assessed: psychiatrists make irremediability judgments constantly — in deciding to stop active treatment, in long-term institutional care, in capacity assessments for patients refusing life-saving treatment. The Dutch have done this under review for more than two decades at small and currently falling volumes, each case checked against the due care criteria with a psychiatric second opinion. Refusing categorically means telling people with decades of documented, treatment-resistant suffering that their pain counts for less than a cancer patient’s because it is in the brain, which is the discrimination the argument claims to be preventing.\n\nThe case that it is never certain enough: there is no reliable way to predict which treatment-resistant patient will recover, and cohort studies find meaningful remission rates even after many failed treatments. Canada wrote the provision into law and has now delayed it three times; in April 2026 the Centre for Addiction and Mental Health recommended an indefinite extension for want of evidence that irremediability can be determined, and a parliamentary committee recommended an indefinite pause in June 2026. When the country that legislated the expansion cannot find clinicians willing to say the judgment can be made safely, that is evidence about the judgment and not about political will.",
+    "lean_label_a": "Can be assessed",
+    "lean_label_b": "Never certain",
+    "id": "can-a-mental-illness-be-judged"
+   },
+   {
+    "text": "Can a person request death in advance, for a future self who cannot consent?",
+    "kind": "value",
+    "why": "Advance directives are accepted everywhere for refusing treatment. Extending them to an active death raises the question of whether a person with advanced dementia, who may be content in the moment, is the same person who signed the document.",
+    "detail": "The case that the directive binds: a competent person’s settled judgment about what they will not live through is the most authentic expression of who they are, and the whole point of writing it down is to reach a time when they can no longer speak. If it can be overridden whenever the later self stops objecting, it offers no protection at all, and the person has been denied the only mechanism available for the outcome they most feared. Dutch law allows it and the Dutch Supreme Court confirmed its lawfulness in 2020, in a practice that has stayed rare and heavily reviewed.\n\nThe case that consent must be present: the person in front of the clinician is the person whose life would end, and that person may be enjoying their days and beyond asking. Acting on a document against a living human being who gives no present assent turns euthanasia from something done at a patient’s request into something done to them on the authority of a stranger they used to be. Canada, Australia and every US state require capacity at the time of death for this reason, and Belgium’s advance directive provision reaches only irreversible unconsciousness.",
+    "lean_label_a": "The directive binds",
+    "lean_label_b": "Consent must be now",
+    "id": "can-a-person-request-death-in"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Legalize assisted dying for terminally ill adults",
+    "color_key": "green",
+    "steelman": "A few people die badly however good the care is, and they are already dying. The last weeks belong to them, not to the disease.",
+    "detail": "Our proposal is deliberately narrow: an adult with capacity, a terminal diagnosis and a prognosis measured in months, who asks more than once across a waiting period, with two independent doctors satisfied that the request is settled and uncoerced, and who takes the medication with their own hand. That last clause is both the strongest safeguard and the clearest statement of whose decision this is.\n\nNone of it is set against palliative care. Nine in ten Oregonians who use the law are already in hospice, and many who obtain the prescription never use it, because knowing the door is unlocked is itself the relief. And the status quo is not safety. It is people starving themselves, dying violently and alone, or flying abroad if they have the money and the strength, with their families investigated afterward. A law does not create those deaths; it brings them somewhere they can be assessed, recorded and, when the request does not stand up, refused.\n\nOn the objection that the line will not hold: a statute naming terminal illness and self-administration does not expand itself, because a legislature has to vote. Where widening happened it had a specific cause — in one country a constitutional ruling, in another a law written around suffering from the start, which never had our line to cross.",
+    "proponents": "Dignity in Dying, Compassion & Choices, Go Gentle Australia, Death with Dignity National Center, Kim Leadbeater",
+    "id": "legalize-assisted-dying-for-terminally-ill"
+   },
+   {
+    "name": "Keep the prohibition and fund end-of-life care",
+    "color_key": "blue",
+    "steelman": "Almost every request we meet is a request for something else. When the pain stops and the family is looked after, the request usually goes.",
+    "detail": "The people who spend their careers at the bedsides of dying patients are the people most opposed to this, and that should count for something. Around four in five palliative medicine specialists oppose a change in the law, and in the doctors’ own survey the palliative specialists among them opposed it by more than two to one.\n\nWhat we are asked to legalize is a permanent answer to a temporary state, delivered inside a health service with waiting lists, in a world where most people who need palliative care never get any, and where an old person who has read what their own care costs can work out what would be convenient without anybody saying a word. The prohibition on doctors deliberately ending patients’ lives is not a piece of religious inheritance. It is the reason a frightened person can say anything to a doctor without wondering which way the conversation will turn — which is why the American Medical Association still calls assisted suicide fundamentally incompatible with the physician’s role as healer.\n\nSome suffering is beyond what palliative care can reach, and we do not pretend otherwise. But modern palliative medicine has tools the public has never heard of, up to sedation to unconsciousness, and they are available now. The residue of genuinely unreachable suffering is far smaller than the numbers these laws produce. A hard case is a bad reason to trade a general protection for a particular mercy, at a price paid by people who are not in the room.",
+    "proponents": "Care Not Killing, Association for Palliative Medicine of Great Britain and Ireland, American Medical Association, World Medical Association, Ilora Finlay",
+    "id": "keep-the-prohibition-and-fund-end"
+   },
+   {
+    "name": "Extend assisted dying to unbearable suffering, not only terminal illness",
+    "color_key": "amber",
+    "steelman": "A six-month prognosis is not a moral principle. It is an actuarial estimate, and it turns away the people who will suffer longest.",
+    "detail": "The person with advanced multiple sclerosis facing eight more years of losing function, the person with a spinal injury and intractable pain, the person with a depression documented across two decades and forty failed treatments — none of them qualify under a terminal-illness law, and every one of them suffers more, and for far longer, than the cancer patient who does. Making nearness to death the gate assists the people who need it least.\n\nOur criterion is the one the Dutch, the Belgians and the Canadian courts arrived at: a grievous and irremediable condition producing suffering the person finds intolerable and that cannot be relieved in a way they find acceptable. It is assessed case by case, by the person’s own standard, because suffering has no external unit. Vulnerability is assessed the same way, on the individual in front of the assessor, rather than by consigning a whole diagnostic group to a category of people presumed incapable of deciding. The feared flood has not arrived: where there is no prognosis requirement at all, uptake runs from a fraction of one percent of deaths to a few percent, and refusals cluster exactly where assessment is hardest, which is what a working filter looks like.\n\nIf someone asks to die because their home care is inadequate, the answer is home care, and we campaign for it. But the inference that nobody in this group can make an authentic choice says that a disabled person’s judgment about their own life is worth less than a dying person’s — which is the belief the objection claims to be fighting.",
+    "proponents": "Dying With Dignity Canada, NVVE, Association pour le Droit de Mourir dans la Dignité, Derecho a Morir Dignamente, Jocelyn Downie",
+    "id": "extend-assisted-dying-to-unbearable-suffering"
+   },
+   {
+    "name": "Reject assisted dying as disability discrimination",
+    "color_key": "rust",
+    "steelman": "The suffering people name is mostly not pain. It is needing help to live — which is to say it is disability, and millions of us live good lives with it.",
+    "detail": "Every argument for these laws is made in the language of choice, and none of it describes the world we live in. When a society writes a statute saying that people in our situation may be helped to die, while the same society will not fund the attendant care that makes our situation livable, it has not expanded our choices. It has told us which of the two it finds easier to pay for.\n\nThat message needs no coercive relative to work. It arrives in the doctor who assumes we would rather be dead, in the four-year wait for a wheelchair, in the family we can see getting tired. Canada wrote the argument into law with a provision open, by its own design, only to people who would otherwise have gone on living, and most of those who use it are people like us. Three United Nations human rights experts warned in 2021 against legislating on the premise that disability can make a life not worth living, and the UN Committee on the Rights of Persons with Disabilities recommended in March 2025 that Canada repeal that provision outright.\n\nWe are not saying a disabled person cannot decide. We are saying you cannot measure a decision made inside conditions you created and then call the result a preference. A society that treats a non-disabled person’s wish to die as a crisis requiring intervention, and ours as a considered judgment requiring paperwork, has put the discrimination in its own response. Offer the supports first. If people still ask, we will have a different conversation, with evidence nobody has yet.",
+    "proponents": "Not Dead Yet, Inclusion Canada, Council of Canadians with Disabilities, UN Committee on the Rights of Persons with Disabilities",
+    "id": "reject-assisted-dying-as-disability-discrimination"
+   },
+   {
+    "name": "Decriminalize assistance without making it a medical service",
+    "color_key": "purple",
+    "steelman": "The question everyone is arguing about — who qualifies — exists only because you decided to build a program. We never built one.",
+    "detail": "Article 115 of the Swiss penal code, unchanged since 1942, says that assisting a suicide is a crime only where the assister acts from selfish motives. That is the whole of it. There is no eligibility list, no waiting period, no committee, no state register of the dying, so nobody has to be certified as suffering enough to be allowed to go, and no doctor is asked to be a gatekeeper over a decision that was never medical in the first place.\n\nThe German Federal Constitutional Court reached the same conclusion from the other direction in 2020, striking down the ban on organized assistance: the right to a self-determined death is part of the general right of personality, it belongs to every person in every phase of life, and it does not depend on a diagnosis or on anyone else’s view of the reasons. Where the medical model was built instead, look at what it produces — criteria that immediately come under pressure to widen, clinicians made responsible for a judgment no training prepares them for, and a permanent argument about who else should be let in.\n\nOur gate is a different one and not obviously weaker. The person must obtain a prescription from a physician who is professionally accountable, must take the drug with their own hand, and the assister must be able to show no selfish motive, which the police check at every death. What we have not created is an authority that decides whose reasons are good enough. The fair criticism of us is about our visitors, who arrive at their own expense from countries that have not settled this.",
+    "proponents": "DIGNITAS, EXIT Deutsche Schweiz, Sterbehilfe Deutschland, German Federal Constitutional Court",
+    "id": "decriminalize-assistance-without-making-it-a"
+   }
+  ],
+  "crux": {
+   "lead": "When a suffering person asks for help to die, whose request is it?",
+   "lead_highlight": "whose request is it",
+   "subtitle": "Nobody disputes that such a wish is shaped by the illness and by everything around it — how much care arrives, what the family can bear, what a society signals a life like this is worth. The disagreement is whether that shaping leaves a choice to respect or manufactures one.",
+   "empirical": "Then it can be narrowed by measurement. Whether requests fall as support rises is testable: give a population real home care, hospice access and income security, and watch whether the wish to die goes with them. Monitoring that recorded the refusals and the deaths that happen anyway, rather than only the assessor’s conclusion, would show how much of the demand is the illness and how much is the shortfall around it.",
+   "values": "Then no amount of data closes it. If a person would not have asked to die had they been cared for properly, one side sees a preference that is still theirs to hold, the other a decision society produced and called a choice. Underneath sits the exchange rate: any law will at some point help someone who would have wanted to live, and any ban will at some point leave someone to a death they found unbearable. Which error to prefer is a judgment."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Oregon’s annual Death with Dignity reports",
+    "description": "Twenty-eight years of official state data on the oldest assisted dying law in the English-speaking world: prescriptions, deaths, diagnoses, stated concerns, complications and compliance, one report a year.",
+    "url": "https://www.oregon.gov/oha/ph/providerpartnerresources/evaluationresearch/deathwithdignityact/pages/ar-index.aspx",
+    "for_position": null,
+    "id": "oregon-s-annual-death-with-dignity"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Where assisted dying is legal, country by country",
+    "description": "A footnoted, continually updated table of what is permitted where, and the fastest way to see how differently the terminal-illness and unbearable-suffering models are built.",
+    "url": "https://en.wikipedia.org/wiki/Legality_of_euthanasia",
+    "for_position": null,
+    "id": "where-assisted-dying-is-legal-country"
+   },
+   {
+    "kind": "policy",
+    "title": "Dignity in Dying — take action",
+    "description": "The main UK campaign for a law covering terminally ill adults, with tools to write to an MP, share a story, join a local group and follow what happens next at Westminster.",
+    "url": "https://www.dignityindying.org.uk/take-action/",
+    "for_position": "Legalize assisted dying for terminally ill adults",
+    "id": "dignity-in-dying-take-action"
+   },
+   {
+    "kind": "policy",
+    "title": "Care Not Killing — contact your MP",
+    "description": "The umbrella campaign against legalization in the UK, which argues for better palliative care instead, with briefing material and a tool for writing to a representative.",
+    "url": "https://carenotkilling.org.uk/articles/contact-your-mp/",
+    "for_position": "Keep the prohibition and fund end-of-life care",
+    "id": "care-not-killing-contact-your-mp"
+   },
+   {
+    "kind": "policy",
+    "title": "Not Dead Yet — action campaigns",
+    "description": "The US disability rights group’s current campaigns against assisted suicide bills, including model testimony, court briefs and its argument that these laws single out disability.",
+    "url": "https://notdeadyet.org/action-campaigns/",
+    "for_position": "Reject assisted dying as disability discrimination",
+    "id": "not-dead-yet-action-campaigns"
+   },
+   {
+    "kind": "policy",
+    "title": "Dying With Dignity Canada — advocacy",
+    "description": "The Canadian campaign for broader access, including the case for allowing an assisted death where mental illness is the sole underlying condition, and for advance requests.",
+    "url": "https://www.dyingwithdignity.ca/advocacy/allow-maid-for-mental-disorders/",
+    "for_position": "Extend assisted dying to unbearable suffering, not only terminal illness",
+    "id": "dying-with-dignity-canada-advocacy"
+   },
+   {
+    "kind": "learn_more",
+    "title": "DIGNITAS, Switzerland",
+    "description": "The Swiss non-profit that has worked under the penal code since 1998, setting out a model with no eligibility list, no state program and no medical gatekeeper.",
+    "url": "https://www.dignitas.ch/index.php?option=com_content&view=article&id=4&Itemid=44&lang=en",
+    "for_position": "Decriminalize assistance without making it a medical service",
+    "id": "dignitas-switzerland"
+   },
+   {
+    "kind": "local",
+    "title": "Make an advance care plan",
+    "description": "A practical guide from the US National Institute on Aging to recording what treatment you would and would not want if you could not speak for yourself — legal everywhere, and most people have not done it.",
+    "url": "https://www.nia.nih.gov/health/advance-care-planning",
+    "for_position": null,
+    "id": "make-an-advance-care-plan"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Volunteer with Marie Curie",
+    "description": "Hospice and community end-of-life care in the UK leans on volunteers for companionship sitting, retail and helper roles; in most countries the equivalent is a local hospice.",
+    "url": "https://www.mariecurie.org.uk/get-involved/volunteer",
+    "for_position": null,
+    "id": "volunteer-with-marie-curie"
+   },
+   {
+    "kind": "donate",
+    "title": "Compassion & Choices",
+    "description": "The largest US organization working for medical aid in dying laws, and for access under the laws that already exist, funded by individual donations.",
+    "url": "https://compassionandchoices.org/take-action",
+    "for_position": "Legalize assisted dying for terminally ill adults",
+    "id": "compassion-choices"
+   }
+  ]
+ }
 }
