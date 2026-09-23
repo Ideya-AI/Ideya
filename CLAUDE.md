@@ -63,5 +63,19 @@ Positions, Crux, Actions, each opening at a glance and expanding in place.
 
 ## The authoring pipeline
 
-**Nothing authors a topic right now.** Being rebuilt from
-`research/pipeline/BRIEF.md`; v1 and v2 are gone and neither is a baseline.
+Skill based, one Claude Code session per topic, launched with Opus. `/author-topic
+<slug>` runs five stages, each a fresh subagent defined in `.claude/agents/`, each
+also runnable alone as its own skill:
+
+| stage | skill | reads → writes |
+|---|---|---|
+| 1 | `/research-topic` | topic index → `research.md`; sets `in_progress` first |
+| 2 | `/edit-topic` | `research.md` → `content` in `topic.json`; checks, loads |
+| 3 | `/create-topic-icons` | topic → `icon.md`, `static/img/topics/<slug>.png`, `icon` |
+| 4 | `/create-topic-views` | loaded topic → `renders/`, share cards, poster |
+| 5 | `/audit-topic` | renders + text → `audit.md`; `mark_ready` on pass |
+
+State is the files in the topic directory; a stopped run resumes with the same
+command. Tools: `manage.py check_topic_text`, `generate_icon`, `token_report`, plus
+the existing loader, `check_links` and `render_*`. `.claude/hooks/usage-guard.py`
+pauses an active run at 80% of the five-hour window or 90% of the weekly one.
