@@ -1,16 +1,7 @@
 # Audit: AI Alignment
-2026-09-23 — **ready**
+2026-09-23, verdict: ready
 
-The page tells one story and keeps to it: alignment methods exist, several of them work
-measurably, and the argument is over whether anyone can confirm from the outside that they
-worked. Every section feeds that thread. Basics is unusually disciplined — sixteen stats, each
-with the caveat its own authors gave it, and eight of them are results the labs published
-against their own interest. The six camps are named by what they want rather than by posture,
-they run 220–308 words apiece, each one is allowed to answer the objection made against it, and
-each one has an action pointing at it. The crux follows from the questions above it and the
-share cards carry it faithfully. Two mechanical checks pass clean: `check_topic_text` reports
-0 errors, `check_links` 25 OK and 1 redirect. Renders (02:34–02:35) are newer than `topic.json`
-(02:31) and current. Nothing on the page would mislead a reader.
+The page tells one story. Basics runs from what current methods achieve (covert actions cut by deliberative alignment) through how they are failing or losing their instruments (monitorability, faithfulness, agentic tampering, alignment faking, evaluation awareness) to how the field is resourced. The seven questions (generalization, scheming, chain-of-thought legibility, values against containment, whose values, automated research, helpfulness) each carry two readings of similar length. The six camps each want something distinct and are named by what they want. Detail lengths run 220 to 308 words, and every camp gets a "we are told" rebuttal. The crux (can anyone check from the outside what a system is disposed to do) grows out of the questions, and the halt camp's resumption criterion and the containment camp's premise both point at it. The why-now event, OpenAI's September 16, 2026 misalignment disclosures, belongs here. Both mechanical checks pass: 0 text errors, 27 of 27 links ok. The renders are newer than topic.json (04:19 to 04:21 against 04:17). The live page at 1440 matches them, and its Go deeper buttons toggle to "Show less" as they should. The three issues from the previous audit are resolved. The sabotage scenario now says it covered twelve of fourteen models, and the automated-research lean labels now answer the question asked. The repeated rules-against-reasons argument remains, and it is now a note. Nothing left on the page would mislead a reader. What remains is for the human's judgment.
 
 ## Issues for editorial
 none
@@ -22,67 +13,16 @@ none
 none
 
 ## Notes for the human
-
-- **Template defect, Actions tile, 1440 and 390.** In an action tile that carries a position
-  label, the "Learn more" kicker wraps to two lines ("Learn / more") while unlabeled tiles keep
-  it on one — the label text crowds the row. Visible on Anthropic Alignment Science blog and
-  Transformer Circuits Thread at 1440, and on those two plus Redwood Research at 390. `views.md`
-  logged it for desktop and marked mobile pass; it is present at both widths. Recurs on every
-  topic whose action links to a position. A `white-space: nowrap` on the kicker, or moving the
-  position label to its own row, fixes it. The pipeline does not edit templates.
-
-- **Position 1 re-spends two Basics tiles.** "Align models through empirical training and
-  evaluation" opens by citing 13.0 → 0.4 percent, 86 → 4.4 percent, 3,000 hours of red teaming
-  and ~1 percent extra compute — all four already in stats 1 and 7 with the same wording. A
-  reader who expanded Basics meets them twice in a row. Position 6 ("Halt frontier scaling")
-  recaps four stats too but does it in prose without a single number, which reads as a camp
-  marshaling evidence rather than a reprint; position 1 could do the same. Symmetric across both
-  wings, so it is not an unevenness problem, only a minimalism one.
-
-- **Position 1 splices two versions of one result.** The stat tile is careful: 3,000 hours and
-  4.4 percent belong to the first classifier, the ~1 percent overhead to the January 2026
-  successor, and that successor's 1,700 further hours turned up one high-risk vulnerability. The
-  steelman runs the three facts together as properties of one system. It is the camp's voice and
-  the honest version sits directly above it in Basics, so no reader is misled, but it is the one
-  place where a steelman leans on the tile it came from.
-
-- **"The number went the wrong way" (stat 2, GPT-6 Astra).** The tile's headline number is
-  57 percent *fewer* misalignment flags; the detail's "the number went the wrong way" means the
-  monitorability score, and the colon that follows says so. One beat of ambiguity at the tile
-  where the reader is most likely to skim.
-
-- **Crux subtitle asserts something one camp on the page denies.** "Nearly every dispute in this
-  field resolves into that one question" — but "Treat alignment as ordinary engineering
-  reliability" argues that the inner-goals framing is an import from thought experiments and not
-  the relevant question at all. The lead question itself is broad enough to hold them (it says
-  "disposed to do," and the empirical pane lists hostile testing and ordinary-use monitoring
-  alongside internals), and the values pane gives that camp its side. It is the one sentence
-  where the page's own voice picks a frame. Worth a second look, not a defect.
-
-- **Glance layer of Basics tilts toward failure.** Across all sixteen the split is roughly six
-  results that work, eight that concern, two neutral — balanced. But the seven shown before
-  Go deeper run two positive, four negative, one mixed. The negative findings genuinely are the
-  news of the last two years and position 1 concedes them by name, so this is defensible; it is
-  the tilt a reader meets if they never expand.
-
-- **The foundational stat sits fourteenth.** "Human feedback against raw model size" is the tile
-  that explains what alignment training *is* — and it is behind Go deeper, after thirteen
-  frontier results that assume the reader knows what covert actions, episodes, chain-of-thought
-  and behavioral audits are. Most of the notes are self-explaining, so a newcomer can follow, but
-  the order gives them the frontier before the foothold.
-
-- **Missing camp, judgment call.** The "alignment discourse is itself the problem — it serves the
-  labs and distracts from present-day harm and power concentration" position has no tile of its
-  own. The declared scope ("Methods, not policy") excludes it, and position 4's closing sentence
-  carries its sharpest point (safety theater, needless refusals, concentration in a few firms).
-  Flagging only because a reader who follows the field will look for it.
-
-- **ControlAI action redirects.** `https://controlai.com/` → `https://controlai.org/`. Resolves;
-  worth updating the URL when convenient.
-
-- **Portrait share card** has a tall empty band between "Explore the full debate" and the dark
-  block. The og and square cards are tight. Cosmetic.
-
-- **Source-label oddity, stat 3.** "Anthropic, Reasoning models don't always say what they think,
-  3 April 2025 (arXiv:2505.05410)" pairs an April date with a May arXiv identifier. The URL is
-  the blog post and resolves; the arXiv record would settle whether both belong.
+- Repeated argument (carried from the last audit). The argument that reasons generalize and rules do not still appears in four places: the covert-actions detail ("a written rule can change conduct in situations its authors did not anticipate"), the 84-pages detail, the optimistic paragraph of the first question, and the first position. A reader meets it four times.
+- Other points the reader meets repeatedly. Evaluation awareness appears in the covert-actions note, its own stat, question two, positions one and six, and the crux subtitle. Astra's lost monitorability appears in its stat, question three, and positions one and six. Positions citing the evidence is expected, but the page leans hard on the same handful of results.
+- chain-of-thought-faithfulness detail. In the page's voice it calls faithfulness "the load-bearing assumption under every attempt to supervise a model by reading what it writes." Question three's durability side argues that a monitor needs only the incriminating step, and that hard tasks force it into the scratchpad. The stat does not mention that reply, although the cost-to-strip stat gives both readings of its number. The 25 to 39 percent figure therefore reads as weighing against durability.
+- Stat 2 against question three. The Astra detail calls reading the scratchpad "the cheapest way anyone has found" to catch misbehavior. Question three's why calls it "the most effective misbehavior detector anyone has." These are different claims, one of them strong, and both are in the page's voice.
+- cost-to-strip-safety-training-from label. The label says "open weights", but one of the note's three examples is GPT-3.5 Turbo stripped through a closed fine-tuning API. A reader could take GPT-3.5 for an open-weight model. The source field names two works (Qi et al.; Volkov) but links only one.
+- Scope. The scope line excludes "regulation and licensing". Yet the sixth camp calls for halting frontier scaling, and its action (ControlAI) lobbies for binding limits on training runs. The camp's claim is about the state of alignment, so including it is defensible, but a reader may notice the tension.
+- Sourcing concentration. Eight of the sixteen stats come from Anthropic, including the agentic-tampering test in which Anthropic's own models score best. The page states that caveat, and most of the Anthropic stats report failures. This is not a neutrality defect, but the evidence base is narrower than the camp list.
+- Proponent overlap. Google DeepMind is listed under both the first and second positions, and Anthropic appears in both (as Anthropic, Anthropic Interpretability and Dario Amodei). The camps differ in what they want, but the overlap may make a reader wonder whether they are one camp.
+- Glance order. Four of six camps show before Go deeper, and so do the actions for camps one to three. The reliability, guarantees and halt camps' actions sit behind Go deeper, and the share cards list only the first four camps. That follows file order by design. The consequence is that every shared card omits the guarantees and halt camps.
+- Crux values box. It ends "Underneath sits who decides." That is too terse to land. A reader cannot tell who the candidates are.
+- Template/CSS: ranked charts do not render the unit. The control chart shows bare 92 and 79 where the unit is "% safe", and the covert-actions chart shows 13.0 and 0.4 without "%". At 390 the ranked-chart bar track is about 45px wide, so 13.0 against 8.7, or 85 against 95, is hard to read from the bars.
+- Template: the expanded-section renders still show "Go deeper" and "See how it resolves" at the section foot. The live page toggles correctly to "Show less", so this is a render-capture artifact, not a page defect.
+- Desktop 1440 expanded: the last Basics row holds two tiles and leaves the third column empty, because 16 stats do not divide by three. It is cosmetic.

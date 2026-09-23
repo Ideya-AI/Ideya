@@ -1,80 +1,30 @@
 # Audit: Assisted Dying
-2026-09-23 — **ready**
+Date: 2026-09-23. Verdict: not ready.
 
-The page tells one story and keeps its hands off the scale. It opens on the two things
-actually in dispute (where the eligibility line goes, and whether the request is the
-person's own), spends Basics on the jurisdictions that supply both sides with their
-evidence, annotates its own charts where they are not comparable, and lands on a crux
-that the questions and positions above it genuinely feed. The five camps are named by
-what they want, run within fifty words of each other, and each is written by someone who
-believes it: the Swiss decriminalizers get a real argument rather than a footnote, and
-the disability camp is not reduced to the prohibition camp. Every question's two cases
-are within twenty words of each other and neither case is written as the obvious one.
-Where both sides read the same table — Oregon's stated concerns, Canada's palliative
-rows, the Dutch compliance rate — the page says so and gives each reading its best form.
-Checks pass with no errors and no dead or placeholder links. Nothing here would mislead
-or confuse a reader; the notes below are for a second look, not for a fix.
+The page tells one story. It starts from where the law now stands and what the numbers show, moves through seven questions that are really contested, and ends at a crux ("whose request is it?") that follows from the coercion, disability and palliative-care questions above it. The why-now event (the Commons vote, and France) belongs to this topic. The five camps are distinct, and each is named by what it wants. The stat details mostly give both readings of the same table, which is the page at its best. Both mechanical checks pass (0 errors; 28 links, 0 dead, 0 placeholder). The renders are newer than topic.json and match the live page at 1440. Three items would confuse or tilt a reader, and all three are cheap text fixes. The biggest judgment call is below, under notes: no camp or question takes up principled, sanctity-of-life opposition.
 
 ## Issues for editorial
-- none
+- palliative-care-before-an-assisted-death (note, glance layer): "2.5 percent needed it but did not receive it; for most of them, 91.2 percent, it had been available." The reader cannot tell who "them" is. Read literally, it means the 2.5 percent who needed care and did not get it, and that contradicts itself. It could also mean everyone who did not receive palliative care. Name the group the 91.2 percent describes, using the wording of the Health Canada report.
+- can-an-assessment-tell-a-settled (detail, "safeguards can tell"): "two independent clinicians assess every request in every jurisdiction". The Switzerland tile says nothing in Swiss law requires a doctor's authorization, and the Decriminalize position says no doctor acts as a gatekeeper. A reader who has seen both meets a contradiction. Limit the claim to jurisdictions with a medical eligibility scheme.
+- quebec-s-share-of-deaths-by (detail): "The profile is otherwise unremarkable" is the page itself ruling that the demographic profile gives no cause for concern. That is the very point the disability and coercion camps dispute. Replace it with a neutral lead-in, for example "The rest of the profile:", and let the figures stand on their own.
 
 ## Issues for icons
-- none
+none
 
 ## Needs research (stops the run)
-- none
+none
 
 ## Notes for the human
-- **Why now, the most visible dated fact on the page.** It says the Commons rejected the
-  Terminally Ill Adults (End of Life) Bill at second reading on 11 September 2026, 286 to
-  270. The page nowhere mentions that a bill of that name cleared the Commons at second
-  and third reading in the previous session, which readers who followed it in 2024-25 will
-  remember; if this is a reintroduced bill in a new session, both facts are true and only
-  the omission is odd. UK Parliament's bill page and Hansard for 11 September 2026 would
-  settle it. My knowledge ends before this event, so the page may simply be ahead of me.
-- **"Every Australian state and territory ... kept the terminal-illness frame"** (question
-  1, expanded). The ACT's Voluntary Assisted Dying Act 2024 is, as I recall it, the one
-  Australian law with no prognosis timeframe. The sentence survives if "terminal-illness
-  frame" means only a condition expected to cause death, but it sits awkwardly beside the
-  last stat's "requires a prognosis, usually six months ... the Australian states." The ACT
-  Health eligibility page would settle it.
-- **Three things a reader meets twice.** The advanced-multiple-sclerosis example carries
-  question 3's suffering-line case and then opens position 3's detail; "dying violently and
-  alone" plus stopping eating and drinking appears in question 2 and again in position 1;
-  the Truchon ruling is described in near-identical words in the Track 2 stat, question 1
-  and question 3. Some echo between a question's case and a camp's voice is structural, but
-  these three are the same sentence twice.
-- **One page-voice ruling.** Question 2's why opens "Coercion by a relative is rare,
-  criminal and usually visible." Everywhere else the page attributes contested empirical
-  claims ("supporters cite", "opponents read"); here it states one flatly, on the question
-  whose framing opponents care most about. The clause that follows hands them their
-  stronger case, so the paragraph as a whole is even.
-- **The Gallup tile mixes years in one chart.** 71 and 66 (the legality questions) sit in
-  the same "% of adults" frame as 49 (morality, 2026); the detail dates the morality series
-  and says the legality numbers are flat, but never says the top two bars are from an
-  earlier poll.
-- **Quebec against the opening chart.** The Quebec tile says 7.9 percent is "the highest
-  rate reported anywhere" while the first tile's top row is the Netherlands at 6.0 — and
-  that chart includes one sub-national jurisdiction, Oregon, but not Quebec. Reconcilable,
-  but a reader may bounce between the two.
-- **The one donate action supports one camp** (Compassion & Choices). The four policy
-  actions are split two and two, and the volunteer action is hospice work, so the imbalance
-  sits only in the Go-deeper layer.
-- **Two proponents are not proponents.** Position 5 lists the German Federal Constitutional
-  Court and position 4 the UN Committee on the Rights of Persons with Disabilities — bodies
-  that ruled or recommended rather than campaigned. It is even-handed across camps, but
-  "proponents" reads oddly for a court.
-- **No explicit sanctity-of-life camp.** Position 2 disclaims religious grounding ("not a
-  piece of religious inheritance"), and the faith-based opposition's policy ask is identical
-  to its own, so folding them is defensible on a page whose positions are policies. Flagging
-  it as a judgment call rather than a gap.
-- **Participation data, not a page defect.** On the live dev page, question 2's lean
-  "Safeguards can tell" renders as chosen (filled green); the stage-4 render of the same
-  section shows no lean. That is a lean recorded in this browser's session against the
-  shared database, from before this audit.
-- **Template, 1440:** when several narrow tiles are expanded at once, their detail prose
-  renders as very tall columns about twenty-five characters wide (see
-  renders/sections/desktop-1440-expanded/02-basics-4.png). Expanding one tile at a time on
-  the live page is far less acute.
-- **Template, share card:** the square card leaves a large empty band under "Explore the
-  full debate" before the dark half begins.
+- Missing ground, a judgment call and not a stop: all opposition on the page is secular, and the Keep-the-prohibition camp says outright that its view is "not a piece of religious inheritance". No camp or question sets out the principled objection that intentionally ending a life is wrong whatever the consent (the sanctity or inviolability of life), even though the Gallup detail names weekly churchgoers as the most opposed group. Nor does any question ask whether a right to die exists at all, although the topic's own scope opens with "the right to end one's own life". The design framing may be deliberate. If not, it needs research, not editing.
+- Facts to settle, not asserted: (a) The Switzerland detail says DIGNITAS is "the only provider that accepts non-residents". My memory is that Pegasos in Basel also accepts foreigners; Pegasos's own eligibility page would settle it. (b) The 300-million detail puts France in the unbearable-suffering model. My memory is that the French text requires a serious, incurable illness that threatens life and is in an advanced or terminal phase; the enacted text on Légifrance would settle it. (c) Q1 says "every Australian state and territory" kept the terminal frame, which implies every territory has a law; the Northern Territory's statute book would settle it. (d) The why-now describes a second-reading defeat in September 2026, but the page never says what happened to the 2024–25 bill it cites elsewhere. Hansard would settle it.
+- Q5, "pulls care up": it cites "the Westminster bill was paired with a palliative care commission" as evidence, but the why-now says that bill was defeated. A reader may ask what a defeated bill's pairing proves.
+- The Extend position says that without a prognosis rule, uptake runs "from a fraction of one percent of deaths to a few percent". Basics shows the Netherlands at 6.0 and Quebec at 7.9. It is the camp's own framing, but it sits uneasily beside the page's own chart.
+- Stat details that lean slightly. Concerns Oregon patients cited: opponents get one clause, and supporters get three rebuttals plus a closing Health Canada finding in the page's voice. Oregon prescriptions taken: "Supporters and critics read that unused third differently" never says how, although the Legalize position gives the supporters' reading.
+- The Switzerland detail says "nothing in its law requires a doctor's authorization" and then "a physician is needed only to prescribe". A reader may stumble over whether a doctor is required.
+- Evenness: the Legalize detail is the shortest of the five (216 words against 253–273) and the only one without a named authority or figure. In Q7 the consent-now case runs 135 words against 103, and its jurisdiction list ends with Quebec, a fact that favors the other side. In Q3 the prognosis case runs 114 words against 79. The Legalize camp has two actions (Dignity in Dying, Compassion & Choices); every other camp has one.
+- Arguments that appear twice, noted rather than blocking: Q3's suffering case and the Extend position; Q1's line-holds case and the third paragraph of Legalize; Q2's no-test case and the second paragraph of the disability position; Q4's breaks-the-role case and Keep the prohibition's trust argument.
+- Canada provides 5 of the 17 stats (four national, one Quebec). This is defensible, but a reader meets Canadian figures five times.
+- The two Canada ranked charts (palliative care, disability) sort by value, so "death not foreseeable" is the bottom row in one and the top row in the next. A reader scanning across them may misread which row is which.
+- The US public support chart mixes years: the legality rows are Gallup 2024, the morality row 2026. The glance note gives no years.
+- Template or CSS: on action cards with a long position name (Extend, Decriminalize), the chip wraps to two lines and pushes the title below the title of the card beside it. In the expanded renders the section toggles still read "Go deeper"; on the live page they correctly read "Show less", so this is a render-capture artifact only.
+- Link: the Dying With Dignity Canada action returns 403 to the checker (blocked, not dead).
