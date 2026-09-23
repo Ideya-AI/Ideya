@@ -16,7 +16,6 @@
     {% for p in positions %}
     <div class="pos"><span class="pd" style="background:{{ p.color_var }}"></span><span class="pnm">{{ p.name }}</span></div>
     {% endfor %}
-    {% if positions_more %}<div class="pos"><span class="pd pd-dim"></span><span class="pnm pnm-dim">+{{ positions_more }} more</span></div>{% endif %}
   </div>
   {% if crux %}<div class="hook"><i class="ph-duotone ph-target"></i><span class="ct"><b>The crux:</b> {{ crux.lead }}</span></div>{% endif %}
 </div>

@@ -54,10 +54,12 @@
      ("3.7 M homes" → "3.7Mhomes"); the unit needs normal tracking. */
   .tv small{font-size:22pt;font-weight:700;color:var(--ink-400);letter-spacing:0}
   .tv small.u-word{margin-left:.18em}
+  /* A long unit drops to its own line under the number instead of breaking mid-phrase. */
+  .tv{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:.12em}
   .vrow{margin-top:auto;padding-top:14px}
   .rank{display:flex;flex-direction:column;gap:9px}
-  .rrow{display:grid;grid-template-columns:0.9in 1fr 0.66in;align-items:center;gap:12px}
-  .rk{font-size:11pt;color:var(--ink-500)}
+  .rrow{display:grid;grid-template-columns:1.25in 1fr 0.6in;align-items:center;gap:10px}
+  .rk{font-size:10pt;line-height:1.25;color:var(--ink-500)}
   .rbar{height:11px;border-radius:9999px;background:var(--ink-100);overflow:hidden}
   .rbar i{display:block;height:100%;border-radius:9999px;background:var(--ink-300)}
   .rrow.on .rbar i{background:var(--green-500)} .rrow.on .rk{color:var(--ink-900);font-weight:700}
@@ -97,6 +99,9 @@
   .crux .ax .ah{display:flex;align-items:center;gap:9px;font-weight:800;font-size:13.5pt;margin-bottom:10px}
   .crux .ax.emp .ah{color:var(--axis-empirical-on-dark)}.crux .ax.val .ah{color:var(--axis-values-on-dark)}
   .crux .ax p{margin:0;font-size:12pt;line-height:1.5;color:#c8d0c2;font-weight:500} .crux .ax p b{color:#fff}
+  /* Long cruxes step down like the title does; the sheet is fixed, the web copy is not. */
+  .crux.c-sm .clead{font-size:36pt;max-width:36ch} .crux.c-sm .csub{font-size:13.5pt;max-width:90ch} .crux.c-sm .ax p{font-size:10.5pt;line-height:1.45} .crux.c-sm .csplit{margin-top:0.18in}
+  .crux.c-xs .clead{font-size:30pt;max-width:42ch} .crux.c-xs .csub{font-size:12pt;line-height:1.4;max-width:100ch} .crux.c-xs .ax p{font-size:9.5pt;line-height:1.4} .crux.c-xs .ax{padding:0.14in 0.18in} .crux.c-xs .csplit{margin-top:0.14in}
 
   /* ---- Go-deeper CTA (QR) ---- */
   .cta{display:flex;align-items:center;justify-content:space-between;gap:0.5in;border-top:1px solid var(--ink-100);padding-top:0.16in}
@@ -139,7 +144,7 @@
           <div class="tk">{{ stat.label }}</div>
           {% if stat.viz == "ranked" %}
           <div class="vrow" style="margin-top:2px"><div class="rank">
-            {% for row in stat.series %}<div class="rrow{% if row.highlight %} on{% endif %}"><span class="rk">{{ row.label }}</span><span class="rbar"><i style="width:{{ row.pct }}%"></i></span><span class="rv">{{ row.value }}</span></div>{% endfor %}
+            {% for row in stat.series|slice:":4" %}<div class="rrow{% if row.highlight %} on{% endif %}"><span class="rk">{{ row.label }}</span><span class="rbar"><i style="width:{{ row.pct }}%"></i></span><span class="rv">{{ row.value }}</span></div>{% endfor %}
           </div></div>
           <div class="tnote">{{ stat.note }}</div>
           {% else %}
@@ -179,7 +184,7 @@
     {% endwith %}{% endif %}
 
     {% if sec.crux.crux %}{% with c=sec.crux.crux %}
-    <div class="band crux">
+    <div class="band crux {{ c.poster_size }}">
       <div class="ck"><i class="ph-duotone ph-target"></i>Crux · the real disagreement</div>
       <div class="clead">{{ c.lead|lead_hl:c.lead_highlight }}</div>
       {% if c.subtitle %}<p class="csub">{{ c.subtitle }}</p>{% endif %}

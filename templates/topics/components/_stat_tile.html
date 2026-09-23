@@ -3,9 +3,8 @@ the enclosing .basics grid's rowGrid Alpine scope (expansion state lives on the
 grid, keyed by data-xid, so row partners open together — see rowGrid in ideya.js).
 Axis 2 (depth): glance = label + viz + lead note; clicking the tile expands it
 to reveal the deeper paragraph + source (no button/signifier). Axis 1 (breadth):
-`is_extra` tiles appear only when the section's Go-deeper is open; `fill_row`
-spans a trailing orphan across the row.{% endcomment %}
-<div class="tile{% if stat.wide %} wide{% endif %}{% if stat.is_extra %} tile-xtra{% endif %}{% if stat.fill_row %} tile-fill{% endif %}{% if stat.detail or stat.source_label %} tile-x{% endif %}" data-xid="{{ stat.id }}"
+`is_extra` tiles appear only when the section's Go-deeper is open.{% endcomment %}
+<div class="tile{% if stat.wide %} wide{% endif %}{% if stat.is_extra %} tile-xtra{% endif %}{% if stat.detail or stat.source_label %} tile-x{% endif %}" data-xid="{{ stat.id }}"
      {% if stat.detail or stat.source_label %}:class="{ 'tile-open': open[{{ stat.id }}] }" @click="toggle($el)"{% endif %}>
   {% if stat.detail or stat.source_label %}<button type="button" class="xtoggle" @click.stop="toggle($el.closest('.tile'))" :aria-expanded="!!open[{{ stat.id }}]" aria-label="Toggle details"><i class="ph-duotone ph-caret-down"></i></button>{% endif %}
   <div class="tk">{{ stat.label }}</div>

@@ -54,7 +54,7 @@ def image_prompt_from_brief(path: Path) -> str:
         start = next(
             i
             for i, l in enumerate(lines)
-            if l.lower().startswith("## generation prompt")
+            if l.lower().startswith(("## generation prompt", "## prompt"))
         )
     except StopIteration:
         return ""
@@ -68,6 +68,47 @@ def image_prompt_from_brief(path: Path) -> str:
         elif in_block:
             break
     return "\n".join(block).strip()
+
+
+def _num(text):
+    """First number in a display string ("~6,500", "8.9%", "about 4"), or None."""
+    m = re.search(r"-?\d+(?:\.\d+)?", str(text or "").replace(",", ""))
+    return float(m.group()) if m else None
+
+
+def derive_viz(s, viz, series):
+    """The percentages the templates draw from, computed from the values so a
+    file never authors them (SCHEMA.md, "Derived by code"). A value the file
+    does carry wins, so exported files round-trip unchanged.
+
+    ranked/sparkline: each row's pct is its share of the largest row.
+    radial/bar: fill_pct is the value itself when the unit is a percentage.
+    range: range_at is the value's position between range_min and range_max;
+    a span value ("26–36") is left to Stat.range_band at render time."""
+    if viz in ("ranked", "sparkline"):
+        nums = [_num(r.get("value")) for r in series]
+        top = max((n for n in nums if n is not None and n > 0), default=None)
+        if top:
+            for r, n in zip(series, nums):
+                if r.get("pct") in (None, "") and n is not None:
+                    r["pct"] = max(0, min(100, round(100 * n / top)))
+    fill = s.get("fill_pct")
+    if fill in (None, "") and viz in ("radial", "bar"):
+        unit = str(s.get("unit") or "")
+        n = _num(s.get("value"))
+        if n is not None and ("%" in unit or "percent" in unit.lower()):
+            fill = max(0, min(100, round(n)))
+        else:
+            fill = None
+    at = s.get("range_at") if viz == "range" else None
+    if at in (None, "") and viz == "range":
+        v, lo, hi = _num(s.get("value")), _num(s.get("range_min")), _num(s.get("range_max"))
+        span = re.search(r"\d\s*[–—-]\s*~?\d", str(s.get("value") or ""))
+        if None not in (v, lo, hi) and hi > lo and not span:
+            at = max(0, min(100, round(100 * (v - lo) / (hi - lo))))
+        else:
+            at = None
+    return fill, at
 
 
 def _index_of(path):
@@ -95,14 +136,20 @@ def wire_related(topic, doc, stderr=None):
     created. A target that does not exist yet is skipped (with a warning when
     `stderr` is given); `load_universe` runs a second pass once every topic
     exists, so forward references settle."""
-    want = {r for r in (doc.get("related") or []) if r != topic.slug}
+    wanted = [r for r in (doc.get("related") or []) if r != topic.slug]
+    want = set(wanted)
     have = {e.target.slug: e for e in topic.outgoing_edges.select_related("target")}
     edges = 0
-    for rel in want - set(have):
+    for i, rel in enumerate(wanted):
+        if rel in have:
+            if have[rel].order != i:  # file order is display order
+                have[rel].order = i
+                have[rel].save(update_fields=["order"])
+            continue
         tgt = Topic.objects.filter(slug=rel).first()
         if tgt:
-            TopicEdge.objects.get_or_create(
-                source=topic, target=tgt, kind=TopicEdge.RELATES_TO
+            TopicEdge.objects.update_or_create(
+                source=topic, target=tgt, kind=TopicEdge.RELATES_TO, defaults={"order": i}
             )
             edges += 1
         elif stderr is not None:
@@ -308,8 +355,14 @@ class Command(BaseCommand):
         # Identity before anything else: every item must have a frozen id, so
         # the rows below are updated in place rather than rebuilt under the
         # reader participation that points at them.
-        if d:
-            ensure_ids(d)
+        if d and ensure_ids(d):
+            # Ids are assigned once and then frozen, so they belong in the file,
+            # which is the source of truth. Written back only for the topic's
+            # own file; a clone loaded from elsewhere is not the truth.
+            src = Path(o["file"])
+            if src.resolve().parent.parent == topics_dir().resolve():
+                src.write_text(json.dumps(doc, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+                self.stdout.write(f"  ids assigned and written to {src}")
         self._validate(doc, Path(o["file"]), o["slug"])
         title = o["title"] or self._resolve_title(doc)
         cat, extra_cats = self._resolve_categories(doc)
@@ -351,7 +404,7 @@ class Command(BaseCommand):
         # already had (never blow away provenance on a reload), else what the
         # draft carries. The path fallback is what lets publishing stay a pure
         # switch: attaching this used to be a flag only the publish step passed.
-        image_prompt = d.get("primary_image_prompt", "")
+        image_prompt = doc.get("primary_image_prompt") or d.get("primary_image_prompt", "")
         brief_path = (
             Path(o["image_brief"])
             if o["image_brief"]
@@ -475,6 +528,7 @@ class Command(BaseCommand):
                         f"'{s.get('label', '')[:60]}' — fell back to bar"
                     )
                 )
+            fill_pct, range_at = derive_viz(s, viz, series)
             stat_keep.append(
                 self._upsert(
                     Stat,
@@ -491,8 +545,8 @@ class Command(BaseCommand):
                         series=series if viz in ("ranked", "sparkline") else [],
                         range_min=str(s.get("range_min") or "")[:40],
                         range_max=str(s.get("range_max") or "")[:40],
-                        range_at=s.get("range_at") if viz == "range" else None,
-                        fill_pct=s.get("fill_pct"),
+                        range_at=range_at,
+                        fill_pct=fill_pct,
                         note=self._cap(
                             s.get("note", ""), 400, "note", s.get("label", "")
                         ),

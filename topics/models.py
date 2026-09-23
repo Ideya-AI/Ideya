@@ -406,9 +406,9 @@ class Section(models.Model):
     @property
     def basics_tiles(self):
         """Importance-ordered Stats annotated for the two-axis Basics grid:
-        `is_extra` (revealed only when Go-deeper is open) and `fill_row` (a
-        trailing orphan spans the full row so rows stay clean). Fixed fold:
-        the first BASICS_ROWS_SHOWN packed rows show; the rest is Go deeper."""
+        `is_extra` (revealed only when Go-deeper is open). Fixed fold: the
+        first BASICS_ROWS_SHOWN packed rows show; the rest is Go deeper. A
+        trailing tile keeps its own width; it does not stretch across the row."""
         stats = list(self.stats.all())
         # Pack into desktop rows of 3 cells. A cell count that is a multiple of
         # 3 does not guarantee the rows pack (1,1,W,W is six cells but leaves
@@ -431,9 +431,6 @@ class Section(models.Model):
         shown = sum(len(row) for row in rows[: self.BASICS_ROWS_SHOWN])
         for i, s in enumerate(stats):
             s.is_extra = i >= shown
-            s.fill_row = False
-        if rows and sum(2 if s.wide else 1 for s in rows[-1]) < 3:
-            rows[-1][-1].fill_row = True
         return stats
 
     @property
@@ -773,6 +770,14 @@ class Crux(models.Model):
     def __str__(self) -> str:
         return f"Crux — {self.section.topic}"
 
+    @property
+    def poster_size(self) -> str:
+        """Size bucket for the poster's crux band, by total length, the way the
+        poster title steps down by length. The sheet is fixed; the web crux is
+        not held to it."""
+        n = len(self.lead) + len(self.subtitle) + len(self.empirical) + len(self.values)
+        return "c-xs" if n > 1050 else "c-sm" if n > 750 else ""
+
 
 class Action(models.Model):
     LEARN_MORE = "learn_more"
@@ -854,9 +859,14 @@ class TopicEdge(models.Model):
     )
     kind = models.CharField(max_length=20, choices=EDGE_TYPES, default=RELATES_TO)
     note = models.CharField(max_length=300, blank=True)
+    order = models.PositiveSmallIntegerField(
+        default=0,
+        help_text="Position in the topic file's `related` list; order is weight.",
+    )
 
     class Meta:
         unique_together = [("source", "target", "kind")]
+        ordering = ["order", "id"]
 
     def __str__(self) -> str:
         return f"{self.source} -[{self.kind}]-> {self.target}"

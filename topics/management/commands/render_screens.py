@@ -54,7 +54,13 @@ def _capture_sections(chrome, url, width, out_dir):
     import requests
     import websockets
 
-    port = 9500 + int(time.time()) % 400
+    # A free port from the OS, not a clock-derived one: two renders started in
+    # the same second collided and one captured the other's topic (2026-09-23).
+    import socket
+
+    with socket.socket() as sock:
+        sock.bind(("127.0.0.1", 0))
+        port = sock.getsockname()[1]
     td = tempfile.mkdtemp()
     proc = subprocess.Popen(
         [chrome, "--headless=new", "--disable-gpu", "--hide-scrollbars",

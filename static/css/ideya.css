@@ -263,8 +263,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .sec.is-open .basics .tile-xtra { display: flex; }
 /* expanded sections: cards size to their own content — equal-height stretch
    left ~250px of dead white inside short cards next to long ones */
-.sec.is-open .basics, .sec.is-open .pos-grid { align-items: start; }
-.tile.tile-fill { grid-column: 1 / -1; }
+.sec.is-open .pos-grid { align-items: start; } /* Basics keeps stretch: tiles in a row match height, open or closed */
 .vrow { margin-top: 12px; }
 /* ranked bars */
 .rank { display: flex; flex-direction: column; gap: 9px; }
