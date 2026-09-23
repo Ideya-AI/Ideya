@@ -1,8 +1,8 @@
 {
  "slug": "housing-affordability-crisis",
  "title": "Housing Affordability",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-09-23T22:00:26+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "What drives housing costs: supply, demand, or financialization.",
@@ -16,5 +16,738 @@
   "how-to-tax-extreme-wealth",
   "water-commodity-vs-right",
   "universal-basic-income"
- ]
+ ],
+ "icon": "house",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: a large house key standing upright as the dominant focal mass, its round bow at the top; the bow of the key frames a small pitched-roof house drawn inside it; a medium apartment block with a simple window grid at the right, overlapped by the key shaft; a small tower crane far behind on the rise; one road curving unbroken across the whole frame from the lower left, up past the base of the key and behind the apartment block as the connective element; the ground is the gentle curve of a low rise.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #b48f2c, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: dollar signs, currency symbols, price tags, for-sale signs, sold signs, banknotes, piggy banks, hands, arrows going up or down, graphs, padlocks, chains, cages, tents, homeless figures, eviction notices, a row of identical small houses.",
+ "content": {
+  "overview": {
+   "summary": "Why homes cost so much more than people earn: too few built, too much money chasing them, or housing bought as an investment.",
+   "scope_covered": "Home prices and rents against incomes in rich countries, the US in most depth: zoning, credit, investors, immigration, rent rules and social housing.",
+   "scope_excluded": "Homelessness services and policing, the design of mortgage finance, insurance and climate risk, commercial real estate, and informal settlements in poorer countries.",
+   "why_now": "On July 11, 2026 the 21st Century ROAD to Housing Act became US law without President Trump’s signature, withheld to protest Senate inaction on an elections bill. Passed by wide margins, it pairs dozens of measures to speed building with a bar on further buying by investors holding 350 or more single-family homes.",
+   "why_now_source_label": "CBS News",
+   "why_now_source_url": "https://www.cbsnews.com/news/housing-bill-becomes-law-trump-sign/"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "US median home price as a multiple of median household income",
+     "viz": "ranked",
+     "wide": true,
+     "value": "4.7",
+     "unit": "× income",
+     "series": [
+      {
+       "label": "1990s average",
+       "value": "3.2",
+       "highlight": false
+      },
+      {
+       "label": "2019",
+       "value": "4.1",
+       "highlight": false
+      },
+      {
+       "label": "2022 peak",
+       "value": "5.0",
+       "highlight": false
+      },
+      {
+       "label": "2025",
+       "value": "4.7",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2025 the median US existing single-family home sold for 4.7 times the median household income, down from a record 5.0 in 2022 and well above the 3.2 average of the 1990s.",
+     "detail": "The Joint Center calls the 1990s “the last relatively stable period” and uses that decade as its benchmark. Prices rose 54 percent nationwide between 2020 and early 2026. The ratio has eased only slightly since its peak because price growth slowed to near zero while incomes kept rising, and 41 of the 100 largest metros saw outright price declines in early 2026. The ratio understates the monthly squeeze because it ignores interest rates: the 30-year mortgage rate averaged 7.04 percent in January 2025 and 6.23 percent by the fourth quarter, against under 3 percent in 2021, so the same multiple costs far more a month than it did at the start of the decade. It is also a national median and hides wide differences between metro areas.",
+     "source_label": "Harvard Joint Center for Housing Studies, The State of the Nation’s Housing 2026",
+     "source_url": "https://www.jchs.harvard.edu/sites/default/files/reports/files/Harvard_JCHS_The_State_of_the_Nations_Housing_2026.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-09-23",
+     "id": "us-median-home-price-as-a"
+    },
+    {
+     "label": "US renter households paying more than 30 percent of income for housing",
+     "viz": "radial",
+     "wide": false,
+     "value": "49",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "A record 22.7 million US renter households, 49 percent of all renters, spent more than 30 percent of their income on housing in 2024, including 12.1 million who spent more than half.",
+     "detail": "“Cost burdened” is the standard US measure: housing costs above 30 percent of pre-tax income, and “severely cost burdened” above 50 percent. The count has set a new record in each of the last several releases and has grown by 2.3 million since 2019, even though market rents stopped rising in many metros in 2024 and 2025, because the data lag and because burdens are concentrated among lower-income renters whose incomes have not kept up. Owners are not exempt: 20.7 million owner households, 24 percent, were also cost burdened, and property taxes rose 31 percent and average insurance premiums 72 percent between 2019 and 2025. The 30 percent line is a convention: a high-income household spending 35 percent is not in the same position as a low-income one, which is why the severe-burden count is often the more telling.",
+     "source_label": "Harvard Joint Center for Housing Studies, State of the Nation’s Housing 2026 press release",
+     "source_url": "https://www.jchs.harvard.edu/sites/default/files/interactive-item/files/Harvard_JCHS_State_of_the_Nations_Housing_2026_Press_Release.pdf",
+     "source_published": "2024",
+     "source_accessed": "2026-09-23",
+     "id": "us-renter-households-paying-more-than"
+    },
+    {
+     "label": "Estimates of the US housing shortage",
+     "viz": "ranked",
+     "wide": true,
+     "value": "3.7",
+     "unit": "million",
+     "series": [
+      {
+       "label": "Realtors (NAR)",
+       "value": "5.5",
+       "highlight": false
+      },
+      {
+       "label": "Brookings",
+       "value": "4.9",
+       "highlight": false
+      },
+      {
+       "label": "Zillow",
+       "value": "4.7",
+       "highlight": false
+      },
+      {
+       "label": "Up for Growth",
+       "value": "3.85",
+       "highlight": false
+      },
+      {
+       "label": "Freddie Mac",
+       "value": "3.7",
+       "highlight": true
+      },
+      {
+       "label": "Home builders (NAHB)",
+       "value": "1.2",
+       "highlight": false
+      },
+      {
+       "label": "Harvard vacancy gap",
+       "value": "0.6",
+       "highlight": false
+      },
+      {
+       "label": "McClure & Schwartz",
+       "value": "0",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Commonly cited estimates of the US housing shortfall run from about 3.7 million to 5.5 million homes; other measures put it near 1 million or below, or deny there is a national shortage at all.",
+     "detail": "Every shortage number compares the homes that exist with a target, and the target is a choice. Freddie Mac, Brookings and Up for Growth count existing households plus “missing” households that would have formed if housing were cheaper, then add a target vacancy rate; Zillow counts families doubled up with unrelated people; the Realtors compare completions since 2001 with the 1968 to 2000 average. The estimates date from 2020 to 2026. The Congressional Research Service summarizes them as “between approximately 4 million and 5 million” and adds that “there is not universal agreement that the United States has a housing shortage at all.” The Harvard Joint Center, measuring only how far vacancy rates sit below their 1990s averages, finds the gap shrank from 1.5 million units in 2022 as the apartment boom delivered, while cautioning that shortages are local. Kirk McClure and Alex Schwartz argue that from 2000 to 2020 the country added more homes than households, nationally and in most metros, so the problem is a mismatch between incomes and prices rather than a shortage; their paper drew a forum of rebuttals.",
+     "source_label": "Congressional Research Service, Estimates of a “Housing Shortage” (IN12628), with NAHB and Harvard JCHS",
+     "source_url": "https://www.congress.gov/crs_external_products/IN/PDF/IN12628/IN12628.1.pdf",
+     "source_published": "2020 to 2026",
+     "source_accessed": "2026-09-23",
+     "id": "estimates-of-the-us-housing-shortage"
+    },
+    {
+     "label": "Average 30-year fixed US mortgage rate",
+     "viz": "range",
+     "wide": false,
+     "value": "6.95",
+     "unit": "%",
+     "series": [],
+     "range_min": "2.65 in 2021",
+     "range_max": "7.79 in 2023",
+     "note": "The average 30-year fixed mortgage rate was 6.95 percent in the week of 17 September 2026, between the record low of 2.65 percent in January 2021 and the October 2023 peak of 7.79.",
+     "detail": "Mortgage rates are the strongest short-run driver of what buying a home costs each month, and the 2021 to 2023 jump was the largest in four decades. At a fixed price, moving from 3 percent to 7 percent raises the monthly principal-and-interest payment by roughly 60 percent. A year earlier the rate stood at 6.26 percent. High rates cut both ways for prices: they reduce what buyers can borrow, which restrains prices, but they also “lock in” owners who hold older low-rate mortgages, which keeps homes off the market. The Joint Center reports residential mobility at a record-low 11.2 percent in 2024 and existing home sales stuck near a three-decade low of 4.1 million. Rates are set largely by the bond market and the central bank rather than by housing policy. The weekly figure moves; check the source for the current value.",
+     "source_label": "Freddie Mac Primary Mortgage Market Survey",
+     "source_url": "https://www.freddiemac.com/pmms",
+     "source_published": "2021 to 2026, weekly",
+     "source_accessed": "2026-09-23",
+     "id": "average-30-year-fixed-us-mortgage"
+    },
+    {
+     "label": "Share of US single-family rental homes owned by large investors",
+     "viz": "ranked",
+     "wide": true,
+     "value": "3",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Metro Atlanta, GAO",
+       "value": "25",
+       "highlight": false
+      },
+      {
+       "label": "350+, John Burns 2026",
+       "value": "5",
+       "highlight": false
+      },
+      {
+       "label": "1,000+, Urban/GAO 2022",
+       "value": "3",
+       "highlight": true
+      },
+      {
+       "label": "100+, Census 2024",
+       "value": "<2",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Nationally, large investors own roughly 2 to 5 percent of US single-family rental homes, depending on the definition, but about a quarter of single-family rentals in metro Atlanta.",
+     "detail": "Single-family homes are mostly owner-occupied: about 84 percent of the 91.2 million occupied one-unit homes in 2024. Of the 15.7 million one-unit rentals, three-quarters belong to owners with ten or fewer other units. Large investors, almost absent before 2011, are a small share nationally and a much larger one in the Sun Belt metros and neighborhoods where they concentrated their buying. A March 2026 GAO study of six metros found institutional investors held 4 to 22 percent of single-family rentals but 3 percent or less of all single-family homes. The dispute is about local concentration rather than national share: whether a buyer holding that large a share of a metro’s rental houses can set rents, and whether its purchases displaced first-time buyers. The three national bars do not nest because they come from different sources, years and methods: the Census survey of landlords may not see an owner’s full portfolio, and nearly 10 percent of its units had owners who did not report their other holdings.",
+     "source_label": "Congressional Research Service, Institutional Investors and Single-Family Housing: In Brief (R49015)",
+     "source_url": "https://www.congress.gov/crs_external_products/R/PDF/R49015/R49015.1.pdf",
+     "source_published": "2022 to 2026",
+     "source_accessed": "2026-09-23",
+     "id": "share-of-us-single-family-rental"
+    },
+    {
+     "label": "Fall in US rentals under $1,000 a month, 2014 to 2024",
+     "viz": "bar",
+     "wide": false,
+     "value": "30+",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Rentals under $1,000 a month, adjusted for inflation, fell by more than 30 percent from 2014 to 2024, a loss of more than 7 million units, while those at $1,000 or more rose 46 percent.",
+     "detail": "Both sides of the filtering argument reach for this number. Supply advocates read it as what a shortage does: when there are too few homes, older units that would once have become cheaper as they aged are bid up by higher-income renters instead, and the bottom of the market disappears. Critics of market-rate building read it the other way: a decade that included a large apartment boom still saw the low-rent stock shrink, which to them means new supply does not trickle down fast enough, or at all, to the people who need it most. The pressure at the bottom may grow: rent restrictions on more than half a million Low-Income Housing Tax Credit units are due to expire in coming years.",
+     "source_label": "Harvard Joint Center for Housing Studies, The State of the Nation’s Housing 2026",
+     "source_url": "https://www.jchs.harvard.edu/sites/default/files/reports/files/Harvard_JCHS_The_State_of_the_Nations_Housing_2026.pdf",
+     "source_published": "2014 to 2024",
+     "source_accessed": "2026-09-23",
+     "id": "fall-in-us-rentals-under-1"
+    },
+    {
+     "label": "Share of US single-family home purchases made by investors",
+     "viz": "ranked",
+     "wide": true,
+     "value": "19",
+     "unit": "%",
+     "series": [
+      {
+       "label": "2022 peak, Redfin",
+       "value": "20+",
+       "highlight": false
+      },
+      {
+       "label": "Early 2026, Redfin",
+       "value": "19",
+       "highlight": true
+      },
+      {
+       "label": "Dec 2025, Cotality",
+       "value": "30",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Investors bought about 19 percent of single-family homes sold in 39 large metros in early 2026, against 6 to 8 percent in the early 2000s; broader counts run higher. Most are small landlords.",
+     "detail": "Investor purchase shares run much higher than ownership shares, which is why they drive so much of the public argument, but every source counts differently. Cotality counts any buyer owning three or more properties; of its December 2025 total, small investors with under 10 properties made 14 percentage points and the largest “mega” investors with 1,000 or more only 3. Realtor.com found that of investor purchases from 2015 to 2025, 53 percent were by small investors and 12 percent by institutional investors with 350 or more purchases. Redfin flags company names on deeds, which can sweep in family trusts used for personal homes. The pattern across all of them is the same: investor buying has risen, small landlords dominate it, and the largest firms slowed their purchases after 2022 when higher rates made the math worse.",
+     "source_label": "Congressional Research Service, Institutional Investors and Single-Family Housing (R49015), citing Redfin and Cotality",
+     "source_url": "https://www.congress.gov/crs_external_products/R/PDF/R49015/R49015.1.pdf",
+     "source_published": "2025 to 2026",
+     "source_accessed": "2026-09-23",
+     "id": "share-of-us-single-family-home"
+    },
+    {
+     "label": "Affordable, available rentals per 100 extremely low-income US renter households",
+     "viz": "bar",
+     "wide": false,
+     "value": "35",
+     "unit": "per 100",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "For every 100 extremely low-income renter households in the US there were only 35 rental homes both affordable and available to them in 2024, a national shortfall of 7.2 million homes.",
+     "detail": "“Extremely low-income” means household income at or below the federal poverty line or 30 percent of the area median, whichever is higher; there were about 11 million such renter households in 2024. “Affordable and available” means the rent is no more than 30 percent of their income and the unit is not occupied by a higher-income household. Seventy-four percent of these renters spent more than half their income on housing. The shortfall ranges from about 7,000 homes in South Dakota to nearly a million in California. This is a different shortage from the aggregate estimates: it exists even in places with plenty of vacant homes, because rents that cover the cost of building and running a unit are above what the poorest households can pay. The Harvard Joint Center’s count is similar: 11.0 million such households competing for 3.8 million affordable and available units.",
+     "source_label": "National Low Income Housing Coalition, The Gap 2026",
+     "source_url": "https://nlihc.org/news/nlihc-releases-gap-2026-shortage-affordable-homes",
+     "source_published": "2024",
+     "source_accessed": "2026-09-23",
+     "id": "affordable-available-rentals-per-100-extremely"
+    },
+    {
+     "label": "Net international migration to the United States",
+     "viz": "ranked",
+     "wide": true,
+     "value": "1.3",
+     "unit": "million",
+     "series": [
+      {
+       "label": "2024",
+       "value": "2.7",
+       "highlight": false
+      },
+      {
+       "label": "2025",
+       "value": "1.3",
+       "highlight": true
+      },
+      {
+       "label": "2026 projection",
+       "value": "0.321",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Net immigration to the US fell by more than half, from 2.7 million in 2024 to 1.3 million in 2025, and the Census Bureau projects it will fall to about 321,000 in 2026.",
+     "detail": "This is the largest and fastest change in US population growth in decades, and it is turning the argument about immigration and housing demand into something close to a natural experiment. The Joint Center reports household growth slowing from an average of 2.0 million a year in 2021 to 1.1 million in 2025, and national rents falling for the first time since early 2021, down 0.5 percent year over year in early 2026, though it attributes the rent decline mainly to the wave of new apartments. Canada is running the same experiment on purpose: its October 2024 immigration plan projected a small population decline in 2025 and 2026. The effect cuts both ways for construction, because immigrants are a large share of the building workforce, and the Joint Center lists “restrictive immigration policies” among the pressures on construction labor.",
+     "source_label": "Harvard Joint Center for Housing Studies, State of the Nation’s Housing 2026, citing the Census Bureau",
+     "source_url": "https://www.jchs.harvard.edu/sites/default/files/reports/files/Harvard_JCHS_The_State_of_the_Nations_Housing_2026.pdf",
+     "source_published": "2024 to 2026",
+     "source_accessed": "2026-09-23",
+     "id": "net-international-migration-to-the-united"
+    },
+    {
+     "label": "Long-run fall in UK real house prices from a lasting 1-point rise in real interest rates",
+     "viz": "bar",
+     "wide": false,
+     "value": "~20",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Bank of England staff find falling real rates can more than explain the rise in UK prices against incomes, 1985 to 2018; a lasting 1-point rise would cut real prices just under 20 percent.",
+     "detail": "This is the strongest single piece of evidence for the view that housing costs are driven by the price of money rather than the number of homes. UK real house prices almost quadrupled over forty years, far faster than real incomes. David Miles and Victoria Monro model a house as an asset whose price reflects the discounted value of the housing services it provides, so when the risk-free real interest rate falls, as it did for three decades, the price rises even with no change in supply. The finding does not say supply is irrelevant: in their framework a place with more elastic supply would see more building and less price growth for the same fall in rates. The rate rises of 2022 and 2023 offered a partial test: UK prices fell in real terms, and England’s ratio of prices to earnings has improved every year since 2021.",
+     "source_label": "David Miles and Victoria Monro, Bank of England Staff Working Paper No. 837",
+     "source_url": "https://www.bankofengland.co.uk/working-paper/2019/uk-house-prices-and-three-decades-of-decline-in-the-risk-free-real-interest-rate",
+     "source_published": "1985 to 2018",
+     "source_accessed": "2026-09-23",
+     "id": "long-run-fall-in-uk-real"
+    },
+    {
+     "label": "Median house price as a multiple of median household income, selected metros",
+     "viz": "ranked",
+     "wide": true,
+     "value": "14.1",
+     "unit": "× income",
+     "series": [
+      {
+       "label": "Hong Kong",
+       "value": "14.1",
+       "highlight": true
+      },
+      {
+       "label": "Sydney",
+       "value": "14.0",
+       "highlight": false
+      },
+      {
+       "label": "San Jose",
+       "value": "11.3",
+       "highlight": false
+      },
+      {
+       "label": "Vancouver",
+       "value": "10.8",
+       "highlight": false
+      },
+      {
+       "label": "Los Angeles",
+       "value": "10.7",
+       "highlight": false
+      },
+      {
+       "label": "Greater London",
+       "value": "8.5",
+       "highlight": false
+      },
+      {
+       "label": "Toronto",
+       "value": "7.6",
+       "highlight": false
+      },
+      {
+       "label": "New York",
+       "value": "7.5",
+       "highlight": false
+      },
+      {
+       "label": "Cleveland",
+       "value": "3.1",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Of 96 major metros in eight countries, Hong Kong was least affordable at 14.1 times median household income and Cleveland the most, at 3.1; none rated “affordable,” meaning 3.0 or less.",
+     "detail": "The median multiple divides the median house price by the median household income and rates markets from “affordable” (3.0 and under) to “impossibly unaffordable” (9.0 and over). Eleven of the 96 markets rated impossibly unaffordable, all in Hong Kong, Australia, Canada and the United States. National medians were 9.9 in Australia, 7.7 in New Zealand, 5.4 in Canada, 5.2 in the United Kingdom, 4.9 in Ireland, 4.5 in the United States and 4.3 in Singapore. The spread inside one country is often larger than between countries. The report is widely cited but is not a neutral party: its author, Wendell Cox, has argued for decades that urban growth boundaries, greenbelts and compact-city planning are the main cause of unaffordability, and the report says so. Its numbers are straightforward ratios; its explanations belong to one camp in this debate.",
+     "source_label": "Demographia International Housing Affordability, 2026 Edition (Wendell Cox, Chapman University)",
+     "source_url": "https://frontiercentre.org/wp-content/uploads/Demographia-International-Housing-Affordability-2026-Edition-1.pdf",
+     "source_published": "Third quarter of 2025",
+     "source_accessed": "2026-09-23",
+     "id": "median-house-price-as-a-multiple"
+    },
+    {
+     "label": "Share of a new US single-family home’s price that builders attribute to regulation",
+     "viz": "radial",
+     "wide": false,
+     "value": "26.4",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "US homebuilders and land developers estimate that regulation at all levels of government accounts for $131,734, or 26.4 percent, of the $499,500 average price of a new single-family home.",
+     "detail": "The figure comes from surveys of builders and developers and covers everything from permit and impact fees to building codes, zoning-driven lot sizes, environmental review and the cost of delay; $46,975 falls at the land development stage and $84,939 during construction. It has risen from 23.8 percent ($93,870) in the 2021 survey. It is the trade association’s own estimate: the association says it is “not arguing that all regulation is bad” and makes no attempt to estimate how much is excessive, and some of what it counts, such as safety and energy codes, buys something. The multifamily equivalent, from a 2022 joint study with the National Multifamily Housing Council, was 40.6 percent of development costs.",
+     "source_label": "National Association of Home Builders, Government Regulation in the Price of a New Home: 2026",
+     "source_url": "https://www.nahb.org/-/media/NAHB/news-and-economics/docs/housing-economics-plus/special-studies/2026/special-study-government-regulation-in-the-price-of-a-home-june-2026-updated.pdf",
+     "source_published": "2026",
+     "source_accessed": "2026-09-23",
+     "id": "share-of-a-new-us-single"
+    },
+    {
+     "label": "US homeownership rate, households under 35",
+     "viz": "ranked",
+     "wide": true,
+     "value": "37.0",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Under 35, 2022 peak",
+       "value": "39.0",
+       "highlight": false
+      },
+      {
+       "label": "Under 35, 2025",
+       "value": "37.0",
+       "highlight": true
+      },
+      {
+       "label": "All households, 2025",
+       "value": "65.2",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The homeownership rate for US households under 35 fell from 39.0 percent in 2022 to 37.0 percent in 2025, and the median first-time homebuyer was 40 years old, an all-time high.",
+     "detail": "The national rate fell for the second year in a row. Citing the National Association of Realtors’ 2025 Profile of Home Buyers and Sellers, the Joint Center reports that only 21 percent of buyers between mid-2024 and mid-2025 were first-time buyers, also a record low. A March 2026 Realtor.com analysis found only 23 percent of listings were affordable to a household earning $75,000 or less, down from 49 percent in March 2019. Racial gaps have widened: the Black-white homeownership gap reached 28.7 percentage points, larger than in 1995. For those who see ownership as the main way ordinary families build wealth, this is the core harm; for those who want housing to be a secure place to live rather than an investment, stable and affordable renting matters as much.",
+     "source_label": "Harvard Joint Center for Housing Studies, The State of the Nation’s Housing 2026",
+     "source_url": "https://www.jchs.harvard.edu/sites/default/files/reports/files/Harvard_JCHS_The_State_of_the_Nations_Housing_2026.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-09-23",
+     "id": "us-homeownership-rate-households-under-35"
+    },
+    {
+     "label": "Auckland three-bedroom rents six years after upzoning, against a modeled comparison",
+     "viz": "bar",
+     "wide": false,
+     "value": "26–33",
+     "unit": "% lower",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Six years after Auckland upzoned about three-quarters of its residential land in 2016, three-bedroom rents were 26 to 33 percent below a statistical comparison built from similar New Zealand cities.",
+     "detail": "Auckland is the largest real-world test of broad upzoning, and a companion paper in the Journal of Urban Economics found strong evidence that the reform stimulated construction, even allowing for building that would have happened elsewhere anyway. The rent paper uses a synthetic control, a weighted blend of other urban areas whose rents tracked Auckland’s before the reform, to estimate what Auckland’s rents would have been without it. The three-bedroom result is statistically significant at the 5 percent level; for two-bedroom homes the estimate is 21 to 24 percent lower, significant only in some specifications. The caveats are those of any single-city study: New Zealand’s cities differ, Auckland also had a pandemic-era migration shock, and the comparison is to a modeled counterfactual rather than an actual fall in rents. Auckland’s median multiple in the Demographia report improved to 7.7 in 2025, still “severely unaffordable.”",
+     "source_label": "Ryan Greenaway-McGrevy, University of Auckland Economic Policy Centre Working Paper 016",
+     "source_url": "https://www.auckland.ac.nz/assets/business/about/our-research/research-institutes-and-centres/Economic-Policy-Centre--EPC-/WP016%203.pdf",
+     "source_published": "2016 reform, six years on",
+     "source_accessed": "2026-09-23",
+     "id": "auckland-three-bedroom-rents-six-years"
+    },
+    {
+     "label": "Growth in homes and rents, Minneapolis versus the rest of Minnesota, 2017 to 2022",
+     "viz": "ranked",
+     "wide": true,
+     "value": "1",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Minneapolis homes",
+       "value": "12",
+       "highlight": false
+      },
+      {
+       "label": "Minneapolis rents",
+       "value": "1",
+       "highlight": true
+      },
+      {
+       "label": "Rest of state, homes",
+       "value": "4",
+       "highlight": false
+      },
+      {
+       "label": "Rest of state, rents",
+       "value": "14",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Between 2017 and 2022 Minneapolis grew its housing stock by 12 percent while rents rose 1 percent; the rest of Minnesota added 4 percent more homes and saw rents rise 14 percent.",
+     "detail": "Minneapolis became the first large US city to end single-family-only zoning citywide in its 2040 Plan, adopted in 2018, and it also eliminated parking minimums and allowed more building along transit corridors. Most of the new homes were large apartment buildings rather than the duplexes and triplexes the plan made legal, so the comparison is better read as evidence about building a lot than about any single zoning change. It is a comparison of two trends, not a controlled experiment, and Minneapolis also had pandemic-era outmigration from its core.",
+     "source_label": "Pew Charitable Trusts, “Minneapolis Land Use Reforms Offer a Blueprint for Housing Affordability”",
+     "source_url": "https://www.pew.org/en/research-and-analysis/articles/2024/01/04/minneapolis-land-use-reforms-offer-a-blueprint-for-housing-affordability",
+     "source_published": "2017 to 2022",
+     "source_accessed": "2026-09-23",
+     "id": "growth-in-homes-and-rents-minneapolis"
+    },
+    {
+     "label": "Cut in rental housing by landlords after San Francisco extended rent control in 1994",
+     "viz": "bar",
+     "wide": false,
+     "value": "15",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "After San Francisco extended rent control to small pre-1980 multifamily buildings, their landlords cut rental supply by 15 percent; covered tenants became about 20 percent likelier to stay put.",
+     "detail": "This is the most cited modern study of rent control, and both sides of the rent-control argument cite it. For incumbent tenants, rent control worked as intended: it cut their mobility and kept many of them in the city, particularly older and longer-tenured renters. But landlords responded by converting buildings to condominiums and tenancies-in-common or redeveloping them, which shrank the rental stock and shifted it toward higher-income owner-occupied housing. The authors conclude that the supply loss likely raised citywide rents, passing the cost to future renters. Modern “second-generation” rent stabilization, such as caps tied to inflation that exempt new construction, is designed to avoid these responses, and supporters argue the San Francisco result reflects loopholes rather than regulation as such.",
+     "source_label": "Rebecca Diamond, Tim McQuade and Franklin Qian, American Economic Review",
+     "source_url": "https://www.aeaweb.org/articles?id=10.1257/aer.20181289",
+     "source_published": "1994 reform, data to the 2010s",
+     "source_accessed": "2026-09-23",
+     "id": "cut-in-rental-housing-by-landlords"
+    },
+    {
+     "label": "Share of Vienna residents in municipal or limited-profit subsidized housing",
+     "viz": "radial",
+     "wide": false,
+     "value": "60+",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The City of Vienna says more than 60 percent of residents live in its roughly 220,000 municipal apartments or 200,000 limited-profit dwellings; other summaries put the share near 50 percent.",
+     "detail": "Vienna is the reference case for everyone who argues housing should be partly taken out of the market. The city has owned and built housing continuously since the 1920s, finances limited-profit associations to build more, and sets income limits high enough that middle-income households qualify, so social housing is not stigmatized as housing for the poor. The gap between the city’s figure and lower estimates turns on what counts as subsidized. Skeptics note that Vienna has had unusually slow population growth for much of the last century, a large inherited public stock and waiting lists, and that its private rental market has become considerably more expensive; supporters answer that the social sector is precisely what keeps rents across the whole market lower than in comparable cities.",
+     "source_label": "City of Vienna, socialhousing.wien, “The Vienna Model”",
+     "source_url": "https://socialhousing.wien/policy/the-vienna-model",
+     "source_published": "Current",
+     "source_accessed": "2026-09-23",
+     "id": "share-of-vienna-residents-in-municipal"
+    },
+    {
+     "label": "People experiencing homelessness in the US on a single night",
+     "viz": "bar",
+     "wide": false,
+     "value": "771,480",
+     "unit": "people",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "A record 771,480 people were counted as homeless on a single night in January 2024, 18 percent more than a year earlier, the most recent national count available as of mid-2026.",
+     "detail": "The point-in-time count is conducted each January by local agencies and reported by HUD. The 2024 jump was driven mostly by people in shelters, including migrants and asylum seekers in cities such as New York, Chicago and Denver, and the Joint Center expects the sheltered count to have fallen since those programs ended. The more durable trend is unsheltered homelessness, which reached an all-time high of 274,220, with two-thirds of its growth in California, Oregon and Washington. A widely cited body of research, including Gregg Colburn and Clayton Page Aldern’s Homelessness Is a Housing Problem (2022), finds that regional homelessness rates track housing costs and rental vacancy more closely than rates of addiction, mental illness or poverty.",
+     "source_label": "Harvard Joint Center for Housing Studies, State of the Nation’s Housing 2026, citing HUD",
+     "source_url": "https://www.jchs.harvard.edu/sites/default/files/reports/files/Harvard_JCHS_The_State_of_the_Nations_Housing_2026.pdf",
+     "source_published": "January 2024",
+     "source_accessed": "2026-09-23",
+     "id": "people-experiencing-homelessness-in-the-us"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Are high housing costs mainly the result of too few homes, or of too much money chasing them?",
+    "kind": "empirical",
+    "why": "Prices are set where supply meets demand, so both forces are always at work. The same price chart fits both stories: prices soared when interest rates fell and in places that built little, and the two happened at the same time.",
+    "detail": "The case for too few homes: the places with the worst affordability are the places that make building hardest. If cheap credit were the main cause it would have inflated prices everywhere equally, and it did not: Houston and Atlanta faced the same mortgage rates as San Jose and Los Angeles and stayed several times more affordable. Low interest rates raise the value of scarce land; they do not create the scarcity, and a market that could build freely would turn cheap money into more homes rather than higher prices.\n\nThe case for too much money: housing is an asset as well as a shelter, and asset prices move with the cost of money. The sharpest price moves of the last five years tracked rates, not construction: US prices jumped when mortgages were cheapest in 2021 and stalled when rates peaked in 2023. Credit expanded as banks shifted lending from business to mortgages, and tax systems reward owning property. The economist Ian Mulheirn has argued that England added homes faster than households over much of the period when its prices soared. Developers build only as fast as they can sell without cutting prices, so building at the margin cannot offset a surge in demand for housing as a store of wealth, and expensive cities are expensive mainly because high-paying jobs cluster there.",
+    "lean_label_a": "Too few homes",
+    "lean_label_b": "Too much money",
+    "id": "are-high-housing-costs-mainly-the"
+   },
+   {
+    "text": "Do large investors and corporate landlords push up home prices and rents?",
+    "kind": "empirical",
+    "why": "Large investors own a small share of US single-family rentals nationally but a far larger one in some metros and neighborhoods. They also buy where prices are expected to rise, which makes cause and effect hard to separate.",
+    "detail": "The case that they do: institutional buyers pay cash, close fast, bid on hundreds of homes at once with algorithms and target the starter homes first-time buyers want, so even a modest share of purchases can set the price at the margin. Studies reviewed by the Congressional Research Service find that large landlords raised rents after consolidating ownership, reduced homeownership where they concentrated and can exercise market power over rents. Short-term rentals do similar damage in tourist cities: a US-wide study found that more Airbnb listings raise rents and house prices by converting long-term rentals without adding homes.\n\nThe case that they matter little: investors cannot explain a price rise in places where they barely operate, and the largest firms’ buying fell sharply after 2022 while prices kept rising. Research in the same review finds institutional buyers helped stabilize prices after the 2008 crash and tended to buy homes needing more repair than a typical family could take on, and a GAO study of six heavily targeted metros found homeownership rose in four of them. An outright ban also steers capital away from build-to-rent communities that add new homes. The Harvard Joint Center judged that restrictions on institutional buyers “may reduce competition for homes but do little to address the high cost of homebuying.”",
+    "lean_label_a": "They drive costs",
+    "lean_label_b": "They matter little",
+    "id": "do-large-investors-and-corporate-landlords"
+   },
+   {
+    "text": "Does building new market-rate housing make homes cheaper for lower-income renters?",
+    "kind": "empirical",
+    "why": "New market-rate apartments rent near the top of the market. Whether they relieve pressure lower down depends on chains of moves that are hard to observe, and a new luxury building beside rising rents can be read as cause or as coincidence.",
+    "detail": "The case that it does: every household that moves into a new building leaves a home behind for someone else. Evan Mast traced these chains for 52,000 residents of new buildings in 12 large US cities and found that a new market-rate building housing 100 people ultimately leads 45 to 70 people to move out of below-median-income neighborhoods, mostly within three years. Studies of the blocks around new buildings in several US cities find they lower rather than raise nearby rents.\n\nThe case that it serves mainly the affluent: filtering is slow, uneven and conditional. It works when a region builds far more than it needs, which almost no expensive region has done, and a new unit takes decades to age into affordability while the people who need it are displaced. Some neighborhood studies, including Damiano and Frenier’s work on Minneapolis, find new high-end buildings raise rents in the cheapest nearby units even as they soften the upper market, consistent with a signal that the neighborhood is changing. And for the poorest renters, who can afford rents well below the cost of operating any new building, filtering never reaches far enough without subsidy.",
+    "lean_label_a": "Filters down",
+    "lean_label_b": "Serves the affluent",
+    "id": "does-building-new-market-rate-housing"
+   },
+   {
+    "text": "Should neighborhoods or higher levels of government decide what housing gets built?",
+    "kind": "value",
+    "why": "Land-use decisions have long been local, and local control is valued as self-government. But the benefits of new housing spread across a region, and the future residents who would live in it do not yet vote where it would be built.",
+    "detail": "The case for local decisions: the people who live in a place know its streets, schools, sewers and fire routes and bear the consequences of what gets built. Local planning lets communities negotiate affordability requirements, infrastructure contributions and design in exchange for growth, and a one-size mandate from the state capital removes that leverage. Places that choose to stay low-density are choosing a way of life their residents paid for, and democracy includes the right to choose it.\n\nThe case for state rules: a council elected by current residents has every incentive to block new neighbors and no one on the other side of the table, so local control systematically produces too little housing. Its costs fall on renters, young people and newcomers with no vote in the neighborhood that excludes them. Zoning in the United States has a documented history of being used to exclude by race and income. States already set rules for schools, roads and the environment, and the housing market is regional; California, Oregon, Montana, Washington and New Zealand have all moved decisions upward for that reason.",
+    "lean_label_a": "Locals decide",
+    "lean_label_b": "The state decides",
+    "id": "should-neighborhoods-or-higher-levels-of"
+   },
+   {
+    "text": "Do rent controls help renters more than they hurt them?",
+    "kind": "empirical",
+    "why": "Rent regulation has clear, immediate winners in sitting tenants and diffuse, delayed losers in future renters. Economists have long opposed hard caps while tenant movements back them, and designs vary so much that evidence on one says little about another.",
+    "detail": "The case that they help: housing is not something people can easily do without or shop around for, and a large rent increase can force a family out of its school, job and community. Stabilization gives tenants the security owners take for granted. New York’s system covers roughly a million apartments and has kept a large part of the city’s working population housed. Modern designs, which tie increases to inflation and exempt new construction, answer the textbook objection, and the supply argument assumes an abundance of market housing that most expensive cities have never had.\n\nThe case that they hurt: when rents are capped below market, owners find ways out by converting and redeveloping buildings, and the cost moves to renters who are not yet protected. When St. Paul, Minnesota passed a 3 percent cap in 2021 that applied to new construction, residential permits fell sharply and the city amended the law to exempt new buildings for 20 years. Rent control also freezes people in place, rewards whoever holds a lease rather than whoever most needs help, and weakens owners’ reason to maintain buildings. A price cap on a scarce good does not make more of it; it decides who gets the homes that exist.",
+    "lean_label_a": "Protects tenants",
+    "lean_label_b": "Shrinks supply",
+    "id": "do-rent-controls-help-renters-more"
+   },
+   {
+    "text": "How much do population growth and immigration drive housing costs?",
+    "kind": "empirical",
+    "why": "Nobody disputes that more people need more homes. The dispute is over how much this matters against other forces, whether immigrants also add to supply by building homes, and whether housing is a legitimate reason to change immigration policy.",
+    "detail": "The case that they are a major driver: when population grows faster than homes can be built, prices and rents must rise, and several countries saw exactly that in the early 2020s. Canada’s population grew 3.2 percent in 2023, the fastest since 1957, with about 98 percent of the growth from international migration, while housing starts barely moved. In the United States even economists who favor high immigration, such as the Cato Institute’s Alex Nowrasteh, accept that immigration raises housing prices. Supply cannot respond in a year or two; population can.\n\nThe case that they are a minor factor: housing costs rose sharply in places with little immigration and in periods when it was low. US prices soared in 2020 and 2021 while international migration had collapsed during the pandemic, and affordability in the US and UK began worsening long before the recent migration waves. Immigrants make up a large share of construction workers, so cutting immigration can slow building as much as demand. And fast-growing places whose rules let housing keep up have stayed affordable, which suggests growth is a problem only when building cannot follow.",
+    "lean_label_a": "A major driver",
+    "lean_label_b": "A minor factor",
+    "id": "how-much-do-population-growth-and"
+   },
+   {
+    "text": "Should a home be a way for ordinary households to build wealth?",
+    "kind": "value",
+    "why": "For most middle-class families in the US, Britain, Canada and Australia, home equity is their largest asset. But a home builds wealth only by rising in value, and a home that rises in value is less affordable to the next buyer.",
+    "detail": "The case for the home as wealth: owning a home is the most successful savings program ever devised for ordinary people. It forces saving through mortgage payments, protects against rising rents in old age and gives families a stake in their community. The gap in wealth between owners and renters, and between Black and white households in the US, is largely a gap in homeownership. Helping more people buy spreads property widely instead of concentrating it among landlords, and the goal should be making ownership reachable, not making the asset worthless for the families whose retirement depends on it.\n\nThe case for the home as shelter: treating housing as an investment guarantees it will be unaffordable, because a good investment must keep rising faster than incomes, so each generation pays more than the last. Homeowners vote at higher rates and dominate local planning, which turns the wish to protect home values into rules that block building. The healthier goal is stable, secure, affordable housing, owned or rented, with wealth built through wages and savings rather than through rising land values that move money from young to old and from renters to owners.",
+    "lean_label_a": "Home as wealth",
+    "lean_label_b": "Home as shelter",
+    "id": "should-a-home-be-a-way"
+   },
+   {
+    "text": "Should governments build and own housing directly, at scale?",
+    "kind": "value",
+    "why": "Most rich countries built public housing in the mid-twentieth century and then stopped. Its record runs from celebrated in Vienna and Singapore to deeply troubled in many US cities, and whether the model or its management explains the gap is disputed.",
+    "detail": "The case for public builders: private developers build only when they can earn a market return, so they never build for households that cannot pay market rents, and they slow down exactly when interest rates rise and need is greatest. A public or non-profit developer can build through the cycle, borrow at government rates, hold land permanently and charge rents that cover costs rather than maximize returns. Seattle voters approved a public developer for mixed-income social housing in 2023. Housing is infrastructure, and governments already build roads, schools and water systems.\n\nThe case for private builders: much US public housing failed through underfunding, poor maintenance, concentrated poverty and political neglect that no new program is guaranteed to avoid. Government builders face the same land costs, zoning obstacles, construction costs and neighborhood opposition as private ones, often at a higher cost per unit, and it is disputed whether public building adds homes or merely replaces private building that would have happened anyway. The fastest way to add homes is to let the private sector, which builds almost all housing in market economies, build more, and to direct public money to households through vouchers rather than to buildings.",
+    "lean_label_a": "Public builders",
+    "lean_label_b": "Private builders",
+    "id": "should-governments-build-and-own-housing"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Legalize and build many more homes",
+    "color_key": "green",
+    "steelman": "Housing is expensive because we made it illegal to build enough of it. Legalize homes of every kind, at every price, and every other tool works better.",
+    "detail": "In most of the places people want to live, zoning allows only detached houses on large lots, parking mandates eat land and money, and every apartment building faces years of hearings, lawsuits and environmental review that a single objector can drag out. Edward Glaeser and Joseph Gyourko have shown that prices across most of the country sit close to what it costs to build a home, while in the metros that block construction they run far above it; that gap is the price of the rules. So we want more homes of all types: apartments, townhouses, duplexes, backyard units, factory-built houses, conversions of empty offices. Each new home relieves pressure somewhere in the chain, and where cities have let building happen, in Auckland, Minneapolis and the Sun Belt, rents have followed.\n\nThe objection is that market-rate building serves the affluent. The affluent are already here, and when we do not build for them they outbid everyone else for older homes; filtering is slow only where building is scarce. We agree the lowest-income households need subsidy, and subsidized housing faces the same zoning and permitting barriers, so legalizing construction is the precondition for every public program too. We part company with those who would ban investors: our coalition warned that the investor limit in the 2026 federal law “would jeopardize the financial viability of building single-family rental homes.” Among us, “abundance” liberals pair deregulation with public investment and accept tenant protections that exempt new construction, while market-oriented economists and homebuilders stress cutting rules and fees and oppose rent regulation altogether.",
+    "proponents": "YIMBY Action, Edward Glaeser, Joseph Gyourko",
+    "id": "legalize-and-build-many-more-homes"
+   },
+   {
+    "name": "Curb investor and speculative ownership of homes",
+    "color_key": "blue",
+    "steelman": "People live in homes, not corporations. Decide who housing is for: limit bulk buying by big investors, tax empty and speculative holdings, and give families the first chance to buy.",
+    "detail": "Over the last fifteen years housing has become one of the world’s favorite assets. Private equity firms, short-term-rental operators and wealthy buyers from abroad have poured capital into homes because they rise in value and throw off rent, and ordinary families now bid against buyers who pay cash, close in days and make algorithmic offers on hundreds of homes at once. The White House said it plainly: “institutional buyers with vast resources outbid hardworking families, turning neighborhoods into investor rental portfolios instead of communities.” Leilani Farha, as the UN’s special rapporteur on housing, described the same process worldwide as capital that “disconnects housing from its social function of providing a place to live in security and dignity.” Building more does not help if the new homes are bought by investors, left empty or rented to tourists by the night.\n\nCritics say large investors own too little to move prices. National averages hide what matters: investors concentrated in particular metros, neighborhoods and price tiers, the starter homes first-time buyers need, and a buyer that wins a quarter of the bids in a neighborhood sets the price there. We accept that building more is necessary, and Congress agreed, passing supply measures and an investor limit in the same law. Among us, the Trump administration and many Republicans focus on Wall Street buyers and immigration and oppose rent regulation; many progressive Democrats pair investor limits with tenant protections and public building; and economists such as Josh Ryan-Collins see cheap credit and tax privileges for property as the deeper speculative force, and favor tighter mortgage lending and land value taxes over bans on particular buyers.",
+    "proponents": "Trump administration, Leilani Farha, Josh Ryan-Collins",
+    "id": "curb-investor-and-speculative-ownership-of"
+   },
+   {
+    "name": "Build more homes and protect tenants at the same time",
+    "color_key": "amber",
+    "steelman": "Pitting “just build” against “just protect tenants” is a false choice that has cost renters a decade. A city needs supply, stability and subsidy: each necessary, none enough alone.",
+    "detail": "A city needs enough homes, or every other policy is fighting over scraps. It needs stability, so the people who live there now are not pushed out by rent spikes and no-fault evictions while the new supply arrives. And it needs subsidy, because no market will ever build homes the lowest-income households can afford; even the Harvard Joint Center concludes that “market forces alone are unlikely to meet the need for deeply affordable homes.” In practice that means legalizing apartments near transit and in wealthy neighborhoods that have shut them out, while capping rent increases on existing homes in ways that exempt new construction, funding public and non-profit developers, and guaranteeing tenants a lawyer in eviction court. Shane Phillips calls this the three S’s. New York under Mayor Zohran Mamdani is attempting all of it at once: a rent freeze on stabilized apartments, a plan for 200,000 permanently affordable homes, and rezoning that goes further than the city’s last reform.\n\nFrom the supply side, the objection is that rent regulation deters building; from the left, that market-rate construction gentrifies. Our answer to the first is design: stabilization tied to inflation, with new buildings exempt for a long period, protects tenants without changing the math for a new project, and cities that got the design wrong have fixed it that way. Our answer to the second is that the alternative to new buildings in a growing city is not no gentrification but gentrification of the existing stock, and that stabilization and public building are how a neighborhood keeps its people while it grows. Whether a rent freeze starves older buildings of upkeep, and whether a city can pay for that many public homes, are fair tests; results will answer them.",
+    "proponents": "Zohran Mamdani, Shane Phillips",
+    "id": "build-more-homes-and-protect-tenants"
+   },
+   {
+    "name": "Keep land-use decisions with local communities",
+    "color_key": "rust",
+    "steelman": "We want affordable housing too. The people who live in a community should decide how it grows, and many communities have plans to add homes in a way that fits.",
+    "detail": "When a state overrides local zoning with blanket rules, it does not produce affordability. It gives developers the right to build market-rate towers wherever a bus line runs, with no guarantee of affordable units, no plan for the roads, sewers, schools and fire response new residents will need, and no say for the neighbors who will live with the result. As Los Angeles Councilmember Traci Park put it, “Sacramento is hijacking local planning, stripping away neighborhood voices, ignoring safety and infrastructure, and handing the keys to corporate developers.” Local planning is where communities negotiate what growth delivers: affordable units, parks, infrastructure contributions, and protection for historic buildings and older rent-controlled apartments. New apartments asked a median rent of about $1,900 in 2025, which the Harvard Joint Center calls “largely out of reach” for low-income households, so we insist on the affordability requirements that state preemption strips away.\n\nThe objection is that local control is a veto held by current homeowners over people who do not yet live there. The shortage has many causes, and cities have approved far more units than developers have chosen to build; permission is not the binding constraint in many places. Removing local review guarantees only more market-rate homes on developers’ timelines, and decisions made in a state capital are not more democratic for being made farther away. We include homeowner associations, preservationists, local governments defending their authority, and tenant groups in lower-income neighborhoods who fear demolition and displacement, as in the Los Angeles fight over California’s SB 79; in Britain, green-belt campaigners make the same case against national building targets.",
+    "proponents": "Neighbors for a Better California, Traci Park",
+    "id": "keep-land-use-decisions-with-local"
+   },
+   {
+    "name": "Build social housing and cap rents",
+    "color_key": "purple",
+    "steelman": "Housing is a basic necessity and a right, not a commodity. Build a large public sector held outside the market, cap rent increases and give tenants real rights.",
+    "detail": "A private market builds what earns the highest return, and the highest return is never in homes that working people and the poor can afford. It lets landlords raise rents as far as the market will bear and use price-setting software to coordinate increases. More market housing will not change that logic. As the Homes Guarantee puts it, “housing must be de-commodified and treated as a basic necessity and civil right rather than an investment.” So we want public and non-profit homes financed by government and held permanently outside the speculative market, with rents set by what it costs to run a home or by what households earn. Representative Alexandria Ocasio-Cortez described the federal Homes Act as “a public option to meet the needs of people and communities that aren’t being served by the private market.” Even the Harvard Joint Center, no ally of ours, concludes that “private markets are incapable of producing enough deeply affordable units.”\n\nThe objection is that rent control shrinks supply and that public housing failed in America. The San Francisco study everyone cites measured a law with a large loophole, since landlords could convert to condos and exit; stabilization closed to such exits, paired with public building, does not face the same problem. American public housing failed because Congress limited it to the very poorest, capped how much could be built and starved it of maintenance money for decades, not because public ownership fails. Where social housing is mixed-income, well funded and permanent, it is the most desirable housing in town. We do not oppose building; we oppose leaving the question of who can afford a city to investors. Some of us oppose market-rate upzoning as a gift to developers; others accept it with strong anti-displacement rules.",
+    "proponents": "People’s Action Institute, Alexandria Ocasio-Cortez, Tina Smith",
+    "id": "build-social-housing-and-cap-rents"
+   },
+   {
+    "name": "Slow population growth to ease housing demand",
+    "color_key": "teal",
+    "steelman": "Homes take years to build, and population can jump in a single year. Matching arrivals to the pace of building is basic planning, not hostility to immigrants.",
+    "detail": "When a country admits people far faster than it can house them, rents and prices rise, and the first people hurt are young adults and working families already here, along with the newcomers themselves, crowded into overpriced rentals. The Canadian government said its cut in admissions “will help to alleviate some pressure in the housing market, with the housing supply gap expected to decrease by approximately 670,000 units by the end of 2027,” and its Parliamentary Budget Officer estimated the plan would shrink the 2030 gap by 534,000 units, or 45 percent. Vice President JD Vance put the US version more bluntly in November 2025, saying housing is expensive “because we flooded the country with 30 million illegal immigrants,” alongside a shortage of homes. Building more is necessary too, but no plausible rate of construction keeps up with population growth at the levels of the early 2020s.\n\nThe objection is that immigrants build a large share of homes, so cutting immigration slows construction as much as demand. We accept that construction needs workers and support targeted admission of skilled trades. But demand from population growth is immediate and cumulative, while construction capacity grows slowly, and every other lever in this debate takes years; slowing growth buys time for supply to catch up. There are sharp differences among us. Canada’s government framed its cuts as a temporary pause to restore sustainable growth, and its budget officer’s figures support a measured version; others, including Vance, tie the housing argument to a broader case for deportation and restriction, and PolitiFact noted that his figure is more than twice independent estimates of 12 to 14 million.",
+    "proponents": "Government of Canada, JD Vance",
+    "id": "slow-population-growth-to-ease-housing"
+   }
+  ],
+  "crux": {
+   "lead": "If a region let homes be built freely, would the market make housing affordable for most people?",
+   "lead_highlight": "would the market make housing affordable",
+   "subtitle": "Almost every camp now wants more homes built in some form. What divides them is whether building is enough on its own, or whether cheap credit, the pull of wealth into property and the terms of ownership keep prices out of reach however many homes go up.",
+   "empirical": "How far prices and rents fall, and for whom, when a region builds much more housing for a decade, and how that compares with the pull of interest rates and credit. That can be measured: long studies that track rents at the bottom and not only the average, follow how fast new homes pass down the income ladder, and count homes against households on one agreed definition would narrow it.",
+   "values": "No measurement says whose claim comes first when they conflict: neighbors who bought into a quiet street or renters who want to live there, owners counting on rising values or the young who pay them, a home as savings or as shelter. Someone who trusts markets to allocate scarce goods reads a building boom as proof the market works; someone who holds that shelter should never depend on price reads it as a partial fix."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Harvard Joint Center for Housing Studies, The State of the Nation’s Housing 2026",
+    "description": "The standard annual reference on US housing costs, construction, rents, homeownership and homelessness, with metro data; it documents both the shortfall and the loss of low-rent homes.",
+    "url": "https://www.jchs.harvard.edu/sites/default/files/reports/files/Harvard_JCHS_The_State_of_the_Nations_Housing_2026.pdf",
+    "for_position": null,
+    "id": "harvard-joint-center-for-housing-studies"
+   },
+   {
+    "kind": "volunteer",
+    "title": "YIMBY Action",
+    "description": "Join a national network of local chapters of renters and homeowners who speak up at council and planning meetings and lobby state legislatures for new housing of all kinds.",
+    "url": "https://yimbyaction.org/",
+    "for_position": "Legalize and build many more homes",
+    "id": "yimby-action"
+   },
+   {
+    "kind": "learn_more",
+    "title": "UN Special Rapporteur on adequate housing, report on the financialization of housing",
+    "description": "The 2017 UN Human Rights Council report by Leilani Farha that defined the “financialization of housing” and set out how governments can limit housing’s role as a global investment asset.",
+    "url": "https://documents.un.org/doc/undoc/gen/g17/009/56/pdf/g1700956.pdf",
+    "for_position": "Curb investor and speculative ownership of homes",
+    "id": "un-special-rapporteur-on-adequate-housing"
+   },
+   {
+    "kind": "local",
+    "title": "Neighbors for a Better California",
+    "description": "A statewide group that organizes California residents to defend local land-use decision-making against state zoning mandates such as SB 79.",
+    "url": "https://www.neighborsforabettercalifornia.org/",
+    "for_position": "Keep land-use decisions with local communities",
+    "id": "neighbors-for-a-better-california"
+   },
+   {
+    "kind": "donate",
+    "title": "Enterprise Community Partners",
+    "description": "A national non-profit that finances, builds and preserves affordable homes and pushes for both zoning reform and federal housing subsidy.",
+    "url": "https://www.enterprisecommunity.org/",
+    "for_position": "Build more homes and protect tenants at the same time",
+    "id": "enterprise-community-partners"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Tenant Union Federation",
+    "description": "A national federation of locally governed tenant unions that trains renters, through its Union School program, to organize their buildings and bargain collectively with landlords.",
+    "url": "https://tenantfederation.org/",
+    "for_position": "Build social housing and cap rents",
+    "id": "tenant-union-federation"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Parliamentary Budget Officer of Canada, Impact of the 2025–2027 Immigration Levels Plan on Canada’s Housing Gap",
+    "description": "A short nonpartisan estimate of how much Canada’s cut in immigration targets reduces its housing shortfall, the clearest official measure of the link between population and housing.",
+    "url": "https://www.pbo-dpb.ca/en/additional-analyses--analyses-complementaires/BLOG-2425-006--impact-2025-2027-immigration-levels-plan-canada-housing-gap--repercussions-plan-niveaux-immigration-2025-2027-ecart-offre-logement-canada",
+    "for_position": "Slow population growth to ease housing demand",
+    "id": "parliamentary-budget-officer-of-canada-impact"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Congressional Research Service, Institutional Investors and Single-Family Housing: In Brief",
+    "description": "A June 2026 nonpartisan review for Congress of how many homes large investors own and buy, what research finds about their effects, and how the new federal law limits them.",
+    "url": "https://www.congress.gov/crs_external_products/R/PDF/R49015/R49015.1.pdf",
+    "for_position": null,
+    "id": "congressional-research-service-institutional-investors-and"
+   },
+   {
+    "kind": "local",
+    "title": "National Zoning Atlas",
+    "description": "A free map of what zoning allows on residential land in towns across the US, including where apartments are legal, minimum lot sizes and parking rules, so you can check your own community.",
+    "url": "https://www.zoningatlas.org/atlas",
+    "for_position": "Legalize and build many more homes",
+    "id": "national-zoning-atlas"
+   },
+   {
+    "kind": "policy",
+    "title": "Track the 21st Century ROAD to Housing Act",
+    "description": "The bill page for the 2026 federal housing law, with its text, votes and history, for following the rules agencies write to carry out its supply grants and investor limits.",
+    "url": "https://www.govtrack.us/congress/bills/119/hr6644",
+    "for_position": null,
+    "id": "track-the-21st-century-road-to"
+   }
+  ]
+ }
 }

@@ -27,14 +27,14 @@ Confirm the page renders and is a draft:
 
 ## Render
 
-Output directory: `research/topics/<slug>/renders/` (untracked). Empty it first
-(`rm -rf research/topics/<slug>/renders`), so nothing from an earlier draft survives
-beside the new captures, and pass the same `--out research/topics/<slug>/renders`
+Output directory: `research/topics/<slug>/renders/` (untracked). Pass `--clean` on the first
+`render_screens` call only, so nothing from an earlier draft survives beside the new
+captures (never delete with `rm`), and pass the same `--out research/topics/<slug>/renders`
 to both `render_screens` calls: the expanded run names its files and its sections
 directory with `-expanded`, so the two do not collide. Always pass
 `--base-url http://localhost:8641`.
 
-1. `.venv/bin/python manage.py render_screens --slug <slug> --base-url http://localhost:8641 --widths 1440,390 --out research/topics/<slug>/renders --sections`
+1. `.venv/bin/python manage.py render_screens --slug <slug> --base-url http://localhost:8641 --widths 1440,390 --out research/topics/<slug>/renders --sections --clean`
 2. The same with `--expanded` added. The expanded capture depends on DEBUG being on;
    confirm the expanded full-page image is taller than the collapsed one, otherwise
    the flag was silently ignored and the server must be restarted with DEBUG on.

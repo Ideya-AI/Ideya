@@ -189,6 +189,12 @@ class Command(BaseCommand):
             "the readable form the view critics and the PM consume.",
         )
         parser.add_argument(
+            "--clean",
+            action="store_true",
+            help="Empty --out before capturing, so nothing from an earlier draft "
+            "survives beside the new images. Only for a topic's renders directory.",
+        )
+        parser.add_argument(
             "--expanded",
             action="store_true",
             help="Capture with ?expanded=1 (DEBUG-only page mode that forces "
@@ -212,6 +218,10 @@ class Command(BaseCommand):
             raise CommandError(f"--widths must be integers, got {opts['widths']!r}.")
 
         out_dir = Path(opts["out"] or settings.BASE_DIR / "research" / "reviews" / slug)
+        if opts["clean"] and out_dir.exists():
+            if out_dir.resolve().name != "renders" or out_dir.resolve().parent.parent.name != "topics":
+                raise CommandError("--clean only empties research/topics/<slug>/renders")
+            shutil.rmtree(out_dir)
         out_dir.mkdir(parents=True, exist_ok=True)
         base = opts["base_url"].rstrip("/")
 

@@ -258,6 +258,8 @@ def run(doc, path):
                 c.err(w, f"{k} missing")
         for k, v in p.items():
             c.text(f"{w}.{k}", f"position.{k}", v)
+        if (p.get("steelman") or "").lstrip().startswith(("“", "‘", '"', "'")):
+            c.err(w, "steelman opens with a quote mark; the template already wraps it in quotes, so it renders doubled. Reword the opening or use the inner quote style mid-sentence")
         if p.get("color_key") not in POS_KEYS:
             c.err(w, f"color_key {p.get('color_key')!r} not in {POS_KEYS}")
         elif keys.count(p["color_key"]) > 1:

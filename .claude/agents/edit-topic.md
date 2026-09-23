@@ -155,8 +155,11 @@ PY
 ```
 
 Set `authored_at` to now in UTC, ISO 8601 with a
-`+00:00` offset (`date -u +%Y-%m-%dT%H:%M:%S+00:00`; the database stores UTC and the
-drift check compares strings), with the same kind of one-liner, then:
+`+00:00` offset, computed inside the Python one-liner
+(`datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds")`; the
+database stores UTC and the drift check compares strings). Start every command with
+`.venv/bin/python` itself, never with a variable assignment or `$(...)` in front: those
+do not match the permission rules and stop the run for a manual approval. Then:
 
 1. `.venv/bin/python manage.py check_topic_text --slug <slug>` and fix every ERROR;
    read each WARNING and fix it unless it is a proper noun or a deliberate choice.
