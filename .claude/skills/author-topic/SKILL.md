@@ -87,7 +87,11 @@ If the audit says `not ready`:
   hand the packet to the user. Research is not re-run inside a loop.
 - Otherwise spawn `edit-topic` and/or `create-topic-icons` in FIX MODE, prompt
   `slug: <slug>\nFIX MODE\n<the relevant issue list from audit.md verbatim>`. Then
-  re-run views if anything changed, then re-run audit.
+  re-run views only if a render could have changed: after an icons fix always, and after
+  an editorial fix only when
+  `.venv/bin/python manage.py check_topic_text --slug <slug> --glance-hash` differs from
+  `T/renders/glance.hash` (a detail-only edit leaves it unchanged, and the renders stay
+  current). Then re-run audit.
 - At most two fix cycles. After the second not-ready audit, stop and hand the packet
   to the user.
 

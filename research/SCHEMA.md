@@ -41,7 +41,9 @@ that art in the file; the fuller brief stays in `icon.md`.
       "summary": "...",                // <=400
       "scope_covered": "...",          // <=400
       "scope_excluded": "...",         // <=400
-      "why_now": "..."                 // short paragraph, a dated recent event
+      "why_now": "...",                // short paragraph, a dated recent event
+      "why_now_source_label": "...",   // <=120, the outlet or body that reports it
+      "why_now_source_url": "https://..."
     },
 
     "basics": {

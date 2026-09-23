@@ -61,6 +61,9 @@ fixed by the editor), **art** (the icon or its tile; fixed by the icon stage), o
 
 ## Output
 
+Record what these renders show, so a later detail-only fix can skip re-rendering:
+`.venv/bin/python manage.py check_topic_text --slug <slug> --glance-hash > research/topics/<slug>/renders/glance.hash`
+
 Write `research/topics/<slug>/renders/views.md`: a line per surface with pass or the
 defect, then three lists headed `Content`, `Art`, `Template`, empty lists included.
 

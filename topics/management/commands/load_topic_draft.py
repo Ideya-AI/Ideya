@@ -439,6 +439,8 @@ class Command(BaseCommand):
             "scope_covered": ov.get("scope_covered", ""),
             "scope_excluded": ov.get("scope_excluded", ""),
             "why_now": ov.get("why_now", ""),
+            "why_now_source_label": (ov.get("why_now_source_label") or "")[:120],
+            "why_now_source_url": ov.get("why_now_source_url") or "",
             "icon": icon,
             # The file's own lifecycle stamps: the authoring skill writes
             # authored_at, the human's publish writes published_at, and the

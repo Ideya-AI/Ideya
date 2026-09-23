@@ -302,6 +302,11 @@ def collect_links(topic_slug: Optional[str]) -> list[LinkItem]:
                         url,
                     )
                 )
+    topics = Topic.objects.exclude(why_now_source_url="")
+    if topic_slug:
+        topics = topics.filter(slug=topic_slug)
+    for t in topics:
+        items.append(LinkItem(t.title, t.slug, "Source", "Why it matters now", t.why_now_source_url))
     return items
 
 

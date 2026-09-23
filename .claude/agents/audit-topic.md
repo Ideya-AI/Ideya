@@ -39,6 +39,21 @@ also open it at 390 and 1440, scroll it top to bottom and open each Go deeper an
 each expander, and prefer what you see there over the screenshots where they differ. Never click a vote, lean, respond or follow control: the database behind the
 dev server is the live one and every such click is recorded as a reader's.
 
+## A re-audit
+
+If `research/topics/<slug>/audit.md` already exists, this is a re-audit after a fix.
+Read that packet first. Confirm each issue it raised is fixed, and check that the fix
+did not break anything around it. Items it listed as notes stay notes: do not raise
+them again as issues. Raise a new issue only if it meets the bar below and the
+previous auditor could not have seen it, because the fix introduced it or it was
+genuinely missed and changes the reading. Still read the whole page, but converge:
+the question is whether it is ready now, not what else could be improved.
+
+Renders older than `topic.json` are current when
+`.venv/bin/python manage.py check_topic_text --slug <slug> --glance-hash` equals
+`research/topics/<slug>/renders/glance.hash`: the fix touched only expanded detail text,
+which you read from `topic.json`.
+
 ## What you read for
 
 - **One story.** Does the page, top to bottom, tell one coherent account of the
@@ -60,8 +75,8 @@ dev server is the live one and every such click is recorded as a reader's.
   stage missed or misclassified. Art that misreads the topic or argues.
 
 Before calling a render stale, compare its file time with `topic.json`'s
-(`stat -c '%y' <file>`); a render newer than the file is current, whatever you
-remember of an earlier draft. When your own memory of a fact disagrees with the page,
+(`stat -c '%y' <file>`), or the glance hash as above; a render newer than the file is
+current, whatever you remember of an earlier draft. When your own memory of a fact disagrees with the page,
 say which source would settle it rather than asserting your memory; the page was
 written with web access and you were not.
 
@@ -78,8 +93,12 @@ case, so a reader meets it twice"), not a preference ("could flow better").
 - **not ready**: a reader would be misled or confused. Sentence shape, cadence,
   a detail that opens by echoing its steelman, four tiles that start the same way:
   these are notes for the human, never issues, because no reader is misled by them.
-  An issue is a wrong or contradictory fact, a page-voice ruling, an uneven camp, a
-  repeated argument, a misleading chart, or a mislabel. Every issue is routed to the
+  An issue is something that changes what a reader believes about the debate: a
+  wrong or contradictory fact that shifts the reading, a page-voice ruling, an uneven
+  camp, a misleading chart, or a mislabel. A figure off by a little in a way that
+  changes no conclusion (53 against 57, 11 of 19 against 11 of 20) is a note, not an
+  issue. A repeated argument is a note: the checker already
+  blocks verbatim repeats, and a reader who meets a point twice is not misled. Every issue is routed to the
   stage that fixes it: `editorial` (any text, order, count or content-caused layout
   defect) or `icons` (the art or glyph). An issue that needs research the page does
   not have (a missing camp, a thin section, a debate framed wrongly at the root) is

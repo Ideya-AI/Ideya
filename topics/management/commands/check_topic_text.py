@@ -157,6 +157,13 @@ def run(doc, path):
         c.err("topic", f"bad status {doc.get('status')!r}")
     if path.parent.parent.name == "topics" and doc.get("slug") != path.parent.name:
         c.err("topic", f"slug {doc.get('slug')!r} != directory {path.parent.name!r}")
+    ov = d.get("overview") or {}
+    if not ov.get("why_now_source_url"):
+        c.err("overview.why_now_source_url", "missing: why-now names a dated event, so it names a source a reader can follow")
+    else:
+        c.text("overview.why_now_source_url", "overview.why_now_source_url", ov["why_now_source_url"], url=True)
+    if not ov.get("why_now_source_label"):
+        c.err("overview.why_now_source_label", "missing")
     for k in ("summary", "scope_covered", "scope_excluded", "why_now"):
         v = (d.get("overview") or {}).get(k)
         if not v:
@@ -182,6 +189,9 @@ def run(doc, path):
                 c.err(w, f"{viz} needs a series of 2+ rows")
             if viz == "ranked" and not s.get("wide"):
                 c.err(w, "ranked tiles are wide")
+            for r in series:
+                if re.search(r"\d\s*(to|–|—)\s*\d", str(r.get("value", ""))):
+                    c.err(w, f"series row {r.get('label')!r} holds a range ({r.get('value')!r}); a bar draws one number, so it draws the low end. Use one number per row, or split into low and high rows")
             nums = []
             for r in series:
                 m = re.search(r"-?\d+(?:\.\d+)?", str(r.get("value", "")).replace(",", ""))
@@ -322,6 +332,8 @@ class Command(BaseCommand):
     def add_arguments(self, p):
         p.add_argument("--slug")
         p.add_argument("--file")
+        p.add_argument("--glance-hash", action="store_true",
+                       help="print a hash of everything a render can show (all but detail text) and exit")
 
     def handle(self, *a, **o):
         if not (o["slug"] or o["file"]):
@@ -333,6 +345,21 @@ class Command(BaseCommand):
         except (OSError, ValueError) as e:
             self.stderr.write(self.style.ERROR(f"{path}: {e}"))
             raise SystemExit(1)
+        if o["glance_hash"]:
+            import hashlib
+
+            def strip(node):
+                if isinstance(node, dict):
+                    return {k: strip(v) for k, v in sorted(node.items())
+                            if k not in ("detail", "id", "source_accessed")}
+                if isinstance(node, list):
+                    return [strip(v) for v in node]
+                return node
+
+            view = {k: doc.get(k) for k in ("title", "icon", "primary_category", "related")}
+            view["content"] = strip(doc.get("content") or {})
+            self.stdout.write(hashlib.sha256(json.dumps(view, sort_keys=True).encode()).hexdigest()[:16])
+            return
         c = run(doc, path.resolve())
         for w in c.warnings:
             self.stdout.write(self.style.WARNING(f"WARN  {w}"))

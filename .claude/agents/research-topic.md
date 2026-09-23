@@ -57,7 +57,17 @@ Write from what you know first, then use the web for exactly three things:
 
 Also fetch each candidate action URL once and note whether it resolved. Roughly 30 to
 60 searches is the expected range; use more only when a section is genuinely thin.
-Do not search for what you already know is settled. When sources disagree or a figure
+Do not search for what you already know is settled. A fact-check of the first pages found about one
+figure in twenty wrong, all of them introduced at research, in four patterns. Guard
+against each:
+- Read a stat's figure off the primary document it cites, not from coverage of it.
+  Secondary reporting rounded one headline figure to the wrong number.
+- When a source reports counts ("8 of 20 runs"), write the count or convert it
+  yourself; never treat a count as a percentage.
+- When a survey or study asks several questions, name the question each figure
+  answers. One page attached a result to the wrong question and reversed its reading.
+- Write "only", "no other", "every" or a tally ("three times") only when the source
+  says it; count events from the record, not from memory. When sources disagree or a figure
 has a basis that changes it (price year, scope, gross versus net), say so inline. A
 number you could not source is written with `[unverified]` after it so the editor can
 drop it rather than guess.

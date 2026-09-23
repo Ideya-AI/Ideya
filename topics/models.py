@@ -181,6 +181,8 @@ class Topic(models.Model):
         max_length=400, blank=True, help_text="What it deliberately excludes."
     )
     why_now = models.TextField(blank=True, help_text="Why it matters now.")
+    why_now_source_label = models.CharField(max_length=120, blank=True)
+    why_now_source_url = models.URLField(max_length=500, blank=True)
     categories = models.ManyToManyField(Category, related_name="topics", blank=True)
     primary_category = models.ForeignKey(
         Category,
@@ -566,6 +568,14 @@ class Stat(models.Model):
 
     def __str__(self) -> str:
         return f"{self.label}: {self.value}"
+
+    @property
+    def unit_is_word(self):
+        """A unit that is a word ("million tonnes", " reactors") sits a space
+        off the number; a symbol ("%", "$/MWh") sits tight. Decided here so
+        no topic file has to remember a leading space."""
+        u = self.unit or ""
+        return u[:1] == " " or u[:1].isalpha()
 
     @property
     def range_band(self):

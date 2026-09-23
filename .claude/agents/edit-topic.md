@@ -116,6 +116,9 @@ label and position name.
   24 characters, and a unit is a token, under about 12; both print in narrow columns
   on the poster.
 - The summary names the central argument without declaring the others closed.
+- `overview.why_now_source_label` and `why_now_source_url` name where a reader can
+  confirm the why-now event (from research.md's Overview). The why-now event is the
+  one dated claim outside Basics, so it always carries its source.
 - Do not touch the index fields (slug, title, scope, categories, related) or `icon`.
 
 ## Procedure

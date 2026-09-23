@@ -139,6 +139,8 @@ class Command(BaseCommand):
                 "scope_covered": topic.scope_covered,
                 "scope_excluded": topic.scope_excluded,
                 "why_now": topic.why_now,
+                "why_now_source_label": topic.why_now_source_label,
+                "why_now_source_url": topic.why_now_source_url,
             },
             "basics": {"stats": children(Section.BASICS, "stats", _stat)},
             "questions": children(Section.QUESTIONS, "questions", _question),

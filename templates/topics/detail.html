@@ -146,7 +146,8 @@
           {% endif %}
           {% if topic.why_now %}
           <div class="mc"><div class="mk"><i class="ph-duotone ph-clock-countdown"></i>Why it matters now</div>
-            <div class="mv">{{ topic.why_now }}</div></div>
+            <div class="mv">{{ topic.why_now }}</div>
+            {% if topic.why_now_source_url %}<a class="tsrc" href="{{ topic.why_now_source_url }}" target="_blank" rel="noopener"><i class="ph-duotone ph-link-simple"></i>{{ topic.why_now_source_label|default:"Source" }}</a>{% endif %}</div>
           {% endif %}
         </div>
         {% endif %}
