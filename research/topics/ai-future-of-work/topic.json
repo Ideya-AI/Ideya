@@ -1,8 +1,8 @@
 {
  "slug": "ai-future-of-work",
  "title": "AI & the Future of Work",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-09-25T05:07:37+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "AI and employment: displacement, augmentation, and what work remains.",
@@ -15,5 +15,584 @@
   "labor-power",
   "economic-inequality",
   "free-trade-vs-nationalism"
- ]
+ ],
+ "content": {
+  "overview": {
+   "summary": "Whether AI will mostly take over people’s work or make them more productive, and who should bear the costs and share the gains.",
+   "scope_covered": "What AI does to paid work: displacement and augmentation so far, forecasts for the next decade, who is exposed, and the responses on offer, from retraining to new funds, bargaining and limits on deployment.",
+   "scope_excluded": "When or whether general-purpose AI arrives, universal basic income as a policy in itself, union power and wage inequality broadly, and AI in hiring and workplace surveillance.",
+   "why_now": "In 2026 US employers began naming AI as a reason for layoffs in large numbers: from March through July it was the most-cited reason for announced job cuts in Challenger, Gray & Christmas’s monthly count.",
+   "why_now_source_label": "Challenger, Gray & Christmas, August 2026 job cuts report",
+   "why_now_source_url": "https://www.challengergray.com/blog/challenger-report-august-job-cuts-up-58-consumer-products-food-lead/"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "Employment gap for 22- to 25-year-olds in the most AI-exposed jobs",
+     "viz": "ranked",
+     "wide": true,
+     "value": "19",
+     "unit": "% gap",
+     "series": [
+      {
+       "label": "Data to July 2025",
+       "value": "15",
+       "highlight": false
+      },
+      {
+       "label": "Data to June 2026",
+       "value": "19",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Employment of 22- to 25-year-olds in the most AI-exposed occupations runs about 19 percent behind same-age peers in less exposed work, a gap its authors call descriptive, not causal.",
+     "detail": "The study draws on ADP payroll records covering millions of US workers rather than a survey, and it is the most cited evidence that AI has begun to affect jobs. The gap sits in occupations such as software development and customer service, works mainly through fewer hires rather than more firings, and has widened with each update: the authors’ restated figure with data through July 2025 was 15 percent. Experienced workers in the same occupations show no comparable gap, and where AI mostly complements workers rather than substituting for them, employment is flat or rising. The result survives excluding tech firms and controlling for interest rates and remote work. The authors are candid about its limits: the gap shrinks when education is controlled for, some divergence predates ChatGPT, and it is stronger in the ADP sample than in national surveys. They find no evidence of widespread, economy-wide displacement.",
+     "source_label": "Brynjolfsson, Chandar & Chen, Stanford Digital Economy Lab, “Canaries in the Coal Mine?” (August 2026 revision)",
+     "source_url": "https://digitaleconomy.stanford.edu/app/uploads/2026/08/Canaries_August2026.pdf",
+     "source_published": "2026",
+     "source_accessed": "2026-09-24",
+     "id": "employment-gap-for-22-to-25"
+    },
+    {
+     "label": "Announced US job cuts attributed to AI, January to August 2026",
+     "viz": "bar",
+     "wide": false,
+     "value": "116,175",
+     "unit": "job cuts",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Employers attributed 116,175 announced US job cuts to AI in the first eight months of 2026, more than double the 54,836 in all of 2025. The count records the reason given, not a measured cause.",
+     "detail": "Challenger, Gray & Christmas has tracked AI as a stated reason for layoffs since 2023; in 2026 through August it accounted for about 22 percent of all announced cuts. AI led every month from March through July, then fell to fourth place in August with 3,462 cuts, its lowest monthly total since December 2025. The rise is concentrated in technology companies and sits inside a shrinking total: all announced cuts from January to August were 529,914, down 41 percent from the same months of 2025, while announced hiring plans rose 37 percent. Challenger itself cautions that “naming AI in a layoff announcement can win over investors,” so firms have a reason to cite it even when cost-cutting or over-hiring would explain the cut. New York State offers a contrasting record: it added a checkbox for AI-related layoffs to its mandatory layoff notices in March 2025, and in the following year more than 160 companies filed notices without one attributing its layoffs to AI, the law firm Hunton Andrews Kurth reported.",
+     "source_label": "Challenger, Gray & Christmas, Job Cut Announcement Reports for December 2025 and August 2026",
+     "source_url": "https://www.challengergray.com/blog/challenger-report-august-job-cuts-up-58-consumer-products-food-lead/",
+     "source_published": "2025–2026",
+     "source_accessed": "2026-09-24",
+     "id": "announced-us-job-cuts-attributed-to"
+    },
+    {
+     "label": "US unemployment rate, all workers and recent college graduates",
+     "viz": "ranked",
+     "wide": true,
+     "value": "4.1",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Recent graduates",
+       "value": "5.6",
+       "highlight": false
+      },
+      {
+       "label": "All workers",
+       "value": "4.1",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "US unemployment was 4.1 percent in August 2026; for recent college graduates aged 22 to 27 it was 5.6 percent in the second quarter.",
+     "detail": "Headline unemployment has stayed low while AI tools spread, the plainest fact against a mass-displacement story so far. The Budget Lab at Yale reaches the same conclusion by other routes: its tracker, updated on September 15, 2026 with August data, finds that churn across occupations, AI exposure among the unemployed and AI usage “all remain flat, lie within historical ranges, or continue along pre-AI trends.” The graduate rate is the figure most cited on the other side. For most of the period since 1990, when the New York Fed series begins, new graduates had lower unemployment than the workforce as a whole; in recent years that gap has inverted, which fits a squeeze on entry-level hiring. It also fits other explanations: a general hiring slowdown after 2022, higher interest rates hitting tech hiring, and the end of pandemic over-hiring. The two rates come from different sources and slightly different populations, so the comparison is indicative.",
+     "source_label": "US Bureau of Labor Statistics, Employment Situation; New York Fed, The Labor Market for Recent College Graduates",
+     "source_url": "https://www.bls.gov/news.release/empsit.nr0.htm",
+     "source_published": "2026",
+     "source_accessed": "2026-09-24",
+     "id": "us-unemployment-rate-all-workers-and"
+    },
+    {
+     "label": "US employees who use AI in their job",
+     "viz": "radial",
+     "wide": false,
+     "value": "52",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Fifty-two percent of US employees say they use AI in their role at least a few times a year, up from 21 percent in 2023; 15 percent use it daily.",
+     "detail": "Worker adoption more than doubled in three years, passing 40 percent in 2025 before reaching 52 percent in Gallup’s May 2026 survey of 22,573 employed adults. The measure is broad, since occasional use counts, so frequent use is the better guide to how deeply the tools are embedded: 30 percent use AI a few times a week or more. Among workers in organizations that have adopted AI, 65 percent say it has improved their productivity, but only 14 percent strongly agree it has transformed how work gets done.",
+     "source_label": "Gallup, “Organizational AI Adoption Jumps Six Points,” July 20, 2026",
+     "source_url": "https://www.gallup.com/workplace/712736/organizational-adoption-jumps-six-points.aspx",
+     "source_published": "2026",
+     "source_accessed": "2026-09-24",
+     "id": "us-employees-who-use-ai-in"
+    },
+    {
+     "label": "Share of jobs exposed to AI worldwide",
+     "viz": "bar",
+     "wide": false,
+     "value": "40",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The IMF estimates that almost 40 percent of jobs worldwide, and about 60 percent in advanced economies, are exposed to AI.",
+     "detail": "Exposed does not mean lost. The IMF splits exposed jobs into those where AI is likely to complement the worker, such as a surgeon or a judge whose judgment and accountability are hard to hand to a machine, and those where it is likely to substitute, such as many clerical roles; in advanced economies it puts roughly half of exposed jobs on each side. Rich countries are more exposed because more of their workers do cognitive office work, which also places them to gain the productivity benefits sooner. Exposure is about 40 percent in emerging market economies and 26 percent in low-income countries. Women and college-educated workers are more exposed but also better placed to benefit, and older workers are less able to adapt.",
+     "source_label": "International Monetary Fund, “Gen-AI: Artificial Intelligence and the Future of Work,” SDN/2024/001",
+     "source_url": "https://www.imf.org/en/Publications/Staff-Discussion-Notes/Issues/2024/01/14/Gen-AI-Artificial-Intelligence-and-the-Future-of-Work-542379",
+     "source_published": "2024",
+     "source_accessed": "2026-09-24",
+     "id": "share-of-jobs-exposed-to-ai"
+    },
+    {
+     "label": "Americans who expect AI to mean fewer jobs over the next 20 years",
+     "viz": "radial",
+     "wide": false,
+     "value": "71",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Asked whether AI will lead to more or fewer US jobs over the next 20 years, 71 percent of Americans said fewer, up from 64 percent in 2024; 5 percent said more.",
+     "detail": "Public expectation has moved sharply in one direction while measured labor data have barely moved. The shift is sharpest among adults under 30: 73 percent now expect fewer jobs, up from 61 percent two years earlier. The public is also far gloomier than the people who build AI: when Pew asked 1,013 AI experts the same question in late 2024, 39 percent said fewer jobs. The view is not only American. In a 37-country Pew survey conducted from February to May 2026, people in 34 countries were more likely to expect fewer jobs than more. A separate Pew survey of workers in 2024 found 52 percent worried about AI’s future impact on their workplace.",
+     "source_label": "Pew Research Center, “Young adults in the U.S. are increasingly wary of AI,” August 18, 2026",
+     "source_url": "https://www.pewresearch.org/short-reads/2026/08/18/young-adults-in-the-us-are-increasingly-wary-of-ai-concerned-it-will-take-jobs/",
+     "source_published": "2026",
+     "source_accessed": "2026-09-24",
+     "id": "americans-who-expect-ai-to-mean"
+    },
+    {
+     "label": "US employment in job titles that did not exist in 1940",
+     "viz": "radial",
+     "wide": false,
+     "value": "60",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Roughly 60 percent of US employment in 2018 was in job titles that had been added since 1940, by one study’s count of new work over eight decades.",
+     "detail": "This is the historical fact behind the argument that technology creates the work it later needs, and the authors’ own reading is more qualified than the headline. New work has appeared steadily, but where it appears has shifted: between 1940 and 1980 it came in middle-paid production and clerical jobs, and since then in high-paid professional jobs and low-paid service jobs. The same paper finds that the job-destroying effect of automation has intensified in recent decades while the job-creating effect of innovations that augment workers has not kept pace.",
+     "source_label": "Autor, Chin, Salomons & Seegmiller, “New Frontiers: The Origins and Content of New Work, 1940–2018,” QJE, 2024",
+     "source_url": "https://www.nber.org/papers/w30389",
+     "source_published": "2018",
+     "source_accessed": "2026-09-24",
+     "id": "us-employment-in-job-titles-that"
+    },
+    {
+     "label": "Share of workers in jobs exposed to generative AI, ILO index",
+     "viz": "ranked",
+     "wide": true,
+     "value": "25",
+     "unit": "%",
+     "series": [
+      {
+       "label": "High-income countries",
+       "value": "34",
+       "highlight": false
+      },
+      {
+       "label": "World",
+       "value": "25",
+       "highlight": true
+      },
+      {
+       "label": "Low-income countries",
+       "value": "11",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "One in four workers worldwide is in an occupation with some generative AI exposure, a narrower measure than the IMF’s; only 3.3 percent are in the highest-exposure category.",
+     "detail": "The International Labour Organization’s index, published on May 20, 2025, scores nearly 30,000 occupational tasks. It runs lower than the IMF’s estimate because it separates a wide band of partial exposure from the small group of jobs where most tasks could be done by generative AI. Its central conclusion is that jobs are far more likely to be transformed than replaced outright, because most exposed occupations still contain tasks that need human input. Exposure is unequal by sex: the highest-exposure category holds 4.7 percent of women’s jobs against 2.4 percent of men’s worldwide, and 9.6 against 3.5 percent in high-income countries, because clerical and administrative work, the most exposed category, is disproportionately done by women.",
+     "source_label": "International Labour Organization, “Generative AI and Jobs: A Refined Global Index of Occupational Exposure”",
+     "source_url": "https://www.ilo.org/publications/generative-ai-and-jobs-refined-global-index-occupational-exposure",
+     "source_published": "2025",
+     "source_accessed": "2026-09-24",
+     "id": "share-of-workers-in-jobs-exposed"
+    },
+    {
+     "label": "Gain in issues resolved per hour with an AI assistant, customer support",
+     "viz": "bar",
+     "wide": false,
+     "value": "14",
+     "unit": "% gain",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Customer support agents given an AI assistant resolved 14 percent more issues per hour on average, and the least experienced 34 percent more; experts gained little.",
+     "detail": "This field study of 5,179 agents at a real company is the best-known evidence for augmentation, and its most discussed feature is who gained. The assistant appears to have captured the practices of the best agents and passed them to the newest ones, narrowing the gap between them. Both sides of the debate cite it, reading the same result in opposite directions. A randomized experiment with 453 college-educated professionals doing writing tasks pointed the same way: ChatGPT cut the average time taken by 40 percent and raised output quality by 18 percent (Noy and Zhang, Science, 2023).",
+     "source_label": "Brynjolfsson, Li & Raymond, “Generative AI at Work,” Quarterly Journal of Economics (NBER Working Paper 31161)",
+     "source_url": "https://www.nber.org/papers/w31161",
+     "source_published": "2025",
+     "source_accessed": "2026-09-24",
+     "id": "gain-in-issues-resolved-per-hour"
+    },
+    {
+     "label": "Change in experienced developers’ task time with early-2025 AI tools",
+     "viz": "bar",
+     "wide": false,
+     "value": "19",
+     "unit": "% slower",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a 2025 randomized trial, experienced open-source developers took 19 percent longer on tasks when allowed AI tools; METR has since called the result outdated.",
+     "detail": "Sixteen developers worked on 246 tasks in their own mature codebases, which made the study the main counterweight to productivity studies of novices on standardized tasks. It also showed how far self-reports can mislead: developers expected a 24 percent speedup and, after being slowed down, still believed the tools had sped them up by 20 percent. In February 2026 METR reported that late-2025 tools were probably speeding developers up, but that its new experiment could not measure this reliably, because many developers now refuse to work without AI even when paid to. The result is best read as a caution about measurement and about how quickly findings age.",
+     "source_label": "METR, “Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity”",
+     "source_url": "https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/",
+     "source_published": "2025",
+     "source_accessed": "2026-09-24",
+     "id": "change-in-experienced-developers-task-time"
+    },
+    {
+     "label": "Jobs employers expect to be created and displaced worldwide, 2025 to 2030",
+     "viz": "ranked",
+     "wide": true,
+     "value": "78",
+     "unit": "million jobs",
+     "series": [
+      {
+       "label": "Jobs created",
+       "value": "170",
+       "highlight": false
+      },
+      {
+       "label": "Jobs displaced",
+       "value": "92",
+       "highlight": false
+      },
+      {
+       "label": "Net gain",
+       "value": "78",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Employers surveyed by the World Economic Forum expect 170 million jobs to be created and 92 million displaced worldwide by 2030, a net gain of 78 million, from all trends, not AI alone.",
+     "detail": "The survey of more than 1,000 employers covers 1.2 billion formal jobs; the expected churn equals 22 percent of them, with creation at 14 percent of current employment and displacement at 8 percent. The figures are expectations rather than measured outcomes, and they fold in the green transition, demographic change and economic uncertainty alongside technology. On AI specifically, 41 percent of employers expect to downsize their workforce as AI becomes able to replicate roles, while 47 percent plan to move staff from AI-disrupted roles into other positions. Employers expect 39 percent of workers’ core skills to change by 2030. The fastest-growing roles include AI and data specialists but also care workers, delivery drivers, teachers and farmworkers; the fastest-declining are clerical, data entry and administrative roles.",
+     "source_label": "World Economic Forum, Future of Jobs Report 2025",
+     "source_url": "https://reports.weforum.org/docs/WEF_Future_of_Jobs_Report_2025.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-09-24",
+     "id": "jobs-employers-expect-to-be-created"
+    },
+    {
+     "label": "US businesses using AI in any business function",
+     "viz": "bar",
+     "wide": false,
+     "value": "17–20",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Between 17 and 20 percent of US businesses reported using AI in some business function from December 2025 to May 2026, rising to 37 percent among firms with 250 or more employees.",
+     "detail": "Firm adoption lags worker adoption by a wide margin, and the gap is part of the argument about speed: workers can use chatbots on their own, but reorganizing a business around AI takes longer, the pattern economists expect of any general-purpose technology. Adoption is highest in information (39.7 percent) and finance and insurance (33.9 percent) and low in retail (14 percent); firms with 100 to 249 employees report 32 percent. The Census Bureau broadened its question in November 2025, from AI used “in producing goods or services” to AI used “in any business function,” so figures before and after the change are not directly comparable. On the old question, adoption grew 68 percent in the year to September 2025, according to the Federal Reserve Board’s April 2026 note “Monitoring AI Adoption in the U.S. Economy.”",
+     "source_label": "US Census Bureau, Business Trends and Outlook Survey, “Large Firms With at Least 20 Employees Biggest AI Users”",
+     "source_url": "https://www.census.gov/library/stories/2026/05/ai-use-businesses.html",
+     "source_published": "2025–2026",
+     "source_accessed": "2026-09-24",
+     "id": "us-businesses-using-ai-in-any"
+    },
+    {
+     "label": "Unemployment among cognitive workers in 2030 under modeled AI scenarios",
+     "viz": "ranked",
+     "wide": true,
+     "value": "17.9",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Mid-2026 start",
+       "value": "2.9",
+       "highlight": false
+      },
+      {
+       "label": "Substantial, 2030",
+       "value": "4.5",
+       "highlight": false
+      },
+      {
+       "label": "Extreme, 2030",
+       "value": "17.9",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In the most extreme of three modeled scenarios, 17.9 percent of workers who began in cognitive occupations are unemployed in 2030; in the modest one, unemployment barely moves. None is a forecast.",
+     "detail": "The paper, by economists including Anton Korinek and Charles Jones, turns assumptions about AI capability and adoption into consistent numbers for output, wages, unemployment and labor’s share of income, which shows how wide the range is. In the modest scenario, overall unemployment is 3.9 percent in 2030 against a normal level of 3.8. In the substantial scenario, cognitive workers’ wages stay roughly flat while the economy grows faster. In the extreme scenario, AI performs almost half of today’s cognitive work by 2030, economy-wide unemployment reaches 11.9 percent, against annual peaks slightly below 10 percent after the financial crisis, and labor’s share of national income falls from 60 to 45 percent. The authors attach no probabilities; a survey they ran found the median US adult’s expectations consistent with the substantial scenario. The source is a research unit of an AI company, which has an interest in the debate; the model and code are public.",
+     "source_label": "Korinek, Jones, Sacher, Cotter & McCrory, “Economic Scenarios for Transformative AI,” Anthropic Institute, 2026",
+     "source_url": "https://www-cdn.anthropic.com/files/4zrzovbb/website/cf58f84d46a4a76bf5a5b039ac695fba6b80041c.pdf",
+     "source_published": "2026",
+     "source_accessed": "2026-09-24",
+     "id": "unemployment-among-cognitive-workers-in-2030"
+    },
+    {
+     "label": "Wage premium in job postings that require AI skills",
+     "viz": "bar",
+     "wide": false,
+     "value": "62",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Job postings requiring specific AI skills offered wages about 62 percent higher than otherwise similar postings, up from 57 percent a year earlier.",
+     "detail": "PwC’s 2026 barometer covers more than 1 billion job advertisements in 27 countries and territories. It also found postings requiring AI skills growing 69 percent a year against 9 percent for all jobs, and headcount at AI-exposed companies growing faster since 2018 than at less exposed ones. The premium ranges from 118 percent in consumer markets to 16 percent in government. Those who expect AI to create more work than it destroys cite it often: if AI were simply replacing workers, the premium for working with it would be falling. It is measured on advertised wages for a small, fast-growing slice of jobs and says nothing about workers whose roles are automated, so it shows who gains rather than how many lose.",
+     "source_label": "PwC, 2026 Global AI Jobs Barometer",
+     "source_url": "https://www.pwc.com/gx/en/issues/artificial-intelligence/job-barometer/2026/2026-global-ai-jobs-barometer-global-findings.pdf",
+     "source_published": "2026",
+     "source_accessed": "2026-09-24",
+     "id": "wage-premium-in-job-postings-that"
+    },
+    {
+     "label": "Estimates of the share of jobs at high risk of automation",
+     "viz": "ranked",
+     "wide": true,
+     "value": "27",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Frey & Osborne, 2013",
+       "value": "47",
+       "highlight": false
+      },
+      {
+       "label": "OECD, 2023",
+       "value": "27",
+       "highlight": true
+      },
+      {
+       "label": "OECD, 2019",
+       "value": "14",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Estimates of the share of jobs at high risk of automation have ranged from 14 to 47 percent depending on method; the OECD’s 2023 figure, which accounts for AI, is 27 percent.",
+     "detail": "The spread is itself the lesson. Frey and Osborne’s 2013 estimate that 47 percent of US employment was at high risk over “perhaps a decade or two” became the founding number of the modern automation debate, and a decade has passed without anything like that loss, which critics of today’s forecasts often point out. Their method scored whole occupations. The OECD’s 2019 method scored the tasks inside jobs, found that most occupations contain tasks that resist automation, and put 14 percent of jobs across its member countries at high risk, with 32 percent facing significant change. Its 2023 figure is higher because it counts occupations at highest risk once AI’s ability to do non-routine cognitive tasks is included. The measures differ and should not be read as a trend.",
+     "source_label": "OECD Employment Outlook 2023; Frey & Osborne, “The Future of Employment,” Oxford Martin School, 2013",
+     "source_url": "https://www.oecd.org/en/publications/oecd-employment-outlook-2023_08785bba-en.html",
+     "source_published": "2013–2023",
+     "source_accessed": "2026-09-24",
+     "id": "estimates-of-the-share-of-jobs"
+    },
+    {
+     "label": "Work conversations with an AI assistant that augment rather than automate",
+     "viz": "radial",
+     "wide": false,
+     "value": "52",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In November 2025, 52 percent of sampled conversations on Anthropic’s Claude.ai had people iterating and learning with the AI rather than handing it a task, down from 56 percent in January 2025.",
+     "detail": "Usage data from AI companies are the only direct window on what people ask these systems to do at work, and researchers on both sides cite them. The share classified as automation rose from 41 to 45 percent over the same period, and in August 2025 automation briefly exceeded augmentation before swinging back. In the company’s business API traffic, where software calls the model programmatically, automation dominates, which matters most for jobs because that is how firms build AI into their processes. The data cover one company’s products and users, who are not representative of all workers, and the company has an interest in the debate. A later Anthropic report, “Cadences” (June 2026), found that the users who delegate most to the AI are the most optimistic about their own job prospects.",
+     "source_label": "Anthropic Economic Index, January 2026 report",
+     "source_url": "https://www.anthropic.com/research/anthropic-economic-index-january-2026-report",
+     "source_published": "2025",
+     "source_accessed": "2026-09-24",
+     "id": "work-conversations-with-an-ai-assistant"
+    },
+    {
+     "label": "Estimated boost to US GDP from AI over ten years, Acemoglu",
+     "viz": "bar",
+     "wide": false,
+     "value": "0.93–1.16",
+     "unit": "% of GDP",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Daron Acemoglu estimates AI will raise US GDP by 0.93 to 1.16 percent over ten years; other estimates and scenarios run far higher, up to about a third by 2030.",
+     "detail": "The size of the gain decides much of the jobs debate: a small gain means little disruption but also little new wealth to share, and a large one means both. Acemoglu weights task-level exposure estimates by wages and assumes only about 23 percent of exposed tasks can profitably be automated, so about 4.6 percent of all tasks are affected within ten years. That yields a total factor productivity gain of no more than 0.66 percent over the decade, or GDP up to about 1.56 percent higher with a larger investment response. Goldman Sachs’s 2023 estimate of 7 percent of global GDP assumed much wider adoption. The Anthropic Institute’s scenarios, explicitly not forecasts, put US GDP 1.6 percent higher by 2030 in the modest case, 8.3 percent in the substantial case and 32.4 percent in the extreme case, in which growth reaches 15 percent a year. The figures differ in horizon and geography, so they are not strictly comparable.",
+     "source_label": "Daron Acemoglu, “The Simple Macroeconomics of AI,” NBER Working Paper 32487",
+     "source_url": "https://www.nber.org/papers/w32487",
+     "source_published": "2024",
+     "source_accessed": "2026-09-24",
+     "id": "estimated-boost-to-us-gdp-from"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Is AI already taking jobs, or are the early warning signs something else?",
+    "kind": "empirical",
+    "why": "Careful studies point both ways. They use different data, follow different workers and measure exposure differently, so a narrow effect on young workers can sit beside calm economy-wide numbers.",
+    "detail": "Those who see displacement already point to payroll records, which track actual paychecks, showing the youngest workers in exposed occupations falling further behind each quarter, mostly because firms hire fewer of them. That is the pattern a displacement story predicts: firms stop hiring juniors for work a model can do and keep the experienced staff who supervise it. Employers now say so openly when they cut. A shift like this starts at the margin of hiring in a few occupations, they argue, and reaches the headline unemployment rate last, so waiting for aggregate data means seeing it late.\n\nThose who see nothing yet point to economy-wide measures still running on pre-AI trends, and to a Federal Reserve Bank of New York study of job postings: postings in AI-exposed occupations were falling before ChatGPT, did not accelerate after it, and fell no faster for entry-level roles than for senior ones. They read the weak market for new graduates as the tail of the tech hiring correction after pandemic over-hiring, plus higher interest rates, which always hit first-time job seekers hardest. And they treat layoff announcements that cite AI as messages to investors rather than measurements.",
+    "lean_label_a": "Already displacing",
+    "lean_label_b": "Not yet visible",
+    "id": "is-ai-already-taking-jobs-or"
+   },
+   {
+    "text": "Will AI create enough new work to replace the work it automates, as earlier technologies did?",
+    "kind": "empirical",
+    "why": "History favors new work: two centuries of automation left most people employed, often in jobs that did not exist before. The doubt is that AI targets cognition itself, the source of much recent new work.",
+    "detail": "The case for new work: each wave of automation, from mechanized farming to computers, came with confident predictions of mass unemployment that did not come true. The mechanism is well understood. Automation lowers prices, the money saved is spent elsewhere, and new products create occupations no one could have named in advance. Many human wants are for things valued because a person provides them: care, teaching, performance, craftsmanship, trust. Where AI arrives as a tool, demand for the people who use it can rise; radiology, a field once expected to be automated early, now faces a shortage of radiologists.\n\nThe case that this time is different: earlier machines replaced muscle and routine, and people moved into work built on judgment, language and learning, which is what AI does. Horses were an input to the economy for thousands of years until engines made them uncompetitive at any price; the question is whether any human task stays out of reach as machines improve every year. Even if new work comes, it can take a generation, as in manufacturing towns that never recovered from automation and trade, and the people displaced are rarely the people hired.",
+    "lean_label_a": "New work will come",
+    "lean_label_b": "This time is different",
+    "id": "will-ai-create-enough-new-work"
+   },
+   {
+    "text": "How fast will AI change the labor market?",
+    "kind": "empirical",
+    "why": "Past general-purpose technologies took decades to show up in jobs data, but AI capability improves in months and workers took it up faster than any earlier tool. The answer decides whether policy must be built now.",
+    "detail": "The case for speed: AI is software delivered over the internet, not machinery that must be built and installed, and its capability is compounding. On one benchmark of real software engineering tasks, AI performance rose from 4.4 percent to 71.7 percent between 2023 and 2024, by the count of Stanford’s AI Index, and agents able to work for hours unsupervised arrived in 2025 and 2026. Some of the people building these systems expect fast change: Anthropic’s chief executive, Dario Amodei, said in May 2025 that AI could eliminate half of entry-level white-collar jobs and push unemployment to 10 to 20 percent within one to five years.\n\nThe case for decades: electricity took roughly forty years to transform factory productivity, because firms had to reorganize around it, and computers followed the same path. Deployment in the real economy is slowed by regulation, liability, reliability, data, legacy systems and the need to redesign work, none of which improves at the speed of the models. Past predictions of imminent disruption, including the 2013 estimates of how many jobs were at high risk, were wrong mainly about timing.",
+    "lean_label_a": "Within a few years",
+    "lean_label_b": "Over decades",
+    "id": "how-fast-will-ai-change-the"
+   },
+   {
+    "text": "Who should capture the gains when AI raises productivity?",
+    "kind": "value",
+    "why": "If AI raises output while cutting demand for some labor, the gains may concentrate with the owners of AI systems or spread through lower prices, wages and new jobs. Whether to steer them is a question of fairness and incentives.",
+    "detail": "For sharing through public mechanisms: the models were trained on the writing, code and knowledge of millions of people who were not paid for it, and they are being deployed to reduce demand for those same people’s labor. If the gains go to whoever owns the systems, a technology built from common knowledge ends up concentrating wealth. The mechanisms on offer run from a fund paid for by AI companies to retrain displaced workers, through taxes on automation or AI revenue, to a public wealth fund that gives every citizen a stake.\n\nFor leaving it to markets: productivity gains reach people as lower prices, higher wages for workers whose output rises, and new products and jobs, without any new tax. Taxes aimed at AI are hard to define, since nearly all software automates something, and they would slow the adoption that produces the gains and push investment and talent to countries that do not impose them. Redistribution designed around a predicted crisis often meets a crisis that does not arrive in the form expected; unemployment insurance, the tax code and education funding can be adjusted if displacement actually shows up in the data.",
+    "lean_label_a": "Share them publicly",
+    "lean_label_b": "Leave them to markets",
+    "id": "who-should-capture-the-gains-when"
+   },
+   {
+    "text": "Does AI mostly make workers more productive, or mostly do their work instead?",
+    "kind": "empirical",
+    "why": "The same tool can do either, depending on how an employer deploys it, and studies measure different things: individual productivity, how people use chatbots, and employment. Firms’ choices shape which way it goes.",
+    "detail": "The case for augmentation: the strongest field evidence shows workers with AI doing more, not being removed, with the largest gains for the least experienced. Most jobs are bundles of tasks, and automating some of them usually shifts a worker’s time to the rest rather than ending the job, which is why exposure estimates put only a small share of work in the highest-exposure category. A rising pay premium for AI skills is not what replacement looks like.\n\nThe case for replacement: output per worker and the number of workers are different things. If each agent resolves more issues and demand is fixed, a firm needs fewer agents. When a tool lifts novices toward the level of experts, it has encoded the experts’ know-how, the first step toward not hiring the novice at all. Augmentation dominates in consumer chat, but automation dominates in the business traffic through which firms build AI into their processes, and the companies building AI say their goal is agents that complete whole tasks without supervision.",
+    "lean_label_a": "Mostly augments",
+    "lean_label_b": "Mostly replaces",
+    "id": "does-ai-mostly-make-workers-more"
+   },
+   {
+    "text": "Should workers have a say in whether and how AI is used in their jobs?",
+    "kind": "value",
+    "why": "The choice between augmenting and replacing workers is made inside firms, so who makes it shapes the outcome. The dispute is over management rights, property and the role of unions.",
+    "detail": "For a say: workers know which parts of their jobs a tool can improve and which it will degrade, and consulting them tends to steer deployment toward augmentation. Bargaining can set terms for a technology without stopping it. Worker voice, on this view, is one of the few forces able to push AI toward tools that make human expertise more valuable. Employers who decide alone keep the savings and leave the costs of displacement to workers and the public.\n\nFor employer control: firms bear the risk of their investments and answer to customers and competitors. Requiring negotiation over every tool slows adoption and gives a veto to incumbents who have reasons to resist change regardless of its merits. Most US workers are not in unions, so bargaining-based protections reach few of them and can widen the gap between protected insiders and everyone else. Competition for workers who use AI well raises their pay without anyone bargaining for it, and where specific uses cause harm, such as opaque algorithmic firing, targeted regulation works better than a general right to co-decide technology.",
+    "lean_label_a": "Decide jointly",
+    "lean_label_b": "Employers decide",
+    "id": "should-workers-have-a-say-in"
+   },
+   {
+    "text": "Should AI deployment be slowed or limited to protect jobs?",
+    "kind": "value",
+    "why": "Faster deployment promises cheaper services and faster growth, while its costs fall heavily on particular workers and places. Weighing the two is a judgment about what a society owes those it lets go.",
+    "detail": "For slowing: transitions that come too fast overwhelm the institutions meant to cushion them. Retraining takes years, and people displaced in mid-career rarely recover their earnings. Conditions on specific uses, such as a trained human where lives are at stake, buy time for democratic institutions to decide what they want before a handful of companies decides for them. No economic law requires every technically possible substitution to happen as soon as it becomes profitable.\n\nFor letting it run: every delay has a cost less visible than a lost job, in slower medical diagnosis, costlier legal help, slower science, and forgone growth that would have paid for the support displaced workers need. Restrictions protect workers in today’s jobs at the expense of consumers and of the workers who would have filled tomorrow’s, and they are hard to lift once an industry grows around them. Other countries will not slow down, so restrictions shift where AI is developed rather than whether. Better to let productivity rise and help the people affected directly, through income support and retraining, than to freeze the economy in place.",
+    "lean_label_a": "Slow it down",
+    "lean_label_b": "Let it run",
+    "id": "should-ai-deployment-be-slowed-or"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Speed AI adoption and help workers adapt through skills",
+    "color_key": "green",
+    "steelman": "Every generation is told this machine will end work, and every time new work appears. Put AI in every worker’s hands, teach the skills, and help people move into the jobs that grow.",
+    "detail": "The fear rests on a fallacy: that there is a fixed amount of work to go around. Automation makes things cheaper, people spend what they save on other things, and that spending creates jobs, many in occupations nobody could have imagined. AI is the most powerful productivity tool in generations, and the country that adopts it fastest will have the fastest-growing economy, the highest wages and the most new work. So get the tools to every worker and every business, teach AI skills in schools, community colleges and apprenticeships, and help the people whose tasks change move into the work that grows. The White House’s 2025 AI Action Plan calls this “a worker-first AI agenda.”\n\nWe take the entry-level data seriously, and they are why the answer is skills: the squeeze falls where firms use AI to substitute for people, and the remedy is to train new entrants to be the people who direct AI, which is what employers now hire for. But the evidence does not yet show an economy-wide effect, and forecasts of mass automation have a poor record. What would actually hurt workers is the alternative on offer: taxes and restrictions that slow adoption at home while other countries, above all China, push ahead, imposing certain costs to address a speculative harm. Some who share this view are not boosters at all. The computer scientists Arvind Narayanan and Sayash Kapoor argue that AI is a “normal technology” whose economic effects will unfold over decades, like electricity’s, which makes emergency labor policy premature for a different reason.",
+    "proponents": "The White House, Information Technology and Innovation Foundation, Marc Andreessen",
+    "id": "speed-ai-adoption-and-help-workers"
+   },
+   {
+    "name": "Share AI’s gains through new public funds and taxes",
+    "color_key": "blue",
+    "steelman": "AI was built from everyone’s knowledge and may shrink demand for many people’s labor. The public should hold a stake now, through funds and taxes, not try to claw one back later.",
+    "detail": "We do not know how fast AI will displace work, but we know where the gains go if nothing changes: to the companies that own the models and the capital that deploys them. Even in a good outcome the transition will be hard for millions, and the old tools, unemployment insurance that runs out in months and retraining programs with modest results, were not built for it. In a bad outcome, wages cannot be the main way most people share in national income. So we want a fund paid for by the largest AI companies, as in Senator Mark Kelly’s proposed AI Horizon Fund, taxes that shift from labor toward capital and AI returns, and a safety net that expands automatically when displacement shows up in the data. The camp runs from transition funds that get people back into work to permanent dividends that partly separate income from work, like the public wealth fund OpenAI proposed in 2026. That two leading AI developers have called for measures of this kind says something about where their builders think this is going.\n\nWe hear that such taxes will slow adoption and answer a crisis that may never come. A fund that takes equity rather than taxing use adds nothing to the cost of adopting AI. A safety net that triggers on measured job loss costs little if displacement never arrives. Taxing AI returns at rates closer to labor’s removes a subsidy for replacing workers; it does not penalize AI. The risk is lopsided: if we build these mechanisms and the effects are mild, we have spent modestly; if we do not and they are severe, we will be designing them mid-crisis, as after the loss of manufacturing jobs, when help came too little and too late.",
+    "proponents": "OpenAI, Mark Kelly, Dario Amodei, Bernie Sanders",
+    "id": "share-ai-s-gains-through-new"
+   },
+   {
+    "name": "Give workers a say in how AI is used on the job",
+    "color_key": "amber",
+    "steelman": "Whether AI makes workers more valuable or unnecessary is a choice, not a fact about the technology, and the people whose jobs are at stake should help make it.",
+    "detail": "The same model can help a nurse catch errors or be used to schedule fewer nurses; it can make a junior analyst as good as a senior one or eliminate the junior analyst. Left alone, firms lean toward replacement, because the tax code taxes labor far more heavily than equipment and software, because a few large AI companies sell their products on the promise of cutting headcount, and because managers value control. Those are incentives, not laws of economics, and they can be changed. We want bargaining rights over new technology, transparency about how it is used, protection from surveillance and algorithmic discipline, a tax code that stops favoring automation over hiring, and public research money for tools that expand what workers can do. We are not against AI; as the AFL-CIO’s president, Liz Shuler, put it, “we reject the false choice between American competitiveness and respecting workers’ rights and dignity.”\n\nThe 2023 Writers Guild of America contract, won after a strike, bars studios from using AI to write or rewrite scripts while letting writers choose to use it: it set terms without stopping the technology. Tools introduced with the people who use them tend to be adopted more successfully, not less, because those people know where they help. That most workers lack a union is an argument for extending bargaining and enforceable standards, not for leaving everyone without a voice, and disclosure of AI-related layoffs reaches non-union workers too. As the economists Daron Acemoglu and Simon Johnson argue from the history of technology, shared prosperity from past innovations came not automatically but because workers had the power to claim a share.",
+    "proponents": "AFL-CIO, Daron Acemoglu, David Autor, Simon Johnson",
+    "id": "give-workers-a-say-in-how"
+   },
+   {
+    "name": "Slow or limit AI deployment to protect jobs",
+    "color_key": "rust",
+    "steelman": "Nobody voted for this. No law says every job a machine can do must go to a machine the moment it pays, so slow the rollout until the public sets the terms and shares the gains.",
+    "detail": "A handful of companies are racing to deploy a technology whose own builders warn could sweep away much entry-level office work within a few years, and the rest of the country is told to retrain and hope. The pace is the problem. Displaced workers rarely recover their earnings, towns that lose their main employer can take a generation to come back, and no program meant to cushion the blow works at the speed these companies move. Societies decide all the time that some things should not be done, or not yet, or not without conditions: we require licensed pilots, licensed doctors and trained drivers of heavy vehicles. Requiring a human operator in an 80,000-pound autonomous truck, as the Teamsters are seeking, protects the public and a job that supports a family. Pausing the build-out of AI data centers until the gains are shared and the risks understood gives democracy time to set the terms.\n\nWe are not proposing to ban AI, only that specific deployments meet conditions first, the kind of rules every industry lives under. The growth argument assumes the gains will be shared, and so far the companies promising growth are the ones announcing the layoffs. Past rapid shocks, from the automation of manufacturing to the surge of imports from China after 2000, left lasting damage to jobs and earnings in the places they hit, which retraining did not repair. As for other countries, the European Union regulates AI and remains a leading economy; a race to the bottom is a choice, not a law of nature. We are not against technology; we are against letting a few billionaires decide the future of work for everyone else.",
+    "proponents": "International Brotherhood of Teamsters, Bernie Sanders, Alexandria Ocasio-Cortez",
+    "id": "slow-or-limit-ai-deployment-to"
+   }
+  ],
+  "crux": {
+   "lead": "Will AI stay a tool people use, or replace human work faster than new work appears?",
+   "lead_highlight": "stay a tool people use, or replace human work",
+   "subtitle": "Every side expects AI to change jobs. They split over whether it will mostly help people do more, so the economy keeps finding work for them, and over who should carry the costs and hold the gains while that is settled.",
+   "empirical": "Measurable, and being measured: how much paid work AI can do at lower cost, how quickly firms reorganize around it, and whether new tasks replace the ones it takes. Payroll records, trackers of the job mix, usage data and wage data should narrow this within three to five years. Whether wholly new kinds of work appear may take decades to see.",
+   "values": "No forecast settles how to weigh faster growth against security for those displaced, or who has the rightful claim on the gains: the firms that built the systems, the workers whose jobs they absorb, or the public whose knowledge trained them. Beneath that sits an older question: whether work is mainly a way to earn a living, which shared income could replace, or a source of purpose and standing that nothing else supplies."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Yale Budget Lab AI Labor Market Tracker",
+    "description": "A regularly updated tracker, with downloadable data, that tests whether the mix of US occupations and the AI exposure of the unemployed are breaking from pre-AI trends.",
+    "url": "https://budgetlab.yale.edu/research/tracking-impact-ai-labor-market",
+    "for_position": null,
+    "id": "yale-budget-lab-ai-labor-market"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Look up your own occupation on O*NET OnLine",
+    "description": "The US Department of Labor’s free database of the tasks, skills, tools and outlook for about a thousand occupations, useful for seeing which parts of a job are routine information work.",
+    "url": "https://www.onetonline.org/",
+    "for_position": null,
+    "id": "look-up-your-own-occupation-on"
+   },
+   {
+    "kind": "local",
+    "title": "Find an American Job Center near you",
+    "description": "CareerOneStop’s locator for federally funded job centers offering free career counseling, training referrals and reemployment help to workers who have lost a job, including to automation.",
+    "url": "https://www.careeronestop.org/LocalHelp/AmericanJobCenters/find-american-job-centers.aspx",
+    "for_position": "Speed AI adoption and help workers adapt through skills",
+    "id": "find-an-american-job-center-near"
+   },
+   {
+    "kind": "policy",
+    "title": "Senator Mark Kelly’s AI for America plan and AI Horizon Fund",
+    "description": "A plan, with a bill announced in September 2026, for frontier AI companies to pay into a federal trust fund for training, unemployment assistance and support for workers whose jobs AI eliminates.",
+    "url": "https://www.kelly.senate.gov/newsroom/press-releases/in-the-news-kelly-releases-ai-for-america-a-roadmap-for-lasting-leadership-that-benefits-all-americans/",
+    "for_position": "Share AI’s gains through new public funds and taxes",
+    "id": "senator-mark-kelly-s-ai-for"
+   },
+   {
+    "kind": "volunteer",
+    "title": "AFL-CIO Workers First Initiative on AI",
+    "description": "The labor federation’s AI campaign site, with its principles for worker-centered AI and a newsletter for workers who want to organize around how AI is introduced where they work.",
+    "url": "https://workersfirstai.org/",
+    "for_position": "Give workers a say in how AI is used on the job",
+    "id": "afl-cio-workers-first-initiative-on"
+   },
+   {
+    "kind": "local",
+    "title": "Teamsters campaign for human operators in autonomous trucks",
+    "description": "The union’s state campaign, active in California, Illinois and Colorado, to require trained human operators in autonomous commercial vehicles, with bills and hearings residents can follow or testify at.",
+    "url": "https://teamster.org/av/",
+    "for_position": "Slow or limit AI deployment to protect jobs",
+    "id": "teamsters-campaign-for-human-operators-in"
+   },
+   {
+    "kind": "donate",
+    "title": "Per Scholas tuition-free tech and AI training",
+    "description": "A national nonprofit that trains adults, many without college degrees, for technology jobs at no cost to learners, including AI-related courses, in more than 30 locations.",
+    "url": "https://perscholas.org/donate/",
+    "for_position": "Speed AI adoption and help workers adapt through skills",
+    "id": "per-scholas-tuition-free-tech-and"
+   },
+   {
+    "kind": "learn_more",
+    "title": "OpenAI’s policy ideas for sharing AI’s gains, as reported by TechCrunch",
+    "description": "A summary of an AI developer’s April 2026 proposals for a public wealth fund, higher taxes on AI returns and capital, an automatically triggered safety net and a four-day week.",
+    "url": "https://techcrunch.com/2026/04/06/openais-vision-for-the-ai-economy-public-wealth-funds-robot-taxes-and-a-four-day-work-week/",
+    "for_position": "Share AI’s gains through new public funds and taxes",
+    "id": "openai-s-policy-ideas-for-sharing"
+   },
+   {
+    "kind": "policy",
+    "title": "AI-Related Job Impacts Clarity Act",
+    "description": "A bipartisan bill from Senators Josh Hawley and Mark Warner that would require large companies and federal agencies to report AI-related layoffs, hires and unfilled positions to the Labor Department each quarter.",
+    "url": "https://www.hawley.senate.gov/hawley-warner-to-introduce-bipartisan-legislation-revealing-number-of-jobs-lost-to-ai/",
+    "for_position": "Give workers a say in how AI is used on the job",
+    "id": "ai-related-job-impacts-clarity-act"
+   },
+   {
+    "kind": "policy",
+    "title": "AI Data Center Moratorium Act",
+    "description": "Senator Bernie Sanders and Representative Alexandria Ocasio-Cortez’s bill to pause construction of AI data centers until conditions on safety, shared economic gains and utility costs are met.",
+    "url": "https://www.sanders.senate.gov/press-releases/news-sanders-ocasio-cortez-announce-ai-data-center-moratorium-act/",
+    "for_position": "Slow or limit AI deployment to protect jobs",
+    "id": "ai-data-center-moratorium-act"
+   }
+  ]
+ },
+ "icon": "briefcase",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: a large closed briefcase standing upright on a gentle rise as the dominant focal mass; a square microchip with short pins on each side, medium sized, leaning against the briefcase and overlapping its lower corner; a small office building and a small factory with a sawtooth roof on the rise behind at the right; a small wrench lying at the foot of the briefcase; one circuit-board trace line with round nodes running unbroken across the whole frame from the lower left, under the chip, up over the rise to the buildings as the connective element; the ground is the gentle curve of a low rise.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #b48f2c, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: humanoid robots, robot faces, robot and human hands, handshakes, pink slips, cardboard boxes of desk belongings, unemployment lines, brains, glowing eyes, arrows going up or down, dollar signs, currency symbols, broken or cracked objects, warning signs."
 }

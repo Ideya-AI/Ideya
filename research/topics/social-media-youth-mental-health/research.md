@@ -448,7 +448,7 @@ Wikipedia, K.G.M. v. Meta et al. — https://en.wikipedia.org/wiki/K.G.M._v._Met
 UNESCO GEM Report, Phone bans in schools are spreading worldwide — https://www.unesco.org/gem-report/en/articles/phone-bans-schools-are-spreading-worldwide-policy-debate-rages — accessed 2026-09-23
 UNESCO GEM Report, How many countries have phone bans in school — https://www.unesco.org/gem-report/en/articles/how-many-countries-have-phone-bans-school — accessed 2026-09-23
 K-12 Legal Insights, state school cellphone bans, 6 August 2026 — https://www.k-12legalinsights.com/2026/08/screening-screen-time-more-states-are-implementing-cell-phone-bans-in-k-12-schools/ — accessed 2026-09-23
-Education Week, Which states ban or restrict cellphones in schools — https://www.edweek.org/technology/which-states-ban-or-restrict-cellphones-in-schools/2024/06 — accessed 2026-09-23
+Education Week, Which states ban or restrict cellphones in schools — https://www.edweek.org/technology/which-states-ban-or-restrict-cellphones-in-schools/2024/06 — accessed 2026-09-23 (rechecked 2026-09-24: “at least 39 states and the District of Columbia”, updated July 28, 2026)
 NBER Digest, School cell phone bans and student achievement (Figlio & Özek) — https://www.nber.org/digest/202512/school-cell-phone-bans-and-student-achievement — accessed 2026-09-23
 Goodyear et al., SMART Schools study, Lancet Regional Health – Europe 2025 — https://pubmed.ncbi.nlm.nih.gov/40213498/ — accessed 2026-09-23
 New York Attorney General, Meta settlement press release, 26 August 2026 — https://ag.ny.gov/press-release/2026/attorney-general-james-secures-171-billion-and-groundbreaking-reforms-meta — accessed 2026-09-23
