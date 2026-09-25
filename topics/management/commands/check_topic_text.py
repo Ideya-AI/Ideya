@@ -27,31 +27,58 @@ ACTION_KINDS = {k for k, _ in Action.KIND_CHOICES} - {Action.SUBMIT_VIEW}
 
 # Hard caps: the loader slices these (some silently). Over = ERROR.
 CAPS = {
-    "overview.summary": 400, "overview.scope_covered": 400, "overview.scope_excluded": 400,
-    "stat.label": 120, "stat.value": 24, "stat.unit": 24, "stat.note": 400,
-    "stat.source_label": 120, "stat.source_published": 40, "stat.range_min": 40, "stat.range_max": 40,
-    "question.text": 400, "question.lean_label_a": 40, "question.lean_label_b": 40,
-    "position.name": 120, "position.steelman": 400, "position.proponents": 400,
-    "crux.lead": 240, "crux.lead_highlight": 80,
-    "action.title": 200, "action.description": 400,
+    "overview.summary": 400,
+    "overview.scope_covered": 400,
+    "overview.scope_excluded": 400,
+    "stat.label": 120,
+    "stat.value": 24,
+    "stat.unit": 24,
+    "stat.note": 400,
+    "stat.source_label": 120,
+    "stat.source_published": 40,
+    "stat.range_min": 40,
+    "stat.range_max": 40,
+    "question.text": 400,
+    "question.lean_label_a": 40,
+    "question.lean_label_b": 40,
+    "position.name": 120,
+    "position.steelman": 400,
+    "position.proponents": 400,
+    "crux.lead": 240,
+    "crux.lead_highlight": 80,
+    "action.title": 200,
+    "action.description": 400,
 }
 # Glance targets from the exemplar page. Outside = WARNING.
 TARGETS = {
-    "overview.summary": (80, 160), "overview.why_now": (150, 320),
-    "stat.note": (90, 200), "stat.detail": (350, 1300),
-    "question.text": (35, 110), "question.why": (140, 260), "question.detail": (500, 1400),
-    "position.steelman": (100, 200), "position.detail": (500, 1800),
-    "crux.lead": (40, 110), "crux.subtitle": (120, 320), "crux.empirical": (180, 450), "crux.values": (180, 450),
+    "overview.summary": (80, 160),
+    "overview.why_now": (150, 320),
+    "stat.note": (90, 200),
+    "stat.detail": (350, 1300),
+    "question.text": (35, 110),
+    "question.why": (140, 260),
+    "question.detail": (500, 1400),
+    "position.steelman": (100, 200),
+    "position.detail": (500, 1800),
+    "crux.lead": (40, 110),
+    "crux.subtitle": (120, 320),
+    "crux.empirical": (180, 450),
+    "crux.values": (180, 450),
     "action.description": (100, 220),
 }
-COUNTS = {"stats": (10, 20), "questions": (5, 8), "positions": (3, 6), "actions": (6, 10)}
+COUNTS = {
+    "stats": (10, 20),
+    "questions": (5, 8),
+    "positions": (3, 6),
+    "actions": (6, 10),
+}
 
 UK = re.compile(
     r"\b(colou?r(?:s|ed|ful|ing)?|favou?r(?:s|ed|ite|able|ing)?|honou?r(?:s|ed|able)?|labou?r(?:s|ed|ing)?|"
     r"behaviou?r(?:s|al)?|neighbou?r(?:s|hood|ing)?|harbou?r(?:s)?|rumou?r(?:s)?|humou?r|vigou?r|"
     r"centre(?:s|d)?|metres?|litres?|theatres?|fibres?|calibre|"
     r"defence|offence|licence|pretence|programmes?|catalogues?|"
-    r"\w+is(?:e|ed|es|ing|ation|ations)|analys(?:e|ed|es|ing)|paralys(?:e|ed)|"
+    r"\w+is(?:e|ed|es|ing|ation|ations)|analys(?:e|ed|ing)|paralys(?:e|ed)|"
     r"grey(?:s|er|ish)?|aluminium|sceptic(?:s|al|ism)?|ageing|artefacts?|"
     r"travell(?:ed|ing|er|ers)|modell(?:ed|ing)|fuell(?:ed|ing)|labell(?:ed|ing)|signall(?:ed|ing)|totall(?:ed|ing)|"
     r"practis(?:e|ed|ing)|enrol(?:s|ment)?|fulfil(?:s|ment)?|instalments?|cheques?|kerbs?|tyres?|"
@@ -60,12 +87,54 @@ UK = re.compile(
 )
 # -ise words that are also correct US spelling; never flag.
 UK_OK = {
-    "advertise", "advise", "arise", "chastise", "comprise", "compromise", "concise", "demise",
-    "despise", "devise", "disguise", "enterprise", "excise", "exercise", "expertise", "franchise",
-    "improvise", "incise", "merchandise", "otherwise", "precise", "premise", "promise", "raise",
-    "revise", "rise", "supervise", "surmise", "surprise", "televise", "wise", "likewise", "praise",
-    "noise", "poise", "cruise", "bruise", "paradise", "practise", "reprise", "apprise", "treatise",
-    "clockwise", "counterclockwise", "lengthwise", "sunrise", "moonrise", "anticlockwise",
+    "advertise",
+    "advise",
+    "arise",
+    "chastise",
+    "comprise",
+    "compromise",
+    "concise",
+    "demise",
+    "despise",
+    "devise",
+    "disguise",
+    "enterprise",
+    "excise",
+    "exercise",
+    "expertise",
+    "franchise",
+    "improvise",
+    "incise",
+    "merchandise",
+    "otherwise",
+    "precise",
+    "premise",
+    "promise",
+    "raise",
+    "revise",
+    "rise",
+    "supervise",
+    "surmise",
+    "surprise",
+    "televise",
+    "wise",
+    "likewise",
+    "praise",
+    "noise",
+    "poise",
+    "cruise",
+    "bruise",
+    "paradise",
+    "practise",
+    "reprise",
+    "apprise",
+    "treatise",
+    "clockwise",
+    "counterclockwise",
+    "lengthwise",
+    "sunrise",
+    "moonrise",
+    "anticlockwise",
 }
 
 
@@ -74,12 +143,29 @@ def _uk_hits(text):
     for m in UK.finditer(text):
         w = m.group(0)
         low = w.lower()
-        if "u" not in low and low.startswith(("color", "favor", "honor", "labor", "behavior", "neighbor", "harbor", "rumor", "humor", "vigor")):
+        if "u" not in low and low.startswith(
+            (
+                "color",
+                "favor",
+                "honor",
+                "labor",
+                "behavior",
+                "neighbor",
+                "harbor",
+                "rumor",
+                "humor",
+                "vigor",
+            )
+        ):
             continue  # US form matched through the optional u
         stem = re.sub(r"(d|s|ing|ation|ations|es)$", "", low)
+        stem = re.sub(r"^un", "", stem)  # "unsupervised" is "supervise"
         if stem in UK_OK or stem.rstrip("e") + "e" in UK_OK or low in UK_OK:
             continue
-        if low.endswith(("ise", "ised", "ises", "ising", "isation", "isations")) and len(low) <= 6:
+        if (
+            low.endswith(("ise", "ised", "ises", "ising", "isation", "isations"))
+            and len(low) <= 6
+        ):
             continue
         hits.append(w)
     return hits
@@ -99,7 +185,9 @@ class Check:
         if key.endswith((".id", ".color_key", ".viz", ".kind", ".wide", ".highlight")):
             return
         if not isinstance(value, str):
-            if value is not None and not isinstance(value, (bool, int, float, list, dict)):
+            if value is not None and not isinstance(
+                value, (bool, int, float, list, dict)
+            ):
                 self.err(where, "not a string")
             return
         if url:
@@ -123,7 +211,11 @@ class Check:
         if tgt and value and not (tgt[0] <= len(value) <= tgt[1]):
             self.warn(where, f"{len(value)} chars, target {tgt[0]}-{tgt[1]}")
         for w in _uk_hits(value):
-            self.warn(where, f"UK spelling? {w!r}" + (" (capitalized: proper noun?)" if w[0].isupper() else ""))
+            self.warn(
+                where,
+                f"UK spelling? {w!r}"
+                + (" (capitalized: proper noun?)" if w[0].isupper() else ""),
+            )
 
     def pack(self, stats):
         """Mirror Section.basics_tiles: 3 cells a row, wide costs 2. The fold is
@@ -143,7 +235,10 @@ class Check:
             rows.append(row)
         shown = [i for row in rows[:3] for i in row]
         if shown != sorted(shown):
-            self.err("basics", f"wide-tile packing reorders the fold: display order {shown}; fix wide flags or order")
+            self.err(
+                "basics",
+                f"wide-tile packing reorders the fold: display order {shown}; fix wide flags or order",
+            )
         return len(shown)
 
 
@@ -159,9 +254,17 @@ def run(doc, path):
         c.err("topic", f"slug {doc.get('slug')!r} != directory {path.parent.name!r}")
     ov = d.get("overview") or {}
     if not ov.get("why_now_source_url"):
-        c.err("overview.why_now_source_url", "missing: why-now names a dated event, so it names a source a reader can follow")
+        c.err(
+            "overview.why_now_source_url",
+            "missing: why-now names a dated event, so it names a source a reader can follow",
+        )
     else:
-        c.text("overview.why_now_source_url", "overview.why_now_source_url", ov["why_now_source_url"], url=True)
+        c.text(
+            "overview.why_now_source_url",
+            "overview.why_now_source_url",
+            ov["why_now_source_url"],
+            url=True,
+        )
     if not ov.get("why_now_source_label"):
         c.err("overview.why_now_source_label", "missing")
     for k in ("summary", "scope_covered", "scope_excluded", "why_now"):
@@ -180,7 +283,10 @@ def run(doc, path):
             c.text(f"{w}.{k}", f"stat.{k}", v, url=(k == "source_url"))
         viz = s.get("viz")
         if viz == "sparkline":
-            c.err(w, "the tile template draws no sparkline (it falls back to a bare number); use ranked for a short series or bar for one value")
+            c.err(
+                w,
+                "the tile template draws no sparkline (it falls back to a bare number); use ranked for a short series or bar for one value",
+            )
         if viz not in VIZ:
             c.err(w, f"viz {viz!r} not in {sorted(VIZ)}")
         series = s.get("series") or []
@@ -191,26 +297,53 @@ def run(doc, path):
                 c.err(w, "ranked tiles are wide")
             for r in series:
                 if re.search(r"\d\s*(to|–|—)\s*\d", str(r.get("value", ""))):
-                    c.err(w, f"series row {r.get('label')!r} holds a range ({r.get('value')!r}); a bar draws one number, so it draws the low end. Use one number per row, or split into low and high rows")
+                    c.err(
+                        w,
+                        f"series row {r.get('label')!r} holds a range ({r.get('value')!r}); a bar draws one number, so it draws the low end. Use one number per row, or split into low and high rows",
+                    )
             nums = []
             for r in series:
-                m = re.search(r"-?\d+(?:\.\d+)?", str(r.get("value", "")).replace(",", ""))
+                m = re.search(
+                    r"-?\d+(?:\.\d+)?", str(r.get("value", "")).replace(",", "")
+                )
                 if m:
                     nums.append(float(m.group()))
-            if len(series) == 2 and len(nums) == 2 and min(nums) > 0 and min(nums) / max(nums) < 0.01:
-                c.err(w, "a two-row ranked chart whose small value is under 1 percent of the large one draws the small bar as an empty track beside a full one; use a bar tile with the large value and the small one in the note")
-            if any(str(r.get("value", "")).strip().startswith(("-", "−", "–")) for r in series):
-                c.err(w, "a series row is negative; bars cannot show sign (a negative renders as no bar). Use magnitudes with the sign in the label, or a bar tile with the value in the headline")
+            if (
+                len(series) == 2
+                and len(nums) == 2
+                and min(nums) > 0
+                and min(nums) / max(nums) < 0.01
+            ):
+                c.err(
+                    w,
+                    "a two-row ranked chart whose small value is under 1 percent of the large one draws the small bar as an empty track beside a full one; use a bar tile with the large value and the small one in the note",
+                )
+            if any(
+                str(r.get("value", "")).strip().startswith(("-", "−", "–"))
+                for r in series
+            ):
+                c.err(
+                    w,
+                    "a series row is negative; bars cannot show sign (a negative renders as no bar). Use magnitudes with the sign in the label, or a bar tile with the value in the headline",
+                )
             for r in series:
                 c.text(f"{w}.series", "series.label", r.get("label"))
                 if len(r.get("label") or "") > 24:
-                    c.warn(w, f"series label {r.get('label')!r} is {len(r['label'])} chars; the poster's label column wraps past ~24")
+                    c.warn(
+                        w,
+                        f"series label {r.get('label')!r} is {len(r['label'])} chars; the poster's label column wraps past ~24",
+                    )
         elif series:
             c.err(w, f"series given but viz is {viz}")
         if viz == "range" and not (s.get("range_min") and s.get("range_max")):
             c.err(w, "range needs range_min and range_max")
         elif viz == "range":
-            nums = [float(m.group()) for m in re.finditer(r"-?\d+(?:\.\d+)?", str(s.get("value", "")).replace(",", ""))]
+            nums = [
+                float(m.group())
+                for m in re.finditer(
+                    r"-?\d+(?:\.\d+)?", str(s.get("value", "")).replace(",", "")
+                )
+            ]
             lo = re.search(r"-?\d+(?:\.\d+)?", str(s.get("range_min")).replace(",", ""))
             hi = re.search(r"-?\d+(?:\.\d+)?", str(s.get("range_max")).replace(",", ""))
             if lo and hi and nums:
@@ -218,15 +351,28 @@ def run(doc, path):
                 if hi <= lo:
                     c.err(w, "range_max must exceed range_min")
                 elif min(nums) <= lo and max(nums) >= hi:
-                    c.err(w, "range ends equal the value span, so the marker fills the whole track; the ends are the scale the value sits on, not the value")
+                    c.err(
+                        w,
+                        "range ends equal the value span, so the marker fills the whole track; the ends are the scale the value sits on, not the value",
+                    )
         if viz != "ranked" and not s.get("value"):
             c.err(w, "value missing")
-        if viz == "radial" and re.search(r"\d\s*(to|–|-|—)\s*\d", str(s.get("value", ""))):
-            c.err(w, "a radial shows one share; a range value wraps its unit at desktop width. Use a bar tile for a range, or one number")
+        if viz == "radial" and re.search(
+            r"\d\s*(to|–|-|—)\s*\d", str(s.get("value", ""))
+        ):
+            c.err(
+                w,
+                "a radial shows one share; a range value wraps its unit at desktop width. Use a bar tile for a range, or one number",
+            )
         if len(s.get("unit") or "") > 12:
-            c.warn(w, f"unit {s.get('unit')!r} is long; it wraps under the number on the poster")
+            c.warn(
+                w,
+                f"unit {s.get('unit')!r} is long; it wraps under the number on the poster",
+            )
         if not s.get("source_url"):
-            c.err(w, "source_url missing: every stat names a source a reader can follow")
+            c.err(
+                w, "source_url missing: every stat names a source a reader can follow"
+            )
         acc = s.get("source_accessed")
         if acc and not re.fullmatch(r"\d{4}-\d{2}-\d{2}", acc):
             c.err(w, f"source_accessed {acc!r} is not YYYY-MM-DD")
@@ -259,20 +405,33 @@ def run(doc, path):
         for k, v in p.items():
             c.text(f"{w}.{k}", f"position.{k}", v)
         if (p.get("steelman") or "").lstrip().startswith(("“", "‘", '"', "'")):
-            c.err(w, "steelman opens with a quote mark; the template already wraps it in quotes, so it renders doubled. Reword the opening or use the inner quote style mid-sentence")
+            c.err(
+                w,
+                "steelman opens with a quote mark; the template already wraps it in quotes, so it renders doubled. Reword the opening or use the inner quote style mid-sentence",
+            )
         if p.get("color_key") not in POS_KEYS:
             c.err(w, f"color_key {p.get('color_key')!r} not in {POS_KEYS}")
         elif keys.count(p["color_key"]) > 1:
             c.err(w, f"color_key {p['color_key']!r} used twice")
-        if re.search(r"\b(skeptics?|advocates?|pragmatists?|realists?|optimists?|pessimists?|hawks?|doves?|defenders?|critics?)\b", p.get("name", ""), re.I):
-            c.warn(w, "name looks like a posture label; camps are named by what they want")
+        if re.search(
+            r"\b(skeptics?|advocates?|pragmatists?|realists?|optimists?|pessimists?|hawks?|doves?|defenders?|critics?)\b",
+            p.get("name", ""),
+            re.I,
+        ):
+            c.warn(
+                w, "name looks like a posture label; camps are named by what they want"
+            )
 
     crux = d.get("crux") or {}
     for k in ("lead", "lead_highlight", "subtitle", "empirical", "values"):
         if not crux.get(k):
             c.err(f"crux.{k}", "missing")
         c.text(f"crux.{k}", f"crux.{k}", crux.get(k))
-    if crux.get("lead") and crux.get("lead_highlight") and crux["lead_highlight"] not in crux["lead"]:
+    if (
+        crux.get("lead")
+        and crux.get("lead_highlight")
+        and crux["lead_highlight"] not in crux["lead"]
+    ):
         c.err("crux.lead_highlight", "not a verbatim substring of lead")
 
     actions = d.get("actions") or []
@@ -315,13 +474,18 @@ def run(doc, path):
             continue
         words = re.findall(r"[a-z0-9$%.,’']+", text.lower())
         for i in range(len(words) - 7):
-            gram = " ".join(words[i:i + 8])
+            gram = " ".join(words[i : i + 8])
             other = seen.setdefault(gram, name)
             if other != name and (other, name) not in reported:
                 reported.add((other, name))
                 c.warn(f"{name}", f"repeats {other}: “{gram} …”")
 
-    for key, items in (("stats", stats), ("questions", questions), ("positions", positions), ("actions", actions)):
+    for key, items in (
+        ("stats", stats),
+        ("questions", questions),
+        ("positions", positions),
+        ("actions", actions),
+    ):
         lo, hi = COUNTS[key]
         if not (lo <= len(items) <= hi):
             c.err(key, f"{len(items)} items, schema says {lo}-{hi}")
@@ -334,14 +498,21 @@ class Command(BaseCommand):
     def add_arguments(self, p):
         p.add_argument("--slug")
         p.add_argument("--file")
-        p.add_argument("--glance-hash", action="store_true",
-                       help="print a hash of everything a render can show (all but detail text) and exit")
+        p.add_argument(
+            "--glance-hash",
+            action="store_true",
+            help="print a hash of everything a render can show (all but detail text) and exit",
+        )
 
     def handle(self, *a, **o):
         if not (o["slug"] or o["file"]):
             self.stderr.write("give --slug or --file")
             raise SystemExit(2)
-        path = Path(o["file"]) if o["file"] else Path("research/topics") / o["slug"] / "topic.json"
+        path = (
+            Path(o["file"])
+            if o["file"]
+            else Path("research/topics") / o["slug"] / "topic.json"
+        )
         try:
             doc = json.loads(path.read_text(encoding="utf-8"))
         except (OSError, ValueError) as e:
@@ -352,21 +523,32 @@ class Command(BaseCommand):
 
             def strip(node):
                 if isinstance(node, dict):
-                    return {k: strip(v) for k, v in sorted(node.items())
-                            if k not in ("detail", "id", "source_accessed")}
+                    return {
+                        k: strip(v)
+                        for k, v in sorted(node.items())
+                        if k not in ("detail", "id", "source_accessed")
+                    }
                 if isinstance(node, list):
                     return [strip(v) for v in node]
                 return node
 
-            view = {k: doc.get(k) for k in ("title", "icon", "primary_category", "related")}
+            view = {
+                k: doc.get(k) for k in ("title", "icon", "primary_category", "related")
+            }
             view["content"] = strip(doc.get("content") or {})
-            self.stdout.write(hashlib.sha256(json.dumps(view, sort_keys=True).encode()).hexdigest()[:16])
+            self.stdout.write(
+                hashlib.sha256(json.dumps(view, sort_keys=True).encode()).hexdigest()[
+                    :16
+                ]
+            )
             return
         c = run(doc, path.resolve())
         for w in c.warnings:
             self.stdout.write(self.style.WARNING(f"WARN  {w}"))
         for e in c.errors:
             self.stdout.write(self.style.ERROR(f"ERROR {e}"))
-        self.stdout.write(f"{len(c.errors)} errors, {len(c.warnings)} warnings in {path}")
+        self.stdout.write(
+            f"{len(c.errors)} errors, {len(c.warnings)} warnings in {path}"
+        )
         if c.errors:
             raise SystemExit(1)

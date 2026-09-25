@@ -1,8 +1,8 @@
 {
  "slug": "gun-policy",
  "title": "Gun Policy",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-09-25T00:06:59+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Firearm regulation: ownership rights against restrictions on access, carry and types of weapons.",
@@ -14,5 +14,867 @@
   "crime-punishment-reform",
   "policing-reform",
   "constitutional-interpretation"
- ]
+ ],
+ "content": {
+  "overview": {
+   "summary": "How far the right to own and carry guns should yield to limits meant to cut gun deaths, and which limits would actually work.",
+   "scope_covered": "Civilian gun law, mostly in the US: background checks and licensing, carry, red flag and storage laws, bans on assault-style weapons, the courts, and the evidence on gun deaths and self-defense.",
+   "scope_excluded": "Policing and police use of force, sentencing and incarceration, constitutional theory beyond gun cases, the military arms trade, and hunting and wildlife rules.",
+   "why_now": "On June 30, 2026 the US Supreme Court agreed, for the first time, to decide whether the Second Amendment protects AR-15-style rifles, taking up challenges to bans in Cook County, Illinois, and Connecticut. Argument is set for December 2.",
+   "why_now_source_label": "SCOTUSblog",
+   "why_now_source_url": "https://www.scotusblog.com/2026/09/court-announces-cases-it-will-hear-in-december-including-challenges-to-the-constitutionality-of-/"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "US gun deaths by intent",
+     "viz": "ranked",
+     "wide": true,
+     "value": "44,447",
+     "unit": "deaths",
+     "series": [
+      {
+       "label": "All gun deaths",
+       "value": "44,447",
+       "highlight": true
+      },
+      {
+       "label": "Suicides",
+       "value": "27,593",
+       "highlight": false
+      },
+      {
+       "label": "Homicides",
+       "value": "15,364",
+       "highlight": false
+      },
+      {
+       "label": "Law enforcement",
+       "value": "636",
+       "highlight": false
+      },
+      {
+       "label": "Unintentional",
+       "value": "450",
+       "highlight": false
+      },
+      {
+       "label": "Undetermined",
+       "value": "404",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "44,447 people died from gun injuries in the US in 2024: 62 percent were suicides and 35 percent homicides.",
+     "detail": "The CDC counts every death certificate on which a gunshot is the underlying cause, so the total mixes very different events: suicides, mostly among older white men in rural areas; homicides, which fall hardest on young Black men in cities; and a remainder of police shootings, accidents and deaths of undetermined intent, each about 1 percent. The 2024 total was the fifth-highest since the CDC’s online records began in 1968, trailing only the four years before it, and the third annual decline from the 2021 peak of nearly 49,000. Provisional CDC data for 2025, analyzed by The Trace, show a further fall to at least 42,348 deaths, the lowest in six years. The age-adjusted rate in 2024 was 12.8 per 100,000, below the 1974 peak of 16.3. Which part of the total a policy targets shapes the argument over it: carry laws and assault weapons bans are debated mainly as homicide and mass-shooting policy, while waiting periods, safe storage and red flag laws are argued largely as suicide prevention.",
+     "source_label": "Pew Research Center, What the data says about gun deaths in the U.S. (April 28, 2026), from CDC data",
+     "source_url": "https://www.pewresearch.org/short-reads/2026/04/28/what-the-data-says-about-gun-deaths-in-the-us/",
+     "source_published": "2024",
+     "source_accessed": "2026-09-24",
+     "id": "us-gun-deaths-by-intent"
+    },
+    {
+     "label": "US adults who own a gun",
+     "viz": "radial",
+     "wide": false,
+     "value": "32",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "About a third of US adults, 32 percent, say they personally own a gun, and another 10 percent live with someone who does.",
+     "detail": "Ownership has been steady in recent surveys: Pew found 30 percent in both 2017 and 2021, and Gallup, pooling its polls from 2019 to 2024, found 31 percent personally own a gun and another 13 percent live with someone who does. Ownership is far higher among Republicans (45 percent) than Democrats (20 percent), and among rural residents (47 percent) than urban ones (20 percent). The main reason owners give is protection: 72 percent call it a major reason, against 32 percent for hunting and 30 percent for sport shooting. Steady household ownership alongside record sales fits existing owners buying more guns, though the 2021 National Firearms Survey estimated that 7.5 million US adults became new gun owners between January 2019 and April 2021, about half of them women and 20 percent Black, compared with gun owners overall, who were 63 percent male and 73 percent white.",
+     "source_label": "Pew Research Center, Key facts about Americans and guns (July 24, 2024), survey of 5,115 adults",
+     "source_url": "https://www.pewresearch.org/short-reads/2024/07/24/key-facts-about-americans-and-guns/",
+     "source_published": "2023",
+     "source_accessed": "2026-09-24",
+     "id": "us-adults-who-own-a-gun"
+    },
+    {
+     "label": "Estimated defensive gun uses a year in the US",
+     "viz": "range",
+     "wide": false,
+     "value": "0.1–4.7",
+     "unit": "million/yr",
+     "series": [],
+     "range_min": "0",
+     "range_max": "5 million",
+     "note": "Published estimates of how often Americans use a gun in self-defense run from a little more than 100,000 to 4.7 million a year; which end is closer is disputed.",
+     "detail": "RAND traces the spread to definitions and survey method. The low estimates come from the federal National Crime Victimization Survey, which asks about defensive use only of people who first report being victims of a crime. The high ones come from surveys that ask about defensive use directly and count brandishing and verbal threats. News-based counts are lower still: the Gun Violence Archive recorded 1,220 defensive gun use incidents in 2024, drawn from news reports that mostly involve a gun being fired. The number matters because the benefit side of gun ownership is much harder to measure than the cost side, and RAND notes that research on how gun laws affect defensive gun use is almost entirely missing.",
+     "source_label": "RAND, The Science of Gun Policy, Fifth Edition (January 29, 2026)",
+     "source_url": "https://www.rand.org/pubs/research_reports/RRA4360-2.html",
+     "source_published": "1995–2021",
+     "source_accessed": "2026-09-24",
+     "id": "estimated-defensive-gun-uses-a-year"
+    },
+    {
+     "label": "Firearm homicide rate, US and other countries",
+     "viz": "ranked",
+     "wide": true,
+     "value": "4.4",
+     "unit": "per 100k",
+     "series": [
+      {
+       "label": "Colombia",
+       "value": "17.9",
+       "highlight": false
+      },
+      {
+       "label": "Mexico",
+       "value": "17.2",
+       "highlight": false
+      },
+      {
+       "label": "Brazil",
+       "value": "5.8",
+       "highlight": false
+      },
+      {
+       "label": "United States",
+       "value": "4.4",
+       "highlight": true
+      },
+      {
+       "label": "Canada",
+       "value": "0.7",
+       "highlight": false
+      },
+      {
+       "label": "Sweden",
+       "value": "0.5",
+       "highlight": false
+      },
+      {
+       "label": "Switzerland",
+       "value": "0.14",
+       "highlight": false
+      },
+      {
+       "label": "Australia",
+       "value": "0.09",
+       "highlight": false
+      },
+      {
+       "label": "United Kingdom",
+       "value": "0.05",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The US firearm homicide rate in 2023 was 4.4 per 100,000, about 6 times Canada’s and 47 times Australia’s, but below Mexico’s, Colombia’s and Brazil’s.",
+     "detail": "The series uses police-recorded homicides compiled by the UN Office on Drugs and Crime, which makes countries comparable but reads lower for the United States than the CDC’s death-certificate count, whose age-adjusted gun homicide rate for 2023 was 5.6. The ratios are computed from the Our World in Data figures. Among rich democracies the United States is an extreme outlier; in the Americas it is not, and Mexico, Colombia and Brazil have far higher rates despite much stricter gun laws on paper, a contrast gun-rights advocates cite to argue that crime, enforcement and trafficking matter more than law. The gap with rich countries widens once suicides are counted: by the Institute for Health Metrics and Evaluation’s estimates, the US gun suicide rate in 2023 was second in the world, after Greenland.",
+     "source_label": "Our World in Data, Homicide rate from firearms, from UN Office on Drugs and Crime data",
+     "source_url": "https://ourworldindata.org/grapher/homicide-rates-from-firearms",
+     "source_published": "2023 (United Kingdom 2022)",
+     "source_accessed": "2026-09-24",
+     "id": "firearm-homicide-rate-us-and-other"
+    },
+    {
+     "label": "AR-15-style and similar rifles put into US circulation since 1990",
+     "viz": "bar",
+     "wide": false,
+     "value": "32,091,000",
+     "unit": "rifles",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The firearms industry’s trade group estimates that 32,091,000 AR-15-style and similar rifles have been made in or imported into the US since 1990.",
+     "detail": "The National Shooting Sports Foundation, which calls these guns “modern sporting rifles,” builds the estimate from ATF manufacturing and import records and industry data. It counts rifles put into circulation, not rifles still in use or the number of people who own them, and it comes from an organization that opposes bans. Its earlier estimates were 24.4 million in 2022 and 28.1 million in 2024. The count is cited in the Supreme Court case over state bans on these rifles, which turns in part on how widely they are owned.",
+     "source_label": "National Shooting Sports Foundation, 2025 firearm production report, via Shooting Industry",
+     "source_url": "https://shootingindustry.com/industry-news/nssf-report-reveals-record-32-million-modern-sporting-rifles-in-circulation/",
+     "source_published": "1990–2025",
+     "source_accessed": "2026-09-24",
+     "id": "ar-15-style-and-similar-rifles"
+    },
+    {
+     "label": "US gun suicides and gun homicides",
+     "viz": "ranked",
+     "wide": true,
+     "value": "27,593",
+     "unit": "deaths",
+     "series": [
+      {
+       "label": "Suicides 2004",
+       "value": "16,750",
+       "highlight": false
+      },
+      {
+       "label": "Suicides 2021",
+       "value": "26,328",
+       "highlight": false
+      },
+      {
+       "label": "Suicides 2024",
+       "value": "27,593",
+       "highlight": true
+      },
+      {
+       "label": "Homicides 2004",
+       "value": "11,624",
+       "highlight": false
+      },
+      {
+       "label": "Homicides 2021",
+       "value": "20,958",
+       "highlight": false
+      },
+      {
+       "label": "Homicides 2024",
+       "value": "15,364",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Gun suicides hit a record in 2024, while gun homicides fell 27 percent from their 2021 record.",
+     "detail": "Gun homicides surged in 2020 and 2021, during the pandemic, and have fallen every year since. The Trace’s analysis of provisional CDC data puts them at about 12,850 in 2025, the lowest in a dozen years, while gun suicides rose for a seventh straight year to more than 28,000, the highest since records began in 1968; the 2025 figures will be revised when finalized. In rates, the 2024 gun suicide rate of 7.6 per 100,000 matched the near-record level of the late 1970s, while the gun homicide rate of 4.7 was well below its 1974 peak of 7.2. Suicide is now the larger half of American gun deaths, and the half still rising.",
+     "source_label": "Pew Research Center, What the data says about gun deaths in the U.S. (April 28, 2026), from CDC data",
+     "source_url": "https://www.pewresearch.org/short-reads/2026/04/28/what-the-data-says-about-gun-deaths-in-the-us/",
+     "source_published": "2004–2024",
+     "source_accessed": "2026-09-24",
+     "id": "us-gun-suicides-and-gun-homicides"
+    },
+    {
+     "label": "Civilian firearms per 100 residents",
+     "viz": "ranked",
+     "wide": true,
+     "value": "120.5",
+     "unit": "per 100",
+     "series": [
+      {
+       "label": "United States",
+       "value": "120.5",
+       "highlight": true
+      },
+      {
+       "label": "Yemen",
+       "value": "52.8",
+       "highlight": false
+      },
+      {
+       "label": "Canada",
+       "value": "34.7",
+       "highlight": false
+      },
+      {
+       "label": "Finland",
+       "value": "32.4",
+       "highlight": false
+      },
+      {
+       "label": "Switzerland",
+       "value": "27.6",
+       "highlight": false
+      },
+      {
+       "label": "New Zealand",
+       "value": "26.3",
+       "highlight": false
+      },
+      {
+       "label": "France",
+       "value": "19.6",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "At the end of 2017 US civilians held an estimated 393.3 million firearms, about 120.5 for every 100 residents, more than twice the rate of any other country.",
+     "detail": "The Small Arms Survey estimated about 857 million civilian-held firearms worldwide at the end of 2017, so the United States, with about 4 percent of the world’s people, held roughly 46 percent of its civilian guns. The estimates combine registration data, surveys and expert judgment, and count legal and illicit guns alike; in some countries, such as Indonesia, the rate is below 1 per 100. The US figure is almost certainly higher now: the survey counted at least 122 million new or imported guns acquired by US civilians from 2006 to 2017, and sales surged again in 2020 and 2021. It is a count of guns, not owners; surveys find that most guns are held by a minority of owners with several each.",
+     "source_label": "Small Arms Survey, Estimating Global Civilian-Held Firearms Numbers (June 2018)",
+     "source_url": "https://www.smallarmssurvey.org/sites/default/files/resources/SAS-BP-Civilian-Firearms-Numbers.pdf",
+     "source_published": "2017",
+     "source_accessed": "2026-09-24",
+     "id": "civilian-firearms-per-100-residents"
+    },
+    {
+     "label": "Share of suicide attempts that end in death, by method",
+     "viz": "ranked",
+     "wide": true,
+     "value": "89.6",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Firearm",
+       "value": "89.6",
+       "highlight": true
+      },
+      {
+       "label": "Drowning",
+       "value": "56.4",
+       "highlight": false
+      },
+      {
+       "label": "Hanging",
+       "value": "52.7",
+       "highlight": false
+      },
+      {
+       "label": "All methods",
+       "value": "8.5",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "About 90 percent of suicide attempts with a firearm end in death, against 8.5 percent of suicide attempts by all methods.",
+     "detail": "The study counted suicide deaths and suicide attempts treated in US emergency departments or hospitals from 2007 to 2014. Firearms and hanging accounted for 8.8 percent of suicidal acts but 75.3 percent of suicide deaths; drug poisoning, the most common method, accounted for 59.4 percent of acts but 13.5 percent of deaths. Because attempts never treated in a hospital are missed, the true fatality rate across all methods is lower still. The finding anchors the public-health case on suicide: limiting access to a gun during a crisis, through waiting periods, safe storage, voluntary temporary storage or red flag orders, is expected to save lives. Gun-rights advocates generally accept the lethality point and favor voluntary measures over legal mandates.",
+     "source_label": "Conner, Azrael & Miller, Annals of Internal Medicine, 2019",
+     "source_url": "https://pubmed.ncbi.nlm.nih.gov/31791066/",
+     "source_published": "2007–2014",
+     "source_accessed": "2026-09-24",
+     "id": "share-of-suicide-attempts-that-end"
+    },
+    {
+     "label": "Weapons used in US gun murders",
+     "viz": "ranked",
+     "wide": true,
+     "value": "53",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Handguns",
+       "value": "53",
+       "highlight": true
+      },
+      {
+       "label": "Rifles",
+       "value": "3",
+       "highlight": false
+      },
+      {
+       "label": "Shotguns",
+       "value": "1",
+       "highlight": false
+      },
+      {
+       "label": "Other or not stated",
+       "value": "42",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Of 11,717 gun murders in 2024 with FBI data, handguns were involved in 53 percent and rifles, the category that includes AR-15-style guns, in 3 percent.",
+     "detail": "The FBI’s figures come from police agencies that report voluntarily, so they cover fewer murders than the CDC’s death-certificate count, and the type of gun is not recorded in 42 percent of cases. If the unknown cases split like the known ones, handguns would account for roughly nine in ten gun murders. The rifle figure covers rifles of every kind, so semiautomatic rifles are a part of it. Everyday gun murder is overwhelmingly a handgun problem; rifles figure far more in the rarer mass shootings.",
+     "source_label": "Pew Research Center, What the data says about gun deaths in the U.S. (April 28, 2026), from FBI data",
+     "source_url": "https://www.pewresearch.org/short-reads/2026/04/28/what-the-data-says-about-gun-deaths-in-the-us/",
+     "source_published": "2024",
+     "source_accessed": "2026-09-24",
+     "id": "weapons-used-in-us-gun-murders"
+    },
+    {
+     "label": "US states with selected gun laws",
+     "viz": "ranked",
+     "wide": true,
+     "value": "29",
+     "unit": "states",
+     "series": [
+      {
+       "label": "Permitless carry",
+       "value": "29",
+       "highlight": true
+      },
+      {
+       "label": "Private-sale checks",
+       "value": "22",
+       "highlight": false
+      },
+      {
+       "label": "Red flag laws",
+       "value": "21",
+       "highlight": false
+      },
+      {
+       "label": "Assault weapons bans",
+       "value": "12",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Twenty-nine states let adults carry a concealed handgun without a permit, while 12 states and DC ban assault weapons and 21 states and DC have red flag laws.",
+     "detail": "The map of American gun law has polarized. Permitless carry, adopted first by Vermont by default and then by Alaska in 2003, reached 29 states in 2024, when Louisiana and South Carolina became the 28th and 29th. In North Carolina the Senate voted in 2025 to override the governor’s veto of a permitless carry bill, but the House had not completed the override as of spring 2026. Mostly Democratic-led states have moved the other way, extending background checks to private sales, adopting extreme risk protection orders and banning assault weapons; Rhode Island and Virginia have the newest bans. The District of Columbia is counted separately in each figure. The counts come from an advocacy group’s legal database and may classify borderline laws differently from other trackers, and the Supreme Court’s December 2026 argument could invalidate every assault weapons ban at once.",
+     "source_label": "Giffords Law Center policy summaries; Wikipedia, Constitutional carry",
+     "source_url": "https://giffords.org/lawcenter/gun-laws/policy-areas/hardware-ammunition/assault-weapons/",
+     "source_published": "2026",
+     "source_accessed": "2026-09-24",
+     "id": "us-states-with-selected-gun-laws"
+    },
+    {
+     "label": "Deaths in US mass shootings",
+     "viz": "bar",
+     "wide": false,
+     "value": "510",
+     "unit": "deaths",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Mass shootings killed 510 people in 2024 by the broadest common definition, about 3 percent of gun homicides; the FBI’s narrower active-shooter count found 23.",
+     "detail": "There is no single definition of a mass shooting. The Gun Violence Archive counts any incident in which four or more people are shot, not counting the shooter, which captures many gang and family shootings; it recorded 502 such incidents in 2024, down from 690 in 2021. The FBI counts “active shooter incidents,” in which someone is actively trying to kill people in a populated area; these fell from 61 in 2021 to 24 in 2024. Mass shootings are a small share of deaths but drive much of the politics: the 1994 federal assault weapons ban, Connecticut’s ban after Sandy Hook and the 2022 Bipartisan Safer Communities Act after Uvalde all followed them.",
+     "source_label": "Pew Research Center, gun deaths in the U.S. (April 28, 2026), from Gun Violence Archive and FBI data",
+     "source_url": "https://www.pewresearch.org/short-reads/2026/04/28/what-the-data-says-about-gun-deaths-in-the-us/",
+     "source_published": "2024",
+     "source_accessed": "2026-09-24",
+     "id": "deaths-in-us-mass-shootings"
+    },
+    {
+     "label": "Gun death rate by state",
+     "viz": "ranked",
+     "wide": true,
+     "value": "12.8",
+     "unit": "per 100k",
+     "series": [
+      {
+       "label": "Mississippi",
+       "value": "28.0",
+       "highlight": false
+      },
+      {
+       "label": "New Mexico",
+       "value": "26.6",
+       "highlight": false
+      },
+      {
+       "label": "Alaska",
+       "value": "24.4",
+       "highlight": false
+      },
+      {
+       "label": "United States",
+       "value": "12.8",
+       "highlight": true
+      },
+      {
+       "label": "New York",
+       "value": "4.4",
+       "highlight": false
+      },
+      {
+       "label": "Massachusetts",
+       "value": "3.8",
+       "highlight": false
+      },
+      {
+       "label": "Hawaii",
+       "value": "3.7",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2024 Mississippi’s gun death rate, 28.0 per 100,000, was more than seven times Hawaii’s 3.7; the national rate was 12.8.",
+     "detail": "The five states with the lowest gun death rates, Hawaii, Massachusetts, New Jersey, New York and Rhode Island, all have strict gun laws and low household gun ownership; the five highest, Mississippi, New Mexico, Alaska, Alabama and Wyoming, mostly have permissive laws and high ownership. Splitting the deaths by type complicates the picture. The highest gun suicide rates in 2024 were in Wyoming (19.7), Alaska (18.7) and Montana (16.9), while the highest gun homicide rates were in the District of Columbia (18.0), which has strict laws, and Mississippi (16.9). The lowest gun homicide rates, in New Hampshire (0.9), Maine (1.2), Rhode Island (1.2), Idaho (1.3) and North Dakota (1.3), mix strict and permissive states. The pattern is read both as evidence that laws work and as a reflection of rural suicide and concentrated urban homicide.",
+     "source_label": "Pew Research Center, What the data says about gun deaths in the U.S. (April 28, 2026), from CDC data",
+     "source_url": "https://www.pewresearch.org/short-reads/2026/04/28/what-the-data-says-about-gun-deaths-in-the-us/",
+     "source_published": "2024",
+     "source_accessed": "2026-09-24",
+     "id": "gun-death-rate-by-state"
+    },
+    {
+     "label": "Support for specific gun policies",
+     "viz": "ranked",
+     "wide": true,
+     "value": "64",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Bar mentally ill buyers",
+       "value": "88",
+       "highlight": false
+      },
+      {
+       "label": "Minimum age of 21",
+       "value": "79",
+       "highlight": false
+      },
+      {
+       "label": "Ban magazines over 10",
+       "value": "66",
+       "highlight": false
+      },
+      {
+       "label": "Ban assault-style guns",
+       "value": "64",
+       "highlight": true
+      },
+      {
+       "label": "Teachers carry in school",
+       "value": "50",
+       "highlight": false
+      },
+      {
+       "label": "Carry in more places",
+       "value": "44",
+       "highlight": false
+      },
+      {
+       "label": "Shorter waiting periods",
+       "value": "30",
+       "highlight": false
+      },
+      {
+       "label": "Permitless carry",
+       "value": "24",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2023, 64 percent of US adults favored banning assault-style weapons, though a differently worded 2024 Gallup poll found 52 percent; 24 percent favored permitless carry.",
+     "detail": "Each figure answers a separate question about one proposal. Only keeping guns from people with mental illness drew overwhelming support in both parties: 89 percent of Democrats and 88 percent of Republicans. Democrats overwhelmingly favored banning high-capacity magazines and assault-style weapons (85 percent each), while fewer than half of Republicans did (45 and 42 percent); 74 percent of Republicans favored letting teachers carry in schools. Owners and non-owners split along similar lines: 43 percent of gun owners and 77 percent of non-owners favored an assault-style weapons ban. The 2023 survey did not ask about background checks; in Pew’s April 2021 survey, 81 percent favored checks on private and gun-show sales. Gallup’s question asked about banning the manufacture, possession and sale of semiautomatic “assault rifles.”",
+     "source_label": "Pew Research Center, Americans’ views of specific gun policy proposals (June 28, 2023)",
+     "source_url": "https://www.pewresearch.org/politics/2023/06/28/americans-views-of-specific-gun-policy-proposals/",
+     "source_published": "2023",
+     "source_accessed": "2026-09-24",
+     "id": "support-for-specific-gun-policies"
+    },
+    {
+     "label": "Homicides and suicides committed with a gun",
+     "viz": "radial",
+     "wide": false,
+     "value": "76",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2024 guns were used in 76 percent of all US homicides and 57 percent of all US suicides, among the highest shares in decades.",
+     "detail": "The counts behind the shares are 20,162 homicides and 48,824 suicides from all causes in 2024. The gun share of homicides has been among the highest since 1968 in recent years, and provisional 2025 data put it at 74 percent. The gun share of suicides was 57 percent in 2025 as well, which The Trace reports is the highest in at least a quarter-century; the record, 61 percent, came in 1990 and 1993. Whether people denied a gun would kill or die by other means as often is one of the central empirical disputes of the debate.",
+     "source_label": "Pew Research Center, What the data says about gun deaths in the U.S. (April 28, 2026), from CDC data",
+     "source_url": "https://www.pewresearch.org/short-reads/2026/04/28/what-the-data-says-about-gun-deaths-in-the-us/",
+     "source_published": "2024",
+     "source_accessed": "2026-09-24",
+     "id": "homicides-and-suicides-committed-with-a"
+    },
+    {
+     "label": "Americans who say gun ownership increases safety",
+     "viz": "ranked",
+     "wide": true,
+     "value": "49",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Republicans",
+       "value": "79",
+       "highlight": false
+      },
+      {
+       "label": "Gun owners",
+       "value": "71",
+       "highlight": false
+      },
+      {
+       "label": "Rural residents",
+       "value": "65",
+       "highlight": false
+      },
+      {
+       "label": "All adults",
+       "value": "49",
+       "highlight": true
+      },
+      {
+       "label": "Non-owners",
+       "value": "37",
+       "highlight": false
+      },
+      {
+       "label": "Urban residents",
+       "value": "34",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2023 Americans split evenly: 49 percent said gun ownership increases safety by letting law-abiding citizens protect themselves, and 49 percent said it reduces safety.",
+     "detail": "The question sits beneath the policy questions, and it divides the country almost exactly in half. The series shows the share in each group saying ownership increases safety; on the other side, 78 percent of Democrats say it reduces safety. Rural residents and gun owners are each about twice as likely as urban residents and non-owners to see ownership as a source of safety. The same survey found 62 percent expected gun violence to increase over the next five years, a prediction the later fall in gun homicides has not borne out.",
+     "source_label": "Pew Research Center, Gun Violence Widely Viewed as a Major – and Growing – National Problem (June 28, 2023)",
+     "source_url": "https://www.pewresearch.org/politics/2023/06/28/gun-violence-widely-viewed-as-a-major-and-growing-national-problem/",
+     "source_published": "2023",
+     "source_accessed": "2026-09-24",
+     "id": "americans-who-say-gun-ownership-increases"
+    },
+    {
+     "label": "Gun deaths among US children and teens under 18",
+     "viz": "bar",
+     "wide": false,
+     "value": "2,227",
+     "unit": "deaths",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "2,227 Americans under 18 died from gunshot wounds in 2024; provisional data show 2,108 in 2025, a 5 percent drop, while gun suicides in that age group rose 15 percent.",
+     "detail": "The CDC reports that firearm injuries were the leading cause of death among US children and teens aged 1 to 19 in 2022, ahead of car crashes and cancer, and Everytown’s analysis of CDC data finds the same for ages 1 to 17 in 2024. The age range matters: 18- and 19-year-olds account for a large share of deaths in the wider group, and the ranking also reflects how far deaths from other causes, such as car crashes, have fallen. Everytown puts the homicide share of gun deaths among those aged 0 to 19 at 65 percent over 2020 to 2024, counting police shootings as homicides; suicides and unintentional shootings make up most of the rest, the categories most affected by safe-storage laws. RAND rates the evidence that child-access prevention laws reduce youth firearm suicides and unintentional injuries as supportive, its strongest rating.",
+     "source_label": "The Trace, analysis of CDC provisional mortality data (August 2026)",
+     "source_url": "https://www.thetrace.org/2026/08/gun-deaths-homicide-suicide-cdc-data/",
+     "source_published": "2024 (2025 provisional)",
+     "source_accessed": "2026-09-24",
+     "id": "gun-deaths-among-us-children-and"
+    },
+    {
+     "label": "Americans who want stricter laws on firearm sales",
+     "viz": "ranked",
+     "wide": true,
+     "value": "56",
+     "unit": "%",
+     "series": [
+      {
+       "label": "1990",
+       "value": "78",
+       "highlight": false
+      },
+      {
+       "label": "2021",
+       "value": "52",
+       "highlight": false
+      },
+      {
+       "label": "2022",
+       "value": "57",
+       "highlight": false
+      },
+      {
+       "label": "2023",
+       "value": "56",
+       "highlight": false
+      },
+      {
+       "label": "2024",
+       "value": "56",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In October 2024, 56 percent of Americans said laws covering the sale of firearms should be made more strict, 33 percent kept as they are and 10 percent less strict.",
+     "detail": "Gallup has asked the same question since 1990, when support for stricter laws was 78 percent, a level it has not returned to. Support tends to rise after high-profile mass shootings and fade afterward: it reached 67 percent after the 2018 Parkland school shooting and fell to 52 percent in 2021, the lowest since 2014. The partisan split is wide: 89 percent of Democrats, 56 percent of independents and 25 percent of Republicans favored stricter laws in 2024. In the same poll, 20 percent favored banning handgun possession except by police, statistically tied with the record low. Pew’s differently worded question in June 2023 found 58 percent saying gun laws should be stricter, 26 percent about right and 15 percent less strict.",
+     "source_label": "Gallup, Majorities Still Back Stricter Gun Laws, Assault Weapons Ban (November 18, 2024)",
+     "source_url": "https://news.gallup.com/poll/653489/majorities-back-stricter-gun-laws-assault-weapons-ban.aspx",
+     "source_published": "2024",
+     "source_accessed": "2026-09-24",
+     "id": "americans-who-want-stricter-laws-on"
+    },
+    {
+     "label": "Fatal mass shootings in Australia before and after its 1996 gun laws",
+     "viz": "ranked",
+     "wide": true,
+     "value": "0",
+     "unit": "shootings",
+     "series": [
+      {
+       "label": "1979–1996",
+       "value": "13",
+       "highlight": false
+      },
+      {
+       "label": "1997–May 2016",
+       "value": "0",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Australia had 13 fatal mass shootings in the 18 years before its 1996 gun law reforms and none in the next two decades; whether the laws caused the drop is disputed.",
+     "detail": "After a gunman killed 35 people at Port Arthur in 1996, Australia banned semiautomatic rifles and pump-action shotguns, required a license and a genuine reason for ownership, and bought back and destroyed more than 650,000 newly prohibited guns. The JAMA study counted shootings in which five or more people were killed. It found the mean firearm death rate fell from 3.6 per 100,000 in 1979–1996 to 1.2 in 1997–2013 and the existing decline in firearm suicide accelerated, but non-firearm suicide and homicide fell by more, so “it is not possible to determine whether the change in firearm deaths can be attributed to the gun law reforms.” Gun-rights advocates add that the decline was already under way and that a mandatory buyback would be unconstitutional and unworkable in a country with more than 100 times as many guns. After the 2025 Bondi Beach attack, carried out with licensed straight-pull rifles and shotguns, Australia tightened its rules again and launched a new buyback in 2026.",
+     "source_label": "Chapman, Alpers & Jones, JAMA, 2016",
+     "source_url": "https://pubmed.ncbi.nlm.nih.gov/27332876/",
+     "source_published": "1979–2016",
+     "source_accessed": "2026-09-24",
+     "id": "fatal-mass-shootings-in-australia-before"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Does having more guns in a place cause more deaths there, or do gun numbers mostly reflect other forces?",
+    "kind": "empirical",
+    "why": "No one can assign guns to communities at random, so the evidence is observational. The link between gun ownership and gun deaths is not disputed; its cause is, because places with many guns differ in many other ways.",
+    "detail": "The case that guns raise deaths: across US states, higher household gun ownership goes with higher total suicide rates, not only more gun suicides, and case-control studies find that a gun in the home roughly triples a household’s risk of suicide. Nine in ten suicide attempts with a gun end in death, far more than with other methods, and many suicidal crises are brief, so the method at hand decides who lives. The United States has rates of assault and robbery broadly like other rich countries but far more deaths, a gun homicide rate about six times Canada’s, because more of its conflicts involve guns.\n\nThe case that guns are not the driver: the places with the most guns are not the most violent. Rural, high-ownership states such as Idaho, Maine and New Hampshire have some of the lowest gun homicide rates in the country, while gun homicide concentrates in particular urban neighborhoods among people with long criminal histories. Switzerland and Finland pair high ownership with low homicide; Japan and South Korea have almost no civilian guns and high suicide rates. The US homicide rate without guns is itself higher than in most rich countries. Correlations cannot separate guns from the conditions that lead people to buy them, and US gun homicides fell by more than a quarter from 2021 to 2024 while the number of guns kept rising.",
+    "lean_label_a": "Guns raise deaths",
+    "lean_label_b": "Guns not the driver",
+    "id": "does-having-more-guns-in-a"
+   },
+   {
+    "text": "Should AR-15-style rifles and large-capacity magazines be banned, and does the Constitution allow it?",
+    "kind": "value",
+    "why": "These rifles appear in a small share of gun deaths but in many of the deadliest mass shootings, and are among the best-selling guns in the country. The Supreme Court’s answer turns partly on history and partly on how it weighs common ownership against danger.",
+    "detail": "The case for a ban: semiautomatic rifles with detachable large-capacity magazines let one person fire dozens of rounds in seconds, and they were the weapons in many of the deadliest US mass shootings, from Sandy Hook to Las Vegas, Parkland and Uvalde. Everytown reports that shootings with assault weapons from 2015 to 2022 left nearly six times as many people shot per incident and that all ten of the deadliest mass shootings from 2016 to 2025 involved an assault weapon and a large-capacity magazine. A handgun serves home defense better; the Second Amendment has always coexisted with bans on especially dangerous weapons, and lower courts have repeatedly upheld these bans. RAND finds limited evidence that magazine bans reduce mass shootings.\n\nThe case for protecting them: tens of millions of law-abiding Americans own these rifles for home defense, hunting and sport. Under Heller, arms “in common use” for lawful purposes are protected, and it is hard to see what that phrase means if the country’s most popular rifle is not. Rifles of all kinds are involved in about 3 percent of gun murders where the weapon is known, so bans burden millions of owners while barely touching everyday violence. “Assault weapon” describes cosmetic features, the 1994–2004 federal ban produced no clear drop in gun deaths, and RAND finds the evidence that such bans affect mass shootings inconclusive.",
+    "lean_label_a": "Ban them",
+    "lean_label_b": "Protect them",
+    "id": "should-ar-15-style-rifles-and"
+   },
+   {
+    "text": "Does letting more people carry guns in public raise or lower violent crime?",
+    "kind": "empirical",
+    "why": "Bruen ended discretionary permit systems, and most states no longer require a permit at all, so broad carry is now national practice. Studies disagree partly because states changed their laws at different times amid national crime swings.",
+    "detail": "The case that it raises crime: RAND’s 2026 review rates as “supportive,” its strongest category, the conclusion that shall-issue carry laws increase total homicides, firearm homicides and other violent crime. Leading studies, which compare states before and after the laws against synthetic controls, find violent crime roughly 13 to 15 percent higher ten years after adoption. More guns carried in public means more arguments, road-rage incidents and thefts that can turn fatal, more guns stolen from cars, and more difficulty for police in telling a threat from a lawful carrier. Stand-your-ground laws, often passed alongside carry expansions, are also associated with more firearm homicides.\n\nThe case that it deters crime: permit holders commit crimes at very low rates, and violent criminals already carry illegally whatever the law says. The expansion of carry since the 1980s coincided with a long fall in violent crime, and gun homicides fell steeply in 2023, 2024 and 2025 as permitless carry spread and Bruen opened carry in the remaining states. Most defensive gun uses involve no shot fired, a benefit crime statistics do not capture. Economists including Carlisle Moody and Thomas Marvell have argued that the leading estimates are sensitive to modeling choices.",
+    "lean_label_a": "Raises crime",
+    "lean_label_b": "Deters crime",
+    "id": "does-letting-more-people-carry-guns"
+   },
+   {
+    "text": "Would background checks on every sale, or a license to buy, cut gun deaths enough to justify the burden?",
+    "kind": "empirical",
+    "why": "Federal law requires checks only on sales by licensed dealers, so private sales go unchecked in about half the states. Most criminals get guns through theft, straw buyers or informal networks, and whether closing the gap reaches them depends on enforcement.",
+    "detail": "The case that it is worth the burden: RAND finds moderate evidence that dealer background checks reduce firearm homicides and that checks on both dealer and private sales reduce total homicides, and, for the first time, limited evidence that permit-to-purchase licensing reduces homicides. Studies of Connecticut, which adopted licensing in 1995, and Missouri, which repealed it in 2007, found fewer gun homicides and suicides after adoption and more after repeal. A check takes minutes for almost everyone and stops prohibited buyers at the counter; without universal checks, anyone turned away at a store can buy privately.\n\nThe case that it is not: studies of California and other states that extended checks to private sales found no clear change in gun deaths, and RAND rates the evidence on private-sale checks alone as limited. Criminals rarely buy from strangers who would run a check. Universal checks cannot be enforced without knowing who owns which gun, which points toward a registry that owners see as the first step to confiscation. Licensing adds fees, fingerprints, classes and weeks of delay that fall hardest on poor and minority residents of high-crime neighborhoods, who most need to defend themselves. Prosecuting the straw buyers and traffickers who already break the law would do more.",
+    "lean_label_a": "Worth the burden",
+    "lean_label_b": "Not worth it",
+    "id": "would-background-checks-on-every-sale"
+   },
+   {
+    "text": "Should gun laws be judged by the nation’s tradition of regulation or by their public-safety benefits today?",
+    "kind": "value",
+    "why": "Bruen replaced the balancing test most lower courts used with a test of consistency with historical regulation. That moved the question from what works to what the founding generation would recognize, and judges applying it have reached conflicting results.",
+    "detail": "The case for history and tradition: the Second Amendment is a right, and rights are not balanced case by case by the officials they limit. Before Bruen, judges weighing benefits against burdens nearly always sided with the government, giving this right less protection than any other in the Bill of Rights. Tying it to its historical scope gives courts an objective anchor and still allows longstanding laws that disarm the dangerous: in Rahimi in 2024 the Court upheld the federal ban on gun possession by people under domestic violence restraining orders on exactly that basis. If the public wants broader restrictions, it can amend the Constitution.\n\nThe case for weighing public safety: historical analogy is a poor guide to modern weapons, cities and threats, and it gives judges wide discretion dressed up as neutrality; courts applying Bruen have split on whether 18- to 20-year-olds, drug users or people in parks may be disarmed. Every other constitutional right allows some weighing of government interests, and democratic majorities facing tens of thousands of gun deaths a year should be able to pass laws that evidence shows save lives. Heller itself called the right “not unlimited,” and the founding era regulated gunpowder storage, public carry and possession by groups it considered dangerous far more than the new test lets modern legislatures do.",
+    "lean_label_a": "Follow history",
+    "lean_label_b": "Weigh public safety",
+    "id": "should-gun-laws-be-judged-by"
+   },
+   {
+    "text": "How often do guns protect people, compared with how often they are used to harm them?",
+    "kind": "empirical",
+    "why": "The harms of guns are counted on death certificates; the benefits mostly are not, because most defensive uses involve no shot fired and leave no record. Estimates of how often they happen vary enormously with how the question is asked.",
+    "detail": "The case that guns protect more than they harm: surveys that ask gun owners directly find large numbers of defensive uses; the 2021 National Firearms Survey estimated about 1.67 million a year, with no shot fired in about 82 percent of them. Criminals surveyed in prison report fearing armed victims more than police. For people in high-crime areas or far from police help, self-defense is not an abstraction, and a policy calculus that counts the deaths guns cause but none of the crimes they prevent is lopsided.\n\nThe case that they harm more: the federal crime-victim survey finds far fewer defensive uses, and survey methodologists argue that direct questions about rare events produce large overestimates, since even a small share of false positives inflates a national figure. Studies consistently find that a gun in the home is associated with higher risks of suicide, homicide of a household member and accidental shooting, and very few household gun deaths are justifiable homicides. David Hemenway and Sara Solnick found that using a gun in self-defense was no more effective at preventing injury than other protective actions, while the tens of thousands of gun suicides each year are concrete.",
+    "lean_label_a": "More help than harm",
+    "lean_label_b": "More harm than help",
+    "id": "how-often-do-guns-protect-people"
+   },
+   {
+    "text": "Should courts be able to take guns temporarily from people judged dangerous before they commit a crime?",
+    "kind": "value",
+    "why": "Red flag laws let family members or police ask a judge to remove someone’s guns for a limited time, often at a first hearing the person does not attend. They sit on the line between prevention and punishment without a conviction.",
+    "detail": "The case for preventing first: many mass shooters and many people who die by suicide give clear warnings that families and police see but cannot act on under criminal law. A temporary order with a prompt full hearing is a narrow, individual tool that leaves everyone else’s rights untouched, and it has support from conservatives such as David French and from Republican-led states including Florida and Indiana. RAND finds limited evidence that the laws reduce suicides, and studies from Connecticut and Indiana estimate roughly one suicide prevented for every 10 to 20 orders issued.\n\nThe case for due process first: the orders strip a constitutional right on a civil standard of proof, often after a hearing the gun owner does not know about, on the word of an estranged relative or on a police officer’s judgment about speech. They take the guns but leave a person judged dangerous free and untreated, and they can become leverage in family disputes. Because orders are relatively rare the evidence is thin, the one-in-10-to-20 estimates rest on a few studies, and existing involuntary commitment and criminal threat laws, which carry stronger protections, could reach the same people.",
+    "lean_label_a": "Prevent first",
+    "lean_label_b": "Due process first",
+    "id": "should-courts-be-able-to-take"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Tighten gun laws to reduce gun deaths",
+    "color_key": "green",
+    "steelman": "Guns turn crises, arguments and grievances into deaths. Sensible limits on who buys, what they buy and how it is stored save lives and leave lawful owners armed.",
+    "detail": "Other rich democracies are no less troubled than we are. The difference is that Americans have easy access to far more guns, and a gun turns a suicidal hour or a heated argument into a death. Firearms are now the leading cause of death for American children and teens. We respect the right to own a gun, and what we ask leaves adults free to own guns for self-defense and sport: background checks on every sale, licensing so buyers show they can handle a gun safely, waiting periods, red flag laws, safe-storage requirements, a minimum age of 21, and an end to the sale of military-style rifles and large-capacity magazines built to kill many people fast. These measures are popular, including with many gun owners, and the states that have adopted them have the lowest gun death rates in the country.\n\nWe hear that these laws burden millions of owners to stop a few criminals. Most gun deaths are not the work of career criminals but of ordinary people in a moment of crisis, most of them suicides, and a check, a license or a few days’ wait are the kinds of conditions we already accept for driving a car. Bans on unusually dangerous weapons belong to the historical tradition the courts ask about, and courts have upheld assault weapons bans in case after case. Where gun homicide has fallen, it has fallen most in states and cities that invested in both gun laws and violence intervention, and gun suicides are still at a record. Pediatricians among us add that a home without a gun is the most reliable protection for a child. A smaller strand, including former Justice John Paul Stevens in 2018, has called for repealing the Second Amendment, and some favor an Australian-style mandatory buyback; most of us do not.",
+    "proponents": "Everytown for Gun Safety, Giffords, Brady, American Academy of Pediatrics, Abigail Spanberger",
+    "id": "tighten-gun-laws-to-reduce-gun"
+   },
+   {
+    "name": "Protect and expand the right to keep and carry arms",
+    "color_key": "blue",
+    "steelman": "Self-defense is a fundamental right of every law-abiding American. Gun control burdens millions of peaceful owners and does little to stop criminals, who ignore it.",
+    "detail": "The right to keep and bear arms is in the Bill of Rights because free people must be able to defend themselves, their families and, in the last resort, their liberty. It belongs to every law-abiding American, not only to those who can persuade an official they deserve it. Criminals do not submit to background checks, register their guns or obey magazine limits, and the cities with the strictest laws have often had the worst violence. The rifles targeted by “assault weapon” bans are the most popular in America and figure in a tiny share of murders. When the police are minutes away, an armed citizen is often the only protection, and most defensive uses end without a shot. The answer to violence is to enforce the laws against violent criminals, restore rights that states have made hard to exercise, and apply Heller and Bruen as written.\n\nAmerica does have more gun deaths than its peers, but the gap comes from suicide, rooted in despair and isolation rather than law, and from homicide concentrated among a small number of repeat offenders. We support voluntary safe storage and suicide prevention led by gun owners, and many of us backed the Fix NICS Act of 2018 to improve records for existing prohibitions. Most mass shooters bought their guns legally after passing a background check or took them from family, and armed security and faster police response save more lives than bans. We differ on how far to go: the NRA has at times accepted narrow measures, such as added rules on bump stocks after the 2017 Las Vegas shooting, while Gun Owners of America and the Firearms Policy Coalition oppose nearly all federal regulation, including the registration of suppressors and short-barreled rifles. The federal Justice Department now sues states, Virginia among them, over their gun laws.",
+    "proponents": "National Rifle Association, Second Amendment Foundation, Gun Owners of America, Firearms Policy Coalition, US Department of Justice",
+    "id": "protect-and-expand-the-right-to"
+   },
+   {
+    "name": "Keep guns from dangerous people while leaving lawful owners alone",
+    "color_key": "amber",
+    "steelman": "Most gun owners will never harm anyone. Disarm the people who show they are dangerous, with full due process, and leave everyone else’s rights alone.",
+    "detail": "Laws on which weapons citizens may own punish millions for the acts of a few. But the Second Amendment has always coexisted with disarming people who show by their conduct that they are dangerous: felons, domestic abusers, people found to be a threat to themselves or others. The practical path is to make those prohibitions work: get juvenile and mental-health records into the background check system, prosecute straw purchasers and traffickers, let families and police ask a judge to remove guns temporarily from someone in crisis, fund mental health care and school safety, and support safe storage. Senator John Cornyn built the 2022 Bipartisan Safer Communities Act, the first major federal gun law in nearly three decades, on these lines; he reports that nearly 500 people have been convicted under its straw-purchase and trafficking provisions. Such measures target people rather than objects, pass with votes from both parties and are likelier to survive in court.\n\nTo those who want rifle bans, we answer that bans on common rifles are unlikely to survive the Supreme Court, would take decades to shrink the existing stock and would break the coalition that made progress possible, while our measures reach both suicides and mass shooters, who so often show warning signs. To those who say red flag orders and wider record checks strip rights without a conviction, we insist on prompt hearings, time limits and penalties for false petitions; disarming the demonstrably dangerous is part of the tradition the Supreme Court has recognized. Some of us accept universal background checks, while many who backed the 2022 law oppose them as a step toward registration. A strand led by gun owners pursues suicide prevention through voluntary safe storage and temporary storage at gun shops.",
+    "proponents": "John Cornyn, David French, National Sheriffs’ Association, Major Cities Chiefs Association",
+    "id": "keep-guns-from-dangerous-people-while"
+   },
+   {
+    "name": "Concentrate on the few people and places that drive shootings",
+    "color_key": "rust",
+    "steelman": "A few hundred people in each city drive most shootings. Reach them directly, with help and with consequences, instead of fighting over the national gun supply.",
+    "detail": "Gun homicide is intensely concentrated. In most cities a few hundred people, often in a handful of street groups on a few blocks, account for most of the shootings, and police, outreach workers and each other know who they are. David Kennedy’s National Network for Safe Communities finds that group members are around half a percent of a city’s population but involved in as much as 70 percent of its homicide and gun violence. Laws aimed at every gun buyer barely reach them. What works is telling those at highest risk directly that the violence must stop, offering real help to those who want out, following through on those who keep shooting, solving more shootings so retaliation is not the only justice available, and fixing the places where violence clusters. A review of 24 evaluations found focused deterrence associated with a moderate reduction in crime, smaller in the more rigorous studies.\n\nWe do not oppose prosecuting traffickers, but the evidence for acting on people is stronger and faster than for national gun laws, and the fall in gun homicide since 2021 came without major new federal restrictions. We divide sharply on means: the Manhattan Institute and the Trump administration stress arresting and incarcerating repeat violent offenders, Kennedy’s network stresses deterrence with minimal arrest, and Advance Peace and hospital-based programs stress mentoring, cash stipends and outreach. The split showed in April 2025, when the Justice Department ended violence intervention grants worth about $145 million, roughly half of the $300 million invested in such programs since 2022; the outreach wing opposed the cut and the enforcement wing largely did not. We concede that our approach has little to say about gun suicide, the majority of gun deaths.",
+    "proponents": "National Network for Safe Communities, David Kennedy, Rafael Mangual, Advance Peace, Cure Violence",
+    "id": "concentrate-on-the-few-people-and"
+   }
+  ],
+  "crux": {
+   "lead": "Would broad limits on guns save enough lives to justify what they take from lawful owners?",
+   "lead_highlight": "save enough lives to justify what they take",
+   "subtitle": "Most sides want fewer gun deaths and accept disarming people shown to be dangerous. The split is over limits that reach every owner: how many deaths they would prevent beyond targeted measures, and how much of a valued right is worth giving up for them.",
+   "empirical": "The size of the effects can be measured: how much licensing, checks on every sale, waiting periods, carry rules and bans on rifles and magazines change suicides, homicides and mass-shooting deaths once other trends are accounted for; whether people denied a gun in a crisis die by other means as often; and how often guns stop crimes, counted in ways both sides accept.",
+   "values": "No study settles how to weigh an individual right against statistical lives, or who carries the burden of proof. One side holds that owning arms for self-defense is a fundamental liberty, like speech, restricted only for people shown to be dangerous. The other holds that a free society may set reasonable conditions on a lethal product, as it does on cars and medicines, and that the lives lost weigh at least as heavily."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Read RAND’s review of what the evidence says about gun laws",
+    "description": "RAND’s nonpartisan Gun Policy in America project rates the scientific evidence on 18 kinds of state gun laws, for outcomes from suicide and homicide to defensive gun use, updated in January 2026.",
+    "url": "https://www.rand.org/research/gun-policy.html",
+    "for_position": null,
+    "id": "read-rand-s-review-of-what"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Volunteer with Moms Demand Action",
+    "description": "The grassroots volunteer network of Everytown for Gun Safety, which campaigns for background checks, red flag laws, secure storage and assault weapons restrictions in statehouses and Congress.",
+    "url": "https://momsdemandaction.org/",
+    "for_position": "Tighten gun laws to reduce gun deaths",
+    "id": "volunteer-with-moms-demand-action"
+   },
+   {
+    "kind": "policy",
+    "title": "Take action with the NRA’s lobbying arm",
+    "description": "The NRA Institute for Legislative Action’s action center alerts members to pending federal and state gun bills and helps them contact their legislators.",
+    "url": "https://www.nraila.org/take-action/",
+    "for_position": "Protect and expand the right to keep and carry arms",
+    "id": "take-action-with-the-nra-s"
+   },
+   {
+    "kind": "local",
+    "title": "Find voluntary temporary gun storage near you",
+    "description": "Hold My Guns connects gun owners with firearm retailers that will store guns securely for a while, during travel, deployment or a difficult period, without involving the courts.",
+    "url": "https://holdmyguns.org/",
+    "for_position": "Keep guns from dangerous people while leaving lawful owners alone",
+    "id": "find-voluntary-temporary-gun-storage-near"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Learn how Group Violence Intervention works",
+    "description": "The National Network for Safe Communities explains the focused-deterrence strategy that brings police, community members and service providers together to confront the few people driving shootings.",
+    "url": "https://nnscommunities.org/strategies/group-violence-intervention/",
+    "for_position": "Concentrate on the few people and places that drive shootings",
+    "id": "learn-how-group-violence-intervention-works"
+   },
+   {
+    "kind": "local",
+    "title": "Call or text 988 if someone is in crisis",
+    "description": "The 988 Suicide & Crisis Lifeline offers free, confidential support by phone, text and chat around the clock, for people in crisis and for those worried about someone else.",
+    "url": "https://988lifeline.org/",
+    "for_position": null,
+    "id": "call-or-text-988-if-someone"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Follow the Supreme Court’s AR-15 case",
+    "description": "SCOTUSblog’s case page for Viramontes v. Cook County, consolidated with Grant v. Higgins, collects the briefs and coverage ahead of the argument over state bans on semiautomatic rifles.",
+    "url": "https://www.scotusblog.com/cases/viramontes-v-cook-county/",
+    "for_position": null,
+    "id": "follow-the-supreme-court-s-ar"
+   },
+   {
+    "kind": "donate",
+    "title": "Support Giffords",
+    "description": "The gun-safety organization led by former Representative Gabby Giffords, who was shot in 2011, runs a law center tracking state gun laws and lobbies for stronger ones.",
+    "url": "https://giffords.org/",
+    "for_position": "Tighten gun laws to reduce gun deaths",
+    "id": "support-giffords"
+   },
+   {
+    "kind": "donate",
+    "title": "Support the Second Amendment Foundation",
+    "description": "The litigation group behind the two AR-15 cases the Supreme Court will hear in December 2026, and many other challenges to state gun laws.",
+    "url": "https://saf.org/",
+    "for_position": "Protect and expand the right to keep and carry arms",
+    "id": "support-the-second-amendment-foundation"
+   },
+   {
+    "kind": "local",
+    "title": "Get a free gun lock through Project ChildSafe",
+    "description": "A firearms-industry program of the National Shooting Sports Foundation that hands out free safety kits with cable locks through local law enforcement and teaches secure storage.",
+    "url": "https://projectchildsafe.org/",
+    "for_position": "Keep guns from dangerous people while leaving lawful owners alone",
+    "id": "get-a-free-gun-lock-through"
+   }
+  ]
+ },
+ "icon": "target",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: a large bolt-action hunting rifle in clean side profile spanning most of the frame's width as the dominant focal mass, its wooden stock and barrel given a clear fill, pointing away to the right and never toward the viewer, resting across a small rounded sandbag rest; the rest sits on the gentle curve of a low grassy mound that is the ground, and the rifle's stock overlaps the mound's edge; a small open box of cartridges on the mound near the stock; a small round bullseye target on a simple wooden stand far off to the upper right on a distant rise; a footpath that curves from the mound out to the target as the connective element. No table, no bench.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #6a62b0, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: people, hands, faces, blood, bullet holes, muzzle flash, smoke, bullets in flight, a gun pointed at the viewer, crosshairs, scopes aimed at anything, crossed guns, flags, national symbols, eagles, constitution scrolls, the number 2, candles, flowers, memorials, ribbons, crime scene tape, police, soldiers, handcuffs, prohibition signs, red circles, slashes, stop signs, school buses, schools, arrows, animals, deer."
 }

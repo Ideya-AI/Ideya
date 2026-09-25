@@ -1,8 +1,8 @@
 {
  "slug": "immigration-borders-restriction",
  "title": "Immigration & Borders",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-09-24T06:47:17+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "How many people a state admits and on what terms, and the freedom to move and settle. Admission, not integration.",
@@ -16,5 +16,671 @@
   "liberal-order-vs-multipolarity",
   "economic-inequality",
   "effective-altruism-vs-traditional-systemic-philanthropy"
- ]
+ ],
+ "content": {
+  "overview": {
+   "summary": "How many people a country should let in, through which doors, and whether states may keep out peaceful people who want to come.",
+   "scope_covered": "How many people states admit and through which doors (work, family, study, resettlement, asylum), border enforcement, detention and deportation, and the claim of a right to move. Evidence mainly from the US, EU, UK and Canada.",
+   "scope_excluded": "What happens after admission: integration, assimilation, language, multiculturalism and national identity. Citizenship rules such as birthright citizenship, except where they bear on who is admitted.",
+   "why_now": "On June 12, 2026 the EU’s Pact on Migration and Asylum began to apply in every member state, bringing mandatory screening of irregular arrivals, fast-track procedures at the border and faster returns, as border crossings, asylum claims and net migration fall across much of the rich world.",
+   "why_now_source_label": "European Commission",
+   "why_now_source_url": "https://home-affairs.ec.europa.eu/news/new-migration-and-asylum-rules-enter-application-what-changing-2026-06-12_en"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "Share of population born abroad, selected countries",
+     "viz": "ranked",
+     "wide": true,
+     "value": "15.2",
+     "unit": "%",
+     "series": [
+      {
+       "label": "United Arab Emirates",
+       "value": "74.0",
+       "highlight": false
+      },
+      {
+       "label": "Switzerland",
+       "value": "31.1",
+       "highlight": false
+      },
+      {
+       "label": "Australia",
+       "value": "30.4",
+       "highlight": false
+      },
+      {
+       "label": "Canada",
+       "value": "22.2",
+       "highlight": false
+      },
+      {
+       "label": "Germany",
+       "value": "19.8",
+       "highlight": false
+      },
+      {
+       "label": "United Kingdom",
+       "value": "17.1",
+       "highlight": false
+      },
+      {
+       "label": "United States",
+       "value": "15.2",
+       "highlight": true
+      },
+      {
+       "label": "France",
+       "value": "13.8",
+       "highlight": false
+      },
+      {
+       "label": "World",
+       "value": "3.7",
+       "highlight": false
+      },
+      {
+       "label": "Japan",
+       "value": "2.8",
+       "highlight": false
+      },
+      {
+       "label": "India",
+       "value": "0.3",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In mid-2024 about 15 percent of US residents were born abroad, fewer than in Switzerland, Australia, Canada, Germany or the UK and far more than in Japan or India.",
+     "detail": "The UN counts anyone living outside their country of birth, whatever their legal status or reason for moving, refugees included. The United States hosts the most migrants of any country, 52.4 million in 2024, but not the largest share. The Gulf states are a category of their own: most of their workforce is temporary and cannot settle or naturalize. Shares have risen almost everywhere in the rich world since 1990: Spain went from 2.1 to 18.5 percent, Ireland from 6.5 to 23.1 percent, the UK from 6.4 to 17.1 percent and Germany from 8.7 to 19.8 percent. Japan and South Korea, rich but historically closed, remain below 4 percent, though both have been widening work routes as their populations age.",
+     "source_label": "UN DESA Population Division, International Migrant Stock 2024, Annex II",
+     "source_url": "https://www.un.org/development/desa/pd/sites/www.un.org.development.desa.pd/files/undesa_pd_2025_intlmigstock_2024_key_facts_and_figures_advance-unedited.pdf",
+     "source_published": "2024",
+     "source_accessed": "2026-09-23",
+     "id": "share-of-population-born-abroad-selected"
+    },
+    {
+     "label": "Share of the world’s people living outside their country of birth",
+     "viz": "radial",
+     "wide": false,
+     "value": "3.7",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "About 304 million people, 3.7 percent of the world’s population, lived outside their country of birth in mid-2024, nearly double the 154 million of 1990.",
+     "detail": "Because the world’s population also grew, the migrant share has risen only from 2.9 percent in 1990 and 3.1 percent in 2010. The count includes everyone, whatever their legal status or reason for moving. Europe hosted the most migrants of any region (94 million), followed by Northern America (61 million), and nearly half of all migrants (45 percent) live in their region of birth. About one in six, 51.7 million including refugees, asylum seekers and others in need of protection, had been forced from home, the highest share since the global refugee data series began in the 1950s. Movement across borders is large in absolute terms and has grown fast in some destinations, yet the great majority of people live and die in the country where they were born.",
+     "source_label": "UN DESA Population Division, International Migrant Stock 2024: Key facts and figures",
+     "source_url": "https://www.un.org/development/desa/pd/sites/www.un.org.development.desa.pd/files/undesa_pd_2025_intlmigstock_2024_key_facts_and_figures_advance-unedited.pdf",
+     "source_published": "2024",
+     "source_accessed": "2026-09-23",
+     "id": "share-of-the-world-s-people"
+    },
+    {
+     "label": "People forcibly displaced worldwide",
+     "viz": "bar",
+     "wide": false,
+     "value": "117.8",
+     "unit": "million",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "At the end of 2025, 117.8 million people were displaced by persecution, conflict or violence, about one person in 70 worldwide, in the first annual decline in a decade.",
+     "detail": "More than half never crossed a border: 68.7 million were displaced inside their own countries. There were 41.6 million refugees, including 6 million Palestine refugees under UNRWA’s mandate and 7.2 million other people in need of international protection, mostly Venezuelans, plus 9.0 million asylum seekers. The total fell about 4 percent in 2025, driven by the largest wave of returns UNHCR has recorded: about 4.4 million refugees and 10.3 million internally displaced people went home, many to Syria and some under pressure, as with Afghans expelled from Iran and Pakistan. About two-thirds of refugees live in a country neighboring their own, and low- and middle-income countries host most of them; Colombia, Germany and Türkiye were the largest hosts, with 2.8, 2.7 and 2.4 million. The rich-world asylum debate therefore concerns a minority of the displaced, which one side reads as proof that rich countries do little and the other as proof that protection works best near home.",
+     "source_label": "UNHCR, Global Trends: Forced Displacement in 2025",
+     "source_url": "https://www.unhcr.org/global-trends",
+     "source_published": "2025",
+     "source_accessed": "2026-09-23",
+     "id": "people-forcibly-displaced-worldwide"
+    },
+    {
+     "label": "US Border Patrol encounters at the southwest border",
+     "viz": "ranked",
+     "wide": true,
+     "value": "237,538",
+     "unit": "encounters",
+     "series": [
+      {
+       "label": "FY2019",
+       "value": "851,508",
+       "highlight": false
+      },
+      {
+       "label": "FY2020",
+       "value": "400,651",
+       "highlight": false
+      },
+      {
+       "label": "FY2021",
+       "value": "1,659,206",
+       "highlight": false
+      },
+      {
+       "label": "FY2022",
+       "value": "2,206,436",
+       "highlight": false
+      },
+      {
+       "label": "FY2023",
+       "value": "2,045,838",
+       "highlight": false
+      },
+      {
+       "label": "FY2024",
+       "value": "1,530,523",
+       "highlight": false
+      },
+      {
+       "label": "FY2025",
+       "value": "237,538",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The Border Patrol recorded about 238,000 encounters at the US-Mexico border in fiscal 2025, the fewest since 1970 and roughly a tenth of the record 2.2 million in fiscal 2022.",
+     "detail": "Encounters are Border Patrol apprehensions between official ports of entry plus, from fiscal 2020, pandemic-era Title 42 expulsions. People who presented themselves at ports of entry, including through the CBP One app in 2023 and 2024, are not counted, and a person caught several times counts several times, which inflated the 2021 and 2022 totals when expelled migrants retried quickly. The fall came in two steps. A June 2024 rule restricting asylum between ports cut crossings by roughly half, and the Trump administration’s January 2025 measures (suspending asylum access at the border, ending releases, deploying troops and reinstating “Remain in Mexico”) cut them to under 10,000 a month from February 2025. About 72 percent of fiscal 2025 apprehensions came in the 111 days before the change of administration.",
+     "source_label": "Pew Research Center analysis of US Customs and Border Protection data",
+     "source_url": "https://www.pewresearch.org/short-reads/2026/02/02/migrant-encounters-at-the-us-mexico-border-are-at-their-lowest-level-in-more-than-50-years/",
+     "source_published": "2019 to 2025",
+     "source_accessed": "2026-09-23",
+     "id": "us-border-patrol-encounters-at-the"
+    },
+    {
+     "label": "EU citizens who feel negative about immigration from outside the EU",
+     "viz": "radial",
+     "wide": false,
+     "value": "51",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In spring 2026, 51 percent of EU citizens said immigration of people from outside the EU evoked a negative feeling for them, and 45 percent a positive one.",
+     "detail": "Across the 27 member states, 8 percent answered very positive, 37 percent fairly positive, 35 percent fairly negative and 16 percent very negative, almost unchanged from a year earlier; 26,415 people were interviewed face to face. A companion question about immigration from other member states draws much more positive answers, which is why free movement inside the EU is far less contested than entry from outside it. Views vary widely between countries. Britain shows the pattern in sharper form: immigration was named the most important issue facing the country throughout 2026 in the Ipsos Issues Index, and in February 2026, 67 percent of Britons told Ipsos the number of asylum seekers was too high, against 43 percent for work migrants and 39 percent for students.",
+     "source_label": "European Commission, Standard Eurobarometer 105 (Spring 2026), question QB5.2",
+     "source_url": "https://euneighbourseast.eu/wp-content/uploads/2026/05/standard-eurobarometer-105-spring-2026_data-annex_en.pdf",
+     "source_published": "2026",
+     "source_accessed": "2026-09-23",
+     "id": "eu-citizens-who-feel-negative-about"
+    },
+    {
+     "label": "Americans who want immigration decreased",
+     "viz": "ranked",
+     "wide": true,
+     "value": "29",
+     "unit": "%",
+     "series": [
+      {
+       "label": "2024",
+       "value": "55",
+       "highlight": false
+      },
+      {
+       "label": "2025",
+       "value": "30",
+       "highlight": false
+      },
+      {
+       "label": "2026",
+       "value": "29",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In June 2026, 29 percent of US adults wanted immigration decreased, down from 55 percent in 2024; 35 percent wanted it kept at the present level and 31 percent increased.",
+     "detail": "The question is Gallup’s long-running “should immigration be kept at its present level, increased or decreased?” The swing is one of the fastest reversals in the series, and it tracked events: the desire for less immigration climbed as border crossings surged after 2021 and fell back once they dropped. Political scientists call this “thermostatic” opinion, in which the public leans against whatever direction policy is moving. A second Gallup question found 73 percent calling immigration a good thing for the country in 2026, down from a record 79 percent in 2025, with Republicans falling 14 points to 50 percent. On specific policies, 75 percent favored a path to citizenship for immigrants in the country illegally and 58 percent opposed deporting all of them. Broad support in the abstract alongside intense concern when the system looks out of control is a combination every camp claims as its mandate.",
+     "source_label": "Gallup, “Americans’ Support for Immigration Down, Still Strong”",
+     "source_url": "https://news.gallup.com/poll/712289/americans-support-immigration-down-strong.aspx",
+     "source_published": "2026",
+     "source_accessed": "2026-09-23",
+     "id": "americans-who-want-immigration-decreased"
+    },
+    {
+     "label": "Share of the US labor force born abroad",
+     "viz": "radial",
+     "wide": false,
+     "value": "19.1",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Immigrants made up 19.1 percent of the US civilian labor force in 2025, about one worker in five.",
+     "detail": "The share has risen from about 15 percent in the early 2000s. Immigrants cluster at both ends of the skill range: 17.0 percent of foreign-born workers aged 25 and over had not completed high school, against 3.2 percent of the native-born, while immigrants are also overrepresented among PhD scientists and engineers. That two-humped profile is why the wage debate splits by skill. The question of labor supply grows as the population ages: the Congressional Budget Office projects that US deaths will exceed births from 2030, after which net immigration accounts for all population growth.",
+     "source_label": "US Bureau of Labor Statistics, Labor Force Characteristics of Foreign-born Workers, 2025",
+     "source_url": "https://www.bls.gov/news.release/forbrn.nr0.htm",
+     "source_published": "2025",
+     "source_accessed": "2026-09-23",
+     "id": "share-of-the-us-labor-force"
+    },
+    {
+     "label": "US net international migration",
+     "viz": "ranked",
+     "wide": true,
+     "value": "1.3",
+     "unit": "million",
+     "series": [
+      {
+       "label": "Year to mid-2024",
+       "value": "2.7",
+       "highlight": false
+      },
+      {
+       "label": "Year to mid-2025",
+       "value": "1.3",
+       "highlight": true
+      },
+      {
+       "label": "Mid-2026 (projected)",
+       "value": "0.321",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "US net international migration fell from 2.7 million in the year to mid-2024 to 1.3 million a year later. The Census Bureau projects about 321,000 next; other estimates put 2025 below zero.",
+     "detail": "Net international migration is arrivals minus departures, whatever their legal status. The Census Bureau’s years run from July to June, so the 2025 figure straddles the last months of the Biden administration, when releases at the border had already fallen sharply, and the first months of the Trump administration. The bureau attributes the fall to fewer arrivals, with fewer refugees and far fewer people released at the border, and to more departures, and says its estimates are “trending toward negative net migration,” which would be the first time in more than 50 years. On a calendar-year basis, Wendy Edelberg and Tara Watson of Brookings and Stan Veuger of AEI put 2025 between −295,000 and −10,000. Because the Census release projected the fall below zero rather than measuring it, the size of the reversal will be settled only by later data.",
+     "source_label": "US Census Bureau, “New Population Estimates Show Historic Decline in Net International Migration”",
+     "source_url": "https://census.gov/newsroom/blogs/random-samplings/2026/01/historic-decline-in-net-international-migration.html",
+     "source_published": "2024 to 2026",
+     "source_accessed": "2026-09-23",
+     "id": "us-net-international-migration"
+    },
+    {
+     "label": "Projected cut in US federal deficits from the 2022–2026 immigration surge, 2024 to 2034",
+     "viz": "bar",
+     "wide": false,
+     "value": "0.9",
+     "unit": "$ trillion",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "CBO projected that the 2022–2026 rise in immigration would cut federal deficits by about $0.9 trillion over 2024 to 2034. It counts the federal budget only.",
+     "detail": "Extra revenue of $1.2 trillion outweighed $0.3 trillion in extra spending and interest, mainly because more workers pay payroll and income taxes; CBO put nominal GDP $8.9 trillion higher over the decade and $1.3 trillion (3.2 percent) higher in 2034. The estimate leaves out state and local costs, which fall more heavily on schools, emergency health care and shelter, and which were the sharpest political flashpoint in New York, Chicago and Denver in 2023 and 2024. It is a projection made before the surge ended, and CBO called it “very uncertain.”",
+     "source_label": "Congressional Budget Office, “Effects of the Immigration Surge on the Federal Budget and the Economy”",
+     "source_url": "https://www.cbo.gov/publication/60569",
+     "source_published": "2024",
+     "source_accessed": "2026-09-23",
+     "id": "projected-cut-in-us-federal-deficits"
+    },
+    {
+     "label": "UK net migration",
+     "viz": "ranked",
+     "wide": true,
+     "value": "171,000",
+     "unit": "people",
+     "series": [
+      {
+       "label": "Year to March 2023",
+       "value": "944,000",
+       "highlight": false
+      },
+      {
+       "label": "Year to Dec 2024",
+       "value": "331,000",
+       "highlight": false
+      },
+      {
+       "label": "Year to Dec 2025",
+       "value": "171,000",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "UK net migration fell to a provisional 171,000 in 2025, less than a fifth of its peak of 944,000 in the year to March 2023.",
+     "detail": "After leaving the EU, Britain ended free movement for Europeans but opened wide work and study routes for everyone else, including a care-worker visa that allowed dependents, and net migration from outside the EU surged, much of it from India, Nigeria, Pakistan and China. Conservative and then Labour governments tightened: dependents were barred for most students and care workers, salary thresholds were raised, and Labour’s May 2025 white paper “Restoring Control over the Immigration System” closed the care-worker route to new applicants and proposed lengthening the wait for settlement to ten years. In 2025 immigration was 813,000 and emigration 642,000. Non-EU nationals arriving for work fell 47 percent, EU nationals left on net (−42,000), as did British nationals (−136,000), and asylum-related immigration held at about 88,000. Reform UK, promising deeper cuts, led many national polls from 2025.",
+     "source_label": "Office for National Statistics, Long-term international migration, provisional: year ending December 2025",
+     "source_url": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/bulletins/longterminternationalmigrationprovisional/yearendingdecember2025",
+     "source_published": "2025",
+     "source_accessed": "2026-09-23",
+     "id": "uk-net-migration"
+    },
+    {
+     "label": "Asylum applications in the EU, Norway and Switzerland",
+     "viz": "bar",
+     "wide": false,
+     "value": "822,000",
+     "unit": "applications",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The EU plus Norway and Switzerland received about 822,000 asylum applications in 2025, 19 percent fewer than in 2024 and the lowest number since 2021.",
+     "detail": "Much of the fall came from Syria: after the Assad government collapsed in December 2024, Syrian applications fell 72 percent, from 151,000 to 42,000. Afghans (117,000) and Venezuelans (91,000) were the largest groups, and about 41 percent of Afghan claims were repeat applications. Germany, France, Spain, Italy and Greece received 80 percent of all claims. About half of all applications came from nationalities with low recognition rates, and applicants from the countries on the EU’s proposed list of safe countries of origin were recognized in only 2 to 6 percent of cases, numbers central to the argument that asylum is being used for economic migration. About 332,000 applications followed in the first half of 2026, the lowest since 2019, though the agency calls the fall “a temporary convergence of factors rather than a definitive turning point.”",
+     "source_label": "European Union Agency for Asylum, annual analysis",
+     "source_url": "https://euaa.europa.eu/news-events/eu-asylum-applications-down-one-fifth-2025-amid-shifting-geopolitical-dynamics",
+     "source_published": "2025",
+     "source_accessed": "2026-09-23",
+     "id": "asylum-applications-in-the-eu-norway"
+    },
+    {
+     "label": "Irregular border crossings into the European Union",
+     "viz": "bar",
+     "wide": false,
+     "value": "178,000",
+     "unit": "detections",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Frontex detected about 178,000 irregular crossings of the EU’s external borders in 2025, down 26 percent from 2024 and less than half the 2023 total.",
+     "detail": "Frontex counts detections, not people, so one person crossing twice counts twice, and the 2025 figure is preliminary. The 2023 figure of about 380,000 was the highest since the aftermath of the 2015 crisis, and 2024’s just over 239,000 was a 38 percent drop. The declines were steepest on routes where the EU or its members struck deals with transit countries: the Western Balkans, the eastern land borders and the Atlantic route to the Canary Islands, where departures from Mauritania and Senegal fell after EU agreements. The Central Mediterranean route from Libya and Tunisia remained the busiest, with about two in five crossings. Whether deals that pay governments with poor human rights records to stop departures are sound policy is one of the sharpest disputes between the camps.",
+     "source_label": "Frontex, “Irregular border crossings down 26% in 2025”",
+     "source_url": "https://www.frontex.europa.eu/media-centre/news/news-release/frontex-irregular-border-crossings-down-26-in-2025-europe-must-stay-prepared-lyKpVb",
+     "source_published": "2025",
+     "source_accessed": "2026-09-23",
+     "id": "irregular-border-crossings-into-the-european"
+    },
+    {
+     "label": "US incarceration rate by immigration status, ages 18 to 54",
+     "viz": "ranked",
+     "wide": true,
+     "value": "674",
+     "unit": "per 100,000",
+     "series": [
+      {
+       "label": "US-born",
+       "value": "1,195",
+       "highlight": false
+      },
+      {
+       "label": "Illegal immigrants",
+       "value": "674",
+       "highlight": true
+      },
+      {
+       "label": "Legal immigrants",
+       "value": "303",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2024, US-born adults aged 18 to 54 were incarcerated at 1,195 per 100,000, illegal immigrants at 674 and legal immigrants at 303, by a Cato estimate that critics dispute.",
+     "detail": "The estimate uses the American Community Survey, which counts people in prisons and jails, with a statistical method to impute legal status, which the survey does not ask. On this measure illegal immigrants were about 44 percent and legal immigrants about 75 percent less likely to be incarcerated than the native-born, and most US studies using other methods also find immigrants offend at similar or lower rates. Critics, notably the Center for Immigration Studies, argue that the survey undercounts illegal immigrants, that deportation removes offenders before they are counted, and that statewide arrest records such as Texas’s are more reliable. The direction of the finding has mostly survived those objections, the size less clearly. The pattern does not hold everywhere, and comparisons across countries are fragile.",
+     "source_label": "Alex Nowrasteh, Cato Institute, “Illegal Immigrant Incarceration Rates, 2010–2024”",
+     "source_url": "https://www.alexnowrasteh.com/p/illegal-immigrant-incarceration-rates",
+     "source_published": "2024",
+     "source_accessed": "2026-09-23",
+     "id": "us-incarceration-rate-by-immigration-status"
+    },
+    {
+     "label": "People held in US immigration detention",
+     "viz": "bar",
+     "wide": false,
+     "value": "65,765",
+     "unit": "people",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "ICE held 65,765 people on July 11, 2026, below January’s record 70,766. Of those, 70.6 percent had no criminal conviction; the administration says many had pending charges.",
+     "detail": "Detention is the capacity limit on deportation, since people usually must be held before they can be removed quickly. The July 2025 budget law known as the One Big Beautiful Bill Act provided about $170 billion for immigration and border enforcement over roughly four years, including about $75 billion for ICE and $45 billion for detention, making ICE the best-funded federal law enforcement agency. The share without convictions is the most disputed number in the enforcement debate: the administration says everyone held is removable under the law and that many have pending charges or prior immigration violations, while critics say enforcement has shifted from people convicted of serious crimes to ordinary workers and families. TRAC found ICE removals in the administration’s first months only modestly above the fiscal 2024 pace of 271,484; the administration’s count of more than 605,000 “deportations” also includes Border Patrol returns and other actions.",
+     "source_label": "TRAC Immigration, Syracuse University, detention quick facts (from ICE data)",
+     "source_url": "https://tracreports.org/immigration/quickfacts/",
+     "source_published": "2026",
+     "source_accessed": "2026-09-23",
+     "id": "people-held-in-us-immigration-detention"
+    },
+    {
+     "label": "Migrants recorded dead or missing on migration routes worldwide",
+     "viz": "bar",
+     "wide": false,
+     "value": "7,904",
+     "unit": "people",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "IOM recorded nearly 8,000 migrants dead or missing worldwide in 2025, down from a record of about 9,200 in 2024, and more than 82,000 since 2014.",
+     "detail": "IOM counts only deaths and disappearances it can document, so the true toll is higher: in the Mediterranean alone at least 1,500 more people were reported missing in 2025 but could not be verified. Its first release for 2025, in February 2026, gave 7,667, including at least 2,185 in the Mediterranean; an April update raised the global count to 7,904. IOM attributes part of the 2025 fall to fewer irregular journeys and part to weaker documentation. The deaths are read in opposite ways: humanitarian groups argue that closing legal routes pushes people into the hands of smugglers, while restrictionists argue that porous borders draw people onto deadly routes and that deterrence saves lives.",
+     "source_label": "International Organization for Migration, Missing Migrants Project",
+     "source_url": "https://www.iom.int/news/nearly-8000-migrant-deaths-recorded-2025-new-iom-data",
+     "source_published": "2025",
+     "source_accessed": "2026-09-23",
+     "id": "migrants-recorded-dead-or-missing-on"
+    },
+    {
+     "label": "Estimated gain to world output from removing all barriers to migration",
+     "viz": "range",
+     "wide": false,
+     "value": "67–147",
+     "unit": "%",
+     "series": [],
+     "range_min": "0%",
+     "range_max": "200%",
+     "note": "Four economic models estimate that removing all barriers to migration would raise world output by 67 to 147 percent; critics doubt the assumptions behind them.",
+     "detail": "The estimates, surveyed by Michael Clemens in 2011, are Hamilton and Whalley (1984) at 147.3 percent, Moses and Letnes (2004) at 96.5, Iregui (2005) at 67 and Klein and Ventura (2007) at 122. The logic is that the same worker is several times more productive, and paid several times more, in a rich country than in a poor one, so moving labor to where it is most productive raises total output. Removing all remaining barriers to trade or capital yields a few percent at most in comparable models, and Clemens argued that the emigration of under 5 percent of poor countries’ populations would yield more than abolishing all trade barriers. The full gains require “epic movements of people,” at least half the population of poor countries moving to rich ones, and assume that institutions, productivity and social trust in destination countries would survive unchanged, which is what critics such as Paul Collier and George Borjas dispute.",
+     "source_label": "Michael Clemens, “Economics and Emigration: Trillion-Dollar Bills on the Sidewalk?” (2011), Table 1",
+     "source_url": "https://www.aeaweb.org/articles?id=10.1257%2Fjep.25.3.83",
+     "source_published": "1984 to 2007",
+     "source_accessed": "2026-09-23",
+     "id": "estimated-gain-to-world-output-from"
+    },
+    {
+     "label": "Adults worldwide who would like to move permanently to another country",
+     "viz": "radial",
+     "wide": false,
+     "value": "15",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2025, 15 percent of adults worldwide, an estimated 900 million people, said they would like to move permanently to another country if they could.",
+     "detail": "Gallup has asked the question in about 140 countries since 2007. It measures desire, not plans or ability, and far fewer people ever act. The share held at a record 16 percent from 2021 to 2024 before dipping in 2025. Among those who would like to move, 15 percent named the United States as their preferred destination, about 134 million people and the lowest share in nearly two decades (it was 24 percent in 2007 to 2009), with Canada second at 9 percent. Desire to move is highest in sub-Saharan Africa, at about a third of adults. Open-borders advocates cite the number as the scale of the gains forgone; restrictionists cite it as the reason no rich country could open its borders without being overwhelmed.",
+     "source_label": "Gallup World Poll, “Desire to Move Permanently to U.S. at New Low”",
+     "source_url": "https://news.gallup.com/poll/708614/desire-migrate-drops-new-low.aspx",
+     "source_published": "2025",
+     "source_accessed": "2026-09-23",
+     "id": "adults-worldwide-who-would-like-to"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Can enforcement cut irregular migration for good, or does it only push people onto other routes?",
+    "kind": "empirical",
+    "why": "Crossings into the US and parts of Europe fell steeply once policy changed, which looks like proof of control. But war and poverty still push people to leave, and each side reads the same episodes as lasting control or as costs moved elsewhere.",
+    "detail": "The case that deterrence works: migrants and smugglers respond to the odds of getting in and staying. Once asylum at the US border was suspended, releases ended and returns became swift and predictable, most people stopped setting out, which also saves lives on the journey. Europe saw the same where transit countries cooperated. What drove the surges was not the state of the world but the signal that arrival meant admission.\n\nThe case that flows reroute: a fall on one route is often followed by a rise on another; when the Western Balkans and Atlantic routes closed, crossings from Libya to Crete tripled. The people deterred still need protection, and many are stranded in Mexico, Libya or Tunisia in conditions human rights groups document as abusive. US crossings also fell after the previous administration’s 2024 asylum restriction and rose and fell in waves long before, so policy is one factor among many, and whether the fall outlasts one administration is not yet known.",
+    "lean_label_a": "Deterrence works",
+    "lean_label_b": "Flows reroute",
+    "id": "can-enforcement-cut-irregular-migration-for"
+   },
+   {
+    "text": "Does immigration hold down the wages of the least-skilled workers already in the country?",
+    "kind": "empirical",
+    "why": "Most economists agree immigration raises total output and leaves most workers unaffected or better off. The fight is over those who compete most directly with newcomers, where the answer turns on which comparison and time horizon one trusts.",
+    "detail": "The case that wages suffer: when many workers with one skill arrive at once, employers can fill jobs at lower pay, and those who feel it are earlier immigrants, workers without a high school diploma and, in the US, disproportionately Black and Hispanic men. George Borjas’s reanalysis of the 1980 Mariel boatlift, which added about 7 percent to Miami’s workforce in a few months, found steep wage declines for non-Hispanic men without a high school education. Studies that find no effect often compare cities, but workers and capital move between cities and spread the impact out of sight.\n\nThe case that wages hold: immigrants are also consumers, founders and workers who complement natives, pushing them into better-paid jobs that need language and local knowledge. David Card’s original Mariel study found no measurable effect on Miami wages, Giovanni Peri and Vasil Yasenov found the same with a synthetic comparison group, and critics showed that Borjas’s result rested on a very small sample. The National Academies’ 2016 review found “little to no” long-run effect on native wages overall, with any losses concentrated on earlier immigrants and people without a diploma.",
+    "lean_label_a": "Wages suffer",
+    "lean_label_b": "Wages hold",
+    "id": "does-immigration-hold-down-the-wages"
+   },
+   {
+    "text": "Should anyone who reaches a country be able to claim asylum there, or should states choose whom to protect?",
+    "kind": "value",
+    "why": "Refugee law forbids returning anyone to persecution, and in practice lets a person who reaches a country’s soil claim protection there. Both sides agree persecuted people deserve protection; they disagree about who chooses them and where.",
+    "detail": "The case for asylum on arrival: persecuted people cannot wait in an orderly queue. They flee with what they have, and most have no legal way to travel. A state that turns them back without a hearing, or sends them to a third country with a poor human rights record, risks returning them to danger, which is what the post-war legal order was built to prevent. Schemes to process claims offshore have proved costly and slow, and courts have blocked several of them.\n\nThe case for choosing abroad: the current system selects for the young, the male and those able to pay smugglers, not the most vulnerable, and lets smugglers rather than voters decide how many arrive, while most rejected applicants in Europe are never returned. Processing claims outside the territory, returning rejected applicants to third countries and resettling refugees chosen abroad would break the smugglers’ business model and let democracies be generous on their own terms. In May 2026, 46 Council of Europe governments adopted a declaration affirming their “undeniable sovereign right” over immigration.",
+    "lean_label_a": "Asylum on arrival",
+    "lean_label_b": "Selection abroad",
+    "id": "should-anyone-who-reaches-a-country"
+   },
+   {
+    "text": "Do immigrants pay more in taxes than they cost in public spending?",
+    "kind": "empirical",
+    "why": "The answer depends on who is admitted, how long they stay, whether their children count, which level of government is measured and how shared costs are split, so each side can find a method that favors its answer.",
+    "detail": "The case for net contributors: immigrants usually arrive as working-age adults whose schooling another country paid for, so they begin contributing almost at once. Britain’s Office for Budget Responsibility found that a migrant arriving at 25 on average earnings becomes a net contributor in their second year, and the National Academies found the children of immigrants among the strongest fiscal contributors of any group. In aging societies with pay-as-you-go pensions, working-age arrivals keep the numbers adding up.\n\nThe case for net cost: averages hide the distribution. Immigrants with little education earn less, pay less tax and draw more on means-tested programs, schools and emergency care; the same OBR analysis found that a migrant earning half the average becomes a net cost relative to the average resident by their early forties. Lifetime studies in Denmark and the Netherlands find large net costs for arrivals from some regions, mostly through lower employment. Immigrants also age, so the demographic bonus needs ever more immigration to sustain. Selection, not volume, decides whether immigration pays.",
+    "lean_label_a": "Net contributors",
+    "lean_label_b": "Net cost",
+    "id": "do-immigrants-pay-more-in-taxes"
+   },
+   {
+    "text": "Does immigration increase crime in the countries that receive it?",
+    "kind": "empirical",
+    "why": "US studies mostly find immigrants incarcerated at lower rates than the native-born, while several European countries find foreign nationals overrepresented among suspects. Legal status is often imputed, and newcomers skew young and male.",
+    "detail": "The case that it does: in Germany’s 2025 police statistics, non-German nationals were 42.9 percent of suspects in violent crime while making up roughly one in six residents, and Scandinavian registry studies find overrepresentation that persists after adjusting for age and income. Every crime by someone who entered or stayed unlawfully was preventable by enforcing the law, which is why the 2024 murder of Laken Riley in Georgia by a man released at the border, and knife attacks by asylum seekers in Solingen, Mannheim and Aschaffenburg, carry such weight. Low American rates rest on legal status estimated from surveys.\n\nThe case that it does not: in the United States, where the data are best, immigrants of every legal status are jailed at lower rates than people born there, and Texas arrest data, which record status directly, show the same. Cities that received many immigrants did not see crime rise faster than others. European overrepresentation reflects the age, sex, poverty and trauma profile of recent asylum seekers, along with reporting bias: a reason for integration policy and deporting offenders, not for lower admission. Anecdotes, however terrible, say nothing about rates.",
+    "lean_label_a": "Raises crime",
+    "lean_label_b": "No added crime",
+    "id": "does-immigration-increase-crime-in-the"
+   },
+   {
+    "text": "Does large-scale immigration strain housing and public services faster than it adds to them?",
+    "kind": "empirical",
+    "why": "Newcomers need homes, school places and doctors at once, while the workers and taxes they bring add capacity only over time. Canada, Australia and Britain saw fast population growth and housing crises together after 2022.",
+    "detail": "The case that it strains capacity: housing supply responds slowly, so a sudden rise in population pushes up rents before new homes can be built. Canada’s population grew by more than 3 percent in 2023, the fastest since the 1950s, largely through temporary residents, and rents and homelessness rose sharply; the government now says it cut temporary arrivals to ease pressure on housing and services. Public services are funded with a lag, so those who wait longer for a doctor or a school place are residents in the places receiving the most newcomers.\n\nThe case that it builds capacity: shortages come from restrictive zoning and slow permitting that predate the recent surges. About a quarter of US construction workers are immigrants, and home builders warned in 2025 that deportations were slowing projects. Hospitals and care homes in every rich country depend on foreign-born nurses, doctors and caregivers, so cutting immigration lengthens waiting lists. Blaming immigrants lets governments avoid the harder work of building.",
+    "lean_label_a": "Strains capacity",
+    "lean_label_b": "Builds capacity",
+    "id": "does-large-scale-immigration-strain-housing"
+   },
+   {
+    "text": "Is preserving a country’s culture and social cohesion a legitimate reason to limit admission?",
+    "kind": "value",
+    "why": "Many citizens say the pace of change in their communities, not the economics, is what worries them. Others hold that limiting admission on cultural grounds slides into discrimination by origin, religion or race.",
+    "detail": "The case that it is legitimate: a nation is a community with a shared language, norms and memories as well as a labor market, and social trust is what makes a welfare state, democratic compromise and safe streets possible. The economist Paul Collier has argued that rapid immigration can outpace integration and erode that trust, with the costs falling on the working-class neighborhoods that receive the most newcomers. Citizens are entitled to decide the pace at which their society changes, and dismissing these concerns as bigotry hands them to parties that will act on them less carefully.\n\nThe case that it is not: culture has never been static, and every wave of newcomers, from the Irish and Italians in the United States to Poles in Britain, was once said to threaten cohesion before becoming part of the nation. Evidence that diversity lowers trust is weak and inconsistent, and the effect fades as neighbors get to know each other. Choosing whom to admit by culture in practice means choosing by religion, ethnicity or national origin, which the US rejected when it abolished its national-origins quotas in 1965.",
+    "lean_label_a": "Legitimate reason",
+    "lean_label_b": "Not a valid reason",
+    "id": "is-preserving-a-country-s-culture"
+   },
+   {
+    "text": "Do states have a moral right to exclude peaceful people who want to move, or is free movement a basic right?",
+    "kind": "value",
+    "why": "International law recognizes a right to leave any country but not to enter one other than your own. The answer decides whether the burden of proof falls on those who would admit more people or on those who would keep them out.",
+    "detail": "The case for a right to exclude: self-determination means a political community decides its own membership; the philosopher Michael Walzer called the power to admit and exclude “at the core of communal independence.” Without it a country cannot plan its public services, sustain a welfare state or keep promises to its citizens, and a government that weighed foreigners’ interests equally with its citizens’ would lose the consent any immigration system depends on. Open borders amid today’s global inequality would change receiving societies faster than institutions could adapt.\n\nThe case for a right to move: no one chooses where they are born, and restricting peaceful movement by birthplace resembles feudal privilege, as the philosopher Joseph Carens put it. The freedoms that justify moving within a country, to pursue work, love and safety, apply equally across borders. The people turned away bear the heaviest costs of the policy and have no vote on it, and a state may not treat their large gains as worth nothing against small costs to citizens. Worries about wages, budgets or culture can be met by less drastic means, such as fees or limits on welfare eligibility.",
+    "lean_label_a": "Right to exclude",
+    "lean_label_b": "Right to move",
+    "id": "do-states-have-a-moral-right"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Cut immigration and enforce the border",
+    "color_key": "green",
+    "steelman": "A country that cannot decide who enters is not fully self-governing. Bring immigration down to a level voters consent to, and enforce the law so it means what it says.",
+    "detail": "For a decade immigration in the United States and Britain ran far above anything voters were asked to approve, through asylum claims mostly unrelated to persecution, abused visa routes and a border that was effectively open. The gains went to migrants and to employers wanting cheaper labor; the costs fell on low-paid workers, renters, crowded schools and hospitals, and the working-class communities that absorbed the most change. We want numbers set at a level the public accepts, selection for the skills the country needs, removal of people who enter or stay illegally, and penalties for employers who hire them. That is not hostility to immigrants; it is the condition for treating well the ones a country admits. The last two years proved that a border can be controlled once policy changes.\n\nA shrinking workforce is no objection: what matters to citizens is income per person, and labor shortages are a signal to raise wages, train residents and invest in automation, as Japan has. Enforcing laws a legislature passed is not cruelty, and deterrence saves lives on the routes. Some of us seek moderate cuts and tight selection for skills, as Britain’s Labour government does; some want net migration near zero or large-scale deportation, like the Trump administration and Reform UK; and some come from the labor left, like Denmark’s Social Democrats, who argue that high immigration undermines wages and the welfare state.",
+    "proponents": "Trump administration, Center for Immigration Studies, NumbersUSA, Reform UK, Denmark’s Social Democrats",
+    "id": "cut-immigration-and-enforce-the-border"
+   },
+   {
+    "name": "Close irregular routes and open legal ones",
+    "color_key": "blue",
+    "steelman": "Public support for immigration depends on the state being in control of it. Shut the irregular route decisively and open legal doors wide enough for the workers and refugees we choose.",
+    "detail": "Canada sustained high, popular immigration for decades because almost all of it was selected and planned, not because Canadians were uniquely welcoming. So we pair swift decisions at the border, real returns of those with no right to stay, cooperation with transit countries and no reward for paying smugglers with legal routes for the workers the economy needs and refugees selected from abroad. Enforcement without legal routes drives migration underground and starves industries of labor; legal routes without enforcement lose the consent that keeps them open. Italy shows the bargain can work: a government elected on a hard line against irregular arrivals approved 497,550 work permits for 2026 to 2028, its largest labor quota. Canada after 2022 shows the reverse: when loosely controlled temporary streams swelled, support fell even for the planned permanent program.\n\nTo those who say offshore processing and return hubs violate the right to asylum, we answer that our schemes include legal safeguards, that even UNHCR has said return hubs can be a legitimate complement when rejected applicants cannot go home, and that a system whose rejected applicants mostly never leave has already lost public trust. To restrictionists, we answer that elected governments setting legal numbers openly is exactly the control they ask for. In Europe our emphasis is deals with transit countries and return hubs alongside labor quotas; in the United States it is the long-stalled bargain of border security plus more visas and legal status for long-settled residents.",
+    "proponents": "George W. Bush Presidential Center, Giorgia Meloni, European Commission, María Elvira Salazar",
+    "id": "close-irregular-routes-and-open-legal"
+   },
+   {
+    "name": "Expand legal immigration",
+    "color_key": "amber",
+    "steelman": "Immigrants make the countries that receive them richer, younger and more inventive. Open wide legal doors and most people will choose them over the smuggler.",
+    "detail": "Immigrants start businesses at higher rates than natives, fill jobs that aging populations cannot, help pay for retirees’ pensions and health care, and win a disproportionate share of patents and Nobel prizes. People cross illegally because the legal system offers ordinary workers almost no way in: the United States has not substantially reformed legal immigration since 1990, its employment-based green card backlog exceeds a million people, and for some nationalities the wait runs to decades. When the US let Americans sponsor Cubans, Haitians, Nicaraguans and Venezuelans through a legal parole program in 2023, irregular crossings by those nationalities fell by about 85 percent, by Cato’s analysis. With US deaths set to exceed births from 2030, immigration is the only near-term source of labor-force growth.\n\nVoters rejected disorder, not legal immigration: once crossings fell, the share of Americans wanting less immigration dropped from 55 percent to about 30. Strains on housing and services come from zoning and underinvestment, and immigrants build the homes and staff the hospitals; the cure is to plan and build for growth, not to stop it. Some of us put skilled immigration first, through points systems and green cards for graduates; others want large seasonal and low-skilled worker programs, private refugee sponsorship or legal status for long-settled residents.",
+    "proponents": "Cato Institute, David Bier, FWD.us, Century Initiative, Giovanni Peri, Michael Clemens, US Chamber of Commerce",
+    "id": "expand-legal-immigration"
+   },
+   {
+    "name": "Protect the right to seek asylum",
+    "color_key": "rust",
+    "steelman": "The right to seek asylum is not a preference to trade against migration targets. Anyone who reaches a border and asks for protection deserves a fair hearing there.",
+    "detail": "The right to seek asylum and the rule against returning anyone to persecution were written after the Second World War because countries had turned away Jewish refugees who were then murdered. A person who asks for protection must get a fair hearing with a lawyer and an appeal, and must not be pushed back, held indefinitely or shipped to a country with a record of abuse; those who fail that hearing may be returned humanely. Rich countries receive a small fraction of the world’s refugees, about two-thirds of whom live in countries neighboring their own. Offshore schemes fail on their own terms: Britain’s Rwanda plan cost hundreds of millions of pounds and removed almost no one before it was scrapped in 2024, and after an August 2025 ruling of the EU Court of Justice, Italy’s centers in Albania were repurposed for detention before deportation. Enforcement that treats every migrant as a threat damages a society’s own commitment to due process and dignity.\n\nWhen asylum looks like a back door, the remedy is fast, well-funded, fair decisions, real returns of those with no claim and legal work routes for those who come for jobs, not dismantling the right for everyone. Backlogs are the product of underfunding, and the reasons people flee have not changed. Some of us focus on asylum law and oppose externalization; some, like the US Catholic bishops, oppose mass deportation and family detention; UNHCR itself engages with governments on safeguards rather than opposing return hubs outright.",
+    "proponents": "Amnesty International, Council of Europe Commissioner for Human Rights, US Conference of Catholic Bishops, American Civil Liberties Union, European Council on Refugees and Exiles",
+    "id": "protect-the-right-to-seek-asylum"
+   },
+   {
+    "name": "Make free movement the norm",
+    "color_key": "purple",
+    "steelman": "Peaceful people who want to work, study or live somewhere should be free to, unless there is a compelling reason to stop them, as we already accept within countries.",
+    "detail": "Asking how many people a state should admit assumes the state has the right to decide, and that is the assumption we reject. Birthplace is an accident, and immigration restrictions are the largest remaining legal barrier to the world’s poor improving their lives: a worker who moves from Haiti or Nigeria to the United States can multiply their income several times over without becoming any more skilled. Free movement already works inside the European Union and between Australia and New Zealand, and in the United States it was the rule for most of the country’s first century. The EU let hundreds of millions of people move between countries with very different wages, and the collapse its opponents predicted never came.\n\nTo the fear that newcomers would overwhelm welfare states, we offer “keyhole solutions” rather than exclusion: entry fees or special taxes, limits on welfare eligibility, delayed voting rights, screening for security and contagious disease. To the fear that hundreds of millions would come at once, we answer that most people prefer to stay home, as most citizens of the EU’s poorer member states have despite their right to move, and that a gradual opening lets institutions adapt. Libertarians among us ground the case in liberty and markets, economists such as Bryan Caplan in the size of the gains, and “no borders” activists on the left in global equality; moderates would settle for much more open borders with fees or quotas.",
+    "proponents": "US Libertarian Party, Bryan Caplan, Joseph Carens, No Borders networks",
+    "id": "make-free-movement-the-norm"
+   }
+  ],
+  "crux": {
+   "lead": "How much do residents lose when newcomers arrive, and how much should newcomers’ gains count against it?",
+   "lead_highlight": "how much should newcomers’ gains count",
+   "subtitle": "Almost everyone agrees migrants gain a great deal by moving and that some residents bear real costs. The camps split over how large and widespread those costs are, and over how much a stranger’s gain should weigh against a citizen’s loss.",
+   "empirical": "What admission does to the people already there, by type of migrant and over time: wage effects on the least skilled, the lifetime tax balance of different arrivals and their children at every level of government, how fast housing and services grow with the population, and whether enforcement curbs irregular migration or only moves it. Wages and budgets are well studied; lasting deterrence and effects on trust are not.",
+   "values": "Whether a community may decide its own membership and pace of change, or peaceful people have a right to move that states must justify overriding, and whether asylum on arrival is an absolute duty or one majorities may limit. Someone who puts citizens first can accept every finding for immigration and still favor restriction; someone who weighs outsiders equally can accept every finding against it and still favor openness."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Explore migration data at Our World in Data",
+    "description": "Free charts and explainers on international migrants, refugees, remittances and migration flows by country, built on UN and World Bank data.",
+    "url": "https://ourworldindata.org/migration",
+    "for_position": null,
+    "id": "explore-migration-data-at-our-world"
+   },
+   {
+    "kind": "policy",
+    "title": "Contact your elected representatives",
+    "description": "The US government’s directory of federal, state and local officials, the people who set immigration levels, enforcement budgets and local cooperation with federal agents.",
+    "url": "https://www.usa.gov/elected-officials",
+    "for_position": null,
+    "id": "contact-your-elected-representatives"
+   },
+   {
+    "kind": "policy",
+    "title": "Join NumbersUSA’s action board",
+    "description": "The immigration-control group’s tools for contacting Congress in support of lower immigration levels, mandatory E-Verify and stronger enforcement.",
+    "url": "https://numbersusa.org/action-board/",
+    "for_position": "Cut immigration and enforce the border",
+    "id": "join-numbersusa-s-action-board"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the Bush Center’s immigration policy work",
+    "description": "The George W. Bush Presidential Center’s research and recommendations pairing border security with expanded legal immigration, plus its monthly immigration data update.",
+    "url": "https://www.bushcenter.org/topics/immigration",
+    "for_position": "Close irregular routes and open legal ones",
+    "id": "read-the-bush-center-s-immigration"
+   },
+   {
+    "kind": "policy",
+    "title": "Support FWD.us campaigns for legal immigration reform",
+    "description": "A bipartisan advocacy group, backed by technology-industry founders, that campaigns for expanded legal immigration, legal status for long-settled residents and changes to the visa system.",
+    "url": "https://www.fwd.us/",
+    "for_position": "Expand legal immigration",
+    "id": "support-fwd-us-campaigns-for-legal"
+   },
+   {
+    "kind": "donate",
+    "title": "Support Amnesty International’s work on refugees and migrants",
+    "description": "Amnesty documents abuses at borders and in detention and campaigns against pushbacks, offshore processing and return hubs; its campaign page links to donation options.",
+    "url": "https://www.amnesty.org/en/what-we-do/refugees-asylum-seekers-and-migrants/",
+    "for_position": "Protect the right to seek asylum",
+    "id": "support-amnesty-international-s-work-on"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the case for open borders",
+    "description": "A long-running site collecting the moral and economic arguments for free movement, replies to common objections and further reading, associated with Bryan Caplan and other advocates.",
+    "url": "https://openborders.info/",
+    "for_position": "Make free movement the norm",
+    "id": "read-the-case-for-open-borders"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Volunteer with the International Rescue Committee in the US",
+    "description": "The IRC’s local offices help refugees and other new arrivals with housing, jobs, English and legal matters, and recruit volunteers for mentoring and tutoring.",
+    "url": "https://www.rescue.org/volunteer",
+    "for_position": "Protect the right to seek asylum",
+    "id": "volunteer-with-the-international-rescue-committee"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Use the Migration Policy Institute’s data and analysis",
+    "description": "An independent think tank’s data hub and policy analysis covering US, European and global migration, including detailed state and country profiles.",
+    "url": "https://www.migrationpolicy.org/",
+    "for_position": null,
+    "id": "use-the-migration-policy-institute-s"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the Migration Observatory’s briefings",
+    "description": "The University of Oxford’s nonpartisan research center publishes plain-language briefings on UK migration numbers, fiscal effects, public opinion and policy.",
+    "url": "https://migrationobservatory.ox.ac.uk/",
+    "for_position": null,
+    "id": "read-the-migration-observatory-s-briefings"
+   }
+  ]
+ },
+ "icon": "suitcase-rolling",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: a small border checkpoint booth with a flat roof and one window as the dominant focal mass; a long striped boom barrier arm pivoting from a post beside the booth, raised halfway at a slant, overlapping the booth's front; a road that curves unbroken from the lower left, passes under the barrier arm and winds away to the upper right as the connective element; a medium closed suitcase with a handle standing at the roadside near the post; a small cluster of distant rooftops on the far rise; the ground is the gentle curve of a low rise.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #6a62b0, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: walls, fences, barbed wire, razor wire, cages, chains, padlocks, handcuffs, soldiers, guns, watchtowers, searchlights, flags, national symbols, the Statue of Liberty, open arms, hands, welcome signs, stop signs, arrows, crowded boats, lines of people, crowds, maps with country outlines, a row of doors."
 }

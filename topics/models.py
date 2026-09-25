@@ -410,7 +410,8 @@ class Section(models.Model):
         """Importance-ordered Stats annotated for the two-axis Basics grid:
         `is_extra` (revealed only when Go-deeper is open). Fixed fold: the
         first BASICS_ROWS_SHOWN packed rows show; the rest is Go deeper. A
-        trailing tile keeps its own width; it does not stretch across the row."""
+        trailing narrow tile keeps its own width; a wide tile alone in its row
+        is marked `full` and spans it."""
         stats = list(self.stats.all())
         # Pack into desktop rows of 3 cells. A cell count that is a multiple of
         # 3 does not guarantee the rows pack (1,1,W,W is six cells but leaves
@@ -429,6 +430,11 @@ class Section(models.Model):
                 else:
                     i += 1
             rows.append(row)
+        # A wide tile left alone in its row (no narrow tile remains to pair
+        # with it) stretches across the row instead of leaving a third empty.
+        for row in rows:
+            for s in row:
+                s.full = len(row) == 1 and s.wide
         stats = [s for row in rows for s in row]
         shown = sum(len(row) for row in rows[: self.BASICS_ROWS_SHOWN])
         for i, s in enumerate(stats):

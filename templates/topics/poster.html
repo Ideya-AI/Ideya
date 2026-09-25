@@ -144,13 +144,13 @@
           <div class="tk">{{ stat.label }}</div>
           {% if stat.viz == "ranked" %}
           <div class="vrow" style="margin-top:2px"><div class="rank">
-            {% for row in stat.series|slice:":4" %}<div class="rrow{% if row.highlight %} on{% endif %}"><span class="rk">{{ row.label }}</span><span class="rbar"><i style="width:{{ row.pct }}%"></i></span><span class="rv">{{ row.value }}</span></div>{% endfor %}
+            {% for row in stat.series|slice:":4" %}<div class="rrow{% if row.highlight %} on{% endif %}"><span class="rk">{{ row.label }}</span><span class="rbar"><i style="width:{{ row.pct }}%"></i></span><span class="rv">{{ row.value|sup_exp }}</span></div>{% endfor %}
           </div></div>
-          <div class="tnote">{{ stat.note }}</div>
+          <div class="tnote">{{ stat.note|sup_exp }}</div>
           {% else %}
-          <div class="tv">{{ stat.value }}{% if stat.unit %}<small{% if stat.unit_is_word %} class="u-word"{% endif %}>{{ stat.unit }}</small>{% endif %}</div>
+          <div class="tv"><span>{{ stat.value|sup_exp }}</span>{% if stat.unit %}<small{% if stat.unit_is_word %} class="u-word"{% endif %}>{{ stat.unit }}</small>{% endif %}</div>
           {# Meter only when there is a true share to show — an empty track under a bare number reads as "zero" (mirrors _stat_tile's guard). #}
-          <div class="vrow">{% if stat.fill_pct %}<div class="pbar"><i style="width:{{ stat.fill_pct }}%"></i></div>{% endif %}<div class="tnote">{{ stat.note }}</div></div>
+          <div class="vrow">{% if stat.fill_pct %}<div class="pbar"><i style="width:{{ stat.fill_pct }}%"></i></div>{% endif %}<div class="tnote">{{ stat.note|sup_exp }}</div></div>
           {% endif %}
         </div>
         {% endfor %}

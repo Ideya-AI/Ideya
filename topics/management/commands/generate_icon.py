@@ -24,6 +24,7 @@ The style template and request shape come from the removed pipeline/icon_prompt.
 """
 
 import base64
+import fcntl
 import json
 import os
 import re
@@ -147,20 +148,34 @@ def generate(slug, rnd, n=2, scene=None, edit=None, note="", ratio="3:2"):
         ]
     else:
         parts = [{"text": assemble(slug, scene)}]
-    taken = {p.stem for p in out.glob(f"r{rnd}-*.png")}
-    letters = [c for c in "abcdefghijklmnop" if f"r{rnd}-{c}" not in taken]
     written = []
-    for i in range(n):
-        dst = out / f"r{rnd}-{letters[i]}.png"
-        dst.write_bytes(_call(parts, ratio))
+    for _ in range(n):
+        png = _call(parts, ratio)
+        # Claim the name only once the image is back, with an exclusive create,
+        # so runs in parallel never overwrite each other's candidates.
+        for c in "abcdefghijklmnopqrstuvwxyz":
+            dst = out / f"r{rnd}-{c}.png"
+            try:
+                with open(dst, "xb") as f:
+                    f.write(png)
+                break
+            except FileExistsError:
+                continue
+        else:
+            raise CommandError(f"round {rnd} has no free candidate names left")
         written.append(dst)
-    log = out / "spend.json"
-    entries = json.loads(log.read_text()) if log.exists() else []
-    entries.append({
-        "round": rnd, "images": n, "mode": "edit" if edit else "generate",
-        "scene": scene or "", "note": note, "usd": round(n * COST_PER_IMAGE, 3),
-    })
-    log.write_text(json.dumps(entries, indent=1) + "\n")
+    with open(out / "spend.json", "a+") as log:
+        fcntl.flock(log, fcntl.LOCK_EX)
+        log.seek(0)
+        body = log.read()
+        entries = json.loads(body) if body.strip() else []
+        entries.append({
+            "round": rnd, "images": n, "mode": "edit" if edit else "generate",
+            "scene": scene or "", "note": note, "usd": round(n * COST_PER_IMAGE, 3),
+        })
+        log.seek(0)
+        log.truncate()
+        log.write(json.dumps(entries, indent=1) + "\n")
     return written, round(sum(e["usd"] for e in entries), 3)
 
 

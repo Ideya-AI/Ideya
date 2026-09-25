@@ -142,7 +142,11 @@ def _log_event(request, kind, action, target, payload=None, prompt=None):
         slug, text = target.topic.slug, f"{target.get_kind_display()} section"
     else:
         slug = target.section.topic.slug
-        text = getattr(target, "text", None) or getattr(target, "name", None) or target.label
+        text = (
+            getattr(target, "text", None)
+            or getattr(target, "name", None)
+            or target.label
+        )
     ParticipationEvent.objects.create(
         kind=kind,
         action=action,
@@ -511,11 +515,16 @@ def share_cards(request, slug):
             "positions": all_positions[: Section.POSITIONS_DEFAULT_SHOWN],
             "crux": getattr(crux_section, "crux", None) if crux_section else None,
             # Long titles step the card headline down a size bucket (mirrors
-            # the poster's length buckets) so they never clip the layout.
+            # the poster's length buckets) so they never clip the layout. A
+            # long single word ("Smartphones") can't wrap, so it steps down too.
             "title_class": (
                 "t-long"
                 if len(topic.title) > 40
-                else "t-mid" if len(topic.title) > 26 else ""
+                else (
+                    "t-mid"
+                    if len(topic.title) > 26
+                    else "t-word" if max(map(len, topic.title.split())) >= 11 else ""
+                )
             ),
             "render_card": (
                 request.GET.get("render")
@@ -606,7 +615,9 @@ def vote(request, target, pk):
             Vote.objects.create(**who, value=direction, **lookup)
             delta, user_vote = direction, direction
         type(obj).objects.filter(pk=obj.pk).update(**{counter: F(counter) + delta})
-        _log_event(request, ParticipationEvent.VOTE, "cast" if delta > 0 else "retract", obj)
+        _log_event(
+            request, ParticipationEvent.VOTE, "cast" if delta > 0 else "retract", obj
+        )
     obj.refresh_from_db(fields=[counter])
     obj.user_vote = user_vote
     obj.votes_cast = Vote.objects.filter(**lookup).count()
@@ -619,8 +630,13 @@ def vote(request, target, pk):
     # A cast (not a retract) opens the follow-up modal.
     if delta > 0:
         response = _with_follow_up(
-            request, response, target, obj, Prompt.TRIGGER_VOTE,
-            "", "",
+            request,
+            response,
+            target,
+            obj,
+            Prompt.TRIGGER_VOTE,
+            "",
+            "",
         )
     return response
 
@@ -653,16 +669,26 @@ def question_lean(request, pk):
         action = "cast"
     label = question.lean_label_a if value == QuestionLean.A else question.lean_label_b
     _log_event(
-        request, ParticipationEvent.LEAN, action, question,
+        request,
+        ParticipationEvent.LEAN,
+        action,
+        question,
         {"value": value, "label": label},
     )
     response = render(request, "topics/components/_qlean.html", {"q": question})
     # A cast or switch (not a retract) opens the follow-up modal for that pole.
     if question.user_lean:
-        label = question.lean_label_a if value == QuestionLean.A else question.lean_label_b
+        label = (
+            question.lean_label_a if value == QuestionLean.A else question.lean_label_b
+        )
         response = _with_follow_up(
-            request, response, "question", question, f"lean_{value}",
-            f"You lean “{label}”", "arrows-left-right",
+            request,
+            response,
+            "question",
+            question,
+            f"lean_{value}",
+            f"You lean “{label}”",
+            "arrows-left-right",
         )
     return response
 
@@ -777,7 +803,9 @@ def respond(request, pk):
         labels = {o.id: o.label for o in prompt.options.all()}
         payload = {k: v for k, v in defaults.items() if v not in ("", None, [], {})}
         if "selected_ids" in payload:
-            payload["selected"] = [labels.get(i, i) for i in payload.pop("selected_ids")]
+            payload["selected"] = [
+                labels.get(i, i) for i in payload.pop("selected_ids")
+            ]
         if "ranking" in payload:
             payload["ranking"] = [labels.get(i, i) for i in payload["ranking"]]
         if "option_texts" in payload:
@@ -785,8 +813,12 @@ def respond(request, pk):
                 labels.get(int(i), i): t for i, t in payload.pop("option_texts").items()
             }
         _log_event(
-            request, ParticipationEvent.RESPONSE, "save" if keep else "clear",
-            prompt.target, payload, prompt,
+            request,
+            ParticipationEvent.RESPONSE,
+            "save" if keep else "clear",
+            prompt.target,
+            payload,
+            prompt,
         )
 
     prompt.user_response = response

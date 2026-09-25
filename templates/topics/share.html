@@ -53,11 +53,11 @@
   .hook{margin-top:auto;border-top:1px solid rgba(255,255,255,.12);display:flex;gap:10px;align-items:flex-start}
   .hook i{color:var(--green-500);flex:none} .hook .ct{color:#dfe4da;line-height:1.4} .hook .ct b{color:#fff;font-weight:600}
   .og{width:1200px;height:630px;--pad:52px;--gap:20px;--tir:18px}
-  .og .lt{flex:0 0 56%;justify-content:safe center} .og .brand{font-size:22px}.og .brand .mark{height:30px;width:auto}
+  .og .lt{flex:0 0 56%;min-width:0;justify-content:safe center} .og .brand{font-size:22px}.og .brand .mark{height:30px;width:auto}
   .og .cat{font-size:15px;padding:7px 15px;margin-top:24px} .og .ttlrow{margin-top:20px}
   .og .ticon{width:132px;height:132px}.og .ticon i{font-size:74px} .og .ttl{font-size:66px}
   .og .summary{font-size:24px;margin-top:18px;max-width:26ch;-webkit-line-clamp:4}
-  .og .dk{flex:0 0 44%;--pgap:17px;--pmt:24px;justify-content:center} .og .dlabel{font-size:16px}
+  .og .dk{flex:0 0 44%;min-width:0;--pgap:17px;--pmt:24px;justify-content:center} .og .dlabel{font-size:16px}
   .og .pos .pd{width:14px;height:14px}.og .pos .pnm{font-size:25px}
   .og .hook{margin-top:28px;padding-top:22px}.og .hook i{font-size:24px}.og .hook .ct{font-size:20px}
   /* sq/pt stack vertically: the dark panel takes its natural height, the white
@@ -67,7 +67,7 @@
   .sq .dk,.pt .dk{flex:none}
   /* long titles step down (mirrors the poster's length buckets) and give the
      summary one fewer line of budget */
-  .og.t-mid .ttl{font-size:54px} .og.t-long .ttl{font-size:44px}
+  .og.t-mid .ttl,.og.t-word .ttl{font-size:54px} .og.t-long .ttl{font-size:44px}
   .sq.t-mid .ttl{font-size:64px} .sq.t-long .ttl{font-size:52px}
   .pt.t-mid .ttl{font-size:76px} .pt.t-long .ttl{font-size:62px}
   .og.t-mid .summary,.og.t-long .summary{-webkit-line-clamp:3}

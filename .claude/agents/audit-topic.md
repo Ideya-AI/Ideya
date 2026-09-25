@@ -65,8 +65,9 @@ which you read from `topic.json`.
 - **Even steelmanning.** A camp written with more energy, evidence or length than
   another. A camp named by a posture rather than by what it wants. Two camps that
   are the same camp. A camp missing that a reader would expect.
-- **No repetition.** The same figure or example carried across several items. An
-  expanded layer that restates its glance layer. A stat that duplicates another.
+- **No repetition.** The same figure or example carried across three or more items;
+  a point met twice is not worth a note. An expanded layer that restates its glance
+  layer. A stat that duplicates another.
 - **Internal consistency.** A figure in Basics that sits oddly beside a claim in a
   position. Two places giving different numbers for the same thing. A date that
   cannot be right given today's date (`date -I`).
@@ -97,7 +98,10 @@ case, so a reader meets it twice"), not a preference ("could flow better").
   wrong or contradictory fact that shifts the reading, a page-voice ruling, an uneven
   camp, a misleading chart, or a mislabel. A figure off by a little in a way that
   changes no conclusion (53 against 57, 11 of 19 against 11 of 20) is a note, not an
-  issue. A repeated argument is a note: the checker already
+  issue. A figure whose linked source cannot contain it (2024 data credited to a 2023
+  brief, a number the cited page does not carry) is an issue however small the
+  number: every figure in the page's voice must name a source a reader can follow.
+  A repeated argument is a note: the checker already
   blocks verbatim repeats, and a reader who meets a point twice is not misled. Every issue is routed to the
   stage that fixes it: `editorial` (any text, order, count or content-caused layout
   defect) or `icons` (the art or glyph). An issue that needs research the page does

@@ -1,8 +1,8 @@
 {
  "slug": "social-media-youth-mental-health",
  "title": "Smartphones & Childhood",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-09-24T04:16:41+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Smartphones and social media as a cause of the youth mental-health decline, and supervised, structured childhood.",
@@ -16,5 +16,733 @@
   "content-moderation-free-speech",
   "overdiagnosis-mental-health",
   "epistemic-crisis-deepfakes"
- ]
+ ],
+ "icon": "device-mobile",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: a large smartphone standing upright as the dominant focal mass, its screen showing a few simple rounded app tiles and a small heart badge; a child's school backpack of medium size leaning against the foot of the phone so it overlaps it; a small playground swing set on the hill behind at the right; a small bicycle low at the left; the ground is the rounded curve of a grassy hill; a winding footpath runs across the whole frame from the bicycle past the phone to the swings as the connective element.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #9459a2, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: sad or crying faces, emoji faces, chains, locks, cages, prison bars, skulls, broken or cracked screens, warning or hazard signs, red notification alarms, storm clouds, dark gloomy tones, tangled cords around anything, brain illustrations, pills, thumbs-down icons, app logos or brand marks, human figures or hands.",
+ "content": {
+  "overview": {
+   "summary": "Whether smartphones and social media caused the rise in teen depression and anxiety, and what childhood should look like now.",
+   "scope_covered": "Depression, anxiety, self-harm and suicide among 10- to 19-year-olds; the research tying them to phones and social media; age limits, phone-free schools, design rules and lawsuits; and the decline of unsupervised play and independence.",
+   "scope_excluded": "Screen time for children under school age, video games in their own right, online child sexual exploitation beyond its place among the harms, content moderation and speech law in general, and whether mental illness is overdiagnosed.",
+   "why_now": "On August 26, 2026, Meta agreed to pay at least $12.1 billion, and up to $17.1 billion if rival platforms settle on similar terms, to 51 attorneys general who said it designed Instagram and Facebook to be addictive for young people. The deal also changes its products for minors and awaits court approval.",
+   "why_now_source_label": "New York State Office of the Attorney General",
+   "why_now_source_url": "https://ag.ny.gov/press-release/2026/attorney-general-james-secures-171-billion-and-groundbreaking-reforms-meta"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "US adolescents aged 12 to 17 with a major depressive episode in the past year",
+     "viz": "ranked",
+     "wide": true,
+     "value": "15.1",
+     "unit": "%",
+     "series": [
+      {
+       "label": "2004",
+       "value": "9.0",
+       "highlight": false
+      },
+      {
+       "label": "2011",
+       "value": "8.2",
+       "highlight": false
+      },
+      {
+       "label": "2015",
+       "value": "12.5",
+       "highlight": false
+      },
+      {
+       "label": "2019",
+       "value": "15.7",
+       "highlight": false
+      },
+      {
+       "label": "2021, new method",
+       "value": "20.8",
+       "highlight": false
+      },
+      {
+       "label": "2025",
+       "value": "15.1",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2025, 15.1 percent of US 12- to 17-year-olds, about 3.7 million, had a major depressive episode in the past year, down from 20.8 percent in 2021; the rate roughly doubled from 2011 to 2019.",
+     "detail": "The National Survey on Drug Use and Health is the federal government’s main household survey of mental health, and it asks adolescents a structured set of questions that approximate a clinical diagnosis. It is the clearest single series behind the claim of a youth mental-health decline: the rate hovered around 8 to 9 percent from 2004 to 2011, then rose every year to 15.7 percent in 2019. The survey changed its methods in 2020, adding web interviews during the pandemic, and SAMHSA states that estimates from 2021 onward “are not comparable with estimates from 2020 or prior years,” so the 2019 and 2021 bars sit on either side of a break. Within the new series the direction is clear: depression peaked in 2021 and has fallen since, and major depression with severe impairment dropped from 15.2 to 11.0 percent. The rise came during the spread of smartphones and social media; the recent fall has come while use stayed high, which each side reads differently. The 2004 to 2019 values are from SAMHSA’s 2019 report.",
+     "source_label": "SAMHSA, Highlights for the 2025 National Survey on Drug Use and Health; 2019 NSDUH report",
+     "source_url": "https://www.samhsa.gov/data/sites/default/files/NSDUH-2025-Annual-Release/2025-nsduh-nnr-highlights.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-09-23",
+     "id": "us-adolescents-aged-12-to-17"
+    },
+    {
+     "label": "US teens who say they are online almost constantly",
+     "viz": "radial",
+     "wide": false,
+     "value": "40",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Four in ten US teens aged 13 to 17 said in 2025 that they use the internet almost constantly, up from 24 percent in 2014–15 and slightly down from 46 percent in 2024.",
+     "detail": "Pew asks teens how often they use the internet, and “almost constantly” is the top answer. The share almost doubled between the smartphone’s spread in the early 2010s and 2024, when Pew also found 95 percent of teens had access to a smartphone; the 2025 dip is small and a single year. Constant use is more common among Black (55 percent) and Hispanic (52 percent) teens than White teens (27 percent), and among lower-income households. By platform, 21 percent of teens say they use TikTok almost constantly and about one in five say so of YouTube, against 12 percent each for Instagram and Snapchat and 3 percent for Facebook; 36 percent are on at least one of those five almost constantly. The same survey found 64 percent of teens now use AI chatbots, about three in ten daily, a new front the debate has only begun to reach.",
+     "source_label": "Pew Research Center, Teens, Social Media and AI Chatbots 2025",
+     "source_url": "https://www.pewresearch.org/internet/2025/12/09/teens-social-media-and-ai-chatbots-2025/",
+     "source_published": "2025",
+     "source_accessed": "2026-09-23",
+     "id": "us-teens-who-say-they-are"
+    },
+    {
+     "label": "US high school students with persistent sadness or hopelessness, by sex",
+     "viz": "ranked",
+     "wide": true,
+     "value": "43",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Girls, 2013",
+       "value": "39",
+       "highlight": false
+      },
+      {
+       "label": "Girls, 2021",
+       "value": "57",
+       "highlight": false
+      },
+      {
+       "label": "Girls, 2025",
+       "value": "43",
+       "highlight": true
+      },
+      {
+       "label": "Boys, 2013",
+       "value": "21",
+       "highlight": false
+      },
+      {
+       "label": "Boys, 2021",
+       "value": "29",
+       "highlight": false
+      },
+      {
+       "label": "Boys, 2025",
+       "value": "24",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2025, 43 percent of US high school girls and 24 percent of boys reported persistent sadness or hopelessness; among girls the figure had peaked at 57 percent in 2021.",
+     "detail": "The Youth Risk Behavior Survey is given in schools every two years to a national sample of high school students. This item asks whether, in the past 12 months, a student felt so sad or hopeless almost every day for two weeks or more in a row that they stopped doing some usual activities: a symptom measure, not a diagnosis. For all students the share went from 30 percent in 2013 to 42 percent in 2021 and 33 percent in 2025, the largest two-year improvement in the series, and between 2023 and 2025 poor mental health fell from 29 to 23 percent and seriously considering suicide from 20 to 14 percent. The gap between the sexes is central to the smartphone argument: Jonathan Haidt and others contend that social media, with its emphasis on appearance, social comparison and relational aggression, harms girls more than boys. Girls rose 18 points from 2013 to 2021 and boys 8, and the fall since has also been steeper for girls. Because the 2021 survey was taken during the pandemic, some of the peak and some of the fall may reflect the pandemic rather than a longer trend. The 2013 to 2023 values are from the CDC’s 2023 trends report.",
+     "source_label": "CDC, Youth Risk Behavior Survey, Youth Health in Focus (2025); YRBS Data Summary & Trends Report 2013–2023",
+     "source_url": "https://www.cdc.gov/yrbs/youth-health-in-focus/mental-health.html",
+     "source_published": "2025",
+     "source_accessed": "2026-09-23",
+     "id": "us-high-school-students-with-persistent"
+    },
+    {
+     "label": "Share of variation in teen well-being associated with digital technology use",
+     "viz": "bar",
+     "wide": false,
+     "value": "0.4",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Across 355,358 adolescents, technology use was linked to lower well-being but explained at most 0.4 percent of its variation; critics say narrower measures show larger links.",
+     "detail": "Amy Orben and Andrew Przybylski ran every defensible combination of variables and controls, a “specification curve,” on three large US and UK surveys, and found an association that was consistently negative but small, of a size they compared with the association between well-being and eating potatoes. The paper became the reference point for researchers who argue the smartphone thesis is overstated. Jonathan Haidt, Jean Twenge and Zach Rausch reply that the analysis averages across all kinds of screen use, both sexes and many outcomes, and that when the question is narrowed to social media, girls and depression, correlations rise to a range they compare with other accepted public-health risks. They also argue that a small average can conceal large harm to a subset of heavy users, and that effects on a population can be larger than individual correlations suggest when a technology changes a whole peer group at once. Both readings are defended in the peer-reviewed literature.",
+     "source_label": "Orben & Przybylski, Nature Human Behaviour, 2019",
+     "source_url": "https://www.nature.com/articles/s41562-018-0506-1",
+     "source_published": "2007 to 2016",
+     "source_accessed": "2026-09-23",
+     "id": "share-of-variation-in-teen-well"
+    },
+    {
+     "label": "Risk of later depression and anxiety problems by daily social media time, compared with non-users",
+     "viz": "ranked",
+     "wide": true,
+     "value": "1.78",
+     "unit": "× risk",
+     "series": [
+      {
+       "label": "3 to 6 hours a day",
+       "value": "1.60",
+       "highlight": false
+      },
+      {
+       "label": "Over 6 hours a day",
+       "value": "1.78",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "US adolescents who used social media more than six hours a day had 1.78 times the risk of later depression and anxiety problems that non-users had, after adjusting for other factors.",
+     "detail": "The study followed 6,595 adolescents aged 12 to 15 in a nationally representative US cohort, and it is the source for the Surgeon General’s 2023 statement that adolescents who spend more than three hours a day on social media “face double the risk” of symptoms of depression and anxiety. The doubling appears most clearly for adolescents with both internalizing problems, such as depression and anxiety, and externalizing problems, such as acting out: adjusted risk ratios of 2.01 for three to six hours and 2.44 for more than six. For internalizing problems alone, shown here, the ratios are smaller. The design is longitudinal: social media time was measured a year before the outcomes, which rules out some but not all reverse causation, since adolescents who were already struggling may have used social media more.",
+     "source_label": "Riehm et al., JAMA Psychiatry, 2019",
+     "source_url": "https://jamanetwork.com/journals/jamapsychiatry/fullarticle/2749480",
+     "source_published": "2013 to 2016",
+     "source_accessed": "2026-09-23",
+     "id": "risk-of-later-depression-and-anxiety"
+    },
+    {
+     "label": "US adults who would support banning social media for under-16s",
+     "viz": "radial",
+     "wide": false,
+     "value": "56",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In mid-2026, 56 percent of US adults said they would support a ban preventing anyone under 16 from using social media sites; 21 percent would oppose it and 23 percent were not sure.",
+     "detail": "Support was bipartisan, 59 percent among Republicans and leaners and 54 percent among Democrats and leaners, and highest among 30- to 49-year-olds (63 percent). Parents of children under 18 were more supportive (65 percent) than other adults (52 percent). Softer measures drew more support still: requiring parental consent for minors to use social media (85 percent), age verification (78 percent) and time limits on use (78 percent). In the UK, the government reported that nine in ten parents responding to its 2026 consultation backed a minimum age of 16, though consultation responses are self-selected rather than a representative sample. The Pew survey reached 9,750 US adults from May 26 to June 1, 2026.",
+     "source_label": "Pew Research Center, Majority of Americans support banning social media for kids under 16",
+     "source_url": "https://www.pewresearch.org/short-reads/2026/07/01/majority-of-americans-support-banning-social-media-for-kids-under-16/",
+     "source_published": "2026",
+     "source_accessed": "2026-09-23",
+     "id": "us-adults-who-would-support-banning"
+    },
+    {
+     "label": "US suicide rate, ages 10 to 24",
+     "viz": "ranked",
+     "wide": true,
+     "value": "11.0",
+     "unit": "per 100,000",
+     "series": [
+      {
+       "label": "2007",
+       "value": "6.8",
+       "highlight": false
+      },
+      {
+       "label": "2021",
+       "value": "11.0",
+       "highlight": true
+      },
+      {
+       "label": "2024, provisional",
+       "value": "9.7",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The US suicide rate for ages 10 to 24 rose 62 percent from 2007 to 2021, from 6.8 to 11.0 deaths per 100,000, and has since fallen to 9.7 in 2024.",
+     "detail": "Suicide is the hardest outcome in the debate because it cannot be explained by changes in how willing young people are to report distress. The rate was stable from 2001 to 2007 and then rose, with the steepest relative increase among the youngest: for ages 10 to 14 it tripled from 0.9 to 2.9 per 100,000 between 2007 and 2018 and then held steady through 2021, and for ages 15 to 19 it rose 57 percent from 2009 to 2017. The 2024 figure comes from CDC WONDER data as reported by Inside Higher Ed, which also reports that the decline since 2021 was driven by boys and young men, down nearly 15 percent, while the rate for girls and young women fell about 2 percent. More than half of youth suicides involve a firearm, which is one reason researchers who doubt the smartphone explanation point to other causes for the rise.",
+     "source_label": "CDC NCHS Data Brief No. 471; CDC WONDER via Inside Higher Ed (2024)",
+     "source_url": "https://www.cdc.gov/nchs/products/databriefs/db471.htm",
+     "source_published": "2021; 2024 provisional",
+     "source_accessed": "2026-09-23",
+     "id": "us-suicide-rate-ages-10-to"
+    },
+    {
+     "label": "Mental health effect of experiments that reduce social media use",
+     "viz": "ranked",
+     "wide": true,
+     "value": "0.088",
+     "unit": "SD",
+     "series": [
+      {
+       "label": "A week or longer",
+       "value": "0.156",
+       "highlight": false
+      },
+      {
+       "label": "All 27 pooled",
+       "value": "0.088",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Pooled across 27 experiments, cutting social media use improved mental health by a nonsignificant 0.088 standard deviations; a reanalysis found a significant 0.156 for cuts of a week or more.",
+     "detail": "Randomized experiments are the strongest test of cause and effect, and they are the most contested evidence in the debate. Christopher Ferguson’s 2024 meta-analysis pooled 27 studies that manipulated social media use and found an average effect whose confidence interval included zero; he concluded the experiments do not show that social media harms mental health. Johannes Thrul and colleagues reanalyzed the same data and found that very short reductions made people feel slightly worse, consistent with withdrawal, while longer ones produced a small, significant improvement. Jonathan Haidt and Zach Rausch, in the 2026 World Happiness Report, put the improvement in well-designed reduction experiments at 0.19 to 0.28 standard deviations. Most of these experiments were run on college students and adults for days or weeks, not on children over years, so all sides agree they cannot directly answer what a childhood with or without social media does. Effects are in standard deviations (Cohen’s d).",
+     "source_label": "Thrul et al., Psychology of Popular Media, 2025, reanalysis of Ferguson, 2024",
+     "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12125955/",
+     "source_published": "studies through 2023",
+     "source_accessed": "2026-09-23",
+     "id": "mental-health-effect-of-experiments-that"
+    },
+    {
+     "label": "Risk of suicidal behavior in early adolescents with rising addictive social media use",
+     "viz": "ranked",
+     "wide": true,
+     "value": "2.14",
+     "unit": "× risk",
+     "series": [
+      {
+       "label": "High-peaking use",
+       "value": "2.39",
+       "highlight": false
+      },
+      {
+       "label": "Rising use",
+       "value": "2.14",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "US early adolescents whose addictive use of social media rose over time had 2.14 times the risk of suicidal behavior of low addictive users, while total screen time showed no link.",
+     "detail": "This cohort of 4,285 children, followed from about age 10 in the Adolescent Brain Cognitive Development Study, found that nearly a third had an increasing pattern of addictive use of social media or mobile phones beginning around age 11. Addictive use means compulsive patterns such as trouble stopping, distress when unable to use and interference with daily life, reported by the child, rather than hours on a device. The finding shifted part of the debate from how much time children spend on screens to how they use them, and each camp claims it: restriction advocates as evidence that the products are built to hook children, design reformers as evidence that features rather than access are the problem, and skeptics as evidence that screen time as such is a poor target. It is an observational study and cannot rule out that children already at risk are more prone to compulsive use. Ratios compare each pattern with low addictive use.",
+     "source_label": "Xiao et al., JAMA, 2025",
+     "source_url": "https://pubmed.ncbi.nlm.nih.gov/40531519/",
+     "source_published": "2016 to 2022",
+     "source_accessed": "2026-09-23",
+     "id": "risk-of-suicidal-behavior-in-early"
+    },
+    {
+     "label": "Education systems with a national ban on phones in schools",
+     "viz": "radial",
+     "wide": false,
+     "value": "58",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "By March 2026, 114 education systems, 58 percent of those UNESCO tracks, had a national ban on mobile phones in schools, up from under a third in 2023.",
+     "detail": "A “ban” covers a wide range of rules, from phones switched off and stored in bags during lessons to phones locked away from the first bell to the last, and several countries leave the rule to each school within a national framework. The 2023 baseline depends on which UNESCO release is used: its latest count puts mid-2023 at 24 percent, while its earlier figures were 60 education systems (30 percent) in 2023 and 79 (40 percent) at the end of 2024. UNESCO’s 2023 report urged that phones be allowed in schools only where they clearly support learning; its 2026 article adds that bans alone are not enough without teaching digital literacy. School bans are the least contested of the proposed remedies, but the evidence for their effect on mental health, as distinct from attention and learning, is thin.",
+     "source_label": "UNESCO Global Education Monitoring Report, How many countries have phone bans in school?",
+     "source_url": "https://www.unesco.org/gem-report/en/articles/how-many-countries-have-phone-bans-school",
+     "source_published": "2026",
+     "source_accessed": "2026-09-23",
+     "id": "education-systems-with-a-national-ban"
+    },
+    {
+     "label": "Minimum age for social media accounts in national laws in force",
+     "viz": "range",
+     "wide": false,
+     "value": "16",
+     "unit": "years",
+     "series": [],
+     "range_min": "13, US default",
+     "range_max": "18, adulthood",
+     "note": "Australia, Brazil, Indonesia and Malaysia now enforce 16 as the minimum age for social media, Brazil’s with a parental-consent exception, and the UK plans to follow in 2027.",
+     "detail": "Australia was first: its law, passed in November 2024 and in force since December 10, 2025, requires platforms including TikTok, Instagram, Snapchat, YouTube and X to take reasonable steps to prevent under-16s holding accounts, with penalties aimed at companies rather than families. Brazil’s law took effect on March 17, 2026, Indonesia’s on March 28, and Malaysia’s on June 1 after a postponement from January. The UK plan, announced on June 15, 2026 for spring 2027, excludes messaging apps such as WhatsApp and Signal, and the UK is also examining overnight curfews and limits on infinite scrolling for under-18s. Denmark, Greece, Spain, Norway, New Zealand and the European Union have proposed minimum ages of 15 or 16 at various stages. In the United States the de facto minimum of 13 comes from a 1998 children’s privacy law, and action is at the state level, mostly parental-consent requirements, several of them tied up in court. Early enforcement figures from Australia differ widely by source and platform and are not yet a reliable guide to compliance.",
+     "source_label": "Wikipedia, Social media age verification laws by country",
+     "source_url": "https://en.wikipedia.org/wiki/Social_media_age_verification_laws_by_country",
+     "source_published": "2026",
+     "source_accessed": "2026-09-23",
+     "id": "minimum-age-for-social-media-accounts"
+    },
+    {
+     "label": "US children in kindergarten to grade 8 who usually walked or biked to school",
+     "viz": "ranked",
+     "wide": true,
+     "value": "13",
+     "unit": "%",
+     "series": [
+      {
+       "label": "1969",
+       "value": "48",
+       "highlight": false
+      },
+      {
+       "label": "2009",
+       "value": "13",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 1969, 48 percent of US children in kindergarten through eighth grade usually walked or biked to school; by 2009 it was 13 percent, while trips by family car rose from 12 to 45 percent.",
+     "detail": "The walk to school is the most consistently measured marker of children’s everyday independence, and its decline long predates smartphones. Researchers attribute it to longer distances as schools consolidated, traffic, parental fears of abduction and injury far out of proportion to actual risk, and changing norms about what counts as neglect. The independence camp in this debate treats it as one sign of a broader shift toward supervised, adult-organized childhood that it holds responsible for rising anxiety; Jonathan Haidt treats it as part of the “play-based childhood” that the phone-based childhood then replaced. The figures are parents’ reports of each child’s usual way of getting to school, from the National Household Travel Survey.",
+     "source_label": "National Center for Safe Routes to School, How Children Get to School, 1969 to 2009",
+     "source_url": "https://www.pedbikeinfo.org/pdf/NHTS_school_travel_report_2011_0.pdf",
+     "source_published": "2009",
+     "source_accessed": "2026-09-23",
+     "id": "us-children-in-kindergarten-to-grade"
+    },
+    {
+     "label": "Average daily time US teens spend on social media",
+     "viz": "ranked",
+     "wide": true,
+     "value": "4.8",
+     "unit": "hours/day",
+     "series": [
+      {
+       "label": "Girls",
+       "value": "5.3",
+       "highlight": false
+      },
+      {
+       "label": "All teens",
+       "value": "4.8",
+       "highlight": true
+      },
+      {
+       "label": "Boys",
+       "value": "4.4",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "US teens reported spending an average of 4.8 hours a day on social media in 2023, and 51 percent reported at least four hours a day.",
+     "detail": "Time estimates vary with how the question is asked; this is self-reported time on seven major platforms, from a Gallup survey of 1,591 adolescents aged 13 to 19. YouTube accounted for 1.9 hours and TikTok 1.5 on average, with Instagram at 0.9. Use rose with age across the teen years. Teens whose parents strongly agreed that they restrict screen time used social media 1.8 hours a day less, and teens rated high in conscientiousness used less. The figure matters because the studies that find the strongest associations with depression concentrate at heavy use, commonly defined as three or more hours a day, a level half of US teens exceed.",
+     "source_label": "Gallup, Familial and Adolescent Health Survey",
+     "source_url": "https://news.gallup.com/poll/512576/teens-spend-average-hours-social-media-per-day.aspx",
+     "source_published": "2023",
+     "source_accessed": "2026-09-23",
+     "id": "average-daily-time-us-teens-spend"
+    },
+    {
+     "label": "What US teens say about social media’s effects",
+     "viz": "ranked",
+     "wide": true,
+     "value": "48",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Feel more connected",
+       "value": "74",
+       "highlight": false
+      },
+      {
+       "label": "Bad for peers, 2024",
+       "value": "48",
+       "highlight": true
+      },
+      {
+       "label": "Hurts their sleep",
+       "value": "45",
+       "highlight": false
+      },
+      {
+       "label": "Bad for peers, 2022",
+       "value": "32",
+       "highlight": false
+      },
+      {
+       "label": "Hurts own mental health",
+       "value": "19",
+       "highlight": false
+      },
+      {
+       "label": "Bad for themselves",
+       "value": "14",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2024, 48 percent of US teens said social media has a mostly negative effect on people their age, up from 32 percent in 2022, but only 14 percent said so of its effect on themselves.",
+     "detail": "Each figure answers a different question. Asked about their peers, teens turned sharply more negative in two years. Asked about their own lives, most say the effect is neutral (58 percent) or mostly positive (28 percent), and far more say it makes them feel more connected to friends than say it has hurt their own mental health. Asked about specific costs, nearly half say it hurts their sleep and 45 percent that they spend too much time on it, up from 36 percent in 2022. Restriction advocates read the gap between “people my age” and “me” as a sign that users underestimate their own harm; skeptics read it as a third-person effect, the common tendency to think media harms others more than oneself. Separately, 55 percent of parents said they were extremely or very concerned about teen mental health. The survey reached 1,391 teens and their parents in fall 2024.",
+     "source_label": "Pew Research Center, Teens, Social Media and Mental Health",
+     "source_url": "https://www.pewresearch.org/internet/2025/04/22/teens-social-media-and-mental-health/",
+     "source_published": "2024",
+     "source_accessed": "2026-09-23",
+     "id": "what-us-teens-say-about-social"
+    },
+    {
+     "label": "US states requiring school districts to ban or restrict student phones",
+     "viz": "range",
+     "wide": false,
+     "value": "38",
+     "unit": "states",
+     "series": [],
+     "range_min": "0",
+     "range_max": "50 states",
+     "note": "As of June 2, 2026, 38 US states and DC required districts to ban or restrict student phones, 29 for the whole school day; other trackers count differently.",
+     "detail": "The count has changed quickly and depends on definitions. Education Week’s own tracker, from which this count is drawn, put the total at “at least 37 states” plus DC in mid-2026, while a Ballotpedia-based count in January 2026 listed 26 states with full-day bans. The differences reflect whether a law sets a statewide rule, requires districts to write their own, or merely recommends restrictions; eight of the 38 limit phones during instructional time only. Most schools rely on phones being kept off and in bags rather than in locked pouches, which advocates of stricter policies argue is why some studies find weak effects.",
+     "source_label": "Education Week state tracker, as reported by K-12 Legal Insights, August 6, 2026",
+     "source_url": "https://www.k-12legalinsights.com/2026/08/screening-screen-time-more-states-are-implementing-cell-phone-bans-in-k-12-schools/",
+     "source_published": "June 2026",
+     "source_accessed": "2026-09-23",
+     "id": "us-states-requiring-school-districts-to"
+    },
+    {
+     "label": "Test score gain in the second year of a school-day phone ban, Florida",
+     "viz": "ranked",
+     "wide": true,
+     "value": "1.1",
+     "unit": "percentiles",
+     "series": [
+      {
+       "label": "Boys",
+       "value": "1.4",
+       "highlight": false
+      },
+      {
+       "label": "Middle and high school",
+       "value": "1.3",
+       "highlight": false
+      },
+      {
+       "label": "All students",
+       "value": "1.1",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a large Florida district that banned phones for the whole school day, test scores showed no significant change in the first year and rose an average of 1.1 percentile points in the second.",
+     "detail": "This is one of the few causal studies of a US school phone ban. Suspensions rose 25 percent in the first month of enforcement, with in-school suspensions of Black male students at the most affected schools up 30 percent, but returned close to earlier levels by the second year; unexcused absences fell and may account for up to half of the test-score gain. The study measured learning and behavior, not mental health. The main study of mental health, the SMART Schools study of 1,227 students aged 12 to 15 in 30 English secondary schools (Lancet Regional Health – Europe, 2025), found that students in schools restricting recreational phone use spent less time on phones during the school day but no less overall, and found no difference in mental wellbeing (an adjusted mean difference of −0.48 points on a scale averaging 47, with a confidence interval from −2.05 to 1.06). It did find that more phone and social media time overall went with worse wellbeing. Supporters of bans criticize the study as cross-sectional and its restrictive schools as not strict enough.",
+     "source_label": "Figlio & Özek, NBER Working Paper 34388 (NBER Digest summary)",
+     "source_url": "https://www.nber.org/digest/202512/school-cell-phone-bans-and-student-achievement",
+     "source_published": "2024–25 school year",
+     "source_accessed": "2026-09-23",
+     "id": "test-score-gain-in-the-second"
+    },
+    {
+     "label": "Primary school children in England allowed to travel home from school alone",
+     "viz": "ranked",
+     "wide": true,
+     "value": "25",
+     "unit": "%",
+     "series": [
+      {
+       "label": "1971",
+       "value": "86",
+       "highlight": false
+      },
+      {
+       "label": "1990",
+       "value": "35",
+       "highlight": false
+      },
+      {
+       "label": "2010",
+       "value": "25",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 1971, 86 percent of parents of primary school children in England said their child was allowed to travel home from school alone; by 1990 it was 35 percent and by 2010 a quarter.",
+     "detail": "The Policy Studies Institute surveyed children and parents in the same English areas in 1971, 1990 and 2010, producing one of the few long, like-for-like series on children’s independence. It found large declines across many freedoms, including crossing main roads, going out after dark and using buses alone, with most of the change already visible by 1990. Peter Gray and colleagues, in a 2023 review in the Journal of Pediatrics, cite this kind of evidence to argue that the decline of independent activity is a cause of declining child mental health. In Germany over the same period the share allowed home alone fell from 91 percent in 1990 to 76 percent in 2010.",
+     "source_label": "Shaw et al., Children’s Independent Mobility: England and Germany 1971–2010, Policy Studies Institute",
+     "source_url": "https://ora.ox.ac.uk/objects/uuid:89103856-a239-489a-8e7e-b6c1bad43a0f",
+     "source_published": "2010",
+     "source_accessed": "2026-09-23",
+     "id": "primary-school-children-in-england-allowed"
+    },
+    {
+     "label": "US states with “Reasonable Childhood Independence” laws",
+     "viz": "range",
+     "wide": false,
+     "value": "13",
+     "unit": "states",
+     "series": [],
+     "range_min": "0",
+     "range_max": "50 states",
+     "note": "By April 2026, 13 US states had passed laws clarifying that letting children do things on their own, such as walking to school or playing outside unsupervised, is not in itself neglect.",
+     "detail": "Utah passed the first such law in 2018, followed by Oklahoma, Texas, Colorado, Virginia, Connecticut, Illinois, Montana, Georgia, Florida, Missouri, Indiana and Kansas. The laws respond to cases in which parents were investigated by child protective services or charged for letting children play or walk alone, and they narrow the definition of neglect to exclude reasonable independent activities. A bipartisan federal bill to the same effect was introduced in May 2026. The campaign is led by Let Grow, which Lenore Skenazy, Peter Gray, Jonathan Haidt and Daniel Shuchman founded, and it is the policy side of the “play-based childhood” half of this debate.",
+     "source_label": "Let Grow, State Policies and Updates",
+     "source_url": "https://letgrow.org/states/",
+     "source_published": "April 2026",
+     "source_accessed": "2026-09-23",
+     "id": "us-states-with-reasonable-childhood-independence"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Did smartphones and social media cause a large share of the rise in teen depression and anxiety after 2012?",
+    "kind": "empirical",
+    "why": "The rise and the spread of smartphones came together, and no one can randomly assign a generation to grow up without them, so each side reads the same imperfect studies differently.",
+    "detail": "The case for a major cause: the timing is sharp and shared. Depression, self-harm and suicide among young adolescents, especially girls, turned upward around 2012 in the US, Canada, the UK and parts of northern Europe, just as front-facing cameras, Instagram and always-on smartphones became normal in early adolescence. Heavy users have about double the risk of depression and anxiety symptoms. Natural experiments point the same way: when Facebook arrived at US colleges one campus at a time, students’ mental health worsened, and the arrival of high-speed internet in regions of several countries was followed by worse mental health among girls.\n\nThe case for a minor factor: the best large analyses find the average link between screen use and well-being is negative but tiny, and longitudinal studies find that distress predicts later use about as well as use predicts later distress. The US National Academies concluded in 2023 that the literature did not show social media causes changes in adolescent health at the population level. Other explanations fit the timing too: academic pressure, the 2008 recession’s aftermath, the opioid epidemic, firearm access, changes in how distress is screened and labeled, and a long decline in children’s independence. And the trend does not track smartphones everywhere: countries with similar phone adoption show different mental-health paths.",
+    "lean_label_a": "Major cause",
+    "lean_label_b": "Minor factor",
+    "id": "did-smartphones-and-social-media-cause"
+   },
+   {
+    "text": "How much certainty should be required before restricting children’s access to a technology?",
+    "kind": "value",
+    "why": "Both sides accept that the evidence is incomplete. They disagree about which error is worse: restricting children needlessly, or failing to protect them while studies accumulate.",
+    "detail": "The case for precaution: children cannot consent to the risks of products designed to capture their attention, and societies set age limits for alcohol, tobacco, driving and gambling without randomized trials proving harm across a population. The cost of waiting falls on a generation passing through a sensitive developmental window, while the cost of delay, a few years without accounts or a smartphone, is modest and reversible. Precaution is also what the public, most parents and many teens themselves now favor.\n\nThe case for proof first: policy built on a contested causal story can do harm of its own. It spends political attention and money that could go to mental-health care, pushes teens to less regulated corners of the internet, cuts isolated young people off from support, and normalizes age checks for everyone. Past panics over comics, television, video games and rock music produced restrictions that later looked misguided. If phones are not the main cause, restrictions will not bring the rates down and the real causes will go unaddressed, so measures should be proportionate to what is known, aimed at specific demonstrated harms, and evaluated as they roll out.",
+    "lean_label_a": "Precaution first",
+    "lean_label_b": "Proof first",
+    "id": "how-much-certainty-should-be-required"
+   },
+   {
+    "text": "Should the remedy keep children off platforms, or change how the platforms are designed?",
+    "kind": "value",
+    "why": "Both camps agree platforms can harm children. They split over whether keeping children off is realistic and enough, or whether it lets companies keep products that also harm older teens and adults.",
+    "detail": "The case for restricting access: design rules are slow, complex and easy to evade, and companies have strong incentives to maximize engagement. A clear age line is simple to state and to enforce, and it protects the most vulnerable years of early puberty whatever the platforms do. Age limits and design rules are not exclusive; delay buys time while better design is worked out.\n\nThe case for fixing design: features such as infinite scroll, autoplay, streaks, engagement-driven recommendations, beauty filters and late-night notifications are what harm young users, and they harm 16- and 17-year-olds and adults as well. A ban removes the pressure on companies to change, pushes children to platforms outside the rules, and turns a teen’s 16th birthday into a cliff edge. Design duties such as the UK’s Age Appropriate Design Code, and the product changes Meta accepted in its 2026 settlement with state attorneys general, go at the mechanism itself.",
+    "lean_label_a": "Restrict access",
+    "lean_label_b": "Fix design",
+    "id": "should-the-remedy-keep-children-off"
+   },
+   {
+    "text": "Is the loss of unsupervised play and independence a bigger cause of youth distress than screens?",
+    "kind": "empirical",
+    "why": "Children’s independence shrank for decades before smartphones, and both trends mean less self-directed time with peers, so they are hard to separate; the leading voices on each side founded an organization together.",
+    "detail": "The case for lost independence: the psychologist Peter Gray argues that the long decline of free play and independent activity, together with rising academic pressure, explains youth anxiety and depression better than phones do. Children who organize their own play learn to solve problems, manage fear and feel competent, and anxiety rises when those experiences are removed. Youth suicide and depression also rose in earlier decades, before the internet, as children’s freedom shrank, and Gray points to psychiatric emergencies that fall during summer vacations as evidence that school pressure is a direct driver. On this view online spaces became one of the last places teens could be unsupervised, and taking them away without restoring freedom offline makes things worse.\n\nThe case for screens first: the decline in independence is real but gradual, running from the 1970s onward, while the mental-health break is sudden and concentrated after 2012, which fits a fast technological change better. Jonathan Haidt calls it two mistakes, overprotection in the real world and underprotection online, and argues that the phone-based childhood accelerated the loss of play by replacing unstructured time with screen time. Restoring independence matters, but it will not work while children have a more attractive option in their pockets.",
+    "lean_label_a": "Lost free play",
+    "lean_label_b": "Screens",
+    "id": "is-the-loss-of-unsupervised-play"
+   },
+   {
+    "text": "Is the improvement since 2021 a sign that phone limits work, or that phones were never the main cause?",
+    "kind": "empirical",
+    "why": "US measures of teen depression and hopelessness fell sharply between 2021 and 2025 while teens’ use of phones and social media stayed high; each side has a ready explanation, and neither has been tested.",
+    "detail": "The case that limits are working: the fall coincides with a wave of phone-free school laws, growing parental caution, platform changes such as teen accounts with default limits, and a cultural shift in which teens themselves say social media harms people their age. Girls, the group most exposed to social comparison online, improved most. On this view changing how children use technology helps, and rates remain well above where they were before 2012.\n\nThe case for pandemic recovery: the sharpest movements, the peak in 2021 and the fall after it, line up with school closures and reopening, not with any change in phone ownership. Almost constant internet use among teens is higher now than a decade ago, yet depression is falling, which is hard to square with phones as the primary cause. Phone-free school laws mostly took effect in 2024 and 2025, too late and too varied to explain a trend that began earlier.",
+    "lean_label_a": "Limits working",
+    "lean_label_b": "Pandemic recovery",
+    "id": "is-the-improvement-since-2021-a"
+   },
+   {
+    "text": "Should the law set a minimum age for social media, or should parents decide?",
+    "kind": "value",
+    "why": "The question is who holds authority over a child’s social life, and it cuts across party lines; courts in the US and France have also asked whether a blanket ban respects young people’s own right to expression.",
+    "detail": "The case for a legal age limit: parents face a collective-action trap. Each family that holds out makes its child the odd one out, so individual choice drifts toward the earliest age any family allows. A legal minimum moves the burden to the companies, which have the data to enforce it, and gives every parent the same backing. The existing US threshold of 13 was never a judgment about development; it comes from a 1998 children’s privacy law.\n\nThe case for parents deciding: children differ, families differ, and parents are better placed than legislators to judge when a particular child is ready. A ban overrides parents who want their teenager on a platform for family contact, creative work or community, and it forces age checks on every user, adults included. The better role for law is to give parents working tools, such as consent requirements and controls platforms must provide, and leave the decision with the family. In the US the Constitution protects minors’ access to speech, and courts have blocked several state laws on those grounds; France’s Constitutional Council struck down that country’s under-15 ban in August 2026.",
+    "lean_label_a": "Legal age limit",
+    "lean_label_b": "Parents decide",
+    "id": "should-the-law-set-a-minimum"
+   },
+   {
+    "text": "Should age limits apply even if they cut isolated and minority teens off from communities they find online?",
+    "kind": "value",
+    "why": "The platforms that expose some teens to harm give others, including LGBTQ youth, rural teens and those with rare conditions, their main source of peers and support, so one rule for everyone trades one group’s safety for another’s.",
+    "detail": "The case for protecting the many: policy should be judged by its effect on the whole population of children, and the harms of compulsive use, sleep loss, harassment, sextortion and exposure to self-harm content reach far more young people than the benefits of particular online communities. Vulnerable teens are also among those most exposed to predators and harmful content. Messaging, dedicated support services and moderated communities can stay available without open social media accounts; the UK plan exempts messaging apps.\n\nThe case for preserving lifelines: for many teens who are isolated at home or at school, online spaces are where they first find people like themselves and information about their health. The Trevor Project and other LGBTQ organizations report that a large share of LGBTQ youth rely on social media for peer support. Cutting them off for the sake of the majority removes a demonstrated benefit to answer a contested harm, and the young people who most need protection are the ones who most need access.",
+    "lean_label_a": "Protect the many",
+    "lean_label_b": "Preserve lifelines",
+    "id": "should-age-limits-apply-even-if"
+   },
+   {
+    "text": "Is mandatory age verification worth its cost to privacy and anonymous speech?",
+    "kind": "value",
+    "why": "Any enforceable minimum age requires checking ages, and every method, from ID uploads to facial age estimation, touches every user, not only children.",
+    "detail": "The case for verifying ages: age checks are routine offline for alcohol, cinema and gambling, and privacy-preserving methods, such as estimation that discards the image or checks done once on the device or in the app store, can confirm an age range without revealing identity. Without verification, age limits are empty, as the long-ignored minimum of 13 shows.\n\nThe case for protecting anonymity: requiring age checks creates databases of IDs or biometric data that can leak and be abused, chills anonymous speech for adults and adolescents alike, and falls hardest on people without documents. Estimation technologies are least accurate at the very ages the laws target. The Electronic Frontier Foundation argues that courts have repeatedly found such requirements incompatible with free-speech rights, and the French ruling against that country’s ban faulted it partly for lacking privacy safeguards on the age checks it required.",
+    "lean_label_a": "Verify ages",
+    "lean_label_b": "Protect anonymity",
+    "id": "is-mandatory-age-verification-worth-its"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Delay smartphones and social media until mid-adolescence",
+    "color_key": "green",
+    "steelman": "Around 2012 childhood moved onto the phone, and teen mental health fell sharply. No smartphone before high school, no social media before 16, phone-free schools, more free play.",
+    "detail": "The products that moved into children’s pockets were designed to maximize engagement, not to support development, and they arrived in early puberty, the most sensitive period for social comparison, sleep and identity. The harm is not only to heavy users: when a whole peer group moves online, even the children who hold out lose the in-person social life that used to be the default. No single family can fix that, because a child without a phone is left out, so shared norms and a legal floor are how we solve the collective-action problem. The ask is modest and reversible: basic phones before about 14, social media accounts from 16, phones locked away for the school day, and more real-world independence to replace what the phone displaced. Jonathan Haidt set out these four norms in The Anxious Generation; Australia has made 16 the law, and the UK is following.\n\nWe are told the evidence is only correlational and small. No product is held to the standard of proving harm to a whole population by randomized trial before a child safety rule is set, and seven independent lines of evidence point the same way, from the timing across countries to natural experiments, reduction trials, and company documents disclosed in court. The small average correlations our critics cite mix all screens, both sexes and every outcome together, and so mask the larger link between social media and depression among girls. Many of us also want design duties on platforms; where we part from design-only reformers is in treating an age floor as necessary rather than as a risk.",
+    "proponents": "Jonathan Haidt, Zach Rausch, Government of the United Kingdom, Government of Australia, Smartphone Free Childhood, Wait Until 8th",
+    "id": "delay-smartphones-and-social-media-until"
+   },
+   {
+    "name": "Make platforms safe by design instead of banning teens",
+    "color_key": "blue",
+    "steelman": "The problem isn’t that teenagers are online; it’s products engineered to hook them. Put a legal duty on companies to design safely for young users, whatever their age.",
+    "detail": "Infinite feeds, autoplay, streaks, notifications, beauty filters and recommendation systems that push distressing and self-harm content to vulnerable users are the machinery of harm. They hurt 16- and 17-year-olds and adults too, so a ban at 16 leaves the machinery running and simply moves the cliff edge. Bans are easy to evade, push children toward less regulated apps and gaming chats, cut off the teens who find support online, and let companies claim the problem is solved once children are formally excluded. The durable fix is a legal duty to design safely for the young people who will use these products regardless: age-appropriate defaults, algorithmic feeds off by default, no nighttime notifications, strong enforcement and real penalties. The Molly Rose Foundation, set up after 14-year-old Molly Russell’s suicide, joined the NSPCC, 5Rights and dozens of child-protection groups in opposing a blanket under-16 ban and calling for a stronger Online Safety Act instead.\n\nThe evidence is on the record: a coroner found in 2022 that online content contributed to Molly’s death, company documents disclosed in US litigation show awareness of harm from specific features, and in March 2026 a Los Angeles jury found Meta and YouTube negligent in the design of their products. Told that design rules are slow and easy to dodge, we answer that bans depend on company enforcement and age checks too, and that courts and regulators have now shown design duties can be imposed. We ask more of platforms than a ban does, since a ban lets them keep harmful designs for everyone over 16. Some of us, like UNICEF, accept age limits as one piece of a broader approach; others oppose blanket bans outright. In the US our work centers on a federal duty of care and state design codes.",
+    "proponents": "Molly Rose Foundation, NSPCC, 5Rights Foundation, UNICEF, Fairplay",
+    "id": "make-platforms-safe-by-design-instead"
+   },
+   {
+    "name": "Look past phones to the wider causes of youth distress",
+    "color_key": "amber",
+    "steelman": "Youth distress is real, which is why the cause matters. The case against phones is weak, and a vivid culprit pulls attention from poverty, school pressure and a strained care system.",
+    "detail": "The research linking social media to mental health finds small average associations, runs in both directions, and does not show that phones caused a decline across a whole population. A single, vivid culprit is appealing, but it risks spending public attention on restricting teenagers’ devices while leaving the known drivers untouched: poverty and economic insecurity, academic pressure, family stress, discrimination, adverse childhood experiences, firearm access in youth suicide, and a mental-health system that cannot meet demand. Some online harms are real and should be regulated, but the priority is better data, including researcher access to platform data, and investment in care. The psychologist Candice Odgers put it plainly in reviewing The Anxious Generation for Nature: the claim that digital technology is causing an epidemic of mental illness is not supported by science.\n\nWe are accused of leaving children exposed while we wait. We do not oppose protecting children from specific harms; we oppose building national policy on a causal claim the evidence has not established, because a policy aimed at the wrong cause protects no one and uses up the political will that measures that work would need. The natural experiments and longitudinal studies on the other side show small effects, mostly in college students or adults, and do not account for the size or timing of the rise among children. Some of us, following Lucy Foulkes and Jack Andrews, think part of the measured rise reflects awareness campaigns leading young people to read ordinary distress as disorder. Most of us support school phone rules for attention and learning while doubting they will move mental-health rates.",
+    "proponents": "Candice Odgers, Amy Orben, Andrew Przybylski, Christopher Ferguson, US National Academies",
+    "id": "look-past-phones-to-the-wider"
+   },
+   {
+    "name": "Give children back independence and free play",
+    "color_key": "rust",
+    "steelman": "Children have been losing their freedom for fifty years. The phone is the one place left where teens can be with friends unwatched; open the front door instead.",
+    "detail": "Children no longer walk to school, roam the neighborhood or play without adults; their days are filled with school, homework, tests and adult-run activities, and parents can be investigated for letting them out alone. Children who never solve their own problems, take small risks or settle their own conflicts do not develop the sense of control that protects against anxiety and depression. Phones are the symptom, not the cause: the online world became the one place teenagers could be together without adults watching. Taking phones away without giving freedom back removes the last unsupervised space and adds one more restriction to an already overcontrolled childhood. So let children play, roam and take responsibility, ease academic pressure, and change the laws and norms that punish parents for allowing it. Peter Gray, co-founder of Let Grow, makes the full case in Restoring Childhood (September 2026): school pressure and the loss of free play, not phones, drive teen suffering.\n\nTold that the loss of independence was gradual while the break after 2012 was sudden, we answer that academic pressure intensified sharply at the same time, with high-stakes testing and new national standards in the US, and that the “sudden break” is partly a return to pre-1990s levels after an unusual improvement. Specific online harms can be addressed without treating the whole technology as the cause, and freedom offline is what makes children less dependent on screens. Let Grow itself spans two views: Gray rejects phones as a major cause, while co-founder Jonathan Haidt treats lost independence and the phone-based childhood as two halves of one problem. Most of us would leave phone rules to families.",
+    "proponents": "Peter Gray, Let Grow, Lenore Skenazy, Elizabeth Nolan Brown",
+    "id": "give-children-back-independence-and-free"
+   },
+   {
+    "name": "Keep the internet open to young people without age checks",
+    "color_key": "purple",
+    "steelman": "Young people have rights to speak, learn and find each other. An age ban cuts off the teens who most need online community and makes everyone show ID to get online.",
+    "detail": "For many young people, especially LGBTQ teens, teens in unsupportive homes, rural teens and those with disabilities, online spaces are where they find information and people like themselves. An age ban cuts them off from all of it on the strength of a contested causal claim. Enforcing it means checking the age of everyone, collecting IDs or face scans from adults and children alike, creating databases that can leak and ending anonymous speech online. Bans do not even work: determined teens get around them and move to less safe corners of the internet. The better answers are comprehensive privacy law that stops platforms harvesting young users’ data, digital literacy education, tools that let parents choose, and enforcement against actual abusers. The Trevor Project, while agreeing that social media can cause harm, has warned legislators that barring minors from it would cut LGBTQ young people off from life-saving support.\n\nWe are told we put abstract rights ahead of children’s safety. The rights at stake belong to children too, and safety measures that expose everyone’s identity create dangers of their own; we back targeted action against specific harms, from strong privacy law to prosecuting predators. US courts have blocked state age-verification and parental-consent laws on First Amendment grounds, facial age estimation is least accurate around the ages these laws target, and early reports from Australia show teens getting around its ban. Parents can coordinate without the state requiring the whole internet to check IDs. Civil-liberties groups among us oppose age verification on principle; industry groups such as NetChoice oppose bans and stress parental tools.",
+    "proponents": "Electronic Frontier Foundation, American Civil Liberties Union, The Trevor Project, Center for Democracy and Technology, NetChoice",
+    "id": "keep-the-internet-open-to-young"
+   }
+  ],
+  "crux": {
+   "lead": "Are phones and social media a main cause of youth distress, and how sure must we be before acting?",
+   "lead_highlight": "how sure must we be before acting",
+   "subtitle": "Almost everyone agrees young people’s mental health worsened in the 2010s and that some online harms are real. The split is over whether phones and social media drove the decline, and who should bear the cost of guessing wrong while the evidence stays incomplete.",
+   "empirical": "Whether heavy use in early adolescence causes a meaningful share of the rise, and which features carry the harm. Long studies of children who start social media later than their peers for reasons unrelated to their mental health, independent access to what platforms show young users, and careful comparisons of places with and without age limits or phone-free schools would narrow it, and every camp says it would update.",
+   "values": "Who carries the burden of proof in the meantime. One side weighs the risk to a generation passing through a sensitive age, and the trap any one family faces in holding out alone, so it accepts limits on a probable cause. The other weighs the cost of a wrong diagnosis: lost community for teens who depend on it, age checks for everyone, other causes neglected, and the state taking decisions from families. No dataset makes that trade."
+  },
+  "actions": [
+   {
+    "kind": "local",
+    "title": "Call or text 988 if a young person is in crisis",
+    "description": "The US 988 Suicide & Crisis Lifeline offers free, confidential support by phone, text and chat, around the clock, for young people and the adults worried about them.",
+    "url": "https://988lifeline.org/",
+    "for_position": null,
+    "id": "call-or-text-988-if-a"
+   },
+   {
+    "kind": "local",
+    "title": "Start a phone-free school or parent group with The Anxious Generation movement",
+    "description": "Guides and templates for parents and educators organizing phone-free schools and shared delays on smartphones and social media in their community.",
+    "url": "https://www.anxiousgeneration.com/take-action",
+    "for_position": "Delay smartphones and social media until mid-adolescence",
+    "id": "start-a-phone-free-school-or"
+   },
+   {
+    "kind": "policy",
+    "title": "Back a duty of care for platform design in the Kids Online Safety Act",
+    "description": "Fairplay’s campaign for federal legislation requiring platforms to design their features so as to prevent and mitigate harms to minors.",
+    "url": "https://fairplayforkids.org/fairplay-statement-on-the-kids-act-passing/",
+    "for_position": "Make platforms safe by design instead of banning teens",
+    "id": "back-a-duty-of-care-for"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the scientific case against the smartphone explanation",
+    "description": "Candice Odgers’s 2024 review of The Anxious Generation in Nature, setting out why she finds the causal claim unsupported and what it may distract from.",
+    "url": "https://www.nature.com/articles/d41586-024-00902-2",
+    "for_position": "Look past phones to the wider causes of youth distress",
+    "id": "read-the-scientific-case-against-the"
+   },
+   {
+    "kind": "local",
+    "title": "Bring the Let Grow Project or Play Club to a local school",
+    "description": "Let Grow’s free programs give children independence assignments and unstructured play time, and its state tracker follows Reasonable Childhood Independence laws.",
+    "url": "https://letgrow.org/",
+    "for_position": "Give children back independence and free play",
+    "id": "bring-the-let-grow-project-or"
+   },
+   {
+    "kind": "policy",
+    "title": "Tell Congress age verification and censorship will not keep kids safe",
+    "description": "The ACLU’s message tool urging members of Congress to oppose online safety bills it says would require age verification and censor protected speech.",
+    "url": "https://action.aclu.org/send-message/censorship-does-not-keep-kids-safe",
+    "for_position": "Keep the internet open to young people without age checks",
+    "id": "tell-congress-age-verification-and-censorship"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the National Academies report on social media and adolescent health",
+    "description": "The 2023 consensus report reviewing the evidence on social media and young people’s health, with recommendations for platforms, schools, researchers and government.",
+    "url": "https://nap.nationalacademies.org/catalog/27396/social-media-and-adolescent-health",
+    "for_position": null,
+    "id": "read-the-national-academies-report-on"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the CDC’s latest youth mental-health data",
+    "description": "The Youth Risk Behavior Survey’s 2025 results on sadness, hopelessness and suicide risk among US high school students, with trends by sex.",
+    "url": "https://www.cdc.gov/yrbs/youth-health-in-focus/mental-health.html",
+    "for_position": null,
+    "id": "read-the-cdc-s-latest-youth"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Sign the Wait Until 8th pledge",
+    "description": "A pledge that activates once enough families in a child’s grade and school agree to wait until at least eighth grade before giving a smartphone.",
+    "url": "https://www.waituntil8th.org/",
+    "for_position": "Delay smartphones and social media until mid-adolescence",
+    "id": "sign-the-wait-until-8th-pledge"
+   },
+   {
+    "kind": "donate",
+    "title": "Support the Molly Rose Foundation",
+    "description": "The UK suicide-prevention charity founded after Molly Russell’s death, which campaigns for stronger online safety regulation and platform accountability.",
+    "url": "https://mollyrosefoundation.org/",
+    "for_position": "Make platforms safe by design instead of banning teens",
+    "id": "support-the-molly-rose-foundation"
+   }
+  ]
+ }
 }

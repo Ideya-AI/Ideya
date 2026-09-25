@@ -16,7 +16,9 @@ lists, search results, category columns).
 The icon's job is recognition: on a wall of tiles it says which topic this is. It
 does not argue. Show the subject plainly; opposing elements are welcome only when the
 domain itself supplies them, never manufactured, and neutrality is never expressed as
-symmetry.
+symmetry. Show the subject, not one camp's corner of it: a shooting range is the
+owner's world, a protest march the activist's. Every camp should recognize the scene as
+the topic.
 
 ## Inputs
 

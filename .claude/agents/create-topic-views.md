@@ -51,8 +51,9 @@ expanded, and the three cards. For each surface record pass or a named defect:
 horizontal overflow, clipped text, a stat value or unit that wraps or overflows its tile, a lean label that wraps, the
 art missing or letterboxed, a card title that wraps past its box, positions running
 off the card's dark band, poster overflow. Say what is wrong and where, not how it
-looks in general. Do not report Basics grid gaps at all: the CSS makes a trailing tile span the full
-row, and blank space under the shorter tile of a row whose two tiles differ in height
+looks in general. Do not report Basics grid gaps at all: a wide tile alone in its row
+spans the full row, a trailing narrow tile keeps its width, and blank space under the
+shorter tile of a row whose two tiles differ in height
 is the grid working as designed. Neither is a defect, however it looks.
 
 Classify each defect: **content** (a too-long value, unit, label, title or name;
@@ -66,6 +67,8 @@ Record what these renders show, so a later detail-only fix can skip re-rendering
 
 Write `research/topics/<slug>/renders/views.md`: a line per surface with pass or the
 defect, then three lists headed `Content`, `Art`, `Template`, empty lists included.
+Any count you give (tiles, questions, positions) comes from `topic.json`, not from
+the number of render files, which split sections into strips.
 
 ## Report
 

@@ -4,7 +4,7 @@ grid, keyed by data-xid, so row partners open together — see rowGrid in ideya.
 Axis 2 (depth): glance = label + viz + lead note; clicking the tile expands it
 to reveal the deeper paragraph + source (no button/signifier). Axis 1 (breadth):
 `is_extra` tiles appear only when the section's Go-deeper is open.{% endcomment %}
-<div class="tile{% if stat.wide %} wide{% endif %}{% if stat.is_extra %} tile-xtra{% endif %}{% if stat.detail or stat.source_label %} tile-x{% endif %}" data-xid="{{ stat.id }}"
+<div class="tile{% if stat.wide %} wide{% endif %}{% if stat.full %} full{% endif %}{% if stat.is_extra %} tile-xtra{% endif %}{% if stat.detail or stat.source_label %} tile-x{% endif %}" data-xid="{{ stat.id }}"
      {% if stat.detail or stat.source_label %}:class="{ 'tile-open': open[{{ stat.id }}] }" @click="toggle($el)"{% endif %}>
   {% if stat.detail or stat.source_label %}<button type="button" class="xtoggle" @click.stop="toggle($el.closest('.tile'))" :aria-expanded="!!open[{{ stat.id }}]" aria-label="Toggle details"><i class="ph-duotone ph-caret-down"></i></button>{% endif %}
   <div class="tk">{{ stat.label }}</div>
@@ -23,11 +23,11 @@ to reveal the deeper paragraph + source (no button/signifier). Axis 1 (breadth):
   {% elif stat.viz == "radial" %}
     <div class="radwrap">
       <div class="radial" style="--pct:{{ stat.fill_pct|default:0 }}"></div>
-      <div class="tv">{{ stat.value|sup_exp }}{% if stat.unit %}<small{% if stat.unit_is_word %} class="u-word"{% endif %}>{{ stat.unit }}</small>{% endif %}</div>
+      <div class="tv"><span class="tvn">{{ stat.value|sup_exp }}</span>{% if stat.unit %}<small{% if stat.unit_is_word %} class="u-word"{% endif %}>{{ stat.unit }}</small>{% endif %}</div>
     </div>
 
   {% elif stat.viz == "range" %}
-    <div class="tv">{{ stat.value|sup_exp }}{% if stat.unit %}<small{% if stat.unit_is_word %} class="u-word"{% endif %}>{{ stat.unit }}</small>{% endif %}</div>
+    <div class="tv"><span class="tvn">{{ stat.value|sup_exp }}</span>{% if stat.unit %}<small{% if stat.unit_is_word %} class="u-word"{% endif %}>{{ stat.unit }}</small>{% endif %}</div>
     <div class="vrow">
       {% with band=stat.range_band %}
       <div class="track">{% if band %}<span class="rband" style="left:{{ band.left }}%;width:{{ band.width }}%"></span>{% else %}<span class="pin" style="left:{{ stat.range_at|default:0 }}%"></span>{% endif %}</div>
@@ -36,7 +36,7 @@ to reveal the deeper paragraph + source (no button/signifier). Axis 1 (breadth):
     </div>
 
   {% else %}{# bar / sparkline #}
-    <div class="tv">{{ stat.value|sup_exp }}{% if stat.unit %}<small{% if stat.unit_is_word %} class="u-word"{% endif %}>{{ stat.unit }}</small>{% endif %}</div>
+    <div class="tv"><span class="tvn">{{ stat.value|sup_exp }}</span>{% if stat.unit %}<small{% if stat.unit_is_word %} class="u-word"{% endif %}>{{ stat.unit }}</small>{% endif %}</div>
     {% if stat.fill_pct %}<div class="vrow"><div class="pbar"><i style="width:{{ stat.fill_pct }}%"></i></div></div>{% endif %}
   {% endif %}
 
