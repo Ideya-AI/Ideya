@@ -1,8 +1,8 @@
 {
  "slug": "democratic-backsliding-populism",
  "title": "Democratic Backsliding",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-09-29T10:15:25+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Populism and the erosion of democratic institutions. Not electoral rules or voting access.",
@@ -16,5 +16,762 @@
   "identity-politics-vs-universalism",
   "liberal-order-vs-multipolarity",
   "executive-power-separation"
- ]
+ ],
+ "content": {
+  "overview": {
+   "summary": "Whether elected populists are eroding democracy from within, how far the global decline is real, and how democracies should respond.",
+   "scope_covered": "How democracy is measured and whether it is declining, whether populists in power erode it more than other governments, what drives populist support, and how democracies respond, from courts and party bans to EU sanctions and elections.",
+   "scope_excluded": "Electoral rules and voting access, the case for democracy against rule by experts, and the US fight over presidential control of the administrative state, except as one national case.",
+   "why_now": "After Alternative for Germany took the most votes in Saxony-Anhalt’s state election on September 6, 2026, a senior Christian Democrat called for a federal-state review of the party and its “possible legal consequences,” reopening Germany’s argument over a ban.",
+   "why_now_source_label": "Brussels Signal",
+   "why_now_source_url": "https://brusselssignal.eu/2026/09/german-state-premier-wust-breaks-cdu-ranks-over-afd-ban/"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "Share of world population living in autocracies",
+     "viz": "ranked",
+     "wide": true,
+     "value": "74",
+     "unit": "%",
+     "series": [
+      {
+       "label": "2005",
+       "value": "50",
+       "highlight": false
+      },
+      {
+       "label": "2025",
+       "value": "74",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "V-Dem classes 74 percent of the world’s people, about 6 billion, as living in autocracies at the end of 2025, up from 50 percent in 2005; critics say its expert coding overstates the decline.",
+     "detail": "V-Dem sorts countries into liberal democracies, electoral democracies, electoral autocracies (which hold multiparty elections that fall short of free and fair) and closed autocracies. At the end of 2025 it counted 92 autocracies and 87 democracies among 179 countries, with only 7 percent of the world’s population, 0.6 billion people, in liberal democracies; the number of liberal democracies fell from 45 in 2009 to 31 in 2025. Much of the population shift comes from a few very large countries: V-Dem classes four of the five most populous, India, China, Indonesia and Pakistan, as autocracies. Weighted by population, the level of democracy enjoyed by the average person is back to where it was in 1978 and 30 percent below its 2003 peak.",
+     "source_label": "V-Dem Institute, Democracy Report 2026: “Unraveling the Democratic Era?”",
+     "source_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-09-29",
+     "id": "share-of-world-population-living-in"
+    },
+    {
+     "label": "Share of world population living in countries rated Free",
+     "viz": "radial",
+     "wide": false,
+     "value": "21",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "21 percent of the world’s people lived in countries Freedom House rated Free in 2025, down from 46 percent in 2005.",
+     "detail": "The count of Free countries has barely moved, 88 of 195 today against 87 in 2005, so the fall in population share comes mostly from large countries changing category. The biggest is India, rated Partly Free since 2021, whose 1.4 billion people left the Free column. Over the same twenty years the number of countries rated Not Free rose from 45 to 59. Read together, the figures show why the debate persists: by Freedom House’s ratings the number of democracies has held up, while the share of humanity living in them, and the quality of democracy in several large ones, has fallen.",
+     "source_label": "Freedom House, Freedom in the World 2026",
+     "source_url": "https://freedomhouse.org/article/new-report-global-freedom-declined-20th-consecutive-year-2025",
+     "source_published": "2025",
+     "source_accessed": "2026-09-29",
+     "id": "share-of-world-population-living-in-2"
+    },
+    {
+     "label": "Elected leaders who presided over significant democratic backsliding, 1990–2018",
+     "viz": "ranked",
+     "wide": true,
+     "value": "23",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Populists",
+       "value": "23",
+       "highlight": true
+      },
+      {
+       "label": "Other elected leaders",
+       "value": "6",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In one study, 23 percent of populist leaders presided over significant democratic backsliding, against 6 percent of other democratically elected leaders.",
+     "detail": "Jordan Kyle and Yascha Mounk built a database of 46 populist leaders or parties that held executive office in 33 democracies between 1990 and 2018, and measured backsliding as a fall in the country’s Polity score; the report’s body text gives 24 percent, a small internal inconsistency. The rate was similar across ideologies: 38 percent of right-wing and 33 percent of left-wing populist governments on a narrower civil-liberties measure. Over half of populist leaders amended or rewrote their constitutions, and populist rule was associated with declines of 7 percent in press freedom, 8 percent in civil liberties and 13 percent in political rights. The study came from a think tank rather than a peer-reviewed journal; later peer-reviewed work using V-Dem data, by Ruth-Lovell and Grahn in the European Journal of Political Research (2023), finds “a rather negative impact of populism on the electoral, liberal and deliberative models of democracy.”",
+     "source_label": "Jordan Kyle and Yascha Mounk, “The Populist Harm to Democracy,” Tony Blair Institute (archived copy)",
+     "source_url": "https://web.archive.org/web/2023/https://institute.global/insights/geopolitics-and-security/populist-harm-democracy-empirical-assessment",
+     "source_published": "1990–2018",
+     "source_accessed": "2026-09-29",
+     "id": "elected-leaders-who-presided-over-significant"
+    },
+    {
+     "label": "EIU global Democracy Index average",
+     "viz": "range",
+     "wide": false,
+     "value": "5.19",
+     "unit": "of 10",
+     "series": [],
+     "range_min": "0 authoritarian",
+     "range_max": "10 full democracy",
+     "note": "The Economist Intelligence Unit’s global average edged up from 5.17 to 5.19 in 2025, which it calls stabilizing after eight years of decline; V-Dem and Freedom House report continued decline.",
+     "detail": "The EIU scores 167 countries on 60 indicators. It counts 26 full democracies holding 6.6 percent of the world’s population, 48 flawed democracies (38.4 percent), 32 hybrid regimes (15.7 percent) and 61 authoritarian regimes (39.2 percent). It cut the United States from 7.85 to 7.65 and from 28th to 34th place, citing “several actions and policies of the Trump administration,” while keeping it a flawed democracy. The indices weigh different things: the EIU gives more weight to political participation and political culture, V-Dem to checks on the executive and civil liberties, which is one reason scholars disagree about how much of the decline is real.",
+     "source_label": "Economist Intelligence Unit, Democracy Index 2025 (press release)",
+     "source_url": "https://www.prnewswire.com/news-releases/eiu-democracy-index-2025-democracy-stabilises-after-eight-years-of-decline-302734863.html",
+     "source_published": "2025",
+     "source_accessed": "2026-09-29",
+     "id": "eiu-global-democracy-index-average"
+    },
+    {
+     "label": "United States score on V-Dem’s Liberal Democracy Index",
+     "viz": "ranked",
+     "wide": true,
+     "value": "0.57",
+     "unit": "of 1",
+     "series": [
+      {
+       "label": "2023",
+       "value": "0.79",
+       "highlight": false
+      },
+      {
+       "label": "2024",
+       "value": "0.75",
+       "highlight": false
+      },
+      {
+       "label": "2025",
+       "value": "0.57",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "V-Dem’s score for the United States fell from 0.75 to 0.57 in 2025, the largest one-year drop in its US data back to 1789; Freedom House and the EIU recorded smaller declines.",
+     "detail": "The fall moved the United States from 20th to 51st of 179 countries, to a level V-Dem compares to 1965, and for the first time in over fifty years V-Dem no longer classes it as a liberal democracy. V-Dem attributes the drop to executive aggrandizement, with legislative constraints on the executive losing a third of their value in 2025, and to declines in civil rights and freedom of expression; the electoral components “remain stable” because election indicators are re-scored only in election years. The report gives the fall as 24 percent in one year and does not print the earlier values; 0.79 for 2023 and 0.75 for 2024 come from V-Dem data charted by the Pew Research Center (“Multiple indicators show a decline in the health of America’s democracy in 2025,” April 2026). A White House spokeswoman, quoted by OPB, called the finding “a ridiculous claim made by an irrelevant, blatantly biased organization.”",
+     "source_label": "V-Dem Institute, Democracy Report 2026, “In Focus: Autocratization in the USA”",
+     "source_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-09-29",
+     "id": "united-states-score-on-v-dem"
+    },
+    {
+     "label": "Aspects of democracy that declined under populist governments",
+     "viz": "bar",
+     "wide": false,
+     "value": "22",
+     "unit": "of 28",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Of the 28 aspects of democracy in International IDEA’s indices, 22 declined on average under populist governments, five of them by statistically significant margins.",
+     "detail": "International IDEA, an intergovernmental organization, compared 465 country-years of populist government in 43 countries between 1980 and 2018 with non-populist periods. The significant declines were in elected government, civil liberties, freedom of expression, freedom of association and assembly, and freedom of movement. Under non-populist governments the average civil liberties score rose 1.1 percent a year; under populist ones it fell 0.8 percent a year. Six aspects improved under populists, none significantly, and only electoral participation improved more than under other governments, a finding populism’s defenders cite as evidence that it re-engages voters. The authors caution that no single robust dataset of populist governments exists and that the findings “need to be interpreted with caution.”",
+     "source_label": "International IDEA, “Populist government and democracy” (GSoD In Focus No. 9)",
+     "source_url": "https://www.idea.int/sites/default/files/publications/populist-government-and-democracy-impact-assessement-using-gsod-indices.pdf",
+     "source_published": "1980–2018",
+     "source_accessed": "2026-09-29",
+     "id": "aspects-of-democracy-that-declined-under"
+    },
+    {
+     "label": "Countries whose freedom declined or improved in 2025",
+     "viz": "ranked",
+     "wide": true,
+     "value": "54",
+     "unit": "countries",
+     "series": [
+      {
+       "label": "Declined",
+       "value": "54",
+       "highlight": true
+      },
+      {
+       "label": "Improved",
+       "value": "35",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Freedom House recorded declines in political rights and civil liberties in 54 countries in 2025 and gains in 35, the twentieth straight year that declines outnumbered gains.",
+     "detail": "Freedom House scores 195 countries and 13 territories on a 100-point scale, 40 points for political rights and 60 for civil liberties, through analysts and expert review. It attributes 2025’s decline to military coups, violence against peaceful protesters and efforts to weaken constitutional safeguards; the largest one-year falls were in Guinea-Bissau, Tanzania, Burkina Faso, Madagascar and El Salvador. The United States lost 3 points to 81, its lowest since Freedom House began publishing 0–100 scores, and its 12-point fall since 2005 is larger than that of any other country rated Free over the period except Nauru and Bulgaria. It is still rated Free.",
+     "source_label": "Freedom House, “Global Freedom Declined for 20th Consecutive Year in 2025”",
+     "source_url": "https://freedomhouse.org/article/new-report-global-freedom-declined-20th-consecutive-year-2025",
+     "source_published": "2025",
+     "source_accessed": "2026-09-29",
+     "id": "countries-whose-freedom-declined-or-improved"
+    },
+    {
+     "label": "Largest falls in liberal democracy among current autocratizers",
+     "viz": "ranked",
+     "wide": true,
+     "value": "0.451",
+     "unit": "points",
+     "series": [
+      {
+       "label": "Hungary (2009)",
+       "value": "0.451",
+       "highlight": true
+      },
+      {
+       "label": "Serbia (2009)",
+       "value": "0.313",
+       "highlight": false
+      },
+      {
+       "label": "India (2008)",
+       "value": "0.309",
+       "highlight": false
+      },
+      {
+       "label": "United States (2023)",
+       "value": "0.218",
+       "highlight": false
+      },
+      {
+       "label": "Mexico (2019)",
+       "value": "0.207",
+       "highlight": false
+      },
+      {
+       "label": "Peru (2020)",
+       "value": "0.200",
+       "highlight": false
+      },
+      {
+       "label": "Greece (2019)",
+       "value": "0.195",
+       "highlight": false
+      },
+      {
+       "label": "Slovakia (2022)",
+       "value": "0.187",
+       "highlight": false
+      },
+      {
+       "label": "Argentina (2023)",
+       "value": "0.171",
+       "highlight": false
+      },
+      {
+       "label": "Kuwait (2023)",
+       "value": "0.167",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Hungary’s score on V-Dem’s 0-to-1 Liberal Democracy Index fell 0.451 points between 2009 and 2025, the largest decline among the countries V-Dem lists as autocratizing.",
+     "detail": "The year beside each country is when its episode of decline began. V-Dem writes that Hungary “was a liberal democracy” when Orbán and Fidesz won power in 2010, and that his government “gradually removed checks and balances on the executive, interfered with the quality of elections, and severely restricted press freedom”; it has classed Hungary as an electoral autocracy since 2018. The list mixes governments of different stripes, from Aleksandar Vučić’s Serbia, Narendra Modi’s India and Morena’s Mexico to Javier Milei’s Argentina and Greece under the center-right New Democracy. V-Dem’s data run to the end of 2025, before Hungary’s change of government. Freedom House reports that Hungary lost 25 points on its 100-point scale between 2010 and 2025 and was downgraded from Free to Partly Free in 2019.",
+     "source_label": "V-Dem Institute, Democracy Report 2026, top 10 stand-alone autocratizers",
+     "source_url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-09-29",
+     "id": "largest-falls-in-liberal-democracy-among"
+    },
+    {
+     "label": "Hungary’s April 2026 parliamentary election",
+     "viz": "ranked",
+     "wide": true,
+     "value": "141",
+     "unit": "seats",
+     "series": [
+      {
+       "label": "Tisza",
+       "value": "141",
+       "highlight": true
+      },
+      {
+       "label": "Fidesz–KDNP",
+       "value": "52",
+       "highlight": false
+      },
+      {
+       "label": "Our Homeland",
+       "value": "6",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Péter Magyar’s Tisza won 141 of 199 seats, above the 133 needed for a two-thirds majority, ending sixteen years of Fidesz government under Viktor Orbán.",
+     "detail": "Tisza took 53.18 percent of the list vote, Fidesz–KDNP 38.61 percent and the far-right Our Homeland 5.63 percent, on a turnout of 78.99 percent, the highest in Hungary’s democratic history. Orbán conceded on election night, and Magyar was elected prime minister on May 9, 2026. The result is read two ways: as proof that an electoral autocracy can still be voted out, since the vote was held in districts Fidesz had drawn and with most media aligned with the government, and as evidence that Hungary was never the dictatorship its critics described.",
+     "source_label": "Wikipedia, “2026 Hungarian parliamentary election”",
+     "source_url": "https://en.wikipedia.org/wiki/2026_Hungarian_parliamentary_election",
+     "source_published": "2026",
+     "source_accessed": "2026-09-29",
+     "id": "hungary-s-april-2026-parliamentary-election"
+    },
+    {
+     "label": "Vote in Saxony-Anhalt’s state election, September 2026",
+     "viz": "ranked",
+     "wide": true,
+     "value": "43.8",
+     "unit": "%",
+     "series": [
+      {
+       "label": "AfD",
+       "value": "43.8",
+       "highlight": true
+      },
+      {
+       "label": "CDU",
+       "value": "17.2",
+       "highlight": false
+      },
+      {
+       "label": "SPD",
+       "value": "9.3",
+       "highlight": false
+      },
+      {
+       "label": "Greens",
+       "value": "8.9",
+       "highlight": false
+      },
+      {
+       "label": "The Left",
+       "value": "8.6",
+       "highlight": false
+      },
+      {
+       "label": "BSW",
+       "value": "5.3",
+       "highlight": false
+      },
+      {
+       "label": "FDP",
+       "value": "2.6",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Alternative for Germany won 43.8 percent of the vote, its best result in any German state, and 39 of 83 seats, three short of a majority.",
+     "detail": "Turnout was 77.8 percent, up 17.5 points on 2021. The CDU, SPD, Greens and Left, which also hold 39 seats together, have ruled out governing with AfD, a policy Germans call the “firewall” (Brandmauer), leaving the balance with the five seats of the Sahra Wagenknecht Alliance (BSW). Germany’s Federal Office for the Protection of the Constitution classified AfD nationally as a “confirmed right-wing extremist” organization on May 2, 2025. On February 26, 2026 a Cologne administrative court suspended that label pending the main case, finding efforts within the party to undermine the democratic order but holding that the party as a whole could not yet be described as anti-constitutional, as France 24 reported.",
+     "source_label": "Wikipedia, “2026 Saxony-Anhalt state election”",
+     "source_url": "https://en.wikipedia.org/wiki/2026_Saxony-Anhalt_state_election",
+     "source_published": "2026",
+     "source_accessed": "2026-09-29",
+     "id": "vote-in-saxony-anhalt-s-state"
+    },
+    {
+     "label": "How populist leaders who took office in 1990–2014 left power",
+     "viz": "ranked",
+     "wide": true,
+     "value": "8",
+     "unit": "cases",
+     "series": [
+      {
+       "label": "Lost election, left",
+       "value": "8",
+       "highlight": true
+      },
+      {
+       "label": "Forced out",
+       "value": "11",
+       "highlight": false
+      },
+      {
+       "label": "Still in office",
+       "value": "14",
+       "highlight": false
+      },
+      {
+       "label": "Other, incl. term limits",
+       "value": "14",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Of 47 times a populist took office between 1990 and 2014, the leader stepped down after losing a free and fair election in 8; 14 were still in office in 2018.",
+     "detail": "Kyle and Mounk counted 11 cases of leaving under “dramatic circumstances” such as impeachment or forced resignation, and summarized that only 34 percent left after free and fair elections or because they respected term limits, which implies about 8 exits at term limits; the “other” row is derived from their counts. Populist governments also proved more durable: after three years about half of non-populist governments were still in office, against 80 percent of populist ones. A study of 60 countries since 1900 by Funke, Schularick and Trebesch in the American Economic Review likewise finds populists staying twice as long on average, eight years against four. Several populist incumbents have since lost and left, including Jair Bolsonaro in Brazil in 2022, Law and Justice in Poland in 2023 and Orbán in 2026, cases this dataset predates.",
+     "source_label": "Jordan Kyle and Yascha Mounk, “The Populist Harm to Democracy,” Tony Blair Institute (archived copy)",
+     "source_url": "https://web.archive.org/web/2023/https://institute.global/insights/geopolitics-and-security/populist-harm-democracy-empirical-assessment",
+     "source_published": "1990–2014",
+     "source_accessed": "2026-09-29",
+     "id": "how-populist-leaders-who-took-office"
+    },
+    {
+     "label": "Vote share a candidate loses for taking an undemocratic position",
+     "viz": "ranked",
+     "wide": true,
+     "value": "3.5",
+     "unit": "% of vote",
+     "series": [
+      {
+       "label": "All scenarios",
+       "value": "11.7",
+       "highlight": false
+      },
+      {
+       "label": "Realistic scenarios",
+       "value": "3.5",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a US experiment, a candidate who took an undemocratic position lost about 11.7 percent of his vote share overall and about 3.5 percent in scenarios resembling real elections.",
+     "detail": "Respondents chose between pairs of hypothetical candidates, some of whom endorsed positions such as ignoring unfavorable court rulings, reducing polling stations in areas that support the other party, or prosecuting journalists who accuse them of misconduct. Only about 13.1 percent were willing to defect from a co-partisan who violated democratic principles. Strong partisans and policy extremists punished violations least, while centrists punished them at four times the rate of “extremist” voters. The authors conclude that the public’s value as a democratic check is “strikingly limited” and weakens as polarization grows, one reason much of the literature treats polarization, not populism alone, as the underlying danger.",
+     "source_label": "Graham and Svolik, “Democracy in America?”, American Political Science Review (2020)",
+     "source_url": "https://bpb-us-w2.wpmucdn.com/campuspress.yale.edu/dist/6/1038/files/2020/06/Graham-and-Svolik-2020-APSR.pdf",
+     "source_published": "2018",
+     "source_accessed": "2026-09-29",
+     "id": "vote-share-a-candidate-loses-for"
+    },
+    {
+     "label": "Political scientists’ rating of US democracy",
+     "viz": "ranked",
+     "wide": true,
+     "value": "60",
+     "unit": "of 100",
+     "series": [
+      {
+       "label": "Nov 2024",
+       "value": "67",
+       "highlight": false
+      },
+      {
+       "label": "Feb–Mar 2025",
+       "value": "55",
+       "highlight": false
+      },
+      {
+       "label": "Apr 2025",
+       "value": "53",
+       "highlight": false
+      },
+      {
+       "label": "Sep 2025",
+       "value": "54",
+       "highlight": false
+      },
+      {
+       "label": "Dec 2025–Jan 2026",
+       "value": "58",
+       "highlight": false
+      },
+      {
+       "label": "Feb–Mar 2026",
+       "value": "57",
+       "highlight": false
+      },
+      {
+       "label": "Jul 2026",
+       "value": "60",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Political scientists surveyed by Bright Line Watch rated US democracy 60 of 100 in July 2026, down from 67 before Trump’s second term; critics read the series as a gauge of expert alarm.",
+     "detail": "Bright Line Watch, run by political scientists at Dartmouth, the University of Chicago and the University of Rochester, surveys hundreds of political scientists (568 in July 2026) and a representative sample of the public several times a year. The July rating was the highest of Trump’s second term, statistically equivalent to the low of his first (61, October 2020) and below the lowest under Biden (66, November 2021). The public’s average rating was 52. Experts expected a rating of 49 in 2032 if a Trump-endorsed Republican wins in 2028, 67 if another Republican wins and 72 if a Democrat does. Critics note that academics lean left; the authors reply that the ratings track specific, observable democratic practices.",
+     "source_label": "Bright Line Watch, “A Partial Democratic Rebound?” (July 2026)",
+     "source_url": "https://brightlinewatch.org/a-partial-democratic-rebound/",
+     "source_published": "2026",
+     "source_accessed": "2026-09-29",
+     "id": "political-scientists-rating-of-us-democracy"
+    },
+    {
+     "label": "Adults dissatisfied with how democracy is working",
+     "viz": "ranked",
+     "wide": true,
+     "value": "69",
+     "unit": "%",
+     "series": [
+      {
+       "label": "US 2025",
+       "value": "62",
+       "highlight": false
+      },
+      {
+       "label": "US 2026",
+       "value": "69",
+       "highlight": true
+      },
+      {
+       "label": "16-country median",
+       "value": "54",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "69 percent of US adults said in 2026 that they were dissatisfied with how democracy is working, up from 62 percent a year earlier and above a 54 percent median across 16 high-income countries.",
+     "detail": "Pew surveyed 19,715 adults between February 9 and May 6, 2026 in Australia, Canada, France, Germany, Greece, Hungary, Israel, Italy, Japan, the Netherlands, Poland, South Korea, Spain, Sweden, the United Kingdom and the United States. About three in four Greeks were dissatisfied, while a similar share of Swedes were satisfied. Satisfaction moves with events: in South Korea it more than doubled, from 28 to 61 percent, after the impeachment of Yoon Suk Yeol and the election of Lee Jae Myung. Dissatisfaction with how democracy works is not the same as rejecting democracy, and scholars disagree on whether it feeds populism or mostly reflects the unhappiness of those whose side lost.",
+     "source_label": "Pew Research Center, “Americans more dissatisfied with their democracy than people in most other high-income countries”",
+     "source_url": "https://www.pewresearch.org/short-reads/2026/06/10/americans-are-more-dissatisfied-with-how-their-democracy-is-working-than-people-in-other-high-income-countries/",
+     "source_published": "2026",
+     "source_accessed": "2026-09-29",
+     "id": "adults-dissatisfied-with-how-democracy-is"
+    },
+    {
+     "label": "Support for rule by a strong leader without parliament or courts",
+     "viz": "radial",
+     "wide": false,
+     "value": "26",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "A median of 26 percent across 24 countries said a system in which “a strong leader can make decisions without interference from parliament or the courts” would be a good way to govern.",
+     "detail": "In the same 2023 survey of 30,861 adults, majorities in every one of the 24 countries called representative democracy, in which elected representatives decide what becomes law, a somewhat or very good way to govern. Support for strong-leader rule rose significantly since 2017 in 8 of the 22 countries with comparable data, among them Brazil, Mexico, Argentina, Kenya, India, South Korea, Germany and Poland, and at least half of respondents favored it in four of the eight middle-income countries. The question measures an attitude, not a vote, and support for a strong leader often coexists with support for elections.",
+     "source_label": "Pew Research Center, “Representative Democracy Remains a Popular Ideal” (February 2024)",
+     "source_url": "https://www.pewresearch.org/global/2024/02/28/representative-democracy-remains-a-popular-ideal-but-people-around-the-world-are-critical-of-how-its-working/",
+     "source_published": "2023",
+     "source_accessed": "2026-09-29",
+     "id": "support-for-rule-by-a-strong"
+    },
+    {
+     "label": "GDP per capita 15 years after a populist takes office",
+     "viz": "bar",
+     "wide": false,
+     "value": "10",
+     "unit": "% lower",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Fifteen years after a populist takes office, GDP per capita is 10 percent lower than in a synthetic comparison built from similar countries without a populist government.",
+     "detail": "Manuel Funke, Moritz Schularick and Christoph Trebesch coded 1,482 leaders from 1900 to 2020 in 60 countries that account for more than 95 percent of world GDP, and identified 51 populist presidents and prime ministers, those whose central narrative sets “the people” against “the elites.” Populism peaked twice, in the 1930s and the 2010s; by the end of 2018, 16 of the 60 countries were ruled by populists, and left- and right-wing populists showed similar patterns of entry, survival and exit. The authors write that “economic disintegration, decreasing macroeconomic stability, and the erosion of institutions typically go hand in hand with populist rule.” The comparison is a statistical counterfactual, not an observed outcome, and defenders of particular populist governments point to exceptions such as Poland under Law and Justice, whose economy grew strongly from 2015 to 2023.",
+     "source_label": "Funke, Schularick and Trebesch, “Populist Leaders and the Economy,” American Economic Review (2023)",
+     "source_url": "https://www.aeaweb.org/articles?id=10.1257/aer.20202045",
+     "source_published": "1900–2020",
+     "source_accessed": "2026-09-29",
+     "id": "gdp-per-capita-15-years-after"
+    },
+    {
+     "label": "Adults who say democracy is preferable to any other form of government",
+     "viz": "ranked",
+     "wide": true,
+     "value": "57",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Ages 18–35",
+       "value": "57",
+       "highlight": true
+      },
+      {
+       "label": "Ages 56 and over",
+       "value": "71",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "57 percent of 18-to-35-year-olds across 30 countries said democracy is preferable to any other form of government, against 71 percent of those 56 and over; whether the gap is generational is disputed.",
+     "detail": "The survey of more than 36,000 people ran from May to July 2023. Roberto Stefan Foa and Yascha Mounk argued from World Values Survey data in 2016 that younger cohorts in established democracies were less attached to democracy; other scholars, such as Erik Voeten, replied that the gap reflects age and life stage rather than a lasting generational shift. Those who read Hungary’s 2026 election as a democratic recovery point to independent polls, reported by European Movement Ireland, finding more than 60 percent of voters under 30 backing Tisza, against 15 percent for Fidesz. Open Society Foundations, which commissioned the survey, was founded by George Soros, a frequent target of governments discussed on this page.",
+     "source_label": "Open Society Foundations, “The Open Society Barometer: Can Democracy Deliver?”",
+     "source_url": "https://www.opensocietyfoundations.org/voices/can-democracy-deliver",
+     "source_published": "2023",
+     "source_accessed": "2026-09-29",
+     "id": "adults-who-say-democracy-is-preferable"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Do populists in power erode democracy more than other governments do?",
+    "kind": "empirical",
+    "why": "Comparative studies point one way, but they turn on whom scholars code as “populist” and on democracy scores built partly from expert opinion, and populist outsiders have also broken open closed party systems.",
+    "detail": "Those who answer yes point to a mechanism built into the idea: if one leader or party alone speaks for “the real people,” then courts, journalists, opposition parties and civil servants who resist are not legitimate rivals but enemies, and there is no principled reason to leave them their independence. They see the same sequence in very different countries, from Venezuela under Hugo Chávez and Nicolás Maduro to Turkey under Recep Tayyip Erdoğan and Serbia under Aleksandar Vučić: capture the referees, silence the critics, tilt the field. Those who answer no say populist movements arise where established parties stopped representing large parts of the electorate, on immigration, trade, sovereignty or inequality, and bring those voters back into politics. Many of the institutions populists challenge, from constitutional courts to central banks and European bodies, took decisions away from voters over decades, and contesting that is a democratic demand. They add that the coding is partisan: governments that restrict speech, prosecute opposition candidates or annul elections in the name of fighting populism are seldom counted as backsliding.",
+    "lean_label_a": "Populists erode it",
+    "lean_label_b": "Populists renew it",
+    "id": "do-populists-in-power-erode-democracy"
+   },
+   {
+    "text": "Is the United States undergoing democratic backsliding?",
+    "kind": "empirical",
+    "why": "Monitors that rely on expert judgment all recorded US declines for 2025, of very different sizes, while elections, courts and a competitive opposition keep working, and answers split almost perfectly along party lines.",
+    "detail": "Those who say yes point to the rapid concentration of power in the presidency, the weakening of congressional checks, pressure on universities and the press, and executive orders targeting law firms that had represented the president’s opponents. Steven Levitsky and Lucan Way argue in Foreign Affairs that the country is moving into “competitive authoritarianism,” in which elections continue but the incumbent’s abuse of power tilts the playing field. Those who say no argue that the administration won a national election on a promise to take control of an unelected bureaucracy and is doing so. Courts, including the Supreme Court, have ruled against it on major questions, such as its emergency tariffs in February 2026, and it has turned to other legal authorities rather than openly defying them, a response V-Dem calls “in effect circumventing the court.” Dima Kortukov and Julian Waller write in American Affairs that the fight is “not a question of regime, but one of state reform or state capture (depending on one’s normative viewpoint).” The November 2026 midterms, run by the states, are the next test.",
+    "lean_label_a": "It is backsliding",
+    "lean_label_b": "It is hardball",
+    "id": "is-the-united-states-undergoing-democratic"
+   },
+   {
+    "text": "When elected majorities and unelected institutions clash, who should have the final word?",
+    "kind": "value",
+    "why": "Every democracy balances majority rule against courts, prosecutors, central banks and a protected civil service; what one side calls capturing neutral referees, the other calls restoring democratic control.",
+    "detail": "On one view, democracy means the people rule through those they elect and can remove. Over decades judges, regulators, career officials, international courts and European institutions have taken over decisions on immigration, speech, social policy and the economy that voters never delegated to them, and when an elected government cannot carry out the program it won on, replacing officials and reforming courts are ordinary acts of government, which the other side performs quietly when it holds power. On the other view, a majority today can use power to make sure it stays the majority tomorrow, by capturing the courts, prosecutors, media and election officials that would check it. Independent institutions exist so the next election can still be fair and the rights of those who lose are protected; constitutional courts and independent civil services were built after the 1930s because elected majorities had voted democracy away before. One test both sides can apply: would the reform still look acceptable if the other side held the power it creates?",
+    "lean_label_a": "Elected majorities",
+    "lean_label_b": "Independent bodies",
+    "id": "when-elected-majorities-and-unelected-institutions"
+   },
+   {
+    "text": "Should democracies ban parties or bar candidates they judge to be antidemocratic?",
+    "kind": "value",
+    "why": "Several European constitutions allow banning parties that seek to abolish democracy, and courts in France, Romania and Brazil have barred or convicted popular candidates; each move reads as self-defense or as removing a rival.",
+    "detail": "Supporters of bans say democracy is not a suicide pact. The Weimar Republic let a party that promised to abolish it compete, and that party won power legally; Germany’s Basic Law was written for a “militant democracy” that can ban parties aiming to overthrow the constitutional order. They cite a 2023 meeting in Potsdam where AfD politicians discussed expelling millions of people, including citizens of immigrant origin, and see waiting for such a party to win and hoping institutions survive as reckless. Prosecuting leaders who attempted coups, as Brazil did with Jair Bolsonaro and South Korea with Yoon Suk Yeol after his martial-law decree, is to them the rule of law reaching the powerful. Opponents answer that banning a party backed by millions does not remove its voters; it tells them their votes do not count and confirms the story that elites will not accept an outcome they dislike. A ban would take years, might fail in court and would make martyrs, and annulling an election or barring a leading candidate through a criminal case sets a precedent any future government can use against its own opponents. Many on this side accept prosecuting coups and martial law as crimes while rejecting bans on popular parties.",
+    "lean_label_a": "Ban when needed",
+    "lean_label_b": "Let voters decide",
+    "id": "should-democracies-ban-parties-or-bar"
+   },
+   {
+    "text": "Is democracy really declining worldwide, or do expert-coded indices overstate it?",
+    "kind": "empirical",
+    "why": "The best-known indices rest largely on expert judgment, while measures that do not, such as how often incumbents lose and hand over power, show far less change; the expert indices themselves disagreed about 2025.",
+    "detail": "Those who see a real decline say it is concentrated in what modern autocrats actually do, censoring media, harassing civil society and packing courts, precisely because they have learned to keep holding elections, so counts of elections and turnovers miss it. V-Dem researchers tested whether shifting expert bias explains the trend and judged it “highly unlikely,” and V-Dem’s model aggregates thousands of country experts, many of whom live in the countries they rate. Skeptics reply with objective indicators: Andrew Little and Anne Meng examined incumbent vote margins, turnover in power and how often ruling parties lose, found “little evidence of global democratic decline during the past decade,” and suggest that coders immersed in a pessimistic media climate may have shifted their standards. Daniel Treisman finds the share of democracies still near its historical high and the recent rate of breakdown unremarkable. The population-weighted headlines are driven by a handful of very large countries, above all India, and by judgment calls about where a country crosses a line.",
+    "lean_label_a": "Decline is real",
+    "lean_label_b": "Decline overstated",
+    "id": "is-democracy-really-declining-worldwide-or"
+   },
+   {
+    "text": "Is populist support driven mainly by economic loss or by cultural backlash?",
+    "kind": "empirical",
+    "why": "Both explanations have strong evidence and they interact, since economic shocks often work through identity; the answer matters because it points to different remedies, from industrial policy to immigration policy.",
+    "detail": "The economic case: regions hit hardest by import competition from China, by automation and by austerity after 2008 moved most toward populist parties in the United States, Britain, France, Germany and Italy, and populist waves have followed financial crises for a century. Decades of stagnant wages for workers without degrees, good jobs concentrating in big cities and bank bailouts gave people real reasons to distrust elites who promised globalization would benefit everyone. Dani Rodrik’s review finds “compelling evidence that globalization shocks, often working through culture and identity, have played an important role.” The cultural case: Pippa Norris and Ronald Inglehart argue in Cultural Backlash (2019) that support for authoritarian populism is better predicted by age cohort, education and values than by income or job loss, and reflects older and less educated voters reacting against rapid change in values, immigration and national identity. Populist parties are strong in rich, low-unemployment countries such as Switzerland, Austria and the Netherlands, many of their voters are not poor, and surveys put immigration and national identity, not personal finances, at the top of their concerns.",
+    "lean_label_a": "Economic grievance",
+    "lean_label_b": "Cultural backlash",
+    "id": "is-populist-support-driven-mainly-by"
+   },
+   {
+    "text": "Can populist-led erosion be reversed at the ballot box?",
+    "kind": "empirical",
+    "why": "Oppositions ousted entrenched populists in Poland in 2023 and Hungary in 2026, while elected leaders in Venezuela, Turkey, Russia and Nicaragua moved beyond electoral reach; even after power changes hands, repair is slow.",
+    "detail": "The hopeful reading: V-Dem counts 10 “U-turn” democratizers reversing an earlier decline, among them Poland, Brazil, Guatemala and Zambia, and reports that 70 percent of autocracies that begin a democratization episode succeed. In Hungary the opposition won on a field tilted toward the incumbent, and on September 23, 2026 the European Commission, judging reforms made, proposed unlocking €4.2 billion in frozen funds, Eunews reported. Oppositions win, on this view, when they unite behind one candidate, campaign on the economy and corruption, and mobilize young voters. The skeptical reading: the populists voted out were caught early or never fully consolidated control. Even in Poland, the government elected in 2023 to repair the courts has been blocked by President Karol Nawrocki, aligned with the former ruling party, who vetoed its bill to restore judges’ control of the National Council of the Judiciary in February 2026 and had issued a record 37 vetoes by June, according to Notes from Poland. Captured institutions can outlast the governments that captured them.",
+    "lean_label_a": "Voters reverse it",
+    "lean_label_b": "Entrenchment wins",
+    "id": "can-populist-led-erosion-be-reversed"
+   },
+   {
+    "text": "Do mainstream parties beat populists by adopting some of their demands or by refusing to?",
+    "kind": "empirical",
+    "why": "Denmark’s Social Democrats adopted strict immigration policies and the populist right collapsed there, but cross-national studies of Western Europe point the other way, so the best-known case and the broader evidence disagree.",
+    "detail": "The case for adopting demands: voters turn to populists when mainstream parties refuse to act on issues they care about, above all immigration. After Mette Frederiksen’s Social Democrats embraced strict immigration controls, the Danish People’s Party fell from 21.1 percent in 2015 to 8.7 percent in 2019, InfoMigrants reported. Addressing a real grievance breaks the populists’ monopoly on it; ignoring it confirms their claim that the system never listens. The case for holding the line: a study of mainstream strategies across Western Europe by Krause, Cohen and Abou-Chadi found no evidence that accommodating radical-right positions reduces radical-right support, and if anything more voters defected to the radical right. Borrowing populist language legitimizes it and makes the original more credible than the copy. Germany’s CDU moved right on migration and AfD still surged in Saxony-Anhalt, and Denmark’s result may reflect Danish conditions rather than a general law.",
+    "lean_label_a": "Adopt the demands",
+    "lean_label_b": "Hold the line",
+    "id": "do-mainstream-parties-beat-populists-by"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Defend the checks on elected power",
+    "color_key": "green",
+    "steelman": "Democracies now die at the hands of leaders who win elections and then capture the referees; defending courts, a free press and fair elections early is what keeps losing safe.",
+    "detail": "Democracies rarely die in coups anymore. They die when leaders win elections and then use office to make sure they cannot lose the next one: capturing the courts that would check them, the prosecutors who would investigate them and the officials who run elections, and harassing the journalists, universities and civil society groups that would expose them. Each step is legal or nearly so, and each is defended as the will of the people against a corrupt elite. Populism is dangerous in particular because a movement that claims to be the only authentic voice of the people cannot accept that its opponents, or the institutions that constrain it, are legitimate. Hungary showed how far this can go inside the European Union; the United States now shows how fast it can move in the oldest constitutional democracy. Studies of populists in office find them far likelier to preside over backsliding, and voters punish their own side’s undemocratic candidates only weakly, so elections alone cannot be relied on to stop it.\n\nWe are told we defend unelected elites against voters. But an independent judiciary, a free press and neutral election officials protect conservatives when progressives govern just as they protect progressives now, and the same monitors have recorded backsliding under left-wing governments in Venezuela, Nicaragua and Mexico. Our test is procedural: does a government leave its opponents a fair chance to replace it? Hungary’s 2026 election is a warning, not a refutation: a united opposition needed a landslide in districts the incumbent had drawn. We differ over tools, some of us backing bans on parties that aim to abolish the constitutional order, others preferring prosecutions for crimes and a cordon that keeps such parties out of government.",
+    "proponents": "V-Dem Institute, Freedom House, International IDEA, Steven Levitsky, Daniel Ziblatt, Jan-Werner Müller, Anne Applebaum, Protect Democracy",
+    "id": "defend-the-checks-on-elected-power"
+   },
+   {
+    "name": "Return power from unelected institutions to voters",
+    "color_key": "blue",
+    "steelman": "Democracy means voters choose a government and it then governs; the real threat is unelected judges, bureaucrats and Brussels overriding them and deciding which parties they may choose.",
+    "detail": "Over the past half century more and more power has moved to bodies no voter can remove: constitutional and international courts, career bureaucracies, central banks, regulators, foreign-funded NGOs, the European Commission, and the media and academic institutions that decide which opinions are respectable. When voters elect governments that try to reclaim that power, to control immigration, protect national culture or reform captured courts, the same establishment calls them populists and autocrats, and the indices that measure democracy are compiled by its own academics. Meanwhile it is the establishment that censors speech online, annuls elections it dislikes, as Romania did in 2024, prosecutes opposition leaders and bars them from the ballot, and asks its intelligence services to brand the largest opposition party extremist, a label a German court then suspended. As Vice President J.D. Vance told the Munich Security Conference in 2025, “There is no room for firewalls.”\n\nCritics say populists use their majorities to capture the institutions that would let voters remove them. But every government appoints judges, replaces officials and changes laws; the question is whether elections stay real, and populist parties have both won and lost in Hungary, Poland, Brazil, the United States and Slovakia. A leader who concedes on election night, as Orbán did, shows more respect for democracy than a system that decides in advance which parties voters may choose. A judiciary or civil service overwhelmingly of one outlook is itself a partisan actor. Some of us, like Orbán, openly prefer an illiberal state; most American conservatives say they are defending liberal democracy itself against a progressive establishment that abandoned it.",
+    "proponents": "Viktor Orbán, J.D. Vance, US Department of State, Alternative for Germany, National Rally, Law and Justice, Heritage Foundation, Yoram Hazony, Patrick Deneen",
+    "id": "return-power-from-unelected-institutions-to"
+   },
+   {
+    "name": "Answer the grievances that fuel populism",
+    "color_key": "amber",
+    "steelman": "Populism is a symptom before it is a threat: voters turned to outsiders because mainstream parties ignored them, and only delivering for those voters beats populists for good.",
+    "detail": "For decades mainstream parties of left and right delivered stagnant wages for people without degrees, hollowed-out industrial towns, bailouts for banks and levels of immigration voters repeatedly said they did not want, then told those who objected that their concerns were illegitimate. Populists won because they were the only ones listening. Defending institutions matters, but a democracy that relies on courts, intelligence agencies and bans to keep a third of its voters from power is postponing a reckoning and confirming the populist story that the system is rigged. As Chancellor Friedrich Merz put it in September 2026, “I do not think that banning this party would solve the problem the party’s voters are seeing in Germany.” The durable answer is to rebuild the industrial base, raise wages, control borders, fight corruption and govern competently. When that happened, in Denmark after 2019 and Hungary in 2026, populists lost at the ballot box, the only victory that lasts; even Freedom House read Hungary’s result as showing that “not even entrenched autocrats can ignore the economy.”\n\nWe are told that copying populists legitimizes them and does not cut their vote. But we do not ask parties to echo slogans; we ask them to solve the problems voters care about. Where parties changed policy credibly and delivered, the populist vote fell; where they borrowed the language without the substance, it rose. Some of us stress deindustrialization and inequality and want industrial policy and investment in left-behind places; others stress immigration and national identity. Most of us still back courts, prosecutions for crimes and EU enforcement, but not bans on popular parties.",
+    "proponents": "Friedrich Merz, Mette Frederiksen, Dani Rodrik, Jake Sullivan, Blue Labour",
+    "id": "answer-the-grievances-that-fuel-populism"
+   },
+   {
+    "name": "Mobilize the many against economic oligarchy",
+    "color_key": "rust",
+    "steelman": "The crisis began with oligarchy, not populism: when wealth captured politics, anger followed, and that anger needs a democratic, egalitarian direction instead of scapegoats.",
+    "detail": "For forty years center-left and center-right governments handed power to markets, central banks, trade agreements and experts, while wealth concentrated at the top and money came to dominate politics. Citizens could vote, but on the questions that shaped their lives, jobs, wages, housing and public services, the choices on offer were the same. That hollowed-out democracy created the anger that right-wing demagogues now aim at immigrants and minorities instead of at the billionaires who profit. The top 1 percent of US households held 32.5 percent of the country’s net worth in the second quarter of 2026, by the Federal Reserve’s count. Defending existing institutions is not enough, because they presided over the decline. The answer is a politics that names the real adversary, concentrated economic power, organizes working people across racial and national lines, and extends democracy into the economy and into how constitutions are made. Bernie Sanders’s 2025 Fighting Oligarchy rallies drew tens of thousands, including in Republican-leaning places such as Folsom, California and Nampa, Idaho, reaching voters right-wing populists court.\n\nCritics point to Venezuela under Chávez and Maduro, and to evidence that left-wing populists curtail civil liberties almost as often as right-wing ones. A democratic left populism is defined by pluralism, minority rights and free elections; Venezuela’s failure was the concentration of power in a leader and the militarization of the state, not the demand to redistribute wealth and power. Some of us, following Chantal Mouffe, embrace the word populism; others, like Sanders, speak of oligarchy and working-class politics and work within existing institutions, while La France Insoumise wants a new constitution drafted by a citizens’ assembly.",
+    "proponents": "Bernie Sanders, Alexandria Ocasio-Cortez, La France Insoumise, Jean-Luc Mélenchon, Chantal Mouffe, Podemos",
+    "id": "mobilize-the-many-against-economic-oligarchy"
+   },
+   {
+    "name": "Reserve the backsliding label for real regime change",
+    "color_key": "purple",
+    "steelman": "Backsliding should mean rules that make it harder to remove a government; stretching it to every outsider’s victory cheapens the warning and invites measures that override voters.",
+    "detail": "Democratic backsliding should mean something specific: a change in the rules that makes it harder for voters to remove the government. That has happened in some places, such as Turkey and Venezuela. But the term is now applied to almost anything a government’s critics dislike, from firing civil servants and pressuring universities to winning elections on anti-immigration platforms, and the indices reporting a global collapse rest on experts whose judgments move with the news. Objective indicators tell a steadier story: incumbents still lose elections at about the same rate, power still changes hands, and in several of the most-cited cases populist governments have been voted out. Even for the United States in 2025, the size of the decline depends heavily on which index one reads.\n\nWe are told that modern autocrats erode democracy in ways objective indicators cannot see, so waiting for incumbents to stop losing means waiting too long. We accept that such erosion is possible and that experts may see it first. But evidence should be proportionate to the claim: if democracy is eroding, incumbents should in time become harder to remove, and in the cases most often cited they have not. A warning system that sounds equally for Hungary under Orbán and for any government its experts oppose will not be heeded when it matters, and treating every outsider’s victory as a step toward autocracy invites the bans, annulments and prosecutions of candidates that themselves weaken democracy. Some of us question the measurement; others accept particular cases but object to stretching the concept to ordinary polarization and hardball. Some of us sympathize with the governments in question; many of us do not and simply want the diagnosis to be accurate.",
+    "proponents": "Andrew Little, Anne Meng, Daniel Treisman, Dima Kortukov, Julian Waller, Andrew J. Taylor",
+    "id": "reserve-the-backsliding-label-for-real"
+   }
+  ],
+  "crux": {
+   "lead": "When elected leaders take over the bodies meant to check them, do they restore democracy or dismantle it?",
+   "lead_highlight": "restore democracy or dismantle it",
+   "subtitle": "Courts, prosecutors, civil servants, public media and election officials constrain whoever governs. One side sees a takeover as voters reclaiming power from people they never elected; the other sees winners removing the means by which voters could replace them.",
+   "empirical": "Whether governments that remake these institutions actually become harder to vote out. That is observable over time: how often such incumbents lose and leave, how fair their elections stay, and how often reversals succeed. Better measures would help, ones that do not rest on expert judgment yet can still detect a tilted field, such as media ownership, prosecutions of opposition figures and who controls election administration.",
+   "values": "How far a majority’s will should be limited by people it did not elect. Two people can agree on every fact and still weigh differently the risk that a popular government entrenches itself if not stopped early against the risk that stopping it early, by bans, prosecutions of candidates or outside sanctions, overrides voters in the name of protecting them. That turns on whom one trusts more: fellow voters or the institutions meant to check them."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Compare the world’s democracy indices yourself",
+    "description": "Our World in Data sets V-Dem, Freedom House, the EIU, Polity and other measures side by side for every country and year, with notes on how each is built and why they disagree.",
+    "url": "https://ourworldindata.org/democracy",
+    "for_position": null,
+    "id": "compare-the-world-s-democracy-indices"
+   },
+   {
+    "kind": "donate",
+    "title": "Support Protect Democracy",
+    "description": "A cross-ideological US nonprofit of lawyers and researchers that litigates and advocates to keep American democracy from declining into what it calls a more authoritarian form of government.",
+    "url": "https://protectdemocracy.org/donate/",
+    "for_position": "Defend the checks on elected power",
+    "id": "support-protect-democracy"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the State Department’s case against Europe’s governing class",
+    "description": "A May 2025 essay from the State Department’s human rights bureau arguing that European censorship, migration policy and moves against populist parties are the real threat to self-government.",
+    "url": "https://statedept.substack.com/p/the-need-for-civilizational-allies-in-europe",
+    "for_position": "Return power from unelected institutions to voters",
+    "id": "read-the-state-department-s-case"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read why globalization fuels populism",
+    "description": "Dani Rodrik’s review of the evidence that trade and economic shocks, working through culture and identity, raised support for populist movements, and what that implies for policy.",
+    "url": "https://www.nber.org/papers/w27526",
+    "for_position": "Answer the grievances that fuel populism",
+    "id": "read-why-globalization-fuels-populism"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Volunteer with Our Revolution",
+    "description": "The grassroots organization founded out of Bernie Sanders’s 2016 campaign recruits volunteers and candidates for a working-class, anti-oligarchy politics.",
+    "url": "https://ourrevolution.com/",
+    "for_position": "Mobilize the many against economic oligarchy",
+    "id": "volunteer-with-our-revolution"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the case that the decline is overstated",
+    "description": "Andrew Little and Anne Meng’s open-access article comparing expert-coded and objective indicators of democracy, and arguing that the evidence for global decline is weaker than it appears.",
+    "url": "https://www.cambridge.org/core/journals/ps-political-science-and-politics/article/measuring-democratic-backsliding/9EE2044CDA598BD815349912E61189D8",
+    "for_position": "Reserve the backsliding label for real regime change",
+    "id": "read-the-case-that-the-decline"
+   },
+   {
+    "kind": "learn_more",
+    "title": "See how three indices rated US democracy in 2025",
+    "description": "A short Pew Research Center explainer on what V-Dem, Freedom House and the Economist Intelligence Unit each measure and how each scored the United States for 2025.",
+    "url": "https://www.pewresearch.org/short-reads/2026/04/15/multiple-indicators-show-a-decline-in-the-health-of-americas-democracy-in-2025/",
+    "for_position": null,
+    "id": "see-how-three-indices-rated-us"
+   },
+   {
+    "kind": "local",
+    "title": "Join a local cross-party group",
+    "description": "Braver Angels runs local alliances and structured conversations between Republicans and Democrats to reduce the partisan hostility that research links to tolerating undemocratic behavior from one’s own side.",
+    "url": "https://braverangels.org/",
+    "for_position": null,
+    "id": "join-a-local-cross-party-group"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read Freedom House’s 2026 report on global freedom",
+    "description": "The annual Freedom in the World report, with scores and narratives for every country and territory it rates, and its case that freedom keeps declining worldwide.",
+    "url": "https://freedomhouse.org/report/freedom-world/2026/growing-shadow-autocracy",
+    "for_position": "Defend the checks on elected power",
+    "id": "read-freedom-house-s-2026-report"
+   },
+   {
+    "kind": "donate",
+    "title": "Support ADF International",
+    "description": "A faith-based legal advocacy group that defends people prosecuted or censored for speech in Europe and elsewhere, a central concern for those who see European speech rules as antidemocratic.",
+    "url": "https://adfinternational.org/",
+    "for_position": "Return power from unelected institutions to voters",
+    "id": "support-adf-international"
+   }
+  ]
+ },
+ "icon": "lectern",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: a raised outdoor rally stage with a lectern and a single microphone as the dominant focal mass, with a loudspeaker on a tall pole at one side; a small classical courthouse with a triangular pediment and four columns, no dome, sits on a rise behind the stage at a smaller scale, the stage's corner overlapping the base of the rise; a small ballot box at the smallest scale in the foreground; the ground is a broad rolling curve; a string of plain triangular bunting runs across the whole frame from the loudspeaker pole to the courthouse as the connective element.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #6a62b0, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: flags, eagles, domes, crowns, thrones, fists, chains, padlocks, cracks, crumbling or broken columns, ruins, fire, tanks, soldiers, handcuffs, megaphones pointed at the viewer, protest signs, crowds, scales of justice, gavels, scrolls, money, clouds or storms, arrows pointing down."
 }

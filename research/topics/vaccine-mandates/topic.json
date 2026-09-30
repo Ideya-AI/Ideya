@@ -1,8 +1,8 @@
 {
  "slug": "vaccine-mandates",
  "title": "Vaccine Mandates",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-09-30T00:12:06+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Requiring vaccination as a condition of school, work or public life, and standing emergency powers for the next pandemic.",
@@ -15,5 +15,829 @@
   "gain-of-function-research",
   "drug-policy-prohibition-vs-legalization",
   "executive-power-separation"
- ]
+ ],
+ "content": {
+  "overview": {
+   "summary": "Whether governments and employers may require vaccination for school, work or public life, and who decides when the next pandemic comes.",
+   "scope_covered": "School and child care vaccine requirements and their medical, religious and personal-belief exemptions; workplace and venue mandates; who sets them; and standing emergency powers for the next pandemic. Most detail on the United States, compared with Europe.",
+   "scope_excluded": "Whether particular vaccines are safe or effective as a scientific matter, except where that drives the fight over compulsion; research on dangerous pathogens; antimicrobial resistance; presidential power in general.",
+   "why_now": "On August 10, 2026, President Trump signed Executive Order 14420, which declares a shorter list of vaccines recommended for every child, advises states to consider updating school-entry requirements to match, and directs the Attorney General to back lawsuits against states that deny religious exemptions.",
+   "why_now_source_label": "The White House, Executive Order 14420",
+   "why_now_source_url": "https://www.whitehouse.gov/wp-content/uploads/2026/08/eo-14420.pdf"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "US kindergartners with an exemption from at least one required vaccine",
+     "viz": "ranked",
+     "wide": true,
+     "value": "4.2",
+     "unit": "%",
+     "series": [
+      {
+       "label": "2011–12",
+       "value": "1.6",
+       "highlight": false
+      },
+      {
+       "label": "2015–16",
+       "value": "2.1",
+       "highlight": false
+      },
+      {
+       "label": "2019–20",
+       "value": "2.5",
+       "highlight": false
+      },
+      {
+       "label": "2021–22",
+       "value": "2.6",
+       "highlight": false
+      },
+      {
+       "label": "2023–24",
+       "value": "3.3",
+       "highlight": false
+      },
+      {
+       "label": "2025–26",
+       "value": "4.2",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "4.2 percent of US kindergartners had an exemption from at least one required vaccine in 2025–26, the highest national rate on record.",
+     "detail": "That is about 157,000 children. Nearly all of the rise is in nonmedical exemptions, for religious or personal belief, which went from 1.9 percent in 2020–21 to 4.0 percent in 2025–26; medical exemptions held at 0.2 percent. Exemptions rose in 41 states and DC, and 24 states exceeded 5 percent. An exemption is a legal status, not a vaccination record: some exempt children have had some vaccines, and some children without an exemption are simply behind or undocumented.",
+     "source_label": "CDC, SchoolVaxView, Vaccination Coverage and Exemptions among Kindergartners",
+     "source_url": "https://www.cdc.gov/schoolvaxview/data/index.html",
+     "source_published": "2025–26",
+     "source_accessed": "2026-09-29",
+     "id": "us-kindergartners-with-an-exemption-from"
+    },
+    {
+     "label": "US kindergartners with both doses of MMR vaccine",
+     "viz": "range",
+     "wide": false,
+     "value": "92.4",
+     "unit": "%",
+     "series": [],
+     "range_min": "0%",
+     "range_max": "100%",
+     "note": "92.4 percent of US kindergartners had both MMR doses in 2025–26, below the 95 percent generally needed to stop measles spreading.",
+     "detail": "About 280,000 kindergartners began the 2025–26 school year without documentation of a complete MMR series. Coverage was 95.2 percent in 2019–20 and has fallen every year since, apart from 2022–23, when it held roughly steady. The 95 percent mark is the WHO’s threshold for preventing measles outbreaks, set by how contagious the disease is: one infected person can infect up to 18 others. Coverage with DTaP (92.0 percent) and polio vaccine (92.4 percent) fell too. Ten states reached 95 percent MMR coverage in 2025–26, down from 19 in 2019–20.",
+     "source_label": "CDC, SchoolVaxView, Vaccination Coverage and Exemptions among Kindergartners",
+     "source_url": "https://www.cdc.gov/schoolvaxview/data/index.html",
+     "source_published": "2025–26",
+     "source_accessed": "2026-09-29",
+     "id": "us-kindergartners-with-both-doses-of"
+    },
+    {
+     "label": "States allowing religious exemptions from school vaccine requirements",
+     "viz": "bar",
+     "wide": false,
+     "value": "45",
+     "unit": "states + DC",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "45 states and DC allow religious exemptions from school vaccine requirements; four allow only medical exemptions.",
+     "detail": "Every state allows medical exemptions, and 16 also allow personal or philosophical ones (17 by KFF Health News’s count). The four medical-only states, California, Connecticut, Maine and New York, repealed their nonmedical exemptions after outbreaks: California in 2015, New York and Maine in 2019, Connecticut in 2021. West Virginia has no nonmedical exemption in statute; Governor Patrick Morrisey ordered one in January 2025, the state Board of Education told schools to disregard it, and the dispute is before the state’s Supreme Court of Appeals.",
+     "source_label": "National Conference of State Legislatures, State Non-Medical Exemptions from School Immunization Requirements",
+     "source_url": "https://www.ncsl.org/health/state-non-medical-exemptions-from-school-immunization-requirements",
+     "source_published": "2026",
+     "source_accessed": "2026-09-29",
+     "id": "states-allowing-religious-exemptions-from-school"
+    },
+    {
+     "label": "Confirmed measles cases in the United States",
+     "viz": "ranked",
+     "wide": true,
+     "value": "3,659",
+     "unit": "cases",
+     "series": [
+      {
+       "label": "1991",
+       "value": "9,643",
+       "highlight": false
+      },
+      {
+       "label": "2000",
+       "value": "85",
+       "highlight": false
+      },
+      {
+       "label": "2014",
+       "value": "667",
+       "highlight": false
+      },
+      {
+       "label": "2019",
+       "value": "1,274",
+       "highlight": false
+      },
+      {
+       "label": "2024",
+       "value": "285",
+       "highlight": false
+      },
+      {
+       "label": "2025",
+       "value": "2,289",
+       "highlight": false
+      },
+      {
+       "label": "2026, to Sep 24",
+       "value": "3,659",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The United States recorded 3,659 confirmed measles cases in 2026 by September 24, more than in any full year since 1991.",
+     "detail": "Cases were reported in 47 states and DC; 95 percent were linked to outbreaks, and about 89 percent were among people unvaccinated or of unknown vaccination status. Two measles-related deaths had been confirmed for 2026 by September 29. Measles was declared eliminated in the United States in 2000. After Canada lost its elimination status in November 2025, the Pan American Health Organization postponed its review of US status to November 2026. Counts before 2026 are Our World in Data’s compilation of CDC figures.",
+     "source_label": "CDC, Measles Cases and Outbreaks; Our World in Data",
+     "source_url": "https://www.cdc.gov/measles/data-research/index.html",
+     "source_published": "2026",
+     "source_accessed": "2026-09-29",
+     "id": "confirmed-measles-cases-in-the-united"
+    },
+    {
+     "label": "US adults who say K-12 students should be required to be vaccinated",
+     "viz": "radial",
+     "wide": false,
+     "value": "65",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "65 percent of US adults said K-12 students should be required to have vaccinations in August 2026; polls worded differently have found 74 and 81 percent.",
+     "detail": "Support split by party: 87 percent of Democrats, 57 percent of independents and 54 percent of Republicans. It also tracked views of safety: 94 percent of those who called vaccines “very safe” backed requirements, against 16 percent of those who called them “not very safe.” A Reuters/Ipsos poll of adults in February 2026 found 74 percent saying the government should require healthy children to be vaccinated to attend school. A KFF/Washington Post survey of parents in 2025 found 81 percent saying public schools should require measles and polio vaccines “with some medical or religious exceptions,” a question that bundles the requirement with exemptions.",
+     "source_label": "Economist/YouGov poll, August 7–10, 2026",
+     "source_url": "https://yougov.com/en-us/articles/55346-65-of-americans-support-vaccine-requirements-for-k-12-schools",
+     "source_published": "2026",
+     "source_accessed": "2026-09-29",
+     "id": "us-adults-who-say-k-12"
+    },
+    {
+     "label": "Kindergarten exemption rates by state, 2025–26",
+     "viz": "ranked",
+     "wide": true,
+     "value": "4.2",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Idaho",
+       "value": "17.5",
+       "highlight": false
+      },
+      {
+       "label": "Utah",
+       "value": "12.7",
+       "highlight": false
+      },
+      {
+       "label": "Oregon",
+       "value": "11.0",
+       "highlight": false
+      },
+      {
+       "label": "Florida",
+       "value": "5.9",
+       "highlight": false
+      },
+      {
+       "label": "United States",
+       "value": "4.2",
+       "highlight": true
+      },
+      {
+       "label": "Mississippi",
+       "value": "2.0",
+       "highlight": false
+      },
+      {
+       "label": "Connecticut",
+       "value": "0.5",
+       "highlight": false
+      },
+      {
+       "label": "California",
+       "value": "0.1",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Kindergarten exemption rates ranged from 17.5 percent in Idaho to 0.1 percent in California, New York and West Virginia in 2025–26.",
+     "detail": "The lowest rates are in the four states that allow only medical exemptions and in West Virginia, where religious exemptions ordered by the governor are on hold in the courts. Idaho allows religious and personal-belief exemptions and in 2025 passed a Medical Freedom Act restricting medical mandates. Mississippi had no nonmedical exemption until a federal court ordered one in 2023; parents seeking one must now watch an educational video. How easy a state makes an exemption, whether a signed form, a notarized affidavit or a counseling session, matters as well as whether it allows one.",
+     "source_label": "CDC, Vaccination Coverage and Exemptions among Kindergartners (data.cdc.gov)",
+     "source_url": "https://data.cdc.gov/Vaccinations/Vaccination-Coverage-and-Exemptions-among-Kinderga/ijqb-a7ye",
+     "source_published": "2025–26",
+     "source_accessed": "2026-09-29",
+     "id": "kindergarten-exemption-rates-by-state-2025"
+    },
+    {
+     "label": "State laws changing public health emergency powers, January 2021 to May 2022",
+     "viz": "ranked",
+     "wide": true,
+     "value": "65",
+     "unit": "laws",
+     "series": [
+      {
+       "label": "Limiting powers",
+       "value": "65",
+       "highlight": true
+      },
+      {
+       "label": "Preempting local rules",
+       "value": "30",
+       "highlight": false
+      },
+      {
+       "label": "Expanding powers",
+       "value": "17",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "State legislatures enacted 65 laws limiting emergency public health powers and 17 expanding them between January 2021 and May 2022.",
+     "detail": "The laws came from 43 states and DC, out of 1,531 bills introduced; 191 were enacted in all, and one law can fall into several categories. A 2021 KFF Health News and AP review counted at least 26 states that had permanently weakened public health powers. Typical changes let legislatures end a governor’s emergency declaration, cap its length, bar vaccine passports or protect religious gatherings; Pennsylvania voters in May 2021 limited declarations to 21 days unless the legislature extends them. The researchers conclude the changes “threaten to reduce response capacity”; supporters see them as restoring legislative control.",
+     "source_label": "Platt, Moran-McCabe, Cook and Burris, American Journal of Public Health, 2023",
+     "source_url": "https://pubmed.ncbi.nlm.nih.gov/36791354/",
+     "source_published": "2021–2022",
+     "source_accessed": "2026-09-29",
+     "id": "state-laws-changing-public-health-emergency"
+    },
+    {
+     "label": "Workers covered by the blocked federal COVID-19 vaccinate-or-test rule",
+     "viz": "bar",
+     "wide": false,
+     "value": "84",
+     "unit": "million",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In January 2022 the Supreme Court blocked a rule requiring 84 million workers to be vaccinated or tested weekly, and upheld one covering about 10 million health care workers.",
+     "detail": "The Court held 6–3 that the Occupational Safety and Health Administration’s workplace-safety power did not reach what it called a broad public health measure, and 5–4 that the health department could require vaccination of staff at facilities funded by Medicare and Medicaid; that rule was withdrawn in 2023. The military’s COVID-19 vaccine requirement, under which more than 8,000 service members were discharged, was rescinded on January 10, 2023, after Congress ordered its repeal. A January 2025 executive order offered reinstatement, and the Pentagon said in July 2026 that more than 230 had rejoined.",
+     "source_label": "Supreme Court of the United States, NFIB v. OSHA and Biden v. Missouri",
+     "source_url": "https://www.supremecourt.gov/opinions/21pdf/21a244_hgci.pdf",
+     "source_published": "2022",
+     "source_accessed": "2026-09-29",
+     "id": "workers-covered-by-the-blocked-federal"
+    },
+    {
+     "label": "EU and EEA countries with at least one mandatory childhood vaccine",
+     "viz": "range",
+     "wide": false,
+     "value": "13",
+     "unit": "of 30",
+     "series": [],
+     "range_min": "0",
+     "range_max": "30 countries",
+     "note": "13 of 30 EU and EEA countries required at least one childhood vaccine in 2024; the other 17 relied on recommendations alone.",
+     "detail": "Six countries introduced or extended mandates between 2014 and 2024: Croatia, France, Germany, Hungary, Italy and Poland. France went from 3 required vaccines to 11 in 2018, Italy from 4 to 10 in 2017, and Germany made measles vaccination mandatory for school and child care in 2020. France, Hungary and Latvia require all but one vaccine on their schedules. Sweden, Norway, Denmark and the Netherlands have no mandatory vaccines, nor does the United Kingdom, outside the EEA. Both sides cite the contrast: mandate supporters note that countries with falling coverage turned to mandates and saw it recover, while the August 2026 US executive order says most peer nations keep high rates “through public trust and education.”",
+     "source_label": "Farina and colleagues, Vaccines, November 2024",
+     "source_url": "https://pubmed.ncbi.nlm.nih.gov/39591198/",
+     "source_published": "2024",
+     "source_accessed": "2026-09-29",
+     "id": "eu-and-eea-countries-with-at"
+    },
+    {
+     "label": "First-dose measles vaccine coverage, with and without mandates, 2024",
+     "viz": "ranked",
+     "wide": true,
+     "value": "92",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Hungary (mandate)",
+       "value": "99",
+       "highlight": false
+      },
+      {
+       "label": "Norway (no mandate)",
+       "value": "96",
+       "highlight": false
+      },
+      {
+       "label": "Germany (mandate)",
+       "value": "96",
+       "highlight": false
+      },
+      {
+       "label": "France (mandate)",
+       "value": "95",
+       "highlight": false
+      },
+      {
+       "label": "Sweden (no mandate)",
+       "value": "93",
+       "highlight": false
+      },
+      {
+       "label": "United States",
+       "value": "92",
+       "highlight": true
+      },
+      {
+       "label": "Czechia (mandate)",
+       "value": "89",
+       "highlight": false
+      },
+      {
+       "label": "UK (no mandate)",
+       "value": "89",
+       "highlight": false
+      },
+      {
+       "label": "Netherlands (no mandate)",
+       "value": "89",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "First-dose measles coverage in 2024 ranged from 89 to 99 percent in European countries with mandates and from 89 to 96 percent in those without.",
+     "detail": "This is the first dose, usually given around the first birthday, not the two-dose kindergarten measure in US school data, so the US figure here is not comparable with kindergarten coverage. Among other mandate countries, Latvia had 98, Italy 95, Poland 92 and Croatia 90; among voluntary ones, Denmark and Finland had 94. The overlap is what both sides argue over: mandate countries tend to sit at the top, but the Nordic voluntary systems match them, while the United Kingdom and the Netherlands, also voluntary, sit lower. Mandate status is from Farina and colleagues (2024).",
+     "source_label": "WHO and UNICEF Estimates of National Immunization Coverage, via Our World in Data",
+     "source_url": "https://ourworldindata.org/grapher/share-of-children-vaccinated-against-measles",
+     "source_published": "2024",
+     "source_accessed": "2026-09-29",
+     "id": "first-dose-measles-vaccine-coverage-with"
+    },
+    {
+     "label": "Kindergarten MMR coverage by state, 2025–26",
+     "viz": "ranked",
+     "wide": true,
+     "value": "92.4",
+     "unit": "%",
+     "series": [
+      {
+       "label": "West Virginia",
+       "value": "98.9",
+       "highlight": false
+      },
+      {
+       "label": "Connecticut",
+       "value": "98.6",
+       "highlight": false
+      },
+      {
+       "label": "New York",
+       "value": "97.7",
+       "highlight": false
+      },
+      {
+       "label": "Mississippi",
+       "value": "97.0",
+       "highlight": false
+      },
+      {
+       "label": "California",
+       "value": "95.7",
+       "highlight": false
+      },
+      {
+       "label": "United States",
+       "value": "92.4",
+       "highlight": true
+      },
+      {
+       "label": "Florida",
+       "value": "88.9",
+       "highlight": false
+      },
+      {
+       "label": "Utah",
+       "value": "87.2",
+       "highlight": false
+      },
+      {
+       "label": "Idaho",
+       "value": "75.2",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Two-dose MMR coverage among kindergartners ranged from 98.9 percent in West Virginia to 75.2 percent in Idaho in 2025–26.",
+     "detail": "West Virginia and the medical-exemption-only states top the list (Maine had 98.0 percent), along with Mississippi, which added a religious exemption only in 2023. The pattern fits the case that strict requirements raise coverage, but states differ in demography, reporting practice and how they count children without documentation, so the ranking alone does not prove cause. Kansas did not report a 2025–26 estimate.",
+     "source_label": "CDC, Vaccination Coverage and Exemptions among Kindergartners (data.cdc.gov)",
+     "source_url": "https://data.cdc.gov/Vaccinations/Vaccination-Coverage-and-Exemptions-among-Kinderga/ijqb-a7ye",
+     "source_published": "2025–26",
+     "source_accessed": "2026-09-29",
+     "id": "kindergarten-mmr-coverage-by-state-2025"
+    },
+    {
+     "label": "Measles coverage gap associated with mandatory vaccination in Europe",
+     "viz": "bar",
+     "wide": false,
+     "value": "3.71",
+     "unit": "points",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Across 29 European countries, those with mandatory vaccination had measles vaccine coverage 3.71 percentage points higher, an association rather than proof of cause.",
+     "detail": "The 95 percent confidence interval runs from 1.68 to 5.74 points; for pertussis the gap was 2.14 points. The study used ECDC and WHO data. Larger fines went with higher coverage. Mandates were associated with lower measles incidence only in countries that allowed no nonmedical exemptions (adjusted incidence rate ratio 0.14), and no significant link was found with pertussis incidence. Because it compares countries at a point in time, it cannot separate mandates from the conditions that produce them.",
+     "source_label": "Vaz and colleagues, “Mandatory Vaccination in Europe,” Pediatrics",
+     "source_url": "https://pubmed.ncbi.nlm.nih.gov/31932361/",
+     "source_published": "2020",
+     "source_accessed": "2026-09-29",
+     "id": "measles-coverage-gap-associated-with-mandatory"
+    },
+    {
+     "label": "California kindergartners with all required vaccines",
+     "viz": "ranked",
+     "wide": true,
+     "value": "95.6",
+     "unit": "%",
+     "series": [
+      {
+       "label": "2013–14",
+       "value": "90.2",
+       "highlight": false
+      },
+      {
+       "label": "2014–15",
+       "value": "90.4",
+       "highlight": false
+      },
+      {
+       "label": "2015–16",
+       "value": "92.8",
+       "highlight": false
+      },
+      {
+       "label": "2016–17",
+       "value": "95.6",
+       "highlight": true
+      },
+      {
+       "label": "2017–18",
+       "value": "95.1",
+       "highlight": false
+      },
+      {
+       "label": "2018–19",
+       "value": "94.8",
+       "highlight": false
+      },
+      {
+       "label": "2019–20",
+       "value": "94.3",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "After California ended personal-belief exemptions, the share of kindergartners with all required vaccines rose from 90.4 percent in 2014–15 to 95.6 percent in 2016–17.",
+     "detail": "The law, SB 277, passed in 2015 after the Disneyland measles outbreak and applied to new entrants from 2016. Personal-belief exemptions had been 3.2 percent in 2013–14. Part of the gain eroded: permanent medical exemptions rose from 0.2 percent to 1.0 percent by 2019–20, and some families moved to home schooling or independent study, which the requirement does not reach. After California tightened medical exemptions (SB 276, effective 2021), they fell from 0.95 percent in 2019 to 0.27 percent in 2021, while the share of kindergartners in settings outside the requirement rose from 1.62 to 2.13 percent (Delamater and colleagues, JAMA, 2023).",
+     "source_label": "California Department of Public Health, 2019–2020 Kindergarten Immunization Assessment",
+     "source_url": "https://www.cdph.ca.gov/Programs/CID/DCDC/CDPH%20Document%20Library/Immunization/archive/school/2019-2020CAKindergartenSummaryReport.pdf",
+     "source_published": "2013–2020",
+     "source_accessed": "2026-09-29",
+     "id": "california-kindergartners-with-all-required-vaccines"
+    },
+    {
+     "label": "Extra COVID-19 doses in France after vaccine certificates",
+     "viz": "bar",
+     "wide": false,
+     "value": "72,151",
+     "unit": "per million",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "France’s COVID-19 certificates for entry to venues were followed by about 72,000 extra doses per million people, compared with a modeled trend without certificates.",
+     "detail": "The synthetic-control study compared Denmark, Israel, Italy, France, Germany and Switzerland with 19 control countries. Uptake rose from 20 days before certification to 40 days after, most among people under 30 and most in countries whose uptake had been below average; in France the run-up before certificates took effect added another 55,672 doses per million. The study found no effect in Germany, where uptake was already average, and an unclear one in Denmark during vaccine shortages. In absolute terms the French estimate is about 4.9 million extra doses after certification.",
+     "source_label": "Mills and Rüttenauer, “The effect of mandatory COVID-19 certificates on vaccine uptake,” Lancet Public Health",
+     "source_url": "https://discovery.ucl.ac.uk/id/eprint/10155602/",
+     "source_published": "2021",
+     "source_accessed": "2026-09-29",
+     "id": "extra-covid-19-doses-in-france"
+    },
+    {
+     "label": "US adults supporting school vaccine requirements and religious opt-outs",
+     "viz": "ranked",
+     "wide": true,
+     "value": "39",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Requirement, 2019",
+       "value": "71",
+       "highlight": false
+      },
+      {
+       "label": "Requirement, 2025",
+       "value": "52",
+       "highlight": false
+      },
+      {
+       "label": "Religious opt-out, 2019",
+       "value": "20",
+       "highlight": false
+      },
+      {
+       "label": "Religious opt-out, 2025",
+       "value": "39",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Between spring 2019 and January 2025, support for requiring vaccination for school fell from 71 to 52 percent, and support for religious opt-outs rose from 20 to 39 percent.",
+     "detail": "The requirement question asked about requiring vaccination for public or private school “to protect children who cannot be vaccinated for medical reasons”; strong support fell from 47 to 24 percent. Each opt-out question asked about a separate reason: support for medical opt-outs rose from 36 to 63 percent, and for personal or philosophical ones from 17 to 35 percent. The 2025 sample was small, 538 respondents with a margin of error of plus or minus 5.2 points, so the direction is clearer than the exact size of the change.",
+     "source_label": "Annenberg Public Policy Center, University of Pennsylvania",
+     "source_url": "https://www.annenbergpublicpolicycenter.org/most-americans-favor-school-vaccine-requirements-but-support-is-rising-for-opt-out-options/",
+     "source_published": "2019–2025",
+     "source_accessed": "2026-09-29",
+     "id": "us-adults-supporting-school-vaccine-requirements"
+    },
+    {
+     "label": "Children worldwide receiving a first dose of measles vaccine",
+     "viz": "radial",
+     "wide": false,
+     "value": "84",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "84 percent of the world’s children got a first measles dose in 2025 and 77 percent got both doses, short of the level that stops outbreaks.",
+     "detail": "The WHO estimates that measles vaccination averted nearly 59 million deaths between 2000 and 2024, and that measles still killed about 95,000 people in 2024, mostly unvaccinated children under five. In 2025, 13.5 million children received no vaccines at all, and 57 countries reported large or disruptive measles outbreaks. In most low-income countries the barrier is access, not refusal, which is why mandates are mainly a debate in richer countries.",
+     "source_label": "WHO and UNICEF Estimates of National Immunization Coverage",
+     "source_url": "https://www.who.int/news/item/15-07-2026-global-childhood-immunization-coverage-inches-forward-despite-conflict-and-hesitancy---unicef--who",
+     "source_published": "2025",
+     "source_accessed": "2026-09-29",
+     "id": "children-worldwide-receiving-a-first-dose"
+    },
+    {
+     "label": "Deaths averted by COVID-19 vaccines, by estimate",
+     "viz": "ranked",
+     "wide": true,
+     "value": "2.5–14.4",
+     "unit": "million",
+     "series": [
+      {
+       "label": "2020–24 (Ioannidis)",
+       "value": "2.5",
+       "highlight": true
+      },
+      {
+       "label": "2021, reported deaths",
+       "value": "14.4",
+       "highlight": false
+      },
+      {
+       "label": "2021, excess deaths",
+       "value": "19.8",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Estimates of deaths averted by COVID-19 vaccines differ widely by method: about 2.5 million over 2020 to 2024 in one study, 14.4 million in the first year alone in another.",
+     "detail": "Both find a large benefit. Ioannidis and colleagues (JAMA Health Forum, 2025) give a main estimate of 2.5 million lives saved through October 2024, with a sensitivity range of 1.4 to 4.0 million. Watson and colleagues (Lancet Infectious Diseases, 2022) modeled only the first year, December 2020 to December 2021: 14.4 million deaths averted when based on reported COVID-19 deaths, and 19.8 million when based on excess deaths. The studies differ in period, method and assumptions.",
+     "source_label": "Ioannidis et al., JAMA Health Forum, 2025; Watson et al., Lancet Infectious Diseases, 2022",
+     "source_url": "https://pubmed.ncbi.nlm.nih.gov/40711778/",
+     "source_published": "2022–2025",
+     "source_accessed": "2026-09-29",
+     "id": "deaths-averted-by-covid-19-vaccines"
+    },
+    {
+     "label": "Compensated vaccine injury claims per million doses",
+     "viz": "bar",
+     "wide": false,
+     "value": "1.89",
+     "unit": "per million",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The federal vaccine injury program found about 1.89 petitions compensable for every million vaccine doses distributed from 2006 to 2024.",
+     "detail": "The no-fault National Vaccine Injury Compensation Program paid $4.89 billion on 12,409 awards from fiscal 1989 through fiscal 2025, out of 28,673 petitions filed since 1988. It is funded by a 75-cent excise tax per disease covered in each dose. For conditions on its injury table it does not require proof that a vaccine caused the injury, and many awards are settlements without a finding of cause. Critics of mandates cite it as proof of real injuries and of manufacturers shielded from ordinary lawsuits; supporters cite the low rate as proof injuries are rare. A separate program for COVID-19 vaccines had found 95 of 10,981 claims eligible, and HHS Secretary Robert F. Kennedy Jr. has said he intends to overhaul the main program.",
+     "source_label": "KFF, Federal Vaccine Injury Compensation Programs: Overview and Current Issues (May 2026), citing HRSA data",
+     "source_url": "https://www.kff.org/other-health/federal-vaccine-injury-compensation-programs-overview-and-current-issues/",
+     "source_published": "2006–2025",
+     "source_accessed": "2026-09-29",
+     "id": "compensated-vaccine-injury-claims-per-million"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Do strict school vaccine requirements substantially raise coverage and prevent outbreaks?",
+    "kind": "empirical",
+    "why": "Coverage is highest where requirements are strict and rose where they were tightened. But refusing families are few and determined, some find workarounds, and several countries with no mandates match the strictest.",
+    "detail": "Those who see a substantial effect point to natural experiments. When California and Italy tightened their rules, coverage rose within two years; in Italy, measles vaccine coverage went from 87.3 percent in 2016 to 94.1 percent by mid-2018 after ten vaccines became compulsory for school and nursery enrollment, according to Italy’s National Institute of Health. The cross-country European evidence found lower measles incidence only where no nonmedical exemptions were allowed, which is what their view predicts. For measles, a few points separate a protected school from an outbreak, so a policy that moves coverage a few points decides the matter.\n\nThose who see little lasting effect say the strictest laws mostly reshuffle the same families: after California ended personal-belief exemptions, medical exemptions and home schooling rose to absorb some of them. Comparisons across countries cannot separate mandates from the trust that makes them workable, and several voluntary systems reach coverage as high as mandatory ones. On this view, what drives coverage down is falling trust, which no law can compel, while access, reminders and pediatricians who take time with parents move coverage without the political cost.",
+    "lean_label_a": "Substantial effect",
+    "lean_label_b": "Little effect",
+    "id": "do-strict-school-vaccine-requirements-substantially"
+   },
+   {
+    "text": "Should parents be able to opt out of school vaccine requirements for religious or conscience reasons?",
+    "kind": "value",
+    "why": "It sets two things most people value against each other: a family’s freedom to raise its children by its own religious or moral lights, and every child’s safety at school, including children who cannot be vaccinated.",
+    "detail": "Those who would protect conscience hold that freedom of conscience is among the first liberties, and that making parents choose between their faith and their child’s schooling is the coercion religious liberty exists to prevent. Objectors are few, most states kept religious exemptions for decades alongside high coverage, and an exemption keeps a family in the school and in touch with the health system rather than driving it out of both. When an outbreak comes, officials can keep unvaccinated children home for its duration without abolishing the exemption.\n\nThose who would protect classmates hold that a requirement shields children who cannot be vaccinated because of cancer treatment, immune disorders or age, and who cannot choose whom they sit beside. Exemptions cluster, so a modest state average can hide individual schools with rates far past the point where measles spreads. Few religions actually forbid vaccination, and many exemptions labeled religious are personal objections. A parent’s liberty ends where it endangers other people’s children, and a family that objects can still teach at home.",
+    "lean_label_a": "Protect conscience",
+    "lean_label_b": "Protect classmates",
+    "id": "should-parents-be-able-to-opt"
+   },
+   {
+    "text": "Do vaccine mandates erode trust and reduce vaccination in the long run?",
+    "kind": "empirical",
+    "why": "Trust in vaccines and health agencies fell sharply and along party lines after COVID-19 mandates, and childhood exemptions rose. Whether mandates caused that, or merely coincided with a wider political split, is hard to establish.",
+    "detail": "Those who see a backfire argue that coercion signals officials do not trust people to decide, and people return the distrust. Bardosh and colleagues warned in BMJ Global Health in 2022 that mandates and passports risked lasting damage to trust in government and science, and lower uptake of future vaccines, routine ones included. They see that borne out: nonmedical kindergarten exemptions roughly doubled after 2020, and in Gallup’s surveys the share of Americans calling childhood vaccination extremely important fell from 58 percent in 2019 to 40 percent in 2024, with nearly all of the fall among Republicans.\n\nThose who see no backfire look at behavior rather than stated attitudes. A 2024 review of COVID-19 mandates, passports and incentives by Fayaz-Farkhad and Jung found “little evidence that these policies backfire” across whole populations, though mandates did least among the most hesitant. US states that mandated COVID-19 vaccination saw higher, not lower, take-up of later boosters and flu vaccines (Fitzgerald, PNAS, 2024). And the fall in trust is concentrated among Republicans in every state, including states that never mandated anything, which they read as the work of political messaging rather than of mandates.",
+    "lean_label_a": "Erode trust",
+    "lean_label_b": "Build habits",
+    "id": "do-vaccine-mandates-erode-trust-and"
+   },
+   {
+    "text": "Who should decide on emergency measures in the next pandemic, health officials or legislatures?",
+    "kind": "value",
+    "why": "Epidemics move in days and legislatures meet for months, but orders that close businesses, require vaccination or limit gatherings bind millions for long stretches. Since COVID-19, most states have changed who holds that power.",
+    "detail": "Those who would leave the call with health officials argue that infections grow exponentially, so every week of delay multiplies the eventual toll. Officials have the expertise and the incoming data; legislators are slower, more partisan and poorly placed to weigh fast-changing evidence. Laws that let a legislature cancel orders, cap them at a few weeks or ban whole categories of response in advance may leave the tools missing when the next pathogen arrives.\n\nThose who would give legislatures the final say argue that orders binding millions of people for months amount to lawmaking, which belongs to elected representatives, and that a ratification vote after a few weeks costs little speed. They point to COVID-19 orders that were inconsistent or poorly tailored, such as liquor stores left open while churches closed, and argue that legislative review would have caught more of those mistakes and given the orders that survived a stronger claim on public compliance.",
+    "lean_label_a": "Health officials",
+    "lean_label_b": "Legislatures",
+    "id": "who-should-decide-on-emergency-measures"
+   },
+   {
+    "text": "Does the Constitution require states to offer religious exemptions from school vaccine requirements?",
+    "kind": "value",
+    "why": "For a century courts upheld school vaccine requirements without religious exemptions. Recent Supreme Court rulings on religious liberty and parental rights have reopened the question, and the Court is being asked to settle it.",
+    "detail": "Those who say an exemption is required argue that a state exempting children for medical reasons but not religious ones treats secular reasons better than religious ones, which the Court’s recent free-exercise decisions forbid. Mahmoud v. Taylor (2025) upheld parents’ right to opt children out of lessons that burden their religion, and Wisconsin v. Yoder (1972) protected Amish families from compulsory schooling rules; exclusion from school, they say, burdens faith more than a lesson does. In December 2025 the Court sent a challenge to New York’s repeal back for reconsideration in light of Mahmoud.\n\nThose who say states may refuse answer that medical exemptions serve the law’s own health purpose and religious ones do not, so the two are not comparable. Neutral, generally applicable laws need not exempt religious objectors (Employment Division v. Smith, 1990), and Jacobson v. Massachusetts (1905), Zucht v. King (1922) and Prince v. Massachusetts (1944), which said religious liberty “does not include liberty to expose the community or the child to communicable disease,” remain good law. Since Mahmoud, the Second Circuit (June 2026) and the Fourth Circuit (April 2026, 2–1) have upheld requirements with no religious exemption, and on September 8, 2026, the Court refused emergency relief to a New York family, with Justices Alito and Gorsuch noting they would have granted it.",
+    "lean_label_a": "Exemption required",
+    "lean_label_b": "States may refuse",
+    "id": "does-the-constitution-require-states-to"
+   },
+   {
+    "text": "Did COVID-19 vaccine mandates for workers, students and public venues do more good than harm?",
+    "kind": "empirical",
+    "why": "COVID-19 vaccines saved millions of lives, mostly among older adults, but mandates reached healthy young workers, students and diners. How much they added to uptake and to protecting others, and how to weigh lost jobs and trust, are disputed.",
+    "detail": "Those who say more good argue that certificates and mandates measurably raised vaccination, and more vaccination meant fewer deaths. Requirements for health care workers protected patients who had no choice about who treated them. The measures came amid mass death, overloaded hospitals and incomplete knowledge, and judging them by what was learned later is hindsight.\n\nThose who say more harm argue that the benefit was concentrated where mandates were least needed to reach it: Ioannidis and colleagues attribute 90 percent of lives saved to people aged 60 and over and 0.01 percent to children and adolescents. The vaccines’ effect on transmission, the strongest ground for requiring them of others, waned with the Omicron variant, though protection against severe disease lasted longer, and most people by then had some immunity from infection. Meanwhile service members were discharged, health workers were fired during staffing shortages, and trust fell in ways that now threaten measles control. Policies aimed at those most at risk, they say, would have captured most of the benefit.",
+    "lean_label_a": "More good",
+    "lean_label_b": "More harm",
+    "id": "did-covid-19-vaccine-mandates-for"
+   },
+   {
+    "text": "Should school requirements cover the whole recommended schedule, or only diseases that spread at school?",
+    "kind": "value",
+    "why": "Compulsion is easiest to justify when an unvaccinated child endangers others, as with measles. Some required vaccines mainly protect the child, like tetanus, or target diseases spread mostly outside school, like hepatitis B.",
+    "detail": "The question is live because the lists are being cut. Florida’s health department proposed in 2025 to drop hepatitis B, chickenpox, Hib and pneumococcal vaccines from its school requirements, and a January 2026 federal schedule change cut the diseases whose vaccines are recommended for all children from 17 to 11 before a federal court stayed it in March.\n\nThose who want the whole schedule argue that each required vaccine prevents serious disease in children and that requirements are the main reason US coverage is high for all of them. Hepatitis B vaccination has made childhood infection rare, and chickenpox and Hib do spread in schools and day care. Dropping vaccines that “only” protect the child treats children as their parents’ property rather than people the state also must protect, and the list should come from expert review, not political pressure.\n\nThose who want contagious diseases only argue that the ethical ground for overriding a parent is protecting other people, and it is weakest for vaccines that protect only the recipient. Requiring vaccines against diseases rare in schools stretches state power and spends trust needed for the requirements that matter most. Peer countries recommend fewer childhood vaccines and require fewer still.",
+    "lean_label_a": "Whole schedule",
+    "lean_label_b": "Contagious only",
+    "id": "should-school-requirements-cover-the-whole"
+   },
+   {
+    "text": "Should the federal government set vaccine exemption rules for the states?",
+    "kind": "value",
+    "why": "School vaccine law has always been state law, but Washington has reached into it from both directions, pressing vaccination on workers in 2021 and pressing exemptions on states in 2026. Positions often flip with the direction.",
+    "detail": "Those who want a national standard argue that diseases do not stop at state lines, so an outbreak seeded in a low-coverage state spreads to its neighbors. Constitutional rights, whether to religious liberty or to equal protection, are national, and the federal government has a duty to enforce them against states that violate them. A patchwork of 50 rules makes a child’s protection depend on where she happens to live.\n\nThose who want states to decide argue that public health and education are core state powers, and states have run school vaccine laws for 170 years with results their voters can judge and change. Federal overreach in either direction, whether requiring vaccination of workers at large private employers or pressing states to add exemptions, substitutes national politics for local accountability. States also serve as laboratories: strict and permissive states show the consequences of each approach, which a single national rule would hide.",
+    "lean_label_a": "National standard",
+    "lean_label_b": "States decide",
+    "id": "should-the-federal-government-set-vaccine"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Require vaccines for school, with medical exemptions only",
+    "color_key": "green",
+    "steelman": "Children who cannot be vaccinated depend on everyone around them. Every school should require the same vaccines of every family, excusing only the child a vaccine would harm.",
+    "detail": "A school requirement is the most effective and least intrusive way to protect the children who cannot protect themselves: infants, children in cancer treatment, children with immune disorders. It asks every family to do the same thing, it reaches families who are not opposed but simply behind, and it makes vaccination the default. A medical exemption protects the child for whom a vaccine would be dangerous. Religious and personal exemptions protect no one’s health, and because they cluster in particular schools and communities, they create exactly the pockets where measles returns. The American Academy of Pediatrics calls a medical-only rule “an equitable choice” that strikes “the optimal balance between parental authority and public safety.”\n\nThe record bears this out: coverage rose quickly when California ended personal-belief exemptions, and the states that allow only medical exemptions now have some of the highest kindergarten coverage in the country. Religious liberty has never included a right to endanger others, few faiths forbid vaccination, and the rule targets no belief. No one is forced to be vaccinated; a family that objects can educate at home. But a family that uses a school takes on the obligation not to endanger other people’s children. Some of us would keep a narrow religious exemption with strict procedures as a step toward ending it, or have the state rather than any physician review medical exemptions.",
+    "proponents": "American Academy of Pediatrics, American Medical Association, California Legislature, New York Legislature",
+    "id": "require-vaccines-for-school-with-medical"
+   },
+   {
+    "name": "Keep school requirements, with religious exemptions",
+    "color_key": "blue",
+    "steelman": "Most families should and do follow school vaccine rules. A free society still makes room for the few whose faith forbids a medical act, and the Constitution does not rank faith below medicine.",
+    "detail": "For decades almost every state paired its school requirements with a religious exemption and still reached high coverage: national kindergarten MMR coverage ran from 94.7 to 95.2 percent in the four school years before the pandemic, when all but a handful of states allowed nonmedical exemptions. The exemption did not cause today’s problem. The rise since 2020 reflects a collapse of trust after COVID-19, and punishing sincere believers for other people’s lost confidence pushes families out of schools rather than into vaccination. Outbreaks can be met directly, by keeping unvaccinated children home while one lasts.\n\nDenying the exemption forces devout families out of schools they pay for and into court, turns a health measure into a religious test, and feeds the distrust that drives hesitancy far beyond the few who object. A state that accepts a doctor’s reason but not a believer’s is choosing which reasons count. As West Virginia Governor Patrick Morrisey put it, parents “should not be forced to choose between their sincere religious beliefs and their child’s right to an education.” Some of us would allow religious exemptions only; others would add personal-belief ones, or accept steps such as an education session so long as the exemption is available in the end.",
+    "proponents": "The White House, Patrick Morrisey, HHS Office for Civil Rights, Florida Senate",
+    "id": "keep-school-requirements-with-religious-exemptions"
+   },
+   {
+    "name": "End vaccine mandates and let individuals and parents choose",
+    "color_key": "amber",
+    "steelman": "Your body is the first thing you own, and parents answer for their children’s health. Government may inform and offer vaccines freely, but never force one as the price of school or work.",
+    "detail": "Mandates corrode what they claim to protect. When the state compels, every adverse event becomes the state’s doing, honest questions are treated as disloyalty, and trust in medicine falls. The COVID-19 years showed how far officials will go once compulsion is accepted: people lost their jobs, service members were discharged, and children were kept from school over a vaccine that did little to stop transmission, against a disease that posed little risk to them. Florida Surgeon General Joseph Ladapo put the question plainly: “Who am I, as a government or anyone else… to tell you what you should put in your body?”\n\nVaccinated children are protected by their own vaccination, and the few who cannot be vaccinated deserve targeted protection, not a regime of compulsion over everyone else. Outbreaks spread in close-knit communities that no mandate has persuaded; trusted doctors are what move hesitant parents, and a free-choice system can still offer vaccines everywhere at no cost. More than half of European countries mandate no childhood vaccine at all. Some of us argue from liberty alone, holding that even a safe and effective vaccine should not be compelled; others also contend that the childhood schedule is inadequately tested and injuries underreported. Some would end mandates in one step, others would accept broad exemptions on the way.",
+    "proponents": "Idaho Legislature, Joseph Ladapo, Children’s Health Defense, Health Freedom Defense Fund, Stand for Health Freedom",
+    "id": "end-vaccine-mandates-and-let-individuals"
+   },
+   {
+    "name": "Raise vaccination through trust and access, not compulsion",
+    "color_key": "rust",
+    "steelman": "The real question is not whether the state may compel but whether compulsion works, and usually it does not. Trust, easy access and doctors with time to talk raise vaccination more durably.",
+    "detail": "Coverage depends on trust: in the vaccine, in the doctor recommending it and in the institutions behind them. Coercion can raise uptake in the short run among the persuadable, but it hardens the resistant, turns a health decision into a political identity and spends trust that future campaigns will need. The Nordic countries reach measles coverage at or above the US level with no mandate at all, through free universal access, reminder systems and clinicians who have time for parents. Where coverage falls, the causes are usually missed appointments, access barriers and lost confidence, and each has its own remedy.\n\nThis is not opposition to mandates in principle. The Nuffield Council on Bioethics accepts compulsion for highly contagious and serious diseases, and Kevin Bardosh and colleagues call mandating “one of the most powerful interventions in public health,” to be used “sparingly and carefully.” Some of us would keep existing school requirements but not tighten them; others favor the European voluntary model outright. To those who say voluntary systems work only where trust is already high: that is why trust has to be rebuilt rather than bypassed, and a mandate imposed on a divided public invites the backlash now visible in state legislatures.",
+    "proponents": "Nuffield Council on Bioethics, Kevin Bardosh",
+    "id": "raise-vaccination-through-trust-and-access"
+   },
+   {
+    "name": "Put pandemic emergency orders under legislative time limits",
+    "color_key": "purple",
+    "steelman": "Emergency powers let government act before the legislature can meet, not rule by decree for months. Orders should lapse after a short time unless elected lawmakers vote to extend them.",
+    "detail": "During COVID-19, governors and health officers in many states issued and reissued orders for months that closed businesses and churches, set rules for weddings and funerals and required vaccination, without a vote by elected representatives. Laws that shape millions of lives for that long need democratic consent, both because that is how self-government works and because orders the public has had a voice in are more likely to be followed. Automatic expiration keeps the first response fast and puts the burden on officials to persuade legislators, and through them the public, that an order is still needed.\n\nTime limits do not stop fast action; they stop indefinite action. A governor can still act on day one, and a legislature that agrees can extend the order in a single vote. If an order cannot win a majority of elected legislators after several weeks, it has lost the consent it needs to work. The American Legislative Exchange Council’s model act would also require such orders to be “narrowly tailored to serve a compelling public health or safety purpose” and give them expedited judicial review. Some of us would stop at time limits; others would also ban specific measures in advance, such as vaccine passports, employer mandates, church closures or local mask orders.",
+    "proponents": "American Legislative Exchange Council, Pacific Legal Foundation",
+    "id": "put-pandemic-emergency-orders-under-legislative"
+   },
+   {
+    "name": "Preserve health officials’ power to act fast in emergencies",
+    "color_key": "teal",
+    "steelman": "In an epidemic every day of delay compounds. The first weeks decide how many die, so the tools must be ready in the hands of officials who can read the evidence as it arrives.",
+    "detail": "The measures that matter most, from quarantine to vaccination requirements for health care workers, have to be available immediately. Legislatures are not built for that: in many states they sit part-time, they are more polarized than health departments, and they cannot track a moving epidemic. Courts already check officials who go too far. The laws passed since 2021 were written in anger at COVID-19 measures, but they will govern the next pandemic, which may be far deadlier to children or young adults, and they may forbid measures that would then be clearly justified. As Michelle Mello of Stanford and her colleagues put it, reform has moved “strongly in one direction—weakening public health legal powers—with potentially dangerous consequences.”\n\nWe accept accountability. Public reporting of the evidence behind orders, periodic review with a real chance to renew, and judicial oversight answer the problem of overlong orders. What we oppose is automatic expiration while a legislature is out of session, and advance bans on whole categories of measures, whatever the next pathogen turns out to be. Some of us would go further and modernize public health law to give officials clearer authority over vaccination requirements in health care and schools during an emergency.",
+    "proponents": "Center for Public Health Law Research, Michelle Mello, Network for Public Health Law, Association of State and Territorial Health Officials",
+    "id": "preserve-health-officials-power-to-act"
+   }
+  ],
+  "crux": {
+   "lead": "When refusing a vaccine puts others at risk, when may the state override that choice, and does it help?",
+   "lead_highlight": "when may the state override that choice",
+   "subtitle": "Every camp wants children protected from contagious disease. They split over how much risk to others justifies overruling a person’s or a parent’s own judgment, and over whether overruling it leaves a community better protected over time.",
+   "empirical": "Evidence can settle much of the second half: how far strict requirements raise coverage once families’ workarounds are counted, how much compulsion depresses trust and later voluntary vaccination, and how much a few points of coverage change outbreaks. Places now loosening or tightening their rules will show much of what each side predicts within a few years; the next serious epidemic will test limits on emergency powers.",
+   "values": "No data closes the first half. People differ in how they weigh a small added risk to a classmate who cannot be vaccinated against a family’s conscience or a person’s control of their own body. Some hold that protecting others from contagion is a fair condition of sharing a school or workplace; others, that a medical act can never be the price of an education or a job. Trading consent for speed in an emergency is the same kind of choice."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "CDC SchoolVaxView",
+    "description": "The CDC’s state-by-state data on kindergarten vaccination coverage and medical and nonmedical exemptions, updated in August 2026 with the 2025–26 school year.",
+    "url": "https://www.cdc.gov/schoolvaxview/data/index.html",
+    "for_position": null,
+    "id": "cdc-schoolvaxview"
+   },
+   {
+    "kind": "learn_more",
+    "title": "NCSL, State Non-Medical Exemptions from School Immunization Requirements",
+    "description": "The National Conference of State Legislatures’ table of which states allow religious, personal-belief or only medical exemptions, with statute citations and pending changes.",
+    "url": "https://www.ncsl.org/health/state-non-medical-exemptions-from-school-immunization-requirements",
+    "for_position": null,
+    "id": "ncsl-state-non-medical-exemptions-from"
+   },
+   {
+    "kind": "policy",
+    "title": "Open States, Find Your Legislator",
+    "description": "Find your state representative and senator from your address, with contact details and the bills they sponsor; school vaccine and emergency-power laws are made by states.",
+    "url": "https://openstates.org/find_your_legislator/",
+    "for_position": null,
+    "id": "open-states-find-your-legislator"
+   },
+   {
+    "kind": "donate",
+    "title": "Vaccinate Your Family",
+    "description": "A national nonprofit that advocates for vaccination, publishes analysis of falling kindergarten coverage and runs campaigns to contact lawmakers, alongside education for families.",
+    "url": "https://vaccinateyourfamily.org/",
+    "for_position": "Require vaccines for school, with medical exemptions only",
+    "id": "vaccinate-your-family"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Stand for Health Freedom, state action alerts",
+    "description": "An advocacy group opposing vaccine mandates and defending exemptions that sends state action alerts, petitions and pre-drafted messages to legislators, and publishes voter guides.",
+    "url": "https://standforhealthfreedom.com/",
+    "for_position": "End vaccine mandates and let individuals and parents choose",
+    "id": "stand-for-health-freedom-state-action"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Executive Order 14420, Delivering Gold Standard Childhood Vaccine Recommendations for Americans",
+    "description": "The White House order making “maximal parental choice over childhood vaccines” federal policy and pressing states to provide religious and medical exemptions.",
+    "url": "https://www.whitehouse.gov/presidential-actions/2026/08/delivering-gold-standard-childhood-vaccine-recommendations-for-americans/",
+    "for_position": "Keep school requirements, with religious exemptions",
+    "id": "executive-order-14420-delivering-gold-standard"
+   },
+   {
+    "kind": "learn_more",
+    "title": "The Vaccine Confidence Project",
+    "description": "A research program at the London School of Hygiene & Tropical Medicine, led by Heidi Larson, that tracks confidence in vaccines across countries and studies what builds and erodes it.",
+    "url": "https://www.vaccineconfidence.org/",
+    "for_position": "Raise vaccination through trust and access, not compulsion",
+    "id": "the-vaccine-confidence-project"
+   },
+   {
+    "kind": "policy",
+    "title": "ALEC, Emergency Power Limitation Act",
+    "description": "The American Legislative Exchange Council’s 2021 model bill making statewide emergency orders expire unless the legislature ratifies them, a template behind many state reforms since.",
+    "url": "https://alec.org/model-policy/emergency-power-limitation-act/",
+    "for_position": "Put pandemic emergency orders under legislative time limits",
+    "id": "alec-emergency-power-limitation-act"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Network for Public Health Law",
+    "description": "A nonprofit network of public health lawyers offering guidance, a 50-state survey of bills limiting public health authority, and resources on emergency legal preparedness.",
+    "url": "https://www.networkforphl.org/",
+    "for_position": "Preserve health officials’ power to act fast in emergencies",
+    "id": "network-for-public-health-law"
+   },
+   {
+    "kind": "local",
+    "title": "Vaccines.gov",
+    "description": "A federal locator for pharmacies and clinics offering vaccines near a ZIP code, useful whatever your view of requirements.",
+    "url": "https://www.vaccines.gov/",
+    "for_position": null,
+    "id": "vaccines-gov"
+   }
+  ]
+ },
+ "icon": "syringe",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: a tall glass vaccine vial with a rubber-stoppered cap as the dominant focal mass, standing in the foreground; a capped syringe lying diagonally in front of the vial's base, overlapping it; a small schoolhouse with a bell tower on a hill behind at a smaller scale; a winding path that runs from the schoolhouse across the whole frame to the vial as the connective element; the ground is a gentle rolling hill curve, with one small rounded tree beside the school.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #b0567f, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: virus particles or spiky germs, face masks, skulls, warning signs, hazard symbols, padlocks, chains, gavels, handcuffs, shields, flags, the red cross emblem, hospital buildings, check marks or X marks, crossed-out symbols, dripping needles, needles pointing at anything, arms or bodies, crowds, protest signs, documents with text."
 }

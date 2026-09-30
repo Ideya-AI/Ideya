@@ -1,8 +1,8 @@
 {
  "slug": "content-moderation-free-speech",
  "title": "Content Moderation",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-09-28T08:38:43+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Platform responsibility for lawful-but-harmful speech and liability shields. Not national speech law.",
@@ -15,5 +15,686 @@
   "epistemic-crisis-deepfakes",
   "money-in-politics",
   "data-ownership-surveillance-capitalism"
- ]
+ ],
+ "content": {
+  "overview": {
+   "summary": "How much platforms should answer for lawful but harmful speech, and who should decide what stays up: companies, governments, courts or users.",
+   "scope_covered": "How platforms write and enforce rules on lawful but harmful speech; Section 230 and its counterparts abroad; government pressure on platforms; laws forcing platforms to carry lawful speech; liability for product design.",
+   "scope_excluded": "What governments may themselves punish, such as hate speech or defamation law; deepfakes and the wider loss of shared facts; the evidence on social media and teen mental health.",
+   "why_now": "On September 10, 2026, Representatives Mark DeSaulnier, a California Democrat, and Jimmy Patronis, a Florida Republican, introduced a bill to repeal Section 230 two years after enactment with no replacement rule, matching a bipartisan Senate bill from December 2025.",
+   "why_now_source_label": "Office of Rep. Mark DeSaulnier",
+   "why_now_source_url": "https://desaulnier.house.gov/media-center/press-releases/representatives-desaulnier-and-patronis-introduce-legislation-hold-tech"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "Moderation decisions citing a platform’s own rules rather than the law",
+     "viz": "radial",
+     "wide": false,
+     "value": "99.8",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a ten-day sample of 131 million EU moderation decisions by the largest platforms, 99.8 percent cited a breach of the platform’s own terms and 0.2 percent cited illegal content.",
+     "detail": "Platforms can ground a decision in the law or in their own terms of service, and they overwhelmingly use their own rules, which reach far beyond what any law forbids and are quicker to apply than a legal judgment. That makes the split the clearest measure of how much moderation concerns lawful but disallowed content. The researchers caution that platforms may file illegal material as a terms breach for convenience, so the figure understates how much removed content was also illegal; Facebook, for instance, used a single standard reason for all its illegal-content reports. The decisions were filed November 19 to 28, 2023, before later changes to the EU database, and the share may differ by platform and year.",
+     "source_label": "Kaushal et al., “Automated Transparency,” ACM FAccT 2024",
+     "source_url": "https://arxiv.org/html/2404.02894v2",
+     "source_published": "2023",
+     "source_accessed": "2026-09-26",
+     "id": "moderation-decisions-citing-a-platform-s"
+    },
+    {
+     "label": "US adults who say tech companies should restrict false information online",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "All adults 2023",
+       "value": "65",
+       "highlight": false
+      },
+      {
+       "label": "All adults 2025",
+       "value": "60",
+       "highlight": true
+      },
+      {
+       "label": "Democrats 2023",
+       "value": "81",
+       "highlight": false
+      },
+      {
+       "label": "Democrats 2025",
+       "value": "73",
+       "highlight": false
+      },
+      {
+       "label": "Republicans 2023",
+       "value": "48",
+       "highlight": false
+      },
+      {
+       "label": "Republicans 2025",
+       "value": "47",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2025, 60 percent of US adults said tech companies should restrict false information online even if it limits freedom of information, down from 65 percent in 2023.",
+     "detail": "Pew asks the same forced choice every few years: restrict false information even at a cost to freedom of information, or protect that freedom even if falsehoods get published. Support for company action ran 56 percent in 2018 and 59 percent in 2021 before peaking in 2023. The party groups include independents who lean to each party; Pew calls Republican support “virtually identical” across the two latest surveys. Americans consistently prefer companies to government as the restricting party: support for government action was 39 percent in 2018, 48 percent in 2021, 55 percent in 2023 and 51 percent in 2025. The 2025 survey of 5,123 adults ran February 24 to March 2, weeks after Meta ended US fact-checking and President Trump signed an executive order on “ending federal censorship.” A parallel question on extremely violent content fell from 71 to 58 percent for tech companies between 2023 and 2025.",
+     "source_label": "Pew Research Center, “Support dips for U.S. government, tech companies restricting false or violent online content”",
+     "source_url": "https://www.pewresearch.org/short-reads/2025/04/14/support-dips-for-us-government-tech-companies-restricting-false-or-violent-online-content/",
+     "source_published": "2025",
+     "source_accessed": "2026-09-26",
+     "id": "us-adults-who-say-tech-companies"
+    },
+    {
+     "label": "US adults who think social media sites intentionally censor political viewpoints",
+     "viz": "radial",
+     "wide": false,
+     "value": "83",
+     "unit": "% of adults",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "83 percent of US adults said in 2024 that social media sites are likely to censor political viewpoints they find objectionable, including 93 percent of Republicans and 74 percent of Democrats.",
+     "detail": "The question asks how likely it is that sites “intentionally censor political viewpoints that they find objectionable,” so it measures perception, not whether censorship occurs. The overall share rose from 77 percent in 2022, and among Democrats from 66 percent. Intensity differs more than the totals: 66 percent of Republicans said it was very likely, against 25 percent of Democrats. The same survey of 10,133 adults, taken February 7 to 11, 2024, found 78 percent say social media companies have too much power and influence in politics. Read beside the support for restricting false information, it shows majorities wanting platforms to act and also believing they suppress views.",
+     "source_label": "Pew Research Center, “Americans’ Views of Technology Companies”",
+     "source_url": "https://www.pewresearch.org/internet/2024/04/29/americans-views-of-technology-companies-2/",
+     "source_published": "2024",
+     "source_accessed": "2026-09-26",
+     "id": "us-adults-who-think-social-media"
+    },
+    {
+     "label": "US adults who have experienced online harassment",
+     "viz": "radial",
+     "wide": false,
+     "value": "41",
+     "unit": "% of adults",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "41 percent of US adults said in 2020 they had been harassed online, and 25 percent had faced severe forms such as physical threats, stalking, sexual harassment or sustained harassment.",
+     "detail": "Harassment is the main harm the “lawful but harmful” category is meant to capture: much of it is legal one post at a time and harmful in aggregate. Pew’s survey of 10,093 adults, taken September 8 to 13, 2020, is the most recent general-population estimate from a neutral source and is now dated. The Anti-Defamation League’s annual YouGov survey, conducted in January and February 2024, found 22 percent of American adults had faced severe harassment on social media in the past 12 months, up from 18 percent a year earlier, and 56 percent had been harassed online at some point, with transgender, LGBTQ+, Muslim and Jewish respondents among the most targeted.",
+     "source_label": "Pew Research Center, “The State of Online Harassment”",
+     "source_url": "https://www.pewresearch.org/internet/2021/01/13/the-state-of-online-harassment/",
+     "source_published": "2020",
+     "source_accessed": "2026-09-26",
+     "id": "us-adults-who-have-experienced-online"
+    },
+    {
+     "label": "Meta’s own estimate of its removals that may have been mistakes",
+     "viz": "range",
+     "wide": false,
+     "value": "10–20",
+     "unit": "%",
+     "series": [],
+     "range_min": "0%",
+     "range_max": "100%",
+     "note": "Meta said in January 2025 that “one to two out of every 10” of the millions of removal actions it took each day in December 2024 may have been mistakes.",
+     "detail": "Meta used the estimate to justify ending third-party fact-checking in the United States, moving to Community Notes, lifting restrictions on topics such as immigration and gender identity, and limiting automated enforcement to illegal and “high-severity” violations. In May 2025 it reported that US enforcement mistakes were cut in half between the fourth quarter of 2024 and the end of the first quarter of 2025, while the prevalence of some harmful content rose slightly: bullying and harassment on Facebook from 0.06–0.07 to 0.07–0.08 percent of views, and violent and graphic content from 0.06–0.07 to about 0.09 percent. The figures are self-reported and not independently audited, yet they are the best public data on the error rate of moderation at scale.",
+     "source_label": "Meta, Joel Kaplan, “More Speech and Fewer Mistakes”",
+     "source_url": "https://about.fb.com/news/2025/01/meta-more-speech-fewer-mistakes/",
+     "source_published": "2024",
+     "source_accessed": "2026-09-26",
+     "id": "meta-s-own-estimate-of-its"
+    },
+    {
+     "label": "Moderation decisions reported to the EU’s public database in 180 days",
+     "viz": "bar",
+     "wide": false,
+     "value": "4.01",
+     "unit": "billion",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Platforms reported about 4.01 billion moderation decisions affecting EU users in the 180 days to late September 2026, 43 percent of them fully automated.",
+     "detail": "Under the Digital Services Act, every online platform in the EU must give an affected user a “statement of reasons” when it removes, demotes, demonetizes or otherwise restricts content or an account, and must file each one in a public Commission database. On September 26, 2026 the database showed 4,013,695,571 statements from 374 platforms over the preceding 180 days. The count includes marketplaces and app stores as well as social media: in an early sample, Google Shopping alone filed more than half of all statements, so the total measures the scale of automated platform governance rather than speech moderation alone. The window rolls, so the figure changes daily.",
+     "source_label": "European Commission, DSA Transparency Database",
+     "source_url": "https://transparency.dsa.ec.europa.eu/?lang=en",
+     "source_published": "2026",
+     "source_accessed": "2026-09-26",
+     "id": "moderation-decisions-reported-to-the-eu"
+    },
+    {
+     "label": "Abusive Facebook comments aimed at 100 members of Congress, before and after Meta’s 2025 changes",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "comments",
+     "series": [
+      {
+       "label": "Abusive, before",
+       "value": "24,000",
+       "highlight": false
+      },
+      {
+       "label": "Abusive, after",
+       "value": "78,000",
+       "highlight": true
+      },
+      {
+       "label": "Hateful, before",
+       "value": "6,900",
+       "highlight": false
+      },
+      {
+       "label": "Hateful, after",
+       "value": "30,000",
+       "highlight": false
+      },
+      {
+       "label": "Violent threats, before",
+       "value": "1,800",
+       "highlight": false
+      },
+      {
+       "label": "Violent threats, after",
+       "value": "7,600",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "An advocacy group counted abusive comments aimed at 100 members of Congress rising from about 24,000 to 78,000 after Meta loosened enforcement; Meta says hateful conduct did not rise platform-wide.",
+     "detail": "The Center for Countering Digital Hate favors stronger platform accountability, and its chief executive, Imran Ahmed, was among five people hit with US visa bans in December 2025. Its study analyzed nearly 8 million comments aimed at the same 100 lawmakers in the six months either side of January 2025, classifying the abuse itself. Meta responded that “the prevalence of hateful conduct did not increase throughout 2025” and that it had removed the content in the report that broke its rules. The two claims use different measures: the group counts abusive comments in a targeted sample, while Meta measures the share of all views across the platform, and a large rise in a narrow sample can coexist with flat prevalence overall.",
+     "source_label": "Center for Countering Digital Hate, “Safety Off”",
+     "source_url": "https://counterhate.com/blog/violent-threats-against-members-of-congress-quadrupled-after-meta-rolled-back-moderation-policies/",
+     "source_published": "2025",
+     "source_accessed": "2026-09-26",
+     "id": "abusive-facebook-comments-aimed-at-100"
+    },
+    {
+     "label": "Deleted comments on large Facebook pages and YouTube channels judged legal under national law",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Germany, Facebook",
+       "value": "99.7",
+       "highlight": true
+      },
+      {
+       "label": "Germany, YouTube",
+       "value": "98.9",
+       "highlight": false
+      },
+      {
+       "label": "Sweden, Facebook",
+       "value": "94.6",
+       "highlight": false
+      },
+      {
+       "label": "Sweden, YouTube",
+       "value": "94.6",
+       "highlight": false
+      },
+      {
+       "label": "France, Facebook",
+       "value": "92.1",
+       "highlight": false
+      },
+      {
+       "label": "France, YouTube",
+       "value": "87.5",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Lawyers judged 87.5 to 99.7 percent of comments deleted from 60 large Facebook pages and YouTube channels in France, Germany and Sweden to be legal, depending on country and platform.",
+     "detail": "The researchers tracked which comments vanished from the 20 largest pages and channels in each country over two weeks in June and July 2023 and had legal experts assess them against national law. On average more than 56 percent of deleted comments were “general expressions of opinion” without attacks or hate speech. The study could not tell who deleted each comment: the platform, the page or channel owner, or the commenter. Legal is also not the same as wrongly removed, since platforms and page owners may remove lawful content under their own rules. The Future of Free Speech reads the figures as over-removal driven by laws such as Germany’s Network Enforcement Act, where the legal share was highest; defenders of moderation reply that removing lawful abuse and spam is moderation working as intended.",
+     "source_label": "The Future of Free Speech and Justitia, “Preventing ‘Torrents of Hate’ or Stifling Free Expression Online?”",
+     "source_url": "https://futurefreespeech.org/wp-content/uploads/2024/05/Preventing-Torrents-of-Hate-or-Stifling-Free-Expression-Online-The-Future-of-Free-Speech.pdf",
+     "source_published": "2023",
+     "source_accessed": "2026-09-26",
+     "id": "deleted-comments-on-large-facebook-pages"
+    },
+    {
+     "label": "Section 230 rulings in which the immunity was the main basis",
+     "viz": "radial",
+     "wide": false,
+     "value": "42",
+     "unit": "% of rulings",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "A tech industry group’s review of more than 500 decisions citing Section 230 found the immunity was the primary basis for the ruling in 42 percent; nearly 30 percent were dismissed without it.",
+     "detail": "Those dismissed without applying Section 230 failed most often because the claims lacked merit, and about 43 percent of the decisions involved defamation. The Internet Association was the trade group of large internet companies and dissolved in 2021; its point was that the law works less as a blanket immunity than as an early, affordable exit from cases that would mostly fail anyway, which matters most to small sites. Critics reply that cases reaching a decision are a filtered sample, since the shield deters many suits from being filed. The law’s core is one sentence: “No provider or user of an interactive computer service shall be treated as the publisher or speaker of any information provided by another information content provider,” plus a clause protecting good-faith removal of “objectionable” material.",
+     "source_label": "Internet Association, “A Review of Section 230’s Meaning & Application Based on More Than 500 Cases”",
+     "source_url": "https://internetassociation.org/publications/a-review-of-section-230s-meaning-application-based-on-more-than-500-cases/",
+     "source_published": "2020",
+     "source_accessed": "2026-09-26",
+     "id": "section-230-rulings-in-which-the"
+    },
+    {
+     "label": "X’s trust and safety staff before and after its 2022 takeover",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "people",
+     "series": [
+      {
+       "label": "Safety staff, Oct 2022",
+       "value": "4,062",
+       "highlight": false
+      },
+      {
+       "label": "Safety staff, May 2023",
+       "value": "2,849",
+       "highlight": true
+      },
+      {
+       "label": "Engineers, Oct 2022",
+       "value": "279",
+       "highlight": false
+      },
+      {
+       "label": "Engineers, May 2023",
+       "value": "55",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "X told Australia’s online safety regulator that its trust and safety staff fell 30 percent, from 4,062 to 2,849, and its safety engineers 80 percent in the seven months after Elon Musk bought it.",
+     "detail": "The figures come from X’s own answers to a legal notice from Australia’s eSafety Commissioner, covering October 28, 2022 to May 31, 2023, and count employees and contractors worldwide. Full-time moderators employed directly fell from 107 to 51 and contract moderators from 2,613 to 2,305, and X said it had reinstated about 6,100 previously banned accounts. X’s pullback came more than two years before Meta’s. Musk has framed the change as restoring free speech; critics treat it as the test case for what happens when enforcement is cut. The regulator’s own release could not be loaded, so the figures here are read from the Associated Press report of it.",
+     "source_label": "Associated Press, reporting X Corp.’s response to Australia’s eSafety Commissioner",
+     "source_url": "https://www.clickorlando.com/business/2024/01/10/x-corp-has-slashed-30-of-trust-and-safety-staff-an-australian-online-safety-watchdog-says/",
+     "source_published": "2023",
+     "source_accessed": "2026-09-26",
+     "id": "x-s-trust-and-safety-staff"
+    },
+    {
+     "label": "Community Notes that were ever published",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "X English, 2023",
+       "value": "9.5",
+       "highlight": false
+      },
+      {
+       "label": "X English, 2021–2025",
+       "value": "7.1",
+       "highlight": true
+      },
+      {
+       "label": "X English, early 2025",
+       "value": "4.9",
+       "highlight": false
+      },
+      {
+       "label": "X Spanish, 2021–2025",
+       "value": "4.7",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Of about 1.12 million English-language Community Notes written on X from 2021 to March 2025, 7.1 percent were ever published.",
+     "detail": "Volunteer contributors write context notes on posts, and a note appears only when raters who usually disagree with each other both rate it helpful, a “bridging” design meant to resist partisan capture. The same design is why most notes never appear: on divisive claims, agreement across the divide is rare. The Digital Democracy Institute of the Americas analyzed 1.76 million notes in 55 languages and found average time to publication fell from more than 100 days in 2022 to 14 days in 2025. Meta, which adopted the same model in the US in 2025, had published about 6 percent of its notes by September 2025, according to the Oversight Board’s March 2026 advisory opinion. Supporters answer that notes are meant to be few and trusted.",
+     "source_label": "Digital Democracy Institute of the Americas, “A Deep Dive into X’s Community Notes”",
+     "source_url": "https://ddia.org/en/a-deep-dive-into-xs-community-notes-report",
+     "source_published": "2025",
+     "source_accessed": "2026-09-26",
+     "id": "community-notes-that-were-ever-published"
+    },
+    {
+     "label": "Drop in engagement with a false post on X once a Community Note is attached",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% fewer",
+     "series": [
+      {
+       "label": "Reposts after note",
+       "value": "46.1",
+       "highlight": true
+      },
+      {
+       "label": "Likes after note",
+       "value": "44.1",
+       "highlight": false
+      },
+      {
+       "label": "Replies after note",
+       "value": "21.9",
+       "highlight": false
+      },
+      {
+       "label": "Views after note",
+       "value": "13.5",
+       "highlight": false
+      },
+      {
+       "label": "Reposts, whole life",
+       "value": "11.6",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Posts that received a published Community Note had 46.1 percent fewer reposts after it appeared than comparable posts, but only 11.6 percent fewer over their whole lifespan.",
+     "detail": "The study of 40,078 posts with proposed notes used synthetic control methods, comparing noted posts with statistically matched posts whose notes were proposed but never shown. The gap between the two numbers is what both sides take from it: notes work on the engagement that comes after them, but most sharing of a viral post happens in its first hours, before a note can be written and rated. Defenders of crowd moderation read the result as proof that a tool that removes nothing still changes behavior; defenders of removal read it as proof that labels arrive too late to stop the harm.",
+     "source_label": "Slaughter, Peytavin, Ugander & Saveski, PNAS",
+     "source_url": "https://pubmed.ncbi.nlm.nih.gov/40966290/",
+     "source_published": "2025",
+     "source_accessed": "2026-09-26",
+     "id": "drop-in-engagement-with-a-false"
+    },
+    {
+     "label": "Maximum fines for platforms under online safety laws",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% of revenue",
+     "series": [
+      {
+       "label": "UK Online Safety Act",
+       "value": "10",
+       "highlight": true
+      },
+      {
+       "label": "EU Digital Services Act",
+       "value": "6",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The UK can fine a platform up to £18 million or 10 percent of qualifying worldwide revenue, whichever is greater; the EU can fine a very large platform up to 6 percent of worldwide annual turnover.",
+     "detail": "Both laws impose duties about systems rather than orders about individual posts. The EU act requires the largest platforms to assess and mitigate “systemic risks,” including illegal content, threats to fundamental rights and elections, gender-based violence, public health and minors’ wellbeing. Its first fine, €120 million against X in December 2025, was for a deceptive paid checkmark, an inadequate advertising repository and blocked researcher access, not for any piece of speech. The UK law in its final form dropped the “legal but harmful” duties for adults its drafts contained, replacing them with tools that let adults filter such content, while keeping duties to shield children. The United States has no general duty; its main federal removal law, the TAKE IT DOWN Act, covers only nonconsensual intimate images, which platforms must remove within 48 hours of a valid request, enforced by the Federal Trade Commission since May 19, 2026.",
+     "source_label": "Online Safety Act 2023, Schedule 13; Digital Services Act, Article 74",
+     "source_url": "https://www.legislation.gov.uk/ukpga/2023/50/schedule/13/paragraph/4",
+     "source_published": "2026",
+     "source_accessed": "2026-09-26",
+     "id": "maximum-fines-for-platforms-under-online"
+    },
+    {
+     "label": "Brazil Supreme Federal Court justices voting to narrow the platform liability shield",
+     "viz": "bar",
+     "wide": false,
+     "value": "8",
+     "unit": "of 11",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "By 8 votes to 3 in June 2025, Brazil’s top court made platforms liable for many kinds of user content they fail to remove after a private notice, not only after a court order.",
+     "detail": "The court declared Article 19 of the Marco Civil da Internet partly unconstitutional. Adopted in 2014, it had been one of the world’s strongest shields outside the United States, making platforms liable only if they ignored a court order. The ruling keeps the court-order rule for crimes against honor such as defamation, moves most other content to notice-and-takedown, and imposes a duty of care for a list of serious categories, along with transparency and due-process obligations. It applies to events after June 26, 2025. Supporters in Brazil cited disinformation and attacks on democratic institutions; the Electronic Frontier Foundation called it a “major setback” and warned that liability relying on AI-based flagging “is a recipe for over censorship.”",
+     "source_label": "Global Network Initiative, “From Shield to Scrutiny: Brazil’s Supreme Court Redefines Platform Liability”",
+     "source_url": "https://globalnetworkinitiative.org/from-shield-to-scrutiny-brazils-supreme-court-redefines-platform-liability/",
+     "source_published": "2025",
+     "source_accessed": "2026-09-26",
+     "id": "brazil-supreme-federal-court-justices-voting"
+    },
+    {
+     "label": "US adults who say harassment targets should be able to sue the platform",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% of adults",
+     "series": [
+      {
+       "label": "Should be able to sue",
+       "value": "33",
+       "highlight": true
+      },
+      {
+       "label": "Should not",
+       "value": "63",
+       "highlight": false
+      },
+      {
+       "label": "Rate platforms fair/poor",
+       "value": "79",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2020, 33 percent of US adults said people harassed on social media should be able to sue the platform and 63 percent said no, though 79 percent rated platforms’ handling of harassment fair or poor.",
+     "detail": "This is the only neutral national survey item found that asks about platform liability rather than platform moderation, and it cuts against the assumption that dissatisfaction with platforms turns into support for suing them. The survey of 10,093 adults ran September 8 to 13, 2020, before the lawsuits over harm to young users and before the bipartisan bills to sunset Section 230, and opinion may have moved since. No later neutral poll asking the same question turned up in research.",
+     "source_label": "Pew Research Center, “The State of Online Harassment”",
+     "source_url": "https://www.pewresearch.org/internet/2021/01/13/the-state-of-online-harassment/",
+     "source_published": "2020",
+     "source_accessed": "2026-09-26",
+     "id": "us-adults-who-say-harassment-targets"
+    },
+    {
+     "label": "US adults who get news from social media at least sometimes",
+     "viz": "radial",
+     "wide": false,
+     "value": "53",
+     "unit": "% of adults",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "53 percent of US adults said in 2025 that they get news from social media often (21 percent) or sometimes (32 percent).",
+     "detail": "This is why moderation choices carry political weight: for about half the country, platform ranking and removal decisions shape which news reaches them at all. The share has held near half since 2020, ranging from 48 to 54 percent. By platform, 38 percent of US adults regularly get news on Facebook and 35 percent on YouTube. Among each site’s own users, 57 percent of X users and 55 percent of TikTok users regularly get news there, the TikTok share up from 22 percent in 2020. The latest survey ran August 18 to 24, 2025.",
+     "source_label": "Pew Research Center, Social Media and News Fact Sheet",
+     "source_url": "https://www.pewresearch.org/journalism/fact-sheet/social-media-and-news-fact-sheet/",
+     "source_published": "2025",
+     "source_accessed": "2026-09-26",
+     "id": "us-adults-who-get-news-from"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Would weakening the liability shield make platforms safer, or mainly make them remove more lawful speech?",
+    "kind": "empirical",
+    "why": "The US’s main test is a 2018 carve-out from Section 230 for sex trafficking, and foreign systems differ in many ways at once. Both sides are predicting how companies would behave under a law that does not yet exist.",
+    "detail": "The case for safer platforms: liability is how the law makes every other industry internalize the harm its products cause. Companies that can be sued for foreseeable harm invest in safety, design more carefully and take down content they now leave up because it drives engagement. The industry predicted ruin before Europe’s rules and Britain’s Online Safety Act, and user speech carried on. Section 230 was written in 1996 to protect fledgling message boards from suits over a single post, not to shield some of the world’s most valuable companies from any accountability, and a sunset forces Congress and industry to write a better rule.\n\nThe case for more removal: when a host can be sued over what users say, the cheapest response is to delete anything a plaintiff might object to and stop hosting some speech altogether, and the burden falls hardest on controversial, minority and critical voices. Large platforms can afford lawyers and filters; small sites, nonprofits like Wikipedia and new competitors cannot, so repeal would entrench the giants its sponsors want to rein in.",
+    "lean_label_a": "Safer platforms",
+    "lean_label_b": "Less lawful speech",
+    "id": "would-weakening-the-liability-shield-make"
+   },
+   {
+    "text": "Does removing or demoting lawful but harmful content reduce harm in the real world?",
+    "kind": "empirical",
+    "why": "Platforms rarely let outsiders run the experiments that would answer it, the harms at issue are rare and have many causes, and the best natural experiments are tangled up with the events that set them off.",
+    "detail": "The case that moderation works: a few super-spreaders produce most harmful content, so removing a small number of accounts can cut a large share of it. After Twitter removed about 70,000 accounts following the attack on the US Capitol in January 2021, misinformation circulation fell among those accounts and among their followers, and many remaining spreaders left the platform (McCabe et al., Nature, 2024).\n\nThe case that harm moves elsewhere: the same Nature authors could not estimate the size of the effect, because the removals coincided with the events of January 6. Removed users migrate to smaller, less moderated platforms such as Telegram and Gab, where they are harder to observe and counter, and removal feeds the grievance that radicalizes them. Much of what is removed is ordinary opinion, so any measured benefit has to be set against the lawful speech lost to catch it, a cost harm studies rarely count.",
+    "lean_label_a": "Moderation works",
+    "lean_label_b": "Harm moves elsewhere",
+    "id": "does-removing-or-demoting-lawful-but"
+   },
+   {
+    "text": "Is platform moderation politically biased, or do uneven enforcement rates reflect what people post?",
+    "kind": "empirical",
+    "why": "Conservatives were suspended more often than liberals in the peak years of misinformation rules, which each side reads as proof of its own view, and platforms’ enforcement data are only partly public.",
+    "detail": "The case for bias: platforms made politically loaded calls that later proved wrong or overreaching. Facebook and Twitter limited the spread of the New York Post’s Hunter Biden laptop story in October 2020. Facebook removed claims that COVID-19 was man-made from February 2021 until late May 2021, when it lifted the ban “in light of ongoing investigations into the origin of COVID-19.” “Misinformation” and “hate” are contested categories, and the staff who define them come mostly from one side of politics. Meta’s own January 2025 statement conceded “mission creep that has made our rules too restrictive and too prone to over-enforcement.”\n\nThe case for neutral rules: a 2024 Nature study found pro-Trump accounts on Twitter were far more likely to be suspended in 2020 but also shared far more links to low-quality news sites, even when quality was judged by politically balanced or all-Republican panels of laypeople, and concluded that neutral policies would produce politically uneven enforcement (Mosleh et al.). Twitter’s own randomized experiment found its ranking algorithm amplified the mainstream political right more than the left in six of seven countries studied (Huszár et al., PNAS, 2022). The disputed decisions are a handful among billions.",
+    "lean_label_a": "Politically biased",
+    "lean_label_b": "Neutral rules",
+    "id": "is-platform-moderation-politically-biased-or"
+   },
+   {
+    "text": "Are a platform’s recommendation algorithms and design features its own conduct, apart from users’ speech?",
+    "kind": "value",
+    "why": "If curation is the platform’s own expression, as the Supreme Court said in 2024, one appeals court reasoned it is not third-party content that Section 230 shields. Whether feeds are products or editing decides what can be sued over.",
+    "detail": "The case that design is conduct: a platform that pushes a dangerous “blackout challenge” video to a ten-year-old is doing something its user did not do; the harm comes from the machine that selects, ranks and repeats, not from any single post. Infinite scroll, variable-reward notifications and stranger-messaging defaults for minors would be harmful whatever content flowed through them, and product-safety law has always covered defective design. Separating the pipe from the posts lets the law reach the business model without anyone deciding what users may say.\n\nThe case that curation is speech: every choice about what to show first is an editorial judgment of the kind newspapers make, and the First Amendment protects it. Almost any harm claim can be recast as a design claim, “the algorithm showed it to me,” so a design exception would swallow Section 230 and invite suits over every recommendation. Ranking is also how platforms demote harmful content, and features like autoplay matter only because of what they deliver, so regulating them is regulating speech by another name.",
+    "lean_label_a": "Design is conduct",
+    "lean_label_b": "Curation is speech",
+    "id": "are-a-platform-s-recommendation-algorithms"
+   },
+   {
+    "text": "Should governments set binding legal duties for how platforms handle speech that is legal?",
+    "kind": "value",
+    "why": "The EU and UK impose duties that reach lawful content, framed as managing risk, while the US Constitution sharply limits laws that turn on what lawful speech says. The same rule reads as accountability to some and censorship by proxy to others.",
+    "detail": "The case for democratic oversight: a few private companies already decide what billions can say and see, under rules they write, enforce and change on their own, often to suit advertisers or political winds. Public rules replace that unaccountable power with transparency, audits, appeal rights and independent researcher access. The Digital Services Act does not order platforms to remove lawful posts; it requires them to assess and reduce the risks their systems create and to explain their decisions. Every other powerful industry answers to public regulators.\n\nThe case for keeping the state out: when government sets duties about lawful speech, it controls that speech indirectly, and a duty to manage “risks” such as disinformation or civic discourse invites regulators to lean on platforms over contested political content. Regulators change with governments, and tools built by one administration are used by the next. Lawful speech should be governed by the people who post, read and host it, not by officials whose preferences shape what counts as harmful. The US government now treats Europe’s rules as a threat to Americans’ speech.",
+    "lean_label_a": "Democratic oversight",
+    "lean_label_b": "Keep the state out",
+    "id": "should-governments-set-binding-legal-duties"
+   },
+   {
+    "text": "When officials urge platforms to remove content, is that legitimate persuasion or censorship?",
+    "kind": "value",
+    "why": "Governments have real reasons to flag threats, terrorism and foreign influence, but platforms depend on government for regulation, antitrust decisions and contracts, so a request can carry an implied threat.",
+    "detail": "In Murthy v. Missouri the Supreme Court ruled 6 to 3 in 2024 that the plaintiffs challenging Biden-era contacts lacked standing, without deciding where the line lies.\n\nThe case that pressure is censorship: the First Amendment forbids government from doing indirectly what it cannot do directly, and a White House request to a company that needs its goodwill is rarely just a request. The Fifth Circuit found in 2023 that White House and Surgeon General’s office officials had coerced platforms, before the Supreme Court set that ruling aside, and in March 2026 the federal government agreed to a consent order barring the Surgeon General, the CDC and the Cybersecurity and Infrastructure Security Agency from threatening platforms into removing protected speech. Informal pressure escapes the accountability formal law would face.\n\nThe case that persuasion is legitimate: governments know which accounts are foreign intelligence fronts, which posts coordinate violence and which health claims are dangerous in a pandemic. Sharing that and asking platforms to apply their own rules is not censorship when they can say no, as they often did. The current administration has itself pressed platforms and imposed visa bans on a former EU commissioner and European campaigners over their dealings with platforms, which suggests the real dispute is whose requests, not whether governments make them.",
+    "lean_label_a": "Mostly coercion",
+    "lean_label_b": "Mostly persuasion",
+    "id": "when-officials-urge-platforms-to-remove"
+   },
+   {
+    "text": "Should platforms owe children stronger protections than adults, even if that means checking everyone’s age?",
+    "kind": "value",
+    "why": "Nearly everyone agrees some lawful content is unsuitable for children, but protecting them means knowing who is a child, which takes age checks for all users, and duties to shield minors can spread to what adults see.",
+    "detail": "The case for protecting children first: children cannot consent to engagement-maximizing design and are uniquely vulnerable to content promoting self-harm, eating disorders and dangerous challenges. Societies routinely restrict children’s access to lawful products, from alcohol to gambling to pornography, and age checks are standard offline. Platforms had years to set a floor voluntarily and did not, and age assurance can now be done without handing identity documents to platforms.\n\nThe case for keeping the internet open: checking every user’s age ends anonymous access to lawful speech, builds databases of identity documents open to breach, and falls hardest on those who most need anonymity, including abuse survivors and LGBTQ youth seeking community. Duties to shield minors lead platforms to restrict whole topics, such as sexual or mental health, for everyone. Lower courts have blocked many state social media laws on these grounds, though the Supreme Court upheld Texas’s age-verification rule for pornography sites in 2025 (Free Speech Coalition v. Paxton), which one side reads as opening the door and the other as limited to sexual material.",
+    "lean_label_a": "Protect children first",
+    "lean_label_b": "Keep the internet open",
+    "id": "should-platforms-owe-children-stronger-protections"
+   },
+   {
+    "text": "Should the largest platforms be treated as common carriers, required to host all lawful speech?",
+    "kind": "value",
+    "why": "Texas and Florida barred large platforms in 2021 from removing users or posts over viewpoint. The Supreme Court sent both cases back in 2024 without settling them, and the idea divides the right as well as separating it from the left.",
+    "detail": "In Moody v. NetChoice the Court held that content curation is protected expression, while three justices, in a concurrence by Justice Alito, doubted the challengers had shown the laws invalid; Justice Thomas had suggested in 2021 that large platforms might be regulated as common carriers.\n\nThe case for must-carry: a handful of platforms function as the public square, and being banned from them is close to exclusion from public life. Telephone companies, railroads and the post office long had to serve all comers without judging the message, and platforms with network effects hold similar power. They enjoy a federal liability shield on the theory that they are conduits, not publishers, and should not get the benefits of both roles.\n\nThe case for letting platforms choose: deciding what to host is the core of editorial freedom, and forcing a private service to carry speech it rejects is compelled speech. A must-carry rule would require platforms to host spam, harassment and extremist propaganda that happens to be lawful, driving away users and advertisers. Section 230’s second clause exists so platforms can remove objectionable material without becoming liable for what they leave up, and if users dislike a platform’s rules, rivals from Bluesky to Truth Social are the remedy.",
+    "lean_label_a": "Platforms must carry",
+    "lean_label_b": "Platforms may choose",
+    "id": "should-the-largest-platforms-be-treated"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Hold platforms legally responsible for harm",
+    "color_key": "green",
+    "steelman": "Every other industry answers for the harm its products foreseeably cause. Platforms profit from what their systems amplify, and they should answer for it too.",
+    "detail": "Platforms are not passive bulletin boards. They are among the most profitable businesses in history, and they earn more when content provokes, enrages and keeps people scrolling, including content that harasses, deceives and endangers children. For thirty years Section 230 has told them no victim can hold them to account in court for what their systems push, so safety teams get cut whenever budgets tighten, as at X after 2022 and at Meta in 2025. A British coroner concluded in 2022 that 14-year-old Molly Russell died from self-harm while suffering from depression and “the negative effects of on-line content.” We do not ask platforms to review every post in advance or to censor opinions. We ask what the law asks of a carmaker or a drug company: identify the risks your product creates, take reasonable steps to reduce them, and pay when you fail.\n\nWe differ on the instrument. Americans among us mostly want to repeal or sunset Section 230 so ordinary tort law, applied by juries, decides; Europeans and the British prefer a regulator enforcing risk duties with fines. Europe has shown this can work without silencing anyone: its first penalty under the Digital Services Act punished deceptive design and blocked research, not anyone’s opinion. To the objection that liability means mass deletion: platforms already remove speech on a vast scale under their own rules, with no due process. Accountability adds notice, reasons, appeal and audits, and a duty of reasonable care is judged by what a careful company would do, not by one post that slipped through.",
+    "proponents": "Lindsey Graham, Dick Durbin, Mark DeSaulnier, Jimmy Patronis, European Commission, Ofcom, Center for Countering Digital Hate, Molly Rose Foundation",
+    "id": "hold-platforms-legally-responsible-for-harm"
+   },
+   {
+    "name": "Protect lawful viewpoints from removal",
+    "color_key": "blue",
+    "steelman": "The danger is not that platforms leave up too much. It is that a few companies, often prodded by officials, decide which lawful opinions Americans may share.",
+    "detail": "During the pandemic and the 2020 election, platforms removed or throttled true reporting, legitimate scientific hypotheses and ordinary political dissent, and the White House leaned on them to do more. Mark Zuckerberg told the House Judiciary Committee in August 2024 that Biden administration officials had “repeatedly pressured” Meta to remove COVID-19 content, including humor and satire, and that Meta should not have demoted the Hunter Biden laptop story. “Misinformation” and “hate” turned out to mean whatever the people writing the rules disagreed with, and most Americans can see it.\n\nThe answer is not new duties for platforms or regulators to police lawful speech, which in practice means removing more disfavored views. Stop government from pressuring platforms, hold platforms to their own promises of fair treatment, and resist foreign regimes that would export their speech codes to Americans. Some of us would require the largest platforms to carry lawful speech regardless of viewpoint, as Texas and Florida tried; others prefer consumer-protection law, transparency rules, or narrowing Section 230 for platforms that act as censors. Nearly all of us favor counter-speech tools over removal. Platforms stay free to remove spam, pornography, illegal content and harassment under clear, evenly applied rules; what they should not do is claim immunity as neutral conduits while acting as partisan editors of political debate.",
+    "proponents": "Andrew Ferguson, Jim Jordan, Brendan Carr, Marco Rubio, Donald Trump, Elon Musk",
+    "id": "protect-lawful-viewpoints-from-removal"
+   },
+   {
+    "name": "Keep the liability shield and platforms’ editorial freedom",
+    "color_key": "amber",
+    "steelman": "The person who posts something is responsible for it, not the site that hosts it. That simple rule is why the internet can carry user speech at all.",
+    "detail": "Without Section 230, every review site, forum, comment section, Wikipedia page and small community would face lawsuits over what users say, and the rational response would be to host far less and remove anything anyone complains about. The biggest companies would survive; their small competitors and nonprofits would not. Repeal would make platforms more cautious, not more careful, and the first speech to go would be about sexual health, abortion, police misconduct, #MeToo accusations and unpopular politics. The one US experiment shows it: after the 2018 carve-out for sex trafficking, Craigslist closed its personals section, and federal prosecutors had brought only one case under the new criminal provision by March 2021.\n\nThe shield has never protected platforms from federal criminal law, intellectual property law or liability for content they create themselves. What it blocks is liability for other people’s speech, and there the question is whether making hosts liable reduces harm without destroying far more lawful speech. The First Amendment also protects a platform’s choice of what to carry, so forced-carriage laws fail too. Senator Ron Wyden, who co-wrote the law, still puts it simply: people who post are responsible for their content, and the big companies should moderate more. The answer to bad moderation is competition, transparency and user choice. Some of us accept product claims that have nothing to do with publishing users’ posts; others see design suits as a way around the law.",
+    "proponents": "Electronic Frontier Foundation, Ron Wyden, Chris Cox, NetChoice, Center for Democracy & Technology, Cato Institute, Wikimedia Foundation, Eric Goldman",
+    "id": "keep-the-liability-shield-and-platforms"
+   },
+   {
+    "name": "Hold platforms liable for design, not speech",
+    "color_key": "rust",
+    "steelman": "The harm comes less from any user’s words than from feeds built never to end. Keep the shield for speech, and lift it for the machinery that decides what to push.",
+    "detail": "Both the repealers and the defenders of Section 230 are fighting about the wrong thing. What has turned parents, juries and regulators against platforms is product choices: notifications timed to pull children back, recommendation systems that learn a lonely teenager lingers on self-harm content and serve more of it. Those are the company’s own conduct, and holding it liable for them leaves users’ speech untouched. Courts and regulators have begun to agree. A Los Angeles jury found Meta and YouTube negligent in designing their apps on March 25, 2026, in the first bellwether trial of California’s social media addiction cases, and the European Commission has preliminarily found that TikTok, Instagram and Facebook breach the Digital Services Act through addictive design.\n\nThe line holds if you ask one question: would the harm exist no matter what content flowed through the feature? Compulsive-use loops, nighttime notifications to children and default location sharing fail that test; a claim that a platform showed someone an offensive post passes it and stays barred. We divide over recommendation algorithms. Public Knowledge would keep ranking protected as editorial judgment and target only features harmful regardless of content; Jaron Lanier, Allison Stanger and Audrey Tang would remove protection for engagement-optimized amplification itself.",
+    "proponents": "Public Knowledge, Jaron Lanier, Allison Stanger, Audrey Tang, Frances Haugen",
+    "id": "hold-platforms-liable-for-design-not"
+   },
+   {
+    "name": "Give users control of moderation",
+    "color_key": "purple",
+    "steelman": "No single company or government can set one standard for billions of people. Let each of us choose the filters, labelers and feeds we trust.",
+    "detail": "Whether platforms or governments should decide which lawful speech people see has no good answer, because both put one central authority in charge for billions of people with different values, languages and tolerances. The trouble is not that moderation is too strict or too loose; it is that there is one dial and someone else holds it. Split the job. A base layer handles illegal content, threats and targeted harassment, and users choose among competing filters, labelers and feeds run by communities, publishers or anyone they trust. A parent can pick strict filters for a child, a researcher can see everything, and no central moderator is left worth capturing.\n\nBluesky has run this at scale since 2024, with independent labeling services users subscribe to on top of the company’s own moderation, and Community Notes shows that users across viewpoints can supply context that changes how people share. Filter bubbles are a real cost, but a smaller one than a single point of control over what billions may say, and blocking tools protect targets whatever filters others choose. Some of us build new networks on open protocols; others, like the political scientist Francis Fukuyama, want rules forcing dominant platforms to let outside curation services plug in.",
+    "proponents": "Bluesky, Francis Fukuyama, Jack Dorsey, Mike Masnick, Project Liberty",
+    "id": "give-users-control-of-moderation"
+   }
+  ],
+  "crux": {
+   "lead": "Does policing lawful but harmful speech prevent more harm than it silences, and who can be trusted to do it?",
+   "lead_highlight": "prevent more harm than it silences",
+   "subtitle": "If the power to remove lawful speech mostly stops real harm, someone should hold it and answer for using it well. If it mostly sweeps away legitimate speech, the less of it anyone holds, the better. Each camp also trusts a different holder: companies, governments, courts or users.",
+   "empirical": "Part of this is measurable. How much harassment, threats, self-harm and radicalization does moderating lawful content actually prevent, and how much lawful and political speech is lost to it? Can rules aimed at product design win the safety gains without the speech costs? Does enforcement fall unevenly on political groups once differences in what they post are counted? The evidence is thin on every side, and the companies hold most of the data.",
+   "values": "The rest no study can settle. How to weigh a concrete harm to one identifiable person, a harassed teenager or a threatened official, against a thin loss of lawful speech spread across millions, including speech later proved right. And whom to trust with the call: a company answerable to shareholders, a government answerable to voters and to whoever holds office next, a court judging after the fact, or each person choosing alone."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Read the Congressional Research Service overview of Section 230",
+    "description": "Congress’s nonpartisan legal research service explains in plain terms what Section 230 says, how courts have read it and the main proposals to change it.",
+    "url": "https://www.everycrsreport.com/reports/R46751.html",
+    "for_position": null,
+    "id": "read-the-congressional-research-service-overview"
+   },
+   {
+    "kind": "policy",
+    "title": "Tell your members of Congress where you stand on the Sunset Section 230 Act",
+    "description": "Read the official text of the House bill, H.R. 10332, which has a Senate companion in S. 3546, then tell your representative and senators whether it should pass.",
+    "url": "https://www.govinfo.gov/app/details/BILLS-119hr10332ih",
+    "for_position": null,
+    "id": "tell-your-members-of-congress-where"
+   },
+   {
+    "kind": "donate",
+    "title": "Support the Molly Rose Foundation",
+    "description": "A UK charity set up after Molly Russell’s death that campaigns for stronger online safety regulation and runs suicide-prevention and education work with young people.",
+    "url": "https://mollyrosefoundation.org/donate/",
+    "for_position": "Hold platforms legally responsible for harm",
+    "id": "support-the-molly-rose-foundation"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the House Judiciary Committee’s case against the Digital Services Act",
+    "description": "The committee majority’s July 2025 staff report, “The Foreign Censorship Threat,” sets out its evidence that European rules push US platforms to restrict Americans’ lawful speech.",
+    "url": "https://judiciary.house.gov/sites/evo-subsites/republicans-judiciary.house.gov/files/2025-07/DSA_Report%26Appendix%2807.25.25%29.pdf",
+    "for_position": "Protect lawful viewpoints from removal",
+    "id": "read-the-house-judiciary-committee-s"
+   },
+   {
+    "kind": "donate",
+    "title": "Support the Electronic Frontier Foundation",
+    "description": "The digital civil-liberties group that defends Section 230 in court and in Congress, and opposes both wider platform liability and government pressure on platforms.",
+    "url": "https://supporters.eff.org/donate",
+    "for_position": "Keep the liability shield and platforms’ editorial freedom",
+    "id": "support-the-electronic-frontier-foundation"
+   },
+   {
+    "kind": "donate",
+    "title": "Support Public Knowledge",
+    "description": "A Washington public-interest group that argues for holding platforms liable for harmful design features while keeping protection for what their users say.",
+    "url": "https://publicknowledge.org/donate/",
+    "for_position": "Hold platforms liable for design, not speech",
+    "id": "support-public-knowledge"
+   },
+   {
+    "kind": "local",
+    "title": "Choose or run your own moderation service on Bluesky",
+    "description": "Subscribe to independent labeling services that hide, blur or flag content, or run one for your own community, so moderation choices sit with users rather than one company.",
+    "url": "https://docs.bsky.app/docs/advanced-guides/moderation",
+    "for_position": "Give users control of moderation",
+    "id": "choose-or-run-your-own-moderation"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Become a Community Notes contributor on X",
+    "description": "Write and rate context notes on posts. Notes go live only with support from contributors who usually disagree, adding context to a post instead of taking it down.",
+    "url": "https://communitynotes.x.com/guide/en/contributing/signing-up",
+    "for_position": "Protect lawful viewpoints from removal",
+    "id": "become-a-community-notes-contributor-on"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the Oversight Board’s rulings on hard cases",
+    "description": "The independent board that reviews Meta’s content decisions publishes its full reasoning on contested removals, a practical way to see the trade-offs case by case.",
+    "url": "https://www.oversightboard.com/decision/",
+    "for_position": null,
+    "id": "read-the-oversight-board-s-rulings"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Search the EU’s public record of moderation decisions",
+    "description": "Browse or download platform moderation decisions filed under the Digital Services Act, each with its stated reason, its legal or policy ground and whether it was automated.",
+    "url": "https://transparency.dsa.ec.europa.eu/?lang=en",
+    "for_position": null,
+    "id": "search-the-eu-s-public-record"
+   }
+  ]
+ },
+ "icon": "flag-pennant",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: a large open laptop seen from the front as the dominant focal mass, its screen showing a simple feed of three stacked post cards, each card a rounded rectangle with a plain filled circle dot and two short blank lines; the top card is lifted out of the column and tilted, overlapping the laptop's upper right frame, with a small triangular pennant flag on a short pole at its corner; everything flat, no drop shadow under any element; three small rounded speech bubbles with no text rise in a loose trail from behind the laptop to the upper left; the laptop sits on a low rounded mound, outlined and softly filled; one long thin rolling hill line runs across the whole width of the frame behind the mound as the connective element; a small cloud at the upper right.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #2f8f86, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: people, hands, faces, text, letters, logos, platform logos, bird, thumbs up, likes, hearts, padlocks, gags, taped mouths, muzzles, chains, scissors, erasers, trash cans, red X marks, crossed-out bubbles, prohibition signs, slashes, stop signs, censored bars, megaphones, gavels, scales of justice, courthouses, flags of nations, shields, warning triangles, exclamation marks, fire, arrows."
 }

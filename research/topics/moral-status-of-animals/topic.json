@@ -1,8 +1,8 @@
 {
  "slug": "moral-status-of-animals",
  "title": "Moral Status of Animals",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-09-30T01:04:11+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Whether and how much animals matter morally. The status question, not farming or wild suffering.",
@@ -14,5 +14,733 @@
   "meat-livestock-climate",
   "ai-consciousness",
   "moral-status-of-the-unborn"
- ]
+ ],
+ "content": {
+  "overview": {
+   "summary": "Whether animals matter morally for their own sake, how much their interests weigh against ours, and what that standing requires.",
+   "scope_covered": "Which animals can feel; how much their interests weigh against human ones; what form their standing takes, from protection against needless suffering to rights; the sentience science behind it; and the law on animals as property, legal persons and sentient beings.",
+   "scope_excluded": "Farming practices, diet, meat and climate; wild animal suffering and whether to intervene in nature; whether artificial systems could be conscious. Farm, fish and lab numbers appear only to show what rides on the answer.",
+   "why_now": "On July 17, 2026, the Michigan Supreme Court declined to hear the Nonhuman Rights Project’s appeal for seven zoo chimpanzees, leaving in place a ruling that chimpanzees are not persons. One justice dissented, saying the court should have asked whether habeas law should evolve.",
+   "why_now_source_label": "Michigan Supreme Court, order in SC 169351",
+   "why_now_source_url": "https://www.courts.michigan.gov/4a0b3f/siteassets/case-documents/uploads/sct/public/orders/169351_97_01.pdf"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "Philosophers who think some members of each group are conscious",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Adult humans",
+       "value": "95.2",
+       "highlight": false
+      },
+      {
+       "label": "Cats",
+       "value": "88.6",
+       "highlight": false
+      },
+      {
+       "label": "Newborn babies",
+       "value": "84.3",
+       "highlight": false
+      },
+      {
+       "label": "Fish",
+       "value": "65.3",
+       "highlight": true
+      },
+      {
+       "label": "Flies",
+       "value": "34.5",
+       "highlight": false
+      },
+      {
+       "label": "Worms",
+       "value": "24.2",
+       "highlight": false
+      },
+      {
+       "label": "Plants",
+       "value": "7.2",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a 2020 survey of professional philosophers, 89 percent accepted or leaned toward cats being conscious, 65 percent fish, 35 percent flies and 24 percent worms.",
+     "detail": "Respondents judged each group separately, so the figures do not sum to 100. Rejection rates complete the picture: 3.9 percent rejected or leaned against cats being conscious, 14.7 percent fish, 38.4 percent flies and 46.6 percent worms, so expert opinion splits roughly evenly at flies and worms. The survey went to faculty at leading philosophy departments worldwide, and this optional question drew 1,092 answers. Philosophers are not neuroscientists, but they are the profession that has argued longest about what consciousness requires, and their ordering (mammals, then fish, then insects, then worms) matches the ordering in most scientific reviews.",
+     "source_label": "PhilPapers Survey 2020 (Bourget and Chalmers), “Other minds,” target faculty",
+     "source_url": "https://survey2020.philpeople.org/survey/results/all",
+     "source_published": "2020",
+     "source_accessed": "2026-09-29",
+     "id": "philosophers-who-think-some-members-of"
+    },
+    {
+     "label": "Researchers who have signed the New York Declaration on Animal Consciousness",
+     "viz": "bar",
+     "wide": false,
+     "value": "611",
+     "unit": "signatories",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "611 researchers have signed a 2024 declaration of strong support for consciousness in mammals and birds and a realistic possibility of it in all vertebrates and many invertebrates.",
+     "detail": "Launched at New York University in April 2024 by a group including Jonathan Birch, Kristin Andrews and Jeff Sebo, the declaration names reptiles, amphibians and fishes among the vertebrates, and at minimum cephalopod mollusks, decapod crustaceans and insects among the invertebrates. Its third claim is the ethical one: where there is a realistic possibility of conscious experience, “it is irresponsible to ignore that possibility in decisions affecting that animal.” It follows the 2012 Cambridge Declaration on Consciousness, which held that humans are not unique in possessing the neurological substrates that generate consciousness. The declaration records how many researchers endorse a view; it is not a survey of what share of the field agrees.",
+     "source_label": "The New York Declaration on Animal Consciousness, New York University",
+     "source_url": "https://sites.google.com/nyu.edu/nydeclaration/declaration",
+     "source_published": "2024–2026",
+     "source_accessed": "2026-09-29",
+     "id": "researchers-who-have-signed-the-new"
+    },
+    {
+     "label": "Estimated capacity for welfare relative to a human, by species",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "human = 1",
+     "series": [
+      {
+       "label": "Pigs",
+       "value": "0.515",
+       "highlight": false
+      },
+      {
+       "label": "Chickens",
+       "value": "0.332",
+       "highlight": true
+      },
+      {
+       "label": "Octopuses",
+       "value": "0.213",
+       "highlight": false
+      },
+      {
+       "label": "Carp",
+       "value": "0.089",
+       "highlight": false
+      },
+      {
+       "label": "Bees",
+       "value": "0.071",
+       "highlight": false
+      },
+      {
+       "label": "Salmon",
+       "value": "0.056",
+       "highlight": false
+      },
+      {
+       "label": "Crayfish",
+       "value": "0.038",
+       "highlight": false
+      },
+      {
+       "label": "Shrimp",
+       "value": "0.031",
+       "highlight": false
+      },
+      {
+       "label": "Crabs",
+       "value": "0.023",
+       "highlight": false
+      },
+      {
+       "label": "Black soldier flies",
+       "value": "0.013",
+       "highlight": false
+      },
+      {
+       "label": "Silkworms",
+       "value": "0.002",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Rethink Priorities’ median estimates put a pig’s capacity for welfare at about half a human’s and a chicken’s at a third, if each is sentient; the authors call them highly uncertain placeholders.",
+     "detail": "A welfare range is the gap between the best and worst experiences an animal can have, expressed as a fraction of the human range. The team scored each species on dozens of behavioral and neurological proxies and combined them under several models. The estimates assume that welfare consists only of pleasant and unpleasant experiences and that equal amounts count equally whatever the species, and the authors describe them as “the best such placeholders available.” The 90 percent intervals run from 0.005 to 1.031 for pigs, 0.002 to 0.869 for chickens and 0 to 1.149 for shrimp. Critics on one side say the proxy method overcounts simple animals; critics on the other say capacity for suffering need not track brain complexity. The estimates are used mainly by charities deciding where animal-welfare spending does most good, which is also why they are contested.",
+     "source_label": "Rethink Priorities, Moral Weight Project, welfare range estimates",
+     "source_url": "https://rethinkpriorities.org/research-area/welfare-range-estimates/",
+     "source_published": "2023",
+     "source_accessed": "2026-09-29",
+     "id": "estimated-capacity-for-welfare-relative-to"
+    },
+    {
+     "label": "Americans who say animals deserve the same rights as people",
+     "viz": "radial",
+     "wide": false,
+     "value": "32",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2015, 32 percent of Americans said animals deserve the same rights as people, 62 percent some protection while still being used for human benefit, and 3 percent little protection.",
+     "detail": "The equal-rights answer rose from 25 percent in 2003 and 2008, with increases across all major demographic groups; women and Democrats chose it more often than men and Republicans, and there was little difference by age. The middle answer, protection plus legitimate use, is the settled majority view and the one most animal law reflects. The 2015 reading rests on a half-sample of 497 adults, with a margin of error of plus or minus 5 points, and Gallup has not published the question since. The same poll found Americans most concerned about animals in circuses, competitive sports and research, and less about farm animals: 26 percent were very concerned about how livestock are treated.",
+     "source_label": "Gallup, “In U.S., More Say Animals Should Have Same Rights as People”",
+     "source_url": "https://news.gallup.com/poll/183275/say-animals-rights-people.aspx",
+     "source_published": "2015",
+     "source_accessed": "2026-09-29",
+     "id": "americans-who-say-animals-deserve-the"
+    },
+    {
+     "label": "Top-court judges siding with the animal in personhood cases",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "judges",
+     "series": [
+      {
+       "label": "Ecuador, 2022",
+       "value": "7 of 9",
+       "highlight": false
+      },
+      {
+       "label": "New York, 2022",
+       "value": "2 of 7",
+       "highlight": false
+      },
+      {
+       "label": "Michigan, 2026",
+       "value": "1 of 7",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Ecuador’s top court held 7 to 2 in 2022 that animals are subjects of rights; the top courts of New York, Colorado and Michigan have turned away personhood claims for elephants and chimpanzees.",
+     "detail": "Courts are where the status question has to be answered in a sentence. The New York majority did not dispute “the impressive capabilities of elephants” but held that habeas corpus protects human beings. The Colorado Supreme Court reached the same result for five elephants in January 2025, holding that the state’s habeas statute applies to persons whatever an animal’s cognitive or social sophistication, and that legislators are better placed to change that. Courts in Argentina (the orangutan Sandra and the chimpanzee Cecilia), India and Pakistan (the elephant Kaavan, 2020) have also used the language of rights or personhood in particular cases. The Michigan count is the vote on whether to hear the appeal, not a ruling on the merits.",
+     "source_label": "Constitutional Court of Ecuador, Judgment 253-20-JH/22; NY Court of Appeals; Michigan Supreme Court",
+     "source_url": "https://www.nonhumanrights.org/wp-content/uploads/Final-Judgment-Estrellita-w-Translation-Certification.pdf",
+     "source_published": "2022–2026",
+     "source_accessed": "2026-09-29",
+     "id": "top-court-judges-siding-with-the"
+    },
+    {
+     "label": "Land animals slaughtered for meat worldwide",
+     "viz": "bar",
+     "wide": false,
+     "value": "87.9",
+     "unit": "billion",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "About 88 billion land animals were slaughtered for meat in 2024, nine in ten of them chickens.",
+     "detail": "Chickens account for 78.53 billion, followed by ducks (4.23 billion), pigs (1.49 billion), geese, sheep, rabbits, goats, turkeys and cattle (0.30 billion). The total is the sum of the species rows in the dataset; it excludes laying hens and dairy cows until they are slaughtered, and it excludes fish and other aquatic animals. The 2023 total was 86.3 billion. The figure is here not to argue about farming, which belongs to another topic, but because it sets the stakes of the status question: whatever weight a chicken’s experience carries is multiplied by nearly 80 billion a year.",
+     "source_label": "Our World in Data, from UN Food and Agriculture Organization (FAOSTAT) data",
+     "source_url": "https://ourworldindata.org/grapher/land-animals-slaughtered-for-meat",
+     "source_published": "2024",
+     "source_accessed": "2026-09-29",
+     "id": "land-animals-slaughtered-for-meat-worldwide"
+    },
+    {
+     "label": "Sentience criteria met with high confidence, by invertebrate group",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "of 8",
+     "series": [
+      {
+       "label": "Octopods",
+       "value": "7",
+       "highlight": true
+      },
+      {
+       "label": "True crabs",
+       "value": "5",
+       "highlight": false
+      },
+      {
+       "label": "Squid and cuttlefish",
+       "value": "4",
+       "highlight": false
+      },
+      {
+       "label": "Anomuran crabs",
+       "value": "3",
+       "highlight": false
+      },
+      {
+       "label": "Lobsters and crayfish",
+       "value": "3",
+       "highlight": false
+      },
+      {
+       "label": "Nautiloids",
+       "value": "1",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "A 2021 review for the UK government found very strong evidence of sentience in octopuses, strong in true crabs, and substantial in squid, cuttlefish, hermit-type crabs, lobsters and crayfish.",
+     "detail": "The review drew on more than 300 scientific studies and scored each group against eight criteria, from having nociceptors and integrative brain regions to trading off threats against rewards, learning from injury and valuing painkillers when hurt. High or very high confidence on seven or more criteria counted as very strong evidence, five or more as strong, three or more as substantial. A missing criterion almost always reflected missing research rather than evidence against: barely studied groups such as nautiloids and farmed penaeid shrimps score low for that reason. The review recommended treating all cephalopods and decapods as sentient, and the government amended the Animal Welfare (Sentience) Bill to include them before it became law in April 2022, the first protection decapods had in UK animal welfare law.",
+     "source_label": "Birch, Burn, Schnell, Browning and Crump, sentience review for DEFRA, LSE",
+     "source_url": "https://www.lse.ac.uk/news/news-assets/pdfs/2021/sentience-in-cephalopod-molluscs-and-decapod-crustaceans-final-report-november-2021.pdf",
+     "source_published": "2021",
+     "source_accessed": "2026-09-29",
+     "id": "sentience-criteria-met-with-high-confidence"
+    },
+    {
+     "label": "Wild fish caught each year, estimated",
+     "viz": "bar",
+     "wide": false,
+     "value": "1.1–2.2",
+     "unit": "trillion",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "An estimated 1.1 to 2.2 trillion wild fish were caught each year on average from 2000 to 2019, and an estimated 130 billion farmed fish were killed in 2022.",
+     "detail": "Official statistics count fish by weight, not number, so these are estimates made by dividing catch tonnages by average weights for each species; the wide range reflects that uncertainty. Mood and Brooke estimate that wild-caught fishes made up about 87.5 percent of vertebrates killed for human consumption in 2019. Their companion estimate for farmed finfish, published by fishcount, has a range of 86 to 180 billion. The numbers matter here because fish sentience is where expert opinion begins to divide: if fish can suffer, most of the animals humans kill are fish; if they cannot, the moral picture changes by an order of magnitude.",
+     "source_label": "Mood and Brooke, “Estimating global numbers of fishes caught from the wild,” Animal Welfare",
+     "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10951671/",
+     "source_published": "2000–2019",
+     "source_accessed": "2026-09-29",
+     "id": "wild-fish-caught-each-year-estimated"
+    },
+    {
+     "label": "UK adults who agree each animal can feel pain",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Lobsters",
+       "value": "83.0",
+       "highlight": false
+      },
+      {
+       "label": "Octopuses",
+       "value": "80.7",
+       "highlight": false
+      },
+      {
+       "label": "Crabs",
+       "value": "78.1",
+       "highlight": false
+      },
+      {
+       "label": "Fish",
+       "value": "77.2",
+       "highlight": true
+      },
+      {
+       "label": "Honey bees",
+       "value": "73.1",
+       "highlight": false
+      },
+      {
+       "label": "Shrimp",
+       "value": "62.2",
+       "highlight": false
+      },
+      {
+       "label": "Caterpillars",
+       "value": "58.1",
+       "highlight": false
+      },
+      {
+       "label": "Flies",
+       "value": "54.2",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a 2021 UK survey, 83 percent agreed that lobsters can feel pain and 54 percent that flies can, compared with 77 percent for fish.",
+     "detail": "Respondents rated fourteen animals on whether each is “capable of feeling pain.” Vertebrates ranged from fish up to 99.1 percent; the invertebrates ranged from about 44 to 83 percent, and outright disagreement was low for all of them, from 3.2 percent for lobsters to 18.8 percent for mealworms. The 1,963 adults were recruited online and weighted to match the UK population, with a stated margin of error under 3 points. The survey was commissioned by a research organization that works on invertebrate welfare and submitted to Parliament to argue that the sentience bill should not be limited to vertebrates.",
+     "source_label": "Rethink Priorities, written evidence to UK Parliament on the Animal Welfare (Sentience) Bill",
+     "source_url": "https://committees.parliament.uk/writtenevidence/37632/html/",
+     "source_published": "2021",
+     "source_accessed": "2026-09-29",
+     "id": "uk-adults-who-agree-each-animal"
+    },
+    {
+     "label": "US states with felony-level animal cruelty laws",
+     "viz": "bar",
+     "wide": false,
+     "value": "50",
+     "unit": "of 50",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Since South Dakota acted in 2014, every US state and the District of Columbia has made at least some forms of animal cruelty a felony.",
+     "detail": "This is the settled floor of the debate in American law: almost no one defends cruelty for its own sake. The dispute is over everything above that floor. Cruelty statutes typically exempt customary farming, hunting, pest control and research practices, so they protect animals against gratuitous harm by individuals rather than against uses society accepts. Congress added a federal crime of animal crushing in the PACT Act of 2019. Those who hold that animals have their own moral standing read the felony laws as recognition of it; those who ground duties to animals in human character read the same laws as a rule about what kind of people we should be.",
+     "source_label": "JAVMA News, “South Dakota is last state to make animal cruelty a felony”",
+     "source_url": "https://www.avma.org/javma-news/2014-06-15/south-dakota-last-state-make-animal-cruelty-felony",
+     "source_published": "2014",
+     "source_accessed": "2026-09-29",
+     "id": "us-states-with-felony-level-animal"
+    },
+    {
+     "label": "Year a civil code first stopped classing animals as things",
+     "viz": "bar",
+     "wide": false,
+     "value": "1988",
+     "unit": "Austria",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Austria rewrote its civil code in 1988 so that animals are no longer legally things; more than a dozen other legal systems in Europe and beyond have since followed.",
+     "detail": "Reforms followed in Germany (1990), Poland (1997), Switzerland (2003), Catalonia (2006), the Czech Republic (2012), the Netherlands (2013), France and Quebec (2015), Portugal and Colombia (2016) and Spain (2022), and Michel also lists Azerbaijan, Moldova and Liechtenstein. (Portugal’s law was published in March 2017; Michel dates it to 2016.) The effect is mostly symbolic: in nearly every case animals can still be owned, bought and sold, and property rules apply unless a special rule says otherwise. Early reforms said what animals are not; the later French and Portuguese ones describe animals as living beings endowed with sentience. Separately, the EU’s founding treaty has recognized animals as “sentient beings” since the Treaty of Lisbon took effect in 2009.",
+     "source_label": "Margot Michel, “Moving Away from Thinghood in Law,” Journal of Animal Law, Ethics and One Health",
+     "source_url": "https://leoh.ch/article/view/4295/3113",
+     "source_published": "2023",
+     "source_accessed": "2026-09-29",
+     "id": "year-a-civil-code-first-stopped"
+    },
+    {
+     "label": "Neurons in the nervous system, by species",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "billion",
+     "series": [
+      {
+       "label": "African elephant",
+       "value": "257",
+       "highlight": false
+      },
+      {
+       "label": "Human",
+       "value": "86",
+       "highlight": true
+      },
+      {
+       "label": "Chimpanzee",
+       "value": "28",
+       "highlight": false
+      },
+      {
+       "label": "Dog",
+       "value": "2.253",
+       "highlight": false
+      },
+      {
+       "label": "Pig",
+       "value": "2.22",
+       "highlight": false
+      },
+      {
+       "label": "Raven",
+       "value": "2.171",
+       "highlight": false
+      },
+      {
+       "label": "Cat",
+       "value": "0.76",
+       "highlight": false
+      },
+      {
+       "label": "Octopus",
+       "value": "0.5",
+       "highlight": false
+      },
+      {
+       "label": "Chicken",
+       "value": "0.221",
+       "highlight": false
+      },
+      {
+       "label": "Honey bee",
+       "value": "0.00096",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "A human has about 86 billion neurons, a pig about 2.2 billion, a chicken about 220 million, a honey bee under a million and the roundworm C. elegans exactly 302.",
+     "detail": "Neuron counts are one of the few physical measures anyone has proposed as a rough proxy for how much an animal’s experiences might matter, and a standing illustration of why proxies are contested. The elephant’s lead comes mostly from its cerebellum; humans lead in the cerebral cortex, with about 16 billion. Birds pack neurons far more densely than mammals, so a raven matches a pig with a brain a fraction of the size. The table mixes whole-brain counts for vertebrates with whole-nervous-system counts for invertebrates, and all but the roundworm’s are estimates from a small number of studies, some not independently replicated, including the dog’s. Weighing interests by neuron count gives insects very low weights; those who reject the proxy argue that the intensity of a feeling need not scale with the number of cells producing it.",
+     "source_label": "Wikipedia, List of animals by number of neurons (mainly Herculano-Houzel and colleagues)",
+     "source_url": "https://en.wikipedia.org/wiki/List_of_animals_by_number_of_neurons",
+     "source_published": "1986–2024",
+     "source_accessed": "2026-09-29",
+     "id": "neurons-in-the-nervous-system-by"
+    },
+    {
+     "label": "Americans who identify as vegetarian or vegan",
+     "viz": "radial",
+     "wide": false,
+     "value": "5",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2023, 4 percent of American adults said they were vegetarian and 1 percent vegan, figures little changed since 2012.",
+     "detail": "The gap between what people say about animals and what they do is one of the most discussed facts in this debate; psychologists call caring about animals while eating them the “meat paradox.” Fewer than 1 percent identify as both, and vegetarianism was slightly higher, at 6 percent, in 1999 and 2001. Those who hold that animals have high moral status read the gap as an inconsistency that argument can correct; those who hold that human priority is right read it as evidence that ordinary moral practice already weighs animals below people, and that philosophy should explain that judgment rather than overturn it.",
+     "source_label": "Gallup, “In U.S., 4% Identify as Vegetarian, 1% as Vegan”",
+     "source_url": "https://news.gallup.com/poll/510038/identify-vegetarian-vegan.aspx",
+     "source_published": "2023",
+     "source_accessed": "2026-09-29",
+     "id": "americans-who-identify-as-vegetarian-or"
+    },
+    {
+     "label": "Animals used for the first time in research, EU and Norway",
+     "viz": "bar",
+     "wide": false,
+     "value": "7,974,226",
+     "unit": "animals",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Nearly 8 million animals were used for the first time in scientific research in the EU and Norway in 2023, down 4.9 percent from 2022; in the EU-27 alone the figure was 6.4 million.",
+     "detail": "Research is where the status question is argued most openly, because both sides accept that it causes animals to suffer and disagree about whether human benefit justifies it. In 2023, 95.4 percent of the animals were mice, fish, rats, rabbits and birds; dogs, cats and monkeys together were 0.22 percent. EU Directive 2010/63/EU requires the replacement, reduction and refinement of animal use and bans the use of great apes except in exceptional circumstances. The United States counts far fewer because its Animal Welfare Act excludes birds, and rats and mice bred for research, which the American Psychological Association estimated in 2002 at about 95 percent of laboratory animals: itself a statement in law about which animals count.",
+     "source_label": "European Commission 2023 statistics, summarized by the European Animal Research Association",
+     "source_url": "https://www.eara.eu/press-releases/the-2023-eu-figures-on-the-number-of-animals-used-in-research-were-released",
+     "source_published": "2023",
+     "source_accessed": "2026-09-29",
+     "id": "animals-used-for-the-first-time"
+    },
+    {
+     "label": "Philosophers’ views on eating animals and animal products",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Omnivorism",
+       "value": "48.0",
+       "highlight": true
+      },
+      {
+       "label": "Vegetarianism",
+       "value": "26.5",
+       "highlight": false
+      },
+      {
+       "label": "Veganism",
+       "value": "18.4",
+       "highlight": false
+      },
+      {
+       "label": "Other",
+       "value": "12.5",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2020, 48 percent of professional philosophers accepted or leaned toward eating animals being permissible in ordinary circumstances, and 45 percent toward it being impermissible.",
+     "detail": "Eating is the most common use of animals, and whether it is permissible turns largely on how much they matter, so this is the clearest indirect measure of what the profession that argues about moral status concludes. Omnivorism holds that eating both animals and animal products is permissible; vegetarianism, that meat is impermissible but other products are not; veganism, that both are impermissible. The 45 percent sums the vegetarian and vegan answers; respondents could accept more than one option, so the answers total slightly over 100, and 1,764 answered. An earlier 2014 survey of 406 US philosophy professors by Eric Schwitzgebel and Joshua Rust found about 60 percent of ethicists and 45 percent of other philosophers rating eating meat from mammals as at least somewhat morally bad.",
+     "source_label": "PhilPapers Survey 2020, “Eating animals and animal products,” target faculty",
+     "source_url": "https://survey2020.philpeople.org/survey/results/all",
+     "source_published": "2020",
+     "source_accessed": "2026-09-29",
+     "id": "philosophers-views-on-eating-animals-and"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Is the capacity to feel enough to matter morally, or does moral status require more?",
+    "kind": "value",
+    "why": "Every theory of moral status must name the property that makes a being count, and the candidates sort animals very differently. Nothing observable settles which property is the right one.",
+    "detail": "Those who say feeling is enough argue that what makes it wrong to hurt someone is that it hurts them. Every higher threshold, whether language, rationality, moral agency or self-awareness, excludes some humans, such as newborns and people with severe cognitive disabilities, whom nobody would use as animals are used. Jeremy Bentham put it in 1789: “the question is not, Can they reason? nor, Can they talk? but, Can they suffer?” On this view, any line that keeps all humans in and all animals out is species membership in disguise. Those who say more is required hold that moral status means standing in a community of beings who can recognize claims, owe duties and be held responsible, which is why animals are not blamed for killing one another. Kant grounded duties about animals in what cruelty does to human character; contractualists argue that status belongs to those who can take part in the agreements that make up morality. On the “kind” version, a human infant counts fully because it belongs to a rational kind, and animals deserve kindness rather than the rights of persons.",
+    "lean_label_a": "Feeling is enough",
+    "lean_label_b": "Reason is required",
+    "id": "is-the-capacity-to-feel-enough"
+   },
+   {
+    "text": "Which animals can actually feel pain or pleasure?",
+    "kind": "empirical",
+    "why": "Consciousness cannot be observed in any creature but oneself, so every attribution is an inference. For mammals and birds it is strong; for fish, crabs, octopuses and insects the same behavior reads as feeling or as reflex.",
+    "detail": "Those who confine confident attributions mostly to vertebrates note that nociception, detecting and reacting to damage, is found almost everywhere in life and needs no feeling at all; plants and single cells respond to harm. Human pain research points to the cerebral cortex, which fish and invertebrates lack, and a 2023 review by fisheries scientists, “Reasons to Be Skeptical about Sentience and Pain in Fishes and Aquatic Invertebrates,” argued that many pain studies are poorly replicated and read flexible behavior too generously; trading off shocks against shelter can come from simple learning systems. Those who extend feeling to many invertebrates point to evidence gathered on exactly the behaviors pain is supposed to explain. Octopuses tend their wounds and prefer places where they received painkillers; hermit crabs given small shocks abandon their shells more readily, but less so a shell they prefer; trout injected with acid stop feeding and rub their lips, and morphine reduces it; bumblebees roll balls with no reward. Different brain structures can do the same job: birds lack a layered cortex and are accepted as conscious. The answer also turns on which theory of consciousness is true, which is itself unsettled.",
+    "lean_label_a": "Mostly vertebrates",
+    "lean_label_b": "Many invertebrates too",
+    "id": "which-animals-can-actually-feel-pain"
+   },
+   {
+    "text": "Can being human by itself justify giving human interests more weight?",
+    "kind": "value",
+    "why": "Almost everyone ranks a human life above an animal’s, and almost everyone rejects discrimination by race or sex. Whether preferring one’s own species resembles those wrongs or a parent’s partiality is the dispute.",
+    "detail": "On one side, species is a biological fact like skin color, and neither says how much a being can suffer or how much its life matters to it. Peter Singer coined “speciesism” for giving weight to an interest because of whose it is rather than how strong it is. Where humans deserve more weight, this side says, it is because of capacities such as planning a future or deep relationships, and the same principle would give a chimpanzee more weight than a human without them; that a preference is universal does not make it right. On the other side, morality begins in the bonds of a shared life, and priority for one’s own, from family to fellow citizens to fellow humans, is the structure of every lived ethics rather than a prejudice. Bernard Williams called the preference “the human prejudice” and defended it as a condition of having moral judgment at all. Humans are the only beings who can recognize the claims of others, including animals, and the species’ weakest members share that standing by belonging to it. For this side, the conclusion that a healthy chimpanzee may matter more than a cognitively disabled child refutes the premise that led to it.",
+    "lean_label_a": "Species is irrelevant",
+    "lean_label_b": "Humans come first",
+    "id": "can-being-human-by-itself-justify"
+   },
+   {
+    "text": "Do animals feel as intensely as humans do?",
+    "kind": "empirical",
+    "why": "Even those who agree a chicken can suffer disagree about how much. No instrument measures the intensity of anyone else’s experience, and multiplied across so many animals the answer decides a great deal.",
+    "detail": "Those who expect comparable intensity argue that pain is an ancient warning system, with no evolutionary reason to hurt less in an animal that must avoid injury as much as we do. Some features may make animal suffering worse: an animal in pain cannot understand that it will end, distract itself with thoughts of recovery or grasp why it is happening. The brain systems for basic affect, such as fear and distress, sit in structures humans share with other mammals and often with birds and fish. Those who expect far dimmer experience argue that much of what makes human suffering bad is cognitive: dread, memory, humiliation, the knowledge of what one is losing. Nervous systems differ in size by orders of magnitude, and if the richness of experience scales at all with the machinery producing it, simple animals feel far less. On this view, treating a shrimp’s pain as a meaningful fraction of a human’s on present evidence is a wager, not a finding.",
+    "lean_label_a": "About as intensely",
+    "lean_label_b": "Far more dimly",
+    "id": "do-animals-feel-as-intensely-as"
+   },
+   {
+    "text": "Should the possibility that an animal feels be treated as if it does?",
+    "kind": "value",
+    "why": "For many animals the honest answer to “can it suffer?” is “we do not know.” Wrongly ignoring sentience could mean vast unseen suffering; wrongly granting it could impose large costs for creatures that feel nothing.",
+    "detail": "Those who favor precaution argue that ignoring a realistic possibility of sentience is reckless in the same way ignoring a realistic risk to a human would be. They ask for proportionate responses, cheap protections where the evidence is suggestive and stronger ones as it firms up, rather than a certainty that may never arrive. Those who would wait for evidence argue that a precautionary principle without a clear threshold proves too much: if every insect gets standing on a realistic possibility, farming, building and driving all become moral catastrophes, and the concept stops guiding anything. Law and policy work best on established findings, and skeptics say the evidence base for fish and invertebrate pain is thin, often unreplicated and read generously by those who already favor protection. Treating a possibility as a fact can also divert attention and resources from animals whose suffering is not in doubt.",
+    "lean_label_a": "Act on precaution",
+    "lean_label_b": "Wait for evidence",
+    "id": "should-the-possibility-that-an-animal"
+   },
+   {
+    "text": "Should any animal be a legal person?",
+    "kind": "value",
+    "why": "Legal personhood is a technical status that corporations and some rivers hold, but for an animal it would let courts enforce rights on its behalf, most immediately the right not to be confined.",
+    "detail": "Those who favor personhood argue that while animals are property, their interests are weighed only against their owners’ and almost always lose. Personhood would not declare an elephant human; it would recognize interests the law must protect for their own sake, and habeas corpus has expanded before to include people once treated as property. Those who favor protected property argue that personhood in law is tied to the capacity to bear duties and responsibilities, and extending it to animals would either empty the concept or invite endless litigation over which animals qualify. Welfare legislation can be as strict as legislators choose, and a change this large belongs to them rather than to judges reinventing ancient writs. Some add that animal personhood, however well meant, weakens the idea that human dignity and human rights do not depend on capacities.",
+    "lean_label_a": "Legal persons",
+    "lean_label_b": "Protected property",
+    "id": "should-any-animal-be-a-legal"
+   },
+   {
+    "text": "Does killing an animal painlessly wrong it?",
+    "kind": "value",
+    "why": "Most animal protection law targets suffering, not death: humane slaughter is legal nearly everywhere and a painless death is the standard for euthanizing pets. Whether death harms a being turns on its stake in a future.",
+    "detail": "Those who say death harms animals argue that it deprives them of all the good experiences they would otherwise have had, which is what makes death bad for a human too, and that this does not require knowing one has a future. Tom Regan held that any subject of a life, a being with beliefs, desires, memory and an emotional life, has a right not to be killed for others’ benefit whether or not the killing hurts. If animals matter only when they suffer, killing any number of them becomes permissible so long as it is done well, which most people reject on reflection. Those who say only suffering counts argue that a being living in the present, without plans or a sense of itself continuing through time, loses less in death, and on some views nothing it could care about. Peter Singer has long held that for animals that are not self-aware, painless killing followed by replacement with an animal with an equally good life may not be wrong, and much welfare science treats the quality of a life, not its length, as what matters. Treating every animal death as a serious wrong would condemn pest control, fishing and many conservation culls, not only slaughter.",
+    "lean_label_a": "Death harms them",
+    "lean_label_b": "Only suffering counts",
+    "id": "does-killing-an-animal-painlessly-wrong"
+   },
+   {
+    "text": "Does raising the status of animals lower the status of humans?",
+    "kind": "empirical",
+    "why": "Moral progress is often told as a widening circle. Critics fear the arguments that widen it to animals deny humans a special dignity, weakening protection for the humans least able to defend themselves.",
+    "detail": "Those who see a widening circle argue that concern for animals and concern for vulnerable humans go together: the societies and people that expanded human rights also expanded animal protection, and research linking animal cruelty to violence against people has shaped cruelty law. Recognizing animal sentience in law has not been accompanied by any reduction in human rights, and most who argue for animals’ status deny only that being human is what grounds it, not that humans have it. Those who fear erosion argue that if moral worth tracks capacities, humans with fewer of them, such as infants and people with severe dementia or cognitive disability, are worth less. Critics such as Wesley J. Smith point to Singer’s own conclusions about severely disabled infants as where that logic leads, and campaigns equating animal farming with human atrocities trivialize the atrocities. Whether expanding animal protection in fact goes with more or less respect for vulnerable humans can be studied, but the evidence either way is thin and mostly correlational.",
+    "lean_label_a": "Widens the circle",
+    "lean_label_b": "Erodes human dignity",
+    "id": "does-raising-the-status-of-animals"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Put human interests first and prevent needless suffering",
+    "color_key": "green",
+    "steelman": "Animals feel pain and deserve protection from needless suffering. But only humans live by moral reasons, so using animals humanely for food, research and work is legitimate.",
+    "detail": "Animals are not things, and nobody serious says they are. A decent society protects them from suffering they need not endure, and veterinarians swear an oath to their welfare. But a human being is not one more animal with a different set of capacities: only humans can reason about right and wrong, make promises, hold themselves accountable and recognize the claims of others, including the claims of animals. So human interests come first when they genuinely conflict, and using animals for food, clothing, companionship, work and medical research is legitimate, as it has been in every human society, provided it is humane. The Catholic catechism puts it plainly: animals are owed kindness, and it is contrary to human dignity to make them suffer or die needlessly. This is the settled view of the public and the law: 62 percent of Americans told Gallup that animals deserve protection but can still be used for human benefit, and every legal system that has written animal sentience into law still permits humane use.\n\nWhat we reject is the step from “animals can suffer” to “animals are our moral equals.” Race and sex tell you nothing about a person’s nature; being human tells you a great deal, and a newborn or a person with severe dementia shares in that nature even when the capacities are undeveloped or lost. If worth tracked capacities, the vulnerable humans the marginal-cases argument invokes would be the ones who lose. Within the camp, veterinary bodies and welfare scientists hold that animal suffering matters for the animal’s own sake but weighs less than human interests, while Kantians and human exceptionalists ground duties about animals in human virtue and stewardship. All agree that humane use is legitimate and cruelty is not.",
+    "proponents": "American Veterinary Medical Association, Catholic Church, World Organisation for Animal Health, Foundation for Biomedical Research, Discovery Institute’s Center on Human Exceptionalism, Carl Cohen, Peter Carruthers, Roger Scruton",
+    "id": "put-human-interests-first-and-prevent"
+   },
+   {
+    "name": "Weigh animal interests equally with like human interests",
+    "color_key": "blue",
+    "steelman": "A pain is as bad as it is, whoever feels it. Discounting suffering because of species is as arbitrary as discounting it for race or sex, and at today’s scale the wrong is vast.",
+    "detail": "Equal consideration does not mean equal treatment. A pig has no interest in voting, and a human’s interest in continuing a life full of plans may well outweigh a mouse’s. It means that where an animal and a human have a comparable interest, above all the interest in not suffering, that interest gets the same weight. Apply that honestly and the conclusion is uncomfortable but clear: tens of billions of sentient animals are made to suffer every year for purposes that come nowhere near justifying it, and this is one of the largest moral problems in the world. We do not claim to know how much a chicken or a fish can suffer; that is an empirical question, and we take seriously the work that tries to estimate it. But uncertainty about the size of the weight is no reason to set it at zero, and across roughly 88 billion land animals and more than a trillion fish killed a year, even the low ends of current estimates imply suffering on a scale that dwarfs most human-caused harms.\n\nThe principle raises animals; it lowers no one. Every human being’s suffering counts fully, and nothing in it licenses harming a disabled person. What it denies is that membership in a species, rather than the capacity to suffer, is what makes suffering matter. Peter Singer set out the view in Animal Liberation in 1975. Most of us are utilitarians, but the principle is shared by others who ground moral status in sentience, and we differ among ourselves on how much weight different species carry and on whether painless killing is wrong.",
+    "proponents": "Peter Singer, Oscar Horta, Animal Ethics, Rethink Priorities, Animal Charity Evaluators",
+    "id": "weigh-animal-interests-equally-with-like"
+   },
+   {
+    "name": "Recognize animals as rights-holders, not property",
+    "color_key": "amber",
+    "steelman": "Animals are not ours to eat, wear, experiment on or use for entertainment. Each is someone with a life of its own, and the most basic right is not to be property.",
+    "detail": "Our objection is not that using animals produces more suffering than benefit; a calculation like that could justify anything, including using humans. It is that each animal is the subject of a life, with a value that does not depend on its usefulness to anyone else. We recognize this for every human being, including those who cannot reason or speak for themselves, and in the law’s eyes the only thing separating them from a pig or a chimpanzee is species. Infants bear no duties and have full rights, so rights cannot rest on the capacity to bear duties; a right protects an interest, it is not a reward for moral agency. Welfare reform only regulates how property is used, and the objection that ending animal use would upend food, clothing and research states the cost of ending an injustice, not an argument that it is none. Every earlier extension of rights was opposed on the ground that the economy depended on the practice it ended.\n\nCourts have begun to listen. In New York, Judge Jenny Rivera wrote in dissent that “a gilded cage is still a cage,” and in July 2026 a Michigan justice called the evidence of chimpanzees’ self-awareness, planning and grief “considerable and seemingly undisputed.” Within the camp, abolitionists such as Gary Francione hold that every sentient animal has a right not to be property and reject welfare reforms as entrenching use; the Nonhuman Rights Project pursues personhood case by case, starting with great apes and elephants; PETA pairs the rights claim with campaigns for incremental reform.",
+    "proponents": "PETA, Gary Francione, Nonhuman Rights Project, Tom Regan, Christine Korsgaard, Steven Wise",
+    "id": "recognize-animals-as-rights-holders-not"
+   },
+   {
+    "name": "Protect any animal that may feel, as the evidence warrants",
+    "color_key": "rust",
+    "steelman": "For many animals we cannot yet know whether they feel. Where there is a realistic possibility, ignoring it is reckless, and protection should scale with the strength of the evidence.",
+    "detail": "The fight between those who say animals matter as much as us and those who say they matter much less misses where the real uncertainty lies. For dogs, pigs and chickens the science is settled; for fish it is very strong; for octopuses and crabs, strong; for bees and flies, suggestive and growing. No theory of consciousness is secure enough to rule these animals in or out, and waiting for certainty means that for the animals most people have never considered, the answer is always no. So we take a realistic possibility of feeling into account in decisions that affect the animal, scale the cost of precaution to the strength of the evidence and the size of the risk, and make that judgment openly, with experts and the public, rather than leaving it to industry or activists.\n\nThe method has been tested in law. An independent review found strong evidence for octopuses and crabs, and in 2022 the UK extended its sentience law to them; it banned nothing, but it made sure those animals are considered. In a 2021 survey, 91 percent of UK adults agreed that if experts see some evidence an animal could feel pain, we should be careful about harming it. A realistic possibility is a real threshold, not bare conceivability: it leaves out plants and, on current evidence, many simple invertebrates, and for insects it may mean humane slaughter standards in insect farming, not a ban on driving. Jonathan Birch set out the framework in The Edge of Sentience (2024). Our adherents range from welfarists who accept humane use to supporters of equal consideration; what we share is a way to act under uncertainty.",
+    "proponents": "Jonathan Birch, Jeff Sebo, Kristin Andrews, Jeremy Coller Centre for Animal Sentience, Government of the United Kingdom",
+    "id": "protect-any-animal-that-may-feel"
+   },
+   {
+    "name": "Fit animals’ rights to their species and their ties to us",
+    "color_key": "purple",
+    "steelman": "A whale, a dog and a chicken are not lesser humans on one scale of pain. Each is owed the chance to live its own kind of life, and what we owe depends on how we are bound to it.",
+    "detail": "The welfare and utilitarian traditions both put every creature on one scale, how much it can suffer, and then argue about the weights. But each animal is a distinctive form of life, with its own ways of moving, playing, bonding and exploring, and justice for an animal means a real opportunity to live that life. Suffering matters, but so does a caged elephant’s inability to roam, even if she is fed and free of pain. What we owe also depends on how we are related. We bred dogs, pigs and chickens into dependence, so we owe them care and a voice in the decisions that govern their lives; wild animals are owed, mostly, to be left alone and to have their habitats respected. Martha Nussbaum grounds this in each species’ characteristic capabilities; Sue Donaldson and Will Kymlicka treat domesticated animals as members of our political community, wild animals as sovereign communities and urban wildlife as residents.\n\nThis is how Ecuador’s Constitutional Court reasoned when it held that animals, including a wild woolly monkey named Estrellita, are subjects of rights “as individuals with intrinsic value”: it read those rights through the needs of each species and did not declare hunting, fishing or domestication illegitimate in themselves. Nothing here excuses current practice. Domestication creates stronger duties, not weaker ones, and a view that condemns any life denying an animal its characteristic activities rules out most intensive confinement. Sentience opens the door to moral standing; the animal’s form of life and our relationship to it decide what we owe once it is open.",
+    "proponents": "Martha Nussbaum, Sue Donaldson, Will Kymlicka, Clare Palmer, Constitutional Court of Ecuador",
+    "id": "fit-animals-rights-to-their-species"
+   }
+  ],
+  "crux": {
+   "lead": "What makes a being matter morally: the capacity to feel, or something only humans have?",
+   "lead_highlight": "What makes a being matter morally",
+   "subtitle": "Almost everyone agrees that cruelty to animals is wrong. They split over why: whether any being that can feel counts in its own right, so that species alone means nothing, or whether reason and moral agency give humans a standing no animal shares.",
+   "empirical": "Evidence can settle part of it: which animals can feel at all, and how rich or intense their experiences are. Brain research, behavioral tests of pain and learning, and work on consciousness in humans can all move these answers, and they change the number of beings at stake by orders of magnitude. But the same facts about an animal’s mind are read differently by those who think capacities ground moral standing and those who do not.",
+   "values": "No discovery about animal brains settles the rest. People differ on whether equal experiences deserve equal weight whoever has them, or whether belonging to a kind that lives by moral reasons gives a claim no animal has, and on whether moral standing is one quantity to measure or a set of relationships calling for different kinds of justice. Each side can accept the same evidence and still answer differently."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Stanford Encyclopedia of Philosophy, The Moral Status of Animals",
+    "description": "A peer-reviewed survey by Lori Gruen of the main philosophical positions, from sentience to human exceptionalism and relational views, with the arguments for and against each.",
+    "url": "https://plato.stanford.edu/entries/moral-animal/",
+    "for_position": null,
+    "id": "stanford-encyclopedia-of-philosophy-the-moral"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Our World in Data, Animal Welfare",
+    "description": "Charts and explainers on how many animals are raised, caught, killed and used each year, by species and country, with the underlying data free to download.",
+    "url": "https://ourworldindata.org/animal-welfare",
+    "for_position": null,
+    "id": "our-world-in-data-animal-welfare"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Foundation for Biomedical Research, animal research facts",
+    "description": "The case for the humane use of animals in medical research, with the rules that govern it and treatments it produced, from the main US group defending the practice.",
+    "url": "https://fbresearch.org/biomedical-research/animal-research-facts",
+    "for_position": "Put human interests first and prevent needless suffering",
+    "id": "foundation-for-biomedical-research-animal-research"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Rethink Priorities, welfare range estimates",
+    "description": "The most detailed published attempt to estimate how much different animals’ experiences can matter next to a human’s, with the methods, assumptions and uncertainty laid out.",
+    "url": "https://rethinkpriorities.org/research-area/welfare-range-estimates/",
+    "for_position": "Weigh animal interests equally with like human interests",
+    "id": "rethink-priorities-welfare-range-estimates"
+   },
+   {
+    "kind": "donate",
+    "title": "Nonhuman Rights Project",
+    "description": "Support the group bringing habeas corpus and personhood cases in US courts on behalf of elephants, chimpanzees and other cognitively complex animals.",
+    "url": "https://www.nonhumanrights.org/donate/",
+    "for_position": "Recognize animals as rights-holders, not property",
+    "id": "nonhuman-rights-project"
+   },
+   {
+    "kind": "learn_more",
+    "title": "The Edge of Sentience, by Jonathan Birch (open access)",
+    "description": "A free book from Oxford University Press on the evidence for sentience across animals and a framework for proportionate precaution when that evidence is uncertain.",
+    "url": "https://academic.oup.com/book/57949",
+    "for_position": "Protect any animal that may feel, as the evidence warrants",
+    "id": "the-edge-of-sentience-by-jonathan"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Martha Nussbaum on Justice for Animals",
+    "description": "An interview on Nussbaum’s capabilities approach, which holds that each animal is owed the chance to flourish in the form of life characteristic of its species.",
+    "url": "https://www.law.uchicago.edu/news/greater-good-magazine-interviews-martha-nussbaum-about-justice-animals",
+    "for_position": "Fit animals’ rights to their species and their ties to us",
+    "id": "martha-nussbaum-on-justice-for-animals"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Volunteer with the ASPCA or a local animal shelter",
+    "description": "Hands-on work caring for, fostering and rehoming companion animals, which people from every camp in this debate take part in; the page also points to local shelters.",
+    "url": "https://www.aspca.org/get-involved/volunteer",
+    "for_position": null,
+    "id": "volunteer-with-the-aspca-or-a"
+   },
+   {
+    "kind": "donate",
+    "title": "Animal Charity Evaluators, recommended charities",
+    "description": "An independent evaluator that reviews animal charities for cost-effectiveness and recommends where a donation is expected to reduce the most suffering per dollar.",
+    "url": "https://animalcharityevaluators.org/donation-advice/recommended-charities/",
+    "for_position": "Weigh animal interests equally with like human interests",
+    "id": "animal-charity-evaluators-recommended-charities"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Discovery Institute’s Center on Human Exceptionalism",
+    "description": "Essays arguing that human beings have a unique moral worth that animal personhood and animal rights claims undermine, while holding that humans owe animals humane treatment.",
+    "url": "https://humanexceptionalism.center/about/",
+    "for_position": "Put human interests first and prevent needless suffering",
+    "id": "discovery-institute-s-center-on-human"
+   }
+  ]
+ },
+ "icon": "paw-print",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: a large calm deer standing in profile on a meadow as the dominant focal mass; a seated dog in the foreground overlapping the deer's legs, looking the same way; a small hen at the dog's side at the smallest scale; a small house with a pitched roof and a low fence on a far hill behind; a winding stream that runs across the whole frame from the house to the foreground as the connective element; the ground is a gentle rolling hill curve.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #b8653f, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: cages, chains, bars, fences enclosing animals, slaughterhouses, factory barns, meat, bones, knives, forks, plates, laboratory flasks or syringes, lab mice, hunting rifles, traps, protest signs, banners, hearts, halos, tears, scales of justice, gavels, human figures, hands, faces with expressions, text, crossed-out symbols, check marks."
 }

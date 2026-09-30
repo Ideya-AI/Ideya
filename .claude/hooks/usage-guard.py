@@ -83,8 +83,9 @@ def windows(data):
     for key in ("five_hour", "seven_day"):
         node = data.get(key)
         if isinstance(node, dict) and isinstance(node.get("utilization"), (int, float)):
-            u = float(node["utilization"])
-            found[key] = (u / 100 if u > 1 else u, node.get("resets_at"))
+            # Always a percent. Treating u <= 1 as a fraction read 1 percent as
+            # 100 and stopped runs just after each reset (2026-09-23 to 09-28).
+            found[key] = (float(node["utilization"]) / 100, node.get("resets_at"))
     # `limits` is the same numbers in list form; use it only to fill a gap.
     for row in data.get("limits") or []:
         if not isinstance(row, dict) or not isinstance(
@@ -161,7 +162,10 @@ def main():
         # full, then settles near 0 (seen 2026-09-23 and 09-24; the first stopped
         # a run for two hours). A window cannot be spent in its first half hour,
         # so drop the reading and fetch fresh next call.
-        log(fresh, f"five-hour reads {five[0]:.0%} with the reset {five[1]}; window-start glitch, allowing")
+        log(
+            fresh,
+            f"five-hour reads {five[0]:.0%} with the reset {five[1]}; window-start glitch, allowing",
+        )
         try:
             os.remove(CACHE)
         except OSError:

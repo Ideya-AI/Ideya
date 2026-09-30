@@ -1,8 +1,8 @@
 {
  "slug": "universal-healthcare",
  "title": "Universal Healthcare",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-09-29T06:23:16+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Single-payer and universal coverage against market-based health systems: cost, access and quality.",
@@ -16,5 +16,874 @@
   "economic-inequality",
   "universal-basic-income",
   "organ-procurement-markets"
- ]
+ ],
+ "content": {
+  "overview": {
+   "summary": "Whether everyone should be guaranteed health coverage, and whether one public insurer, regulated private insurers or markets do it best.",
+   "scope_covered": "How rich countries pay for and guarantee medical care, from single payer through regulated competing insurers to market-based systems, compared on cost, access and quality, with the United States in most depth.",
+   "scope_excluded": "How drugs are priced and developed, organ markets, and inequality in general, except where they bear directly on how coverage is organized.",
+   "why_now": "On September 15, 2026 the US Census Bureau reported that 26.7 million Americans went without health insurance for all of 2025, the baseline before two changes: enhanced ACA premium subsidies lapsed at the end of 2025, and Medicaid work requirements must be in place by January 2027.",
+   "why_now_source_label": "US Census Bureau",
+   "why_now_source_url": "https://www.census.gov/library/publications/2026/demo/p60-291.html"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "Health spending as a share of GDP",
+     "viz": "ranked",
+     "wide": true,
+     "value": "17.2",
+     "unit": "% of GDP",
+     "series": [
+      {
+       "label": "United States",
+       "value": "17.2",
+       "highlight": true
+      },
+      {
+       "label": "Germany",
+       "value": "12.3",
+       "highlight": false
+      },
+      {
+       "label": "Switzerland",
+       "value": "11.8",
+       "highlight": false
+      },
+      {
+       "label": "France",
+       "value": "11.5",
+       "highlight": false
+      },
+      {
+       "label": "Canada",
+       "value": "11.3",
+       "highlight": false
+      },
+      {
+       "label": "United Kingdom",
+       "value": "11.1",
+       "highlight": false
+      },
+      {
+       "label": "Japan",
+       "value": "10.6",
+       "highlight": false
+      },
+      {
+       "label": "Netherlands",
+       "value": "10.0",
+       "highlight": false
+      },
+      {
+       "label": "OECD average",
+       "value": "9.3",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The United States spent 17.2 percent of its GDP on health in 2024, the most in the OECD, against an average of 9.3 percent.",
+     "detail": "The US government’s own accounts (the CMS National Health Expenditure data), which use a broader basis than the OECD’s, put 2024 spending at $5.3 trillion, or 18.0 percent of GDP, and project 20.6 percent by 2034; the two figures differ by method, not because either is wrong. By sponsor, CMS attributes 31 percent of 2024 US spending to the federal government, 28 percent to households, 18 percent to private businesses and 16 percent to state and local governments. The next-highest spenders use very different models: Germany and Switzerland rely on competing insurers under strict rules, Canada on provincial public plans and the UK on a tax-funded national service.",
+     "source_label": "OECD, Health at a Glance 2025, Table 1.6",
+     "source_url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/11/health-at-a-glance-2025_a894f72e/8f9e3f98-en.pdf",
+     "source_published": "2024",
+     "source_accessed": "2026-09-28",
+     "id": "health-spending-as-a-share-of"
+    },
+    {
+     "label": "People in the United States uninsured for all of 2025",
+     "viz": "radial",
+     "wide": false,
+     "value": "7.9",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "7.9 percent of people in the United States had no health insurance at any point in 2025, not statistically different from 2024.",
+     "detail": "That is 26.7 million people on the Census Bureau’s Current Population Survey measure, which counts someone as uninsured only if they lacked coverage for the whole year. Of the population, 53.5 percent had employment-based coverage, 35.8 percent some public coverage (Medicare 20.1, Medicaid 17.1) and 10.5 percent coverage bought directly; the shares add to more than 100 because people can hold several kinds in a year. On a different basis, the OECD reports 93 percent of the US population eligible for core services, against 98 percent on average across the OECD and 100 percent in Canada, Germany, France, Japan and the UK.",
+     "source_label": "US Census Bureau, Health Insurance Coverage in the United States: 2025 (P60-291)",
+     "source_url": "https://www.census.gov/library/publications/2026/demo/p60-291.html",
+     "source_published": "2025",
+     "source_accessed": "2026-09-28",
+     "id": "people-in-the-united-states-uninsured"
+    },
+    {
+     "label": "CBO estimate: single payer’s effect on total US health spending in 2030",
+     "viz": "range",
+     "wide": false,
+     "value": "-0.7–0.3",
+     "unit": "$ trillion",
+     "series": [],
+     "range_min": "-1 trillion",
+     "range_max": "+1 trillion",
+     "note": "CBO’s single-payer designs ran from a $0.7 trillion cut to a $0.3 trillion rise in total US health spending in 2030, with federal spending up $1.5 trillion to $3.0 trillion; other estimates differ.",
+     "detail": "CBO’s five designs vary by provider payment rates, cost sharing and whether long-term care is covered, and CBO projected near-universal coverage under all of them. Charles Blahous of the Mercatus Center estimated in 2018 that Medicare for All would add about $32.6 trillion to federal spending over 2022–2031 and that total national spending would dip by roughly $2 trillion over the decade, but only if providers accepted payment cuts of roughly 40 percent, which he doubted. Galvani and colleagues, writing in The Lancet in 2020, estimated a 13 percent saving in national health spending, more than $450 billion a year in 2017 dollars. The bases differ: CBO counts a single year in 2030 dollars, Mercatus a ten-year total, Galvani annual savings at 2017 levels.",
+     "source_label": "Congressional Budget Office, Working Paper 2020-08 on the costs of single-payer proposals",
+     "source_url": "https://www.cbo.gov/publication/56811",
+     "source_published": "2020",
+     "source_accessed": "2026-09-28",
+     "id": "cbo-estimate-single-payer-s-effect"
+    },
+    {
+     "label": "Avoidable deaths",
+     "viz": "ranked",
+     "wide": true,
+     "value": "312",
+     "unit": "per 100,000",
+     "series": [
+      {
+       "label": "Switzerland",
+       "value": "114",
+       "highlight": false
+      },
+      {
+       "label": "Japan",
+       "value": "135",
+       "highlight": false
+      },
+      {
+       "label": "Netherlands",
+       "value": "149",
+       "highlight": false
+      },
+      {
+       "label": "France",
+       "value": "162",
+       "highlight": false
+      },
+      {
+       "label": "Canada",
+       "value": "184",
+       "highlight": false
+      },
+      {
+       "label": "Germany",
+       "value": "195",
+       "highlight": false
+      },
+      {
+       "label": "OECD average",
+       "value": "222",
+       "highlight": false
+      },
+      {
+       "label": "United Kingdom",
+       "value": "227",
+       "highlight": false
+      },
+      {
+       "label": "United States",
+       "value": "312",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The United States had 312 avoidable deaths per 100,000 people, against an OECD average of 222 and 114 in Switzerland.",
+     "detail": "Avoidable mortality, standardized for age, combines deaths that effective prevention and public health could have averted with deaths that timely, effective medical care could have averted. It is the closest standard measure of deaths a health system should have stopped, though the preventable part also reflects behavior and policy outside medicine. The OECD’s own summary is that the United States “spends much more than the OECD average but has worse avoidable mortality rates.” The figures are for 2023, or 2020 to 2022 for the United States, the UK, Canada, France, Germany, Japan and others.",
+     "source_label": "OECD, Health at a Glance 2025, Table 1.2",
+     "source_url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/11/health-at-a-glance-2025_a894f72e/8f9e3f98-en.pdf",
+     "source_published": "2020–2023",
+     "source_accessed": "2026-09-28",
+     "id": "avoidable-deaths"
+    },
+    {
+     "label": "Median wait from GP referral to treatment in Canada",
+     "viz": "bar",
+     "wide": false,
+     "value": "28.6",
+     "unit": "weeks",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Canadian patients waited a median 28.6 weeks from GP referral to specialist treatment in 2025, according to the Fraser Institute’s survey of specialists, against 9.3 weeks in 1993.",
+     "detail": "The Fraser Institute is a market-oriented think tank, and its annual survey (1,577 physicians in 2025) asks about elective, medically necessary treatment, so it reflects what physicians report rather than administrative records. The 2025 wait splits into 15.3 weeks from referral to a specialist consultation and 13.3 weeks from consultation to treatment, and it was down from 30.0 weeks in 2024. Provinces ranged from 19.2 weeks in Ontario to 60.9 in New Brunswick. Canada is the single-payer model US reformers cite most: its public plans cover medically necessary hospital and physician care with no charge at the point of use, and most provinces restrict private insurance for those services.",
+     "source_label": "Fraser Institute, Waiting Your Turn: Wait Times for Health Care in Canada, 2025 Report",
+     "source_url": "https://www.fraserinstitute.org/studies/waiting-your-turn-wait-times-for-health-care-in-canada-2025",
+     "source_published": "2025",
+     "source_accessed": "2026-09-28",
+     "id": "median-wait-from-gp-referral-to"
+    },
+    {
+     "label": "Prices private insurers pay US hospitals, as a percent of Medicare’s",
+     "viz": "ranked",
+     "wide": true,
+     "value": "254",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Outpatient facility",
+       "value": "279",
+       "highlight": false
+      },
+      {
+       "label": "All hospital services",
+       "value": "254",
+       "highlight": true
+      },
+      {
+       "label": "Professional services",
+       "value": "184",
+       "highlight": false
+      },
+      {
+       "label": "Medicare",
+       "value": "100",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Employers and private insurers paid US hospitals on average 254 percent of what Medicare would have paid for the same services in 2022.",
+     "detail": "RAND analyzed $77.4 billion in hospital spending at more than 4,000 hospitals, using state all-payer claims databases and self-insured employer data, and found that hospital market power explained most of the variation in prices. The figure is used by every camp: single-payer supporters read it as the saving from paying Medicare-like rates, price-regulation supporters as the case for caps, and hospitals and market-oriented analysts as evidence that Medicare and Medicaid pay less than cost, pushing costs onto private patients. The next round of the study is enrolling employers and has not reported.",
+     "source_label": "RAND Corporation, Prices Paid to Hospitals by Private Health Plans, Round 5",
+     "source_url": "https://www.rand.org/pubs/research_reports/RRA1144-2-v2.html",
+     "source_published": "2022",
+     "source_accessed": "2026-09-28",
+     "id": "prices-private-insurers-pay-us-hospitals"
+    },
+    {
+     "label": "NHS England waiting list for planned hospital treatment",
+     "viz": "bar",
+     "wide": false,
+     "value": "7.3",
+     "unit": "million",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "At the end of July 2026, 7.3 million NHS England treatment pathways were waiting to start; 65.4 percent had waited under 18 weeks, against a 92 percent standard.",
+     "detail": "The NHS is the leading example of a tax-funded, state-run health service, free at the point of use. One patient can be on several pathways, which is why NHS England estimates the number of people waiting at about 6.2 million. Of the pathways, 111,379 had been waiting more than 52 weeks. Channel 4 FactCheck reports that the list peaked at about 7.8 million pathways in September 2023, after years of tight budgets and the pandemic.",
+     "source_label": "NHS England, Statistical Press Notice, RTT waiting times data, July 2026",
+     "source_url": "https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2026/09/Jul26-RTT-statistical-press-notice-PDF-578K-97ylx5.pdf",
+     "source_published": "2026",
+     "source_accessed": "2026-09-28",
+     "id": "nhs-england-waiting-list-for-planned"
+    },
+    {
+     "label": "Health spending per person, adjusted for purchasing power",
+     "viz": "ranked",
+     "wide": true,
+     "value": "14,885",
+     "unit": "$ per person",
+     "series": [
+      {
+       "label": "United States",
+       "value": "14,885",
+       "highlight": true
+      },
+      {
+       "label": "Switzerland",
+       "value": "9,963",
+       "highlight": false
+      },
+      {
+       "label": "Germany",
+       "value": "9,365",
+       "highlight": false
+      },
+      {
+       "label": "Netherlands",
+       "value": "8,436",
+       "highlight": false
+      },
+      {
+       "label": "France",
+       "value": "7,367",
+       "highlight": false
+      },
+      {
+       "label": "Canada",
+       "value": "7,301",
+       "highlight": false
+      },
+      {
+       "label": "United Kingdom",
+       "value": "6,747",
+       "highlight": false
+      },
+      {
+       "label": "OECD average",
+       "value": "5,967",
+       "highlight": false
+      },
+      {
+       "label": "Japan",
+       "value": "5,790",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "US health spending was $14,885 per person in 2024, about 2.5 times the OECD average; Switzerland, the next highest, spent $9,963.",
+     "detail": "The OECD attributes the US gap to both prices and volume. Its health-specific price comparison finds the same basket of health goods and services costs about 52 percent more than the OECD average in the United States and Switzerland, and it estimates US volume of care per person at about 50 percent above average. Switzerland also relies on private insurers, but coverage there is mandatory and the insurers are tightly regulated. Across the OECD, about three-quarters of health spending is paid by government or compulsory insurance.",
+     "source_label": "OECD, Health at a Glance 2025, Table 1.6",
+     "source_url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/11/health-at-a-glance-2025_a894f72e/8f9e3f98-en.pdf",
+     "source_published": "2024",
+     "source_accessed": "2026-09-28",
+     "id": "health-spending-per-person-adjusted-for"
+    },
+    {
+     "label": "Average annual premium for employer family coverage",
+     "viz": "bar",
+     "wide": false,
+     "value": "26,993",
+     "unit": "$ a year",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The average employer family health plan cost $26,993 in 2025, of which workers paid $6,850 directly.",
+     "detail": "About half of Americans get coverage through an employer. The average family premium rose 6 percent in 2025, and the average single-coverage premium rose 5 percent to $9,325. Employers pay the rest of the premium, and economists generally find it comes out of wages over time, so the full cost falls largely on workers even when they do not see it. The tax exclusion for employer coverage is one of the largest federal tax breaks and a target of reformers on both left and right.",
+     "source_label": "KFF, 2025 Employer Health Benefits Survey",
+     "source_url": "https://www.kff.org/health-costs/2025-employer-health-benefits-survey/",
+     "source_published": "2025",
+     "source_accessed": "2026-09-28",
+     "id": "average-annual-premium-for-employer-family"
+    },
+    {
+     "label": "Life expectancy at birth",
+     "viz": "ranked",
+     "wide": true,
+     "value": "78.4",
+     "unit": "years",
+     "series": [
+      {
+       "label": "Switzerland",
+       "value": "84.3",
+       "highlight": false
+      },
+      {
+       "label": "Japan",
+       "value": "84.1",
+       "highlight": false
+      },
+      {
+       "label": "France",
+       "value": "83.0",
+       "highlight": false
+      },
+      {
+       "label": "Netherlands",
+       "value": "81.9",
+       "highlight": false
+      },
+      {
+       "label": "Canada",
+       "value": "81.7",
+       "highlight": false
+      },
+      {
+       "label": "Germany",
+       "value": "81.1",
+       "highlight": false
+      },
+      {
+       "label": "OECD average",
+       "value": "81.1",
+       "highlight": false
+      },
+      {
+       "label": "United Kingdom",
+       "value": "81.0",
+       "highlight": false
+      },
+      {
+       "label": "United States",
+       "value": "78.4",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "US life expectancy was 78.4 years in 2023, 2.7 years below the OECD average; how much of the gap medical care explains is disputed.",
+     "detail": "Life expectancy reflects much more than a health system: diet, obesity, drug overdoses, gun deaths and road deaths all weigh on the US figure. Every country in the comparison, whether it runs a single public insurer, competing regulated insurers or a national health service, sits above the United States. The OECD’s dashboard rates the United States as having deteriorated on this measure over time while most other members improved.",
+     "source_label": "OECD, Health at a Glance 2025, Table 1.2",
+     "source_url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/11/health-at-a-glance-2025_a894f72e/8f9e3f98-en.pdf",
+     "source_published": "2023",
+     "source_accessed": "2026-09-28",
+     "id": "life-expectancy-at-birth"
+    },
+    {
+     "label": "US adults with significant medical debt",
+     "viz": "bar",
+     "wide": false,
+     "value": "20",
+     "unit": "million",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "About 20 million US adults, nearly 1 in 12, owed more than $250 in medical debt in 2021, many of them insured.",
+     "detail": "KFF defines “significant” medical debt as more than $250. About 14 million adults owed more than $1,000 and about 3 million more than $10,000, and the total owed was at least $220 billion. Medical debt falls disproportionately on people with disabilities, lower incomes and worse health. Countries with universal coverage and low or capped cost sharing have little medical debt of this kind, which supporters of universal systems cite as a financial-protection benefit distinct from any health effect.",
+     "source_label": "Peterson-KFF Health System Tracker, The burden of medical debt in the United States",
+     "source_url": "https://www.healthsystemtracker.org/brief/the-burden-of-medical-debt-in-the-united-states/",
+     "source_published": "2021",
+     "source_accessed": "2026-09-28",
+     "id": "us-adults-with-significant-medical-debt"
+    },
+    {
+     "label": "Administrative costs as a share of health spending",
+     "viz": "ranked",
+     "wide": true,
+     "value": "34.2",
+     "unit": "%",
+     "series": [
+      {
+       "label": "United States",
+       "value": "34.2",
+       "highlight": true
+      },
+      {
+       "label": "Canada",
+       "value": "17.0",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "One study put US administrative costs at 34.2 percent of health spending in 2017, twice Canada’s 17.0 percent; it sits at the high end of published estimates.",
+     "detail": "The estimate counts insurer overhead plus billing and administrative work inside hospitals, physician practices, nursing homes and home care: $812 billion in the United States in 2017, or $2,497 per person against $551 in Canada. Its authors are founders of Physicians for a National Health Program. David Cutler, writing for the Hamilton Project at Brookings in 2020, put administrative costs at “one-quarter to one-third” of US health spending but estimated that coordinated simplification of billing, prior authorization and quality reporting could save about $50 billion a year without changing who pays.",
+     "source_label": "Himmelstein, Campbell & Woolhandler, Annals of Internal Medicine, 2020",
+     "source_url": "https://www.acpjournals.org/doi/10.7326/M19-2818",
+     "source_published": "2017",
+     "source_accessed": "2026-09-28",
+     "id": "administrative-costs-as-a-share-of"
+    },
+    {
+     "label": "US adults who say government should ensure everyone has coverage",
+     "viz": "radial",
+     "wide": false,
+     "value": "64",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "64 percent of US adults said the federal government should ensure all Americans have coverage, but 46 percent preferred a government-run system and 48 percent one based mostly on private insurance.",
+     "detail": "The two questions get two different answers. The first, about responsibility for ensuring coverage, drew its highest reading since 2007; the second, about the kind of system, splits the country almost evenly. In Gallup’s 2024 survey the first figure was 62 percent, with 90 percent of Democrats and 32 percent of Republicans agreeing. In the November 2025 survey, 29 percent named cost as the most urgent health problem facing the country, the highest share since 2004.",
+     "source_label": "Gallup, Cost Leads Americans’ Top-of-Mind Healthcare Concerns",
+     "source_url": "https://news.gallup.com/poll/699770/cost-leads-americans-top-mind-healthcare-concerns.aspx",
+     "source_published": "2025",
+     "source_accessed": "2026-09-28",
+     "id": "us-adults-who-say-government-should"
+    },
+    {
+     "label": "US overall rank among 10 high-income health systems",
+     "viz": "range",
+     "wide": false,
+     "value": "10",
+     "unit": "of 10",
+     "series": [],
+     "range_min": "1 best",
+     "range_max": "10 worst",
+     "note": "The Commonwealth Fund ranked the United States last of 10 high-income countries in 2024, though second on care process; critics question how such rankings weigh measures.",
+     "detail": "The Fund scored 70 measures in five domains. The United States ranked last on access to care and health outcomes and ninth on administrative efficiency and equity. Care process covers preventive care, safety, coordination and patient engagement, where strong US screening and vaccination rates score well. The top three, Australia, the Netherlands and the UK, represent three different models: a public insurer with a large private sector, regulated competing private insurers, and a state-run service. The Fund supports expanding coverage, and composite rankings depend on which measures are chosen and how they are weighted; the report runs sensitivity tests and finds the United States last under all of them.",
+     "source_label": "Commonwealth Fund, Mirror, Mirror 2024, Exhibit 1",
+     "source_url": "https://www.commonwealthfund.org/sites/default/files/2024-09/Blumenthal_mirror_mirror_2024_final_v2.pdf",
+     "source_published": "2021–2023",
+     "source_accessed": "2026-09-28",
+     "id": "us-overall-rank-among-10-high"
+    },
+    {
+     "label": "Britons satisfied with the way the NHS runs",
+     "viz": "radial",
+     "wide": false,
+     "value": "26",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "26 percent of Britons were satisfied with how the NHS ran in 2025, yet 89 percent backed its principle of care free of charge when you need it.",
+     "detail": "Satisfaction rose 6 points from 2024, the first rise since 2019, but was still the third-lowest reading in the British Social Attitudes survey’s 42-year history, and 51 percent were dissatisfied. Large majorities also backed the other founding principles: 81 percent that the NHS be funded mainly through taxes and 74 percent that it be available to everyone. Support for “available to everyone” has fallen most since 2021 and splits by party: 68 percent of Labour supporters said it should definitely apply, against 45 percent of Conservative and 30 percent of Reform supporters.",
+     "source_label": "The King’s Fund and Nuffield Trust, Public satisfaction with the NHS and social care in 2025",
+     "source_url": "https://assets.kingsfund.org.uk/f/256914/x/bd8551f32f/public_satisfaction_nhs_bsa2025_march2026.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-09-28",
+     "id": "britons-satisfied-with-the-way-the"
+    },
+    {
+     "label": "Satisfied with the availability of quality health care locally",
+     "viz": "ranked",
+     "wide": true,
+     "value": "75",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Switzerland",
+       "value": "89",
+       "highlight": false
+      },
+      {
+       "label": "Netherlands",
+       "value": "83",
+       "highlight": false
+      },
+      {
+       "label": "Germany",
+       "value": "81",
+       "highlight": false
+      },
+      {
+       "label": "Japan",
+       "value": "80",
+       "highlight": false
+      },
+      {
+       "label": "United States",
+       "value": "75",
+       "highlight": true
+      },
+      {
+       "label": "Australia",
+       "value": "71",
+       "highlight": false
+      },
+      {
+       "label": "OECD average",
+       "value": "64",
+       "highlight": false
+      },
+      {
+       "label": "United Kingdom",
+       "value": "61",
+       "highlight": false
+      },
+      {
+       "label": "France",
+       "value": "60",
+       "highlight": false
+      },
+      {
+       "label": "Canada",
+       "value": "50",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "75 percent of Americans were satisfied with the availability of quality health care in their area in 2024, above the OECD average of 64 percent.",
+     "detail": "The Gallup World Poll asks people to rate the availability of good care where they live, not its cost or whether they are covered. It is one of the few system-level measures on which the United States is above average and Canada and the UK are below it. A differently worded question gets a different answer: in Gallup’s US survey of November 2025, a record 23 percent of Americans said the US health system was “in a state of crisis” and a further 47 percent said it had “major problems.”",
+     "source_label": "OECD, Health at a Glance 2025, Table 1.4 (Gallup World Poll data)",
+     "source_url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/11/health-at-a-glance-2025_a894f72e/8f9e3f98-en.pdf",
+     "source_published": "2024",
+     "source_accessed": "2026-09-28",
+     "id": "satisfied-with-the-availability-of-quality"
+    },
+    {
+     "label": "Projected rise in the uninsured from the 2025 budget law",
+     "viz": "bar",
+     "wide": false,
+     "value": "10",
+     "unit": "million",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "CBO projects that the July 2025 budget reconciliation law will leave 10 million more people uninsured in 2034 than its January 2025 baseline.",
+     "detail": "CBO’s year-by-year figures rise from 5.2 million more uninsured in 2027 to 6.8 million in 2028 and 8.6 million in 2029. Most of the increase comes from Medicaid provisions, chiefly the requirement that expansion adults aged 19 to 64 show 80 hours a month of work, study or community service. CBO estimated the Medicaid changes cut federal spending by about $1.06 trillion over 2025–2034. Counting the separate expiry of the enhanced ACA tax credits, the Georgetown Center for Children and Families put the combined increase at about 15 million by 2034.",
+     "source_label": "Congressional Budget Office, Estimated Budgetary Effects of Public Law 119-21",
+     "source_url": "https://www.cbo.gov/publication/61570",
+     "source_published": "2025",
+     "source_accessed": "2026-09-28",
+     "id": "projected-rise-in-the-uninsured-from"
+    },
+    {
+     "label": "ACA marketplace enrollment with coverage in effect, each February",
+     "viz": "ranked",
+     "wide": true,
+     "value": "19.2",
+     "unit": "million",
+     "series": [
+      {
+       "label": "2019",
+       "value": "10.4",
+       "highlight": false
+      },
+      {
+       "label": "2025",
+       "value": "22.1",
+       "highlight": false
+      },
+      {
+       "label": "2026",
+       "value": "19.2",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Marketplace enrollment fell from 22.1 million in February 2025 to 19.2 million in February 2026 after the enhanced tax credits expired; why it fell is disputed.",
+     "detail": "The enhanced premium tax credits, enacted in 2021 and extended in 2022, lapsed at the end of 2025. KFF had estimated that average net premium payments for subsidized enrollees would more than double, from $888 to $1,904 a year. CMS counted 23.1 million plan selections in open enrollment, 5 percent fewer than in 2025, with average out-of-pocket premiums up from $113 to $178 a month and the share choosing bronze plans up from 30 to 40 percent. The administration’s ASPE brief attributes the 2.9 million decline to removing improper, phantom or fraudulent enrollments and estimates 2.6 million such enrollments remain; supporters of the credits attribute it mainly to higher net premiums. Both readings agree enrollment remains well above the pre-2021 level of about 10 million.",
+     "source_label": "HHS ASPE, ACA Exchange Enrollment in 2026",
+     "source_url": "https://www.aspe.hhs.gov/sites/default/files/documents/f5f29954221d5b5713070ac2541fda8e/aca-enrollment-report-2026-final-version.pdf",
+     "source_published": "2026",
+     "source_accessed": "2026-09-28",
+     "id": "aca-marketplace-enrollment-with-coverage-in"
+    },
+    {
+     "label": "Deaths within 30 days of hospital admission for stroke",
+     "viz": "ranked",
+     "wide": true,
+     "value": "4.5",
+     "unit": "per 100",
+     "series": [
+      {
+       "label": "Japan",
+       "value": "2.1",
+       "highlight": false
+      },
+      {
+       "label": "Korea",
+       "value": "3.3",
+       "highlight": false
+      },
+      {
+       "label": "Norway",
+       "value": "4.0",
+       "highlight": false
+      },
+      {
+       "label": "Australia",
+       "value": "4.1",
+       "highlight": false
+      },
+      {
+       "label": "United States",
+       "value": "4.5",
+       "highlight": true
+      },
+      {
+       "label": "Germany",
+       "value": "7.0",
+       "highlight": false
+      },
+      {
+       "label": "Canada",
+       "value": "7.6",
+       "highlight": false
+      },
+      {
+       "label": "OECD average",
+       "value": "7.7",
+       "highlight": false
+      },
+      {
+       "label": "Switzerland",
+       "value": "7.9",
+       "highlight": false
+      },
+      {
+       "label": "United Kingdom",
+       "value": "8.5",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "About 4.5 in 100 US patients admitted for ischemic stroke died within 30 days, against an OECD average of 7.7.",
+     "detail": "Once patients reach a hospital, US acute care performs well by several OECD measures. The same table shows 79.8 percent of US women aged 50 to 69 screened for breast cancer in the past two years, against 55.9 percent on average. The United States does worse on measures that depend on continuous primary care: 733 avoidable hospital admissions for asthma, COPD, heart failure and diabetes for every 100,000 people, where the OECD average is 473. The stroke rate covers people 45 and over, standardized for age and sex, and counts deaths in the same hospital rather than linked records, which the OECD cautions limits comparability.",
+     "source_label": "OECD, Health at a Glance 2025, Table 1.5",
+     "source_url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/11/health-at-a-glance-2025_a894f72e/8f9e3f98-en.pdf",
+     "source_published": "2021–2023",
+     "source_accessed": "2026-09-28",
+     "id": "deaths-within-30-days-of-hospital"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Should government guarantee health care to all, or leave it mainly to individuals with a safety net?",
+    "kind": "value",
+    "why": "This is a question about what people owe one another and what government is for. Many Americans who want everyone covered still do not want government to run the system, and the split falls sharply along party lines.",
+    "detail": "The case for a guarantee: illness is largely unchosen and unpredictable, and without coverage people delay care, fall into medical debt or go without. Every other wealthy democracy treats access to care as a condition of equal citizenship, and markets cannot supply coverage to people whose expected costs exceed what they can pay. A guarantee also frees people to change jobs or start businesses without losing coverage.\n\nThe case for individual choice with a safety net: people differ in what care they value and what trade-offs they would make between cost, access and risk, and a single guaranteed package imposes one answer on everyone. Government guarantees crowd out charity, family and private arrangements and make the guarantee hostage to budget politics. A targeted safety net for the poor and the sick protects the vulnerable without taking the whole sector under state control or taxing everyone to pay for it.",
+    "lean_label_a": "Guarantee it to all",
+    "lean_label_b": "Choice, with a safety net",
+    "id": "should-government-guarantee-health-care-to"
+   },
+   {
+    "text": "Would a single public payer lower total US health spending?",
+    "kind": "empirical",
+    "why": "Almost everyone agrees single payer would move spending from premiums and out-of-pocket costs onto taxes. The dispute is whether the total bill, public and private together, would shrink, and that rests on assumptions no one can test in advance.",
+    "detail": "Three assumptions decide the answer: how far provider payment rates would fall, how much administrative cost would disappear, and how much more care people would use once it is free at the point of use.\n\nThe case that spending falls: the United States pays higher prices than other countries for the same services, and private insurers pay hospitals far more than Medicare does. One public buyer with national bargaining power could set prices, as Canada’s provinces and Medicare already do, and a single set of rules would strip out much of the billing apparatus that multiple payers require.\n\nThe case that it rises: the savings assume providers accept rates far below what private insurers pay today, which would squeeze hospitals that already say Medicare underpays them, or else rates rise under political pressure and the savings evaporate. Eliminating deductibles and copays would increase use of care, and CBO expects congestion as demand outruns supply. Every estimate requires large new federal revenue.",
+    "lean_label_a": "Total spending falls",
+    "lean_label_b": "Total spending rises",
+    "id": "would-a-single-public-payer-lower"
+   },
+   {
+    "text": "Why does the United States spend so much: higher prices, or more care and sicker patients?",
+    "kind": "empirical",
+    "why": "The diagnosis decides the cure. If prices and overhead drive the gap, who sets prices matters most; if Americans use more care and carry more disease, cutting prices alone would ration care.",
+    "detail": "The case for prices: Gerard Anderson and colleagues’ “It’s the prices, stupid” work and its updates show US spending is high mainly because each service costs more, not because Americans see doctors or stay in hospital more often. The United States has fewer physicians per 1,000 people (2.7) than the OECD average (3.9). Private insurers pay hospitals well over twice Medicare’s rates, and administrative costs are estimated at a quarter to a third of spending.\n\nThe case for volume and demand: the OECD finds US volume of care per person well above average as well as prices, so both matter. Americans get more imaging, more specialty care, faster access to new drugs and more intensive end-of-life care, and US obesity and diabetes rates are among the highest in the OECD. Higher incomes also drive health spending everywhere, and the United States is richer than most comparison countries.",
+    "lean_label_a": "Higher prices",
+    "lean_label_b": "More care used",
+    "id": "why-does-the-united-states-spend"
+   },
+   {
+    "text": "Are long waits an inherent cost of universal public systems, or a fixable result of underfunding?",
+    "kind": "empirical",
+    "why": "Canada and England report long waits for planned treatment, but several universal systems, including the Netherlands, Germany and Switzerland, report short ones. The question is whether waits follow from the financing model or from how much a country spends.",
+    "detail": "The case that waits are inherent: when care is free at the point of use and the budget is fixed, demand exceeds supply and queues do the rationing that prices do elsewhere. Single-payer systems control costs precisely by limiting capacity, so waiting is the mechanism, not a flaw. Canada spends more of its economy on health than the OECD average and still reports median waits of more than half a year from referral to treatment.\n\nThe case that they are fixable: waits vary widely across universal systems and within them, from province to province in Canada, which points to management, workforce and funding rather than the financing model. England’s list grew through years of tight budgets and the pandemic and has come down from its peak. Americans also wait, for appointments and insurer approvals, and some go without care they cannot afford.",
+    "lean_label_a": "Inherent to the model",
+    "lean_label_b": "Fixable with funding",
+    "id": "are-long-waits-an-inherent-cost"
+   },
+   {
+    "text": "Should private insurance for core medical care be replaced, or kept alongside public coverage?",
+    "kind": "value",
+    "why": "This is the line between Medicare for All and every other route to universal coverage. About half of Americans have employer coverage and many say they like it, while the Medicare for All Act would end private coverage that duplicates the public plan.",
+    "detail": "The case for replacing it: a single payer gets its savings from being single, with one set of rules, one price schedule, no networks, no marketing and no profit margin. Keeping private insurers alongside a public plan keeps most of the administrative overhead and lets insurers select healthier customers. Employer coverage ties people’s care to their jobs, and “choice” of insurer means little when networks and costs change every year.\n\nThe case for keeping it: many high-performing systems, in the Netherlands, Switzerland and Germany, reach universal coverage with competing insurers. Forcing 150 million people out of plans they have chosen would be a huge disruption and a political dead end. Competition among plans rewards service and innovation, and a public plan can compete on price without becoming a monopoly that leaves patients no exit if it underperforms.",
+    "lean_label_a": "Replace private insurance",
+    "lean_label_b": "Keep a choice of plans",
+    "id": "should-private-insurance-for-core-medical"
+   },
+   {
+    "text": "Does expanding health insurance substantially improve health and survival?",
+    "kind": "empirical",
+    "why": "Randomized evidence is scarce, and the best studies point in somewhat different directions. The answer decides whether universal coverage is mainly a health program or mainly a way to protect people’s finances.",
+    "detail": "The case for large gains: Miller, Johnson and Wherry (Quarterly Journal of Economics, 2021) found a 9.4 percent reduction in annual mortality among low-income adults aged 55 to 64 in states that expanded Medicaid under the ACA, implying about 15,600 excess deaths a year in states that did not expand. A randomized IRS outreach experiment also found that coverage reduced mortality.\n\nThe case for modest gains: the Oregon Health Insurance Experiment, the only lottery-based randomized study of Medicaid, found no significant effect on blood pressure, cholesterol or blood sugar control within two years, though it reduced depression and nearly eliminated catastrophic out-of-pocket spending (New England Journal of Medicine, 2013). Much of the US life expectancy gap comes from overdoses, obesity, violence and road deaths, which insurance does little to change. On this view coverage’s main benefit is financial security, which cheaper designs could provide.",
+    "lean_label_a": "Large health gains",
+    "lean_label_b": "Modest health gains",
+    "id": "does-expanding-health-insurance-substantially-improve"
+   },
+   {
+    "text": "How much should patients pay at the point of care?",
+    "kind": "value",
+    "why": "Charges at the point of care both control spending and deter care. Where to set them separates Medicare for All, with no copays or deductibles, from almost every other design, including many universal systems in Europe.",
+    "detail": "The case for care free at the point of use: deductibles and copays deter needed care as much as unneeded care, especially for low-income and chronically ill patients, and they create medical debt. Free care when you need it is the most popular principle of Britain’s NHS. Costs are better controlled by setting prices and budgets than by charging the sick.\n\nThe case for cost sharing: when patients pay nothing at the point of care, they use more care, including care of little value, and the system must ration by queue or budget instead. Income-related deductibles protect the poor and the very sick fully while keeping everyone else price-conscious. Switzerland and the Netherlands combine universal coverage with substantial deductibles and rank well on outcomes.",
+    "lean_label_a": "Free at point of use",
+    "lean_label_b": "Cost sharing for most",
+    "id": "how-much-should-patients-pay-at"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Cover everyone through a mix of public and private insurers",
+    "color_key": "green",
+    "steelman": "Everyone should be covered and no one ruined by illness, and the surest route builds on what works: regulated private plans, a public option and help for all who need it.",
+    "detail": "The gaps in American coverage are specific and fixable: people who cannot afford marketplace premiums, adults in the 10 states that have not expanded Medicaid, workers whose employer offer is affordable on paper but not in practice. The AMA records the nonelderly uninsured falling from 46.5 million when the ACA was enacted in 2010 to 25.6 million in 2022, and marketplace enrollment more than doubled while the enhanced subsidies lasted. A public plan in every county, as in the Medicare-X Choice Act, adds a low-cost, stable choice and competitive pressure on private insurers without forcing anyone out of coverage they like. Germany, the Netherlands and Switzerland reach universal coverage this way, with competing insurers under strict rules and subsidies for everyone who needs them. It is also what most Americans will accept: a majority want government to ensure coverage, but not a majority want to give up private plans. Some of us favor a public option, some Dutch- or Swiss-style automatic enrollment with regulated insurers, some simply closing today’s gaps.\n\nSingle-payer supporters say multiple payers keep the waste and the high prices. Administrative waste comes mostly from nonstandard billing rules and prior authorization, which can be standardized without a single payer. Prices can be regulated across all payers, and a public option paying near-Medicare rates pulls them down. Multi-payer systems abroad cost far less than ours, which shows the problem is regulation, not the number of insurers.",
+    "proponents": "American Medical Association, Michael Bennet, Tim Kaine, Urban Institute",
+    "id": "cover-everyone-through-a-mix-of"
+   },
+   {
+    "name": "Cover everyone through a single public insurer",
+    "color_key": "blue",
+    "steelman": "Health care is a human right. One public plan that covers everyone automatically, with no premiums or deductibles, closes every gap and has the bargaining power to control costs.",
+    "detail": "Only a system that covers everyone automatically, for everything medically necessary, with no premiums, deductibles or networks, actually delivers health care as a right. Every piecemeal fix leaves people falling through the gaps, as the lapse of the enhanced subsidies and the coming Medicaid work requirements show, because coverage that depends on income checks, employer offers and annual enrollment will always shed people. One public payer is also the only design that controls costs. It sets prices with national bargaining power, as Canada’s provinces and Medicare do, and removes the hundreds of billions spent on billing, marketing, claim denials and insurer profits; Physicians for a National Health Program projects “over $500 billion in administrative savings.” The savings pay for covering the uninsured and eliminating out-of-pocket costs. Most of us follow the Canadian model, public insurance with private doctors and hospitals; a smaller group favors a national health service with publicly employed clinicians.\n\nThe objection is long waits and huge tax increases. The taxes replace premiums, deductibles and copays that families and employers already pay, and even skeptical estimates find total spending about flat or lower, so most households would pay less overall. Canada’s waits reflect Canada’s spending choices, a system of about 11 percent of GDP; a US single payer would start from 17 to 18 percent, far above any other country. Americans already wait, and millions have no coverage to wait with.",
+    "proponents": "Physicians for a National Health Program, Bernie Sanders, Pramila Jayapal, Debbie Dingell, National Nurses United",
+    "id": "cover-everyone-through-a-single-public"
+   },
+   {
+    "name": "Lower costs through competition and consumer choice",
+    "color_key": "amber",
+    "steelman": "Care is expensive because it is not a market. Put people in control of their own health dollars, free supply from needless rules, and target help to the poor and sick.",
+    "detail": "Tax breaks for employer coverage and open-ended subsidies hide the price of care from patients, so neither they nor insurers bargain hard. Mandates make every plan cover everything, and licensing, certificate-of-need laws and payment rules shield hospitals from competition and encourage consolidation. As Michael Cannon of the Cato Institute argues, government already controls a larger share of US health spending than Canada’s or the UK’s, and government-financed demand without price discipline pushes prices up. Where patients do spend their own money, on cosmetic surgery, LASIK or cash-price clinics, prices are posted and fall over time. Give people control of their health dollars through health savings accounts and portable coverage, let insurers offer plans people actually want, and remove supply restrictions, and costs fall. Some of us would scale back federal subsidies and mandates entirely; others accept targeted subsidies that flow to individuals.\n\nCritics say markets leave the sick and poor without coverage and point to the worst outcomes among rich countries. Those outcomes reflect a system dominated by government payment rules and third-party payment, not a free market, and much of the life expectancy gap comes from causes outside medicine. The sick and poor are better served by direct help, such as funded high-risk pools and subsidies to individuals, than by putting everyone into a government plan that rations by queue. The US system already delivers fast access to advanced care for those in it, and zero-premium subsidies invited improper enrollments that are only now being removed.",
+    "proponents": "Paragon Health Institute, Brian Blase, Cato Institute, Michael F. Cannon, Heritage Foundation",
+    "id": "lower-costs-through-competition-and-consumer"
+   },
+   {
+    "name": "Cap health care prices, whoever does the insuring",
+    "color_key": "rust",
+    "steelman": "Americans pay more because each service costs more. Cap what dominant hospitals can charge, whoever pays the bill, and every route to coverage becomes affordable.",
+    "detail": "The single-payer-versus-market debate asks the wrong question. Prices are high because consolidated hospital systems have market power over private insurers, and changing who insures people does not by itself change that; neither does adding a public plan or handing patients health savings accounts. Capping what providers can charge, or setting prices across all payers, would lower premiums whatever the coverage model, and it could be done now, without the upheaval of replacing employer coverage or the delay of building a new system. The Committee for a Responsible Federal Budget estimates that capping commercial hospital prices at 200 percent of Medicare would cut national health spending by just over $1 trillion over 2021–2030, $889 billion of it in lower premiums. Maryland has set hospital rates for all payers since the 1970s and since 2014 has run its hospitals on global budgets. Our proposals range from caps on out-of-network or outpatient prices to full all-payer rate setting, often paired with antitrust enforcement.\n\nMarket supporters warn that price caps cause shortages and hospital closures. Caps set well above Medicare, at 200 to 300 percent, bind only on the highest-priced and usually most consolidated hospitals, not rural or safety-net ones, and Maryland’s hospitals have operated under rate setting for decades. Universal-coverage supporters warn that caps leave the uninsured uncovered. Lower prices make every coverage expansion cheaper: price control is the step that makes universal coverage affordable, not a substitute for it.",
+    "proponents": "Arnold Ventures, Committee for a Responsible Federal Budget, Gerard Anderson, Center for American Progress",
+    "id": "cap-health-care-prices-whoever-does"
+   },
+   {
+    "name": "Guarantee everyone catastrophic coverage",
+    "color_key": "purple",
+    "steelman": "Enroll everyone automatically in public protection against ruinous bills, pay in full for the poor and very sick, and let people with means pay for routine care.",
+    "detail": "The left is right that everyone should be protected from financial ruin and covered automatically, and the right is right that prices, choice and personal responsibility keep costs in check. Universal catastrophic coverage does both. Everyone is enrolled in a public floor that pays fully for the poor and the very sick, while people with means pay deductibles scaled to income for routine care and can buy more coverage if they want it. No one has to apply, re-enroll or prove eligibility, so no one falls through the gaps, and public money goes where insurance matters most, to large and unpredictable costs. Designs differ on how generous the floor is, from catastrophic only to a basic bundle that includes primary care. Writing for the Niskanen Center, Ed Dolan reported a RAND analysis estimating that a basic universal catastrophic plan would cut total national health spending by $211 billion, about 8.7 percent, compared with current law, and save the federal budget a net $40 billion.\n\nSingle-payer supporters say high deductibles deter needed care; market supporters call it a large new entitlement. Deductibles scale with income, so the poor pay nothing and no one faces costs that are large relative to what they earn. The floor replaces much of today’s tangle of Medicaid, marketplace subsidies and the employer tax break rather than adding to it, so its net cost depends on design and could be close to what government already spends.",
+    "proponents": "Niskanen Center, Katherine Baicker, Amitabh Chandra, Mark Shepard",
+    "id": "guarantee-everyone-catastrophic-coverage"
+   }
+  ],
+  "crux": {
+   "lead": "Would changing how coverage is organized close the US gap in cost and health, and at what price?",
+   "lead_highlight": "changing how coverage is organized",
+   "subtitle": "The United States spends more on health than any other rich country, yet its people die younger and more of them go uncovered. The camps split over whether the cause is who pays for care, what care costs or things outside medicine, and over what a remedy would cost in taxes, waits, choice and disruption.",
+   "empirical": "How much of the extra spending comes from higher prices and overhead rather than more care, sicker patients and higher incomes; whether covering the uninsured mainly saves lives or mainly protects finances; whether long waits follow from public financing or from funding choices; and how hospitals would respond to sharply lower payments. Natural experiments and cross-country studies can narrow these, though not all the way.",
+   "values": "Even with the facts settled, people weigh the goods differently: equal access for everyone against choice of plan and doctor; rationing by waiting against rationing by price; how much the healthy and well-off should pay in taxes for the care of the sick and poor; and how much disruption a more universal system is worth. Whether care is a right the state guarantees or a service people arrange for themselves, no data can answer."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Peterson-KFF Health System Tracker",
+    "description": "A nonpartisan collection of charts and briefs comparing US health spending, prices, coverage, medical debt and outcomes with other wealthy countries, updated regularly.",
+    "url": "https://www.healthsystemtracker.org/",
+    "for_position": null,
+    "id": "peterson-kff-health-system-tracker"
+   },
+   {
+    "kind": "local",
+    "title": "HealthCare.gov Find Local Help",
+    "description": "A federal search tool listing trained navigators, assisters and brokers near your ZIP code who help people enroll in marketplace plans, Medicaid or CHIP at no charge.",
+    "url": "https://localhelp.healthcare.gov/",
+    "for_position": null,
+    "id": "healthcare-gov-find-local-help"
+   },
+   {
+    "kind": "policy",
+    "title": "Medicare for All Act of 2025 (S. 1506)",
+    "description": "Track the Senate single-payer bill Senator Bernie Sanders introduced on April 29, 2025, with its text, status and cosponsors; the House companion is H.R. 3069.",
+    "url": "https://www.govtrack.us/congress/bills/119/s1506",
+    "for_position": "Cover everyone through a single public insurer",
+    "id": "medicare-for-all-act-of-2025"
+   },
+   {
+    "kind": "policy",
+    "title": "Medicare-X Choice Act (2025 reintroduction)",
+    "description": "Senators Bennet and Kaine’s bill to offer a public plan alongside private plans in every county, with links to the bill text and a summary.",
+    "url": "https://www.bennet.senate.gov/2025/12/04/bennet-kaine-colleagues-reintroduce-medicare-x-choice-act-to-achieve-universal-health-care/",
+    "for_position": "Cover everyone through a mix of public and private insurers",
+    "id": "medicare-x-choice-act-2025-reintroduction"
+   },
+   {
+    "kind": "donate",
+    "title": "Paragon Health Institute",
+    "description": "A policy research group that argues government subsidies and regulation drive up US health costs and proposes market-based alternatives; donations fund its research and testimony.",
+    "url": "https://paragoninstitute.org/donate/",
+    "for_position": "Lower costs through competition and consumer choice",
+    "id": "paragon-health-institute"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Committee for a Responsible Federal Budget, Capping Hospital Prices",
+    "description": "A budget analysis of limiting commercial hospital prices to 200 percent of Medicare, with estimated savings for premiums and the federal budget.",
+    "url": "https://www.crfb.org/papers/capping-hospital-prices",
+    "for_position": "Cap health care prices, whoever does the insuring",
+    "id": "committee-for-a-responsible-federal-budget"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Niskanen Center, Universal Catastrophic Coverage",
+    "description": "The Niskanen Center’s proposal and supporting essays for automatic public coverage of large medical costs, with deductibles scaled to income for routine care.",
+    "url": "https://www.niskanencenter.org/universal-catastrophic-coverage/",
+    "for_position": "Guarantee everyone catastrophic coverage",
+    "id": "niskanen-center-universal-catastrophic-coverage"
+   },
+   {
+    "kind": "volunteer",
+    "title": "National Nurses United, Medicare for All",
+    "description": "The largest US nurses’ union’s campaign page, with fact sheets on the Medicare for All Act and a sign-up to join its network of activists and volunteers.",
+    "url": "https://www.nationalnursesunited.org/medicare-for-all",
+    "for_position": "Cover everyone through a single public insurer",
+    "id": "national-nurses-united-medicare-for-all"
+   },
+   {
+    "kind": "learn_more",
+    "title": "OECD, Health at a Glance 2025",
+    "description": "The standard international reference on health spending, coverage, waiting, quality and outcomes across OECD countries, with the tables behind most of this page’s comparisons.",
+    "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/11/health-at-a-glance-2025_a894f72e/8f9e3f98-en.pdf",
+    "for_position": null,
+    "id": "oecd-health-at-a-glance-2025"
+   },
+   {
+    "kind": "policy",
+    "title": "Find your US representative",
+    "description": "The House lookup tool gives your member’s contact details for any address, to weigh in on coverage bills, the ACA tax credits or Medicaid changes in whichever direction you favor.",
+    "url": "https://www.house.gov/representatives/find-your-representative",
+    "for_position": null,
+    "id": "find-your-us-representative"
+   }
+  ]
+ },
+ "icon": "hospital",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: a broad two-story clinic building with a plain cross on its facade as the dominant focal mass; a small ambulance parked in front, overlapping the building's lower corner; a cluster of three small houses on the far left at a smaller scale; a winding road that runs from the houses across the whole frame to the clinic's door as the connective element; the ground is a gentle rolling hill curve, with one rounded tree of medium size beside the clinic.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #b0567f, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: dollar signs, coins, price tags, bills or invoices, piggy banks, flags, the caduceus, the red cross emblem in red, hospital beds, syringes, skulls, protest signs, queues of people, broken or crumbling buildings, padlocks, scales of justice."
 }
