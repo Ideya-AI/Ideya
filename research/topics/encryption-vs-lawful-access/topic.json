@@ -1,8 +1,8 @@
 {
  "slug": "encryption-vs-lawful-access",
  "title": "Encryption vs. Lawful Access",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-09-30T02:13:34+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Government access to end-to-end encrypted communication. Encryption specifically, not surveillance broadly.",
@@ -14,5 +14,657 @@
   "privacy-vs-surveillance",
   "data-ownership-surveillance-capitalism",
   "content-moderation-free-speech"
- ]
+ ],
+ "content": {
+  "overview": {
+   "summary": "Whether governments should get into encrypted messages by decryption, scanning or hacking, and what each answer costs in security, privacy and child safety.",
+   "scope_covered": "Government access to end-to-end encrypted messages: decryption on court order, scanning on the phone before encryption, and hacking suspects’ devices; stored data only where the same powers reach it.",
+   "scope_excluded": "Surveillance in general, including metadata, data retention, facial recognition and bulk intelligence collection; moderation of public posts.",
+   "why_now": "On September 29, 2026, EU negotiators met in Brussels to seek political agreement on detection duties in the proposed child sexual abuse regulation, which critics call chat control, the sixth political round since talks opened in December 2025.",
+   "why_now_source_label": "Council of the EU, note 13051/26",
+   "why_now_source_url": "https://data.consilium.europa.eu/doc/document/ST-13051-2026-INIT/en/pdf"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "US wiretaps where investigators met encryption they could not decrypt",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "wiretaps",
+     "series": [
+      {
+       "label": "2015",
+       "value": "11",
+       "highlight": false
+      },
+      {
+       "label": "2018",
+       "value": "192",
+       "highlight": false
+      },
+      {
+       "label": "2020",
+       "value": "383",
+       "highlight": false
+      },
+      {
+       "label": "2022",
+       "value": "441",
+       "highlight": false
+      },
+      {
+       "label": "2024",
+       "value": "533",
+       "highlight": false
+      },
+      {
+       "label": "2025",
+       "value": "486",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2025, officials could not decipher the plain text in 486 US wiretaps, 217 state and 269 federal, against 1,735 wiretaps authorized that year.",
+     "detail": "The US courts’ annual wiretap report is the only long-running official count of how often encryption stops a court-ordered interception. Each figure adds state wiretaps in which “officials were unable to decipher the plain text” to federal wiretaps reported as encrypted that “could not be decrypted.” Over the same decade the number of wiretaps authorized fell from 4,148 in 2015 to 1,735 in 2025, so unreadable intercepts went from a fraction of a percent to a large minority of the total. That share is only approximate, because a year’s encryption count can include wiretaps authorized earlier. The report covers only real-time interception; it says nothing about stored messages, seized phones, cloud backups or cases where investigators never applied because they expected encryption. Law enforcement reads the rise as evidence of “going dark”; critics note that the yearly count remains in the hundreds.",
+     "source_label": "Administrative Office of the US Courts, Wiretap Report 2025 (and the 2015, 2018, 2020, 2022 and 2024 reports)",
+     "source_url": "https://www.uscourts.gov/data-news/reports/statistical-reports/wiretap-reports/wiretap-report-2025",
+     "source_published": "2025",
+     "source_accessed": "2026-09-29",
+     "id": "us-wiretaps-where-investigators-met-encryption"
+    },
+    {
+     "label": "Monthly users of WhatsApp",
+     "viz": "bar",
+     "wide": false,
+     "value": "3+",
+     "unit": "billion",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Mark Zuckerberg said on May 1, 2025, that more than 3 billion people use WhatsApp each month; its personal messages are end-to-end encrypted by default.",
+     "detail": "WhatsApp completed end-to-end encryption for all messages in 2016 using the Signal Protocol, the same design Signal uses, which made strong encryption the default for a large share of humanity rather than a tool for specialists. Apple’s iMessage is also end-to-end encrypted, and Facebook Messenger joined in December 2023. Scale is why governments now treat encryption design as a policy question: one company’s product choice decides whether several billion people’s messages can be reached by any warrant anywhere. It is also why security officials worry about adding an access mechanism, since any flaw in it would sit on the same several billion devices.",
+     "source_label": "TechCrunch, reporting Meta’s first-quarter 2025 earnings call, 1 May 2025",
+     "source_url": "https://techcrunch.com/2025/05/01/whatsapp-now-has-more-than-3-billion-users/",
+     "source_published": "2025",
+     "source_accessed": "2026-09-29",
+     "id": "monthly-users-of-whatsapp"
+    },
+    {
+     "label": "CyberTipline reports from Meta’s platforms",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "reports",
+     "series": [
+      {
+       "label": "Facebook 2023",
+       "value": "17,838,422",
+       "highlight": false
+      },
+      {
+       "label": "Facebook 2024",
+       "value": "8,590,357",
+       "highlight": false
+      },
+      {
+       "label": "Facebook 2025",
+       "value": "4,907,710",
+       "highlight": true
+      },
+      {
+       "label": "Instagram 2023",
+       "value": "11,430,007",
+       "highlight": false
+      },
+      {
+       "label": "Instagram 2025",
+       "value": "3,673,045",
+       "highlight": false
+      },
+      {
+       "label": "WhatsApp 2023",
+       "value": "1,389,618",
+       "highlight": false
+      },
+      {
+       "label": "WhatsApp 2025",
+       "value": "2,355,302",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Facebook filed 4.9 million reports in 2025, down from 17.8 million in 2023; NCMEC names encryption as one cause, alongside changes in how reports are counted.",
+     "detail": "Meta turned on end-to-end encryption by default for Messenger in December 2023 and, according to NCMEC, finished the rollout in summer 2024. After adjusting for Facebook’s adoption of “bundling,” which lets one report cover a viral image shared many times, and for a change in what content it reports, NCMEC says Facebook filed about 6.9 million fewer reports in 2024 than in 2023, and it lists encryption as a contributing factor. The raw drop is larger because it mixes in those changes, so it should not be read as the effect of encryption alone. Meta says it still reports more than any other company, using signals other than message content, such as account behavior and user reports. WhatsApp, end-to-end encrypted since 2016, cannot scan message content; it reports from unencrypted surfaces such as profile photos and group descriptions and from user reports, and its count rose over the same period.",
+     "source_label": "NCMEC, CyberTipline reports by electronic service provider, 2023, 2024 and 2025",
+     "source_url": "https://www.missingkids.org/content/dam/missingkids/pdfs/2025-reports-by-esp.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-09-29",
+     "id": "cybertipline-reports-from-meta-s-platforms"
+    },
+    {
+     "label": "Reach of the Salt Typhoon intrusion into telecom networks",
+     "viz": "bar",
+     "wide": false,
+     "value": "80+",
+     "unit": "countries",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The FBI said in August 2025 that the China-linked Salt Typhoon campaign targeted organizations in more than 80 countries and that it had notified at least 600 organizations.",
+     "detail": "Salt Typhoon matters to this debate because of where it got in. In November 2024 the FBI and CISA said the hackers had stolen call records, the private communications of a limited number of people in government and politics, and copies of “certain information that was subject to U.S. law enforcement requests pursuant to court orders.” That means the systems carriers maintain to carry out wiretaps under the 1994 Communications Assistance for Law Enforcement Act. In December 2024 CISA advised senior officials and others at high risk to “use only end-to-end encrypted communications,” naming Signal as an example.",
+     "source_label": "Nextgov/FCW, quoting FBI Cyber Division director Brett Leatherman, 27 August 2025",
+     "source_url": "https://www.nextgov.com/cybersecurity/2025/08/salt-typhoon-hackers-targeted-over-80-countries-fbi-says/407719/",
+     "source_published": "2025",
+     "source_accessed": "2026-09-29",
+     "id": "reach-of-the-salt-typhoon-intrusion"
+    },
+    {
+     "label": "Europeans supporting scanning for child abuse, depending on the question",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% support",
+     "series": [
+      {
+       "label": "Detect in messages",
+       "value": "87",
+       "highlight": false
+      },
+      {
+       "label": "Encrypted, if risky",
+       "value": "83",
+       "highlight": true
+      },
+      {
+       "label": "Search all messages",
+       "value": "18",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a 2023 Eurobarometer for the European Commission, 83 percent backed detection in risky encrypted services; a separate 2021 poll for an opponent found 18 percent backed searching all messages.",
+     "detail": "The rows answer different questions and do not contradict each other; they show how much the answer depends on framing. The first two come from a 2023 Eurobarometer commissioned by the European Commission, which also found that 96 percent saw detecting child abuse as equally or more important than online privacy and that 78 percent approved of the Commission’s proposal. The third comes from a 2021 YouGov survey of 10,265 people in ten countries, commissioned by Pirate Party MEP Patrick Breyer, an opponent of the proposal, which asked about “automatic searching of all personal electronic mail and messages of each citizen for presumed suspicious content”; 72 percent opposed it. Each side has criticized the other’s wording: one describes targeted detection under a risk condition, the other blanket searching. No poll found asks about the text actually under negotiation in 2026.",
+     "source_label": "European Commission, Eurobarometer, 20 July 2023; Patrick Breyer, YouGov poll, 28 April 2021",
+     "source_url": "https://home-affairs.ec.europa.eu/news/strong-support-citizens-across-eu-prevent-and-combat-child-sexual-abuse-online-2023-07-20_en",
+     "source_published": "2023",
+     "source_accessed": "2026-09-29",
+     "id": "europeans-supporting-scanning-for-child-abuse"
+    },
+    {
+     "label": "Arrests from the hacking of the EncroChat encrypted phone network",
+     "viz": "bar",
+     "wide": false,
+     "value": "6,558",
+     "unit": "arrests",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Europol reported 6,558 arrests and close to 900 million euros seized after French and Dutch investigators intercepted more than 115 million conversations among about 60,000 EncroChat users.",
+     "detail": "EncroChat sold modified phones with encrypted messaging, overwhelmingly to organized crime. In 2020 the French gendarmerie planted malware through the network’s servers onto the handsets, reading messages on the device before they were encrypted, and shared the take with partners across Europe. Similar operations followed against Sky ECC in 2021. Both sides cite the case: supporters of stronger access powers as a measure of how much serious crime hides behind encryption, opponents of mandates as proof that police can reach criminal networks by targeted hacking without weakening the apps ordinary people use. Defendants in several countries challenged the evidence, with mixed results in court.",
+     "source_label": "Europol, EncroChat results press release, 27 June 2023",
+     "source_url": "https://www.europol.europa.eu/media-press/newsroom/news/dismantling-encrypted-criminal-encrochat-communications-leads-to-over-6-500-arrests-and-close-to-eur-900-million-seized",
+     "source_published": "2023",
+     "source_accessed": "2026-09-29",
+     "id": "arrests-from-the-hacking-of-the"
+    },
+    {
+     "label": "Facebook child-abuse reports to UK police projected lost to default encryption",
+     "viz": "radial",
+     "wide": false,
+     "value": "92",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The UK National Crime Agency projected in 2023 that default encryption would cost 92 percent of Facebook’s and 85 percent of Instagram’s child-abuse reports that reach UK police.",
+     "detail": "This is a projection made when Meta announced the Messenger rollout, not a measured outcome, and Instagram direct messages were not yet encrypted by default at the time. The NCA said industry reports across all companies, acted on by it and local police, were leading to “over 800 arrests and nearly 1,200 children being safeguarded” each month. Meta has not published a comparable figure for how many reports its encrypted services now generate from signals other than message content; NCMEC’s count of Facebook reports is the nearest measured series.",
+     "source_label": "National Crime Agency, response to Meta’s rollout of end-to-end encryption, 7 December 2023 (republished by WiredGov)",
+     "source_url": "https://wired-gov.net/wg/news.nsf/articles/NCA+response+to+Metas+rollout+of+endtoendencryption+07122023161500?open=",
+     "source_published": "2023",
+     "source_accessed": "2026-09-29",
+     "id": "facebook-child-abuse-reports-to-uk"
+    },
+    {
+     "label": "Reports of suspected child sexual exploitation to the US CyberTipline",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "million",
+     "series": [
+      {
+       "label": "2023",
+       "value": "36.2",
+       "highlight": false
+      },
+      {
+       "label": "2024",
+       "value": "20.5",
+       "highlight": false
+      },
+      {
+       "label": "2025",
+       "value": "21.3",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "NCMEC’s CyberTipline received 21.3 million reports in 2025, after 36.2 million in 2023; part of the 2024 fall reflects a change in how reports are counted.",
+     "detail": "US-based online services must report child sexual abuse material to the National Center for Missing & Exploited Children when they become aware of it, and most reports come from companies that scan their own services. Adjusting for bundling, the counting change introduced in 2024, NCMEC counted 29.2 million incidents that year, about 7 million fewer than in 2023. It attributes the rest of the decline to several causes, among them fewer reports from Google, X, Discord, Microsoft and Synchronoss, the removal of images that broke terms of service but did not meet the legal definition, and “further implementation of end-to-end encryption.” The same year the REPORT Act added categories companies must report, which NCMEC says should have raised the count. Reports are not distinct victims or offenders: one report can cover many files, and many reports concern the same material.",
+     "source_label": "NCMEC, 2025 CyberTipline Report; NCMEC, 2024 CyberTipline Report",
+     "source_url": "https://www.missingkids.org/content/dam/missingkids/pdfs/2025-cybertipline-report.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-09-29",
+     "id": "reports-of-suspected-child-sexual-exploitation"
+    },
+    {
+     "label": "Automated child-abuse referrals that Irish police found were not abuse material",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "referrals",
+     "series": [
+      {
+       "label": "Received from NCMEC",
+       "value": "4,192",
+       "highlight": false
+      },
+      {
+       "label": "Not abuse material",
+       "value": "471",
+       "highlight": true
+      },
+      {
+       "label": "Actionable",
+       "value": "409",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Of 4,192 referrals Ireland’s police received from NCMEC in 2020, they marked 471 (11.2 percent) as not child abuse material and 409 (9.7 percent) as actionable.",
+     "detail": "This is one of the few official, published breakdowns of what happens to reports generated largely by automated scanning. The Garda child-exploitation unit gave examples of material it would not pursue: “children playing on a beach, topless content, nudist, adult content, etc.” The source does not classify the remaining roughly 3,300 referrals, which may include genuine abuse material that could not be acted on, for example because the offender was abroad, so the actionable share is not the share that was abuse. Opponents of mandatory scanning cite the false positives and the fact that Irish police kept data on people they had cleared; supporters note that most referrals were not false positives and that new laws would bring stricter accuracy standards.",
+     "source_label": "Irish Council for Civil Liberties, citing An Garda Síochána responses, 19 October 2022",
+     "source_url": "https://www.iccl.ie/news/an-garda-siochana-unlawfully-retains-files-on-innocent-people-who-it-has-already-cleared-of-producing-or-sharing-of-child-sex-abuse-material/",
+     "source_published": "2020",
+     "source_accessed": "2026-09-29",
+     "id": "automated-child-abuse-referrals-that-irish"
+    },
+    {
+     "label": "European Parliament civil liberties committee vote on the child sexual abuse regulation",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "votes",
+     "series": [
+      {
+       "label": "In favor",
+       "value": "51",
+       "highlight": true
+      },
+      {
+       "label": "Against",
+       "value": "2",
+       "highlight": false
+      },
+      {
+       "label": "Abstained",
+       "value": "1",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In November 2023 the committee adopted Parliament’s position 51 to 2, excluding end-to-end encrypted communications from detection orders and limiting orders to targeted, court-approved last resorts.",
+     "detail": "The vote crossed party lines, including the center-right rapporteur Javier Zarzalejos, and set Parliament firmly against scanning encrypted messages. The Council of the EU did not agree its own position until November 26, 2025, after Poland and then Denmark failed to find a majority for mandatory detection and Germany announced in October 2025 that it would not support the Danish text. The Council mandate dropped mandatory scanning in favor of risk-mitigation duties and made voluntary scanning permanent. The gap between the two institutions on detection and encryption is what the 2026 negotiations are meant to close.",
+     "source_label": "European Parliament press release, 14 November 2023",
+     "source_url": "https://www.europarl.europa.eu/news/en/press-room/20231110IPR10118/child-sexual-abuse-online-effective-measures-no-mass-surveillance",
+     "source_published": "2023",
+     "source_accessed": "2026-09-29",
+     "id": "european-parliament-civil-liberties-committee-vote"
+    },
+    {
+     "label": "Days the EU went without a legal basis for voluntary child-abuse scanning",
+     "viz": "bar",
+     "wide": false,
+     "value": "111",
+     "unit": "days",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The EU law letting providers voluntarily scan for child abuse material lapsed on April 3, 2026, for 111 days until its July 23 reinstatement, which excluded end-to-end encrypted communications.",
+     "detail": "Since 2021 a temporary exception to the EU’s ePrivacy rules has allowed services such as Gmail, Messenger and Instagram to keep scanning for known abuse material while the permanent regulation is negotiated. The European Parliament declined to extend it in March 2026, and it expired; child-protection groups warned of “an alarming and unacceptable gap in child protection.” Parliament passed the reinstatement under an urgent procedure on July 9, 2026, with an amendment excluding end-to-end encrypted interpersonal communications, which the Council accepted; it now runs to April 3, 2028. Encrypted services were effectively outside the old regime anyway, since providers cannot scan what they cannot read; the amendment makes that exclusion explicit in law.",
+     "source_label": "Agence Europe, “EU Council formally adopts extension of derogation from ePrivacy until 3 April 2028”",
+     "source_url": "https://agenceurope.eu/en/bulletin/article/13915/9/eu-council-formally-adopts-extension-of-derogation-from-eprivacy-until-3-april-2028",
+     "source_published": "2026",
+     "source_accessed": "2026-09-29",
+     "id": "days-the-eu-went-without-a"
+    },
+    {
+     "label": "Encrypted phones the FBI said it could not open in fiscal 2017",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "devices",
+     "series": [
+      {
+       "label": "Figure given Congress",
+       "value": "7,775",
+       "highlight": true
+      },
+      {
+       "label": "Internal estimate",
+       "value": "~1,200",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "FBI leaders told Congress and the public that encryption kept them out of 7,775 devices in fiscal 2017; the bureau later cited “programming errors,” and an internal estimate put it near 1,200.",
+     "detail": "The Washington Post reported in May 2018 that the FBI had counted phones repeatedly across three databases. Director Christopher Wray had called the 7,775 figure evidence of a major public-safety problem. The bureau never published a final corrected count. The episode is why skeptics of the “going dark” argument ask for independently audited numbers, and why the European Commission and Europol have since asked member states to gather documented cases of investigations frustrated by encryption. It concerns locked devices, not messages in transit, but the same agencies made both arguments.",
+     "source_label": "CSO Online, reporting the Washington Post, 23 May 2018",
+     "source_url": "https://www.csoonline.com/article/565476/fbi-going-dark-whopper-locked-out-of-only-1200-phones-not-7775.html",
+     "source_published": "2017",
+     "source_accessed": "2026-09-29",
+     "id": "encrypted-phones-the-fbi-said-it"
+    },
+    {
+     "label": "EU criminal investigations that rely on electronic evidence",
+     "viz": "radial",
+     "wide": false,
+     "value": "85",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The European Commission says 85 percent of criminal investigations now rely on electronic evidence, from phone records and cloud accounts to messages.",
+     "detail": "The figure covers electronic evidence of every kind, not encrypted evidence specifically, and the Commission has used it since its 2018 e-evidence proposals, so it describes how much investigations depend on data rather than how often encryption blocks them. The Commission’s June 2025 roadmap on lawful access promised a “Technology Roadmap on encryption” in 2026 to “identify and evaluate solutions that enable lawful access to encrypted data,” and research so that Europol has next-generation decryption capabilities from 2030. The Commission also states that its measures “do not in any way prohibit, limit or weaken encryption.”",
+     "source_label": "European Commission, Roadmap for lawful and effective access to data for law enforcement, 24 June 2025",
+     "source_url": "https://home-affairs.ec.europa.eu/news/commission-presents-roadmap-effective-and-lawful-access-data-law-enforcement-2025-06-24_en",
+     "source_published": "2025",
+     "source_accessed": "2026-09-29",
+     "id": "eu-criminal-investigations-that-rely-on"
+    },
+    {
+     "label": "Messages collected through ANOM, an encrypted phone service secretly run by the FBI",
+     "viz": "bar",
+     "wide": false,
+     "value": "27,000,000",
+     "unit": "messages",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The FBI and Australian Federal Police secretly ran the ANOM encrypted phone service from 2018 to 2021, distributing about 11,800 devices to criminal networks and collecting 27 million messages.",
+     "detail": "ANOM was built with a hidden function that copied every message to a server investigators could read, and was sold through criminal channels as a secure phone. When it was revealed on June 8, 2021, more than 800 arrests were coordinated through Europol; counting national operations, reported arrests exceeded 1,100 across 16 countries, with about 40 metric tons of drugs and 250 firearms seized. It shows police can penetrate encrypted criminal markets without changing mainstream apps, though it worked because the targets used a niche product sold to criminals, which mainstream-app users do not.",
+     "source_label": "Wikipedia, Operation Trojan Shield (citing Europol and the FBI)",
+     "source_url": "https://en.wikipedia.org/wiki/Operation_Trojan_Shield",
+     "source_published": "2021",
+     "source_accessed": "2026-09-29",
+     "id": "messages-collected-through-anom-an-encrypted"
+    },
+    {
+     "label": "Scientists signing the 2025 open letter against the EU’s message-scanning plan",
+     "viz": "bar",
+     "wide": false,
+     "value": "807",
+     "unit": "signatories",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "807 scientists and researchers from 37 countries signed a September 2025 letter calling the EU plan to scan private messages technically infeasible and dangerous to security and democracy.",
+     "detail": "It was the third such letter from the research community since 2023, with signatories concentrated among cryptographers and computer security researchers at European universities, the Max Planck Society and Fraunhofer. Press reports at different points gave 400, 500 or 600 signatories because the count kept growing; 807 is the letter’s own final figure. Supporters of the regulation respond that technical feasibility should be judged on accredited tools and independent testing rather than letters, and point to Ian Levy and Crispin Robinson of the UK’s National Cyber Security Centre and GCHQ, who argued in 2022 that on-device safety measures can be designed with meaningful safeguards.",
+     "source_label": "Joint statement of scientists and researchers on the EU’s proposed CSA Regulation, September 2025",
+     "source_url": "https://csa-scientist-open-letter.org/Sep2025",
+     "source_published": "2025",
+     "source_accessed": "2026-09-29",
+     "id": "scientists-signing-the-2025-open-letter"
+    },
+    {
+     "label": "Australian requests and notices to help police get around encryption, 2024–25",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "issued",
+     "series": [
+      {
+       "label": "Voluntary requests",
+       "value": "58",
+       "highlight": true
+      },
+      {
+       "label": "Assistance notices",
+       "value": "0",
+       "highlight": false
+      },
+      {
+       "label": "Capability notices",
+       "value": "0",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Five Australian interception agencies made 58 voluntary technical assistance requests to communications providers in 2024–25 and issued no compulsory assistance or capability notices.",
+     "detail": "Australia’s Assistance and Access Act of 2018 lets agencies compel a communications company to use or build a capability to help them, though it bars requiring a “systemic weakness” in encryption. Its use so far has been mostly voluntary: 60 requests in 2023–24 and 58 in 2024–25, two compulsory assistance notices in 2023–24 and none in 2024–25, and no capability notices in either year. Supporters say the power works as intended, by giving police leverage to reach voluntary agreements; critics say its secrecy makes it impossible to know what the requests achieved or cost. The UK’s equivalent, the technical capability notice under the Investigatory Powers Act 2016, is the power reportedly used against Apple.",
+     "source_label": "Australian Department of Home Affairs, TIA Act Annual Report 2024–25",
+     "source_url": "https://www.homeaffairs.gov.au/criminal-justice/files/telecommunications-interception-and-access-reports/telecommunications-interception-access-act-1979-annual-report-24-25.pdf",
+     "source_published": "2024–25",
+     "source_accessed": "2026-09-29",
+     "id": "australian-requests-and-notices-to-help"
+    },
+    {
+     "label": "Americans who said Apple should unlock the San Bernardino gunman’s iPhone",
+     "viz": "radial",
+     "wide": false,
+     "value": "51",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a February 2016 survey of 1,002 US adults, 51 percent said Apple should unlock the iPhone to assist the FBI investigation and 38 percent said it should not.",
+     "detail": "The survey was taken days after a federal magistrate ordered Apple to write software to help the FBI into the work phone of one of the gunmen who killed 14 people in San Bernardino, California, in December 2015. Republicans (56 percent) and Democrats (55 percent) gave similar answers; the split ran more through independents. The FBI dropped the case in March 2016 after an outside firm, later reported to be Australia’s Azimuth Security, unlocked the phone. The question concerned one phone in a terrorism case, not encrypted messaging generally, and Pew has not repeated it; there is no recent US poll of similar quality on end-to-end encrypted messaging.",
+     "source_label": "Pew Research Center, 22 February 2016",
+     "source_url": "https://www.pewresearch.org/politics/2016/02/22/more-support-for-justice-department-than-for-apple-in-dispute-over-unlocking-iphone/",
+     "source_published": "2016",
+     "source_accessed": "2026-09-29",
+     "id": "americans-who-said-apple-should-unlock"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Can a way in for lawful authorities be built without creating a weakness others will exploit?",
+    "kind": "empirical",
+    "why": "No government has published a working design for exceptional access to end-to-end encrypted messaging at scale, so the argument is about systems that do not yet exist.",
+    "detail": "Those who think it can be done separate the encryption algorithm, which no one proposes to weaken, from the system around it, which engineers design every day. Companies already guard secrets whose theft would be catastrophic: the keys that sign software updates for billions of phones, the keys that run cloud services, the systems that process payments. A decryption capability used only on court order, split among several parties, logged and audited, would be no harder to protect, and claims of impossibility have been made about many engineering problems later solved.\n\nThose who think it cannot answer that a signing key is used rarely by a few people, while an access key would be used thousands of times a year by many agencies in many countries, each use a chance for theft, insider abuse or error. Access also adds complexity, concentrates targets and undoes modern protections such as forward secrecy. And the record of past mechanisms is one of failure, from the US Clipper Chip of the 1990s, which had a flaw that let users bypass it, to the tapping of the Greek prime minister’s phone in 2004 and 2005 through the lawful-intercept software in Vodafone’s network.",
+    "lean_label_a": "Access can be safe",
+    "lean_label_b": "Access is a hole",
+    "id": "can-a-way-in-for-lawful"
+   },
+   {
+    "text": "Should any private communication be beyond the reach of a lawful warrant?",
+    "kind": "value",
+    "why": "Democratic law has always let a judge authorize a search, and end-to-end encryption is the first technology to make that order unenforceable for everyday communication at scale.",
+    "detail": "One side sees a gap in the rule of law. When a judge finds probable cause, police may enter a locked house, and a warrant is the product of democratic law, judicial oversight and individual suspicion, not arbitrary power. Letting companies decide by product design that no warrant can ever be served moves a decision about public safety from legislatures and courts to engineers, and those who gain most are those with most to hide.\n\nThe other side sees a restoration. For most of history the most private conversations, spoken face to face, were never recorded and could not be retrieved by any warrant; the wiretap and the stored message are recent exceptions, not the baseline. The same property that protects a suspect protects a journalist’s source, a dissident abroad, a victim hiding from an abuser and an official discussing secrets, and it cannot be offered to one and withheld from another. On this view the question is not whether the state may search, but whether everyone must be made less secure so that it always can.",
+    "lean_label_a": "All within reach",
+    "lean_label_b": "Some beyond reach",
+    "id": "should-any-private-communication-be-beyond"
+   },
+   {
+    "text": "Is encryption leaving police unable to investigate serious crime, or do they have more evidence than ever?",
+    "kind": "empirical",
+    "why": "The data are fragmentary and partly collected by interested parties, and nobody counts the cases never solved or never opened because investigators expected encryption.",
+    "detail": "The going-dark view holds that the content of criminal communication is the best evidence there is and that it is disappearing. Prosecutors stop applying for intercepts they know will be useless, so official counts understate the loss. Metadata shows who talked to whom, not what they planned, and rarely proves intent in court. Hacking a device is expensive, slow, out of reach for most local police forces and often defeated by the next software update.\n\nThe opposing view holds that police have never had more digital evidence. Phones generate location histories, cloud backups, contact lists, photos and payment records that investigators can obtain with ordinary legal process, and commercial forensic tools unlock many seized devices. A 2016 Harvard study, “Don’t Panic,” concluded that going dark was real in some corners but not the whole picture, because commercial incentives keep most data readable by companies and therefore reachable by warrants. Until agencies publish audited counts of cases lost to encryption, this side says, claims of going dark remain assertions.",
+    "lean_label_a": "Going dark",
+    "lean_label_b": "More data than ever",
+    "id": "is-encryption-leaving-police-unable-to"
+   },
+   {
+    "text": "Should platforms search for child abuse proactively, or only when a specific person is suspected?",
+    "kind": "value",
+    "why": "Most abuse material is found today because platforms scan everything on unencrypted services, suspecting no one. Encryption forces a choice between extending that into private messages and searching only people a court suspects.",
+    "detail": "For proactive detection: children being abused cannot report it, and images of their abuse circulate for years. Proactive detection is how millions of those images are found and how victims are identified, and a search that waits for suspicion cannot find what nobody has reported. Scanning for known images is narrow, automatic and reviewed by people before anything reaches police, less intrusive than the airport screening and bank monitoring everyone already accepts. Leaving encrypted messaging outside detection creates exactly the safe haven offenders seek.\n\nFor searching only on suspicion: going through everyone’s private messages without any suspicion is general surveillance, which European courts and constitutions have long rejected whatever the purpose. A detection order should name individuals or groups a court has reasonable grounds to suspect, as a last resort. Money and effort are better spent on child-protection services, on police capacity to act on reports that already exist and on prevention than on a system that treats every citizen as a suspect.",
+    "lean_label_a": "Proactive detection",
+    "lean_label_b": "Only on suspicion",
+    "id": "should-platforms-search-for-child-abuse"
+   },
+   {
+    "text": "Does scanning messages on the phone before encryption keep the protection end-to-end encryption promises?",
+    "kind": "empirical",
+    "why": "Client-side scanning leaves the encryption untouched but adds software that inspects content before it is sent. Whether that is a narrow safety check or a surveillance channel turns on things outsiders cannot observe.",
+    "detail": "Those who say the protection holds point out that messages stay encrypted in transit and on the server and nobody gets a key. Matching on the device against a list of already-known abuse images, the hashing technique platforms have run on unencrypted services for over a decade, reveals nothing about a message that does not match. The EU proposal would allow only technologies tested and approved by a new EU Centre, with detection orders issued by courts.\n\nThose who say it breaks answer that the promise is that only sender and recipient learn what a message says, and software that inspects every message and reports on it breaks that promise wherever it runs. It can be repurposed by changing the list it matches against. Apple designed such a system for iCloud Photos in 2021 and abandoned it in 2022 after criticism from security researchers, some of whom showed its image matching could be made to produce false matches. Detecting new images and grooming needs machine-learning classifiers whose error rates, across billions of messages, would flood police with innocent material.",
+    "lean_label_a": "Protection holds",
+    "lean_label_b": "Protection breaks",
+    "id": "does-scanning-messages-on-the-phone"
+   },
+   {
+    "text": "Would access mandates catch serious criminals, or only expose ordinary users?",
+    "kind": "empirical",
+    "why": "Encryption software is free and open source, so a determined offender can always use a tool beyond a government’s reach. Whether most offenders do, or stay on mainstream apps out of convenience, has little systematic evidence.",
+    "detail": "Those who expect mandates to work say most criminals are not sophisticated. Offenders who groom children go where children are, which is mainstream platforms, and much abuse material is traded on ordinary apps. Drug networks, fraudsters and extremists use the big messaging apps because everyone does. Making those services reachable would recover most of the lost evidence even if a few experts moved, and the niche tools they moved to would become markers of criminality and targets for police.\n\nThose who expect offenders to move say strong encryption is published mathematics running in open-source code anyone can compile, and it cannot be recalled. A law can compel Apple or Meta but not the maintainers of open-source software in another country, so the most dangerous people would switch and the law would fall on everyone else. Mandates would also push dissidents, journalists and security-conscious users toward less audited apps, and some responsible providers would leave a market rather than comply.",
+    "lean_label_a": "Offenders caught",
+    "lean_label_b": "Offenders move on",
+    "id": "would-access-mandates-catch-serious-criminals"
+   },
+   {
+    "text": "Can an access power granted by democracies be kept from authoritarian governments and criminals?",
+    "kind": "empirical",
+    "why": "Messaging apps are global products, so a capability built for one government exists everywhere the app is sold. Whether companies can refuse other governments once they comply with one is a political prediction as much as a technical one.",
+    "detail": "Those who trust safeguards note that companies already comply with lawful demands in dozens of countries and refuse many others; legal teams, transparency reports and home-country law let them tell a judge’s order in a democracy from a dictator’s request. Access can be limited to cases authorized by law, with strong safeguards and independent oversight, as the Five Eyes governments, India and Japan proposed in 2020. China and Russia already block or control the apps they dislike without waiting for a Western precedent, so refusing democracies what autocracies take anyway protects no one.\n\nThose who expect the precedent to spread say that once a capability exists, a company cannot credibly tell another government it is technically impossible. The UK’s 2025 order to Apple itself claimed reach over users worldwide; the US Director of National Intelligence objected publicly and said in August 2025 that the UK had agreed to drop the demand as it affected Americans, after which the UK reportedly issued a narrower order covering British users. Laws written for child abuse have a history of expanding to other crimes.",
+    "lean_label_a": "Safeguards hold",
+    "lean_label_b": "Precedent spreads",
+    "id": "can-an-access-power-granted-by"
+   },
+   {
+    "text": "Should governments hack suspects’ devices, given it means leaving some software flaws unpatched?",
+    "kind": "value",
+    "why": "Breaking into one suspect’s phone leaves encryption intact for everyone else, but it relies on flaws that governments keep secret instead of getting fixed, and others can find the same flaws.",
+    "detail": "For allowing it: police should do the work of breaking into one named suspect’s phone under a warrant, not ask companies to change apps used by billions. Four security researchers argued in a 2014 paper that exploiting existing flaws beats building wiretap interfaces, because its cost confines it to serious cases. Germany has long allowed court-ordered interception on suspects’ own devices, and targeted operations against the EncroChat and ANOM criminal phone networks reached encrypted crime with no mandate. The flaw risk can be governed: agencies can be made to disclose most flaws they find, exploit the rest only on a judge’s order and report each use.\n\nFor ruling it out: every flaw kept open for police is open to criminals and hostile states too. The NSA’s EternalBlue exploit, stolen and leaked in 2017, powered the WannaCry and NotPetya attacks. The commercial spyware industry that sells hacking to governments, from NSO Group’s Pegasus onward, has been turned on journalists, dissidents and politicians in democracies as well as autocracies. Hacking moves the risk rather than removing it, and whether governments should stockpile and exploit software flaws at all deserves open public debate.",
+    "lean_label_a": "Allow hacking",
+    "lean_label_b": "Rule out hacking",
+    "id": "should-the-state-hack-individual-suspects"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Build lawful access and abuse detection into encrypted apps",
+    "color_key": "green",
+    "steelman": "A judge’s order should reach every kind of evidence. We ask companies to design their apps so they can still answer a court order and still find the worst abuse.",
+    "detail": "Society settled long ago that, with good reason shown to a judge, police may open a letter, tap a phone line or seize a bank record. End-to-end encryption as now deployed undoes that settlement for the main way people communicate, not by any democratic decision but by the product choices of a few companies. Offenders groom children on mainstream apps because children are there; abuse images circulate on the same services; drug networks, fraudsters and terrorists coordinate on the apps everyone uses. When Messenger went encrypted by default, millions of reports that used to reach child-protection agencies stopped. We are not asking to weaken the mathematics, to read everyone’s messages or to spy without a warrant, and the claim that what we ask is impossible is a policy preference presented as a technical fact.\n\nWe differ on emphasis. Police and interior ministries, among them Europol and the UK Home Office, stress lawful access: a provider able to hand over a named suspect’s messages in readable form when a court orders it. Child-protection groups and the European Commission stress detection: automated scanning, including on the device, for known and new abuse images and grooming. To the objection that any access point will be broken, as US telephone wiretap systems were, we answer that those were decades-old systems carriers never properly secured, and the lesson is to protect access systems as seriously as the other critical secrets companies guard, not to abolish lawful access. A child groomed in an encrypted chat is a security failure too.",
+    "proponents": "Europol; European Police Chiefs; Catherine De Bolle; US Department of Justice; UK Home Office; UK National Crime Agency; Virtual Global Taskforce; European Commission; National Center for Missing & Exploited Children; ECPAT International; Thorn; Internet Watch Foundation; NSPCC",
+    "id": "build-lawful-access-and-abuse-detection"
+   },
+   {
+    "name": "Keep end-to-end encryption closed to everyone but its users",
+    "color_key": "blue",
+    "steelman": "There is no door only the right people can open. Encryption protects everyone, children included, and any way in built for police becomes a way in for attackers.",
+    "detail": "Encryption is how ordinary people, companies and governments protect themselves in a world of constant attack. It shields bank transfers, medical records, the messages of soldiers and diplomats, journalists’ sources and dissidents’ plans, and it protects children, whose photos and locations are exactly what stalkers and extortionists want. Every access system built so far has ended up abused or broken; Salt Typhoon went straight into the interception systems US law required carriers to build. Scanning on the device before encryption is the same door by another name. The mathematics is public and open-source code cannot be recalled, so a mandate would push serious criminals to other tools and leave everyone else less secure. Signal has said it would leave a market rather than build surveillance into its app, and Apple withdrew its strongest iCloud protection from UK users in February 2025 rather than comply with a British order.\n\nWe do not deny the loss when reports fall. Part of it is an accounting change, and the rest is real. But reports are not rescues: police in many countries cannot act on most of the reports they already receive, and children are protected by investigators, prevention and support services more than by report volume. Encrypted platforms can still act on user reports, unencrypted profile information, account behavior and metadata, and can make it harder for strangers to reach children. We differ on the rest: some of us accept targeted government hacking under warrant as the lesser evil, while others, such as the Electronic Frontier Foundation, oppose the stockpiling of software flaws too.",
+    "proponents": "Signal Foundation; Meredith Whittaker; Apple; WhatsApp; Electronic Frontier Foundation; Ron Wyden; Andy Biggs; Global Encryption Coalition; European Digital Rights; Privacy International; Liberty; Internet Society; Proton; Tuta; Patrick Breyer",
+    "id": "keep-end-to-end-encryption-closed"
+   },
+   {
+    "name": "Target suspects’ devices, not everyone’s encryption",
+    "color_key": "amber",
+    "steelman": "Keep encryption strong for everyone and serve the warrant on the suspect’s own device. Going after one person with a judge’s approval is policing; scanning everyone is surveillance.",
+    "detail": "The debate has been framed as a choice between weakening encryption for everyone and letting criminals go free, and both halves are wrong. A warrant against a specific person still means something, and police can serve it on that person’s phone, where messages sit unencrypted to be read, rather than on the design of an app used by billions. Targeted hacking is expensive and slow, and that is a feature: it limits intrusion to serious cases a judge has approved, as physical surveillance always has. The biggest successes against encrypted crime, EncroChat, Sky ECC and ANOM, came this way. Germany has worked since 1999 on the principle of “security through encryption and security despite encryption,” with narrowly limited powers to intercept at the source and search suspects’ devices.\n\nWe hear objections from both sides. To those who say targeted work does not scale: an investigative method that can be used against everyone at once is a surveillance system, and scale should come from more investigators and better cooperation. To those who say government hacking leaves flaws unpatched: the risk is real but bounded, since governments can be required to disclose most flaws they find, to use exploits only under warrant and to report their use, and a flaw used quietly against a handful of suspects is a smaller danger than an access mechanism in every copy of an app. We differ on how far providers must help, from not at all to targeted assistance short of changing encryption for everyone.",
+    "proponents": "German Federal Government; European Parliament; Stefanie Hubig; Jens Spahn; Steven Bellovin; Matt Blaze; Sandy Clark; Susan Landau",
+    "id": "target-suspects-devices-not-everyone-s"
+   }
+  ],
+  "crux": {
+   "lead": "Can police be given a way into encrypted messages without opening it to everyone else?",
+   "lead_highlight": "without opening it to everyone else",
+   "subtitle": "If a way in can be built, guarded and held to court orders, the argument becomes how to govern it. If any way in eventually serves criminals, hostile states or abusive governments, the argument becomes whether what it buys for investigations and child safety is worth that risk to everyone.",
+   "empirical": "Part of this can be tested. Would a published access or scanning design survive sustained attack by independent researchers? How accurate is detection on the phone in live use, measured by outside testers rather than vendors? How many investigations does encryption actually defeat, by audited counts? How many children are protected, not just reported? Do offenders move to niche tools when mainstream apps change?",
+   "values": "The rest no study settles. How much risk to everyone’s security and privacy is acceptable for what access would add to investigations and child protection. Whether a judge’s order must be enforceable everywhere. Whether searching everyone’s messages without suspicion is ever proportionate. And who decides: each country’s legislatures and courts, or the companies that build products used worldwide."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Read the National Academies’ framework for the encryption debate",
+    "description": "A 2018 report from the US National Academies of Sciences, Engineering, and Medicine setting out the questions any lawful-access proposal should answer, from effectiveness to security risk, without taking a side.",
+    "url": "https://nap.nationalacademies.org/catalog/25010/decrypting-the-encryption-debate-a-framework-for-decision-makers",
+    "for_position": null,
+    "id": "read-the-national-academies-framework-for"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Follow the EU chat control negotiations",
+    "description": "The European Parliament’s Legislative Train page tracks the proposed regulation on child sexual abuse online, including the negotiations over detection and encryption.",
+    "url": "https://www.europarl.europa.eu/legislative-train/theme-promoting-our-european-way-of-life/file-combating-child-sexual-abuse-online",
+    "for_position": null,
+    "id": "follow-the-eu-chat-control-negotiations"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the US Justice Department’s case for lawful access",
+    "description": "The Department of Justice’s lawful access page sets out its argument against “warrant-proof” encryption, with case examples and statements from US attorneys.",
+    "url": "https://www.justice.gov/olp/lawful-access",
+    "for_position": "Build lawful access and abuse detection into encrypted apps",
+    "id": "read-the-us-justice-department-s"
+   },
+   {
+    "kind": "policy",
+    "title": "Join the Global Encryption Coalition’s campaigns",
+    "description": "A coalition of more than 400 organizations, companies and experts in 103 countries listing current campaigns against laws and orders that would weaken encryption, with ways to take part.",
+    "url": "https://www.globalencryption.org/take-action/",
+    "for_position": "Keep end-to-end encryption closed to everyone but its users",
+    "id": "join-the-global-encryption-coalition-s"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the case for lawful hacking",
+    "description": "The 2014 paper by Steven Bellovin, Matt Blaze, Sandy Clark and Susan Landau arguing that police should exploit existing vulnerabilities in targeted cases rather than require built-in access.",
+    "url": "https://scholarlycommons.law.northwestern.edu/njtip/vol12/iss1/1/",
+    "for_position": "Target suspects’ devices, not everyone’s encryption",
+    "id": "read-the-case-for-lawful-hacking"
+   },
+   {
+    "kind": "policy",
+    "title": "Back ECPAT’s call for a permanent EU law on detecting child abuse",
+    "description": "ECPAT International, a global network against the sexual exploitation of children, campaigns for a permanent EU legal framework guaranteeing continued detection of child sexual abuse online.",
+    "url": "https://ecpat.org/this-is-no-april-fools-joke-europe-is-switching-its-detection-of-child-sexual-abuse-online-off/",
+    "for_position": "Build lawful access and abuse detection into encrypted apps",
+    "id": "back-ecpat-s-call-for-a"
+   },
+   {
+    "kind": "donate",
+    "title": "Support the Electronic Frontier Foundation",
+    "description": "A US digital-rights nonprofit that litigates and lobbies against encryption backdoors and client-side scanning mandates in the US and abroad.",
+    "url": "https://supporters.eff.org/donate",
+    "for_position": "Keep end-to-end encryption closed to everyone but its users",
+    "id": "support-the-electronic-frontier-foundation"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the Carnegie working group’s attempt at middle ground",
+    "description": "A 2019 paper from former FBI, CIA and NSA officials, technologists and civil-liberties advocates that recommends setting aside access to messages in transit and focusing on data stored on phones.",
+    "url": "https://carnegieendowment.org/research/2019/09/moving-the-encryption-policy-conversation-forward",
+    "for_position": "Target suspects’ devices, not everyone’s encryption",
+    "id": "read-the-carnegie-working-group-s"
+   },
+   {
+    "kind": "donate",
+    "title": "Support Thorn",
+    "description": "A US nonprofit that builds detection technology platforms use to find child sexual abuse material and advocates for stronger child-safety duties for online services.",
+    "url": "https://www.thorn.org/donate/",
+    "for_position": "Build lawful access and abuse detection into encrypted apps",
+    "id": "support-thorn"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Use EFF’s Surveillance Self-Defense guide",
+    "description": "A practical guide to choosing and using end-to-end encrypted tools, written for journalists, activists and ordinary users.",
+    "url": "https://ssd.eff.org/",
+    "for_position": "Keep end-to-end encryption closed to everyone but its users",
+    "id": "use-eff-s-surveillance-self-defense"
+   }
+  ]
+ },
+ "icon": "lock-key",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: a large closed padlock as the dominant focal mass, outlined and softly filled, its keyhole a simple dot and slot; a medium rounded chat bubble with no text overlaps the upper right of the padlock body as if held inside it; a small smartphone stands at the left and another small smartphone at the right, each on the ground; one long thin curved line of network wire runs across the whole frame between the two phones and passes behind the padlock, with small round nodes along it; a cell tower with two small signal arcs stands small in the background; everything sits on a low rounded mound, outlined and softly filled; everything flat, no drop shadow.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #2f8f86, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: people, hands, faces, eyes, text, letters, numbers, code, binary digits, logos, app logos, keys, broken locks, open padlocks, cracked shields, skulls, hackers, hoods, masks, police badges, handcuffs, government buildings, flags of nations, magnifying glasses, spy glasses, cameras, surveillance cameras, warning triangles, exclamation marks, red marks, chains, vaults, safes, question marks."
 }

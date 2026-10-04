@@ -1,8 +1,8 @@
 {
  "slug": "money-in-politics",
  "title": "Money in Politics",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-10-03T08:20:10+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Political spending as protected speech versus corruption and unequal influence.",
@@ -15,5 +15,707 @@
   "electoral-system-design",
   "antitrust-market-power",
   "democratic-backsliding-populism"
- ]
+ ],
+ "content": {
+  "overview": {
+   "summary": "Whether money spent to win elections and sway government is free speech to protect or a source of corruption and unequal power to limit.",
+   "scope_covered": "Contributions, super PACs, dark money, limits and disclosure, public financing, US Supreme Court doctrine from Buckley v. Valeo to NRSC v. FEC, lobbying, and how other democracies regulate political money.",
+   "scope_excluded": "Electoral system design, speech rules on social media and corporate market power, each on its own page; bribery, vote buying and foreign donations, which every camp agrees should be illegal.",
+   "why_now": "On June 30, 2026, in NRSC v. FEC, the Supreme Court voted 6 to 3 to strike down federal limits on what political parties may spend in coordination with their own candidates, months before a midterm election heavily financed by outside groups.",
+   "why_now_source_label": "Supreme Court of the United States, NRSC v. FEC opinion",
+   "why_now_source_url": "https://www.supremecourt.gov/opinions/25pdf/24-621_h315.pdf"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "Total cost of US federal elections, by cycle",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "$ billion",
+     "series": [
+      {
+       "label": "2000",
+       "value": "5.6",
+       "highlight": false
+      },
+      {
+       "label": "2004",
+       "value": "6.9",
+       "highlight": false
+      },
+      {
+       "label": "2008",
+       "value": "7.6",
+       "highlight": false
+      },
+      {
+       "label": "2012",
+       "value": "8.6",
+       "highlight": false
+      },
+      {
+       "label": "2016",
+       "value": "8.5",
+       "highlight": false
+      },
+      {
+       "label": "2020",
+       "value": "18.3",
+       "highlight": false
+      },
+      {
+       "label": "2024",
+       "value": "14.8",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "OpenSecrets counts about $14.8 billion spent on the 2024 presidential and congressional elections, below the 2020 record of about $18.3 billion, both in 2024 dollars.",
+     "detail": "The total combines spending by presidential and congressional candidates, party committees, outside groups such as super PACs, and PAC overhead, with transfers between committees removed to avoid double counting; issue ads never reported to the FEC are left out. Of the 2024 total, about $9.5 billion went to congressional races and $5.3 billion to the presidential race. Midterm cycles cost less: about $9.5 billion in 2022, in 2024 dollars. Before the election OpenSecrets projected a nominal record of $15.9 billion, against $15.1 billion in nominal terms for 2020 (In Depth NH, 2024); the final tally came in lower. Real spending roughly tripled between 2000 and 2020. Reformers read that rise as an arms race that makes candidates dependent on donors; defenders of political spending answer that it comes to a few dozen dollars per American per cycle to debate who will run a government that spends trillions a year.",
+     "source_label": "OpenSecrets, Cost of Election",
+     "source_url": "https://www.opensecrets.org/elections-overview/cost-of-election",
+     "source_published": "2024",
+     "source_accessed": "2026-10-03",
+     "id": "total-cost-of-us-federal-elections"
+    },
+    {
+     "label": "Americans who say there should be limits on campaign spending",
+     "viz": "radial",
+     "wide": false,
+     "value": "72",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a 2023 Pew survey, 72 percent of US adults said there should be limits on what individuals and organizations can spend on political campaigns; 11 percent said no.",
+     "detail": "Support crossed party lines: 76 percent of Democrats and 71 percent of Republicans agreed, and 16 percent of all adults were not sure. The survey of 8,480 adults was conducted in July 2023. In the same Pew survey, 80 percent said people who donate to campaigns have too much influence on the decisions members of Congress make, 73 percent said the same of lobbyists and special interest groups, and 85 percent said “the cost of political campaigns makes it hard for good people to run for office” describes the country well. Fewer were confident anything could be done: 58 percent said laws could effectively reduce the role of money in politics and 21 percent said they could not. Reformers cite these numbers as a mandate. Defenders of current law, such as the Institute for Free Speech, answer that support for “limits” in the abstract is not support for silencing any particular union, advocacy group or citizen, and that constitutional rights do not depend on majority approval.",
+     "source_label": "Pew Research Center, “7 facts about Americans’ views of money in politics” (October 23, 2023)",
+     "source_url": "https://www.pewresearch.org/short-reads/2023/10/23/7-facts-about-americans-views-of-money-in-politics/",
+     "source_published": "2023",
+     "source_accessed": "2026-10-03",
+     "id": "americans-who-say-there-should-be"
+    },
+    {
+     "label": "US adults who gave more than $200 to federal candidates, parties or PACs",
+     "viz": "radial",
+     "wide": false,
+     "value": "1.3",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "About 3.36 million people, roughly 1.3 percent of American adults, gave more than $200 to federal candidates, parties or PACs in the 2024 cycle.",
+     "detail": "The share is computed from OpenSecrets’ counts: 1,510,544 women and 1,846,376 men gave more than $200, out of an adult population OpenSecrets puts at about 255 million. Together these itemized donors gave about $10.3 billion. A smaller group, about 0.13 percent of adult women and 0.21 percent of adult men, gave $3,300 or more, the most one person could give one candidate for one election that cycle. Gifts of $200 or less are not itemized in FEC reports, so the millions of small donors who give through platforms such as ActBlue and WinRed are not counted here. Reformers read the figures as a donor class that candidates must court; defenders of the current system note that small online giving has grown sharply since the 2000s and that the speech donors pay for reaches all voters, who still decide.",
+     "source_label": "OpenSecrets, Donor Demographics, 2024 cycle",
+     "source_url": "https://www.opensecrets.org/elections-overview/donor-demographics?cycle=2024",
+     "source_published": "2023–2024",
+     "source_accessed": "2026-10-03",
+     "id": "us-adults-who-gave-more-than"
+    },
+    {
+     "label": "Outside spending in US federal elections, by cycle",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "$ billion",
+     "series": [
+      {
+       "label": "2008",
+       "value": "0.34",
+       "highlight": false
+      },
+      {
+       "label": "2010",
+       "value": "0.31",
+       "highlight": false
+      },
+      {
+       "label": "2012",
+       "value": "1.04",
+       "highlight": false
+      },
+      {
+       "label": "2016",
+       "value": "1.41",
+       "highlight": false
+      },
+      {
+       "label": "2020",
+       "value": "2.91",
+       "highlight": false
+      },
+      {
+       "label": "2022",
+       "value": "2.03",
+       "highlight": false
+      },
+      {
+       "label": "2024",
+       "value": "4.22",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Groups other than candidates and parties spent about $4.2 billion on the 2024 federal elections, more than 12 times their 2008 spending, the last presidential cycle before Citizens United.",
+     "detail": "Outside spending is money spent to support or oppose candidates by groups legally independent of them: chiefly super PACs, along with nonprofits, unions and corporations. The figures are in nominal dollars and leave out party committees. Outside spending grew after two 2010 rulings: Citizens United v. FEC, which let corporations and unions spend unlimited sums on independent political advocacy, and SpeechNow.org v. FEC, an appeals court decision that led to super PACs, committees that may take unlimited contributions as long as they do not coordinate with candidates. The FEC’s own count of independent expenditures in 2023–2024, which includes party committees, is $4.4 billion, of which super PACs accounted for $2.7 billion (FEC statistical summary, 2025). Those who want limits see the jump as the direct result of the Court’s deregulation; defenders of the rulings answer that money moved to the channel the law left open while candidates and parties stayed capped, and that outside groups often help challengers compete with incumbents.",
+     "source_label": "OpenSecrets, Outside Spending by Cycle",
+     "source_url": "https://www.opensecrets.org/outside-spending/by_cycle",
+     "source_published": "2024",
+     "source_accessed": "2026-10-03",
+     "id": "outside-spending-in-us-federal-elections"
+    },
+    {
+     "label": "Most an individual may give a federal candidate, 2025–2026",
+     "viz": "bar",
+     "wide": false,
+     "value": "3,500",
+     "unit": "$/election",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "An individual may give a federal candidate at most $3,500 per election, or $7,000 across a primary and a general election, but may give a super PAC an unlimited amount.",
+     "detail": "The FEC’s 2025–2026 limits also let an individual give $5,000 a year to a PAC, $44,300 a year to a national party committee and $132,900 a year to each of a national party’s special accounts. The limits on giving to candidates are indexed for inflation in odd-numbered years. Corporations and unions may not give to candidates or parties from their treasuries, but since 2010 they may give unlimited sums to super PACs. Until June 30, 2026, a party’s spending in coordination with its own nominee was also capped, at $65,300 for most House nominees in 2025 (Skadden, 2026); the Supreme Court removed that cap in NRSC v. FEC.",
+     "source_label": "Federal Election Commission, Contribution limits for 2025–2026 federal elections",
+     "source_url": "https://www.fec.gov/help-candidates-and-committees/candidate-taking-receipts/contribution-limits/",
+     "source_published": "2025–2026",
+     "source_accessed": "2026-10-03",
+     "id": "most-an-individual-may-give-a"
+    },
+    {
+     "label": "Dark money in US federal elections, 2024",
+     "viz": "bar",
+     "wide": false,
+     "value": "1.9",
+     "unit": "$ billion",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The Brennan Center estimates that groups that do not disclose their donors put more than $1.9 billion into the 2024 federal elections, almost double the 2020 record of about $1 billion.",
+     "detail": "The estimate combines four streams: $1.3 billion given to super PACs by groups that do not disclose their own donors, spending reported directly to the FEC, television ads tracked by the Wesleyan Media Project, and online ads that platforms report voluntarily. The Brennan Center, which favors stronger disclosure laws, says its method “necessarily — and perhaps substantially — underestimates” the total, and counts at least $4.3 billion in dark money in federal elections since Citizens United. Most of the 2024 money benefited Democrats, about $1.2 billion against $664 million for Republicans, reversing the earlier pattern.",
+     "source_label": "Brennan Center for Justice, “Dark Money Hit a Record High of $1.9 Billion in 2024 Federal Races” (May 7, 2025)",
+     "source_url": "https://www.brennancenter.org/our-work/research-reports/dark-money-hit-record-high-19-billion-2024-federal-races",
+     "source_published": "2024",
+     "source_accessed": "2026-10-03",
+     "id": "dark-money-in-us-federal-elections"
+    },
+    {
+     "label": "Federal Election Commission members in office",
+     "viz": "range",
+     "wide": false,
+     "value": "2",
+     "unit": "members",
+     "series": [],
+     "range_min": "0",
+     "range_max": "6 seats",
+     "note": "The FEC has two seated commissioners and has lacked the four votes it needs to enforce campaign finance law, write rules or issue advisory opinions since May 1, 2025.",
+     "detail": "The commission lost its quorum after Republican Sean Cooksey resigned in January 2025, President Trump removed Democrat Ellen Weintraub in February, a removal she disputed, and Republican Allen Dickerson resigned on April 30 (CNN, 2025); Republican Trey Trainor later left to run for Congress. In February 2026 the president nominated two Republicans, Ashley Stow and Andrew Woodson, whose confirmation would restore a quorum. By March 2026 the Senate had not acted, and the backlog of pending enforcement matters had grown from 190 in December 2025 to 195 (NOTUS, 2026). The FEC has six seats, no more than three per party, so even with a quorum it often deadlocks along party lines. Reformers argue that its design leaves the law largely unenforced; defenders of the bipartisan design say an agency that regulates political speech should not be able to act against one party with the other party’s votes.",
+     "source_label": "Federal Election Commission, All Commissioners",
+     "source_url": "https://www.fec.gov/about/leadership-and-structure/commissioners/",
+     "source_published": "2026",
+     "source_accessed": "2026-10-03",
+     "id": "federal-election-commission-members-in-office"
+    },
+    {
+     "label": "Races won by the candidate who spent more",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% of races",
+     "series": [
+      {
+       "label": "House 2024",
+       "value": "93.9",
+       "highlight": true
+      },
+      {
+       "label": "Senate 2024",
+       "value": "87.9",
+       "highlight": false
+      },
+      {
+       "label": "House 2020",
+       "value": "87.7",
+       "highlight": false
+      },
+      {
+       "label": "Senate 2020",
+       "value": "71.4",
+       "highlight": false
+      },
+      {
+       "label": "House 2010",
+       "value": "85.6",
+       "highlight": false
+      },
+      {
+       "label": "Senate 2010",
+       "value": "78.4",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The candidate whose campaign spent more won about 94 percent of House races and 88 percent of Senate races in 2024.",
+     "detail": "The figures count only spending by candidates’ own campaigns, not by outside groups, and include many races in which a safe incumbent faced a little-known opponent who spent almost nothing. The correlation does not show which way causation runs, because donors give to candidates already likely to win, especially incumbents. Those who want limits read the figure as showing that money is the price of entry, so candidates who cannot raise it do not run; those who defend political spending read it as money following popularity rather than creating it.",
+     "source_label": "OpenSecrets, Did Money Win? (archived November 22, 2025)",
+     "source_url": "https://web.archive.org/web/20251122200817/https://www.opensecrets.org/elections-overview/winning-vs-spending",
+     "source_published": "2024",
+     "source_accessed": "2026-10-03",
+     "id": "races-won-by-the-candidate-who"
+    },
+    {
+     "label": "How countries regulate political money",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% of nations",
+     "series": [
+      {
+       "label": "Public party funding",
+       "value": "69",
+       "highlight": true
+      },
+      {
+       "label": "Candidate spending caps",
+       "value": "50",
+       "highlight": false
+      },
+      {
+       "label": "Party spending caps",
+       "value": "39",
+       "highlight": false
+      },
+      {
+       "label": "Corporate donation bans",
+       "value": "26",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Of 181 countries in International IDEA’s database, 125 give parties direct public funding, 90 cap candidate spending, 71 cap party spending and 47 ban corporate donations to parties.",
+     "detail": "The shares are tallied from IDEA’s country-by-country answers, coded between 2018 and 2025, with countries marked “No data” or “Not applicable” left in the total; public funding counts countries that fund parties regularly, for campaigns or both. IDEA codes the United States as having public funding in relation to campaigns, a ban on corporate donations to parties, and limits on candidate and party spending, the last reflecting conditions attached to presidential public funding and the coordinated-party limits since struck down. Unlike Canada, the United Kingdom, India and Japan, the United States has no limit on independent spending by third parties. Reformers cite other democracies as proof that limits are compatible with free elections; defenders of the US approach reply that the First Amendment protects political speech more strongly than most constitutions and that spending caps abroad entrench established parties.",
+     "source_label": "International IDEA, Political Finance Database",
+     "source_url": "https://www.idea.int/data-tools/data/political-finance-database",
+     "source_published": "2018–2025",
+     "source_accessed": "2026-10-03",
+     "id": "how-countries-regulate-political-money"
+    },
+    {
+     "label": "Largest individual donor in the 2024 US elections",
+     "viz": "bar",
+     "wide": false,
+     "value": "290",
+     "unit": "$ million",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Elon Musk gave more than $290 million in the 2024 election cycle, the most of any donor to either party, according to year-end FEC filings.",
+     "detail": "Most of the money went to America PAC, the super PAC Musk formed to support Donald Trump, which ran canvassing operations in swing states; CNN reports that the PAC’s giveaways to voters who signed a petition cost more than $50 million of the total. Musk then led the administration’s Department of Government Efficiency effort in the first months of 2025, which reformers cite as political spending turning into government power; his supporters say he spent his own money openly, on speech, and that his influence came from voters electing the candidate he backed. In April 2025 Musk and groups he funds spent about $21 million on a Wisconsin Supreme Court race, according to the Brennan Center, in a contest whose total passed $100 million, a record for a judicial election (PBS Wisconsin, 2025); his candidate lost.",
+     "source_label": "CNN, “Elon Musk spent more than $290 million on the 2024 election” (February 1, 2025)",
+     "source_url": "https://www.cnn.com/2025/02/01/politics/elon-musk-2024-election-spending-millions",
+     "source_published": "2024",
+     "source_accessed": "2026-10-03",
+     "id": "largest-individual-donor-in-the-2024"
+    },
+    {
+     "label": "Spending on federal lobbying",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "$ billion",
+     "series": [
+      {
+       "label": "2000",
+       "value": "1.56",
+       "highlight": false
+      },
+      {
+       "label": "2008",
+       "value": "3.31",
+       "highlight": false
+      },
+      {
+       "label": "2010",
+       "value": "3.50",
+       "highlight": false
+      },
+      {
+       "label": "2016",
+       "value": "3.16",
+       "highlight": false
+      },
+      {
+       "label": "2020",
+       "value": "3.53",
+       "highlight": false
+      },
+      {
+       "label": "2024",
+       "value": "4.45",
+       "highlight": false
+      },
+      {
+       "label": "2025",
+       "value": "5.08",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Organizations reported spending about $5.1 billion to lobby Congress and federal agencies in 2025, the first year above $5 billion and 14 percent more than in 2024.",
+     "detail": "The figures, in nominal dollars, count what companies, trade associations, unions, nonprofits and governments report spending on registered lobbyists under the Lobbying Disclosure Act, drawn from Senate filings; activity below the law’s registration thresholds, such as much strategic advice and public relations work, is left out. OpenSecrets counted 13,699 registered lobbyists active in 2025, up from 13,028 in 2024 but below the 2007 peak of 14,873. Lobbying is distinct from election spending: it is protected by the First Amendment’s right to petition the government and is regulated mainly by registration and disclosure. Scholars such as Lee Drutman, in The Business of America Is Lobbying (2015), argue it is the main channel through which business shapes policy; others note that lobbying also supplies legislators with information and that unions, charities and local governments lobby too.",
+     "source_label": "OpenSecrets, Federal Lobbying, based on Senate Office of Public Records filings",
+     "source_url": "https://www.opensecrets.org/federal-lobbying",
+     "source_published": "2025",
+     "source_accessed": "2026-10-03",
+     "id": "spending-on-federal-lobbying"
+    },
+    {
+     "label": "Cash held by leading super PACs at the start of 2026",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "$ million",
+     "series": [
+      {
+       "label": "MAGA Inc.",
+       "value": "304",
+       "highlight": true
+      },
+      {
+       "label": "Fairshake (crypto)",
+       "value": "194",
+       "highlight": false
+      },
+      {
+       "label": "Senate Leadership Fund",
+       "value": "100",
+       "highlight": false
+      },
+      {
+       "label": "Cong. Leadership Fund",
+       "value": "54.5",
+       "highlight": false
+      },
+      {
+       "label": "Leading the Future (AI)",
+       "value": "39",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "At the end of 2025 the pro-Trump super PAC MAGA Inc. held about $304 million and the crypto industry’s Fairshake nearly $194 million for the 2026 midterms.",
+     "detail": "The figures are cash on hand from year-end 2025 FEC reports as summarized by NBC News; Senate Leadership Fund and Congressional Leadership Fund are Republican congressional super PACs. Industry-funded super PACs are a newer feature of the post-2010 system. Fairshake, funded mainly by cryptocurrency companies, spent in races of both parties in 2024. Leading the Future, funded by AI investors and executives including the venture firm Andreessen Horowitz and OpenAI president Greg Brockman, was formed in 2025 to back candidates favoring lighter AI regulation and raised more than $50 million between mid-August and the end of 2025. On the Democratic side, House Majority PAC raised more than $48 million in the second half of 2025. Reformers see industries buying the regulators they will face; the funds’ backers describe a lawful way for a new industry, outnumbered in Washington by older ones, to make its case to voters.",
+     "source_label": "NBC News, “AI, crypto and Trump super PACs stash millions to spend on the midterms” (January 31, 2026)",
+     "source_url": "https://www.nbcnews.com/politics/2026-election/ai-crypto-trump-super-pacs-stash-millions-spend-midterms-rcna256622",
+     "source_published": "2025",
+     "source_accessed": "2026-10-03",
+     "id": "cash-held-by-leading-super-pacs"
+    },
+    {
+     "label": "Campaign spending at the 2024 UK general election",
+     "viz": "bar",
+     "wide": false,
+     "value": "94.5",
+     "unit": "£ million",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Parties, candidates and other campaigners spent a record £94.5 million on the 2024 UK general election; Labour, which won, spent about £30.1 million.",
+     "detail": "The UK caps what parties, candidates and third-party campaigners may spend in the regulated period before an election, bans paid political advertising on television and radio, and gives parties free broadcasts. Among other parties, the Conservatives spent £23.9 million, the Liberal Democrats £5.6 million, Reform UK £5.5 million and the Greens £1.7 million; larger parties and campaigners, those spending £250,000 or more, accounted for £69.3 million in all. The UK total is less than 1 percent of what OpenSecrets counts for the 2024 US federal elections, in a country with about a fifth of the US population, though currencies, campaign lengths and categories counted differ. Reformers present the UK as a democracy with vigorous campaigns at a fraction of the cost. Critics of UK-style caps point out that donations to UK parties are not capped, that large donors still dominate party funding there, and that caps restrict what outsiders can say during campaigns.",
+     "source_label": "UK Electoral Commission, “General election spending hits record high” (July 17, 2025)",
+     "source_url": "https://www.electoralcommission.org.uk/media-centre/general-election-spending-hits-record-high",
+     "source_published": "2024",
+     "source_accessed": "2026-10-03",
+     "id": "campaign-spending-at-the-2024-uk"
+    },
+    {
+     "label": "US states offering public financing to candidates",
+     "viz": "range",
+     "wide": false,
+     "value": "15",
+     "unit": "states",
+     "series": [],
+     "range_min": "0",
+     "range_max": "50 states",
+     "note": "Fifteen states and Washington, D.C., offer candidates some form of statewide public financing, each in exchange for accepting limits on spending and contributions.",
+     "detail": "State programs take two main forms: grants that fully fund candidates who qualify by collecting many small contributions, as in Arizona, Maine and Connecticut, and matching funds that multiply small private gifts. Cities run their own programs, including New York City’s matching funds and Seattle’s democracy vouchers, which give every resident four $25 vouchers to give to local candidates. Public financing is voluntary for candidates: the Supreme Court held in Arizona Free Enterprise Club v. Bennett (2011) that a state may not raise a publicly financed candidate’s funds in response to an opponent’s or an outside group’s spending. Supporters of these programs include the ACLU and the Brennan Center; opponents include the Institute for Free Speech and the Cato Institute.",
+     "source_label": "National Conference of State Legislatures, Public Financing of Campaigns: Overview",
+     "source_url": "https://www.ncsl.org/elections-and-campaigns/public-financing-of-campaigns-overview",
+     "source_published": "2025",
+     "source_accessed": "2026-10-03",
+     "id": "us-states-offering-public-financing-to"
+    },
+    {
+     "label": "Tax filers who check the presidential campaign fund box",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% of filers",
+     "series": [
+      {
+       "label": "1980",
+       "value": "28.7",
+       "highlight": false
+      },
+      {
+       "label": "1990",
+       "value": "19.5",
+       "highlight": false
+      },
+      {
+       "label": "2000",
+       "value": "11.5",
+       "highlight": false
+      },
+      {
+       "label": "2010",
+       "value": "6.6",
+       "highlight": false
+      },
+      {
+       "label": "2020",
+       "value": "3.56",
+       "highlight": false
+      },
+      {
+       "label": "2024",
+       "value": "3.14",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "About 3 percent of tax filers now check the box that sends $3 of their taxes to the presidential public funding program, down from 28.7 percent in 1980.",
+     "detail": "The checkoff, created in 1971 and raised from $1 to $3 in 1993, is the program’s only source of money and does not change the filer’s tax bill. The program gives presidential candidates who agree to spending limits matching funds in primaries and a grant in the general election. Barack Obama in 2008 was the first major-party nominee to decline the general-election grant, and none has taken it since John McCain that year, because the spending limit attached is far below what candidates can raise privately. Opponents of public financing read the falling participation as Americans not wanting their taxes spent on campaigns; supporters say the design failed rather than the idea, since the grant was never updated for the cost of modern campaigns.",
+     "source_label": "Federal Election Commission, Presidential Election Campaign Fund Tax Check-Off Chart",
+     "source_url": "https://www.fec.gov/resources/cms-content/documents/Pres_Public_Funding.pdf",
+     "source_published": "1980–2024",
+     "source_accessed": "2026-10-03",
+     "id": "tax-filers-who-check-the-presidential"
+    },
+    {
+     "label": "Projected political ad spending, 2025–2026 cycle",
+     "viz": "bar",
+     "wide": false,
+     "value": "10.8",
+     "unit": "$ billion",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "AdImpact projects $10.8 billion in political ad spending for the 2026 cycle, which would be the most for any midterm and more than 20 percent above 2022.",
+     "detail": "AdImpact tracks broadcast, cable, streaming and digital advertising across federal, state and local races and ballot measures, so its totals are not comparable with OpenSecrets’ federal-only cost figures. It says its 2024 projection of $10.7 billion came within 5 percent of the actual $11.2 billion. It expects House and Senate races to account for about $5 billion of the 2026 total, and streaming television, at $2.5 billion, to be the fastest-growing medium.",
+     "source_label": "AdImpact, 2025–2026 Political Projections",
+     "source_url": "https://adimpact.com/political-projections-26",
+     "source_published": "2025",
+     "source_accessed": "2026-10-03",
+     "id": "projected-political-ad-spending-2025-2026"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Does campaign money change what governments do, or mostly follow candidates voters already favor?",
+    "kind": "empirical",
+    "why": "Donors give to candidates who already agree with them and are likely to win, so money and outcomes move together either way, and the most direct influence, a quiet change in a bill’s wording, is the hardest to measure.",
+    "detail": "Studies that try to isolate a causal effect point both ways. When Citizens United forced about half the states to drop bans on corporate election spending, those states went on to adopt more corporate-friendly policies on issues with large stakes for corporations, and not on unrelated ones (Gilens, Patterson & Haines, American Political Science Review, 2021); another study found Republicans’ chances of winning state house races there rose about 4 percentage points (Klumpp, Mialon & Williams, 2016). A field experiment found congressional offices made senior policymakers available far more often when told a meeting would include donors (Kalla & Broockman, 2016), and Martin Gilens and Benjamin Page’s study of 1,779 policy issues concluded that economic elites and business groups have substantial independent influence while average citizens have little (2014).\n\nOn the other side, a review of 49 field experiments put the average persuasive effect of campaign contact and advertising in general elections at zero (Kalla & Broockman, 2018); legislators’ votes are explained mainly by party, ideology and constituency, with little left for contributions (Ansolabehere, de Figueiredo & Snyder, 2003); and Peter Enns showed that rich and middle-income Americans want the same thing on most issues, so the middle usually gets its way (2015).",
+    "lean_label_a": "Shapes policy",
+    "lean_label_b": "Follows support",
+    "id": "does-campaign-money-change-what-governments"
+   },
+   {
+    "text": "Is spending money to spread a political message a form of protected speech?",
+    "kind": "value",
+    "why": "Nearly every way of reaching voters costs money, so a cap on spending limits how much one can say. Critics answer that the same money buys gratitude and access, and that treating dollars as speech gives those with more dollars more speech.",
+    "detail": "The Supreme Court has held since Buckley v. Valeo (1976) that a limit on what a person or group spends on political communication necessarily reduces the quantity of expression, the issues discussed and the audience reached, and most of the debate since has been over what follows. Those who say spending is speech point out that newspapers, books and documentaries all cost money; Citizens United itself began when the government said a nonprofit could not distribute a film criticizing Hillary Clinton close to an election. If government can cap political spending, those in power decide how much criticism of themselves is allowed.\n\nThose who say money is not speech answer that money enables speech without being it. Justice John Paul Stevens, dissenting in Citizens United, wrote that “a democracy cannot function effectively when its constituent members believe laws are being bought and sold.” Canada, the United Kingdom and France cap campaign spending or contributions without being regarded as unfree, and treating unlimited spending as speech, on this view, turns economic inequality straight into political inequality.",
+    "lean_label_a": "Is speech",
+    "lean_label_b": "Isn’t speech",
+    "id": "is-spending-money-to-spread-a"
+   },
+   {
+    "text": "Do limits on political money protect incumbents and push money toward less accountable groups?",
+    "kind": "empirical",
+    "why": "Limits are written by sitting legislators, and every major tightening of the rules has been followed by money finding a new route. Reformers reply that the leaks come from court rulings and weak enforcement, not from limits as such.",
+    "detail": "Those who say limits backfire start with challengers, who must spend more than incumbents to become known, so caps on spending or fundraising favor those already in office, as the political scientist Gary Jacobson documented in the 1970s and 1980s. Soft money in the 1990s, 527 groups in 2004 and super PACs after 2010 each absorbed money the rules squeezed out elsewhere. “Money under pressure does not disappear, it finds the path of least resistance,” Samuel Issacharoff wrote in 2026.\n\nThose who say limits work point out that limits on giving to candidates, upheld since 1976, have kept direct giving small and transparent, and that the channels where money pours in unchecked are the ones courts and the FEC left open. Ohio’s largest corruption case shows what unlimited, undisclosed money can buy: FirstEnergy funneled about $60 million through a nonprofit that did not name its donors to elect allies of House Speaker Larry Householder and pass a $1 billion bailout, and Householder was sentenced to 20 years in prison in 2023 (PBS NewsHour). Canada and the United Kingdom cap spending and still see incumbents lose regularly.",
+    "lean_label_a": "Limits backfire",
+    "lean_label_b": "Limits work",
+    "id": "do-limits-on-political-money-protect"
+   },
+   {
+    "text": "Should corporations and unions have the same right to spend on elections as individual citizens?",
+    "kind": "value",
+    "why": "Citizens United barred limits on independent political spending based on the speaker being a corporation or union. Proposed constitutional amendments and a Montana ballot measure would treat people and “artificial persons” differently.",
+    "detail": "Those who want the same rights note that corporations are associations of people, shareholders, workers and members, and so are unions, advocacy nonprofits like the ACLU and the NRA, and most newspapers. A rule that lets government silence corporate speakers could reach the Sierra Club and the New York Times as well as Exxon; the First Amendment protects speech, not speakers, and voters can weigh who is talking. Montana’s Republican Party opposes the state’s Initiative 194, on the November 2026 ballot, as silencing small Montana businesses with a stake in state elections (Montana Public Radio, 2026).\n\nThose who would reserve election spending to people answer that corporations are created by state law for economic purposes and given privileges, limited liability and perpetual life among them, that let them amass wealth no individual could, and that using it to elect their own regulators distorts citizenship rather than exercising it. Shareholders and workers did not consent to their company’s political spending and have their own votes. Montana banned corporate election spending from 1912, after copper companies bought legislators, until the Supreme Court struck its law down in 2012 on the authority of Citizens United; the initiative would revive that model by redefining the powers the state grants such entities.",
+    "lean_label_a": "Same rights",
+    "lean_label_b": "People only",
+    "id": "should-corporations-and-unions-have-the"
+   },
+   {
+    "text": "Should the donors behind political spending be publicly disclosed?",
+    "kind": "value",
+    "why": "Eight of nine justices in Citizens United endorsed disclosure as the alternative to limits, but the Court has also shielded members of controversial groups from exposure since NAACP v. Alabama in 1958.",
+    "detail": "Those who want disclosure say voters judge a message partly by who pays for it: an ad from a group with a civic-sounding name means something different when the money comes from one industry. Justice Anthony Kennedy’s majority in Citizens United relied on disclosure to let citizens and shareholders hold corporations and officials accountable, and Justice Antonin Scalia wrote in Doe v. Reed (2010) that “requiring people to stand up in public for their political acts fosters civic courage, without which democracy is doomed.” Without disclosure, contribution limits and the ban on foreign money cannot be enforced, and thresholds can shield small donors while exposing the large ones.\n\nThose who defend donor privacy say disclosure exposes people to boycotts, harassment and job loss for backing unpopular causes, which is why the Court protected the NAACP’s Alabama membership list in the civil rights era, and why in Americans for Prosperity Foundation v. Bonta (2021) it struck down California’s demand for charities’ donor lists. The Institute for Free Speech and Americans for Prosperity argue that in a polarized era a public donor list becomes a target list, and that the chill falls hardest on ordinary people. The Federalist Papers, they note, were published anonymously.",
+    "lean_label_a": "Disclose donors",
+    "lean_label_b": "Protect privacy",
+    "id": "should-the-donors-behind-political-spending"
+   },
+   {
+    "text": "May campaign finance law aim at political equality, or only at preventing quid pro quo corruption?",
+    "kind": "value",
+    "why": "The Supreme Court accepts one reason to limit political money: preventing an explicit exchange of money for official acts, or its appearance. It has rejected “leveling the playing field” as a goal, and reformers want that changed.",
+    "detail": "The Court restated the narrow test in McCutcheon v. FEC (2014) and again in 2026. Those who hold to it argue that a government allowed to limit speech to equalize influence must decide whose voice is too loud, and that power will be used by those in office. In Buckley v. Valeo the Court called restricting the speech of some to enhance the relative voice of others “wholly foreign to the First Amendment.” Influence won by persuading voters, organizing allies or funding ads is how democratic politics works, and an equality rule would logically reach newspapers, celebrities, unions and activists too.\n\nThose who want an equality interest, such as the legal scholars Lawrence Lessig and Zephyr Teachout, argue that corruption in the founders’ sense was not only the bribe but representatives’ dependence on a narrow class of funders instead of on the people. A legislature that answers to donors before voters is corrupt even if no single exchange can be proved, and a system that multiplies some citizens’ voices by millions violates one person, one vote as plainly as a poll tax would. The constitutional amendments reformers propose would write such an interest in.",
+    "lean_label_a": "Corruption only",
+    "lean_label_b": "Equality too",
+    "id": "may-campaign-finance-law-aim-at"
+   },
+   {
+    "text": "Would freeing parties to spend with their candidates make politics more accountable or more donor-driven?",
+    "kind": "empirical",
+    "why": "Since the Supreme Court lifted caps on party spending coordinated with candidates, reformers have split: some see parties as accountable coalitions that can draw money back from super PACs, others as a new pipe for large donors.",
+    "detail": "Those who expect more accountability argue that parties must win majorities across many districts, so they favor electable candidates and answer to voters for a whole ticket, while super PACs answer to a few donors. Samuel Issacharoff of NYU’s Democracy Project wrote that capping party coordination while leaving outside groups unlimited “systematically disadvantaged parties relative to every other player in the campaign finance ecosystem.” A majority of states largely let parties coordinate with their nominees, and the Court’s majority treated the lack of evidence of resulting corruption as “a strong sign” the federal concern was speculative.\n\nThose who expect more donor influence note that a donor limited to $7,000 for a candidate can now give a party far more, knowing it will pay that candidate’s bills; Justice Elena Kagan’s dissent put the figure at “as much as half a million dollars” and said the Court “ushers back in the same opportunities for quid pro quo corruption that the contribution limits were meant to check.” The majority answered that earmarking rules still count money given to a party for a particular candidate as a contribution to that candidate. Critics reply that those rules are hard to enforce with an FEC that lacks a quorum, and that parties are themselves dominated by large donors and joint fundraising committees.",
+    "lean_label_a": "More accountable",
+    "lean_label_b": "More donor-driven",
+    "id": "would-freeing-parties-to-spend-with"
+   },
+   {
+    "text": "Does public financing broaden who takes part in politics, or spend taxpayers’ money without changing much?",
+    "kind": "empirical",
+    "why": "Programs differ in ways that matter, from full grants to multiple matching of small gifts to vouchers, and evaluations of the same program disagree depending on whether users are compared with past cash donors or with the whole electorate.",
+    "detail": "Those who see broader participation cite Seattle’s first voucher election in 2017, when 20,727 residents used democracy vouchers, more than double the number who gave cash. The researchers Brian McCabe and Jennifer Heerwig found voucher users significantly more economically diverse than cash donors: households earning over $100,000 made up nearly a quarter of cash donors but 16 percent of voucher users, though the lowest-income residents stayed underrepresented. A Brennan Center and Campaign Finance Institute study found that New York City Council candidates’ matched small donors came from a much broader range of neighborhoods than small donors to the same city’s unmatched State Assembly races.\n\nThose who see little change cite a 2024 study of Seattle using individual voter records, which found that “those most mobilized by the availability of vouchers belong to groups already overrepresented within the donor pool,” across race, income, age, past participation and partisanship (Yorgason, American Political Science Review). They add that public money cannot cap outside spending, which still dominates competitive races, and that taxpayers are made to fund candidates they may oppose.",
+    "lean_label_a": "Broadens giving",
+    "lean_label_b": "Changes little",
+    "id": "does-public-financing-broaden-who-takes"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Limit political money and overturn Citizens United",
+    "color_key": "green",
+    "steelman": "One person, one vote means little when a sliver of donors and a few billionaires fund campaigns; reasonable limits on political money keep government answerable to voters.",
+    "detail": "Fifty years of Supreme Court decisions have taken political equality apart. The Court decided in 1976 that spending money is speech, in 2010 that corporations may spend without limit and that independent spending cannot corrupt, and in 2026 that parties may serve as a pass-through for donors who have already given candidates the legal maximum. The result is visible to any voter: industries form super PACs to pick the lawmakers who will regulate them, and officeholders spend their days raising money from a small donor class and listening to it. Every other established democracy accepts reasonable limits on political money without losing its freedom. No one would be stopped from speaking, only from pouring unlimited money into amplifying a message, as limits on contributions have done since 1976. Today’s unlimited system protects incumbents far more than limits would, since incumbents attract most of the money.\n\nBecause the Court has closed the door to ordinary legislation, the Constitution should be amended to let Congress and the states set reasonable limits on contributions and spending and to distinguish people from corporations. Senator Adam Schiff’s Citizens Over Corporations Amendment and the For Our Freedom Amendment, which Republican Representative Tom Barrett introduced in near-identical form in June 2026, are two versions; American Promise says 25 states have called on Congress to propose one. Meanwhile the states test current law: Maine voters approved a cap on contributions to super PACs with about 75 percent of the vote in 2024. Most of us also back public financing and the federal DISCLOSE Act, and some, like Lawrence Lessig, see candidates’ dependence on funders as the core problem.",
+    "proponents": "Campaign Legal Center; Brennan Center for Justice; American Promise; Adam Schiff; Tom Barrett; Equal Citizens; Lawrence Lessig",
+    "id": "limit-political-money-and-overturn-citizens"
+   },
+   {
+    "name": "Protect political spending as free speech",
+    "color_key": "blue",
+    "steelman": "Political speech costs money, so a cap on what people may spend to reach voters is a cap on what they may say, written by incumbents whose records that speech would criticize.",
+    "detail": "The First Amendment was written to protect political speech above all, and printing, postage, airtime, staff and websites all cost money. The only valid reason to regulate political money is to prevent the exchange of money for official acts, and bribery laws, limits on giving to candidates and earmarking rules already do that. Trying to equalize influence is impossible and dangerous, because it hands government the power to decide which voices are too loud, a power that will be turned on unpopular causes, outsiders and the opposition. Spending silences no one, no one is forced to listen, and big money flows to both parties, whose large spenders often cancel out and frequently lose.\n\nEach new restriction has only pushed money into less accountable channels, while the internet has made more speech cheaper than ever, as the record sums raised in small online donations show. The deeper problem is how much power government holds over the economy: limit what politicians can sell, not what citizens can say, and let voters judge whether a message persuades. The Institute for Free Speech, founded by the former FEC chairman Bradley Smith, called the 2026 ruling “a landmark victory for the First Amendment.” We divide on disclosure, which some of us oppose for donors to advocacy groups while others accept it as the right alternative to limits, and on how far to go: some, like Justice Clarence Thomas, would apply strict scrutiny to limits on giving to candidates too. Most of us oppose taxpayer-funded campaigns.",
+    "proponents": "Institute for Free Speech; Cato Institute; Mitch McConnell; National Republican Senatorial Committee; National Republican Congressional Committee; Americans for Prosperity; Bradley Smith",
+    "id": "protect-political-spending-as-free-speech"
+   },
+   {
+    "name": "Expand public financing without capping spending",
+    "color_key": "amber",
+    "steelman": "The trouble isn’t that a few speak too much but that most are never heard; match small gifts with public money to raise the floor instead of lowering the ceiling.",
+    "detail": "Candidates spend their time with the people who fund them, and today that is a sliver of the country. Capping spending won’t fix this: courts strike the caps down, money finds another route where they survive, and the caps restrict real political speech, including that of the unpopular and minority causes the ACLU has defended for a century. The ACLU opposes any constitutional amendment that would narrow the First Amendment and holds that the answer to costly campaigns is to expand, not limit, the resources available for political advocacy. Multiply small contributions with public matching funds, or give every voter a voucher or tax credit to give to the candidates they choose, and a candidate who courts thousands of ordinary donors can compete with one who courts a few rich ones. That adds voices instead of subtracting them, and courts have upheld voluntary public financing since 1976.\n\nPublic money doesn’t need to outspend super PACs, only to give every serious candidate enough to be heard and a reason to court ordinary voters; a candidate free of dependence on large donors governs differently even when outside groups spend against them. Democracy is a public good like the courts, and its cost is small beside what large donors receive in policy. We differ on design, from full grants to multiple matching, vouchers or small-donor tax rebates, and on whether participating candidates should accept spending limits. The political scientist Michael Malbin argues for matching aimed at small, in-district donors, as New York State has adopted. What sets us apart from the first camp is that we reject caps on independent spending and an amendment to allow them.",
+    "proponents": "American Civil Liberties Union; Michael Malbin",
+    "id": "expand-public-financing-without-capping-spending"
+   },
+   {
+    "name": "Route political money through the parties",
+    "color_key": "rust",
+    "steelman": "Law can’t shrink the money in politics, only steer it; send it through parties that answer to voters for a whole ticket, not super PACs that answer to a few donors.",
+    "detail": "The usual debate asks how much money there should be in politics, which is the wrong question. Money will flow into the system whatever the law says, as every round of reform has shown; what law can decide is where it goes. Parties are the one political organization that must build majorities across many districts, answer to voters for a whole ticket and govern afterward, so they favor candidates who can win general elections, which pulls them toward the center. Super PACs, single-candidate committees and dark money nonprofits answer to a handful of donors and activists, and they grew because the law capped parties while leaving them free. The political scientists Raymond La Raja and Brian Schaffner found, from state-level evidence, that rules restricting party fundraising push money toward ideological donors and go with more polarized legislatures (2015).\n\nSo let parties raise and spend more and coordinate with their own candidates, while keeping limits and disclosure aimed at genuine quid pro quo deals. Party money is pooled across many races and donors, which dilutes any single donor’s leverage, and a party that must answer to primary and general-election voters nationwide is a more accountable broker than a super PAC funded by one billionaire. Our camp joins election lawyers who otherwise favor regulation, such as Bob Bauer, former White House counsel to President Obama, with Republicans who wanted coordination limits struck for free-speech reasons. Some of us would pair stronger parties with lower limits on super PACs if the courts allowed it.",
+    "proponents": "Samuel Issacharoff; Richard Pildes; Bob Bauer; Raymond La Raja; Jonathan Rauch; Brian Schaffner",
+    "id": "route-political-money-through-the-parties"
+   }
+  ],
+  "crux": {
+   "lead": "Does big political money distort democracy enough to justify limits on what people spend to be heard?",
+   "lead_highlight": "enough to justify limits",
+   "subtitle": "Every camp opposes bribery and wants officials answerable to the public. They split over whether large donations and outside spending are citizens backing causes they believe in, or wealth buying a louder voice and a closer ear than votes can.",
+   "empirical": "Evidence can measure how much money changes election results, lawmakers’ votes and policy once donors’ habit of backing likely winners is accounted for; whether limits curb large donors or just push money into less accountable groups; and whether public matching funds change who gives. Natural and field experiments have begun to answer, with mixed results.",
+   "values": "No data settles whether each citizen’s roughly equal chance to be heard justifies limits on political spending, or whether freedom to speak and spend must come first because any power that rations speech can be turned on its critics; whether spending to amplify a message is itself speech; or whether companies and other associations share individuals’ political rights."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Follow the money with OpenSecrets",
+    "description": "A nonpartisan research group’s searchable data on who gives to federal candidates, parties, super PACs and dark money groups, and who lobbies whom.",
+    "url": "https://www.opensecrets.org/",
+    "for_position": null,
+    "id": "follow-the-money-with-opensecrets"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the Supreme Court’s NRSC v. FEC opinion and dissent",
+    "description": "The June 2026 decision striking down limits on party spending coordinated with candidates, with a majority opinion and a dissent that set out the core legal argument.",
+    "url": "https://www.supremecourt.gov/opinions/25pdf/24-621_h315.pdf",
+    "for_position": null,
+    "id": "read-the-supreme-court-s-nrsc"
+   },
+   {
+    "kind": "policy",
+    "title": "Join the campaign for a constitutional amendment on money in politics",
+    "description": "American Promise organizes citizens and state legislators across parties to press Congress to propose the For Our Freedom Amendment, which would let Congress and the states limit political spending.",
+    "url": "https://americanpromise.net/take-action/",
+    "for_position": "Limit political money and overturn Citizens United",
+    "id": "join-the-campaign-for-a-constitutional"
+   },
+   {
+    "kind": "donate",
+    "title": "Support legal defense of political speech",
+    "description": "The Institute for Free Speech litigates against campaign finance restrictions and donor disclosure mandates, and offers free legal help to people and groups facing them.",
+    "url": "https://www.ifs.org/donate/",
+    "for_position": "Protect political spending as free speech",
+    "id": "support-legal-defense-of-political-speech"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the ACLU’s position on campaign finance reform",
+    "description": "The ACLU explains why it opposes spending limits and an amendment to overturn Citizens United while supporting public financing and carefully drawn disclosure.",
+    "url": "https://www.aclu.org/issues/free-speech/campaign-finance-reform",
+    "for_position": "Expand public financing without capping spending",
+    "id": "read-the-aclu-s-position-on"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the case for stronger political parties",
+    "description": "A Brookings report by Raymond La Raja and Jonathan Rauch on the condition of state parties and how strengthening them could offset the influence of super PACs.",
+    "url": "https://www.brookings.edu/articles/the-state-of-state-parties-and-how-strengthening-them-can-improve-our-politics/",
+    "for_position": "Route political money through the parties",
+    "id": "read-the-case-for-stronger-political"
+   },
+   {
+    "kind": "donate",
+    "title": "Support the legal challenge to super PACs",
+    "description": "Equal Citizens, founded by Lawrence Lessig, is defending Maine’s voter-approved $5,000 cap on super PAC contributions in federal court as a test case for limiting super PACs nationwide.",
+    "url": "https://equalcitizens.us/against_superpacs/",
+    "for_position": "Limit political money and overturn Citizens United",
+    "id": "support-the-legal-challenge-to-super"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read Cato’s brief against party coordination limits",
+    "description": "The Cato Institute’s friend-of-the-court brief in NRSC v. FEC, arguing that limits on party spending with candidates restrict speech and association without preventing corruption.",
+    "url": "https://www.supremecourt.gov/DocketPDF/24/24-621/373002/20250828111459411_NRSC%20v%20FEC_Final.pdf",
+    "for_position": "Protect political spending as free speech",
+    "id": "read-cato-s-brief-against-party"
+   },
+   {
+    "kind": "local",
+    "title": "See how Seattle’s democracy vouchers work",
+    "description": "Seattle’s official page for its voucher program, which lets residents make publicly funded contributions to local candidates, with participation data and reports.",
+    "url": "https://www.seattle.gov/democracyvoucher",
+    "for_position": "Expand public financing without capping spending",
+    "id": "see-how-seattle-s-democracy-vouchers"
+   },
+   {
+    "kind": "local",
+    "title": "Check your state’s contribution limits",
+    "description": "The National Conference of State Legislatures’ table of how much individuals, PACs, parties, corporations and unions may give to candidates in each state.",
+    "url": "https://www.ncsl.org/elections-and-campaigns/state-limits-on-contributions-to-candidates",
+    "for_position": null,
+    "id": "check-your-state-s-contribution-limits"
+   }
+  ]
+ },
+ "icon": "coins",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: a tall neat stack of large coins in the foreground as the dominant focal mass, each coin given a clear fill; a plain blank campaign yard sign on two stakes, with only a simple five-pointed star on it, standing just behind the stack so the coins overlap its lower edge; a small domed capitol building with no columns in front on a distant rise at the upper right; the ground is the gentle curve of a low rounded hill under the coins and sign; a winding road runs from the foreground hill across the frame up to the distant capitol as the connective element; a small sealed envelope lying on the hill beside the coins.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #6a62b0, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: people, hands, faces, money bags, dollar signs, currency symbols, banknotes with portraits, puppets, strings, puppet strings, top hats, fat cats, briefcases of cash, handshakes, bribes, scales of justice, shackles, chains, locks, ballot boxes, voting booths, flags, eagles, flames, falling coins, arrows, charts, prohibition signs, slashes, red, gavels, megaphones, bunting, Greek columns."
 }

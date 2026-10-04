@@ -1,8 +1,8 @@
 {
  "slug": "drug-policy-prohibition-vs-legalization",
  "title": "Drug Policy",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-10-03T07:01:05+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Legal status of illicit drugs and how to treat users: prohibition, decriminalization, regulation, harm reduction versus abstinence.",
@@ -16,5 +16,669 @@
   "drug-pricing-vs-innovation",
   "policing-reform",
   "overdiagnosis-mental-health"
- ]
+ ],
+ "content": {
+  "overview": {
+   "summary": "Whether drugs and their users belong to criminal law, health care or a regulated market, and whether care should aim at safer use or at recovery.",
+   "scope_covered": "The legal status of drugs that are now illegal and how to treat the people who use them: prohibition and enforcement, decriminalization, legal regulation, harm reduction and recovery-oriented treatment, with the evidence on deaths, use, crime, incarceration and racial disparities.",
+   "scope_excluded": "Prescription drug pricing and patents, and policing and sentencing in general, each on its own page; alcohol and tobacco policy except as points of comparison; and psychedelics as medical therapy.",
+   "why_now": "On April 23, 2026, the US Justice Department moved state-licensed medical marijuana out of Schedule I, the strictest federal drug category, where all marijuana had sat since 1970, into Schedule III. Adult-use cannabis stays in Schedule I while a broader rescheduling case is pending.",
+   "why_now_source_label": "NPR",
+   "why_now_source_url": "https://www.npr.org/2026/04/23/nx-s1-5797245/marijuana-rules-reschedule-medical-legalization"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "US drug overdose deaths, 12-month totals",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "deaths",
+     "series": [
+      {
+       "label": "Dec 2019",
+       "value": "71,740",
+       "highlight": false
+      },
+      {
+       "label": "Dec 2021",
+       "value": "108,553",
+       "highlight": false
+      },
+      {
+       "label": "Aug 2023 (peak)",
+       "value": "112,418",
+       "highlight": false
+      },
+      {
+       "label": "Dec 2024",
+       "value": "81,313",
+       "highlight": false
+      },
+      {
+       "label": "Dec 2025",
+       "value": "70,735",
+       "highlight": false
+      },
+      {
+       "label": "Apr 2026",
+       "value": "66,937",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "About 67,000 people died of drug overdoses in the US in the 12 months to April 2026, down about 40 percent from a peak of about 112,000 in the 12 months to August 2023.",
+     "detail": "Each row is the total for the 12 months ending in that month. These are provisional counts, which the CDC adjusts upward for death certificates still under investigation; the counts as reported are slightly lower (65,726 for the 12 months to April 2026 and 111,451 at the peak). The decline began in late 2023 and has continued for more than two years. Its causes are disputed and probably several: wider naloxone distribution, including over-the-counter sales since 2023; more people on medication for opioid use disorder; changes in the illicit supply, including weaker or adulterated fentanyl; enforcement against traffickers; and the deaths of many of the most vulnerable users in earlier years. Harm-reduction, treatment and enforcement advocates each cite the fall as evidence for their own approach. Even after it, the 12-month total is close to the level of 2019, the year before the pandemic-era surge.",
+     "source_label": "CDC National Center for Health Statistics, Provisional Drug Overdose Death Counts",
+     "source_url": "https://www.cdc.gov/nchs/nvss/vsrr/drug-overdose-data.htm",
+     "source_published": "2026",
+     "source_accessed": "2026-10-02",
+     "id": "us-drug-overdose-deaths-12-month"
+    },
+    {
+     "label": "Americans who needed substance use treatment and received it",
+     "viz": "radial",
+     "wide": false,
+     "value": "16",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Of an estimated 47.2 million Americans who needed treatment for substance use in 2025, 7.6 million, or 16 percent, received any.",
+     "detail": "The survey counted 44.6 million people aged 12 and older, 15.3 percent, with a substance use disorder in 2025: 26.0 million with a drug use disorder and 25.7 million with an alcohol use disorder, 7.1 million of them with both. Of the 4.0 million with an opioid use disorder, 15.7 percent, about 623,000, received medication for it. “Needed treatment” here counts everyone who met diagnostic criteria for a disorder or received treatment, whether or not they felt a need for it. Globally the gap is wider: the UN Office on Drugs and Crime estimates that only 1 in 12 people with a drug use disorder received any drug treatment in 2024 (World Drug Report 2026). Every camp in the debate wants more treatment; they disagree over whether the law should push people into it, and whether its goal should be abstinence or ongoing medication and safer use.",
+     "source_label": "SAMHSA, 2025 National Survey on Drug Use and Health (press release, July 27, 2026)",
+     "source_url": "https://www.samhsa.gov/newsroom/press-announcements/20260727/samhsa-releases-annual-national-survey-on-drug-use-and-health",
+     "source_published": "2025",
+     "source_accessed": "2026-10-02",
+     "id": "americans-who-needed-substance-use-treatment"
+    },
+    {
+     "label": "US overdose deaths by drug involved, 2025",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "deaths",
+     "series": [
+      {
+       "label": "Fentanyl & synthetics",
+       "value": "38,506",
+       "highlight": true
+      },
+      {
+       "label": "Meth & other stimulants",
+       "value": "26,315",
+       "highlight": false
+      },
+      {
+       "label": "Cocaine",
+       "value": "19,953",
+       "highlight": false
+      },
+      {
+       "label": "Rx opioid painkillers",
+       "value": "7,148",
+       "highlight": false
+      },
+      {
+       "label": "Heroin",
+       "value": "2,065",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Fentanyl and other synthetic opioids were involved in about 54 percent of US overdose deaths in 2025, down from about 69 percent in 2023. One death can involve several drugs.",
+     "detail": "The rows are provisional counts for the 12 months ending December 2025, and they overlap: many methamphetamine and cocaine deaths also involve fentanyl, so they add up to more than the year’s total. The UN Office on Drugs and Crime reports that fentanyls were implicated in nearly 70 percent of US stimulant overdose deaths in 2024 (World Drug Report 2026). Heroin deaths have fallen from a peak of about 16,300 in the 12 months to June 2017, as fentanyl displaced heroin in the illicit supply, and deaths from prescription painkillers peaked around 2017 as prescribing was curbed. Reformers argue that this succession, from prescription pills to heroin to fentanyl to adulterants such as xylazine and nitazenes, shows prohibition pushing markets toward ever more potent and concealable drugs. Defenders of enforcement argue that it shows the need to disrupt the supply chains, mostly running through Mexico with precursor chemicals from China, that bring fentanyl into the country.",
+     "source_label": "CDC National Center for Health Statistics, Provisional Drug Overdose Death Counts",
+     "source_url": "https://www.cdc.gov/nchs/nvss/vsrr/drug-overdose-data.htm",
+     "source_published": "2025",
+     "source_accessed": "2026-10-02",
+     "id": "us-overdose-deaths-by-drug-involved"
+    },
+    {
+     "label": "Americans who say marijuana should be legal for recreational use",
+     "viz": "radial",
+     "wide": false,
+     "value": "55",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In January 2026, 55 percent of US adults told Pew that marijuana should be legal for medical and recreational use. Gallup, asking a simpler yes-or-no question, found 64 percent in October 2025.",
+     "detail": "In Pew’s survey of 8,512 adults, another 33 percent said marijuana should be legal for medical use only and 11 percent said it should not be legal at all. Support for full legalization was 67 percent among Democrats and those who lean Democratic and 44 percent among Republicans and Republican leaners. Gallup’s figure is down from a peak of 70 percent, with Republican support falling from 53 percent in 2024 to 40 percent (Gallup, reported by Cannabis Science and Technology). Support for legal marijuana does not carry over to other drugs in the same way: in a 2021 poll for the ACLU and the Drug Policy Alliance, 66 percent of voters favored “eliminating criminal penalties for drug possession and reinvesting drug enforcement resources into treatment and addiction services,” but results on such questions vary with wording.",
+     "source_label": "Pew Research Center, Key facts about Americans and marijuana (May 26, 2026)",
+     "source_url": "https://www.pewresearch.org/short-reads/2026/05/26/facts-about-marijuana/",
+     "source_published": "2026",
+     "source_accessed": "2026-10-02",
+     "id": "americans-who-say-marijuana-should-be"
+    },
+    {
+     "label": "US arrests for drug law violations",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "arrests",
+     "series": [
+      {
+       "label": "2018",
+       "value": "1,654,282",
+       "highlight": false
+      },
+      {
+       "label": "2019",
+       "value": "1,558,862",
+       "highlight": false
+      },
+      {
+       "label": "2020",
+       "value": "1,155,610",
+       "highlight": false
+      },
+      {
+       "label": "2023",
+       "value": "870,874",
+       "highlight": false
+      },
+      {
+       "label": "2024",
+       "value": "822,488",
+       "highlight": false
+      },
+      {
+       "label": "2025",
+       "value": "845,031",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "US police made an estimated 845,031 drug arrests in 2025, about half as many as in 2018. In 2024, 87.7 percent of drug arrests were for possession.",
+     "detail": "These are FBI national estimates as compiled by Drug Policy Facts, a reference site run by drug-policy reformers; the FBI publishes them through its Crime Data Explorer. Drug arrests were about 12 percent of roughly 7.5 million estimated US arrests in 2024, and 12.3 percent of that year’s drug arrests were for sale or manufacture. The drop after 2019 reflects several things at once: cannabis legalization and decriminalization in many states, reduced policing during the COVID-19 pandemic, and the FBI’s 2021 switch to a new reporting system, which makes year-to-year comparisons around 2020 and 2021 uncertain. The FBI revises its estimates as late reports arrive.",
+     "source_label": "Drug Policy Facts, compiling FBI Uniform Crime Reports",
+     "source_url": "https://www.drugpolicyfacts.org/chapter/crime_arrests",
+     "source_published": "2025",
+     "source_accessed": "2026-10-02",
+     "id": "us-arrests-for-drug-law-violations"
+    },
+    {
+     "label": "Federal prisoners held mainly for a drug offense",
+     "viz": "radial",
+     "wide": false,
+     "value": "45.2",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "About 45 percent of sentenced federal prisoners in September 2023 were held mainly for a drug offense, against about 13 percent of sentenced state prisoners at the end of 2022.",
+     "detail": "In numbers, about 64,600 federal prisoners and 131,300 state prisoners were serving sentences mainly for drug offenses, out of about 1,039,500 sentenced state prisoners. Possession alone was the most serious offense for 3.6 percent of state prisoners; most drug prisoners were convicted of trafficking or other supply offenses, though prosecutors and defenders dispute how many of those were low-level sellers who also used drugs. Women in state prison were about twice as likely as men to be serving time for a drug offense (25.5 percent against 11.7 percent), and 59.1 percent of Hispanic federal prisoners were held for drug offenses. The counts exclude people in local jails and on probation or parole. Reformers cite the federal share as a measure of the drug war’s reach; others note that state prisons, which hold most US prisoners, are dominated by violent offenses, so ending drug imprisonment would not by itself end mass incarceration.",
+     "source_label": "Bureau of Justice Statistics, Prisoners in 2023: Statistical Tables (September 2025), tables 17 and 20",
+     "source_url": "https://bjs.ojp.gov/document/p23st.pdf",
+     "source_published": "2023",
+     "source_accessed": "2026-10-02",
+     "id": "federal-prisoners-held-mainly-for-a"
+    },
+    {
+     "label": "Black-white gap in marijuana possession arrests, 2018",
+     "viz": "bar",
+     "wide": false,
+     "value": "3.64",
+     "unit": "times",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2018 Black Americans were 3.64 times as likely as white Americans to be arrested for marijuana possession, though the two groups use marijuana at similar rates.",
+     "detail": "The ACLU, which supports legalization, analyzed FBI data and counted more than 6.1 million marijuana arrests from 2010 to 2018, almost 700,000 of them in 2018, when marijuana accounted for more than 43 percent of all drug arrests. Disparities persisted in states that had legalized or decriminalized marijuana, though the total number of arrests there fell sharply. Reformers treat racial disparities in drug enforcement as a central argument for decriminalization and legalization. Defenders of enforcement attribute part of the gap to where police are deployed, which they tie to differences in violent crime, and to open-air rather than indoor drug markets, rather than to bias.",
+     "source_label": "American Civil Liberties Union, A Tale of Two Countries: Racially Targeted Arrests in the Era of Marijuana Reform (2020)",
+     "source_url": "https://www.aclu.org/publications/tale-two-countries-racially-targeted-arrests-era-marijuana-reform",
+     "source_published": "2018",
+     "source_accessed": "2026-10-02",
+     "id": "black-white-gap-in-marijuana-possession"
+    },
+    {
+     "label": "People worldwide who used an illegal drug in the past year, 2024",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "million",
+     "series": [
+      {
+       "label": "Any drug",
+       "value": "331",
+       "highlight": true
+      },
+      {
+       "label": "Cannabis",
+       "value": "256",
+       "highlight": false
+      },
+      {
+       "label": "Opioids",
+       "value": "63",
+       "highlight": false
+      },
+      {
+       "label": "Amphetamines",
+       "value": "32",
+       "highlight": false
+      },
+      {
+       "label": "Cocaine",
+       "value": "25",
+       "highlight": false
+      },
+      {
+       "label": "Ecstasy",
+       "value": "21",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "An estimated 331 million people, a record 6.2 percent of the world’s population aged 15 to 64, used an illegal drug in 2024, up from 5.2 percent in 2014.",
+     "detail": "The total is 34 percent higher than a decade earlier. The UN Office on Drugs and Crime attributes part of the rise to population growth of about 10 percent and better data, and part to a real increase in prevalence. Cannabis users grew by 40 percent over the decade, and the highest regional rates of use are in Oceania (15.5 percent) and the Americas (15 percent). The opioid row counts people using any opioid non-medically, almost half of them using opiates such as heroin and opium. UNODC stresses that most drug use is occasional and that a smaller group with frequent, dependent use accounts for most of the harm; it estimates that 63 million people had a drug use disorder in 2024, a separate figure that happens to match the opioid row. Reformers say five decades of global prohibition under the UN drug conventions have not reduced use; supporters of prohibition say legal drugs would bring many more users, and that the trend argues for stronger prevention and enforcement.",
+     "source_label": "UN Office on Drugs and Crime, World Drug Report 2026",
+     "source_url": "https://www.unodc.org/documents/data-and-analysis/WDR_2026/WDR26_Highlights.pdf",
+     "source_published": "2024",
+     "source_accessed": "2026-10-02",
+     "id": "people-worldwide-who-used-an-illegal"
+    },
+    {
+     "label": "Drug overdose deaths, European Union and United States, 2024",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "deaths",
+     "series": [
+      {
+       "label": "United States",
+       "value": "79,384",
+       "highlight": false
+      },
+      {
+       "label": "European Union",
+       "value": "7,589",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The European Union counted at least 7,589 overdose deaths in 2024. The United States, with fewer people, counted 79,384 in the CDC’s final tally, about ten times as many.",
+     "detail": "The EU Drugs Agency describes 7,589 as a minimum estimate (7,653 in 2023) and puts the EU overdose death rate at 25 per million people aged 15 to 64; only 22 of 29 reporting countries had 2024 data, and recording practices differ. The US row is the final count of deaths among US residents, an age-adjusted rate of 23.1 per 100,000, down 26.2 percent from 2023 (CDC, NCHS Data Brief 549). The EU had about 449 million residents in 2024 (Eurostat) and the United States about 340 million (US Census Bureau). The main reason for the gap is fentanyl, which saturated the North American supply but has not established itself in most of Europe, though nitazenes and other synthetic opioids are appearing in the Baltic states, Ireland and elsewhere. European countries also tend to have wider access to methadone and buprenorphine, and several run supervised consumption sites.",
+     "source_label": "EU Drugs Agency, European Drug Report 2026: Drug-induced deaths; US row from CDC NCHS Data Brief 549",
+     "source_url": "https://www.euda.europa.eu/publications/european-drug-report/2026/drug-induced-deaths_en",
+     "source_published": "2024",
+     "source_accessed": "2026-10-02",
+     "id": "drug-overdose-deaths-european-union-and"
+    },
+    {
+     "label": "Deaths a year from tobacco, alcohol and drug use worldwide",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "million",
+     "series": [
+      {
+       "label": "Tobacco",
+       "value": "7+",
+       "highlight": false
+      },
+      {
+       "label": "Alcohol",
+       "value": "2.6",
+       "highlight": false
+      },
+      {
+       "label": "Drug use",
+       "value": "0.6",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "WHO attributes about 0.6 million deaths in 2019 to drug use and 2.6 million to alcohol, and more than 7 million a year to tobacco by a later estimate. UNODC puts 2023’s drug deaths at 492,000.",
+     "detail": "The tobacco row comes from WHO’s tobacco fact sheet, which says tobacco “kills more than 7 million people each year, including over 1.6 million non-smokers” exposed to second-hand smoke. Drug deaths include direct deaths such as overdoses and indirect ones such as liver disease from hepatitis C acquired through injecting. The UN Office on Drugs and Crime’s estimate, built on the Global Burden of Disease study, is 29 percent higher than a decade earlier, with hepatitis C-related liver disease the largest single cause at 46 percent (World Drug Report 2026). Advocates of legal regulation use the comparison to argue that legal status does not track harm, since the two deadliest substances are legal. Defenders of prohibition reply that alcohol and tobacco kill so many precisely because they are legal, commercial and widely used, and that legalizing other drugs would add to that toll rather than replace it.",
+     "source_label": "World Health Organization, alcohol and drug deaths release (June 25, 2024); tobacco row from WHO’s tobacco fact sheet",
+     "source_url": "https://www.who.int/news/item/25-06-2024-over-3-million-annual-deaths-due-to-alcohol-and-drug-use-majority-among-men",
+     "source_published": "2019",
+     "source_accessed": "2026-10-02",
+     "id": "deaths-a-year-from-tobacco-alcohol"
+    },
+    {
+     "label": "Global cocaine production, 2024",
+     "viz": "bar",
+     "wide": false,
+     "value": "4,100",
+     "unit": "tons",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Potential manufacture of pure cocaine reached about 4,100 tons in 2024, within an estimated range of 3,800 to 4,700, more than four times its most recent low in 2014.",
+     "detail": "The rise is driven by more land under coca cultivation and higher yields, mainly in Colombia. Seizures have broadly kept pace with production: South America accounted for about 64 percent of global cocaine seizures in 2024, its highest share since 1984, and Colombia alone seized 966 tons, 40 percent of the world total. The number of cocaine users grew by more than a third over the decade, and the drug is reaching new markets in Africa and Asia. Critics of prohibition read record supply after five decades of eradication and interdiction as evidence that enforcement cannot win against demand. Supporters of enforcement read it as the result of weakened eradication, notably Colombia’s retreat from aerial spraying and forced eradication, and as a reason for tougher action against producing countries and trafficking groups.",
+     "source_label": "UN Office on Drugs and Crime, World Drug Report 2026",
+     "source_url": "https://www.unodc.org/documents/data-and-analysis/WDR_2026/WDR26_Highlights.pdf",
+     "source_published": "2024",
+     "source_accessed": "2026-10-02",
+     "id": "global-cocaine-production-2024"
+    },
+    {
+     "label": "Deaths per 1,000 person-years, in and out of opioid substitution treatment",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "per 1,000",
+     "series": [
+      {
+       "label": "Out of methadone",
+       "value": "36.1",
+       "highlight": false
+      },
+      {
+       "label": "In methadone",
+       "value": "11.3",
+       "highlight": true
+      },
+      {
+       "label": "Out of buprenorphine",
+       "value": "9.5",
+       "highlight": false
+      },
+      {
+       "label": "In buprenorphine",
+       "value": "4.3",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "People dependent on opioids died at about a third the rate while in methadone treatment as when out of it, 11.3 against 36.1 deaths from all causes per 1,000 person-years.",
+     "detail": "The 2017 meta-analysis pooled 19 cohorts following 122,885 people treated with methadone and 15,831 treated with buprenorphine. Overdose deaths fell even more steeply: 2.6 per 1,000 person-years in methadone treatment against 12.7 out of it. The risk was highest in the first four weeks of starting methadone and in the weeks just after leaving either treatment. The buprenorphine cohorts had lower death rates both in and out of treatment, so the rows for the two medications are not directly comparable, and the authors caution that comparisons in and out of treatment may be affected by confounding and selection. Medication sits awkwardly in the abstinence-versus-harm-reduction debate: supporters of recovery-first approaches increasingly accept it as treatment, while some abstinence-based programs still regard it as replacing one drug with another.",
+     "source_label": "Sordo et al., Mortality risk during and after opioid substitution treatment, BMJ, 2017",
+     "source_url": "https://pubmed.ncbi.nlm.nih.gov/28446428/",
+     "source_published": "2017",
+     "source_accessed": "2026-10-02",
+     "id": "deaths-per-1-000-person-years"
+    },
+    {
+     "label": "US states with legal recreational cannabis",
+     "viz": "range",
+     "wide": false,
+     "value": "24",
+     "unit": "states",
+     "series": [],
+     "range_min": "0",
+     "range_max": "50 states",
+     "note": "Twenty-four states and the District of Columbia allow recreational cannabis for adults; another 24 allow only medical use, and Idaho and Kansas allow neither.",
+     "detail": "The count has not changed since Delaware, Minnesota and Ohio legalized in 2023; no state legalized recreational use in 2025 or so far in 2026, and a Florida initiative failed to qualify for the 2026 ballot (Ballotpedia). Massachusetts voters will decide on November 3, 2026, whether to end recreational retail sales there from January 1, 2028, while keeping adult possession of up to an ounce legal (Question 8). Federally, adult-use cannabis remains a Schedule I drug, so state-licensed businesses operate in violation of federal law. Outside the United States, Canada and Uruguay have legal commercial or state-regulated markets, while Malta (2021), Luxembourg (2023), Germany (2024) and Czechia (2026) allow adults to grow and possess limited amounts, and Germany and Malta allow nonprofit cannabis clubs (UNODC, World Drug Report 2026).",
+     "source_label": "Pew Research Center, Key facts about Americans and marijuana (May 26, 2026)",
+     "source_url": "https://www.pewresearch.org/short-reads/2026/05/26/facts-about-marijuana/",
+     "source_published": "2026",
+     "source_accessed": "2026-10-02",
+     "id": "us-states-with-legal-recreational-cannabis"
+    },
+    {
+     "label": "Americans using cannabis or alcohol daily or near daily",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "million",
+     "series": [
+      {
+       "label": "Cannabis, 2022",
+       "value": "17.7",
+       "highlight": true
+      },
+      {
+       "label": "Alcohol, 2022",
+       "value": "14.7",
+       "highlight": false
+      },
+      {
+       "label": "Alcohol, 1992",
+       "value": "8.9",
+       "highlight": false
+      },
+      {
+       "label": "Cannabis, 1992",
+       "value": "0.9",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2022, for the first time, more Americans reported using cannabis daily or near daily (17.7 million) than drinking alcohol daily or near daily (14.7 million).",
+     "detail": "Far more Americans drink than use cannabis, but heavy use is more common among cannabis users: 42.3 percent of past-month cannabis users reported daily or near-daily use, against 10.9 percent of past-month drinkers. Between 2008 and 2022 the per-capita rate of past-year cannabis use rose 120 percent and reported days of use per capita rose 218 percent. Caulkins, analyzing the National Survey on Drug Use and Health, concludes that long-term trends in use “parallel corresponding changes in cannabis policy.” Critics of legalization point to these figures, to the rising potency of cannabis products and to studies linking heavy use of high-potency cannabis to psychosis; supporters note that teen use has not risen with legalization and that adults’ choices about a substance less lethal than alcohol are their own. SAMHSA’s 2025 survey counted 19.3 million people with a marijuana use disorder, the most common drug use disorder in the country, most of them mild.",
+     "source_label": "Jonathan Caulkins, Changes in self-reported cannabis use in the United States from 1979 to 2022, Addiction, 2024",
+     "source_url": "https://pubmed.ncbi.nlm.nih.gov/38775461/",
+     "source_published": "2022",
+     "source_accessed": "2026-10-02",
+     "id": "americans-using-cannabis-or-alcohol-daily"
+    },
+    {
+     "label": "Executions for drug offenses worldwide, 2025",
+     "viz": "bar",
+     "wide": false,
+     "value": "1,257",
+     "unit": "executions",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Amnesty International recorded 1,257 executions for drug offenses in 2025, 46 percent of all recorded executions and nearly double the 637 it recorded in 2024.",
+     "detail": "Iran carried out 998 of them, Saudi Arabia 240, Singapore 15 and Kuwait 2. Amnesty recorded at least 2,707 executions in 17 countries in 2025, a 78 percent increase from 1,518 in 2024, and drug offenses accounted for 67 percent of Saudi Arabia’s executions and 88 percent of Singapore’s. China also executes people for drug offenses, but Amnesty’s totals exclude China, Vietnam and North Korea, where the figures are state secrets. Amnesty considers these executions unlawful because international human rights law restricts the death penalty to the “most serious crimes,” which it says drug offenses are not. Governments that use it, such as Singapore’s, say the death penalty deters large-scale trafficking and has kept drug use low.",
+     "source_label": "Amnesty International, Death sentences and executions 2025: facts and figures (May 2026)",
+     "source_url": "https://www.amnesty.org/en/latest/news/2026/05/death-penalty-in-2025-facts-and-figures/",
+     "source_published": "2025",
+     "source_accessed": "2026-10-02",
+     "id": "executions-for-drug-offenses-worldwide-2025"
+    },
+    {
+     "label": "People killed in US military strikes on alleged drug boats",
+     "viz": "bar",
+     "wide": false,
+     "value": "234",
+     "unit": "killed",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "At least 234 people have been killed in at least 78 US military strikes, beginning September 2, 2025, on boats the US government says were carrying drugs.",
+     "detail": "The count, from InSight Crime’s timeline as updated on September 21, 2026, includes 17 people missing and presumed dead. The strikes, in the Caribbean and the eastern Pacific, are part of a campaign the administration calls Operation Southern Spear, which treats designated cartels as terrorist organizations and their crews as enemy combatants. The administration says the strikes stop drugs and deter traffickers; critics, including legal scholars and members of Congress from both parties, say the government has offered little public evidence about the boats or the people killed and that killing suspected smugglers without trial is unlawful. The strikes extend a supply-side approach that runs back through the Andean eradication programs of the 1990s.",
+     "source_label": "InSight Crime, Timeline of US strikes against alleged drug boats (updated September 21, 2026)",
+     "source_url": "https://insightcrime.org/news/timeline-us-strikes-against-alleged-drug-boats/",
+     "source_published": "2026",
+     "source_accessed": "2026-10-02",
+     "id": "people-killed-in-us-military-strikes"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Do criminal penalties for drug possession reduce drug use and its harms, or add to them?",
+    "kind": "empirical",
+    "why": "Drug laws aim to deter use and steer people toward treatment, but arrests and records carry costs of their own. Places that changed their laws changed much else at the same time, so the law’s own effect is hard to isolate.",
+    "detail": "Those who see penalties as protective argue that the threat of arrest deters some people from starting and gives police and courts leverage to bring addicted people into treatment they would not otherwise seek. Those who see penalties as harmful argue that most people who use drugs never become addicted, that those who do are not deterred by laws they already break, and that criminal records cost people jobs, housing and custody of their children while fear of arrest drives people to use alone. The best-studied test cases, Oregon and Washington, removed penalties in 2021 just as fentanyl reached West Coast markets, and the studies split on how to separate the two. Synthetic-control studies find excess deaths, one estimating about 1,186 in Oregon and 1,895 in Washington from 2021 to 2023 (Hall, Hansen and Matsuzawa, NBER, 2026). Studies that adjust for when fentanyl arrived find no significant effect (Joshi et al., JAMA Psychiatry, 2023; Zoorob et al., JAMA Network Open, 2024). The first group replies that the fentanyl measure partly reflects the fall in police drug seizures that decriminalization itself caused.",
+    "lean_label_a": "Penalties protect",
+    "lean_label_b": "Penalties harm",
+    "id": "do-criminal-penalties-for-drug-possession"
+   },
+   {
+    "text": "Should public money fund harm reduction, such as supervised drug use sites, or only treatment for recovery?",
+    "kind": "value",
+    "why": "Harm reduction accepts that some people will keep using and tries to make that use less deadly. Recovery-first approaches treat ending use as the goal and see services that ease ongoing use as delaying it.",
+    "detail": "Harm reduction covers naloxone, sterile supplies, drug checking, supervised consumption sites and, in some places, prescribed alternatives to street drugs. Naloxone itself is now broadly accepted, including in the 2026 US National Drug Control Strategy; the fight is over the rest. A July 2025 US executive order directs federal grants away from “so-called ‘harm reduction’ or ‘safe consumption’ efforts that only facilitate illegal drug use and its attendant harm,” while New York City, Rhode Island, Vancouver, Glasgow and much of Western Europe operate supervised sites. Supporters argue that a dead person cannot recover, that staff at sanctioned sites reverse overdoses that would otherwise kill, that syringe programs prevent HIV and hepatitis C, and that these services are often the first contact through which people later enter treatment. Opponents argue that services asking nothing of the user can keep people in addiction for years, concentrate drug use and dealing in particular neighborhoods, and signal that daily fentanyl or methamphetamine use is a tolerable way to live. British Columbia’s move in February 2025 to require that prescribed safer-supply doses be taken in front of a health professional, after reports that they were being diverted and resold, is a case both sides cite.",
+    "lean_label_a": "Harm reduction",
+    "lean_label_b": "Recovery only",
+    "id": "should-public-money-fund-harm-reduction"
+   },
+   {
+    "text": "Would legally regulated sales of drugs such as cocaine and heroin cut deaths and crime, or spread addiction?",
+    "kind": "empirical",
+    "why": "No country has legalized non-medical sales of cocaine, heroin or methamphetamine, so the evidence is indirect, and the answer turns on whether a legal market could be held to strict limits.",
+    "detail": "The evidence comes from US alcohol prohibition, heroin-assisted treatment in Switzerland and elsewhere, prescribed safer supply in Canada, cannabis legalization, and legal drugs such as alcohol, tobacco and prescription opioids. Supporters of regulation argue that prohibition hands a vast trade to criminal organizations, fuels violence from Mexico to Ecuador, and makes the supply unpredictable and adulterated, which is why people die from fentanyl they did not know they were taking. Sales by prescription or licensed pharmacy, with controls on potency and packaging and no advertising, would let people know what they are taking and starve cartels of revenue. Opponents answer that the opioid crisis began with a legal product sold by a licensed company, OxyContin, and that legal availability lowers prices and stigma and would bring many more people into use of highly addictive drugs, with the harms landing hardest on the poor. Criminal groups would not disappear, they add, but would undercut taxed products and sell to minors, as illicit cannabis markets persist in legal states. Prohibition, on this view, keeps use far below that of legal drugs: about 4.2 million Americans used cocaine at any point in 2025, while 129 million drank alcohol in the past month alone (SAMHSA).",
+    "lean_label_a": "Cut deaths, crime",
+    "lean_label_b": "Spread addiction",
+    "id": "would-legally-regulated-sales-of-drugs"
+   },
+   {
+    "text": "Has legalizing cannabis for adults done more good than harm?",
+    "kind": "empirical",
+    "why": "Many US states, Canada and Uruguay now have years of experience, but outcomes move slowly, the products have changed, and effects on psychosis, impaired driving, youth use and illicit markets are hard to measure.",
+    "detail": "Supporters point to hundreds of thousands of arrests a year that no longer happen, most of them of young people and disproportionately of Black Americans, and to the absence of the surge in teen use that opponents predicted: a study of national youth surveys found recreational legalization associated with an 8 percent decrease in the odds of teen marijuana use (Anderson et al., JAMA Pediatrics, 2019). Legal markets, they add, offer tested products with labeled potency, raise tax revenue and take business from criminal organizations, and adults have a right to choose a substance less lethal than alcohol. Opponents say commercial markets have produced products far more potent than the cannabis of earlier decades and an industry that profits from heavy users, whose numbers have soared. In Denmark, the share of schizophrenia cases associated with cannabis use disorder rose from about 2 percent in 1995 to 6 to 8 percent since 2010 as potency rose (Hjorthøj et al., JAMA Psychiatry, 2021). Illicit markets persist in legal states, and Smart Approaches to Marijuana argues that federal rescheduling would hand a tax break to what it calls “Big Weed.” The answer shapes both the US rescheduling fight and whether cannabis is a model for other drugs.",
+    "lean_label_a": "More good",
+    "lean_label_b": "More harm",
+    "id": "has-legalizing-cannabis-for-adults-done"
+   },
+   {
+    "text": "Is it right to compel people with severe addiction into treatment?",
+    "kind": "value",
+    "why": "Drug courts and civil commitment already let courts order treatment, and new laws widen that power. Supporters say severe addiction erodes the capacity to choose; opponents say forced treatment violates rights and works poorly.",
+    "detail": "Alberta’s Compassionate Intervention Act, passed in May 2025, lets courts order people into treatment, and a July 2025 US executive order encourages “maximally flexible” civil commitment. Supporters argue that addiction at its most severe takes away the capacity for free choice that voluntary systems rely on, and that people living on the street with fentanyl and methamphetamine use are dying while they wait to be ready. Society already compels treatment for people whose mental illness makes them a danger to themselves, families in crisis often ask for exactly that power, and drug courts give people a choice between treatment and jail. Opponents argue that people forced into treatment often relapse on release with lower tolerance, which raises the risk of fatal overdose in the weeks that follow, the same spike seen when people leave opioid treatment. Involuntary detention for drug use has a poor record internationally, and UN agencies have called for closing compulsory drug detention centers. Money spent on locked facilities, they add, could fund voluntary treatment for the millions still waiting, and treatment works best when people choose it.",
+    "lean_label_a": "Compel if needed",
+    "lean_label_b": "Voluntary care only",
+    "id": "is-it-right-to-compel-people"
+   },
+   {
+    "text": "Do adults have a right to use drugs if they harm no one else?",
+    "kind": "value",
+    "why": "Beneath the empirical arguments is a dispute over the law’s proper reach: whether the state may punish what adults put in their own bodies, or whether addiction’s harm to users, families and communities justifies limits.",
+    "detail": "Those who put liberty first argue that in a free society the law punishes people for harming others, not for risks they take with themselves, and the state already permits drinking, smoking, gambling and dangerous sports. Criminalizing use, they say, treats millions of adults who harm no one as criminals and gives the state wide power to search, arrest and imprison, while the harms that do follow from drug use, from impaired driving to neglect of children, are already crimes in their own right. Those who put protection first argue that drugs such as fentanyl and methamphetamine do not stay private: addiction leads to lost jobs, broken families, children in foster care, crime to fund use and public disorder, and its costs fall on everyone. People in the grip of addiction, on this view, are not making free choices, and a law that keeps them from starting or continuing respects their future selves. The law already limits personal risk, from seatbelts to prescription-only medicines, and they hold that the dangers of these drugs are far greater.",
+    "lean_label_a": "Personal liberty",
+    "lean_label_b": "Shared protection",
+    "id": "do-adults-have-a-right-to"
+   },
+   {
+    "text": "Is drug trafficking best fought as a security threat, or as a crime and a public health problem?",
+    "kind": "value",
+    "why": "The US has designated cartels as terrorist organizations and turned military force on boats it says carry drugs. Supporters call cartels armed enemies; opponents call the strikes killings without trial.",
+    "detail": "Supporters of a security approach argue that cartels are armed organizations that control territory, corrupt governments and kill on a scale ordinary policing cannot match, and that fentanyl trafficking has killed Americans in enormous numbers. Treating cartels as terrorist organizations brings military, intelligence and financial tools to bear, and a government’s first duty is to protect its citizens from those attacking them. Opponents argue that smuggling is a crime to be prosecuted under law, not an act of war, and that killing suspects without trial abandons due process and risks killing fishermen and migrants. Half a century of eradication, interdiction and militarized campaigns in Colombia, Mexico and the Philippines, they say, has not reduced supply, and Mexico’s drug war coincided with soaring homicides. Demand drives supply, so the durable answer is treatment and prevention at home.",
+    "lean_label_a": "Security threat",
+    "lean_label_b": "Crime and health",
+    "id": "is-drug-trafficking-best-fought-as"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Enforce drug laws and steer people toward recovery",
+    "color_key": "green",
+    "steelman": "Addiction is something people recover from, and the law should help: firm limits on drugs and dealing, real treatment, and court-ordered care when addiction has taken away choice.",
+    "detail": "The law against using and selling drugs keeps them costlier and harder to get, and it gives families, police and courts the leverage to bring someone in crisis into care. The last decade showed what happens without that leverage: when Oregon and British Columbia stopped treating possession as a crime, almost no one used the treatment hotlines, public drug use spread through downtowns, and overdose deaths rose faster than elsewhere, until both reversed course. Services that ask nothing of the person keep people alive for now but too often keep them using, and money spent on them is not spent on treatment beds. Alberta, which added more than 10,000 publicly funded treatment spaces, reports a nearly 40 percent fall in opioid deaths in 2024 from 2023 (Alberta Recovery Model). As its premier, Danielle Smith, said, “there is no compassion in leaving people to suffer in the throes of addiction.”\n\nRecord drug use does not prove prohibition failed: legal, cheap drugs would mean far more use, as alcohol and tobacco show, and what is missing is treatment, not law. We reserve compulsion for people who are a danger to themselves or others, with court oversight and continuing care after release. Commercial cannabis is a high-potency industry that profits from heavy users, and the federal government should not bless it. Supply must be fought too: cartels are armed organizations, and treating them as terrorists brings military, intelligence and financial power against them. We differ at the edges: Alberta accepts medication treatment and naloxone where the 2025 US executive order rejects most harm reduction, some of us call the US strikes on drug boats unlawful, and most of us reject the executions for trafficking in Singapore and Iran and the killings of the Philippines’ drug war.",
+    "proponents": "Trump administration; Government of Alberta; Danielle Smith; Smart Approaches to Marijuana; Kevin Sabet; Charles Fain Lehman",
+    "id": "enforce-drug-laws-and-steer-people"
+   },
+   {
+    "name": "Keep possession illegal, fund treatment and harm reduction",
+    "color_key": "blue",
+    "steelman": "Use every tool that keeps people alive, from naloxone to supervised sites, but keep possession illegal, so the law becomes a door to treatment and public spaces stay usable.",
+    "detail": "The overdose crisis demands every tool that saves lives. Naloxone, syringe services, drug checking, medication treatment and supervised consumption sites keep people alive long enough to recover, and refusing them on principle costs lives. After Vancouver’s Insite opened, overdose deaths within 500 meters fell 35 percent, against 9.3 percent in the rest of the city (Marshall et al., The Lancet, 2011), and New York City’s two sanctioned sites were not associated with more crime or disorder nearby (Chalfin et al., JAMA Network Open, 2023). But removing criminal penalties altogether did not by itself bring people into care, and it lost public support quickly once drug use became visible on the streets. As the Stanford addiction researcher Keith Humphreys has said of isolated people with severe addiction, “if there’s no law pressure, there is no pressure at all.”\n\nThe workable middle keeps possession of hard drugs illegal while making the criminal law a door to treatment rather than prison: police deflection, drug courts, record sealing for those who complete treatment, and sentences reserved for trafficking and violence. That holds voters’ trust while the health system is built up, which is the real lesson of Portugal, whose success rests on treatment more than on the legal change. To those who say any possession arrest does harm, we answer that our aim is a lever toward care, not punishment, and that the decriminalization experiments we watched did not deliver the treatment uptake promised. Policy should follow risk, so many of us accept legal, regulated cannabis while keeping harder drugs prohibited. We differ on supervised sites, which Canada supports and many US officials in this camp oppose, and on how hard courts should push people into treatment.",
+    "proponents": "Government of British Columbia; Tina Kotek; Government of Canada; Keith Humphreys",
+    "id": "keep-possession-illegal-fund-treatment-and"
+   },
+   {
+    "name": "Decriminalize drug use and treat addiction as a health issue",
+    "color_key": "amber",
+    "steelman": "People who use drugs need care, not a criminal record. End possession arrests, keep selling illegal, and build the treatment, housing and outreach to make it work.",
+    "detail": "A criminal record follows a person for life, closing off the jobs, housing and stability that recovery depends on, and fear of arrest drives people to use alone, to avoid calling for help when a friend overdoses and to stay away from health services. Since 2001 Portugal has treated possession of small amounts as an administrative matter handled by health-led commissions, invested in treatment, and seen overdose deaths, HIV infections and drug-related imprisonment fall without the surge in use opponents predicted. It averages fewer than 80 overdose deaths a year, against nearly 3,000 in New Jersey, which has a similar population (NPR, 2024), and its police refer people to care instead of arresting them. Ending possession arrests would also end the most racially unequal part of American law enforcement. As João Goulão, the physician who designed Portugal’s policy, puts it, “the more you have other kinds of responses available, the better.”\n\nDecriminalization does not legalize selling drugs, which stays a crime, and it is not meant to work alone: it needs treatment on demand, housing, harm reduction and outreach. Oregon and British Columbia removed penalties during the worst fentanyl surge on record and before building that system, the best-controlled studies of Oregon find no effect of its law on deaths, and the reversals were driven by public reaction to visible street drug use, a housing and public-order problem that possession penalties had not solved before. Portugal gets high attendance at counseling through voluntary referral, without coercion. Some of us, like the Drug Policy Alliance, also campaign for legal cannabis and see decriminalization as a first step; others, including Portugal’s government, treat it as the end point and keep supply firmly illegal.",
+    "proponents": "Drug Policy Alliance; João Goulão; Government of Portugal",
+    "id": "decriminalize-drug-use-and-treat-addiction"
+   },
+   {
+    "name": "Legally regulate the supply of drugs",
+    "color_key": "rust",
+    "steelman": "Prohibition hands drugs to criminals and poisons the supply. Take control with strict legal regulation matched to each drug’s risk, not a commercial free-for-all.",
+    "detail": "Prohibition does not make drugs disappear; it hands their production and sale to criminals. Half a century of the war on drugs has delivered record use, record cocaine production and the most potent and adulterated supply in history, while funding cartels that corrupt governments and kill on the scale of wars. The fentanyl crisis is a product of prohibition: smugglers favor the most compact, potent drugs, and people die because they cannot know what they are taking. Decriminalizing users does nothing about any of this, because the supply stays in criminal hands. As the UN High Commissioner for Human Rights, Volker Türk, said in April 2025, “responsible regulation should aim to take control of illegal drug markets, and eliminate profits from illegal trafficking, criminality and violence.”\n\nThe answer is not a commercial free-for-all, which the opioid and tobacco industries show is dangerous, but strict rules matched to each drug’s risk: prescription or pharmacy sale for the most dangerous drugs, licensed and age-restricted outlets for others, controls on potency, price and packaging, and no advertising. Heroin-assisted treatment in Switzerland, the Netherlands and elsewhere has shown that regulated supply to people with addiction reduces crime and deaths, and cannabis regulation has shown the legal machinery can work. We differ on how far and how fast: Transform and the Global Commission favor tightly controlled, often non-commercial models designed drug by drug, while libertarians such as the Cato Institute’s Jeffrey Miron would treat all drugs like alcohol, with an ordinary taxed market. Many of us also want the three UN drug control conventions revised, since they limit drugs to medical and scientific use.",
+    "proponents": "Transform Drug Policy Foundation; Global Commission on Drug Policy; Volker Türk; Jeffrey Miron",
+    "id": "legally-regulate-the-supply-of-drugs"
+   }
+  ],
+  "crux": {
+   "lead": "Does using the criminal law against drugs, their users and their trade prevent more harm than it causes?",
+   "lead_highlight": "prevent more harm than it causes",
+   "subtitle": "Every camp wants fewer deaths, less addiction and less crime. They split over whether the law’s deterrence and leverage outweigh the arrests, records, violent black markets and tainted supply that come with it, and over what care for people who use drugs should aim at.",
+   "empirical": "Evidence could show how much a drug’s legal status, apart from changes in the supply, treatment, housing and policing, shifts how many people use drugs, become addicted, die of overdoses or suffer crime; whether legal pressure brings more people into lasting recovery than voluntary outreach; and how much use would rise if harder drugs were sold legally under strict rules.",
+   "values": "No data settles how to weigh an adult’s freedom over what goes into their own body against society’s interest in protecting people, including from their own addiction; whether care should keep people alive and healthy while they use or bring them to stop; and how much more drug use a society should accept in exchange for fewer people punished, or fewer killed in drug markets at home and abroad."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Read the UN’s World Drug Report 2026",
+    "description": "The UN Office on Drugs and Crime’s annual global assessment of drug use, production, trafficking, deaths, treatment and criminal justice responses, with country and regional data.",
+    "url": "https://www.unodc.org/unodc/en/data-and-analysis/world-drug-report-2026.html",
+    "for_position": null,
+    "id": "read-the-un-s-world-drug"
+   },
+   {
+    "kind": "local",
+    "title": "Carry naloxone and learn to use it",
+    "description": "The CDC’s guide to naloxone, the overdose-reversal medicine sold over the counter in all 50 states: where to get it and how it works.",
+    "url": "https://www.cdc.gov/stop-overdose/caring/naloxone.html",
+    "for_position": null,
+    "id": "carry-naloxone-and-learn-to-use"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read Alberta’s recovery model",
+    "description": "The Alberta government’s account of its recovery-oriented system of care, including new treatment spaces, recovery communities and court-ordered treatment under the Compassionate Intervention Act.",
+    "url": "https://open.alberta.ca/publications/alberta-recovery-model",
+    "for_position": "Enforce drug laws and steer people toward recovery",
+    "id": "read-alberta-s-recovery-model"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Support treatment courts with All Rise",
+    "description": "The national organization for drug and treatment courts, which route people charged with drug offenses into supervised treatment instead of jail; it offers training, advocacy and ways to help local courts.",
+    "url": "https://allrise.org/",
+    "for_position": "Keep possession illegal, fund treatment and harm reduction",
+    "id": "support-treatment-courts-with-all-rise"
+   },
+   {
+    "kind": "donate",
+    "title": "Support the Drug Policy Alliance",
+    "description": "The main US organization campaigning to end criminal penalties for drug possession and shift drug policy toward public health, housing and treatment.",
+    "url": "https://drugpolicy.org/",
+    "for_position": "Decriminalize drug use and treat addiction as a health issue",
+    "id": "support-the-drug-policy-alliance"
+   },
+   {
+    "kind": "learn_more",
+    "title": "See how legal drug regulation could work",
+    "description": "The Transform Drug Policy Foundation’s guides to regulating drugs by risk, from cannabis and psychedelics to stimulants, with practical models for licensing, pricing and sales.",
+    "url": "https://transformdrugs.org/drug-policy/models-of-regulation",
+    "for_position": "Legally regulate the supply of drugs",
+    "id": "see-how-legal-drug-regulation-could"
+   },
+   {
+    "kind": "local",
+    "title": "Find addiction treatment near you",
+    "description": "FindTreatment.gov, the federal government’s confidential locator for licensed substance use and mental health treatment, searchable by location, payment and type of care.",
+    "url": "https://findtreatment.gov/",
+    "for_position": null,
+    "id": "find-addiction-treatment-near-you"
+   },
+   {
+    "kind": "donate",
+    "title": "Support Smart Approaches to Marijuana",
+    "description": "The leading US organization opposing cannabis commercialization and federal rescheduling, and a backer of the Massachusetts ballot measure to end retail cannabis sales.",
+    "url": "https://learnaboutsam.org/",
+    "for_position": "Enforce drug laws and steer people toward recovery",
+    "id": "support-smart-approaches-to-marijuana"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Find a harm reduction program near you",
+    "description": "The National Harm Reduction Coalition’s directory of local syringe services, naloxone distribution and other harm reduction programs, many of which take volunteers.",
+    "url": "https://harmreduction.org/resource-center/harm-reduction-near-you/",
+    "for_position": null,
+    "id": "find-a-harm-reduction-program-near"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Explore RAND’s drug policy research",
+    "description": "RAND’s Drug Policy Research Center, which has studied cannabis legalization, opioid treatment, drug markets and enforcement since 1989 without taking sides on legalization.",
+    "url": "https://www.rand.org/health/centers/dprc.html",
+    "for_position": null,
+    "id": "explore-rand-s-drug-policy-research"
+   }
+  ]
+ },
+ "icon": "pill",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: a large opium poppy seed pod on a tall curving stem, with one open poppy flower and a second smaller pod beside it, as the dominant focal mass rising from the left; a small cannabis plant with a few clear leaves growing at its foot, overlapping the poppy stems; a few scattered capsules and round tablets lying on the ground in front; all of it on the gentle curve of a low rounded hill that is the ground; a narrow footpath curving from the hill across the frame toward a few small distant rooftops on a far rise at the right, as the connective element.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #6a62b0, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: people, hands, faces, syringes, needles, spoons, lighters, smoke, powder lines, rolled bills, skulls, police, handcuffs, badges, prison bars, jail cells, crosses, hospitals, red crosses, dollar signs, money, shops, storefronts, prohibition signs, red circles, slashes, stop signs, warning triangles, scales of justice, gavels, flags, arrows."
 }

@@ -1,8 +1,8 @@
 {
  "slug": "what-we-owe-future-generations",
  "title": "What We Owe the Future",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-10-01T23:29:43+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Duties to people not yet born: future generations, climate discounting, and longtermist prioritization of extinction-level risk.",
@@ -14,5 +14,615 @@
   "population-growth-decline-the-optimum",
   "effective-altruism-vs-traditional-systemic-philanthropy",
   "government-debt-sustainability"
- ]
+ ],
+ "content": {
+  "overview": {
+   "summary": "What people alive now owe those not yet born: how much later lives should count, and whether averting extinction should come first.",
+   "scope_covered": "Whether later lives count for less, how discount rates weigh the future in public decisions, longtermism and the backlash to it, and the institutions built to speak for future generations.",
+   "scope_excluded": "Whether particular risks such as AI, engineered pandemics or nuclear war are as dangerous as claimed; climate and fossil fuel policy; population size; effective altruism as a movement; and government debt.",
+   "why_now": "On March 5, 2026 the European Commission adopted its first Strategy on Intergenerational Fairness, promising an index of fairness between generations and a “youth check” on new EU policy. Elsewhere, similar commitments have stalled or been reversed.",
+   "why_now_source_label": "European Commission press release IP/26/535",
+   "why_now_source_url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_535"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "Value today of $1,000 arriving in 200 years",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "US dollars",
+     "series": [
+      {
+       "label": "At 3% a year",
+       "value": "2.71",
+       "highlight": true
+      },
+      {
+       "label": "At 4% a year",
+       "value": "0.39",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Discounted at 3 percent a year, $1,000 of benefit to people living 200 years from now is worth $2.71 today; at 4 percent, it is worth 39 cents.",
+     "detail": "Discounting is compound interest run backward, so at ordinary market-like rates anything more than a century or two away shrinks to almost nothing in present value. That arithmetic is behind the charge that standard cost-benefit analysis cannot see the far future. Resources for the Future describes two ways to choose the rate: a “prescriptive” approach that sets it from ethical judgments about how to weigh different generations, and a “descriptive” approach that reads it from observed market interest rates. It calls the choice between them “a contentious issue, with different analysts having differing opinions about which is best.”",
+     "source_label": "Resources for the Future, “Discounting 101” (Brian C. Prest)",
+     "source_url": "https://www.rff.org/publications/explainers/discounting-101/",
+     "source_published": "2022",
+     "source_accessed": "2026-10-01",
+     "id": "value-today-of-1-000-arriving"
+    },
+    {
+     "label": "People who could yet be born",
+     "viz": "bar",
+     "wide": false,
+     "value": "100 trillion",
+     "unit": "",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "If humanity lasted as long as a typical mammal species at a stable population, about 100 trillion more people would be born, against roughly 117 billion born so far.",
+     "detail": "Max Roser’s illustration assumes a population that stabilizes at 11 billion, a life expectancy of 88 years, and a species lifespan of about a million years, the rough average for mammals, which leaves 800,000 years to come. The count of people born so far comes from the Population Reference Bureau; about 7.95 billion were alive in 2022. Roser stresses that these are illustrations of what is possible, not forecasts, and that the size of the future depends on humanity avoiding catastrophe. Longer horizons give larger numbers: about 125 quadrillion births if humanity lasted as long as Earth remains habitable, about a billion years.",
+     "source_label": "Our World in Data, “The Future is Vast” (Max Roser)",
+     "source_url": "https://ourworldindata.org/the-future-is-vast",
+     "source_published": "2022",
+     "source_accessed": "2026-10-01",
+     "id": "people-who-could-yet-be-born"
+    },
+    {
+     "label": "Social cost of carbon at different discount rates",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "$/ton CO2",
+     "series": [
+      {
+       "label": "1% rate",
+       "value": "485",
+       "highlight": false
+      },
+      {
+       "label": "2% rate",
+       "value": "176",
+       "highlight": false
+      },
+      {
+       "label": "3% rate",
+       "value": "87",
+       "highlight": true
+      },
+      {
+       "label": "4% rate",
+       "value": "49",
+       "highlight": false
+      },
+      {
+       "label": "5% rate",
+       "value": "32",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In William Nordhaus’s climate-economy model, the harm from a ton of carbon dioxide is valued at $485 with a 1 percent discount rate and $32 with 5 percent, fifteenfold apart.",
+     "detail": "The social cost of carbon is the present value of all the future damage from emitting one more ton of carbon dioxide; cost-benefit analysis uses it to decide how much cutting emissions is worth. Because most of that damage arrives decades to centuries later, the discount rate dominates the answer. The figures are for emissions in 2020, in 2019 dollars. The model’s standard run, with a near-term real return of 4.5 percent a year that declines over time, gives $66 a ton. Lint Barrage and Nordhaus call the discounting assumptions “highly controversial,” write that estimates from different models are “quite close conditional on the discount rate,” and find that the 2°C target passes their cost-benefit test only with low discounting (2 percent) or a more pessimistic damage function.",
+     "source_label": "Lint Barrage and William Nordhaus, “Results from the DICE-2023 model,” PNAS, Table 2",
+     "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10990119/",
+     "source_published": "2024",
+     "source_accessed": "2026-10-01",
+     "id": "social-cost-of-carbon-at-different"
+    },
+    {
+     "label": "Experts’ recommended pure rate of time preference",
+     "viz": "bar",
+     "wide": false,
+     "value": "0.5%",
+     "unit": "a year",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a survey of more than 200 experts (Drupp and colleagues, 2018), the median pure rate of time preference, how much less well-being counts just for coming later, was 0.5 percent a year.",
+     "detail": "A social discount rate bundles two things: pure time preference, and the expectation that future people will be richer, so that an extra dollar will matter less to them. Many moral philosophers, following Henry Sidgwick and Frank Ramsey, hold that pure time preference toward future generations is indefensible. In the same survey the most common answer for the pure rate was zero and the mean was 1.1 percent, as reported by the US EPA in 2023. The authors found “a surprising degree of consensus” on the overall rate, with “more than three-quarters finding the median risk-free SDR of 2 percent acceptable.” For comparison, the 2006 Stern Review used a pure rate of 0.1 percent, justified by the small chance that humanity does not survive (US EPA, 2023).",
+     "source_label": "Moritz Drupp, Mark Freeman, Ben Groom and Frikk Nesje, “Discounting Disentangled,” AEJ: Economic Policy",
+     "source_url": "https://www.aeaweb.org/articles?id=10.1257/pol.20160240",
+     "source_published": "2018",
+     "source_accessed": "2026-10-01",
+     "id": "experts-recommended-pure-rate-of-time"
+    },
+    {
+     "label": "Forecasts of human extinction by 2100",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% (median)",
+     "series": [
+      {
+       "label": "Domain experts",
+       "value": "6",
+       "highlight": true
+      },
+      {
+       "label": "Public sample",
+       "value": "5",
+       "highlight": false
+      },
+      {
+       "label": "Superforecasters",
+       "value": "1",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a 2022 forecasting tournament, the median domain expert put the chance of human extinction by 2100 at 6 percent and the median superforecaster at 1 percent.",
+     "detail": "The Forecasting Research Institute’s tournament brought together 80 experts in AI, climate, nuclear and biological risk and 89 superforecasters, people with strong records on short-range forecasting questions, and paid bonuses for persuasive arguments and for accurately predicting the other participants’ views. Extinction meant the global population falling below 5,000. The public row comes from a separate survey of college graduates. The groups split most over AI: experts put extinction caused by AI at 3 percent, superforecasters at 0.38 percent, and few minds changed over months of discussion. A separate catastrophe question, at least 10 percent of humans dying within five years, drew medians of 20 percent from experts and 9 percent from superforecasters.",
+     "source_label": "Forecasting Research Institute, “Forecasting Existential Risks: Evidence from a Long-Run Forecasting Tournament”",
+     "source_url": "https://static1.squarespace.com/static/635693acf15a3e2a14a56a4a/t/64f0a7838ccbf43b6b5ee40c/1693493128111/XPT.pdf",
+     "source_published": "2023",
+     "source_accessed": "2026-10-01",
+     "id": "forecasts-of-human-extinction-by-2100"
+    },
+    {
+     "label": "National constitutions that refer to future generations",
+     "viz": "radial",
+     "wide": false,
+     "value": "41",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Of 196 national constitutions in force in 2021, 81 (41 percent) contain explicit protections of or references to future generations, up from a handful a few decades earlier.",
+     "detail": "Renan Araújo and Leonie Koessler read every national written constitution, past and present, and traced how future generations became “a new holder of legal interest,” mostly through environmental clauses added since the 1990s. The provisions range from preambular aspirations to enforceable duties, and courts have only sometimes given them teeth. The best-known case is Germany’s Federal Constitutional Court, which in 2021 struck down part of the federal climate law partly because it pushed the burden of emission cuts onto later years and younger people.",
+     "source_label": "Renan Araújo and Leonie Koessler, “The Rise of the Constitutional Protection of Future Generations”",
+     "source_url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3933683",
+     "source_published": "2021",
+     "source_accessed": "2026-10-01",
+     "id": "national-constitutions-that-refer-to-future"
+    },
+    {
+     "label": "Carbon dioxide emitted this century still in the air after 1,000 years",
+     "viz": "range",
+     "wide": false,
+     "value": "15–40",
+     "unit": "%",
+     "series": [],
+     "range_min": "0%",
+     "range_max": "100%",
+     "note": "The IPCC assessed that about 15 to 40 percent of the carbon dioxide emitted up to 2100 will remain in the atmosphere for more than 1,000 years.",
+     "detail": "Oceans and land take up most of an emitted pulse of carbon dioxide within decades to centuries, but the remaining fraction is removed only by slow chemical weathering and sediment processes over many thousands of years. Warming caused by today’s emissions is therefore effectively permanent on the scale of human history, and most of the harm from a ton emitted now falls generations later, where discounting weighs it least. The range reflects differences across models and emissions scenarios; the figure is from the IPCC’s 2013 assessment.",
+     "source_label": "IPCC, Fifth Assessment Report, Working Group I, Chapter 6, Box 6.1",
+     "source_url": "https://www.ipcc.ch/site/assets/uploads/2018/02/WG1AR5_Chapter06_FINAL.pdf",
+     "source_published": "2013",
+     "source_accessed": "2026-10-01",
+     "id": "carbon-dioxide-emitted-this-century-still"
+    },
+    {
+     "label": "Toby Ord’s estimate of existential catastrophe this century",
+     "viz": "bar",
+     "wide": false,
+     "value": "1 in 6",
+     "unit": "chance",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The philosopher Toby Ord’s best guess in The Precipice (2020), one person’s subjective estimate, is a one in six chance of existential catastrophe this century, with unaligned AI at one in ten.",
+     "detail": "By existential catastrophe Ord means human extinction or an unrecoverable collapse that permanently destroys humanity’s long-term potential, not merely a very large disaster. His other estimates are one in 30 for engineered pandemics and one in 1,000 each for nuclear war and climate change. Revisiting them in 2024, he wrote that the figures were “all rounded off (usually to the nearest factor of 10)” and that none had moved far, while judging climate risk down, nuclear risk up, and pandemic and AI risk mixed. They are the most quoted numbers in the debate; critics treat their precision as false, and supporters say an explicit guess is better than an implicit one.",
+     "source_label": "Toby Ord, “The Precipice Revisited”",
+     "source_url": "https://www.tobyord.com/writing/the-precipice-revisited",
+     "source_published": "2020, restated 2024",
+     "source_accessed": "2026-10-01",
+     "id": "toby-ord-s-estimate-of-existential"
+    },
+    {
+     "label": "The US federal social cost of carbon over time",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "$/ton CO2",
+     "series": [
+      {
+       "label": "2016 (Obama)",
+       "value": "50",
+       "highlight": false
+      },
+      {
+       "label": "2017–20 (Trump)",
+       "value": "7",
+       "highlight": false
+      },
+      {
+       "label": "2021 (Biden interim)",
+       "value": "51",
+       "highlight": false
+      },
+      {
+       "label": "2023 (EPA final)",
+       "value": "190",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Washington’s official price on each ton of carbon dioxide went from about $50 to $7, $51 and $190, and since 2025 there has been none; the first two rows are GAO figures in 2018 dollars.",
+     "detail": "The swings come mostly from two choices: whose damages count and how steeply to discount. The 2017–2020 figure counted only damages inside the United States and added a 7 percent discount rate alongside 3 percent (GAO-20-254). The 2023 EPA figure counted global damages, updated the science and economics and used a 2 percent near-term rate; the EPA calls its $190 central estimate “around 280% larger” than the 2021 interim value, and puts the 2020 figure at $340 with a 1.5 percent rate and $120 with 2.5 percent. In 2025 Executive Order 14154 disbanded the interagency working group, and an Office of Management and Budget memorandum of May 5, 2025 directed agencies to consider greenhouse gas emissions only where statutes plainly require it (Harvard Environmental & Energy Law Program). All rows are for emissions in 2020; the EPA rows are in 2020 dollars.",
+     "source_label": "US EPA, Report on the Social Cost of Greenhouse Gases (2021 and 2023 rows); US GAO, GAO-20-254 (2016 and 2017–2020 rows)",
+     "source_url": "https://www.epa.gov/system/files/documents/2023-12/epa_scghg_2023_report_final.pdf",
+     "source_published": "2016–2025",
+     "source_accessed": "2026-10-01",
+     "id": "the-us-federal-social-cost-of"
+    },
+    {
+     "label": "Upper bound on the yearly natural risk of human extinction",
+     "viz": "bar",
+     "wide": false,
+     "value": "1 in 14,000",
+     "unit": "",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Because Homo sapiens has survived at least 200,000 years, the yearly chance of extinction from natural causes such as asteroids and supervolcanoes is almost certainly below 1 in 14,000.",
+     "detail": "Andrew Snyder-Beattie, Toby Ord and Michael Bonsall use only humanity’s long survival to bound the combined risk from all natural causes, including ones not yet understood. The rate is likely below 1 in 87,000 a year, and below 1 in 870,000 using the track record of the genus Homo, and the bound is consistent with mammalian extinction rates, the typical lifespans of hominin species and the frequency of mass extinctions. The authors add that “no similar guarantee can be made for risks that our ancestors did not face, such as anthropogenic climate change or nuclear/biological warfare.”",
+     "source_label": "Andrew Snyder-Beattie, Toby Ord and Michael Bonsall, “An upper bound for the background rate of human extinction”",
+     "source_url": "https://pubmed.ncbi.nlm.nih.gov/31363134/",
+     "source_published": "2019",
+     "source_accessed": "2026-10-01",
+     "id": "upper-bound-on-the-natural-risk"
+    },
+    {
+     "label": "Official discount rates for public decisions",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% a year",
+     "series": [
+      {
+       "label": "US 2003, base case",
+       "value": "7",
+       "highlight": true
+      },
+      {
+       "label": "UK, years 1–30",
+       "value": "3.5",
+       "highlight": false
+      },
+      {
+       "label": "US 2003, lower rate",
+       "value": "3",
+       "highlight": false
+      },
+      {
+       "label": "UK, years 31–75",
+       "value": "3.0",
+       "highlight": false
+      },
+      {
+       "label": "UK, years 76+",
+       "value": "2.5",
+       "highlight": false
+      },
+      {
+       "label": "US 2023 (revoked)",
+       "value": "2.0",
+       "highlight": false
+      },
+      {
+       "label": "UK, health effects",
+       "value": "1.5",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The UK discounts public projects at 3.5 percent for the first 30 years, falling to 2.5 percent beyond 75 years; the US has returned to its 2003 guidance of 7 and 3 percent.",
+     "detail": "Every major government discounts, but by how much differs, and the gap matters most for effects that span generations. The UK Treasury’s rate is a “social time preference rate” built from how much people prefer present to future consumption, and it declines for distant years to reflect growing uncertainty; health and life effects get 1.5 percent because the expectation that future people will be richer is excluded for them. The 2003 US guidance calls 7 percent “an estimate of the average before-tax rate of return to private capital in the U.S. economy” and uses 3 percent as a consumption rate. A 2023 revision set a single default of 2.0 percent; Executive Order 14192 of January 31, 2025 directed its revocation and the return of the 2003 version. Rows come from each government’s own guidance, as labeled.",
+     "source_label": "HM Treasury, The Green Book (2026) (UK rows); OMB Circular A-4, 2003 and 2023 (US rows)",
+     "source_url": "https://www.gov.uk/government/publications/the-green-book-appraisal-and-evaluation-in-central-government/the-green-book-2026",
+     "source_published": "2003, 2023 and 2026",
+     "source_accessed": "2026-10-01",
+     "id": "official-discount-rates-for-public-decisions"
+    },
+    {
+     "label": "Projected global growth in income per person",
+     "viz": "bar",
+     "wide": false,
+     "value": "1.6%",
+     "unit": "a year",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The projections behind the US government’s 2023 climate-damage estimates have average global income per person growing about 1.6 percent a year from 2030 to 2100, before climate damages.",
+     "detail": "The projections, from Resources for the Future, are probabilistic. Mean growth starts at 1.4 percent in 2021, is “relatively flat between 2030 and 2100 at 1.6%,” then declines, leveling off around 1.1 percent after 2200. They run lower than the IPCC’s older scenarios, which assumed near-term growth near 3 percent. Sustained for 70 years, 1.6 percent a year roughly triples average income. Expected growth is the main economic reason for discounting: if people later are richer, an extra dollar matters less to them.",
+     "source_label": "US EPA, Report on the Social Cost of Greenhouse Gases, section 2.1 (Resources for the Future socioeconomic projections)",
+     "source_url": "https://www.epa.gov/system/files/documents/2023-12/epa_scghg_2023_report_final.pdf",
+     "source_published": "2023",
+     "source_accessed": "2026-10-01",
+     "id": "projected-global-growth-in-income-per"
+    },
+    {
+     "label": "People who judge human extinction uniquely bad",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% agreeing",
+     "series": [
+      {
+       "label": "Standard question",
+       "value": "23.5",
+       "highlight": true
+      },
+      {
+       "label": "Asked about long term",
+       "value": "50.3",
+       "highlight": false
+      },
+      {
+       "label": "Told of a good future",
+       "value": "76.7",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Asked whether going from 80 percent of humanity dying to 100 percent is a bigger loss than going from none to 80 percent, about a quarter said yes until prompted to think about the long term.",
+     "detail": "The question is Derek Parfit’s. He argued that the gap between a catastrophe killing 80 percent of people and one killing everyone is far greater than the gap between peace and the 80 percent catastrophe, because extinction also destroys every future generation. In this UK sample, 50 of the 213 participants who ranked the outcomes as expected agreed under the standard wording; with a sentence asking them to consider long-term consequences, 97 of 193 did; told that survival would lead to a long and very good future, 165 of 215 did. Stefan Schubert, Lucius Caviola and Nadira Faber conclude that people do think extinction must be prevented but focus on the immediate deaths rather than the lost future generations.",
+     "source_label": "Stefan Schubert, Lucius Caviola and Nadira Faber, “The Psychology of Existential Risk,” Scientific Reports",
+     "source_url": "https://www.nature.com/articles/s41598-019-50145-9",
+     "source_published": "2019",
+     "source_accessed": "2026-10-01",
+     "id": "people-who-judge-human-extinction-uniquely"
+    },
+    {
+     "label": "Children facing unprecedented lifetime heatwave exposure",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% of cohort",
+     "series": [
+      {
+       "label": "Born 1960",
+       "value": "16",
+       "highlight": false
+      },
+      {
+       "label": "Born 2020, 1.5°C",
+       "value": "52",
+       "highlight": true
+      },
+      {
+       "label": "Born 2020, 3.5°C",
+       "value": "92",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Of children born in 2020, 52 percent face lifetime heatwave exposure virtually impossible without climate change if warming stays at 1.5°C, and 92 percent at 3.5°C, against 16 percent born in 1960.",
+     "detail": "Unprecedented here means cumulative lifetime exposure above the 99.99th percentile of what a person would have experienced in a pre-industrial climate: about 13 million of the 81 million people born in 1960, and 62 million of those born in 2020 at 1.5°C or 111 million at 3.5°C. Under current policies, which the authors align with about 2.7°C of warming by 2100, the share of each birth cohort facing unprecedented exposure to heatwaves, crop failures, floods, droughts, wildfires and cyclones at least doubles between 1960 and 2020, and children in the most socioeconomically vulnerable groups are most exposed. The study concerns children already born, not the unborn.",
+     "source_label": "Luke Grant, Wim Thiery and colleagues, “Global emergence of unprecedented lifetime exposure to climate extremes,” Nature",
+     "source_url": "https://www.nature.com/articles/s41586-025-08907-1",
+     "source_published": "2025",
+     "source_accessed": "2026-10-01",
+     "id": "children-facing-unprecedented-lifetime-heatwave-exposure"
+    },
+    {
+     "label": "Median share of adults who expect today’s children to be worse off than their parents",
+     "viz": "radial",
+     "wide": false,
+     "value": "57",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Across 36 countries, a median of 57 percent of adults say today’s children will grow up financially worse off than their parents; a median of 34 percent say better off.",
+     "detail": "Pessimism is concentrated in rich countries: about three-quarters of adults in the United States and Canada, and three-quarters or more in France, Greece, Italy, Spain and the United Kingdom, expect children to be worse off. Fast-growing economies are optimistic, with at least seven in ten in India and Indonesia expecting children to be better off. In Germany the share expecting children to be worse off rose from 42 percent in 2019 to 61 percent in 2024.",
+     "source_label": "Pew Research Center, “Views of children’s financial future,” Spring 2024 Global Attitudes Survey",
+     "source_url": "https://www.pewresearch.org/global/2025/01/09/views-of-childrens-financial-future/",
+     "source_published": "2024",
+     "source_accessed": "2026-10-01",
+     "id": "adults-who-expect-today-s-children"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Should a person’s well-being count for less because they will live later?",
+    "kind": "value",
+    "why": "Almost everyone accepts discounting dollars when the future is richer or uncertain. The dispute is over pure time preference: whether a life or a harm counts for less merely because of when it happens.",
+    "detail": "For equal weight: location in time looks like location in space. A child born in 2150 will suffer from a flood as much as a child alive today, and the date does not make that suffering matter less. Philosophers from Henry Sidgwick to Derek Parfit, and economists from Frank Ramsey to Nicholas Stern, have called discounting well-being for time alone a bias rather than a value. Even a 1 percent pure discount counts a death 500 years from now at less than a hundredth of a death today, which few would accept if asked directly.\n\nFor weighting the present: morality is not only impartial arithmetic. People have special obligations to those near them, including their own generation and its poor, and every generation has put its own needs first while still leaving successors better off. Democratic governments act for the people who elect them. A zero pure rate over a long future implies that the present should save almost everything for people who will probably be far richer, a conclusion economists such as Kenneth Arrow and Partha Dasgupta have called unreasonable.",
+    "lean_label_a": "Equal weight",
+    "lean_label_b": "More weight now",
+    "id": "should-a-person-s-well-being"
+   },
+   {
+    "text": "Will future generations be much richer than we are, even with climate change?",
+    "kind": "empirical",
+    "why": "Expected wealth is the strongest economic reason to discount: a dollar matters less to someone richer. Central projections say future people will be richer; skeptics point to the paths where growth stalls or fails.",
+    "detail": "Those who expect a richer future point to two centuries of growth in income per person through wars, pandemics and depressions, and to projections in which climate damage slows growth rather than reversing it. On that reading, the best gift to the future is often investment in growth, health and institutions, and heavy sacrifice by today’s poorer world needs a strong reason.\n\nThose who doubt it say averages hide the tail. The cases that matter most for future generations are the ones where growth stalls or reverses, through severe warming, ecological collapse, a catastrophic war or a pandemic, and those are exactly the cases where discounting by expected growth undervalues protection. Projections over a century are guesses; the IPCC’s older scenarios already proved too optimistic about near-term growth. And publics in rich countries mostly expect today’s children to end up worse off than their parents.",
+    "lean_label_a": "Much richer",
+    "lean_label_b": "Growth at risk",
+    "id": "will-future-generations-be-much-richer"
+   },
+   {
+    "text": "How likely is an extinction-level or unrecoverable catastrophe this century?",
+    "kind": "empirical",
+    "why": "There is no track record to check, so every estimate is a structured judgment, and experts and superforecasters asked the same question answered several times apart. The case for priority needs a risk large enough to matter and still reducible.",
+    "detail": "Those who find it uncomfortably likely note that humanity now holds technologies its ancestors never had, nuclear arsenals, the ability to engineer pathogens and increasingly capable AI, while the natural risk it has always faced is well under 1 percent a century. Most of today’s risk is therefore new and human-made. On this view, even a few percent chance of losing everything that could ever exist is far larger than risks societies already spend heavily to avoid.\n\nThose who find it very remote note that superforecasters, the people with the best records at predicting uncertain events, put the risk far below the domain experts in the same tournament, and that much of the higher figure rests on speculative AI scenarios. Humanity lives on every continent, adapts, and has come through plagues, world wars and supervolcanoes; killing everyone, or preventing recovery, is far harder than killing many. Specialists who devote careers to a risk may be selected for believing in it, and dramatic forecasts have a record of not coming true.",
+    "lean_label_a": "Serious risk",
+    "lean_label_b": "Remote risk",
+    "id": "how-likely-is-an-extinction-level"
+   },
+   {
+    "text": "Does a strong focus on the far future help or harm people alive today?",
+    "kind": "empirical",
+    "why": "Money and attention are limited. Longtermists say their priorities also protect people now; critics say the far-future frame pulls resources and power from present needs toward a small community’s priorities.",
+    "detail": "On the complementary view, most long-term priorities are near-term ones too. A pandemic preparedness system, lower nuclear risk or safer AI protects people living today, and thinking about the long term strengthens action on climate and institutions that ordinary politics neglects. The question is less whether to help the present than which present dangers deserve the most attention.\n\nOn the crowding-out view, money moved toward speculative risks is money not spent on malaria, poverty or the documented harms of current technologies, and attention works the same way: regulators asked to plan against hypothetical extinction have less time for the harms of technologies already in use. Which dangers come first, on this view, should follow the evidence of harm happening now, not projections of future value.",
+    "lean_label_a": "Helps today too",
+    "lean_label_b": "Crowds out today",
+    "id": "does-a-strong-focus-on-the"
+   },
+   {
+    "text": "Should future generations have legal standing that courts and commissioners can enforce?",
+    "kind": "value",
+    "why": "People not yet born have no say in elections or courts. Some countries answer with constitutional clauses, commissioners and court doctrines; others see unelected bodies settling questions that belong to legislatures.",
+    "detail": "For standing: elections reward short-term results, and the people most affected by long-lived decisions about carbon, debt, nuclear waste and infrastructure have no voice in them. Formal representation corrects a structural bias rather than overriding democracy, and it has been tried. Since 2015 Wales has had a commissioner who holds its public bodies to a legal duty to meet present needs without compromising those of future generations. In 2021 Germany’s Federal Constitutional Court ruled part of the national climate law unconstitutional, in part because it shifted the burden of cutting emissions onto younger people and later years.\n\nAgainst: no one knows what future people will want, so anyone claiming to speak for them speaks for their own views about the future. Trade-offs between present and future are among the most contested questions in politics and belong to elected legislatures, and voters already care about their children and grandchildren and act on it. In January 2026 the Scottish Parliament voted 91 to 25 against a bill creating a future generations commissioner (Scottish Parliament bill page), after a majority of its lead committee recommended against it, citing overlap with existing commissioners and public bodies (Social Justice and Social Security Committee, Stage 1 report, December 2025).",
+    "lean_label_a": "Grant standing",
+    "lean_label_b": "Leave to voters",
+    "id": "should-future-generations-have-legal-standing"
+   },
+   {
+    "text": "Is a future with more good lives in it better than one with fewer?",
+    "kind": "value",
+    "why": "This is the core dispute of population ethics. Whether extinction is an astronomical loss, or mainly a loss to those who die in it, depends on whether people who never get to exist count as lost.",
+    "detail": "On the first view, a world that goes on for a million years, full of people living good lives, is better than one that ends this century, and the difference is not only the deaths at the end. If a life worth living is good for the person who lives it, preventing it is a loss, and preventing trillions of them is an enormous one. Denying this can make it a matter of indifference whether humanity continues at all, so long as no one now alive is harmed.\n\nOn the second, morality is about making people better off, not about making more people; as the philosopher Jan Narveson put it, we are in favor of making people happy but neutral about making happy people. A merely possible person who never exists is deprived of nothing. The total view also leads to Derek Parfit’s “Repugnant Conclusion,” that a vast population of lives barely worth living could be better than a smaller flourishing one, which many take as a sign that something has gone wrong.",
+    "lean_label_a": "More is better",
+    "lean_label_b": "Neutral on size",
+    "id": "is-a-future-with-more-good"
+   },
+   {
+    "text": "Can what we do now predictably improve the far future?",
+    "kind": "empirical",
+    "why": "Even if future people count fully, an action helps them only if its effects last and can be foreseen. Ripple effects multiply over centuries, which philosophers call the problem of cluelessness.",
+    "detail": "Those who think influence persists point to effects that are both durable and foreseeable. Extinction is permanent, and constitutions, institutions and technologies lock in for generations. Lowering the chance of an irreversible catastrophe has a predictable sign even if its size is unknown, and history holds choices with very long shadows, from the founding of universities to the abolition of slavery.\n\nThose who think effects wash out say most interventions’ long-run consequences are swamped by countless other causes within decades, and well-meant actions can backfire in ways no one predicted. They point to forecasters, whose accuracy falls sharply beyond a few years. If the far-future consequences of almost everything are unknowable, the far future cannot guide choices, and people should act on what they can see: the welfare of people alive now and soon.",
+    "lean_label_a": "Effects last",
+    "lean_label_b": "Effects wash out",
+    "id": "can-what-we-do-now-predictably"
+   },
+   {
+    "text": "Should tiny chances of astronomically large outcomes drive priorities?",
+    "kind": "value",
+    "why": "With trillions of possible lives at stake, even a one-in-a-billion cut in extinction risk can outweigh saving thousands of lives now. Whether to accept that reasoning or reject it as fanaticism is unresolved in decision theory.",
+    "detail": "For following expected value: it is how insurers, engineers and public health agencies handle rare disasters, and refusing to apply it at large scales is arbitrary. On many estimates the risks in question are percentage points this century, not one-in-a-trillion long shots, so the argument does not need extreme numbers. Ignoring small probabilities of catastrophe is how societies end up unprepared for pandemics and financial crises.\n\nFor setting long shots aside: reasoning that lets any tiny probability of a vast payoff override everything else is open to manipulation and leads to conclusions nearly everyone rejects, the problem known as Pascal’s mugging. The probabilities involved are not measured but invented, and an invented probability multiplied by an astronomical number yields an astronomical number of no reliability. Prudent decision-makers set aside very small, unverifiable probabilities and attend to the harms they can see.",
+    "lean_label_a": "Weigh long shots",
+    "lean_label_b": "Drop long shots",
+    "id": "should-tiny-chances-of-astronomically-large"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Protect future generations through law and policy",
+    "color_key": "green",
+    "steelman": "Every generation inherits a world it did not make. The people who will live with our carbon, waste and debt cannot vote, so justice requires the law to speak for them.",
+    "detail": "Carbon dioxide emitted this century will still be warming the planet a thousand years from now, nuclear waste must be kept safe for millennia, and infrastructure, debt and depleted ecosystems all outlast the people who chose them. Those who will bear these costs have no lobby and no standing to sue, and governments working to four- or five-year cycles predictably discount them to nothing. Our answer is not a calculation about trillions of possible people but an old principle of fairness: leave the world at least as good as you found it, and do not impose harms on those who cannot consent. As Pope Francis wrote in 2015, intergenerational solidarity “is not optional, but rather a basic question of justice.” Discounting their losses at market interest rates treats a child born in 2100 as worth a fraction of a child born today, which no one would defend if asked directly.\n\nThe remedy is institutional. Give future generations someone who speaks for them, as Wales has done since 2015 with a commissioner who holds public bodies to the needs of the future; write their interests into constitutions; count their losses at a low discount rate; and let courts hold governments to their duties, as the International Court of Justice did in 2025 when it held that “due regard for the interests of future generations” must inform states’ climate obligations. Legislatures create these bodies, and most of them advise, review and require reporting rather than decide; correcting a known bias strengthens democracy. Nor is growth a guarantee: a stable climate, lost species and a habitable coastline cannot be bought back with higher incomes.",
+    "proponents": "Future Generations Commissioner for Wales; Pope Francis; European Commission; Nicholas Stern; Our Children’s Trust",
+    "id": "protect-future-generations-through-law-and"
+   },
+   {
+    "name": "Discount the future at market rates",
+    "color_key": "blue",
+    "steelman": "Discounting does not say future people matter less. A dollar invested well becomes many for our grandchildren, and they will very likely be richer than we are.",
+    "detail": "Resources have other uses. Money invested at the historical return on capital compounds, so a climate or catastrophe policy that returns less than that leaves our descendants poorer than they would otherwise have been. As the Heritage Foundation put it in 2025, “choosing too low a rate for discounting environmental benefits … would harm those in the future by ignoring investments that would provide greater benefits.” And with average incomes projected to keep rising this century even with climate change, asking today’s poorer people, including billions in developing countries, to sacrifice heavily for richer descendants moves resources from the poor to the rich.\n\nMarket interest rates and savings show how real people weigh the present against the future. Overriding them with a philosopher’s near-zero rate imposes one group’s ethics on everyone, and it proves too much, since it implies the present should save almost all its income. William Nordhaus, who has argued for a carbon tax for decades, showed that the Stern Review’s conclusions depend “decisively on the assumption of a near-zero time discount rate.” The answer to a catastrophic tail is to model the risk explicitly, not to lower the rate for everything, and the 2003 US guidance already allows lower-rate checks for effects across generations. Fund what passes a sound cost-benefit test, a moderate carbon price included, and spend the rest where it does the most good, often on the world’s poorest people now. Some of us accept the social cost of carbon and argue about its size; others think the estimates too uncertain to guide regulation at all.",
+    "proponents": "William Nordhaus; Trump administration; Heritage Foundation; Bjørn Lomborg; Copenhagen Consensus Center",
+    "id": "discount-the-future-at-market-rates"
+   },
+   {
+    "name": "Make the long-term future a top priority",
+    "color_key": "amber",
+    "steelman": "Far more people may live after us than have ever lived. Reducing the risk that humanity ends or collapses for good is among the most important things we can do.",
+    "detail": "Future people count, and there could be an enormous number of them: hundreds for every person who has ever lived, if humanity lasts as long as a typical mammal species. We can affect how their lives go, most clearly by making sure they get to exist at all. Humanity has survived natural hazards for 200,000 years, but in the last century it gained the power to destroy itself, first with nuclear weapons, then engineered pathogens, now increasingly powerful AI, without the wisdom or institutions to manage that power. Because natural risk is small, most of the danger is of our own making, and so ours to reduce. Extinction is irreversible and would foreclose everything that could follow, so even small cuts in its probability are worth a great deal, and the effort the world devotes to them is tiny next to the stakes. As William MacAskill puts it, “staggering numbers of people will lead lives of flourishing or misery or never live at all, depending on what we do today.”\n\nThis is not a call to ignore the present. Pandemic preparedness, nuclear risk reduction and safe AI protect people alive today, and Carl Shulman and Elliott Thornley argue that “standard cost-benefit analysis implies that governments should spend much more on reducing catastrophic risk” even counting only the living. And whatever else about the far future is unpredictable, extinction is the one outcome whose long-run effects are certain. Some of us hold that the far future dominates the value of most choices; others hold only that preventing catastrophe is badly underfunded on any reasonable accounting.",
+    "proponents": "William MacAskill; Toby Ord; 80,000 Hours; Forethought",
+    "id": "make-the-long-term-future-a"
+   },
+   {
+    "name": "Put present harms and justice first",
+    "color_key": "rust",
+    "steelman": "Caring about the future means building a just, livable world for the people here now, not ranking imagined trillions above them in an expected-value calculation.",
+    "detail": "Nobody here is against caring about the future. Our objection is to an ideology that turns the future into a sum in which hypothetical trillions of digital or space-faring beings outweigh any number of real people today. A framework that can justify almost any present sacrifice in the name of astronomical future value is dangerous, especially when its leading funders and advocates are a small, wealthy, mostly Western technology elite whose own businesses are among the sources of the risks they warn about. The collapse of the FTX exchange in 2022, whose founder had pledged large sums to longtermist causes, showed how that money and reasoning can go wrong.\n\nIn practice the agenda has steered philanthropic money and regulatory attention toward speculative AI scenarios while the harms of current systems, exploitation of data workers, surveillance, discrimination, misinformation and concentrated power, go under-addressed. As Timnit Gebru, Emily M. Bender and Angelina McMillan-Major wrote in 2023, “the harms from so-called AI are real and present and follow from the acts of people and corporations.” The probabilities attached to existential risk are guesses dressed as numbers, and the population ethics beneath them, which counts merely possible people as losses, is rejected by many philosophers, Kieran Setiya among them. Nuclear war, pandemics and climate change are real dangers worth addressing on their own terms. The most reliable legacy any generation can leave is justice now: a stable climate, accountable technology and less inequality, built democratically for the people who are actually here.",
+    "proponents": "Timnit Gebru; Émile P. Torres; Distributed AI Research Institute; Emily M. Bender; Kieran Setiya",
+    "id": "address-present-harms-not-speculative-futures"
+   }
+  ],
+  "crux": {
+   "lead": "How much should people born long after us count when helping them costs something now?",
+   "lead_highlight": "How much should people born long after us count",
+   "subtitle": "No one in this debate says the suffering of future people is unimportant, and all agree they will live with what we leave them. The split is over how much weight that gives the future against present needs, and why.",
+   "empirical": "Part of it is factual. How likely is a catastrophe that ends humanity or derails it for good, and how much can spending reduce that chance? How much richer will later generations be, and how likely are the paths where they are not? Can anyone foresee the long-run effects of today’s choices well enough to act on them? Better answers would move people in every camp.",
+   "values": "The rest is a choice. Whether well-being may count for less merely because it comes later. Whether a future with more good lives is better, so that extinction is a loss to the never-born. How to act when a tiny probability attaches to a vast outcome. How much the present, and its poorest, should give up for people who may be richer. And who decides: voters, or institutions built to speak for the future."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Read the Stanford Encyclopedia of Philosophy on intergenerational justice",
+    "description": "A scholarly, even-handed survey of the arguments about what present people owe future ones, including the non-identity problem, the rights of future people and discounting.",
+    "url": "https://plato.stanford.edu/entries/justice-intergenerational/",
+    "for_position": null,
+    "id": "read-the-stanford-encyclopedia-of-philosophy"
+   },
+   {
+    "kind": "learn_more",
+    "title": "See how Wales gives future generations a voice",
+    "description": "The Future Generations Commissioner for Wales explains the 2015 law requiring Welsh public bodies to weigh long-term well-being, and reviews how well they are doing it.",
+    "url": "https://futuregenerations.wales/discover/about-future-generations-commissioner/",
+    "for_position": "Protect future generations through law and policy",
+    "id": "see-how-wales-gives-future-generations"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the case for prioritizing what works best now",
+    "description": "The Copenhagen Consensus Center’s Best Things First makes the cost-benefit case for twelve high-return investments, mostly in health, nutrition and education, as the best uses of development money now.",
+    "url": "https://copenhagenconsensus.com/books/best-things-first",
+    "for_position": "Discount the future at market rates",
+    "id": "read-the-case-for-prioritizing-what"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the case for longtermism",
+    "description": "80,000 Hours sets out why future generations matter, why there could be so many of them, and how a career can reduce risks to humanity’s long-term future.",
+    "url": "https://80000hours.org/articles/future-generations/",
+    "for_position": "Make the long-term future a top priority",
+    "id": "read-the-case-for-longtermism"
+   },
+   {
+    "kind": "donate",
+    "title": "Support research on present-day harms of AI",
+    "description": "The Distributed AI Research Institute, founded by Timnit Gebru, studies and documents current harms from AI systems and criticizes longtermist framing in AI policy.",
+    "url": "https://www.dair-institute.org/support",
+    "for_position": "Put present harms and justice first",
+    "id": "support-research-on-present-day-harms"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Learn how discounting works",
+    "description": "Resources for the Future’s short explainer on discount rates, the prescriptive and descriptive ways of choosing one, and why the choice matters so much in climate cost-benefit analysis.",
+    "url": "https://www.rff.org/publications/explainers/discounting-101/",
+    "for_position": null,
+    "id": "learn-how-discounting-works"
+   },
+   {
+    "kind": "donate",
+    "title": "Support youth constitutional climate cases",
+    "description": "Our Children’s Trust is the nonprofit law firm behind Juliana v. United States, Held v. Montana and Lighthiser v. Trump, which argue governments violate young and future generations’ rights by promoting fossil fuels.",
+    "url": "https://www.ourchildrenstrust.org/donate",
+    "for_position": "Protect future generations through law and policy",
+    "id": "support-youth-constitutional-climate-cases"
+   },
+   {
+    "kind": "donate",
+    "title": "Fund work on reducing catastrophic risks",
+    "description": "The Long-Term Future Fund, part of EA Funds, makes grants to researchers and projects working on risks from advanced AI, engineered pandemics and other threats to humanity’s long-term future.",
+    "url": "https://funds.effectivealtruism.org/funds/far-future",
+    "for_position": "Make the long-term future a top priority",
+    "id": "fund-work-on-reducing-catastrophic-risks"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the forecasting tournament on existential risk",
+    "description": "The Forecasting Research Institute’s report compares experts’ and superforecasters’ estimates of catastrophe and extinction by 2100, and examines why they did not converge.",
+    "url": "https://forecastingresearch.org/research/existential-risk-persuasion-tournament",
+    "for_position": null,
+    "id": "read-the-forecasting-tournament-on-existential"
+   },
+   {
+    "kind": "policy",
+    "title": "Comment on federal rules that weigh long-term costs",
+    "description": "Regulations.gov lets anyone comment on proposed US federal rules, including how agencies count long-term climate and catastrophic risks and which discount rates they use.",
+    "url": "https://www.regulations.gov/",
+    "for_position": null,
+    "id": "comment-on-federal-rules-that-weigh"
+   }
+  ]
+ },
+ "icon": "plant",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: A broad old oak tree as the dominant mass, standing on a gently rounded hill. A young sapling tied to a wooden stake in front of the oak, overlapping the base of its trunk. A small watering can beside the sapling. A low rising sun, half above a long distant horizon line that runs across the whole frame behind the hill. Two or three tiny birds in the sky.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #b8653f, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: people, hands, faces, babies, cradles, footprints, roads or winding paths, globes or planet Earth, clocks, mushroom clouds, asteroids, skulls, smokestacks, flames, dollar signs or coins, scales of justice, text or numbers, a frame or border, a second color"
 }

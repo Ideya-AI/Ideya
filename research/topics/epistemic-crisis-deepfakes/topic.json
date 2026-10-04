@@ -1,8 +1,8 @@
 {
  "slug": "epistemic-crisis-deepfakes",
  "title": "Deepfakes & Shared Truth",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-10-02T10:17:18+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Synthetic media, AI-generated content and the collapse of shared facts. Not platform moderation rules.",
@@ -17,5 +17,626 @@
   "social-media-youth-mental-health",
   "ai-copyright-training-data",
   "the-replication-crisis-trust-in-science"
- ]
+ ],
+ "content": {
+  "overview": {
+   "summary": "Whether cheap, convincing AI fakes are wearing down a society’s ability to agree on facts, or riding a distrust that was already there.",
+   "scope_covered": "AI-made or AI-altered images, video, audio and text that pass as real: election deepfakes, voice and video fraud, sexual deepfakes, the “liar’s dividend” by which real evidence is waved away as fake, and the responses on offer, from labels and provenance to detection, likeness rights and media literacy.",
+   "scope_excluded": "Platform moderation rules and Section 230 reform, which belong to Content Moderation & Free Speech; AI training on copyrighted work; the economics of journalism; and trust in science, except where synthetic media is the mechanism.",
+   "why_now": "On August 2, 2026 the transparency duties in the EU’s AI Act began to apply: anyone deploying a deepfake must label it for viewers, and AI providers must mark generated content so machines can detect it, with generators already on the market given until December 2. It is the first such regime at continental scale.",
+   "why_now_source_label": "European Commission, Code of Practice on Transparency of AI-generated Content",
+   "why_now_source_url": "https://digital-strategy.ec.europa.eu/en/policies/code-practice-ai-generated-content"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "Human accuracy at detecting high-quality deepfakes",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% correct",
+     "series": [
+      {
+       "label": "Audio",
+       "value": "62.08",
+       "highlight": false
+      },
+      {
+       "label": "Video",
+       "value": "57.31",
+       "highlight": false
+      },
+      {
+       "label": "All formats",
+       "value": "55.54",
+       "highlight": true
+      },
+      {
+       "label": "Images",
+       "value": "53.16",
+       "highlight": false
+      },
+      {
+       "label": "Text",
+       "value": "52.00",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Pooling 56 studies with 86,155 participants, people identified high-quality deepfakes correctly 55.54 percent of the time; the confidence interval crosses the 50 percent chance line.",
+     "detail": "This is the first meta-analysis of human deepfake detection. The 95 percent confidence interval on overall accuracy runs from 48.87 to 62.10 percent, and the authors report that detection sensitivity was not significantly above chance. Audio was the easiest format and text and images the hardest, though the audio estimate rests on only eight effects and has a very wide interval. Training with feedback, AI assistance and exaggerated “caricatured” fakes raised accuracy to 65.14 percent, so detection can be learned to a degree. The studies used deliberately high-quality fakes, while much deceptive content in circulation is cruder; for that reason, those skeptical of the crisis framing say lab detection rates overstate the practical problem.",
+     "source_label": "Diel et al., Human performance in detecting deepfakes: a meta-analysis of 56 papers, Computers in Human Behavior Reports",
+     "source_url": "https://doi.org/10.1016/j.chbr.2024.100538",
+     "source_published": "2024",
+     "source_accessed": "2026-10-02",
+     "id": "human-accuracy-at-detecting-high-quality"
+    },
+    {
+     "label": "Concern about what is real and fake online",
+     "viz": "radial",
+     "wide": false,
+     "value": "62",
+     "unit": "% concerned",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Across 48 markets, 62 percent of people surveyed by the Reuters Institute said they were concerned about what is real and what is fake online, up 4 points from 2025.",
+     "detail": "The Digital News Report surveys roughly 2,000 people in each market. Concern jumped by more than 5 points in 11 markets and by at least 4 in every Western European market, including 7 in Norway, 8 in the Netherlands and 9 in Belgium; the report links the rise to worry about deepfakes, AI slop and politically motivated misinformation. Brazil was the one market where it fell, and Nigeria and Kenya were highest. The measure records anxiety, not exposure or harm.",
+     "source_label": "Reuters Institute for the Study of Journalism, Digital News Report 2026, executive summary",
+     "source_url": "https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2026/dnr-executive-summary",
+     "source_published": "2026",
+     "source_accessed": "2026-10-02",
+     "id": "concern-about-what-is-real-and"
+    },
+    {
+     "label": "Deceptive share of AI uses documented in 2024 elections",
+     "viz": "radial",
+     "wide": false,
+     "value": "50",
+     "unit": "% deceptive",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Of 78 instances of AI use in 2024 elections worldwide, collected by the WIRED AI Elections Project and analyzed by Sayash Kapoor and Arvind Narayanan, 39 were deceptive and 39 were not.",
+     "detail": "The authors estimated that every deceptive case could have been produced without AI for no more than a few hundred dollars, and cite a News Literacy Project finding that “cheap fakes,” conventionally edited or miscaptioned media, were used seven times more often than AI content in the 2024 US election. They argue that the bottleneck for a disinformation campaign is distribution and audience demand, not production cost. The Alan Turing Institute’s Centre for Emerging Technology and Security identified 16 viral AI-enabled disinformation cases in the 2024 UK general election and 11 across the EU and French elections, finding no evidence they changed results while noting they amplified harmful narratives.",
+     "source_label": "Kapoor & Narayanan, We Looked at 78 Election Deepfakes, Knight First Amendment Institute",
+     "source_url": "https://knightcolumbia.org/blog/we-looked-at-78-election-deepfakes-political-misinformation-is-not-an-ai-problem",
+     "source_published": "2024",
+     "source_accessed": "2026-10-02",
+     "id": "deceptive-share-of-ai-uses-documented"
+    },
+    {
+     "label": "Listeners judging real and fake speech correctly",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% correct",
+     "series": [
+      {
+       "label": "Real speech, 2021",
+       "value": "72.7",
+       "highlight": false
+      },
+      {
+       "label": "Real speech, 2026",
+       "value": "64.1",
+       "highlight": true
+      },
+      {
+       "label": "Fake speech, 2021",
+       "value": "72.9",
+       "highlight": false
+      },
+      {
+       "label": "Fake speech, 2026",
+       "value": "71.2",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a 2026 preprint study, listeners caught fake audio about as well as a 2021 baseline (71.2 against 72.9 percent) but recognized real audio as real markedly less often (64.1 against 72.7).",
+     "detail": "The study, not yet peer reviewed, is the largest listening test of audio deepfakes to date: 35,532 judgments from 1,768 participants across 138 speech-synthesis and voice-conversion systems. The authors call the finding a skepticism shift: people are not getting worse at spotting synthesis artifacts, they are increasingly distrusting authentic speech, the mechanism behind the liar’s dividend. Audio from commercial and language-model-based systems was the hardest to catch, at 61.3 to 65.9 percent accuracy. A machine-learning detector used as a reference stayed above 94.5 percent accuracy in every condition.",
+     "source_label": "Müller & Choong, Eroding Trust in Real Speech, arXiv:2605.26136 (preprint)",
+     "source_url": "https://arxiv.org/abs/2605.26136",
+     "source_published": "2026",
+     "source_accessed": "2026-10-02",
+     "id": "listeners-judging-real-and-fake-speech"
+    },
+    {
+     "label": "US states with laws regulating election deepfakes",
+     "viz": "range",
+     "wide": false,
+     "value": "30",
+     "unit": "states",
+     "series": [],
+     "range_min": "0",
+     "range_max": "50 states",
+     "note": "Maryland became the 30th state with a law regulating deepfakes in elections in May 2026, according to Public Citizen, which tracks and campaigns for such laws.",
+     "detail": "Public Citizen’s tracker lists further enactments since, including Louisiana in June 2026. Most of these laws require a disclosure on deceptive AI depictions of candidates in a window before an election; a few prohibit some such content outright. Several have been struck down or blocked in court. A federal judge struck down California’s AB 2655 in August 2025 as preempted by Section 230 and its AB 2839 as unconstitutional, writing that the antidote in political expression is counter speech and fact-checking (Georgetown Free Speech Project). A federal court permanently blocked Hawaii’s Act 191 in January 2026 in a case brought by The Babylon Bee (Courthouse News), and Montana’s law was preliminarily enjoined for the named plaintiffs in September 2026 (Daily Montanan). There is no federal statute on political deepfakes.",
+     "source_label": "Public Citizen, 30 States Now Have Laws to Regulate Election Deepfakes",
+     "source_url": "https://www.citizen.org/news/30-states-now-have-laws-to-regulate-election-deepfakes/",
+     "source_published": "2026",
+     "source_accessed": "2026-10-02",
+     "id": "us-states-with-laws-regulating-election"
+    },
+    {
+     "label": "Sexualized images generated by Grok on X in 11 days",
+     "viz": "bar",
+     "wide": false,
+     "value": "3 million",
+     "unit": "images",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The advocacy group CCDH estimated that Grok’s image-editing feature made about 3 million sexualized images, some 23,000 apparently of children, from December 29, 2025 to January 8, 2026.",
+     "detail": "The estimate extrapolates from a random sample of 20,000 of the 4.6 million images Grok produced in the period, classified with AI assistance and manual review. It works out to about 190 sexualized images a minute, and one apparently depicting a child every 41 seconds. As of January 15, 29 percent of the sexualized images of children in the sample were still publicly accessible. The episode prompted an Ofcom investigation of X under the UK Online Safety Act and temporary blocks of X in Malaysia and Indonesia, according to Ofcom and NBC News, and it is the case most often cited for regulating generation tools themselves rather than only the people who post their output.",
+     "source_label": "Center for Countering Digital Hate, Grok floods X with sexualized images of women and children",
+     "source_url": "https://counterhate.com/research/grok-floods-x-with-sexualized-images/",
+     "source_published": "2026",
+     "source_accessed": "2026-10-02",
+     "id": "sexualized-images-generated-by-grok-on"
+    },
+    {
+     "label": "AI political ads with no AI disclaimer, 2026 US cycle",
+     "viz": "radial",
+     "wide": false,
+     "value": "69",
+     "unit": "% of AI ads",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Of at least 164 political ads made or enhanced with AI in the 2026 US election cycle, 69 percent of the ads and 78 percent of the spending carried no AI disclaimer, the Wesleyan Media Project found.",
+     "detail": "The ads identified account for just under $80 million in spending across broadcast television, connected TV and digital venues. Eighty percent of the ads and 83 percent of the spending came from Republican candidates or pro-Republican groups, and 11 percent of the ads, 14 percent of spending, from Democratic sponsors. Wesleyan calls its count a minimum: it found AI ads through news coverage, self-disclosure and its own review of visuals, and no federal rule requires political ads to disclose AI use. The count covers all AI-generated or AI-enhanced ads, not only deceptive deepfakes of opponents, so it measures how routine AI has become in campaigning rather than how much of it deceives.",
+     "source_label": "Wesleyan Media Project, At Least $80 Million Spent on AI Ads This Cycle",
+     "source_url": "https://mediaproject.wesleyan.edu/releases-090426/",
+     "source_published": "2026",
+     "source_accessed": "2026-10-02",
+     "id": "ai-political-ads-with-no-ai"
+    },
+    {
+     "label": "Platforms that showed provenance data on an AI video",
+     "viz": "range",
+     "wide": false,
+     "value": "1",
+     "unit": "platforms",
+     "series": [],
+     "range_min": "0",
+     "range_max": "8 tested",
+     "note": "The Washington Post uploaded an AI video carrying Content Credentials to eight major platforms; only YouTube disclosed anything about its origin, and none kept the credentials attached or viewable.",
+     "detail": "Content Credentials, built on the C2PA standard, attach a signed record of how a file was made and edited, and they are the main industry answer to deepfakes. Marking on the generating side is large: Google said in May 2025 that more than 10 billion pieces of content had been watermarked with its SynthID system, and TikTok said in July 2026 that it had labeled more than 3 billion pieces of content as AI-generated using Content Credentials and invisible watermarking (C2PA). The Post’s test located the weak link in distribution: if the platforms where people see content strip or ignore the record, it never reaches the viewer.",
+     "source_label": "The Washington Post, Tests show top social platforms don’t disclose markers on AI videos",
+     "source_url": "https://www.washingtonpost.com/technology/2025/10/22/ai-deepfake-sora-platforms-c2pa/",
+     "source_published": "2025",
+     "source_accessed": "2026-10-02",
+     "id": "platforms-that-showed-provenance-data-on"
+    },
+    {
+     "label": "Deepfake detector accuracy lost on real-world content",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% AUC lost",
+     "series": [
+      {
+       "label": "Video detectors",
+       "value": "50",
+       "highlight": true
+      },
+      {
+       "label": "Audio detectors",
+       "value": "48",
+       "highlight": false
+      },
+      {
+       "label": "Image detectors",
+       "value": "45",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Open-source deepfake detectors lost about half their discriminating power when tested on deepfakes that circulated in 2024 rather than on academic benchmark datasets.",
+     "detail": "The Deepfake-Eval-2024 benchmark collected 45 hours of video, 56.5 hours of audio and 1,975 images from social media and detection-platform users, spanning 88 websites and 52 languages. AUC measures how well a classifier separates real from fake, where 0.5 is a coin toss; the drop moved many off-the-shelf models close to that line. Commercial systems and models fine-tuned on the new data did better, but the authors report they still do not match trained deepfake forensic analysts.",
+     "source_label": "Chandra et al., Deepfake-Eval-2024: A Multi-Modal In-the-Wild Benchmark, arXiv:2503.02857",
+     "source_url": "https://arxiv.org/abs/2503.02857",
+     "source_published": "2024",
+     "source_accessed": "2026-10-02",
+     "id": "deepfake-detector-accuracy-lost-on-real"
+    },
+    {
+     "label": "Sexual deepfake videos hosted on one site",
+     "viz": "bar",
+     "wide": false,
+     "value": "43,000",
+     "unit": "videos",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "As of November 2023, the MrDeepFakes site hosted about 43,000 sexual deepfake videos depicting about 3,800 people, viewed more than 1.5 billion times.",
+     "detail": "Among the 1,942 most targeted individuals, who account for 95 percent of the site’s videos, 95.3 percent were women. Most were actors and musicians, but the researchers found hundreds of targets with little or no public presence despite the site’s celebrity-only rule. Only 43 of those individuals, 2.21 percent, were geopolitical figures, which bears on a recurring point in the debate: the deepfake harms best documented so far are sexual and personal rather than political. This is the one area where US federal law now acts directly: under the TAKE IT DOWN Act, whose removal duties took effect on May 19, 2026, covered platforms must remove reported nonconsensual intimate images within 48 hours (Federal Trade Commission).",
+     "source_label": "Han, Li, Kumar & Durumeric, Characterizing the MrDeepFakes Sexual Deepfake Marketplace, USENIX Security 2025",
+     "source_url": "https://www.usenix.org/system/files/usenixsecurity25-han.pdf",
+     "source_published": "2023",
+     "source_accessed": "2026-10-02",
+     "id": "sexual-deepfake-videos-hosted-on-one"
+    },
+    {
+     "label": "Trust in news and in AI chatbot answers",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% trust",
+     "series": [
+      {
+       "label": "Global, 2025",
+       "value": "40",
+       "highlight": false
+      },
+      {
+       "label": "Global, 2026",
+       "value": "37",
+       "highlight": true
+      },
+      {
+       "label": "United States, 2026",
+       "value": "25",
+       "highlight": false
+      },
+      {
+       "label": "AI chatbots, 2026",
+       "value": "20",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Trust in news fell to 37 percent globally in 2026, the lowest since the Reuters Institute began measuring in 2015; it was 25 percent in the US, and trust in answers from AI chatbots was 20 percent.",
+     "detail": "Global trust in news had held at 40 percent for three years before the fall. Weekly use of AI chatbots such as ChatGPT, Perplexity and Gemini for news rose from 7 to 10 percent year on year, so a growing share of people get news through a channel they trust even less than journalism.",
+     "source_label": "Reuters Institute for the Study of Journalism, Digital News Report 2026, executive summary",
+     "source_url": "https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2026/dnr-executive-summary",
+     "source_published": "2026",
+     "source_accessed": "2026-10-02",
+     "id": "trust-in-news-and-in-ai"
+    },
+    {
+     "label": "Loss in a single deepfake video-call fraud",
+     "viz": "bar",
+     "wide": false,
+     "value": "200 million",
+     "unit": "HK dollars",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "An employee in engineering firm Arup’s Hong Kong office sent HK$200 million, about £20 million, to fraudsters after a video call in which AI-generated likenesses posed as senior colleagues.",
+     "detail": "Hong Kong police reported the case in February 2024 without naming the company; Arup confirmed in May that it was the victim and that fake voices and images were used, adding that its financial stability and operations were not affected. The case became the standard illustration that deepfakes can defeat the most intuitive human check, seeing and hearing a known colleague live. It also shows a side of the shared-truth problem that has nothing to do with politics: when face and voice stop proving identity, organizations and families fall back on codewords, callbacks and other out-of-band checks.",
+     "source_label": "The Guardian, UK engineering firm Arup falls victim to £20m deepfake scam",
+     "source_url": "https://www.theguardian.com/technology/article/2024/may/17/uk-engineering-arup-deepfake-scam-hong-kong-ai-video",
+     "source_published": "2024",
+     "source_accessed": "2026-10-02",
+     "id": "loss-in-a-single-deepfake-video"
+    },
+    {
+     "label": "Trust in US mass media",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% trust",
+     "series": [
+      {
+       "label": "2020",
+       "value": "40",
+       "highlight": false
+      },
+      {
+       "label": "2024",
+       "value": "31",
+       "highlight": false
+      },
+      {
+       "label": "2025",
+       "value": "28",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2025, 28 percent of Americans said they trust newspapers, television and radio to report the news fully, accurately and fairly, the lowest Gallup has recorded.",
+     "detail": "Among Republicans trust was 8 percent, the first single-digit reading; among independents 27 percent; and among Democrats 51 percent, tying their 2016 low. Americans 65 and older were the most trusting, at 43 percent. Gallup recorded trust of 68 to 72 percent in the 1970s, so the decline predates generative AI by decades. Those who argue that synthetic media is a symptom of a trust problem rather than its cause make this their central empirical point; those who favor regulation reply that a low-trust public is exactly where cheap fabrication and the liar’s dividend do the most damage.",
+     "source_label": "Gallup, Trust in Media at New Low of 28% in U.S.",
+     "source_url": "https://news.gallup.com/poll/695762/trust-media-new-low.aspx",
+     "source_published": "2025",
+     "source_accessed": "2026-10-02",
+     "id": "trust-in-us-mass-media"
+    },
+    {
+     "label": "Americans who say telling AI content from human content matters",
+     "viz": "radial",
+     "wide": false,
+     "value": "76",
+     "unit": "% of adults",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Seventy-six percent of US adults said it is extremely or very important to be able to tell whether pictures, videos and text were made by AI or by people; 53 percent were not confident they could.",
+     "detail": "Pew surveyed 5,023 US adults on its American Trends Panel from June 9 to 15, 2025. The two figures answer different questions, one how much telling the difference matters and the other how confident people are in their own ability, and the gap between them is the demand that labeling mandates and provenance systems are both trying to meet. Twelve percent described themselves as highly confident. Confidence is not accuracy: in the meta-analysis of detection studies by Diel and colleagues (2024), viewers performed near chance on high-quality fakes.",
+     "source_label": "Pew Research Center, How Americans View AI and Its Impact on People and Society",
+     "source_url": "https://www.pewresearch.org/science/2025/09/17/how-americans-view-ai-and-its-impact-on-people-and-society/",
+     "source_published": "2025",
+     "source_accessed": "2026-10-02",
+     "id": "americans-who-say-telling-ai-content"
+    },
+    {
+     "label": "Opposition to a scandal-hit politician after a false “fake news” claim",
+     "viz": "range",
+     "wide": false,
+     "value": "32–34",
+     "unit": "% opposed",
+     "series": [],
+     "range_min": "0",
+     "range_max": "44 no response",
+     "note": "In a 2021 experiment with 2,503 Americans, a politician’s false claim that a real, text-reported scandal was misinformation cut opposition from about 44 to 32–34 percent, across two framings.",
+     "detail": "Across five survey experiments with more than 15,000 American adults, Schiff, Jackson Schiff and Bueno found that falsely crying “fake news” raised support for politicians caught in real scandals by roughly 0.15 to 0.24 standard deviations, more than apologizing or staying silent, across partisan subgroups. A November 2022 replication found opposition falling from 58 to about 49 percent. The finding most relevant to deepfakes cuts the other way: falsely claiming that a real video was a deepfake was largely ineffective in 2021, apparently because people still believed video, though in 2022 a claim framed to rally the politician’s partisans did work against video. Awareness of deepfakes rose between the studies, with 22 percent who had not heard of them in 2021 and 8 percent in 2022, and the authors flag rising familiarity as one possible reason. The false claims did not reduce general trust in media.",
+     "source_label": "Schiff, Jackson Schiff & Bueno, The Liar’s Dividend, American Political Science Review",
+     "source_url": "https://doi.org/10.1017/S0003055423001454",
+     "source_published": "2021",
+     "source_accessed": "2026-10-02",
+     "id": "opposition-to-a-scandal-hit-politician"
+    },
+    {
+     "label": "AI content farm websites identified",
+     "viz": "bar",
+     "wide": false,
+     "value": "3,006",
+     "unit": "websites",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "By March 2026 NewsGuard had identified 3,006 websites publishing mostly AI-generated content presented as human-written news, a number it says more than doubled over the previous year.",
+     "detail": "NewsGuard counts a site as an AI content farm when a substantial share of its content is AI-generated, it does not disclose this, and it could mislead an average reader into thinking humans wrote it. It reports new sites appearing at 300 to 500 a month. NewsGuard is a commercial company that sells reliability ratings, which those wary of centralized credibility judgments note. Most such sites exist for advertising revenue rather than persuasion, which those who locate the problem in demand read as noise rather than belief change; the worry on the other side is that they feed the training data and retrieval sources of AI chatbots.",
+     "source_label": "NewsGuard, NewsGuard Launches Real-time “AI Content Farm” Detection Datastream",
+     "source_url": "https://www.newsguardtech.com/press/newsguard-launches-real-time-ai-content-farm-detection-datastream-to-counter-onslaught-of-ai-slop-in-news/",
+     "source_published": "2026",
+     "source_accessed": "2026-10-02",
+     "id": "ai-content-farm-websites-identified"
+    },
+    {
+     "label": "AI chatbots repeating false claims about the news",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% false",
+     "series": [
+      {
+       "label": "August 2024",
+       "value": "18",
+       "highlight": false
+      },
+      {
+       "label": "August 2025",
+       "value": "35",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In NewsGuard’s August 2025 audit, the ten leading AI chatbots repeated false claims in 35 percent of responses to news prompts built on known falsehoods, up from 18 percent a year earlier.",
+     "detail": "The rise came with a change in behavior: a year earlier the chatbots often declined to answer, and in August 2025 they answered every prompt, so the combined rate of false answers and non-answers fell from 49 to 35 percent while the false-claim rate roughly doubled. The tools tested included ChatGPT, Grok, Copilot, Meta AI, Claude, Gemini and Perplexity. The audit uses prompts deliberately built around circulating falsehoods, some seeded by state influence networks, so it measures vulnerability on contested news rather than average accuracy.",
+     "source_label": "NewsGuard, One-Year AI Audit Progress Report",
+     "source_url": "https://www.newsguardtech.com/press/newsguard-one-year-ai-audit-progress-report-finds-that-ai-models-spread-falsehoods-in-the-news-35-of-the-time/",
+     "source_published": "2025",
+     "source_accessed": "2026-10-02",
+     "id": "ai-chatbots-repeating-false-claims-about"
+    },
+    {
+     "label": "Accuracy at telling AI-generated faces from real ones",
+     "viz": "radial",
+     "wide": false,
+     "value": "48.2",
+     "unit": "% correct",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a 2022 study, 315 participants told StyleGAN2 faces from real ones with 48.2 percent accuracy, just below the 50 percent of chance; with training and feedback, 219 others reached 59.0 percent.",
+     "detail": "In a third experiment, 223 participants rated the synthetic faces 7.7 percent more trustworthy than the real ones, a mean of 4.82 against 4.48 on a seven-point scale, a statistically significant difference. Feedback improved accuracy overall, but participants did not improve over the course of the trials. The study used still faces from a 2020-era generator; image and video generators have improved substantially since.",
+     "source_label": "Nightingale & Farid, AI-synthesized faces are indistinguishable from real faces and more trustworthy, PNAS",
+     "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8872790/",
+     "source_published": "2022",
+     "source_accessed": "2026-10-02",
+     "id": "accuracy-at-telling-ai-generated-faces"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Is synthetic media changing what people believe, or mostly confirming what they already thought?",
+    "kind": "empirical",
+    "why": "Documented deepfakes are plentiful and measured effects on election results small, but a record of what was found cannot show what was missed, and the tools improve every few months.",
+    "detail": "Those who see deception at scale note that people cannot reliably tell high-quality fakes from real media, and that a fake does not need to persuade a majority to matter. The Biden voice robocall before the 2024 New Hampshire primary and the Arup video call each worked on the few people it reached at the moment that counted. Targeted, private and last-minute deception is exactly what public case collections and post-election studies are worst at catching.\n\nThose who think it mostly confirms existing views draw on decades of misinformation research: the average person consumes very little of it, and consumption is concentrated among people who are already highly partisan or distrustful and go looking for it. On this reading, deepfakes mostly give committed audiences what they already wanted to see.",
+    "lean_label_a": "Changes beliefs",
+    "lean_label_b": "Confirms beliefs",
+    "id": "is-synthetic-media-changing-what-people"
+   },
+   {
+    "text": "Is the bigger danger that people believe fakes, or that they stop believing real evidence?",
+    "kind": "empirical",
+    "why": "The two dangers call for different remedies, catching fakes or shoring up authentic evidence, and the evidence on dismissing real media is newer and more mixed than the evidence on deception.",
+    "detail": "Those who rank deception first point to harms that can be counted today: nonconsensual sexual images of real people, scams using a cloned voice or face, fabricated statements by candidates, and fake news sites. These have identifiable victims and measurable losses. In the largest experiments on the liar’s dividend, politicians who dismissed genuine video as fake mostly failed, because people still trusted what they saw; policy should address the harms that are happening.\n\nThose who rank doubt first point to the largest audio listening study, which found people no worse at catching fakes than in 2021 but worse at accepting real speech as real, and to experiments in which politicians gained support by falsely calling real reports fake. A world where any recording can be dismissed favors those who can deny over those who must prove. WITNESS, which runs a rapid-response force for disputed footage, handles claims that authentic evidence is AI-generated as well as actual deepfakes.",
+    "lean_label_a": "Fakes believed",
+    "lean_label_b": "Evidence doubted",
+    "id": "is-the-bigger-danger-that-people"
+   },
+   {
+    "text": "Should the law require labels on AI-generated political content?",
+    "kind": "value",
+    "why": "Supporters call disclosure the lightest form of regulation, and it polls well, but US courts have repeatedly found these laws unconstitutional when applied to political speech and satire.",
+    "detail": "Supporters argue that voters have a right to know when an image of a candidate saying or doing something was manufactured. Most state election deepfake laws require labels in the weeks before a vote, because a last-minute fake leaves no time for correction, and the EU now requires deepfakes to be labeled for viewers, with narrow allowances for evidently artistic or satirical work. That most AI ads in US campaigns carry no disclaimer, they say, strengthens the case for a clear rule.\n\nOpponents argue that political speech is the core of what free speech protects, and that letting the government decide which depictions of candidates are “deceptive” invites selective enforcement. Labels destroy satire and parody, which depend on the audience getting the joke unprompted, and a mandated label can itself mislead by implying an ad is false. Fraud, voter suppression and defamation are already illegal whatever tool is used.",
+    "lean_label_a": "Require labels",
+    "lean_label_b": "Protect speech",
+    "id": "should-the-law-require-labels-on"
+   },
+   {
+    "text": "When a deepfake causes harm, who should be liable: its maker, the platform, or the AI company?",
+    "kind": "value",
+    "why": "Liability on tools and platforms can actually be enforced but sweeps in lawful uses; liability on individual creators spares innovation but often cannot reach anonymous or foreign actors.",
+    "detail": "Those who would hold companies liable argue that the firms that build and host generators are the only actors positioned to prevent harm at scale, and that they profit from the product. A company that ships a tool it knew or should have known would be used to hurt people should answer for it as a manufacturer would in the physical world, and immunity for what users post should not extend to output a company’s own model creates. Victims cannot sue thousands of anonymous users; they can sue one company.\n\nThose who would hold users liable argue that generative tools, like cameras and editing software, have overwhelmingly lawful uses, and that making their makers answer for every misuse would push development toward a few large firms able to absorb the legal risk and toward pre-emptive censorship of legitimate output. The person who chooses to deceive, defraud or harass is the wrongdoer, and law on fraud, defamation, harassment and impersonation already reaches that person, whatever software was involved.",
+    "lean_label_a": "Companies liable",
+    "lean_label_b": "Users liable",
+    "id": "when-a-deepfake-causes-harm-who"
+   },
+   {
+    "text": "Can provenance and watermarking work at internet scale?",
+    "kind": "empirical",
+    "why": "Marking content at creation is spreading fast, but marks can be stripped, rogue generators will never add them, and the platforms where people see content have been slow to show the record.",
+    "detail": "Supporters note that the C2PA standard is backed by Adobe, Google, Microsoft, Meta, OpenAI, Sony, TikTok and major news organizations, and that about 190 companies and organizations had signed the EU’s code on marking AI-generated content by the end of July 2026, according to the European Commission. The goal, they say, is not to label every fake but to let authentic capture from cameras, newsrooms and campaigns prove itself, so that unverified content is treated with appropriate caution.\n\nSkeptics answer that metadata disappears with a screenshot or re-encode, that watermarks can be removed or forged by determined actors, and that open-source generators run by bad actors will never add them. A system that marks only the compliant can create false reassurance, since unmarked fakes look more trustworthy, and pressure to sign all authentic capture raises privacy risks for journalists, dissidents and witnesses who need anonymity.",
+    "lean_label_a": "Works at scale",
+    "lean_label_b": "Easily stripped",
+    "id": "can-provenance-and-watermarking-work-at"
+   },
+   {
+    "text": "Will detection tools keep pace with generation?",
+    "kind": "empirical",
+    "why": "Detection tools post excellent results on the kind of data they were trained on and much worse ones on content in the wild, and each new generator resets the contest.",
+    "detail": "Optimists note that detectors fine-tuned on current real-world data recover much of their lost performance. Combining automated screening with expert review and provenance gives a layered defense. Detection does not need to be perfect to be valuable; it needs to reach the journalists, election officials and courts who face disputed content, quickly.\n\nPessimists point to a structural advantage for the generator: any detector can be used to train a better fake. Detection also fails unevenly for the people who most need it, in less common languages, on low-quality phone footage and in communities without commercial tools, and a false positive on authentic evidence does the liar’s work.",
+    "lean_label_a": "Detection wins",
+    "lean_label_b": "Generation wins",
+    "id": "will-detection-tools-keep-pace-with"
+   },
+   {
+    "text": "Should people own their face and voice as a property right?",
+    "kind": "value",
+    "why": "Performers and victims want an enforceable right against unauthorized digital replicas; civil liberties groups fear a takedown regime that will be abused against commentary and signed away in contracts.",
+    "detail": "Supporters say that without a clear right, a voice or face can be cloned for ads, songs, scams or pornography with little recourse beyond a patchwork of state publicity laws. The NO FAKES Act, advanced unanimously by the Senate Judiciary Committee in June 2026, would create a federal right in one’s voice and visual likeness, with a notice-and-removal system and exceptions for news, commentary, satire and parody. Denmark has drafted amendments to its copyright act requiring consent before realistic digital imitations of a person’s appearance or voice are made available; in January 2026 the European Parliamentary Research Service reported they were scheduled to take effect that July.\n\nOpponents say a transferable property right will be signed over to studios and labels in standard contracts, protecting companies rather than people, and that a notice-and-takedown system modeled on copyright lets anyone claiming to be depicted force the removal of criticism, satire or news, while platforms over-filter to avoid liability. The real interest at stake, on this view, is privacy and dignity, which a narrower privacy law could protect.",
+    "lean_label_a": "Property right",
+    "lean_label_b": "Privacy right",
+    "id": "should-people-own-their-face-and"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Require labels and liability for synthetic media",
+    "color_key": "green",
+    "steelman": "When anyone can fake anyone in seconds and viewers can’t tell, the cost of the harm should fall on those who profit from the tools, not on their victims.",
+    "detail": "Companies cannot be left to police themselves; the Grok episode showed what happens when guardrails cost engagement. The answer is rules with teeth, built in layers. AI providers should mark what their systems generate in ways machines can detect, and anyone deploying a realistic deepfake should tell the people who see it. Election deepfakes of candidates should carry clear disclosure in the window before a vote, when there is no time for correction. Nonconsensual sexual deepfakes and AI impersonation for fraud should be crimes with fast removal duties. And the companies that build and host generators should be liable when they knew or should have known their product would be used to harm people, as any manufacturer would be; the digital forensics expert Hany Farid argues that platform immunity does not cover output a company’s own model creates.\n\nDisclosure bans nothing; it restores a fact the viewer is entitled to know. The courts that struck down particular state laws objected to their drafting, viewpoint selectivity, vagueness, burdens on platforms, not to the idea that voters can be told what is synthetic, and good laws exempt evident satire and parody. Voluntary provenance standards are welcome, but they have not reached viewers; obligations are what make standards stick. And the people harmed by nonconsensual images and fraud are not harmed by their own partisanship.",
+    "proponents": "European Commission; Public Citizen; Hany Farid",
+    "id": "require-labels-and-liability-for-synthetic"
+   },
+   {
+    "name": "Protect synthetic speech and punish concrete harms",
+    "color_key": "blue",
+    "steelman": "A new medium is no new exception to free speech: punish fraud, defamation and exploitation whatever tool made them, and leave satire of the powerful alone.",
+    "detail": "Altered images of politicians are as old as political cartoons and darkroom retouching, and ridicule of the powerful is the speech the First Amendment protects most. The wrong in a harmful deepfake lies in what it does to a particular person or election, and that is conduct existing law on fraud, defamation, voter suppression and harassment already reaches. Election deepfake laws that single out content “intended to injure” a candidate are viewpoint discrimination by design; as FIRE’s 2026 explainer “How does the First Amendment apply to ‘deepfakes’?” puts it, “a mandatory disclaimer for parody or satire would kill the joke.” Broad takedown systems for “digital replicas” will be used by the powerful against critics while platforms over-filter to avoid liability. Courts have agreed again and again.\n\nCompelled disclosure is still a speech burden, and a label rule enforced by officials in the weeks before an election hands incumbents a weapon. Where there is a real gap, fill it with narrow, harm-specific law, such as remedies for nonconsensual intimate images, and with privacy protections for ordinary people, not with rules that make the government or platforms the arbiter of which depictions of public figures may circulate. That a fake goes viral fast is an argument for counter speech and fact-checking, not for prior restraint by the state.",
+    "proponents": "Foundation for Individual Rights and Expression (FIRE); Electronic Frontier Foundation (EFF); Cato Institute",
+    "id": "protect-synthetic-speech-and-punish-concrete"
+   },
+   {
+    "name": "Build provenance that proves what is real",
+    "color_key": "amber",
+    "steelman": "Chasing fakes is a race defenders lose. Let authentic media prove where it came from, and unverified content earns caution without anyone ruling on truth.",
+    "detail": "The durable fix is to authenticate rather than detect. Cameras, editing software, newsrooms, campaigns and AI generators can attach a cryptographically signed record of where a file came from and what was done to it, and platforms can show that record to viewers. This is an open, interoperable standard built across competitors and news organizations; it informs rather than censors and puts the judgment in the viewer’s hands. Laws help when they require generators to mark output and platforms to preserve and display credentials, but the system has to be built by the ecosystem, not decreed content by content.\n\nStripped metadata is an implementation gap that platforms are closing under regulatory pressure, and durable watermarks now travel with content alongside it. The system does not need to catch every fake; it needs authentic material from trusted sources to be verifiable, the way HTTPS made websites verifiable without eliminating fake ones. Labeling fakes asks the least trustworthy actors to label themselves; provenance asks the trustworthy to sign their work. Human rights participants such as WITNESS press for opt-in signing and protection for anonymity, so that provenance does not expose the people it should protect.",
+    "proponents": "Coalition for Content Provenance and Authenticity (C2PA); Content Authenticity Initiative; WITNESS",
+    "id": "build-provenance-that-proves-what-is"
+   },
+   {
+    "name": "Address demand, not the supply of fakes",
+    "color_key": "rust",
+    "steelman": "Deepfakes find audiences because trust had already collapsed. Fix the distrust and polarization that create the demand, or any cut in supply gets routed around.",
+    "detail": "The crisis framing gets causation backward. People did not stop sharing a common reality because deepfakes arrived; the fakes spread where institutions had already lost trust and politics had already sorted people into hostile camps. Those audiences share low-tech falsehoods as readily as sophisticated fakes. The real constraint on a disinformation campaign is distribution and a receptive audience, not production cost, so making production cheaper changes less than it seems; misinformation, in the words of Felix Simon, Sacha Altay and Hugo Mercier (Harvard Kennedy School Misinformation Review, 2023), is “mostly limited by demand and not by supply.”\n\nTreating synthetic media as the cause has costs of its own: it licenses speech restrictions that will not work, hands politicians a ready excuse to dismiss real evidence, and alarm about fakes can itself erode trust in genuine information. Past panics, from Photoshop to cheap fakes, predicted collapses that did not come, and limited attention and motivated reasoning do not change when fakes get better. A label is only as good as the trust in whoever issues it. The effective work is slower: rebuilding trusted journalism, supporting fact-checkers, teaching verification habits and addressing polarization. Nonconsensual imagery and fraud are real harms, best met by laws aimed at them, but they are personal and criminal, not a collapse of shared facts.",
+    "proponents": "Sayash Kapoor; Arvind Narayanan; Felix M. Simon; Sacha Altay; Hugo Mercier",
+    "id": "address-the-demand-for-falsehood-not"
+   }
+  ],
+  "crux": {
+   "lead": "What is wearing down shared truth: the supply of convincing fakes, or the demand for them?",
+   "lead_highlight": "What is wearing down shared truth",
+   "subtitle": "Most people in this debate agree that sexual deepfakes and AI fraud are real harms that call for targeted laws. They split over whether a society’s ability to agree on facts is being damaged by the tools themselves, or by distrust and partisanship that came first.",
+   "empirical": "Some of this can be measured. Does seeing an AI fake change beliefs and votes more than equally cheap, low-tech misinformation does, in real elections rather than in labs? Does the growing habit of doubting genuine recordings keep spreading as fakes improve? And where labels showing a file’s origin actually reach viewers, do they change what people believe or share?",
+   "values": "Other parts no study closes. How much risk to political expression, parody and anonymous speech is worth how much protection against deception? Who should be trusted to certify what is authentic: governments, platforms, a group of technology companies, or no one? And whose mistakes would a society rather live with, fakes that deceive or rules that can be turned against legitimate speech?"
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Get a nonconsensual intimate image removed",
+    "description": "StopNCII.org lets adults fingerprint an intimate image on their own device so participating platforms can block it without the image being uploaded; NCMEC’s Take It Down does the same for minors.",
+    "url": "https://stopncii.org/",
+    "for_position": null,
+    "id": "get-a-nonconsensual-intimate-image-removed"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the International AI Safety Report 2026",
+    "description": "The independent, government-backed scientific review led by Yoshua Bengio, with chapters on AI-generated content, manipulation, fraud and nonconsensual imagery, and on what the evidence does and does not show.",
+    "url": "https://internationalaisafetyreport.org/publication/international-ai-safety-report-2026",
+    "for_position": null,
+    "id": "read-the-international-ai-safety-report"
+   },
+   {
+    "kind": "local",
+    "title": "Look up your state’s election deepfake law",
+    "description": "Public Citizen’s tracker lists which US states regulate deepfakes in elections, what each law requires and which bills are pending, so you can see what applies where you vote.",
+    "url": "https://www.citizen.org/article/tracker-legislation-on-deepfakes-in-elections/",
+    "for_position": "Require labels and liability for synthetic media",
+    "id": "look-up-your-state-s-election"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Check an image for Content Credentials",
+    "description": "A free tool from the Content Authenticity Initiative that reads any provenance record attached to an image or video and shows how it was made and edited.",
+    "url": "https://contentcredentials.org/verify",
+    "for_position": "Build provenance that proves what is real",
+    "id": "check-an-image-for-content-credentials"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Practice verification with RumorGuard",
+    "description": "The News Literacy Project’s free site walks through viral claims and images, including AI fakes, and teaches the checks that work on any of them.",
+    "url": "https://www.rumorguard.org/",
+    "for_position": "Address demand, not the supply of fakes",
+    "id": "practice-verification-with-rumorguard"
+   },
+   {
+    "kind": "policy",
+    "title": "Join EFF’s campaign against NO FAKES",
+    "description": "The Electronic Frontier Foundation’s explainer and action asking Congress to reject the NO FAKES Act in favor of privacy-based protections it argues would not chill speech.",
+    "url": "https://www.eff.org/deeplinks/2026/06/tell-congress-just-say-no-no-fakes",
+    "for_position": "Protect synthetic speech and punish concrete harms",
+    "id": "join-eff-s-campaign-against-no"
+   },
+   {
+    "kind": "policy",
+    "title": "Follow the NO FAKES Act in the Senate",
+    "description": "The bipartisan bill would give people a federal right over digital replicas of their voice and likeness, with a notice-and-removal system; GovTrack shows its text, status and sponsors so you can contact your senators.",
+    "url": "https://www.govtrack.us/congress/bills/119/s4591",
+    "for_position": "Require labels and liability for synthetic media",
+    "id": "follow-the-no-fakes-act-in"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read “We Looked at 78 Election Deepfakes”",
+    "description": "Sayash Kapoor and Arvind Narayanan’s analysis for the Knight First Amendment Institute, arguing that political misinformation is a demand problem, not an AI problem.",
+    "url": "https://knightcolumbia.org/blog/we-looked-at-78-election-deepfakes-political-misinformation-is-not-an-ai-problem",
+    "for_position": "Address demand, not the supply of fakes",
+    "id": "read-we-looked-at-78-election"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Use WITNESS’s guidance on AI and video evidence",
+    "description": "Resources from the human rights video organization on provenance, access to detection, and responding both to deepfakes and to false claims that real footage is fake.",
+    "url": "https://www.gen-ai.witness.org/",
+    "for_position": "Build provenance that proves what is real",
+    "id": "use-witness-s-guidance-on-ai"
+   },
+   {
+    "kind": "donate",
+    "title": "Support FIRE",
+    "description": "The free speech organization litigates and campaigns against laws it considers unconstitutional restrictions on political speech and satire, including election deepfake laws.",
+    "url": "https://www.fire.org/donate",
+    "for_position": "Protect synthetic speech and punish concrete harms",
+    "id": "support-fire"
+   }
+  ]
+ },
+ "icon": "scan-smiley",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: a large rounded video player window seen from the front as the dominant focal mass, its screen showing a simple landscape picture of a mountain peak and a round sun, with a plain triangular play button and a thin progress bar along its bottom; a second, slightly smaller copy of the same picture frame sits offset behind it to the upper left, overlapping, its mountain drawn a little shifted so the two pictures almost but not quite match; a small four-pointed sparkle star sits at the upper right corner of the front window; the window rests on a low rounded mound, outlined and softly filled; one long thin flowing ribbon of dashed signal line runs across the whole width of the frame behind the mound as the connective element, passing through two small dots; a small cloud at the upper right.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #2f8f86, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: people, faces, heads, silhouettes, eyes, masks, theater masks, mouths, hands, text, letters, logos, question marks, exclamation marks, warning triangles, red X marks, check marks, crossed-out images, prohibition signs, magnifying glasses, shields, padlocks, gavels, scales of justice, broken glass, cracks, glitch effects, pixelation, distortion, smoke, fire, puppet strings, newspapers, flags."
 }

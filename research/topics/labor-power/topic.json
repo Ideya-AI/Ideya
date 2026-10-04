@@ -1,8 +1,8 @@
 {
  "slug": "labor-power",
  "title": "Labor Power",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-10-03T03:54:56+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Wages against productivity, unions, minimum wage, and the legal status of platform workers.",
@@ -14,5 +14,763 @@
   "economic-inequality",
   "ai-future-of-work",
   "universal-basic-income"
- ]
+ ],
+ "content": {
+  "overview": {
+   "summary": "How much bargaining power workers have over pay and conditions, and whether unions, wage floors or freer markets best raise pay.",
+   "scope_covered": "Pay against productivity, unions and collective bargaining, the minimum wage, and the legal status of people who work through apps, centered on the United States with comparisons to Europe and other rich countries.",
+   "scope_excluded": "The overall gap between rich and poor, automation and AI, basic income and immigration policy, each on its own page; immigration appears here only where a camp treats it as a labor-market lever.",
+   "why_now": "On September 9, 2026, California’s labor relations board certified the California Gig Workers Union to bargain for all Uber and Lyft drivers in the state, under a 2025 law that lets drivers bargain collectively while remaining independent contractors.",
+   "why_now_source_label": "California Public Employment Relations Board",
+   "why_now_source_url": "https://perb.ca.gov/news/perb-certifies-california-gig-workers-union-as-certified-driver-bargaining-organization-under-tnc-act/"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "Growth in US productivity and typical worker pay, 1979–2025",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% growth",
+     "series": [
+      {
+       "label": "Net productivity",
+       "value": "90.2",
+       "highlight": false
+      },
+      {
+       "label": "Typical worker pay",
+       "value": "33.0",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "By the Economic Policy Institute’s measure, US net productivity rose 90.2 percent from 1979 to 2025 and typical worker pay 33.0 percent; critics say other measures shrink the gap.",
+     "detail": "The Economic Policy Institute, a labor-aligned think tank, compares “net” productivity (output per hour across the whole economy, minus the wear and tear on capital) with the inflation-adjusted hourly pay and benefits of production and nonsupervisory workers, roughly the 80 percent of private-sector workers who are not managers. It reckons that if typical pay had kept pace, the typical worker would earn $16.40 more an hour, and attributes the gap to policy choices that weakened workers’ bargaining power. Critics accept that a gap exists but argue its size depends on method: productivity is deflated by output prices and pay by consumer prices, which have risen faster; average compensation, which includes higher earners, has tracked productivity far more closely than the typical worker’s; and benefits such as health insurance have grown as a share of pay. Anna Stansbury and Lawrence Summers (NBER, 2017) found that over 1973 to 2016 one percentage point faster productivity growth went with 0.7 to 1 point faster growth in median and average compensation, which they read as a link weakened but not broken.",
+     "source_label": "Economic Policy Institute, The Productivity–Pay Gap",
+     "source_url": "https://www.epi.org/productivity-pay-gap/",
+     "source_published": "2025",
+     "source_accessed": "2026-10-02",
+     "id": "growth-in-us-productivity-and-typical"
+    },
+    {
+     "label": "Americans who approve of labor unions",
+     "viz": "radial",
+     "wide": false,
+     "value": "71",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In August 2026, 71 percent of US adults told Gallup they approve of labor unions, tying the 2022 figure as the highest since 1965.",
+     "detail": "Gallup has asked the question since 1936, when 72 percent approved; approval peaked at 73 to 75 percent in the 1950s and fell to a low of 48 percent in 2009. A second question asks whether unions should have more, the same or less influence than they have today: in 2026 a record 47 percent said more, 26 percent the same and 23 percent less, with 73 percent of Democrats, 45 percent of independents and 19 percent of Republicans wanting more. The poll surveyed 1,200 adults with a margin of error of plus or minus 4 percentage points. The gap between high approval and low membership is itself contested: unions and their allies read it as evidence that labor law blocks workers who want to organize, while their opponents note that approving of unions in general is not the same as wanting to join one.",
+     "source_label": "Gallup, “Record-High 47% Want Unions to Have More Influence” (September 1, 2026)",
+     "source_url": "https://news.gallup.com/poll/713936/record-high-unions-influence.aspx",
+     "source_published": "2026",
+     "source_accessed": "2026-10-02",
+     "id": "americans-who-approve-of-labor-unions"
+    },
+    {
+     "label": "US union membership rate",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Public sector, 2025",
+       "value": "32.9",
+       "highlight": false
+      },
+      {
+       "label": "All workers, 1983",
+       "value": "20.1",
+       "highlight": false
+      },
+      {
+       "label": "All workers, 2025",
+       "value": "10.0",
+       "highlight": true
+      },
+      {
+       "label": "Private sector, 2025",
+       "value": "5.9",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "One in ten US wage and salary workers, 14.7 million people, belonged to a union in 2025, about half the 1983 rate; in the private sector the rate was 5.9 percent.",
+     "detail": "The Bureau of Labor Statistics measures membership in its monthly household survey; 1983 is the first year with comparable data, when there were 17.7 million members. The rate halved while the number of members fell more slowly, because nonunion employment grew much faster. The decline is concentrated in the private sector; government workers are more than five times as likely to belong. Rates range by state from below 5 percent to nearly 25 percent. Explanations for the long decline include the shift from manufacturing to services, global competition, employer opposition, state right-to-work laws (26 states by the National Right to Work Foundation’s 2026 count, after Michigan repealed its law in 2024), weak penalties under the National Labor Relations Act and, in the view of free-market economists, workers’ own preference for nonunion jobs.",
+     "source_label": "US Bureau of Labor Statistics, Union Members — 2025 (released February 18, 2026)",
+     "source_url": "https://www.bls.gov/news.release/union2.nr0.htm",
+     "source_published": "2025",
+     "source_accessed": "2026-10-02",
+     "id": "us-union-membership-rate"
+    },
+    {
+     "label": "US adults who earned money through gig apps in the past year",
+     "viz": "radial",
+     "wide": false,
+     "value": "9",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2021, 9 percent of US adults had earned money through an online gig platform in the past year and 16 percent ever; for 3 percent of adults it was their main job.",
+     "detail": "Pew counted work arranged through apps for ride-hailing, food and grocery delivery, household tasks and errands. Gig work was more common among Hispanic and Black adults, younger adults and lower-income adults. Of those who had done gig work in the past year, 31 percent said it was their main job. The breadth of the group explains much of the classification fight: for most people app work is a flexible supplement, which the companies emphasize, while for a smaller core of full-time drivers and couriers it is a livelihood without the protections of employment, which unions emphasize. This is Pew’s most recent survey of its kind, and the figures may have changed since 2021.",
+     "source_label": "Pew Research Center, The State of Gig Work in 2021 (December 8, 2021)",
+     "source_url": "https://www.pewresearch.org/internet/2021/12/08/the-state-of-gig-work-in-2021/",
+     "source_published": "2021",
+     "source_accessed": "2026-10-02",
+     "id": "us-adults-who-earned-money-through"
+    },
+    {
+     "label": "Federal minimum wage in August 2026 dollars",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "$/hour",
+     "series": [
+      {
+       "label": "February 1968",
+       "value": "15.67",
+       "highlight": false
+      },
+      {
+       "label": "July 2009",
+       "value": "11.28",
+       "highlight": false
+      },
+      {
+       "label": "August 2026",
+       "value": "7.25",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The federal minimum has been $7.25 an hour since July 2009; by the official price index it has lost about 36 percent of its value since and is under half its 1968 peak, which other indexes put lower.",
+     "detail": "These values are calculated from the official consumer price index for all urban consumers (34.2 in February 1968, 215.351 in July 2009 and 334.980 in August 2026), when the nominal minimum was $1.60, $7.25 and $7.25, and can be reproduced with the Bureau of Labor Statistics inflation calculator. The Economic Policy Institute, using a research series that revises older inflation down, puts the 1968 peak at about $14.81 in 2025 dollars. The Center for Economic and Policy Research counts the stretch since 2009 as the longest without an increase since the federal minimum was created in 1938. Bills before Congress include the Raise the Wage Act of 2025, sponsored by Senator Bernie Sanders and Representative Bobby Scott, which would reach $17 by 2030, and a bipartisan 2025 bill by Senators Josh Hawley, a Republican, and Peter Welch, a Democrat, which would set $15 and index it to inflation.",
+     "source_label": "US Department of Labor, history of federal minimum wage rates; US Bureau of Labor Statistics, CPI-U",
+     "source_url": "https://www.dol.gov/agencies/whd/minimum-wage/history/chart",
+     "source_published": "2026",
+     "source_accessed": "2026-10-02",
+     "id": "federal-minimum-wage-in-august-2026"
+    },
+    {
+     "label": "US minimum wage estimates showing job losses",
+     "viz": "radial",
+     "wide": false,
+     "value": "79.2",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In Neumark and Shirley’s survey of 70 US studies, 79.2 percent of preferred estimates showed job losses; a 2019 study of 138 state increases by Cengiz and others found low-wage jobs about unchanged.",
+     "detail": "David Neumark, a leading academic critic of minimum wage increases, and Peter Shirley gathered the preferred employment estimates from US studies published since 1992, asking authors to confirm which best represented their conclusions. Of those estimates, 53.8 percent were negative and significant at the 10 percent level and 46.2 percent at the 5 percent level, with the strongest effects for teenagers, young adults and the less educated, and weaker ones in studies of low-wage industries such as restaurants (64.5 percent negative, 32.3 percent significant). The count is a share of estimates, not a measure of how large job losses are, and many negative estimates are small. The rival study, by Doruk Cengiz, Arindrajit Dube, Attila Lindner and Ben Zipperer (Quarterly Journal of Economics, 2019), covered increases from 1979 to 2016 and tracked low-wage jobs for five years after each. The two readings rest on different methods for choosing comparison groups, and the disagreement has not been settled.",
+     "source_label": "David Neumark and Peter Shirley, “Myth or Measurement,” NBER Working Paper 28388",
+     "source_url": "https://www.nber.org/system/files/working_papers/w28388/w28388.pdf",
+     "source_published": "2022",
+     "source_accessed": "2026-10-02",
+     "id": "us-minimum-wage-estimates-showing-job"
+    },
+    {
+     "label": "Workers’ share of US gross domestic income",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "1970",
+       "value": "58.4",
+       "highlight": false
+      },
+      {
+       "label": "1979",
+       "value": "57.2",
+       "highlight": false
+      },
+      {
+       "label": "2000",
+       "value": "56.6",
+       "highlight": false
+      },
+      {
+       "label": "2010",
+       "value": "53.0",
+       "highlight": false
+      },
+      {
+       "label": "2019",
+       "value": "53.3",
+       "highlight": false
+      },
+      {
+       "label": "2025",
+       "value": "50.9",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Wages, salaries and employer-paid benefits made up 50.9 percent of US gross domestic income in 2025, down from 57.2 percent in 1979 and 58.4 percent in 1970.",
+     "detail": "The labor share is the slice of everything the economy earns that goes to employees as pay and benefits; the rest goes to profits, interest, rent, the income of the self-employed, depreciation and taxes on production. In this Bureau of Economic Analysis series the 2025 figure is the lowest since 1935. A separate Bureau of Labor Statistics index for the nonfarm business sector, which counts part of self-employment income as labor income, reached 93.4 in the second quarter of 2026 (2017 = 100), its lowest reading since the series began in 1947; that figure is preliminary and routinely revised. Economists agree the share has fallen in the United States and many other rich countries since around 2000 but disagree about why: weaker unions and bargaining power, the rise of a few highly profitable “superstar” firms, automation and cheaper capital goods, globalization, and measurement issues such as how housing and depreciation are counted all have proponents.",
+     "source_label": "US Bureau of Economic Analysis, via FRED, series A4002E1A156NBEA",
+     "source_url": "https://fred.stlouisfed.org/series/A4002E1A156NBEA",
+     "source_published": "2025",
+     "source_accessed": "2026-10-02",
+     "id": "workers-share-of-us-national-income"
+    },
+    {
+     "label": "States with a minimum wage above the federal $7.25",
+     "viz": "range",
+     "wide": false,
+     "value": "30",
+     "unit": "states",
+     "series": [],
+     "range_min": "0 states",
+     "range_max": "50 states",
+     "note": "Thirty states and the District of Columbia had a minimum wage above $7.25 in July 2026; in the other 20 states the federal $7.25 applies.",
+     "detail": "The Labor Department groups jurisdictions into those above the federal minimum (30 states plus the District of Columbia, Guam, Puerto Rico and the US Virgin Islands), those equal to it (13 states), and those with no state minimum or one below $7.25, where the federal floor applies to employers covered by federal law (7 states). Many state minimums rise automatically with inflation, and dozens of cities and counties set higher local rates; the District of Columbia’s $18.40 and Washington State’s $17.13 were among the highest in 2026, by the department’s state table. Because so much wage-setting has moved to the states, the federal minimum now binds mostly in the South and parts of the Mountain West, where wages and living costs are lower. Supporters of a higher federal floor see the workers left behind there; opponents see the places where a national $15 or $17 would bite hardest.",
+     "source_label": "US Department of Labor, Wage and Hour Division, Consolidated Minimum Wage Table",
+     "source_url": "https://www.dol.gov/agencies/whd/mw-consolidated",
+     "source_published": "2026",
+     "source_accessed": "2026-10-02",
+     "id": "states-with-a-minimum-wage-above"
+    },
+    {
+     "label": "CBO estimate of a $15 federal minimum wage",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "million",
+     "series": [
+      {
+       "label": "Workers with raises",
+       "value": "17",
+       "highlight": false
+      },
+      {
+       "label": "Jobs lost, average",
+       "value": "1.4",
+       "highlight": true
+      },
+      {
+       "label": "Jobs lost, median",
+       "value": "1.0",
+       "highlight": false
+      },
+      {
+       "label": "People out of poverty",
+       "value": "0.9",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The Congressional Budget Office estimated in 2021 that a $15 federal minimum by 2025 would raise pay for 17 million workers, cost 1.4 million jobs on average and lift 0.9 million out of poverty.",
+     "detail": "The nonpartisan budget office analyzed a bill that would have raised the federal minimum in steps to $15 by June 2025 and then indexed it to median wages. Its average job-loss estimate, 0.9 percent of employment, is pulled up by the possibility of large losses; its median estimate is 1.0 million, and it put a one-in-three chance on losses between about zero and 1.0 million and a one-in-three chance on losses between 1.0 million and 2.7 million. Many of a further 10 million workers earning slightly above $15 would also have seen raises, and affected workers’ pay would have risen by a net $333 billion over 2021 to 2031. Supporters of a $15 floor cite the raises and the fall in poverty; opponents cite the lost jobs. The bill was never enacted, and inflation since 2021 means $15 is now a smaller real increase than the office modeled.",
+     "source_label": "Congressional Budget Office, The Budgetary Effects of the Raise the Wage Act of 2021",
+     "source_url": "https://www.cbo.gov/publication/56975",
+     "source_published": "2021",
+     "source_accessed": "2026-10-02",
+     "id": "cbo-estimate-of-a-15-federal"
+    },
+    {
+     "label": "US workers who are independent contractors in their main job",
+     "viz": "radial",
+     "wide": false,
+     "value": "7.4",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In July 2023, 11.9 million Americans, 7.4 percent of the employed, worked as independent contractors in their main job, and 80.3 percent of them preferred that to a traditional job.",
+     "detail": "Independent contractors in this survey include consultants, freelancers and the self-employed in many trades, not only app-based workers, and app work, often a second job, is undercounted by questions about a main job. The Bureau of Labor Statistics asked new questions about app-based work in the same survey but had not published those results as of October 2026. Only 8.3 percent of independent contractors said they would prefer to be employees. Platform companies and their allies cite these preferences as evidence that workers value independence; labor advocates respond that the survey covers a broad, mostly higher-earning group and says little about app drivers and couriers. The same survey found 6.9 million contingent workers, people who do not expect their jobs to last, or 4.3 percent of employment.",
+     "source_label": "US Bureau of Labor Statistics, Contingent and Alternative Employment Arrangements, July 2023",
+     "source_url": "https://www.bls.gov/news.release/conemp.nr0.htm",
+     "source_published": "2023",
+     "source_accessed": "2026-10-02",
+     "id": "us-workers-who-are-independent-contractors"
+    },
+    {
+     "label": "Union membership across rich countries",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Iceland",
+       "value": "90.6",
+       "highlight": false
+      },
+      {
+       "label": "Sweden",
+       "value": "65.9",
+       "highlight": false
+      },
+      {
+       "label": "Denmark",
+       "value": "60.4",
+       "highlight": false
+      },
+      {
+       "label": "Canada",
+       "value": "28.3",
+       "highlight": false
+      },
+      {
+       "label": "United Kingdom",
+       "value": "22.0",
+       "highlight": false
+      },
+      {
+       "label": "Japan",
+       "value": "16.2",
+       "highlight": false
+      },
+      {
+       "label": "OECD average",
+       "value": "15.2",
+       "highlight": false
+      },
+      {
+       "label": "Germany",
+       "value": "14.1",
+       "highlight": false
+      },
+      {
+       "label": "Australia",
+       "value": "12.2",
+       "highlight": false
+      },
+      {
+       "label": "United States",
+       "value": "9.9",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "About one in ten US employees belonged to a union in 2024, against an OECD average of about 15 percent and more than 60 percent in Sweden and Denmark; Iceland’s figure is from 2023.",
+     "detail": "The OECD maintains the standard cross-country database on unions, first built by Jelle Visser at the University of Amsterdam. Its December 2025 brief reports that average union density across OECD countries halved from 30 percent in 1985 to 15 percent in 2023 and 2024, with Iceland and Belgium among the few countries that bucked the trend. Very high Nordic rates partly reflect the “Ghent system,” in which unions administer unemployment insurance, giving workers a direct reason to join. The OECD figure for the United States differs slightly from the Bureau of Labor Statistics membership rate because of differences in definitions and timing.",
+     "source_label": "OECD/AIAS ICTWSS database, Trade union density (OECD Data Explorer)",
+     "source_url": "https://data-explorer.oecd.org/vis?df[ds]=dsDisseminateFinalDMZ&df[id]=DSD_TUD_CBC%40DF_TUD&df[ag]=OECD.ELS.SAE",
+     "source_published": "2024",
+     "source_accessed": "2026-10-02",
+     "id": "union-membership-across-rich-countries"
+    },
+    {
+     "label": "Wait for a first union contract in the United States",
+     "viz": "bar",
+     "wide": false,
+     "value": "465",
+     "unit": "days",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In Bloomberg Law’s sample of 391 first contracts signed since 2005, newly unionized workers waited a mean of 465 days, and a median of 374, to ratify a first contract.",
+     "detail": "US law requires employers to bargain “in good faith” with a newly certified union but not to reach an agreement; critics of the law call the penalties for stalling weak, and many new unions never win a contract at all. Bloomberg Law found that 53 percent of the first contracts it examined took a year or longer. Because the sample counts only contracts that were eventually signed, it understates the delay for units that never reach one. The delay is the target of the Faster Labor Contracts Act, a first-contract bill now before Congress, whose supporters cite a figure of 458 days from the same Bloomberg Law series. Opponents of the bill, including the Club for Growth, argue that first contracts take time because they are complex and that terms imposed through federal arbitration would bind workers to contracts they never voted on.",
+     "source_label": "Bloomberg Law, “Analysis: Now It Takes 465 Days to Sign a Union’s First Contract” (August 2, 2022)",
+     "source_url": "https://news.bloomberglaw.com/bloomberg-law-analysis/analysis-now-it-takes-465-days-to-sign-a-unions-first-contract",
+     "source_published": "2022",
+     "source_accessed": "2026-10-02",
+     "id": "wait-for-a-first-union-contract"
+    },
+    {
+     "label": "Workers covered by collective agreements",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "France",
+       "value": "98.0",
+       "highlight": false
+      },
+      {
+       "label": "Sweden",
+       "value": "88.0",
+       "highlight": false
+      },
+      {
+       "label": "Germany",
+       "value": "49.0",
+       "highlight": false
+      },
+      {
+       "label": "United Kingdom",
+       "value": "40.2",
+       "highlight": false
+      },
+      {
+       "label": "OECD average",
+       "value": "33.6",
+       "highlight": false
+      },
+      {
+       "label": "Canada",
+       "value": "30.2",
+       "highlight": false
+      },
+      {
+       "label": "Japan",
+       "value": "15.2",
+       "highlight": false
+      },
+      {
+       "label": "United States",
+       "value": "11.1",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "About 11 percent of eligible US employees had their pay set by a collective agreement in 2024, against 98 percent in France and an OECD average of about a third; Japan’s figure is from 2023.",
+     "detail": "Coverage, not membership, determines how many workers’ pay is actually bargained. In much of continental Europe, agreements negotiated between unions and employer associations for a whole sector apply to every worker in it, and governments often extend them by decree, so in OECD data France combines union membership of about 10 percent with near-universal coverage. In the United States bargaining happens firm by firm or workplace by workplace, so coverage barely exceeds membership. The OECD’s December 2025 brief reports that average coverage fell from 47 percent in 1985 to 33.6 percent in 2023 and 2024, and that only 10 of the 27 EU countries exceed the 80 percent threshold that, under the EU’s 2022 minimum wage directive, obliges governments to adopt an action plan to promote bargaining. This adjusted measure excludes employees with no legal right to bargain, and the OECD notes that high coverage can coexist with weak bargaining.",
+     "source_label": "OECD/AIAS ICTWSS database, Collective bargaining coverage (OECD Data Explorer)",
+     "source_url": "https://data-explorer.oecd.org/vis?df[ds]=dsDisseminateFinalDMZ&df[id]=DSD_TUD_CBC%40DF_CBC&df[ag]=OECD.ELS.SAE",
+     "source_published": "2024",
+     "source_accessed": "2026-10-02",
+     "id": "workers-covered-by-collective-agreements"
+    },
+    {
+     "label": "People working through digital labor platforms in the EU",
+     "viz": "bar",
+     "wide": false,
+     "value": "28",
+     "unit": "million",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The European Commission estimated in 2021 that more than 28 million people in the EU worked through digital labor platforms, 5.5 million of whom might be wrongly classed as self-employed.",
+     "detail": "The estimate covers anyone who earns money through a platform, including occasional and part-time work such as ride-hailing, food delivery, home services and online freelance tasks; most do it on the side. The Commission projected 43 million by 2025, a projection rather than a measurement. It also reported that over 90 percent of platforms classified their workers as self-employed, that about 55 percent of people working through platforms earned less than their country’s net hourly minimum wage, and that platform workers spent on average 8.9 hours a week on unpaid tasks such as waiting for assignments against 12.6 hours of paid work; platforms dispute those earnings figures, which count waiting time differently. The figures underpinned the Platform Work Directive (Directive (EU) 2024/2831), which presumes an employment relationship when facts indicate control and direction by a platform, puts the burden on the platform to prove otherwise, and regulates algorithmic management; member states must write it into national law by December 2, 2026.",
+     "source_label": "European Commission, Questions and Answers: Improving working conditions in platform work (December 9, 2021)",
+     "source_url": "https://ec.europa.eu/commission/presscorner/api/files/document/print/en/qanda_21_6606",
+     "source_published": "2021",
+     "source_accessed": "2026-10-02",
+     "id": "people-working-through-digital-labor-platforms"
+    },
+    {
+     "label": "Minimum wage as a share of the median full-time wage",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% of median",
+     "series": [
+      {
+       "label": "France",
+       "value": "62.5",
+       "highlight": false
+      },
+      {
+       "label": "United Kingdom",
+       "value": "61.9",
+       "highlight": false
+      },
+      {
+       "label": "Australia",
+       "value": "54.5",
+       "highlight": false
+      },
+      {
+       "label": "Germany",
+       "value": "49.6",
+       "highlight": false
+      },
+      {
+       "label": "Canada",
+       "value": "49.2",
+       "highlight": false
+      },
+      {
+       "label": "Japan",
+       "value": "46.4",
+       "highlight": false
+      },
+      {
+       "label": "United States",
+       "value": "24.1",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The US federal minimum equaled about 24 percent of the median full-time wage in 2025, the lowest ratio of the countries shown; in France and the United Kingdom it was about 62 percent.",
+     "detail": "Economists call this ratio the minimum wage’s “bite”: the higher it is, the more workers the floor directly affects and the greater the risk of job losses. The US figure uses the federal $7.25, so it understates the floor most American workers face, since most live in states with higher minimums. The United Kingdom offers the largest test: its independent Low Pay Commission was given a target of keeping the National Living Wage at two-thirds of median hourly pay, and the UK government’s rate for workers aged 21 and over rose to £12.71 on April 1, 2026. A 2019 review of the international evidence for HM Treasury by the economist Arindrajit Dube concluded that recent research points to “a very muted effect of minimum wages on employment,” that US state evidence suggests small employment effects up to around 59 percent of the median wage, and that the UK should explore a floor of 60 percent to two-thirds of median hourly earnings; economists who find larger job losses dispute that reading.",
+     "source_label": "OECD, Minimum relative to average wages of full-time workers (median), OECD Data Explorer",
+     "source_url": "https://data-explorer.oecd.org/vis?df[ds]=dsDisseminateFinalDMZ&df[id]=DSD_EARNINGS%40MIN2AVE&df[ag]=OECD.ELS.SAE",
+     "source_published": "2025",
+     "source_accessed": "2026-10-02",
+     "id": "minimum-wage-as-a-share-of"
+    },
+    {
+     "label": "US hourly workers paid at or below the federal minimum",
+     "viz": "bar",
+     "wide": false,
+     "value": "1.0",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2024, 843,000 US hourly workers, 1.0 percent of the total, were paid the federal minimum of $7.25 or less, against 13.4 percent of hourly workers in 1979.",
+     "detail": "Of the 843,000, about 82,000 earned exactly $7.25 and about 760,000 earned less, which is legal for some groups, chiefly tipped workers, whose employers may pay a cash wage as low as $2.13 an hour if tips bring them up to the minimum. The share is small because state minimums and market wages have moved far above the federal floor. Opponents of a higher federal minimum cite the figure to argue that the federal rate matters little and that raising it would mainly affect low-cost regions; supporters respond that it counts only workers at the old floor, not the far larger number earning just above it who would gain from a higher one. The Bureau of Labor Statistics had not published the 2025 edition as of October 2026.",
+     "source_label": "US Bureau of Labor Statistics, Characteristics of minimum wage workers, 2024 (June 2025)",
+     "source_url": "https://www.bls.gov/opub/reports/minimum-wage/2024/home.htm",
+     "source_published": "2024",
+     "source_accessed": "2026-10-02",
+     "id": "us-hourly-workers-paid-at-or"
+    },
+    {
+     "label": "Median weekly earnings of union and nonunion workers",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "$/week",
+     "series": [
+      {
+       "label": "Union members",
+       "value": "1,404",
+       "highlight": true
+      },
+      {
+       "label": "Nonunion workers",
+       "value": "1,174",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Full-time union members had median weekly earnings of $1,404 in 2025, against $1,174 for nonunion workers; studies that compare similar workers find a smaller premium.",
+     "detail": "The Bureau of Labor Statistics notes that the raw gap reflects more than membership: union and nonunion workers differ in occupation, industry, firm size, age and region, all of which affect pay. Adjusting for such differences shrinks the premium. In a VoxEU column, David Blanchflower and Alex Bryson report that the adjusted US union premium in hourly wages has varied between 10 and 20 percent for much of the past 50 years, with larger premiums for lower-wage and less-educated workers, and that the advantage is larger still in benefits such as health insurance and pensions.",
+     "source_label": "US Bureau of Labor Statistics, Union Members — 2025 (February 18, 2026)",
+     "source_url": "https://www.bls.gov/news.release/union2.nr0.htm",
+     "source_published": "2025",
+     "source_accessed": "2026-10-02",
+     "id": "median-weekly-earnings-of-union-and"
+    },
+    {
+     "label": "Major US strikes and lockouts begun in 2025",
+     "viz": "bar",
+     "wide": false,
+     "value": "30",
+     "unit": "stoppages",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Thirty strikes or lockouts involving 1,000 or more workers began in the United States in 2025, involving 306,800 workers, against a record 470 in 1952 and a low of 5 in 2009.",
+     "detail": "The Bureau of Labor Statistics counts only stoppages involving at least 1,000 workers and lasting at least one full shift, so it misses the many smaller strikes that other trackers count; the average from 2006 to 2025 was 17.8 a year. In 2025 service industries accounted for 98 percent of idled workers, led by education and health services (196,500 workers) and public administration (82,300), while manufacturing accounted for 6,200. To those who favor stronger unions, the decline of the large strike since the 1970s is one of the clearest measures of lost bargaining power; others attribute it to the shift from factories to services and to fewer workers covered by contracts, and note that the count has risen from its 2009 low.",
+     "source_label": "US Bureau of Labor Statistics, Major Work Stoppages in 2025 (February 20, 2026)",
+     "source_url": "https://www.bls.gov/news.release/wkstp.nr0.htm",
+     "source_published": "2025",
+     "source_accessed": "2026-10-02",
+     "id": "major-us-strikes-and-lockouts-begun"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Has weak bargaining power held typical pay below what workers produce?",
+    "kind": "empirical",
+    "why": "Almost everyone agrees typical US pay has grown more slowly than output per hour since the late 1970s and that labor’s share of income has fallen. The fight is over how much of the gap is real and what caused it.",
+    "detail": "One side points to timing. For three decades after the Second World War pay and productivity rose together; after 1979 they split, just as private-sector unions collapsed, the minimum wage eroded, large strikes faded and unemployment ran high. Research on monopsony, the power of employers in labor markets with few competing buyers of labor, finds that many workers have few realistic alternatives and that employers mark wages down well below what workers add. When labor markets tightened after the pandemic and pay at the bottom jumped, this side read it as proof that power, not productivity, had been holding wages down.\n\nThe other side says much of the measured gap is an artifact of method: output and pay are adjusted with different price indexes, benefits take a growing share of compensation, and rising inequality among workers means the median grew more slowly than the average. On this reading the link between productivity and pay is weakened but not broken, and the fall in labor’s share, which appears across countries with very different union laws, points to technology, a few very productive firms and global competition rather than labor law. Settling it turns on which workers are counted, how pay and output are deflated, and whether falling union density and rising employer concentration can be shown to cause wage losses rather than merely coincide with them.",
+    "lean_label_a": "Power held pay down",
+    "lean_label_b": "Pay tracks output",
+    "id": "has-weak-bargaining-power-held-typical"
+   },
+   {
+    "text": "How high can a minimum wage go before it costs low-wage jobs?",
+    "kind": "empirical",
+    "why": "Studies disagree about the level at which a wage floor starts to cost jobs, for whom and over what time, because they use different comparison groups and horizons, and recent minimums are higher than any studied before.",
+    "detail": "Those who find little job loss trace a modern literature back to David Card and Alan Krueger’s 1994 study of fast-food restaurants, which found that a moderate increase raised pay without cutting jobs. When employers have wage-setting power, they argue, a higher floor can even raise employment by drawing more people into work and reducing costly turnover. They point to Britain’s high national floor and to cities and states such as Seattle and California, including California’s $20 minimum for fast-food workers, as places where low-wage employment did not collapse as opponents warned.\n\nThose who find real job loss say the clearest harm falls on teenagers, young adults and less-educated workers, the people a minimum wage is meant to help. Losses can arrive as fewer hours, slower hiring, less training, automated entry-level tasks and firms that never open rather than as layoffs, which many studies are not designed to catch. Evidence is thinnest for floors above about 60 percent of the local median wage.",
+    "lean_label_a": "Little job loss",
+    "lean_label_b": "Real job loss",
+    "id": "how-high-can-a-minimum-wage"
+   },
+   {
+    "text": "Should US labor law make it easier for workers to form unions and win contracts?",
+    "kind": "value",
+    "why": "Proposals from card-check recognition and bans on mandatory anti-union meetings to arbitrated first contracts and repeal of right-to-work laws each weigh a majority’s collective power against each worker’s and employer’s choice.",
+    "detail": "Supporters of easier organizing describe an uneven contest. Employers were long allowed to require attendance at anti-union meetings, a practice the National Labor Relations Board banned only in 2024 and that its new majority may restore; they can stall bargaining for more than a year after a union wins, and fire organizers knowing the usual penalty is back pay years later. Right-to-work laws let workers receive the wages and grievance protection a union must provide to everyone in the unit without paying for them, which starves unions of resources.\n\nOpponents hold that the secret-ballot election is the fairest test of whether workers want a union and that card-check campaigns expose workers to pressure from organizers and coworkers. Requiring workers to pay a union as a condition of employment, they argue, forces them to fund an organization and often a political agenda they may oppose, and first-contract arbitration would let a government-appointed arbitrator impose wages and work rules that neither the employer nor the workers voted for. On this view unions shrank because the economy changed and many workers saw little value in them, and the law should not be rewritten to reverse that by compulsion.",
+    "lean_label_a": "Easier organizing",
+    "lean_label_b": "Individual choice",
+    "id": "should-us-labor-law-make-it"
+   },
+   {
+    "text": "Should drivers and couriers who work through apps be legally treated as employees?",
+    "kind": "value",
+    "why": "App workers fit neither box cleanly: the app sets the price, assigns the work and can cut them off, yet they choose when and whether to work, often for several apps at once. Whether a new middle category would help is also disputed.",
+    "detail": "Employee status brings the minimum wage, overtime, unemployment insurance, workers’ compensation and the federal right to unionize; platforms say its costs would end the flexibility many workers value. Those who want employee status argue that platforms control the essential terms of the work: they set fares, decide who gets which job, monitor performance through algorithms and can deactivate a worker without explanation. Calling these workers contractors, they say, shifts the costs of vehicles, insurance, idle time and injury onto them, and employment does not require rigid schedules, since employers can and do offer flexible shifts. The EU’s platform work law and California’s ABC test both start from a presumption of employment when a platform controls the work.\n\nThose who want to keep app workers independent note that most do the work part time, around other jobs, school or family, and value logging on and off at will. They warn that reclassification would bring fixed shifts and limits on who can work and when, shrinking the opportunities it was meant to improve, and they argue that protections such as portable benefits and minimum earnings standards can be attached to independent work directly.",
+    "lean_label_a": "Treat as employees",
+    "lean_label_b": "Keep as contractors",
+    "id": "should-drivers-and-couriers-who-work"
+   },
+   {
+    "text": "Who should set the minimum wage: Congress for the whole country, or states, cities and industries?",
+    "kind": "value",
+    "why": "Living costs and typical wages vary widely across the United States, so a federal floor that is modest in Boston is high in rural Alabama. The dispute is whether a national floor is a basic guarantee or should defer to local conditions.",
+    "detail": "Supporters of one national floor see it as a statement that no full-time worker anywhere should earn poverty pay. The workers left behind by state-by-state policy, they argue, are concentrated in Southern states whose legislatures have never set their own floor, and leaving the floor to states lets employers play states against each other. Many prices are national, and a floor indexed to median wages, as the Raise the Wage Act proposes, would keep it from eroding again while being set below the level where evidence suggests harm.\n\nSupporters of local and sector floors answer that most states have already set their own minimums, many above $15 and indexed to inflation, which shows that local democracy works. A national figure high enough to matter in expensive cities would bite hardest in low-wage regions, where they see the evidence of job loss as strongest, and where voters have chosen not to raise the floor, federal law should respect that. Where floors above the general minimum are needed, they favor industry wage boards, such as California’s fast-food council, or bargaining, which can set pay with better knowledge of each industry.",
+    "lean_label_a": "National floor",
+    "lean_label_b": "Local floors",
+    "id": "who-should-set-the-minimum-wage"
+   },
+   {
+    "text": "Do unions on balance make the economy stronger or weaker?",
+    "kind": "empirical",
+    "why": "Few dispute that unions raise members’ pay and narrow wage gaps. The question is whether those gains come from higher productivity or from profits, investment, consumers and nonunion workers, and whether union firms grow more slowly.",
+    "detail": "Those who see unions strengthening the economy say they give workers a voice that reduces turnover, improves training and safety, and surfaces problems management would miss, effects that can raise productivity. Unions compressed wage inequality and built the broad middle class of the postwar decades, and countries with strong bargaining systems, such as the Nordic countries, combine high productivity with low inequality and high employment. Higher wages sustain consumer demand, and unions act as a civic institution and a check on corporate political power.\n\nThose who see unions weakening it say the wage premium is partly a cost that firms recover by investing less, hiring fewer people or raising prices, and that unionized US firms have historically grown more slowly and been more likely to fail. Rigid work rules and seniority systems can block new technology and penalize the best workers; the decline of the Big Three automakers and the steel industry, on this view, shows what happens when contracts outrun competitiveness. Public-sector unions bargain with officials they help elect, raising the cost of government, and Nordic success rests on a consensual model and generous welfare states rather than adversarial American-style unions. The evidence is mixed across countries, industries and decades.",
+    "lean_label_a": "Stronger economy",
+    "lean_label_b": "Weaker economy",
+    "id": "do-unions-on-balance-make-the"
+   },
+   {
+    "text": "Is a tight labor market a better route to higher pay than unions and wage floors?",
+    "kind": "empirical",
+    "why": "Both sides want higher pay at the bottom. One stresses low unemployment and labor supply, the other rules that give workers bargaining power in any economy, and each reads the low-wage pay surge of 2021 to 2023 as its evidence.",
+    "detail": "Those who favor tight markets say that when employers compete for scarce workers, pay rises at the bottom without any new law. After the pandemic the lowest-paid workers’ wages grew fastest, reversing about 38 percent of the rise in the gap between high and low wages since 1980, as David Autor, Arindrajit Dube and Annie McGrew found, while workers quit for better-paying jobs. Full-employment policy at the Federal Reserve and, for some conservatives, tighter enforcement against illegal hiring and less low-skill immigration deliver raises without the risk of pricing workers out of jobs.\n\nThose who favor stronger institutions reply that tight markets come and go: the post-pandemic compression followed four decades of stagnation and depended on an unusually hot labor market that has since cooled. Unions and indexed minimum wages lock in gains so workers do not lose them in the next downturn, and bargaining covers what shortages do not, including safety, scheduling, pensions and protection from arbitrary firing. They also argue that restricting immigration to tighten labor markets harms immigrant workers, and that research finds small effects of immigration on native wages.",
+    "lean_label_a": "Tight markets",
+    "lean_label_b": "Strong institutions",
+    "id": "is-a-tight-labor-market-a"
+   },
+   {
+    "text": "Should worker voice come mainly through independent unions or through works councils and board seats?",
+    "kind": "value",
+    "why": "US law bans employer-created worker committees to prevent company-controlled unions, so the main route to collective voice is an adversarial union election. Whether to open a cooperative path divides people who agree workers need more say.",
+    "detail": "Germany and other European countries combine unions with elected works councils and worker seats on company boards. Defenders of the independent-union route say only an organization that workers control and finance, and that can strike, has real bargaining power. Works councils without strong unions behind them become talking shops that management can ignore or capture, and the US ban exists because employers in the 1920s and 1930s used company unions to block real organizing. German councils work, they argue, because sectoral unions set wages and the law backs the councils with real rights; legalizing cooperative committees in the United States without strengthening unions would hand employers a tool to preempt organizing.\n\nAdvocates of councils and board seats answer that most American workers say they want more say at work, but many do not want an adversarial union or its politics. Councils and board representation give voice on scheduling, safety, technology and training without the all-or-nothing fight of a union election, and evidence from Europe suggests they raise trust and job satisfaction. They argue that this route would reach the many workers the union model no longer serves, and that unions themselves would gain from a less hostile relationship with employers.",
+    "lean_label_a": "Independent unions",
+    "lean_label_b": "Works councils",
+    "id": "should-worker-voice-come-mainly-through"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Strengthen unions and raise the wage floor",
+    "color_key": "green",
+    "steelman": "Pay stopped tracking productivity because workers lost the power to claim their share. Restore it: real organizing rights, a living minimum wage that never erodes, and employee status for app workers.",
+    "detail": "Workers did not stop producing around 1980; employers gained the upper hand through hostile labor law, weak penalties, the spread of right-to-work laws, globalization and a federal minimum Congress has left frozen since 2009. Workers should be able to form a union when a majority want one, without captive-audience meetings or years of stalling before a first contract. Employers who fire organizers should face real penalties, and unions should be able to collect fees from everyone they are legally required to represent, as the PRO Act would allow. And a driver whose fares, assignments and deactivation are set by an app is an employee, not an independent business. Unions built the American middle class, and their near-record popularity shows that Americans know it.\n\nWe are told that stronger unions and higher floors price workers out of jobs. The best modern research finds small or no employment effects from moderate increases, the dire forecasts made before past increases did not come true, and even the Congressional Budget Office’s median estimate for a $15 minimum was below its headline figure. Countries with high bargaining coverage, such as Sweden and Denmark, are among the richest and most productive in the world, and where workers lack power the alternative to a union is not a free market between equals but employers setting pay below what workers add. Mainstream unions and Democrats center on the PRO Act and a higher federal minimum; a more ambitious wing wants sectoral bargaining or wage boards that set pay for whole industries, as most of continental Europe does. On app work, the Service Employees International Union accepted California’s 2025 law, which lets drivers bargain while staying contractors, as a step toward the same goal.",
+    "proponents": "AFL-CIO; Service Employees International Union; American Federation of State, County and Municipal Employees; Economic Policy Institute; Bernie Sanders; Bobby Scott; European Trade Union Confederation",
+    "id": "strengthen-unions-and-raise-the-wage"
+   },
+   {
+    "name": "Leave pay and work arrangements to the market",
+    "color_key": "blue",
+    "steelman": "Wages rise when workers grow more productive and employers compete for them. Mandates and compulsory unionism destroy entry-level jobs and take choices away from individual workers.",
+    "detail": "Mandates that push pay above what a worker’s output can support do not create value. They cost the least experienced and least skilled the first rung of the ladder, where they would learn the skills that lead to higher pay, and the losses often arrive as fewer hours, slower hiring and businesses that never open rather than as layoffs. Card check and government-imposed contracts take decisions away from workers, many of whom do not want a union, and hand them to organizations with their own political agendas. Flexible app work is an innovation that millions choose because it lets them earn on their own schedule, and the declining share of workers in unions reflects choices workers made in a changing economy, not a conspiracy by employers. Voters often agree: Oklahoma rejected a $15 minimum wage by about 55 to 45 percent in June 2026, and Californians rejected an $18 minimum in 2024.\n\nThe strongest objection is that employers with market power hold wages down. The remedy for that is more competition, not more regulation: remove the occupational licensing barriers, noncompete clauses and zoning rules that keep workers from moving to high-wage cities, and keep labor markets tight, as the employer bidding of 2021 to 2023 showed. Where low earnings are the problem, the earned income tax credit raises incomes without the job losses of a mandate and spreads the cost across all taxpayers rather than the small businesses that hire entry-level workers, a tool that economists such as Michael Strain of the American Enterprise Institute favor. Libertarians at the Cato Institute oppose minimum wage laws in principle, while business groups such as the US Chamber of Commerce accept a floor but oppose large federal increases and new union rules.",
+    "proponents": "US Chamber of Commerce; Club for Growth; Cato Institute; National Right to Work Committee; Employment Policies Institute; Institute for the American Worker; Coalition for Workforce Innovation",
+    "id": "leave-pay-and-work-arrangements-to"
+   },
+   {
+    "name": "Rebuild worker power with cooperation and tight job markets",
+    "color_key": "amber",
+    "steelman": "A healthy society needs a voice at work. Fix the labor laws that plainly fail, build cooperative forms of representation, and make employers compete for workers by tightening the labor market.",
+    "detail": "Conservatives were wrong to treat organized labor as an enemy and the market wage as sacred. Free trade, offshoring, mass low-skill immigration and a financialized model of the corporation shifted bargaining power from workers to capital, and it should shift back. Start with what clearly fails: employers who stall first contracts for more than a year. The Faster Labor Contracts Act would require bargaining to begin within 10 days of a union win and send stalled talks to mediation and binding arbitration, and it passed the House 230 to 193 in June 2026 with votes from both parties. Then build less adversarial forms of representation that more workers want: works councils, elected worker seats on corporate boards and labor organizations that deliver training and benefits rather than partisan politics. And use tariffs that bring production home and strict enforcement against illegal hiring so that employers must compete for workers. The PRO Act is the wrong vehicle, because it would override state right-to-work laws and the secret ballot and bind unions even more tightly to one party.\n\nCritics on the left say our agenda contradicts the Republican record, including the new Republican majority on the labor board; critics on the right say we have adopted Big Labor’s agenda. We are building a new coalition, not ratifying either party’s record, and the Teamsters chose to work with Republicans on first contracts. Within the camp, Senator Josh Hawley and the Teamsters stress faster contracts and limits on captive-audience meetings, while American Compass stresses cooperative alternatives to the union model and is wary of sectoral bargaining. Many of our union allies, who organize immigrant workers, do not share our views on immigration and trade.",
+    "proponents": "American Compass; Oren Cass; Josh Hawley; Bernie Moreno; Roger Marshall; International Brotherhood of Teamsters; Sean O’Brien",
+    "id": "rebuild-worker-power-with-cooperation-and"
+   },
+   {
+    "name": "Give app workers a middle status with portable benefits",
+    "color_key": "rust",
+    "steelman": "Employee or contractor is a false choice for app work. Keep the freedom to log on at will, and add earnings floors and benefits that follow each worker from app to app.",
+    "detail": "Employee status would end the defining feature of this work, the freedom to log on whenever and for as long as one likes, often across several apps at once, which is what most of these workers value most. Pure contractor status leaves them without a safety net. The answer is a third path written for how the work actually happens: earnings floors tied to time spent on a job, benefits funds that platforms pay into in proportion to each worker’s earnings and that follow the worker across apps, occupational accident insurance and, in some versions, the right to bargain as a sector. California voters endorsed this approach with Proposition 22 in 2020, and Britain’s intermediate “worker” status, which its Supreme Court applied to Uber drivers in 2021, shows that a third category can work in law.\n\nThe strongest objection is that a middle status lets platforms escape the costs of employment while keeping control, and that floors paid only during trips leave waiting time unpaid. Employee status would not deliver what its advocates promise: platforms would schedule shifts, cap the number of workers and cut those who earn least, as happened when Deliveroo left Spain after its 2021 rider law. Benefits tied to earnings can be designed to cover waiting time, and the new driver bargaining laws in California and Massachusetts let drivers negotiate exactly these terms. The choice is between workable protections now and litigation that has dragged on for a decade. Platforms favor mandated floors in some states but voluntary contributions and a national classification test at the federal level; the economists Seth Harris and Alan Krueger proposed an “independent worker” who could organize and bargain but would have no hourly minimum.",
+    "proponents": "Flex; Uber; Dara Khosrowshahi; Seth Harris; Alan Krueger",
+    "id": "give-app-workers-a-middle-status"
+   }
+  ],
+  "crux": {
+   "lead": "When workers bargain over pay, who holds the power, and is the fix collective strength or more competition?",
+   "lead_highlight": "who holds the power",
+   "subtitle": "Nearly everyone wants low-wage workers to earn more. The split is over whether employers routinely hold pay below what workers add, and whether the answer is unions and legal floors or more competition and each worker’s freedom to choose.",
+   "empirical": "Some of it can be measured: how much power employers have to set wages in typical labor markets, judged by how readily workers quit for better jobs; how large job losses from a minimum wage become as it rises relative to local pay; how much of the gap between output and typical pay survives consistent measurement; and what happens to earnings and flexibility when app workers gain employee status, earnings floors or bargaining rights.",
+   "values": "No data settles whether joining a union, or the protections that come with a job, should be decided by a majority of workers or by each one alone; how much risk of lost jobs for the least experienced is worth higher pay for those who keep theirs; whether work should offer flexibility or security first; or whether wage floors belong to the nation, the state or the industry."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Know your rights at work under federal labor law",
+    "description": "The National Labor Relations Board explains what the law protects, including the right to organize or refuse to, discuss pay with coworkers and strike, and how to file a charge.",
+    "url": "https://www.nlrb.gov/about-nlrb/rights-we-protect/your-rights",
+    "for_position": null,
+    "id": "know-your-rights-at-work-under"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Look up the minimum wage in your state",
+    "description": "The Labor Department’s state table lists the current minimum wage in every state and territory, with scheduled increases and where the federal rate applies.",
+    "url": "https://www.dol.gov/agencies/whd/minimum-wage/state",
+    "for_position": null,
+    "id": "look-up-the-minimum-wage-in"
+   },
+   {
+    "kind": "policy",
+    "title": "Back the PRO Act",
+    "description": "The AFL-CIO’s campaign site for the Protecting the Right to Organize Act lets supporters sign a petition and co-sign a letter urging Congress to pass the bill.",
+    "url": "https://proact.aflcio.org/",
+    "for_position": "Strengthen unions and raise the wage floor",
+    "id": "back-the-pro-act"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Get free legal help if you object to union dues or representation",
+    "description": "The National Right to Work Legal Defense Foundation offers free legal aid to employees who want to leave a union, stop paying dues or challenge union conduct.",
+    "url": "https://www.nrtw.org/your-rights/",
+    "for_position": "Leave pay and work arrangements to the market",
+    "id": "get-free-legal-help-if-you"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the conservative proposal for works councils and worker board seats",
+    "description": "American Compass’s “A Better Bargain” paper sets out how changing federal labor law could allow cooperative worker-management councils and elected worker seats on corporate boards.",
+    "url": "https://americancompass.org/a-better-bargain-worker-voice-and-representation/",
+    "for_position": "Rebuild worker power with cooperation and tight job markets",
+    "id": "read-the-conservative-proposal-for-works"
+   },
+   {
+    "kind": "learn_more",
+    "title": "See the app industry’s portable benefits framework",
+    "description": "Flex, the trade group for DoorDash, Instacart, Lyft, Uber and other app companies, proposes retirement, health and paid-leave benefits that follow app workers who remain contractors.",
+    "url": "https://www.flexassociation.org/policy/developing-portable-benefits-solutions/",
+    "for_position": "Give app workers a middle status with portable benefits",
+    "id": "see-the-app-industry-s-portable"
+   },
+   {
+    "kind": "policy",
+    "title": "Tell your senators how to vote on the Faster Labor Contracts Act",
+    "description": "The House passed this first-contract bill in June 2026, and it now needs 60 Senate votes. The Senate directory lists how to reach both your senators, whichever way you lean.",
+    "url": "https://www.senate.gov/senators/senators-contact.htm",
+    "for_position": null,
+    "id": "tell-your-senators-how-to-vote"
+   },
+   {
+    "kind": "local",
+    "title": "If you drive for Uber or Lyft in California, join or follow the new drivers’ union",
+    "description": "The newly certified statewide union for California’s Uber and Lyft drivers takes membership sign-ups and posts updates on its bargaining with the companies.",
+    "url": "https://cagigunion.org/",
+    "for_position": "Strengthen unions and raise the wage floor",
+    "id": "if-you-drive-for-uber-or"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Follow the case for worker choice in labor policy",
+    "description": "The Institute for the American Worker rates labor bills and rules, backing secret-ballot protections and clearer contractor rules and opposing measures such as the PRO Act.",
+    "url": "https://i4aw.org/proworkeragenda/",
+    "for_position": "Leave pay and work arrangements to the market",
+    "id": "follow-the-case-for-worker-choice"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the EU Platform Work Directive",
+    "description": "The official text of Directive (EU) 2024/2831, which presumes employment for platform workers under a platform’s control and regulates algorithmic management.",
+    "url": "https://eur-lex.europa.eu/eli/dir/2024/2831/oj",
+    "for_position": null,
+    "id": "read-the-eu-platform-work-directive"
+   }
+  ]
+ },
+ "icon": "hard-hat",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: a compact scene sitting on a small rounded hill, the hill's curve ending well inside the frame on both sides: a large domed metal lunch pail with a handle as the dominant focal mass at center; a work hard hat resting on top of the lunch pail, overlapping its lid; a plain paper pay envelope leaning against the pail's side at small scale; a small warehouse with a roll-up door and a small delivery scooter with a cargo box on the crest behind at medium scale; a line of utility poles with wires running across the hill behind everything as the connective element, starting and ending inside the frame.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #b48f2c, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: picket signs, raised fists, protest banners, strikers, megaphones, handshakes, chains, broken chains, dollar signs, currency symbols, banknotes, money bags, top hats, briefcases, factory smokestacks, charts, graphs, arrows, scales of justice, gears, tug of war, contrast of light and dark halves."
 }

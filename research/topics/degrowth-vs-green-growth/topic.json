@@ -1,8 +1,8 @@
 {
  "slug": "degrowth-vs-green-growth",
  "title": "Degrowth vs. Green Growth",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-10-02T20:45:13+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Whether economic growth can decouple from emissions. Growth itself, not the pace of transition.",
@@ -16,5 +16,615 @@
   "birth-rate-decline-pronatalism",
   "civilizational-collapse",
   "critical-minerals"
- ]
+ ],
+ "content": {
+  "overview": {
+   "summary": "Whether economies can keep growing while cutting emissions as fast as climate goals require, and what should give if they cannot.",
+   "scope_covered": "Whether economic growth can be decoupled from emissions and other environmental pressures fast enough, whether rich countries should keep growth as a goal, and what they owe poorer countries.",
+   "scope_excluded": "The pace of the energy transition and the timing of net zero, the choice among energy sources, critical minerals, inequality, population and civilizational collapse, each on its own page.",
+   "why_now": "On September 2, 2026, a Carbon Brief analysis found that China’s CO2 emissions had plateaued for more than two years since peaking in March 2024, and fell 1 percent in the second quarter as oil use dropped 9 percent amid the Strait of Hormuz supply crisis.",
+   "why_now_source_label": "Carbon Brief",
+   "why_now_source_url": "https://www.carbonbrief.org/analysis-chinas-co2-emissions-fall-in-q2-2026-due-to-plummeting-oil-use"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "World GDP and fossil CO2 emissions, 2024 against 1990",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "1990 = 100",
+     "series": [
+      {
+       "label": "World GDP",
+       "value": "291",
+       "highlight": true
+      },
+      {
+       "label": "Fossil CO2 emissions",
+       "value": "170",
+       "highlight": false
+      },
+      {
+       "label": "CO2 per unit of GDP",
+       "value": "58",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Between 1990 and 2024 the world economy grew to almost three times its size while fossil CO2 emissions rose 70 percent, so each dollar of output came with about 42 percent less CO2.",
+     "detail": "GDP here is measured at purchasing power parity in constant 2021 international dollars, which adjust for price differences between countries (World Bank and others, via Our World in Data). Emissions are territorial fossil and cement CO2, counted where they occur, excluding land use. Emissions growing more slowly than output is called relative decoupling. The carbon intensity of world output fell about 1.6 percent a year on average over the period, and about 2 percent a year since 2010, calculated from the same series. The debate is about absolute decoupling, in which emissions fall while the economy grows, and about its speed. The IPCC’s 2022 assessment found that in pathways limiting warming to 1.5°C, the carbon intensity of energy, a related measure of CO2 per unit of energy used, would have to fall about 7.7 percent a year from 2020 to 2050, against 0.3 percent a year achieved in 2010 to 2019. Green growth supporters point to the widening gap between the two lines; degrowth supporters point out that emissions are still rising.",
+     "source_label": "Our World in Data, from Global Carbon Budget (2025) and World Bank GDP (2026); index calculated",
+     "source_url": "https://ourworldindata.org/grapher/annual-co2-emissions-per-country",
+     "source_published": "1990 to 2024",
+     "source_accessed": "2026-10-02",
+     "id": "world-gdp-and-fossil-co2-emissions"
+    },
+    {
+     "label": "Countries that cut emissions while their economies grew, 2015 to 2024",
+     "viz": "bar",
+     "wide": false,
+     "value": "35",
+     "unit": "countries",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Thirty-five countries cut their fossil CO2 emissions over the decade to 2024 while their GDP grew, twice as many as in the decade before.",
+     "detail": "The count is from the Global Carbon Project, the scientific consortium that publishes the annual global carbon budget. Its FAQ does not say whether the count uses territorial emissions or consumption-based ones, which add the emissions in imported goods. Other counts use stricter tests. The IPCC’s 2022 assessment found at least 18 countries that had cut both production-based greenhouse gas emissions and consumption-based CO2 for more than ten years, some by around 4 percent a year, but judged that these reductions had only partly offset global emissions growth. Zeke Hausfather, writing for the Breakthrough Institute in 2021, counted 32 countries of more than a million people that had decoupled on both bases since 2005. Green growth supporters cite such counts as proof that absolute decoupling is real and spreading; degrowth supporters accept them and dispute whether the pace is enough.",
+     "source_label": "Global Carbon Project, Global Carbon Budget 2025, frequently asked questions",
+     "source_url": "https://globalcarbonbudget.org/gcb-2025/the-global-carbon-budget-faqs-2025/",
+     "source_published": "2015 to 2024",
+     "source_accessed": "2026-10-02",
+     "id": "countries-that-cut-emissions-while-their"
+    },
+    {
+     "label": "Remaining carbon budget for 1.5°C",
+     "viz": "bar",
+     "wide": false,
+     "value": "170",
+     "unit": "Gt CO2",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "From the start of 2026 the world can emit about 170 billion more tonnes of CO2 for an even chance of holding warming to 1.5°C, about four years at the current rate.",
+     "detail": "The Global Carbon Project projected fossil CO2 emissions of 38.1 billion tonnes in 2025, with land-use change adding about 4.1 billion. At that rate, it says, the 1.5°C budget “will be gone before 2030,” and it calls the budget “virtually exhausted.” The project’s FAQ puts the budgets for 1.7°C and 2°C at 525 and 1,055 billion tonnes, about 12 and 25 years of 2025 emissions. A budget turns a dispute about rates into one about time: decoupling that is real but slow still uses up a fixed amount. Degrowth supporters argue that budgets this small leave rich countries no time to wait for technology alone. Green growth supporters argue that with 1.5°C effectively out of reach, the relevant question is how fast clean technology can bend emissions toward net zero under any target.",
+     "source_label": "Global Carbon Project, Global Carbon Budget 2025",
+     "source_url": "https://globalcarbonbudget.org/fossil-fuel-co2-emissions-hit-record-high-in-2025/",
+     "source_published": "2025",
+     "source_accessed": "2026-10-02",
+     "id": "remaining-carbon-budget-for-1-5"
+    },
+    {
+     "label": "Growth in world GDP and energy CO2 emissions, 2025",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% in 2025",
+     "series": [
+      {
+       "label": "World GDP",
+       "value": "3.1",
+       "highlight": false
+      },
+      {
+       "label": "Energy CO2 emissions",
+       "value": "0.4",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2025 the world economy grew about 3.1 percent while energy-related CO2 emissions rose about 0.4 percent, to a record of nearly 38.4 billion tonnes.",
+     "detail": "The IEA calls this “a continued decoupling between emissions and economic activity”; it was the slowest emissions growth since 2021. China, the largest emitter, cut its emissions about 0.5 percent in a year when its economy grew 5.0 percent, according to its National Bureau of Statistics, as renewables grew, heavy industry declined structurally and demand grew more slowly. Emissions fell 0.8 percent in the European Union and 0.1 percent in India, and rose 2.2 percent in the United States, partly because of a cold winter and a switch from gas back to coal. For the first time since the 1990s, emissions in advanced economies grew faster than in emerging and developing ones. Energy use per unit of GDP improved by nearly 2 percent, back to its 2010 to 2019 average. Green growth supporters read the year as decoupling spreading to the largest economies; degrowth supporters read it as another record for emissions, far from the steep annual falls they say the carbon budget requires.",
+     "source_label": "International Energy Agency, Global Energy Review 2026",
+     "source_url": "https://iea.blob.core.windows.net/assets/df903e1c-49c6-4757-8cbf-6fbcfe7611a0/GlobalEnergyReview2026.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-10-02",
+     "id": "growth-in-world-gdp-and-energy"
+    },
+    {
+     "label": "Modeled cost of holding warming to 1.5°C, as lower world GDP in 2050",
+     "viz": "range",
+     "wide": false,
+     "value": "2.6–4.2",
+     "unit": "% of GDP",
+     "series": [],
+     "range_min": "No cost (0%)",
+     "range_max": "5% lower",
+     "note": "IPCC-assessed models put the cost of holding warming to 1.5°C at 2.6 to 4.2 percent of world GDP in 2050, before avoided damage; degrowth researchers dispute their assumptions.",
+     "detail": "The comparison is with continuing current policies. In every pathway the IPCC assessed, world GDP at least doubles between 2020 and 2050 whatever the level of mitigation, and the strictest pathways lower average annual growth by 0.09 to 0.14 percentage points. Limiting warming to 2°C costs 1.3 to 2.7 percent of GDP in 2050, and 2.5°C costs 0.5 to 1.2 percent. The estimates leave out the benefit of avoided climate damage, and the IPCC reports that in most of the literature the benefit of limiting warming to 2°C exceeds the cost. Green growth supporters treat this as their strongest institutional evidence. Degrowth and post-growth researchers reply that the integrated assessment models behind it assume growth from the start, then reconcile it with the carbon budget through large-scale carbon removal and very fast technology deployment; Lorenz Keyßer and Manfred Lenzen argued in Nature Communications in 2021 that pathways with lower energy demand in rich countries reduce those risks.",
+     "source_label": "IPCC Sixth Assessment Report, Working Group III, Summary for Policymakers, C.12.2",
+     "source_url": "https://www.ipcc.ch/report/ar6/wg3/downloads/report/IPCC_AR6_WGIII_SPM.pdf",
+     "source_published": "2022",
+     "source_accessed": "2026-10-02",
+     "id": "modeled-cost-of-holding-warming-to"
+    },
+    {
+     "label": "Yearly emissions cuts achieved versus needed in rich countries that decoupled",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% a year",
+     "series": [
+      {
+       "label": "Needed by 2025",
+       "value": "30",
+       "highlight": false
+      },
+      {
+       "label": "UK achieved",
+       "value": "3.1",
+       "highlight": false
+      },
+      {
+       "label": "11-country average",
+       "value": "1.6",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The 11 rich countries that cut consumption-based CO2 while growing in 2013 to 2019 did so by about 1.6 percent a year; one study puts their fair-share need near 30 percent.",
+     "detail": "Jefim Vogel and Jason Hickel identified 11 of 36 high-income countries that absolutely decoupled consumption-based CO2 from GDP between 2013 and 2019: Australia, Austria, Belgium, Canada, Denmark, France, Germany, Luxembourg, the Netherlands, Sweden and the United Kingdom. At those rates the countries would take 73 to 369 years, 223 on average, to cut their 2022 emissions by 95 percent, and would emit 5 to 162 times, 27 on average, their fair share of the remaining global budget for an even chance of 1.5°C. The needed rates depend on the fair-share rule the authors chose, which divides the remaining budget among countries by equity principles; other rules give different rates, and the study also reports results for a 1.7°C budget. The authors conclude that these countries are very unlikely to achieve green growth and call for post-growth demand-reduction strategies. Green growth supporters reply that the 2013 to 2019 rates came before the steepest falls in clean energy costs and most current climate policy, so they understate what is now possible.",
+     "source_label": "Vogel and Hickel, “Is green growth happening?”, Lancet Planetary Health (2023)",
+     "source_url": "https://researchonline.lse.ac.uk/id/eprint/120169/",
+     "source_published": "2013 to 2019",
+     "source_accessed": "2026-10-02",
+     "id": "yearly-emissions-cuts-achieved-versus-needed"
+    },
+    {
+     "label": "Fall in UK emissions by accounting method, 1996 to 2023",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% fall",
+     "series": [
+      {
+       "label": "Territorial",
+       "value": "50",
+       "highlight": false
+      },
+      {
+       "label": "Production-based",
+       "value": "42",
+       "highlight": false
+      },
+      {
+       "label": "Consumption-based",
+       "value": "15",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "From 1996 to 2023 UK territorial emissions halved, but the UK’s carbon footprint, which counts emissions in imported goods, fell 15 percent.",
+     "detail": "The carbon footprint counts the greenhouse gases emitted anywhere in the world to make the goods and services UK residents consume. It fell from 826 to 699 million tonnes of CO2 equivalent between 1996 and 2023, after peaking at 984 million in 2007, so it is 29 percent below its peak. Emissions embodied in imports rose 43 percent and now make up 53 percent of the footprint, against 31 percent in 1996. UK GDP grew about 65 percent over the same years (World Bank data via Our World in Data). Degrowth supporters cite the gap between the measures as evidence that part of rich countries’ decoupling came from moving heavy industry abroad. Green growth supporters answer that even the footprint has fallen by almost a third from its peak while the economy grew, which is absolute decoupling on the strictest measure. The Department for Energy Security and Net Zero’s final figures for 2024, published in February 2026, put UK territorial emissions 53 percent below 1990.",
+     "source_label": "UK Department for Environment, Food & Rural Affairs, Carbon footprint for the UK and England to 2023",
+     "source_url": "https://www.gov.uk/government/statistics/uks-carbon-footprint/carbon-footprint-for-the-uk-and-england-to-2023",
+     "source_published": "1996 to 2023",
+     "source_accessed": "2026-10-02",
+     "id": "fall-in-uk-emissions-by-accounting"
+    },
+    {
+     "label": "Cut in EU net greenhouse gas emissions, 1990 to 2024",
+     "viz": "bar",
+     "wide": false,
+     "value": "37",
+     "unit": "% cut",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The European Union cut its net greenhouse gas emissions by more than 37 percent between 1990 and 2024 while its economy grew 71 percent.",
+     "detail": "The Commission’s figure is net of land use and includes the EU’s share of international aviation and shipping; excluding those, the cut is 39 percent. Emissions fell 2.5 percent in 2024. The figures are territorial. The Commission presents them as proof that climate policy and growth go together, titled its 2025 progress report “Strengthening competitiveness on the road to climate neutrality,” and says the EU is on track for its 2030 target of a 55 percent cut if existing and planned measures are fully implemented. Degrowth supporters note that EU growth over the period was modest by world standards, that part of the fall came from the collapse of heavy industry in Central and Eastern Europe after 1990 and from offshoring, and that the remaining cuts to 2030 and to net zero by 2050 must come much faster than the average so far.",
+     "source_label": "European Commission, Climate Action Progress Report 2025",
+     "source_url": "https://climate.ec.europa.eu/areas-action/climate-strategies-targets/progress-climate-action_en",
+     "source_published": "1990 to 2024",
+     "source_accessed": "2026-10-02",
+     "id": "cut-in-eu-net-greenhouse-gas"
+    },
+    {
+     "label": "Cut in global emissions by 2035 below 2019 levels, needed versus pledged",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Needed for 1.5°C",
+       "value": "55",
+       "highlight": true
+      },
+      {
+       "label": "Needed for 2°C",
+       "value": "35",
+       "highlight": false
+      },
+      {
+       "label": "Conditional pledges",
+       "value": "15",
+       "highlight": false
+      },
+      {
+       "label": "Unconditional pledges",
+       "value": "12",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Global emissions would need to fall 55 percent below 2019 levels by 2035 for 1.5°C, but fully delivering countries’ pledges would cut them about 12 to 15 percent.",
+     "detail": "Global greenhouse gas emissions reached 57.7 billion tonnes of CO2 equivalent in 2024, up 2.3 percent on 2023. If current pledges are fully implemented, the report projects warming of 2.3 to 2.5°C this century, down from 2.6 to 2.8°C a year earlier. The pledge figures are central estimates within ranges of 6 to 16 percent for unconditional pledges and 11 to 18 percent for conditional ones, and they fall to 9 and 11 percent without the pledge of the United States, which has since withdrawn from the Paris Agreement. Green growth supporters see the gap as a shortfall of policy and investment; degrowth supporters see it as evidence that a strategy built on continued growth has not delivered.",
+     "source_label": "UN Environment Programme, Emissions Gap Report 2025",
+     "source_url": "https://www.uncclearn.org/wp-content/uploads/library/EGR2025.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-10-02",
+     "id": "cut-in-global-emissions-by-2035"
+    },
+    {
+     "label": "Global material extraction, 2024",
+     "viz": "bar",
+     "wide": false,
+     "value": "106.6",
+     "unit": "billion t",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The world extracted 106.6 billion tonnes of materials in 2024, more than three times as much as in 1970, and extraction is still growing by more than 2.3 percent a year.",
+     "detail": "Materials here are biomass, fossil fuels, metals and non-metallic minerals such as sand and gravel. The International Resource Panel finds that extracting and processing them accounts for over 55 percent of greenhouse gas emissions, more than 60 percent with land-use change, and that there has so far been “no evidence of widespread absolute decoupling at the global level” of material use from growth. Use per person rose from 8.4 to 13.2 tonnes between 1970 and 2024. High-income countries use about six times as much per person as low-income ones, though their material footprint has been roughly flat since the 2008 to 2009 financial crisis. On historical trends extraction would reach about 160 billion tonnes by 2060. The panel also models a “Sustainability Transition” scenario in which, by 2060, global GDP is about 3 percent higher than on historical trends, growth in material use is 30 percent lower and greenhouse gas emissions fall by more than 80 percent. Degrowth supporters cite the extraction figures to argue that decoupling is far weaker for materials than for carbon; green growth supporters cite the scenario as evidence that policy can deliver both.",
+     "source_label": "UN Environment Programme International Resource Panel, Global Resources Outlook 2024",
+     "source_url": "https://www.resourcepanel.org/reports/global-resources-outlook-2024",
+     "source_published": "2024",
+     "source_accessed": "2026-10-02",
+     "id": "global-material-extraction-2024"
+    },
+    {
+     "label": "Cost of electricity from new utility-scale solar plants",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "$/kWh",
+     "series": [
+      {
+       "label": "2010",
+       "value": "0.408",
+       "highlight": false
+      },
+      {
+       "label": "2015",
+       "value": "0.134",
+       "highlight": false
+      },
+      {
+       "label": "2020",
+       "value": "0.061",
+       "highlight": false
+      },
+      {
+       "label": "2025",
+       "value": "0.044",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The global average cost of electricity from new utility-scale solar plants fell about 89 percent between 2010 and 2025, to $0.044 per kilowatt-hour.",
+     "detail": "This is the levelized cost: the average cost per unit of electricity over a plant’s lifetime, including construction, financing and operation, here in constant 2025 dollars. IRENA’s own 2024 report gives $0.043 for 2024 and a 90 percent fall since 2010. Onshore wind fell from about $0.114 to $0.033 over the same years on the same chart. Green growth supporters put falling costs at the core of their case: if the clean option is also the cheapest, they argue, growth and decarbonization stop pulling against each other and poorer countries can develop on clean power. The levelized cost leaves out the storage, grid expansion and backup needed when solar and wind supply a large share of power, which is where much of the remaining argument over total system costs lies.",
+     "source_label": "Our World in Data, from IRENA Renewable Power Generation Costs",
+     "source_url": "https://ourworldindata.org/grapher/levelized-cost-of-energy",
+     "source_published": "2010 to 2025",
+     "source_accessed": "2026-10-02",
+     "id": "cost-of-electricity-from-new-utility"
+    },
+    {
+     "label": "CO2 emissions per person, 2024",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "t CO2",
+     "series": [
+      {
+       "label": "United States",
+       "value": "14.2",
+       "highlight": false
+      },
+      {
+       "label": "High-income countries",
+       "value": "9.8",
+       "highlight": true
+      },
+      {
+       "label": "China",
+       "value": "8.7",
+       "highlight": false
+      },
+      {
+       "label": "Upper-middle income",
+       "value": "6.1",
+       "highlight": false
+      },
+      {
+       "label": "European Union",
+       "value": "5.4",
+       "highlight": false
+      },
+      {
+       "label": "World",
+       "value": "4.7",
+       "highlight": false
+      },
+      {
+       "label": "India",
+       "value": "2.2",
+       "highlight": false
+      },
+      {
+       "label": "Lower-middle income",
+       "value": "1.6",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "A person in a high-income country emits about 9.8 tonnes of CO2 a year from fossil fuels and industry, about 35 times the 0.28 tonnes of a person in a low-income country.",
+     "detail": "These are territorial emissions divided by population; consumption-based figures would raise rich countries’ numbers somewhat and lower China’s. Low-income countries are left off the chart because their bar would be too small to see. The spread is why nearly every camp in this debate accepts that poorer countries need room to grow; they disagree over what that implies for rich ones, whether they must use less so that others can use more, or whether cheap clean technology lets everyone grow at once. China’s figure is now above the European Union’s, which growth-first and green growth supporters cite as a reason that cutting back in rich countries cannot by itself solve the problem.",
+     "source_label": "Our World in Data, from Global Carbon Budget (2025)",
+     "source_url": "https://ourworldindata.org/grapher/co-emissions-per-capita",
+     "source_published": "2024",
+     "source_accessed": "2026-10-02",
+     "id": "co2-emissions-per-person-2024"
+    },
+    {
+     "label": "Climate policy researchers who prefer agrowth or degrowth to green growth",
+     "viz": "radial",
+     "wide": false,
+     "value": "73",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Of 764 climate policy researchers surveyed for a 2023 study, about 73 percent preferred an agrowth or degrowth position to green growth.",
+     "detail": "Lewis King, Ivan Savin and Stefan Drews surveyed researchers from 73 countries who had published on climate policy and classified them into the three positions from their answers. Agrowth, which is indifferent to whether GDP grows, was the most popular, the authors reported in The Conversation. Skepticism of green growth was highest among researchers from the European Union, at 86.1 percent, and lowest among those from non-OECD countries, more than half of whom held green growth views. Social scientists other than economists were the most skeptical; economists were the most likely to hold green growth views. The study was published in Nature Sustainability.",
+     "source_label": "Autonomous University of Barcelona, on King, Savin and Drews, Nature Sustainability (2023)",
+     "source_url": "https://www.uab.cat/web/newsroom/news-detail/green-growth-loses-favour-with-climate-policy-scientists-1345830290613.html?detid=1345895947270",
+     "source_published": "2023",
+     "source_accessed": "2026-10-02",
+     "id": "climate-policy-researchers-who-prefer-agrowth"
+    },
+    {
+     "label": "EU citizens with pro-growth views",
+     "viz": "radial",
+     "wide": false,
+     "value": "59.8",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a 2026 survey of 16,781 people in 13 EU countries, about 60 percent held pro-growth views, about a third were indifferent to growth and about 8 percent were skeptical.",
+     "detail": "The shares are not answers to one question. Respondents rated four statements about growth and the environment, and the researchers grouped them by their pattern of answers: strongly pro-growth (25.1 percent), moderately pro-growth (34.7), growth-indifferent (32.1) and growth-skeptical (8.2). Pro-growth respondents see growth as essential for a sustainable society. Support for growth was lower in wealthier and more equal countries; in Denmark, the Netherlands and Austria almost half held indifferent or skeptical views. Growth attitudes had no significant link to climate concern or support for climate policy, though growth-skeptical respondents more strongly favored bans such as on combustion-engine cars. The authors contrast the result with their earlier survey of researchers, cautioning that the two differ in population and timing. One coauthor, Jeroen van den Bergh, originated the agrowth position.",
+     "source_label": "Savin, King, van den Bergh and others, Nature Communications (2026)",
+     "source_url": "https://www.nature.com/articles/s41467-026-73323-6",
+     "source_published": "2026",
+     "source_accessed": "2026-10-02",
+     "id": "eu-citizens-with-pro-growth-views"
+    },
+    {
+     "label": "Fall in world fossil CO2 emissions in the 2020 recession",
+     "viz": "bar",
+     "wide": false,
+     "value": "5.2",
+     "unit": "% fall",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "When the world economy shrank 2.8 percent in 2020, fossil CO2 emissions fell 5.2 percent; in 2021 GDP grew 6.5 percent and emissions 4.9 percent.",
+     "detail": "The pandemic is the largest recent case of the world economy shrinking, and both sides draw lessons from it. Growth-first and green growth supporters argue that it shows how little emissions fall even in a severe, involuntary contraction with large job losses, so cutting emissions by shrinking output would cost a great deal per tonne avoided. Degrowth supporters reply that an unplanned recession is exactly what they do not propose: their program is a planned, selective reduction in energy- and material-intensive production paired with income guarantees, shorter working time and public services, and should be judged against that design. The changes are calculated from Global Carbon Budget emissions and World Bank GDP at purchasing power parity, both via Our World in Data.",
+     "source_label": "Our World in Data, from Global Carbon Budget (2025) and World Bank GDP (2026); changes calculated",
+     "source_url": "https://ourworldindata.org/grapher/annual-co2-emissions-per-country",
+     "source_published": "2020 to 2021",
+     "source_accessed": "2026-10-02",
+     "id": "fall-in-world-fossil-co2-emissions"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Can rich economies cut emissions fast enough for the Paris goals while they keep growing?",
+    "kind": "empirical",
+    "why": "That rich countries can cut emissions while growing is not in question. The dispute is whether today’s rates can rise to what the carbon budget implies, and whether the past is any guide to what clean technology can now do.",
+    "detail": "Those who answer yes argue that past rates were set before solar, wind and batteries became the cheapest new power almost everywhere and before most climate policy took effect. Decarbonization, on this view, is a series of engineering swaps, coal for solar, petrol cars for electric ones, gas boilers for heat pumps, none of which requires anyone to consume less, so speed is a matter of policy and investment, and both are accelerating. Those who answer no point out that the rates rich countries have actually achieved are a small fraction of what a fair share of the remaining budget would demand, and that each extra percent of output raises energy demand that clean supply must also cover. The models that reconcile growth with tight budgets, they add, lean on carbon removal at a scale that does not yet exist, which leaves cutting energy and material demand in rich countries as the only lever that works at once.",
+    "lean_label_a": "Fast enough",
+    "lean_label_b": "Too slow",
+    "id": "can-rich-economies-cut-emissions-fast"
+   },
+   {
+    "text": "Is the decoupling seen so far genuine, or largely shifted abroad and confined to carbon?",
+    "kind": "empirical",
+    "why": "Emissions counted where they occur flatter countries that import their manufactured goods, while counts that follow the goods show smaller cuts. Carbon is also only one pressure; materials, land and wildlife follow other trends.",
+    "detail": "Those who call it genuine say the strictest test has been passed: several countries have cut emissions on the consumption basis too, for more than a decade, and the falls came mostly from coal plants closing and being replaced by gas and renewables rather than from factories moving abroad. Material decoupling is weaker, they concede, but the materials that matter most for climate, fossil fuels, are exactly what the transition replaces. Those who call it shifted or partial note that in some of the best-known cases consumption-based emissions have fallen far less than territorial ones, with a growing share of a country’s footprint emitted abroad. Beyond carbon, they argue, global material use has kept rising with output and drives most biodiversity loss, and reviews of the research find absolute decoupling of resource use rare. Solving carbon while overshooting other planetary boundaries, on this view, is not green growth.",
+    "lean_label_a": "Genuine decoupling",
+    "lean_label_b": "Shifted or partial",
+    "id": "is-the-decoupling-seen-so-far"
+   },
+   {
+    "text": "Should GDP growth remain a central goal of economic policy in rich countries?",
+    "kind": "value",
+    "why": "Almost no one defends GDP as a full measure of progress. The dispute is whether rich societies should still aim to raise it for what it pays for, or target wellbeing and environmental limits directly and accept whatever GDP results.",
+    "detail": "For keeping growth central: it funds pensions, health care, defense and the energy transition without a fight over a fixed pie; it is why today’s workers live better than their grandparents; and it is tied to the innovation that makes clean technology cheaper for everyone. Large studies by Betsey Stevenson and Justin Wolfers (2008) and Matthew Killingsworth (2021) find that life satisfaction keeps rising with income without a clear ceiling, and societies that stop growing tend to turn zero-sum and bitter. Kaushik Basu, co-chair of the UN’s 2026 expert group on measuring progress beyond GDP, stressed that doing so “does not mean eschewing economic growth.” For dropping it: GDP counts pollution cleanup and longer commutes as gains and ignores unpaid care, leisure and the depletion of nature. Richard Easterlin found that average happiness in rich countries barely moved as incomes multiplied, and research on wellbeing thresholds finds that most social outcomes, from life expectancy to education, can be met at income and energy levels well below those of the richest countries. Freed from protecting growth at all costs, governments could adopt climate policies now blocked because they might slow GDP.",
+    "lean_label_a": "Keep growth central",
+    "lean_label_b": "Stop targeting GDP",
+    "id": "should-gdp-growth-remain-a-central"
+   },
+   {
+    "text": "Should rich countries consume less to leave room for poorer countries to grow?",
+    "kind": "value",
+    "why": "Nearly every camp agrees poorer countries need to grow. The dispute is whether fairness requires the rich to cut back to make room within a small carbon budget, or whether cheap clean technology can let everyone grow at once.",
+    "detail": "Those who say the rich should cut back treat the carbon budget as a shared and nearly exhausted resource that rich countries have already overdrawn: every tonne they emit to keep growing is a tonne unavailable to countries that still need energy for basic needs. Asking the poor to wait for clean technology while the rich keep expanding, they argue, repeats a history in which the North’s prosperity was built on the South’s resources. Those who say everyone can grow answer that the poor gain nothing from rich-country recessions, which cut demand for their exports, aid budgets and investment. Cheap clean technology came from rich-country markets, research and scale; Chinese solar panels became cheap because the world bought them in enormous numbers. Since most future emissions growth will come from middle-income countries, they argue, even zero emissions in the rich world would leave the problem unsolved, so fairness is better served by finance and technology transfer than by shrinking.",
+    "lean_label_a": "Rich cut back",
+    "lean_label_b": "All can grow",
+    "id": "should-rich-countries-consume-less-to"
+   },
+   {
+    "text": "Can a rich economy stay stable and prosperous without growth?",
+    "kind": "empirical",
+    "why": "Modern economies are built around growth: jobs, public debts and pensions all lean on it. Whether those dependencies can be redesigned, and at what cost, has been modeled but never tested at national scale in peacetime.",
+    "detail": "Those who think stability is possible say the dependencies are institutional, not natural laws. Macroeconomic models of Canada by Peter Victor and Tim Jackson find scenarios in which output levels off while employment, public finances and emissions all improve, through shorter working hours, a shift toward labor-intensive services such as care and education, and redistribution, and Japan has had near-zero growth for long stretches without social collapse. Those who think growth is needed note that unemployment rises when output grows more slowly than productivity, that debts become hard to sustain when interest rates exceed nominal growth, and that every recession of the past century brought job losses, falling revenue and political backlash; there is no example of a deliberately non-growing modern economy that stayed prosperous and democratic. Aging populations, they add, will raise health and pension costs whatever happens to output.",
+    "lean_label_a": "Can be stable",
+    "lean_label_b": "Needs growth",
+    "id": "can-a-rich-economy-stay-stable"
+   },
+   {
+    "text": "How much growth is it worth giving up to reduce the risk of climate damage?",
+    "kind": "value",
+    "why": "Models that weigh mitigation costs against climate damage often favor slower cuts than the Paris goals, especially when future harm is discounted. Others hold that catastrophic, irreversible risks cannot be traded against GDP.",
+    "detail": "Those who would weigh the costs argue that money spent on expensive emissions cuts cannot go to health, education or adaptation, which often do more good, especially for the poor. Climate policy, on this view, should be judged like any other: cut emissions where it is cheap, invest in clean-energy research, and avoid measures whose costs exceed their benefits. Those who would avoid the risk answer that cost-benefit models leave out what matters most, such as tipping points, mass displacement and extinction, and that their answers hinge on a discount rate, which is an ethical choice about how much future people count. The damage falls mostly on poor people and future generations who did not share in the growth that caused it, and where losses are irreversible, they argue, precaution rather than a GDP calculation should set the limit.",
+    "lean_label_a": "Weigh the costs",
+    "lean_label_b": "Avoid the risk",
+    "id": "how-much-growth-is-it-worth"
+   },
+   {
+    "text": "Will cheap clean technology reconcile growth with decarbonization, or will rebound eat the gains?",
+    "kind": "empirical",
+    "why": "Clean energy keeps getting cheaper, but efficiency gains tend to lower costs and raise consumption, and new energy sources have historically added to old ones rather than replacing them.",
+    "detail": "Those who expect the two to reinforce each other point to learning curves: each doubling of deployment cuts costs further, so growing demand for clean technology speeds the transition. Once power from sun and wind is cheaper than from fossil fuels, the market does the decoupling and the poorest countries can develop on clean power. Rebound matters, on this view, only when the extra consumption is fossil-powered; when energy itself is clean, using more of it is not a climate problem. Those who expect rebound to eat the gains note that efficiency savings are partly or wholly spent on more consumption elsewhere; a 2021 review led by Paul Brockway estimated that economy-wide rebound may erode more than half of expected energy savings. Global clean energy has grown for two decades while fossil energy use kept rising too, and building the new system takes metals, land and construction with emissions and ecological damage of their own. As long as total demand keeps growing, they argue, clean supply is chasing a moving target.",
+    "lean_label_a": "Clean tech pays",
+    "lean_label_b": "Rebound eats gains",
+    "id": "will-cheap-clean-technology-reconcile-growth"
+   },
+   {
+    "text": "Could a planned reduction in rich countries’ output win and keep democratic support?",
+    "kind": "empirical",
+    "why": "Climate policy already provokes backlash when it raises costs. Surveys find real interest in putting wellbeing ahead of growth when asked in the abstract, and much less for an economy that deliberately shrinks.",
+    "detail": "Those who think it can note that earlier surveys offering a binary choice found around 60 percent of respondents in Europe and worldwide putting environmental protection ahead of growth, as a 2026 Nature Communications paper summarizes, and that specific degrowth policies, such as shorter working weeks, better public transport, free public services and limits on luxury consumption like private jets, poll well on their own. Framed as security and free time rather than deprivation, they argue, the program can build a coalition, and citizens’ assemblies on climate have tended to back ambitious demand-side measures. Those who think it cannot point to the same paper’s finding that most EU citizens hold pro-growth views even where academic skepticism is highest, and to the Savin and van den Bergh review, which found that most degrowth studies of public support judged the strategy socially and politically infeasible. Voters punish governments for recessions, they argue, and a program that promises lower GDP hands the field to parties that reject climate policy altogether.",
+    "lean_label_a": "Can win support",
+    "lean_label_b": "Cannot win support",
+    "id": "could-a-planned-reduction-in-rich"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Keep growing and cut emissions with clean technology",
+    "color_key": "green",
+    "steelman": "The problem is carbon, not prosperity. Clean energy is now the cheap option, so decarbonizing is a building boom that lifts incomes, not a sacrifice.",
+    "detail": "Emissions come from burning coal, oil and gas, and every major use of them now has a clean substitute that is cheap or getting cheaper: solar and wind for power, electric vehicles for transport, heat pumps for buildings, electrified or hydrogen-based processes for industry. Replacing them asks no one to consume less; it asks us to build, and building is economic activity. Growth paid for the mass deployment that made clean technology cheap, and most of humanity still needs far more energy and income, which only cheap clean energy can supply without wrecking the climate. The evidence is moving our way: clean power met all the growth in global electricity demand in 2025, according to the think tank Ember, and the IEA expects clean energy to draw nearly twice the investment of oil, gas and coal in 2026.\n\nCritics say decoupling has been far too slow. But the rates they cite describe the decade before clean technology became the cheapest option, and adoption in power and cars now follows an accelerating S-curve. Shrinking output is a weak lever by comparison, as the 2020 recession showed at great human cost, and a fair-share target that growth cannot reach, degrowth cannot reach either; a strategy that asks voters to accept falling incomes will not last long enough to work. We differ on instruments: economists and the OECD favor carbon pricing, the architects of the US Inflation Reduction Act and the EU’s Clean Industrial Deal favor public investment, and ecomodernists such as the Breakthrough Institute stress innovation and nuclear power. Some of us accept less flying or less meat as long as it does not mean targeting lower GDP, and developing-country governments among us insist that rich countries finance clean growth in poorer ones.",
+    "proponents": "European Commission; OECD; Hannah Ritchie; Nicholas Stern; World Bank; Breakthrough Institute; Zeke Hausfather",
+    "id": "keep-growing-and-cut-emissions-with"
+   },
+   {
+    "name": "Shrink rich countries’ footprint, even if GDP falls",
+    "color_key": "blue",
+    "steelman": "Decoupling is real but far too slow for the carbon budget. Rich countries should plan a fair, democratic cut in what they produce and use, and share what they have.",
+    "detail": "The rich countries that have cut emissions while growing have managed a few percent a year at most, while their fair share of the remaining budget demands cuts many times steeper, starting now. Every extra unit of output needs energy that clean supply must also cover, so growth makes the task harder, and carbon is only one of several planetary boundaries being crossed. A 2020 review of 835 studies led by Helmut Haberl found that observed decoupling rates cannot deliver large, rapid reductions and must be complemented by sufficiency, and the IPCC’s 2022 assessment found that demand-side measures could cut end-use emissions by 40 to 70 percent by 2050. Rich countries already produce enough for everyone to live well; what they lack is fair distribution. So we would scale down the production that does least for wellbeing and most damage, such as SUVs, private jets, fast fashion and planned obsolescence, guarantee livelihoods through shorter working hours, universal public services and job guarantees, and let poorer countries keep growing so that the world converges on a sustainable level of energy and material use.\n\nWe are told no democracy will vote for unemployment and falling revenue. That describes an unplanned recession in an economy built to need growth, not a planned transition: work can be shared through shorter hours, and needs met through public provision rather than rising incomes. Nor is green growth the safe option when its own record shows it is not delivering; the real choice is between a managed reduction now and an unmanaged one forced by climate breakdown later. Many of us also call the program post-growth. Eco-socialists such as Kohei Saito hold that it requires moving beyond capitalism; others think a reformed market economy can do it.",
+    "proponents": "Jason Hickel; Giorgos Kallis; Julia Steinberger; Research & Degrowth International; Timothée Parrique; Kohei Saito",
+    "id": "shrink-rich-countries-footprint-even-if"
+   },
+   {
+    "name": "Pursue climate and wellbeing goals, not GDP growth",
+    "color_key": "amber",
+    "steelman": "Whether GDP rises or falls is the wrong fight. Set binding limits for emissions and nature, aim at wellbeing, and make society secure whatever GDP does.",
+    "detail": "GDP was never designed to measure welfare, and in rich countries more of it adds little to health, longevity or life satisfaction. Making it the master goal means every climate policy is judged by whether it might slow growth, which is how strong policies get diluted. Making shrinkage the goal repeats the mistake in reverse, targeting an indicator instead of outcomes, and alarms voters for nothing. Better to set binding targets for what matters, emissions, ecological limits, health, security and equality, pursue them with the best policies available, including strong carbon pricing and regulation, and redesign pensions, employment and public finance so that slow or negative growth is not a crisis. As Kate Raworth puts it, rich countries need “economies that make us thrive, whether or not they grow.”\n\nBoth sides object that indifference is not a policy: someone must say whether the economy will grow or shrink, and governments facing voters cannot be agnostic about recessions. Our answer is that what happens to GDP is genuinely uncertain and depends on technology, so committing in advance to growth or to degrowth is a bet the evidence cannot support. What can be decided now is that environmental limits come first. Agnosticism is also a political strategy: it lets climate policy be judged on its results rather than dragged into a fight over growth that neither side can win. Jeroen van den Bergh’s “agrowth” stays close to green growth in its instruments, especially carbon pricing; Raworth’s doughnut economics and the wellbeing economy movement would redesign institutions and measures of progress; Tim Jackson and much of the post-growth literature expect that rich economies will in fact have to stop growing.",
+    "proponents": "Kate Raworth; Wellbeing Economy Alliance; Jeroen van den Bergh; Tim Jackson; Doughnut Economics Action Lab; European Environmental Bureau",
+    "id": "pursue-climate-and-wellbeing-goals-not"
+   },
+   {
+    "name": "Put growth first and cut emissions where benefits exceed costs",
+    "color_key": "rust",
+    "steelman": "Growth and cheap energy lifted billions out of poverty. Climate change is a real but manageable cost, so cut emissions only where doing so does more good than harm.",
+    "detail": "Growth more than doubled life expectancy, ended mass hunger in most of the world and lifted billions out of poverty, and cheap, reliable energy, still mostly fossil, powered it. Climate change is a real cost of that progress, but mainstream estimates put the damage from substantial warming at a few percent of a much larger future income, and richer societies adapt far better to heat, floods and storms. Bjørn Lomborg’s 2020 review of the IPCC’s scenarios found human welfare rising to 450 percent of today’s level over the century, and to 434 percent after climate damage. So the question is what each tonne avoided is worth against what it costs. Research into cheaper clean energy, adaptation and cutting methane pass that test; mandates that raise energy prices often do not, and degrowth fails it spectacularly. As US Energy Secretary Chris Wright put it in 2025, climate change is “a side effect of building the modern world.”\n\nCritics say cost-benefit analysis cannot price catastrophic, irreversible risks and slights future generations and the poor. But unbounded precaution has victims too: every dollar spent on costly emissions cuts is a dollar not spent on health, education, nutrition or adaptation, which save more lives sooner. The best insurance against catastrophe is to be rich, inventive and adaptable, and to make clean energy cheaper than fossil fuels so the world switches by choice. Lomborg and the Copenhagen Consensus accept mainstream climate science and favor energy research and adaptation over mandates and subsidies; the current US administration goes further, leaving the Paris Agreement, promoting fossil fuel production and rolling back emissions rules; some developing-country governments put growth first and ask rich countries to pay for cutting emissions.",
+    "proponents": "Bjørn Lomborg; Copenhagen Consensus Center; US Department of Energy; Alex Epstein",
+    "id": "put-growth-first-and-cut-emissions"
+   }
+  ],
+  "crux": {
+   "lead": "Can rich economies cut emissions fast enough while still growing, and if not, what should give?",
+   "lead_highlight": "fast enough while still growing",
+   "subtitle": "Few doubt that some rich countries have cut emissions while their economies grew. The split is over whether that can happen at the speed climate goals require, and if not, whether growth, the pace of cuts or the measure of progress should yield.",
+   "empirical": "Much of this is measurable: how fast emissions fall once clean energy is the cheapest option, whether cuts hold when imported goods are counted and extend to materials and land, how much of the savings rebound into consumption, and whether jobs and pensions can work without growth. Rich economies sustaining far steeper annual cuts while growing would move one side; a decade of clean energy growth without falling emissions would move the other.",
+   "values": "No data settles how to weigh the risk of overshooting climate limits against the costs of slower growth, or how much precaution is owed to future generations and to the poorest countries, which emitted least. Nor can evidence say whether progress should be measured by output, by wellbeing or by staying within ecological limits, or whether fairness requires the rich to consume less so that others can consume more."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Compare emissions and growth country by country",
+    "description": "Our World in Data’s CO2 and greenhouse gas section lets you chart any country’s emissions, counted where produced or where consumed, against its GDP.",
+    "url": "https://ourworldindata.org/co2-and-greenhouse-gas-emissions",
+    "for_position": null,
+    "id": "compare-emissions-and-growth-country-by"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the case that growth and emissions have decoupled",
+    "description": "Zeke Hausfather’s 2021 analysis for the Breakthrough Institute charts the countries that grew their economies while cutting both territorial and consumption-based CO2.",
+    "url": "https://thebreakthrough.org/issues/energy/absolute-decoupling-of-economic-growth-and-emissions-in-32-countries",
+    "for_position": "Keep growing and cut emissions with clean technology",
+    "id": "read-the-case-that-growth-and"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Explore the research on degrowth",
+    "description": "The degrowth.info library collects scientific papers, reports, interviews and teaching materials on degrowth, searchable by topic, year and language.",
+    "url": "https://degrowth.info/en/library",
+    "for_position": "Shrink rich countries’ footprint, even if GDP falls",
+    "id": "explore-the-research-on-degrowth"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Join a wellbeing economy hub",
+    "description": "The Wellbeing Economy Alliance supports about 25 local hubs worldwide that work to put wellbeing and ecological limits, rather than GDP growth, at the center of policy; join one or start one.",
+    "url": "https://weall.org/hubs",
+    "for_position": "Pursue climate and wellbeing goals, not GDP growth",
+    "id": "join-a-wellbeing-economy-hub"
+   },
+   {
+    "kind": "learn_more",
+    "title": "See how climate policy ranks against other priorities",
+    "description": "The Copenhagen Consensus Center publishes cost-benefit rankings of policies on health, poverty, education and climate, showing which do the most good per dollar.",
+    "url": "https://copenhagenconsensus.com/",
+    "for_position": "Put growth first and cut emissions where benefits exceed costs",
+    "id": "see-how-climate-policy-ranks-against"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the annual global carbon budget",
+    "description": "The Global Carbon Project’s yearly assessment reports how much CO2 the world emitted, which countries cut emissions while growing and how much of the budget remains.",
+    "url": "https://globalcarbonbudget.org/",
+    "for_position": null,
+    "id": "read-the-annual-global-carbon-budget"
+   },
+   {
+    "kind": "learn_more",
+    "title": "See the UN’s proposed measures of progress beyond GDP",
+    "description": "The UN High-Level Expert Group on Beyond GDP’s 2026 report proposes a dashboard of wellbeing, equity and sustainability indicators for countries to track alongside GDP.",
+    "url": "https://www.un.org/en/beyondGDP",
+    "for_position": null,
+    "id": "see-the-un-s-proposed-measures"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Lobby for a carbon price",
+    "description": "Citizens’ Climate Lobby trains volunteers to meet members of Congress and write to local papers in support of carbon pricing, with commitments starting at a few minutes a month.",
+    "url": "https://citizensclimatelobby.org/join-citizens-climate-lobby/",
+    "for_position": "Keep growing and cut emissions with clean technology",
+    "id": "lobby-for-a-carbon-price"
+   },
+   {
+    "kind": "local",
+    "title": "Fix things instead of replacing them",
+    "description": "Repair Café lists free community events where volunteers help repair clothes, electronics and household items, and explains how to start one where you live.",
+    "url": "https://www.repaircafe.org/en/",
+    "for_position": "Shrink rich countries’ footprint, even if GDP falls",
+    "id": "fix-things-instead-of-replacing-them"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Use doughnut economics tools",
+    "description": "The Doughnut Economics Action Lab offers more than 200 free tools for applying Kate Raworth’s framework of meeting everyone’s needs within planetary limits in schools, businesses and cities.",
+    "url": "https://doughnuteconomics.org/tools",
+    "for_position": "Pursue climate and wellbeing goals, not GDP growth",
+    "id": "use-doughnut-economics-tools"
+   }
+  ]
+ },
+ "icon": "factory",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: A small working town economy read as one landscape: a mid-size factory with a sawtooth roof and one tall chimney releasing a single soft wisp of steam, the dominant focal mass, sits center on a broad curved hillside; a cluster of three simple pitched-roof houses of medium size sits lower left, the nearest overlapping the factory's left corner; a road winds across the full width of the frame as the connective element, entering at lower left, rising over the hill in front of the factory and leaving at the right edge; one small boxy delivery truck travels on the road at right, the smallest element; a single round leafy tree stands at right, overlapping the road's edge; the ground is one long gentle curve with a fainter second hill behind it.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #3f9a6a, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: no black smoke or smog, no flames, no dying planet or melting globe, no wilting or dead plants, no upward or downward arrows, no charts or graphs, no line going up or down, no money, coins or dollar signs, no scales or balance, no wind turbines or solar panels, no protest signs or banners, no thermometer, no skull, no text or numbers, no people or hands, no faces, no frame or border, no vignette, no second color, no drop shadows."
 }

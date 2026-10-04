@@ -1,8 +1,8 @@
 {
  "slug": "dei-in-institutions",
  "title": "DEI in Institutions",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-10-04T01:18:46+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Formal diversity, equity and inclusion programs in workplaces and schools.",
@@ -16,5 +16,750 @@
   "identity-politics-vs-universalism",
   "reparations-historical-injustice",
   "algorithmic-fairness"
- ]
+ ],
+ "content": {
+  "overview": {
+   "summary": "Whether diversity, equity and inclusion programs counter discrimination or commit it, whether they work, and who gets to decide.",
+   "scope_covered": "Diversity offices and training, targeted recruiting, demographic goals, diverse-slate rules, programs limited by race or sex, diversity statements and race in admissions, mainly in the US, with European comparisons.",
+   "scope_excluded": "Whether merit-based selection is itself fair, identity politics in general, reparations and bias in algorithms, each on its own page.",
+   "why_now": "On August 25, 2026, the US Justice Department announced that Deloitte would pay $21.5 million to settle claims that it used race and sex in hiring, promotion and staffing while certifying compliance with federal anti-discrimination rules. Deloitte denied the claims and admitted no liability.",
+   "why_now_source_label": "US Department of Justice",
+   "why_now_source_url": "https://www.justice.gov/opa/pr/deloitte-agrees-pay-215m-resolve-alleged-employment-discrimination-violations"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "Extra callbacks for white over equally qualified Black job applicants",
+     "viz": "bar",
+     "wide": false,
+     "value": "36",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Across US hiring experiments run since 1989, white applicants got on average 36 percent more callbacks than equally qualified Black applicants, with no decline over 25 years.",
+     "detail": "Field experiments, also called audit or correspondence studies, send matched fictitious applications that differ only in a name or other signal of race, so a gap in callbacks measures discrimination directly rather than inferring it from outcomes. This meta-analysis pooled every available US study of hiring discrimination against African Americans or Latinos; the 24 run since 1989 covered 54,318 applications for 25,517 positions. Latino applicants faced a smaller gap, 24 percent more callbacks for white applicants, with modest evidence of a decline. The studies measure callbacks at the first stage of hiring, not job offers or pay, and stop at 2015. It is the evidence most often cited for the view that hiring discrimination is ongoing rather than historical.",
+     "source_label": "Quillian, Pager, Hexel & Midtbøen, meta-analysis of hiring field experiments, PNAS (2017)",
+     "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5642692/",
+     "source_published": "1989–2015",
+     "source_accessed": "2026-10-03",
+     "id": "extra-callbacks-for-white-over-equally"
+    },
+    {
+     "label": "Share of US workers, managers and chief executives who are women or Black",
+     "viz": "ranked",
+     "wide": true,
+     "value": "8.8",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Women, all workers",
+       "value": "47.1",
+       "highlight": false
+      },
+      {
+       "label": "Women, managers",
+       "value": "41.8",
+       "highlight": false
+      },
+      {
+       "label": "Women, chief executives",
+       "value": "33.0",
+       "highlight": false
+      },
+      {
+       "label": "Black, all workers",
+       "value": "12.7",
+       "highlight": false
+      },
+      {
+       "label": "Black, managers",
+       "value": "8.8",
+       "highlight": true
+      },
+      {
+       "label": "Black, chief executives",
+       "value": "5.6",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Black Americans are 12.7 percent of employed workers but 8.8 percent of managers and 5.6 percent of chief executives; women are 47.1 percent of workers and 33 percent of chief executives.",
+     "detail": "These are the official national figures from the monthly household survey, averaged over 2025; October was not collected during the federal government shutdown. The gap between a group’s share of the workforce and its share of senior jobs is the pattern DEI programs were built to change, but the shares alone do not show why it exists. Those who favor DEI read them, alongside hiring experiments, as evidence of barriers inside organizations; those who oppose it point to differences in age, education, field of study, hours and career choices that raw shares do not control for, and argue that equal treatment, not equal shares, is the right test. Hispanic or Latino workers, who can be of any race, are 20.0 percent of the employed, 13.5 percent of managers and 8.4 percent of chief executives. Asian workers are 7.5 percent of the employed and 7.4 percent of managers, one reason the debate increasingly distinguishes among groups rather than treating “minorities” as one category.",
+     "source_label": "US Bureau of Labor Statistics, Current Population Survey, Table 11 (2025 annual averages)",
+     "source_url": "https://www.bls.gov/cps/cpsaat11.htm",
+     "source_published": "2025",
+     "source_accessed": "2026-10-03",
+     "id": "share-of-us-workers-managers-and"
+    },
+    {
+     "label": "Change in Black women’s share of management after mandatory diversity training",
+     "viz": "bar",
+     "wide": false,
+     "value": "-9",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Five years after firms made diversity training mandatory, Black women’s share of management was 9 percent lower on average; mentoring and diversity task forces were followed by 9 to 30 percent gains.",
+     "detail": "Frank Dobbin, a Harvard sociologist, and Alexandra Kalev, of Tel Aviv University, matched the timing of programs at more than 800 US firms to the firms’ own workforce reports over about three decades. The changes are relative shifts in a group’s share of managers, not percentage points. Mandatory training was also followed by declines of 4 to 5 percent for Asian American men and women, while diversity managers (7 to 18 percent), voluntary training (9 to 13 percent) and college recruiting aimed at women (about 10 percent) were followed by gains. The authors attribute the pattern to managers resisting being told what to do, and credit programs that engage managers voluntarily and make someone responsible. Nearly all of the Fortune 500 used mandatory training, while only about 10 percent of firms had mentoring programs. The design is observational, so it shows what followed each program rather than proving cause, and it predates the expansion of DEI after 2020.",
+     "source_label": "Frank Dobbin & Alexandra Kalev, “Why Diversity Programs Fail,” Harvard Business Review (July–August 2016)",
+     "source_url": "https://hbr.org/2016/07/why-diversity-programs-fail",
+     "source_published": "2016",
+     "source_accessed": "2026-10-03",
+     "id": "change-in-black-women-s-share"
+    },
+    {
+     "label": "S&P 500 annual reports that refer to DEI",
+     "viz": "ranked",
+     "wide": true,
+     "value": "8",
+     "unit": "%",
+     "series": [
+      {
+       "label": "DEI language, 2024",
+       "value": "90",
+       "highlight": false
+      },
+      {
+       "label": "DEI language, 2026",
+       "value": "8",
+       "highlight": true
+      },
+      {
+       "label": "Any diversity item, 2024",
+       "value": "97",
+       "highlight": false
+      },
+      {
+       "label": "Any diversity item, 2026",
+       "value": "55",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2024, 90 percent of S&P 500 annual reports referred to DEI; by early 2026, 8 percent did, and only 55 percent included any diversity-related disclosure at all.",
+     "detail": "Annual reports filed with the Securities and Exchange Commission are the most standardized record of what large companies say about themselves. The drop followed the January 2025 executive orders, the administration’s warnings that “illegal DEI” could expose federal contractors to False Claims Act liability, and legal pressure after the 2023 Supreme Court admissions ruling. The Conference Board, in its own 2025 study of S&P 500 filings, found the same direction a year in: use of the acronym “DEI” fell 68 percent from 2024. The figures cannot show how much of the change is vocabulary. Many companies have renamed programs around inclusion, belonging, opportunity or human capital, and that Conference Board study described companies as “selectively reframing commitments, reducing public exposure.”",
+     "source_label": "Orrick, on DEI and corporate disclosures, Harvard Law School Forum on Corporate Governance (2026)",
+     "source_url": "https://corpgov.law.harvard.edu/2026/06/08/evolving-legal-and-regulatory-dynamics-for-dei-challenges-and-its-impact-on-corporate-disclosures/",
+     "source_published": "2024–2026",
+     "source_accessed": "2026-10-03",
+     "id": "s-p-500-annual-reports-that"
+    },
+    {
+     "label": "US workers who call a focus on DEI at work mainly a good thing",
+     "viz": "bar",
+     "wide": false,
+     "value": "52",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In October 2024, 52 percent of US workers said focusing on increasing DEI at work is mainly a good thing, down from 56 percent in early 2023; 21 percent called it bad, up from 16.",
+     "detail": "Pew asked 4,367 employed adults the question it had asked in February 2023, so the two readings are directly comparable; 26 percent said a DEI focus was neither good nor bad. The shift toward the negative was concentrated among Republicans, 42 percent of whom called it a bad thing, up from 30 percent. Men and white workers also moved, to 29 and 27 percent “bad,” up from 23 and 21. Nineteen percent of workers said their employer pays too much attention to DEI, up from 14, and 12 percent too little, down from 15. Because it asks people about their own workplaces, the survey sits closer to this page’s subject than general polls about “DEI” as a political label.",
+     "source_label": "Pew Research Center, “Views of DEI have become slightly more negative among U.S. workers” (2024)",
+     "source_url": "https://www.pewresearch.org/short-reads/2024/11/19/views-of-dei-have-become-slightly-more-negative-among-us-workers/",
+     "source_published": "2023–2024",
+     "source_accessed": "2026-10-03",
+     "id": "us-workers-who-call-a-focus"
+    },
+    {
+     "label": "S&P 500 boards with a diverse-slate rule for director searches",
+     "viz": "ranked",
+     "wide": true,
+     "value": "12",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Diverse-slate rule, 2025",
+       "value": "58",
+       "highlight": false
+      },
+      {
+       "label": "Diverse-slate rule, 2026",
+       "value": "12",
+       "highlight": true
+      },
+      {
+       "label": "Women directors, 2025",
+       "value": "35",
+       "highlight": false
+      },
+      {
+       "label": "Women directors, 2026",
+       "value": "34",
+       "highlight": false
+      },
+      {
+       "label": "Minority directors, 2025",
+       "value": "24",
+       "highlight": false
+      },
+      {
+       "label": "Minority directors, 2026",
+       "value": "24",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "S&P 500 boards with a diverse-slate rule for director searches fell from 58 to 12 percent in a year, while the shares of directors who are women or from minorities barely moved.",
+     "detail": "A diverse-slate rule, modeled on the National Football League’s 2003 Rooney Rule requiring minority candidates to be interviewed for head coaching jobs, commits a board to include women or minority candidates in every search without dictating who is chosen. Spencer Stuart, the executive search firm that publishes the annual Board Index, reports that the share of directors who are women, minorities or both slipped only from 49.6 to 49.3 percent. A separate ESGAUGE analysis for Bloomberg News, reported by Fortune in August 2026, found that 61 of the S&P 100 companies had removed explicit diversity criteria for new directors since 2023. Directors serve for years, so any effect of dropped policies would show first in new appointments rather than in whole boards.",
+     "source_label": "Spencer Stuart, “2026 Board Index Director Snapshot,” Harvard Law School Forum on Corporate Governance (2026)",
+     "source_url": "https://corpgov.law.harvard.edu/2026/08/24/2026-board-index-director-snapshot/",
+     "source_published": "2025–2026",
+     "source_accessed": "2026-10-03",
+     "id": "s-p-500-boards-with-a"
+    },
+    {
+     "label": "Lower chance of contact for Black-named applicants at large US employers",
+     "viz": "bar",
+     "wide": false,
+     "value": "2.1",
+     "unit": "points",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In more than 83,000 fake applications to 108 of the largest US employers, Black names cut the chance of hearing back by 2.1 percentage points; a fifth of firms caused nearly half the gap.",
+     "detail": "Run from 2019 to 2021 on entry-level openings at Fortune 500 companies, this is the largest recent US hiring experiment, and both sides of the DEI debate cite it. The authors identified 23 individual companies that discriminated against Black applicants with high confidence. A follow-up report card summarized by the University of Chicago’s Becker Friedman Institute (2024) found the worst-graded firms 24 percent less likely to contact a Black applicant than a white one, and the best-graded 3 percent less likely. Racial gaps were smaller at firms with centralized recruiting, at more profitable firms and at federal contractors, a finding cited by those who argue that structure and oversight, rather than training, reduce bias. Gender gaps averaged close to zero but varied widely by firm, some favoring men and others women.",
+     "source_label": "Kline, Rose & Walters, “Systemic Discrimination Among Large U.S. Employers,” NBER Working Paper 29053",
+     "source_url": "https://www.nber.org/papers/w29053",
+     "source_published": "2019–2021",
+     "source_accessed": "2026-10-03",
+     "id": "lower-chance-of-contact-for-black"
+    },
+    {
+     "label": "Americans who say it is important for businesses to promote DEI",
+     "viz": "ranked",
+     "wide": true,
+     "value": "69",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Democrats, 2025",
+       "value": "96",
+       "highlight": false
+      },
+      {
+       "label": "All adults, 2025",
+       "value": "69",
+       "highlight": true
+      },
+      {
+       "label": "Independents, 2025",
+       "value": "67",
+       "highlight": false
+      },
+      {
+       "label": "Republicans, 2024",
+       "value": "49",
+       "highlight": false
+      },
+      {
+       "label": "Republicans, 2025",
+       "value": "33",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2025, 69 percent of Americans said it is important for businesses to promote DEI, the lowest since Gallup began asking in 2022; among Republicans the share fell from 49 to 33 percent in a year.",
+     "detail": "The Bentley University-Gallup survey of 3,007 adults asks about the importance of the goal, not about quotas, training or preferences. Support is highest among Black (88 percent), Asian (78 percent), Hispanic (75 percent) and female (79 percent) adults, against 63 percent of white adults and 56 percent of men. Thirty-five percent said businesses were doing an excellent or good job promoting DEI, also a low. Majorities still agreed that diverse workforces make companies more innovative (64 percent) and more profitable (61 percent).",
+     "source_label": "Gallup, “Fewer Americans See Diversity as a Business Priority” (2025)",
+     "source_url": "https://news.gallup.com/poll/696221/fewer-americans-diversity-business-priority.aspx",
+     "source_published": "2025",
+     "source_accessed": "2026-10-03",
+     "id": "americans-who-say-it-is-important"
+    },
+    {
+     "label": "Average effect of diversity training across 260 studies",
+     "viz": "bar",
+     "wide": false,
+     "value": "0.38",
+     "unit": "SD",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Across 260 studies, diversity training had a moderate effect of 0.38 standard deviations, largest on reactions and knowledge, smaller on behavior and attitudes; attitude effects faded.",
+     "detail": "This meta-analysis by Bezrukova, Spell, Perry and Jehn, spanning more than 40 years of research, is the most comprehensive review of whether training changes the people who take it. An effect of that size is moderate by social-science conventions, but much of it reflects how participants rated the training and what they learned, and knowledge held up while attitudes slipped. Training worked better when it was part of a broader diversity effort, built skills as well as awareness, and ran over a long period. Two later reviews are less encouraging about implicit-bias training. A 2019 meta-analysis of 492 studies by Patrick Forscher, Calvin Lai and colleagues found that procedures could shift implicit-bias measures, but in the 63 studies that tested it, those shifts did not carry through to behavior. A 2021 Annual Review of Psychology survey of 418 prejudice-reduction experiments by Elizabeth Levy Paluck and colleagues found signs of publication bias and limited effects in landmark studies.",
+     "source_label": "Bezrukova, Spell, Perry & Jehn, meta-analysis of diversity training evaluation, Psychological Bulletin (2016)",
+     "source_url": "https://ecommons.cornell.edu/handle/1813/71443",
+     "source_published": "2016",
+     "source_accessed": "2026-10-03",
+     "id": "average-effect-of-diversity-training-across"
+    },
+    {
+     "label": "Likelihood of outperforming financially, top vs. bottom quarter for diversity (McKinsey)",
+     "viz": "ranked",
+     "wide": true,
+     "value": "39",
+     "unit": "% likelier",
+     "series": [
+      {
+       "label": "Executive team, gender",
+       "value": "39",
+       "highlight": false
+      },
+      {
+       "label": "Executive team, ethnic",
+       "value": "39",
+       "highlight": true
+      },
+      {
+       "label": "Board, gender",
+       "value": "27",
+       "highlight": false
+      },
+      {
+       "label": "Board, ethnic",
+       "value": "13",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "McKinsey finds firms in the top quarter for executive gender or ethnic diversity 39 percent likelier to outperform the bottom quarter; an independent test on S&P 500 firms found no significant link.",
+     "detail": "McKinsey’s four Diversity Matters reports (2015, 2018, 2020, 2023) are the most widely cited source for the business case for diversity; the 2023 edition used 2022 financial data for 1,265 companies in 23 countries. The reports describe correlations, not causes. Jeremiah Green of Texas A&M and John Hand of the University of North Carolina, writing in Econ Journal Watch in 2024, applied McKinsey’s method to S&P 500 companies and found no statistically significant positive correlation between executive racial or ethnic diversity and financial performance. They also argued that McKinsey compared diversity measured at the end of a period with profits earned earlier in it, so the data could not show diversity driving performance. McKinsey declined to share its company list, so a direct replication was not possible.",
+     "source_label": "McKinsey & Company, “Diversity Matters Even More: The Case for Holistic Impact” (November 2023)",
+     "source_url": "https://www.mckinsey.com/featured-insights/diversity-and-inclusion/diversity-matters-even-more-the-case-for-holistic-impact",
+     "source_published": "2022",
+     "source_accessed": "2026-10-03",
+     "id": "likelihood-of-outperforming-financially-top-vs"
+    },
+    {
+     "label": "S&P 500 companies tying executive pay to DEI goals",
+     "viz": "ranked",
+     "wide": true,
+     "value": "35",
+     "unit": "%",
+     "series": [
+      {
+       "label": "DEI pay metric, 2024",
+       "value": "68",
+       "highlight": false
+      },
+      {
+       "label": "DEI pay metric, 2025",
+       "value": "35",
+       "highlight": true
+      },
+      {
+       "label": "Board oversight, 2024",
+       "value": "72",
+       "highlight": false
+      },
+      {
+       "label": "Board oversight, 2025",
+       "value": "79",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The share of S&P 500 companies linking executive pay to DEI goals fell from 68 to 35 percent in a year, while the share disclosing board oversight of DEI rose from 72 to 79 percent.",
+     "detail": "Pay incentives are the hardest-edged form of corporate DEI, because they reward leaders for changing who works for them, and they featured in the Justice Department’s allegations against Deloitte. Their halving fits companies dropping the practices most exposed to legal challenge. The Conference Board reads the rise in board oversight as evidence that companies are moving the work inside governance rather than ending it. The same study found that 21 percent of S&P 100 companies eliminated DEI-related metrics and targets, and 30 percent narrowed pay-equity disclosures.",
+     "source_label": "The Conference Board, corporate diversity disclosure study (2025)",
+     "source_url": "https://www.conference-board.org/press/corporate-diversity-disclosure-2025",
+     "source_published": "2024–2025",
+     "source_accessed": "2026-10-03",
+     "id": "s-p-500-companies-tying-executive"
+    },
+    {
+     "label": "US workers whose workplace has each DEI practice",
+     "viz": "ranked",
+     "wide": true,
+     "value": "52",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Fair hiring, pay rules",
+       "value": "61",
+       "highlight": false
+      },
+      {
+       "label": "DEI training or meetings",
+       "value": "52",
+       "highlight": true
+      },
+      {
+       "label": "DEI staff member",
+       "value": "33",
+       "highlight": false
+      },
+      {
+       "label": "Salary transparency",
+       "value": "30",
+       "highlight": false
+      },
+      {
+       "label": "Affinity groups",
+       "value": "26",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In early 2023, 52 percent of US workers said their workplace held DEI trainings or meetings, 61 percent had policies on fairness in hiring, pay or promotion, and 33 percent had dedicated DEI staff.",
+     "detail": "This snapshot of workplace DEI near its peak comes from 4,744 workers at organizations with at least ten employees; affinity or employee resource groups were the least common practice asked about. Among workers who had attended DEI training, 53 percent found it helpful, with a wide partisan gap: 66 percent of Democrats and 36 percent of Republicans. No comparable survey has measured how much of this survived the 2025 and 2026 rollbacks, one reason the extent of the retreat is disputed.",
+     "source_label": "Pew Research Center, “Diversity, Equity and Inclusion in the Workplace” (May 2023)",
+     "source_url": "https://www.pewresearch.org/social-trends/2023/05/17/diversity-equity-and-inclusion-in-the-workplace/",
+     "source_published": "2023",
+     "source_accessed": "2026-10-03",
+     "id": "us-workers-whose-workplace-has-each"
+    },
+    {
+     "label": "Average shareholder support for DEI proposals at US companies, 2026",
+     "viz": "ranked",
+     "wide": true,
+     "value": "1",
+     "unit": "% support",
+     "series": [
+      {
+       "label": "Pro-DEI proposals",
+       "value": "13",
+       "highlight": false
+      },
+      {
+       "label": "Anti-DEI proposals",
+       "value": "1",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In the 2026 proxy season through May, proposals against DEI drew about 1 percent average support from shareholders, and proposals pressing for more DEI about 13 percent.",
+     "detail": "Shareholder votes show how institutional investors, mostly index and pension funds, view companies’ diversity policies; 22 anti-DEI and 5 pro-DEI proposals came to a vote in the period, and 43 anti-DEI proposals were submitted. Anti-DEI proposals drew similarly little support in 2025. Pro-DEI activism has shrunk too: only 10 pro-DEI proposals were filed through May 2026, against about 47 in the whole 2025 season, and board-diversity proposals fell from 26.5 percent average support in 2024 to 2 percent for the single one voted in 2026. The shareholder group As You Sow, which backs DEI, calls the votes a mandate for diverse workforces; the decline on both sides also fits a reading in which investors want management left alone on the question.",
+     "source_label": "Fenwick & West, “How DEI Shareholder Proposals Are Faring in 2026,” Harvard Law School Forum (2026)",
+     "source_url": "https://corpgov.law.harvard.edu/2026/06/05/how-dei-shareholder-proposals-are-faring-in-2026/",
+     "source_published": "2026",
+     "source_accessed": "2026-10-03",
+     "id": "average-shareholder-support-for-dei-proposals"
+    },
+    {
+     "label": "Black share of MIT’s entering class before and after race-conscious admissions ended",
+     "viz": "ranked",
+     "wide": true,
+     "value": "5",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Black, prior average",
+       "value": "13",
+       "highlight": false
+      },
+      {
+       "label": "Black, class of 2028",
+       "value": "5",
+       "highlight": true
+      },
+      {
+       "label": "Four groups, prior",
+       "value": "25",
+       "highlight": false
+      },
+      {
+       "label": "Four groups, 2028",
+       "value": "16",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In the first class admitted after the Supreme Court ended race-conscious admissions, the Black share of MIT’s entering class fell to 5 percent from a recent average of about 13.",
+     "detail": "The four groups are Black, Hispanic, Native American and Pacific Islander students combined. In Students for Fair Admissions v. Harvard (2023), the Court held that race-conscious admissions at Harvard and the University of North Carolina violated the Equal Protection Clause and Title VI, reasoning now being extended to scholarships, fellowships, contracting and employment. MIT showed one of the largest early changes; its dean of admissions, Stu Schmill, told The Tech in 2024 that the class was “not different in academic preparedness: it’s just less racially diverse.” Effects vary widely by college: the Harvard Crimson put the Black share of Harvard’s entering class at 14 percent for the class of 2028 and 11.5 percent for the class of 2029, noting that earlier years were reported on a different basis. Opponents of racial preferences read such changes as the removal of an unfair thumb on the scale; supporters read them as evidence that race-neutral admissions reproduce unequal schooling and opportunity.",
+     "source_label": "NBC News, reporting MIT’s class profile (August 2024)",
+     "source_url": "https://www.nbcnews.com/news/nbcblk/mits-black-student-enrollment-slides-affirmative-action-supreme-court-rcna167622",
+     "source_published": "2024",
+     "source_accessed": "2026-10-03",
+     "id": "black-share-of-mit-s-entering"
+    },
+    {
+     "label": "Americans who disapprove of colleges considering race in admissions",
+     "viz": "ranked",
+     "wide": true,
+     "value": "50",
+     "unit": "%",
+     "series": [
+      {
+       "label": "White adults",
+       "value": "57",
+       "highlight": false
+      },
+      {
+       "label": "Asian adults",
+       "value": "52",
+       "highlight": false
+      },
+      {
+       "label": "All adults",
+       "value": "50",
+       "highlight": true
+      },
+      {
+       "label": "Hispanic adults",
+       "value": "39",
+       "highlight": false
+      },
+      {
+       "label": "Black adults",
+       "value": "29",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Shortly before the Supreme Court’s 2023 ruling, 50 percent of Americans disapproved of selective colleges considering race and ethnicity in admissions and 33 percent approved.",
+     "detail": "Pew asked 5,079 adults about selective colleges “taking race and ethnicity into account in admissions decisions in order to increase the racial and ethnic diversity at the school.” It is the most explicit form of preference in the DEI debate, and far less popular than DEI as a general goal: 49 percent said considering race makes admissions less fair, against 20 percent who said more fair. Seventy-four percent of Republicans disapproved, while 54 percent of Democrats approved. Black adults approved 47 to 29, Hispanic adults split evenly at 39 percent each, and Asian adults disapproved 52 to 37.",
+     "source_label": "Pew Research Center, views on colleges considering race and ethnicity in admissions (June 2023)",
+     "source_url": "https://www.pewresearch.org/politics/2023/06/08/more-americans-disapprove-than-approve-of-colleges-considering-race-ethnicity-in-admissions-decisions/",
+     "source_published": "2023",
+     "source_accessed": "2026-10-03",
+     "id": "americans-who-disapprove-of-colleges-considering"
+    },
+    {
+     "label": "Fortune 500 companies run by a woman",
+     "viz": "radial",
+     "wide": false,
+     "value": "11",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "A record 55 women lead Fortune 500 companies in 2026, 11 percent of the list and the fourth straight year above 10 percent.",
+     "detail": "The share is up from 7.4 percent in 2020, so progress at the very top has continued through the DEI rollback, though slowly. Representation of women of color is thinner: Fortune reports that the list briefly had a single Black woman CEO and, after one departure, no Latina CEO for the first time since 2022, before three Black women were set to lead Fortune 500 companies in mid-2026. CEO counts are small numbers that move with a handful of appointments, so year-to-year changes say little about the effect of any program.",
+     "source_label": "Fortune, “Women run a record 11% of Fortune 500 companies in 2026” (June 2026)",
+     "source_url": "https://fortune.com/2026/06/03/how-many-women-are-fortune-500-ceos/",
+     "source_published": "2026",
+     "source_accessed": "2026-10-03",
+     "id": "fortune-500-companies-run-by-a"
+    },
+    {
+     "label": "Women’s share of non-executive board seats at the EU’s largest listed companies",
+     "viz": "range",
+     "wide": false,
+     "value": "~40",
+     "unit": "%",
+     "series": [],
+     "range_min": "0%",
+     "range_max": "50% parity",
+     "note": "Women held just under 40 percent of non-executive board seats at the EU’s largest listed companies in October 2025, close to the 40 percent target EU law set for June 30, 2026.",
+     "detail": "Europe is moving in the opposite legal direction from the United States. The Gender Balance on Corporate Boards Directive requires large listed companies to reach that share of the underrepresented sex among non-executive directors, or 33 percent among all directors, with transparent selection procedures. The European Institute for Gender Equality reports that women hold about a third of all board seats but fewer than a fifth of executive director posts, just over 10 percent of board chairs and just under 10 percent of CEO posts, and that 18 member states had transposed the directive by June 2026. Supporters of targets cite the result as proof that mandates change representation quickly; American critics cite it as the kind of identity-based rule they want to keep out.",
+     "source_label": "European Institute for Gender Equality, on the Gender Balance on Corporate Boards Directive (June 2026)",
+     "source_url": "https://eige.europa.eu/newsroom/director-corner/after-decade-making-conversation-gender-balance-corporate-boards-directive-continues?language_content_entity=en",
+     "source_published": "2025",
+     "source_accessed": "2026-10-03",
+     "id": "women-s-share-of-non-executive"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Is fairness treating each person the same, or also making an institution reflect the groups it serves?",
+    "kind": "value",
+    "why": "Both sides say they oppose discrimination but mean different things: for one, fairness belongs to each decision, so any use of race or sex is wrong; for the other, lasting gaps between groups show decisions are not neutral.",
+    "detail": "Those who put equal treatment first hold that the promise of the Civil Rights Act was to judge people as individuals. Counting people by group, setting targets for each group and rewarding managers for hitting them treats individuals as stand-ins for categories. Groups differ in age, education, field and preferences, so fair procedures will not produce identical shares, and demanding identical shares pushes institutions toward preferences. The Supreme Court’s 2023 admissions ruling and its unanimous 2025 Ames decision, which held that majority-group plaintiffs face no extra burden under Title VII, rest on this principle.\n\nThose who also look at results answer that choices that seem neutral one at a time can add up to exclusion, through referral networks, unexamined criteria, biased evaluations and the effects of past discrimination in schooling, housing and wealth. Watching outcomes by group is how an institution learns whether its procedures are fair in practice, and acting when gaps persist is how it fixes them. An institution that serves a diverse public or draws on talent from every group has its own reasons to want its people to reflect that public.",
+    "lean_label_a": "Equal treatment",
+    "lean_label_b": "Representative mix",
+    "id": "is-fairness-treating-each-person-the"
+   },
+   {
+    "text": "How much of the gap in who gets hired, promoted and admitted is caused by discrimination today?",
+    "kind": "empirical",
+    "why": "Field experiments measure discrimination directly but only at the first step of hiring, while raw gaps in representation shrink, sometimes sharply, once education, experience and occupation are taken into account.",
+    "detail": "Those who see mostly discrimination point to randomized field experiments, the most direct evidence available, which find large and unchanging gaps in callbacks for equally qualified applicants. Discrimination at the first step compounds through interviews, promotions and pay, and earlier discrimination in schools and neighborhoods shapes the very credentials that other explanations treat as neutral. Gaps that persist across decades, industries and levels are, on this view, what systemic barriers look like.\n\nThose who see mostly other causes answer that the gaps in the largest recent experiment are small in absolute terms and concentrated in a minority of firms, which argues for enforcement against those firms rather than programs that reshape every institution. Most of the difference in who reaches management, the professions and selective colleges tracks education, field of study, age and work patterns that form long before anyone applies. Some groups, such as Asian Americans, are overrepresented in many elite settings, and treating every gap as discrimination aims at the hiring desk instead of at early education and family circumstances.",
+    "lean_label_a": "Discrimination",
+    "lean_label_b": "Other causes",
+    "id": "how-much-of-the-gap-in"
+   },
+   {
+    "text": "Do DEI programs, as actually practiced, reduce bias and widen opportunity?",
+    "kind": "empirical",
+    "why": "DEI is dozens of tools rather than one, and the evidence differs sharply among them. Most were never rigorously evaluated, and the strongest long-run studies are observational, showing what followed a program rather than what it caused.",
+    "detail": "Those who say DEI works argue that the question is which DEI, not whether. Long-run company data link mentoring, task forces, targeted recruiting and assigned responsibility with more diverse management, and structured interviews, clear promotion criteria, pay audits and centralized recruiting narrow the room for bias. Training itself does best as part of a broader, sustained effort, and dropping the effective tools along with the weak ones would throw away real gains.\n\nSkeptics answer that the tools that made up most of the DEI boom, mandatory training, implicit-bias workshops and diversity statements, have the weakest evidence: mandatory training was followed by fewer Black women in management, and shifting implicit bias does not shift behavior. A field that grew into a large industry on correlational business-case studies, with little rigorous testing of its core products, has not earned a presumption that it works. Programs that sort people by identity can also breed resentment, and the rise in workers calling DEI a bad thing suggests that cost is real.",
+    "lean_label_a": "Measurably work",
+    "lean_label_b": "Little or backfire",
+    "id": "do-dei-programs-as-actually-practiced"
+   },
+   {
+    "text": "Should government bar DEI in the institutions it funds, or leave the choice to each institution?",
+    "kind": "value",
+    "why": "Executive orders, contract clauses, funding conditions and laws in more than a dozen states now restrict DEI. Backers call this enforcing civil rights law; opponents, including some critics of DEI, call it government dictating what institutions do and teach.",
+    "detail": "Supporters of bans hold that public universities and agencies spend taxpayers’ money, so the public may decide which offices they fund and what principles they apply. Contractors and grantees take federal money on condition that they not discriminate; under a January 2025 executive order they must certify that they run no unlawful DEI programs, and enforcing that through fraud liability is ordinary law enforcement. Institutions had years to reform and instead expanded DEI bureaucracies, and without penalties they repackage the same practices under new names.\n\nOpponents answer that a federal court, vacating the Education Department’s 2025 anti-DEI directive in American Federation of Teachers v. Department of Education, found it gave no workable definition of DEI and no way to tell lawful from unlawful practice. The same vagueness runs through many bans, so institutions cancel lawful mentoring, outreach and even courses out of fear. Existing law already forbids genuine preferences. Bans on what may be taught about race and sex threaten academic freedom, and using funding threats and fraud liability to force uniform policy hands that power to whoever next holds the executive branch.",
+    "lean_label_a": "Ban by law",
+    "lean_label_b": "Institutions decide",
+    "id": "should-government-bar-dei-in-the"
+   },
+   {
+    "text": "Is it fair to reserve some opportunities, like fellowships or mentoring slots, for underrepresented groups?",
+    "kind": "value",
+    "why": "Programs open only to some races or one sex are the sharpest edge of DEI and the main target of lawsuits. Courts have increasingly sided with challengers since 2023, but whether such programs should exist is separate from whether they are lawful now.",
+    "detail": "Defenders hold that opportunity is not distributed by résumé alone. Internships, mentors, introductions and capital flow through networks shaped by past exclusion, so a program that brings people from underrepresented groups into them levels a field that is not level. Such programs are small, voluntary and additive: they create opportunities rather than taking positions from anyone, and many were created in the open, often with government encouragement, over decades.\n\nCritics answer that an opportunity closed to someone because of race or sex is discrimination against that person whatever the motive, and the applicant turned away does not experience it as additive. Race and sex are crude proxies for disadvantage, taking in the children of affluent professionals and leaving out poor applicants of every group. A program that would be plainly illegal if it favored white men cannot be legal because it favors someone else, and opening it to anyone facing disadvantage serves the goal without the exclusion.",
+    "lean_label_a": "Fair remedy",
+    "lean_label_b": "Unfair preference",
+    "id": "is-it-fair-to-reserve-some"
+   },
+   {
+    "text": "Should help be targeted by race and sex, or by economic disadvantage?",
+    "kind": "value",
+    "why": "As courts and federal pressure narrow group-based programs, many institutions are turning to income, first-generation status and adversity. Backers call this fairer; many civil rights advocates say it misses barriers specific to race and sex.",
+    "detail": "Those who would keep race and sex in view hold that racial discrimination is not reducible to income. Black families at every income level have far less wealth than white families with the same income and live in more segregated neighborhoods, and hiring experiments find discrimination regardless of qualifications. Women face barriers in promotion and pay that have little to do with their parents’ class. Class-based programs help, but evidence from selective colleges shows they recover only part of the racial diversity that race-conscious policies achieved.\n\nAdvocates of economic targeting answer that disadvantage in America runs most deeply along lines of class, and that race-based programs disproportionately benefit the most advantaged members of minority groups while passing over poor white, Asian and rural applicants. Income, first-generation status and neighborhood are lawful, broadly popular criteria that direct help to those with the fewest advantages of any race, and because poverty is concentrated among Black and Hispanic Americans, they still produce substantial racial diversity.",
+    "lean_label_a": "Race and sex",
+    "lean_label_b": "Economic need",
+    "id": "should-help-be-targeted-by-race"
+   },
+   {
+    "text": "Is the corporate retreat from DEI a real change in practice, or mostly a change of name?",
+    "kind": "empirical",
+    "why": "Companies have dropped DEI language and many formal rules, but renamed programs and slow-moving workforce data make it hard to tell whether the work itself has stopped. The answer decides whether the fight is over substance or symbols.",
+    "detail": "Those who see a real retreat note that companies have ended the practices with teeth: representation goals, diverse-slate rules, pay incentives, supplier targets and programs limited to particular groups, and many have cut DEI staff. Disclosure of workforce data, the main way outsiders could hold firms to account, is shrinking, and the Equal Employment Opportunity Commission proposed in July 2026 to stop collecting the annual EEO-1 count of employees by race and sex. Policy changes take years to show up in who sits on boards and in management. Those who back the rollback count it a success and those who regret it a loss, but both see substance.\n\nThose who see mostly rebranding answer that many firms moved programs under new names, opened group-restricted programs to all employees and shifted oversight to the board, where legal defensibility lies. Board composition is essentially unchanged, and a record number of women lead Fortune 500 companies. Even critics of DEI in the administration complain that institutions are disguising rather than ending it, which is why enforcement has moved to investigations and fraud liability.",
+    "lean_label_a": "Real retreat",
+    "lean_label_b": "Mostly rebranding",
+    "id": "is-the-corporate-retreat-from-dei"
+   },
+   {
+    "text": "Does diversity in leadership make organizations perform better?",
+    "kind": "empirical",
+    "why": "The business case, which presents DEI as a route to profit rather than a political stance, is the argument companies cited most, but much of it rests on consultancy studies whose data are not public, and academic results vary with the setting and the measure.",
+    "detail": "Those who see a gain point to controlled studies beyond McKinsey. In a field experiment with student-run startups, Hoogendoorn, Oosterbeek and van Praag (2013) found that gender-balanced teams earned more sales and profits than teams dominated by either sex, and Levine and colleagues (PNAS, 2014) found ethnically diverse trading markets less prone to price bubbles, because traders checked one another instead of following the crowd. A null result on one sample of large US firms does not refute the core argument: a firm that recruits from a narrow slice of the population leaves talent unused.\n\nSkeptics answer that an independent attempt to reproduce McKinsey’s result found no significant link, and that academic research on team diversity finds effects that are small, inconsistent and sometimes negative depending on the task and how teams are run. Profitable firms may simply have more room to spend on diversity, which would produce the correlation in reverse. And a case for DEI that rests on profits fails the moment the numbers do; the honest case is fairness, argued as such.",
+    "lean_label_a": "Performance gain",
+    "lean_label_b": "No proven link",
+    "id": "does-diversity-in-leadership-make-organizations"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Keep DEI programs to counter discrimination",
+    "color_key": "green",
+    "steelman": "Bias still filters talent out of hiring and promotion. DEI is how institutions find it and fix it, and nearly all of it is lawful and has been for decades.",
+    "detail": "Women and people of color still thin out at every step toward the top, and experiments that test employers directly show that bias, not only background, is part of the reason. The work itself is practical: recruiting from the whole talent pool, structured hiring and promotion criteria, pay audits, tracking outcomes so problems show up, and mentoring for people without inherited networks. As the NAACP Legal Defense Fund’s Demetria McCain put it, these programs “advance merit by removing barriers to employment for talent.” Preferences and quotas were already illegal; the campaign against “DEI” blurs lawful inclusion with unlawful preference to scare institutions out of both.\n\nWhere a program does sort people by race or sex, the remedy is to fix that program, not to abolish the whole effort. Measuring results by group is not discrimination but the only way to detect it, which is why the government asked large employers for those counts for six decades, and the enforcement campaign has produced settlements without any finding of liability. Within the camp, civil rights litigators defend these programs in court, corporate defenders stress talent and markets, and an equity wing wants institutions to close outcome gaps actively, including by race-conscious means.",
+    "proponents": "NAACP Legal Defense Fund; National Urban League; Kwame Raoul; Andrea Campbell; Kimberlé Crenshaw; African American Policy Forum; American Federation of Teachers",
+    "id": "keep-dei-programs-to-counter-discrimination"
+   },
+   {
+    "name": "End DEI and treat everyone without regard to race or sex",
+    "color_key": "blue",
+    "steelman": "Civil rights law promised that people would be judged as individuals. DEI sorts them by race and sex instead, and that is discrimination whichever group it favors.",
+    "detail": "Behind a vocabulary of inclusion, DEI built bureaucracies that classify every employee and student by identity, set demographic targets and tie executives’ pay to hitting them, reserve fellowships for some races, require faculty to profess an ideology in diversity statements, and train workers to see one another as oppressors and oppressed. Civil rights law protects every individual equally, and the courts now say so plainly. The effort also failed on its own terms: its core tools did not deliver, its business case did not replicate, and it bred division.\n\nDiscrimination that persists is already illegal, and the answer is to enforce the law case by case and for everyone. Programs open to all, such as mentoring, skills training and outreach to poor communities, remain welcome, and gaps that form long before hiring belong to schools and families, not the hiring desk. We divide on means. Some want voluntary change and ordinary lawsuits; others back executive orders, funding conditions, fraud liability for contractors and state bans on DEI offices at public colleges. A libertarian strand is wary of government dictating private employers’ policies.",
+    "proponents": "Trump administration; Christopher Rufo; Ilya Shapiro; Manhattan Institute; Goldwater Institute; Edward Blum; American Alliance for Equal Rights; Andrea Lucas",
+    "id": "end-dei-and-treat-everyone-without"
+   },
+   {
+    "name": "Pursue DEI goals through programs open to everyone",
+    "color_key": "amber",
+    "steelman": "DEI’s goals were right and many of its methods were wrong. Practices open to everyone raise diversity without dividing workers by identity or inviting backlash.",
+    "detail": "Mandatory training, implicit-bias workshops, identity-restricted programs and demographic targets either did not work or provoked the backlash that now threatens the whole project. Decades of company data point to what does: transparent hiring and promotion criteria, mentoring and sponsorship, skills training, flexible schedules, centralized recruiting and managers who answer for results. Those practices help everyone, are plainly lawful and raise diversity as a by-product. The Society for Human Resource Management, the largest US association of HR professionals, now calls its approach “inclusion for all.”\n\nTo those who call this surrender, we answer that we keep measurement and accountability, the tools that work, and drop only the ones that did not, and that programs open to all can still be designed to reach the people most often excluded. To those who call it DEI under a new name, the test is conduct, not vocabulary: a practice that allocates nothing by race or sex is fair whatever it is called. Some of us keep internal demographic goals while ending public targets; others measure only whether processes are fair, through pay audits and promotion-rate checks.",
+    "proponents": "Society for Human Resource Management; Frank Dobbin; Alexandra Kalev; Lily Zheng",
+    "id": "pursue-dei-goals-through-programs-open"
+   },
+   {
+    "name": "Protect free inquiry from both DEI mandates and DEI bans",
+    "color_key": "rust",
+    "steelman": "Institutions built for inquiry must not impose orthodoxy, whether through required diversity statements or through state bans on teaching about race and sex.",
+    "detail": "On campus, the most damaging part of this fight is about what may be said and taught, not who is hired. Required diversity statements made a contested set of views a condition of academic employment, and speech codes and bias-reporting systems chilled debate. Now governments ban concepts from classrooms, defund courses and threaten institutions over their teaching. Both attack the same principle. MIT dropped required diversity statements in 2024, its president Sally Kornbluth saying that “compelled statements impinge on freedom of expression, and they don’t work.”\n\nThe remedy is to protect speech from both directions: ban loyalty oaths and litmus tests of any viewpoint, keep universities neutral on contested public questions, and leave diversity open to be taught and argued about. Anti-discrimination and harassment law still apply in full, and inclusion work that compels no belief is untouched. Banning ideas by statute hands the next government the same power over other ideas. Some of us focus only on higher education; others oppose DEI bureaucracies generally because they drift into policing speech.",
+    "proponents": "Foundation for Individual Rights and Expression; Greg Lukianoff; Heterodox Academy",
+    "id": "protect-free-inquiry-from-both-dei"
+   },
+   {
+    "name": "Target help by economic disadvantage, not race or sex",
+    "color_key": "purple",
+    "steelman": "The deepest divide in American opportunity is class. Help aimed at income, wealth and neighborhood reaches those with the least, of every race, and it is lawful.",
+    "detail": "DEI asked who is in the room by race and sex and mostly ignored who grew up poor. The children of professionals of every background meet at the top, working-class Americans of every race are left out, and using race as a stand-in for hardship divides working people who share the same problems. Well-designed class preferences count wealth, neighborhood and school quality as well as income, and ending legacy, donor and early-decision preferences that favor the affluent would widen the door further.\n\nWeighing hardship is weighing merit: a high score earned against long odds says more about ability than the same score earned with every advantage. Richard Kahlenberg, whose book Class Matters (2025) makes the case, calls for “a liberal politics of class rather than race.” A left wing, including Walter Benn Michaels and Adolph Reed Jr., sees diversity as a corporate substitute for wages, unions and public goods; conservatives who adopt economic criteria favor them as a lawful option, not an obligation.",
+    "proponents": "Richard Kahlenberg; Walter Benn Michaels; Adolph Reed Jr.",
+    "id": "target-help-by-economic-disadvantage-not"
+   }
+  ],
+  "crux": {
+   "lead": "When some groups stay underrepresented, is fair treatment a matter of process alone, or of results too?",
+   "lead_highlight": "a matter of process alone, or of results too",
+   "subtitle": "The split is whether an institution that has made its rules neutral has done its duty, or must also act when gaps between groups persist, and which of the steps it might take help without adding new unfairness of their own.",
+   "empirical": "How much of today’s gaps in hiring, promotion and admissions comes from discrimination inside institutions, and how much from differences that form earlier, in schooling, family resources and neighborhoods; which programs actually change who is hired and promoted; whether group-based programs provoke backlash; and whether help aimed at income reaches the same people. Hiring experiments and workforce records, if still collected, can narrow these.",
+   "values": "No data settles whether fairness belongs to each individual decision or also to the pattern of results across groups; how to weigh a person passed over by a preference against a group long shut out; whether race, sex or poverty is the injustice that most demands a remedy; or how far government may dictate what employers, colleges and schools do, measure and teach."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "See what US workers say about DEI where they work",
+    "description": "Pew Research Center’s workplace survey shows which DEI practices workers encounter, how they rate them, and how views differ by party, race, sex and age.",
+    "url": "https://www.pewresearch.org/social-trends/2023/05/17/diversity-equity-and-inclusion-in-the-workplace/",
+    "for_position": null,
+    "id": "see-what-us-workers-say-about"
+   },
+   {
+    "kind": "donate",
+    "title": "Support the NAACP Legal Defense Fund",
+    "description": "The Legal Defense Fund litigates to defend DEI programs and challenges the federal executive orders and funding conditions aimed at them.",
+    "url": "https://www.naacpldf.org/donate/",
+    "for_position": "Keep DEI programs to counter discrimination",
+    "id": "support-the-naacp-legal-defense-fund"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Report a race-restricted program to the American Alliance for Equal Rights",
+    "description": "Edward Blum’s organization, which has sued scholarship programs, law firms and venture funds over race-restricted programs, invites people to report such programs and to join.",
+    "url": "https://americanallianceforequalrights.org/",
+    "for_position": "End DEI and treat everyone without regard to race or sex",
+    "id": "report-a-race-restricted-program-to"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Use the HR profession’s framework for inclusion open to all",
+    "description": "SHRM’s BEAM framework guides employers toward inclusion programs grounded in job-related merit and open to everyone, without preferences or quotas.",
+    "url": "https://www.shrm.org/topics-tools/news/inclusion-diversity/shrms-beam-framework-for-inclusion-aligning-merit-with-organizational-excellence",
+    "for_position": "Pursue DEI goals through programs open to everyone",
+    "id": "use-the-hr-profession-s-framework"
+   },
+   {
+    "kind": "policy",
+    "title": "Back a viewpoint-neutral ban on political litmus tests in academia",
+    "description": "FIRE’s model Intellectual Freedom Protection Act would bar public colleges from requiring diversity statements or any other ideological pledge, while leaving teaching about diversity untouched.",
+    "url": "https://www.fire.org/news/new-fire-model-legislation-takes-dei-bureaucracys-chilling-effect-campus",
+    "for_position": "Protect free inquiry from both DEI mandates and DEI bans",
+    "id": "back-a-viewpoint-neutral-ban-on"
+   },
+   {
+    "kind": "policy",
+    "title": "Comment on the proposed tax rule for private schools and colleges",
+    "description": "Treasury and the IRS take public comments until November 3, 2026, on rules that would deny tax-exempt status to private schools and colleges that consider race in admissions, scholarships or programs.",
+    "url": "https://www.federalregister.gov/public-inspection/2026-18127/racial-nondiscrimination-in-private-schools",
+    "for_position": null,
+    "id": "comment-on-the-proposed-tax-rule"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Look up how large employers grade on hiring discrimination",
+    "description": "The University of Chicago’s Becker Friedman Institute grades large US companies, by firm and industry, on the results of an 83,000-application hiring experiment.",
+    "url": "https://bfi.uchicago.edu/discrimination-report-card",
+    "for_position": null,
+    "id": "look-up-how-large-employers-grade"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the case for class-based opportunity",
+    "description": "Richard Kahlenberg of the Progressive Policy Institute argues that colleges and other institutions should target help by economic disadvantage rather than race, and that doing so still yields diversity.",
+    "url": "https://www.progressivepolicy.org/kahlenberg-in-the-new-york-times-affirmative-action-is-gone-can-class-based-admissions-replace-it/",
+    "for_position": "Target help by economic disadvantage, not race or sex",
+    "id": "read-the-case-for-class-based"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the state attorneys general’s guidance on lawful DEI",
+    "description": "Guidance from 16 state attorneys general sets out which diversity, equity, inclusion and accessibility practices they consider lawful for employers, and why they say such programs help prevent discrimination.",
+    "url": "https://www.illinoisattorneygeneral.gov/news/story/attorney-general-raoul-issues-multistate-guidance-for-businesses-on-diversity-equity-inclusion-and-accessibility-employment-initiatives-in-the-workplace",
+    "for_position": "Keep DEI programs to counter discrimination",
+    "id": "read-the-state-attorneys-general-s"
+   },
+   {
+    "kind": "policy",
+    "title": "Propose the model law to abolish DEI offices at public universities",
+    "description": "The Manhattan Institute’s model state bill, written with the Goldwater Institute, would abolish DEI offices, end mandatory diversity training and diversity statements, and bar identity preferences at public colleges.",
+    "url": "https://media4.manhattan-institute.org/sites/default/files/model_dei_legislation013023.pdf",
+    "for_position": "End DEI and treat everyone without regard to race or sex",
+    "id": "propose-the-model-law-to-abolish"
+   }
+  ]
+ },
+ "icon": "presentation",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: A broad glass-fronted office building with a front entrance stands as the dominant focal mass, set on one continuous gently curved hill with a soft fill. In front of it and overlapping its lower facade, a training session is set up: a flip-chart easel with a blank sheet, and two rows of plain stacking chairs angled toward it. A lanyard name badge hangs over the back of one chair. A small columned school hall sits on the far shoulder of the hill, and one unbroken winding footpath runs across the frame from the office entrance to the hall.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #9459a2, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: people, faces, hands, silhouettes, handshake, raised fist, rainbow, puzzle pieces, multicolored anything, scales of justice, protest signs, crossed-out or prohibition symbols, ladders, staircases, gates or barriers, open or closed doors as metaphor, letters or words on the chart, the letters DEI, logos, mirrored or balanced halves, ground drawn as a flat line, a frame or border"
 }

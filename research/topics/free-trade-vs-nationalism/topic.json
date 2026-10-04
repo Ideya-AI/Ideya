@@ -1,8 +1,8 @@
 {
  "slug": "free-trade-vs-nationalism",
  "title": "Trade & Industrial Policy",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-10-03T23:53:28+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Free trade against economic nationalism: tariffs, reshoring, localism, and state subsidy of strategic industries.",
@@ -15,5 +15,789 @@
   "economic-inequality",
   "labor-power",
   "liberal-order-vs-multipolarity"
- ]
+ ],
+ "content": {
+  "overview": {
+   "summary": "How freely goods should cross borders, and how far governments should use tariffs and subsidies to decide where things are made.",
+   "scope_covered": "Tariffs, trade agreements and the WTO system, reshoring and friend-shoring, localism, and subsidies for strategic industries such as chips, steel, shipbuilding and clean energy, in the United States and abroad.",
+   "scope_excluded": "Sourcing of critical minerals; income inequality and worker bargaining power except where trade drives them; the wider contest between a liberal and a multipolar world order; and immigration. Each has its own page.",
+   "why_now": "On September 30, 2026, the US Court of International Trade heard the lead challenge to tariffs of 10 or 12.5 percent imposed in July on 60 economies for failing to ban imports made with forced labor, the third legal basis the administration has used for broad tariffs after courts ruled against the first two.",
+   "why_now_source_label": "Liberty Justice Center",
+   "why_now_source_url": "https://libertyjusticecenter.org/mediaalert/court-of-international-trade-to-hear-challenge-to-sweeping-section-301-tariffs/"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "US average tariff rate",
+     "viz": "ranked",
+     "wide": true,
+     "value": "11.0",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Jan 2025",
+       "value": "2.4",
+       "highlight": false
+      },
+      {
+       "label": "Apr 2025, announced",
+       "value": "22.4",
+       "highlight": false
+      },
+      {
+       "label": "Aug 2026",
+       "value": "11.0",
+       "highlight": true
+      },
+      {
+       "label": "End 2026, current law",
+       "value": "11.8",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The average US tariff rate was about 11 percent in August 2026, more than four times its level at the start of 2025; the 2025 rows are effective rates, the 2026 rows statutory.",
+     "detail": "The April 2025 peak, which the Yale Budget Lab then called the highest US effective rate since 1909, never fully took effect: most of the “reciprocal” rates were paused within days. In February 2026 the Supreme Court ruled that the emergency-powers statute behind much of the 2025 regime does not authorize tariffs, and the rate settled near its current level after a temporary replacement tariff, which the trade court had ruled unlawful in a decision stayed on appeal, expired on July 24, 2026 and tariffs tied to forced labor took its place. The Lab estimates that current-law tariffs will raise the price level by about 0.7 percent, cost the average household about $1,100 a year and raise about $1.9 trillion over ten years before counting their drag on growth. In its April 2026 retrospective it found that independent estimates put the consumer price effect of the 2025 tariffs at 0.5 to 1 percent, below its own April 2025 projection of 2.3 percent, partly because rates were cut back and partly for reasons not yet settled, including whether some of the cost fell on incomes rather than prices. China faces far higher rates: Chad Bown of the Peterson Institute calculates the average US tariff on Chinese imports at near 50 percent at the end of 2025, up from 21 percent in January 2025.",
+     "source_label": "Yale Budget Lab, The State of U.S. Tariffs (August 24, 2026) and One Year of Tariff Analysis (April 2, 2026)",
+     "source_url": "https://budgetlab.yale.edu/research/state-us-tariffs",
+     "source_published": "2025 to 2026",
+     "source_accessed": "2026-10-03",
+     "id": "us-average-tariff-rate"
+    },
+    {
+     "label": "Share of the 2025 US tariffs absorbed by foreign exporters",
+     "viz": "radial",
+     "wide": false,
+     "value": "4",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Foreign exporters absorbed about 4 percent of the 2025 US tariffs by cutting prices, a Kiel Institute study finds; the administration argues that foreigners and the dollar bear more.",
+     "detail": "The Kiel team analyzed more than 25 million shipment records covering nearly $4 trillion of imports, and reports that US customs revenue rose by about $200 billion in 2025. The rest of the burden fell on American importers, which either raise their own prices or accept lower margins; the study does not measure how that share splits between US firms and US consumers. Research on the 2018 and 2019 tariffs reached the same result: as Kimberly Clausing and Maurice Obstfeld of the Peterson Institute summarized it in 2026, those studies “found that US buyers of imports suffered essentially the entire burden of the tariffs.” The administration also calls the revenue a fair charge for access to the American market. A weaker dollar or lower foreign wages could shift some of the burden abroad over time in ways shipment prices do not capture.",
+     "source_label": "Kiel Institute, America’s Own Goal: Who Pays the Tariffs? (Hinz, Lohmann, Mahlkow and Vorwig, January 2026)",
+     "source_url": "https://www.kielinstitut.de/publications/news/americas-own-goal-americans-pay-almost-entirely-for-trumps-tariffs/",
+     "source_published": "2025",
+     "source_accessed": "2026-10-03",
+     "id": "share-of-the-2025-us-tariffs"
+    },
+    {
+     "label": "US jobs lost to Chinese import competition, 1999 to 2011",
+     "viz": "bar",
+     "wide": false,
+     "value": "2.0 to 2.4",
+     "unit": "million",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Economists estimate that rising imports from China cost the United States 2.0 to 2.4 million jobs from 1999 to 2011, in manufacturing and across the wider economy.",
+     "detail": "The authors put the direct loss within manufacturing at about 560,000 jobs, roughly 10 percent of the 5.8 million factory jobs lost over the period; counting supply-chain links raises the manufacturing loss to 985,000, and effects on other sectors make up the rest. This study and its companions, often called the China shock literature, changed how economists view the costs of trade. The losses were concentrated in particular places, furniture, textile and electronics towns in the South and Midwest, and later research by Autor, Dorn and Hanson found that lower employment and incomes in the most exposed commuting zones persisted through 2019 (“On the Persistence of the China Shock,” Brookings Papers on Economic Activity, 2021).",
+     "source_label": "Acemoglu, Autor, Dorn, Hanson and Price, Journal of Labor Economics (2016)",
+     "source_url": "https://economics.mit.edu/sites/default/files/publications/import%20competition%20unemployment%20sag%202016.pdf",
+     "source_published": "1999 to 2011",
+     "source_accessed": "2026-10-03",
+     "id": "us-jobs-lost-to-chinese-import"
+    },
+    {
+     "label": "US manufacturing employment",
+     "viz": "ranked",
+     "wide": true,
+     "value": "12.65",
+     "unit": "million jobs",
+     "series": [
+      {
+       "label": "Jun 1979 (peak)",
+       "value": "19.55",
+       "highlight": false
+      },
+      {
+       "label": "Jul 2000",
+       "value": "17.32",
+       "highlight": false
+      },
+      {
+       "label": "Mar 2010",
+       "value": "11.44",
+       "highlight": false
+      },
+      {
+       "label": "Jul 2019",
+       "value": "12.79",
+       "highlight": false
+      },
+      {
+       "label": "Jan 2025",
+       "value": "12.67",
+       "highlight": false
+      },
+      {
+       "label": "Sep 2026",
+       "value": "12.65",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The United States had about 12.65 million manufacturing jobs in September 2026, about 7 million fewer than at the 1979 peak and about the same as in January 2025.",
+     "detail": "Manufacturing is about 8 percent of the 159.0 million US payroll jobs, by preliminary September 2026 figures. The steepest loss came in one decade: about 5.9 million jobs between mid-2000 and early 2010, spanning China’s entry into the WTO in 2001 and the Great Recession, followed by a recovery of about 1.3 million by 2019. The count dipped to 12.58 million in December 2025 before edging back up. Measured manufacturing output has grown far faster than employment since 1979; how much of that reflects automation and how much reflects quality adjustments in computers is part of the dispute over why the jobs left. Announcements run ahead of hiring: the Reshoring Initiative, a group that campaigns for reshoring, counted about 244,000 reshoring and foreign-investment manufacturing jobs announced in 2024, a count of plans rather than filled jobs.",
+     "source_label": "US Bureau of Labor Statistics, Current Employment Statistics, series CES3000000001",
+     "source_url": "https://data.bls.gov/timeseries/CES3000000001",
+     "source_published": "1979 to 2026 (2026 preliminary)",
+     "source_accessed": "2026-10-03",
+     "id": "us-manufacturing-employment"
+    },
+    {
+     "label": "US goods trade deficit, 2025",
+     "viz": "bar",
+     "wide": false,
+     "value": "1.24",
+     "unit": "trillion $",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The US goods trade deficit rose 2.1 percent in 2025, the first year of the new tariffs, to $1.24 trillion; the goods and services deficit was about unchanged at $901.5 billion.",
+     "detail": "Exports of goods and services were $3.43 trillion and imports $4.33 trillion, and the services surplus grew to $339.5 billion. The bilateral pattern shifted more than the total. Goods deficits with the European Union were $218.8 billion, with China $202.1 billion, with Mexico $196.9 billion and with Vietnam $178.2 billion; the deficit with China fell by $93.4 billion while the deficit with Vietnam rose by $54.7 billion. Chad Bown of the Peterson Institute notes that part of the 2025 import surge was stockpiling ahead of expected tariffs.",
+     "source_label": "US Bureau of Economic Analysis and Census Bureau, U.S. International Trade in Goods and Services, Annual 2025",
+     "source_url": "https://www.bea.gov/news/2026/us-international-trade-goods-and-services-december-and-annual-2025",
+     "source_published": "2025",
+     "source_accessed": "2026-10-03",
+     "id": "us-goods-trade-deficit-2025"
+    },
+    {
+     "label": "China’s share of world manufacturing value added",
+     "viz": "ranked",
+     "wide": true,
+     "value": "28",
+     "unit": "%",
+     "series": [
+      {
+       "label": "2004",
+       "value": "8.5",
+       "highlight": false
+      },
+      {
+       "label": "2010",
+       "value": "18.0",
+       "highlight": false
+      },
+      {
+       "label": "2019",
+       "value": "27.0",
+       "highlight": false
+      },
+      {
+       "label": "2024",
+       "value": "28.0",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "China produced about 28 percent of the world’s manufacturing value added in 2024, up from under 9 percent in 2004, by shares calculated from World Bank data.",
+     "detail": "In dollars, China’s manufacturing value added was $4.65 trillion of a world total of $16.6 trillion in 2024. The same series puts the United States at about 17 percent of the world total in 2019, the last year for which it reports a US figure. Value added at market exchange rates is only one measure of industrial weight. Projections are more contested: the UN Industrial Development Organization’s 2024 report “The Future of Industrialization” extends 2010 to 2019 growth rates to show China at about 45 percent by 2030, a mechanical projection rather than a forecast.",
+     "source_label": "World Bank, Manufacturing value added (current US$), NV.IND.MANF.CD; shares calculated from it",
+     "source_url": "https://data.worldbank.org/indicator/NV.IND.MANF.CD",
+     "source_published": "2004 to 2024",
+     "source_accessed": "2026-10-03",
+     "id": "china-s-share-of-world-manufacturing"
+    },
+    {
+     "label": "China’s share of US goods imports",
+     "viz": "ranked",
+     "wide": true,
+     "value": "9",
+     "unit": "%",
+     "series": [
+      {
+       "label": "2017",
+       "value": "22",
+       "highlight": false
+      },
+      {
+       "label": "End 2025",
+       "value": "9",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "China supplied about 22 percent of US goods imports in 2017, before the first trade war, and about 9 percent by the end of 2025.",
+     "detail": "Chad Bown calculates that real US imports from China fell 28 percent in 2025 alone and ended 40 percent below their level on the eve of the 2018 trade war, while real imports from all other countries rose more than 9 percent in 2025. Since 2017 most of China’s lost share has gone to Taiwan (4.1 percentage points), Vietnam (3.7) and Mexico (2.3), partly because of booming imports of equipment for AI data centers and partly because supply chains moved to third countries. Researchers at Stanford’s Center on China’s Economy and Institutions find that Chinese value added in US imports has fallen less than China’s direct share. Supporters of tariffs read the shift as decoupling from a strategic rival; their critics read it as trade rerouted rather than production brought home.",
+     "source_label": "PIIE, Chad P. Bown, “The Trump-China trade wars: Five takeaways from US imports in 2025” (March 16, 2026)",
+     "source_url": "https://www.piie.com/blogs/realtime-economics/2026/trump-china-trade-wars-five-takeaways-us-imports-2025",
+     "source_published": "2017 to 2025",
+     "source_accessed": "2026-10-03",
+     "id": "china-s-share-of-us-goods"
+    },
+    {
+     "label": "Spending on US factory construction",
+     "viz": "ranked",
+     "wide": true,
+     "value": "170.7",
+     "unit": "$bn a year",
+     "series": [
+      {
+       "label": "2021 average",
+       "value": "75.5",
+       "highlight": false
+      },
+      {
+       "label": "2024 average",
+       "value": "235.6",
+       "highlight": false
+      },
+      {
+       "label": "Aug 2025",
+       "value": "211.1",
+       "highlight": false
+      },
+      {
+       "label": "Aug 2026",
+       "value": "170.7",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Spending on building US factories tripled from 2021 to 2024, by FactCheck.org’s reading of Census data, and in August 2026 ran 19 percent below a year earlier.",
+     "detail": "The first two rows are annual averages and the last two single months at seasonally adjusted annual rates, so they are close but not identical measures; none is adjusted for construction cost inflation. The boom followed the CHIPS and Science Act and the Inflation Reduction Act of August 2022, which subsidized chip plants, battery factories and clean-energy manufacturing; FactCheck.org reports that spending rose 62 percent in 2023 alone and peaked in the third quarter of 2024. The causes of the decline are disputed. Supporters of targeted subsidies point to large chip projects finishing, the 2025 rollback of clean-energy tax credits and tariffs on building materials, and the Associated Builders and Contractors’ chief economist cited “CHIPS Act-enabled megaprojects winding down and the stiff headwind of trade policy.” The White House has pointed to 2025 spending that stayed above the 2021 to 2024 average as evidence of a continuing boom.",
+     "source_label": "US Census Bureau, Monthly Construction Spending, August 2026; annual averages as compiled by FactCheck.org",
+     "source_url": "https://www.census.gov/construction/c30/pdf/release.pdf",
+     "source_published": "2021 to 2026",
+     "source_accessed": "2026-10-03",
+     "id": "spending-on-us-factory-construction"
+    },
+    {
+     "label": "Industrial policy spending as a share of GDP, 2019",
+     "viz": "ranked",
+     "wide": true,
+     "value": "1.73",
+     "unit": "% of GDP",
+     "series": [
+      {
+       "label": "China",
+       "value": "1.73",
+       "highlight": true
+      },
+      {
+       "label": "China, same basis",
+       "value": "1.48",
+       "highlight": false
+      },
+      {
+       "label": "South Korea",
+       "value": "0.67",
+       "highlight": false
+      },
+      {
+       "label": "France",
+       "value": "0.55",
+       "highlight": false
+      },
+      {
+       "label": "Japan",
+       "value": "0.50",
+       "highlight": false
+      },
+      {
+       "label": "Germany",
+       "value": "0.41",
+       "highlight": false
+      },
+      {
+       "label": "Taiwan",
+       "value": "0.41",
+       "highlight": false
+      },
+      {
+       "label": "United States",
+       "value": "0.39",
+       "highlight": false
+      },
+      {
+       "label": "Brazil",
+       "value": "0.33",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "By a conservative CSIS count, China spent at least 1.73 percent of GDP on industrial policy in 2019, over four times the US share; its second row uses the basis applied to the others.",
+     "detail": "The authors count direct subsidies, tax breaks, below-market credit, government research support and state investment funds, and put China’s total at more than $248 billion at nominal exchange rates. They call the China estimates conservative because many forms of support, such as cheap land and energy, cannot be quantified. The same report documents waste and excess capacity in China’s programs. The comparison predates the 2022 US CHIPS and Science Act and Inflation Reduction Act and the European Union’s later subsidy programs, which raised Western spending substantially.",
+     "source_label": "CSIS, “Red Ink: Estimating Chinese Industrial Policy Spending in Comparative Perspective” (May 2022)",
+     "source_url": "https://www.csis.org/analysis/red-ink-estimating-chinese-industrial-policy-spending-comparative-perspective",
+     "source_published": "2019",
+     "source_accessed": "2026-10-03",
+     "id": "industrial-policy-spending-as-a-share"
+    },
+    {
+     "label": "US share of world chipmaking capacity",
+     "viz": "ranked",
+     "wide": true,
+     "value": "14",
+     "unit": "%",
+     "series": [
+      {
+       "label": "2022",
+       "value": "10",
+       "highlight": false
+      },
+      {
+       "label": "2032 with CHIPS Act",
+       "value": "14",
+       "highlight": true
+      },
+      {
+       "label": "2032 without it",
+       "value": "8",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The chip industry, whose members receive the grants, projects that subsidies will lift the US share of world chipmaking capacity from 10 percent in 2022 to 14 percent in 2032, not 8.",
+     "detail": "The Semiconductor Industry Association, which produced the study with Boston Consulting Group, represents chipmakers that receive CHIPS Act grants. It projects US fabrication capacity to roughly triple (up 203 percent) by 2032 and the US share of the most advanced logic chips, below 10 nanometers, to rise from 0 percent in 2022 to 28 percent, and counts more than 80 announced projects in 25 states worth nearly $450 billion in private investment. The 2022 law provided $39 billion in direct manufacturing incentives plus a 25 percent investment tax credit. Skeptics of subsidies point to construction delays, cost overruns and doubt that the plants can compete without permanent support.",
+     "source_label": "SIA and Boston Consulting Group, “Emerging Resilience in the Semiconductor Supply Chain” (May 8, 2024)",
+     "source_url": "https://www.semiconductors.org/america-projected-to-triple-semiconductor-manufacturing-capacity-by-2032-the-largest-rate-of-growth-in-the-world/",
+     "source_published": "2022 actual; 2032 projections",
+     "source_accessed": "2026-10-03",
+     "id": "us-share-of-world-chipmaking-capacity"
+    },
+    {
+     "label": "Consumer cost per job from the 2018 washing machine tariffs",
+     "viz": "bar",
+     "wide": false,
+     "value": "815,000+",
+     "unit": "$ a year",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The 2018 tariffs on imported washing machines cost American buyers more than $815,000 a year for each US manufacturing job that companies reported creating.",
+     "detail": "Washer prices rose nearly 12 percent after the safeguard tariffs, and dryer prices, which were not tariffed but are bought alongside washers, rose by a similar amount. The authors estimate the cost to consumers at just over $1.5 billion a year against about $82 million in tariff revenue, and divide the net cost by the roughly 1,800 jobs that companies reported adding; the job count comes from company reports, not the authors’ own estimate. Supporters of protection answer that the jobs and the new Samsung and LG plants are lasting, that consumer costs fall as domestic capacity grows, and that cost-per-job arithmetic leaves out the value of being able to make things at home.",
+     "source_label": "Flaaen, Hortaçsu and Tintelnot, “The Case of Washing Machines,” American Economic Review (2020)",
+     "source_url": "https://www.aeaweb.org/articles?id=10.1257/aer.20190611",
+     "source_published": "2018",
+     "source_accessed": "2026-10-03",
+     "id": "consumer-cost-per-job-from-the"
+    },
+    {
+     "label": "US customs duties collected and refunded, fiscal 2026",
+     "viz": "ranked",
+     "wide": true,
+     "value": "125.2",
+     "unit": "billion $",
+     "series": [
+      {
+       "label": "Gross, FY26 to Aug",
+       "value": "292.5",
+       "highlight": false
+      },
+      {
+       "label": "Refunds, FY26 to Aug",
+       "value": "125.2",
+       "highlight": true
+      },
+      {
+       "label": "Net, FY26 to Aug",
+       "value": "167.3",
+       "highlight": false
+      },
+      {
+       "label": "Net, FY25 same months",
+       "value": "165.2",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The Treasury collected $292.5 billion in customs duties in fiscal 2026 through August but refunded $125.2 billion, leaving net receipts near the same months a year earlier.",
+     "detail": "Net customs receipts were negative in May, June and July 2026 (minus $42 million, minus $25.6 billion and minus $8.5 billion) as refunds of the invalidated emergency tariffs outran new collections, then turned positive again in August at $12.8 billion. The Treasury statement does not break refunds out by legal authority, so not every refunded dollar comes from the invalidated tariffs. Net customs receipts were $194.9 billion in all of fiscal 2025 and $77.0 billion in fiscal 2024 (Monthly Treasury Statement, September 2025), and Customs and Border Protection runs the refunds through a system it calls CAPE. Supporters of the tariffs cite customs revenue as a way to cut deficits; opponents say refunds and legal uncertainty make it a fragile source, collected from American importers.",
+     "source_label": "US Treasury, Monthly Treasury Statement, August 2026",
+     "source_url": "https://fiscaldata.treasury.gov/static-data/published-reports/mts/MonthlyTreasuryStatement_202608.pdf",
+     "source_published": "fiscal 2025 to 2026 (2026 to August)",
+     "source_accessed": "2026-10-03",
+     "id": "us-customs-duties-collected-and-refunded"
+    },
+    {
+     "label": "New industrial policy measures worldwide, 2023",
+     "viz": "bar",
+     "wide": false,
+     "value": "2,500+",
+     "unit": "measures",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Governments adopted more than 2,500 industrial policy measures in 2023, and more than two-thirds of them likely discriminated against foreign firms, the IMF reports.",
+     "detail": "China, the European Union and the United States together accounted for almost half of the new measures; subsidies were the most common instrument, and advanced economies drove the surge. Governments most often cite strategic competitiveness as the motive, with climate change, supply chain resilience and national security rising. The data come from the New Industrial Policy Observatory (Evenett, Jakubik, Martín and Ruta, IMF Working Paper 2024/001). The IMF’s own view is that well-designed industrial policy can address genuine market failures, but that the bar for success is high and trade-distorting measures risk retaliation.",
+     "source_label": "IMF, “Industrial Policy is Back But the Bar to Get it Right Is High” (April 12, 2024)",
+     "source_url": "https://www.imf.org/en/blogs/articles/2024/04/12/industrial-policy-is-back-but-the-bar-to-get-it-right-is-high",
+     "source_published": "2023",
+     "source_accessed": "2026-10-03",
+     "id": "new-industrial-policy-measures-worldwide-2023"
+    },
+    {
+     "label": "China’s goods trade surplus, 2025",
+     "viz": "bar",
+     "wide": false,
+     "value": "1.19",
+     "unit": "trillion $",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "China exported about $1.19 trillion more in goods than it imported in 2025, a record and about 20 percent more than in 2024, by its customs administration’s count.",
+     "detail": "The surplus grew even as exports to the United States fell sharply, and it is central to the argument over “overcapacity.” Governments in Washington, Brussels and several emerging economies argue that Chinese subsidies and weak domestic consumption push surplus production onto world markets, and the European Union, Mexico, Brazil, India and others have raised tariffs or opened trade-defense cases on Chinese steel, electric vehicles and other goods. Chinese officials attribute the surplus to industrial depth and competitive firms, and supporters of open trade note that cheap Chinese solar panels, batteries and machinery lower costs for everyone else.",
+     "source_label": "China General Administration of Customs, reported by France 24 (January 14, 2026)",
+     "source_url": "https://www.france24.com/en/tv-shows/business/20260114-china-sees-record-1-19-trillion-trade-surplus-in-2025-in-spite-of-us-tariffs",
+     "source_published": "2025",
+     "source_accessed": "2026-10-03",
+     "id": "china-s-goods-trade-surplus-2025"
+    },
+    {
+     "label": "Share of world trade on WTO equal-treatment terms",
+     "viz": "ranked",
+     "wide": true,
+     "value": "72",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Start of 2025",
+       "value": "80",
+       "highlight": false
+      },
+      {
+       "label": "Feb 2026",
+       "value": "72",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "World trade at the WTO’s equal-treatment (most-favored-nation) tariffs fell from about 80 percent of the total at the start of 2025 to 72 percent in February 2026, on different base years.",
+     "detail": "Under the most-favored-nation principle, Article I of the General Agreement on Tariffs and Trade, a WTO member must extend any tariff advantage it gives one member to all others. Trade can leave those terms in two directions: lower, through free trade agreements and preference schemes, or higher, through discriminatory tariffs such as those the United States imposed in 2025. The WTO notes that the share rose and fell during 2025 before settling, and that most-favored-nation tariffs still govern most world trade. The earlier estimate used 2022 import data and the new one 2024 data. In its March 2026 forecast the WTO expected world merchandise trade volume growth to slow from 4.6 percent in 2025 to 1.9 percent in 2026.",
+     "source_label": "World Trade Organization, Global Trade Outlook and Statistics, March 2026",
+     "source_url": "https://www.wto.org/english/res_e/booksp_e/gtos0326_e.pdf",
+     "source_published": "2025 to 2026",
+     "source_accessed": "2026-10-03",
+     "id": "share-of-world-trade-on-wto"
+    },
+    {
+     "label": "Americans’ views of trade and of the new tariffs, 2026",
+     "viz": "ranked",
+     "wide": true,
+     "value": "82",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Trade an opportunity",
+       "value": "82",
+       "highlight": true
+      },
+      {
+       "label": "Trade a threat",
+       "value": "13",
+       "highlight": false
+      },
+      {
+       "label": "Approve of tariffs",
+       "value": "37",
+       "highlight": false
+      },
+      {
+       "label": "Disapprove of tariffs",
+       "value": "60",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In early 2026, 82 percent of Americans told Gallup that foreign trade is more an opportunity than a threat, and 60 percent told Pew they disapproved of the increased tariffs.",
+     "detail": "The rows answer different questions in different surveys. Gallup asks whether foreign trade is more an opportunity for growth through exports or a threat from imports; Pew asked about the Trump administration’s increased tariffs on imports. Partisanship shapes both: Gallup found 89 percent of Democrats, 81 percent of independents and 74 percent of Republicans calling trade an opportunity, while Pew found 71 percent of Republicans approving of the tariffs and 93 percent of Democrats disapproving, so many Republicans hold both views at once. Pew also found 51 percent expecting the tariffs’ effects on the country to be mostly negative. In Gallup’s trend, the share calling trade a threat peaked at 52 percent in 2008, and the opportunity share fell to 63 percent in 2021 before rising to 81 percent in 2025.",
+     "source_label": "Gallup, World Affairs survey (February 2–16, 2026); Pew Research Center, American Trends Panel (January 20–26, 2026)",
+     "source_url": "https://news.gallup.com/poll/702764/top-foreign-policy-priority-security.aspx",
+     "source_published": "2026",
+     "source_accessed": "2026-10-03",
+     "id": "americans-views-of-trade-and-of"
+    },
+    {
+     "label": "Federal payments to farmers hit by trade retaliation",
+     "viz": "ranked",
+     "wide": true,
+     "value": "23",
+     "unit": "billion $",
+     "series": [
+      {
+       "label": "2018 and 2019",
+       "value": "23",
+       "highlight": true
+      },
+      {
+       "label": "Dec 2025 package",
+       "value": "12",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The government paid farmers $23 billion to offset retaliation losses in 2018 and 2019, the GAO reports, and the USDA announced a further $12 billion package in December 2025.",
+     "detail": "When China and other partners answered US tariffs by taxing American soybeans, pork and other farm goods, the Department of Agriculture compensated farmers through its Market Facilitation Program; the GAO found weaknesses in how payments were calculated and said oversight of future aid could be improved. In its December 2025 announcement the USDA said $11 billion of the new package would go in one-time payments to row-crop farmers of up to $155,000 each, citing “unfair market disruptions.” Supporters of open trade cite the payments as a hidden taxpayer cost of tariffs; supporters of tariffs call them a bridge while new trade deals open markets, pointing to agreements in which partners committed to buy more US farm goods.",
+     "source_label": "US Government Accountability Office, GAO-22-104259 (2022); US Department of Agriculture press release (December 8, 2025)",
+     "source_url": "https://www.gao.gov/products/gao-22-104259",
+     "source_published": "2018 to 2025",
+     "source_accessed": "2026-10-03",
+     "id": "federal-payments-to-farmers-hit-by"
+    },
+    {
+     "label": "Share of the world in extreme poverty",
+     "viz": "ranked",
+     "wide": true,
+     "value": "10.0",
+     "unit": "%",
+     "series": [
+      {
+       "label": "1990",
+       "value": "43.4",
+       "highlight": false
+      },
+      {
+       "label": "2000",
+       "value": "36.2",
+       "highlight": false
+      },
+      {
+       "label": "2010",
+       "value": "21.0",
+       "highlight": false
+      },
+      {
+       "label": "2019",
+       "value": "10.8",
+       "highlight": false
+      },
+      {
+       "label": "2025 (nowcast)",
+       "value": "10.0",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The share of the world living on less than $3.00 a day fell from about 43 percent in 1990 to about 10 percent in 2025, by World Bank estimates.",
+     "detail": "The World Bank raised its international poverty line to $3.00 a day in 2021 prices in June 2025; these figures use that line and differ slightly from earlier published versions. The decades after 1990 brought the fastest growth in world trade, and the countries that cut poverty fastest, including China and Vietnam, did so as export manufacturers. How much of the decline trade caused is disputed: some credit export-led growth, while others stress that China, South Korea and Taiwan grew with heavy state direction, protection of infant industries and controls on capital. Progress has slowed sharply since 2019, and extreme poverty is increasingly concentrated in sub-Saharan Africa.",
+     "source_label": "World Bank, Poverty and Inequality Platform (international poverty line of $3.00 a day)",
+     "source_url": "https://pip.worldbank.org/home",
+     "source_published": "1990 to 2025",
+     "source_accessed": "2026-10-03",
+     "id": "share-of-the-world-in-extreme"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Can tariffs rebuild domestic manufacturing at a cost worth paying?",
+    "kind": "empirical",
+    "why": "Studies of the narrow, short-lived 2018 tariffs found high costs and net job losses. Supporters answer that a broad, permanent tariff has never been tested in modern conditions, and that factories take years to build.",
+    "detail": "Those who expect tariffs to work note that every country that industrialized, the United States in the nineteenth century included, did so behind tariff walls, and that foreign automakers and appliance makers built US plants after earlier trade actions. On this view the costs economists measure are front-loaded and visible, while the benefits, a deeper supplier base, skilled workers and the innovation that grows near factories, take decades and do not show up in a two-year study; uncertainty, not the tariffs themselves, has held back investment. Skeptics answer that the record is consistent. Federal Reserve economists found that in 2018 and 2019 protection added slightly to employment in shielded industries, while higher input costs and foreign retaliation subtracted more, with little effect on industrial production (Flaaen and Pierce, 2019). Most imports are parts and materials for American production, so a broad tariff taxes the manufacturers it means to help, and money spent on duties is not spent on new plants. The early record of the 2025 tariffs, flat factory employment and falling factory construction, is read by one side as failure and by the other as too soon to judge.",
+    "lean_label_a": "Worth the cost",
+    "lean_label_b": "Not worth the cost",
+    "id": "can-tariffs-rebuild-domestic-manufacturing-at"
+   },
+   {
+    "text": "How much efficiency should a country give up for security and resilience?",
+    "kind": "value",
+    "why": "There is no market price for national security. One side says firms underinvest in backup supply and a rival has used dependence as leverage; the other says insurance has a price and almost any product can be called strategic.",
+    "detail": "Concentrated supply chains broke down during the pandemic; in 2025 Chinese export restrictions on rare earth magnets and certain chips twice nearly halted US auto production (Bown, Peterson Institute, 2026); and defense planners worry about munitions and shipbuilding capacity. Those who put resilience first argue that a country unable to make its own chips, ships, drugs or munitions is at the mercy of whoever does. Markets price a product, not the cost of losing access to it in a crisis, so paying somewhat more for domestic or allied supply is the premium on a policy the market will not write. Those who put efficiency first answer that diversification, not self-sufficiency, is what makes supply resilient: a country that makes everything at home is exposed to its own disasters and has no fallback. They would handle the few genuinely critical items with stockpiles, targeted support and agreements with allies, and warn that calling whole industries strategic invites every lobby to claim protection and weakens the economy whose size is the real foundation of national power.",
+    "lean_label_a": "Resilience first",
+    "lean_label_b": "Efficiency first",
+    "id": "how-much-efficiency-should-a-country"
+   },
+   {
+    "text": "Was trade or technology the main reason US factory jobs disappeared?",
+    "kind": "empirical",
+    "why": "Measured factory output kept rising for decades while employment fell, which many read as automation; yet the sharpest losses came in the 2000s, as Chinese imports surged, hitting the most exposed places hardest. That decides what trade policy can restore.",
+    "detail": "Those who blame trade say official output figures are flattered by measured quality gains in computers, and that outside that sector factory output has been weak. Germany, Japan and South Korea automated too and kept far larger manufacturing workforces; what set the United States apart, on this view, was its willingness to let production move offshore. Those who blame technology answer that manufacturing’s share of jobs has fallen in nearly every rich country, including those with trade surpluses, and that even the China shock research attributes only a modest share of the decade’s factory losses to direct import competition. The shock, they add, was a one-time event as China joined the world economy, and production brought home today would arrive in highly automated plants with few workers, so help for affected people and places would do more than trade barriers.",
+    "lean_label_a": "Mostly trade",
+    "lean_label_b": "Mostly automation",
+    "id": "was-trade-or-technology-the-main"
+   },
+   {
+    "text": "Can governments choose industries to support without wasting the money?",
+    "kind": "empirical",
+    "why": "East Asia’s rise and China’s lead in solar, batteries and electric vehicles are read as proof that industrial policy works; failed programs and overcapacity, as proof it does not. Successes are visible and the counterfactual is not.",
+    "detail": "Supporters point out that many advanced technologies, from the internet to GPS to mRNA vaccines, began with public funding, and that Japan, South Korea, Taiwan and China caught up by steering credit and protection to chosen industries. The aim, they say, is to back sectors with large spillovers or security value, with conditions and performance tests attached, rather than to pick individual firms. Skeptics answer that governments know less than markets about which technologies and companies will succeed, and that their choices bend to lobbying and electoral geography. China’s own record, they note, includes ghost factories, bankrupt chipmakers and loss-making overcapacity alongside its successes, and subsidies invite retaliation and subsidy races that leave taxpayers everywhere worse off.",
+    "lean_label_a": "States can target",
+    "lean_label_b": "Markets do better",
+    "id": "can-governments-choose-industries-to-support"
+   },
+   {
+    "text": "Do persistent trade deficits harm the economy?",
+    "kind": "empirical",
+    "why": "Most economists treat the overall deficit as the mirror of national saving and investment. A school associated with Michael Pettis, taken up by tariff advocates, holds that surplus countries suppress their own consumption and push the excess onto the US.",
+    "detail": "On the first view, a deficit means goods that could be made at home are made abroad, paid for by selling American assets and borrowing; American Compass puts the resulting US net foreign asset position near minus $23 trillion. Surplus countries such as China and Germany hold down domestic consumption and export the excess, and the United States, with the most open market and the reserve currency, absorbs it, so tariffs that push trade toward balance would shift demand back to American producers. On the second view, the deficit reflects how much Americans save and invest, foreign demand for US assets reflects confidence in the economy, and bilateral deficits are an artifact of supply chains. Tariffs change the overall balance little, this side argues, because they also strengthen the dollar and reduce exports, as the rise in the goods deficit in 2025 suggests; changing the balance means changing domestic saving, including the federal budget deficit.",
+    "lean_label_a": "Deficits do harm",
+    "lean_label_b": "Deficits are benign",
+    "id": "do-persistent-trade-deficits-harm-the"
+   },
+   {
+    "text": "Should world trade run on common rules or on bilateral deals backed by leverage?",
+    "kind": "value",
+    "why": "WTO rule-making has stalled, and its appeals body has lacked a quorum since December 2019, after the United States spent years blocking appointments. One side wants the rules repaired; the other says a big market’s leverage wins more, country by country.",
+    "detail": "Defenders of common rules argue that predictable, non-discriminatory terms let firms invest across borders without fearing that a political decision will wreck their business overnight, and protect small countries from large ones; the postwar system turned trade wars into legal disputes. Deals struck under threat, they say, produce unstable bargains, invite retaliation and push others into blocs that exclude the United States. Advocates of leverage answer that the rules were written for a world without a state-directed economy the size of China’s and have failed to discipline its subsidies, forced technology transfer or overcapacity, while other countries kept higher tariffs and non-tariff barriers against an open American market. Using that market country by country, they say, has already won concessions and investment pledges that decades of WTO talks did not. In March 2026 the WTO’s ministerial conference in Yaoundé ended without agreement on a reform declaration, and the moratorium on customs duties on electronic transmissions, in place since 1998, lapsed (European Commission, 2026).",
+    "lean_label_a": "Common rules",
+    "lean_label_b": "Bilateral leverage",
+    "id": "should-world-trade-run-on-common"
+   },
+   {
+    "text": "Who should decide tariffs, Congress or the President?",
+    "kind": "value",
+    "why": "The Constitution gives Congress the power to lay duties, but Congress delegated broad tariff authority to the President. In February 2026 the Supreme Court held that the emergency-powers law does not cover tariffs; other routes are now in court.",
+    "detail": "Those who want Congress in charge argue that tariffs are taxes, and taxing is the core power the Constitution reserves to the legislature. When one person can impose, change or lift tariffs on any country overnight, they say, trade policy becomes unpredictable, open to lobbying and favoritism, and usable for ends unrelated to trade; the bipartisan Trade Review Act would make new tariffs lapse unless Congress approved them. Those who want the President in charge answer that trade policy is now inseparable from foreign policy and security, that leverage depends on acting quickly and credibly, and that Congress delegated these powers deliberately, in statutes it can amend, because a 535-member legislature cannot negotiate with foreign governments in real time. Requiring a vote on every tariff, they say, would hand other countries a veto through their lobbyists in Washington.",
+    "lean_label_a": "Congress decides",
+    "lean_label_b": "President decides",
+    "id": "who-should-decide-tariffs-congress-or"
+   },
+   {
+    "text": "Should poorer countries be allowed to protect industries in ways richer ones may not?",
+    "kind": "value",
+    "why": "WTO rules give developing countries some flexibility, but countries declare their own status and China’s claim is disputed. Developing-country governments see rich countries’ return to subsidies and tariffs as a double standard.",
+    "detail": "Those who want the same rules for everyone argue that infant-industry protection usually produces industries that never grow up, sheltering firms and raising prices for poor consumers, and that the fastest-growing developing countries got there by exporting into open world markets, which depends on everyone keeping theirs open. Special treatment for an economy as large as China’s, they add, has let the most powerful exporter claim the privileges of the weakest. Those who want room to develop answer that Britain, the United States, Germany, Japan, South Korea and China all protected and subsidized young industries before embracing free trade, that today’s rules forbid poorer countries the tools that made the rich rich, and that low-income countries that liberalized fastest have often stayed exporters of raw materials.",
+    "lean_label_a": "Same rules for all",
+    "lean_label_b": "Room to develop",
+    "id": "should-poorer-countries-be-allowed-to"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Keep trade open under shared rules",
+    "color_key": "green",
+    "steelman": "Trade makes nations richer the way specialization makes people richer. Tariffs tax our own families and factories, and shared rules beat trade wars.",
+    "detail": "A tariff is a tax on a country’s own consumers and producers. Most imports are parts and materials that American factories use, so a broad tariff raises their costs, and retaliation lands on our farmers and exporters. The evidence keeps saying so: shipment data show that about 96 percent of the 2025 tariffs was passed on to US buyers (Kiel Institute, 2026), and the 2018 washing machine tariffs cost over $815,000 annually per reported job. The long fall in factory employment mostly reflects rising productivity, which every rich country has seen. The postwar system of shared, predictable rules turned trade disputes into legal cases and coincided with the largest fall in poverty in history; the answer to China’s subsidies is to work with allies under common rules, not to wall off the American market and push the world to trade around it.\n\nWe accept that the China shock was real and that the country did far too little for the workers and towns it hit. The remedy is wage insurance, retraining, relocation help and investment in those places, at a fraction of the cost of taxing every consumer. On security, stockpiles, diversified supply among allies and narrow export controls handle the few genuinely critical goods; they do not justify tariffs on everything from coffee to clothing. Libertarians among us, such as the Cato Institute, would cut tariffs even unilaterally; center-left economists such as Kimberly Clausing pair open trade with a stronger safety net and progressive taxes; and most open-trade governments now accept targeted defense against Chinese overcapacity while opposing broad tariffs.",
+    "proponents": "Cato Institute; US Chamber of Commerce; Douglas Irwin; Kimberly Clausing; Maurice Obstfeld; Scott Lincicome; Government of Japan; Government of Canada",
+    "id": "keep-trade-open-under-shared-rules"
+   },
+   {
+    "name": "Use broad tariffs to rebuild home industry",
+    "color_key": "blue",
+    "steelman": "Forty years of open markets hollowed out our industry and left us dependent on a rival. If you want to sell to Americans, make it in America.",
+    "detail": "For four decades the United States ran trade policy for consumers and multinational corporations. Factories closed, towns emptied, and the country came to depend on a rival power for medicines, chips and the parts of its weapons, borrowing from abroad to pay for the imports. Every other major economy protects its producers through tariffs, value-added taxes, subsidies or currency management; only we treated our market as a free resource. A broad, predictable tariff changes where companies build, the revenue can replace other taxes, and the leverage has already won agreements with the European Union, Japan, South Korea and others to cut barriers and invest here. Tariffs move supply chains: China’s share of US imports fell from 22 percent in 2017 to 9 percent by the end of 2025. Trade is neither good nor bad; the question is whether its pattern serves the national interest.\n\nCritics say Americans pay the tariffs. A tariff is meant to change behavior, not to be paid by foreigners, and some rise in prices is the cost of rebuilding capacity we never should have lost. Studies of short, narrow tariffs say little about a permanent, broad one; plants take years to build, and court challenges have held investment back, which is why the tariff must be durable. Job counts miss what matters most: the ability to make critical goods, the skills and suppliers that come with production, and the towns that depend on them. The administration pairs a baseline tariff with sector tariffs and country tariffs used as leverage; American Compass would instead set a uniform global tariff starting at 10 percent and rising five points a year until trade balances, and Robert Lighthizer also favors a fixed, rule-based tariff over deal-by-deal bargaining.",
+    "proponents": "Trump administration; American Compass; Robert Lighthizer; Coalition for a Prosperous America; Jamieson Greer; Oren Cass; United Steelworkers",
+    "id": "use-broad-tariffs-to-rebuild-home"
+   },
+   {
+    "name": "Back strategic industries with subsidies and allies",
+    "color_key": "amber",
+    "steelman": "Markets alone won’t build the chips and clean energy a secure economy needs. Invest in them with allies, fence off a few technologies, and keep the rest of trade open.",
+    "detail": "China built its lead in solar panels, batteries and much of electronics with sustained state investment, and matching that takes public money, not slogans. Our tools are targeted: grants and tax credits for semiconductors, clean energy and defense industries, with conditions on wages and investment; narrow tariffs and export controls where a rival’s subsidies or military ambitions threaten a strategic sector, what Jake Sullivan called a “small yard and high fence”; and partnership with allies, so that democracies together have the scale China has alone. The approach works: spending on new factories tripled after the 2022 chip and climate laws, and leading-edge chipmaking, which had almost entirely left the country, is coming back. Broad tariffs on friends get this backwards, raising costs for the very plants the subsidies are building and driving allies away.\n\nCritics say governments are bad at picking winners. We are not picking firms; we back sectors where private investors systematically underinvest because the payoff is shared or the risk is strategic. Conditions, clawbacks and competitive grants discipline the spending, and coordinating with allies turns subsidy races into shared investment. The alternative is not a free market but one shaped by China’s far larger subsidies. Our security wing would go further on export controls against China; our climate wing wants carbon border adjustments; and our labor wing, including the AFL-CIO and Rethink Trade, puts enforceable labor rights at the center, has backed some of the current administration’s tariffs and is warier of new free trade agreements even with allies.",
+    "proponents": "Jake Sullivan; Roosevelt Institute; Dani Rodrik; Mario Draghi; AFL-CIO; Rethink Trade; Lori Wallach; Todd N. Tucker",
+    "id": "back-strategic-industries-with-subsidies-and"
+   },
+   {
+    "name": "Give developing countries room to build industry",
+    "color_key": "rust",
+    "steelman": "Every rich country shielded its young industries before it preached free trade. Poorer countries deserve the same tools to climb the same ladder.",
+    "detail": "The argument between free trade and nationalism is mostly a quarrel among rich countries about how to keep what they have. As Ha-Joon Chang argued in “Kicking Away the Ladder,” today’s rich countries industrialized behind the protections they now deny poor ones. WTO rules and most trade agreements forbid many of those tools: subsidies tied to local content, controls on foreign investment, flexible patent rules. Meanwhile rich countries are again subsidizing and protecting their own industries on a vast scale and taxing poor countries’ exports; UNCTAD counts around 18,000 discriminatory trade measures since 2020. The countries that cut poverty fastest combined exporting with heavy state direction and controlled capital flows: the share of East Asia and the Pacific living in extreme poverty fell from 67 percent in 1990 to 2 percent in 2024 (World Bank).\n\nYes, protection without discipline fails. East Asia tied support to export performance and withdrew it from firms that did not deliver; the lesson is to design industrial policy well, not to forbid it. The rapid liberalization of the structural adjustment programs of the 1980s and 1990s was followed by deindustrialization and slow growth in much of Africa and Latin America. We want neither the old rule book nor a free-for-all in which the strongest set the terms, but rules that let countries at different stages use different policies. Some of us, such as India and South Africa, push for flexibility inside the WTO; others build regional markets such as the African Continental Free Trade Area; and China’s claim to developing-country status is disputed among us too.",
+    "proponents": "Ha-Joon Chang; UNCTAD; South Centre; Government of India; Government of South Africa; Group of 77",
+    "id": "give-developing-countries-room-to-build"
+   },
+   {
+    "name": "Shift production back to local economies",
+    "color_key": "purple",
+    "steelman": "Free traders and nationalists only argue over who gets the factories. We want food, energy and basic goods made closer to the people who use them.",
+    "detail": "Both free traders and economic nationalists want an economy of ever-larger flows of goods controlled by ever-larger firms. Long supply chains ship food and goods back and forth across oceans, push farmers everywhere into export monocultures, let corporations play communities against one another and leave people dependent on decisions they cannot influence. Producing food, energy and basic goods closer to where they are used keeps money and skills in communities, brings producers within reach of the people who hold them to account, cuts energy use and makes essentials more secure. The pandemic’s broken supply chains, and the food price spikes of 2008 and 2022 that hit import-dependent countries hardest, showed the risk of the alternative.\n\nCritics say localization would make people poorer and leave food supplies fragile when a local harvest fails. The efficiency of global chains rests on costs no one pays: carbon emissions, depleted soils, abandoned towns. Diverse local and regional food systems are more resilient than dependence on a few global traders and exporting countries, and we favor regional trade and reserves alongside local production, not self-sufficiency in everything. Food-sovereignty movements such as La Via Campesina center small farmers and want agriculture taken out of WTO negotiations; degrowth advocates see localization as part of using less in rich countries; and some on the nationalist right share the goal of self-reliance but not the ecological reasons for it.",
+    "proponents": "La Via Campesina; Helena Norberg-Hodge; Local Futures",
+    "id": "shift-production-back-to-local-economies"
+   }
+  ],
+  "crux": {
+   "lead": "How much should a country pay to choose where things are made, and does the money buy what it promises?",
+   "lead_highlight": "pay to choose where things are made",
+   "subtitle": "Most sides agree that trade lowers prices and that it has badly hurt particular places. They split over whether tariffs and subsidies bring back factories, jobs and security at a price worth paying, and whose losses should count most.",
+   "empirical": "Part of this can be measured as today’s tariffs and subsidy programs run their course: whether they durably add domestic production, jobs and skills, and at what cost once dearer parts and foreign retaliation are counted; how much past factory job loss came from trade rather than automation; whether trade deficits displace home production; and how fragile concentrated supply chains prove in a crisis.",
+   "values": "The rest turns on weights no data can set: consumers against producers, the whole economy against particular towns, income against autonomy and security, a country’s own workers against poorer workers abroad, one rule book for all against rules that vary with development, local control against growth, and who should decide. Two people who agree on every estimate can still differ on whether paying more is worth a steel mill or a farming town."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Track the current US tariff rate and its costs",
+    "description": "The Yale Budget Lab’s regularly updated State of U.S. Tariffs estimates the average US tariff rate, its effect on prices and household budgets, and the revenue it raises.",
+    "url": "https://budgetlab.yale.edu/research/state-us-tariffs",
+    "for_position": null,
+    "id": "track-the-current-us-tariff-rate"
+   },
+   {
+    "kind": "policy",
+    "title": "Ask your senators to require congressional approval of tariffs",
+    "description": "The bipartisan Trade Review Act of 2025 (S. 1272) would end new tariffs after 60 days unless Congress approves them; it was introduced in April 2025 with 13 cosponsors and has not had a vote.",
+    "url": "https://www.govtrack.us/congress/bills/119/s1272",
+    "for_position": "Keep trade open under shared rules",
+    "id": "ask-your-senators-to-require-congressional"
+   },
+   {
+    "kind": "policy",
+    "title": "Ask your representative to give the President reciprocal tariff authority",
+    "description": "The United States Reciprocal Trade Act (H.R. 735), sponsored by Representative Riley Moore with 10 Republican cosponsors, would expressly authorize reciprocal trade actions; it has not had a vote.",
+    "url": "https://www.govtrack.us/congress/bills/119/hr735",
+    "for_position": "Use broad tariffs to rebuild home industry",
+    "id": "ask-your-representative-to-give-the"
+   },
+   {
+    "kind": "donate",
+    "title": "Support research on targeted industrial policy",
+    "description": "The Roosevelt Institute’s industrial policy and trade program researches and advocates public investment in strategic and clean-energy industries, backed by targeted trade measures and labor standards.",
+    "url": "https://rooseveltinstitute.org/donate/",
+    "for_position": "Back strategic industries with subsidies and allies",
+    "id": "support-research-on-targeted-industrial-policy"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the developing-country case on trade rules",
+    "description": "The South Centre, an intergovernmental research organization of developing countries, publishes analysis of WTO negotiations, industrial policy and special treatment for poorer countries.",
+    "url": "https://www.southcentre.int/",
+    "for_position": "Give developing countries room to build industry",
+    "id": "read-the-developing-country-case-on"
+   },
+   {
+    "kind": "local",
+    "title": "Buy from farms and markets near you",
+    "description": "The US Department of Agriculture’s Local Food Directories list farmers markets, community-supported agriculture programs, on-farm markets and food hubs by location.",
+    "url": "https://www.usdalocalfoodportal.com/",
+    "for_position": "Shift production back to local economies",
+    "id": "buy-from-farms-and-markets-near"
+   },
+   {
+    "kind": "learn_more",
+    "title": "See every country’s tariff changes in one place",
+    "description": "The WTO’s Tariff & Trade Data portal tracks changes in applied tariffs by country and compares bilateral tariffs and trade flows across about 150 economies.",
+    "url": "https://ttd.wto.org/en/reports/tariff-actions",
+    "for_position": null,
+    "id": "see-every-country-s-tariff-changes"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Add your business or group to Americans for Free Trade",
+    "description": "A coalition of more than 300 business and trade organizations, including the National Retail Federation, that campaigns against tariffs; organizations can sign up on its homepage.",
+    "url": "https://www.americansforfreetrade.com/",
+    "for_position": "Keep trade open under shared rules",
+    "id": "add-your-business-or-group-to"
+   },
+   {
+    "kind": "donate",
+    "title": "Support the Coalition for a Prosperous America",
+    "description": "A membership organization of manufacturers, farmers and workers that campaigns for tariffs and other policies to rebuild US production; associate dues fund its research and advocacy.",
+    "url": "https://prosperousamerica.org/join/",
+    "for_position": "Use broad tariffs to rebuild home industry",
+    "id": "support-the-coalition-for-a-prosperous"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Join the campaign for worker-centered trade rules",
+    "description": "Rethink Trade, led by Lori Wallach, campaigns for enforceable labor and environmental standards in trade deals and is tracking the 2026 USMCA review; sign up for alerts on its site.",
+    "url": "https://rethinktrade.org/",
+    "for_position": "Back strategic industries with subsidies and allies",
+    "id": "join-the-campaign-for-worker-centered"
+   }
+  ]
+ },
+ "icon": "shipping-container",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: a large container ship loaded with neat rows of ribbed shipping containers as the dominant focal mass, sailing on a calm gently curving sea swell; a medium dockside gantry crane on a rounded shore at the right, its boom reaching out over the ship's bow and overlapping it; a small factory with a sawtooth roof on the shore behind the crane; a small freight truck carrying one container on a road that curves from the factory down to the quay; the curving shoreline and road together run across the frame as the connective element; the ground is a soft rounded rise meeting the water in a curve.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #b48f2c, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: flags, national symbols, maps, globes, walls, fences, gates, barriers, padlocks, chains, scales of justice, money or coin symbols, dollar signs, percent signs, arrows, charts, smoke, storm waves, cracked or broken objects, people."
 }

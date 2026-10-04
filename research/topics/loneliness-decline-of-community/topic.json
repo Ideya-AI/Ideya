@@ -1,8 +1,8 @@
 {
  "slug": "loneliness-decline-of-community",
  "title": "Loneliness & Community",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-10-03T19:59:58+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Social capital, isolation and whether a loneliness epidemic is real.",
@@ -15,5 +15,672 @@
   "religion-science-pluralism",
   "birth-rate-decline-pronatalism",
   "boys-and-men-falling-behind"
- ]
+ ],
+ "content": {
+  "overview": {
+   "summary": "Whether rich societies face a loneliness epidemic born of the decline of community, how much it harms health, and who should act.",
+   "scope_covered": "Loneliness, social isolation and social capital: how they are measured, how they relate to health, what drives the fall in contact, and the remedies offered by governments, civil society and AI companions.",
+   "scope_excluded": "Smartphones and teen mental health, falling birth rates, religion in public life and the problems of boys and men, each on its own page; they appear here only where they bear on connection.",
+   "why_now": "On June 17, 2026, Senator Chris Murphy of Connecticut reintroduced the National Strategy for Social Connection Act, which would create a permanent White House Office of Social Connection Policy and require a government-wide strategy on loneliness.",
+   "why_now_source_label": "Office of Senator Chris Murphy",
+   "why_now_source_url": "https://www.murphy.senate.gov/newsroom/press-releases/murphy-introduces-bill-to-tackle-loneliness-and-social-disconnection-improve-the-spiritual-health-of-our-democracy"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "Share of people who are lonely, by country income",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Low income",
+       "value": "24.3",
+       "highlight": false
+      },
+      {
+       "label": "Lower-middle income",
+       "value": "19.3",
+       "highlight": false
+      },
+      {
+       "label": "World",
+       "value": "15.8",
+       "highlight": true
+      },
+      {
+       "label": "Upper-middle income",
+       "value": "12.1",
+       "highlight": false
+      },
+      {
+       "label": "High income",
+       "value": "10.6",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The WHO estimates that about one person in six worldwide was lonely between 2014 and 2023, with rates more than twice as high in low-income countries as in high-income ones.",
+     "detail": "These are the first global estimates of loneliness, pooled by the WHO from multi-country surveys covering 153 countries and territories. Loneliness is highest among the young: 20.9 percent of 13 to 17 year olds, 17.4 percent of 18 to 29 year olds, 15.1 percent of adults aged 30 to 59 and 11.8 percent of people 60 and over, though survey instruments differ by age group, so the comparison across ages is approximate. By region, the African Region is highest at about 24 percent and the European Region lowest at about 10 percent. The income gradient cuts against a common assumption, that loneliness is a disease of affluent, individualistic societies; the report points to poverty, which limits people’s ability to take part in social life, as a likely reason. The figures are snapshots and say nothing on their own about whether loneliness is rising.",
+     "source_label": "WHO Commission on Social Connection, From loneliness to social connection (2025)",
+     "source_url": "https://www.who.int/publications/i/item/978240112360",
+     "source_published": "2014–2023",
+     "source_accessed": "2026-10-03",
+     "id": "share-of-people-who-are-lonely"
+    },
+    {
+     "label": "Deaths a year associated with loneliness, worldwide",
+     "viz": "bar",
+     "wide": false,
+     "value": "871,000",
+     "unit": "deaths",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The WHO attributes about 871,000 deaths a year to loneliness, an estimate that holds only if loneliness causes the extra deaths seen in studies, which is disputed.",
+     "detail": "The figure is an attributable-burden estimate, averaged over 2014 to 2019: it combines how common loneliness is with the extra risk of death that observational studies associate with it. It therefore inherits the main uncertainty in the field, whether loneliness does the damage or travels with conditions that do, such as depression, poverty, chronic illness and bereavement. The WHO’s news release frames the number as about 100 deaths every hour.",
+     "source_label": "WHO Commission on Social Connection, From loneliness to social connection (2025)",
+     "source_url": "https://www.who.int/publications/i/item/978240112360",
+     "source_published": "2014–2019",
+     "source_accessed": "2026-10-03",
+     "id": "deaths-a-year-associated-with-loneliness"
+    },
+    {
+     "label": "Time Americans spend with friends in person",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "min/day",
+     "series": [
+      {
+       "label": "2003",
+       "value": "60",
+       "highlight": false
+      },
+      {
+       "label": "2019",
+       "value": "34",
+       "highlight": false
+      },
+      {
+       "label": "2020",
+       "value": "20",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Americans aged 15 and over averaged about an hour a day with friends in 2003, 34 minutes in 2019 and 20 minutes in the pandemic year 2020.",
+     "detail": "The American Time Use Survey asks a large national sample to account for every activity of one day and who they were with, so it measures contact rather than feelings. Kannan and Veazie found time with friends falling steadily before the pandemic, with the steepest drop among 15 to 24 year olds; because 2020 was a lockdown year, the pre-pandemic trend is the cleaner reading. The 2023 Surgeon General’s advisory cited the 60-to-20 comparison and added that young people’s time with friends fell from roughly 150 to 40 minutes a day over the same period. Those who say community is eroding treat the decline in contact as their strongest single piece of evidence; those who doubt a loneliness epidemic point out that less time with friends has not produced a matching rise in reported loneliness.",
+     "source_label": "Kannan & Veazie, “US trends in social isolation, social engagement, and companionship,” SSM – Population Health (2023)",
+     "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9811250/",
+     "source_published": "2003–2020",
+     "source_accessed": "2026-10-03",
+     "id": "time-americans-spend-with-friends-in"
+    },
+    {
+     "label": "Rise in loneliness scores among young adults, 1976–2019",
+     "viz": "bar",
+     "wide": false,
+     "value": "0.56",
+     "unit": "SD",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Across 345 studies of 18 to 29 year olds, average loneliness scores rose by about half a standard deviation from 1976 to 2019, a rise the WHO reads as confined to North America.",
+     "detail": "This preregistered meta-analysis pooled 449 average scores from 124,855 young adults who took the same questionnaire, the UCLA Loneliness Scale. The authors call the increase a reason not to overlook young adults but write that the term “loneliness epidemic” “seems exaggerated.” The WHO commission, reviewing the same study, finds no such rise in Asia or Europe. For older Americans the picture differs: a 2019 University of Chicago study of two national surveys found no evidence that loneliness had increased among older adults between 2005 and 2016, or that baby boomers were lonelier than earlier generations at the same age (Hawkley et al., Psychology and Aging). On these two studies, loneliness has risen among the young and held steady among the old, which is why the age of the people being described matters so much in this debate.",
+     "source_label": "Buecker et al., “Is loneliness in emerging adults increasing over time?” Psychological Bulletin (2021)",
+     "source_url": "https://pubmed.ncbi.nlm.nih.gov/34898234/",
+     "source_published": "1976–2019",
+     "source_accessed": "2026-10-03",
+     "id": "rise-in-loneliness-scores-among-young"
+    },
+    {
+     "label": "Extra risk of early death linked to weak social ties",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Socially isolated",
+       "value": "32",
+       "highlight": true
+      },
+      {
+       "label": "Lonely",
+       "value": "14",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 90 observational studies of about 2.2 million people, isolation was linked to a 32 percent and loneliness to a 14 percent higher risk of early death; which causes which is disputed.",
+     "detail": "The 2023 meta-analysis pooled prospective cohort studies with 2,205,199 participants and found hazard ratios of 1.32 for social isolation and 1.14 for loneliness on death from any cause. Isolation, the objective lack of contact, carries a larger association than the feeling of loneliness. The best-known earlier figure comes from Julianne Holt-Lunstad and colleagues, whose 2010 meta-analysis of 148 studies (308,849 participants) in PLoS Medicine found a 50 percent greater likelihood of survival among people with stronger social relationships. That study is the source of the widely repeated comparison, used in the 2023 Surgeon General’s advisory, that lacking social connection is as dangerous as smoking up to 15 cigarettes a day. Because it measures survival with strong ties rather than risk from loneliness, it is not directly comparable to the two figures here. All rest on studies that adjust for health and income but cannot rule out that illness causes isolation rather than the reverse.",
+     "source_label": "Wang et al., meta-analysis of 90 cohort studies of isolation, loneliness and mortality, Nature Human Behaviour (2023)",
+     "source_url": "https://pubmed.ncbi.nlm.nih.gov/37337095/",
+     "source_published": "2022",
+     "source_accessed": "2026-10-03",
+     "id": "extra-risk-of-early-death-linked"
+    },
+    {
+     "label": "Diseases where genetic evidence did not point to loneliness as a cause",
+     "viz": "bar",
+     "wide": false,
+     "value": "20 of 26",
+     "unit": "",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Loneliness went with 30 of 56 diseases in a large British cohort, but for 20 of the 26 that genetic methods could test, those methods, which have their own critics, found no sign it was a cause.",
+     "detail": "Observational studies show that lonely people are sicker and die sooner; the question is whether loneliness does the damage. This study applied Mendelian randomization, which treats genetic variants associated with loneliness as a natural experiment, to UK Biobank participants followed for a median of 12.2 years. The non-causal associations included cardiovascular disease, type 2 diabetes and obesity, and only six links looked potentially causal; socioeconomic factors, health behaviors, depression and other illnesses largely explained the associations. The authors conclude that loneliness “may serve as a potential surrogate marker rather than a causal risk factor for most diseases tested.” Mendelian randomization rests on assumptions of its own, and those who see loneliness as a direct health threat point to experimental and biological evidence of stress and inflammation pathways.",
+     "source_label": "Liang et al., observational and genetic evidence on loneliness and disease, Nature Human Behaviour (2024)",
+     "source_url": "https://pubmed.ncbi.nlm.nih.gov/39284978/",
+     "source_published": "2024",
+     "source_accessed": "2026-10-03",
+     "id": "diseases-where-genetic-evidence-did-not"
+    },
+    {
+     "label": "Share of US adults counted as lonely, by survey question",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Cigna, Gen Z",
+       "value": "67",
+       "highlight": false
+      },
+      {
+       "label": "Cigna, boomers",
+       "value": "44",
+       "highlight": false
+      },
+      {
+       "label": "APA, weekly",
+       "value": "30",
+       "highlight": false
+      },
+      {
+       "label": "Harvard, serious",
+       "value": "21",
+       "highlight": false
+      },
+      {
+       "label": "Gallup, daily",
+       "value": "20",
+       "highlight": true
+      },
+      {
+       "label": "APA, every day",
+       "value": "10",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Depending on the question and the scale, 2024 surveys put the share of lonely Americans anywhere from about one in ten to more than half; the rows come from different surveys.",
+     "detail": "The rows are not strictly comparable, which is the point: the headline size of the “epidemic” depends on the instrument. Gallup asked 6,289 adults, August 27 to September 4, 2024, whether they felt loneliness “a lot of the day yesterday.” The American Psychiatric Association’s Healthy Minds poll of 2,200 adults in January 2024 used the CDC’s definition, “feeling like you do not have meaningful or close relationships or a sense of belonging.” Harvard’s Making Caring Common asked about serious loneliness in a May 2024 YouGov survey. Cigna’s Loneliness in America 2025 report, from a May to June 2024 survey, classifies people as lonely on a multi-item scale; Managed Healthcare Executive’s coverage gives its overall figure as 57 percent. Multi-item scales count people who agree with milder statements, such as sometimes lacking companionship, which is why they produce the “half of Americans are lonely” figures cited in the 2023 Surgeon General’s advisory. Gallup’s own daily measure has since edged up: its September 2025 report put it at 21 percent, the highest since a pandemic peak of 25 percent in March 2021.",
+     "source_label": "Gallup, “Daily Loneliness Afflicts One in Five in U.S.” (October 2024); other rows from surveys named in the detail",
+     "source_url": "https://news.gallup.com/poll/651881/daily-loneliness-afflicts-one-five.aspx",
+     "source_published": "2024",
+     "source_accessed": "2026-10-03",
+     "id": "share-of-us-adults-counted-as"
+    },
+    {
+     "label": "Adults in England who feel lonely often or always",
+     "viz": "bar",
+     "wide": false,
+     "value": "6.6",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2024/25, 6.6 percent of adults in England felt lonely often or always, after holding at 5 to 6 percent from 2013/14 to 2021/22 and reaching 7.1 percent in 2023/24.",
+     "detail": "The Community Life Survey has asked the question since 2013/14; in 2018 the UK government appointed a minister for loneliness and, in its strategy A connected society, made the question a national measure. Young adults are lonelier than older ones: 9 percent of 16 to 24 year olds against 4 to 5 percent of people 65 and over. The share is far below US figures from multi-item scales, because “often or always” captures chronic loneliness rather than passing feelings. Those who doubt a loneliness epidemic cite the decade of stability; those who see one point to the step up after the pandemic.",
+     "source_label": "UK Department for Culture, Media and Sport, Community Life Survey 2024/25 (July 2026)",
+     "source_url": "https://www.gov.uk/government/statistics/community-life-survey-202425-annual-publication/community-life-survey-202425-loneliness-and-support-networks",
+     "source_published": "2024/25",
+     "source_accessed": "2026-10-03",
+     "id": "adults-in-england-who-feel-lonely"
+    },
+    {
+     "label": "Americans with no close friends",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "1990 (Gallup)",
+       "value": "3",
+       "highlight": false
+      },
+      {
+       "label": "2021",
+       "value": "12",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The share of Americans reporting no close friends rose from 3 percent in 1990 to 12 percent in 2021, in polls by different firms; Pew found 8 percent in 2023.",
+     "detail": "The Survey Center on American Life, part of the American Enterprise Institute, asked 2,019 adults in May 2021 the question Gallup had asked in 1990. It also found the share with ten or more close friends fell from 33 to 13 percent and the share with a best friend from 75 to 59 percent, while the share with three or fewer close friends rose from 27 to 49 percent. The comparison spans a 1990 telephone poll and a 2021 online panel, fielded in a pandemic year, which skeptics such as the Berkeley sociologist Claude Fischer note can shift answers. Pew Research Center, asking 5,057 adults in July 2023, found 38 percent with five or more close friends alongside its lower count of the friendless.",
+     "source_label": "Survey Center on American Life, “The State of American Friendship: Change, Challenges, and Loss” (2021)",
+     "source_url": "https://www.americansurveycenter.org/research/the-state-of-american-friendship-change-challenges-and-loss/",
+     "source_published": "1990, 2021",
+     "source_accessed": "2026-10-03",
+     "id": "americans-with-no-close-friends"
+    },
+    {
+     "label": "US households with one person living alone",
+     "viz": "bar",
+     "wide": false,
+     "value": "29",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2025, 39.7 million US households, 29 percent of the total, were one person living alone, up from 20 percent in 1975.",
+     "detail": "The 2023 Surgeon General’s advisory, citing the Census Bureau, puts the share at 13 percent in 1960. Over the same fifty years married-couple households fell from roughly two-thirds of households to 47 percent, and the median age at first marriage rose to 30.8 for men and 28.4 for women. Our World in Data, reviewing the research, finds only a weak correlation between living alone and feeling lonely, and notes that the Nordic countries, where solo living is most common, report some of the lowest loneliness in Europe.",
+     "source_label": "US Census Bureau, Families and Living Arrangements press release (December 2025)",
+     "source_url": "https://www.census.gov/newsroom/press-releases/2025/families-and-living-arrangements.html",
+     "source_published": "2025",
+     "source_accessed": "2026-10-03",
+     "id": "us-households-with-one-person-living"
+    },
+    {
+     "label": "Americans who belong to a church, synagogue or mosque",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "1937",
+       "value": "73",
+       "highlight": false
+      },
+      {
+       "label": "1999",
+       "value": "70",
+       "highlight": false
+      },
+      {
+       "label": "2020",
+       "value": "47",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Membership in a house of worship fell from 70 percent of Americans in 1999 to 47 percent in 2020, below half for the first time in Gallup’s eight-decade trend.",
+     "detail": "Congregations have historically been the largest source of organized social life in the United States, which is why their decline is central both to Robert Putnam’s account of falling social capital and to the conservative argument that rebuilding faith communities is the most direct remedy for isolation. The fall is generational: in 2018 to 2020, 66 percent of Americans born before 1946 belonged to a congregation, against 36 percent of millennials. Gallup attributes the decline mainly to the growing share of Americans with no religious preference, from 8 to 21 percent between 1998–2000 and 2018–2020, and secondarily to lower membership among the religious, from 73 to 60 percent.",
+     "source_label": "Gallup, “U.S. Church Membership Falls Below Majority for First Time” (March 2021)",
+     "source_url": "https://news.gallup.com/poll/341963/church-membership-falls-below-majority-first-time.aspx",
+     "source_published": "1937–2020",
+     "source_accessed": "2026-10-03",
+     "id": "americans-who-belong-to-a-church"
+    },
+    {
+     "label": "Countries where teenagers’ loneliness at school rose, 2012–2018",
+     "viz": "bar",
+     "wide": false,
+     "value": "36 of 37",
+     "unit": "",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Loneliness at school among 15 and 16 year olds rose between 2012 and 2018 in 36 of the 37 countries studied.",
+     "detail": "The OECD’s PISA assessments ask about a million 15 and 16 year olds six questions about feeling lonely or like an outsider at school. Jean Twenge, Jonathan Haidt and colleagues found that nearly twice as many adolescents worldwide had elevated school loneliness in 2018 as in 2012, with larger increases among girls. Loneliness was higher where smartphone access and internet use were high, while income inequality, GDP and family size were not related when matched by year; the authors note that causation cannot be proven. The study is the main cross-national evidence that something changed for teenagers in the 2010s, and the chief evidence for those who tie the change to smartphones, a question with its own page.",
+     "source_label": "Twenge, Haidt et al., “Worldwide increases in adolescent loneliness,” Journal of Adolescence (2021)",
+     "source_url": "https://pubmed.ncbi.nlm.nih.gov/34294429/",
+     "source_published": "2012–2018",
+     "source_accessed": "2026-10-03",
+     "id": "countries-where-teenagers-loneliness-at-school"
+    },
+    {
+     "label": "Time Americans spend alone",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "min/day",
+     "series": [
+      {
+       "label": "2003",
+       "value": "285",
+       "highlight": false
+      },
+      {
+       "label": "2019",
+       "value": "309",
+       "highlight": false
+      },
+      {
+       "label": "2020",
+       "value": "333",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Americans aged 15 and over spent an average of 285 minutes a day alone in 2003, 309 in 2019 and 333 in the pandemic year 2020.",
+     "detail": "Before the pandemic the increase was 24 minutes a day over 16 years, a rise of about 8 percent; the pandemic year added another 24. The WHO commission’s report describes the 2003 to 2020 change as a 16.5 percent rise and notes it is unclear whether the survey items used to measure isolation have been validated. Time alone is not the same as loneliness. Those who see a crisis read the series as the clearest sign of a retreat from shared life; those who doubt it describe an “epidemic of aloneness,” partly chosen, rather than of loneliness.",
+     "source_label": "Kannan & Veazie, SSM – Population Health (2023), from the American Time Use Survey",
+     "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9811250/",
+     "source_published": "2003–2020",
+     "source_accessed": "2026-10-03",
+     "id": "time-americans-spend-alone"
+    },
+    {
+     "label": "US teenagers who have used an AI companion",
+     "viz": "radial",
+     "wide": false,
+     "value": "72",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Nearly three in four American teenagers aged 13 to 17 had used an AI companion at least once by spring 2025, and over half used one at least a few times a month.",
+     "detail": "AI companions are chatbots built for friendship, emotional support or romance, such as Character.AI and Replika, as distinct from general-purpose assistants. Common Sense Media surveyed 1,060 teens in April and May 2025. About one in three found conversations with AI companions as satisfying as, or more satisfying than, those with real-life friends. The organization, which rates the risks of media for children, recommends that no one under 18 use them.",
+     "source_label": "Common Sense Media, “Talk, Trust, and Trade-Offs: How and Why Teens Use AI Companions” (July 2025)",
+     "source_url": "https://www.commonsensemedia.org/press-releases/nearly-3-in-4-teens-have-used-ai-companions-new-national-survey-finds",
+     "source_published": "2025",
+     "source_accessed": "2026-10-03",
+     "id": "us-teenagers-who-have-used-an"
+    },
+    {
+     "label": "Young men who felt lonely a lot of the previous day, by country",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Türkiye",
+       "value": "29",
+       "highlight": false
+      },
+      {
+       "label": "United States",
+       "value": "25",
+       "highlight": true
+      },
+      {
+       "label": "France",
+       "value": "24",
+       "highlight": false
+      },
+      {
+       "label": "Ireland",
+       "value": "23",
+       "highlight": false
+      },
+      {
+       "label": "Canada",
+       "value": "22",
+       "highlight": false
+      },
+      {
+       "label": "OECD median",
+       "value": "15",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "A quarter of American men aged 15 to 34 said they felt lonely a lot of the previous day in 2023–2024, against a median of 15 percent for young men across 38 OECD countries.",
+     "detail": "Gallup’s World Poll asks the same question in every country, which makes cross-national comparison possible. The United States stood out less for its level than for its gap: young American men were 8 points lonelier than other American adults (25 against 17 percent), and Gallup describes the United States as alone among OECD countries in having so large a gap. Young American women were at 18 percent. The finding feeds a related debate, taken up on its own page, about whether men in particular are losing the institutions that used to supply their friendships: work, marriage, congregations and clubs.",
+     "source_label": "Gallup, “Younger Men in the U.S. Among the Loneliest in West” (2025)",
+     "source_url": "https://news.gallup.com/poll/690788/younger-men-among-loneliest-west.aspx",
+     "source_published": "2023–2024",
+     "source_accessed": "2026-10-03",
+     "id": "young-men-who-felt-lonely-a"
+    },
+    {
+     "label": "Americans who volunteered through an organization",
+     "viz": "bar",
+     "wide": false,
+     "value": "28.3",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "About 28 percent of Americans 16 and over, 75.7 million people, volunteered through an organization in 2023, up from 23.2 percent in 2021 and recovering most of the pandemic drop.",
+     "detail": "Formal volunteering is a classic measure of associational life. Informal helping, such as assisting neighbors, rose from 51.7 percent in 2019 to 54.2 percent in 2023. Average hours per volunteer fell from 96.5 in 2017 to 70 in 2023, so people are volunteering in shorter stints. A peer-reviewed analysis of an earlier stretch of the same survey, 2008 to 2013, found that group membership had not declined and time spent with neighbors had changed little, a finding often cited against the claim of steady civic decline (Weiss et al., Social Indicators Research).",
+     "source_label": "US Census Bureau and AmeriCorps, Current Population Survey Civic Engagement and Volunteering Supplement (November 2024)",
+     "source_url": "https://www.census.gov/library/stories/2024/11/civic-engagement-and-volunteerism.html",
+     "source_published": "2023",
+     "source_accessed": "2026-10-03",
+     "id": "americans-who-volunteered-through-an-organization"
+    },
+    {
+     "label": "Americans who say most people can be trusted",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "1972 (GSS)",
+       "value": "46",
+       "highlight": false
+      },
+      {
+       "label": "2018 (GSS)",
+       "value": "34",
+       "highlight": false
+      },
+      {
+       "label": "2023–24 (Pew)",
+       "value": "34",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "About a third of Americans say most people can be trusted, down from 46 percent in 1972; the 1972 and 2018 rows are from the General Social Survey, the latest from Pew.",
+     "detail": "Generalized trust is a standard measure of social capital, because it shows whether people expect strangers and neighbors to behave decently. Pew reports a wide age gap: 44 percent of Americans 65 and over say most people can be trusted, against 26 percent of those 18 to 29. Pew’s report discusses polarization, fragmented media, rising inequality, less religious participation and fewer face-to-face interactions as possible contributors, without settling which matters most. Because the 2018 and 2023 to 2024 figures come from different surveys, the flat reading between them is approximate.",
+     "source_label": "Pew Research Center, “Americans’ Trust in One Another” (May 2025)",
+     "source_url": "https://www.pewresearch.org/2025/05/08/americans-trust-in-one-another/",
+     "source_published": "1972–2024",
+     "source_accessed": "2026-10-03",
+     "id": "americans-who-say-most-people-can"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Is loneliness itself rising, or only the time people spend together?",
+    "kind": "empirical",
+    "why": "Measures of contact, such as time with friends, have clearly fallen. Measures of the feeling itself are short, inconsistent and sensitive to wording, and the WHO’s 2025 report says earlier data cannot show whether loneliness has risen.",
+    "detail": "Those who see a rise point out that every long series tracking young people points the same way: loneliness scores among young adults since the 1970s, teenagers’ loneliness at school across dozens of countries in the 2010s, Homma and Takase’s 2026 meta-analysis in Frontiers in Psychology of Japanese studies going back to 1983, and England’s official rate after the pandemic. Time with friends fell sharply in the United States even before COVID-19. When contact collapses this much and the young report more loneliness wherever they are asked consistently, they argue, waiting for perfect data is a choice to do nothing.\n\nThose who see stability answer that the best-designed studies of adults and older people find flat or falling loneliness: no increase among older Americans between 2005 and 2016, stable or declining trends in Northern Europe, and a decline in high-income countries between 2023 and 2024 in Gallup’s world data. The young-adult rise appears in North America but not in Europe or Asia, and the headline claims that half of Americans are lonely come from multi-item scales with no long baseline. People are spending more time alone, they say, but the feeling has not risen to match.",
+    "lean_label_a": "Rising",
+    "lean_label_b": "Holding steady",
+    "id": "is-loneliness-itself-rising-or-only"
+   },
+   {
+    "text": "Does loneliness itself damage health, or does it mostly mark other problems?",
+    "kind": "empirical",
+    "why": "Lonely and isolated people die sooner in almost every cohort study, but those studies are observational, and loneliness travels with depression, poverty, illness and bereavement. Genetic and experimental evidence points different ways.",
+    "detail": "Those who see a direct threat note that the links to early death survive adjustment for health and income, and that associations with heart disease, stroke and dementia are consistent across countries, ages and lengths of follow-up. Laboratory and animal studies show plausible pathways through chronic stress, inflammation, sleep and health behavior, and the same standard of evidence was enough to act on many other risk factors before randomized trials were possible.\n\nThose who see a marker point to genetic studies that use inherited variants as a natural experiment: in them, most of the links between loneliness and disease disappear, and socioeconomic factors, depression and existing illness explain much of what remains. People who are already ill withdraw from social life, so illness causes isolation as much as the reverse. On this view, the popular comparisons with smoking rest on survival odds from observational studies and overstate what is known.",
+    "lean_label_a": "A cause of illness",
+    "lean_label_b": "A marker of illness",
+    "id": "does-loneliness-itself-damage-health-or"
+   },
+   {
+    "text": "What mainly drives the loss of contact: technology, or older shifts in work, family and faith?",
+    "kind": "empirical",
+    "why": "Less time with friends, emptier congregations, later marriage and more solo living all overlap with the spread of smartphones, changes in work and secularization. Untangling them with observational data is hard.",
+    "detail": "Those who blame screens note that the sharpest changes among the young began around 2012, when smartphones and social media became nearly universal, and that they appeared in dozens of countries at once, which national economic or cultural explanations struggle to explain. Teenagers’ loneliness at school tracked the spread of phones and the internet across countries, and time once spent with friends is now spent at home with screens.\n\nThose who stress older shifts answer that membership in congregations and associations was falling for decades before smartphones, and that marriage and solo-living trends go back to the 1960s. Longer working hours limit time with others, low-income countries report the most loneliness, and lonely people in Japan, asked in the government’s annual national survey, most often cite the death of a family member, living alone, and a change of school, job or retirement, not technology. Treating phones as the main cause, they argue, risks neglecting family formation, work, housing and the decline of shared institutions.",
+    "lean_label_a": "Mainly technology",
+    "lean_label_b": "Mainly older shifts",
+    "id": "what-mainly-drives-the-loss-of"
+   },
+   {
+    "text": "Who should lead the rebuilding of connection: government, or family, faith and voluntary groups?",
+    "kind": "value",
+    "why": "Both sides agree that social ties matter. They disagree about whether relationships are something governments can or should fix, and whether the growth of the state is part of what weakened them.",
+    "detail": "Those who want a public strategy say loneliness is shaped by things only governments control: transport, zoning, housing, public spaces, working hours, health systems and data. A coordinated strategy, they argue, can fund what works, such as social prescribing through doctors, measure progress, and reach the people private initiative misses: the poor, the disabled, the bereaved and the very old.\n\nThose who look to civil society answer that friendship cannot be delivered by an agency. The institutions that once supplied belonging, from congregations to unions, lodges and neighborhood associations, grew from below, and their decline is cultural rather than a gap a program can fill. They fear the state can crowd out the voluntary bonds it hopes to rebuild, and would spend public effort removing obstacles and supporting families and local institutions rather than building new bureaucracies.",
+    "lean_label_a": "Public strategy",
+    "lean_label_b": "Civil society",
+    "id": "who-should-lead-the-rebuilding-of"
+   },
+   {
+    "text": "Can AI companions ease loneliness, or will they deepen it?",
+    "kind": "empirical",
+    "why": "AI companions are new and spreading fast, especially among teenagers, and the early studies are short and conflicting. The answer may differ for an isolated 85-year-old and a 14-year-old.",
+    "detail": "On the hopeful side, early controlled experiments find that short spells of conversation with a companion lower loneliness, mostly by making users feel heard. For people who are housebound, grieving or socially anxious, something that listens may be better than nothing, and it can be a bridge to human contact.\n\nOn the worried side, a four-week MIT Media Lab and OpenAI study of 981 people found that heavier voluntary chatbot use went with more loneliness, more emotional dependence and less real-world socializing. Companies that profit from engagement have reason to make companions compelling rather than to send users back to people, and child-safety groups recommend that minors not use them at all. Heavy use among the young could mean companions are replacing friends rather than supporting them.",
+    "lean_label_a": "Ease it",
+    "lean_label_b": "Deepen it",
+    "id": "can-ai-companions-ease-loneliness-or"
+   },
+   {
+    "text": "Does calling loneliness an “epidemic” help or harm?",
+    "kind": "value",
+    "why": "Supporters credit the framing with drawing attention, money and legislation; critics say it borrows medicine’s authority for disputed trend data and turns a common experience into a disease.",
+    "detail": "Defenders of the framing say public health has always used the language of epidemics to make diffuse, invisible harms visible. The 2023 Surgeon General’s advisory and the WHO commission put social connection on the agenda of governments that had ignored it, and the burden is large whether or not it is new. Without strong language, they argue, a problem that falls on the isolated, who by definition have no one to speak for them, stays neglected.\n\nCritics answer that overstated alarms erode trust in public health when the data do not bear them out, and can make lonely people feel their condition is a disease rather than a common, often temporary state. The result, they say, can be panic about the wrong causes and the wrong cures, where precise language would focus help on the groups in which loneliness is clearly high and rising.",
+    "lean_label_a": "The framing helps",
+    "lean_label_b": "The framing harms",
+    "id": "does-calling-loneliness-an-epidemic-help"
+   },
+   {
+    "text": "Should efforts to ease loneliness focus first on the young or on the old?",
+    "kind": "value",
+    "why": "Loneliness is highest, and by several measures rising, among teenagers and young adults, while objective isolation and its health effects are greatest among older people. Programs, budgets and laws have mostly targeted the old.",
+    "detail": "Those who put the young first note that young people report the most loneliness in almost every survey, from the WHO’s global estimates to Gallup and England’s official statistics, and that their trend is the clearest. Patterns of connection set in youth last a lifetime, and loneliness among the young is closely tied to depression and anxiety, which have risen sharply. Most existing programs were designed for the elderly and miss them.\n\nThose who put the old first note that older people are most likely to be objectively isolated, through widowhood, disability and living alone, and that isolation carries the strongest link to death, dementia and need for care. Their numbers are growing fast as populations age. Young people’s loneliness often eases as they form partnerships and careers, they argue, while isolation in old age tends to deepen and is harder to escape without help.",
+    "lean_label_a": "Young adults first",
+    "lean_label_b": "Older adults first",
+    "id": "should-efforts-to-ease-loneliness-focus"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Make social connection a public health priority",
+    "color_key": "green",
+    "steelman": "Social connection is a basic human need and shapes health on the scale of smoking and inactivity, yet health policy ignores it. Problems built into systems need a national strategy.",
+    "detail": "One person in six worldwide is lonely, and the forces pulling people apart are built into how societies are organized: car-dependent suburbs, long working hours, platforms designed to hold attention. Individuals and voluntary groups matter, but they cannot by themselves reach the isolated, who are by definition the people with no one to bring them in. We want national strategies with a lead office, routine measurement, social prescribing that lets doctors refer lonely patients to community activities, design standards for housing, transport and public spaces, and accountability for technology companies. England and Japan already treat this as a government responsibility, and the World Health Assembly has asked every country to do the same. Within the camp, the economist Noreena Hertz, author of The Lonely Century, blames market competition, insecure work and the decline of unions and wants stronger labor protections; others, including former Surgeon General Vivek Murthy, put more weight on regulating social media and protecting children’s time.\n\nTo those who say the trend is unproven, we answer that the case rests on the size of the burden, not on whether it is new: high blood pressure did not need to be rising to deserve a public health response. Isolation is linked to death even after adjusting for health, social ties shape behavior and stress in well-understood ways, and the remaining uncertainty argues for better measurement, which a national strategy would fund. A strategy coordinates and funds local groups; it does not replace them.",
+    "proponents": "World Health Organization; Vivek Murthy; Chris Murphy; Noreena Hertz; Foundation for Social Connection; Campaign to End Loneliness",
+    "id": "make-social-connection-a-public-health"
+   },
+   {
+    "name": "Rebuild family, faith and civic life",
+    "color_key": "blue",
+    "steelman": "Belonging used to come from marriage, congregations, lodges and neighborhoods, not programs. Rebuild those institutions and connection follows; no federal office can supply friendship.",
+    "detail": "The loss of connection is real, but it is not mainly a health problem, and a health program will not solve it. It is the visible result of the long decline of the institutions that gave people belonging without anyone having to plan it: marriage and the extended family, the congregation, the union hall, the parish school and the neighborhood. Where those institutions remain strong, people are less alienated, more mobile and more trusting; where they have collapsed, government programs have moved in and voluntary bonds have withered further, which is what the congressional Social Capital Project found in counties more reliant on government programs. As Timothy Carney puts it, it is not the factory closings that have torn communities apart, but the church closings.\n\nThe remedy is to make family formation easier, protect and encourage religious and civic life, give local communities room to run their own affairs, and stop treating as private and optional the commitments that sustain people through illness, grief and old age. We want these institutions open to newcomers, and congregations and voluntary groups already do most of the visiting, feeding and befriending of the isolated. Policy already shapes family and faith through taxes, benefits and housing, and it should stop penalizing them. And the evidence public-health advocates cite documents the decline of communities, which is exactly our point.",
+    "proponents": "Joint Economic Committee Social Capital Project; Mike Lee; Institute for Family Studies; Timothy P. Carney; Erica Komisar",
+    "id": "rebuild-family-faith-and-civic-life"
+   },
+   {
+    "name": "Drop the epidemic framing and target help",
+    "color_key": "amber",
+    "steelman": "Real people are lonely and deserve help, but there is no good evidence that society as a whole is getting lonelier. Aim help at the widowed, the poor, the sick and the young who need it.",
+    "detail": "Long-run data on how lonely people feel show no clear rise among adults. The numbers that make headlines come from new survey instruments with no baseline, and warnings that Americans had become a nation of strangers appeared in 1929, 1950 and 1972. What has changed is how people live: more live alone, marry later and spend more time at home, often by choice and as a result of prosperity and longer lives. The Berkeley sociologist Claude Fischer finds that loneliness depends mainly on whether someone has a spouse or partner rather than on friends. Treating changed living arrangements as a disease medicalizes ordinary experience, invites panic about the wrong causes, from capitalism to secularism, and diverts attention from the groups for whom loneliness really is high.\n\nAloneness is not loneliness, and the falls in contact have not produced matching rises in the feeling. Where young people are lonelier, the rise deserves study, but it is a targeted problem, not a society-wide epidemic, and many of the young grow out of it as they settle into partnerships. Strong language may win attention, but overstated claims make for badly aimed programs and cost public health trust when the data catch up.",
+    "proponents": "Claude S. Fischer; Johan Norberg; Cato Institute",
+    "id": "drop-the-epidemic-framing-and-target"
+   },
+   {
+    "name": "Use AI companions to ease loneliness",
+    "color_key": "rust",
+    "steelman": "Human help cannot reach everyone who needs it, and loneliness peaks when no one else is awake. A companion that always listens fills the gaps; for many, the alternative is silence.",
+    "detail": "There are not enough visitors, therapists or neighbors for every housebound older person, night-shift worker or anxious teenager. AI companions are available at any moment, never tire, remember what matters to their users, and can prompt them to call family, take medicine or join an activity. They do not replace human relationships, and we do not claim they do; they fill the gaps between them. New York State reports a 95 percent reduction in loneliness among more than 800 older adults given ElliQ companion robots, who interact with them dozens of times a day, and experiments published in the Journal of Consumer Research in 2025 found AI companions reduced loneliness about as much as talking with another person and more than watching videos. Most teenagers have already used one, so the question is how companions are designed, not whether they will be used. As the technology improves and the stigma fades, society will find the vocabulary to see why people who use these tools are acting rationally.\n\nWhen heavy chatbot use goes with more loneliness, that is because the lonely are the people most likely to seek companions out; correlation does not show harm, and design choices, such as nudging users toward people, matter more than the technology itself. If companies profit from dependence, the answer is safety rules, which California and New York have begun to write, not denying the tool to the people it helps. Insisting that only human contact counts is a luxury many isolated people do not have.",
+    "proponents": "Mark Zuckerberg; Meta; New York State Office for the Aging",
+    "id": "use-ai-companions-to-ease-loneliness"
+   }
+  ],
+  "crux": {
+   "lead": "Is the retreat from shared life a growing harm to reverse, or a change in how people choose to live?",
+   "lead_highlight": "the retreat from shared life",
+   "subtitle": "Few dispute that people now spend less time with friends and more time alone. The split is over whether that is a broad, growing harm societies must deliberately undo, or mostly a chosen way of living, with real suffering concentrated in particular groups.",
+   "empirical": "Two things could be measured. Whether the feeling of loneliness, as distinct from time alone, is rising and for whom, which needs long series asking the same questions across ages and countries. And whether loneliness and isolation cause illness and early death or mostly accompany poverty, depression and existing illness, which genetic studies, natural experiments and trials can narrow.",
+   "values": "No data settles whether a good society should steer people toward togetherness when they choose solitude, or who should do the steering. Some see the decline of family, faith and local belonging as a loss in itself; others see more solo living as a freedom not to be pathologized. The answer also turns on how far one trusts the state, markets and tradition with private life, and on whether a machine can count as company."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Read the WHO Commission on Social Connection report",
+    "description": "The 2025 report From loneliness to social connection sets out global estimates, the evidence on health effects, what is known about trends, and which interventions have evidence behind them.",
+    "url": "https://www.who.int/publications/i/item/978240112360",
+    "for_position": null,
+    "id": "read-the-who-commission-on-social"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read Our World in Data on whether there is a loneliness epidemic",
+    "description": "A short data explainer that separates loneliness from solitude and living alone, and reviews the evidence on whether loneliness is rising.",
+    "url": "https://ourworldindata.org/loneliness-epidemic",
+    "for_position": null,
+    "id": "read-our-world-in-data-on"
+   },
+   {
+    "kind": "policy",
+    "title": "Follow the National Strategy for Social Connection Act (S. 4818)",
+    "description": "The text and status of Senator Chris Murphy’s 2026 bill, which would give the White House a standing office and the federal government a national plan for social connection.",
+    "url": "https://www.govinfo.gov/app/details/BILLS-119s4818is",
+    "for_position": "Make social connection a public health priority",
+    "id": "follow-the-national-strategy-for-social"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Volunteer with Little Brothers – Friends of the Elderly",
+    "description": "A US nonprofit network that matches volunteers with isolated older people for visits, outings and holiday celebrations.",
+    "url": "https://lbfenetwork.org/",
+    "for_position": "Rebuild family, faith and civic life",
+    "id": "volunteer-with-little-brothers-friends-of"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read Claude Fischer’s “The Myth of the Loneliness Epidemic”",
+    "description": "A Berkeley sociologist’s review of a century of loneliness alarms and of the data on whether Americans have actually become lonelier.",
+    "url": "https://asteriskmag.com/issues/08/the-myth-of-the-loneliness-epidemic",
+    "for_position": "Drop the epidemic framing and target help",
+    "id": "read-claude-fischer-s-the-myth"
+   },
+   {
+    "kind": "learn_more",
+    "title": "See New York State’s AI companion program for older adults",
+    "description": "The New York State Office for the Aging’s announcement of results from its program giving ElliQ companion robots to isolated older people.",
+    "url": "https://aging.ny.gov/news/nysofas-rollout-ai-companion-robot-elliq-shows-95-reduction-loneliness",
+    "for_position": "Use AI companions to ease loneliness",
+    "id": "see-new-york-state-s-ai"
+   },
+   {
+    "kind": "local",
+    "title": "Find local programs for isolated older adults through the Eldercare Locator",
+    "description": "A federal service of the US Administration for Community Living that connects people to their local Area Agency on Aging, which runs friendly-visitor, meal and social programs.",
+    "url": "https://eldercare.acl.gov/",
+    "for_position": null,
+    "id": "find-local-programs-for-isolated-older"
+   },
+   {
+    "kind": "donate",
+    "title": "Support the Campaign to End Loneliness",
+    "description": "A UK charity campaign that has pushed for national loneliness policy since 2011 and publishes research, measurement tools and training on loneliness.",
+    "url": "https://www.campaigntoendloneliness.org/",
+    "for_position": "Make social connection a public health priority",
+    "id": "support-the-campaign-to-end-loneliness"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read Timothy Carney’s Alienated America",
+    "description": "An AEI scholar’s account of how the decline of churches, families and civic organizations, rather than economics alone, explains why some American communities thrive and others collapse.",
+    "url": "https://www.aei.org/research-products/book/alienated-america-why-some-places-thrive-while-others-collapse/",
+    "for_position": "Rebuild family, faith and civic life",
+    "id": "read-timothy-carney-s-alienated-america"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read Common Sense Media’s report on teens and AI companions",
+    "description": "A national survey of how US teenagers use AI companions, with the organization’s risk assessment and its recommendation that minors not use them.",
+    "url": "https://www.commonsensemedia.org/research/talk-trust-and-trade-offs-how-and-why-teens-use-ai-companions",
+    "for_position": null,
+    "id": "read-common-sense-media-s-report"
+   }
+  ]
+ },
+ "icon": "users-three",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: one compact neighborhood scene grouped in the center with wide white margins, nothing touching the edges: a tall apartment building with a simple grid of windows as the dominant focal mass, filled, a few of its windows lit with a slightly stronger fill and the rest plain; a medium row of small mailboxes on a post standing in front of the building, overlapping its lower corner, filled; a small single armchair glimpsed through one ground-floor window; a small rounded tree beside the building, partly hidden by it; one long telephone wire strung across the whole scene from the building to a pole on the far side, as the connective element; the ground is a gentle rounded hill.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #9459a2, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: human figures, silhouettes, crowds, faces, hands, hearts, tears, rain clouds, broken hearts, chains, cages, empty chairs at a set table, gravestones, phones with chat bubbles, robots, speech bubbles, charts, graphs, arrows, question marks, balance scales, park benches, street lamps, bicycles, kites, clotheslines, abandoned or boarded buildings, cracks."
 }

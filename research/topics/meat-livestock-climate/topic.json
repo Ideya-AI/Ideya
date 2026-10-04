@@ -1,8 +1,8 @@
 {
  "slug": "meat-livestock-climate",
  "title": "Meat & Alternatives",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-10-02T10:22:24+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Diet change, more sustainable livestock, and cultivated meat in climate and food strategy.",
@@ -17,5 +17,686 @@
   "moral-status-of-animals",
   "animal-agriculture-welfare-reform-vs-abolition",
   "gm-crops"
- ]
+ ],
+ "content": {
+  "overview": {
+   "summary": "Whether meat’s climate cost can be cut by better farms and substitutes, or whether people in rich countries must also eat less of it.",
+   "scope_covered": "Eating less meat, especially beef, in high-consuming countries; cutting emissions on farms through feed additives, breeding, manure management and grazing; plant-based, fermented and cultivated meat; and the policies around them, from meat taxes and dietary guidelines to methane accounting and cultivated-meat bans.",
+   "scope_excluded": "The ethics of killing and confining animals, the wider choice between intensive and extensive farming for nature, and genetically modified feed crops, which have their own topics; they appear here only where a climate or food argument depends on them.",
+   "why_now": "On July 7, 2026 the European Commission adopted the EU’s first Strategy on Livestock with a Protein Action Plan, treating livestock as a strategic pillar of farming and setting no target for eating less meat.",
+   "why_now_source_label": "European Commission, “Setting sustainable livestock farming on a strong footing”",
+   "why_now_source_url": "https://commission.europa.eu/news-and-media/news/setting-sustainable-livestock-farming-strong-footing-2026-07-07_en"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "Livestock share of human-caused greenhouse gas emissions",
+     "viz": "radial",
+     "wide": false,
+     "value": "12",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "FAO puts livestock supply chains at about 6.2 billion tonnes CO2-equivalent in 2015, 12% of the human total; its 2013 estimate was 14.5%, and other studies count more.",
+     "detail": "The figure comes from FAO’s life-cycle model and covers methane from digestion and manure, feed production, land cleared for feed, input manufacturing and some processing and transport. Cattle account for about 62% of it. FAO’s 2013 assessment put livestock at 7.1 billion tonnes, but it used a different model version, data and reference year, so the lower 2023 number does not by itself show that emissions fell. Xu and colleagues, writing in Nature Food in 2021, estimated that animal-based foods, including their feed, cause 57% of all food-production emissions, twice the share of plant-based foods. Estimates differ mainly in how they count land-use change, which year they use and how they convert methane to CO2-equivalents. Without new measures, FAO projects livestock emissions rising to about 9.1 billion tonnes by 2050 as demand for animal products grows about 20%.",
+     "source_label": "FAO, “New FAO report maps pathways towards lower livestock emissions”",
+     "source_url": "https://www.fao.org/newsroom/detail/new-fao-report-maps-pathways-towards-lower-livestock-emissions/en",
+     "source_published": "2023",
+     "source_accessed": "2026-10-01",
+     "id": "livestock-share-of-human-caused-greenhouse"
+    },
+    {
+     "label": "Greenhouse gas emissions per 100 grams of protein",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "kg CO2e",
+     "series": [
+      {
+       "label": "Beef (beef herd)",
+       "value": "49.9",
+       "highlight": true
+      },
+      {
+       "label": "Lamb & mutton",
+       "value": "19.9",
+       "highlight": false
+      },
+      {
+       "label": "Beef (dairy herd)",
+       "value": "16.9",
+       "highlight": false
+      },
+      {
+       "label": "Cheese",
+       "value": "10.8",
+       "highlight": false
+      },
+      {
+       "label": "Pig meat",
+       "value": "7.6",
+       "highlight": false
+      },
+      {
+       "label": "Poultry meat",
+       "value": "5.7",
+       "highlight": false
+      },
+      {
+       "label": "Eggs",
+       "value": "4.2",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "On global averages, protein from beef-herd cattle emits about 50 kg CO2-equivalent per 100 grams, roughly nine times poultry, 25 times tofu and more than 100 times peas.",
+     "detail": "These are global means from Poore and Nemecek’s 2018 meta-analysis of about 570 studies covering some 38,700 farms in 119 countries, counting land-use change, farming, processing, transport, packaging and retail. Tofu comes to 2.0 kg and peas to 0.4 kg. Measured per kilogram of product instead, the same dataset gives about 99 kg CO2-equivalent for beef-herd beef, 33 kg for dairy-herd beef, 12 kg for pig meat, 10 kg for poultry and 1 kg for peas (Our World in Data). Beef from dairy herds scores lower because part of each animal’s footprint is assigned to milk. Transport is a small share for most foods; Our World in Data puts it at about 0.5% of beef-herd beef’s footprint. The numbers convert methane with the standard 100-year warming potential. Those who favor alternative methane metrics argue that this overstates the ongoing warming caused by herds that are not growing.",
+     "source_label": "Our World in Data, from Poore & Nemecek (2018), Science",
+     "source_url": "https://ourworldindata.org/grapher/ghg-per-protein-poore",
+     "source_published": "2018",
+     "source_accessed": "2026-10-01",
+     "id": "greenhouse-gas-emissions-per-100-grams"
+    },
+    {
+     "label": "Lowest-emitting beef compared with peas, per 100 grams of protein",
+     "viz": "range",
+     "wide": false,
+     "value": "9",
+     "unit": "kg CO2e",
+     "series": [],
+     "range_min": "0.8 high-impact peas",
+     "range_max": "105 high-impact beef",
+     "note": "The lowest-emitting tenth of beef emits about 9 kg CO2-equivalent per 100 grams of protein, over ten times the highest-emitting tenth of peas at 0.8 kg; the worst tenth of beef exceeds 105 kg.",
+     "detail": "The same food can have very different footprints depending on where and how it is produced, and Poore and Nemecek found the spread widest for beef. The two sides of the debate read this spread in opposite ways. Those who favor better farming see a large opportunity: if high emitters adopted the practices of the best, emissions could fall without anyone eating less. Those who favor diet change see proof that even the best beef stays far more emissions-intensive than plant protein.",
+     "source_label": "Our World in Data, “Less meat is nearly always better than sustainable meat, to reduce your carbon footprint”",
+     "source_url": "https://ourworldindata.org/less-meat-or-sustainable-meat",
+     "source_published": "2018",
+     "source_accessed": "2026-10-01",
+     "id": "lowest-emitting-beef-compared-with-peas"
+    },
+    {
+     "label": "Mitigation potential of diet change and of measures against digestive methane",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "Gt CO2e/yr",
+     "series": [
+      {
+       "label": "Diet shift, technical",
+       "value": "3.6",
+       "highlight": true
+      },
+      {
+       "label": "Diet shift, plausible",
+       "value": "2.5",
+       "highlight": false
+      },
+      {
+       "label": "Gut methane, technical",
+       "value": "0.8",
+       "highlight": false
+      },
+      {
+       "label": "Gut methane, ≤$100/t",
+       "value": "0.2",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The IPCC put the technical potential of shifting to sustainable healthy diets at 3.6 billion tonnes CO2e a year and of cutting digestive methane at 0.8 billion; the two are not like-for-like.",
+     "detail": "Technical potential is what full adoption could achieve regardless of cost. The IPCC, with medium confidence, gave a range of 0.3 to 8.0 billion tonnes for diets and judged 2.5 billion (1.5 to 3.9) plausible. For measures against enteric methane, the methane cattle and sheep produce while digesting, it gave 0.2 to 1.2 billion, of which only 0.2 billion (0.1 to 0.3) is available at up to USD 100 a tonne. The rows differ in scope: the diet figure counts savings across the whole food chain, including land freed from production, while the methane figure covers one source. The IPCC also noted that chemical methane inhibitors had cut emissions 16–70% in studies and that models do not capture their full potential, and that diet potential “varies across regions as diets are location- and community-specific.” It separately estimated 4.1 billion tonnes a year (1.7 to 6.7) at up to USD 100 a tonne from farm measures such as soil carbon, agroforestry, and livestock and nutrient management.",
+     "source_label": "IPCC Sixth Assessment Report, Working Group III, Chapter 7 (Agriculture, Forestry and Other Land Uses)",
+     "source_url": "https://www.ipcc.ch/report/ar6/wg3/chapter/chapter-7/",
+     "source_published": "2022",
+     "source_accessed": "2026-10-01",
+     "id": "mitigation-potential-of-diet-change-and"
+    },
+    {
+     "label": "Methane cut by the feed additive 3-NOP in dairy cows",
+     "viz": "bar",
+     "wide": false,
+     "value": "30.9",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Across 14 experiments in dairy cattle, the feed additive 3-NOP, sold as Bovaer, cut methane per kilogram of feed eaten by about 31% on average.",
+     "detail": "3-NOP blocks an enzyme that rumen microbes use to make methane. At an average dose of 70.5 mg per kilogram of dry matter, the meta-analysis found total methane production down 32.7% and methane per kilogram of milk down 32.6%. The additive worked less well in diets higher in fiber or fat and better in diets higher in starch. That matters because most of the world’s cattle graze rather than eat mixed rations, and the IPCC judged that giving such additives in pasture-based systems is “likely to be challenging.” Farmers bear the cost unless buyers, carbon markets or governments pay it. Other approaches under study include red seaweed, breeding low-methane animals and methane vaccines, none yet in wide use.",
+     "source_label": "Kebreab et al., meta-analysis of 3-nitrooxypropanol effects on methane in dairy cattle, Journal of Dairy Science",
+     "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9868067/",
+     "source_published": "2023",
+     "source_accessed": "2026-10-01",
+     "id": "methane-cut-by-the-feed-additive"
+    },
+    {
+     "label": "Livestock share of farmland compared with its share of food",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Farmland",
+       "value": "80",
+       "highlight": true
+      },
+      {
+       "label": "Protein supply",
+       "value": "38",
+       "highlight": false
+      },
+      {
+       "label": "Calorie supply",
+       "value": "17",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Grazing land and feed crops take about 80% of the world’s 48 million km² of farmland, while animal foods supply 17% of calories and 38% of protein; what else that land could grow is disputed.",
+     "detail": "Much grazing land is too dry, steep or poor for crops, so defenders of livestock argue that the comparison overstates what could be grown instead: ruminants turn grass and crop residues that people cannot eat into food. Those who favor diet change reply that much pasture was once forest or could return to forest or grassland that stores carbon, and that about 38% of cropland grows animal feed. The food shares count meat, dairy and farmed fish. Poore and Nemecek, on a slightly different basis, estimated 18% of calories and 37% of protein from animal products.",
+     "source_label": "Our World in Data, Hannah Ritchie & Max Roser, “Half of the world’s habitable land is used for agriculture”",
+     "source_url": "https://ourworldindata.org/global-land-for-agriculture",
+     "source_published": "2024",
+     "source_accessed": "2026-10-01",
+     "id": "livestock-share-of-farmland-compared-with"
+    },
+    {
+     "label": "Global meat production",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "million t",
+     "series": [
+      {
+       "label": "1961",
+       "value": "71.4",
+       "highlight": false
+      },
+      {
+       "label": "1990",
+       "value": "179.5",
+       "highlight": false
+      },
+      {
+       "label": "2000",
+       "value": "231.9",
+       "highlight": false
+      },
+      {
+       "label": "2024",
+       "value": "373.9",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The world produced about 374 million tonnes of meat in 2024, more than five times the 1961 total and about 17% more than in 2014.",
+     "detail": "Poultry has grown fastest and is now the largest category. In 2024 the world produced about 146 million tonnes of poultry, 125 million of pig meat, 77 million of beef and buffalo and 19 million of sheep and goat meat (Our World in Data, by livestock type). Growth is now concentrated in middle-income countries in Asia, Latin America and Africa, where incomes are rising, while per-person supply has flattened in many high-income countries. The OECD and FAO project in their 2025 outlook that per-person calories from animal products will rise 6% worldwide between 2025 and 2034, and 24% in lower-middle-income countries.",
+     "source_label": "Our World in Data, from UN FAO, “Global meat production”",
+     "source_url": "https://ourworldindata.org/grapher/global-meat-production",
+     "source_published": "2024",
+     "source_accessed": "2026-10-01",
+     "id": "global-meat-production"
+    },
+    {
+     "label": "Grazing emissions that soil carbon could offset",
+     "viz": "range",
+     "wide": false,
+     "value": "20–60",
+     "unit": "%",
+     "series": [],
+     "range_min": "0%",
+     "range_max": "100% of grazing emissions",
+     "note": "An Oxford-led review estimated that well-managed grazing could store enough soil carbon to offset 20–60% of grazing systems’ emissions; regenerative advocates cite farm studies with better results.",
+     "detail": "Measured against all livestock emissions, the same sequestration would offset only 4–11%, and 0.6–1.6% of all human-caused emissions. The review, “Grazed and Confused?”, concluded that carbon stored by grazing is “small, time-limited, reversible and substantially outweighed” by the animals’ emissions, because soils reach a new balance after a few decades and drought or a change in management can release the carbon again. Advocates of regenerative grazing point to farm-level results: a peer-reviewed life-cycle study of White Oak Pastures in Georgia found that soil carbon gains gave its beef a footprint 66% lower than conventional US beef, while it used about 2.5 times as much land per kilogram (Rowntree and colleagues, Frontiers in Sustainable Food Systems, 2020). Researchers on both sides agree that results vary widely by soil, climate and starting condition.",
+     "source_label": "Garnett et al., “Grazed and Confused?,” Food Climate Research Network, University of Oxford (summary)",
+     "source_url": "https://www.tabledebates.org/sites/default/files/2022-04/Grazed%20and%20Confused%20summary.pdf",
+     "source_published": "2017",
+     "source_accessed": "2026-10-01",
+     "id": "grazing-emissions-that-soil-carbon-could"
+    },
+    {
+     "label": "Sources of human-caused methane",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Fossil fuels",
+       "value": "35",
+       "highlight": false
+      },
+      {
+       "label": "Livestock",
+       "value": "32",
+       "highlight": true
+      },
+      {
+       "label": "Landfill & wastewater",
+       "value": "20",
+       "highlight": false
+      },
+      {
+       "label": "Rice",
+       "value": "8",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Livestock, through digestion and manure, produce about 32% of the methane emitted by human activity, close to the 35% from fossil fuels.",
+     "detail": "Methane breaks down in about a decade but traps far more heat than carbon dioxide while it lasts, so cutting it slows warming quickly. The UN Environment Programme and Climate and Clean Air Coalition assessment found that human-caused methane could be cut by up to 45% this decade, avoiding nearly 0.3°C of warming by 2045. Agriculture as a whole, including rice, produces about 40% of human-caused methane. The Global Methane Pledge, launched in 2021, commits its participants to cutting methane 30% below 2020 levels by 2030.",
+     "source_label": "World Meteorological Organization, “Global methane assessment released” (UNEP & Climate and Clean Air Coalition)",
+     "source_url": "https://wmo.int/media/news/global-methane-assessment-released",
+     "source_published": "2021",
+     "source_accessed": "2026-10-01",
+     "id": "sources-of-human-caused-methane"
+    },
+    {
+     "label": "Meat supply per person",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "kg/yr",
+     "series": [
+      {
+       "label": "United States",
+       "value": "122.1",
+       "highlight": false
+      },
+      {
+       "label": "Brazil",
+       "value": "104.6",
+       "highlight": false
+      },
+      {
+       "label": "United Kingdom",
+       "value": "84.4",
+       "highlight": false
+      },
+      {
+       "label": "China",
+       "value": "73.5",
+       "highlight": false
+      },
+      {
+       "label": "World",
+       "value": "45.1",
+       "highlight": true
+      },
+      {
+       "label": "India",
+       "value": "8.1",
+       "highlight": false
+      },
+      {
+       "label": "Nigeria",
+       "value": "7.1",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2023 the average American had about 122 kg of meat available, nearly three times the world average of 45 kg and about 15 times the Indian average.",
+     "detail": "These are food-supply figures from FAO food balance sheets: meat available for consumption at retail, before household waste and bone, so actual intake is lower. They cover beef, pork, poultry, sheep, goat and other meats but not fish. The spread underlies a point most camps share: the case for eating less meat is made about high-consuming countries, while health and development agencies argue that many people in low-income countries would benefit from more animal-source food.",
+     "source_label": "Our World in Data, from UN FAO Food Balances, “Per capita meat consumption”",
+     "source_url": "https://ourworldindata.org/grapher/meat-supply-per-person",
+     "source_published": "2023",
+     "source_accessed": "2026-10-01",
+     "id": "meat-supply-per-person"
+    },
+    {
+     "label": "EAT-Lancet reference intake of red meat",
+     "viz": "bar",
+     "wide": false,
+     "value": "15",
+     "unit": "g a day",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The 2025 EAT-Lancet Commission’s reference diet allows about 15 grams of beef, pork or lamb a day (0–30 g); some nutrition scientists and livestock groups say intakes that low risk deficiencies.",
+     "detail": "The Commission, a group of scientists convened by the EAT Foundation and The Lancet, says its diet rests on health evidence rather than environmental criteria, though it also lowers environmental impacts. Alongside red meat it allows about 30 grams of poultry, 30 grams of fish and shellfish and 15 grams of eggs a day, and it estimates that ruminant meat production “may need to fall by one-third.” The Commission reports that food systems cause roughly 30% of global greenhouse gas emissions and that shifting diets could prevent up to 15 million premature deaths a year. Its critics argue that very low meat intakes risk shortfalls of iron, zinc, vitamin B12 and other nutrients, especially for children, women of reproductive age and the poor.",
+     "source_label": "2025 EAT-Lancet Commission, Summary for and with Policymakers",
+     "source_url": "https://eatforum.org/wp-content/uploads/2026/03/2025-EATLancet_Summary-for-and-with-Policymakers.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-10-01",
+     "id": "eat-lancet-reference-intake-of-red"
+    },
+    {
+     "label": "US states that ban or pause sales of cultivated meat",
+     "viz": "bar",
+     "wide": false,
+     "value": "8",
+     "unit": "states",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "By March 2026 eight US states had banned or paused sales of cultivated meat, while regulators in Singapore, the United States, Israel, Australia and New Zealand had approved products.",
+     "detail": "Florida and Alabama acted in 2024; Mississippi, Montana, Indiana, Nebraska and Texas in 2025; South Dakota in 2026. Several laws are temporary: South Dakota’s runs from July 2026 to June 2031, and the National Agricultural Law Center lists Indiana’s as running to June 2027 and Texas’s to September 2027. On March 23, 2026 the federal appeals court for the Eleventh Circuit rejected Upside Foods’ argument that federal poultry-inspection law overrides Florida’s ban (Regulatory Oversight). Italy banned cultivated meat in 2023, with fines of €10,000 to €60,000 per violation, and Hungary’s parliament voted 140 to 10 for a ban on November 18, 2025, though the European Commission called it “unjustified” (Green Queen). Approvals have widened from chicken to salmon, quail, pork fat, duck and beef, but a September 2026 review by the trade magazine vegconomist counted close to a dozen approvals worldwide and no product yet sold at commercial scale.",
+     "source_label": "Green Queen, “South Dakota Becomes Eighth US State to Ban Lab-Grown Meat”",
+     "source_url": "https://www.greenqueen.com.hk/south-dakota-lab-grown-cultivated-meat-ban-state-moratorium/",
+     "source_published": "2026",
+     "source_accessed": "2026-10-01",
+     "id": "us-states-that-ban-or-pause"
+    },
+    {
+     "label": "UK public support for a food tax based on environmental impact",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% of adults",
+     "series": [
+      {
+       "label": "Support, 2024",
+       "value": "42",
+       "highlight": false
+      },
+      {
+       "label": "Support, 2025",
+       "value": "32",
+       "highlight": true
+      },
+      {
+       "label": "Oppose, 2025",
+       "value": "42",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2025, 32% of UK adults backed a tax varying with foods’ environmental impact, “meaning higher prices for red meat and dairy,” down from 42% a year earlier; 42% opposed it.",
+     "detail": "The King’s College London and Ipsos survey of 4,027 adults aged 16 and over, fielded August 21–27, 2025, found opposition exceeding support for the first time. Support fell most among people 55 and over, from 47% in 2024 to 27%, while 38% of 16–34-year-olds backed the tax. The question asked specifically about a tax; other research has found people more willing to back subsidies for plant-based food, and health-based arguments, than taxes or climate-based ones.",
+     "source_label": "King’s College London & Ipsos, “UK’s sense of urgency on net zero and support for climate policies falls sharply”",
+     "source_url": "https://www.kcl.ac.uk/news/uks-sense-of-urgency-on-net-zero-and-support-for-climate-policies-falls-sharply-study-finds",
+     "source_published": "2025",
+     "source_accessed": "2026-10-01",
+     "id": "uk-public-support-for-a-food"
+    },
+    {
+     "label": "US retail sales of plant-based meat and seafood",
+     "viz": "bar",
+     "wide": false,
+     "value": "1.0",
+     "unit": "billion USD",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "US shoppers spent about $1.0 billion on plant-based meat and seafood in 2025, 10% less than in 2024, with unit sales down 11%; the category is about 1.4% of packaged meat sales.",
+     "detail": "Sales grew quickly from 2019 to 2021, when 11% of US households bought plant-based meat, then moderated in 2022 and declined after 2023. Counting meat sold loose at the counter, plant-based products are about 0.7% of the meat market. The Good Food Institute, which advocates for alternative proteins, cites taste and price gaps as the main barriers among people who do not buy them, along with shrinking shelf space. The category leader’s results tell the same story: Beyond Meat reported 2025 net revenues of $275.5 million, down 15.6% from 2024 (FoodNavigator, April 1, 2026).",
+     "source_label": "Good Food Institute, “Plant-based retail market overview,” SPINS data",
+     "source_url": "https://gfi.org/marketresearch/",
+     "source_published": "2025",
+     "source_accessed": "2026-10-01",
+     "id": "us-retail-sales-of-plant-based"
+    },
+    {
+     "label": "Private investment in alternative protein companies",
+     "viz": "bar",
+     "wide": false,
+     "value": "881",
+     "unit": "million USD",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Alternative protein companies raised $881 million in 2025 by the Good Food Institute’s tracker, down from a record $5 billion in 2021 in GFI’s press release that year.",
+     "detail": "The tracker splits the 2025 total into $450 million for plant-based companies, $357 million for fermentation and $73.9 million for cultivated meat and seafood, which raised $144 million in 2024. GFI’s 2021 release put cultivated meat and seafood at $1.4 billion that year. GFI puts cumulative investment since 2017 above $19.5 billion. These are an advocacy group’s own tallies of disclosed private deals. The fall followed the end of low interest rates and disappointing plant-based sales; supporters and skeptics of the technology read it differently.",
+     "source_label": "Good Food Institute, “Investment resources”",
+     "source_url": "https://gfi.org/investment/",
+     "source_published": "2025",
+     "source_accessed": "2026-10-01",
+     "id": "private-investment-in-alternative-protein-companies"
+    },
+    {
+     "label": "Denmark’s tax on livestock emissions",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "DKK/t CO2e",
+     "series": [
+      {
+       "label": "2030 headline",
+       "value": "300",
+       "highlight": true
+      },
+      {
+       "label": "2030 after deduction",
+       "value": "120",
+       "highlight": false
+      },
+      {
+       "label": "2035 headline",
+       "value": "750",
+       "highlight": false
+      },
+      {
+       "label": "2035 after deduction",
+       "value": "300",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Denmark agreed in 2024 to tax livestock emissions from 2030 at 300 kroner a tonne CO2-equivalent, rising to 750 in 2035; a 60% deduction cuts the effective rate to 120 and 300 kroner.",
+     "detail": "The tax is part of the Green Tripartite agreement negotiated between the government, the Danish Agriculture and Food Council, the Danish Society for Nature Conservation, trade unions, employers and local government. It is expected to cut emissions by 1.8 million tonnes CO2-equivalent in 2030, potentially up to 2.6 million. Denmark is so far alone: New Zealand, which once planned to price farm emissions, decided in October 2025 not to introduce on-farm pricing by 2030 (DairyNZ, October 12, 2025).",
+     "source_label": "Invest in Denmark, “Denmark is the first country in the world to introduce carbon tax on livestock farming”",
+     "source_url": "https://investindk.com/insights/denmark-is-the-first-country-in-the-world-to-introduce-carbon-tax-on-livestock-farming",
+     "source_published": "2024",
+     "source_accessed": "2026-10-01",
+     "id": "denmark-s-tax-on-livestock-emissions"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Can farm-level improvements cut livestock emissions enough without people eating less meat?",
+    "kind": "empirical",
+    "why": "Emissions per kilogram of meat and milk keep falling and vary hugely between producers, but total livestock emissions still rise as output grows, and the newest technologies are costly or hard to use on grazing animals.",
+    "detail": "Those who say farming can do it start from the spread between producers. In much of South Asia, Latin America and Africa a cow may give a fraction of the milk of a European one while emitting nearly as much methane, so raising productivity there cuts emissions per liter sharply. Feed additives, breeding, seaweed-based feeds and vaccines add to that, and demand for animal products will keep growing whatever campaigners in rich countries say. On this view the realistic question is how to make that food with fewer emissions per unit, and persuading billions of people to eat differently has never worked at that scale.\n\nThose who say diets must change cite the IPCC, which rated the technical potential of shifting diets several times higher than that of measures against digestive methane, and found only a small part of the latter affordable at moderate cost. The question turns on things not yet measured well: how widely methane inhibitors are adopted, whether they work on grazing animals, what they cost, and how much output would shift to other countries if demand fell in rich ones.",
+    "lean_label_a": "Farming suffices",
+    "lean_label_b": "Diets must shift",
+    "id": "can-farm-level-improvements-cut-livestock"
+   },
+   {
+    "text": "Should governments actively steer people away from eating meat?",
+    "kind": "value",
+    "why": "Governments already shape diets through guidelines, school menus, farm subsidies and taxes, so the dispute is over direction and means, and meat is bound up with culture, religion, rural livelihoods and identity.",
+    "detail": "Those who favor steering argue that food prices leave out the damage livestock emissions cause, and that farm subsidies in many rich countries lower the price of meat and dairy. Correcting that, they say, is no more paternalistic than taxing tobacco or the carbon in fuel. Governments can also act without forbidding anything: plant-forward menus in schools and hospitals, dietary guidelines that weigh the environment, support for farmers who switch, and public money for alternatives. The health case, on their reading, points the same way.\n\nThose who favor leaving diets to people answer that what a family eats is among its most personal choices, and that asking ordinary households to give up meat for the climate puts the cost on those least able to bear it, since food taxes take a larger share of poorer budgets. Livestock farming sustains rural communities and traditions that factory-made substitutes cannot replace. Farms should cut emissions through research and voluntary adoption, they argue, without governments engineering the dinner plate. Both sides agree that leaving prices as they are is itself a policy; they disagree about whether it is the right one.",
+    "lean_label_a": "Steer diets",
+    "lean_label_b": "Personal choice",
+    "id": "should-governments-actively-steer-people-away"
+   },
+   {
+    "text": "Can people be persuaded to eat much less meat at the scale climate goals would require?",
+    "kind": "empirical",
+    "why": "Many people say they would eat less meat and per-person supply has flattened in some rich countries, but global output keeps rising, and measures that work in trials are rarely tested across whole countries.",
+    "detail": "Those who think norms can shift note that diets have been transformed within a generation by cities, supermarkets and marketing. Behavioral studies find that making plant-based dishes the default on menus, placing them better and naming them appealingly reduces meat ordering substantially without restricting anyone’s choice. Chefs, public institutions and cultural leaders could make eating less meat ordinary, as they did with not smoking, and young people in many surveys are more open to it than their parents.\n\nThose who think habits will hold read the record differently. Where meat eating has fallen in rich countries, people have mostly swapped beef for chicken rather than for plants. Rising incomes in Asia, Africa and Latin America will push demand up for decades, and people there have every right to eat as well as Europeans and Americans do. Campaigns that ask for sacrifice also provoke backlash. Evidence that could settle it is thin: few diet policies have been run at national scale long enough to see whether the effects last.",
+    "lean_label_a": "Norms can shift",
+    "lean_label_b": "Habits will hold",
+    "id": "can-people-be-persuaded-to-eat"
+   },
+   {
+    "text": "Will cultivated meat become cheap and clean enough to replace a meaningful share of animal meat?",
+    "kind": "empirical",
+    "why": "No company yet makes cultivated meat at commercial scale, so every claim about its price and footprint is a projection, and the published cost and life-cycle studies disagree by an order of magnitude.",
+    "detail": "Life-cycle studies span a wide range. A 2021 assessment by the consultancy CE Delft, commissioned by the Good Food Institute and GAIA and based on company data, found that cultivated meat made at scale with renewable energy in 2030 could have a carbon footprint 92% below conventional beef, 44% below pork and about 3% above chicken. A peer-reviewed 2024 study by UC Davis researchers found that if cells need pharmaceutical-grade purified growth media, the footprint could be 4 to 25 times that of retail beef, and that with food-grade inputs it would range from 80% below to 26% above beef. The gap is mostly about assumptions: how pure the medium must be, how much energy the process uses and where that energy comes from.\n\nCost estimates diverge as well. A techno-economic analysis funded by Open Philanthropy, by the chemical engineer David Humbird, estimated that even a large plant with cells engineered for efficient growth would make wet cell mass at about $37 a kilogram, and that unstructured products might reach a minimum of about $50 a kilogram at retail (Humbird, 2021). Developers report steep falls in growth-medium costs and point to the price curves of solar panels and batteries; skeptics answer that animal cells are fragile, slow-growing and need near-sterile conditions closer to drug manufacturing than to brewing.",
+    "lean_label_a": "Will scale up",
+    "lean_label_b": "Will stay niche",
+    "id": "will-cultivated-meat-become-cheap-and"
+   },
+   {
+    "text": "Should livestock methane be counted by the change in warming it causes or by the standard 100-year metric?",
+    "kind": "value",
+    "why": "Methane breaks down in about a decade, so a steady herd keeps atmospheric methane roughly level; the science is agreed, but not which question a climate target should answer or who gets credit for past emissions.",
+    "detail": "The standard metric, GWP100, counts each year’s methane as if it were long-lived like carbon dioxide. An alternative, GWP*, measures the change in warming from a baseline, so a herd whose emissions hold steady shows little new warming and a herd that shrinks shows cooling. Its supporters say climate targets are ultimately about temperature and GWP* describes temperature effects of short-lived gases more accurately, giving farmers a goal they can reach. New Zealand in 2025 cut its 2050 target for biogenic methane from 24–47% to 14–24% below 2017 levels, a range its independent review linked to “no additional warming” (DairyNZ, 2025).\n\nIts critics say a baseline rewards whoever already emits the most: a country with a large herd can hold steady and claim no new warming, while a poor country growing a small herd is counted as warming the planet. In May 2026, 42 climate scientists issued a statement warning against such targets, and one signatory, Drew Shindell of Duke University, said the approach “gives a free pass to countries with large existing herds” (Inside Climate News, May 20, 2026). They add that methane already in the air keeps warming the planet and that meeting the Paris goal needs deep methane cuts, not a freeze.",
+    "lean_label_a": "Warming change",
+    "lean_label_b": "Standard metric",
+    "id": "should-livestock-methane-be-counted-by"
+   },
+   {
+    "text": "Should cultivated meat be allowed on sale once food-safety regulators find it safe?",
+    "kind": "value",
+    "why": "Regulators in several countries have approved cultivated meat after review, while lawmakers elsewhere have barred or paused it; its supporters call the bans protectionism, and backers of the bans see an untested product pushed by investors.",
+    "detail": "Those who would allow it argue that once expert regulators have reviewed a food, people should be free to buy it or not. Bans shield incumbents from competition, the kind of measure free-market conservatives usually oppose, and they may foreclose uses for climate, animal welfare, food security in countries with little farmland, or lowering the pandemic risk from livestock before anyone learns whether those uses are real. Labeling can meet demands for transparency without prohibition.\n\nThose who would ban or restrict it answer that food is not just another product; it is tied to national culture, rural communities and trust built over generations. They see cultivated meat as a novel, highly processed product with no long-term health record, made with technology held by a few well-funded companies and promoted in a way that casts livestock farmers as the problem. What divides the two sides is less the safety review itself than whether a regulator’s finding of safety should be the only test a new food has to pass.",
+    "lean_label_a": "Allow its sale",
+    "lean_label_b": "Ban or restrict",
+    "id": "should-cultivated-meat-be-allowed-on"
+   },
+   {
+    "text": "Is beef from well-managed pasture better or worse for the climate than beef from intensive systems?",
+    "kind": "empirical",
+    "why": "Grass-fed cattle grow more slowly, emit more methane per kilogram and need more land, while grazing advocates say pasture stores soil carbon and avoids feed-grain emissions; the answer turns on how soil carbon is measured and kept.",
+    "detail": "Advocates of pasture argue that feedlots depend on grain grown with synthetic fertilizer and pesticides, often on land cleared for soy and maize, and concentrate manure into pollution. Animals on well-managed pasture eat grass people cannot, fertilize the soil and, through rotational grazing, can rebuild soil organic matter. Grasslands evolved with grazing animals, and counting only methane per kilogram leaves out biodiversity, animal welfare and rural livelihoods.\n\nAdvocates of intensive production answer that the slower growth and extra land of grass-fed cattle are the core of the climate account, not side issues. Supplying today’s beef demand from grass alone, they argue, would mean clearing more land and releasing carbon that soil gains on pasture could not make up. Much depends on what the land would otherwise be used for and on how reliably soil carbon can be measured over time.",
+    "lean_label_a": "Favor pasture",
+    "lean_label_b": "Favor intensive",
+    "id": "is-beef-from-well-managed-pasture"
+   },
+   {
+    "text": "Are diets with little or no red meat healthier for most people?",
+    "kind": "empirical",
+    "why": "Large observational studies link red and processed meat to heart disease, diabetes and bowel cancer, but critics say they cannot fully separate meat from other habits, and animal foods are dense in nutrients many people lack.",
+    "detail": "Those who favor less red meat point to decades of cohort studies across many countries in which people who eat more red and processed meat have higher rates of chronic disease, and in which replacing meat with legumes, nuts and whole grains goes with lower risk. In 2015 the World Health Organization’s cancer agency classified processed meat as carcinogenic and red meat as probably carcinogenic. In rich countries, they argue, the health and climate cases point the same way.\n\nThose who see meat as nutritionally vital say animal-source foods supply protein, iron, zinc, vitamin B12 and other nutrients in forms the body absorbs readily, which matters most for young children, pregnant women and older people. In low-income countries the problem is too little, not too much: the OECD-FAO outlook projects intake of animal-source foods there at about 143 kilocalories a day in 2034, below the 300-kilocalorie benchmark it uses for a healthy diet. They regard links between moderate red-meat intake and disease as weak and confounded, and note that the US Dietary Guidelines for 2025–2030 place red meat among “high-quality” protein foods (Harvard T.H. Chan School of Public Health, 2026).",
+    "lean_label_a": "Less is better",
+    "lean_label_b": "Meat is vital",
+    "id": "are-diets-with-little-or-no"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Cut livestock emissions without cutting meat",
+    "color_key": "green",
+    "steelman": "Meat, milk and eggs feed billions, and demand for them is growing. The task is to produce them with far lower emissions, and the tools to do that exist and keep improving.",
+    "detail": "The gap between the most and least efficient producers is the opportunity. FAO estimated in 2013 that spreading existing best practices could cut the sector’s emissions by as much as 30%, and its 2023 assessment called higher productivity across the value chain “the most promising way” to reduce livestock emissions. The largest gains lie in low-productivity herds in poorer countries, which is exactly where output is growing. Better feed, animal health and breeding mean fewer animals for the same food; feed additives cut methane; digesters turn manure into energy. And because methane is short-lived, steady cuts of a few percent a year mean herds stop adding to warming and then begin to reverse it, a measurable goal farmers can actually reach.\n\nDiet campaigns aimed at rich countries would achieve little by comparison. The animal scientist Frank Mitloehner has written that if Americans eliminated all animal protein from their diets, US emissions would fall by only 2.6%, and the production would move to countries with dirtier herds. The large estimates for diet change are technical maximums that assume billions of people change what they eat, which has never happened at that scale. The camp has two wings that agree on that much and disagree on farming: an intensification wing of large meat and dairy companies and industry bodies such as the US National Cattlemen’s Beef Association, which set a goal in 2021 to demonstrate climate neutrality of US cattle by 2040, and a regenerative wing, led by the Savory Institute and grass-fed ranchers, that rejects feedlots and argues well-managed grazing restores grasslands and stores carbon.",
+    "proponents": "Global Dairy Platform; National Cattlemen’s Beef Association; Frank Mitloehner; Savory Institute",
+    "id": "cut-livestock-emissions-without-cutting-meat"
+   },
+   {
+    "name": "Shift diets toward plants",
+    "color_key": "blue",
+    "steelman": "The gap between beef and plant protein is too wide for any farm technology to close. The fastest, surest cut is for the people who eat the most meat to eat much less of it.",
+    "detail": "Farm technologies help, but their cumulative effect has been outrun by growth in animal numbers for decades. The most certain cut available is for high consumers, above all of beef and lamb, to replace much of it with legumes, grains, nuts and vegetables, or where they wish with poultry, fish or alternatives. That also frees hundreds of millions of hectares that could return to forest and other ecosystems and draw carbon from the air, and it improves health. Researchers at the World Resources Institute put it plainly: “shifting the diets of higher-income consumers toward plant-based foods remains essential.” The responsibility lies with the rich: the 2025 EAT-Lancet Commission found that the richest 30% of people drive more than 70% of food-related environmental impacts. People in poorer countries who lack animal-source foods should get more, not less.\n\nThe objection that people will not change misreads history. Diets have always shifted with prices, availability and norms, and governments already shape them through subsidies, procurement and guidelines that currently favor meat; changing those signals is not coercion. The shift is compatible with eating some meat, and farmers can be supported through it. Members differ on how far to go: WRI asks high consumers to cut beef, lamb and goat by about 40% by 2050 relative to 2010, Greenpeace calls for halving global meat and dairy by 2050, and vegan advocates want animal products phased out. Relying on farm technology alone, they agree, leaves food emissions on course to consume much of what remains of the 1.5°C carbon budget.",
+    "proponents": "World Resources Institute; EAT-Lancet Commission; Greenpeace; Walter Willett; Johan Rockström",
+    "id": "shift-diets-toward-plants"
+   },
+   {
+    "name": "Protect conventional meat and farmers from replacement",
+    "color_key": "amber",
+    "steelman": "Raising animals feeds families, keeps rural communities alive and carries culture. Farmers deserve protection from lab-grown substitutes and diet campaigns pushed by investors.",
+    "detail": "Raising animals for food is one of humanity’s oldest and most valuable traditions, and in places like Italy it is inseparable from national culture. The push to make people eat less meat, tax it or replace it with products grown in steel tanks comes largely from investors, technology companies and international institutions, not from farmers or the public, and it treats the people who raise animals as a problem to be eliminated. Lab-grown meat is new, heavily processed and untested over a lifetime of eating; a handful of companies control it, and its environmental benefits are unproven. FAO’s 2023 review of animal-source foods found that the evidence suggests plant-based and cell-cultured products cannot replace them in nutritional composition. Italy’s farmers’ federation Coldiretti gathered about 350,000 signatures against “synthetic” food before the country’s 2023 ban, and Florida’s governor Ron DeSantis signed his state’s 2024 ban promising to keep “investing in our local farmers and ranchers.”\n\nCalling this protectionism misses the point. Every country decides what food may be sold within its borders, and approvals granted abroad after short reviews of a brand-new process do not settle long-term health, food sovereignty or the survival of farming communities. Many of the laws are moratoria pending more evidence, and consumers are not clamoring for these products anyway. Members differ on how far to go: some want permanent bans and others temporary pauses, and some farm groups back methane research and efficiency programs while some politicians reject climate-driven food policy altogether.",
+    "proponents": "Coldiretti; Ron DeSantis; Government of Italy; Government of Hungary",
+    "id": "protect-conventional-meat-and-farmers-from"
+   },
+   {
+    "name": "Replace animal meat with alternative proteins",
+    "color_key": "rust",
+    "steelman": "Asking billions of people to give up food they enjoy has barely moved demand. Make plant-based, fermented and cultivated meat as tasty and cheap as animal meat, and people will switch on their own.",
+    "detail": "Change how meat is made rather than what people want. If alternatives match animal meat on taste and price, people will choose them for the same reasons they choose any food, and emissions, land use, pollution, antibiotic use and animal suffering fall together, without the political fight over diets. Electric cars are displacing gasoline cars because the product got better and cheaper, not because drivers were shamed; food can follow the same path. The technology is real: several food-safety regulators have approved cultivated products, and beef is now among them. What is missing is the public investment in open research, production capacity and fair regulation that every other climate technology received. Bill Gates has said all rich countries should move to “100% synthetic beef,” while adding that he does not expect the poorest countries to eat it; many in the camp likewise see substitutes for rich and middle-income countries and more productive livestock for poorer ones.\n\nThe market slump is a trough, not a verdict. Every clean technology passed through one when early hype met engineering reality, and solar power and batteries came out of theirs because governments kept funding research and deployment. Today’s plant-based products are a first generation that has not reached price or taste parity, the barriers consumers name most. The bleakest life-cycle results assume pharmaceutical-grade inputs that companies are already replacing with food-grade ones. Members disagree about which technology matters most, from plant-based foods already on shelves to precision fermentation and cultivated meat, but agree that funding alternatives is a hedge in case neither farm technology nor diet persuasion delivers enough.",
+    "proponents": "Good Food Institute; Bill Gates",
+    "id": "replace-animal-meat-with-alternative-proteins"
+   },
+   {
+    "name": "Eat less meat from better farms",
+    "color_key": "purple",
+    "steelman": "Rich countries eat far too much meat from industrial systems. Cut it roughly in half, and raise what remains on pasture and mixed farms that serve climate, nature, health and animals at once.",
+    "detail": "The problem is not that people eat meat but that rich countries eat far too much of it, produced in industrial systems that confine animals, depend on imported feed grown on cleared forest, pollute rivers and breed antibiotic resistance. Cutting consumption in high-consuming countries frees land and cuts emissions; the meat that remains should come from animals raised on pasture and in mixed farms, eating grass and food waste rather than grain people could eat, fertilizing soil, supporting wildlife and treated humanely. Farmers stay in business by earning more from fewer, better animals, if public money and procurement reward quality rather than volume. Eating Better, a UK alliance of more than 60 organizations, works toward a 50% cut in meat and dairy consumption in the UK by 2030, and Philip Lymbery of Compassion in World Farming urges people to choose “pasture fed, organic and regenerative” products.\n\nThe objection that pasture-raised meat emits more methane and needs more land per kilogram is fair only at today’s volumes. If total consumption falls by half, extensive systems can supply what remains without more land, while ending feed-crop emissions, deforestation for soy and the pollution of intensive units. Counting methane per kilogram ignores soil carbon, biodiversity, animal welfare, antibiotic resistance and grassland that cannot grow crops. Members differ on how fast to cut, on what “better” means, from organic to higher welfare to regenerative, and on whether plant-based and cultivated alternatives are welcome or one more industrial product.",
+    "proponents": "Eating Better; Compassion in World Farming; Philip Lymbery; Soil Association; Friends of the Earth",
+    "id": "eat-less-meat-from-better-farms"
+   }
+  ],
+  "crux": {
+   "lead": "Can changing how meat is made cut its climate cost far enough, or must the biggest eaters also eat less?",
+   "lead_highlight": "far enough",
+   "subtitle": "Nearly everyone accepts that cattle and sheep are a large source of methane and that beef emits far more per gram of protein than plant foods. The split is over whether better farming and substitutes can close that gap, and how far governments should steer what people eat.",
+   "empirical": "Much of it can be measured. If farm measures cut methane steeply and cheaply in practice, including on grazing animals, if soil carbon proves large and lasting, or if meat substitutes reach the price of meat, the case for asking people to eat less weakens. If not, it strengthens. Evidence can also show how far production would simply move abroad if rich countries ate less, and which policies change diets at scale.",
+   "values": "Some choices would remain. Should methane targets aim to stop adding warming or to reverse it, which decides how much credit large existing herds receive? How should food traditions, rural livelihoods and personal freedom weigh against emission cuts, and may governments steer diets or forbid new foods? And how should the burden fall between rich countries that eat the most meat and poorer ones where many people eat little?"
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Compare the footprints of different foods",
+    "description": "Our World in Data’s interactive guide to the emissions, land and water use of dozens of foods, per kilogram, per calorie and per gram of protein.",
+    "url": "https://ourworldindata.org/environmental-impacts-of-food",
+    "for_position": null,
+    "id": "compare-the-footprints-of-different-foods"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Follow the dairy sector’s plan to cut emissions",
+    "description": "Pathways to Dairy Net Zero, an industry-led initiative setting out farm-level ways to cut dairy emissions through feed, animal health, manure and additives, with progress reports.",
+    "url": "https://pathwaystodairynetzero.org/",
+    "for_position": "Cut livestock emissions without cutting meat",
+    "id": "follow-the-dairy-sector-s-plan"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the 2025 EAT-Lancet Commission report",
+    "description": "The EAT Foundation’s hub for the Commission on healthy, sustainable and just food systems, with its planetary health diet, policymaker summary and country findings.",
+    "url": "https://eatforum.org/eat-lancet-commission/",
+    "for_position": "Shift diets toward plants",
+    "id": "read-the-2025-eat-lancet-commission"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Back livestock farming with the Animal Agriculture Alliance",
+    "description": "A US nonprofit founded in 1987 that works to “safeguard the future of animal agriculture,” offering memberships, action alerts and ways to donate.",
+    "url": "https://animalagalliance.org/support-us/",
+    "for_position": "Protect conventional meat and farmers from replacement",
+    "id": "back-livestock-farming-with-the-animal"
+   },
+   {
+    "kind": "donate",
+    "title": "Support research on alternative proteins",
+    "description": "The Good Food Institute funds open-access research on plant-based, fermented and cultivated proteins and lobbies for public investment and fair regulation.",
+    "url": "https://gfi.org/donate/",
+    "for_position": "Replace animal meat with alternative proteins",
+    "id": "support-research-on-alternative-proteins"
+   },
+   {
+    "kind": "policy",
+    "title": "Read the UK roadmap to halve meat and dairy",
+    "description": "Eating Better’s Better by Half roadmap sets out 25 actions for governments, producers, retailers, caterers and investors to halve UK meat and dairy consumption by 2030 and make better meat standard.",
+    "url": "https://www.eating-better.org/better-by-half/",
+    "for_position": "Eat less meat from better farms",
+    "id": "join-the-campaign-for-less-and"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Understand the fight over how methane is counted",
+    "description": "Carbon Brief’s question-and-answer explainer on the GWP* metric, what it shows about livestock methane, and why some scientists and governments favor it while others warn against it.",
+    "url": "https://www.carbonbrief.org/qa-what-the-controversial-gwp-methane-metric-means-for-farming-emissions",
+    "for_position": null,
+    "id": "understand-the-fight-over-how-methane"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read FAO’s global assessment of livestock emissions",
+    "description": "The UN Food and Agriculture Organization’s 2023 report “Pathways towards lower emissions,” estimating emissions by species and region and weighing supply-side and demand-side options.",
+    "url": "https://openknowledge.fao.org/handle/20.500.14283/cc9029en",
+    "for_position": null,
+    "id": "read-fao-s-global-assessment-of"
+   },
+   {
+    "kind": "local",
+    "title": "Try Meatless Monday",
+    "description": "A long-running campaign encouraging people, schools, workplaces and restaurants to skip meat one day a week, with recipes and toolkits for institutions.",
+    "url": "https://www.mondaycampaigns.org/meatless-monday",
+    "for_position": "Shift diets toward plants",
+    "id": "try-meatless-monday"
+   },
+   {
+    "kind": "local",
+    "title": "Buy from verified regenerative grazing farms",
+    "description": "Land to Market, a verification program linked to the Savory Institute that certifies meat, dairy, wool and leather from farms whose soil, water and biodiversity outcomes are measured.",
+    "url": "https://www.landtomarket.com/",
+    "for_position": "Cut livestock emissions without cutting meat",
+    "id": "buy-from-verified-regenerative-grazing-farms"
+   }
+  ]
+ },
+ "icon": "cow",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: a large round dinner plate seen at a slight angle as the dominant focal mass, holding a simple cut of meat beside a heap of beans and a few leaf greens, in the foreground; behind it a curved pasture hill with a medium standing cow in side view, the plate's rim overlapping the base of the hill; on a second curved slope a small field of crop rows with leafy bean plants; a winding farm path running from the far hills down across the frame toward the plate as the connective element; the ground is the curve of the hills, never a flat line.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #7d8a4e, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: smokestacks, exhaust clouds or gas coming from the cow, flatulence jokes, burning globes, thermometers, graphs, factory farm sheds or cages, slaughterhouse, knives, butcher cuts chart, steak on a fork, burgers, test tubes, crossed-out symbols, warning signs, price tags, a farmer or any person, cartoon cow face with a smile."
 }

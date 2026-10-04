@@ -1,8 +1,8 @@
 {
  "slug": "how-to-tax-extreme-wealth",
  "title": "Taxing Extreme Wealth",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-10-03T02:33:37+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Taxing billionaire net worth rather than only income.",
@@ -15,5 +15,690 @@
   "government-debt-sustainability",
   "labor-power",
   "reparations-historical-injustice"
- ]
+ ],
+ "content": {
+  "overview": {
+   "summary": "Whether to tax what the very richest own, not only the income they report, and whether a tax on great fortunes can be made to work.",
+   "scope_covered": "Annual wealth taxes, one-time levies, minimum taxes on billionaires, taxing unrealized gains each year or at death, and heavier inheritance taxes, in the United States and abroad.",
+   "scope_excluded": "How much inequality matters, top income and corporate tax rates in general, wages and labor power, and reparations, each on its own page; government debt only as a motive for revenue.",
+   "why_now": "On November 3, 2026, Californians vote on Proposition 40, a one-time 5 percent tax on the net worth of billionaires who were state residents on January 1, 2026, with 90 percent of the money going to health programs. It qualified for the ballot on June 17.",
+   "why_now_source_label": "Ballotpedia News",
+   "why_now_source_url": "https://news.ballotpedia.org/2026/06/18/california-billionaires-tax-qualifies-for-the-november-ballot-competing-measures-pending-signature-verification/"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "Total tax rate of the 400 richest Americans, two estimates",
+     "viz": "ranked",
+     "wide": true,
+     "value": "24",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Top 400, Zucman et al.",
+       "value": "24",
+       "highlight": true
+      },
+      {
+       "label": "All, Zucman et al.",
+       "value": "30",
+       "highlight": false
+      },
+      {
+       "label": "Top 400, Splinter",
+       "value": "38",
+       "highlight": false
+      },
+      {
+       "label": "All, Splinter",
+       "value": "25",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "On one estimate the 400 richest Americans paid about 24 percent of their income in all taxes in 2018–2020, against 30 percent overall; David Splinter’s rival estimate says 38 against 25.",
+     "detail": "Akcan Balkir, Emmanuel Saez, Danny Yagan and Gabriel Zucman matched the Forbes 400 to IRS individual, business, estate and gift tax returns and counted every tax, including corporate tax on the companies they own, which supplies about 9 points of the top 400’s rate. Their “economic income” includes companies’ retained profits but not unrealized gains in share prices. They find the top 400’s rate fell from about 30 percent in 2010 to 2017 after the 2017 tax law, against about 45 percent for top labor income earners, because the companies the very rich own pay out little in dividends and their partnerships report losses. Splinter, an economist at Congress’s Joint Committee on Taxation writing in a personal capacity in 2025, argues the estimate double-counts capital income, treats a Forbes family as a single tax return and omits state income taxes; he puts the top 400 at 9 to 19 points above the average, and at about 59 percent once annual charitable giving is added. Both papers agree the system is built to tax income rather than wealth, which is why rates at the very top look lower when people are ranked by wealth.",
+     "source_label": "Balkir, Saez, Yagan & Zucman, “How Much Tax Do US Billionaires Pay?” NBER Working Paper 34170 (2025)",
+     "source_url": "https://gabriel-zucman.eu/files/BSYZ2025NBER.pdf",
+     "source_published": "2018–2020",
+     "source_accessed": "2026-10-02",
+     "id": "total-tax-rate-of-the-400"
+    },
+    {
+     "label": "Billionaires worldwide and their combined wealth",
+     "viz": "bar",
+     "wide": false,
+     "value": "3,428",
+     "unit": "billionaires",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Forbes counted a record 3,428 billionaires in March 2026, 400 more than a year earlier, with a combined net worth of $20.1 trillion, up about $4 trillion.",
+     "detail": "Forbes’s annual list is the standard count. It values public shareholdings at market prices and estimates private holdings, so totals move sharply with stock markets; Forbes attributes the 2026 jump to artificial intelligence, booming markets and friendly fiscal policies. Elon Musk led the list at an estimated $839 billion. Other trackers differ in method and date: Oxfam, using Forbes data at a different point, reported in January 2026 that billionaire wealth rose by $2.5 trillion in 2025 to $18.3 trillion. The scale matters for revenue: 2 percent of a $20 trillion base is about $400 billion a year, before any credit for taxes already paid and before avoidance, and assumptions about avoidance, more than rates, drive most of the disagreement over what such taxes would raise.",
+     "source_label": "Forbes, “Inside Forbes’ 2026 Billionaires List” (March 10, 2026)",
+     "source_url": "https://www.forbes.com/sites/chasewithorn/2026/03/10/2026-worlds-billionaires-list-facts-and-figures/",
+     "source_published": "2026",
+     "source_accessed": "2026-10-02",
+     "id": "billionaires-worldwide-and-their-combined-wealth"
+    },
+    {
+     "label": "Billionaires’ individual taxes as a share of their wealth",
+     "viz": "bar",
+     "wide": false,
+     "value": "0.3",
+     "unit": "% of wealth",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Gabriel Zucman estimates billionaires pay individual taxes, excluding corporate tax, of about 0.3 percent of their wealth a year, while that wealth has earned about 7.5 percent a year above inflation.",
+     "detail": "The figure measures taxes against the stock of wealth, the natural yardstick for a wealth tax, rather than against income, and it leaves out corporate taxes paid by billionaires’ companies, one reason it sits far below estimates that measure taxes against income. The return is an average over four decades. Zucman’s report, commissioned by Brazil’s G20 presidency, proposes a coordinated minimum: billionaires would owe at least 2 percent of their wealth each year in individual taxes, with income taxes already paid counted toward it. He estimates this would raise $200 to $250 billion a year from about 3,000 people, and $100 to $140 billion more if extended to fortunes over $100 million, and that it would cut billionaires’ after-tax return from about 7.2 to 5.5 percent rather than shrink their fortunes. The G20 leaders’ declaration of November 2024 committed members to “engage cooperatively to ensure that ultra-high-net-worth individuals are effectively taxed,” “with full respect to tax sovereignty,” but adopted no rate.",
+     "source_label": "Gabriel Zucman, minimum tax blueprint, report for Brazil’s G20 presidency (June 2024)",
+     "source_url": "https://taxobservatory.world//www-site/uploads/2024/06/report-g20.pdf",
+     "source_published": "2024",
+     "source_accessed": "2026-10-02",
+     "id": "billionaires-individual-taxes-as-a-share"
+    },
+    {
+     "label": "Unrealized gains as a share of wealth, US households",
+     "viz": "ranked",
+     "wide": true,
+     "value": "54",
+     "unit": "% of wealth",
+     "series": [
+      {
+       "label": "Over $100 million",
+       "value": "54",
+       "highlight": true
+      },
+      {
+       "label": "Over $50 million",
+       "value": "50",
+       "highlight": false
+      },
+      {
+       "label": "$20–50 million",
+       "value": "38",
+       "highlight": false
+      },
+      {
+       "label": "$10–20 million",
+       "value": "34",
+       "highlight": false
+      },
+      {
+       "label": "Under $10 million",
+       "value": "28",
+       "highlight": false
+      },
+      {
+       "label": "All households",
+       "value": "33",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2020 about 54 percent of the wealth of US households worth over $100 million was gains on assets never sold, and so never taxed, against 33 percent for all households.",
+     "detail": "This is why the debate exists. The income tax taxes a rise in an asset’s value only when the asset is sold, and owners who never sell can borrow against their shares to fund spending and pass them on at death, when heirs inherit them at current value and the gain escapes income tax for good, a strategy known as “buy, borrow, die.” For the over-$100 million group, 64 percent of unrealized gains were in private business shares, 26 percent in publicly traded stock and 10 percent in real estate, which bears on how hard they would be to value each year. The authors assumed half of Forbes billionaires’ wealth is unrealized gains. Treasury estate tax data for 2010 show a similar pattern, with 44 percent of estates over $20 million made up of unrealized gains, and Zucman estimated in 2024 that the share for Americans worth over $100 million had risen to about 60 percent after the post-pandemic stock rally.",
+     "source_label": "Saez, Yagan & Zucman, “Capital Gains Withholding” (2021), Table 1",
+     "source_url": "https://gabriel-zucman.eu/files/SYZ2021.pdf",
+     "source_published": "2020",
+     "source_accessed": "2026-10-02",
+     "id": "unrealized-gains-as-a-share-of"
+    },
+    {
+     "label": "Fewer wealthy taxpayers per point of wealth tax",
+     "viz": "bar",
+     "wide": false,
+     "value": "2",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In Scandinavian records, a 1 point higher top wealth tax rate cut the number of wealthy taxpayers by about 2 percent; their departures cut employment 0.02 percent and value added 0.10 percent.",
+     "detail": "This is the most direct recent evidence on whether wealth taxes drive the rich abroad. The authors use the unexpected repeal of Sweden’s wealth tax in 2006 and two Danish reforms, in 1989 and 1996, and find clear responses: the Swedish repeal cut wealthy Swedes’ propensity to emigrate by 30 percent. Because the wealthy own many businesses (in Sweden the top 2 percent by wealth control close to 10 percent of employment through private firms), departures hurt the firms they own, but the authors find the aggregate effect small. Supporters of wealth taxes read this as flight that is real but too small to defeat the tax, opponents as proof that even modest rates lose taxpayers. Recent episodes are less well measured: AFP reported in 2024 that more than 100 of Norway’s wealthiest people moved abroad, mostly to Switzerland, between 2021 and 2023 after Norway raised its rates. The paper is an unpublished working paper.",
+     "source_label": "Jakobsen, Kleven, Kolsrud, Landais & Muñoz, “Taxing Top Wealth: Migration Responses” (working paper, 2025)",
+     "source_url": "https://www.henrikkleven.com/research/working_papers/WealthMig_Nov2025.pdf",
+     "source_published": "1989–2007",
+     "source_accessed": "2026-10-02",
+     "id": "fewer-wealthy-taxpayers-per-point-of"
+    },
+    {
+     "label": "OECD countries with an annual net wealth tax on individuals",
+     "viz": "ranked",
+     "wide": true,
+     "value": "4",
+     "unit": "countries",
+     "series": [
+      {
+       "label": "1990",
+       "value": "12",
+       "highlight": false
+      },
+      {
+       "label": "2017",
+       "value": "4",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Twelve OECD countries taxed individuals’ net wealth every year in 1990; by 2017 only four did: France, Norway, Spain and Switzerland.",
+     "detail": "Austria repealed its wealth tax in 1994, Denmark and Germany in 1997, the Netherlands in 2001, Finland, Iceland and Luxembourg in 2006 and Sweden in 2007; Spain cut its tax to zero in 2008 and reinstated it after the financial crisis. The OECD reports that repeals were usually justified by efficiency and administrative concerns, low revenue and failure to meet redistributive goals. France replaced its wealth tax with a tax on real estate wealth only in 2018, and Spain added a national “solidarity” tax on fortunes over €3 million in 2022. Supporters of wealth taxes argue the repealed taxes failed because of low thresholds, many exemptions and weak enforcement, and that a tax on only the very richest with third-party reporting is a different instrument; opponents read the repeals as the verdict of experience. The OECD’s own conclusion is conditional: it finds “limited arguments” for a net wealth tax where capital income and inheritances are already taxed well, and a stronger case where they are not.",
+     "source_label": "OECD, “The Role and Design of Net Wealth Taxes in the OECD,” Tax Policy Studies No. 26 (2018)",
+     "source_url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2018/04/the-role-and-design-of-net-wealth-taxes-in-the-oecd_g1g89919/9789264290303-en.pdf",
+     "source_published": "1990 and 2017",
+     "source_accessed": "2026-10-02",
+     "id": "oecd-countries-with-an-annual-net"
+    },
+    {
+     "label": "Rise in reported wealth after a 1-point wealth tax cut, Switzerland",
+     "viz": "bar",
+     "wide": false,
+     "value": "43",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "When a Swiss canton cut its wealth tax rate by 1 percentage point, reported taxable wealth rose by at least 43 percent after six years.",
+     "detail": "The response is large, but its sources matter. The authors attribute roughly a quarter of it to taxpayers moving between cantons and about a fifth to house prices absorbing the tax change; much of the rest appears to be evasion or avoidance, which is easier in Switzerland because banks do not systematically report financial wealth to the tax authorities. A 1 point change is also large relative to Swiss rates, which are typically well below 1 percent. Opponents of wealth taxes cite the finding as evidence that the base shrinks sharply when taxed. Proponents, including Saez and Zucman, argue it shows the cost of weak enforcement rather than of wealth taxation as such, and point to Danish evidence, where wealth is reported by third parties, of much smaller responses (Jakobsen, Jakobsen, Kleven & Zucman, Quarterly Journal of Economics, 2020).",
+     "source_label": "Brülhart, Gruber, Krapf & Schmidheiny, “Behavioral Responses to Wealth Taxes,” AEJ: Economic Policy (2022)",
+     "source_url": "https://www.aeaweb.org/articles?id=10.1257%2Fpol.20200258",
+     "source_published": "2022",
+     "source_accessed": "2026-10-02",
+     "id": "rise-in-reported-wealth-after-a"
+    },
+    {
+     "label": "Revenue from the Ultra-Millionaire Tax Act of 2026, sponsors’ score",
+     "viz": "bar",
+     "wide": false,
+     "value": "6.17",
+     "unit": "$ trillion",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Scoring for the bill’s sponsors, Saez and Zucman put its ten-year revenue at $6.17 trillion; independent scores of a 2019 version with a higher top rate came in lower.",
+     "detail": "The bill charges 2 percent a year on net worth above $50 million plus 1 percent more above $1 billion. The score covers 2026 to 2035, about 1.7 percent of GDP a year from some 260,000 families. It assumes a taxable base of $22.6 trillion above $50 million and $6.2 trillion for the billionaire surtax, from about 900 billionaire families at the end of 2025, growth of 4 percent a year, and avoidance and evasion that cut liabilities by 15 percent; $0.74 trillion would come from the surtax. Senator Elizabeth Warren’s 2019 campaign plan, with a 6 percent rate above $1 billion, was put by her campaign at $3.75 trillion; the Penn Wharton Budget Model estimated $2.7 trillion over 2021 to 2030 before economic feedback and $2.3 trillion after it, with a range of $1.4 to $4.8 trillion depending on avoidance (U.S. News, 2019). Lawrence Summers and Natasha Sarin argued in 2019 that estate tax experience suggests the rich would avoid much more than the bill’s backers assume.",
+     "source_label": "Saez & Zucman, score of the Ultra-Millionaire Tax Act of 2026 (March 23, 2026)",
+     "source_url": "https://www.warren.senate.gov/imo/media/doc/ultra-millionaire_tax_act_score.pdf",
+     "source_published": "2026",
+     "source_accessed": "2026-10-02",
+     "id": "revenue-from-the-ultra-millionaire-tax"
+    },
+    {
+     "label": "Likely California voters on Proposition 40",
+     "viz": "ranked",
+     "wide": true,
+     "value": "48",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Yes",
+       "value": "48",
+       "highlight": true
+      },
+      {
+       "label": "No",
+       "value": "38",
+       "highlight": false
+      },
+      {
+       "label": "Undecided",
+       "value": "14",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a September 21–24, 2026 poll, 48 percent of likely California voters backed the one-time billionaire tax, 38 percent opposed it and 14 percent were undecided, with a margin of error of 4 points.",
+     "detail": "Proposition 40 needs a simple majority. In the same poll 59 percent said they were not much concerned about wealthy residents leaving the state because of the tax. The opposition is far better funded: Google co-founder Sergey Brin, reported to have moved his residence out of the state before the January 1 cutoff, had given $82 million by mid-June (CalMatters, 2026), and a committee he primarily funds placed two competing constitutional amendments on the same ballot, one barring new taxes on personal assets and savings enacted after January 1, 2026, which would nullify Proposition 40 if it receives more votes (Ballotpedia News, 2026). The coalitions cut across the usual lines: Governor Gavin Newsom, the California Business Roundtable, the California Teachers Association and the California Medical Association oppose it, while SEIU-United Healthcare Workers West, the Teamsters, AFSCME and the state Democratic Party back it (CalMatters voter guide).",
+     "source_label": "NBCUniversal Local and Telemundo Station Group poll, reported by NBC News (September 30, 2026)",
+     "source_url": "https://www.nbcnews.com/politics/2026-election/california-poll-voters-back-billionaire-tax-proposal-falls-short-major-rcna600354",
+     "source_published": "2026",
+     "source_accessed": "2026-10-02",
+     "id": "likely-california-voters-on-proposition-40"
+    },
+    {
+     "label": "Revenue from annual net wealth taxes, by country",
+     "viz": "ranked",
+     "wide": true,
+     "value": "1.14",
+     "unit": "% of GDP",
+     "series": [
+      {
+       "label": "Switzerland",
+       "value": "1.14",
+       "highlight": true
+      },
+      {
+       "label": "Norway",
+       "value": "0.60",
+       "highlight": false
+      },
+      {
+       "label": "Spain",
+       "value": "0.20",
+       "highlight": false
+      },
+      {
+       "label": "US estate & gift tax",
+       "value": "0.13",
+       "highlight": false
+      },
+      {
+       "label": "France, property only",
+       "value": "0.09",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2024 annual wealth taxes raised 1.14 percent of GDP in Switzerland, 0.60 percent in Norway and 0.20 percent in Spain; France’s property-only tax and the US estate tax are shown for comparison.",
+     "detail": "Switzerland is the outlier because its cantons tax net wealth from comparatively low thresholds, so the tax reaches the middle class as well as the rich; it has no federal wealth tax. Norway taxes net wealth above NOK 1.9 million at 1 percent, rising to 1.1 percent above NOK 21.5 million (Tax Foundation, 2026). Spain’s figure combines its regional wealth tax and national solidarity tax. France’s real estate wealth tax raised 0.09 percent of GDP, against 0.22 percent for its broader wealth tax in 2017, the year before it was replaced; the US federal estate and gift tax raised 0.13 percent. Opponents read amounts this small against total taxation as proof the taxes raise little for their costs; proponents answer that current taxes are full of exemptions, and that a tax on billionaires’ fortunes alone, with no low threshold, is a separate design.",
+     "source_label": "OECD Revenue Statistics, Global Revenue Statistics Database (categories 4210 and 4300)",
+     "source_url": "https://data-explorer.oecd.org/vis?df[ds]=dsDisseminateFinalDMZ&df[id]=DSD_REV_COMP_OECD%40DF_RSOECD&df[ag]=OECD.CTP.TPS",
+     "source_published": "2024",
+     "source_accessed": "2026-10-02",
+     "id": "revenue-from-annual-net-wealth-taxes"
+    },
+    {
+     "label": "Average federal income tax rate by income group, US",
+     "viz": "ranked",
+     "wide": true,
+     "value": "23.6",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Top 0.001%",
+       "value": "23.6",
+       "highlight": true
+      },
+      {
+       "label": "Top 0.01%",
+       "value": "25.2",
+       "highlight": false
+      },
+      {
+       "label": "Top 0.1%",
+       "value": "26.7",
+       "highlight": false
+      },
+      {
+       "label": "Top 1%",
+       "value": "26.3",
+       "highlight": false
+      },
+      {
+       "label": "Top 10%",
+       "value": "20.9",
+       "highlight": false
+      },
+      {
+       "label": "All returns",
+       "value": "14.1",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2023 the top 1 percent of taxpayers by income paid on average 26.3 percent of adjusted gross income in federal income tax, the top 0.001 percent 23.6 percent and all returns 14.1 percent.",
+     "detail": "Ranked by reported income, the US income tax is steeply progressive: in 2023 the top 1 percent of returns, with adjusted gross income above about $676,000, received 20.6 percent of all reported income and paid 38.4 percent of all federal income tax, and the top 0.001 percent, 1,531 returns, received 2.1 percent of income and paid 3.5 percent of tax. Opponents of new taxes on wealth cite these shares as evidence that the rich already carry the system. Supporters point to two things in the same table: the average rate dips at the very top, and the table measures only income people report, so it leaves out the unrealized gains that make up most of the largest fortunes. The table ranks taxpayers by income, not wealth, so its top 0.001 percent is not the same group as the 400 wealthiest families.",
+     "source_label": "IRS Statistics of Income, Table 4.1, “Individual Income Tax Rates and Tax Shares” (tax year 2023)",
+     "source_url": "https://www.irs.gov/pub/irs-soi/23in41ts.xlsx",
+     "source_published": "2023",
+     "source_accessed": "2026-10-02",
+     "id": "average-federal-income-tax-rate-by"
+    },
+    {
+     "label": "Federal income tax rate of the 400 richest families, counting unrealized gains",
+     "viz": "ranked",
+     "wide": true,
+     "value": "8.2",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Forbes 400, 2010–18",
+       "value": "8.2",
+       "highlight": true
+      },
+      {
+       "label": "$1 million+ income",
+       "value": "26",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Counting yearly gains in their fortunes as income, which defenders of today’s system reject, White House economists put the 400 richest families’ federal income tax rate at 8.2 percent in 2010–18.",
+     "detail": "The comparison row, about 26 percent, is the Joint Committee on Taxation’s estimate for 2021 of the rate paid by households with income over $1 million, on the ordinary definition of income. The two rows use different definitions on purpose: families with the most wealth pay a low rate relative to the growth in their wealth because most of it comes as unrealized gains, while high earners whose income is wages pay the statutory rates. The estimate was produced by economists Greg Leiserson and Danny Yagan for the Biden administration, which used it to support its proposed billionaire minimum income tax. It counts only the federal individual income tax, not corporate, payroll, state or estate taxes, which is why it is far lower than estimates that count every tax. Defenders of the current system answer that unrealized gains cannot be spent, that share prices fall as well as rise, and that the gains are taxed on sale or, for large estates, by the estate tax.",
+     "source_label": "White House Council of Economic Advisers & OMB, average federal income tax rate of the wealthiest (2021)",
+     "source_url": "https://bidenwhitehouse.archives.gov/cea/written-materials/2021/09/23/what-is-the-average-federal-individual-income-tax-rate-on-the-wealthiest-americans/",
+     "source_published": "2010–2018",
+     "source_accessed": "2026-10-02",
+     "id": "federal-income-tax-rate-of-the"
+    },
+    {
+     "label": "Federal revenue lost to the step-up in basis at death",
+     "viz": "bar",
+     "wide": false,
+     "value": "41.1",
+     "unit": "$ billion",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The Treasury estimates that letting heirs inherit assets at current value, so lifetime gains escape income tax, costs about $41 billion in fiscal 2026 and $570 billion over ten years.",
+     "detail": "The estimate is the cost against a baseline that taxes gains at death. It rises from $33.6 billion in 2024 to $79.0 billion in 2034 with projected asset growth, and was prepared before the 2025 budget law; the Joint Committee on Taxation publishes its own, differently defined estimates. Ending the step-up, by taxing gains at death or by making heirs take over the original owner’s cost basis, would reach unrealized gains without valuing every asset each year. The Biden administration proposed taxing gains at death above an exemption, and Governor Gavin Newsom’s June 2026 national plan includes ending tax-free borrowing against stock.",
+     "source_label": "US Department of the Treasury, Office of Tax Analysis, Tax Expenditures, Fiscal Year 2026",
+     "source_url": "https://home.treasury.gov/system/files/131/Tax-Expenditures-FY2026.pdf",
+     "source_published": "2026",
+     "source_accessed": "2026-10-02",
+     "id": "federal-revenue-lost-to-the-step"
+    },
+    {
+     "label": "Share of US deaths that owe federal estate tax",
+     "viz": "bar",
+     "wide": false,
+     "value": "0.07",
+     "unit": "% of deaths",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Just 0.07 percent of Americans who died in 2019 left an estate owing federal estate tax, down from 2.1 percent in 2001 as the exemption rose; in 2026 the exemption is $15 million per person.",
+     "detail": "The estate tax is the US tax that already reaches fortunes as such, at a 40 percent rate above the exemption, which the 2025 budget law (P.L. 119-21) raised for 2026 and made permanent, indexed for inflation thereafter. Revenue has fallen from about 0.3 percent of GDP in 2000 to about 0.1 percent, according to the Congressional Research Service, because exemptions rose and rates fell, and because estates can be reduced through trusts, valuation discounts and transfers to spouses and charities. Balkir, Saez, Yagan and Zucman (2025) find that the estates of Forbes 400 members who died paid federal estate tax equal to 0.8 percent of their wealth when married and 7 percent when single, and that estate values reported to the IRS averaged about 30 percent of Forbes’s estimates. Those who favor taxing fortunes at transfer see this as the instrument to repair; those who oppose the estate tax argue it falls on savings already taxed once and should be abolished.",
+     "source_label": "Congressional Research Service, “The Estate and Gift Tax: An Overview,” R48183",
+     "source_url": "https://www.congress.gov/crs-product/R48183",
+     "source_published": "2001 and 2019",
+     "source_accessed": "2026-10-02",
+     "id": "share-of-us-deaths-that-owe"
+    },
+    {
+     "label": "Share of US household wealth held by the top 0.1 percent",
+     "viz": "ranked",
+     "wide": true,
+     "value": "15.0",
+     "unit": "%",
+     "series": [
+      {
+       "label": "1989",
+       "value": "8.6",
+       "highlight": false
+      },
+      {
+       "label": "2019",
+       "value": "12.3",
+       "highlight": false
+      },
+      {
+       "label": "2026",
+       "value": "15.0",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The richest 0.1 percent of US households, about 130,000 of them, held 15.0 percent of household net worth in mid-2026, up from 8.6 percent in 1989.",
+     "detail": "The Federal Reserve’s Distributional Financial Accounts combine the national balance sheet with the triennial Survey of Consumer Finances, which by design leaves out the Forbes 400, so the very top is estimated. In the same accounts the top 1 percent’s share rose from 22.8 to 32.5 percent over the same period. Most top-0.1-percent wealth is corporate equity and business ownership rather than housing: in the second quarter of 2026 the group held about $16.2 trillion of its $28.2 trillion in assets as corporate equities and mutual fund shares and about $2.0 trillion as real estate. Because the share moves with the stock market, it can fall in a crash. Supporters and opponents of wealth taxes read the same rise differently: as the outcome of lightly taxed compounding returns, or as the reward to building companies whose value the public has bid up.",
+     "source_label": "Federal Reserve Board, Distributional Financial Accounts, via FRED (series WFRBSTP1300)",
+     "source_url": "https://fred.stlouisfed.org/series/WFRBSTP1300",
+     "source_published": "1989–2026",
+     "source_accessed": "2026-10-02",
+     "id": "share-of-us-household-wealth-held"
+    },
+    {
+     "label": "Americans favoring an annual wealth tax when told its revenue",
+     "viz": "radial",
+     "wide": false,
+     "value": "80",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a February 2026 survey of 2,509 US adults, 80 percent favored a 2 percent annual tax on wealth over $50 million and 3 percent over $1 billion, including 72 percent of Republicans.",
+     "detail": "Support among Democrats was 88 percent. The Program for Public Consultation shows respondents policy options with the revenue each would raise or cost, based on nonpartisan estimates, before asking their view, so its results reflect informed choices among options rather than snap reactions. In the same survey 64 percent favored lowering the estate tax exemption from $15 million to $5 million, and 64 percent favored higher capital gains taxes on households with income over $200,000. Ballot votes on concrete measures have so far been less favorable to taxes on great fortunes than national surveys like this one.",
+     "source_label": "Program for Public Consultation, University of Maryland, “Common Ground 2026: Taxes”",
+     "source_url": "https://vop.org/common-ground-2026-taxes/",
+     "source_published": "2026",
+     "source_accessed": "2026-10-02",
+     "id": "americans-favoring-an-annual-wealth-tax"
+    },
+    {
+     "label": "French National Assembly vote on the “Zucman tax”",
+     "viz": "ranked",
+     "wide": true,
+     "value": "228",
+     "unit": "votes",
+     "series": [
+      {
+       "label": "Against",
+       "value": "228",
+       "highlight": true
+      },
+      {
+       "label": "For",
+       "value": "172",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "On October 31, 2025, France’s National Assembly rejected a 2 percent minimum tax on the roughly 1,800 households with assets over €100 million by 228 votes to 172.",
+     "detail": "The proposal, named after Gabriel Zucman, would have required anyone with assets over €100 million to pay total personal taxes of no less than 2 percent of their wealth a year, topping up any shortfall; Zucman estimated about €20 billion a year in revenue. The left voted for it; the center bloc, the Republicans and the National Rally voted against, and a narrower Socialist compromise of 3 percent above €10 million, excluding innovative and family businesses, also failed. It was the most prominent national test of the G20 blueprint, and business leaders publicly opposed it, arguing it would force founders to sell stakes in their own companies to pay.",
+     "source_label": "Toute l’Europe, “Budget 2026 : l’Assemblée nationale rejette la taxe Zucman” (October 31, 2025)",
+     "source_url": "https://www.touteleurope.eu/economie-et-social/budget-2026-l-assemblee-nationale-rejette-la-taxe-zucman-tous-les-regards-braques-a-gauche/",
+     "source_published": "2025",
+     "source_accessed": "2026-10-02",
+     "id": "french-national-assembly-vote-on-the"
+    },
+    {
+     "label": "Swiss vote on a 50 percent inheritance tax above CHF 50 million",
+     "viz": "radial",
+     "wide": false,
+     "value": "78.3",
+     "unit": "% voted no",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "On November 30, 2025, Swiss voters rejected a 50 percent federal tax on estates and gifts above CHF 50 million, meant to fund climate measures, by 78.3 percent to 21.7 percent.",
+     "detail": "The initiative, put forward by the Young Socialists (JUSO), the youth wing of the Social Democratic Party, would have applied to only a few thousand of the very richest people in a country with no federal inheritance tax; cantons tax inheritances, but most exempt spouses and children. Opponents of new taxes on wealth cite the result as evidence that voters reject them when the stakes are concrete; supporters read it as a judgment on an unusually high 50 percent rate, not on the principle of taxing the largest fortunes.",
+     "source_label": "Withers, “Swiss voters reject federal inheritance tax proposal” (December 2025), reporting the official result",
+     "source_url": "https://www.withersworldwide.com/en-gb/insight/read/swiss-voters-reject-federal-inheritance-tax-proposal",
+     "source_published": "2025",
+     "source_accessed": "2026-10-02",
+     "id": "swiss-vote-on-a-50-percent"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Do the richest people pay a lower tax rate than ordinary taxpayers?",
+    "kind": "empirical",
+    "why": "The answer turns on what counts as income: what people report, national-accounts income including companies’ retained profits, or the yearly rise in their wealth. Each yardstick is defensible, and choosing one is part of the argument.",
+    "detail": "Those who say the richest pay less argue that the fair yardstick is how much richer a person became in a year, because that is what a wage earner is taxed on. By that measure the very richest are taxed lightly: most of their gain is the rising value of shares they never sell, their companies pay out little in dividends, their partnerships report tax losses while earning book profits, and the gains vanish for income tax purposes at death. A system in which a nurse can pay a higher rate than a billionaire fails a basic test of fairness, whatever its formal progressivity.\n\nThose who say the richest pay more answer that the system taxes income, and by that standard the rich pay a far larger share of income tax than of the income they receive. Estimates showing low rates at the very top, they argue, rest on contestable choices: treating a whole family dynasty as one taxpayer, counting the same capital income twice, leaving out state taxes, and treating paper gains that can vanish in a market fall as if they were cash. Unrealized gains are taxed eventually when assets are sold, and the corporate tax already falls on the profits that drive share prices.",
+    "lean_label_a": "Lower than average",
+    "lean_label_b": "Higher than average",
+    "id": "do-the-richest-people-pay-a"
+   },
+   {
+    "text": "Would an annual wealth tax on the richest raise large sums after avoidance and departures?",
+    "kind": "empirical",
+    "why": "Revenue estimates for similar designs differ severalfold, mostly over how much the very rich would avoid, undervalue or leave. Europe’s repealed wealth taxes are read both as a warning and as a lesson in bad design.",
+    "detail": "Those who expect large revenue argue that the old European taxes failed for reasons that can be fixed: they started at modest wealth levels, exempted business assets and other favored holdings, relied on self-reporting of financial wealth and let taxpayers move to a neighboring country at no cost. A tax that starts at $50 million, has no exemptions, uses reporting by banks and brokers, values private companies with formulas and audits, and taxes renouncing citizenship heavily leaves far fewer escape routes. With US billionaire wealth in the trillions, even a generous allowance for avoidance would leave one of the largest sums available from any single reform.\n\nThose who expect little argue that every estimate assumes the base can be measured, and for the largest fortunes it cannot: most is held in private companies, founder stakes with voting control, partnerships, art and trusts with no market price. The estate tax, which already reaches the same people once a generation, raises far less than its base would suggest because of valuation discounts, trusts and planning. Reported wealth has proved highly sensitive to rates where it is self-reported, and some of the very richest have left countries that raised wealth taxes. A wealth tax also shrinks the income and capital gains tax base it sits on, so net revenue is smaller than gross.",
+    "lean_label_a": "Large net revenue",
+    "lean_label_b": "Little net revenue",
+    "id": "would-an-annual-wealth-tax-on"
+   },
+   {
+    "text": "Is a rise in the value of unsold assets income that the state may fairly tax?",
+    "kind": "value",
+    "why": "Economists’ standard definition of income counts any rise in net worth, and the very rich can borrow against paper gains. Tax systems have generally waited for a sale, because such gains can reverse, are hard to value and may yield no cash.",
+    "detail": "Those who would tax gains as they accrue argue that a billionaire whose shares rise by $10 billion is $10 billion richer and can spend against that wealth at once by borrowing. Treating the gain as untaxable until a sale the owner can postpone forever, and then erasing it at death, lets the people with the most economic power choose whether they pay. The income tax already taxes some unrealized gains, such as those on futures contracts and some foreign holdings, so taxing gains as they accrue, or at least at death, would apply the income tax to the rich as it applies to wage earners.\n\nThose who would tax only on sale argue that income is what a person actually receives. Share prices rise and fall, and taxing a gain that may vanish next year forces people to sell or borrow to pay tax on money they never had, a burden that falls hardest on founders and family businesses with little cash. In their view the realization rule is not a loophole but a recognition that government should tax transactions it can measure, not appraisals it must guess at, and if the problem is borrowing against shares, it can be addressed directly without abandoning the principle.",
+    "lean_label_a": "Tax gains yearly",
+    "lean_label_b": "Tax gains on sale",
+    "id": "is-a-rise-in-the-value"
+   },
+   {
+    "text": "Is extreme concentration of wealth a harm in itself, apart from what a tax on it would raise?",
+    "kind": "value",
+    "why": "Much of the case for wealth taxes is about power, not revenue: fortunes large enough to buy political influence, media and dynastic advantage. Others hold that wealth honestly earned is the owner’s, and that political harms should be met directly.",
+    "detail": "Those who see concentration as a harm argue that when one person’s wealth rivals a country’s economy, it becomes power no election can check: funding campaigns and ballot measures, owning news outlets and social networks, shaping which laws pass and which never come up. Because large fortunes earn high returns and compound, concentration will keep rising unless something slows it, and a wealth tax is valuable precisely because it does; revenue is a secondary benefit. Some, like the philosopher Ingrid Robeyns, go further and argue that no one should hold more than a set limit.\n\nThose who see the wealth as legitimate answer that the largest fortunes today were mostly built by founders of companies that millions of people chose to buy from, and that the wealth is the market value of those companies, not cash hoarded away from others. Taking a share of it every year treats success as an offense and the state as the rightful owner of whatever it chooses to levy. Political influence is a real concern, they say, but campaign finance and disclosure rules meet it better than a tax on everything a person owns.",
+    "lean_label_a": "A harm in itself",
+    "lean_label_b": "No harm in itself",
+    "id": "is-extreme-concentration-of-wealth-a"
+   },
+   {
+    "text": "Can one state or country tax its billionaires alone, or does it take international coordination?",
+    "kind": "empirical",
+    "why": "Billionaires can move, and their assets more easily still. Some see fixed residency dates, exit taxes and taxing citizens wherever they live as enough to hold the base; others see departures as proof that only wider action works.",
+    "detail": "Those who think a government can act alone note that countries already tax their residents, and in the US their citizens, on worldwide income and could tax wealth the same way. Because the United States taxes citizens wherever they live, a federal wealth tax could be escaped only by renouncing citizenship, which an exit tax can make expensive, and fixing a one-time levy’s residency date in the past means no one can avoid it by moving afterward. Measured migration responses are modest, and waiting for global agreement is a recipe for never acting; coordination, as the G20’s 2024 commitment showed, follows countries willing to move first.\n\nThose who think coordination is needed argue that within a federation, where people move freely, a state wealth tax mainly drives the base elsewhere, and California has already seen billionaires leave before its residency cutoff. Even national taxes face low-tax neighbors, as Norway found when some of its wealthiest moved to Switzerland. As Governor Gavin Newsom put it in June 2026, “wealth is movable, and it shops for the state with the lowest tax.” Acting alone risks losing both the new tax and the existing taxes the departing residents used to pay.",
+    "lean_label_a": "Can act alone",
+    "lean_label_b": "Needs coordination",
+    "id": "can-one-state-or-country-tax"
+   },
+   {
+    "text": "Would taxing great fortunes every year slow investment, entrepreneurship and growth?",
+    "kind": "empirical",
+    "why": "A wealth tax falls on the stock of capital, much of it founders’ stakes in operating companies. Direct evidence on growth is scarce, and measured responses mix real changes in saving and investment with relabeling.",
+    "detail": "Those who expect little harm argue that billionaire fortunes are mostly the accumulated return on companies already built, and that taxing a small slice each year barely changes the reward for building a new one: a founder whose company succeeds still becomes enormously rich. The best evidence on departures finds their effect on jobs and output small. Revenue can fund public investment in education, research and health that does more for growth than the marginal spending of the very richest, and concentrated fortunes can themselves suppress competition by entrenching incumbents.\n\nThose who expect real harm answer that wealth is savings, and savings fund investment. A tax on net worth, levied whether or not the assets earn anything, can take most of the normal return to capital and more than all of it in a year of losses. It falls hardest on founders whose wealth is tied up in growing companies, who would have to sell shares or borrow to pay, diluting their control and steering capital away from the riskiest and most productive ventures. The Penn Wharton Budget Model projected in 2019 that Senator Elizabeth Warren’s plan would reduce long-run GDP, and countries that repealed wealth taxes did so partly because they judged these costs larger than the revenue.",
+    "lean_label_a": "Little harm",
+    "lean_label_b": "Real harm",
+    "id": "would-taxing-great-fortunes-every-year"
+   },
+   {
+    "text": "Should great fortunes be taxed each year while they are held, or once when they pass to heirs?",
+    "kind": "value",
+    "why": "Both aim at the same accumulated wealth and both face valuation and avoidance problems. The choice turns on whether the target is power during a lifetime or inherited advantage, and on which charge is fairer and more workable.",
+    "detail": "Those who favor an annual tax argue that the problem with extreme fortunes is not only that they are passed on, but that they compound and exercise power during the founder’s lifetime, which may last decades. An inheritance tax touches a fortune once a generation and has proved easy to plan around with trusts, valuation discounts and lifetime gifts, so the largest estates pay strikingly little. A modest annual tax spreads the burden, raises steady revenue and slows concentration as it happens.\n\nThose who favor taxing transfers argue that inheritance is where the case for taxing wealth is strongest: heirs did not earn what they receive, and taxing it supports equal opportunity without penalizing anyone for building or saving. A tax at death values an estate once, not every asset every year, and falls when a transfer creates the cash to pay. Ending the step-up in basis, so that unrealized gains are taxed at death, would reach the same untaxed growth that motivates wealth taxes, which is why many economists who doubt annual wealth taxes favor strengthening inheritance and capital gains taxes instead.",
+    "lean_label_a": "Tax while held",
+    "lean_label_b": "Tax at transfer",
+    "id": "should-great-fortunes-be-taxed-each"
+   },
+   {
+    "text": "Would a federal annual wealth tax survive the US Constitution?",
+    "kind": "empirical",
+    "why": "The Constitution requires “direct” taxes to be apportioned among the states by population, and the Sixteenth Amendment exempts only taxes on incomes. Whether a tax on net worth is a direct tax has never been decided.",
+    "detail": "In Moore v. United States (June 2024) the Supreme Court expressly declined to address taxes “on holdings, wealth, or net worth” or on unrealized appreciation, noting that the government had itself indicated that a tax on wealth or net worth “might be considered a tax on property, not income.” Apportionment by population would make a wealth tax unworkable, so the question decides whether one can exist at all.\n\nLegal scholars who think it permissible argue that the Framers understood “direct taxes” narrowly, as head taxes and taxes on land, and that the 1895 decision striking down the income tax (Pollock) is a discredited outlier the Sixteenth Amendment repudiated; taxing gains each year stands on firmer ground still, since Congress already does so for some financial contracts. Those who think it unconstitutional answer that a tax on owning property is the clearest example of a direct tax, that Pollock has never been overruled for wealth itself, and that in Moore four justices, Barrett and Alito concurring and Thomas and Gorsuch dissenting, wrote that precedent requires gains to be realized before they can be taxed without apportionment. A wealth tax would invite years of litigation over revenue that might have to be refunded.",
+    "lean_label_a": "Constitutional",
+    "lean_label_b": "Unconstitutional",
+    "id": "would-a-federal-annual-wealth-tax"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Tax billionaires’ net worth directly",
+    "color_key": "green",
+    "steelman": "The richest people pay lower tax rates than nurses and teachers because their fortunes grow untaxed; a small annual tax on great wealth reaches what they actually have.",
+    "detail": "A billionaire’s wealth compounds as gains in companies they own, which the income tax does not touch until a sale that never has to happen, and the step-up at death erases the gain for good. Taxing the stock of wealth is the only instrument that reaches a fortune whatever form it takes and whether or not it is ever sold. Two or three percent a year on fortunes above $50 million would leave every billionaire a billionaire, raise hundreds of billions a year for health care, child care and education, and slow the concentration of economic and political power in a few hundred families. Most Americans, across parties, favor exactly this design when told what it would raise.\n\nThe charge that it cannot be enforced rests on Europe’s old wealth taxes, which failed by design: low thresholds, exemptions for business assets, self-reporting of financial wealth and free exit. A modern tax starts at $50 million, exempts nothing, relies on reporting by banks and brokers, values hard-to-price assets with formulas and audits, lets illiquid founders pay in shares or over time, and taxes renouncing citizenship. We differ on form: an annual tax like Senator Elizabeth Warren’s bill, a one-time levy fixed to a past date like California’s Proposition 40, or a minimum tax that credits income tax already paid, as in Gabriel Zucman’s G20 blueprint. A limitarian wing, including the philosopher Ingrid Robeyns, holds that fortunes above a set level should not exist at all.",
+    "proponents": "Elizabeth Warren; Gabriel Zucman; Emmanuel Saez; Bernie Sanders; Oxfam International; SEIU-United Healthcare Workers West; Patriotic Millionaires; Americans for Tax Fairness; Government of Brazil",
+    "id": "tax-billionaires-net-worth-directly"
+   },
+   {
+    "name": "Tax income and spending, not wealth",
+    "color_key": "blue",
+    "steelman": "Wealth is the companies and capital that create jobs; taxing it every year punishes saving and investment, raises little, and has been abandoned almost everywhere it was tried.",
+    "detail": "Wealth is not money sitting idle. It is factories, software, patents and companies that make what people buy and employ the people who make it. A 2 percent tax on net worth is a 40 percent tax on a 5 percent return, layered on the income, corporate and estate taxes that already apply, and in a bad year it confiscates capital outright; its cost falls in the end on workers, through less investment, lower wages and fewer jobs. The rich already pay most of the income tax, and the countries that tried wealth taxes found they drove out capital and entrepreneurs and filled with loopholes.\n\nThe claim that billionaires pay less than workers depends on counting paper gains as income and treating a whole dynasty as one return. The gain is deferred, not escaping: capital gains tax is due on sale, and the companies whose value rises pay corporate tax on their profits. Where a real gap exists, such as living on borrowed money, the answer is to tax what people consume, which taxes billionaires fully when they spend, rather than an annual appraisal of everything they own, which no tax agency has ever done well. Some of us would abolish the estate tax and cut taxes on capital further; others accept today’s taxes on capital but oppose any new tax on wealth or unrealized gains, and some object mainly to state wealth taxes because people can move between states.",
+    "proponents": "Tax Foundation; Cato Institute; Most Republicans in Congress; California Business Roundtable; Sergey Brin; Adam N. Michel; Chris Edwards; Jared Walczak",
+    "id": "tax-income-and-spending-not-wealth"
+   },
+   {
+    "name": "Tax billionaires’ gains and inheritances instead",
+    "color_key": "amber",
+    "steelman": "The richest are under-taxed because their gains escape income tax until a sale and vanish at death; close those gaps nationally rather than invent a new tax on property.",
+    "detail": "The first camp is right about the problem and wrong about the remedy. Deferring gains indefinitely, borrowing against them tax-free and passing them on with the gain erased are features of the income and estate taxes, and they can be fixed there: tax gains at death or make heirs carry over the original cost, treat large loans against appreciated stock as a sale, set a minimum tax on the full income of the very richest including gains on traded assets, and enforce the estate tax. That reaches the same untaxed growth without a tax on the stock of property, with its valuation, liquidity and constitutional problems, and it never taxes a fortune that has lost value as if it had grown. It must also be national, because a state that taxes wealth alone exports its billionaires.\n\nThis is not a half-measure. Zucman himself estimated that a 25 percent minimum tax on full income would equal a wealth tax of more than 2 percent a year, and Natasha Sarin and Lawrence Summers estimate that their package of base-broadening and enforcement could raise over $4 trillion in a decade. Taxing gains at death has drawn support from both parties, while annual taxes on great fortunes have lost in France’s parliament. We differ on how far to go: Senator Ron Wyden, the Biden administration and Governor Gavin Newsom would tax the richest people’s gains every year, while Sarin and Summers prefer to tax gains at death within a system that waits for a sale.",
+    "proponents": "Gavin Newsom; Biden administration; Ron Wyden; Lawrence Summers; Natasha Sarin; Committee for a Responsible Federal Budget",
+    "id": "tax-billionaires-gains-and-inheritances-instead"
+   }
+  ],
+  "crux": {
+   "lead": "Can a tax on great fortunes really collect, and is wealth that has grown but not been sold fair to tax?",
+   "lead_highlight": "wealth that has grown but not been sold",
+   "subtitle": "Most of a great fortune is growth in assets never sold, which the income tax does not reach until a sale. The split is over taxing the fortune itself.",
+   "empirical": "Some of this can be measured: how much the richest actually pay relative to how fast their wealth grows, which fuller access to tax records could settle; how much avoidance, undervaluation and moving away a well-enforced tax on only the largest fortunes would cause, as opposed to the broad, loosely enforced wealth taxes of the past; and whether taxing wealth each year slows investment more than taxing gains or inheritances would.",
+   "values": "No data settles whether a rise in value that has not been sold is income a person owes tax on, or property the state should leave alone until it changes hands; whether great private fortunes endanger democratic self-government enough to tax them at some cost in growth, or are the legitimate reward for creating value; or whether fairness is measured by what people have, what they earn or what they spend."
+  },
+  "actions": [
+   {
+    "kind": "local",
+    "title": "Read both sides of California’s Proposition 40 before you vote",
+    "description": "The Secretary of State’s official voter guide gives the measure’s text, the Legislative Analyst’s fiscal estimate and the signed arguments for and against, with links to both campaigns.",
+    "url": "https://voterguide.sos.ca.gov/propositions/40/index.htm",
+    "for_position": null,
+    "id": "read-both-sides-of-california-s"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Learn how wealth taxes have worked where they were tried",
+    "description": "The OECD’s review of net wealth taxes in its member countries covers why most were repealed, what the remaining ones raise, and how a wealth tax would need to be designed to work.",
+    "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2018/04/the-role-and-design-of-net-wealth-taxes-in-the-oecd_g1g89919/9789264290303-en.pdf",
+    "for_position": null,
+    "id": "learn-how-wealth-taxes-have-worked"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Campaign for Proposition 40",
+    "description": "The Yes on 40 campaign, led by SEIU-United Healthcare Workers West, organizes volunteers and donations for the one-time 5 percent tax on California billionaires.",
+    "url": "https://yeson40.com/",
+    "for_position": "Tax billionaires’ net worth directly",
+    "id": "campaign-for-proposition-40"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Campaign against Proposition 40",
+    "description": "The No on 40 campaign, backed by business, teachers’ and medical groups, argues the one-time tax would drive billionaires and their tax payments out of California.",
+    "url": "https://votenoon40.org/",
+    "for_position": "Tax income and spending, not wealth",
+    "id": "campaign-against-proposition-40"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the case for fixing the income tax instead",
+    "description": "Natasha Sarin and Lawrence Summers’s Hamilton Project paper proposes ending the step-up in basis, ending capital gains preferences and stepping up enforcement as an alternative to a wealth tax.",
+    "url": "https://www.hamiltonproject.org/assets/files/SarinSummers_LO_FINAL.pdf",
+    "for_position": "Tax billionaires’ gains and inheritances instead",
+    "id": "read-the-case-for-fixing-the"
+   },
+   {
+    "kind": "policy",
+    "title": "Tell your representative how you think billionaires should be taxed",
+    "description": "Find your member of the House and contact them about the Ultra-Millionaire Tax Act, a billionaire minimum income tax, the estate tax or a move to consumption taxes, whichever you favor.",
+    "url": "https://www.house.gov/representatives/find-your-representative",
+    "for_position": null,
+    "id": "tell-your-representative-how-you-think"
+   },
+   {
+    "kind": "learn_more",
+    "title": "See what the billionaire tax would actually raise",
+    "description": "The California Legislative Analyst’s Office, the state’s nonpartisan fiscal adviser, explains how Proposition 40 would work and why its revenue is “very hard to predict.”",
+    "url": "https://lao.ca.gov/BallotAnalysis/Proposition?number=40&year=2026",
+    "for_position": null,
+    "id": "see-what-the-billionaire-tax-would"
+   },
+   {
+    "kind": "donate",
+    "title": "Support wealthy Americans pushing to tax great fortunes",
+    "description": "Patriotic Millionaires, a group of high-net-worth Americans, campaigns for wealth taxes and higher taxes on the rich and endorses the Ultra-Millionaire Tax Act.",
+    "url": "https://patrioticmillionaires.org/",
+    "for_position": "Tax billionaires’ net worth directly",
+    "id": "support-wealthy-americans-pushing-to-tax"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the case that wealth taxes backfire",
+    "description": "The Tax Foundation’s analysis of California’s billionaire tax sets out why it argues that taxing wealth harms investment and that the measure would tax founders far above its headline rate.",
+    "url": "https://taxfoundation.org/research/all/state/california-wealth-tax-billionaires-proposal/",
+    "for_position": "Tax income and spending, not wealth",
+    "id": "read-the-case-that-wealth-taxes"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Understand the “step-up” that erases gains at death",
+    "description": "The Committee for a Responsible Federal Budget explains how the stepped-up basis works, what it costs and the main bipartisan proposals to close it.",
+    "url": "https://www.crfb.org/blogs/closing-stepped-basis-loophole",
+    "for_position": "Tax billionaires’ gains and inheritances instead",
+    "id": "understand-the-step-up-that-erases"
+   }
+  ]
+ },
+ "icon": "vault",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: A large open bank vault door, round and heavy, standing slightly ajar as the dominant mass at center left. A small stack of share certificates with ribbon seals and a folded property deed overlap the vault door's lower edge. A tax form on a clipboard with blank lines and a pen leans against the certificates. A rounded hill curves across the ground, and a winding path crosses the frame from the vault up the hill to a small grand manor house with columns on the crest at right.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #b48f2c, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: no money bags, no dollar signs or currency symbols, no top hats or monocles, no coin towers, no balance scales, no guillotines or pitchforks, no scissors or hands grabbing, no arrows or charts, no flags, no people or faces, no text, letters or numbers, no frame or border, no second color"
 }

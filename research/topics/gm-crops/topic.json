@@ -1,8 +1,8 @@
 {
  "slug": "gm-crops",
  "title": "GM Crops",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-10-02T03:45:45+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "GM crops in the food supply: yields and resilience against safety, corporate control and labeling.",
@@ -14,5 +14,634 @@
   "land-sparing-vs-sharing",
   "genetic-engineering-of-nature-gene-drives-de-extinction",
   "meat-livestock-climate"
- ]
+ ],
+ "icon": "dna",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: a tall maize plant with broad leaves and one husked ear as the dominant focal mass, rising from the crest of a single rounded hill of crop rows at the center-left; a small simple DNA double-helix with filled ribbons beside the upper stalk, overlapping one leaf; a medium glass research greenhouse with a filled interior sitting on the far right shoulder of the hill; a small filled seed sack at the foot of the maize plant; a gently curving farm track running across the whole hill from left to right as the connective element; the hill is a soft filled mound whose curved edges end well inside the frame, with white space all around, never a flat line and never running off the edges.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #7d8a4e, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: syringes or needles, injected fruit, a skull, warning or biohazard signs, a \"frankenfood\" monster or stitched vegetable, a test tube or flask poured onto crops, glowing or mutant plants, crossed-out symbols, price tags, padlocks or chains on seeds, corporate logos, a lab coat or scientist, tractors spraying, wheat sheaves, globes, labels with writing.",
+ "content": {
+  "overview": {
+   "summary": "Whether genetically engineered and gene-edited crops should be grown more widely, and under what safety rules, labels and seed ownership.",
+   "scope_covered": "GM and gene-edited crops in the food supply: yields and pest control, food and environmental safety, seed patents and industry concentration, labeling, and how gene editing is regulated.",
+   "scope_excluded": "Gene drives and de-extinction, land sparing versus sharing, and the climate effects of livestock, which have their own topics; glyphosate appears only where it is bound up with herbicide-tolerant crops.",
+   "why_now": "On June 17, 2026 the European Parliament gave final approval to EU rules that treat gene-edited plants whose changes could also arise naturally or through conventional breeding like conventional crops, exempt from GMO risk assessment and consumer labels; other gene-edited plants stay under GMO law.",
+   "why_now_source_label": "Regulation (EU) 2026/1388 on plants obtained by certain new genomic techniques, EUR-Lex",
+   "why_now_source_url": "https://eur-lex.europa.eu/eli/reg/2026/1388"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "Area planted with GM crops",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "million ha",
+     "series": [
+      {
+       "label": "World",
+       "value": "209.8",
+       "highlight": true
+      },
+      {
+       "label": "United States",
+       "value": "75.4",
+       "highlight": false
+      },
+      {
+       "label": "Brazil",
+       "value": "67.9",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "GM crops covered 209.8 million hectares worldwide in 2024, up 1.9% from 2023, with the US and Brazil growing more than two thirds; ISAAA’s tally puts the US area higher.",
+     "detail": "That is roughly the land area of Mexico. AgbioInvestor, an agricultural biotechnology consultancy, reports that soybeans are the most widely planted GM crop and grew 4.7% in 2024, while GM maize area fell 2.5%. ISAAA, a nonprofit that promotes crop biotechnology and published full crop-by-crop global reports until 2019, reports 79.9 million hectares for the United States in 2024 and counts 31 countries growing GM crops (ISAAA, 2026); other tallies put the number of countries at 28. Europe grows very little: AgbioInvestor puts the continent’s GM area at about 179,000 hectares in 2024, mostly insect-resistant maize in Spain, while the EU imports GM soybeans and maize for food and animal feed under separate authorizations.",
+     "source_label": "AgbioInvestor, “Total GM crop areas increased in 2024”",
+     "source_url": "https://gm.agbioinvestor.com/news/total-gm-crop-areas-increased-in-2024",
+     "source_published": "2024",
+     "source_accessed": "2026-10-01",
+     "id": "area-planted-with-gm-crops"
+    },
+    {
+     "label": "US soybean acres planted with herbicide-tolerant seed",
+     "viz": "radial",
+     "wide": false,
+     "value": "96",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Herbicide-tolerant varieties covered 96% of US soybean acres in 2024 and 2025, and genetically engineered seed now covers more than 90% of US corn and upland cotton acres.",
+     "detail": "In 2025 herbicide-tolerant seed covered 93% of upland cotton acres and about 92% of corn acres, and insect-resistant (Bt) seed covered 91% of cotton and 87% of corn. Adoption was rapid after 1996: herbicide-tolerant soybeans rose from 17% of acres in 1997 to 68% in 2001 and plateaued around 94% by 2014, while Bt corn grew from about 8% in 1997 to 19% in 2000. Most seed now carries several traits at once; in 2025, 87% of cotton acres and 84% of corn acres were planted with “stacked” seed combining herbicide tolerance and insect resistance. Those who favor GM crops read near-total adoption as farmers voting with their wallets year after year; critics note that it also reflects how few non-GM varieties seed companies still offer in these crops.",
+     "source_label": "USDA Economic Research Service, “Recent Trends in GE Adoption,” updated December 2025",
+     "source_url": "https://www.ers.usda.gov/data-products/adoption-of-genetically-engineered-crops-in-the-united-states/recent-trends-in-ge-adoption",
+     "source_published": "2025",
+     "source_accessed": "2026-10-01",
+     "id": "us-soybean-acres-planted-with-herbicide"
+    },
+    {
+     "label": "Who says GM foods are generally safe to eat",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "AAAS scientists",
+       "value": "88",
+       "highlight": false
+      },
+      {
+       "label": "US adults",
+       "value": "37",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2014, 88% of scientists in the American Association for the Advancement of Science said GM foods are generally safe to eat, against 37% of US adults, a 51-point gap.",
+     "detail": "Pew Research Center surveyed the public and AAAS members between September 11 and October 13, 2014. In the same survey, 67% of US adults said scientists do not have a clear understanding of the health effects of GM crops, one possible reason for the gap. Those on the expert side point to the national academies and food-safety agencies that have reviewed the evidence; those who doubt GM safety reply that agreement among scientists is not the same as proof.",
+     "source_label": "Pew Research Center, “Public and Scientists’ Views on Science and Society,” January 29, 2015",
+     "source_url": "https://www.pewresearch.org/science/2015/01/29/public-and-scientists-views-on-science-and-society/",
+     "source_published": "2014",
+     "source_accessed": "2026-10-01",
+     "id": "who-says-gm-foods-are-generally"
+    },
+    {
+     "label": "Weed species resistant to glyphosate",
+     "viz": "bar",
+     "wide": false,
+     "value": "62",
+     "unit": "species",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Sixty-two weed species, 29 broadleaf and 33 grass-like, have evolved resistance to glyphosate, the herbicide most herbicide-tolerant GM crops were designed around.",
+     "detail": "Resistant weeds multiplied after herbicide-tolerant crops let farmers spray glyphosate over whole fields, often as their only weed control, year after year. The US National Academies reported in 2016 that “in many locations some weeds had evolved resistance to glyphosate” and recommended integrated weed management rather than reliance on a single herbicide. Resistance is not unique to glyphosate: the same database lists resistant species for every major herbicide group, and many species resist several. Seed companies responded with crops tolerant to additional herbicides such as dicamba and 2,4-D, which critics say repeats the cycle and which led to complaints of drift damage on neighboring US farms.",
+     "source_label": "International Herbicide-Resistant Weed Database, summary by site of action",
+     "source_url": "https://www.weedscience.org/Pages/SOASummary.aspx",
+     "source_published": "2026",
+     "source_accessed": "2026-10-01",
+     "id": "weed-species-resistant-to-glyphosate"
+    },
+    {
+     "label": "Average effects of adopting GM crops, 147 studies",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Farmer profits, up",
+       "value": "68",
+       "highlight": false
+      },
+      {
+       "label": "Pesticide use, down",
+       "value": "37",
+       "highlight": false
+      },
+      {
+       "label": "Crop yields, up",
+       "value": "22",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Averaging 147 studies of soybean, maize and cotton, a 2014 meta-analysis found yields up 22%, pesticide use down 37% and profits up 68%; the National Academies saw no speed-up in national US yields.",
+     "detail": "Gains were larger for insect-resistant crops than for herbicide-tolerant ones, and yield gains were 14 percentage points higher in developing countries than in developed ones. Only insect-resistant crops consistently reduced the quantity of pesticide used; herbicide-tolerant crops cut herbicide costs mainly because broad-spectrum glyphosate was cheaper than the selective herbicides it replaced. The authors found that funding source did not significantly change the estimates. These are farm-level comparisons of GM and non-GM fields. Looking at national data instead, the US National Academies reported in 2016 “no evidence that GE crops had changed the rate of increase in yields” of US soybeans, cotton and maize, while noting that insect-resistant crops reduced losses where pests were serious. Supporters and critics each tend to cite the half of this record that fits their case.",
+     "source_label": "Klümper & Qaim, “A Meta-Analysis of the Impacts of Genetically Modified Crops,” PLOS ONE, 2014",
+     "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0111629",
+     "source_published": "Studies published up to 2014",
+     "source_accessed": "2026-10-01",
+     "id": "average-effects-of-adopting-gm-crops"
+    },
+    {
+     "label": "US corn acres planted with Bayer or Corteva seed",
+     "viz": "radial",
+     "wide": false,
+     "value": "72",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2018–20 two companies, Bayer and Corteva, supplied the seed for 72% of planted US corn acres and 66% of planted soybean acres.",
+     "detail": "The seed industry consolidated through a wave of mergers: Dow and DuPont merged and spun off Corteva in 2019, ChemChina bought Syngenta in 2017, and Bayer bought Monsanto in 2018, selling parts of its seed business to BASF. USDA’s economists concluded that stronger intellectual property rights and concentration have let seed companies spend more on research, bring higher-yielding varieties faster and “charge higher prices reflecting the value of improved seeds.” Research spending by the seven largest seed firms rose from less than $2 billion in 1990 to more than $7 billion by 2014. Whether that combination mainly serves farmers or mainly extracts from them is disputed.",
+     "source_label": "USDA Economic Research Service, Amber Waves, August 2023",
+     "source_url": "https://www.ers.usda.gov/amber-waves/2023/august/expanded-intellectual-property-protections-for-crop-seeds-increase-innovation-and-market-power-for-companies",
+     "source_published": "2018–2020",
+     "source_accessed": "2026-10-01",
+     "id": "us-corn-acres-planted-with-bayer"
+    },
+    {
+     "label": "Rise in US seed and crop prices, 1990 to 2020",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% rise",
+     "series": [
+      {
+       "label": "Main GM crop seed",
+       "value": "463",
+       "highlight": true
+      },
+      {
+       "label": "All crop seed",
+       "value": "170",
+       "highlight": false
+      },
+      {
+       "label": "Crops farmers sold",
+       "value": "56",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Average seed prices for corn, soybeans and cotton, crops planted mostly with GM seed, rose 463% from 1990 to 2020, against 170% for all crop seed and 56% for the crops farmers sold.",
+     "detail": "All three rows are price indexes over the same 30 years on the same basis; the article does not say they are adjusted for general inflation. Higher seed prices partly buy something: seed that carries several traits can replace insecticide sprays and some tillage, and farm-level studies find average profits rise with GM adoption. Critics, including farm groups that favor antitrust action, argue that the gap between seed and crop prices also reflects the market power of a few patent-holding firms. USDA’s Economic Research Service names both effects at work.",
+     "source_label": "USDA Economic Research Service, Amber Waves, August 2023",
+     "source_url": "https://www.ers.usda.gov/amber-waves/2023/august/expanded-intellectual-property-protections-for-crop-seeds-increase-innovation-and-market-power-for-companies",
+     "source_published": "1990–2020",
+     "source_accessed": "2026-10-01",
+     "id": "rise-in-us-seed-and-crop"
+    },
+    {
+     "label": "US adults who support mandatory GM food labels",
+     "viz": "radial",
+     "wide": false,
+     "value": "88",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a May 2016 survey of 1,008 US adults, 88% supported mandatory labeling of foods containing GMOs, and 91% agreed people have a right to know when a product contains them.",
+     "detail": "The same survey found that fewer than one in five respondents (18%) knew of the National Academies report that had just found no substantiated evidence of health risks, and 22% agreed that scientists have not found any risks. SSRS ran the poll for the Annenberg Public Policy Center and the University of Wisconsin–Madison, with a margin of error of ±3.75 points. Congress passed a federal disclosure law that July, and USDA’s bioengineered food disclosure standard became mandatory on January 1, 2022. In October 2025 the Ninth Circuit held its QR-code and text-message options and its blanket exemption for highly refined foods such as oils and sugars unlawful (Natural Grocers v. Rollins), and in August 2026 a district court gave USDA until January 1, 2028 to fix them (Hogan Lovells, 2026). The EU has required GM labeling since 1997, exempting only accidental or technically unavoidable GM content of 0.9% or less of an ingredient (European Commission).",
+     "source_label": "Annenberg Public Policy Center, July 18, 2016",
+     "source_url": "https://www.annenbergpublicpolicycenter.org/americans-support-gmo-food-labels-but-dont-know-much-about-safety-of-genetically-modified-foods/",
+     "source_published": "2016",
+     "source_accessed": "2026-10-01",
+     "id": "us-adults-who-support-mandatory-gm"
+    },
+    {
+     "label": "Share of each crop’s world area planted with GM varieties",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Cotton",
+       "value": "79",
+       "highlight": false
+      },
+      {
+       "label": "Soybeans",
+       "value": "74",
+       "highlight": true
+      },
+      {
+       "label": "Maize",
+       "value": "31",
+       "highlight": false
+      },
+      {
+       "label": "Canola",
+       "value": "27",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2019, ISAAA’s last full crop-by-crop count, GM varieties made up 79% of the world’s cotton area, 74% of its soybeans, 31% of its maize and 27% of its canola.",
+     "detail": "GM traits are concentrated in a handful of commodity crops used mostly for animal feed, cooking oil, sweeteners and fiber rather than eaten whole. Very few GM fruits or vegetables are grown at scale; examples include virus-resistant papaya in Hawaii, insect-resistant eggplant in Bangladesh, and non-browning apples and potatoes in the United States. Most of the world’s rice and wheat is not GM. ISAAA, the source, is a nonprofit that promotes crop biotechnology. In 2019 it counted 190.4 million hectares in 29 countries, with the United States, Brazil, Argentina, Canada and India holding 91% of the total.",
+     "source_label": "ISAAA, Brief 55: Global Status of Commercialized Biotech/GM Crops in 2019, executive summary",
+     "source_url": "https://www.isaaa.org/resources/publications/briefs/55/executivesummary/default.asp",
+     "source_published": "2019",
+     "source_accessed": "2026-10-01",
+     "id": "share-of-each-crop-s-world"
+    },
+    {
+     "label": "Rise in global glyphosate use, 1996 to 2014",
+     "viz": "bar",
+     "wide": false,
+     "value": "~15",
+     "unit": "× increase",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Global glyphosate use rose almost 15-fold after herbicide-tolerant GM crops were introduced in 1996, and those crops accounted for about 56% of it by 2014, Charles Benbrook estimated.",
+     "detail": "Benbrook, an agricultural economist, estimated that 8.6 billion kilograms of glyphosate had been applied worldwide since 1974, 19% of it in the United States, and that 72% of all glyphosate ever applied had been sprayed in the ten years before 2014. More herbicide by weight does not by itself mean more harm: supporters of herbicide-tolerant crops argue that glyphosate replaced more toxic herbicides and made no-till farming, which reduces soil erosion, easier. Critics answer that heavier spraying of a single herbicide bred resistant weeds and left residues on the harvest, and that glyphosate’s own cancer risk remains in dispute.",
+     "source_label": "Benbrook, “Trends in glyphosate herbicide use in the United States and globally,” Environmental Sciences Europe, 2016",
+     "source_url": "https://pubmed.ncbi.nlm.nih.gov/27752438/",
+     "source_published": "2014",
+     "source_accessed": "2026-10-01",
+     "id": "rise-in-global-glyphosate-use-1996"
+    },
+    {
+     "label": "Say GM foods are unsafe to eat, 20 publics",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Russia",
+       "value": "70",
+       "highlight": false
+      },
+      {
+       "label": "Italy",
+       "value": "62",
+       "highlight": false
+      },
+      {
+       "label": "India",
+       "value": "58",
+       "highlight": false
+      },
+      {
+       "label": "South Korea",
+       "value": "57",
+       "highlight": false
+      },
+      {
+       "label": "20-public median",
+       "value": "48",
+       "highlight": true
+      },
+      {
+       "label": "Spain",
+       "value": "47",
+       "highlight": false
+      },
+      {
+       "label": "Australia",
+       "value": "31",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Across 20 publics surveyed in 2019–2020, a median of 48% said GM foods are generally unsafe to eat, 13% said they are safe, and 37% said they did not know enough to say.",
+     "detail": "The publics were in Europe, Russia, the Americas and the Asia-Pacific, surveyed from October 2019 to March 2020; each row is the share answering “unsafe.” In Australia equal shares, 31%, said safe and unsafe. Women were more likely than men to call GM foods unsafe in most publics, by 20 points in South Korea and 16 in the United States. The large “don’t know” share matters to both sides: those who favor GM crops read it as room for better science communication, while those who favor caution read widespread doubt as a reason for governments to keep strict rules and labels.",
+     "source_label": "Pew Research Center, “Many publics around world doubt safety of genetically modified foods,” November 11, 2020",
+     "source_url": "https://www.pewresearch.org/short-reads/2020/11/11/many-publics-around-world-doubt-safety-of-genetically-modified-foods/",
+     "source_published": "2019–2020",
+     "source_accessed": "2026-10-01",
+     "id": "say-gm-foods-are-unsafe-to"
+    },
+    {
+     "label": "Cases of insect pests resistant to Bt crops",
+     "viz": "bar",
+     "wide": false,
+     "value": "16",
+     "unit": "cases",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Documented cases of insect pests evolving resistance to the Bt proteins made by GM crops rose from 3 in 2005 to 16 in 2016; in 17 other cases the authors found no drop in susceptibility.",
+     "detail": "Bt crops carry genes from the bacterium Bacillus thuringiensis that make proteins toxic to certain insects. The study by Tabashnik and Carrière covered field data on many Bt proteins, crops and pest species from 10 countries on six continents. They attribute the acceleration partly to cross-resistance, where resistance to one Bt protein confers resistance to related proteins in newer crops. The best-known case is the pink bollworm in India, which became resistant to Bt cotton. Resistance management, chiefly requiring “refuges” of non-Bt crops so that susceptible insects survive to breed, works where farmers follow it, which is harder on millions of small farms than on large ones.",
+     "source_label": "Tabashnik & Carrière, “Surge in insect resistance to transgenic crops,” Nature Biotechnology, 2017",
+     "source_url": "https://experts.arizona.edu/en/publications/surge-in-insect-resistance-to-transgenic-crops-and-prospects-for-/",
+     "source_published": "2016",
+     "source_accessed": "2026-10-01",
+     "id": "cases-of-insect-pests-resistant-to"
+    },
+    {
+     "label": "Bt cotton’s effect on Indian smallholders, 2002–2008",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Cotton profit",
+       "value": "50",
+       "highlight": false
+      },
+      {
+       "label": "Yield per acre",
+       "value": "24",
+       "highlight": true
+      },
+      {
+       "label": "Household spending",
+       "value": "18",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Following Indian smallholders in 2002–2008, a panel study estimated Bt cotton raised yields per acre 24%, profits 50% and household spending 18%; a later 20-year analysis disputes the yield gain.",
+     "detail": "India approved Bt cotton in 2002 and it soon covered most of the country’s cotton area; the household spending gain was measured in 2006–2008. A 2020 analysis of 20 years of data by Keshav Kranthi, former director of India’s Central Institute for Cotton Research, and anthropologist Glenn Davis Stone found Bt adoption “a poor indicator of yield trends but a strong indicator of initial reductions in pesticide use,” with yield gains tracking fertilizer and other inputs. With pink bollworm now resistant and other pests surging, they wrote, “farmers now spend more on pesticides today than before the introduction of Bt” (Nature Plants, 2020). Matin Qaim, coauthor of the panel study, replied in the same journal that their methods cannot establish causal effects and that farm-level panel data controlling for other factors show the gains; Kranthi and Stone published a rejoinder.",
+     "source_label": "Kathage & Qaim, “Economic impacts and impact dynamics of Bt cotton in India,” PNAS, 2012",
+     "source_url": "https://pubmed.ncbi.nlm.nih.gov/22753493/",
+     "source_published": "2002–2008",
+     "source_accessed": "2026-10-01",
+     "id": "bt-cotton-s-effect-on-indian"
+    },
+    {
+     "label": "Cost of bringing a new GM trait to market",
+     "viz": "bar",
+     "wide": false,
+     "value": "115",
+     "unit": "million USD",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Traits launched in 2017–2022 cost an average of $115 million and took 16.5 years from discovery to market, up from 13.1 years in 2008–2012, by an industry-commissioned estimate.",
+     "detail": "The study surveyed the major crop biotechnology companies and was commissioned by their trade association, CropLife International, so it reflects their own accounting; it put the average cost for traits launched in 2008–2012 at $136 million. Regulatory science, registration and regulatory affairs made up $43.2 million, or 37.6% of the cost, and the regulatory phase took about half of the total time. Supporters of lighter rules argue that costs like these mean only large companies can bring a GM crop to market, concentrating the industry and stranding minor crops and public-sector projects. Supporters of strict rules answer that a lengthy review is the price of public trust and that the estimate does not count the risks the review is designed to catch.",
+     "source_label": "AgbioInvestor for CropLife International, “Time and Cost to Develop a New GM Trait,” May 2022",
+     "source_url": "https://croplife.org/wp-content/uploads/2022/05/AgbioInvestor-Trait-RD-Branded-Report-Final-20220512.pdf",
+     "source_published": "2022",
+     "source_accessed": "2026-10-01",
+     "id": "cost-of-bringing-a-new-gm"
+    },
+    {
+     "label": "Bt eggplant in Bangladesh: randomized trial results",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Eco-harm spray cut",
+       "value": "82",
+       "highlight": false
+      },
+      {
+       "label": "Pesticide cost cut",
+       "value": "47",
+       "highlight": false
+      },
+      {
+       "label": "Net yield gain",
+       "value": "42",
+       "highlight": true
+      },
+      {
+       "label": "Health-risk sprays cut",
+       "value": "23",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a randomized trial, Bangladeshi farmers growing insect-resistant Bt brinjal (eggplant) had 42% higher net yields, spent 47% less on pesticides and cut the most ecologically harmful sprays by 82%.",
+     "detail": "Brinjal is a staple vegetable in Bangladesh, and the fruit and shoot borer that attacks it is normally fought with very frequent spraying. Bangladesh approved Bt brinjal in 2013; it was developed by the country’s public Agricultural Research Institute and is one of the few GM food crops eaten directly. Use of pesticides with adverse effects on farmer health fell 23%, and among people with a pre-existing condition consistent with pesticide exposure, those in villages randomly assigned to grow Bt brinjal were 11.5 percentage points less likely to report a pesticide-exposure symptom. The study was funded by USAID and the Government of Bangladesh. India placed a moratorium on the same crop in 2010 that has not been lifted, and a Philippine appeals court halted its commercial planting there in 2024.",
+     "source_label": "Ahmed, Hoddinott, Abedin & Hossain, Bt brinjal randomized controlled trial, IFPRI Discussion Paper, 2019",
+     "source_url": "https://cgspace.cgiar.org/items/075500ed-de58-4a2d-9863-01db93eb5d72",
+     "source_published": "2019",
+     "source_accessed": "2026-10-01",
+     "id": "bt-eggplant-in-bangladesh-randomized-trial"
+    },
+    {
+     "label": "US food animals raised on feed with GM ingredients",
+     "viz": "radial",
+     "wide": false,
+     "value": "95",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "More than 95% of the over 9 billion food-producing animals raised each year in the United States eat feed containing GM ingredients, a 2014 review estimated.",
+     "detail": "The review estimated that food-producing animals consume 70 to 90% of GM crop biomass. It compared publicly available livestock health and productivity data from 1983, before GM crops, through 2011, covering more than 100 billion animals, and found no unfavorable or perturbed trends after GM feed became dominant. It found no study showing a difference in the nutritional profile of meat, milk or eggs from GM-fed animals, and no detectable GM DNA or protein in those products. Critics of GM crops reply that aggregate production statistics are too coarse to detect subtle or long-term effects and that independent long-term feeding studies remain few.",
+     "source_label": "Van Eenennaam & Young, “Prevalence and impacts of genetically engineered feedstuffs,” Journal of Animal Science, 2014",
+     "source_url": "https://pubmed.ncbi.nlm.nih.gov/25184846/",
+     "source_published": "2014",
+     "source_accessed": "2026-10-01",
+     "id": "us-food-animals-raised-on-feed"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Are foods from GM crops as safe to eat as foods from conventional crops?",
+    "kind": "empirical",
+    "why": "Scientific academies and food-safety regulators have found no substantiated evidence that approved GM foods carry extra health risks. Doubters answer that long-term independent studies are few and that absence of evidence is not proof of safety.",
+    "detail": "Those who hold GM foods as safe as any others point to the US National Academies, which examined almost 900 publications in 2016 and “found no substantiated evidence of a difference in risks to human health” between commercial GM crops and conventional ones, and to the World Health Organization and food-safety agencies in dozens of countries, which reached the same conclusion for the products they assessed. Conventional breeding, including the radiation and chemical mutagenesis behind many familiar varieties, changes far more of a plant’s DNA, unpredictably, and is not tested at all. A specific risk, such as a new allergen, belongs to a specific product and is caught by case-by-case assessment.\n\nThose who say safety has not been shown answer that a 2015 statement in Environmental Sciences Europe, signed by more than 300 scientists and legal experts, argued there is “no scientific consensus on GMO safety,” because most studies are short-term, funded by developers or both. Agreement about the products assessed so far says little about the next one, and without labels to trace who ate what, population-level effects are hard to detect. The precautionary principle, written into EU law, puts the burden of proof on whoever introduces a new technology, and herbicide-tolerant crops carry residues of the herbicides sprayed on them.",
+    "lean_label_a": "Just as safe",
+    "lean_label_b": "Not proven safe",
+    "id": "are-foods-from-gm-crops-as"
+   },
+   {
+    "text": "Have GM crops raised yields, or mainly cut losses and costs?",
+    "kind": "empirical",
+    "why": "Comparisons of GM and non-GM fields find large average gains, while long national records are read as showing far less. The answer shifts with the trait, the pest pressure, and whether one compares fields or decades.",
+    "detail": "The two traits that dominate GM acreage were never designed to raise a crop’s potential yield. Insect resistance protects the yield a plant already has, which matters most where pests are heavy and sprays unaffordable; herbicide tolerance mainly saves labor and makes no-till farming easier. Those who see real gains say that is exactly why the benefits show up on farms with serious pest losses, that profits rather than yields alone keep adoption high wherever farmers can choose, and that traits aimed squarely at yield are only now arriving: India’s agricultural research council, ICAR, reports that its genome-edited Kamala rice yielded 19% more than its parent variety in trials.\n\nThose who see little yield gain argue that a national trend line is the fairer test of what a technology adds, that gains fade once pests adapt, and that conventional breeding, better agronomy and agroecological methods have delivered most of the yield growth of recent decades. On their reading, the money and attention spent on GM traits could have gone to those methods instead.",
+    "lean_label_a": "Real yield gains",
+    "lean_label_b": "Little yield gain",
+    "id": "have-gm-crops-raised-yields-or"
+   },
+   {
+    "text": "Should gene-edited crops be regulated like conventional crops or like GMOs?",
+    "kind": "value",
+    "why": "Gene editing can make small, targeted changes, often indistinguishable from natural mutations and without foreign DNA. Some say rules should follow the product; others say a powerful genetic technique still needs GMO-style oversight.",
+    "detail": "Those who want edited crops treated as conventional cite the US National Academies’ 2016 principle: “It is the product and not the process that should be regulated.” An edit that could have arisen naturally or through conventional mutagenesis, which has never required safety testing, poses no new kind of risk and often cannot be told apart from its conventional cousin by any test. GMO rules would add years and tens of millions of dollars to each variety, which only the largest firms can afford, shutting out public breeders and small seed companies working on drought-tolerant, disease-resistant or lower-input crops.\n\nThose who want GMO rules kept answer that gene editing’s errors, such as off-target edits and unintended changes near the target site, are not the same as those of conventional breeding. Exempting edited plants from risk assessment, traceability and labeling removes the tools needed to detect a problem after release and recall the product, and leaves consumers and organic farmers unable to avoid them. The EU Court of Justice ruled in July 2018 that organisms from the new mutagenesis techniques are GMOs under EU law, before the EU wrote new rules for them. Edited traits can also be patented, extending the reach of the firms that already dominate seed markets.",
+    "lean_label_a": "Like other crops",
+    "lean_label_b": "Like GMOs",
+    "id": "should-gene-edited-crops-be-regulated"
+   },
+   {
+    "text": "Have GM crops reduced the harm from pesticides, or deepened dependence on them?",
+    "kind": "empirical",
+    "why": "Insect-resistant crops cut insecticide spraying at first, while herbicide-tolerant crops multiplied glyphosate use. The dispute is over which effect is larger, whether weight of chemical is the right measure, and whether gains last once pests adapt.",
+    "detail": "Those who see less harm say Bt crops let farmers stop spraying broad-spectrum insecticides that kill beneficial insects and poison farmworkers, and the National Academies found some evidence of fewer insecticide poisonings. The benefit can reach beyond adopters: widespread Bt maize suppressed the European corn borer across five Corn Belt states, with estimated savings of $6.8 billion over 14 years, more than $4.3 billion of it to farmers who did not plant Bt maize (Hutchison and colleagues, Science, 2010). Glyphosate is less toxic than many herbicides it replaced, so more kilograms can mean less harm, and resistance is a problem common to every pest control method, answered by stacking traits, rotating modes of action and planting refuges.\n\nThose who see deeper dependence say herbicide-tolerant crops, which make up most GM acreage, were designed to sell more of the company’s own herbicide, and that resistant weeds are now pushing farmers toward a new generation of crops tolerant to older herbicides. Insects adapt as well. A technology that relies on a single chemical or a single protein, they argue, builds in its own obsolescence.",
+    "lean_label_a": "Cut pesticide harm",
+    "lean_label_b": "More dependence",
+    "id": "have-gm-crops-reduced-the-harm"
+   },
+   {
+    "text": "Should foods made from GM crops carry a mandatory label?",
+    "kind": "value",
+    "why": "Most countries with GM rules require labels, and polls show wide support. Opponents argue that a label based on breeding method, rather than any property of the food, implies a health warning the evidence does not support.",
+    "detail": "Those who want mandatory labels say people choose food for many reasons beyond physical safety, including religious and ethical convictions, concern about herbicide use, support for particular farming systems or distrust of particular companies, and cannot act on any of them without information. On that view the question is not whether GM food is dangerous but who decides what a shopper gets to know, and European consumer organizations apply the same reasoning to gene-edited foods.\n\nThose who want labels kept voluntary say a mandatory label is a government signal that consumers reasonably read as a warning; where GM labels are required, retailers often drop labeled products, so the label works as a ban by other means. The National Academies concluded that mandatory labeling “is not justified to protect public health.” People who want to avoid GM ingredients already can, through voluntary labels such as USDA Organic and Non-GMO Project Verified, which put the cost on those who want the information, and a label on gene-edited foods that are indistinguishable from conventional ones could not be enforced by testing.",
+    "lean_label_a": "Mandatory label",
+    "lean_label_b": "Voluntary label",
+    "id": "should-foods-made-from-gm-crops"
+   },
+   {
+    "text": "Do seed patents and industry concentration hurt farmers more than they help them?",
+    "kind": "empirical",
+    "why": "A few firms now supply most seed for the major GM crops, and its price has risen far faster than crop prices. Supporters read that as the reward for costly innovation; critics read it as market power over farmers.",
+    "detail": "Those who say patents mostly help argue that no company would spend what a new trait costs without a way to recover it, and that farmers keep buying the seed because it pays. Much of the concentration, in their view, is driven by the cost of regulation itself, which favors the few firms that can afford it; streamlining approval, not breaking up the industry, is what would let smaller breeders back in.\n\nThose who say concentration mostly hurts argue that patents bar farmers from saving and replanting seed, a practice as old as farming, and that companies have sued farmers who did. When the same few firms own both the seeds and the herbicides the seeds are engineered to tolerate, research is steered toward products that sell more chemicals rather than toward what farmers or the public most need. In 2024 the European Parliament voted to ban patents on gene-edited plants, though the final EU law dropped the ban in favor of patent transparency rules, and farmers’ movements in Africa and India argue that who owns crop genetics matters as much as the genetics themselves.",
+    "lean_label_a": "Help farmers",
+    "lean_label_b": "Hurt farmers",
+    "id": "do-seed-patents-and-industry-concentration"
+   },
+   {
+    "text": "Who should decide whether GM crops are grown: shared international rules or each country?",
+    "kind": "value",
+    "why": "Trade agreements require food restrictions to rest on scientific risk assessment. Mexico, several national courts and many farmers’ movements answer that a country’s choice about its staple crops and farming system is not only a question of food safety.",
+    "detail": "In 2023 Mexico decreed a ban on GM corn in tortillas and dough and a phase-out in other food and feed. A US–Mexico–Canada Agreement panel ruled in December 2024 that the measures were not based on science and broke Mexico’s market-access commitments. Mexico repealed the import limits in February 2025 and in March 2025 amended its constitution to ban planting GM corn, while still importing it for feed and industry.\n\nThose who want shared rules say that when each country can restrict food for reasons other than evidence, trade becomes hostage to politics and both exporting farmers and importing consumers pay. Divergent rules also slow useful crops in the poorest countries, which often follow European rules for fear of losing export markets. Those who want each country to decide say food is culture and livelihood, not only a commodity: Mexico is the birthplace of maize, and its government holds that protecting native varieties from cross-pollination is a matter of heritage no trade panel should overrule. Courts in Kenya, the Philippines and India have halted GM approvals over inadequate consultation and biosafety review. A risk assessment, they argue, can say whether a food is safe to eat; it cannot decide what kind of farming a society wants.",
+    "lean_label_a": "Shared rules",
+    "lean_label_b": "National choice",
+    "id": "who-should-decide-whether-gm-crops"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Expand GM and gene-edited crops",
+    "color_key": "green",
+    "steelman": "Approved GM crops have proved as safe as any others and let farmers grow more with fewer sprays. Judge each crop by its traits, not how it was bred, and let gene editing deliver.",
+    "detail": "Thirty years and billions of meals have shown that approved GM crops are as safe as any others, and every major scientific academy that has looked agrees. The traits in use today let farmers grow more with fewer insecticide sprays, less tillage and less labor; the average adopter earns more, and the gains are largest for poor farmers facing heavy pest pressure. Many of the crops now arriving come from public institutions and are given away royalty-free, from Bangladesh’s insect-resistant eggplant to insect-resistant cowpea in Nigeria and Ghana and Golden Rice, bred against vitamin A deficiency.\n\nThe obstacle is not the science but the rules. Bringing a single trait to market now takes about 16 years and over $100 million, much of it regulatory, so only the largest companies can afford to bring a crop to market, and public projects wait decades; in 2016 more than 100 Nobel laureates urged Greenpeace to end its opposition to Golden Rice. Resistant weeds and insects are a problem of how any pest control is used, and diverse traits and good management answer it. Regulation should judge each crop by its traits and risks, not by how it was bred, and a warming climate and a growing population cannot afford to leave these tools on the shelf.",
+    "proponents": "Alliance for Science; Richard J. Roberts; CropLife International; National Corn Growers Association",
+    "id": "expand-gm-and-gene-edited-crops"
+   },
+   {
+    "name": "Keep safety reviews and labels for all GM foods",
+    "color_key": "blue",
+    "steelman": "GM foods can be sold, but only after an independent check that each one is safe, and with a clear label so everyone can decide for themselves whether to buy it.",
+    "detail": "A market cannot respect people’s choices if the information they need is hidden. A label is information, not a warning: shoppers already see labels for facts that carry no health risk, such as country of origin, organic status or whether fish is farmed, and if some avoid labeled products, that is their choice to make. The remedy for unfounded fear is more openness, not less. Traceability is also a safety tool: if a problem emerges years after approval, it is the only way to find out who was exposed and to recall the product, and it depends on an independent, case-by-case review before anything reaches the shelf.\n\nThe same principles must apply to gene-edited foods, which are made by genetic engineering and should not escape review simply because the technique is newer. Where an edit cannot be detected by testing, the developer who made it knows what it edited and can disclose it, and Europe already relies on paperwork rather than lab tests for many labels. Members differ on how strict the review should be: European consumer groups such as BEUC want gene-edited foods assessed and labeled exactly like older GMOs, while some US label advocates accept the existing federal safety system and focus on getting words on the package.",
+    "proponents": "BEUC; Just Label It; Natural Grocers; IFOAM Organics Europe",
+    "id": "keep-safety-reviews-and-labels-for"
+   },
+   {
+    "name": "Keep GM crops out of farms and food",
+    "color_key": "amber",
+    "steelman": "GM crops lock farmers into patented seed and matching chemicals and hand control of food to a few corporations. Agroecology and farmers’ own seed can feed people without that dependence.",
+    "detail": "GM crops are a solution designed for an industrial farming system that is itself the problem. They tie farmers to buying patented seed and its chemicals every season, concentrate power over the world’s food in a handful of corporations, and spread their genes into native varieties and organic fields where they cannot be recalled. Their headline traits have bred herbicide-resistant superweeds and Bt-resistant pests, and their long-term effects on health and ecosystems have never been studied independently at the scale their spread demands. A consensus built largely on industry data is not independent proof, and safety on a plate is only one question; the others are who owns the seed, what happens to soils, insects and native varieties, and whether farmers can still save seed.\n\nHunger comes from poverty, inequality and waste, not a shortage of patented genes. Agroecology, farmer-managed seed systems, crop diversity and participatory breeding raise yields, restore soils and build resilience while keeping decisions about food with those who grow and eat it, yet GM crops are measured against chemical-intensive farming, never against alternatives given comparable investment. Gene-edited crops are GMOs by another name; the Alliance for Food Sovereignty in Africa declared in November 2025 that “Africa does not need genome editing to feed its people.” Vitamin A deficiency, Golden Rice’s target, can be met with supplements, diverse diets and conventionally bred orange-fleshed crops. Choosing not to adopt a technology is a legitimate democratic decision, not a denial of science.",
+    "proponents": "Alliance for Food Sovereignty in Africa; Government of Mexico (on planting GM corn); Greenpeace; La Via Campesina; Navdanya; MASIPAG",
+    "id": "keep-gm-crops-out-of-farms"
+   },
+   {
+    "name": "Free gene editing, keep GMO rules for transgenic crops",
+    "color_key": "rust",
+    "steelman": "The line that matters is whether nature could have made the change. Treat such edits like conventional breeding, and keep full GMO review for genes moved between species.",
+    "detail": "A targeted edit that switches off a gene or swaps a single letter of DNA produces a plant indistinguishable from a natural mutant or from the radiation breeding farmers have used for decades, and it should be regulated the same way. Inserting genes from other species, such as a bacterial insecticide gene, creates combinations nature does not, and case-by-case assessment, traceability and labels are reasonable for those. Drawing the line here lets public breeders and small seed companies use precise tools to develop climate-resilient crops quickly, while keeping safeguards where public concern is strongest. As the UK government put it in 2021, gene editing “does not result in the introduction of DNA from other species.”\n\nThe EU law shows the line can answer critics on both sides. It keeps herbicide-tolerant plants out of the conventional-like category, bars all gene-edited plants from organic farming and labels their seed so farmers know what they plant, and it passed a famously GM-skeptical Parliament by 431 votes to 201 (USDA Foreign Agricultural Service, 2026). To those who say transgenic crops are just as safe, the answer is that regulation must also earn public trust; to those who want edited foods labeled, that a label on a product no test can tell from conventional food would be unenforceable and misleading. Countries place the line differently, the EU with numerical limits on edits and India by exempting the simplest classes, and some here see a stable settlement while others see a first step toward regulating every crop by product.",
+    "proponents": "European Commission; UK Department for Environment, Food & Rural Affairs; Indian Council of Agricultural Research",
+    "id": "free-gene-editing-keep-gmo-rules"
+   }
+  ],
+  "crux": {
+   "lead": "Should a crop be judged only by what it is, or also by how it was made and who owns it?",
+   "lead_highlight": "only by what it is, or also by how it was made",
+   "subtitle": "The camps argue over particular crops, but their deeper split is whether genetic engineering is a meaningful category at all: whether the method, and the patents and farming system that travel with it, should change how a crop is regulated, labeled or allowed.",
+   "empirical": "Some of this is answerable. Long-term studies could show whether foods from engineered crops differ in health or nutrition from conventional ones. Others could show whether gene editing causes unintended changes more often than older breeding, how long farm gains last once pests and weeds adapt, and whether higher seed prices reflect value delivered or market power.",
+   "values": "No evidence settles how much proof of safety a new technology owes before it is used, or whether its makers or its critics carry that burden; whether people have a right to know how food was made when the method does not change the food; whether private ownership of crop genetics is a fair price for faster innovation; or who decides what a country grows."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Read the National Academies’ report on GM crops",
+    "description": "The 2016 report by the US National Academies of Sciences, Engineering, and Medicine, free online, reviews the health, environmental, yield and economic record of GM crops, including what remains uncertain.",
+    "url": "https://nap.nationalacademies.org/catalog/23395/genetically-engineered-crops-experiences-and-prospects",
+    "for_position": null,
+    "id": "read-the-national-academies-report-on"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Join the Alliance for Science network",
+    "description": "Sign up with the nonprofit that trains scientists, farmers and communicators to advocate for agricultural biotechnology, especially in Africa and Asia.",
+    "url": "https://allianceforscience.org/resources/join-us/",
+    "for_position": "Expand GM and gene-edited crops",
+    "id": "join-the-alliance-for-science-network"
+   },
+   {
+    "kind": "policy",
+    "title": "Follow and comment on the US bioengineered food label",
+    "description": "USDA’s Agricultural Marketing Service must rewrite parts of the national bioengineered food disclosure rule after court rulings; its page tracks the standard and links to rulemaking open for public comment.",
+    "url": "https://www.ams.usda.gov/rules-regulations/be",
+    "for_position": "Keep safety reviews and labels for all GM foods",
+    "id": "follow-and-comment-on-the-us"
+   },
+   {
+    "kind": "donate",
+    "title": "Support the Center for Food Safety",
+    "description": "A US nonprofit that litigates and campaigns against GM crops and their associated pesticides and for mandatory labeling; it represented plaintiffs in the case that struck down parts of the US label rule.",
+    "url": "https://centerforfoodsafety.org/ways-to-give/",
+    "for_position": "Keep GM crops out of farms and food",
+    "id": "support-the-center-for-food-safety"
+   },
+   {
+    "kind": "learn_more",
+    "title": "See how the EU now separates gene editing from GM",
+    "description": "The European Commission’s page on its new genomic techniques regulation, explaining which gene-edited plants are treated like conventional ones and which stay under GMO rules.",
+    "url": "https://food.ec.europa.eu/plants/new-genomic-techniques_en",
+    "for_position": "Free gene editing, keep GMO rules for transgenic crops",
+    "id": "see-how-the-eu-now-separates"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read WHO’s questions and answers on GM food",
+    "description": "The World Health Organization’s explainer on what GM foods are, how their safety is assessed, and the main concerns raised about them.",
+    "url": "https://www.who.int/news-room/questions-and-answers/item/food-genetically-modified",
+    "for_position": null,
+    "id": "read-who-s-questions-and-answers"
+   },
+   {
+    "kind": "policy",
+    "title": "Add your name to the laureates’ letter on GM crops",
+    "description": "The campaign begun by Nobel laureates in 2016 calling on governments and Greenpeace to support crops improved through biotechnology, including Golden Rice, invites scientists and citizens to sign.",
+    "url": "https://www.supportprecisionagriculture.org/join-us_rjr.html",
+    "for_position": "Expand GM and gene-edited crops",
+    "id": "add-your-name-to-the-laureates"
+   },
+   {
+    "kind": "local",
+    "title": "Find products verified as non-GMO",
+    "description": "The Non-GMO Project’s search tool for products carrying its verification mark, for shoppers who want to avoid GM ingredients at their local store.",
+    "url": "https://www.nongmoproject.org/find-non-gmo/",
+    "for_position": "Keep safety reviews and labels for all GM foods",
+    "id": "find-products-verified-as-non-gmo"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the African food sovereignty case against gene editing",
+    "description": "The Alliance for Food Sovereignty in Africa’s statement arguing that genome editing is “a costly distraction” and setting out its agroecological alternatives.",
+    "url": "https://afsafrica.org/blog/genome-editing-is-not-an-african-priority-it-is-a-costly-distraction/",
+    "for_position": "Keep GM crops out of farms and food",
+    "id": "read-the-african-food-sovereignty-case"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Follow EFSA’s work on gene-edited plants",
+    "description": "The European Food Safety Authority’s page on new genomic techniques, with its scientific opinions on the risks of gene-edited plants and its role under the new EU regulation.",
+    "url": "https://www.efsa.europa.eu/en/topics/new-genomic-techniques",
+    "for_position": null,
+    "id": "follow-efsa-s-work-on-gene"
+   }
+  ]
+ }
 }

@@ -1,8 +1,8 @@
 {
  "slug": "birth-rate-decline-pronatalism",
  "title": "Birth-Rate Decline",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-09-30T05:55:36+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Sub-replacement fertility and policies to raise birth rates. Not optimal world population.",
@@ -16,5 +16,695 @@
   "degrowth-vs-green-growth",
   "immigration-borders-restriction",
   "loneliness-decline-of-community"
- ]
+ ],
+ "content": {
+  "overview": {
+   "summary": "Fertility below replacement in most countries: how much it matters, and whether governments should try to raise it.",
+   "scope_covered": "Sub-replacement fertility: its spread and causes, its effects on aging and public finances, policies to raise births, and the alternatives of adapting, relying on immigration or accepting decline.",
+   "scope_excluded": "The optimal size of the world’s population, and immigration as a subject in its own right.",
+   "why_now": "On 23 September 2026 South Korea reported 24,275 births in July, up 11.1 percent on a year earlier and the 25th consecutive month of gains. The country that became the symbol of falling fertility is now the test of whether the decline can be reversed.",
+   "why_now_source_label": "Korea Times",
+   "why_now_source_url": "https://www.koreatimes.co.kr/southkorea/society/20260923/births-up-11-in-july-extending-gains-to-25th-consecutive-month"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "Total fertility rate by country",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "births/woman",
+     "series": [
+      {
+       "label": "South Korea",
+       "value": "0.75",
+       "highlight": true
+      },
+      {
+       "label": "Poland",
+       "value": "1.10",
+       "highlight": false
+      },
+      {
+       "label": "Spain",
+       "value": "1.10",
+       "highlight": false
+      },
+      {
+       "label": "Japan",
+       "value": "1.15",
+       "highlight": false
+      },
+      {
+       "label": "Italy",
+       "value": "1.18",
+       "highlight": false
+      },
+      {
+       "label": "Canada",
+       "value": "1.25",
+       "highlight": false
+      },
+      {
+       "label": "Germany",
+       "value": "1.35",
+       "highlight": false
+      },
+      {
+       "label": "OECD average",
+       "value": "1.40",
+       "highlight": false
+      },
+      {
+       "label": "France",
+       "value": "1.61",
+       "highlight": false
+      },
+      {
+       "label": "Mexico",
+       "value": "2.01",
+       "highlight": false
+      },
+      {
+       "label": "Israel",
+       "value": "2.87",
+       "highlight": false
+      }
+     ],
+     "note": "In 2024 every OECD country except Israel had fertility below the replacement level of 2.1, and South Korea’s was the lowest, at 0.75.",
+     "detail": "The OECD average fell from 2.84 children per woman in 1970 to 1.40 in 2024. The spread matters as much as the average: without migration, a country at 1.4 shrinks by about a third per generation, while one at 0.75 shrinks by nearly two thirds. Outside the OECD, the same data file gives China 1.00 and India 1.98 for 2023. National statistics offices have since published 2025 figures that are lower still in most places, such as Italy at 1.14 in ISTAT’s March 2026 demographic indicators, while South Korea rose. Israel is the lasting exception among rich countries; its average is lifted by very high fertility among ultra-Orthodox Jews, though secular Israelis are also above the OECD average.",
+     "source_label": "OECD Family Database, SF2.1 Fertility rates (updated April 2026)",
+     "source_url": "https://webfs.oecd.org/els-com/Family_Database/SF_2_1_Fertility_rates.pdf",
+     "source_published": "2024",
+     "source_accessed": "2026-09-29",
+     "id": "total-fertility-rate-by-country"
+    },
+    {
+     "label": "World total fertility rate",
+     "viz": "range",
+     "wide": false,
+     "value": "2.25",
+     "unit": "births/woman",
+     "range_min": "0",
+     "range_max": "5 in 1950",
+     "note": "At current rates a woman worldwide has 2.25 children on average over her lifetime, down from 3.31 in 1990 and about 5 in 1950.",
+     "detail": "The UN reports that more than half of all countries and areas now have fertility below replacement, and that nearly one fifth, including China, Italy, South Korea and Spain, have what it calls ultra-low fertility, below 1.4. At the other end, 45 percent are still at or above 2.1, and more than one in ten, mostly in sub-Saharan Africa, are at four or more. Because young age structures carry momentum, the world’s population is still projected to grow from 8.2 billion in 2024 to a peak of about 10.3 billion in the mid-2080s, with an estimated 80 percent likelihood that the peak falls within this century. Replacement is about 2.1 only where child mortality is low; it is higher where more children die young. The 1950 figure is the UN estimate as cited by UNFPA.",
+     "source_label": "UN DESA Population Division, World Population Prospects 2024: Summary of Results",
+     "source_url": "https://population.un.org/wpp/assets/Files/WPP2024_Summary-of-Results.pdf",
+     "source_published": "2024",
+     "source_accessed": "2026-09-29",
+     "id": "world-total-fertility-rate"
+    },
+    {
+     "label": "South Korea’s total fertility rate over time",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "births/woman",
+     "series": [
+      {
+       "label": "1970",
+       "value": "4.53",
+       "highlight": false
+      },
+      {
+       "label": "1983",
+       "value": "2.06",
+       "highlight": false
+      },
+      {
+       "label": "2023",
+       "value": "0.72",
+       "highlight": false
+      },
+      {
+       "label": "2025",
+       "value": "0.80",
+       "highlight": true
+      }
+     ],
+     "note": "South Korea’s fertility rate fell below one child per woman in 2018, reached a record low of 0.72 in 2023 and rose to 0.80 in 2025.",
+     "detail": "It is one of the fastest declines ever recorded: the rate fell to about replacement level in 1983 and has been below it ever since. Births rose 6.7 percent to 254,300 in 2025, the highest since 2021; the average mother was 33.8 years old, and 37.3 percent of births were to women 35 or older. The rise has continued into 2026, with a monthly fertility rate of 0.89 in July and births in January to July up 14.7 percent year on year. The government has renewed a five-year low-fertility plan since 2006 and has spent a sum reported by Al Jazeera and others as more than 360 trillion won (about $270 billion) on it, though that accounting includes programs only loosely tied to births. Recent measures include a 6+6 parental-leave scheme that pays the second parent close to full wages, doubled paid paternity leave, and priority housing and cheaper mortgages for newlyweds and new parents.",
+     "source_label": "Statistics Korea via Wikipedia; 2025 figure from the Ministry of Data and Statistics via Korea Times",
+     "source_url": "https://en.wikipedia.org/wiki/Demographics_of_South_Korea",
+     "source_published": "2025",
+     "source_accessed": "2026-09-29",
+     "id": "south-korea-s-total-fertility-rate"
+    },
+    {
+     "label": "People aged 50 and over who had fewer children than they wanted",
+     "viz": "radial",
+     "wide": false,
+     "value": "31",
+     "unit": "% aged 50+",
+     "note": "Among survey respondents aged 50 and over, 31 percent said they had fewer children than they ideally would have chosen, and 12 percent said they had more.",
+     "detail": "UNFPA and YouGov surveyed more than 14,000 adults in 14 countries holding more than 37 percent of the world’s population, and the different questions give different answers. Among adults of reproductive age, 18 percent believed they would not have the number of children they desire, 11 percent expecting fewer and 7 percent more, while 37 percent expected to meet their ideal and 45 percent did not know or did not say. Among about 10,000 respondents who had or wanted children, 39 percent said financial limitations had affected or would affect their ability to have the family size they wanted, the most common barrier, followed by unemployment or job insecurity at 21 percent. In every country surveyed, two was the most commonly desired number of children.",
+     "source_label": "UNFPA, State of World Population 2025: The Real Fertility Crisis (UNFPA/YouGov survey, 14 countries)",
+     "source_url": "https://www.unfpa.org/sites/default/files/pub-pdf/EN_State%20of%20World%20Population%20report%202025.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-09-29",
+     "id": "people-aged-50-and-over-who"
+    },
+    {
+     "label": "Older people per 100 working-age people, projected for 2054",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "per 100",
+     "series": [
+      {
+       "label": "South Korea",
+       "value": "84.5",
+       "highlight": true
+      },
+      {
+       "label": "Japan",
+       "value": "80.0",
+       "highlight": false
+      },
+      {
+       "label": "Italy",
+       "value": "76.6",
+       "highlight": false
+      },
+      {
+       "label": "Spain",
+       "value": "76.2",
+       "highlight": false
+      },
+      {
+       "label": "China",
+       "value": "64.2",
+       "highlight": false
+      },
+      {
+       "label": "OECD average",
+       "value": "55.2",
+       "highlight": false
+      },
+      {
+       "label": "United States",
+       "value": "42.9",
+       "highlight": false
+      },
+      {
+       "label": "Israel",
+       "value": "30.0",
+       "highlight": false
+      }
+     ],
+     "note": "By 2054 South Korea is projected to have 84.5 people aged 65 or over for every 100 people aged 20 to 64, up from 29.3 in 2024.",
+     "detail": "The 2024 values for the same countries are Japan 54.9, Italy 42.0, Spain 34.9, China 23.1, OECD average 32.6, United States 30.8 and Israel 24.1, so Korea goes from below the OECD average to the highest ratio in the OECD within thirty years; the table projects 122.0 by 2084, more people over 65 than aged 20 to 64. Low fertility is only one driver. The OECD finds that falling fertility and rising life expectancy have had similar effects on the ratio over the past decade on average, and that immigration has lowered it noticeably in Canada and Iceland.",
+     "source_label": "OECD, Pensions at a Glance 2025, Table 6.2",
+     "source_url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/11/pensions-at-a-glance-2025_76510fe4/e40274c1-en.pdf",
+     "source_published": "2054 (projection; 2024 base)",
+     "source_accessed": "2026-09-29",
+     "id": "older-people-per-100-working-age"
+    },
+    {
+     "label": "US adults under 50 without children who say they are unlikely ever to have them",
+     "viz": "radial",
+     "wide": false,
+     "value": "47",
+     "unit": "%",
+     "note": "In 2023, 47 percent of US adults under 50 without children said they were unlikely ever to have them, up from 37 percent in 2018.",
+     "detail": "Among those who said they were unlikely to have children, 57 percent named as a major reason that they just do not want to, 44 percent that they want to focus on other things such as career or interests, 38 percent concern about the state of the world, 36 percent that they cannot afford a child, 26 percent concern about the environment and 20 percent that they do not really like children. Respondents could name more than one major reason. Those who argue that preferences, not only barriers, have shifted lean on this survey more than any other. It sits in tension with polls of ideal family size, though the two ask different questions of different groups.",
+     "source_label": "Pew Research Center, The Experiences of U.S. Adults Who Don’t Have Children, 25 July 2024",
+     "source_url": "https://www.pewresearch.org/social-trends/2024/07/25/the-experiences-of-u-s-adults-who-dont-have-children/",
+     "source_published": "2023",
+     "source_accessed": "2026-09-29",
+     "id": "us-adults-under-50-without-children"
+    },
+    {
+     "label": "Hungary’s total fertility rate",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "births/woman",
+     "series": [
+      {
+       "label": "2011",
+       "value": "1.23",
+       "highlight": false
+      },
+      {
+       "label": "2015",
+       "value": "1.45",
+       "highlight": false
+      },
+      {
+       "label": "2021",
+       "value": "1.61",
+       "highlight": false
+      },
+      {
+       "label": "2025",
+       "value": "1.31",
+       "highlight": true
+      }
+     ],
+     "note": "Hungary’s fertility rate rose from 1.23 in 2011 to 1.61 in 2021, then fell to 1.31 in 2025.",
+     "detail": "Under Viktor Orbán from 2010 to 2026, Hungary ran the most prominent explicitly pronatalist program in the democratic world, framed as family policy instead of immigration: subsidized loans that are forgiven as children arrive, housing grants for families, generous family tax allowances, and a lifetime income-tax exemption for mothers of four or more children from 2020, which Orbán announced in March 2025 would be extended to mothers of two or more. The rise to 2021 is the strongest evidence pronatalists cite. Critics note that part of it came from women born in the larger cohorts of the mid-1970s having postponed births, and that the gains reversed after 2021 amid high inflation. Births fell from 93,039 in 2021 to 72,017 in 2025. Orbán’s Fidesz lost the April 2026 election to Péter Magyar’s Tisza party.",
+     "source_label": "Hungarian Central Statistical Office (KSH), table 22.1.1.6 Live births, total fertility rate",
+     "source_url": "https://www.ksh.hu/stadat_files/nep/en/nep0006.html",
+     "source_published": "2025",
+     "source_accessed": "2026-09-29",
+     "id": "hungary-s-total-fertility-rate"
+    },
+    {
+     "label": "Share of the world’s population living in countries whose population has already peaked",
+     "viz": "radial",
+     "wide": false,
+     "value": "28",
+     "unit": "% of world",
+     "note": "In 63 countries and areas holding 28 percent of the world’s people, including China, Germany, Japan and Russia, population size peaked before 2024.",
+     "detail": "The UN’s projections show how hard a reversal is. For 24 countries that had ultra-low fertility in 2024 and whose populations have already peaked, it puts the probability of a return to 2.1 within thirty years at 0.1 percent. By the late 2030s half of the women in already-peaked countries will be too old to have children by natural means, so the effect of any fertility-raising policy on population size will diminish over time. For countries losing young adults to emigration, the UN suggests decent work and encouraging return migration could slow decline faster in the short run than policies aimed at fertility. For countries that wish to help people reach their desired family size, it lists paid parental leave, flexible work, affordable childcare and housing, and a more equal division of caregiving between women and men.",
+     "source_label": "UN DESA Population Division, World Population Prospects 2024: Summary of Results",
+     "source_url": "https://population.un.org/wpp/assets/Files/WPP2024_Summary-of-Results.pdf",
+     "source_published": "2024",
+     "source_accessed": "2026-09-29",
+     "id": "share-of-the-world-s-population"
+    },
+    {
+     "label": "Public spending on family benefits",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% of GDP",
+     "series": [
+      {
+       "label": "Poland",
+       "value": "3.63",
+       "highlight": false
+      },
+      {
+       "label": "France",
+       "value": "3.38",
+       "highlight": false
+      },
+      {
+       "label": "Hungary",
+       "value": "2.93",
+       "highlight": false
+      },
+      {
+       "label": "OECD average",
+       "value": "2.35",
+       "highlight": true
+      },
+      {
+       "label": "South Korea",
+       "value": "1.77",
+       "highlight": false
+      },
+      {
+       "label": "United States",
+       "value": "0.99",
+       "highlight": false
+      }
+     ],
+     "note": "OECD countries spent an average of 2.35 percent of GDP on cash, services and tax breaks for families in 2021, from 3.63 percent in Poland to 0.99 percent in the United States.",
+     "detail": "The measure covers support exclusively for families with children: child allowances, parental-leave pay, childcare and early education, family services and child-related tax breaks. It excludes health and housing support that also helps families, and treats tax advantages for marriage as not serving a social purpose, so it understates programs such as Hungary’s subsidized housing loans for families. The ranking does not line up neatly with fertility: Poland and Hungary spend more than the OECD average and are below it on fertility, France and Sweden spend heavily and have been near the top of Europe for decades, and the United States spends the least and has had higher fertility than most of Europe. The 2021 figures still include some pandemic support.",
+     "source_label": "OECD Family Database, PF1.1 Public spending on family benefits (updated February 2025)",
+     "source_url": "https://webfs.oecd.org/els-com/Family_Database/PF1_1_Public_spending_on_family_benefits.pdf",
+     "source_published": "2021",
+     "source_accessed": "2026-09-29",
+     "id": "public-spending-on-family-benefits"
+    },
+    {
+     "label": "United States total fertility rate",
+     "viz": "range",
+     "wide": false,
+     "value": "1.60",
+     "unit": "births/woman",
+     "range_min": "0",
+     "range_max": "2.1 replacement",
+     "note": "The US total fertility rate was 1,599.5 births per 1,000 women in 2024, a record low and 23 percent below 2008.",
+     "detail": "The United States was an outlier among rich countries until the 2008 recession, with fertility near replacement; it has declined almost every year since. Provisional data for 2025 show 3,606,400 births, down 1 percent, and a general fertility rate of 53.1 births per 1,000 women aged 15 to 44, a record low in data going back to 1909. Most of the decline since 2007 has come from women under 30, especially teenagers, whose birth rate has fallen to a record low, while rates for women in their late thirties and forties have held or risen.",
+     "source_label": "CDC National Center for Health Statistics, Births: Final Data for 2024, National Vital Statistics Reports vol. 75 no. 2",
+     "source_url": "https://www.cdc.gov/nchs/data/nvsr/nvsr75/nvsr75-02.pdf",
+     "source_published": "2024",
+     "source_accessed": "2026-09-29",
+     "id": "united-states-total-fertility-rate"
+    },
+    {
+     "label": "Poland’s fertility rate before and after the Family 500+ child benefit",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "births/woman",
+     "series": [
+      {
+       "label": "2015",
+       "value": "1.3",
+       "highlight": false
+      },
+      {
+       "label": "2017",
+       "value": "1.45",
+       "highlight": false
+      },
+      {
+       "label": "2023",
+       "value": "1.16",
+       "highlight": false
+      },
+      {
+       "label": "2024",
+       "value": "1.10",
+       "highlight": true
+      }
+     ],
+     "note": "Poland’s fertility rate rose from about 1.3 in 2015 to 1.45 in 2017 after the Family 500+ benefit began in 2016, then fell to 1.10 by 2024.",
+     "detail": "Family 500+ paid 500 złoty a month per child, first for second and later children and from 2019 for every child; it was raised to 800 złoty in 2024. Poland’s cash transfers for families doubled between 2015 and 2017 to about 2 percent of GDP. A peer-reviewed evaluation using household survey data found that in the short term the benefit raised the annual probability of a birth by 1.5 percentage points, with increases for women aged 31 to 40 and decreases for women aged 21 to 30 and for higher-income households, and described the evidence as mixed. The program substantially reduced child poverty, one of its stated goals. Statistics Poland puts the 2024 rate at 1.099, a record low.",
+     "source_label": "OECD Family Database SF2.1 (2019 to 2024); Statistics Poland via Wikipedia (2017); N-IUSSP, Anna Bokun (2015)",
+     "source_url": "https://www.niussp.org/fertility-and-reproduction/lessons-from-polands-pro-natalist-family-500-program/",
+     "source_published": "2024",
+     "source_accessed": "2026-09-29",
+     "id": "poland-s-fertility-rate-before-and"
+    },
+    {
+     "label": "Countries projected to have below-replacement fertility by 2100",
+     "viz": "radial",
+     "wide": false,
+     "value": "97",
+     "unit": "%",
+     "note": "An IHME study projects 155 of 204 countries below replacement fertility by 2050 and 198, or 97 percent, by 2100; the UN’s projections run higher.",
+     "detail": "The Global Burden of Disease forecast puts global fertility at 1.83 in 2050 and 1.59 in 2100 in its reference scenario, with wide uncertainty intervals: 1.59 to 2.08 in 2050 and 1.25 to 1.96 in 2100. That is lower than the UN, which expects global fertility to fall only to about 2.1 around mid-century, and demographers disagree about which is more plausible. The two agree on direction: fertility is projected to keep falling nearly everywhere, and births will be increasingly concentrated in low-income countries, especially in sub-Saharan Africa. Long-range fertility forecasts have a mixed record, and the UN’s projections of global population have been revised downward over the past decade.",
+     "source_label": "IHME, GBD 2021 Fertility and Forecasting Collaborators, The Lancet, March 2024",
+     "source_url": "https://www.healthdata.org/news-events/newsroom/news-releases/lancet-dramatic-declines-global-fertility-rates-set-transform",
+     "source_published": "2100 (projection)",
+     "source_accessed": "2026-09-29",
+     "id": "countries-projected-to-have-below-replacement"
+    },
+    {
+     "label": "Effect of Quebec’s baby bonus on the probability of having a child",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% rise",
+     "series": [
+      {
+       "label": "Two or more children",
+       "value": "25.0",
+       "highlight": true
+      },
+      {
+       "label": "No children yet",
+       "value": "10.7",
+       "highlight": false
+      }
+     ],
+     "note": "Quebec’s Allowance for Newborn Children, worth up to C$8,000 per birth, raised the probability of a birth by 10.7 percent for families with no children and 25.0 percent for those with two or more.",
+     "detail": "It is one of the cleanest natural experiments on cash for babies: Quebec paid the bonus, the rest of Canada did not, and the payment rose with birth order. Kevin Milligan estimated a benefit elasticity of about 0.11, meaning a 10 percent larger benefit raises fertility by about 1 percent, in line with earlier cross-country estimates. In a companion policy paper he calculated that each child who would not otherwise have been born cost the public more than C$15,000 in 1990s dollars. Quebec ended the program in 1997 and shifted to heavily subsidized childcare. A 2021 systematic review by Bergsvik, Fauske and Hart in Population and Development Review, covering 35 quasi-experimental studies from Europe, North America and Australia found that effects of cash transfers are likely transitory, mostly shifting when births happen, while large reforms of public childcare and parental leave had lasting and substantial effects.",
+     "source_label": "Kevin Milligan, Subsidizing the Stork, Review of Economics and Statistics, 2005",
+     "source_url": "https://jenni.uchicago.edu/Fertility/Milligan_2005_REStat_v87_n3.pdf",
+     "source_published": "1988 to 1997 (policy period)",
+     "source_accessed": "2026-09-29",
+     "id": "effect-of-quebec-s-baby-bonus"
+    },
+    {
+     "label": "Year US deaths are projected to exceed births",
+     "viz": "bar",
+     "wide": false,
+     "value": "2030",
+     "unit": "projected",
+     "note": "CBO projects that from 2030 declining fertility will leave US births short of deaths, making net immigration the only source of population growth.",
+     "detail": "CBO projects the US population to grow from 349 million in 2026 to 364 million in 2056, with growth slowing from about 0.3 percent a year over the next decade to 0.1 percent a year after that and reaching zero in 2056, after which the population shrinks. The United States has so far avoided the steep aging of Japan or Korea largely because of immigration. CBO stresses that small differences in fertility, mortality and immigration assumptions compound over thirty years.",
+     "source_label": "Congressional Budget Office, The Demographic Outlook: 2026 to 2056, January 2026",
+     "source_url": "https://www.cbo.gov/publication/61994",
+     "source_published": "2026 (projection)",
+     "source_accessed": "2026-09-29",
+     "id": "year-us-deaths-are-projected-to"
+    },
+    {
+     "label": "Americans’ ideal family size compared with actual fertility",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "children",
+     "series": [
+      {
+       "label": "Ideal family size",
+       "value": "2.7",
+       "highlight": true
+      },
+      {
+       "label": "Fertility rate",
+       "value": "1.6",
+       "highlight": false
+      }
+     ],
+     "note": "Asked the ideal number of children for a family to have, US adults gave an average of 2.7 in July 2025, against an actual fertility rate of about 1.6.",
+     "detail": "The poll of 1,002 adults found 40 percent naming two as ideal, 27 percent three, 11 percent four and 4 percent five or more, so 42 percent named three or more; 4 percent chose one and 2 percent none. The question asks about the ideal for families in general, not how many children the respondent intends to have, so the gap is not a direct measure of unmet personal wishes. It is nonetheless the figure most often cited by those who argue that fertility is low because of obstacles rather than preferences. Gallup noted that preferences for three or more children were higher among men, frequent religious attenders and Republicans.",
+     "source_label": "Gallup, Americans’ Ideal Family Size Remains Above Two Children, 4 September 2025",
+     "source_url": "https://news.gallup.com/poll/694640/americans-ideal-family-size-remains-above-two-children.aspx",
+     "source_published": "2025",
+     "source_accessed": "2026-09-29",
+     "id": "americans-ideal-family-size-compared-with"
+    },
+    {
+     "label": "Births in China",
+     "viz": "bar",
+     "wide": false,
+     "value": "7.92",
+     "unit": "million",
+     "note": "China recorded 7.92 million births in 2025, 1.62 million fewer than in 2024, and its population fell by 3.39 million to 1,404.89 million.",
+     "detail": "The birth rate was 5.63 per thousand and the death rate 8.04 per thousand, with 11.31 million deaths, and 2025 was the fourth consecutive year of population decline. People aged 60 and over were 23.0 percent of the population and those 65 and over 15.9 percent. China enforced a one-child policy from 1980, moved to two children in 2016 and three in 2021, and has since shifted to active encouragement. In July 2025 it announced a national childcare subsidy of 3,600 yuan a year for each child under three, backdated to 1 January 2025 and paid regardless of birth order. China does not publish an official annual fertility rate.",
+     "source_label": "National Bureau of Statistics of China, National Economy release, 19 January 2026",
+     "source_url": "https://www.stats.gov.cn/english/PressRelease/202601/t20260119_1962328.html",
+     "source_published": "2025",
+     "source_accessed": "2026-09-29",
+     "id": "births-in-china"
+    },
+    {
+     "label": "Births in Japan",
+     "viz": "bar",
+     "wide": false,
+     "value": "671,236",
+     "unit": "births",
+     "note": "Japan recorded 671,236 births and 1,589,489 deaths in 2025, a natural decrease of 918,253, and its fertility rate fell to a record low of 1.14.",
+     "detail": "It was the tenth consecutive record low for births and the second year below 700,000; the fertility rate was down from 1.15 in 2024, and Tokyo’s was 0.96. Japan has had below-replacement fertility since the mid-1970s and has run successive plans to raise it since the 1990s, and its population has been shrinking since the late 2000s. It has also relied far less on immigration than other rich countries, which makes it the usual reference case for what sustained low fertility does to a society without large inflows of people.",
+     "source_label": "Ministry of Health, Labour and Welfare vital statistics, via Nippon.com, June 2026",
+     "source_url": "https://www.nippon.com/en/japan-data/h02802/",
+     "source_published": "2025",
+     "source_accessed": "2026-09-29",
+     "id": "births-in-japan"
+    },
+    {
+     "label": "Births minus deaths in France",
+     "viz": "bar",
+     "wide": false,
+     "value": "-6,000",
+     "unit": "people",
+     "note": "France recorded about 645,000 births and 651,000 deaths in 2025, its first natural decrease since the end of the Second World War.",
+     "detail": "France has long been the rich-world example of family policy working: generous allowances, tax treatment that rises with family size, near-universal preschool, and a fertility rate near 2.0 as recently as 2010. INSEE puts the 2025 fertility rate at 1.56 children per woman, down from 1.61 in 2024 and the lowest since the end of the First World War. The EU as a whole recorded 1.34 children per woman in 2024, down from 1.38 in 2023 and the lowest since its series begins in 2001, with 3.55 million births; Bulgaria had the highest rate at 1.72 and France the second highest, while Malta was lowest at 1.01. Pronatalists read France’s slide as evidence that the problem is getting harder, skeptics as evidence that spending cannot hold fertility up.",
+     "source_label": "INSEE, Bilan démographique 2025 (Insee Première no. 2087)",
+     "source_url": "https://www.insee.fr/fr/statistiques/8719824",
+     "source_published": "2025",
+     "source_accessed": "2026-09-29",
+     "id": "births-minus-deaths-in-france"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Can government policy raise fertility by enough, for long enough, at a cost a country would accept?",
+    "kind": "empirical",
+    "why": "Every study finds some effect from family policy, and none finds one large enough to return a low-fertility country to replacement. The fight is over whether modest effects are worth the price, and whether they add children or only move births earlier.",
+    "detail": "Those who say policy can move it read the quasi-experimental record as consistent: money, time and services change behavior, from Quebec’s baby bonus to Poland’s child benefit, and big expansions of childcare and parental leave have had lasting effects. On this view the failures are of scale and design. Most countries spend a small share of what it costs to raise a child, so a benefit worth a few percent of that cost should be expected to move fertility a few percent, and proposals such as Lyman Stone’s large birth-linked savings accounts are sized to the effects the research actually measures.\n\nThose who say effects stay small point to the countries that tried hardest. Korea spent heavily for nearly two decades while its rate kept falling; Hungary’s gains reversed after 2021; Poland is lower than before its benefit began; France and the Nordic countries, which built the model systems, are sliding too. Cash mostly moves births earlier rather than adding them, its effect is largest among better-off families who need help least, and each extra birth bought this way is expensive.",
+    "lean_label_a": "Policy can move it",
+    "lean_label_b": "Effects stay small",
+    "id": "can-government-policy-raise-fertility-by"
+   },
+   {
+    "text": "Is low fertility mainly the result of barriers to the families people want, or of changed preferences?",
+    "kind": "empirical",
+    "why": "The answer decides what kind of problem this is. If people want more children than they have, removing obstacles is uncontroversial; if they simply want fewer, closing the gap does little, and raising fertility would mean changing what people want.",
+    "detail": "The barriers view starts from what people say: most want about two children or more, and many end up with fewer. Housing costs, long years of education, late partnering and the difficulty of combining two careers with small children push first births later, and later first births mean fewer second and third children and more involuntary childlessness as fertility falls with age. When the path to family formation reopens, this side argues, people take it.\n\nThe preferences view holds that stated ideals are cheap and behavior is not. When non-parents are asked about their own plans, the most common reason for expecting no children is simply not wanting them, well ahead of cost. Economists Melissa Kearney, Phillip Levine and Luke Pardue found that changes in measurable economic conditions and policies explain little of the US decline since 2007, and pointed to shifting priorities among younger adults (Journal of Economic Perspectives, 2022). The fall is also steepest in the richest, most secure and most gender-equal societies, which is hard to square with a story about affordability. Careers, leisure, higher standards for what a child needs and looser religious and social expectations have changed what people want, and that is a durable feature of modern life.",
+    "lean_label_a": "Blocked by barriers",
+    "lean_label_b": "Wants have changed",
+    "id": "is-low-fertility-mainly-the-result"
+   },
+   {
+    "text": "Should governments set a goal for how many children their citizens have?",
+    "kind": "value",
+    "why": "Almost everyone supports helping parents; the dispute is whether a birth-rate target is a proper aim of the state at all. History weighs on both sides, from forced sterilization and one-child rules to France’s long-standing family policy.",
+    "detail": "Those who call it a legitimate goal argue that a society has an interest in its own continuation: the number of children born decides whether pensions are paid, whether towns survive and whether a language and culture carry on. Governments already pursue collective goals that rest on private choices, such as savings, vaccination and education, through incentives rather than commands. Parents also produce a public good, the taxpayers who will fund everyone’s old age, including the childless, so moving more of the cost of children onto society is a matter of fairness. Declining to set a goal is itself a choice to shrink by default.\n\nThose who call it a private choice answer that how many children to have is among the most personal decisions there is, and once the state treats births as a national output, the pressure tends to fall on women’s bodies and careers. The record of population targets in both directions includes coerced sterilization, forced abortion, restricted contraception and bans on abortion, including Romania’s under Ceaușescu. Support for parents stands on its own grounds, child welfare, fairness and less poverty, and should not be judged by whether it raises births.",
+    "lean_label_a": "A legitimate goal",
+    "lean_label_b": "A private choice",
+    "id": "should-governments-set-a-goal-for"
+   },
+   {
+    "text": "How much economic harm does a shrinking, aging population do once a country adapts?",
+    "kind": "empirical",
+    "why": "No modern economy has lived through decades of steep population decline, so the evidence is projections and a few early cases. Both sides agree aging raises pension and health costs; they split on whether more work and higher productivity can absorb them.",
+    "detail": "The case for a lasting drag starts with the arithmetic. The OECD projects its working-age population to fall 13 percent over the next four decades, and by more than 35 percent in Italy, Korea, Latvia, Lithuania and Poland. Pay-as-you-go pensions and health systems depend on the ratio of workers to retirees, and retirement ages can rise and benefits fall only so far before voters refuse. New ideas also come from people, and a smaller, older population has fewer inventors, entrepreneurs and young workers willing to take risks. Japan’s decades of weak growth, emptying countryside and shortage of care workers look like a preview.\n\nThe case that it is manageable holds that living standards depend on output per person, not on headcount, and more on the share of people in work and their output than on the age structure alone. Most rich countries still have large untapped labor among older workers and women, retirement ages have already begun rising with life expectancy, and automation and AI are likely to raise output per worker. On this view adaptation is a policy choice with known tools, not a race against arithmetic.",
+    "lean_label_a": "A lasting drag",
+    "lean_label_b": "A manageable shift",
+    "id": "how-much-economic-harm-does-a"
+   },
+   {
+    "text": "Is South Korea’s rebound evidence that pronatal policy works, or a temporary echo of a larger generation?",
+    "kind": "empirical",
+    "why": "Korea is the extreme case, and its turn since 2024 is among the most closely watched demographic data anywhere. The same numbers support both readings, and settling it depends on what would have happened without the policies.",
+    "detail": "Those who see policy working cite a June 2026 analysis by the Korea Institute for Health and Social Affairs, which found that the largest single contributor to the 2024 rise was higher fertility among married women in their thirties, not merely more women of that age. The rise followed a burst of measures and a public campaign that treated low fertility as a national emergency. Marriages were still rising in mid-2026, up 9.3 percent year on year in July, which points to more births ahead rather than a one-off bump.\n\nThose who see a cohort echo note that the same analysis found a temporarily larger group of women aged 30 to 34 also lifted births, and expects that group to shrink after 2030 as much smaller cohorts follow. Marriages postponed during the pandemic were then held, and about 95 percent of Korean births occur within marriage, so a marriage catch-up produces a birth catch-up a year or two later. Mothers are older than ever, which fits postponed births being realized rather than more births overall. Korea is still below every other country on record, and Hungary’s decade of gains shows how quickly a rebound can reverse.",
+    "lean_label_a": "Policy is working",
+    "lean_label_b": "A temporary echo",
+    "id": "is-south-korea-s-rebound-evidence"
+   },
+   {
+    "text": "Can immigration substitute for the births a country is not having?",
+    "kind": "value",
+    "why": "The demographic arithmetic is not in dispute: immigration already keeps many rich-country populations from shrinking. The disagreement is whether that is a sustainable and desirable answer, which turns on economics, integration and national identity.",
+    "detail": "Those who say immigration works point out that it delivers working-age adults at once, already educated at another country’s expense, while a baby born today will not work for twenty years. Much of the world, especially sub-Saharan Africa, will have large young populations for decades, so the supply of potential migrants is large. A country that wants more workers can have them far more cheaply and quickly through well-managed immigration than through pronatal spending, and countries that have stayed closed show what the alternative looks like.\n\nThose who say births are needed answer that immigration postpones the problem rather than solving it. Immigrants age too, and their fertility tends to converge on the host country’s within a generation, so holding an age structure steady takes ever-rising inflows. The sending countries are heading below replacement themselves: India and much of Latin America and Asia are already there, so the pool is shrinking. Large-scale immigration also raises questions of integration, housing and social trust that voters in many countries have made clear they care about. And a society that cannot reproduce itself, many in this camp argue, has a deeper problem that importing workers does not touch.",
+    "lean_label_a": "Immigration works",
+    "lean_label_b": "Births are needed",
+    "id": "can-immigration-substitute-for-the-births"
+   },
+   {
+    "text": "Is falling fertility a sign that something has gone wrong, or a result of people having more freedom?",
+    "kind": "value",
+    "why": "The same facts, later and fewer marriages, more childless adults and smaller families, can be read as the collapse of institutions that once made family life possible or as a widening of choice, especially for women.",
+    "detail": "Those who see a failure argue that when most people want children and a growing share end up with fewer or none, something is letting them down. Marriage rates have fallen, young men and women report difficulty finding partners, housing in the places with jobs is unaffordable, and work is organized as if no one had children. Social conservatives trace the root to the decline of marriage, religion and community, and point to religious communities where larger families remain normal. Progressive pronatalists reach a similar diagnosis from the other side: a society that makes parenting exhausting, expensive and professionally punishing, especially for mothers, has made a choice, and the birth rate shows it.\n\nThose who see freedom answer that fertility falls wherever women gain education, contraception, careers and legal equality, and has fallen furthest where women’s lives changed fastest. That is not a malfunction but people, and especially women, getting to choose, and many with small families or none are content. Calling it a crisis implies that the old pattern of earlier marriage, more children and fewer options for women was the healthy baseline, and invites policies that restrict contraception, abortion or women’s independence.",
+    "lean_label_a": "A sign of failure",
+    "lean_label_b": "A result of freedom",
+    "id": "is-falling-fertility-a-sign-that"
+   },
+   {
+    "text": "Does fertility respond more to support for marriage and home care, or to equality in work and care?",
+    "kind": "empirical",
+    "why": "Pronatalists on the right and the left propose very different packages, and each cites cross-country evidence. The old finding that more gender-equal rich countries had higher fertility has weakened as Nordic fertility has fallen.",
+    "detail": "The marriage side notes that married couples have more children in every rich country, and that in East Asia almost all births occur within marriage, so the fall in marriage is the fall in births. Subsidies that pay only for institutional childcare favor two-earner households and penalize families where one parent stays home; neutral support such as larger child tax credits respects the arrangements families actually prefer. The Nordic countries, which built the most gender-equal family systems, have seen some of the steepest recent falls.\n\nThe equality side notes that the lowest-fertility countries, South Korea, Japan, Italy and Spain, are those where women are expected to do most of the childcare and housework while also holding jobs, and where time out damages careers. Women there postpone or forgo children because the terms on offer are bad. The most lasting policy effects have come from large expansions of public childcare and parental leave, and Korea’s newest measures pay fathers near-full wages to take leave. Policies that push women back into the home run against what most young women want and risk delaying marriage further.",
+    "lean_label_a": "Marriage, home care",
+    "lean_label_b": "Equal work and care",
+    "id": "does-fertility-respond-more-to-support"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Raise birth rates toward replacement",
+    "color_key": "green",
+    "steelman": "A society where each generation is a third smaller than the last is not on a sustainable path. Most people want more children than they have; closing that gap is the answer to decline.",
+    "detail": "Children are the one input every other public good depends on: the workers who pay pensions, the scientists and founders who produce new ideas, the nurses and caregivers of the next generation. Nor is this the state imposing its preferences. People fall short of the families they want because housing is unaffordable, careers punish parents, marriage has become harder to reach, and the cost of children has shifted almost entirely onto parents while the benefits are shared by everyone.\n\nPolicy works in proportion to its size. Every credible study finds that money, time and housing for parents raise births; most countries have spent a small fraction of what a child costs, and a benefit people expect to be withdrawn cannot change a twenty-year decision. The honest question about Korea or Hungary is what their fertility would have been without the effort, when comparable countries were falling over the same years. We differ on means: fiscal pronatalists such as Lyman Stone want large, simple cash support; social conservatives such as the Heritage Foundation put marriage and parents who stay home at the center; economists Dean Spears and Michael Geruso would work through paid leave, childcare, housing and gender equality, and reject coercion. What we share is the view that permanent adaptation to a shrinking population is not a free option. It is a bet that productivity and immigration can carry burdens no society has yet tried to carry.",
+    "proponents": "Institute for Family Studies; Heritage Foundation; Lyman Stone; Dean Spears; Michael Geruso; Government of South Korea; Government of China; Trump administration",
+    "id": "raise-birth-rates-toward-replacement"
+   },
+   {
+    "name": "Help people have the children they want",
+    "color_key": "blue",
+    "steelman": "The real crisis is not too few babies or too many. It is that people everywhere cannot have the families they want, and that is worth fixing for its own sake.",
+    "detail": "Nearly one in three people in our 14-country survey had experienced an unintended pregnancy, and many others want children they feel unable to have, mostly for reasons of money, insecure work and housing. Unmet wishes run in both directions. The remedies are known: affordable childcare, paid leave for both parents, secure work, housing young people can afford, access to fertility care and a fair division of work at home. Childcare and health services help families across incomes, while cash mostly shifts the timing of births and does most for the better-off.\n\nWhat we reject is turning births into a national target. Once a government decides it needs a certain number of children, history is clear about where the pressure lands: on women, through limits on contraception and abortion, stigma for the childless and policies that push women out of work. We make no promise that meeting people’s wishes will return fertility to 2.1. If people who are able to have the children they want choose fewer than two on average, that is a legitimate outcome, and societies can plan for it. The pronatalists justify their policies by the same gap between wanted and actual family size, so where the gap closes, their mandate ends.",
+    "proponents": "UNFPA; Karen Benjamin Guzzo",
+    "id": "help-people-have-the-children-they"
+   },
+   {
+    "name": "Adapt to fewer births",
+    "color_key": "amber",
+    "steelman": "Low fertility is the normal condition of rich, educated societies. What sustains living standards is how many people work and how productive they are, not how many are born.",
+    "detail": "Every serious projection says low fertility will persist, and even the Nordic countries, long held up as proof that good family policy keeps fertility near replacement, have seen steep falls. Governments can nudge birth rates, but the effects are modest and costly, and the 2.1 benchmark says nothing about whether people are prosperous. Rich countries have large reserves: older people who are healthier than ever and can work longer, women still underemployed across much of Europe and East Asia, and technology that raises output per worker. Smaller cohorts also mean more investment in each child, and demographers Guillaume Marois and Wolfgang Lutz argue that under plausible conditions low fertility can be an economic advantage.\n\nWe do not claim adaptation is painless, and fertility below one child per woman is a serious problem. But the question is what policy can realistically change. Lifting fertility from 1.4 to 1.6 would count as a triumph for any pronatal program and would barely touch the dependency ratio for two decades, because a baby is a dependent for twenty years before becoming a worker; raising employment among people in their sixties, or adding a point to productivity growth, changes it now. So reform pensions that assume endless growth, tie retirement to life expectancy, invest in education, admit the migrants the economy needs, and stop spending fortunes on a target. If fertility recovers on its own, adaptation costs nothing; if it does not, adaptation is the only plan that works.",
+    "proponents": "IIASA; Guillaume Marois; Wolfgang Lutz; Niskanen Center; Ed Dolan; UN Population Division",
+    "id": "adapt-to-fewer-births"
+   },
+   {
+    "name": "Welcome smaller populations",
+    "color_key": "rust",
+    "steelman": "Falling birth rates are one of the great successes of the last century, the result of women gaining education, rights and control over their own fertility. They should be welcomed, not reversed.",
+    "detail": "A world of eight billion people consuming at today’s rates is already breaching the planet’s limits on climate, biodiversity and resources, and every country that stabilizes and gently declines eases that pressure while its people become richer, better educated and longer-lived. The economic case for pronatalism rests on a model that needs ever more workers to support ever more retirees, a pyramid scheme by construction; the answer is to fix the model, not to demand more babies to feed it. Smaller populations can mean less crowding, cheaper housing, higher wages for scarce workers and more investment in each child, and countries that have lived with low fertility for decades, such as Japan and Italy, remain among the richest and longest-lived in the world.\n\nWe agree that very rapid aging brings real strain, and we support the same adaptations the economists propose: longer working lives, pension reform, investment in care and technology. We also accept that this debate is about nations, and that a country can be too old even if the world is too large. But a hard transition is no reason to reverse it, least of all by leaning on women to have children they do not want. What we oppose most is pronatalism’s drift toward pressure on women, limits on contraception and abortion, and stigma for people who choose small families or none.",
+    "proponents": "Population Matters; Population Connection",
+    "id": "welcome-smaller-populations"
+   }
+  ],
+  "crux": {
+   "lead": "Is low fertility serious enough to justify governments trying to change how many children people have?",
+   "lead_highlight": "serious enough to justify",
+   "subtitle": "Nearly everyone agrees that fertility is falling in most countries and that parents deserve support. The split is over whether a country’s birth rate is a legitimate aim of public policy, or the sum of private choices that policy should serve but not steer.",
+   "empirical": "Then two measurements do most of the work. How much lasting harm does low fertility do once a country has adapted, with later retirement, more people in work, higher productivity and immigration, and at what level do those adjustments stop being enough? And what can policy buy: how many extra births, for how long, at what cost, and how much of the shortfall is obstacles rather than changed wishes?",
+   "values": "Then no data settles it. One side holds that a nation’s size and continuity is a shared good the state may pursue by shaping private decisions about children; the other, that the number of children is each person’s business and the state’s role ends at making their choices possible. How to weigh future generations, fairness between parents and the childless, the environment, and the risk that a target lands on women is a judgment."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Our World in Data — Fertility Rate",
+    "description": "Interactive charts of fertility by country since the 1950s, with an explainer on the drivers of the decline and related measures such as births by the mother’s age.",
+    "url": "https://ourworldindata.org/fertility-rate",
+    "for_position": null,
+    "id": "our-world-in-data-fertility-rate"
+   },
+   {
+    "kind": "learn_more",
+    "title": "UN World Population Prospects",
+    "description": "The UN’s official estimates and projections of fertility, mortality, migration and population for every country from 1950 to 2100, with charts, downloadable data and a plain-language summary.",
+    "url": "https://population.un.org/wpp/",
+    "for_position": null,
+    "id": "un-world-population-prospects"
+   },
+   {
+    "kind": "learn_more",
+    "title": "IFS Pronatalism Initiative",
+    "description": "The Institute for Family Studies program, directed by Lyman Stone, publishing research and proposals to raise US fertility: larger child tax credits, caregiver credits and birth-linked savings accounts.",
+    "url": "https://ifstudies.org/pronatalism-initiative",
+    "for_position": "Raise birth rates toward replacement",
+    "id": "ifs-pronatalism-initiative"
+   },
+   {
+    "kind": "learn_more",
+    "title": "The Real Fertility Crisis (UNFPA, 2025)",
+    "description": "UNFPA’s State of World Population report and 14-country survey on why people have fewer or more children than they want, arguing for reproductive agency over birth-rate targets.",
+    "url": "https://www.unfpa.org/swp2025",
+    "for_position": "Help people have the children they want",
+    "id": "the-real-fertility-crisis-unfpa-2025"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Social Policy for a Low-Fertility Future (Niskanen Center)",
+    "description": "Economist Ed Dolan on how pensions, immigration, welfare and health policy should be redesigned for a society that stops growing, instead of trying to raise birth rates.",
+    "url": "https://www.niskanencenter.org/social-policy-for-a-low-fertility-future/",
+    "for_position": "Adapt to fewer births",
+    "id": "social-policy-for-a-low-fertility"
+   },
+   {
+    "kind": "donate",
+    "title": "Population Matters",
+    "description": "A UK charity campaigning for smaller families by choice, reproductive rights and adaptation to aging, and against pronatalist policy; accepts donations and memberships.",
+    "url": "https://populationmatters.org/donate/",
+    "for_position": "Welcome smaller populations",
+    "id": "population-matters"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Saving America by Saving the Family (Heritage Foundation)",
+    "description": "The Heritage Foundation’s January 2026 marriage-centered family agenda: marriage-linked savings accounts, a tax credit for married parents of newborns and a credit for parents caring for young children at home.",
+    "url": "https://www.heritage.org/sites/default/files/2026-01/SR323.pdf",
+    "for_position": "Raise birth rates toward replacement",
+    "id": "saving-america-by-saving-the-family"
+   },
+   {
+    "kind": "policy",
+    "title": "Child Care Aware of America",
+    "description": "A US national organization advocating for affordable, accessible childcare, with tools for contacting lawmakers about childcare funding and policy.",
+    "url": "https://www.childcareaware.org/public-policy/",
+    "for_position": "Help people have the children they want",
+    "id": "child-care-aware-of-america"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Wittgenstein Centre Human Capital Data Explorer",
+    "description": "Population projections by age, sex and education for every country under different scenarios, from demographers who argue that education and productivity matter more than headcount.",
+    "url": "https://dataexplorer.wittgensteincentre.org/",
+    "for_position": "Adapt to fewer births",
+    "id": "wittgenstein-centre-human-capital-data-explorer"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Population Connection",
+    "description": "A US organization that advocates for family-planning access and against pronatalist policies, with grassroots advocacy and education programs to join.",
+    "url": "https://populationconnection.org/",
+    "for_position": "Welcome smaller populations",
+    "id": "population-connection"
+   }
+  ]
+ },
+ "icon": "baby-carriage",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: one compact home scene grouped in the center with wide white margins, nothing touching the edges: a simple two-story family house with a pitched roof as the dominant focal mass, filled; a medium baby pram with a rounded hood standing in front of the house, overlapping its lower corner, filled; a small wooden cradle on rockers beside the pram; a small rounded tree behind the right side of the house, partly hidden by it; one long clothesline strung across the whole scene from the house to the tree, with a few tiny baby garments hanging from it, as the connective element; the ground is a gentle rounded hill.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #9459a2, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: storks, pregnant figures, babies, parents, crowds, population pyramids, charts, graphs, arrows, hourglasses, clocks, calendars, dollar signs, coins, flags, hearts, cracks, empty or abandoned buildings, gravestones, question marks, balance scales, seesaws, swings, bicycles."
 }

@@ -1,8 +1,8 @@
 {
  "slug": "higher-education-student-debt",
  "title": "Higher Education & Student Debt",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-10-03T12:32:41+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Whether college is worth its cost, who should pay, and what to do about student debt.",
@@ -14,5 +14,785 @@
   "school-choice-public-education",
   "meritocracy-and-discontents",
   "economic-inequality"
- ]
+ ],
+ "content": {
+  "overview": {
+   "summary": "Whether a degree still pays, and who should bear its cost and risk: students, colleges or taxpayers.",
+   "scope_covered": "Education after high school in the United States, with comparisons to England and other rich countries: what a degree is worth, tuition and grants, federal student loans, repayment and forgiveness, and alternatives such as apprenticeships.",
+   "scope_excluded": "Admission to selective colleges, schooling before college and the overall gap between rich and poor have their own pages. Campus speech, research funding and federal disputes with particular universities are left out.",
+   "why_now": "On July 1, 2026, the largest overhaul of federal student lending in more than a decade took effect under the 2025 budget law: new graduate borrowing was capped, Parent PLUS loans were limited, and a single Repayment Assistance Plan replaced income-driven plans for new loans.",
+   "why_now_source_label": "Federal Register, Education Department final rule (May 1, 2026)",
+   "why_now_source_url": "https://www.federalregister.gov/documents/2026/05/01/2026-08556/reimagining-and-improving-student-education-federal-student-loan-program-final-regulations"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "Federal student loan debt outstanding",
+     "viz": "ranked",
+     "wide": true,
+     "value": "1,724.5",
+     "unit": "$ billion",
+     "series": [
+      {
+       "label": "2007",
+       "value": "516.0",
+       "highlight": false
+      },
+      {
+       "label": "2012",
+       "value": "948.2",
+       "highlight": false
+      },
+      {
+       "label": "2016",
+       "value": "1,292.2",
+       "highlight": false
+      },
+      {
+       "label": "2020",
+       "value": "1,566.3",
+       "highlight": false
+      },
+      {
+       "label": "2026",
+       "value": "1,724.5",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "As of June 30, 2026, 42.3 million Americans owed $1.72 trillion in federal student loans, more than three times the 2007 total in current dollars.",
+     "detail": "The total counts outstanding principal and interest on every federal student loan: $1,564.8 billion in Direct Loans made by the Education Department since 2010, $157.0 billion in older guaranteed (FFEL) loans and $2.7 billion in Perkins loans. Earlier rows are as of September 30, the end of the federal fiscal year, and none is adjusted for inflation. In 2025 dollars, the College Board’s Trends in College Pricing and Student Aid 2025 puts the rise at $0.80 trillion in 2007 to $1.66 trillion in 2025, and reports that the average balance per borrower peaked at $45,100 in 2020 and was about $39,000 in 2025, about the same as in 2015. The number of borrowers has held at 42 to 43 million since 2018. Growth slowed after 2020 because of the pandemic pause on payments and interest and the loan discharges approved under the Biden administration. The Federal Reserve Bank of New York, which measures student debt from credit reports and includes private loans, put the total at $1.65 trillion in June 2026.",
+     "source_label": "US Department of Education, Federal Student Aid Data Center, Federal Student Loan Portfolio Summary",
+     "source_url": "https://studentaid.gov/data-center/student/portfolio",
+     "source_published": "2007–2026 (latest June 30, 2026)",
+     "source_accessed": "2026-10-03",
+     "id": "federal-student-loan-debt-outstanding"
+    },
+    {
+     "label": "Students who finish within six years",
+     "viz": "radial",
+     "wide": false,
+     "value": "61.1",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Of the more than 2.3 million students who started college in fall 2019, 61.1 percent had a degree or certificate six years later, 9.0 percent were still enrolled and 29.8 percent had left without one.",
+     "detail": "The National Student Clearinghouse follows students across institutions, so one who transfers and finishes elsewhere counts as a completer, and it includes two-year and four-year colleges and students who start part-time. The rate has held at about this level for four straight starting classes. It differs sharply by group: 67.1 percent for full-time starters and 44.0 percent for Black students. Students who borrow and do not finish carry debt without the earnings gain of a degree, which puts non-completion at the center of the debt debate. The Clearinghouse’s Some College, No Credential report (2025) counts 43.1 million Americans who have left college without a credential, 37.6 million of them under 65, as of the start of the 2023–24 academic year.",
+     "source_label": "National Student Clearinghouse Research Center, Completing College 2025 (December 4, 2025)",
+     "source_url": "https://www.studentclearinghouse.org/news/college-completion-rates-hold-steady-at-recent-highs/",
+     "source_published": "Fall 2019 starters, measured in 2025",
+     "source_accessed": "2026-10-03",
+     "id": "students-who-finish-within-six-years"
+    },
+    {
+     "label": "Median weekly earnings by highest degree",
+     "viz": "ranked",
+     "wide": true,
+     "value": "1,578",
+     "unit": "$/week",
+     "series": [
+      {
+       "label": "Doctoral",
+       "value": "2,307",
+       "highlight": false
+      },
+      {
+       "label": "Professional",
+       "value": "2,294",
+       "highlight": false
+      },
+      {
+       "label": "Master’s",
+       "value": "1,876",
+       "highlight": false
+      },
+      {
+       "label": "Bachelor’s",
+       "value": "1,578",
+       "highlight": true
+      },
+      {
+       "label": "Associate",
+       "value": "1,135",
+       "highlight": false
+      },
+      {
+       "label": "Some college",
+       "value": "1,062",
+       "highlight": false
+      },
+      {
+       "label": "High school",
+       "value": "966",
+       "highlight": false
+      },
+      {
+       "label": "No diploma",
+       "value": "770",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2025 the median full-time worker with a bachelor’s degree earned $1,578 a week, 63 percent more than one with only a high school diploma; how much of that gap the degree causes is debated.",
+     "detail": "These are medians for full-time wage and salary workers aged 25 and older, by highest level of education. Unemployment falls with education too: 2.8 percent for bachelor’s holders against 4.3 percent for high school graduates and 3.4 percent for all workers. Because of the federal government shutdown in fall 2025, the 2025 figures are 11-month averages that leave out October. The comparison is between different people: those who finish a degree differ from those who do not in ability, family background and motivation, so part of the gap would exist without the degree. Most labor economists conclude that a large share of the premium is caused by education itself; skeptics such as the economist Bryan Caplan argue that much of it reflects signaling, the degree certifying traits employers value rather than building skills. People who start college and do not finish earn little more than high school graduates, which is why completion weighs so heavily on whether college pays for a given student.",
+     "source_label": "US Bureau of Labor Statistics, Education pays (Current Population Survey)",
+     "source_url": "https://www.bls.gov/emp/tables/unemployment-earnings-education.htm",
+     "source_published": "2025",
+     "source_accessed": "2026-10-03",
+     "id": "median-weekly-earnings-by-highest-degree"
+    },
+    {
+     "label": "Bachelor’s degree programs with a negative return on investment",
+     "viz": "radial",
+     "wide": false,
+     "value": "28",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "By Preston Cooper’s estimate, 28 percent of bachelor’s programs leave the typical student financially worse off once the risk of not finishing is counted; 16 percent for on-time graduates.",
+     "detail": "The analysis covers nearly 30,000 programs. It compares each program’s expected lifetime earnings with what the same students would likely have earned without the degree, then subtracts tuition and the earnings given up while in school. For on-time graduates the median bachelor’s program returns $306,000 over a lifetime; adjusted for the risk of not finishing, the median drops to $129,000. Field matters more than college: 69 percent of engineering programs return $1 million or more, while 68 percent of visual arts and music programs have a negative return. The estimates rest on assumptions about what students would have earned otherwise and leave out non-financial benefits. Cooper, now at the American Enterprise Institute, uses the results to argue for tying federal loans to program outcomes; critics of earnings tests note that fields such as teaching and social work pay modestly by design.",
+     "source_label": "Foundation for Research on Equal Opportunity, “Is College Worth It?” by Preston Cooper (May 2024)",
+     "source_url": "https://freopp.org/whitepapers/is-college-worth-it-a-comprehensive-return-on-investment-analysis/",
+     "source_published": "2024",
+     "source_accessed": "2026-10-03",
+     "id": "bachelor-s-degree-programs-with-a"
+    },
+    {
+     "label": "Federal student loan borrowers in default",
+     "viz": "ranked",
+     "wide": true,
+     "value": "9.3",
+     "unit": "million",
+     "series": [
+      {
+       "label": "Sep 2024",
+       "value": "5.6",
+       "highlight": false
+      },
+      {
+       "label": "Sep 2025",
+       "value": "5.2",
+       "highlight": false
+      },
+      {
+       "label": "Dec 2025",
+       "value": "7.7",
+       "highlight": false
+      },
+      {
+       "label": "Mar 2026",
+       "value": "9.0",
+       "highlight": false
+      },
+      {
+       "label": "Jun 2026",
+       "value": "9.3",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "As of June 30, 2026, 9.3 million borrowers of federally managed student loans were in default, owing $234.1 billion, about 14 percent of the dollars in that portfolio.",
+     "detail": "Federal Student Aid counts a loan as in default once it is more than 360 days delinquent. On the same date the federally managed portfolio, about $1.64 trillion, had $658.5 billion owed by 17.4 million borrowers in active repayment and $459.2 billion owed by 8.0 million borrowers in forbearance, with payments paused. Collections on defaulted loans were halted from March 2020 through the pandemic pause; borrowers who stopped paying after payments resumed in late 2023 and a one-year grace period ended began crossing the 360-day line in 2025, which produced the jump from late 2025. The New York Fed’s credit-report measure, the share of balances newly 90 or more days delinquent, was 7.83 percent in the second quarter of 2026, down from 12.88 percent a year earlier; the bank says the re-reporting of defaulted student debt is distorting its figures. Default brings wage garnishment, seizure of tax refunds and part of Social Security benefits, and damaged credit. CNBC reported that the Education Department paused those collections on January 16, 2026, while new repayment rules took effect.",
+     "source_label": "US Department of Education, Federal Student Aid Data Center, Federally Managed Portfolio by Loan Status",
+     "source_url": "https://studentaid.gov/data-center/student/portfolio",
+     "source_published": "2024–2026 (latest June 30, 2026)",
+     "source_accessed": "2026-10-03",
+     "id": "federal-student-loan-borrowers-in-default"
+    },
+    {
+     "label": "Bachelor’s graduates who borrowed",
+     "viz": "radial",
+     "wide": false,
+     "value": "47",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "47 percent of 2023–24 bachelor’s graduates of public and private nonprofit four-year colleges left with student debt; those who borrowed owed an average of $29,560.",
+     "detail": "The figures cover students who started and finished at the same public or private nonprofit four-year college and count federal and private loans taken by the student. They leave out Parent PLUS loans taken by parents and for-profit colleges, for which comparable data are not available. Both measures have fallen: among 2018–19 graduates, 56 percent borrowed and the average debt was $35,310 in 2024 dollars. Annual borrowing has fallen too. Total student and parent borrowing peaked at $163.9 billion (2024 dollars) in 2010–11 and was $102.6 billion in 2024–25, and the share of undergraduates taking federal loans in a given year fell from 38 percent in 2011–12 to 23 percent in 2024–25. The hardest cases are not the largest balances: Adam Looney and Constantine Yannelis (Brookings Papers on Economic Activity, 2015) found that borrowers who left without a degree or attended for-profit colleges defaulted at much higher rates on smaller balances, while the largest balances belong mostly to graduate and professional students.",
+     "source_label": "College Board, Trends in College Pricing and Student Aid 2025, Figure SA-14A",
+     "source_url": "https://research.collegeboard.org/media/pdf/Trends-in-College-Pricing-and-Student-Aid-2025-final_1.pdf",
+     "source_published": "2023–24 graduates (debt in 2024 dollars)",
+     "source_accessed": "2026-10-03",
+     "id": "bachelor-s-graduates-who-borrowed"
+    },
+    {
+     "label": "Published tuition and fees, 1995–96 and 2025–26",
+     "viz": "ranked",
+     "wide": true,
+     "value": "11,950",
+     "unit": "$/year",
+     "series": [
+      {
+       "label": "Private 2025–26",
+       "value": "45,000",
+       "highlight": false
+      },
+      {
+       "label": "Private 1995–96",
+       "value": "25,820",
+       "highlight": false
+      },
+      {
+       "label": "Public 2025–26",
+       "value": "11,950",
+       "highlight": true
+      },
+      {
+       "label": "Public 1995–96",
+       "value": "5,940",
+       "highlight": false
+      },
+      {
+       "label": "Community 2025–26",
+       "value": "4,150",
+       "highlight": false
+      },
+      {
+       "label": "Community 1995–96",
+       "value": "2,810",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "After inflation, the average sticker price of in-state tuition and fees at a public four-year college roughly doubled in 30 years, from $5,940 in 1995–96 to $11,950 in 2025–26, in 2025 dollars.",
+     "detail": "These are published prices for full-time undergraduates, averaged across colleges before any grant aid; “Private” means private nonprofit four-year colleges, “Public” public four-year colleges and “Community” public two-year colleges. Out-of-state students at public four-year colleges are charged $31,880 on average. Counting housing, food, books and transportation, average budgets in 2025–26 range from $21,320 for community college students living off campus to $30,990 at in-state public four-year colleges and $65,470 at private nonprofits. The long rise has recently reversed in real terms: from 2015–16 to 2025–26, inflation-adjusted tuition fell 7 percent at public four-year colleges and 10 percent at community colleges and rose 2 percent at private nonprofit four-year colleges. In-state public four-year tuition ranges from $6,360 in Florida to $18,090 in Vermont. State and local funding per student at public colleges was $11,680 in 2023–24, about the same as a year earlier in real terms. Economists give cuts to that funding after the 2008 recession as one of the main reasons for the rise in public tuition, alongside rising costs and, in some studies, the expansion of federal aid.",
+     "source_label": "College Board, Trends in College Pricing and Student Aid 2025",
+     "source_url": "https://research.collegeboard.org/media/pdf/Trends-in-College-Pricing-and-Student-Aid-2025-final_1.pdf",
+     "source_published": "2025–26 (in 2025 dollars)",
+     "source_accessed": "2026-10-03",
+     "id": "published-tuition-and-fees-1995-96"
+    },
+    {
+     "label": "Graduate students’ share of new federal student loans",
+     "viz": "radial",
+     "wide": false,
+     "value": "48",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Graduate students, about 17 percent of all college students, took 48 percent of new federal student loans in 2024–25, up from 32 percent in 2009–10.",
+     "detail": "From 2009–10 to 2024–25, annual federal loans to undergraduates fell by more than half, from $98.0 billion to $46.3 billion in 2024 dollars, while federal loans to graduate students fell 10 percent, from $47.1 billion to $42.4 billion. Since 2006 the Grad PLUS program had let graduate students borrow up to the full cost of attendance; in 2024–25, 454,000 graduate students borrowed through it, an average of $34,170, on top of 1.4 million who borrowed standard unsubsidized loans, averaging $19,800. Under the 2025 budget law, as set out in the Education Department’s final rule of May 2026, Grad PLUS closed to new borrowers on July 1, 2026, and new graduate borrowing is capped at $20,500 a year and $100,000 in total, or $50,000 and $200,000 for professional degrees such as medicine and law.",
+     "source_label": "College Board, Trends in College Pricing and Student Aid 2025",
+     "source_url": "https://research.collegeboard.org/media/pdf/Trends-in-College-Pricing-and-Student-Aid-2025-final_1.pdf",
+     "source_published": "2024–25",
+     "source_accessed": "2026-10-03",
+     "id": "graduate-students-share-of-new-federal"
+    },
+    {
+     "label": "Average net tuition after grants, public four-year colleges",
+     "viz": "ranked",
+     "wide": true,
+     "value": "2,300",
+     "unit": "$/year",
+     "series": [
+      {
+       "label": "2006–07",
+       "value": "4,030",
+       "highlight": false
+      },
+      {
+       "label": "2012–13",
+       "value": "4,450",
+       "highlight": false
+      },
+      {
+       "label": "2016–17",
+       "value": "4,390",
+       "highlight": false
+      },
+      {
+       "label": "2020–21",
+       "value": "3,290",
+       "highlight": false
+      },
+      {
+       "label": "2025–26",
+       "value": "2,300",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "After grants, the average first-time, full-time in-state student at a public four-year college pays an estimated $2,300 in tuition and fees in 2025–26, about half the 2012–13 peak of $4,450.",
+     "detail": "Net price subtracts federal, state and institutional grants from the sticker price and averages across all such students, including the 21 percent who received no grant aid in 2022–23. Grant data run only through 2022–23, so later years are College Board projections. Average grant aid per student rose about 85 percent after inflation from 2006–07 to 2025–26, from $5,230 to $9,650, while sticker tuition rose 29 percent. Tuition is the smaller part of the bill: after grants, these students still face an average of $16,200 for tuition, fees, housing and food, plus about $5,140 for books, transportation and other expenses. At private nonprofit four-year colleges, average net tuition and fees fell from $19,810 in 2006–07 to an estimated $16,910 in 2025–26. The gap between sticker and net price is itself disputed: those who call college affordable point to falling net tuition, and those who do not point to the full cost of attendance and to families who never learn the net price before deciding.",
+     "source_label": "College Board, Trends in College Pricing and Student Aid 2025, Figure CP-9",
+     "source_url": "https://research.collegeboard.org/media/pdf/Trends-in-College-Pricing-and-Student-Aid-2025-final_1.pdf",
+     "source_published": "2025–26 estimate (in 2025 dollars)",
+     "source_accessed": "2026-10-03",
+     "id": "average-net-tuition-after-grants-public"
+    },
+    {
+     "label": "Recent graduates in jobs that do not require a degree",
+     "viz": "radial",
+     "wide": false,
+     "value": "42",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "About 42 percent of college graduates aged 22 to 27 held jobs that typically do not require a bachelor’s degree in mid-2026, against about 34 percent of all graduates.",
+     "detail": "The New York Fed classifies a job as not requiring a degree using Labor Department surveys of what workers in each occupation say is needed, and counts graduates with advanced degrees too. The rate has moved in a narrow band for decades: 38.1 percent of recent graduates in June 2000, 45.5 percent in June 2010 after the recession, 41.2 percent in June 2019 and 42.0 percent in June 2026. It is highest in fields such as criminal justice and the performing arts and lowest in engineering, education and nursing. American Compass’s Oren Cass cites the rate as evidence that the country is producing more degrees than jobs need; others read it as a normal starting point, since many graduates move into degree-level jobs later in their careers.",
+     "source_label": "Federal Reserve Bank of New York, The Labor Market for Recent College Graduates (August 6, 2026)",
+     "source_url": "https://www.newyorkfed.org/research/college-labor-market",
+     "source_published": "June 2026",
+     "source_accessed": "2026-10-03",
+     "id": "recent-graduates-in-jobs-that-do"
+    },
+    {
+     "label": "Federal student loan relief approved, 2021 to 2025",
+     "viz": "ranked",
+     "wide": true,
+     "value": "188.8",
+     "unit": "$ billion",
+     "series": [
+      {
+       "label": "All relief",
+       "value": "188.8",
+       "highlight": true
+      },
+      {
+       "label": "Public service",
+       "value": "78.5",
+       "highlight": false
+      },
+      {
+       "label": "Income-driven plans",
+       "value": "57.1",
+       "highlight": false
+      },
+      {
+       "label": "Fraud & closures",
+       "value": "34.5",
+       "highlight": false
+      },
+      {
+       "label": "Disability",
+       "value": "18.7",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The Biden administration approved $188.8 billion in loan forgiveness for 5.3 million borrowers, mostly through existing programs for public servants, income-driven repayment and defrauded students.",
+     "detail": "The relief came from 33 executive actions that expanded or repaired programs already in law; the fraud row covers borrower defense, closed schools and related settlements. Public Service Loan Forgiveness, which forgives remaining balances after 10 years of payments while working for government or a nonprofit, reached 1,069,000 borrowers; the department says only 7,000 had received it before 2021. The administration’s broader plan to cancel up to $10,000 per borrower ($20,000 for Pell Grant recipients) was struck down 6 to 3 by the Supreme Court in Biden v. Nebraska on June 30, 2023; the Court’s opinion describes it as canceling about $430 billion in principal and erasing the debts of 20 million borrowers. Supporters regard the approved relief as overdue help the law already promised; opponents regard much of it as an executive transfer that Congress never approved.",
+     "source_label": "US Department of Education press release, final forgiveness and borrower assistance actions (January 16, 2025)",
+     "source_url": "https://protectborrowers.org/wp-content/uploads/2025/01/IDR-AA-ED-Release-Email_01-16-2025.pdf",
+     "source_published": "January 2021 to January 2025",
+     "source_accessed": "2026-10-03",
+     "id": "federal-student-loan-relief-approved-2021"
+    },
+    {
+     "label": "Americans who say government should be more responsible for funding college",
+     "viz": "radial",
+     "wide": false,
+     "value": "54",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "54 percent of Americans said government should be more responsible for funding higher education, since it benefits society; 44 percent said students should be, since they benefit personally.",
+     "detail": "The answer splits sharply by party: 75 percent of Democrats chose government, against 31 percent of Republicans. The share choosing government has fallen steadily from 63 percent in 2019. In a differently worded question in the same survey, 50 percent said federal and state governments should be mainly responsible for funding education after high school and 45 percent said students and their families should be. Support for spending more is broader than support for public responsibility: 74 percent agreed the federal government should spend more to make education after high school more affordable (91 percent of Democrats and 58 percent of Republicans), and eight in ten supported raising the maximum Pell Grant. The survey reached 1,631 adults in March 2025.",
+     "source_label": "New America, Varying Degrees 2025 (July 16, 2025)",
+     "source_url": "https://www.newamerica.org/insights/varying-degrees-2025-americans-find-common-ground-in-higher-education/",
+     "source_published": "2025",
+     "source_accessed": "2026-10-03",
+     "id": "americans-who-say-government-should-be"
+    },
+    {
+     "label": "Share of college spending paid by government",
+     "viz": "ranked",
+     "wide": true,
+     "value": "38.7",
+     "unit": "%",
+     "series": [
+      {
+       "label": "OECD average",
+       "value": "67.4",
+       "highlight": false
+      },
+      {
+       "label": "United States",
+       "value": "38.7",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Government pays for 38.7 percent of tertiary education in the United States, against an OECD average of 67.4 percent; households and other private sources pay the rest.",
+     "detail": "The OECD counts all spending on colleges and universities, treating government transfers to students, such as grants, as public. US government spending per tertiary student, $14,046, is close to the OECD average of $15,102; total spending per student is much higher, and private payments fill the gap. The same report finds average annual tuition for national students in bachelor’s programs at US public institutions, $9,596 at purchasing power parity, the highest among OECD countries, and $34,041 at private institutions, more than 2.5 times the next highest country’s average; the OECD compares national systems, and England, part of the United Kingdom, charges more. Nearly 82 percent of US students receive public grants, scholarships or public or government-guaranteed loans. Denmark, Finland, Norway and Sweden charge their own students no tuition. England finances tuition with government loans repaid as a share of income above a threshold, with unpaid balances written off after a set number of years; the Student Loans Company reported £294.6 billion outstanding at the end of the 2025–26 financial year.",
+     "source_label": "OECD, Education at a Glance 2025, Country Note: United States",
+     "source_url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/09/education-at-a-glance-2025-country-notes_9749f4ff/united-states_e87f109d/784df67f-en.pdf",
+     "source_published": "Education at a Glance 2025",
+     "source_accessed": "2026-10-03",
+     "id": "share-of-college-spending-paid-by"
+    },
+    {
+     "label": "Unemployment rate of recent college graduates",
+     "viz": "ranked",
+     "wide": true,
+     "value": "5.7",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Young workers",
+       "value": "7.2",
+       "highlight": false
+      },
+      {
+       "label": "Recent graduates",
+       "value": "5.7",
+       "highlight": true
+      },
+      {
+       "label": "All workers",
+       "value": "4.1",
+       "highlight": false
+      },
+      {
+       "label": "All graduates",
+       "value": "2.9",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In June 2026, 5.7 percent of recent college graduates aged 22 to 27 were unemployed, above the 4.1 percent rate for all workers but below the 7.2 percent rate for all workers aged 22 to 27.",
+     "detail": "The New York Fed computes these rates from the Current Population Survey for bachelor’s degree holders aged 22 to 27. In its series, recent graduates’ unemployment has run above the rate for all workers every month since January 2021, after doing so only rarely before 2018: in June 2019 the figures were 4.3 and 3.5 percent, and in June 2000 recent graduates were below the overall rate, at 3.0 against 3.7 percent. A degree still protects against unemployment compared with peers who lack one, and college graduates of all ages remain well below the overall rate. Economists debate how much of the recent weakness reflects a slow hiring market for entry-level white-collar jobs and how much reflects early effects of artificial intelligence on tasks once given to new graduates.",
+     "source_label": "Federal Reserve Bank of New York, The Labor Market for Recent College Graduates (August 6, 2026)",
+     "source_url": "https://www.newyorkfed.org/research/college-labor-market",
+     "source_published": "June 2026",
+     "source_accessed": "2026-10-03",
+     "id": "unemployment-rate-of-recent-college-graduates"
+    },
+    {
+     "label": "Lifetime financial return to a college education",
+     "viz": "ranked",
+     "wide": true,
+     "value": "726,100",
+     "unit": "$",
+     "series": [
+      {
+       "label": "US men",
+       "value": "726,100",
+       "highlight": true
+      },
+      {
+       "label": "US women",
+       "value": "511,400",
+       "highlight": false
+      },
+      {
+       "label": "OECD men",
+       "value": "364,200",
+       "highlight": false
+      },
+      {
+       "label": "OECD women",
+       "value": "300,900",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "After its costs, a tertiary education is worth an average of $726,100 over a lifetime to a US man and $511,400 to a US woman, the highest returns in the OECD and 1.7 to 2 times its averages.",
+     "detail": "The OECD subtracts tuition and earnings forgone while studying from the higher lifetime earnings of tertiary graduates, compared with people whose highest qualification is a high school diploma, at purchasing power parity. It is an average across all graduates, including those with graduate degrees, and does not adjust for differences between people who do and do not go to college. The same note reports that among 25- to 34-year-olds, Americans with a bachelor’s degree earn about 57 percent more than peers without tertiary education, and that a high school diploma brings no earnings advantage over not finishing high school for that age group, which the OECD reads as a sign that the United States has few viable routes to strong earnings outside college. Those who favor more public investment in college cite the size of the return; those who favor alternatives to college cite the lack of other routes as the problem to fix.",
+     "source_label": "OECD, Education at a Glance 2025, Country Note: United States",
+     "source_url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/09/education-at-a-glance-2025-country-notes_9749f4ff/united-states_e87f109d/784df67f-en.pdf",
+     "source_published": "Education at a Glance 2025",
+     "source_accessed": "2026-10-03",
+     "id": "lifetime-financial-return-to-a-college"
+    },
+    {
+     "label": "Is a four-year degree worth the cost?",
+     "viz": "ranked",
+     "wide": true,
+     "value": "22",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Worth it even with loans",
+       "value": "22",
+       "highlight": true
+      },
+      {
+       "label": "Only without loans",
+       "value": "47",
+       "highlight": false
+      },
+      {
+       "label": "Not worth the cost",
+       "value": "29",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In Pew’s 2023 survey, 22 percent of US adults said a four-year degree is worth the cost even with loans, 47 percent only without loans, 29 percent not at all; other polls find warmer views.",
+     "detail": "The question asked about the cost of getting a four-year college degree today. Adults with a four-year degree were more likely than those without one to say it is worth it even with loans, 32 percent against 17 percent. In the same survey, 49 percent said a four-year degree is less important for getting a well-paying job than it was 20 years ago, 32 percent said more important and 17 percent about as important. Pew reached 5,203 adults through its American Trends Panel from November 27 to December 3, 2023. In New America’s Varying Degrees survey of March 2025, 73 percent agreed that education after high school offers a good return on investment for the student.",
+     "source_label": "Pew Research Center, “Is College Worth It?” (May 23, 2024)",
+     "source_url": "https://www.pewresearch.org/social-trends/2024/05/23/is-college-worth-it-2/",
+     "source_published": "2023",
+     "source_accessed": "2026-10-03",
+     "id": "is-a-four-year-degree-worth"
+    },
+    {
+     "label": "Confidence in higher education",
+     "viz": "ranked",
+     "wide": true,
+     "value": "38",
+     "unit": "%",
+     "series": [
+      {
+       "label": "2015",
+       "value": "57",
+       "highlight": false
+      },
+      {
+       "label": "2025",
+       "value": "42",
+       "highlight": false
+      },
+      {
+       "label": "2026",
+       "value": "38",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In June 2026, 38 percent of Americans told Gallup they had a great deal or quite a lot of confidence in higher education, down from 42 percent in 2025 and 57 percent in 2015.",
+     "detail": "The 2026 decline came mainly from Democrats, 50 percent of whom expressed confidence, a new low for the group, against 39 percent of independents and 23 percent of Republicans. Among those lacking confidence, the reasons most often given were perceived political agendas (31 percent), high costs (30 percent) and poor preparation for the workforce (25 percent). The survey also found 46 percent expect artificial intelligence to make a college degree less important over the next five years. The confidence question was asked of 1,001 adults, with a margin of error of plus or minus 4 points. Confidence fell sharply in 2018 and 2023 and partly recovered in 2025.",
+     "source_label": "Gallup and Lumina Foundation, “Confidence in U.S. Higher Education Slips Back Slightly” (July 13, 2026)",
+     "source_url": "https://news.gallup.com/poll/712322/confidence-higher-education-slips-back-slightly.aspx",
+     "source_published": "2026",
+     "source_accessed": "2026-10-03",
+     "id": "confidence-in-higher-education"
+    },
+    {
+     "label": "Borrowers enrolled in the SAVE repayment plan",
+     "viz": "ranked",
+     "wide": true,
+     "value": "6.5",
+     "unit": "million",
+     "series": [
+      {
+       "label": "Sep 2024",
+       "value": "8.0",
+       "highlight": false
+      },
+      {
+       "label": "Sep 2025",
+       "value": "7.4",
+       "highlight": false
+      },
+      {
+       "label": "Jun 2026",
+       "value": "6.5",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "As of June 30, 2026, 6.5 million borrowers owing $354.3 billion were still enrolled in SAVE, the Biden-era repayment plan that a court ended in March 2026.",
+     "detail": "SAVE, launched in 2023, set payments at 5 to 10 percent of income above 225 percent of the poverty line, stopped unpaid interest from growing balances, and offered forgiveness after as few as 10 years for borrowers who originally owed $12,000 or less. Republican-led states sued; courts blocked it in 2024, and enrollees were placed in forbearance with payments paused. The Education Department agreed with Missouri in December 2025 to end the plan, and a court order ended it on March 10, 2026. According to the federal loan servicer MOHELA, enrollees must choose another plan, including the new Repayment Assistance Plan, within 90 days of a notice from their servicer; notices began July 1, 2026, and those who do not choose are moved to a standard plan. Enrollment in the older Income-Based Repayment plan has risen as borrowers leave SAVE, to 4.0 million recipients in the federally managed portfolio at the same date.",
+     "source_label": "US Department of Education, Federal Student Aid Data Center, Federally Managed Portfolio by Repayment Plan",
+     "source_url": "https://studentaid.gov/data-center/student/portfolio",
+     "source_published": "2024–2026 (latest June 30, 2026)",
+     "source_accessed": "2026-10-03",
+     "id": "borrowers-enrolled-in-the-save-repayment"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Does college still pay off for the students deciding whether to go?",
+    "kind": "empirical",
+    "why": "Everyone agrees the average graduate out-earns the average high school graduate. The dispute is over the student at the margin, with middling grades, uncertain plans or a modestly paid field, whom policy actually affects.",
+    "detail": "Averages mix in students who would have done well anyway, leave out those who start and do not finish, and say nothing about the price of the program chosen. Those who say college still pays point to studies built to isolate its effect on students near the line: Seth Zimmerman (Journal of Labor Economics, 2014) compared Florida students just above and just below a state university’s admission cutoff and found that those admitted earned substantially more years later. On this reading, high dropout and underemployment argue for helping students finish and choose well, not for steering them away.\n\nThose who say it often does not pay point to the large minority for whom the bet fails: students who leave without a credential earn little more than high school graduates while still owing, many programs cost more than they return, and recent graduates have had a harder time finding work than other workers since 2021. If much of the premium reflects who goes to college, or what a degree signals to employers rather than what it teaches, as the economist Bryan Caplan argues, then the average return overstates what an extra student gains.",
+    "lean_label_a": "Still pays off",
+    "lean_label_b": "Often a bad bet",
+    "id": "does-college-still-pay-off-for"
+   },
+   {
+    "text": "Who should pay for college: the public or the student?",
+    "kind": "value",
+    "why": "College brings private gains, as higher pay for the graduate, and public ones, such as tax revenue, civic life and a skilled workforce. How to weigh them is a judgment about fairness and the role of government, not a quantity anyone can measure.",
+    "detail": "Those who want the public to pay most argue that education after high school has become what high school was a century ago, the minimum for a secure working life, and that a country that made high school free should do the same for its successor. Graduates pay more in taxes and rely less on public programs, and making individuals carry the cost through debt deters the low-income and first-generation students who stand to gain most.\n\nThose who want students to pay most argue that the graduate is the largest beneficiary of a degree, and that asking all taxpayers, most of whom do not hold bachelor’s degrees, to cover that gain moves money from people who on average earn less to people who on average will earn more. When students pay part of the price, they and their colleges have reason to weigh cost against value; when someone else pays, prices and enrollment in weak programs rise. Many on this side still back need-based grants for low-income students while rejecting free tuition for all. Americans split almost evenly on the question, largely along party lines.",
+    "lean_label_a": "Mostly the public",
+    "lean_label_b": "Mostly the student",
+    "id": "who-should-pay-for-college-the"
+   },
+   {
+    "text": "Should the government cancel existing student debt broadly?",
+    "kind": "value",
+    "why": "Whether it is fair depends on whom borrowers are compared with, and whom it helps depends on the measure: counted by dollars forgiven, it favors graduate degree holders; counted by hardship relieved, borrowers in default.",
+    "detail": "Supporters of broad cancellation say the country told a generation that borrowing for college was the responsible choice, then let balances grow through interest, servicing failures and forgiveness programs that for years rarely delivered. The debt delays home buying, family formation and saving, falls hardest on Black borrowers and on those who never finished, and cancellation would end its worst harms at once.\n\nOpponents say broad cancellation pays the most to those who owe the most, disproportionately people with graduate degrees and high future earnings, while low earners on income-driven plans would never have repaid most of their balances anyway. It treats unfairly those who chose cheaper schools, worked through college or already repaid, does nothing about the next cohort’s borrowing, and signals that future loans may be forgiven too. Between the two sit those who favor targeted relief through income-driven repayment and repaired forgiveness programs. Part of the fairness argument turns on the comparison: with people who never went to college, with those who already paid off their loans, or with people of the same age who were told college was the only route to the middle class.",
+    "lean_label_a": "Cancel broadly",
+    "lean_label_b": "Keep repayment",
+    "id": "should-the-government-cancel-existing-student"
+   },
+   {
+    "text": "Does federal student aid drive up tuition?",
+    "kind": "empirical",
+    "why": "The claim, called the Bennett hypothesis after Education Secretary William Bennett, who made it in 1987, is hard to test because aid, enrollment, state funding and costs all changed at once, so each side can cite credible studies.",
+    "detail": "Those who see aid inflating prices argue that when colleges know students can borrow whatever they charge, they have little reason to hold prices down. They point to studies finding that colleges passed a large share of higher federal loan limits into tuition, with the biggest effects at expensive private colleges, vocational schools and graduate programs once graduate borrowing was uncapped. Capping federal loans, on this view, is the most direct lever on price.\n\nThose who see aid widening access answer that the pass-through evidence is strongest for graduate programs and for-profit colleges, where many of them accept tighter rules. At public colleges, which enroll most undergraduates, tuition has tracked falling state support per student more closely than federal aid, and what students pay after grants has fallen as grants grew. Higher loan limits for undergraduates, in their reading of the evidence, raised completion, earnings and repayment. Cutting aid to discipline prices would mostly shut out the students who need it.",
+    "lean_label_a": "Aid inflates prices",
+    "lean_label_b": "Aid widens access",
+    "id": "does-federal-student-aid-drive-up"
+   },
+   {
+    "text": "Should programs lose federal loans when their graduates earn too little?",
+    "kind": "value",
+    "why": "Judging programs by graduates’ earnings is simple and comparable, but it counts only one kind of value. The dispute is whether it is a fair test for fields that serve the public at modest pay and for colleges in weaker job markets.",
+    "detail": "Under an Education Department rule published in July 2026 and taking effect in July 2027, undergraduate programs whose graduates do not out-earn typical high school graduates, and graduate programs whose graduates do not out-earn typical bachelor’s holders, lose access to federal loans after failing two years out of three. Supporters say taxpayers lend the money and absorb the losses, so they are entitled to ask whether a program leaves students better off; the bar is low, and a program that fails it is, on average, making its students poorer. Holding every college to the same rule also ends a long fight over earlier rules aimed mainly at for-profit colleges.\n\nCritics say pay is not the only return on education: some of the lowest-paying programs, such as early childhood education, social work and the arts, train people for work society needs and chooses to pay poorly. Earnings measured a few years after graduation miss later gains, vary with local job markets and penalize colleges that serve students who start further behind. The test also risks closing the programs most open to low-income and rural students unless it comes with support for the colleges that serve them.",
+    "lean_label_a": "Tie aid to earnings",
+    "lean_label_b": "Look beyond pay",
+    "id": "should-programs-lose-federal-loans-when"
+   },
+   {
+    "text": "Should public money keep favoring college over other paths to good jobs?",
+    "kind": "value",
+    "why": "Public support for education after high school flows mostly to colleges, while apprenticeships and employer training get much less. Whether that is right depends on whether college is the main ladder of opportunity or one route among several.",
+    "detail": "Those who would keep the focus on college argue that degrees remain the most reliable route to stable, well-paid work in the United States, where a high school diploma alone does little for young adults’ earnings. Steering students, especially low-income students, toward vocational tracks has a long history of limiting their options, and apprenticeships and short-term credentials have a thinner and more mixed record; many of the best of them run through community colleges anyway.\n\nThose who would fund other paths argue that most Americans never earn a bachelor’s degree, yet policy treats college as the default and gives everyone else little support. Employer-led training, apprenticeships and dropping needless degree requirements would serve the many who left college without a credential or never went, at lower risk than borrowing for a degree that may not be finished or used.",
+    "lean_label_a": "Focus on college",
+    "lean_label_b": "Fund other paths",
+    "id": "should-public-money-keep-favoring-college"
+   },
+   {
+    "text": "Will the new caps on federal student loans lower prices or shut students out?",
+    "kind": "empirical",
+    "why": "The caps are only months old, so evidence is just beginning to arrive. The answer depends on how far graduate and professional programs cut prices or add aid, and how much private lenders fill the gap, and on what terms.",
+    "detail": "Those who expect prices to adjust argue that programs charging more than students can now borrow will face pressure to cut prices or offer more of their own aid, as they did before uncapped graduate lending began in 2006, and that most students borrow less than the caps anyway. Where students need more, private lenders, who price risk, will lend more readily for programs that pay off than for programs that do not, which they see as the point.\n\nThose who expect access to shrink note that private loans require credit checks and often co-signers, which students from low-income families and students of color are least likely to have, and lack federal protections such as income-driven repayment and public service forgiveness. Professions with long, expensive training and modest early pay, such as social work, counseling and some medical fields, would lose applicants first. Inside Higher Ed reported in September 2026 on a law student whose registration was put on hold after she hit the new $257,500 lifetime limit on all federal student loans, undergraduate and graduate combined.",
+    "lean_label_a": "Prices will adjust",
+    "lean_label_b": "Access will shrink",
+    "id": "will-the-new-caps-on-federal"
+   },
+   {
+    "text": "Will artificial intelligence lower the value of a college degree?",
+    "kind": "empirical",
+    "why": "The evidence is still early. Recent graduates’ weak job market fits several explanations, and forecasts disagree on whether AI will replace or complement the skills college teaches.",
+    "detail": "Those who expect degrees to hold their value note that past waves of technology raised the demand for educated workers who can learn new tools: Claudia Goldin and Lawrence Katz’s history of the college premium, The Race between Education and Technology (2008), describes a century in which technology kept raising the reward for schooling. College graduates as a whole remain far less likely to be unemployed than other workers, and if AI automates routine tasks, the judgment, communication and adaptability college aims to build may become worth more.\n\nThose who expect degrees to lose value argue that AI is the first technology aimed squarely at the entry-level writing, analysis and coding tasks new graduates are hired to do. In the New York Fed’s series, recent graduates’ unemployment rose from 4.9 percent in June 2025 to 5.7 percent in June 2026, faster than the overall rate. If employers can screen for skills directly, the degree’s value as a signal may weaken too.",
+    "lean_label_a": "Degrees hold value",
+    "lean_label_b": "Degrees lose value",
+    "id": "will-artificial-intelligence-lower-the-value"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Expand need-based aid and keep federal loans affordable",
+    "color_key": "green",
+    "steelman": "College is still the surest way up for low-income students. Put public money where it changes outcomes: bigger grants, steady state funding and loans that work like insurance.",
+    "detail": "Price and risk keep many low-income students out of college or leave them with debt they cannot manage. Public money should go where it changes outcomes: a bigger Pell Grant, which has not risen since 2023–24; state funding, which sets public tuition; and support for the colleges that enroll the most low-income students. Loans should carry payments tied to income, forgiveness after a reasonable period, and the discharges the law already promises to public servants, disabled borrowers and students defrauded by their colleges. Programs that leave students worse off should lose federal money, but the burden of fixing the system belongs on colleges and government, not on the students least able to bear it.\n\nThe evidence backs this. When the federal government raised undergraduate loan limits, students who could borrow more were more likely to finish, earned more and repaid more reliably (Black, Denning, Dettling, Goodman and Turner, American Economic Review, 2023). Repayment tracks income: in the Federal Reserve’s survey of 2025, fewer than half of borrowers earning under $50,000 paid the full amount due in the prior month, against 92 percent of those earning $100,000 or more. Even the economists most critical of broad forgiveness, Sylvain Catherine and Constantine Yannelis, found that enrolling struggling borrowers in income-driven repayment was the cheapest and most progressive relief. Free college for everyone spends money on families who do not need it; caps on federal loans and a stingier repayment plan push risk onto the students who need help most.",
+    "proponents": "Institute for College Access & Success; Third Way; Biden administration Education Department",
+    "id": "expand-need-based-aid-and-keep"
+   },
+   {
+    "name": "Limit federal lending and tie it to graduates’ earnings",
+    "color_key": "blue",
+    "steelman": "Lending students whatever colleges charge drove prices up and left taxpayers with the losses. Cap the loans, expect repayment and stop funding programs that do not pay.",
+    "detail": "For two decades the federal government lent students whatever colleges chose to charge, with no check on whether the program would pay off, and colleges raised prices accordingly. Economists at the Federal Reserve Bank of New York (Lucca, Nadauld and Shen) found that colleges raised tuition by about 60 cents for each dollar increase in subsidized federal loan limits, and uncapping graduate loans through Grad PLUS raised prices in the programs most exposed to it without improving access or completion (Black, Turner and Denning, 2023). Students took on debt for degrees that did not raise their earnings, taxpayers absorbed the losses through ever more generous forgiveness, and an administration tried to cancel hundreds of billions of dollars without a vote of Congress.\n\nThe fix is limits and price signals: cap what the government will lend, especially for graduate school; replace a maze of repayment plans with one income-based plan that keeps balances from ballooning but expects borrowers to repay; and stop lending for programs whose graduates earn no more than people who never enrolled. Colleges that want students to borrow more will have to show it pays, or cut prices. By Preston Cooper’s estimate for the American Enterprise Institute, most students are untouched by the new caps: under 20 percent of master’s students and 8 percent of doctoral students would be constrained. Cancellation does none of this: universal forgiveness would deliver as much to the top tenth of earners as to the bottom three-tenths combined (Catherine and Yannelis, 2020), and it invites the next cohort to borrow expecting the same. Some of us, like the Heritage Foundation, would go further and replace federal loans with private lending.",
+    "proponents": "American Enterprise Institute; Preston Cooper; Senator Bill Cassidy; Heritage Foundation; Trump administration Education Department",
+    "id": "limit-federal-lending-and-tie-it"
+   },
+   {
+    "name": "Make public college free and cancel student debt",
+    "color_key": "amber",
+    "steelman": "Higher education is a public good, as high school became a century ago. Make public college free and release the borrowers a broken lending system has trapped.",
+    "detail": "The United States is unusual among rich countries in charging students so much for public college. It shifted the cost onto students as states cut support, then built a lending system that traps millions in debt for decades, with borrowers in default facing seized tax refunds and garnished wages. The debt falls hardest on Black borrowers, who in a 2016 Brookings analysis by Judith Scott-Clayton and Jing Li owed about $25,000 more than white graduates four years after graduation, and on people who never finished, and it holds back home buying, family formation and saving. Free public college would end the cycle for future students, and cancellation would free current borrowers from a system that failed them. The GI Bill, Germany and the Nordic countries show that public funding works, with public control over prices.\n\nTo the charge that cancellation is regressive, we answer that measures based on lifetime earnings count dollars, not hardship: the borrowers in default and those whose wages are garnished are disproportionately low-income and Black, and relief would reach them at once. Income limits keep free tuition from subsidizing the rich; Senator Bernie Sanders’s College for All Act of 2025 would make public colleges tuition-free for households earning up to $150,000 and community college free for all. Refusing relief now because earlier borrowers suffered only extends the harm. We differ on how far to go: the Debt Collective would cancel all student debt, while others have called for canceling up to $50,000 per borrower.",
+    "proponents": "Debt Collective; Senator Bernie Sanders; Representative Pramila Jayapal; Senator Elizabeth Warren; Representative Ayanna Pressley",
+    "id": "make-public-college-free-and-cancel"
+   },
+   {
+    "name": "Fund paths to good jobs outside college",
+    "color_key": "rust",
+    "steelman": "College should not be the default for everyone. Fund apprenticeships and employer training that pay people while they learn, and drop degree requirements that jobs do not need.",
+    "detail": "The fight over who should pay for college assumes college should be the default, and that assumption is the mistake. Only about a third of Americans earn a bachelor’s degree by 25, by Oren Cass’s count, yet most of the rest get little public help preparing for work; Senator Tom Cotton points out that federal spending on college is about eight times federal spending on job training. College-for-all has produced credential inflation, debt for many of the 37.6 million working-age Americans who left college without a degree, and graduates working in jobs that do not need theirs.\n\nA better system would fund employer-led training and apprenticeships, drop needless degree requirements, and leave college to those who want it and benefit from it. Cass’s American Compass proposes a $10,000-a-year grant to employers for each worker in certified on-the-job training, paid for by gradually shifting money from higher education subsidies; Cotton’s American Workforce Act would give $9,000 training vouchers to young people without degrees, funded by a tax on the largest college endowments. Nobody would be barred from college; the aim is a supported path of equal standing, as apprenticeship systems offer in Germany and Switzerland, and training led by the employer who has already hired the trainee avoids programs that train for jobs that do not exist. Some of us, like the economist Bryan Caplan, would go further and cut education subsidies sharply, holding that most of the college premium is signaling.",
+    "proponents": "American Compass; Oren Cass; Senator Tom Cotton; Bryan Caplan; Opportunity@Work",
+    "id": "fund-paths-to-good-jobs-outside"
+   }
+  ],
+  "crux": {
+   "lead": "When college does not pay off, who should carry the loss: the student, the college or the public?",
+   "lead_highlight": "who should carry the loss",
+   "subtitle": "Every camp accepts that a degree pays well for many students and leaves others worse off. They divide over how often the second happens, whether public money makes it more or less likely, and who should bear the cost when it does.",
+   "empirical": "Part of it can be measured: how much college raises earnings for the students actually on the fence, by field and by their chance of finishing; how much of that gain comes from skills and how much from what a degree signals; whether more public lending raises tuition, completion or both; and whether paid training on the job can match a degree for those who would start college and not finish.",
+   "values": "The rest is a choice: how much financial risk an 18-year-old should carry for a decision made with little information; whether education after high school is a public good, like high school, or a private investment its main beneficiary should pay for; and whom fairness compares borrowers with, whether those who never borrowed, those who already repaid, or earlier generations who paid less."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Compare colleges’ costs, debt and graduates’ earnings",
+    "description": "The Education Department’s College Scorecard shows each college’s and each field of study’s average cost after aid, typical debt and graduates’ earnings.",
+    "url": "https://collegescorecard.ed.gov/",
+    "for_position": null,
+    "id": "compare-colleges-costs-debt-and-graduates"
+   },
+   {
+    "kind": "learn_more",
+    "title": "See your payments under each repayment plan",
+    "description": "The Federal Student Aid Loan Simulator estimates monthly payments and total cost under each plan a borrower qualifies for, using the borrower’s own loan records.",
+    "url": "https://studentaid.gov/loan-simulator/",
+    "for_position": null,
+    "id": "see-your-payments-under-each-repayment"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Join the Debt Collective",
+    "description": "The Debt Collective organizes borrowers to press for canceling all student debt and for tuition-free public college, and offers tools for borrowers dealing with their loans.",
+    "url": "https://debtcollective.org/",
+    "for_position": "Make public college free and cancel student debt",
+    "id": "join-the-debt-collective"
+   },
+   {
+    "kind": "donate",
+    "title": "Support the Institute for College Access & Success",
+    "description": "TICAS researches and advocates for larger need-based grants, affordable income-driven repayment and accountability for colleges, and opposed the 2025 loan caps.",
+    "url": "https://ticas.org/donate/",
+    "for_position": "Expand need-based aid and keep federal loans affordable",
+    "id": "support-the-institute-for-college-access"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the case for loan limits and an earnings test",
+    "description": "Preston Cooper of the American Enterprise Institute explains how the 2025 law’s loan caps, Repayment Assistance Plan and earnings test are meant to restrain prices and protect taxpayers.",
+    "url": "https://www.aei.org/research-products/report/an-analysis-of-the-one-big-beautiful-bill-acts-effect-on-student-loans/",
+    "for_position": "Limit federal lending and tie it to graduates’ earnings",
+    "id": "read-the-case-for-loan-limits"
+   },
+   {
+    "kind": "local",
+    "title": "Find a paid apprenticeship near you",
+    "description": "The Labor Department’s Apprenticeship Job Finder lists registered apprenticeships, in which people are paid while they train for a credential, by occupation and location.",
+    "url": "https://www.apprenticeship.gov/apprenticeship-job-finder",
+    "for_position": "Fund paths to good jobs outside college",
+    "id": "find-a-paid-apprenticeship-near-you"
+   },
+   {
+    "kind": "policy",
+    "title": "Tell your members of Congress what you think",
+    "description": "Congress sets federal loan limits, repayment plans, Pell Grants and any future cancellation; this directory finds your representative, and senate.gov lists senators.",
+    "url": "https://www.house.gov/representatives/find-your-representative",
+    "for_position": null,
+    "id": "tell-your-members-of-congress-what"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Get a defaulted federal loan back into good standing",
+    "description": "Federal Student Aid’s default page explains loan rehabilitation and consolidation, the main ways out of default, and where to get help.",
+    "url": "https://studentaid.gov/manage-loans/default",
+    "for_position": null,
+    "id": "get-a-defaulted-federal-loan-back"
+   }
+  ]
+ },
+ "icon": "graduation-cap",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: one compact study scene grouped in the center with wide white margins, nothing touching the edges: a large graduation mortarboard cap with a hanging tassel resting on top of a tall stack of four thick books as the dominant focal mass, filled; a medium rolled diploma tied with a ribbon leaning against the book stack, overlapping it, filled; a small short stack of coins beside the books; a small classic columned university hall far behind on the horizon, at the end of a winding path that runs from the books back across the scene to the hall, as the connective element; the ground is a gentle rounded hill.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #9459a2, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: dollar signs, banknotes, money bags, chains, shackles, balls and chains, weights, anchors, padlocks, price tags, receipts, charts, graphs, arrows, ladders, cracks, falling or crumbling buildings, scissors, protest signs, flags, students, graduates, crowds, diplomas with writing, clocks, hourglasses, balance scales, question marks, bicycles, swings."
 }

@@ -1,8 +1,8 @@
 {
  "slug": "immigration-assimilation-multiculturalism",
  "title": "Immigration & Assimilation",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-10-03T21:17:43+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "What host societies expect of immigrants after arrival. Integration, not admission.",
@@ -14,5 +14,810 @@
   "immigration-borders-restriction",
   "identity-politics-vs-universalism",
   "religion-science-pluralism"
- ]
+ ],
+ "content": {
+  "overview": {
+   "summary": "Once immigrants settle, should they be expected to adopt the host country’s culture, only its language and laws, or be free to keep their own?",
+   "scope_covered": "Language, civics and residence requirements for settlement and citizenship, integration programs, multiculturalism, religious dress, concentrated neighborhoods, discrimination, the second generation, and calls for return. Evidence mainly from Western Europe, North America and Australia.",
+   "scope_excluded": "Admission: how many people a state lets in, visas, asylum at the border, enforcement and the ethics of borders. Broader fights over group identity and religion in public life, except where they bear on immigrants.",
+   "why_now": "On August 25, 2026, US Citizenship and Immigration Services wrote “neighborhood investigations” of naturalization applicants into its Policy Manual, months after recasting the civics test to “ensure proper assimilation,” while governments from Sweden to Britain move to lengthen the road to settlement and citizenship.",
+   "why_now_source_label": "USCIS Policy Manual updates",
+   "why_now_source_url": "https://www.uscis.gov/policy-manual/updates"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "Income gap with local-born families, across two generations",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "rank points",
+     "series": [
+      {
+       "label": "Immigrant parents",
+       "value": "5",
+       "highlight": true
+      },
+      {
+       "label": "Their sons",
+       "value": "3",
+       "highlight": false
+      },
+      {
+       "label": "Their daughters",
+       "value": "0",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Across 15 rich countries, immigrant parents earned a median 5 percentile points less than local-born parents; for their sons the gap narrowed to 3 points, and for their daughters it closed.",
+     "detail": "The study, by 38 economists using linked records from 11 European and four non-European countries, ranks everyone within their birth cohort from 0 to 100. Parents’ gaps exceeded 10 points in Denmark, Norway, Sweden, France and the Netherlands, while in Canada, Israel, Italy, Spain and the United States immigrant parents earned at parity or slightly more. In the next generation, gaps in the ten countries with first-generation shortfalls ranged from −9 to +5 points for sons and −4 to +7 for daughters, with Dutch sons an outlier at −15; Austria was the one country where gaps grew. In the United States the children of immigrants out-earned the children of the local-born by 2 to 4 points. About half the difference between countries reflects how poor immigrant parents were to begin with; the authors link the rest to destination labor markets and policy rather than to where families came from. The paper has not been peer reviewed; an earlier study of two centuries of US data by several of the same authors (American Economic Review, 2021) found the same upward pattern. Assimilationists, multiculturalists and civic integrationists each cite this convergence as evidence for their own model.",
+     "source_label": "Boustan, Jensen, Abramitzky et al., “Intergenerational Mobility of Immigrants in 15 Destination Countries,” NBER, 2025",
+     "source_url": "https://www.nber.org/system/files/working_papers/w33558/w33558.pdf",
+     "source_published": "1994–2000 and 2014–2015",
+     "source_accessed": "2026-10-03",
+     "id": "income-gap-with-local-born-families"
+    },
+    {
+     "label": "Germany’s population with an immigration history",
+     "viz": "radial",
+     "wide": false,
+     "value": "26.3",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2025, 21.8 million people in Germany, 26.3 percent of the population, had immigrated themselves or had two parents who did.",
+     "detail": "Germany’s statistics office counts people who immigrated since 1950 or whose parents both did; children with only one immigrant parent are left out, so the measure is narrower than the older “migration background” definition. Of the 21.8 million, 16.4 million (19.8 percent of the population) were immigrants themselves and 5.4 million were their descendants. The share rose 0.5 points from 2024. Poland and Turkey (1.5 million each), Ukraine (1.3 million), Russia and Syria (1.0 million each) together accounted for 39 percent of immigrants. Where one person in four has a recent immigrant lineage, language, citizenship and belonging are questions about a large share of the population, not a small newcomer minority.",
+     "source_label": "Destatis (Federal Statistical Office of Germany), press release no. 128, 13 April 2026",
+     "source_url": "https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/04/PD26_128_125.html",
+     "source_published": "2025",
+     "source_accessed": "2026-10-03",
+     "id": "germany-s-population-with-an-immigration"
+    },
+    {
+     "label": "EU immigrants with advanced command of the host-country language",
+     "viz": "radial",
+     "wide": false,
+     "value": "62",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In the EU, 62 percent of immigrants say they speak the host-country language at an advanced level or better; settled immigrants are almost twice as likely to say so as recent arrivals.",
+     "detail": "The figures are self-reported; “settled” means ten or more years of residence and “recent” less than five. EU-wide, 40 percent of recent arrivals report advanced proficiency against 70 percent of settled immigrants; in the United States the step is smaller, from 63 to 74 percent, and across the settlement countries (Australia, Canada, New Zealand and the United States) 72 percent of immigrants report it. Shares are highest in Central Europe, Portugal, Spain and English-speaking destinations, where many immigrants arrive already speaking the language, and lowest in Malta, Cyprus, Estonia, Latvia, the Netherlands and Finland. Taking a language course is associated with a two-point higher chance of reaching advanced proficiency among those who arrived with no more than intermediate skills, a modest link that supporters and skeptics of mandatory courses both cite. Across generations the shift is faster: the US National Academies of Sciences, Engineering and Medicine concluded in 2015 that children of immigrants generally become fluent in English and that by the third generation most speak only English.",
+     "source_label": "OECD and European Commission, Indicators of Immigrant Integration 2023: Settling In, main indicators",
+     "source_url": "https://www.oecd.org/content/dam/oecd/en/publications/support-materials/2023/06/indicators-of-immigrant-integration-2023_70d202c4/indicators-of-immigrant-integration-settling-in-main-indicators-2023-brochure.pdf",
+     "source_published": "2023 (report)",
+     "source_accessed": "2026-10-03",
+     "id": "eu-immigrants-with-advanced-command-of"
+    },
+    {
+     "label": "How far immigrants’ employment rate trails the native-born, 2024",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "points",
+     "series": [
+      {
+       "label": "Netherlands",
+       "value": "12.8",
+       "highlight": false
+      },
+      {
+       "label": "Germany",
+       "value": "10.3",
+       "highlight": false
+      },
+      {
+       "label": "Finland",
+       "value": "9.8",
+       "highlight": false
+      },
+      {
+       "label": "Sweden",
+       "value": "9.2",
+       "highlight": false
+      },
+      {
+       "label": "France",
+       "value": "6.9",
+       "highlight": false
+      },
+      {
+       "label": "EU27",
+       "value": "3.5",
+       "highlight": true
+      },
+      {
+       "label": "OECD average",
+       "value": "1.2",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2024 immigrants in the EU were 3.5 percentage points less likely to be employed than the native-born; in the US, UK, Australia, Italy and Portugal they were as likely or more.",
+     "detail": "Across the OECD the immigrant employment rate averaged 70.9 percent in 2024, against 72.1 percent for the native-born; in the EU it was 67.9 percent. Norway (7.8 points), Belgium (6.5), Austria (5.9) and Switzerland (5.5) also had wide gaps, and the Dutch gap was the largest in the OECD. Immigrants’ employment rates matched or exceeded natives’ in 15 of 36 countries, but their unemployment rates were higher in all but six. The pattern tracks who came and why: countries whose immigrants arrived mainly through employer-selected work routes or free movement within the EU show small or positive gaps, while those that took many refugees and family migrants, often with little formal education, show the widest. Those who favor tougher civic integration read the Northern European gaps as the cost of generous welfare and weak work obligations; defenders of multiculturalism and anti-discrimination policy read them as partly the product of discrimination and slow recognition of foreign qualifications. The gap figures alone cannot separate the two readings.",
+     "source_label": "OECD, International Migration Outlook 2025, Table 1.6",
+     "source_url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/11/international-migration-outlook-2025_355ae9fd/ae26c893-en.pdf",
+     "source_published": "2024",
+     "source_accessed": "2026-10-03",
+     "id": "how-far-immigrants-employment-rate-trails"
+    },
+    {
+     "label": "Hiring discrimination in field experiments",
+     "viz": "range",
+     "wide": false,
+     "value": "nearly 2",
+     "unit": "to 1",
+     "series": [],
+     "range_min": "1 = equal",
+     "range_max": "2 = double",
+     "note": "In matched job applications differing only in apparent ethnicity, white natives got about 1.25 callbacks per one for nonwhite applicants in the least discriminating countries, nearly 2 in the most.",
+     "detail": "Field experiments send employers pairs of fictitious applications identical except for a name or other marker of ethnic origin, so differences in callbacks measure discrimination directly rather than through self-reports. This meta-analysis pooled 97 such experiments from Belgium, Canada, France, Germany, Great Britain, the Netherlands, Norway, Sweden and the United States. It found significant discrimination against nonwhite natives in every country and low discrimination against white immigrants. France had the highest rate, followed by Sweden. That discrimination persists against the native-born children of immigrants, who speak the language and hold local qualifications, is central to the argument that integration is not only something immigrants do; critics of official multiculturalism point to Sweden’s high rate.",
+     "source_label": "Quillian, Heath, Pager, Midtbøen, Fleischmann and Hexel, Sociological Science, 2019",
+     "source_url": "https://sociologicalscience.com/articles-v6-18-467/",
+     "source_published": "2019",
+     "source_accessed": "2026-10-03",
+     "id": "hiring-discrimination-in-field-experiments"
+    },
+    {
+     "label": "What people say it takes to be “truly” one of the nation",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Speak the language",
+       "value": "91",
+       "highlight": true
+      },
+      {
+       "label": "Share customs",
+       "value": "81",
+       "highlight": false
+      },
+      {
+       "label": "Born in the country",
+       "value": "58",
+       "highlight": false
+      },
+      {
+       "label": "Dominant religion",
+       "value": "42",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a 2023 survey of 23 countries, medians of 91 percent called speaking the national language and 81 percent sharing national customs important to being truly part of the nation.",
+     "detail": "The figures combine “very” and “somewhat” important. Language was not asked in Nigeria or South Africa and religion was not asked in Japan or South Korea, so those medians cover 21 countries. In the United States the shares were 78 percent for English, 71 for customs, 50 for birthplace and 37 for being Christian; Sweden stood out with 19 percent calling birthplace important. The stronger “very important” answers have fallen in several European countries since 2016: for language from 81 to 58 percent in the United Kingdom, 84 to 64 percent in the Netherlands and 79 to 62 percent in Germany, and for customs from 54 to 30 percent in the United Kingdom. Large majorities nearly everywhere expect newcomers to speak the language and take part in national customs, while markers newcomers cannot acquire, birthplace and religion, divide publics, and their weight has been falling in much of Western Europe.",
+     "source_label": "Pew Research Center, “Language and Traditions Are Considered Central to National Identity,” January 2024",
+     "source_url": "https://www.pewresearch.org/global/wp-content/uploads/sites/2/2024/01/gap_2024.01.18_national-identity_report.pdf",
+     "source_published": "2023",
+     "source_accessed": "2026-10-03",
+     "id": "what-people-say-it-takes-to"
+    },
+    {
+     "label": "Multiculturalism Policy Index for immigrant minorities, 2020",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "of 8",
+     "series": [
+      {
+       "label": "Australia",
+       "value": "8",
+       "highlight": false
+      },
+      {
+       "label": "Canada",
+       "value": "7",
+       "highlight": true
+      },
+      {
+       "label": "Sweden",
+       "value": "7",
+       "highlight": false
+      },
+      {
+       "label": "United Kingdom",
+       "value": "6",
+       "highlight": false
+      },
+      {
+       "label": "United States",
+       "value": "3.5",
+       "highlight": false
+      },
+      {
+       "label": "Germany",
+       "value": "3",
+       "highlight": false
+      },
+      {
+       "label": "France",
+       "value": "1.5",
+       "highlight": false
+      },
+      {
+       "label": "Netherlands",
+       "value": "1",
+       "highlight": false
+      },
+      {
+       "label": "Denmark",
+       "value": "1",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Counting eight multicultural policies, the index scored Australia 8 in 2020 and Canada and Sweden 7, while France, Denmark and the Netherlands scored 1.5 or lower.",
+     "detail": "The index awards up to one point each for official affirmation of multiculturalism, multiculturalism in school curricula, ethnic representation in public media, exemptions from dress codes and similar rules, dual citizenship, public funding for ethnic group organizations, bilingual or mother-tongue education, and affirmative action for disadvantaged immigrant groups. It measures national policy on paper, not outcomes or public attitudes. The Netherlands, once Europe’s model of group-based multiculturalism, rose from 2.5 in 1980 to 4 in 2000, then fell to 2 in 2010 and 1 in 2020 as it switched to compulsory civic integration; Finland rose from 0 in 1980 to 7, and Australia has held the maximum since 1990. The project is led by Keith Banting and Will Kymlicka, a leading theorist of multiculturalism, and its own summary argues that multicultural policies have generally persisted and often expanded despite talk of a backlash. Critics of multiculturalism read the same series as showing that the countries that went furthest, above all the Netherlands, turned back hardest.",
+     "source_label": "Multiculturalism Policy Index, Queen’s University, Immigrant Minority Policies, third edition (2021)",
+     "source_url": "https://www.queensu.ca/mcp/sites/mcpwww/files/uploaded_files/immigrantminorities/evidence/Immigrant%20Minorities%20Index%20Evidence%202021-Web0122.pdf",
+     "source_published": "2020",
+     "source_accessed": "2026-10-03",
+     "id": "multiculturalism-policy-index-for-immigrant-minorities"
+    },
+    {
+     "label": "People granted citizenship, selected countries, 2024",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "thousand",
+     "series": [
+      {
+       "label": "United States",
+       "value": "820",
+       "highlight": false
+      },
+      {
+       "label": "Canada",
+       "value": "375",
+       "highlight": false
+      },
+      {
+       "label": "Germany",
+       "value": "290",
+       "highlight": true
+      },
+      {
+       "label": "United Kingdom",
+       "value": "270",
+       "highlight": false
+      },
+      {
+       "label": "Spain",
+       "value": "252",
+       "highlight": false
+      },
+      {
+       "label": "Italy",
+       "value": "217",
+       "highlight": false
+      },
+      {
+       "label": "Australia",
+       "value": "192",
+       "highlight": false
+      },
+      {
+       "label": "Sweden",
+       "value": "63",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Germany naturalized a record 290,000 people in 2024, up 46 percent in a year; the United States, counted by fiscal year, remained the largest with about 820,000.",
+     "detail": "Germany’s record followed its 2024 nationality law, which cut the standard residence requirement from eight years to five and allowed dual citizenship without restriction; a three-year route for especially well-integrated applicants was abolished by a Bundestag vote on October 8, 2025, while the five-year rule stayed, IamExpat reported. The United Kingdom, Spain and Italy also set records, and more than 2.8 million people acquired the nationality of an OECD country in 2023. Relative to their foreign populations, Canada (11.4 percent of foreign residents naturalizing in 2023) and Sweden (7.8 percent) led the OECD, against an average of 2.6 percent. Many countries are also raising the bar: Finland lengthened its residence requirement from five to eight years in October 2024 and France raised the language level for naturalization to B2 in 2024, and Sweden’s eight-year rule with language and civics requirements took effect on June 6, 2026, according to its Migration Agency. A joint OECD and European Commission report found that just over half of settled immigrants in the EU held host-country citizenship around 2020, against about 80 percent in Australia, Canada, New Zealand and the United States.",
+     "source_label": "OECD, International Migration Outlook 2025, chapter 1",
+     "source_url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/11/international-migration-outlook-2025_355ae9fd/ae26c893-en.pdf",
+     "source_published": "2024 (United States: fiscal year)",
+     "source_accessed": "2026-10-03",
+     "id": "people-granted-citizenship-selected-countries-2024"
+    },
+    {
+     "label": "EU citizens who think integration of non-EU migrants has succeeded",
+     "viz": "radial",
+     "wide": false,
+     "value": "47",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2021, 47 percent of EU citizens said the integration of non-EU migrants in their country had been successful, fewer than half.",
+     "detail": "The same report found that most EU citizens hold distorted views of non-EU migrants’ characteristics and of how their outcomes have changed: whatever indicator was considered, fewer than 43 percent of respondents correctly perceived the direction of change over the previous decade. Immigrants themselves trust host institutions more than the native-born do in about two-thirds of host countries, though that trust tends to decline the longer they stay. Fifteen percent of the foreign-born in the EU reported feeling discriminated against on grounds of ethnicity, nationality or race, with shares near 20 percent in Italy, France and the Netherlands. The gap between perception and measured outcomes runs both ways depending on the country and indicator, and each camp tends to cite the half that suits it.",
+     "source_label": "OECD and European Commission, Indicators of Immigrant Integration 2023: Settling In (drawing on Eurobarometer)",
+     "source_url": "https://www.oecd.org/content/dam/oecd/en/publications/support-materials/2023/06/indicators-of-immigrant-integration-2023_70d202c4/indicators-of-immigrant-integration-settling-in-main-indicators-2023-brochure.pdf",
+     "source_published": "2021",
+     "source_accessed": "2026-10-03",
+     "id": "eu-citizens-who-think-integration-of"
+    },
+    {
+     "label": "Muslims in the EU reporting racial discrimination in the past five years",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Austria",
+       "value": "71",
+       "highlight": false
+      },
+      {
+       "label": "Germany",
+       "value": "68",
+       "highlight": false
+      },
+      {
+       "label": "Finland",
+       "value": "63",
+       "highlight": false
+      },
+      {
+       "label": "13 countries",
+       "value": "47",
+       "highlight": true
+      },
+      {
+       "label": "2016 survey",
+       "value": "39",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a 2021–2022 survey, 47 percent of Muslims in 13 EU countries said they had faced racial discrimination in the previous five years, up from 39 percent in 2016; the figures are self-reported.",
+     "detail": "The survey of about 9,600 Muslims, immigrants and their children, asked about discrimination based on skin color, ethnic or immigrant background, or religion (FRA, Being Muslim in the EU, 2024). Discrimination was reported most often when looking for work (39 percent) and at work (35 percent), up from 31 and 23 percent in 2016, and 35 percent said it had kept them from buying or renting housing. Women wearing religious clothing reported more discrimination when looking for work (45 against 31 percent for those who do not), rising to 58 percent among young women. Muslim respondents were three times as likely as the general EU population to leave school early (30 against 9.6 percent), and 41 percent were overqualified for their jobs against 22 percent generally. Perceived discrimination can differ from discrimination measured in experiments, and the agency is an anti-discrimination body whose recommendations follow from its mandate. Multiculturalists and anti-racists read the rising figures as the main barrier to integration; assimilationists read some of the same patterns as consequences of visible religious separateness.",
+     "source_label": "EU Agency for Fundamental Rights (FRA), “Being Muslim in the EU,” press release, 24 October 2024",
+     "source_url": "https://fra.europa.eu/sites/default/files/fra_uploads/pr-2024-being-muslim-in-the-eu_en.pdf",
+     "source_published": "2021–2022",
+     "source_accessed": "2026-10-03",
+     "id": "muslims-in-the-eu-reporting-racial"
+    },
+    {
+     "label": "Fundamentalist views among Muslim immigrants and descendants in Western Europe",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Quran has one reading",
+       "value": "75",
+       "highlight": false
+      },
+      {
+       "label": "Religion above law",
+       "value": "65",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a 2008 survey in six Western European countries, 65 percent of Muslims of Turkish and Moroccan origin put religious rules above national laws; what that answer measures is disputed.",
+     "detail": "The Six Country Immigrant Integration Comparative Survey interviewed about 9,000 people in Germany, France, the Netherlands, Belgium, Austria and Sweden, comparing Muslims of Turkish and Moroccan origin, immigrants and their descendants, with native Christians. Almost 60 percent of Muslim respondents agreed that Muslims should return to the roots of Islam, and between 40 and 45 percent agreed with all three statements Ruud Koopmans used to define fundamentalism, from 30 percent in Germany to 55 percent in Austria, against 4 percent of native Christians holding equivalent views. Second-generation respondents scored somewhat lower than the first. Koopmans stressed that most Muslims hold more liberal views and that fundamentalism is not support for violence, though in his data it correlated with hostility toward Jews, gay people and Westerners. Saying religious rules matter more than national laws may express a demand to put religious law above civil law, or personal piety that coexists with obeying the law. The data are nearly two decades old and cover two origin groups; assimilationists treat the study as evidence that some value differences persist, while defenders of multiculturalism point to its age, its scope and the second-generation decline.",
+     "source_label": "WZB press release (via EurekAlert) on Ruud Koopmans, Journal of Ethnic and Migration Studies, 2015",
+     "source_url": "https://www.eurekalert.org/news-releases/895379",
+     "source_published": "2008",
+     "source_accessed": "2026-10-03",
+     "id": "fundamentalist-views-among-muslim-immigrants-and"
+    },
+    {
+     "label": "Employment of asylum seekers who came to Germany in 2015, nine years on",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Refugee men",
+       "value": "76",
+       "highlight": false
+      },
+      {
+       "label": "Population average",
+       "value": "70",
+       "highlight": false
+      },
+      {
+       "label": "All 2015 arrivals",
+       "value": "64",
+       "highlight": true
+      },
+      {
+       "label": "Refugee women",
+       "value": "35",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Nine years after arriving in 2015, 64 percent of that year’s asylum seekers in Germany were in paid work, against 70 percent of the working-age population; in their first year, under 10 percent were.",
+     "detail": "The 2015 cohort arrived in the year Angela Merkel said “Wir schaffen das” (“We can do this”), and its progress has become a test case for every side. The Institute for Employment Research, the research arm of Germany’s Federal Employment Agency, tracks it with a large panel survey linked to employment records. Of those employed, 90 percent held regular jobs covered by social insurance. The gap between men, slightly above the population average, and women remains large, and the authors see women’s employment as the main remaining potential. Median full-time earnings were 70 percent of the median for all full-time workers in 2024, just above the low-wage threshold, though the refugees are much younger and less experienced than the average worker. Employment varied widely by region, and the authors find that placing refugees with more attention to local labor markets would have produced higher rates. Supporters of the 2015 policy read the trajectory as slow but real integration; critics point to the women’s rate, the low earnings and the nine years it took.",
+     "source_label": "Institute for Employment Research (IAB), Kurzbericht 17/2025, “10 Jahre Fluchtmigration 2015”",
+     "source_url": "https://doku.iab.de/kurzber/2025/kb2025-17.pdf",
+     "source_published": "2024",
+     "source_accessed": "2026-10-03",
+     "id": "employment-of-asylum-seekers-who-came"
+    },
+    {
+     "label": "Immigrants’ earnings gap with comparable native-born workers",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% lower",
+     "series": [
+      {
+       "label": "At entry",
+       "value": "34",
+       "highlight": true
+      },
+      {
+       "label": "After five years",
+       "value": "21",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Immigrants entering the labor market in 15 OECD countries earned 34 percent less than comparable native-born workers; the gap fell to 21 percent within five years and to about half within ten.",
+     "detail": "The estimate uses linked employer-employee data from 2000 to 2019 and compares immigrants with native-born workers of the same age and sex. Almost two-thirds (63 percent) of the entry gap comes from where immigrants work: 36 percent from their concentration in lower-paying sectors and 27 percent from working for lower-paying employers within them. Part of the later narrowing comes from immigrants moving to better-paying firms and sectors. The OECD draws a conclusion that cuts across the camps: integration programs should pay more attention to job mobility (job-search information, career counseling, professional networks, transport and affordable housing), not only to language and skills. The figure does not say how much of the remaining gap reflects skills that do not transfer, language or discrimination, which is where the camps part ways.",
+     "source_label": "OECD, International Migration Outlook 2025, special chapter on the role of firms",
+     "source_url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/11/international-migration-outlook-2025_355ae9fd/ae26c893-en.pdf",
+     "source_published": "2000–2019",
+     "source_accessed": "2026-10-03",
+     "id": "immigrants-earnings-gap-with-comparable-native"
+    },
+    {
+     "label": "EU fifteen-year-olds lacking basic reading skills, by parents’ birthplace",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Foreign-born parents",
+       "value": "29",
+       "highlight": true
+      },
+      {
+       "label": "Native-born parents",
+       "value": "18",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2018, 29 percent of EU 15-year-olds born in the country to immigrant parents lacked basic reading skills, against 18 percent of those with native-born parents.",
+     "detail": "The figures come from the OECD’s PISA tests and concern the second generation, children born and schooled in the host country. In Europe and Latin America the children of immigrants read less well than peers with native-born parents; in most other non-European OECD countries the reverse holds, reflecting who immigrated there. The gap has narrowed: the native-born children of immigrants improved their reading scores since 2009 while peers with native-born parents stayed roughly level, and among disadvantaged pupils, children of immigrants are more often top readers in most countries. More than half of pupils with foreign-born parents attend schools in the top quarter for concentration of such pupils, a concentration that rose over the decade in almost all countries. Around 17 percent of native-born 15- to 34-year-olds with foreign-born parents were neither in work, education nor training in 2020–21, more than their peers in virtually all EU countries. Because the gap concerns people who never migrated, assimilationists read it as failed integration at home and in segregated schools, multiculturalists as the product of unequal schools and discrimination.",
+     "source_label": "OECD and European Commission, Indicators of Immigrant Integration 2023: Settling In, main indicators",
+     "source_url": "https://www.oecd.org/content/dam/oecd/en/publications/support-materials/2023/06/indicators-of-immigrant-integration-2023_70d202c4/indicators-of-immigrant-integration-settling-in-main-indicators-2023-brochure.pdf",
+     "source_published": "2018",
+     "source_accessed": "2026-10-03",
+     "id": "eu-fifteen-year-olds-lacking-basic"
+    },
+    {
+     "label": "Australians’ views of multiculturalism and immigration",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Good for Australia",
+       "value": "83",
+       "highlight": true
+      },
+      {
+       "label": "Immigrants add new ideas",
+       "value": "78",
+       "highlight": false
+      },
+      {
+       "label": "Immigration too high",
+       "value": "51",
+       "highlight": false
+      },
+      {
+       "label": "Fund minority customs",
+       "value": "33",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2025, 83 percent of Australian adults agreed multiculturalism has been good for the country, but only 33 percent that ethnic minorities should get government help to maintain their customs.",
+     "detail": "In the country with the strongest official commitment to multiculturalism, symbolic support is broad: 90 percent agreed that someone born overseas is just as likely to be a good citizen as someone born in Australia. Support for public money to preserve minority cultures is far lower, in line with its average since 2007. A separate item, that accepting immigrants from many countries makes Australia stronger, fell from 78 to 67 percent between 2023 and 2025, and the share saying immigration is too high rose from 24 percent in 2022 to 51 percent in 2025, the highest the survey has recorded. The authors stress that concern about numbers has not, so far, become rejection of diversity itself. Multiculturalists point to the durable majority; assimilationists and civic integrationists point to the reluctance to fund separate cultural maintenance.",
+     "source_label": "Scanlon Institute, Mapping Social Cohesion 2025",
+     "source_url": "https://scanloninstitute.org.au/wp-content/uploads/SI0001_MappingSocialCohesion_2025_v5.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-10-03",
+     "id": "australians-views-of-multiculturalism-and-immigration"
+    },
+    {
+     "label": "US newlyweds married to someone of a different race or ethnicity",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Asian, US-born",
+       "value": "46",
+       "highlight": true
+      },
+      {
+       "label": "Hispanic, US-born",
+       "value": "39",
+       "highlight": false
+      },
+      {
+       "label": "Asian, immigrant",
+       "value": "24",
+       "highlight": false
+      },
+      {
+       "label": "All newlyweds",
+       "value": "17",
+       "highlight": false
+      },
+      {
+       "label": "Hispanic, immigrant",
+       "value": "15",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2015, US-born Hispanic and Asian American newlyweds were about two to three times as likely as immigrant newlyweds to marry outside their group.",
+     "detail": "Sociologists treat intermarriage as one of the strongest signs of assimilation, because it blurs group boundaries within a family. Pew’s analysis of the American Community Survey found that 17 percent of all US newlyweds in 2015 had a spouse of a different race or ethnicity, up from 3 percent in 1967. Half of Hispanic newlyweds and three-quarters of Asian newlyweds were immigrants. The data are a decade old, and comparable European figures are scarcer and vary more by origin group. Assimilationists cite the jump between generations as proof that the melting pot still works when the culture expects it; multiculturalists cite it as proof that newcomers integrate without being made to give up their heritage.",
+     "source_label": "Pew Research Center, “Intermarriage in the U.S. 50 Years After Loving v. Virginia,” May 2017",
+     "source_url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2017/05/Intermarriage-May-2017-Full-Report.pdf",
+     "source_published": "2015",
+     "source_accessed": "2026-10-03",
+     "id": "us-newlyweds-married-to-someone-of"
+    },
+    {
+     "label": "Housing areas on Denmark’s official “parallel societies” list",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "areas",
+     "series": [
+      {
+       "label": "2023",
+       "value": "12",
+       "highlight": false
+      },
+      {
+       "label": "2024",
+       "value": "8",
+       "highlight": false
+      },
+      {
+       "label": "2025",
+       "value": "5",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Denmark’s list of “parallel societies” fell to five housing areas in December 2025, from eight a year earlier and twelve in 2023 (the 2023 count as reported by The Local Denmark).",
+     "detail": "Denmark’s 2018 law, widely known as the “ghetto package,” targets public housing estates of at least 1,000 residents where more than half are immigrants or descendants from non-Western countries and that meet two of four criteria on unemployment, criminal convictions, schooling and income. In the hardest category, estates must cut their share of public family housing by 2030, which has meant demolitions, sales and relocations; the Danish outlet Mandag Morgen estimated in 2019 that about 11,000 people would have to leave their homes, The World reported. The minister responsible has said her goal is zero parallel societies. Residents of one estate challenged the law, and on December 18, 2025 the EU Court of Justice ruled that such classifications fall under the Racial Equality Directive and returned the case to Danish courts to decide whether the scheme discriminates by ethnic origin, EU Law Live reported. The government credits the policy for the falling count; opponents argue that it removes people rather than integrating them and classifies citizens by ancestry.",
+     "source_label": "The Copenhagen Post, 1 December 2025 (ministry list); The Local Denmark, 2 December 2024 (2023 figure)",
+     "source_url": "https://cphpost.dk/2025-12-01/news/politics/fewer-immigrant-parallel-societies-in-denmark/",
+     "source_published": "2025",
+     "source_accessed": "2026-10-03",
+     "id": "housing-areas-on-denmark-s-official"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Should immigrants be expected to adopt the national culture, or only its language, laws and democratic rules?",
+    "kind": "value",
+    "why": "Nearly everyone agrees newcomers must obey the law, and most that they should learn the language. The dispute is over customs, dress, family norms, religion in daily life and identity, and turns on whether a nation is a cultural or a political community.",
+    "detail": "Those who favor assimilation argue that democracies run on trust, and that trust rests on more than agreement about procedures: people pay taxes for strangers and accept electoral defeat because they feel they belong to one people with a common language, memory and way of life. A society that asks nothing beyond obedience to the law, they argue, leaves newcomers adrift between two cultures and invites parallel communities, while a clear expectation of cultural belonging offers a path to full membership.\n\nThose who favor civic integration or multiculturalism reply that a liberal state may demand obedience to its laws, knowledge of its language and acceptance of democratic rules, but not conformity in taste, faith or private life, which it does not demand of native citizens either. National cultures have always absorbed newcomers and changed in the process, and in practice “the national culture” means whatever the current majority prefers. Demands for cultural conformity, they argue, fall hardest on visible minorities such as Muslims, who can learn the language and the constitution but cannot stop being seen as different, so the demand becomes a test they can never pass.",
+    "lean_label_a": "Shared culture",
+    "lean_label_b": "Civic rules only",
+    "id": "should-immigrants-be-expected-to-adopt"
+   },
+   {
+    "text": "Do integration gaps come mainly from newcomers’ choices and values, or from barriers the host society raises?",
+    "kind": "empirical",
+    "why": "Both sides point to the same gaps in jobs, schooling and housing and explain them differently. Experiments have measured discrimination and surveys have measured conservative views in some groups; no study has settled how much of the gap each explains.",
+    "detail": "Those who stress newcomers’ choices note that outcomes vary widely by origin group within the same host country, under the same institutions, which suggests that culture, family structure, women’s work and religious practice matter; low employment among women in some refugee groups persists years after arrival. On this view, emphasizing discrimination excuses choices that newcomers and their communities can change, and integration policy should ask more of them.\n\nThose who stress host barriers point to field experiments in which applicants born and schooled in the country still get fewer callbacks when their names sound foreign. Research in France by Claire Adida, David Laitin and Marie-Anne Valfort found that otherwise identical candidates fared worse when identified as Muslim, and the authors argue that discrimination and withdrawal reinforce each other. On this view, demands placed only on immigrants misdiagnose the problem, and integration is a two-way process in which the host must open jobs, housing and schools.",
+    "lean_label_a": "Newcomer choices",
+    "lean_label_b": "Host barriers",
+    "id": "do-integration-gaps-come-mainly-from"
+   },
+   {
+    "text": "Does official multiculturalism help immigrants integrate, or hold them back?",
+    "kind": "empirical",
+    "why": "Countries with strongly multicultural policies differ from others in many ways, above all in which immigrants they select, so comparisons are easy to make and hard to read; the Dutch retreat and Canada’s persistence give each side a favorite case.",
+    "detail": "Supporters argue that recognition makes belonging easier: immigrants who are not asked to choose between their heritage and their new country identify with it more readily, naturalize more and participate more. A comparative study by Matthew Wright and Irene Bloemraad (2012) found no evidence that multicultural policies weaken immigrants’ attachment or political participation, and Vasiliki Fouka (2020) found that bans on German-language schooling in US states after the First World War made German Americans less likely to assimilate, not more.\n\nCritics argue that funding and representing groups as groups freezes identities, empowers conservative community leaders over individuals and weakens the incentive to learn the language and find work. Ruud Koopmans (2010) found that European countries combining multicultural policies with generous welfare states had worse immigrant employment and segregation outcomes. Canada and Australia, critics add, do well because they select skilled immigrants, not because of multicultural policy.",
+    "lean_label_a": "Helps integration",
+    "lean_label_b": "Hinders integration",
+    "id": "does-official-multiculturalism-help-immigrants-integrate"
+   },
+   {
+    "text": "May the state restrict religious dress and practice for the sake of a shared public life?",
+    "kind": "value",
+    "why": "France bans religious symbols in public schools and face coverings in public, and Quebec bars them for some public employees, while Britain and the United States accommodate religious dress. Each side says it is defending equal citizenship.",
+    "detail": "Supporters argue that a secular public sphere protects everyone, including members of minority faiths who do not want to be pressured by their own communities, and that face-to-face interaction is a basic condition of shared civic life. In France’s republican tradition the state treats citizens as individuals, not as members of religious communities. The European Court of Human Rights upheld France’s face-veil ban in S.A.S. v. France (2014), accepting “living together” as a legitimate aim and leaving states a wide margin; the Supreme Court of Canada heard the challenge to Quebec’s law in March 2026 and has yet to rule, the Canadian Press reported.\n\nOpponents argue that such bans fall almost entirely on Muslim women, the people they claim to free, and push them out of schools and jobs rather than into the mainstream. Aala Abdelgadir and Vasiliki Fouka (American Political Science Review, 2020) found that France’s 2004 ban on headscarves in public schools reduced the secondary educational attainment of Muslim girls. A liberal state, on this view, integrates religious minorities by accommodating them, as it once accommodated Catholics and Jews.",
+    "lean_label_a": "Common norms",
+    "lean_label_b": "Religious freedom",
+    "id": "may-the-state-restrict-religious-dress"
+   },
+   {
+    "text": "Does granting citizenship early speed integration, or should it reward integration already achieved?",
+    "kind": "empirical",
+    "why": "Governments are moving both ways: Germany cut its residence requirement to five years, while Finland and Sweden lengthened theirs. Part of the dispute is whether naturalization itself improves outcomes, part what citizenship means.",
+    "detail": "Supporters of early naturalization point to natural experiments in Switzerland, where some municipalities decided applications by close popular votes: Jens Hainmueller, Dominik Hangartner and Giuseppe Pietrantuono (2015, 2017) found that immigrants who narrowly won citizenship became more politically engaged and better socially integrated over the following years than those who narrowly lost, with the largest effects for the most marginalized groups. Secure status, they argue, lets people invest in a future, and long waits leave large parts of the population without a vote where they live.\n\nThose who favor later citizenship argue that it is a commitment by the nation as well as the immigrant and should follow proof of attachment: language skill, self-support, a clean record and knowledge of the country. Easy citizenship, they argue, cheapens membership and gives up leverage at the point where a state can still ask for effort.",
+    "lean_label_a": "Early catalyst",
+    "lean_label_b": "Earned reward",
+    "id": "does-granting-citizenship-early-speed-integration"
+   },
+   {
+    "text": "Do compulsory integration rules with sanctions work better than voluntary, supported programs?",
+    "kind": "empirical",
+    "why": "Since the late 1990s much of Western Europe has made language and civics courses mandatory and tied benefits and residence permits to them. Evaluations of single reforms exist, but their results point in different directions depending on the instrument.",
+    "detail": "Advocates argue that optional courses are skipped by exactly those who most need them, often women kept at home by family pressure, and that tying residence and benefits to language and work protects the welfare state’s legitimacy among taxpayers. Research by Lars Højsgaard Andersen, Christian Dustmann and Rasmus Landersø found that Denmark’s 2002 cut in benefits for newly arrived refugees produced a sharp short-run rise in employment.\n\nCritics point to the same research, which found that the employment gains had largely disappeared nine to ten years after arrival, that many affected households fell close to subsistence, and that their children did worse in school and committed more crime as teenagers. By contrast, Mette Foged, Linea Hasager, Giovanni Peri and colleagues found that Denmark’s 1999 expansion of free language training produced lasting gains in refugees’ earnings (Review of Economics and Statistics, 2024). On this view, investment works better than pressure.",
+    "lean_label_a": "Obligations work",
+    "lean_label_b": "Support works",
+    "id": "do-compulsory-integration-rules-with-sanctions"
+   },
+   {
+    "text": "Should refugees be integrated from arrival, or treated as temporary residents expected to return?",
+    "kind": "value",
+    "why": "Refugee law allows protection to end when the danger at home ends, and Denmark’s 2019 “paradigm shift” made return rather than integration the stated aim for refugees. Yet most refugees stay for many years, and their children grow up in the host country.",
+    "detail": "Supporters of early integration argue that wars rarely end quickly and most refugees never go home, so delaying integration only wastes the years in which language, work and schooling could be built. Germany’s 2015 cohort shows how slow the climb into work is, and in their reading every year lost at the start costs more later. Temporary status discourages investment by refugees and employers alike.\n\nSupporters of temporary protection argue that asylum is a promise of shelter from danger, not of a new homeland, and that keeping return as the goal preserves public support for taking refugees in at all. Return also serves the home country, which needs its people to rebuild. After the fall of Syria’s Assad government in December 2024, they argue, the case for Syrian refugees in Europe to go home became concrete rather than theoretical.",
+    "lean_label_a": "Integrate early",
+    "lean_label_b": "Plan for return",
+    "id": "should-refugees-be-integrated-from-arrival"
+   },
+   {
+    "text": "Does ethnic and cultural diversity erode trust and solidarity?",
+    "kind": "empirical",
+    "why": "Robert Putnam’s 2007 study of US communities, which found lower trust in more diverse places, set off a large literature. It finds a negative link whose size varies with how trust and diversity are measured, and the sides read its size differently.",
+    "detail": "A meta-analysis of 1,001 estimates from 87 studies by Peter Thisted Dinesen, Merlin Schaeffer and Kim Mannemar Sønderskov (Annual Review of Political Science, 2020) found a statistically significant negative relationship between ethnic diversity and social trust, strongest for trust in neighbors and when diversity is measured locally. Those who worry about cohesion argue that this is why a shared culture, or at least a strong shared identity, matters: it supplies the trust that diversity draws down and underpins the solidarity welfare states depend on.\n\nOthers note that the same literature finds the effect small, often tied to segregation and inequality rather than diversity as such, and that contact between groups over time tends to raise trust. Diverse cities and countries such as Canada sustain high trust; on this view, what erodes it is segregation and rapid change without investment in shared institutions, not diversity itself.",
+    "lean_label_a": "Erodes trust",
+    "lean_label_b": "Trust adapts",
+    "id": "does-ethnic-and-cultural-diversity-erode"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Require a common language and civic values, not culture",
+    "color_key": "green",
+    "steelman": "Integration is a two-way bargain: newcomers learn the language, work and accept democratic rules, the state offers real support and equal rights, and beyond that, culture is free.",
+    "detail": "We ask what a liberal state may fairly ask, and no more. The host society offers equal rights, language classes, recognition of qualifications and, in time, full citizenship; the newcomer learns the language, works where able, obeys the law and accepts the rules everyone lives by: equality of men and women, freedom of speech and religion, and the separation of religious authority from the law. Faith, food, festivals and family languages stay free, as they did for earlier generations of immigrants. Clear, published requirements backed by real support are fairer to newcomers than vague expectations they can never be sure they have met, and they keep the public consent on which continued immigration depends. As Britain’s Home Office wrote in its 2025 settlement plan, “This does not mean assimilation,” but “it does demand contribution and integration.”\n\nWe reject two mistakes. The old multiculturalism asked too little, treated communities as blocs speaking through self-appointed leaders and in places tolerated isolation in the name of respect. Assimilationism asks for what a liberal state has no right to demand and no means to enforce: that people change what they believe in private and who they feel themselves to be. To those who call civic values too thin to hold a nation together, we answer that a shared language, shared schools and workplaces and equal citizenship are not thin, and that Britain and Canada have built common identities on them across many faiths. Our demanding wing uses residence permits, benefits and long waits as levers, as the Netherlands, Denmark and Sweden do; our facilitating wing, as in Germany and Canada, treats early citizenship and dual nationality as tools.",
+    "proponents": "UK Home Office; British Future; Government of Sweden; Government of the Netherlands; Council of Europe Intercultural Cities",
+    "id": "require-a-common-language-and-civic"
+   },
+   {
+    "name": "Expect newcomers to adopt the national culture",
+    "color_key": "blue",
+    "steelman": "A nation is a people, not just a legal framework. Every successful nation of immigrants asked newcomers to become part of it, and that invitation to full membership is a mark of respect.",
+    "detail": "A nation has a language, a history, habits and loyalties, and it can absorb large numbers of newcomers only if they, and above all their children, come to share them. That has nothing to do with race: people of every origin have become fully American, Australian or French. As Senator Tommy Tuberville said when introducing his ASSIMILATION Act in May 2026, “Assimilation has absolutely nothing to do with race. It’s about values.” What failed in recent decades was not immigration but the confidence to ask, replaced by a multicultural ethic that told newcomers they need not change and told natives they must not mind. The results show in neighborhoods where the national language is rarely heard, in communities where religious rules outrank national law, and in second and third generations who feel loyal to neither country.\n\nThe great American immigration of 1880 to 1920 shows what works: millions of Southern and Eastern Europeans, a deliberate Americanization effort, and descendants now fully in the mainstream. Citizenship should crown a real transformation, tested seriously, and schools and public life should teach the national language, history and civic culture without apology. To the charge that this is coercion, we answer that persecution is not invitation; what works is a confident culture that expects newcomers to join and rewards them when they do, and many of its loudest advocates are immigrants who did. Some of us stress values and loyalty, as the US citizenship agency now does; others stress customs, dress and religion, as in Germany’s Leitkultur debate and Pauline Hanson’s call for a “monocultural” Australia. Quebec’s 2025 integration law makes French and Quebec culture the common culture all residents are expected to join.",
+    "proponents": "US Citizenship and Immigration Services; Government of Quebec; Pauline Hanson; Tommy Tuberville; Nancy Mace",
+    "id": "expect-newcomers-to-adopt-the-national"
+   },
+   {
+    "name": "Let newcomers keep their cultures and accommodate them",
+    "color_key": "amber",
+    "steelman": "People do not leave their identities at the border. You can be Canadian and Sikh, British and Muslim; recognition and fair treatment make newcomers belong, and pressure pushes them away.",
+    "detail": "Equal citizenship in a diverse society means more than equal treatment under laws written for the majority. A state that asks people to shed their language, faith and heritage is telling them they are not fully welcome. Public institutions should accommodate difference where they reasonably can, in dress codes, school curricula, broadcasting and public holidays, and the state should fight the discrimination that is the main barrier immigrants and their children face. Integration happens best when people feel secure: they learn the language because they want to take part, not because a test forces them, and their children grow up with a confident dual identity rather than a choice between betraying their parents and being rejected by their neighbors. As Tariq Modood puts it, multiculturalism “is not a politics of separatism”; it is integration without assimilation, in which minorities and the majority both change.\n\nCanada and Australia, the most multicultural countries by policy, have some of the highest naturalization rates in the rich world and children of immigrants who out-earn the children of the local-born, and most Australians say multiculturalism has been good for their country. Segregation and withdrawal follow exclusion, not recognition: the Dutch problems our critics cite grew out of a guest-worker policy that for decades expected migrants to go home. Multiculturalism has always worked within liberal limits, where rights, not group traditions, have the final word, and accommodation means headscarves and holidays, not forced marriage. Some of us seek group recognition and public funding for cultural maintenance; others, especially anti-racist organizations, center on removing discrimination.",
+    "proponents": "Government of Canada; Tariq Modood; Will Kymlicka; Runnymede Trust; Government of Australia",
+    "id": "let-newcomers-keep-their-cultures-and"
+   },
+   {
+    "name": "Aim for return, not integration",
+    "color_key": "rust",
+    "steelman": "For large groups from culturally distant regions, decades of integration programs have not delivered. Asylum is shelter for the length of a danger, and lawful return should be the goal.",
+    "detail": "Employment gaps, welfare dependence, crime, parallel neighborhoods and hostility to the host society’s values persist into the second generation in country after country. More programs will not change that, because the problem is scale and cultural distance, not funding. When wars end, as Syria’s has, refugees should go home and rebuild their countries. Those with no right to stay should leave; others should stay only by contributing and accepting the nation’s way of life. Nations have a right to preserve their identity, and our voters have asked again and again for less immigration. Europe’s guest workers, expected to leave but allowed to stay, show that temporary status means nothing unless enforced. Return, through incentives and lawful enforcement, addresses the root of the problem and is the condition for welcoming those who do integrate.\n\nTo those who say return means expelling citizens by ancestry, we answer that it means the lawful return of foreigners required to leave and of refugees once the reason for flight has ended; Germany’s AfD, in a January 2024 position paper, called deporting German citizens of migrant origin unconstitutional and said those who are well integrated are expressly welcome. To those who call it impractical or cruel, we answer that every state already removes people with no right to stay, that incentives for voluntary return are humane, and that the status quo is crueler to the natives and immigrants who live with its consequences. Our broader wing reaches legal residents and citizens too: after the shooting of two National Guard members in November 2025, President Donald Trump wrote that he would “denaturalize migrants who undermine domestic tranquility” and deport any foreign national who is “non-compatible with Western civilization.”",
+    "proponents": "Alternative for Germany (AfD); Alice Weidel; Donald Trump",
+    "id": "aim-for-return-not-integration"
+   }
+  ],
+  "crux": {
+   "lead": "What turns newcomers into members: equal rights and time, or a shared culture the nation may ask of them?",
+   "lead_highlight": "What turns newcomers into members",
+   "subtitle": "Almost everyone wants immigrants and their children to speak the language, obey the law and feel at home. The split is over whether that happens on its own when treatment is fair, and whether a democracy may ask for more than respect for its laws.",
+   "empirical": "How fast and how fully immigrants and their children come to share the language, values and sense of belonging of the native-born, and what speeds or slows it: discrimination, norms within communities, recognition of heritage, mandatory courses, early citizenship. If convergence proves fast under light-touch policies, the case for cultural demands weakens; if it stalls for some groups under every policy, the case for asking more gains.",
+   "values": "Whether a nation is a cultural community whose members may wish to keep their language, history and way of life, so that asking newcomers to join it, or to leave, is a fair condition of membership, or a civic compact open to anyone who keeps its laws, so that asking more intrudes on freedoms owed to natives and newcomers alike. Evidence can inform that weighing but cannot do it."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Read the OECD and EU scorecard on immigrant integration",
+    "description": "The joint OECD and European Commission “Settling In” indicators compare immigrants and their children with the native-born on jobs, language, schooling, housing, citizenship and discrimination.",
+    "url": "https://www.oecd.org/content/dam/oecd/en/publications/support-materials/2023/06/indicators-of-immigrant-integration-2023_70d202c4/indicators-of-immigrant-integration-settling-in-main-indicators-2023-brochure.pdf",
+    "for_position": null,
+    "id": "read-the-oecd-and-eu-scorecard"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Tutor an adult learning English",
+    "description": "ProLiteracy’s volunteer page links to a national directory of adult literacy and English-language programs that train volunteer tutors, typically for one and a half to two hours a week.",
+    "url": "https://www.proliteracy.org/get-involved/volunteer/",
+    "for_position": "Require a common language and civic values, not culture",
+    "id": "tutor-an-adult-learning-english"
+   },
+   {
+    "kind": "policy",
+    "title": "Back official-English laws with U.S. English",
+    "description": "The group campaigns for the English Language Unity Act and state official-English laws to preserve what it calls “the unifying role of the English language,” and helps supporters contact legislators.",
+    "url": "https://www.usenglish.org/",
+    "for_position": "Expect newcomers to adopt the national culture",
+    "id": "back-official-english-laws-with-u"
+   },
+   {
+    "kind": "donate",
+    "title": "Support race-equality research at the Runnymede Trust",
+    "description": "Britain’s race-equality think tank researches discrimination in housing, criminal justice, education and citizenship and argues for equal opportunities for people of all backgrounds.",
+    "url": "https://www.runnymedetrust.org/donate",
+    "for_position": "Let newcomers keep their cultures and accommodate them",
+    "id": "support-race-equality-research-at-the"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the AfD’s own definition of “remigration”",
+    "description": "The German party’s January 2024 position paper, in German, sets out what it means by remigration and what it says the term does not mean.",
+    "url": "https://www.afd.de/afd-positionspapier-zur-remigration-raeumt-mit-deportationsluege-auf/",
+    "for_position": "Aim for return, not integration",
+    "id": "read-the-afd-s-own-definition"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Compare integration policies across 56 countries with MIPEX",
+    "description": "The Migrant Integration Policy Index scores laws on nationality, anti-discrimination, education, family reunion, work and political participation; its benchmark is equal rights for migrants.",
+    "url": "https://www.mipex.eu/",
+    "for_position": null,
+    "id": "compare-integration-policies-across-56-countries"
+   },
+   {
+    "kind": "local",
+    "title": "Host or join a Great Get Together",
+    "description": "The Jo Cox Foundation’s annual weekend of community events, from street parties to shared meals between longtime residents and newcomers, built on Jo Cox’s line “we have more in common than that which divides us.”",
+    "url": "https://www.jocoxfoundation.org/our-work/stronger-communities/great-get-together/",
+    "for_position": "Require a common language and civic values, not culture",
+    "id": "host-or-join-a-great-get"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Help someone prepare for the US citizenship test",
+    "description": "USCIS’s Citizenship Resource Center offers study materials for the 2025 civics test and resources for volunteers who teach English, US history and government to applicants.",
+    "url": "https://www.uscis.gov/citizenship",
+    "for_position": "Expect newcomers to adopt the national culture",
+    "id": "help-someone-prepare-for-the-us"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read what Canada’s Multiculturalism Act promises",
+    "description": "Canadian Heritage’s summary of the 1988 act sets out the official case for preserving cultural heritage while removing barriers to participation in Canadian society.",
+    "url": "https://www.canada.ca/en/canadian-heritage/services/about-multiculturalism-anti-racism/about-act.html",
+    "for_position": "Let newcomers keep their cultures and accommodate them",
+    "id": "read-what-canada-s-multiculturalism-act"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Explore Australia’s long-running survey of social cohesion",
+    "description": "The Scanlon Institute’s annual Mapping Social Cohesion report has tracked views on immigration, multiculturalism, belonging and trust since 2007, separating views on numbers from views on diversity.",
+    "url": "https://scanloninstitute.org.au/mapping-social-cohesion-2025/",
+    "for_position": null,
+    "id": "explore-australia-s-long-running-survey"
+   }
+  ]
+ },
+ "icon": "storefront",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: a two-story corner shop with a large scalloped striped awning over its wide front window and a blank sign band above as the dominant focal mass; three open wooden crates of large round fruits and leafy greens stacked on the pavement in front, overlapping the bottom of the shop window; a medium narrow apartment building with two small balconies just behind the shop, one balcony with a potted plant; a small schoolhouse with a bell in its gable sitting on the far rise; one single string of round lights stretched from the shop's top corner across the frame to a slim post at the right as the connective element; the ground is a broad gentle hill curving up from the shop to the schoolhouse. Few simple elements, large and bold.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #9459a2, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: suitcases, luggage, passports, boats, walls, fences, barriers, border posts, flags, bunting, national symbols, globes, maps, the Statue of Liberty, melting pots, salad bowls, mosaics, puzzle pieces, jigsaw pieces, patchwork quilts, two halves, split frames, open arms, hands, handshakes, crosses, crescents, domes, minarets, headscarves, religious symbols, signs, lettering, speech bubbles, arrows, balance scales."
 }

@@ -1,8 +1,8 @@
 {
  "slug": "economic-inequality",
  "title": "Economic Inequality",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-10-01T19:22:03+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Causes and cures of the rich-poor gap. Not wages specifically or wealth taxation.",
@@ -18,5 +18,866 @@
   "free-trade-vs-nationalism",
   "universal-basic-income",
   "universal-healthcare"
- ]
+ ],
+ "content": {
+  "overview": {
+   "summary": "Why the gap between rich and poor is as wide as it is, whether it matters in itself or only for the poor, and what, if anything, should be done.",
+   "scope_covered": "Income and wealth gaps within countries and across the world: how large they are, how much they have grown, what drives them, whether they matter in themselves, and remedies from taxes and transfers to competition and industrial policy.",
+   "scope_excluded": "Wages, unions and minimum wages (labor power), wealth and inheritance taxes (taxing extreme wealth), and meritocracy, basic income and universal healthcare, each on its own page.",
+   "why_now": "On September 23, 2026, during the UN General Assembly’s high-level week, Brazil, Norway, South Africa and Spain launched an International Panel on Inequality modeled on the climate panel, and UN Secretary-General António Guterres called unchecked inequality “a ticking time bomb.”",
+   "why_now_source_label": "UN News",
+   "why_now_source_url": "https://news.un.org/en/story/2026/09/1168489"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "Share of global wealth owned by the richest 10%",
+     "viz": "radial",
+     "wide": false,
+     "value": "75",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2025 the richest tenth of the world’s adults owned 75 percent of personal wealth and the poorer half 2 percent; the same groups received 53 and 8 percent of income.",
+     "detail": "These are the headline global estimates of the World Inequality Lab, the research group around Lucas Chancel and Thomas Piketty, published in December 2025. The middle 40 percent held 23 percent of wealth and received 38 percent of income. Income is measured before taxes and transfers but after pensions and unemployment benefits, and both measures are converted at purchasing power parity, which adjusts for lower prices in poorer countries. Wealth is more concentrated than income because most people own little beyond a home and some savings. The report finds that the share held by the richest 0.001 percent, about 56,000 adults, rose from around 3.8 percent in 1995 to nearly 6.1 percent in 2025, and that over those years the top 1 percent captured 36.7 percent of global wealth growth and the bottom half 1.1 percent. A G20 committee chaired by Joseph Stiglitz, looking at a different window, puts the top 1 percent’s capture of new wealth since 2000 at 41 percent. Global estimates rely on imputation where tax and survey data are weak, so they are less certain than national series for rich countries.",
+     "source_label": "World Inequality Lab, World Inequality Report 2026, Executive Summary",
+     "source_url": "https://wir2026.wid.world/www-site/uploads/2025/11/WIR26_Executive_Summary_English.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-10-01",
+     "id": "share-of-global-wealth-owned-by"
+    },
+    {
+     "label": "Share of US household wealth, 1989 and 2026",
+     "viz": "ranked",
+     "wide": true,
+     "value": "32.5",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Top 1%, 1989",
+       "value": "22.8",
+       "highlight": false
+      },
+      {
+       "label": "Top 1%, 2026",
+       "value": "32.5",
+       "highlight": true
+      },
+      {
+       "label": "90th–99th, 1989",
+       "value": "38.0",
+       "highlight": false
+      },
+      {
+       "label": "90th–99th, 2026",
+       "value": "36.4",
+       "highlight": false
+      },
+      {
+       "label": "50th–90th, 1989",
+       "value": "35.7",
+       "highlight": false
+      },
+      {
+       "label": "50th–90th, 2026",
+       "value": "28.8",
+       "highlight": false
+      },
+      {
+       "label": "Bottom 50%, 1989",
+       "value": "3.5",
+       "highlight": false
+      },
+      {
+       "label": "Bottom 50%, 2026",
+       "value": "2.3",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The richest 1 percent of US households held 32.5 percent of household net worth in mid-2026, up from 22.8 percent in 1989; the bottom half held 2.3 percent, down from 3.5.",
+     "detail": "The Federal Reserve’s Distributional Financial Accounts combine its quarterly national balance sheet with its triennial Survey of Consumer Finances, which makes them the most current official estimate of how US wealth is divided. The 1989 figures are for the third quarter, the 2026 figures for the second. The shift is not only at the bottom: households between the 50th and 90th percentiles, roughly the middle class, lost about 7 points of share while the top 1 percent gained about 10. The usual explanation is what each group owns. Middle-class wealth is mostly housing and pensions; top wealth is mostly corporate stock and private businesses, whose values rose much faster over the period. The top share therefore moves with the stock market and can fall in a crash. The quarterly series for each group can also be checked on FRED, the St. Louis Fed’s data site.",
+     "source_label": "Federal Reserve Board, Distributional Financial Accounts",
+     "source_url": "https://www.federalreserve.gov/releases/z1/dataviz/dfa/distribute/chart/",
+     "source_published": "1989 and 2026",
+     "source_accessed": "2026-10-01",
+     "id": "share-of-us-household-wealth-1989"
+    },
+    {
+     "label": "Combined wealth of the world’s billionaires",
+     "viz": "bar",
+     "wide": false,
+     "value": "20",
+     "unit": "$ trillion",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Forbes’ March 2026 list counted more than 3,400 billionaires with a combined net worth of about $20 trillion.",
+     "detail": "Forbes attributes the growth in billionaire wealth to the artificial intelligence boom, rising markets and favorable fiscal policy. Oxfam, using Forbes’ real-time data to November 30, 2025, reported that billionaire wealth rose more than 16 percent in 2025 to $18.3 trillion and that the number of billionaires passed 3,000 for the first time; its total and Forbes’ differ because they are measured on different dates. Oxfam timed a January 2026 report on billionaires’ political power to the Davos meeting. Billionaire wealth is mostly the market value of company shares, so it rises and falls sharply with stock prices.",
+     "source_label": "Forbes, “Inside Forbes’ 2026 Billionaires List: More Than 3,400 Worth $20 Trillion” (March 10, 2026)",
+     "source_url": "https://www.forbes.com/sites/chasewithorn/2026/03/10/2026-worlds-billionaires-list-facts-and-figures/",
+     "source_published": "2026",
+     "source_accessed": "2026-10-01",
+     "id": "combined-wealth-of-the-world-s"
+    },
+    {
+     "label": "Rise in the US top 1% share of after-tax income, 1979–2019",
+     "viz": "ranked",
+     "wide": true,
+     "value": "6.4",
+     "unit": "points",
+     "series": [
+      {
+       "label": "Piketty, Saez & Zucman",
+       "value": "6.4",
+       "highlight": false
+      },
+      {
+       "label": "Auten & Splinter",
+       "value": "1.4",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Two research teams disagree over how much the top 1 percent’s share of US after-tax income grew from 1979 to 2019: about 6.4 points in one estimate, about 1.4 in the other.",
+     "detail": "This is the central measurement dispute in the debate. Both teams start from IRS tax data and then add the income missing from it, and how that income is assigned drives the result. Gerald Auten of the Treasury and David Splinter of Congress’s Joint Committee on Taxation, in the Journal of Political Economy in July 2024, found the top 1 percent’s pre-tax share rose 4.4 points over the period, and concluded that after-tax top shares are “about the same as in the early 1960s.” Piketty, Saez and Zucman’s own series shows a pre-tax rise of 8.3 points. In a September 2024 comment they argue that Auten and Splinter assign tax-exempt partnership income to the wrong owners and treat public goods spending like a basic income worth 9 percent of national income, and that changing these two choices raises Auten and Splinter’s after-tax rise to 5.4 points. Auten and Splinter have published a reply defending their choices.",
+     "source_label": "Piketty, Saez & Zucman, “Income Inequality in the United States: A Comment,” World Inequality Lab Technical Note 2024/04",
+     "source_url": "https://eml.berkeley.edu/~saez/PSZ2024.pdf",
+     "source_published": "1979–2019",
+     "source_accessed": "2026-10-01",
+     "id": "rise-in-the-us-top-1"
+    },
+    {
+     "label": "Americans born in the 1980s who out-earn their parents",
+     "viz": "radial",
+     "wide": false,
+     "value": "50",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "About 90 percent of Americans born in 1940 grew up to earn more than their parents; for those born in the 1980s it is about 50 percent, though other adjustments give higher figures.",
+     "detail": "This measure, absolute mobility, compares a child’s household income around age 30 with their parents’ at the same age, adjusted for inflation. Raj Chetty and coauthors estimate that restoring the faster growth of the mid-century economy while keeping today’s distribution would lift the 1980s figure only to 62 percent, while keeping today’s growth but sharing it as broadly as in the 1940s would lift it to 80 percent; they conclude that the unequal distribution of growth, more than slower growth, drove the fall. Critics reply that the result depends on the price index used for inflation and on how household size is handled, and that other choices give a larger share: Gonzalo Schwarz of the Archbridge Institute (2018) cites roughly three in four of today’s adults out-earning their parents.",
+     "source_label": "Chetty, Grusky, Hell, Hendren, Manduca & Narang, “The Fading American Dream,” Science (2017), Opportunity Insights",
+     "source_url": "https://opportunityinsights.org/paper/the-fading-american-dream/",
+     "source_published": "birth cohorts 1940–1984",
+     "source_accessed": "2026-10-01",
+     "id": "americans-born-in-the-1980s-who"
+    },
+    {
+     "label": "Share of the world living in extreme poverty",
+     "viz": "ranked",
+     "wide": true,
+     "value": "10.0",
+     "unit": "%",
+     "series": [
+      {
+       "label": "1990",
+       "value": "43.4",
+       "highlight": false
+      },
+      {
+       "label": "2000",
+       "value": "36.2",
+       "highlight": false
+      },
+      {
+       "label": "2010",
+       "value": "21.0",
+       "highlight": false
+      },
+      {
+       "label": "2019",
+       "value": "10.8",
+       "highlight": false
+      },
+      {
+       "label": "2020",
+       "value": "11.4",
+       "highlight": false
+      },
+      {
+       "label": "2024",
+       "value": "10.4",
+       "highlight": false
+      },
+      {
+       "label": "2026, projected",
+       "value": "10.0",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The share of people living on less than $3 a day fell from 43.4 percent in 1990 to a projected 10 percent in 2026, but has barely moved since 2019.",
+     "detail": "The line is $3.00 a day in 2021 prices, adjusted for differences in living costs. The World Bank adopted it in June 2025, replacing $2.15 a day in 2017 prices; Our World in Data reports that the change added about 125 million people to the count and revised the whole series, and all figures here use the new line. Depending on the country’s survey, the line is applied to income or to consumption. The pandemic pushed the rate up in 2020, and the remaining poor are increasingly concentrated in Sub-Saharan Africa and in fragile states. Figures after 2024 are projections; the World Bank’s September 2026 update of its platform puts 2026 slightly lower, at 9.8 percent or about 811 million people.",
+     "source_label": "World Bank Poverty and Inequality Platform (2026), via Our World in Data",
+     "source_url": "https://ourworldindata.org/grapher/share-of-population-in-extreme-poverty",
+     "source_published": "1990–2026",
+     "source_accessed": "2026-10-01",
+     "id": "share-of-the-world-living-in"
+    },
+    {
+     "label": "Income inequality before and after taxes and transfers",
+     "viz": "ranked",
+     "wide": true,
+     "value": "0.394",
+     "unit": "Gini (0–1)",
+     "series": [
+      {
+       "label": "US 2024, before",
+       "value": "0.509",
+       "highlight": false
+      },
+      {
+       "label": "US 2024, after",
+       "value": "0.394",
+       "highlight": true
+      },
+      {
+       "label": "Germany 2022, before",
+       "value": "0.510",
+       "highlight": false
+      },
+      {
+       "label": "Germany 2022, after",
+       "value": "0.312",
+       "highlight": false
+      },
+      {
+       "label": "UK 2024, before",
+       "value": "0.469",
+       "highlight": false
+      },
+      {
+       "label": "UK 2024, after",
+       "value": "0.298",
+       "highlight": false
+      },
+      {
+       "label": "Denmark 2022, before",
+       "value": "0.477",
+       "highlight": false
+      },
+      {
+       "label": "Denmark 2022, after",
+       "value": "0.288",
+       "highlight": false
+      },
+      {
+       "label": "Belgium 2024, before",
+       "value": "0.485",
+       "highlight": false
+      },
+      {
+       "label": "Belgium 2024, after",
+       "value": "0.243",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The United States and Germany start with almost the same market-income inequality, a Gini near 0.51, but after taxes and transfers the US figure is 0.394 and Germany’s 0.312.",
+     "detail": "The Gini coefficient sums up a whole distribution in one number, from 0, where everyone has the same, to 1, where one household has everything. The Luxembourg Income Study harmonizes national household surveys so countries can be compared on the same definitions, and reports inequality of market income (wages, business and capital income) and of disposable income (after income taxes, payroll taxes and cash transfers). On these figures, taxes and transfers cut the Gini by about 23 percent in the United States, 39 percent in Germany and 50 percent in Belgium. There are caveats. Public pensions count as transfers, so countries where retirees live on state pensions show many households with near-zero market income, which inflates their market Gini and makes their redistribution look larger than it is. The comparison also leaves out in-kind benefits such as public health care and education, which are larger in Europe, and consumption taxes, which fall harder on the poor. Survey years differ by country, as the labels show.",
+     "source_label": "Luxembourg Income Study, via Our World in Data",
+     "source_url": "https://ourworldindata.org/grapher/gini-coefficient-before-and-after-tax-lis",
+     "source_published": "2022–2024",
+     "source_accessed": "2026-10-01",
+     "id": "income-inequality-before-and-after-taxes"
+    },
+    {
+     "label": "Real income growth across the world distribution, 1988–2008",
+     "viz": "ranked",
+     "wide": true,
+     "value": "71.7",
+     "unit": "% growth",
+     "series": [
+      {
+       "label": "Bottom 10%",
+       "value": "24.9",
+       "highlight": false
+      },
+      {
+       "label": "40th–50th",
+       "value": "70.6",
+       "highlight": false
+      },
+      {
+       "label": "50th–60th",
+       "value": "71.7",
+       "highlight": true
+      },
+      {
+       "label": "60th–70th",
+       "value": "57.9",
+       "highlight": false
+      },
+      {
+       "label": "80th–90th",
+       "value": "4.6",
+       "highlight": false
+      },
+      {
+       "label": "90th–95th",
+       "value": "16.6",
+       "highlight": false
+      },
+      {
+       "label": "95th–99th",
+       "value": "26.9",
+       "highlight": false
+      },
+      {
+       "label": "Top 1%",
+       "value": "64.8",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "From 1988 to 2008, incomes near the world’s median grew about 70 percent and the global top 1 percent’s about 65; near the 80th to 90th percentile, under 5 percent, a dip whose cause is disputed.",
+     "detail": "This is the “elephant curve” of Christoph Lakner and Branko Milanovic, the most widely cited picture of who gained from globalization. By population, those gaining near the global median were about 90 percent from Asia, chiefly China’s rising middle class; those around the 85th percentile were almost 90 percent from mature economies, the working and lower-middle classes of rich countries. The global top 1 percent, mostly rich-country elites, did nearly as well as the middle. The same paper finds the global Gini fell only slightly, from 72.2 to 70.5, and that once top incomes missing from household surveys are added it is close to 76 and the fall almost disappears. Adam Corlett of the Resolution Foundation (2016) showed that part of the dip reflects changing country composition, notably stagnating Japan and the collapse of the former Soviet economies, rather than falling incomes for the same rich-country workers. Growth is cumulative real income per person in 2005 purchasing-power dollars.",
+     "source_label": "Lakner & Milanovic, World Bank Policy Research Working Paper 6719 (2013)",
+     "source_url": "https://documents1.worldbank.org/curated/en/914431468162277879/pdf/WPS6719.pdf",
+     "source_published": "1988–2008",
+     "source_accessed": "2026-10-01",
+     "id": "real-income-growth-across-the-world"
+    },
+    {
+     "label": "Share of global income inequality due to gaps between countries",
+     "viz": "ranked",
+     "wide": true,
+     "value": "30",
+     "unit": "% of total",
+     "series": [
+      {
+       "label": "1820",
+       "value": "~10",
+       "highlight": false
+      },
+      {
+       "label": "1980",
+       "value": "55+",
+       "highlight": false
+      },
+      {
+       "label": "2020",
+       "value": "~30",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 1980 more than half of all income inequality among the world’s people came from differences between countries; by 2020 it was about 30 percent, the rest coming from inside countries.",
+     "detail": "Global inequality between individuals, measured here with the Theil index, can be split into a part due to some countries being richer than others and a part due to inequality inside each country. From 1820 to 1980 the between-country part grew as Western Europe and North America industrialized and most of the world did not. Since 1980, fast growth in China, India and other emerging economies has narrowed the gap between countries while inequality rose inside most of them, so overall global inequality has stayed roughly flat at a very high level. Lucas Chancel and Thomas Piketty find that the average income of the world’s top 10 percent was under 20 times that of its bottom 50 percent in 1820, about 40 times in 1910, and still about 40 times in 2020. The figures shown are approximate.",
+     "source_label": "Chancel & Piketty, “Global Income Inequality, 1820–2020,” Journal of the European Economic Association (2021)",
+     "source_url": "http://piketty.pse.ens.fr/files/ChancelPiketty2021JEEA.pdf",
+     "source_published": "1820–2020",
+     "source_accessed": "2026-10-01",
+     "id": "share-of-global-income-inequality-due"
+    },
+    {
+     "label": "Adults who call the rich-poor gap a very big problem",
+     "viz": "ranked",
+     "wide": true,
+     "value": "51",
+     "unit": "%",
+     "series": [
+      {
+       "label": "South Africa",
+       "value": "72",
+       "highlight": false
+      },
+      {
+       "label": "France",
+       "value": "64",
+       "highlight": false
+      },
+      {
+       "label": "India",
+       "value": "64",
+       "highlight": false
+      },
+      {
+       "label": "Germany",
+       "value": "61",
+       "highlight": false
+      },
+      {
+       "label": "United Kingdom",
+       "value": "59",
+       "highlight": false
+      },
+      {
+       "label": "Canada",
+       "value": "57",
+       "highlight": false
+      },
+      {
+       "label": "36-country median",
+       "value": "54",
+       "highlight": false
+      },
+      {
+       "label": "United States",
+       "value": "51",
+       "highlight": true
+      },
+      {
+       "label": "Brazil",
+       "value": "42",
+       "highlight": false
+      },
+      {
+       "label": "Japan",
+       "value": "35",
+       "highlight": false
+      },
+      {
+       "label": "Sweden",
+       "value": "27",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Half of Americans, and a median of 54 percent across 36 countries, say the gap between rich and poor is a very big problem where they live.",
+     "detail": "Pew asked whether the gap between the rich and the poor is a very big, moderately big, small or not a problem at all in the respondent’s country; the figures are the “very big” answers only. Counting “moderately big” too, a majority in every one of the 36 countries call it at least a moderately big problem, including 83 percent of Americans. The United States shows the widest ideological split of any country surveyed: 76 percent of liberals call it a very big problem against 30 percent of conservatives, a 46-point gap. Concern is higher in middle-income countries, a median of 62 percent, than in high-income ones, 48 percent. The US survey was fielded in April 2024 with 3,600 adults, before the presidential election.",
+     "source_label": "Pew Research Center, “Economic Inequality Seen as Major Challenge Around the World” (January 2025)",
+     "source_url": "https://www.pewresearch.org/global/2025/01/09/economic-inequality-seen-as-major-challenge-around-the-world/",
+     "source_published": "2024",
+     "source_accessed": "2026-10-01",
+     "id": "adults-who-call-the-rich-poor"
+    },
+    {
+     "label": "Generations for a low-income family to reach average income",
+     "viz": "ranked",
+     "wide": true,
+     "value": "5",
+     "unit": "generations",
+     "series": [
+      {
+       "label": "Colombia",
+       "value": "11",
+       "highlight": false
+      },
+      {
+       "label": "Brazil",
+       "value": "9",
+       "highlight": false
+      },
+      {
+       "label": "South Africa",
+       "value": "9",
+       "highlight": false
+      },
+      {
+       "label": "China",
+       "value": "7",
+       "highlight": false
+      },
+      {
+       "label": "Germany",
+       "value": "6",
+       "highlight": false
+      },
+      {
+       "label": "France",
+       "value": "6",
+       "highlight": false
+      },
+      {
+       "label": "United States",
+       "value": "5",
+       "highlight": true
+      },
+      {
+       "label": "United Kingdom",
+       "value": "5",
+       "highlight": false
+      },
+      {
+       "label": "OECD average",
+       "value": "4.5",
+       "highlight": false
+      },
+      {
+       "label": "Canada",
+       "value": "4",
+       "highlight": false
+      },
+      {
+       "label": "Sweden",
+       "value": "3",
+       "highlight": false
+      },
+      {
+       "label": "Denmark",
+       "value": "2",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In an illustrative OECD estimate, the descendants of a low-income American family would take about five generations to reach average income, against two in Denmark and eleven in Colombia.",
+     "detail": "The OECD calls these estimates simulation-based and illustrative. They start from a family in the bottom 10 percent and combine two things: how strongly sons’ earnings track their fathers’, with on average 38 percent of the difference carried over across the OECD, and how far the bottom tenth sits below the average. They assume both stay constant, and they use earnings data from around the early 2010s. The comparison mixes countries with very different data quality, so the ranking is a rough guide rather than a precise measure. The source link opens the figure’s data file; the full report is A Broken Social Elevator? How to Promote Social Mobility (OECD, 2018).",
+     "source_label": "OECD, A Broken Social Elevator? How to Promote Social Mobility (2018), Figure 1.5",
+     "source_url": "https://doi.org/10.1787/888933761910",
+     "source_published": "2018",
+     "source_accessed": "2026-10-01",
+     "id": "generations-for-a-low-income-family"
+    },
+    {
+     "label": "What Americans say contributes a great deal to inequality",
+     "viz": "ranked",
+     "wide": true,
+     "value": "61",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Rich people’s influence",
+       "value": "61",
+       "highlight": true
+      },
+      {
+       "label": "Education system",
+       "value": "48",
+       "highlight": false
+      },
+      {
+       "label": "Born with more chances",
+       "value": "36",
+       "highlight": false
+      },
+      {
+       "label": "Some work harder",
+       "value": "33",
+       "highlight": false
+      },
+      {
+       "label": "Racial discrimination",
+       "value": "28",
+       "highlight": false
+      },
+      {
+       "label": "Robots and computers",
+       "value": "22",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Asked what leads to economic inequality in the United States, 61 percent of Americans say the political influence of the rich contributes a great deal, more than any other factor offered.",
+     "detail": "Each factor was asked about separately, with answers of a great deal, a fair amount, not too much or not at all; the series shows the “great deal” share. The full wordings were: rich people having too much political influence; problems with the education system; some people being born with more opportunities than others; some people working harder than others; discrimination against racial or ethnic minorities; and robots and computers doing work previously done by humans. Across all 36 countries surveyed, the political influence of the rich was also the top-rated cause, with a median of 60 percent. In the United States, 58 percent of people on the left say unequal opportunities at birth contribute a great deal, against 21 percent on the right.",
+     "source_label": "Pew Research Center, “Economic Inequality Seen as Major Challenge Around the World” (January 2025)",
+     "source_url": "https://www.pewresearch.org/global/2025/01/09/economic-inequality-seen-as-major-challenge-around-the-world/",
+     "source_published": "2024",
+     "source_accessed": "2026-10-01",
+     "id": "what-americans-say-contributes-a-great"
+    },
+    {
+     "label": "Estimated growth gain from lower inequality, OECD countries",
+     "viz": "bar",
+     "wide": false,
+     "value": "3",
+     "unit": "% of GDP",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "An OECD study estimated that cutting inequality by 1 Gini point would add about 3 percent to GDP over 25 years; other studies find no such effect or the reverse.",
+     "detail": "Federico Cingano’s 2014 OECD working paper, estimated on data for OECD countries from 1970 to 2010, puts the effect at slightly more than 0.1 percentage point of growth a year. It finds the effect works mainly through the gap between low-income households and everyone else, which it links to lower investment in education by poorer families, and finds no evidence that redistribution through taxes and transfers harms growth. Kristin Forbes (American Economic Review, 2000) found instead that within countries a rise in inequality was followed by higher short-run growth, and Robert Barro (2000) found inequality slowed growth in poor countries but not in rich ones. Cross-country growth regressions are sensitive to the sample, period and inequality data used, and the OECD itself cautions that its country-by-country illustrations should not be read as the causal effect of each country’s actual change in inequality.",
+     "source_label": "Cingano, OECD Social, Employment and Migration Working Paper 163 (2014)",
+     "source_url": "https://www.oecd.org/en/publications/trends-in-income-inequality-and-its-impact-on-economic-growth_5jxrjncwxv6j-en.html",
+     "source_published": "1970–2010",
+     "source_accessed": "2026-10-01",
+     "id": "estimated-growth-gain-from-lower-inequality"
+    },
+    {
+     "label": "Life expectancy gap between the richest and poorest 1% of US men",
+     "viz": "bar",
+     "wide": false,
+     "value": "14.6",
+     "unit": "years",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "At age 40, the richest 1 percent of American men can expect to live about 14.6 years longer than the poorest 1 percent; for women the gap is about 10.1 years.",
+     "detail": "Raj Chetty and coauthors linked 1.4 billion tax records to Social Security death records for 2001 to 2014. The gap was growing: life expectancy rose by 2.34 years for men and 2.91 years for women in the top 5 percent of the income distribution, but by only 0.32 years for men and 0.04 years for women in the bottom 5 percent. The same study found that differences in life expectancy among the poor from place to place were significantly correlated with health behaviors such as smoking, and not significantly correlated with local income inequality, access to medical care or labor market conditions. Some read the finding as a measure of what inequality costs; others read it as evidence about the circumstances of the poor rather than the size of the gap.",
+     "source_label": "Chetty et al., “The Association Between Income and Life Expectancy in the United States,” JAMA (2016)",
+     "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4866586/",
+     "source_published": "2001–2014",
+     "source_accessed": "2026-10-01",
+     "id": "life-expectancy-gap-between-the-richest"
+    },
+    {
+     "label": "Top 1% share of income and wealth in India",
+     "viz": "ranked",
+     "wide": true,
+     "value": "22.6",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Income share",
+       "value": "22.6",
+       "highlight": true
+      },
+      {
+       "label": "Wealth share",
+       "value": "40.1",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "On World Inequality Lab estimates, India’s richest 1 percent received 22.6 percent of national income in 2022–23, the highest share since the series begins in 1922, and held 40.1 percent of wealth.",
+     "detail": "India, the world’s most populous country and one of its fastest-growing large economies, shows the tension between the camps in sharp form: rapid growth and falling extreme poverty alongside, on these estimates by Bharti, Chancel, Piketty and Somanchi (2024), a top income share higher than under British colonial rule and above that of the United States, Brazil or South Africa. The authors warn that the quality of Indian economic data is poor and has declined, and present the figures as a likely lower bound. They sit uneasily with the World Bank’s consumption-based Gini index for India, 25.5 in 2022 and among the lowest in the world, because household consumption surveys capture the rich poorly.",
+     "source_label": "Bharti, Chancel, Piketty & Somanchi, “The Rise of the Billionaire Raj,” World Inequality Lab (2024)",
+     "source_url": "https://wid.world/news-article/inequality-in-india-the-billionaire-raj-is-now-more-unequal-than-the-british-colonial-raj/",
+     "source_published": "2022–23",
+     "source_accessed": "2026-10-01",
+     "id": "top-1-share-of-income-and"
+    },
+    {
+     "label": "Median family wealth by race and ethnicity, US",
+     "viz": "ranked",
+     "wide": true,
+     "value": "285,000",
+     "unit": "dollars",
+     "series": [
+      {
+       "label": "Asian",
+       "value": "536,000",
+       "highlight": false
+      },
+      {
+       "label": "White",
+       "value": "285,000",
+       "highlight": true
+      },
+      {
+       "label": "Hispanic",
+       "value": "61,600",
+       "highlight": false
+      },
+      {
+       "label": "Black",
+       "value": "44,900",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2022 the median White family in the United States held $285,000 in wealth, against $61,600 for the median Hispanic family and $44,900 for the median Black family.",
+     "detail": "The rich-poor gap in the United States overlaps heavily with racial gaps, because wealth is accumulated and inherited over generations, and because of the history of slavery, segregation and exclusion from home-buying programs. According to the Federal Reserve, the ratios between groups narrowed from 2019 to 2022 as home, stock and business ownership rose faster among non-White families. 2022 is the first year this series reports Asian families separately. The Survey of Consumer Finances is conducted every three years, and results from the 2025 survey, due in late 2026, will update these figures. All figures are in 2022 dollars.",
+     "source_label": "Federal Reserve, FEDS Notes, “Greater Wealth, Greater Uncertainty” (October 2023)",
+     "source_url": "https://www.federalreserve.gov/econres/notes/feds-notes/greater-wealth-greater-uncertainty-changes-in-racial-inequality-in-the-survey-of-consumer-finances-20231018.html",
+     "source_published": "2022",
+     "source_accessed": "2026-10-01",
+     "id": "median-family-wealth-by-race-and"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Should policy aim to narrow the gap between rich and poor, or only to raise the floor?",
+    "kind": "value",
+    "why": "If what matters is that everyone has enough, a widening gap is harmless whenever the poor also gain; if relative position matters in itself, or through status, health and power, a rising floor is not enough.",
+    "detail": "Those who would narrow the gap say people live in societies, not in income tables. What counts as a decent life, a good school, a safe neighborhood or a political voice is set relative to others, so a family can gain in dollars and lose in standing, security and say. Large gaps, on this view, turn into unequal access to housing, schooling, health and influence, and into a sense that the system is rigged. Those who would raise the floor follow the philosopher Harry Frankfurt: what matters is whether each person has enough, and fixing on relative shares invites envy and distracts from need. A policy that cuts the top without lifting anyone at the bottom, they say, makes no one better off, while a fortune made by building something millions of people buy usually leaves them richer too. No measurement settles which of these a society should care about.",
+    "lean_label_a": "Narrow the gap",
+    "lean_label_b": "Raise the floor",
+    "id": "should-policy-aim-to-narrow-the"
+   },
+   {
+    "text": "Has inequality in rich countries really risen much, once taxes, transfers and untaxed income are counted?",
+    "kind": "empirical",
+    "why": "Everyone agrees income reported on US tax returns grew far more concentrated after 1980. The fight is over how to count income that never appears there, such as employer health insurance, retained profits, transfers and public services.",
+    "detail": "Those who see a sharp rise note that every major data source shows top shares climbing since around 1980: tax data, the Federal Reserve’s wealth accounts, the Congressional Budget Office’s household series and the World Inequality Database. Wealth, which is measured directly rather than pieced together from tax returns, is harder to dispute, and it shows the same trend. They argue that the low estimates rest on contestable choices about who receives untaxed income. Those who see a modest rise, led by the tax economists Gerald Auten and David Splinter, argue that much of the apparent increase is an artifact: tax law changes after 1986 moved business income onto individual returns, marriage rates fell among households that are not rich, and simple measures ignore the growth of transfers and refundable tax credits. On their estimates, real after-tax income of the bottom half rose by about two-thirds between 1979 and 2019. If the gap after government action has barely moved, they say, the case for new redistribution is much weaker than the headline numbers suggest.",
+    "lean_label_a": "Risen sharply",
+    "lean_label_b": "Risen modestly",
+    "id": "has-inequality-in-rich-countries-really"
+   },
+   {
+    "text": "Are the largest fortunes mostly earned by creating value, or extracted through rents and political influence?",
+    "kind": "empirical",
+    "why": "Both sides agree some top income rewards innovation and some is a return to monopoly, protection or lobbying. The fight is over proportions, which are hard to measure because a patent or a zoning rule can be both a reward and a barrier.",
+    "detail": "Those who see fortunes as mostly earned note that the founders atop current billionaire lists built companies whose products hundreds of millions of people chose to buy, and cite William Nordhaus’s estimate that innovators capture only a small fraction of the value their innovations create, most of it going to consumers. Top earners, they add, increasingly draw their income from work and business ownership rather than inherited capital. Those who see more extraction point to evidence of rising market power and scarcity rents. Jan De Loecker, Jan Eeckhout and Gabriel Unger (Quarterly Journal of Economics, 2020) estimate that average markups of US public firms rose from about 21 percent above cost in 1980 to about 61 percent in 2016, though other economists dispute the measurement. Matthew Rognlie (Brookings Papers on Economic Activity, 2015) found that the rise in capital’s share of income in rich countries since the mid-twentieth century came overwhelmingly from housing, which points to scarce, regulated land rather than machines. Skeptics reply that high markups can reflect scale and innovation as easily as monopoly.",
+    "lean_label_a": "Mostly earned",
+    "lean_label_b": "Mostly extracted",
+    "id": "are-the-largest-fortunes-mostly-earned"
+   },
+   {
+    "text": "What mainly drove inequality up within countries: technology and trade, or policy and power?",
+    "kind": "empirical",
+    "why": "The rise since 1980 coincided with computerization, the opening of China to world trade, financial deregulation, cuts in top tax rates and the decline of unions. The answer decides whether policy can only cushion the gap or can reverse it.",
+    "detail": "The case for common forces is that inequality rose across very different countries at the same time. Technology raised the reward for education and skill faster than schools supplied it, the race between education and technology described by Claudia Goldin and Lawrence Katz. “Superstar” dynamics let the best firms and performers serve global markets, and trade with low-wage economies hit manufacturing workers in rich countries. Policy can soften these forces, on this view, but did not create them. The case for choices is that countries exposed to the same technology and trade ended up with very different levels of inequality, and that top income shares rose far more in the English-speaking countries than in continental Europe or Japan. That pattern points to decisions about top tax rates, labor law, corporate governance, financial regulation and antitrust. Thomas Piketty, Emmanuel Saez and Stefanie Stantcheva (2014) found that the countries that cut top tax rates most saw the largest rises in top income shares, without faster growth.",
+    "lean_label_a": "Tech and trade",
+    "lean_label_b": "Policy and power",
+    "id": "what-mainly-drove-inequality-up-within"
+   },
+   {
+    "text": "Does inequality slow economic growth, or is it part of the price of growth?",
+    "kind": "empirical",
+    "why": "The classic view, Arthur Okun’s 1975 “leaky bucket,” holds that redistribution costs some efficiency. Since 2014, OECD and IMF research has argued the reverse, but cross-country growth studies are fragile.",
+    "detail": "Those who see a drag point to work by IMF economists Jonathan Ostry, Andrew Berg and Charalambos Tsangarides (2014), who found lower inequality after taxes and transfers associated with faster and more durable growth. The proposed mechanisms include wasted talent among children who never get a chance, household debt built up as lower earners borrow to keep up, and political instability. Those who see a price argue that incentives matter at the margin: high returns to skill, risk and entrepreneurship are what draw people into starting companies and acquiring scarce skills, and high marginal tax rates blunt them. The growth miracles that cut global poverty, in China and India, came with rising inequality inside those countries, and they argue that regressions linking inequality to slower growth cannot separate cause from correlation. Results in this literature shift with the countries, period and data chosen, so neither side’s estimates are treated as settled.",
+    "lean_label_a": "Drag on growth",
+    "lean_label_b": "Price of growth",
+    "id": "does-inequality-slow-economic-growth-or"
+   },
+   {
+    "text": "Does concentrated wealth translate into concentrated political power?",
+    "kind": "empirical",
+    "why": "Fear that economic inequality corrupts democracy is a main reason people relaxed about the gap itself still oppose it. But influence is hard to measure when the rich and everyone else often want the same policies.",
+    "detail": "Martin Gilens and Benjamin Page (2014) found that across nearly 1,800 US policy questions, the preferences of economic elites and organized business groups predicted outcomes, while those of average citizens had little independent effect. Oxfam’s January 2026 report says billionaires are about 4,000 times more likely than ordinary people to hold political office, and campaign finance, lobbying and media ownership are concentrated at the top. Re-analyses of the Gilens and Page data, by Peter Enns (2015) and by Branham, Soroka and Wlezien (2017), found that the rich and the middle class agree on most issues and that when they disagree the rich win only slightly more often. Skeptics add that large fortunes are spread across both parties and often cancel out, that heavily outspent candidates frequently lose, and that the growth of transfers and refundable credits since the 1970s is hard to square with a government captured by the rich. Some also treat political spending as protected speech, a value in its own right.",
+    "lean_label_a": "Wealth buys power",
+    "lean_label_b": "Power stays diffuse",
+    "id": "does-concentrated-wealth-translate-into-concentrated"
+   },
+   {
+    "text": "Should the cure change what the market pays, or tax and transfer afterward?",
+    "kind": "value",
+    "why": "Almost everyone supports some of both; the fight is over emphasis and cost. Transfers are fast and measurable but criticized for dependence and disincentives; changing market outcomes is slower and harder to prove.",
+    "detail": "On one side are approaches that change incomes before taxes: investment in children and schooling, competition policy that removes rents, industrial and trade policy that rebuilds well-paid work, and labor rules, which the labor power page covers. Their advocates argue that earnings are more durable than benefits, carry more standing, and reduce the need for transfers in the first place. On the other side is tax-and-transfer policy, which reaches people who cannot work, including children, older people and people with disabilities, and whose effects can be measured and adjusted every year. Its advocates say that industrial subsidies and tariffs have uncertain payoffs, can be captured by the industries they help and raise prices for the poor, and that investing in children takes a generation to pay off while poverty is now. Many real programs mix the two, such as the Earned Income Tax Credit, which pays out only to people with earnings.",
+    "lean_label_a": "Shape the market",
+    "lean_label_b": "Redistribute after",
+    "id": "should-the-cure-change-what-the"
+   },
+   {
+    "text": "Does high inequality cause low mobility, or are they separate problems?",
+    "kind": "empirical",
+    "why": "More unequal countries tend to have less mobility between generations, the “Great Gatsby curve.” Whether the gap causes this, or both stem from schooling, family structure and geography, decides whether narrowing it opens opportunity.",
+    "detail": "Those who see a causal link argue that when the rungs of a ladder are far apart it is harder to climb, and that parents at the top have more resources to keep their children there, through homes in good school districts, tutoring, internships and inheritance. Richard Reeves argues that the upper middle class “hoards” opportunity through exclusionary zoning, legacy admissions and unpaid internships. Those who see separate problems point to the 2014 maps of Raj Chetty and coauthors, which show mobility varying widely between US commuting zones under the same national inequality. Mobility there correlates with segregation, school quality, social capital, family stability and inequality among the bottom 99 percent, but not with the top 1 percent’s share of income. On this view a society could cut its top shares and leave mobility unchanged, or raise mobility without touching the top. Gonzalo Schwarz of the Archbridge Institute argues that conflating poverty, inequality and mobility leads to policies that help none of them.",
+    "lean_label_a": "Gap blocks mobility",
+    "lean_label_b": "Separate problems",
+    "id": "does-high-inequality-cause-low-mobility"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Shrink the gap with taxes, transfers and public power",
+    "color_key": "green",
+    "steelman": "Today’s gap was built by policy and can be unmade by it: tax the top, fund services everyone uses, and stop extreme wealth from buying political power.",
+    "detail": "Inequality at today’s level is not a law of nature. It is the product of tax codes that favor capital over work, labor laws that weaken workers, financial and corporate rules written by the powerful, and public services left to decay. The gap is harmful in itself: it turns economic power into political power, corrodes trust, shortens lives at the bottom and locks children into their parents’ position. The proof that it is a choice is that rich democracies with similar market inequality end up far apart once taxes and transfers do their work, and the Nordic and Benelux countries are rich, innovative and far more equal. Our program is progressive taxation that reaches the top, generous transfers and public services that reach everyone, and rules that rebalance bargaining power, with international cooperation, from the new International Panel on Inequality to global minimum taxes on multinationals, so capital cannot simply move elsewhere.\n\nWe are told that taxing the top discourages the work and investment that make everyone richer. The evidence for large incentive costs is weak: US growth was fastest in the decades when top tax rates were highest, and the best cross-country evidence finds redistribution benign for growth. Nor can the floor be separated from the gap, because the political power of extreme wealth is used to block the very floor-raising policies our critics endorse. Some of us stress taxes and universal services; others want to shape incomes before taxes through stronger unions and investment in children; a more radical wing, with Thomas Piketty, would change who owns capital through social wealth funds, worker seats on corporate boards and capital endowments for every young adult.",
+    "proponents": "Oxfam International; Joseph Stiglitz; Thomas Piketty; International Trade Union Confederation; Emmanuel Saez; Gabriel Zucman",
+    "id": "shrink-the-gap-with-taxes-transfers"
+   },
+   {
+    "name": "Lift the floor rather than narrow the gap",
+    "color_key": "blue",
+    "steelman": "What matters is that everyone has enough and can climb, not how they compare with a billionaire, so attack poverty and the barriers to work directly instead of pulling down the top.",
+    "detail": "Judged by how the poor actually live, the modern era is a triumph. Extreme poverty has collapsed worldwide, and in the United States the real incomes of the bottom half have risen substantially once taxes and transfers are counted. Much of the alarm rests on measures that leave out transfers, tax credits and changes in household size. Large fortunes mostly come from building companies whose products people choose to buy, and the economy that produces them is the same one that lifts wages and pays for the safety net. So target poverty and opportunity directly: remove the rules that keep people from working, building homes, starting businesses and getting skills, and reward work through measures such as the Earned Income Tax Credit.\n\nCritics say concentrated wealth buys political power and blocks opportunity even when the floor rises. The cure for crony capitalism is to shrink the favors government can sell, by ending corporate subsidies, deregulating and simplifying the tax code, not to tax success in general. Barriers to mobility, from bad schools to zoning and licensing rules, can be removed without targeting the top at all, and removing them helps the poor directly. Libertarians among us emphasize growth and a limited state; reform conservatives such as Michael Strain of the American Enterprise Institute favor an active, work-based safety net; and measurement critics such as Phil Gramm and John Early argue that official statistics overstate inequality by leaving out what government gives and takes.",
+    "proponents": "Cato Institute; Michael R. Strain; Harry Frankfurt; Archbridge Institute; Phil Gramm; John Early",
+    "id": "lift-the-floor-rather-than-narrow"
+   },
+   {
+    "name": "Strip out the rents that rig markets",
+    "color_key": "amber",
+    "steelman": "The trouble is not that some people get rich but how: tear down the monopolies, licensing walls and zoning rules that let insiders collect rents, and the economy grows fairer and faster at once.",
+    "detail": "Much of the income at the top, and in the comfortable upper middle class, comes from positions protected against competition by rules the beneficiaries helped write: concentrated industries with rising profit margins, banks that gamble with implicit public backing, patents and copyrights stretched far beyond what invention needs, licensing laws that shut people out of trades, and zoning that turns homeowners in prosperous cities into rentiers while pricing out the young and the poor. Brink Lindsey and Steven Teles call this “regressive regulation.” Because these rents both widen the gap and slow growth, removing them is a rare policy that serves fairness and efficiency together. Taxing and transferring after the fact treats the symptom and leaves the rigged rules in place; opening markets, breaking up monopolies and legalizing housing attack the cause.\n\nFrom the redistributive side we hear that reform is slow, that every rent has a defender, and that people in poverty need help now. We do not oppose a safety net; we oppose treating redistribution as a substitute for fixing the rules. From the other side we hear that what looks like monopoly is often scale and innovation. The test is whether profits are competed away over time, and in housing, licensing and much of health care they plainly are not. We are a left-right coalition: the Open Markets Institute and the antitrust revival of the 2020s focus on corporate concentration and platform power, the Niskanen Center on zoning, licensing, intellectual property and financial subsidies.",
+    "proponents": "Open Markets Institute; Niskanen Center; Brink Lindsey; Richard Reeves; Steven M. Teles; Luigi Zingales",
+    "id": "strip-out-the-rents-that-rig"
+   },
+   {
+    "name": "Rebuild work rather than redistribute income",
+    "color_key": "rust",
+    "steelman": "The gap that matters is between people who can support a family by their own work and those who cannot, so rebuild industry and give workers real bargaining power.",
+    "detail": "For forty years both parties pursued one formula: maximize growth through free trade and financial markets, then redistribute some of the gains. The result was rising consumption and rising transfers alongside hollowed-out industrial towns, falling marriage and work among men without degrees, and the despair that followed. No benefit check replaces the dignity, independence and standing of a good job. David Autor, David Dorn and Gordon Hanson found that import competition from China after 2000 cost manufacturing jobs and depressed employment and wages in exposed US communities for more than a decade. The cure is to rebuild the productive economy: tariffs and industrial policy that bring manufacturing back, vocational education as respected as college, labor institutions with real bargaining power, and an end to trade and immigration rules that hold down wages at the bottom.\n\nThe objection is that tariffs raise prices for the poor, invite retaliation and cannot bring back jobs that automation, not trade, eliminated. Consumption is the wrong yardstick: paying somewhat more for goods in exchange for communities where people can work and raise families is a trade most voters would accept. Germany, Japan and South Korea kept large manufacturing sectors despite the same technology, which shows that losing industry was a choice. Oren Cass of American Compass says the economic-pie model “ignores who’s baking the pie.” National conservatives in the Trump administration lean on tariffs, immigration restriction and reshoring, while some unions and politicians on the left share the diagnosis but pair it with redistribution.",
+    "proponents": "American Compass; Oren Cass; JD Vance; Robert Lighthizer",
+    "id": "rebuild-work-rather-than-redistribute-income"
+   }
+  ],
+  "crux": {
+   "lead": "Is wide inequality the byproduct of growth that lifts most people, or of rules that let a few capture it?",
+   "lead_highlight": "the byproduct of growth that lifts most people, or of rules",
+   "subtitle": "Nearly everyone wants poverty to fall and the economy to grow. The split is over whether top fortunes are mostly earned or mostly captured, and over whether a wide gap is wrong in itself even when everyone is gaining.",
+   "empirical": "Some of this can be measured: what share of top income comes from innovation and investment rather than market power, scarce land, licensing barriers and lobbying; whether incomes at the bottom, after taxes and benefits, have kept rising alongside the top; whether redistribution slows growth; and whether a wider gap causes lower mobility and unequal political voice. Better data can narrow each.",
+   "values": "No data settles whether relative position matters in itself. Someone who cares that everyone has enough can accept a rising floor with a widening gap; someone who sees great inequality as a wrong, or as bound to become inequality of status and voice, cannot. Nor can evidence say whose gap counts, fellow citizens’ or the world’s, or choose the yardstick of a good economy: consumption, the dignity of earning a living or freedom from domination."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Explore the data on inequality and poverty",
+    "description": "Our World in Data’s inequality section gathers income, wealth and poverty data for every country in interactive charts, explaining how each measure works and where sources disagree.",
+    "url": "https://ourworldindata.org/economic-inequality",
+    "for_position": null,
+    "id": "explore-the-data-on-inequality-and"
+   },
+   {
+    "kind": "donate",
+    "title": "Support Oxfam’s work against extreme inequality",
+    "description": "Oxfam campaigns for progressive taxation, public services and limits on the political power of wealth, and funds anti-poverty programs worldwide.",
+    "url": "https://www.oxfam.org/en/donate",
+    "for_position": "Shrink the gap with taxes, transfers and public power",
+    "id": "support-oxfam-s-work-against-extreme"
+   },
+   {
+    "kind": "donate",
+    "title": "Give cash directly to people in extreme poverty",
+    "description": "GiveDirectly sends unconditional cash transfers to households living in extreme poverty, mostly in Africa, putting money straight into the hands of the poorest.",
+    "url": "https://www.givedirectly.org/",
+    "for_position": "Lift the floor rather than narrow the gap",
+    "id": "give-cash-directly-to-people-in"
+   },
+   {
+    "kind": "local",
+    "title": "Push your city to allow more homes",
+    "description": "YIMBY Action organizes local members to back new housing at city council and planning meetings, challenging the land-use rules that push up rents and home prices.",
+    "url": "https://yimbyaction.org/",
+    "for_position": "Strip out the rents that rig markets",
+    "id": "push-your-city-to-allow-more"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the case for rebuilding work over redistribution",
+    "description": "American Compass publishes the national-conservative argument for industrial policy, trade protection and labor reform as the answer to working-class decline.",
+    "url": "https://americancompass.org/",
+    "for_position": "Rebuild work rather than redistribute income",
+    "id": "read-the-case-for-rebuilding-work"
+   },
+   {
+    "kind": "policy",
+    "title": "Tell your members of Congress what you want done",
+    "description": "Find your representative and senators and contact them about tax, safety-net, housing, competition or trade policy, whichever approach to the gap you favor.",
+    "url": "https://www.house.gov/representatives/find-your-representative",
+    "for_position": null,
+    "id": "tell-your-members-of-congress-what"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Look up the odds for children where you live",
+    "description": "The Opportunity Atlas, built from Census and tax records by Raj Chetty and colleagues, maps how children from low-income families in each US neighborhood fared as adults.",
+    "url": "https://www.opportunityatlas.org/",
+    "for_position": null,
+    "id": "look-up-the-odds-for-children"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the G20 inequality report",
+    "description": "The November 2025 report of the committee chaired by Joseph Stiglitz makes the case that inequality is an emergency and proposes an International Panel on Inequality.",
+    "url": "https://peri.umass.edu/publication/g20-global-inequality-report/",
+    "for_position": "Shrink the gap with taxes, transfers and public power",
+    "id": "read-the-g20-inequality-report"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Help working families claim their tax credits",
+    "description": "The IRS Volunteer Income Tax Assistance program trains volunteers to prepare free returns for low- and moderate-income households, helping them claim the Earned Income Tax Credit.",
+    "url": "https://www.irs.gov/individuals/irs-tax-volunteers",
+    "for_position": "Lift the floor rather than narrow the gap",
+    "id": "help-working-families-claim-their-tax"
+   },
+   {
+    "kind": "donate",
+    "title": "Back the fight against monopoly power",
+    "description": "The Open Markets Institute researches and campaigns for stronger antitrust enforcement against concentrated corporate power, which it links to rising inequality.",
+    "url": "https://www.openmarketsinstitute.org/donate",
+    "for_position": "Strip out the rents that rig markets",
+    "id": "back-the-fight-against-monopoly-power"
+   }
+  ]
+ },
+ "icon": "coins",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: a compact scene sitting on a small rounded hill, the hill's curve ending well inside the frame on both sides: a very tall stack of plain unmarked coin discs as the dominant focal mass just right of center; three shorter coin stacks stepping down in height to a single coin at the left, the nearest one overlapping the tall stack's base; a small plain house and a small office building on the crest behind at medium scale; one narrow path winding across the hill from its left foot, behind the stacks, up to the buildings, as the connective element, starting and ending inside the frame.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #b48f2c, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: dollar signs, currency symbols, banknotes, money bags, top hats, mansions, yachts, slums, ragged or broken houses, beggars, hands, scales of justice, ladders, arrows going up or down, charts, graphs, cracks or chasms, contrast of light and dark halves."
 }

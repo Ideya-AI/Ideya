@@ -1,8 +1,8 @@
 {
  "slug": "electoral-system-design",
  "title": "Electoral Rules",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-10-03T11:00:00+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Majoritarian versus proportional representation, and ease of voting against election-security measures.",
@@ -14,5 +14,798 @@
   "democratic-backsliding-populism",
   "who-should-rule-democracy-rivals",
   "money-in-politics"
- ]
+ ],
+ "content": {
+  "overview": {
+   "summary": "How votes should become seats, in proportion or through winner-take-all districts, and how to weigh easy voting against checks on who votes.",
+   "scope_covered": "Electoral systems for legislatures (first-past-the-post, runoffs and ranked ballots, proportional representation) and the rules on who votes and how: registration, voter ID, proof of citizenship, mail and early voting, and voter rolls.",
+   "scope_excluded": "Campaign finance, the wider health of democracy, alternatives to democracy, the US Electoral College, term limits, the voting age, and gerrymandering except where it bears on single-member districts.",
+   "why_now": "On September 29, 2026, UK Prime Minister Andy Burnham announced a National Commission on Electoral Reform and pledged that Labour would fight the next election promising to change the voting system. In the US, Congress and the courts are fighting over proof-of-citizenship and mail-ballot rules before the midterms.",
+   "why_now_source_label": "Politics.co.uk",
+   "why_now_source_url": "https://www.politics.co.uk/2026/09/andy-burnham-announces-national-commission-on-electoral-reform/"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "Vote share and seat share by party, UK general election 2024",
+     "viz": "ranked",
+     "wide": true,
+     "value": "63.2",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Labour votes",
+       "value": "33.7",
+       "highlight": false
+      },
+      {
+       "label": "Labour seats",
+       "value": "63.2",
+       "highlight": true
+      },
+      {
+       "label": "Conservative votes",
+       "value": "23.7",
+       "highlight": false
+      },
+      {
+       "label": "Conservative seats",
+       "value": "18.6",
+       "highlight": false
+      },
+      {
+       "label": "Reform UK votes",
+       "value": "14.3",
+       "highlight": false
+      },
+      {
+       "label": "Reform UK seats",
+       "value": "0.8",
+       "highlight": false
+      },
+      {
+       "label": "Lib Dem votes",
+       "value": "12.2",
+       "highlight": false
+      },
+      {
+       "label": "Lib Dem seats",
+       "value": "11.1",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Labour won 411 of 650 seats, 63.2 percent, on 33.7 percent of the vote; Reform UK won 5 seats, 0.8 percent, on 14.3 percent.",
+     "detail": "The Electoral Reform Society, which campaigns for proportional representation, calls 2024 “the most disproportional election in British electoral history,” with a Gallagher least-squares index of 23.6, where zero would mean seats exactly matched votes; published estimates vary slightly with how small parties are grouped. By the society’s count 57.8 percent of voters, 16.6 million people, backed a candidate who was not elected, and turnout was 59.9 percent. It took about 23,600 votes to elect each Labour MP and about 823,500 to elect each Reform UK MP, because first-past-the-post rewards support concentrated where a party can win seats. Defenders of first-past-the-post read the same result as a clear verdict that removed a governing party and gave one party a known program to carry out.",
+     "source_label": "Electoral Reform Society, A System Out of Step: The 2024 General Election",
+     "source_url": "https://electoral-reform.org.uk/latest-news-and-research/publications/a-system-out-of-step-the-2024-general-election/",
+     "source_published": "2024",
+     "source_accessed": "2026-10-03",
+     "id": "vote-share-and-seat-share-by"
+    },
+    {
+     "label": "US voting-age citizens without ready access to proof of citizenship",
+     "viz": "radial",
+     "wide": false,
+     "value": "9",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Over 9 percent of voting-age US citizens, about 21.3 million people, said they could not readily produce proof of citizenship; how many would fail to register as a result is disputed.",
+     "detail": "The survey, fielded by SSRS in 2023 for the University of Maryland’s Center for Democracy and Civic Engagement with VoteRiders and the Brennan Center, asked about a US birth certificate, passport, naturalization certificate or certificate of citizenship. “Readily” matters: most respondents have such a document somewhere but could not easily produce it, because it is lost, held by a relative or in another state; just under 2 percent of adult citizens, over 3.8 million, have none at all. The same survey estimated that just over 1 percent, nearly 2.6 million, have no government-issued photo ID of any kind, and that 15 percent, over 34.5 million, either lack a driver’s license or state ID or have one without their current name or address. The sponsors oppose proof-of-citizenship requirements. Supporters of such rules reply that most people without ready access could obtain a document, that the SAVE America Act, a federal bill that passed the House in February 2026 and fell short of 60 votes in the Senate on September 30 (Ballotpedia; Senator Alex Padilla’s office), would accept several alternatives, and that registering is a one-time act.",
+     "source_label": "Center for Democracy and Civic Engagement, University of Maryland, Who Lacks ID in America Today?",
+     "source_url": "https://cdce.umd.edu/sites/cdce.umd.edu/files/pubs/Voter%20ID%202023%20survey%20Key%20Results%20June%202024%20updatev2.pdf",
+     "source_published": "2023",
+     "source_accessed": "2026-10-03",
+     "id": "us-voting-age-citizens-without-ready"
+    },
+    {
+     "label": "Noncitizens found in Georgia’s statewide voter roll audit",
+     "viz": "bar",
+     "wide": false,
+     "value": "20",
+     "unit": "noncitizens",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Georgia’s 2024 citizenship audit of its 8.2 million registered voters found 20 noncitizens on the rolls, 9 of whom had voted at some point, most before 2012.",
+     "detail": "Secretary of State Brad Raffensperger, a Republican, called it the most comprehensive citizenship check Georgia had run. According to the Georgia Recorder, it compared the roll with jury-duty records, driver’s license data and federal immigration records, and the people it found had identified themselves as noncitizens to get out of jury duty; the cases were referred to prosecutors, and 156 registrations were still under investigation. Since 2025 the federal government has run state rolls through the Department of Homeland Security’s SAVE database. In Texas, which uploaded more than 18 million registrations, it flagged 2,724 people as potential noncitizens, some of whom county officials later confirmed were citizens (Votebeat, 2026). Those who favor verification say every ineligible registration matters; those who favor access say results like Georgia’s show the problem is tiny next to the number of citizens new requirements would burden.",
+     "source_label": "Atlanta Journal-Constitution, Election audit shows 20 noncitizens registered to vote in Georgia",
+     "source_url": "https://www.ajc.com/politics/election-audit-shows-20-noncitizens-registered-to-vote-in-georgia/NRORAL7Z3RDSNMQ3QDLVEARPSY/",
+     "source_published": "2024",
+     "source_accessed": "2026-10-03",
+     "id": "noncitizens-found-in-georgia-s-statewide"
+    },
+    {
+     "label": "Electoral systems used to elect national legislatures",
+     "viz": "ranked",
+     "wide": true,
+     "value": "77",
+     "unit": "countries",
+     "series": [
+      {
+       "label": "List proportional",
+       "value": "77",
+       "highlight": true
+      },
+      {
+       "label": "First-past-the-post",
+       "value": "48",
+       "highlight": false
+      },
+      {
+       "label": "Parallel mixed",
+       "value": "21",
+       "highlight": false
+      },
+      {
+       "label": "Two-round",
+       "value": "20",
+       "highlight": false
+      },
+      {
+       "label": "Block vote",
+       "value": "15",
+       "highlight": false
+      },
+      {
+       "label": "Mixed-member PR",
+       "value": "6",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Of 212 countries and territories in International IDEA’s database, 77 elect their legislature by list proportional representation and 48 by first-past-the-post; other counts classify differently.",
+     "detail": "The counts treat every country and territory equally regardless of population and include non-democracies, where the rules may not decide who governs. Smaller categories include the alternative vote, a ranked ballot in single-member seats (3), and the single transferable vote (2). Grouped into families, the same IDEA database counts 86 plurality or majority systems, 82 proportional and 33 mixed, out of a slightly different total of 217. The Electoral Reform Society, using the Inter-Parliamentary Union’s data, counts more than 130 countries with proportional or mixed systems and fewer than 55 with first-past-the-post. First-past-the-post survives mainly in the United Kingdom and countries with British colonial roots, including the United States, Canada and India; most of continental Europe and Latin America uses proportional representation; France uses a two-round system; and Australia elects its lower house by the alternative vote.",
+     "source_label": "International IDEA, Electoral System Design Database, electoral system for national legislature",
+     "source_url": "https://www.idea.int/data-tools/data/question?question_id=9381&database_theme=307",
+     "source_published": "2026",
+     "source_accessed": "2026-10-03",
+     "id": "electoral-systems-used-to-elect-national"
+    },
+    {
+     "label": "Estimated effect of strict voter ID laws on turnout",
+     "viz": "range",
+     "wide": false,
+     "value": "-0.1",
+     "unit": "points",
+     "series": [],
+     "range_min": "-5 points",
+     "range_max": "+5 points",
+     "note": "A nationwide study of 2008–2018 elections put the effect of strict ID laws on turnout at about −0.1 points, near zero; a 2014 GAO study found drops of 2 to 3 points in Kansas and Tennessee.",
+     "detail": "Enrico Cantoni and Vincent Pons compared states that adopted strict ID laws with states that did not, before and after, using 1.6 billion observations. They found no significant effect on registration or turnout for any group defined by race, gender, age or party, with a 95 percent confidence interval of −3.0 to +2.8 points, and no significant effect on fraud. The Government Accountability Office’s earlier estimate, covering the 2012 elections after the two states tightened their rules, found larger drops among young, newly registered and Black voters, and noted that of 10 earlier studies, 5 found no significant effect, 4 a decrease and 1 an increase. Supporters of ID laws read the newer study as showing the burden was overstated; opponents point to the older, state-level evidence and to campaigns that may have helped affected voters get ID.",
+     "source_label": "Cantoni and Pons, Strict ID Laws Don’t Stop Voters, Quarterly Journal of Economics 2021 (NBER working paper 25522)",
+     "source_url": "https://www.nber.org/papers/w25522",
+     "source_published": "2008–2018",
+     "source_accessed": "2026-10-03",
+     "id": "estimated-effect-of-strict-voter-id"
+    },
+    {
+     "label": "US public support for election policies",
+     "viz": "ranked",
+     "wide": true,
+     "value": "83",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Paper ballot backups",
+       "value": "84",
+       "highlight": false
+      },
+      {
+       "label": "Photo ID to vote",
+       "value": "83",
+       "highlight": true
+      },
+      {
+       "label": "2+ weeks early voting",
+       "value": "80",
+       "highlight": false
+      },
+      {
+       "label": "Vote after sentence",
+       "value": "66",
+       "highlight": false
+      },
+      {
+       "label": "Automatic registration",
+       "value": "59",
+       "highlight": false
+      },
+      {
+       "label": "Mail voting for all",
+       "value": "58",
+       "highlight": false
+      },
+      {
+       "label": "Ban ballot collection",
+       "value": "45",
+       "highlight": false
+      },
+      {
+       "label": "Remove inactive voters",
+       "value": "43",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "83 percent of Americans favor requiring photo ID to vote and 80 percent favor at least two weeks of early in-person voting; smaller majorities back mail voting for all and automatic registration.",
+     "detail": "Pew surveyed 3,554 adults in August 2025; item wording is abbreviated here, and the last two rows are banning outside groups from collecting completed ballots and removing people from registration lists if they have not recently voted or confirmed their registration. Photo ID was favored by 95 percent of Republicans and 71 percent of Democrats. Gallup found the same pattern in October 2024: 84 percent favored photo ID to vote, 83 percent proof of citizenship when first registering, 76 percent early voting and 60 percent automatic registration. Those who favor tighter verification cite these numbers as a mandate for ID and citizenship checks; voting rights groups reply that support for ID in principle is not support for any particular law, and that the same respondents favor the access measures those laws are often set against.",
+     "source_label": "Pew Research Center, Most Americans Back Expanded Early Voting, Voting by Mail, Voter ID",
+     "source_url": "https://www.pewresearch.org/politics/2025/08/22/majority-of-americans-continue-to-back-expanded-early-voting-voting-by-mail-voter-id/",
+     "source_published": "2025",
+     "source_accessed": "2026-10-03",
+     "id": "us-public-support-for-election-policies"
+    },
+    {
+     "label": "British public support for changing the voting system",
+     "viz": "radial",
+     "wide": false,
+     "value": "60",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "A record 60 percent of Britons chose changing the voting system to give smaller parties a fairer share of MPs over keeping it for effective government; the question names no system.",
+     "detail": "British Social Attitudes asked: “Some people say we should change the voting system for general elections to the UK House of Commons to allow smaller political parties to get a fairer share of MPs. Others say that we should keep the voting system for the House of Commons as it is to produce effective government.” After the 2024 election 36 percent chose keeping it, and for the first time a majority of every party’s supporters chose change: 90 percent of Green, 78 percent of Reform UK, 56 percent of Liberal Democrat, 55 percent of Labour and 52 percent of Conservative supporters. A year earlier the figure was 53 percent. In the same survey 53 percent said a coalition government would generally be better for Britain, against 41 percent for single-party government, the highest coalition preference since the question began in 1983. The 2011 referendum on replacing first-past-the-post with the alternative vote failed by 67.9 percent to 32.1 percent (House of Commons Library); defenders of the current system cite it to argue that support for change in the abstract does not survive a campaign over a specific system.",
+     "source_label": "National Centre for Social Research, British Social Attitudes 42: Britain’s Democracy",
+     "source_url": "https://natcen.ac.uk/publications/bsa-42-britains-democracy",
+     "source_published": "2024",
+     "source_accessed": "2026-10-03",
+     "id": "british-public-support-for-changing-the"
+    },
+    {
+     "label": "US states with voter ID laws, by type",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "states",
+     "series": [
+      {
+       "label": "Strict photo ID",
+       "value": "10",
+       "highlight": true
+      },
+      {
+       "label": "Non-strict photo ID",
+       "value": "14",
+       "highlight": false
+      },
+      {
+       "label": "Strict non-photo ID",
+       "value": "4",
+       "highlight": false
+      },
+      {
+       "label": "Non-strict non-photo",
+       "value": "8",
+       "highlight": false
+      },
+      {
+       "label": "No ID document",
+       "value": "14",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Thirty-six states ask or require voters to show identification at the polls, 24 of them photo ID; 14 states and DC verify identity by other means, such as a signature.",
+     "detail": "In NCSL’s terms, “strict” means a voter without acceptable ID casts a provisional ballot and must return with ID within a few days for it to count; in “non-strict” states the voter can cast a regular ballot after signing an affidavit or having a poll worker vouch for them. The ten strict photo ID states are Arkansas, Georgia, Indiana, Kansas, Mississippi, New Hampshire, North Carolina, Ohio, Tennessee and Wisconsin. Recent changes have tightened the rules: West Virginia moved to photo ID in 2025, Georgia and Tennessee barred digital IDs, New Hampshire removed student IDs in 2026, Iowa dropped its attestation option and Louisiana removed its affidavit alternative effective 2027. Six statewide voter ID measures are on 2026 ballots, the most in a single year (Ballotpedia). The SAVE America Act would set a federal photo ID rule for federal elections, including a copy of ID with mail ballots, which its opponents said would be stricter than any state’s.",
+     "source_label": "National Conference of State Legislatures, Voter ID Laws",
+     "source_url": "https://www.ncsl.org/elections-and-campaigns/voter-id",
+     "source_published": "2026",
+     "source_accessed": "2026-10-03",
+     "id": "us-states-with-voter-id-laws"
+    },
+    {
+     "label": "Registration applicants blocked by Kansas’s proof-of-citizenship law",
+     "viz": "bar",
+     "wide": false,
+     "value": "31,089",
+     "unit": "applicants",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Kansas’s proof-of-citizenship rule led to 31,089 registration applications being canceled or suspended; the trial court found at most 39 noncitizens had reached the rolls in 19 years.",
+     "detail": "Kansas required documentary proof of citizenship to register from 2013 until a 2016 preliminary injunction. The canceled or suspended applicants made up 12.4 percent of new registrations from January 2013 to December 2015, according to expert evidence the court accepted, and at most 67 noncitizens had registered or tried to register over the 19 years before the 2018 trial. The Tenth Circuit upheld the finding that the law violated the National Voter Registration Act and the Constitution as applied, calling the evidence of a noncitizen threat “incredibly slight” and noting that “administrative anomalies” could explain many of the cases found. It also acknowledged that there was little evidence on how many blocked applicants actually lacked the documents, as opposed to not submitting them.",
+     "source_label": "US Court of Appeals for the Tenth Circuit, Fish v. Kobach (2020)",
+     "source_url": "https://electionlawblog.org/wp-content/uploads/fish-10th-opinion.pdf",
+     "source_published": "2013–2016",
+     "source_accessed": "2026-10-03",
+     "id": "registration-applicants-blocked-by-kansas-s"
+    },
+    {
+     "label": "Vote share and seat share by party, Senedd election 2026",
+     "viz": "ranked",
+     "wide": true,
+     "value": "44.8",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Plaid Cymru votes",
+       "value": "35.4",
+       "highlight": false
+      },
+      {
+       "label": "Plaid Cymru seats",
+       "value": "44.8",
+       "highlight": true
+      },
+      {
+       "label": "Reform UK votes",
+       "value": "29.3",
+       "highlight": false
+      },
+      {
+       "label": "Reform UK seats",
+       "value": "35.4",
+       "highlight": false
+      },
+      {
+       "label": "Labour votes",
+       "value": "11.1",
+       "highlight": false
+      },
+      {
+       "label": "Labour seats",
+       "value": "9.4",
+       "highlight": false
+      },
+      {
+       "label": "Conservative votes",
+       "value": "10.7",
+       "highlight": false
+      },
+      {
+       "label": "Conservative seats",
+       "value": "7.3",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In Wales’s first election under closed-list proportional representation, Plaid Cymru won 43 of 96 seats on 35.4 percent of the vote and Reform UK won 34 on 29.3 percent.",
+     "detail": "The Senedd Cymru (Members and Elections) Act 2024 replaced Wales’s mixed system with closed party lists in 16 six-member constituencies and enlarged the chamber to 96 members. With six seats per district the largest parties still won more seats than votes: the Electoral Reform Society, which prefers the single transferable vote to closed lists, puts the largest party’s overrepresentation at 9.4 points, the lowest of any Senedd election but not zero, and its own disproportionality score at 15.5, a measure not directly comparable with the Gallagher index used for Westminster. No party won the 49 seats needed for a majority. Reformers point to a parliament closer to how Wales voted; critics of proportional systems point to the post-election bargaining it requires.",
+     "source_label": "Electoral Reform Society, How Wales voted in the 2026 Senedd election",
+     "source_url": "https://electoral-reform.org.uk/how-wales-voted-in-the-2026-senedd-election/",
+     "source_published": "2026",
+     "source_accessed": "2026-10-03",
+     "id": "vote-share-and-seat-share-by-2"
+    },
+    {
+     "label": "Voters unable to vote for lack of ID, UK general election 2024",
+     "viz": "bar",
+     "wide": false,
+     "value": "0.08",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "About 16,000 people in Great Britain, 0.08 percent of those who tried to vote in person, could not vote in the 2024 general election because they lacked accepted ID.",
+     "detail": "Photo ID was first required at polling stations in England’s May 2023 local elections; Northern Ireland has required it for decades. In 2024, 0.25 percent of in-person voters were initially turned away, and about two-thirds of them came back with ID. Asked unprompted why they did not vote, about 4 percent of non-voters mentioned the ID rule; given a list of reasons, 10 percent chose it. The Electoral Reform Society, which wants the rule scrapped, counts at least 42,368 people turned away across the 2023 and 2024 local elections and the 2024 general election. The Labour government kept the requirement, but its Representation of the People Bill, which passed the Commons in September 2026, adds bank cards to the accepted IDs and lowers the voting age to 16; Conservative MPs opposed the bank-card change as weakening the rule.",
+     "source_label": "Electoral Commission, Voter ID at the 2024 UK general election",
+     "source_url": "https://www.electoralcommission.org.uk/research-reports-and-data/our-reports-and-data-past-elections-and-referendums/voter-id-2024-uk-general-election",
+     "source_published": "2024",
+     "source_accessed": "2026-10-03",
+     "id": "voters-unable-to-vote-for-lack"
+    },
+    {
+     "label": "How Americans cast their ballots, 2024 general election",
+     "viz": "ranked",
+     "wide": true,
+     "value": "30.3",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Election Day, in person",
+       "value": "37.4",
+       "highlight": false
+      },
+      {
+       "label": "Early, in person",
+       "value": "35.2",
+       "highlight": false
+      },
+      {
+       "label": "By mail",
+       "value": "30.3",
+       "highlight": true
+      },
+      {
+       "label": "By mail, 2020",
+       "value": "43",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Nearly a third of 2024 voters voted by mail, down from 43 percent in the pandemic election of 2020; the EAC reports each share separately, so they do not sum to 100.",
+     "detail": "Turnout was 64.7 percent of the citizen voting-age population, with over 158 million ballots counted, down from 67.7 percent in 2020. States sent 66,867,671 mail ballots, voters returned 47,957,093, and 584,463 were rejected, 1.2 percent of those returned; about two-fifths of rejections were for a missing or mismatched signature. Nearly 15 million mail ballots came back through drop boxes in the 36 states that allow them, and more than 585,000 ballots went through a “cure” process for fixing errors, more than half successfully. Twenty-nine states offer no-excuse absentee voting, eight states and DC conduct elections mainly by mail, and 13 require an excuse (NCSL, 2026).",
+     "source_label": "US Election Assistance Commission, Election Administration and Voting Survey 2024 Comprehensive Report",
+     "source_url": "https://www.eac.gov/sites/default/files/2025-07/2024_EAVS_Report_508.pdf",
+     "source_published": "2024",
+     "source_accessed": "2026-10-03",
+     "id": "how-americans-cast-their-ballots-2024"
+    },
+    {
+     "label": "US states that ban ranked-choice voting",
+     "viz": "range",
+     "wide": false,
+     "value": "19",
+     "unit": "states",
+     "series": [],
+     "range_min": "0",
+     "range_max": "50 states",
+     "note": "Nineteen states prohibit ranked-choice voting in some or all elections, after Indiana and Ohio added bans in early 2026.",
+     "detail": "Ohio’s governor signed its ban on March 17, 2026, after Indiana’s in February. FairVote, which campaigns for ranked-choice voting, counts 49 American jurisdictions using or adopting it, reaching nearly 14 million voters in 22 states and DC, including Maine and Alaska statewide, 36 cities and 3 counties. The Foundation for Government Accountability, which campaigns against it, notes that voters rejected ranked-choice ballot measures in five states in 2024. On November 3, 2026, Alaskans vote again on repealing their top-four primary and ranked-choice general election after a 2024 repeal attempt narrowly failed, and Irvine, Honolulu and Longmont, Colorado, vote on adopting it (Ballotpedia). New York City has used ranked ballots in its party primaries since 2021.",
+     "source_label": "Ballotpedia News, Ohio becomes second state this year to ban ranked-choice voting",
+     "source_url": "https://news.ballotpedia.org/2026/03/19/ohio-becomes-second-state-this-year-to-ban-ranked-choice-voting/",
+     "source_published": "2026",
+     "source_accessed": "2026-10-03",
+     "id": "us-states-that-ban-ranked-choice"
+    },
+    {
+     "label": "Support for no-excuse early and absentee voting, by party",
+     "viz": "ranked",
+     "wide": true,
+     "value": "34",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Democrats, 2026",
+       "value": "81",
+       "highlight": false
+      },
+      {
+       "label": "All adults, 2026",
+       "value": "59",
+       "highlight": false
+      },
+      {
+       "label": "Republicans, 2018",
+       "value": "57",
+       "highlight": false
+      },
+      {
+       "label": "Republicans, 2026",
+       "value": "34",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Republican support for letting any voter vote early or absentee without an excuse fell from 57 percent in 2018 to 34 percent in 2026, while Democratic support stayed above 80 percent.",
+     "detail": "Pew surveyed 5,103 adults in April 2026. Before 2020 mail and early voting were not strongly partisan: the Bipartisan Policy Center notes that Texas and Tennessee were among the earliest adopters of early in-person voting, and California, Oregon and Colorado of voting by mail. The split opened after the pandemic expansion of mail voting in 2020 and the disputes over that election’s result. Support is higher where people already use the system: 67 percent in states that vote mainly by mail, 59 percent in no-excuse states and 53 percent in states that require an excuse. President Trump’s March 2026 executive order limiting mail ballots, and his calls to end most mail voting, match a view now held by about two-thirds of Republicans and opposed by most Democrats.",
+     "source_label": "Pew Research Center, How Republicans and Democrats view no-excuse early and absentee voting",
+     "source_url": "https://www.pewresearch.org/short-reads/2026/06/16/republicans-democrats-continue-to-differ-sharply-on-voting-access-2/",
+     "source_published": "2026",
+     "source_accessed": "2026-10-03",
+     "id": "support-for-no-excuse-early-and"
+    },
+    {
+     "label": "Confidence that votes will be counted accurately, by party",
+     "viz": "ranked",
+     "wide": true,
+     "value": "57",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Democrats",
+       "value": "84",
+       "highlight": false
+      },
+      {
+       "label": "All adults",
+       "value": "57",
+       "highlight": true
+      },
+      {
+       "label": "Republicans",
+       "value": "28",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Before the 2024 election, 84 percent of Democrats but only 28 percent of Republicans were confident the presidential vote would be counted accurately, the widest gap Gallup had recorded.",
+     "detail": "Gallup surveyed 1,007 adults in September 2024. Republican confidence fell from 55 percent in 2016 to 44 percent in 2020 and 28 percent in 2024. Confidence in one’s own local polling place was much higher: 76 percent overall, including 90 percent of Democrats and 70 percent of Republicans. The parties worried about different things: 74 percent of Republicans were concerned about ineligible people voting, while 75 percent of Democrats were concerned about defeated candidates refusing to concede. Those who favor verification read low confidence as a reason for safeguards that would reassure doubters; those who favor access read it as a reason for leaders to stop casting doubt on results that audits and courts have upheld.",
+     "source_label": "Gallup, Partisan Split on Election Integrity Gets Even Wider",
+     "source_url": "https://news.gallup.com/poll/651185/partisan-split-election-integrity-gets-even-wider.aspx",
+     "source_published": "2024",
+     "source_accessed": "2026-10-03",
+     "id": "confidence-that-votes-will-be-counted"
+    },
+    {
+     "label": "US House races by margin of victory, 2024",
+     "viz": "ranked",
+     "wide": true,
+     "value": "304",
+     "unit": "races",
+     "series": [
+      {
+       "label": "Under 5 points",
+       "value": "37",
+       "highlight": false
+      },
+      {
+       "label": "5 to 15 points",
+       "value": "74",
+       "highlight": false
+      },
+      {
+       "label": "Over 15 points",
+       "value": "304",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2024, 37 US House races were decided by fewer than 5 points and 304 by more than 15; Ballotpedia’s table covers 415 of the 435 seats.",
+     "detail": "Ballotpedia puts the average 2024 margin across all 435 races at 27.3 points, the narrowest since it began tracking in 2012; it was 36.6 points in 2016. Advocates of proportional representation for the House, such as Fix Our House, argue that single-member districts leave most voters in seats one party cannot lose and push real competition into low-turnout primaries. Defenders of single-member districts reply that safe seats mostly reflect where Americans choose to live and that each voter has one clearly accountable representative. Mid-decade redistricting in 2025 and 2026 in states including Texas, California and Ohio, and the Supreme Court’s April 2026 narrowing of Section 2 of the Voting Rights Act in Louisiana v. Callais, have made district lines a larger issue for the 2026 midterms (Congressional Research Service).",
+     "source_label": "Ballotpedia, Election results, 2024: Congressional margin of victory analysis",
+     "source_url": "https://ballotpedia.org/Election_results,_2024:_Congressional_margin_of_victory_analysis",
+     "source_published": "2024",
+     "source_accessed": "2026-10-03",
+     "id": "us-house-races-by-margin-of"
+    },
+    {
+     "label": "Share of women elected, by electoral system, 2025",
+     "viz": "ranked",
+     "wide": true,
+     "value": "31.1",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Proportional or mixed",
+       "value": "31.1",
+       "highlight": true
+      },
+      {
+       "label": "Majoritarian",
+       "value": "25.5",
+       "highlight": false
+      },
+      {
+       "label": "With gender quotas",
+       "value": "30.9",
+       "highlight": false
+      },
+      {
+       "label": "Without quotas",
+       "value": "23.3",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In parliaments renewed in 2025, 31.1 percent of members elected under proportional or mixed systems were women, against 25.5 percent under majoritarian ones; the effect overlaps with gender quotas.",
+     "detail": "The Inter-Parliamentary Union names electoral systems and gender quotas as the two factors that made the most difference to women’s representation in 2025; quotas are easier to apply to party lists than to single-member seats, so the two effects overlap. By the IPU’s count, women worldwide held 27.5 percent of parliamentary seats at the start of 2026, up 0.3 points in a year, and the Americas led at 35.6 percent. Supporters of proportional representation cite the gap as evidence that list systems produce more representative legislatures; defenders of single-member systems note that countries such as the United Kingdom have raised women’s representation through party selection without changing the voting system, and that culture and party rules explain much of the variation.",
+     "source_label": "Inter-Parliamentary Union, Women in parliament in 2025: The year in review",
+     "source_url": "https://www.ipu.org/file/23136/download",
+     "source_published": "2025",
+     "source_accessed": "2026-10-03",
+     "id": "share-of-women-elected-by-electoral"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Should seats track each party’s share of the vote, or should elections deliver a clear governing majority?",
+    "kind": "value",
+    "why": "Every electoral system trades some proportionality for some decisiveness, and no evidence says how much of one is worth how much of the other. Parties’ positions also tend to follow their seat prospects, so each side doubts the other’s principles.",
+    "detail": "Those who want seats to mirror the vote say a parliament exists to represent the people, and a system that can hand a majority of seats to a party most voters did not choose fails that basic test. Proportional rules give every vote similar weight wherever it is cast, end tactical voting for the least bad candidate who can win, and make a government rest on representatives of more than half the voters, as in most of Europe.\n\nThose who want voters to choose a government say a general election picks a government as well as a legislature. Winner-take-all districts let voters see which party will govern, and on what program, before they vote, then remove it cleanly when it fails. Under proportional rules the government is assembled after the vote by party leaders, manifestos become bargaining chips, and a small party can hold the balance of power. Each voter also has one local representative to hold to account, and proportionality is one democratic value among several.",
+    "lean_label_a": "Mirror the vote",
+    "lean_label_b": "Pick a government",
+    "id": "should-seats-track-each-party-s"
+   },
+   {
+    "text": "How often do ineligible people register or vote, and how much would stricter checks catch?",
+    "kind": "empirical",
+    "why": "Ineligible voting is a crime that is hard to observe directly, so the same small counts read as proof the problem is tiny or as the visible tip of something larger. New federal database checks have produced errors of their own, so even fresh data are disputed.",
+    "detail": "Those who see the problem as rare and already caught say every systematic search has found very little: statewide roll audits and court records turn up dozens of cases among millions of registrations. Registering already requires swearing to citizenship under penalty of perjury, a crime that also risks deportation, and existing database checks, audits and prosecutions catch the few cases that occur. On this view new barriers for a problem this small cost far more eligible votes than they save.\n\nThose who see an undercounted risk say low numbers reflect how weakly eligibility is checked, not how rarely it is violated. Most states verify citizenship only by the applicant’s own attestation, and an audit finds only what its data can match. Courts have overturned results over absentee ballot fraud, many races are decided by a few thousand votes or fewer, and federal checks begun in 2025 have flagged registrations for review. Closing gaps before they are exploited, they argue, is prudent when confidence is this low.",
+    "lean_label_a": "Rare and caught",
+    "lean_label_b": "Undercounted risk",
+    "id": "how-often-do-ineligible-people-register"
+   },
+   {
+    "text": "Do photo ID and proof-of-citizenship rules keep eligible citizens from voting?",
+    "kind": "empirical",
+    "why": "Studies of turnout and surveys of who holds documents answer different questions: one asks whether fewer people vote, the other who would have to do something extra in order to vote. Each side leads with the kind that supports it.",
+    "detail": "Those who see a real barrier say documents are unevenly held: the citizens most likely to lack a birth certificate, passport or current photo ID are disproportionately young, low-income, rural, Black or Hispanic, or women whose names changed at marriage. A rule most people meet without noticing can still stop the few who cannot, and turnout studies measure everyone rather than those few. Proof of citizenship is harder to meet than ID at the polls, because the papers are older, scattered and costly to replace.\n\nThose who see a negligible effect say most citizens already carry ID, states with ID laws issue free cards, and voters adapt once a rule is known. Turnout studies across many states and elections find little change after strict ID laws take effect. Survey counts of people without “ready access” to documents overstate the problem, they argue, since most could get them once they had a reason to, and registering is something a citizen does once.",
+    "lean_label_a": "Real barrier",
+    "lean_label_b": "Negligible effect",
+    "id": "do-photo-id-and-proof-of"
+   },
+   {
+    "text": "Does proportional representation calm polarization, or give fringe parties more power?",
+    "kind": "empirical",
+    "why": "Countries differ in too many ways for clean comparisons, and both sides can point to cases: steady multiparty consensus in northern Europe, coalition crises and hard-right gains elsewhere. The answer may hinge on details such as district size and thresholds.",
+    "detail": "Those who say it moderates politics argue that two-party contests turn every election into a binary fight over national identity, while multiparty systems let voters back parties close to their views and push those parties to cooperate in shifting coalitions. Under proportional rules an extreme party gets its share of seats but cannot win a majority on a minority of the vote, whereas first-past-the-post can hand one to a movement with less than 30 percent, the danger Andy Burnham cited in calling for reform. Bringing protest votes inside parliament, on this view, is safer than leaving them unrepresented and resentful.\n\nThose who say it empowers extremes argue that a high bar to winning seats forces parties to assemble wide coalitions of voters before polling day and pulls them toward the median voter. Proportional systems let small parties into parliament on a few percent of the vote and sometimes make them kingmakers, with leverage far beyond their support, and several European democracies have seen hard-right and hard-left parties enter government through coalitions. Single-member seats also let voters remove a specific representative, a check on extremists that party lists lack.",
+    "lean_label_a": "Moderates politics",
+    "lean_label_b": "Boosts fringes",
+    "id": "does-proportional-representation-calm-polarization-or"
+   },
+   {
+    "text": "Should any voter be able to vote by mail without giving a reason?",
+    "kind": "value",
+    "why": "Mail voting trades the supervision of a polling place for convenience and participation. Both sides agree mail ballots need safeguards; they disagree on whether the risk that remains is acceptable, and the parties have split sharply since 2020.",
+    "detail": "Those who want mail voting open to all say it is used heavily by older, rural, disabled and military voters of both parties, that states voting mainly by mail run elections with high turnout and few problems, and that signature checks, ballot tracking and chances to fix errors already catch mistakes. Restricting it would make voting harder for millions to address risks that audits in mail-voting states have not found.\n\nThose who want voting mostly in person say a supervised polling place, with ID, is the surest way to confirm that the right person cast a ballot freely and in secret. Ballots mailed to addresses on outdated rolls, collected by third parties or filled out at home cannot be supervised the same way; London’s 2014 Tower Hamlets mayoral election was voided in 2015 for corrupt practices that included postal vote abuses. They would keep mail voting for people with a real need, such as the disabled, the elderly and the military, rather than as a default.",
+    "lean_label_a": "Mail for any voter",
+    "lean_label_b": "In person for most",
+    "id": "should-any-voter-be-able-to"
+   },
+   {
+    "text": "Do proportional systems produce less stable or less accountable governments?",
+    "kind": "empirical",
+    "why": "Stability can mean how long governments last, how long they take to form or how steady policy stays, and the measures point different ways. Reformers cite Britain’s turnover of prime ministers under first-past-the-post as a counterexample.",
+    "detail": "Those who see coalitions as steadier note that Germany, the Nordic countries and the Netherlands have long been governed under proportional rules with steady policy and strong economies, while Britain has swung between single-party governments that reverse one another’s policies; Andy Burnham pointed to seven prime ministers in ten years. Because the center of a coalition moves less than the governing party does in a two-party system, policy changes more gradually.\n\nThose who see coalitions as fragile point to long periods of government formation, such as Belgium’s more than 500 days without a full government in 2010 and 2011, and to coalitions that fall over a single issue. When no party can win a majority, voters cannot remove a government whose parties simply reassemble in a new combination, and policy is settled in private bargaining after the vote. A single-party government may make mistakes, they argue, but voters know whom to blame.",
+    "lean_label_a": "Steady coalitions",
+    "lean_label_b": "Fragile coalitions",
+    "id": "do-proportional-systems-produce-less-stable"
+   },
+   {
+    "text": "Do stricter election rules restore public confidence, or does confidence follow what leaders say?",
+    "kind": "empirical",
+    "why": "Republican confidence in US elections fell from 2016 to a low before the 2024 vote, then rebounded after Trump won (AP-NORC, 2024). Whether new safeguards would raise trust, or trust mainly follows what leaders say about who won, is disputed.",
+    "detail": "Those who say rules build trust argue that visible safeguards such as photo ID, citizenship checks and clean rolls reassure voters regardless of party, which is why majorities of both parties favor ID. Confidence fell as mail voting expanded and rules changed quickly in 2020, and a system has to be trusted by losers as well as winners to work.\n\nThose who say leaders shape trust note that Republican confidence fell most after the 2020 election, when, on their reading, nothing about the rules had become less secure, and that people trust their own polling place far more than elections nationally. In Britain, introducing photo ID left public confidence in polling-station security about where it had been, according to Electoral Commission data cited by the Electoral Reform Society. Confidence, on this view, depends mainly on whether leaders accept results, and new restrictions that answer unfounded claims risk lending them credibility.",
+    "lean_label_a": "Rules build trust",
+    "lean_label_b": "Leaders set trust",
+    "id": "do-stricter-election-rules-restore-public"
+   },
+   {
+    "text": "When no candidate wins a majority, should voters’ ranked preferences decide the winner?",
+    "kind": "value",
+    "why": "Ranked-choice voting changes what counts as winning, and each side appeals to fairness: majority support, or a simple count of first choices. In the US it splits by party, adopted mostly in Democratic-leaning places and banned mostly by Republican-led states.",
+    "detail": "Those who want candidates ranked say plurality voting lets a candidate win with a minority when votes split, punishes voters who back a third choice, and rewards candidates who mobilize a narrow base. Ranking lets voters express real preferences without fear of spoilers, ensures the winner has majority support among ballots still counting in the final round, and encourages candidates to court second choices from rivals’ supporters, which they say reduces negative campaigning.\n\nThose who want the most votes to win say ranked-choice voting departs from that basic principle, confuses voters and delays results while ballots are re-tabulated. It also sets aside “exhausted” ballots whose ranked candidates have all been eliminated, so the winner’s majority is a majority of remaining ballots only. A single mark for one candidate is easier to understand and to audit, which they regard as essential for trust.",
+    "lean_label_a": "Rank candidates",
+    "lean_label_b": "Most votes wins",
+    "id": "when-no-candidate-wins-a-majority"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Adopt proportional representation",
+    "color_key": "green",
+    "steelman": "A parliament should look like the people who elected it. Proportional representation gives every vote similar weight and makes governments rest on a real majority of voters.",
+    "detail": "First-past-the-post turned a third of the vote into a landslide in 2024: Labour won 63.2 percent of seats on 33.7 percent of the vote, while Reform UK and the Greens, with about 21 percent between them, won 9 seats. Most voters’ ballots elect no one, and millions vote tactically against the party they fear rather than for the one they want. That distortion was tolerable when two parties took nine votes in ten; in today’s fragmented politics it hands total power to whoever wins a plurality in the right places. Most established democracies already elect their parliaments proportionally without the instability our critics predict. In the United States, multi-member districts would end gerrymandering’s power to decide results in advance, give Republicans in cities and Democrats in rural areas a voice, and break what Lee Drutman of Fix Our House calls the two-party “doom loop,” in which every election becomes an existential contest.\n\nCritics say we would trade voters’ choice of government for backroom coalition deals and lose the local MP. Coalitions are negotiated in the open among parties that together represent most voters, which is more democratic than one party governing on a third of the vote, and systems such as the single transferable vote and mixed-member proportional keep local representatives. We differ over which system: the Electoral Reform Society prefers the single transferable vote, others the mixed-member model of Germany, New Zealand and Scotland, and few British reformers like the closed lists Wales adopted.",
+    "proponents": "Electoral Reform Society; Make Votes Matter; Fix Our House; Lee Drutman; Liberal Democrats; Green Party; Fair Vote Canada",
+    "id": "adopt-proportional-representation"
+   },
+   {
+    "name": "Keep first-past-the-post",
+    "color_key": "blue",
+    "steelman": "An election is how voters choose who governs and judge who has governed. First-past-the-post lets them pick a government, keep a local MP, and throw a failing government out.",
+    "detail": "An election is not an opinion poll that parliament should mirror. Under first-past-the-post, parties put a program to the country, the winner governs on it, and voters can remove it in a single stroke, as they did in 1979, 1997 and 2024. Every voter has one MP who answers for a defined place and can be removed personally. Proportional systems make coalition the norm, so the real choice of government is made by party leaders after the votes are counted, small parties extract concessions far beyond their support, and a party can keep returning to office in new combinations. Voters value what we defend: in polling at the 2024 election, Richard Johnson of Queen Mary University of London found 60 percent support and 8 percent opposition for having one MP per constituency, and 65 percent support for electing the candidate with the most first-preference votes.\n\nReformers say the system wastes votes. Every system distorts something; this one distorts toward a clear outcome that voters can punish next time, and a winner’s low cost in votes per seat is the price of decisive government, not a defect. Polls that frame change as “fairer” and the status quo only as “effective” do not show support for any particular proportional system, and when Britain was last asked, in 2011, it voted to keep this one. The demand for change tends to come from parties that would gain seats by it: Reform UK campaigned for proportional representation in 2024 and has since dropped the pledge. In the United States the same case defends single-member districts and plurality rules against ranked-choice voting.",
+    "proponents": "Conservative Party; Kemi Badenoch; Richard Johnson; Reform UK; Foundation for Government Accountability",
+    "id": "keep-first-past-the-post"
+   },
+   {
+    "name": "Tighten voter eligibility checks",
+    "color_key": "amber",
+    "steelman": "Only citizens may vote, yet most states check citizenship with a box applicants tick. Photo ID and proof of citizenship are modest, popular safeguards that let the losing side trust the result.",
+    "detail": "Voter rolls carry people who have moved or died, mail ballots go to addresses no one has verified, and ballots are counted that no official saw cast. Asking voters to show who they are, as they must to board a plane or open a bank account, and to prove citizenship once when they register, is a safeguard most democracies take for granted. Fraud is real: the Heritage Foundation’s database listed more than 1,400 proven cases by January 2023, and North Carolina’s 2018 congressional election was overturned for absentee ballot fraud. Elections are now decided by thousands or hundreds of votes, and the losing side of a close race needs reason to trust the count. Senator Mike Lee’s SAVE America Act would require documentary proof of citizenship to register and photo ID to vote, “to ensure that our federal elections are decided by U.S. citizens—and U.S. citizens alone.” Mail voting should be the exception for those who need it, with secure envelopes and verification.\n\nCritics say fraud is vanishingly rare and these rules would block millions. Low counts reflect weak detection, not clean rolls, and every ineligible ballot cancels an eligible one. The largest nationwide study, by Enrico Cantoni and Vincent Pons, found strict ID laws did not reduce turnout; states provide free IDs; and a citizen without a birth certificate at hand can obtain one once, for a right used for life. Kansas’s troubles came from a poorly run rollout before today’s federal databases. We differ on reach: photo ID at the polls has wide support, while federal citizenship lists, ending most mail voting and Election Day receipt deadlines divide even Republicans, and some of us want states, not Washington, to act.",
+    "proponents": "Trump administration; Mike Lee; Heritage Foundation; Honest Elections Project; Republican National Committee",
+    "id": "tighten-voter-eligibility-checks"
+   },
+   {
+    "name": "Expand access to voting",
+    "color_key": "rust",
+    "steelman": "Voting is a right of citizenship. The fraud these rules target barely exists, while their burdens fall on millions of eligible citizens who lack the papers they demand.",
+    "detail": "The system should make it easy for every eligible citizen to vote: automatic registration, early voting, mail voting for anyone who wants it, and no documentary hurdles that eligible people cannot clear. Every serious search for noncitizen or impersonation voting finds a handful of cases among millions, already caught by existing checks and punished by severe penalties; Georgia’s audit of 8.2 million registrations found 20 noncitizens. The burdens are concrete: 21.3 million citizens cannot readily produce a birth certificate or passport. When Kansas required documentary proof of citizenship, 31,089 applications were canceled or suspended while the trial court found no more than 39 noncitizens on the rolls over 19 years, and the courts struck the law down. The Brennan Center told the Senate that the SAVE America Act “would be the most restrictive voting bill ever passed by Congress.” Claims of fraud used to justify such rules have themselves damaged trust in elections.\n\nThe strongest objection is that ID is popular, common in other democracies and not shown to lower turnout overall. Other democracies with ID rules issue national ID cards free and register voters automatically, so the comparison supports universal access to ID, not requirements without it. A turnout effect near zero on average can coexist with real harm, offset by mobilization campaigns that should not be needed. We differ on photo ID itself: many accept it at the polls if it is free and flexible, with alternatives such as a signed affidavit, while the Brennan Center and the ACLU oppose strict ID laws. Nearly all of us oppose proof-of-citizenship rules for registration and limits on mail voting.",
+    "proponents": "Brennan Center for Justice; Alex Padilla; ACLU; League of Women Voters",
+    "id": "expand-access-to-voting"
+   },
+   {
+    "name": "Pair voter ID with guaranteed access",
+    "color_key": "purple",
+    "steelman": "Access and security are a false choice. Most Americans want both, so pair a simple ID check with free IDs, easy registration and ample early and mail voting.",
+    "detail": "The fight between access and security is useful to both parties and serves voters poorly. The same public backs photo ID and two weeks of early voting by similar margins, 83 and 80 percent in Pew’s 2025 survey. The law should give them both: a simple identity check for every voter, in person and by mail, together with free IDs issued proactively, automatic or easy registration, ample early voting, and mail ballots with verification and a chance to fix errors. Each side gets the guarantee it says it needs and loses the argument it uses against the other. The 2005 Carter-Baker commission proposed this bargain, photo ID phased in over five years with free cards and mobile units to issue them, concluding that “a free and fair election requires both ballot security and full access to voting.” Under Georgia’s photo ID law more than 2 million people had voted early by October 23, 2024, which Secretary of State Brad Raffensperger called proof that “it’s easy to vote and hard to cheat.”\n\nAccess advocates say any ID rule will exclude someone; verification advocates say ID means little without proof of citizenship and limits on mail voting. The first objection is met by making ID free, easy to get and broadly defined, with fallbacks, and the second by identity checks on mail ballots and better use of government data to confirm citizenship, rather than rules that block eligible applicants. Rules adopted with support from both parties are the only ones that last. We differ on how strict the ID should be, whether citizenship is checked by documents or databases, and whether national or state law should carry the bargain.",
+    "proponents": "Bipartisan Policy Center; Carter-Baker Commission; Brad Raffensperger",
+    "id": "pair-voter-id-with-guaranteed-access"
+   },
+   {
+    "name": "Rank candidates in single-winner races",
+    "color_key": "teal",
+    "steelman": "Keep the local, accountable representative but let voters rank candidates, so no one wins on a minority when votes split and no one is punished for voting their conscience.",
+    "detail": "The trouble with American and British elections is less that districts elect one person than that the winner can be chosen by a minority and voters are punished for voting their conscience. Ranking candidates fixes both: if no one has a majority, the last-place candidate is eliminated and those ballots move to their next choice until someone does. Third-party and independent candidates can run without being spoilers, candidates must reach beyond their base for second preferences, and costly runoffs fold into one election. Cities and states can adopt it today, and it is proven: Australia has used it for its House of Representatives for a century, and Ireland for decades in presidential elections. Katherine Gehl’s “Final Five Voting” pairs it with a nonpartisan top-five primary.\n\nOpponents say ranked ballots confuse voters, slow results and discard exhausted ballots, so the winner’s majority is not real. Voters where it is used report understanding it; an exhausted ballot is one whose voter chose not to rank the finalists, just as voters skip a separate runoff; and FairVote counts 31 of 39 places holding ranked-choice elections in the two years to June 2025 that released results on Election Day or the day after. We read the wave of state bans as partisan, passed before most of those states’ voters had ever used it. Many of us, FairVote included, also back multi-winner ranked voting in larger districts, which is a form of proportional representation.",
+    "proponents": "FairVote; Katherine Gehl; Institute for Political Innovation; Unite America; Alaskans for Better Elections",
+    "id": "rank-candidates-in-single-winner-races"
+   }
+  ],
+  "crux": {
+   "lead": "Does an election earn legitimacy by including every voter fully, or by a decisive result the losers accept?",
+   "lead_highlight": "including every voter fully, or by a decisive result the losers accept",
+   "subtitle": "Two arguments meet at this fork. One is how votes become seats: in proportion to each party’s support, or through districts that give one side a clear win. The other is who may vote and how easily: with the fewest hurdles, or with checks that every ballot is eligible.",
+   "empirical": "Much of it can be measured: how many eligible citizens a given ID or citizenship-document rule actually stops, as opposed to how many lack papers in a survey; how many ineligible ballots exist and how many each check would catch; whether new safeguards raise the confidence of those who doubt results; and whether proportional systems calm or inflame polarization and how stable their governments are.",
+   "values": "Even with perfect data, people weigh the errors differently: no measurement says how many eligible citizens turned away equal one ineligible ballot counted. A parliament that mirrors the voters and a government voters choose and remove directly are both democratic ideals that no system fully delivers together. Some ground legitimacy in everyone taking part; others in a result the losing side can check and accept."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Compare the world’s electoral systems",
+    "description": "International IDEA’s Electoral System Design Database shows which system each country uses to elect its legislature, with a definition of each system and family.",
+    "url": "https://www.idea.int/data-tools/data/electoral-system-design-database",
+    "for_position": null,
+    "id": "compare-the-world-s-electoral-systems"
+   },
+   {
+    "kind": "policy",
+    "title": "Join the campaign for proportional representation in the UK",
+    "description": "Make Votes Matter is a cross-party campaign for proportional representation at Westminster that organizes supporters to lobby their MPs.",
+    "url": "https://makevotesmatter.org.uk",
+    "for_position": "Adopt proportional representation",
+    "id": "join-the-campaign-for-proportional-representation"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the case for keeping first-past-the-post",
+    "description": "Richard Johnson’s Queen Mary University of London policy brief argues that single-member plurality voting gives voters a clearer choice of government and an easier way to remove one.",
+    "url": "https://www.qmul.ac.uk/mei/media/mei/qm-policy-hub/briefs/Queen-Mary-Policy-Brief---Is-First-Past-the-Post-Undemocratic.pdf",
+    "for_position": "Keep first-past-the-post",
+    "id": "read-the-case-for-keeping-first"
+   },
+   {
+    "kind": "policy",
+    "title": "Back stronger voter eligibility safeguards",
+    "description": "The Honest Elections Project publishes model bills, litigation and reports supporting voter roll maintenance and limits on ballot collection, and lets supporters sign up for alerts.",
+    "url": "https://honestelections.org",
+    "for_position": "Tighten voter eligibility checks",
+    "id": "back-stronger-voter-eligibility-safeguards"
+   },
+   {
+    "kind": "policy",
+    "title": "Support expanded access to voting",
+    "description": "The Brennan Center for Justice publishes research and advocacy on automatic registration, mail voting and opposition to proof-of-citizenship requirements, with ways to support its work.",
+    "url": "https://www.brennancenter.org/topics/voting-elections",
+    "for_position": "Expand access to voting",
+    "id": "support-expanded-access-to-voting"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Help voters get the ID they need",
+    "description": "VoteRiders is a nonpartisan nonprofit that helps citizens obtain the identification their state requires to vote, through a helpline, local volunteers and help with document costs.",
+    "url": "https://www.voteriders.org",
+    "for_position": "Pair voter ID with guaranteed access",
+    "id": "help-voters-get-the-id-they"
+   },
+   {
+    "kind": "donate",
+    "title": "Support ranked-choice voting",
+    "description": "FairVote is the main US advocacy group for ranked-choice voting in single-winner races and proportional ranked voting for legislatures, and takes donations and volunteers.",
+    "url": "https://fairvote.org",
+    "for_position": "Rank candidates in single-winner races",
+    "id": "support-ranked-choice-voting"
+   },
+   {
+    "kind": "local",
+    "title": "Check your state’s voter ID rules before you vote",
+    "description": "The National Conference of State Legislatures keeps a current table of what identification each state asks for at the polls and what happens if a voter does not have it.",
+    "url": "https://www.ncsl.org/elections-and-campaigns/voter-id",
+    "for_position": null,
+    "id": "check-your-state-s-voter-id"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Become a poll worker",
+    "description": "The US Election Assistance Commission’s Help America Vote program points people to their local election office to sign up as poll workers, who run both the access and the security sides of an election.",
+    "url": "https://www.eac.gov/help-america-vote",
+    "for_position": null,
+    "id": "become-a-poll-worker"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read a plain guide to how electoral systems work",
+    "description": "The ACE Electoral Knowledge Network, maintained by election-assistance bodies including International IDEA and the UN, explains each system’s mechanics, advantages and drawbacks.",
+    "url": "https://aceproject.org/ace-en/topics/es",
+    "for_position": null,
+    "id": "read-a-plain-guide-to-how"
+   }
+  ]
+ },
+ "icon": "check-square-offset",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: a large plain ballot box in the foreground as the dominant focal mass, with a single folded paper ballot halfway into its slot; behind it and partly hidden by the box, a wide semicircular legislative chamber seen from above as curved rows of small rounded seats arranged in a half ring, each seat given a clear fill; the ground is the gentle curve of a low rounded hill under the box; a dotted path winds from the ballot box across the frame to the half ring of seats as the connective element; a small blank ballot card with three empty square check boxes lying on the hill beside the box.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #6a62b0, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: people, hands, faces, flags, eagles, stars, bunting, red and blue, party logos, donkeys, elephants, check marks, ticked boxes, crosses in boxes, arrows, charts, pie charts, bar charts, padlocks, shields, ID cards, scales of justice, gavels, megaphones, lecterns, Greek columns, domed capitols, slashes, prohibition signs, flames."
 }

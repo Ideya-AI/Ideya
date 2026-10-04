@@ -1,8 +1,8 @@
 {
  "slug": "antimicrobial-resistance",
  "title": "Antimicrobial Resistance",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-10-01T22:06:05+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Drug-resistant pathogens and a post-antibiotic era.",
@@ -14,5 +14,686 @@
   "gain-of-function-research",
   "drug-pricing-vs-innovation",
   "vaccine-mandates"
- ]
+ ],
+ "icon": "pill",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: A large shallow petri dish, seen at a gentle three-quarter angle, is the dominant mass at centre, resting on a single soft curved hill; its round lid is tilted half open and leans against the back of the dish. Inside the dish sit three round antibiotic paper disks; a clear empty ring surrounds two of them, while a cluster of plump rod-shaped bacteria crowds right up to the edge of the third disk. A medium oversized two-tone antibiotic capsule lies on the hill in front, overlapping the dish rim at the lower left. Far back at the left end of the hill, small, a barn with a pitched roof; far back at the right end, small, a simple hospital building with a plain rectangle sign. A thin winding path runs along the hill from the barn, behind the dish, to the hospital, and stays entirely on the hill. The hill ends well above the bottom of the image, leaving white space below. Scales step down from dish to capsule to buildings to disks.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #b3404f, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: no virus particles, no spiky balls, no flask, no biohazard trefoil, no skulls, no crossbones, no syringes, no people, no faces, no animals, no cows, no pigs, no tractors, no medical cross, no red cross, no warning signs, no arrows, no checkmarks or crosses, no prohibition circles, no money or coins, no scales of justice, no text, no labels, no numbers, no frame or border, no second color, no gradients, no shading, no drop shadows, no flat horizon line",
+ "content": {
+  "overview": {
+   "summary": "Resistant infections are growing; the central fight is over which lever matters most: using antibiotics less, paying for new ones, or widening access.",
+   "scope_covered": "Drug-resistant infections, above all bacterial ones including drug-resistant tuberculosis: how large the threat is and how fast it grows, antibiotic use in medicine and livestock, how new antibiotics get invented and paid for, and who can get the ones that already exist.",
+   "scope_excluded": "Resistance to HIV, influenza and malaria drugs, except where a cited figure includes it; gain-of-function research, drug pricing in general and vaccine mandates, which have their own topics.",
+   "why_now": "On May 23, 2026 the World Health Assembly adopted an updated Global Action Plan on Antimicrobial Resistance to run through 2036, replacing the plan of 2015, while governments still argue over how to pay for new antibiotics and how far to curb their use on farms.",
+   "why_now_source_label": "World Health Organization, news release on the updated Global Action Plan on AMR, May 25, 2026",
+   "why_now_source_url": "https://www.who.int/news/item/25-05-2026-the-world-health-assembly-adopts-updated-global-action-plan-on-antimicrobial-resistance-(2026-2036)"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "Deaths from drug-resistant bacterial infections, 2021",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "million",
+     "series": [
+      {
+       "label": "Associated with AMR",
+       "value": "4.71",
+       "highlight": false
+      },
+      {
+       "label": "Attributable to AMR",
+       "value": "1.14",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "An estimated 1.14 million deaths in 2021 were caused directly by bacterial resistance, and 4.71 million involved a resistant infection.",
+     "detail": "“Attributable” deaths are those that would not have happened had the infection been drug-susceptible; “associated” deaths involved a resistant infection, compared with no infection at all. The 95% uncertainty ranges are 1.00 to 1.28 million and 4.23 to 5.19 million. The same group’s estimate for 2019, 1.27 million attributable and 4.95 million associated (Murray et al., The Lancet, 2022), is the baseline the United Nations used for its target; the 2024 paper notes that part of the gap reflects a drop in non-COVID infectious deaths in 2020 and 2021. From 1990 to 2021, AMR deaths among children under five fell by more than half, while deaths among adults 70 and older rose by more than 80%. Carbapenem-resistant Gram-negative bacteria caused 216,000 attributable deaths in 2021 and methicillin-resistant Staphylococcus aureus 130,000. These are modeled estimates for 204 countries built from 520 million records, and many low-income countries contribute little direct data.",
+     "source_label": "GBD 2021 Antimicrobial Resistance Collaborators, The Lancet, 2024 (abstract on PubMed)",
+     "source_url": "https://pubmed.ncbi.nlm.nih.gov/39299261/",
+     "source_published": "2021",
+     "source_accessed": "2026-10-01",
+     "id": "deaths-from-drug-resistant-bacterial-infections"
+    },
+    {
+     "label": "Lab-confirmed bacterial infections that resist antibiotics",
+     "viz": "bar",
+     "wide": false,
+     "value": "1 in 6",
+     "unit": "infections",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "About one in six laboratory-confirmed bacterial infections reported to WHO in 2023 resisted antibiotic treatment, and one in three in its South-East Asia and Eastern Mediterranean regions.",
+     "detail": "The figures come from WHO’s global surveillance system, GLASS, which drew on data from 104 countries, up from 25 in 2016, and tracks 22 antibiotics against eight common bacterial pathogens. The share was one in five in WHO’s African Region and one in seven in the Americas (Pan American Health Organization, 2025). Between 2018 and 2023 resistance rose in more than 40% of the pathogen-antibiotic combinations monitored, by an average of 5–15% a year, and rates are highest where health systems are weakest. WHO names two limits itself: 48% of countries reported no data for 2023, and about half of those reporting lacked systems able to produce reliable data, so the global figure leans on the countries that can measure.",
+     "source_label": "World Health Organization, Global antibiotic resistance surveillance report 2025 (GLASS), news release, October 13, 2025",
+     "source_url": "https://www.who.int/news/item/13-10-2025-who-warns-of-widespread-resistance-to-common-antibiotics-worldwide",
+     "source_published": "2023",
+     "source_accessed": "2026-10-01",
+     "id": "lab-confirmed-bacterial-infections-that-resist"
+    },
+    {
+     "label": "Projected yearly deaths from drug resistance in 2050",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "million",
+     "series": [
+      {
+       "label": "O’Neill review, 2016",
+       "value": "10",
+       "highlight": false
+      },
+      {
+       "label": "GBD associated, 2024",
+       "value": "8.22",
+       "highlight": false
+      },
+      {
+       "label": "GBD attributable, 2024",
+       "value": "1.91",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The 2016 O’Neill review projected 10 million deaths a year by 2050; the 2024 GBD forecast is 1.91 million caused by resistance and 8.22 million associated. Which to cite is disputed.",
+     "detail": "The O’Neill review, commissioned by the UK government and chaired by the economist Jim O’Neill, started from about 700,000 deaths a year. Its 10 million figure was a scenario built by the consultancies KPMG and RAND from assumptions about rising resistance, not a most-likely forecast, and it covered a broader set of drugs, including those for HIV and malaria. In 2016 the epidemiologists Marlieke de Kraker, Andrew Stewardson and Stephan Harbarth argued in PLOS Medicine that it rested on weak data. The GBD forecast, a statistical projection of bacterial resistance only, adds up to 39 million attributable and about 169 million associated deaths from 2025 to 2050 (Wellcome, 2024). Its rise is driven mostly by aging: people 70 and older are forecast to account for 65.9% of attributable deaths in 2050. A forecast 25 years out depends on assumptions about health care, drug development and population aging that may not hold.",
+     "source_label": "GBD 2021 AMR Collaborators, The Lancet, 2024 (abstract on PubMed); O’Neill review, final report, 2016",
+     "source_url": "https://pubmed.ncbi.nlm.nih.gov/39299261/",
+     "source_published": "2024 forecast; O’Neill 2016",
+     "source_accessed": "2026-10-01",
+     "id": "projected-yearly-deaths-from-drug-resistance"
+    },
+    {
+     "label": "Carbapenem-resistant infections matched by suitable drugs, eight countries",
+     "viz": "radial",
+     "wide": false,
+     "value": "6.9",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Suitable antibiotics procured in 2019 were enough for 6.9% of an estimated 1.5 million carbapenem-resistant Gram-negative infections in eight low- and middle-income countries.",
+     "detail": "The study counted 103,647 courses of suitable antibiotics procured in Bangladesh, Brazil, Egypt, India, Kenya, Mexico, Pakistan and South Africa. India bought 80.5% of the courses and covered 7.8% of its infections; Mexico and Egypt had the highest coverage, at 14.9%. The most-procured drug was intravenous tigecycline. Carbapenem-resistant Gram-negative bacteria resist one of the last broadly effective classes of antibiotics. The study was funded by the Global Antibiotic Research and Development Partnership, a nonprofit that develops antibiotics for these markets.",
+     "source_label": "GARDP-funded study of undertreatment in eight countries, Lancet Infectious Diseases, 2025",
+     "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12367590/",
+     "source_published": "2019",
+     "source_accessed": "2026-10-01",
+     "id": "carbapenem-resistant-infections-matched-by-suitable"
+    },
+    {
+     "label": "Antibacterial drugs in clinical trials, early 2025",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "candidates",
+     "series": [
+      {
+       "label": "All candidates",
+       "value": "90",
+       "highlight": true
+      },
+      {
+       "label": "Traditional",
+       "value": "50",
+       "highlight": false
+      },
+      {
+       "label": "Non-traditional",
+       "value": "40",
+       "highlight": false
+      },
+      {
+       "label": "Innovative",
+       "value": "15",
+       "highlight": false
+      },
+      {
+       "label": "Innovative, critical",
+       "value": "5",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "WHO counted 90 antibacterial agents in clinical trials in early 2025, down from 97 in 2023; 15 met its innovation criteria and 5 of those worked against its critical-priority pathogens.",
+     "detail": "Non-traditional approaches include bacteriophages, antibodies and microbiome treatments. Since July 2017, 17 new antibacterials have been authorized, and only 2 of them represent new chemical classes. WHO counted 232 preclinical programs across 148 groups worldwide, 90% of them small firms with fewer than 50 employees, a structure it describes as fragile. For 10 of the 15 innovative candidates there were not yet enough data to rule out cross-resistance with existing drugs. Whether the pipeline is thin because the science is hard or because the market pays too little is disputed.",
+     "source_label": "World Health Organization, news release on the 2025 antibacterial pipeline and diagnostics reports, October 2, 2025",
+     "source_url": "https://www.who.int/news/item/02-10-2025-who-releases-new-reports-on-new-tests-and-treatments-in-development-for-bacterial-infections",
+     "source_published": "2025",
+     "source_accessed": "2026-10-01",
+     "id": "antibacterial-drugs-in-clinical-trials-early"
+    },
+    {
+     "label": "Countries still giving antibiotics to healthy animals for growth",
+     "viz": "radial",
+     "wide": false,
+     "value": "22",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a World Organisation for Animal Health survey for 2022, 22% of participating countries still used antimicrobials as growth promoters, 71% did not and 7% did not know.",
+     "detail": "Growth promotion means giving low doses of antimicrobials to healthy animals so they gain weight faster. WOAH reports that 80% of the countries still doing so are in the Americas and Asia-Pacific, and that 7% of participating countries use at least one highest-priority critically important human antibiotic for it. The European Union banned antibiotic growth promoters in 2006 and, from January 2022, all routine farm use, including preventive treatment of groups of healthy animals. The United States ended growth-promotion use of medically important antibiotics in 2017 but still permits preventive use under veterinary oversight. The 2024 UN political declaration on AMR commits countries to phase out growth-promotion use of medically important antimicrobials.",
+     "source_label": "World Organisation for Animal Health, “An overview of antimicrobial use in animals,” 9th ANIMUSE report, May 2025",
+     "source_url": "https://www.woah.org/app/uploads/2025/05/woah-amu-2025-an-overview-of-antimicrobials-use.pdf",
+     "source_published": "2022",
+     "source_accessed": "2026-10-01",
+     "id": "countries-still-giving-antibiotics-to-healthy"
+    },
+    {
+     "label": "Colistin resistance after China banned it in animal feed",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Pigs, 2015–16",
+       "value": "34.0",
+       "highlight": false
+      },
+      {
+       "label": "Pigs, 2017–18",
+       "value": "5.1",
+       "highlight": true
+      },
+      {
+       "label": "Chickens, 2015–16",
+       "value": "18.1",
+       "highlight": false
+      },
+      {
+       "label": "Chickens, 2017–18",
+       "value": "5.0",
+       "highlight": false
+      },
+      {
+       "label": "Hospital mcr-1, 2016",
+       "value": "14.3",
+       "highlight": false
+      },
+      {
+       "label": "Hospital mcr-1, 2019",
+       "value": "6.3",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "After China banned colistin as a feed additive in 2017, colistin-resistant E. coli fell from 34.0% to 5.1% of pig samples, and hospital carriage of the mcr-1 gene from 14.3% to 6.3%.",
+     "detail": "Colistin is a last-resort antibiotic for some multidrug-resistant infections in people. A transferable colistin-resistance gene, mcr-1, was discovered in Chinese pigs in 2015, which prompted the ban. Production of colistin premix fell from 27,170 metric tons in 2015 to 2,497 in 2018. In chicken samples, colistin-resistant E. coli fell from 18.1% to 5.0%. Among clinical E. coli infections in people the fall was more modest, from 1.7% to 1.3%. The ban concerned one drug used heavily as a feed additive, and how far the result carries over to other drugs and farming systems is disputed.",
+     "source_label": "Wang et al., colistin ban in China, Lancet Infectious Diseases, 2020 (abstract on PubMed)",
+     "source_url": "https://pubmed.ncbi.nlm.nih.gov/32505232/",
+     "source_published": "2015–2019",
+     "source_accessed": "2026-10-01",
+     "id": "colistin-resistance-after-china-banned-it"
+    },
+    {
+     "label": "US sales of medically important antibiotics for food animals",
+     "viz": "bar",
+     "wide": false,
+     "value": "16",
+     "unit": "% rise",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "US sales of medically important antibiotics for food-producing animals rose 16% from 2023 to 2024, leaving them 27% below their 2015 peak.",
+     "detail": "FDA cautions that sales figures show what is sold, not how much is ultimately given to animals. About 43% of the 2024 volume was for pigs, 41% for cattle, 11% for turkeys and 4% for chickens, and tetracyclines were the largest class (CIDRAP, 2025). In February 2026 FDA finalized Guidance for Industry #273, which asks drug sponsors to set defined durations of use for more than 100 medically important feed antibiotics that lack them, voluntarily and over about three years (Federal Register, 2026).",
+     "source_label": "US FDA, 2024 Summary Report on Antimicrobials Sold for Food-Producing Animals, December 5, 2025",
+     "source_url": "https://www.fda.gov/animal-veterinary/cvm-updates/fda-releases-annual-summary-sales-and-distribution-antimicrobials-2024-use-food-producing-animals",
+     "source_published": "2024",
+     "source_accessed": "2026-10-01",
+     "id": "us-sales-of-medically-important-antibiotics"
+    },
+    {
+     "label": "Resistance to first-choice drugs for serious infections, 2023",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% resistant",
+     "series": [
+      {
+       "label": "Both bacteria, Africa",
+       "value": ">70",
+       "highlight": false
+      },
+      {
+       "label": "K. pneumoniae, world",
+       "value": ">55",
+       "highlight": true
+      },
+      {
+       "label": "E. coli, world",
+       "value": ">40",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Worldwide in 2023, more than 55% of K. pneumoniae and 40% of E. coli tested resisted third-generation cephalosporins, first-choice drugs for many serious infections; over 70% in WHO’s African Region.",
+     "detail": "WHO calls E. coli and K. pneumoniae the leading drug-resistant Gram-negative bacteria in bloodstream infections, which often lead to sepsis, organ failure and death. When third-generation cephalosporins fail, doctors turn to carbapenems, and WHO reports that carbapenem resistance, once rare, is becoming more frequent, forcing reliance on last-resort antibiotics that are costly, hard to obtain and often unavailable in low- and middle-income countries. The GBD study found that among Gram-negative bacteria, carbapenem resistance increased more than resistance to any other class between 1990 and 2021.",
+     "source_label": "World Health Organization, GLASS report 2025, via the Pan American Health Organization news release, October 13, 2025",
+     "source_url": "https://www.paho.org/en/news/13-10-2025-who-warns-widespread-resistance-common-antibiotics-worldwide",
+     "source_published": "2023",
+     "source_accessed": "2026-10-01",
+     "id": "resistance-to-first-choice-drugs-for"
+    },
+    {
+     "label": "First-choice antibiotics as a share of human use, 2022",
+     "viz": "range",
+     "wide": false,
+     "value": "53",
+     "unit": "%",
+     "series": [],
+     "range_min": "0%",
+     "range_max": "70% UN target",
+     "note": "In 2022 WHO’s Access antibiotics, the first choices for most common infections, made up about 53% of global human use, against a UN target of at least 70% by 2030.",
+     "detail": "WHO sorts antibiotics into three groups: Access (narrow, older, lower resistance risk), Watch (broader-spectrum drugs to be used more sparingly) and Reserve (last-resort drugs). Watch antibiotics made up about 45% of use and exceeded 70% of total use in nearly a third of countries. The 70% Access target was adopted in the UN General Assembly’s 2024 political declaration on AMR. A low Access share can mean overuse of broad drugs in some places and, in others, that cheap first-line drugs are out of stock, which is why stewardship and access advocates both cite it.",
+     "source_label": "World Health Organization, Antimicrobial resistance fact sheet, updated July 16, 2026",
+     "source_url": "https://www.who.int/news-room/fact-sheets/detail/antimicrobial-resistance",
+     "source_published": "2022",
+     "source_accessed": "2026-10-01",
+     "id": "first-choice-antibiotics-as-a-share"
+    },
+    {
+     "label": "Global human antibiotic consumption",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "billion",
+     "series": [
+      {
+       "label": "2023",
+       "value": "49.3",
+       "highlight": true
+      },
+      {
+       "label": "2030, no new policy",
+       "value": "75.1",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Global human antibiotic consumption was an estimated 49.3 billion defined daily doses in 2023, up 20.9% since 2016; the authors project 75.1 billion by 2030 without policy change.",
+     "detail": "A defined daily dose is a standardized unit of drug quantity, not a count of patients or prescriptions. Growth is concentrated in middle-income countries: from 2016 to 2023 use per person fell 4.9% in high-income countries and rose 18.6% in middle-income ones. In the 67 countries with reported sales data, use per person rose 10.6%, from 13.7 to 15.2 doses per 1,000 people per day. Rising use in poorer countries reflects both better access and inappropriate use; the authors argue that water, sanitation and vaccination are the way to slow growth without denying treatment.",
+     "source_label": "Klein et al., “Global trends in antibiotic consumption during 2016–2023 and future projections through 2030,” PNAS, 2024",
+     "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11626136/",
+     "source_published": "2023",
+     "source_accessed": "2026-10-01",
+     "id": "global-human-antibiotic-consumption"
+    },
+    {
+     "label": "Antibiotic doses against 23 pathogens that vaccines could avert",
+     "viz": "radial",
+     "wide": false,
+     "value": "22",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "WHO estimates that vaccines against 23 pathogens could cut the antibiotics used for those diseases by 22%, or 2.5 billion defined daily doses a year.",
+     "detail": "Vaccines already in use against pneumococcus, Haemophilus influenzae type b and typhoid could avert up to 106,000 AMR-associated deaths a year; another 543,000 could be averted once vaccines for tuberculosis and Klebsiella pneumoniae are developed and rolled out, and neither exists yet at scale. WHO puts the hospital cost of treating the resistant pathogens in the report at $730 billion a year and says full vaccine rollout could save a third of it. Part of the saving comes from vaccines against diseases antibiotics do not cure, such as malaria, because people with those illnesses are often given antibiotics anyway.",
+     "source_label": "World Health Organization, news release on vaccines and antibiotic use, October 10, 2024",
+     "source_url": "https://www.who.int/news/item/10-10-2024-better-use-of-vaccines-could-reduce-antibiotic-use-by-2.5-billion-doses-annually--says-who",
+     "source_published": "2024",
+     "source_accessed": "2026-10-01",
+     "id": "antibiotic-use-that-vaccines-could-prevent"
+    },
+    {
+     "label": "Yearly AMR deaths in poorer countries avertible with existing tools",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "deaths/yr",
+     "series": [
+      {
+       "label": "Infection control",
+       "value": "337,000",
+       "highlight": true
+      },
+      {
+       "label": "Water & sanitation",
+       "value": "247,800",
+       "highlight": false
+      },
+      {
+       "label": "Childhood vaccines",
+       "value": "181,500",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In low- and middle-income countries, better infection control could prevent at least 337,000 AMR-associated deaths a year, universal water and sanitation 247,800, and childhood vaccines 181,500.",
+     "detail": "These equal 7.8%, 5.7% and 4.2% of AMR-associated deaths in those countries. The authors, led by Joseph Lewnard and Ramanan Laxminarayan, conclude that the UN goal of a 10% cut in AMR deaths by 2030 is achievable with existing interventions. The measures work in two ways: they stop infections from happening at all, and they reduce the antibiotic use that breeds resistance. The figures are not simply additive, since the same death can be prevented by more than one measure.",
+     "source_label": "Lewnard et al., AMR burden avertible by existing interventions, The Lancet, 2024 (PubMed)",
+     "source_url": "https://pubmed.ncbi.nlm.nih.gov/38797180/",
+     "source_published": "2019 baseline; published 2024",
+     "source_accessed": "2026-10-01",
+     "id": "yearly-amr-deaths-in-poorer-countries"
+    },
+    {
+     "label": "People with drug-resistant TB who started treatment, 2024",
+     "viz": "radial",
+     "wide": false,
+     "value": "42",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "An estimated 390,000 people developed multidrug- or rifampicin-resistant tuberculosis in 2024, and 164,545, or 42%, started treatment for it.",
+     "detail": "Tuberculosis is a bacterial disease, and drug-resistant TB is counted within bacterial AMR. WHO estimates that 3.2% of people with a first episode of TB had drug-resistant TB in 2024. Its Global Tuberculosis Report 2025 puts treatment success at 71% for people who started treatment for drug-resistant TB in 2022, the latest group with outcomes, and reports that shorter regimens are spreading fast: 34,256 people started six-month regimens in 2024, up from 5,653 in 2023.",
+     "source_label": "World Health Organization, Global Tuberculosis Report 2025, fact sheet",
+     "source_url": "https://cdn.who.int/media/docs/default-source/global-tuberculosis-report-2025/global-tb-report-2025_factsheet.pdf",
+     "source_published": "2024",
+     "source_accessed": "2026-10-01",
+     "id": "people-with-drug-resistant-tb-who"
+    },
+    {
+     "label": "World Bank estimate of yearly GDP lost to drug resistance by 2050",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% of GDP",
+     "series": [
+      {
+       "label": "High-impact scenario",
+       "value": "3.8",
+       "highlight": true
+      },
+      {
+       "label": "Low-impact scenario",
+       "value": "1.1",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "World Bank simulations found that by 2050 drug resistance would cut annual global GDP by 1.1% in a low-impact scenario and by 3.8% in a high-impact one.",
+     "detail": "In the high-impact scenario the annual shortfall reaches $3.4 trillion by 2030, and 28.3 million more people would be living in extreme poverty in 2050, 26.2 million of them in low-income countries. The report compares the scale of loss to the 2008–2009 financial crisis, but lasting decades rather than a few years. It modeled resistance as shocks to labor supply and livestock productivity, an approach its authors call conservative. WHO’s fact sheet cites a more recent projection that treating resistant bacterial infections could cost $412 billion a year by 2035, with productivity losses of $443 billion a year. All such numbers rest on forecasts of resistance that are themselves uncertain.",
+     "source_label": "World Bank, “Drug-Resistant Infections: A Threat to Our Economic Future,” final report, March 2017",
+     "source_url": "https://documents1.worldbank.org/curated/en/323311493396993758/pdf/final-report.pdf",
+     "source_published": "2017",
+     "source_accessed": "2026-10-01",
+     "id": "world-bank-estimate-of-yearly-gdp"
+    },
+    {
+     "label": "England’s top yearly payment per subscription antibiotic",
+     "viz": "bar",
+     "wide": false,
+     "value": "£20",
+     "unit": "million",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "England will pay up to £20 million a year for each subscription antibiotic, however much is used, under contracts tendered at an estimated almost £1.9 billion over 16 years.",
+     "detail": "A subscription pays a flat rate for a drug, set by its value to public health, rather than for the doses patients use, with the aim of rewarding new antibiotics while their use is kept low. England piloted the model with two antibiotics, cefiderocol and ceftazidime-avibactam, and its 2024 tender set four payment bands of £5, £10, £15 and £20 million a year, the top one for “breakthrough” drugs (The Pharmaceutical Journal, 2024). In the United States the PASTEUR Act, reintroduced in both chambers in 2026, would pay $75 million to $300 million a year per qualifying drug on contracts of up to 10 years (Senator Michael Bennet, 2026).",
+     "source_label": "National Audit Office, “Investigation into how government is addressing antimicrobial resistance,” February 26, 2025",
+     "source_url": "https://www.nao.org.uk/wp-content/uploads/2025/02/investigation-into-how-government-is-addressing-antimicrobial-resistance.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-10-01",
+     "id": "most-england-pays-per-subscription-antibiotic"
+    },
+    {
+     "label": "Antimicrobial use in animals worldwide",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "mg/kg",
+     "series": [
+      {
+       "label": "2020",
+       "value": "102",
+       "highlight": false
+      },
+      {
+       "label": "2021",
+       "value": "107.9",
+       "highlight": false
+      },
+      {
+       "label": "2022",
+       "value": "97",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 85 countries that reported consistently, covering 62% of global animal biomass, antimicrobial use in animals fell 5% from 2020 to 2022, from 102 to 97 mg per kg of biomass.",
+     "detail": "The trend was uneven: use fell 20% in Africa and 23% in Europe, 2% in the Americas and 4% in Asia-Pacific, and rose 43% in the Middle East. WOAH estimates total use in animals in 2022 at 70,648 metric tons, or up to 74,035 adjusted for coverage. A 2019 study in Science estimated that animals consume three times the antimicrobials humans do (Van Boeckel et al.), and a 2023 modeling study put food-animal use at 99,502 metric tons in 2020, rising to about 107,500 by 2030 (Mulchandani et al., PLOS Global Public Health). Estimates differ because many countries report incompletely.",
+     "source_label": "World Organisation for Animal Health, “An overview of antimicrobial use in animals,” 9th ANIMUSE report, May 2025",
+     "source_url": "https://www.woah.org/app/uploads/2025/05/woah-amu-2025-an-overview-of-antimicrobials-use.pdf",
+     "source_published": "2022",
+     "source_accessed": "2026-10-01",
+     "id": "antimicrobial-use-in-animals-worldwide"
+    },
+    {
+     "label": "Drug-resistant infections in the United States each year",
+     "viz": "bar",
+     "wide": false,
+     "value": "2.8",
+     "unit": "million",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "CDC estimates more than 2.8 million antimicrobial-resistant infections and 35,000 deaths a year in the US, or more than 3 million infections and 48,000 deaths counting C. difficile.",
+     "detail": "These remain CDC’s most recent full national estimates, published in 2019. A July 2024 CDC update found that six resistant hospital-onset bacterial infections rose by a combined 20% during the COVID-19 pandemic and stayed above pre-pandemic levels in 2022. In September 2025 CDC reported that infections with NDM-producing carbapenem-resistant Enterobacterales, which resist nearly all available antibiotics, rose by more than 460% between 2019 and 2023 in the areas it monitors. CDC also estimates that at least 28% of antibiotics prescribed in US outpatient settings are unnecessary, and that 85–95% of human antibiotic use happens outside hospitals.",
+     "source_label": "US Centers for Disease Control and Prevention, Antibiotic Resistance Threats in the United States, 2019 (overview page)",
+     "source_url": "https://www.cdc.gov/antimicrobial-resistance/data-research/threats/index.html",
+     "source_published": "2019",
+     "source_accessed": "2026-10-01",
+     "id": "drug-resistant-infections-in-the-united"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "How many people will drug-resistant infections kill in the coming decades?",
+    "kind": "empirical",
+    "why": "The best-known projections for 2050 differ about fivefold. Data are thinnest where the burden is thought highest, and every forecast rests on assumptions about aging, health care and new drugs.",
+    "detail": "Those who expect a catastrophe point to resistance rising across many of the drug and pathogen pairs WHO tracks, and to last-resort drugs failing in the bacteria behind the most bloodstream infections. Forecasts built on past trends, they argue, cannot capture a tipping point: if carbapenems and colistin fail broadly, the protection antibiotics give to cancer chemotherapy, cesarean sections, joint replacements and organ transplants erodes with them, adding deaths that are now counted under other causes.\n\nThose who see a serious but manageable burden note that the best estimate of deaths caused by resistance, as distinct from deaths in which a resistant bug was present, is far below the headline numbers and was lower in 2021 than in 2019, though partly because fewer people died of other infections during the pandemic years. Child deaths from resistant infections have dropped as vaccines, sanitation and care improved, which shows the burden responds to ordinary public health, and the forecast rise comes mostly from an aging population. Apocalyptic numbers, on this view, risk crowding out the less dramatic investments in infection control, water, vaccines and diagnostics.",
+    "lean_label_a": "Catastrophic",
+    "lean_label_b": "Manageable",
+    "id": "how-many-people-will-drug-resistant"
+   },
+   {
+    "text": "How much does antibiotic use in farm animals drive resistant infections in people?",
+    "kind": "empirical",
+    "why": "Animals receive more antimicrobials than people by weight, and resistance genes move between bacteria. But tracing a human infection back to a farm is hard, and genomic studies in different places have reached different answers.",
+    "detail": "Those who see a major driver cite natural experiments and genomic tracing. A 2025 study led by Lance Price of George Washington University estimated that strains of E. coli from food animals caused 18% of urinary tract infections in Southern California (Aziz et al., mBio, 2025). A WHO-commissioned 2017 review found that restricting farm antibiotic use was associated with 10–15% lower absolute prevalence of resistance in animals and 24% lower prevalence in the human groups studied (Tang et al., Lancet Planetary Health).\n\nThose who see a minor, largely separate reservoir say most resistance in human infections comes from human medicine. A 2019 genomic study in the East of England found that E. coli from livestock and from patients with bloodstream infections were distinct populations, with limited sharing of the mobile elements that carry resistance genes (Ludden et al., mBio). The 2017 review itself noted that the implications for the general population were unclear because of the small number of studies, and that the effect was strongest among people in direct contact with farm animals.",
+    "lean_label_a": "A major driver",
+    "lean_label_b": "A minor factor",
+    "id": "how-much-does-antibiotic-use-in"
+   },
+   {
+    "text": "Will guaranteed payments bring drug companies back to antibiotic development?",
+    "kind": "empirical",
+    "why": "Most large drug companies have left antibiotics, and small developers often fail even after approval. England has begun paying subscriptions, but no scheme has yet run long enough to show it yields drugs that would not otherwise exist.",
+    "detail": "Supporters reason that new antibiotics should be used as little as possible to slow resistance, which means they cannot earn back their development costs through sales. A predictable reward paid regardless of volume fixes that specific market failure. Funding for early research already exists through programs such as CARB-X; what is missing is a payoff at the end, and only large, credible payments from rich-country governments can supply it.\n\nSkeptics doubt that payments alone will bring companies back. Part of the bottleneck, they argue, is scientific: most antibacterials approved in recent years belong to existing drug classes, and finding a new class that bacteria do not already resist is hard at any price. They add that a reward paid only after approval does not carry a small firm through years of trials, and that one country’s subscriptions are too small to move global investment, while the larger US scheme has been introduced in four Congresses without a floor vote (Senator Michael Bennet, 2026). Médecins Sans Frontières calls the US bill “an inefficient means of incentivizing meaningful antimicrobial innovation” (2024).",
+    "lean_label_a": "Payments work",
+    "lean_label_b": "Not on their own",
+    "id": "will-guaranteed-payments-bring-drug-companies"
+   },
+   {
+    "text": "Where antibiotics are scarce, should widening access come before restricting use?",
+    "kind": "value",
+    "why": "The same pills that save a child with pneumonia in a clinic without a laboratory also breed resistance when sold without a prescription, and poorer countries are asked to widen access and curb overuse at once.",
+    "detail": "The access-first case is that across much of the world more people die for lack of an effective antibiotic than from resistance, and that restrictive rules written for over-prescribing countries can starve under-served places of drugs. Rich countries, it notes, wrote their stewardship rules after decades of easy access. The answer is to get the right drug to the right patient, new drugs included, while preventing infections in the first place.\n\nThe stewardship-first case is that expanding access without controls repeats the history that produced resistance. Every unnecessary course raises the odds that the drugs will fail for the next patient, including the poor patient the access argument aims to help. On this view, access programs must be built with prescription controls, diagnostics and first-choice drugs from the first day, or they will burn through the few antibiotics that still work.",
+    "lean_label_a": "Access first",
+    "lean_label_b": "Controls first",
+    "id": "where-antibiotics-are-scarce-should-widening"
+   },
+   {
+    "text": "If antibiotic use falls, will resistance fall with it?",
+    "kind": "empirical",
+    "why": "Resistance often costs bacteria some fitness, which predicts it should fade when a drug is withdrawn. But bacteria evolve compensating mutations, and resistance genes travel together, so using one drug can keep resistance to another alive.",
+    "detail": "Those who expect resistance to recede point to the sharp fall in colistin resistance, in animals and in people, within about three years of China’s ban on the drug in animal feed. They also point to the Nordic countries, which have long combined low antibiotic use with low resistance. If restraint works, conservation is the cheapest and most durable tool.\n\nThose who expect it to persist point to Kronoberg County, Sweden, where a 24-month voluntary restriction cut trimethoprim use by 85% yet resistance in E. coli changed only marginally. The researchers found no measurable fitness cost and strong co-selection with other drugs, and concluded that reversing resistance once established is unlikely and new drugs are urgently needed (Sundqvist et al., Journal of Antimicrobial Chemotherapy, 2010). If resistance mostly persists, restraint can slow its growth but cannot win back drugs already lost.",
+    "lean_label_a": "Resistance falls",
+    "lean_label_b": "Resistance stays",
+    "id": "if-antibiotic-use-falls-will-resistance"
+   },
+   {
+    "text": "Should cuts in farm antibiotic use be binding targets, or left to national and veterinary judgment?",
+    "kind": "value",
+    "why": "The European Union bans routine farm use by law, while the United States relies mostly on voluntary guidance and veterinary oversight. At the UN, a proposed numeric target for cutting farm use was dropped from the final text.",
+    "detail": "Advocates of binding targets say voluntary approaches have stalled and point to the EU’s legal ban on routine preventive use as proof that intensive farming can adapt. A draft of the 2024 UN political declaration proposed cutting antimicrobial use in agrifood systems by at least 30% by 2030; the final text committed only to “meaningfully reduce” it. Haileyesus Getahun, chief executive of the South-South HeDPAC health partnership, said the animal food industry had been able to “influence some member states and even divide” the UN agencies to remove the target (Health Policy Watch, 2024).\n\nAdvocates of discretion say farms, climates, diseases and production systems differ, and a single quantity target can push producers to stop treating animals that need treatment, harming animal welfare and food safety. The Animal Health Institute, which represents US animal-drug makers, says veterinarians “are in the best position to make decisions about the proper use of antimicrobials” (2026). The veterinary researcher J. Scott Weese adds that total quantity is the wrong yardstick: a country that expands livestock production while following treatment guidelines may rightly use more antimicrobials overall (Canadian Veterinary Journal, 2025). Where veterinary services are thin, a hard cut could cost farmers their herds before vaccines and diagnostics arrive.",
+    "lean_label_a": "Binding targets",
+    "lean_label_b": "Vets’ judgment",
+    "id": "should-cuts-in-farm-antibiotic-use"
+   },
+   {
+    "text": "Should a doctor treating today’s patient give weight to the risk of resistance for future patients?",
+    "kind": "value",
+    "why": "Each prescription helps one person now and adds slightly to a shared risk later. Medical ethics centers on the individual patient, while resistance is a collective, slow-moving harm that no single prescription causes.",
+    "detail": "One side holds that a clinician’s duty is to the person in front of them, and that withholding or delaying an antibiotic from a sick patient to protect an abstract future is a harm with a face. Underuse also kills: sepsis can turn fatal within hours, and undertreatment is common in much of the world. Stewardship, on this view, should come from better diagnostics, narrower drugs and shorter courses, not from asking doctors to ration.\n\nThe other side treats antibiotics as a shared resource, like a fishery, that every unnecessary course depletes for everyone. Many outpatient prescriptions buy the patient little benefit while adding to a risk that falls on others, and professional norms already accept limits on individual choice for the sake of collective goods, as with vaccination and infection control. Antibiotic prescribing, on this view, should be treated the same way.",
+    "lean_label_a": "Patient first",
+    "lean_label_b": "Future patients",
+    "id": "should-a-doctor-treating-today-s"
+   },
+   {
+    "text": "Can vaccines, phages and other alternatives take the place of new antibiotics?",
+    "kind": "empirical",
+    "why": "Nearly half the antibacterial candidates in clinical trials are non-traditional approaches, and vaccines can prevent infections before they need treatment. None has yet replaced antibiotics at scale for treating an established infection.",
+    "detail": "Those who think alternatives can carry much of the load point to WHO estimates that vaccines could cut antibiotic use substantially, and to modeling that finds infection control, clean water and existing vaccines could prevent hundreds of thousands of resistant-infection deaths a year in poorer countries with tools that exist today. Phages and antibodies can be aimed at a single pathogen, which avoids the broad selection pressure that drives resistance, and money spent chasing ever-scarcer antibiotic chemistry might do more good here.\n\nThose who think new antibiotics remain essential reply that a patient already infected with an organism that resists every drug needs one that works now, and prevention cannot help them. Phage therapy remains largely experimental and hard to standardize, and the most important missing vaccines, against tuberculosis and Klebsiella, do not yet exist at scale. Alternatives complement antibiotics, on this view, but do not end the need to keep inventing them.",
+    "lean_label_a": "Alternatives can",
+    "lean_label_b": "New drugs needed",
+    "id": "can-vaccines-phages-and-other-alternatives"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Cut antibiotic use in farms and clinics",
+    "color_key": "green",
+    "steelman": "Resistance is evolution under selection pressure, and the pressure is antibiotic use. Conserving the drugs we have is cheaper, faster and surer than waiting for new ones.",
+    "detail": "Every dose given where it is not needed, whether to a healthy pig in a crowded barn or to a patient with a cold, breeds resistant bacteria that spread through food, water, soil and people. Most of the world’s antimicrobials go to animals, much of that to animals that are not sick. The answer is to stop it: ban routine and preventive group dosing, ban last-resort human drugs such as colistin on farms, set binding reduction targets, publish use data farm by farm, and bring the same discipline to unnecessary prescriptions in clinics. Any new drug will be lost just as fast if overuse continues.\n\nEurope shows it can be done: sales of veterinary antibiotics in 25 European countries fell 53% between 2011 and 2022 (European Medicines Agency), and meat production did not collapse. The fix for disease in crowded barns is better husbandry and vaccines, not permanent medication. A genomic study that finds little overlap in one region does not rule out the gene transfer and food-borne spread documented elsewhere, and where doubt remains about how much farm use harms people, the burden of proof belongs on continuing a practice with a plausible and partly demonstrated risk.",
+    "proponents": "Alliance to Save Our Antibiotics; Food Animal Concerns Trust; Natural Resources Defense Council; Environmental Working Group; Lance Price",
+    "id": "cut-antibiotic-use-in-farms-and"
+   },
+   {
+    "name": "Guarantee payments for new antibiotics",
+    "color_key": "blue",
+    "steelman": "A drug meant to sit on the shelf can’t earn back its cost through sales. Pay for the capability, not the pills, and inventing new antibiotics makes sense again.",
+    "detail": "The antibiotic market is broken in a way no other drug market is. Society wants new antibiotics developed and then used as little as possible, so that resistance does not catch up with them. A drug meant to be used rarely cannot recover a development cost of hundreds of millions of dollars, so investors stay away, large companies have left the field, and the small firms that remain go bankrupt even after success. Most small and medium-sized companies that sponsored an antibacterial approved by the FDA since 2010 went bankrupt or exited at a loss, among them Achaogen, which filed for bankruptcy in April 2019, the year after its antibiotic plazomicin was approved (Wells, Nguyen & Harbarth, 2024). A subscription set by a drug’s value to public health and paid regardless of volume makes it rational both to invent the drug and to hold it in reserve, so profit and stewardship pull the same way.\n\nCritics call this corporate welfare. But the cost is modest next to the damage resistance threatens, payments are tied to scored public-health value and to stewardship and supply obligations, and the 2026 PASTEUR bill reduces payments by a company’s net sales. Public and nonprofit developers can compete for the same contracts. Prevention matters, but bacteria keep evolving, and only new drugs can treat the patient whose infection already resists everything: the 2024 GBD forecast estimates that a new pipeline of drugs against Gram-negative bacteria could avert 11.1 million AMR deaths from 2025 to 2050. Without a predictable reward, the private capital that produced nearly every antibiotic in use today will not return.",
+    "proponents": "Infectious Diseases Society of America; Jim O’Neill; AMR Action Fund; Biotechnology Innovation Organization; Michael Bennet",
+    "id": "guarantee-payments-for-new-antibiotics"
+   },
+   {
+    "name": "Close the access gap before restricting use",
+    "color_key": "amber",
+    "steelman": "Rules written for countries that overuse antibiotics can starve poor ones of drugs. Prevent infections first, then make sure the right antibiotic is there when one strikes.",
+    "detail": "The AMR debate was framed in rich countries, where the problem is too many antibiotics. Across much of Africa and South Asia the bigger killer is too few: children die of pneumonia and newborns of sepsis because the right drug is unaffordable, out of stock or never registered. Even the 2024 UN political declaration states that lack of access to antimicrobials and diagnostics, particularly in developing countries, “is responsible for more deaths than antimicrobial resistance.” Policies that only restrict use, such as tighter prescription rules or higher prices to discourage sales, deny treatment to the people who need it most. The 2024 GBD forecast found that better care of severe infections and better access to antibiotics would avert 92.0 million deaths from 2025 to 2050.\n\nStewardship and access are not opposites. We do not want more antibiotics sold over the counter; we want the right ones delivered through health systems, with diagnostics and first-choice drugs as the default, and newer drugs for resistant infections available where they are needed. Clean water, sanitation, hospital infection control and vaccines cut antibiotic use and deaths at the same time, and a resistant infection left untreated or treated with the wrong drug is itself a driver of spread. Good stewardship means the right drug for the right patient, which in most of the world means more access, not less.",
+    "proponents": "Global Antibiotic Research and Development Partnership; Ramanan Laxminarayan",
+    "id": "close-the-access-gap-before-restricting"
+   },
+   {
+    "name": "Leave farm antibiotic decisions to veterinarians",
+    "color_key": "rust",
+    "steelman": "Sick animals suffer and can pass disease to people. A veterinarian who knows the herd, not a regulator’s formula, should decide when they need antibiotics.",
+    "detail": "Antibiotics are medicines for animals too. US producers have already ended growth-promotion use of medically important drugs and put every one of them under veterinary oversight; what remains is treatment, control and prevention of disease, decided by a licensed veterinarian. Blanket bans on preventive use, quantity targets or fixed duration caps substitute a formula for a clinician’s judgment and can force a choice between letting animals sicken and breaking the law. The way to cut use is to cut disease, through vaccines, diagnostics, biosecurity and better housing: the Animal Health Institute reports that from 2019 to 2023 the industry brought 28 new diagnostic tools and 71 new vaccines to market. Only 8% of antimicrobials used in animals in 2022 were in the classes most critical for human medicine (World Organisation for Animal Health), and the bulk of resistance in people stems from how people themselves use antibiotics.\n\nA one-year rise in US sales does not prove that voluntary measures have failed. Sales are not use, as FDA itself cautions, and they move with outbreaks and herd sizes from year to year. China’s colistin ban involved a feed additive used for growth, a use US producers have ended for medically important drugs. Even within stewardship, the veterinary researcher J. Scott Weese argues against mass-reduction targets: “Use as little as possible but use enough,” he writes, adding that “zero AMU in animals is not a realistic goal.”",
+    "proponents": "Animal Health Institute; National Pork Producers Council; J. Scott Weese",
+    "id": "leave-farm-antibiotic-decisions-to-veterinarians"
+   },
+   {
+    "name": "Fund public and nonprofit antibiotic R&D",
+    "color_key": "purple",
+    "steelman": "If antibiotics are a public good to be used sparingly and shared fairly, the public should own their development rather than rent it from companies at a premium.",
+    "detail": "Subscription schemes pay firms large sums while leaving them free to set prices and choose which markets to serve, so patients in low- and middle-income countries, who bear most of the burden, may never see the drugs their governments helped pay for. Médecins Sans Frontières’ Access Campaign argues that the US PASTEUR Act would “drive up prices of PASTEUR-supported novel antimicrobials in all markets” and “compromise stewardship.” Plazomicin shows the risk: US government biosecurity grants of $106 million did not result in access, because the Indian and Chinese companies that bought the rights after its developer’s bankruptcy did not widely market it (Wells, Nguyen & Harbarth, 2024).\n\nThis is not a rejection of new antibiotics but a different way to get them: fund the science directly, license on condition of affordable access and stewardship, keep the knowledge open, and delink development fully from sales. The nonprofit route works. Zoliflodacin, a first-in-class oral antibiotic for gonorrhea approved by the FDA in December 2025, was developed by the nonprofit Global Antibiotic Research and Development Partnership with Innoviva Specialty Therapeutics. Public developers can contract private firms for manufacturing and trials without ceding control; the question is not whether firms are involved but who sets the terms. Some of us would accept pull payments that carry enforceable conditions on global access, price and stewardship; others oppose any reward that leaves patent and pricing power with a private company.",
+    "proponents": "Médecins Sans Frontières Access Campaign; ReAct – Action on Antibiotic Resistance",
+    "id": "develop-new-antibiotics-through-public-and"
+   }
+  ],
+  "crux": {
+   "lead": "Can using antibiotics less hold resistance back, and when it cannot, whose needs give way?",
+   "lead_highlight": "whose needs give way",
+   "subtitle": "Nearly everyone agrees resistance is rising and that both restraint and new drugs matter. They split over which does more of the work, and over who carries the cost: patients and farmers today, people who cannot get antibiotics at all, or patients not yet born.",
+   "empirical": "Much of it can be measured. How far and how fast does resistance fall when use falls? Some bans have been followed by sharp drops, while deep cuts in other drugs barely moved it. What share of resistant human infections starts on farms? Do guaranteed payments yield drugs that would not otherwise exist? And how many deaths would better access and prevention avert compared with new drugs?",
+   "values": "Some choices would remain: how much a sick person or a farmer today should give up for patients not yet born; whether a shared, slowly depleting resource is better run by binding rules or by professional judgment; whether public money for new drugs should buy private returns or public ownership; and what rich countries owe poorer ones that still lack basic antibiotics."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Read WHO’s fact sheet on antimicrobial resistance",
+    "description": "The World Health Organization’s summary of what AMR is, the latest global figures and what countries have committed to, updated July 2026.",
+    "url": "https://www.who.int/news-room/fact-sheets/detail/antimicrobial-resistance",
+    "for_position": null,
+    "id": "read-who-s-fact-sheet-on"
+   },
+   {
+    "kind": "policy",
+    "title": "Back the campaign to end routine farm antibiotic use",
+    "description": "The Alliance to Save Our Antibiotics campaigns to ban routine and preventive group dosing of farm animals and colistin in livestock, and to bar imports produced with growth promoters.",
+    "url": "https://www.saveourantibiotics.org/our-campaign/",
+    "for_position": "Cut antibiotic use in farms and clinics",
+    "id": "back-the-campaign-to-end-routine"
+   },
+   {
+    "kind": "policy",
+    "title": "Tell Congress where you stand on the PASTEUR Act",
+    "description": "The bill page for H.R. 7352, which would create federal subscription contracts for critically needed new antibiotics and antifungals; the Senate companion is S. 4875.",
+    "url": "https://www.govtrack.us/congress/bills/119/hr7352",
+    "for_position": "Guarantee payments for new antibiotics",
+    "id": "tell-congress-where-you-stand-on"
+   },
+   {
+    "kind": "donate",
+    "title": "Fund antibiotic development for neglected patients",
+    "description": "The Global Antibiotic Research and Development Partnership develops and licenses antibiotics with the aim of making them available and affordable in low- and middle-income countries.",
+    "url": "https://gardp.org/donate/",
+    "for_position": "Close the access gap before restricting use",
+    "id": "fund-antibiotic-development-for-neglected-patients"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Hear the livestock producers’ case",
+    "description": "The National Pork Producers Council explains how US pig farmers use antimicrobials under veterinary oversight and why it opposes mandated antimicrobial reductions.",
+    "url": "https://nppc.org/antimicrobials/",
+    "for_position": "Leave farm antibiotic decisions to veterinarians",
+    "id": "hear-the-livestock-producers-case"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the case for public and nonprofit antibiotic R&D",
+    "description": "Médecins Sans Frontières Access Campaign sets out its objections to the PASTEUR Act and its alternative: public and nonprofit development that keeps public control over price, access and stewardship.",
+    "url": "https://msfaccess.org/pasteur-act-not-way-us-government-address-antimicrobial-resistance",
+    "for_position": "Fund public and nonprofit antibiotic R&D",
+    "id": "read-the-case-for-public-and"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Explore the data on antibiotics and resistance",
+    "description": "Our World in Data’s charts and explainers on antibiotic use, resistance and deaths, with the source for every series.",
+    "url": "https://ourworldindata.org/antibiotics",
+    "for_position": null,
+    "id": "explore-the-data-on-antibiotics-and"
+   },
+   {
+    "kind": "local",
+    "title": "Use antibiotics only when you need them",
+    "description": "CDC’s guidance for patients on when antibiotics help, when they do not and what to ask a clinician: the part of stewardship every reader controls.",
+    "url": "https://www.cdc.gov/antibiotic-use/index.html",
+    "for_position": null,
+    "id": "use-antibiotics-only-when-you-need"
+   },
+   {
+    "kind": "local",
+    "title": "Join World AMR Awareness Week, November 18–24, 2026",
+    "description": "WHO’s annual campaign, this year themed “One Health, one action: Prevent AMR now,” with materials for schools, clinics, farms and community events.",
+    "url": "https://www.who.int/campaigns/world-amr-awareness-week/world-amr-awareness-week-2026",
+    "for_position": null,
+    "id": "join-world-amr-awareness-week-november"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Hunt for new antibiotics in soil with Tiny Earth",
+    "description": "A network that enlists students and instructors to search soil samples for undiscovered antibiotic-producing microbes, with course materials for high schools and colleges.",
+    "url": "https://tinyearth.wisc.edu/",
+    "for_position": null,
+    "id": "hunt-for-new-antibiotics-in-soil"
+   }
+  ]
+ }
 }

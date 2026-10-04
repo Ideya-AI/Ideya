@@ -1,8 +1,8 @@
 {
  "slug": "policing-reform",
  "title": "Policing Reform",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-10-03T09:31:50+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "What police should do and how they are held to account: reform, funding, and alternatives.",
@@ -14,5 +14,722 @@
   "crime-punishment-reform",
   "gun-policy",
   "drug-policy-prohibition-vs-legalization"
- ]
+ ],
+ "content": {
+  "overview": {
+   "summary": "How much policing keeps people safe, at what cost in force and intrusion, and how officers should answer when they cause harm.",
+   "scope_covered": "Mostly US policing: the size and funding of forces, which calls police answer, training and discipline, qualified immunity, consent decrees and civilian oversight, police unions, and calls to defund or abolish.",
+   "scope_excluded": "Punishment, sentencing and prisons; gun laws; drug legalization; and immigration enforcement as a policy, except where federal agents’ use of force raises the same accountability questions.",
+   "why_now": "On October 1, 2026, the family of Renee Good, a US citizen shot dead in January by an immigration agent during a federal enforcement surge in Minneapolis, sued the United States, the agent and senior officials, reopening the question of how officers answer for force.",
+   "why_now_source_label": "MPR News",
+   "why_now_source_url": "https://www.mprnews.org/story/2026/10/01/renee-good-lawsuit-minneapolis-ice-shooting-operation-metro-surge"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "People killed by US law enforcement",
+     "viz": "bar",
+     "wide": false,
+     "value": "1,314",
+     "unit": "people",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "By Mapping Police Violence’s count, US police killed at least 1,314 people in 2025, 5 percent fewer than the record 1,383 in 2024. No complete official count exists.",
+     "detail": "The tally covers every publicized killing by an on-duty officer, by any means, drawn from news reports and public records, so it runs higher than counts of shootings alone. Gunfire caused 87 percent of the 2025 deaths, vehicles 8 percent and Tasers 8 percent, some deaths involving more than one. Police killed someone on all but six days of the year. About 22 percent of those killed were unarmed under the report’s definition, 76 percent were allegedly armed and 52 percent were armed with a gun; 20 percent showed signs of mental or behavioral illness. Other tallies differ: the same researchers’ Police Violence Report counts more than 1,200 killings in 2025, and The Washington Post’s database of fatal police shootings, which recorded between 959 and 1,175 deaths a year from 2015 to 2024, stopped after 2024. For comparison, police in England and Wales, with about 61 million people, fatally shot four people in the year to March 2026, the Independent Office for Police Conduct reports, a count of shootings only.",
+     "source_label": "Campaign Zero, Mapping Police Violence, U.S. Police Violence in 2025 year-end report (updated February 2026)",
+     "source_url": "https://campaignzero.org/wp-content/uploads/campaign-zero-mapping-police-violence-2025-report.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-10-03",
+     "id": "people-killed-by-us-law-enforcement"
+    },
+    {
+     "label": "US murder rate",
+     "viz": "bar",
+     "wide": false,
+     "value": "4.1",
+     "unit": "per 100,000",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The FBI estimates that murder fell 18.1 percent in 2025, to 4.1 per 100,000 people, tied with 1955 and 1956 for the lowest rate it has recorded.",
+     "detail": "Violent crime overall fell 9.3 percent from 2024 to 2025, the FBI reports, the largest one-year drop since its estimates began in 1936, with robbery down 18.5 percent. The fall followed the sharpest one-year rise in murder on record, nearly 30 percent in 2020, by the Murder Accountability Project’s count, and it has continued: the Council on Criminal Justice found homicides in the large cities it tracks 18 percent lower in the first half of 2026 than a year earlier and 51 percent below their early-2022 peak. Every camp claims some of the credit or disputes the others’ claim. Some point to rehiring, higher clearance rates and federal enforcement; others to community violence intervention, the end of pandemic disruption, and declines in cities that adopted reforms as well as in those that did not. The FBI’s national figures are estimates built from the agencies that report, and its 2021 switch of reporting systems adds uncertainty to comparisons across that change.",
+     "source_label": "FBI, “FBI Releases 2025 Reported Crimes in the Nation Statistics” (August 14, 2026)",
+     "source_url": "https://www.fbi.gov/news/press-releases/fbi-releases-2025-reported-crimes-in-the-nation-statistics",
+     "source_published": "2025",
+     "source_accessed": "2026-10-03",
+     "id": "us-murder-rate"
+    },
+    {
+     "label": "Added officers needed to prevent one homicide a year",
+     "viz": "bar",
+     "wide": false,
+     "value": "10–17",
+     "unit": "officers",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a study of 242 large US cities from 1981 to 2018, each added officer prevented an estimated 0.06 to 0.1 homicides a year: about one life for every 10 to 17 officers hired.",
+     "detail": "Chalfin, Hansen, Weisburst and Williams estimate that the effect per person is about twice as large for Black victims as for White victims, so that Black communities are, in their words, “simultaneously over and under-policed.” Each added officer also made an estimated 7.3 more arrests a year for low-level “quality of life” offenses, a burden that falls disproportionately on Black residents per capita, while arrests for serious offenses fell. Cities with the largest Black population shares saw smaller homicide benefits and more low-level arrests. The authors suggest that police presence, rather than arrests, drives the benefit.",
+     "source_label": "Chalfin, Hansen, Weisburst & Williams, “Police Force Size and Civilian Race,” NBER Working Paper 28202 (2020)",
+     "source_url": "https://www.nber.org/system/files/working_papers/w28202/w28202.pdf",
+     "source_published": "1981–2018",
+     "source_accessed": "2026-10-03",
+     "id": "added-officers-needed-to-prevent-one"
+    },
+    {
+     "label": "Rate of killings by police, by race",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "per 100,000",
+     "series": [
+      {
+       "label": "Native American",
+       "value": "0.86",
+       "highlight": false
+      },
+      {
+       "label": "Black",
+       "value": "0.75",
+       "highlight": true
+      },
+      {
+       "label": "Hispanic",
+       "value": "0.37",
+       "highlight": false
+      },
+      {
+       "label": "White",
+       "value": "0.29",
+       "highlight": false
+      },
+      {
+       "label": "Asian",
+       "value": "0.08",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Black Americans were killed by police at 0.75 per 100,000 in 2025, about 2.6 times the White rate. The gap itself is not in dispute; what causes it is.",
+     "detail": "The report counts about 300 Black people killed out of a population of about 40 million, 234 Hispanic people out of 63 million, 560 White people out of 193 million and 16 Asian Americans out of 19 million. The top row is American Indian and Alaska Native residents; Native Hawaiian and Pacific Islander residents, a very small group, had the highest rate of all. White Americans are the largest group of people killed in absolute numbers. Rates fell for every group from 2024 to 2025, most for Black and Pacific Islander victims.",
+     "source_label": "Campaign Zero, Mapping Police Violence, U.S. Police Violence in 2025 (Figure 5)",
+     "source_url": "https://campaignzero.org/wp-content/uploads/campaign-zero-mapping-police-violence-2025-report.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-10-03",
+     "id": "rate-of-killings-by-police-by"
+    },
+    {
+     "label": "911 calls for police that involved violent crime, at most",
+     "viz": "radial",
+     "wide": false,
+     "value": "7",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In nine cities, at most 7 percent of 911 calls for police involved violent crime, and Vera judged that 19 percent could go to unarmed responders, a reading police groups contest.",
+     "detail": "The Vera Institute of Justice analyzed 15.6 million calls from January 2019 to November 2021 from police departments in nine cities, including Baltimore, Detroit, New Orleans and Seattle. In most of them fewer than 3 percent of calls involved violent crime, and an average of 62.6 percent involved situations Vera classified as noncriminal. Vera favors shifting calls to civilians. Police organizations and some analysts reply that dispatchers code calls before anyone arrives, that calls described as noncriminal can turn violent, and that the time police spend on calls matters more for staffing than their number, since serious crime calls take far longer each. Dee and Pyne, in their 2022 study of Denver, cite estimates that a quarter to two-thirds of calls involving disorder, mental health, medical and noncriminal problems could be handled by others.",
+     "source_label": "Vera Institute of Justice, 911 Analysis (April 2022)",
+     "source_url": "https://www.vera.org/publications/911-analysis",
+     "source_published": "2019–2021",
+     "source_accessed": "2026-10-03",
+     "id": "911-calls-for-police-that-involved"
+    },
+    {
+     "label": "Murders solved by US police",
+     "viz": "radial",
+     "wide": false,
+     "value": "68.8",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "US police cleared an estimated 68.8 percent of murders in 2025, the largest one-year gain on record, up from an all-time low of 52.3 percent in 2022.",
+     "detail": "A murder is cleared when police arrest and charge a suspect, or close the case for reasons such as the suspect’s death. The rate was 61.4 percent in 2024. Working from FBI estimates, the Murder Accountability Project says unsolved murders grew steadily more common over six decades before the trend reversed in 2023, and that 2025 had the best clearance rate in a quarter century. Its chairman, Thomas Hargrove, credits resources: cities hired detectives and forensic staff during the 2020–21 surge and kept them as murders fell. Clearance is far lower for other violent crimes; the FBI estimated that 43.8 percent of all violent crimes were cleared in 2024. Those who want more police investment say solving crimes deters them and gives victims’ families justice; those who want resources moved say officers spend most of their time on calls unrelated to serious crime, and that freeing them would let more go to investigations.",
+     "source_label": "Murder Accountability Project, “Here’s the reason for America’s good news about murder” (August 24, 2026)",
+     "source_url": "https://www.murderdata.org/2026/08/heres-reason-for-americas-good-news.html",
+     "source_published": "2025",
+     "source_accessed": "2026-10-03",
+     "id": "murders-solved-by-us-police"
+    },
+    {
+     "label": "Officers charged with murder or manslaughter over on-duty shootings, 2005–2024",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "officers",
+     "series": [
+      {
+       "label": "Charged",
+       "value": "204",
+       "highlight": true
+      },
+      {
+       "label": "Not convicted",
+       "value": "92",
+       "highlight": false
+      },
+      {
+       "label": "Convicted",
+       "value": "64",
+       "highlight": false
+      },
+      {
+       "label": "Cases pending",
+       "value": "48",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "From 2005 to late 2024, 204 nonfederal officers were charged with murder or manslaughter over on-duty shootings; 64 were convicted of some crime, 7 of murder.",
+     "detail": "Philip Stinson’s count covers on-duty shootings in which an officer killed someone. For scale, The Washington Post’s database records about 10,430 people shot and killed by on-duty police from 2015 to 2024. Of the 156 officers whose cases had ended, 64 were convicted, often of a lesser offense, and 92 were not, among them 42 acquitted by juries and 9 at bench trials, 14 whose charges a judge dismissed and 21 whose charges a prosecutor dropped. Mapping Police Violence, which counts all killings by police, estimates that officers were charged with a crime in close to 4 percent of police killings from 2019 to 2023, up from about 2 percent in earlier years. Advocates of accountability read these figures as a system that almost never punishes officers who kill. Police organizations and many prosecutors reply that most killings by police involve armed people and are lawful under the Supreme Court’s standard of objective reasonableness, so a low charge rate is what the law predicts, and that the rising number of prosecutions shows the system responds.",
+     "source_label": "Philip M. Stinson & Eric M. Cooke, “On-Duty Shootings: Police Officers Charged with Murder or Manslaughter, 2005–2024”",
+     "source_url": "https://capitalbnews.org/wp-content/uploads/2024/11/count.murd_.and_.mansl_.onduty.shootings.111924.1007.pdf",
+     "source_published": "2005–2024",
+     "source_accessed": "2026-10-03",
+     "id": "officers-charged-with-murder-or-manslaughter"
+    },
+    {
+     "label": "Confidence in the police, by party",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Republicans",
+       "value": "75",
+       "highlight": false
+      },
+      {
+       "label": "All adults",
+       "value": "45",
+       "highlight": true
+      },
+      {
+       "label": "Independents",
+       "value": "40",
+       "highlight": false
+      },
+      {
+       "label": "Democrats",
+       "value": "30",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In June 2026, 45 percent of US adults had a great deal or quite a lot of confidence in the police, two points above the 2023 record low of 43 percent.",
+     "detail": "Gallup has asked the question every year since 1993. By its 2025 report, confidence averaged 55 percent from 1993, peaked at 64 percent in 2004, has been below that average since 2018 and fell to 48 percent in 2020. The police remain more trusted than most institutions Gallup measures, but the 45-point partisan gap is among the widest for any of them. The racial gap is wider than for any other institution: in 2025, Gallup found confidence among 52 percent of White adults, 35 percent of Hispanic adults and 24 percent of Black adults, up for Black adults from 19 percent in 2020. Reformers read the racial gap as evidence that policing does not serve all communities equally; supporters of stronger policing read the overall level, still above Congress, the courts and the news media, as broad public support.",
+     "source_label": "Gallup, “Confidence in U.S. Institutions Remains Near All-Time Low” (July 13, 2026)",
+     "source_url": "https://news.gallup.com/poll/712436/confidence-institutions-remains-near-time-low.aspx",
+     "source_published": "2026",
+     "source_accessed": "2026-10-03",
+     "id": "confidence-in-the-police-by-party"
+    },
+    {
+     "label": "State and local spending on police",
+     "viz": "bar",
+     "wide": false,
+     "value": "135",
+     "unit": "$ billion",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "State and local governments spent $135 billion on police in 2021, about 4 percent of their direct general spending.",
+     "detail": "Local governments do 87 percent of this spending, and 96 percent of it goes to operating costs, mostly salaries and benefits, so cutting a police budget generally means fewer officers. In 2021 dollars, police spending rose 189 percent from $47 billion in 1977; corrections spending rose 346 percent, to $87 billion, over the same period. The federal government spent another $30 billion directly on policing in 2017, the latest year the Urban Institute reports. Because most of the money is local, the “defund the police” campaigns of 2020 targeted city budgets. Those who favor alternatives say the money would buy more safety spent on housing, mental-health care and violence prevention; those who favor police funding say it is a small share of government budgets relative to the cost of crime.",
+     "source_label": "Urban Institute, State and Local Finance Initiative, Criminal Justice Expenditures: Police, Corrections, and Courts",
+     "source_url": "https://www.urban.org/policy-centers/cross-center-initiatives/state-and-local-finance-initiative/state-and-local-backgrounders/criminal-justice-police-corrections-courts-expenditures",
+     "source_published": "2021",
+     "source_accessed": "2026-10-03",
+     "id": "state-and-local-spending-on-police"
+    },
+    {
+     "label": "How fatal police encounters began, 2025",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Suspected violent crime",
+       "value": "27",
+       "highlight": true
+      },
+      {
+       "label": "Other nonviolent offense",
+       "value": "19",
+       "highlight": false
+      },
+      {
+       "label": "Person with a weapon",
+       "value": "10",
+       "highlight": false
+      },
+      {
+       "label": "Other crimes vs. people",
+       "value": "10",
+       "highlight": false
+      },
+      {
+       "label": "Welfare or mental health",
+       "value": "10",
+       "highlight": false
+      },
+      {
+       "label": "Traffic stop",
+       "value": "9",
+       "highlight": false
+      },
+      {
+       "label": "Domestic disturbance",
+       "value": "7",
+       "highlight": false
+      },
+      {
+       "label": "None or unknown",
+       "value": "7",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Of 1,201 killings by police in one 2025 dataset, 325 began with a call about a suspected violent crime, 116 with a mental-health or welfare check and 112 with a traffic stop.",
+     "detail": "The Police Violence Report, from the Mapping Police Violence researchers, classifies each killing by the situation that first brought police to the scene, not by what happened once they arrived: a traffic stop can turn into a gunfight, and a violent-crime call can end with the death of someone unarmed. The percentages are calculated from its published incident file. The report notes that most traffic-stop deaths involved vehicle pursuits. Advocates of alternative responders cite the mental-health, traffic and minor-offense shares as killings a different first response might have avoided. Police organizations reply that officers cannot know in advance which routine calls will turn dangerous, and that about half of those killed were reported to be armed with a gun. This dataset counts fewer killings than the Mapping Police Violence year-end tally because the two use different cutoffs and inclusion rules.",
+     "source_label": "Police Violence Report 2025 (Mapping Police Violence researchers), incident data file",
+     "source_url": "https://policeviolencereport.org/",
+     "source_published": "2025",
+     "source_accessed": "2026-10-03",
+     "id": "how-fatal-police-encounters-began-2025"
+    },
+    {
+     "label": "Drop in low-level crime reports under Denver’s civilian crisis pilot",
+     "viz": "bar",
+     "wide": false,
+     "value": "34",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "A clinician and a paramedic sent instead of police to some calls in eight Denver precincts cut reports of targeted minor crimes 34 percent, much of it because they do not report people as offenders.",
+     "detail": "Denver’s Support Team Assisted Response (STAR) program answered 748 calls during the six-month pilot in 2020, about six per eight-hour shift, for problems such as trespassing, public disorder and intoxication; about a third came at police officers’ request. Dee and Pyne found no detectable effect on serious crime and estimate about 1,376 fewer recorded offenses, at a direct cost of $151 per offense reduced, against roughly $500 to $600 in criminal-justice costs for a typical minor offense. Supporters count the unrecorded offenses as a benefit, people helped rather than charged; skeptics count them as a change in recording rather than in behavior. Programs of this kind, including CAHOOTS in Eugene, Oregon, and B-HEARD in New York City, now run in many cities. Their advocates say the evidence shows civilians can safely take a share of police work; police leaders and some researchers caution that such programs handle a narrow band of calls and depend on police backup when situations turn dangerous.",
+     "source_label": "Thomas S. Dee & Jaymes Pyne, Science Advances (June 8, 2022)",
+     "source_url": "https://tom-dee.github.io/files/sciadv.abm2106.pdf",
+     "source_published": "2020",
+     "source_accessed": "2026-10-03",
+     "id": "drop-in-low-level-crime-reports"
+    },
+    {
+     "label": "Want police to spend the same or more time in their area, by race",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "White",
+       "value": "88",
+       "highlight": false
+      },
+      {
+       "label": "All adults",
+       "value": "86",
+       "highlight": false
+      },
+      {
+       "label": "Hispanic",
+       "value": "83",
+       "highlight": false
+      },
+      {
+       "label": "Black",
+       "value": "81",
+       "highlight": true
+      },
+      {
+       "label": "Asian",
+       "value": "72",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Weeks after George Floyd’s killing in 2020, 81 percent of Black Americans wanted police to spend the same (61 percent) or more (20 percent) time in their area; 19 percent wanted less.",
+     "detail": "Each row adds Gallup’s “more time” and “same amount of time” answers: White Americans 17 and 71, Hispanic Americans 24 and 59, Asian Americans 9 and 63, all adults 19 and 67. Another Gallup report from the same survey found that 58 percent of Americans, including 88 percent of Black Americans, said policing needed “major changes,” that nearly all supported punishing officer abuses and barring officers with repeated abuses from serving, and that 15 percent supported abolishing police departments, including 22 percent of Black Americans. Both findings are cited constantly: by those who say the communities most affected want more and better policing, not less, and by those who say wanting police nearby is compatible with wanting them held to account. Support for more police spending in one’s own area rose afterward; Pew found 47 percent favored an increase in 2021, up from 31 percent in June 2020.",
+     "source_label": "Gallup, “Black Americans Want Police to Retain Local Presence” (August 5, 2020)",
+     "source_url": "https://news.gallup.com/poll/316571/black-americans-police-retain-local-presence.aspx",
+     "source_published": "2020",
+     "source_accessed": "2026-10-03",
+     "id": "want-police-to-spend-the-same"
+    },
+    {
+     "label": "Civil-rights payouts against police paid by governments, not officers",
+     "viz": "radial",
+     "wide": false,
+     "value": "99.98",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In Joanna Schwartz’s national study, governments paid about 99.98 percent of the money plaintiffs recovered in civil-rights suits against police; officers almost never paid.",
+     "detail": "Schwartz studied 44 large and 37 mid-sized and small agencies. Officers in her study never paid a punitive damages award and almost never contributed to settlements or judgments, even when they were disciplined, fired or prosecuted for the conduct. The finding is cited on both sides of the qualified immunity debate, over whether ending the defense would mainly shift costs to cities or mainly burden officers with litigation. Since 2020 Colorado, Connecticut and New Mexico have created state-law claims that bar or limit the defense, and New York City did the same by local law in 2021, according to a Police1 review. The federal doctrine, created by the Supreme Court, still applies to federal civil-rights suits everywhere.",
+     "source_label": "Joanna C. Schwartz, “Police Indemnification,” New York University Law Review 89 (2014)",
+     "source_url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2297534",
+     "source_published": "2014",
+     "source_accessed": "2026-10-03",
+     "id": "civil-rights-payouts-against-police-paid"
+    },
+    {
+     "label": "Officers feloniously killed in the line of duty",
+     "viz": "bar",
+     "wide": false,
+     "value": "53",
+     "unit": "officers",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "53 law enforcement officers were feloniously killed in 2025, 43 with firearms, the fewest since 2020, while assaults on officers hit a 10-year high of 13.8 per 100 officers.",
+     "detail": "The FBI counted 73 officers feloniously killed in 2021, 61 in 2022, 60 in 2023 and 64 in 2024; the 258 deaths from 2021 to 2024 were more than in any other four-year period in its data since 2006. In 2025, agencies employing 653,044 officers reported 90,178 assaults on officers, a rate rising since 2021, and 445 officers were assaulted and injured with firearms. The Fraternal Order of Police, which tracks officers shot, counted 342 officers shot in 2024, 50 of them killed, according to its president’s testimony to Congress in December 2025. Police organizations cite these figures to argue that the danger officers face justifies their training and rules on force, and that anti-police rhetoric fuels attacks; advocates of accountability note that police kill far more civilians each year than civilians kill officers.",
+     "source_label": "FBI, Officers Killed and Assaulted in the Line of Duty, 2025 (released May 2026)",
+     "source_url": "https://cde.ucr.cjis.gov/LATEST/resources/reports/Officers%20Killed%20and%20Assaulted%20in%20the%20Line%20of%20Duty,%202025.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-10-03",
+     "id": "officers-feloniously-killed-in-the-line"
+    },
+    {
+     "label": "Sworn police officers per 100,000 residents",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "per 100,000",
+     "series": [
+      {
+       "label": "European Union",
+       "value": "345",
+       "highlight": false
+      },
+      {
+       "label": "United States",
+       "value": "241",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The US had 241 full-time state and local sworn officers per 100,000 residents in 2018, BJS found, fewer than the roughly 345 per 100,000 in the EU in 2024, from Eurostat counts.",
+     "detail": "BJS counted 788,000 full-time sworn officers and 427,000 civilian staff in 2018; the US rate was about 250 per 100,000 in 1996 and 2008. The FBI’s more recent count, from agencies that report to it, was 751,989 full-time officers in 2025. Eurostat reports 1,551,663 police officers in the EU in 2024; dividing by an EU population of about 449 million gives roughly 345 per 100,000, though national definitions of a police officer vary. Staffing fell after 2020 and has partly recovered: the Police Executive Research Forum’s survey found staffing up 1.4 percent in 2025, back to its 2022 level, with hiring up 17.6 percent from 2024. Those who favor more police cite the European comparison to argue that the United States is under-policed for its level of violence and leans on incarceration instead; those who favor shrinking police reply that European police work under tighter limits on force and alongside stronger social services.",
+     "source_label": "Bureau of Justice Statistics, Census of State and Local Law Enforcement Agencies, 2018; Eurostat (2024)",
+     "source_url": "https://bjs.ojp.gov/media/67846/download",
+     "source_published": "2018 (US); 2024 (EU)",
+     "source_accessed": "2026-10-03",
+     "id": "sworn-police-officers-per-100-000"
+    },
+    {
+     "label": "State and local law enforcement agencies",
+     "viz": "bar",
+     "wide": false,
+     "value": "17,541",
+     "unit": "agencies",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2018 the United States had 17,541 state and local law enforcement agencies, and 40 percent of them had fewer than 10 full-time-equivalent sworn officers.",
+     "detail": "Local police departments made up 67 percent of agencies and sheriffs’ offices 17 percent, with state police, tribal and special-jurisdiction agencies and constables making up the rest. Just 80 agencies with 1,000 or more officers employed 29 percent of all sworn personnel. Standards for hiring, training, use of force and discipline are set agency by agency and state by state, and an officer fired in one place can often be hired in another. That is why national proposals such as a federal registry of officers decertified for misconduct focus on information sharing and minimum standards, and why opponents of federal mandates argue that policing belongs to local voters and state law. BJS has not yet published counts from a later census of agencies.",
+     "source_label": "Bureau of Justice Statistics, Census of State and Local Law Enforcement Agencies, 2018 – Statistical Tables",
+     "source_url": "https://bjs.ojp.gov/media/67846/download",
+     "source_published": "2018",
+     "source_accessed": "2026-10-03",
+     "id": "state-and-local-law-enforcement-agencies"
+    },
+    {
+     "label": "Threat or use of nonfatal force in police-initiated contacts, by race",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Black",
+       "value": "5.8",
+       "highlight": true
+      },
+      {
+       "label": "All residents",
+       "value": "2.1",
+       "highlight": false
+      },
+      {
+       "label": "White",
+       "value": "1.7",
+       "highlight": false
+      },
+      {
+       "label": "Hispanic",
+       "value": "1.5",
+       "highlight": false
+      },
+      {
+       "label": "Other races",
+       "value": "1.1",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2022, 5.8 percent of Black residents whose latest police contact was police-initiated or a traffic accident said police threatened or used force, against 1.7 percent of White residents.",
+     "detail": "The figures come from a national household survey, not police records, and count threats, handcuffing, pushing, grabbing, hitting, kicking, pepper spray, Tasers and pointing or firing a gun. About 19 percent of residents age 16 and older, 49.2 million people, had some contact with police in 2022; about 8 percent had a police-initiated contact, most often a traffic stop, and 11 percent initiated contact themselves, most often to report a possible crime. Of those who experienced threatened or actual force in such a contact, about 40 percent called it necessary and 38 percent excessive. The survey does not record what the person was doing before force was used, so it cannot by itself say whether the racial difference reflects officers’ decisions or differences in the encounters.",
+     "source_label": "Bureau of Justice Statistics, Contacts Between Police and the Public, 2022 (October 2024), Table 8",
+     "source_url": "https://bjs.ojp.gov/document/cbpp22.pdf",
+     "source_published": "2022",
+     "source_accessed": "2026-10-03",
+     "id": "threat-or-use-of-nonfatal-force"
+    },
+    {
+     "label": "Hours of basic police academy training, by topic",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "hours",
+     "series": [
+      {
+       "label": "Firearms skills",
+       "value": "73",
+       "highlight": false
+      },
+      {
+       "label": "Defensive tactics",
+       "value": "64",
+       "highlight": false
+      },
+      {
+       "label": "Law",
+       "value": "51",
+       "highlight": false
+      },
+      {
+       "label": "De-escalation",
+       "value": "22",
+       "highlight": true
+      },
+      {
+       "label": "Mental illness response",
+       "value": "21",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "US police academies required an average of 806 hours of basic training in 2022, BJS found, including 73 hours on firearms and 22 on de-escalation.",
+     "detail": "BJS counted 747 academies training 60,214 recruits in 2022, and 89 percent of academies also required field training afterward. The law hours cover criminal and constitutional law. Nearly all recruits were trained to respond to people with mental illness or behavioral health problems, an average of 21 hours. Reformers argue that longer training weighted toward communication, de-escalation and crisis response would reduce force. Police leaders broadly support more training but note that it costs officer time when departments are short-staffed, and that firearms and defensive-tactics hours protect officers and the public in the encounters that do turn violent.",
+     "source_label": "Bureau of Justice Statistics, State and Local Law Enforcement Training Academies’ Training Topics and Instructors, 2022",
+     "source_url": "https://bjs.ojp.gov/document/slletatti22st.pdf",
+     "source_published": "2022",
+     "source_accessed": "2026-10-03",
+     "id": "hours-of-basic-police-academy-training"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Do more police officers cut serious violence by enough to outweigh the stops, arrests and force they bring?",
+    "kind": "empirical",
+    "why": "Few now deny that police presence reduces some crime. The dispute is over how large the effect is, which police activities produce it, and how to weigh burdens that fall on different people from the benefits.",
+    "detail": "Those who say the benefits win point to study after study, using federal hiring grants, deployments after terror alerts and randomized patrols, that finds more police mean less crime, with large effects on homicide and the biggest per-person gains for Black residents, who are most often the victims of violence. Each prevented killing also prevents the retaliation that would have followed. If policing has costs, they argue, the answer is to direct it better, not to have less of it.\n\nThose who say the costs win note that stops and arrests carry harms of their own, from lost jobs to lasting distrust that makes residents less willing to report crimes or help investigations, and that killings by police rose to records even as police budgets recovered. Money spent on officers is money not spent on street outreach, summer jobs, cleaning vacant lots and better lighting, several of which have randomized evidence behind them and none of which risks a death at the hands of the state. The right comparison, in this view, is police against the next best use of the money, not police against nothing.",
+    "lean_label_a": "Worth it",
+    "lean_label_b": "Not worth it",
+    "id": "do-more-police-officers-cut-serious"
+   },
+   {
+    "text": "How much of the racial gap in police stops and force reflects bias, not where police go and what they meet?",
+    "kind": "empirical",
+    "why": "Researchers agree the disparities exist; they disagree on the benchmark. Comparing with population, with violent crime or with police encounters gives different answers, and each benchmark can itself be shaped by policing.",
+    "detail": "Those who see mostly bias note disparities at every stage: who is stopped, searched, handcuffed and shot. The Stanford Open Policing Project, analyzing nearly 100 million traffic stops, found Black drivers generally stopped at higher rates than White drivers and searched more often once stopped, and its threshold test, which infers how much suspicion officers require before searching, found that police require less to search Black and Hispanic drivers. Knox, Lowe and Mummolo argued in 2020 that studies comparing outcomes only among people police chose to stop understate bias, because the decision to stop is where much of it enters.\n\nThose who see mostly context note that police are deployed where calls and violent crime concentrate, and that in many cities those neighborhoods are disproportionately Black, as are the victims of violence. Measured against involvement in violent encounters rather than population, the gap in police shootings shrinks or disappears in several studies; Roland Fryer’s 2019 study of Houston found no racial difference in police shootings once encounters were accounted for, while finding Black and Hispanic civilians more likely to face lesser force. In the Stanford project’s simpler outcome test, searches of Black drivers found contraband at rates generally in line with searches of White drivers, though the project prefers its threshold test.",
+    "lean_label_a": "Mostly bias",
+    "lean_label_b": "Mostly context",
+    "id": "how-much-of-the-racial-gap"
+   },
+   {
+    "text": "Should qualified immunity shield officers from civil suits when they violate someone’s constitutional rights?",
+    "kind": "value",
+    "why": "The Supreme Court created the doctrine, not Congress; it bars damages suits unless an officer broke “clearly established” law. Congress has repeatedly failed to change it, and a bill to curtail it was reintroduced in September 2025.",
+    "detail": "Those who would end it say a person whose rights were plainly violated should be able to recover in court, and that the doctrine often demands an earlier case with nearly identical facts before an officer can be held liable, so new forms of misconduct go unremedied. Because governments, not officers, pay nearly all judgments, ending the defense would mainly move costs onto the cities that hire, train and supervise officers, giving them a reason to do it better. Colorado ended the defense for state claims in 2020, and its police departments continue to function.\n\nThose who would keep it say officers make split-second decisions under threat, and the doctrine protects those who act reasonably where the law has not clearly spoken, while still allowing suits against those who break clearly established rules. Removing it would expose officers to years of litigation and discovery even when they win, and would deter recruitment at a time of staffing shortages; police organizations warn it would make officers hesitate in exactly the moments when hesitation is dangerous. If the doctrine needs adjusting, they argue, courts should refine it rather than Congress abolish it.",
+    "lean_label_a": "End the shield",
+    "lean_label_b": "Keep the shield",
+    "id": "should-qualified-immunity-shield-officers-from"
+   },
+   {
+    "text": "Which calls should police stop answering, and can civilian responders take them over safely at scale?",
+    "kind": "empirical",
+    "why": "Pilots show civilians can handle some crisis and disorder calls. But the programs are small, the calls they take are screened, and no city has yet moved a large share of police work to other agencies.",
+    "detail": "Those who would shift calls say armed officers are the wrong first response to a person in crisis, that every unneeded encounter is a chance for one to go wrong, and that the civilian programs studied so far have cut minor offenses at a fraction of the cost of a police and court response without raising serious crime. Eugene’s CAHOOTS teams were dispatched to 17,700 calls in 2019 and called for police backup 311 times, according to the city police department’s own analysis.\n\nThose who would keep police responding say a disturbance, a man acting strangely or a welfare check can involve weapons. Civilian programs work because they take screened calls, keep limited hours and rely on police backup; the same Eugene analysis estimates that CAHOOTS diverts only about 5 to 8 percent of police calls for service. New York’s B-HEARD program and the city’s new Office of Community Safety, created by Mayor Zohran Mamdani in March 2026, have started small for the same reason. People in crisis sometimes threaten others, and families often call police because no one else will come at 3 a.m.",
+    "lean_label_a": "Send civilians",
+    "lean_label_b": "Send police",
+    "id": "which-calls-should-police-stop-answering"
+   },
+   {
+    "text": "Who should hold local police to account when they violate rights: federal courts, states, or local voters?",
+    "kind": "value",
+    "why": "Federal consent decrees, enforced by judges and monitors, were the main national tool for reforming troubled departments from the 1990s to 2024. The current administration has dropped them as overreach, while some states and cities pursue their own.",
+    "detail": "Those who favor federal oversight say local officials depend politically on police unions and often act only after a crisis, and that constitutional rights should not depend on the city one lives in. In Seattle, the court-appointed monitor’s 2017 assessment found that moderate and higher-level force fell 60 percent between July 2014 and October 2016 under the city’s consent decree, as summarized by city council members. Decrees bring outside data, monitoring and deadlines, and the Justice Department’s dismissal of the Minneapolis and Louisville cases in May 2025, with its retraction of findings in six other cities, left communities where federal investigators had found unconstitutional policing without that protection.\n\nThose who favor local control say policing is a local function answerable to local voters, and that decrees hand control to unelected monitors and judges for a decade or more at a cost of hundreds of millions of dollars, as the Justice Department argued when it dropped them. Cities that want reform can adopt it themselves, as Minneapolis did by executive order in June 2025, and states can set training, decertification and use-of-force standards for every agency, reaching far more departments than federal decrees ever did.",
+    "lean_label_a": "Federal oversight",
+    "lean_label_b": "Local control",
+    "id": "who-should-hold-local-police-to"
+   },
+   {
+    "text": "Did the pullback in policing after the 2020 protests help drive that year’s surge in murder?",
+    "kind": "empirical",
+    "why": "Murder rose nearly 30 percent in 2020, the largest one-year increase on record, starting in the weeks after George Floyd’s killing, during a pandemic that shut schools and services and amid record gun sales. The timing fits several explanations.",
+    "detail": "Those who blame the pullback note that the surge began the week of Floyd’s killing, not when the pandemic began in March, and was concentrated in cities with large protests and sharp drops in stops and arrests, and that officers in surveys reported avoiding discretionary enforcement for fear of becoming the next viral video. Devi and Fryer found an earlier version of the pattern: federal pattern-or-practice investigations launched after viral police killings were followed by almost 900 excess homicides in the cities studied, apparently because police activity fell, while investigations not preceded by viral incidents reduced crime. The recovery, they add, followed rehiring and renewed enforcement.\n\nThose who point to other causes note that murder rose almost everywhere in 2020, in suburbs and rural counties as well as protest cities, in places with and without reforms, and where police budgets rose. The pandemic closed schools, jobs and the violence-intervention programs that work with people at highest risk, while Americans bought guns at record rates. No major city abolished its police department. The decline since 2022 has also been nearly universal, including in cities that kept reforms and invested in community violence intervention, which suggests that broad forces drove both the rise and the fall.",
+    "lean_label_a": "Pullback drove it",
+    "lean_label_b": "Other causes did",
+    "id": "did-the-pullback-in-policing-after"
+   },
+   {
+    "text": "Can policing be made just through reform, or is the institution itself the problem?",
+    "kind": "value",
+    "why": "This is the question beneath the slogans of 2020. Most Americans reject abolition, but a third of adults under 35 told Gallup that year that they supported it, and the two sides read the same record of change in opposite ways.",
+    "detail": "Those who say reform can work point out that policing has changed before: deadly-force rules narrowed after the Supreme Court’s 1985 decision in Tennessee v. Garner, departments that adopted de-escalation training have measurably reduced force, and states have created decertification systems and duty-to-intervene laws. Every society, they argue, needs someone who can meet violence in progress with force, and the job is to make that institution accountable, professional and focused rather than to abolish the only one that answers a 911 call at any hour.\n\nThose who would replace it answer that each wave of reform, from the riot commissions of the 1960s to body cameras, has left the basic role unchanged: armed agents of the state sent to manage poverty, addiction, mental illness and disorder, with predictable violence against the people they police. Changes that give police more money or credibility only postpone the alternatives, in this view, so the way forward is to reduce police step by step toward a society that no longer needs them.",
+    "lean_label_a": "Reform it",
+    "lean_label_b": "Replace it",
+    "id": "can-policing-be-made-just-through"
+   },
+   {
+    "text": "Do pedestrian stops, pretextual traffic stops and arrests for minor offenses prevent enough serious crime?",
+    "kind": "empirical",
+    "why": "Proactive tactics are a separate question from police numbers. The National Academies found good evidence for some focused strategies and weak or mixed evidence for others, and both sides cite New York’s stop-and-frisk era and its end.",
+    "detail": "Those who defend proactive work say crime is intensely concentrated: in New York about half of reported violent crime occurs on 4 percent of street segments, according to research Rafael Mangual of the Manhattan Institute cited to Congress in November 2025. Police who work those places actively, stopping people with illegal guns, enforcing warrants and addressing disorder, prevent shootings that responding to calls cannot. Most homicide suspects have long arrest records, they note, so contact with repeat offenders is the point, not a side effect, and hot-spots policing and focused deterrence have among the strongest evidence of any crime-control strategy.\n\nThose who see mostly harm say most stops find nothing. New York’s recorded stops fell from a record 685,724 in 2011 to 25,386 in 2024, by the New York Civil Liberties Union’s count, a drop of more than 96 percent, without a return to the violence of the early 1990s. Traffic stops are among the routine encounters that end in deaths, and each fruitless stop teaches residents that police see them as suspects, corroding the cooperation investigations depend on. Philadelphia and Virginia have restricted stops for minor equipment violations, and the evidence for focused strategies, they argue, is evidence for precision, not for broad stops.",
+    "lean_label_a": "Prevents enough",
+    "lean_label_b": "Not enough",
+    "id": "do-pedestrian-stops-pretextual-traffic-stops"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Fund police and bind them to enforceable standards",
+    "color_key": "green",
+    "steelman": "Communities need police they can count on and police they can trust. Fund them properly, and tie that money to national rules on force, training and discipline.",
+    "detail": "The neighborhoods that suffer most from violence want police to stay, and they also want police they can trust. Those goals do not compete: a department that uses force sparingly, explains itself and removes bad officers gets more cooperation from witnesses and solves more crimes. So we would fund policing properly and attach conditions to the money: national standards on use of force, a duty to intervene, bans on chokeholds and most no-knock warrants, body cameras, independent investigation of deaths, a national registry so officers fired for misconduct cannot be quietly rehired elsewhere, reform of qualified immunity, and better training in de-escalation and crisis response. Trained civilians should take many mental-health calls alongside police, freeing officers for serious crime. This is the program of President Biden’s 2022 Safer America Plan, which paired money for 100,000 more officers with accountability standards, and of the George Floyd Justice in Policing Act, reintroduced in 2025.\n\nGood rules make officers safer, not more endangered. When Louisville rolled out de-escalation training in a randomized design, use-of-force incidents fell 28 percent, citizen injuries 26 percent and officer injuries 36 percent (Engel and colleagues, 2022). To those who would shrink or abolish police, we note that Minneapolis voters rejected replacing their police department in November 2021, 56.2 percent voting no, and that the evidence on police and homicide is too strong to bet lives against. To those who say reform has failed, we answer that the reforms that work have rarely been adopted fully or nationally, which is the point of federal standards. Some of us, in civil rights groups, put accountability first and say little about funding; police executives pair the two.",
+    "proponents": "Joe Biden; NAACP Legal Defense Fund; National Organization of Black Law Enforcement Executives; Police Executive Research Forum; Glenn Ivey",
+    "id": "fund-police-and-bind-them-to"
+   },
+   {
+    "name": "Expand police and free them to enforce the law",
+    "color_key": "blue",
+    "steelman": "Protecting people from violence is government’s first duty. Hire more officers, back them when they act lawfully, and stop treating a whole profession as suspect.",
+    "detail": "The evidence that more officers and active policing reduce crime is among the strongest in social science, and those who gain most are residents of the poor, mostly minority neighborhoods where violence concentrates. After 2020, politicians and activists demonized officers, cut budgets, stripped away legal protections and opened investigations after every viral video. Officers pulled back, resignations rose by more than half between 2019 and 2022 in the Police Executive Research Forum’s survey of its member agencies, and murder surged. The recovery came as cities rehired, police returned to proactive work and the federal government stood behind them. As President Trump’s April 2025 executive order put it, “Safe communities rely on the backbone and heroism of a tough and well-equipped police force.”\n\nSo we would fund and staff departments fully, keep qualified immunity, end federal micromanagement through consent decrees, and target the small number of repeat violent offenders who commit most serious crime. Officers who break the law should be prosecuted through the ordinary criminal process, as Derek Chauvin was, without lowering the legal standard for force. Most people killed by police were reported to be armed, and far more Black lives are lost to the violence that under-policing allows than to police. Crisis teams for screened calls are fine, but they cannot replace officers. We differ on federal power: the administration took temporary control of the District of Columbia’s police in August 2025, while many conservatives would leave policing to states and localities.",
+    "proponents": "Donald Trump; Fraternal Order of Police; Manhattan Institute; Harmeet Dhillon; Rafael Mangual",
+    "id": "expand-police-and-free-them-to"
+   },
+   {
+    "name": "Move money and duties from police to other responders",
+    "color_key": "amber",
+    "steelman": "We send armed officers to problems they were never built to solve. Shrink what police do and fund the crisis teams, services and prevention that keep people safe.",
+    "detail": "The United States asks police to handle almost every social problem, from homelessness and addiction to mental illness, school discipline and traffic, and then is surprised when armed officers trained mainly in force produce violent outcomes. Most calls to police have nothing to do with violent crime, and many of the people killed by police were in a mental-health crisis, stopped for a traffic violation or suspected of a minor offense. Training, body cameras, consent decrees and review boards have left police in charge of the same work with the same tools. So we would shrink what police do and what they spend, and build what prevents harm: unarmed crisis responders, violence interrupters, housing, mental-health and addiction treatment, youth programs, and investment in neighborhoods that have been both over-policed and under-served. Every call someone else handles is an encounter that cannot end in a police killing.\n\nThe question is not police against nothing but which mix of spending saves the most lives with the least harm, and the alternatives we propose also reduce violence. Polls showing that Black Americans want police nearby also show overwhelming demand for major change, and residents asked what keeps them safe name jobs, housing and services as often as officers. Some of us want deep, immediate cuts; others, including many city officials who adopted the language of reallocation in 2020, favor gradual shifts through attrition, moving mental-health response, school safety and traffic enforcement to civilian agencies. For some that is the goal, a smaller and more accountable police force; for others, including many in the Movement for Black Lives, it is a step toward abolition.",
+    "proponents": "Movement for Black Lives; Alex Vitale; Vera Institute of Justice",
+    "id": "move-money-and-duties-from-police"
+   },
+   {
+    "name": "Abolish police and build other ways to keep people safe",
+    "color_key": "rust",
+    "steelman": "A century of reform has not changed what police are for. Shrink them step by step, and build housing, care and community responses until police are no longer needed.",
+    "detail": "Policing in the United States grew out of slave patrols, strikebreaking and the control of poor and colonized people, and it still does what it was built to do: manage poverty and race through surveillance, punishment and force. That is why commissions, training, body cameras, civilian review and consent decrees are absorbed while police budgets keep growing. Police mostly arrive after harm is done and often fail to solve the crimes that devastate communities. What produces safety is people having housing, health care, income, and relationships and institutions that can answer conflict and harm without cages and guns. Mariame Kaba’s 2020 essay in The New York Times put it plainly in its title: “Yes, We Mean Literally Abolish the Police.”\n\nAbolition is a project, not the disappearance of police tomorrow. We back “non-reformist reforms” that shrink police, such as budget cuts, removing police from schools and ending pretextual stops, and oppose reforms that expand police resources, such as more training money or body-camera purchases. To the objection that someone must respond when a person is attacked now, we answer that most violence is between people who know each other and is better prevented by changing conditions, and that the goal is to build community responders and transformative-justice processes that make armed police unnecessary, not to leave people without help. Studies showing that more police reduce homicide compare police with fewer police, not with the world we propose. And most transformative changes, from the abolition of slavery to the end of legal segregation, began as minority positions.",
+    "proponents": "Critical Resistance; Mariame Kaba; Angela Davis; Ruth Wilson Gilmore; MPD150",
+    "id": "abolish-police-and-build-other-ways"
+   }
+  ],
+  "crux": {
+   "lead": "How much safety do armed police uniquely provide, and what price in force and intrusion is worth paying?",
+   "lead_highlight": "what price in force and intrusion is worth paying",
+   "subtitle": "Nearly everyone wants fewer killings, by criminals and by police. The split is over how much protection only police can give, and how much of their force, stops and error a society should accept for it, when both the burdens and the benefits fall hardest on poor and Black neighborhoods.",
+   "empirical": "Evidence could size the trade: how many killings added officers prevent, and through which activities; how much the same money spent on civilian responders, violence prevention and services would prevent, tested across whole cities rather than in pilots; how far training, oversight and liability rules cut police violence, and what they do to crime; and how much of the racial gap in force reflects officers’ choices.",
+   "values": "No study settles how to weigh different harms or who should bear them. One view holds that protecting people from violence is the state’s first duty and that some intrusion and error is the price. Another holds that a killing or abuse by an agent of the state is a distinct wrong, done in the public’s name, that gains in average safety cannot offset. A third holds that safety comes from meeting people’s needs, not from force."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Read the Council on Criminal Justice’s policing assessments",
+    "description": "The nonpartisan council’s Task Force on Policing, launched in November 2020, assessed more than two dozen proposed reforms, from training and decertification to shifting duties to other responders.",
+    "url": "https://counciloncj.org/task-force-on-policing/",
+    "for_position": null,
+    "id": "read-the-council-on-criminal-justice"
+   },
+   {
+    "kind": "policy",
+    "title": "Read the George Floyd Justice in Policing Act of 2025",
+    "description": "H.R. 5361 would curtail qualified immunity, create a national misconduct registry, ban chokeholds and no-knock warrants in drug cases, and set national use-of-force standards. Tell your representative where you stand.",
+    "url": "https://www.govinfo.gov/app/details/BILLS-119hr5361ih",
+    "for_position": "Fund police and bind them to enforceable standards",
+    "id": "read-the-george-floyd-justice-in"
+   },
+   {
+    "kind": "policy",
+    "title": "Read the Back the Blue Act of 2025",
+    "description": "S. 3366, introduced in December 2025 by Senator John Cornyn and Republican colleagues, would create new federal crimes and penalties for violence against law enforcement officers. Tell your senators where you stand.",
+    "url": "https://www.govinfo.gov/app/details/BILLS-119s3366is",
+    "for_position": "Expand police and free them to enforce the law",
+    "id": "read-the-back-the-blue-act"
+   },
+   {
+    "kind": "donate",
+    "title": "Support the Movement for Black Lives’ campaign to defund the police",
+    "description": "The coalition of Black-led organizations campaigns to move public money from police and prisons into community services, and promotes the BREATHE Act to do the same with federal funds.",
+    "url": "https://m4bl.org/defund-the-police/",
+    "for_position": "Move money and duties from police to other responders",
+    "id": "support-the-movement-for-black-lives"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Join Critical Resistance",
+    "description": "The abolitionist organization’s chapters campaign to shrink policing and build community alternatives; its site gathers resources on abolishing policing and ways to join a local chapter.",
+    "url": "https://criticalresistance.org/abolish-policing/",
+    "for_position": "Abolish police and build other ways to keep people safe",
+    "id": "join-critical-resistance"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the National Academies’ review of proactive policing",
+    "description": "The 2018 consensus report on what the evidence shows about hot-spots policing, stop-and-frisk, focused deterrence and other proactive strategies, and about their effects on communities. Free to read online.",
+    "url": "https://nap.nationalacademies.org/catalog/24928/proactive-policing-effects-on-crime-and-communities",
+    "for_position": null,
+    "id": "read-the-national-academies-review-of"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Explore the Stanford Open Policing Project’s traffic stop data",
+    "description": "Findings and downloadable data on nearly 100 million traffic stops, with explanations of the statistical tests researchers use to look for racial bias in stops and searches.",
+    "url": "https://openpolicing.stanford.edu/findings/",
+    "for_position": null,
+    "id": "explore-the-stanford-open-policing-project"
+   },
+   {
+    "kind": "learn_more",
+    "title": "See how Eugene’s CAHOOTS crisis teams work",
+    "description": "The White Bird Clinic’s page on the long-running Oregon program that sends a medic and a crisis worker instead of police to many mental-health, welfare and intoxication calls.",
+    "url": "https://whitebirdclinic.org/cahoots/",
+    "for_position": "Move money and duties from police to other responders",
+    "id": "see-how-eugene-s-cahoots-crisis"
+   },
+   {
+    "kind": "local",
+    "title": "Learn how civilian oversight of police works",
+    "description": "The National Association for Civilian Oversight of Law Enforcement explains the forms review boards and police auditors take, a start on finding out how your own department is overseen.",
+    "url": "https://www.nacole.org/civilian_oversight_basics",
+    "for_position": "Fund police and bind them to enforceable standards",
+    "id": "learn-how-civilian-oversight-of-police"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Volunteer with your local police department",
+    "description": "The International Association of Chiefs of Police’s Volunteers in Police Service program explains how residents can serve in civilian volunteer roles that support local law enforcement.",
+    "url": "https://www.theiacp.org/projects/volunteers-in-police-service-vips",
+    "for_position": "Expand police and free them to enforce the law",
+    "id": "volunteer-with-your-local-police-department"
+   }
+  ]
+ },
+ "icon": "police-car",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: a large patrol car in clean side profile as the dominant focal mass, with a wide two-lamp light bar across its roof and a plain stripe along its doors, parked on a quiet residential street; the car rests on the gentle filled curve of a low rise that is the ground, never a flat line; a medium street lamp standing just behind the car, its post overlapping the car's rear; a small fire hydrant on the sidewalk beside the front wheel; two small houses with pitched roofs on the far rise to the upper right; a street that curves from beneath the car and winds away toward the houses as the connective element.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #6a62b0, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: people, officers, faces, hands, guns, holsters, batons, handcuffs, riot shields, helmets, tear gas, smoke, flashing light rays, sirens blaring, motion lines, crime scene tape, barricades, fences, protest signs, raised fists, megaphones, candles, flowers, memorials, flags, national symbols, scales of justice, gavels, prison bars, jail cells, the word POLICE or any lettering, badges with text, arrows, broken windows."
 }

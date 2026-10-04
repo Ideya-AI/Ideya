@@ -1,8 +1,8 @@
 {
  "slug": "data-ownership-surveillance-capitalism",
  "title": "Surveillance Capitalism",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-10-02T21:30:07+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Who owns and profits from personal data, and the business model built on it. The commercial model, not state surveillance.",
@@ -15,5 +15,696 @@
   "ai-copyright-training-data",
   "antitrust-market-power",
   "content-moderation-free-speech"
- ]
+ ],
+ "content": {
+  "overview": {
+   "summary": "Whether tracking people to sell ads is a fair price for free services, and who should control and profit from the personal data it runs on.",
+   "scope_covered": "The commercial trade in personal data: targeted advertising, data brokers, consent and privacy law, competition remedies, and proposals to pay people for their data.",
+   "scope_excluded": "Government surveillance, AI training on copyrighted work, antitrust beyond the role of data, and what platforms let people say, each covered on its own page.",
+   "why_now": "On August 1, 2026, California began requiring every registered data broker to honor deletion requests sent through a single state platform, while a bill before the US House would set one national privacy standard and override state laws like it.",
+   "why_now_source_label": "California Privacy Protection Agency",
+   "why_now_source_url": "https://privacy.ca.gov/2026/08/half-a-million-californians-have-signed-up-for-drop-to-delete-their-personal-information-from-data-brokers/"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "Google advertising revenue",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "$ billion",
+     "series": [
+      {
+       "label": "2023",
+       "value": "237.9",
+       "highlight": false
+      },
+      {
+       "label": "2024",
+       "value": "264.6",
+       "highlight": false
+      },
+      {
+       "label": "2025",
+       "value": "294.7",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Google earned $294.7 billion from advertising in 2025, 73 percent of Alphabet’s total revenue of $402.8 billion.",
+     "detail": "Alphabet’s annual report splits the total into Google Search & other ($224.5 billion in 2025), YouTube ads ($40.4 billion) and Google Network ($29.8 billion), the last being ads Google places on other companies’ websites and apps through its advertising technology. Advertising’s share of revenue has been falling slowly as Google Cloud and subscriptions grow, from 77 percent in 2023. Search ads are aimed mainly at what a person types, which is why some critics of tracking see search advertising as closer to contextual advertising than to profiling. Google also uses signed-in activity, location and other signals to personalize ads, and its ad technology runs auctions for ads across millions of other sites.",
+     "source_label": "Alphabet Inc., Form 10-K for fiscal year 2025 (revenues by type)",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
+     "source_published": "2025",
+     "source_accessed": "2026-10-02",
+     "id": "google-advertising-revenue"
+    },
+    {
+     "label": "Share of Meta’s revenue that comes from advertising",
+     "viz": "radial",
+     "wide": false,
+     "value": "97.6",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Meta reported $196.2 billion in advertising revenue out of $201.0 billion in total revenue in 2025, so about 97.6 percent of its revenue came from ads.",
+     "detail": "The percentage is calculated from Meta’s reported figures ($196,175 million and $200,966 million); Meta’s own 2025 annual report says it generates “substantially all” of its revenue from advertising. Ad revenue rose 22 percent from $160.6 billion in 2024, and Meta counted 3.58 billion daily active people across Facebook, Instagram, Messenger and WhatsApp in December 2025. Ads are targeted using activity on Meta’s own apps and, where people permit it, data that other websites and apps send Meta through its tracking pixel and software kits. Meta announced in October 2025 that from December 16 it would also use people’s conversations with its AI assistant to personalize ads in most regions, excluding sensitive topics such as health and religion.",
+     "source_label": "Meta Platforms, fourth quarter and full year 2025 results, January 28, 2026",
+     "source_url": "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Fourth-Quarter-and-Full-Year-2025-Results/default.aspx",
+     "source_published": "2025",
+     "source_accessed": "2026-10-02",
+     "id": "share-of-meta-s-revenue-that"
+    },
+    {
+     "label": "What Americans say about how companies use their data",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Concerned about use",
+       "value": "81",
+       "highlight": true
+      },
+      {
+       "label": "Little or no control",
+       "value": "73",
+       "highlight": false
+      },
+      {
+       "label": "Want more regulation",
+       "value": "72",
+       "highlight": false
+      },
+      {
+       "label": "Understand little",
+       "value": "67",
+       "highlight": false
+      },
+      {
+       "label": "Click “agree” unread",
+       "value": "56",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2023, 81 percent of US adults said they were concerned about how companies use the data they collect about them, and 72 percent wanted more government regulation of it.",
+     "detail": "Each row answers a different question in the same Pew survey of 5,101 US adults, taken May 15 to 21, 2023. By comparison, 71 percent were concerned about how the government uses their data, and only 7 percent wanted less regulation of companies. The share saying they understood little or nothing about what companies do with their data rose from 59 percent in 2019. In Pew’s 2019 survey, 81 percent said the potential risks of company data collection outweigh the benefits, and 72 percent said they personally benefit very little or not at all from it. Defenders of the ad-funded model point to the gap between these stated attitudes and behavior: very few people pay to avoid ads or use the opt-outs available to them.",
+     "source_label": "Pew Research Center, How Americans View Data Privacy, October 18, 2023",
+     "source_url": "https://www.pewresearch.org/internet/2023/10/18/views-of-data-privacy-risks-personal-data-and-digital-privacy-laws/",
+     "source_published": "2023",
+     "source_accessed": "2026-10-02",
+     "id": "what-americans-say-about-how-companies"
+    },
+    {
+     "label": "Share of the ad market held by Alphabet, Meta and Amazon",
+     "viz": "radial",
+     "wide": false,
+     "value": "57.6",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "WPP Media says the three largest ad sellers outside China, Alphabet, Meta and Amazon, control 57.6 percent of the market in 2026, a year it forecasts $1.3 trillion in global ad revenue.",
+     "detail": "WPP Media, the media-buying arm of the advertising group WPP, publishes twice-yearly forecasts of global advertising revenue, excluding US political advertising. Its June 2026 forecast raised expected 2026 growth to 8.9 percent and credited much of it to artificial intelligence, both spending by AI companies and advertisers using AI tools. The release does not define the market behind the share; it is read here as global advertising outside China, where Alibaba, ByteDance, Tencent and others dominate. Those who see the problem as monopoly cite the figure as proof that data advantages compound; those who defend the model note that the money comes from millions of advertisers, many of them small businesses that could not reach customers as cheaply any other way.",
+     "source_label": "WPP Media, This Year Next Year 2026 Midyear Forecast, June 16, 2026",
+     "source_url": "https://www.wppmedia.com/news/report-this-year-next-year-midyear-2026",
+     "source_published": "2026 (forecast)",
+     "source_accessed": "2026-10-02",
+     "id": "share-of-the-ad-market-held"
+    },
+    {
+     "label": "How much less publishers earn when ads cannot use tracking",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% less",
+     "series": [
+      {
+       "label": "Google test, 2019",
+       "value": "52",
+       "highlight": true
+      },
+      {
+       "label": "Johnson et al., 2020",
+       "value": "52",
+       "highlight": false
+      },
+      {
+       "label": "Laub et al., apps",
+       "value": "23",
+       "highlight": false
+      },
+      {
+       "label": "Laub et al., EU web",
+       "value": "18",
+       "highlight": false
+      },
+      {
+       "label": "Marotta et al., 2019",
+       "value": "4",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Estimates of how much less a publisher earns from an ad that cannot use tracking data run from about 4 percent to 52 percent, depending on who measured it, where and how.",
+     "detail": "The rows measure related but different things, so they are a spread of estimates from different studies rather than one series. Google’s 2019 experiment turned off cookie-based personalization for a small random fraction of users and found its top 500 publishers’ average revenue from them fell 52 percent (median 64 percent). Johnson, Shriver and Du (Marketing Science, 2020) found that ads shown to users who had opted out of behavioral advertising, 0.23 percent of US ad impressions, fetched 52 percent less on an ad exchange. Laub, Miller and Skiera (working paper, revised 2024) found ad prices 18 percent lower in 2016 EU desktop data and 23 percent lower in 2023 mobile app data when users could not be tracked. Marotta, Abhishek and Acquisti (preliminary draft, 2019) found a publisher’s revenue only about 4 percent higher when a user’s cookie was available, about $0.00008 per ad. Critics of Google’s study note that Google sells advertising technology; the industry raises comparable doubts about academic studies drawn from a single publisher.",
+     "source_label": "Google, Effect of disabling third-party cookies on publisher revenue, 2019; other rows as named",
+     "source_url": "https://services.google.com/fh/files/misc/disabling_third-party_cookies_publisher_revenue.pdf",
+     "source_published": "2019 (other rows differ)",
+     "source_accessed": "2026-10-02",
+     "id": "how-much-less-publishers-earn-when"
+    },
+    {
+     "label": "Data brokers registered in California",
+     "viz": "bar",
+     "wide": false,
+     "value": "654",
+     "unit": "brokers",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "654 data brokers are registered with California, and more than 500,000 residents signed up between January 1 and August 25, 2026 to have all of them delete their information.",
+     "detail": "California’s Delete Act of 2023 defines a data broker as a business that collects and sells personal information about people with whom it has no direct relationship, and requires brokers to register each year. Brokers combine records from public sources, apps, loyalty programs, websites and other brokers, and sell profiles, lists and location data for marketing, risk scoring, people searches and other uses. Since August 1, 2026, registered brokers must process deletion requests sent through the state’s Delete Request and Opt-out Platform. By late August, CalPrivacy said, about a quarter of brokers had reported processing requests, “tens of millions of records” had been deleted, and the typical user’s information had been removed by more than 40 brokers. Sign-ups were a little over 1 percent of California’s roughly 39 million residents (US Census Bureau, 2025 estimate); supporters read this as strong early demand, skeptics as a sign that most people do not act even when acting is easy. Vermont, Texas and Oregon also run broker registries; no federal law requires brokers to register.",
+     "source_label": "California Privacy Protection Agency (CalPrivacy), August 25, 2026",
+     "source_url": "https://privacy.ca.gov/2026/08/half-a-million-californians-have-signed-up-for-drop-to-delete-their-personal-information-from-data-brokers/",
+     "source_published": "2026",
+     "source_accessed": "2026-10-02",
+     "id": "data-brokers-registered-in-california"
+    },
+    {
+     "label": "Revenue Meta earns per user",
+     "viz": "bar",
+     "wide": false,
+     "value": "57.03",
+     "unit": "$ a year",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Meta’s worldwide average revenue per daily user was $57.03 in 2025, up 15 percent from 2024.",
+     "detail": "Meta divides the quarterly revenue of its apps by the average number of daily active people and sums the four quarters; the fourth quarter of 2025 alone came to $16.56. The worldwide average hides a wide spread: Meta reports much higher revenue per user in the United States & Canada and in Europe than elsewhere, because those advertising markets are larger. The figure is often used as a rough answer to what a person’s data is worth to a platform, though it measures revenue, not profit, and the revenue also depends on the content, engineering and advertisers the platform supplies. Advocates of data dividends cite it to argue people should get a share; their critics note that divided among users it comes to a few dollars a month.",
+     "source_label": "Meta Platforms, Form 10-K for fiscal year 2025 (average revenue per person)",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm",
+     "source_published": "2025",
+     "source_accessed": "2026-10-02",
+     "id": "revenue-meta-earns-per-user"
+    },
+    {
+     "label": "What people say they would need to be paid to give up free online services",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "$ a year",
+     "series": [
+      {
+       "label": "Search engines",
+       "value": "17,530",
+       "highlight": true
+      },
+      {
+       "label": "Email",
+       "value": "8,414",
+       "highlight": false
+      },
+      {
+       "label": "Digital maps",
+       "value": "3,648",
+       "highlight": false
+      },
+      {
+       "label": "Video",
+       "value": "1,173",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2017, the median US participant said they would need $17,530 a year to give up all search engines, $8,414 to give up email and $3,648 to give up digital maps.",
+     "detail": "The economists asked large online samples how much they would have to be paid to lose a whole category of digital goods for a year, a measure economists call willingness to accept. Other categories came lower: e-commerce $842, social media $322, music $168 and messaging $155. The categories are all-or-nothing, so the numbers are high partly because there is no substitute and many people need these services for work. In a separate experiment in which participants actually lost access if they accepted payment, the median Facebook user needed about $48 to give it up for a month in 2016 and $37.76 in 2017. Defenders of the ad-funded model cite such figures as the value consumers receive for their attention and data; critics reply that the value comes from the services themselves, which could be funded with less data, and that the figures do not price the harms of data collection.",
+     "source_label": "Brynjolfsson, Collis & Eggers, Using massive online choice experiments to measure changes in well-being, PNAS, 2019",
+     "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6462102/",
+     "source_published": "2017",
+     "source_accessed": "2026-10-02",
+     "id": "what-people-say-they-would-need"
+    },
+    {
+     "label": "Location signals one data broker said it collected each day",
+     "viz": "bar",
+     "wide": false,
+     "value": "17 billion",
+     "unit": "signals",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The FTC said Gravy Analytics and its subsidiary Venntel claimed to collect “more than 17 billion signals from around a billion mobile devices daily.”",
+     "detail": "Location data comes mostly from apps that collect a phone’s location and pass it, often through advertising software and ad auctions, to brokers who resell it. The FTC alleged that Gravy and Venntel sold location data that was not anonymized and could identify people, including their visits to medical facilities and places of worship. Its proposed order banned the companies from selling data tied to sensitive locations such as health clinics, religious organizations, labor union offices, shelters and military installations. The same month the FTC brought a similar case against Mobilewalla. The industry argues that most location data is used for aggregate purposes such as measuring store visits and traffic, and that bans should target misuse rather than the data itself.",
+     "source_label": "Federal Trade Commission, action against Gravy Analytics and Venntel, December 3, 2024",
+     "source_url": "https://www.ftc.gov/news-events/news/press-releases/2024/12/ftc-takes-action-against-gravy-analytics-venntel-unlawfully-selling-location-data-tracking-consumers",
+     "source_published": "2024",
+     "source_accessed": "2026-10-02",
+     "id": "location-signals-one-data-broker-said"
+    },
+    {
+     "label": "Times a day a person’s online activity is broadcast in ad auctions",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "per day",
+     "series": [
+      {
+       "label": "United States",
+       "value": "747",
+       "highlight": true
+      },
+      {
+       "label": "Europe",
+       "value": "376",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The Irish Council for Civil Liberties, which campaigns against the practice, estimates that ad auctions expose a person’s online activity and location 747 times a day in the US and 376 in Europe.",
+     "detail": "Real-time bidding is the auction that runs in the fraction of a second while a web page or app loads. The site’s ad system sends a “bid request” describing the page and the user, often with device identifiers, approximate location and interest segments, to many potential buyers, and each receives the data whether or not it wins. ICCL calls this “the biggest data breach ever recorded” and estimated 178 trillion such broadcasts a year across the US and Europe, with 4,698 companies permitted by Google to receive bid data about people in the United States. The figures are its own estimates built from industry data, not an official count. The advertising industry says bid requests are governed by contracts and industry frameworks, increasingly omit personal identifiers, and let small publishers sell their space to a wide market.",
+     "source_label": "Irish Council for Civil Liberties, report on the scale of Real-Time Bidding data broadcasts, May 16, 2022",
+     "source_url": "https://www.iccl.ie/digital-data/iccl-report-on-the-scale-of-real-time-bidding-data-broadcasts-in-the-u-s-and-europe/",
+     "source_published": "2021",
+     "source_accessed": "2026-10-02",
+     "id": "times-a-day-a-person-s"
+    },
+    {
+     "label": "Lowest price researchers paid for data on a US service member",
+     "viz": "bar",
+     "wide": false,
+     "value": "0.12",
+     "unit": "$ a person",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Duke researchers bought identified data on US military personnel from brokers for $0.12 to $0.32 per service member, buying 4,951 to 15,000 records at a time.",
+     "detail": "The team contacted brokers from a US domain and from a .asia domain and bought datasets with names, home addresses, email addresses, phone numbers and, in some cases, health, financial and religious information about active-duty personnel, veterans and their families. The report found brokers’ checks on who their customers were inconsistent, and that brokers advertised military datasets for as little as $0.01 per person in larger purchases. Location data was available, but the team did not buy it. Such studies are cited by those who want data sales restricted on national-security as well as privacy grounds. A 2024 federal law, the Protecting Americans’ Data from Foreign Adversaries Act, bars brokers from selling sensitive data to entities controlled by China, Russia, Iran and North Korea; sales to buyers inside the United States are outside its reach.",
+     "source_label": "Sherman et al., Data Brokers and the Sale of Data on U.S. Military Personnel, Duke University, November 2023",
+     "source_url": "https://techpolicy.sanford.duke.edu/wp-content/uploads/2023/11/Sherman-et-al-2023-Data-Brokers-and-the-Sale-of-Data-on-US-Military-Personnel.pdf",
+     "source_published": "2023",
+     "source_accessed": "2026-10-02",
+     "id": "lowest-price-researchers-paid-for-data"
+    },
+    {
+     "label": "Meta’s estimate of what Apple’s tracking prompt would cost it",
+     "viz": "bar",
+     "wide": false,
+     "value": "10",
+     "unit": "$ billion",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Meta’s chief financial officer said Apple’s iOS privacy changes would be a headwind “on the order of $10 billion” to Meta’s 2022 revenue.",
+     "detail": "In April 2021 Apple began requiring apps to ask permission before tracking users across other companies’ apps and websites, a feature called App Tracking Transparency, and many users declined. David Wehner, then Meta’s finance chief, called the figure an estimate (“We can’t be precise on this”). Privacy advocates cite the episode as proof that, asked plainly, most people refuse tracking. Critics of Apple note that the change hurt rival advertising businesses while Apple’s own ad business, which uses data from its platform, grew. France’s Autorité de la concurrence fined Apple €150 million on March 31, 2025, finding that the way Apple implemented the prompt penalized smaller publishers in particular.",
+     "source_label": "Meta Platforms, fourth quarter 2021 earnings call transcript, February 2, 2022",
+     "source_url": "https://s21.q4cdn.com/399680738/files/doc_financials/2021/q4/Meta-Q4-2021-Earnings-Call-Transcript.pdf",
+     "source_published": "2022",
+     "source_accessed": "2026-10-02",
+     "id": "meta-s-estimate-of-what-apple"
+    },
+    {
+     "label": "US states with a comprehensive consumer privacy law",
+     "viz": "bar",
+     "wide": false,
+     "value": "24",
+     "unit": "states",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "By June 2026, 24 US states had enacted comprehensive consumer privacy laws, four of them in 2026; the United States has no comprehensive federal privacy law.",
+     "detail": "California was first, with the California Consumer Privacy Act of 2018, strengthened by a 2020 ballot measure that created the California Privacy Protection Agency. Most later laws follow a model Virginia adopted in 2021: rights to access, correct and delete personal data and to opt out of its sale and of targeted advertising, with stricter consent rules for sensitive data. Maryland’s 2024 law goes further, limiting collection to what is reasonably necessary for the service a person asked for. Alabama, Louisiana, Oklahoma and Vermont were the 2026 additions. Business groups say the patchwork imposes heavy compliance costs and want one federal standard that preempts the states; consumer groups want any federal law to be a floor that states can build on. Congress.gov records show that the House SECURE Data Act (H.R. 8413) and the Senate’s Consumer Data Privacy and Security Act (S. 4211), both introduced in 2026, had gone no further than introduction and, for the House bill, a subcommittee hearing.",
+     "source_label": "Husch Blackwell, Byte Back, US state privacy law landscape expands to 24 states, June 29, 2026",
+     "source_url": "https://www.bytebacklaw.com/2026/06/u-s-state-privacy-law-landscape-expands-to-24-states-what-the-latest-legislative-wave-means-for-businesses/",
+     "source_published": "2026",
+     "source_accessed": "2026-10-02",
+     "id": "us-states-with-a-comprehensive-consumer"
+    },
+    {
+     "label": "Fines under Europe’s General Data Protection Regulation",
+     "viz": "bar",
+     "wide": false,
+     "value": "7.1",
+     "unit": "€ billion",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "European data protection authorities have issued about €7.1 billion in GDPR fines since May 2018, about €1.2 billion of it in 2025.",
+     "detail": "The largest single fine remains the €1.2 billion that Ireland’s Data Protection Commission imposed on Meta in 2023 over transfers of Europeans’ data to the United States, followed by €530 million against TikTok in 2025 over transfers of European users’ data to China. Ireland’s regulator, which supervises most large US technology companies because their European headquarters are in Dublin, accounts for €4.04 billion of the total. DLA Piper, a law firm, compiles the figures from regulators’ announcements; it does not report how much has actually been paid, and many of the largest fines are under appeal. Privacy advocates read the totals as small beside the companies’ revenues and criticize slow cross-border enforcement; industry reads them as proof that Europe’s rules carry real penalties.",
+     "source_label": "DLA Piper, GDPR Fines and Data Breach Survey, January 2026",
+     "source_url": "https://www.dlapiper.com/en/insights/publications/2026/01/dla-piper-gdpr-fines-and-data-breach-survey-january-2026",
+     "source_published": "2025",
+     "source_accessed": "2026-10-02",
+     "id": "fines-under-europe-s-general-data"
+    },
+    {
+     "label": "Largest US privacy penalties against technology companies",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "$ billion",
+     "series": [
+      {
+       "label": "FTC v. Facebook, 2019",
+       "value": "5.0",
+       "highlight": true
+      },
+      {
+       "label": "Texas v. Meta, 2024",
+       "value": "1.4",
+       "highlight": false
+      },
+      {
+       "label": "Texas v. Google, 2025",
+       "value": "1.375",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The FTC’s $5 billion penalty against Facebook in 2019 remains the largest US privacy penalty; Texas has since announced settlements of $1.4 billion with Meta and $1.375 billion with Google.",
+     "detail": "The FTC’s 2019 order followed the Cambridge Analytica affair, in which Facebook said the information of up to 87 million people “may have been improperly shared” with a political consultancy (Facebook, April 4, 2018). Texas settled with Meta in July 2024 over capturing facial geometry from photos under the state’s biometric privacy law, to be paid over five years (Texas Tribune), and announced the Google settlement in May 2025 over location, incognito-mode and biometric data claims, which Google finalized in October 2025 (Texas Attorney General). None of the companies admitted wrongdoing. The list leaves out penalties for other harms, such as the August 2026 multistate settlement with Meta over young people’s mental health, which was not a data-privacy case.",
+     "source_label": "Federal Trade Commission, July 24, 2019; Texas Tribune, 2024; Texas Attorney General, 2025",
+     "source_url": "https://www.ftc.gov/news-events/news/press-releases/2019/07/ftc-imposes-5-billion-penalty-sweeping-new-privacy-restrictions-facebook",
+     "source_published": "2019, 2024 and 2025",
+     "source_accessed": "2026-10-02",
+     "id": "largest-us-privacy-penalties-against-technology"
+    },
+    {
+     "label": "Fall in recorded EU web traffic and revenue after the GDPR",
+     "viz": "bar",
+     "wide": false,
+     "value": "12",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Across 1,084 online firms, page views and revenue recorded from EU users fell about 12 percent after the GDPR’s enforcement deadline in May 2018.",
+     "detail": "The study uses data from Adobe’s website analytics platform and separates real losses from changes in what the platform could record once users declined tracking. A companion study by Johnson, Shriver and Goldberg (Management Science, 2023) of more than 27,000 top websites found their use of web technology vendors fell 15 percent for EU residents the week after enforcement, and that concentration in the vendor market rose 17 percent as sites kept the largest vendors, especially those owned by Google and Facebook; the overall effects faded by the end of 2018 but persisted for advertising vendors. These studies are central to the claim that privacy rules entrench the largest firms. Supporters of the GDPR answer that early effects reflect weak enforcement and transitional confusion, and that the law’s purpose was to cut data flows, not to keep website revenue constant.",
+     "source_label": "Goldberg, Johnson & Shriver, Regulating Privacy Online: An Economic Evaluation of the GDPR, AEJ: Economic Policy, 2024",
+     "source_url": "https://www.aeaweb.org/articles?id=10.1257%2Fpol.20210309",
+     "source_published": "2018",
+     "source_accessed": "2026-10-02",
+     "id": "fall-in-recorded-eu-web-traffic"
+    },
+    {
+     "label": "Time it would take to read the privacy policies of websites visited",
+     "viz": "bar",
+     "wide": false,
+     "value": "201",
+     "unit": "hours a year",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Carnegie Mellon researchers estimated in 2008 that reading the privacy policy of every website an American visits would take about 201 hours a year.",
+     "detail": "The estimate multiplies the typical length of privacy policies, reading speed and the number of unique websites the average US internet user visited in a year, then values the time at standard wage-based rates, putting the national cost at about $781 billion a year, more than the online advertising market at the time. It predates smartphones, apps and cookie banners, which have multiplied the notices people see, and no comparable official estimate has replaced it. It is the standard evidence for the claim that notice and consent cannot protect privacy because no one can read what they agree to. Supporters of consent-based rules answer that the remedy is shorter, standardized notices and default settings, not abandoning consent.",
+     "source_label": "McDonald & Cranor (Carnegie Mellon), The Cost of Reading Privacy Policies, 2008",
+     "source_url": "https://lorrie.cranor.org/pubs/readingPolicyCost-authorDraft.pdf",
+     "source_published": "2008",
+     "source_accessed": "2026-10-02",
+     "id": "time-it-would-take-to-read"
+    },
+    {
+     "label": "Android apps with tracking code linked to each company",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% of apps",
+     "series": [
+      {
+       "label": "Alphabet",
+       "value": "88.4",
+       "highlight": true
+      },
+      {
+       "label": "Facebook",
+       "value": "42.6",
+       "highlight": false
+      },
+      {
+       "label": "Twitter",
+       "value": "33.9",
+       "highlight": false
+      },
+      {
+       "label": "Verizon",
+       "value": "26.3",
+       "highlight": false
+      },
+      {
+       "label": "Microsoft",
+       "value": "22.8",
+       "highlight": false
+      },
+      {
+       "label": "Amazon",
+       "value": "17.9",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a 2017 study of 959,000 apps from the US and UK Google Play stores, 88.4 percent contained code that could send data to Alphabet-owned tracking services.",
+     "detail": "The Oxford researchers decompiled the apps, searched their code for the internet addresses of known tracking companies and grouped them by ultimate parent. The median app contained code for 10 tracker hosts belonging to 5 distinct companies, and 90.4 percent of apps included at least one; news and family apps had the most. A tracker in an app’s code shows that data could flow to a company, not how much did, and some of the code serves analytics, crash reporting or app infrastructure rather than advertising. The data predate Apple’s and Google’s later changes to app tracking permissions, so they describe the structure of the ecosystem more than its current state. Facebook’s share includes its advertising and analytics kits; Verizon’s reflects its then ownership of Yahoo’s and AOL’s ad businesses.",
+     "source_label": "Binns et al., Third Party Tracking in the Mobile Ecosystem, ACM Web Science 2018",
+     "source_url": "https://arxiv.org/abs/1804.03603",
+     "source_published": "2017",
+     "source_accessed": "2026-10-02",
+     "id": "android-apps-with-tracking-code-linked"
+    },
+    {
+     "label": "Extra clicks from ads matched to personality inferred from Facebook data",
+     "viz": "bar",
+     "wide": false,
+     "value": "40",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In experiments reaching over 3.5 million people, ads matched to inferred personality drew up to 40 percent more clicks and 50 percent more purchases; other researchers dispute the cause.",
+     "detail": "Matz, Kosinski, Nave and Stillwell targeted ads to people predicted to be extraverted or introverted, or open or closed to new experiences, using Facebook’s interest targeting as a stand-in for traits inferred from Likes, and compared them with mismatched or unpersonalized ads. It is the most cited real-world evidence that profiling can shift behavior and was widely discussed after the Cambridge Analytica affair. Eckles, Gordon and Johnson argued in PNAS in 2018 that the design could not separate the effect of psychological matching from Facebook’s own ad delivery, which shows each ad to the people most likely to click; the authors replied that this was unlikely to explain their results.",
+     "source_label": "Matz, Kosinski, Nave & Stillwell, Psychological targeting as an effective approach to digital mass persuasion, PNAS",
+     "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5715760/",
+     "source_published": "2017",
+     "source_accessed": "2026-10-02",
+     "id": "extra-clicks-from-ads-matched-to"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Is trading personal data for free services a fair bargain?",
+    "kind": "value",
+    "why": "Free search, email, maps and social media are worth a great deal to the people who use them. Whether the data they hand over is a fair price depends on whether they know the terms, could pay another way, and bear the costs themselves.",
+    "detail": "Those who call it a fair exchange say advertising has paid for free media for more than a century, from newspapers to broadcast television, and that data-driven ads make the same bargain more efficient. By people’s own valuations, search and email are worth far more to them than any platform earns from them. Relevant ads are more useful than random ones and let small businesses find customers they could never reach through mass advertising, and a paid internet would shut out the poor first. Anyone who objects can block ads, pay for a subscription or use a privacy-focused service, and most people do not. Those who call it exploitative say a bargain requires that both sides know the terms, and most people neither read nor understand them. The price is hidden and open-ended: data collected for ads can be resold to brokers, exposed in breaches or used to set prices. Much of it describes people who never agreed, such as contacts in an address book or non-users tracked across websites. And there is often no real alternative: when Meta offered Europeans a choice between tracking and a paid subscription, the European Data Protection Board said in 2024 that such a binary choice will in most cases not produce valid consent.",
+    "lean_label_a": "A fair trade",
+    "lean_label_b": "An unfair trade",
+    "id": "is-trading-personal-data-for-free"
+   },
+   {
+    "text": "Can individual consent meaningfully govern how companies use personal data?",
+    "kind": "empirical",
+    "why": "Nearly every privacy law rests on notice and choice. Whether people can really use that choice, or the number of decisions and the design of consent screens make it a formality, is partly measurable, and the evidence shifts with how the choice is offered.",
+    "detail": "Those who say consent can work point out that when a choice is put clearly and evenly, people use it: Apple’s single plain question about cross-app tracking was refused often enough that Meta expected a large revenue hit, and California’s one-stop deletion platform drew hundreds of thousands of sign-ups in its first months. On this view, consent has failed because of bad design, such as walls of legal text, pre-ticked boxes and manipulative banners, which regulators can outlaw. Opt-out signals set once in a browser, now required in many US states, and standardized consent that lasts for months, as the EU has proposed, can reduce the burden to a single setting, and abandoning consent would hand the decision to regulators who cannot know individual preferences. Those who call consent a fiction say the number of decisions is too large for anyone to make well: a typical app carries code from several tracking companies, and a single page load can send data to many bidders at once. When opting out is left to individuals, almost no one does it, even though most people tell surveyors they object to tracking. And one person’s consent cannot protect others, since data about one person reveals much about their family, friends and neighbors. Only limits on what may be collected at all, regardless of consent, would scale.",
+    "lean_label_a": "Consent can work",
+    "lean_label_b": "Consent can’t work",
+    "id": "can-individual-consent-meaningfully-govern-how"
+   },
+   {
+    "text": "How much does tracking people add to what advertising earns?",
+    "kind": "empirical",
+    "why": "If behavioral targeting earns much of the internet’s ad revenue, limiting it would cost publishers and users dearly; if untracked ads earn nearly as much, the trade-off is small. Estimates vary widely and often come from parties with a stake.",
+    "detail": "Those who say tracking pays for content cite randomized evidence: Google’s own experiment and independent academic studies both found large drops in what an ad fetches when tracking is switched off, and recorded revenue from EU users fell after the GDPR took effect. The cost, they argue, falls hardest on smaller and general-interest publishers, which cannot command premium prices for their content alone. Those who say tracking adds little answer that much of its value is captured by the intermediaries who sell it, not by the publishers who produce content. The largest estimate comes from a company that sells tracking-based advertising, and it measured a sudden switch in a market built around cookies, not what contextual ads would earn once advertisers had adjusted. Laub, Miller and Skiera found that a bare user identifier, not browsing history, supplies most of tracking’s value, so the most invasive data may add the least. And part of the money targeting moves, they say, is a transfer between advertisers competing for the same customers rather than new value created.",
+    "lean_label_a": "Adds a lot",
+    "lean_label_b": "Adds little",
+    "id": "how-much-does-tracking-people-add"
+   },
+   {
+    "text": "Should companies be allowed to sell personal data to third parties at all?",
+    "kind": "value",
+    "why": "Data brokers support fraud prevention, identity checks, credit, marketing and research, and the FTC has alleged that some sell location histories revealing clinic visits. Most US law allows the trade subject to opt-outs; some advocates want it banned.",
+    "detail": "Those who would regulate the trade say much of what brokers do is useful and some of it essential: verifying identities to stop fraud, helping lenders reach people without credit histories, measuring the reach of advertising, locating heirs and debtors. A ban would fall on these uses along with abusive ones. The better answer, they argue, is targeted rules: registration and deletion rights, bans on selling sensitive data such as precise location and health information, and enforcement against bad actors, as the FTC did in 2024 when it barred two brokers from selling data tied to sensitive places. The industry’s trade groups support opt-out rights over sale and targeted advertising as a national standard. Those who would end the trade say opt-outs do not work against companies people have never heard of, and that its harms are built in: researchers have bought service members’ records for pennies with inconsistent checks on the buyer, and a state registry reaches only the brokers that register. Consumer Reports wants federal law to prohibit selling sensitive personal information outright, and others want to end the sale of personal data entirely. Information gathered for one purpose, they argue, should not be resold for another.",
+    "lean_label_a": "Regulate the trade",
+    "lean_label_b": "End the trade",
+    "id": "should-companies-be-allowed-to-sell"
+   },
+   {
+    "text": "Is the deeper problem the collection of personal data or the market power of the firms that collect it?",
+    "kind": "empirical",
+    "why": "The same few companies dominate both data collection and digital advertising, so it is hard to tell which causes which. The answer decides whether privacy law or competition law is the main remedy, and the two can pull against each other.",
+    "detail": "Those who see collection as the root note that smaller companies collect and sell data as aggressively as large ones, and that some of the worst practices belong to data brokers most people have never heard of. Breaking up Google or Meta would produce several smaller companies with the same business model and the same incentive to extract as much data as possible, and competition can even make matters worse as firms fight for the same advertisers by offering ever more precise targeting. Only rules that limit collection and use, applied to every firm, address the incentive itself. Those who see market power as the root say people tolerate invasive terms because they have nowhere else to go: no one can take their friends and history to another social network, so firms face little pressure to offer better terms. Privacy rules with fixed compliance costs, they add, favor the largest firms, as the shift toward Google- and Facebook-owned vendors after the GDPR suggested. Breakups, interoperability and limits on pooling data would let users leave services that abuse them, and make privacy something firms compete to offer.",
+    "lean_label_a": "Data collection",
+    "lean_label_b": "Market power",
+    "id": "is-the-deeper-problem-the-collection"
+   },
+   {
+    "text": "Should personal data be property that people can own and sell?",
+    "kind": "value",
+    "why": "Ownership sounds like the natural answer to whose data it is. Critics note that data about one person is also about others and is created jointly with the services that record it, and fear a price would turn a right into a commodity.",
+    "detail": "Those who want ownership say people produce the raw material of an industry worth hundreds of billions of dollars and get no share of it beyond free services whose terms they never negotiated. Property rights would let them license their data on their own terms, revoke the license and be paid. Individually the sums may be small, but organized through coalitions that bargain the way unions do, people would have real leverage, and rules that only let people say no leave companies with all the value from those who say yes. Those who want data protected as a right, not sold, say a price would legitimize the trade it is meant to fix. Cameron Kerry and John Morris of the Brookings Institution wrote in 2019 that “it’s not your data; it’s not their data either,” and that treating it as property “may induce people to trade away their privacy rights for very little value.” Any dividend would be a few dollars a month, enough to buy consent but not to cover its risks, and those with the least money would sell the most. Shoshana Zuboff goes further: “Every argument that begins with ‘data’ is an argument that we have already lost.” European law treats data protection as a fundamental right that cannot be signed away.",
+    "lean_label_a": "Make it property",
+    "lean_label_b": "Keep it a right",
+    "id": "should-personal-data-be-property-that"
+   },
+   {
+    "text": "Does data-driven targeting manipulate people, or does it mostly fail to persuade them?",
+    "kind": "empirical",
+    "why": "Shoshana Zuboff’s account holds that companies use data not only to predict behavior but to shape it. Others, including some fierce critics of the model, say its persuasive power is mostly a sales pitch, and good evidence is hard to get outside the platforms.",
+    "detail": "Those who see manipulation say platforms continually test what people see and when, and optimize for engagement and purchases with a precision no traditional advertiser had. Systems that learn which emotional states make a person likely to buy, or which messages keep them scrolling, change behavior at a scale where small individual effects add up to large social ones. Zuboff told Congress in 2022 that these are “commodity markets in human futures.” Those who see the power as overrated say most measured effects of targeted advertising are small, and many claims of manipulation come from companies selling targeting or from consultancies such as Cambridge Analytica, whose own effectiveness was never shown. Economists using Facebook’s own large randomized experiments found that the methods advertisers commonly use to measure ads often overstate their effect, because they count people who would have bought anyway (Gordon, Zettelmeyer and colleagues, Marketing Science, 2019). Cory Doctorow argued in How to Destroy Surveillance Capitalism (2020) that crediting the companies with mind control repeats their own pitch to advertisers. On this view the harms of commercial surveillance are real but come from breaches, discrimination, stalking, pricing and concentrated power, not irresistible persuasion.",
+    "lean_label_a": "Shapes behavior",
+    "lean_label_b": "Persuades little",
+    "id": "does-data-driven-targeting-manipulate-people"
+   },
+   {
+    "text": "Should rules on personal data be loosened to help companies compete in artificial intelligence?",
+    "kind": "value",
+    "why": "AI models train on vast amounts of data about people, and governments in Europe and the US are weighing privacy rules against the fear of falling behind. A 2025 European proposal would ease the GDPR for AI; critics say it would weaken core protections.",
+    "detail": "Those who would loosen the rules say European companies spend heavily complying with rules written before modern AI, while competitors in the United States and China train models freely. The European Commission’s November 2025 Digital Omnibus proposal holds that pseudonymized data should not count as personal data for a company with no means to re-identify anyone, and that training AI can be a legitimate interest, under conditions, without each person’s consent. Consent rules designed for advertising, they argue, make little sense for a model that learns statistical patterns rather than profiling individuals, and clearer, lighter rules would bring investment while harmful uses of AI are policed directly. Those who would hold the line say the companies that built the advertising model are now feeding the same data into AI. Narrowing the definition of personal data would let firms treat profiling data as anonymous whenever they claim not to hold the key, a claim that is hard to verify. In February 2026 the European Data Protection Board and the European Data Protection Supervisor “strongly” urged legislators not to adopt that change, saying it would contradict EU case law and substantially narrow protection, and the proposal drew more than 1,750 amendments in Parliament. Rights, they argue, are hardest to restore once given up.",
+    "lean_label_a": "Ease the rules",
+    "lean_label_b": "Keep the rules",
+    "id": "should-rules-on-personal-data-be"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Protect personal data as a right in comprehensive law",
+    "color_key": "green",
+    "steelman": "Information about you is part of who you are. Law that applies to everyone, enforced by a regulator with real fines, should decide how it is used, not terms written by the company that profits.",
+    "detail": "The model already exists in the world’s privacy laws. People should have the right to know what is collected about them, to see it, correct it and delete it, to refuse its sale and its use for profiling, and to have sensitive information such as health, location and biometrics used only with their explicit permission, with an independent regulator to enforce it. This does not abolish advertising or data-driven services; it makes them answer to the people whose data they use. Consent alone has been abused through dark patterns and take-it-or-leave-it choices, so the best laws pair it with limits on what can be collected in the first place, as Maryland’s 2024 law does. Americans want this: 72 percent told Pew in 2023 that companies’ use of personal information needs more regulation. States have acted because Congress has not, and a national law should be a floor that builds on their protections. The House’s SECURE Data Act would instead, in the words of Consumer Reports, “replace several stronger state and local laws with a weak federal framework riddled with loopholes.”\n\nIndustry says privacy rules impose large costs and entrench the biggest firms. The GDPR’s early effects were real but partial, and they faded within months except in advertising; the answer to costs that fall hardest on small firms is clear, uniform rules and stronger enforcement against the largest, not fewer rights. Advocates of a ban say rights-based laws merely legitimize surveillance. That is why our stronger wing insists on data minimization and bans on selling sensitive data. A comprehensive law can include those limits, and unlike an outright ban on targeted advertising, it can pass and hold up in court.",
+    "proponents": "European Data Protection Board; Consumer Reports; noyb; European Data Protection Supervisor; Cameron Kerry; Frank Pallone",
+    "id": "protect-personal-data-as-a-right"
+   },
+   {
+    "name": "Keep ad-funded services under one light national standard",
+    "color_key": "blue",
+    "steelman": "Advertising keeps search, maps, email and news free for everyone, rich or poor. Punish real harms hard, but don’t treat every relevant ad as suspect, and write one rule for all fifty states.",
+    "detail": "The internet most people use every day is free because advertising pays for it, and advertising pays for it because it works better when it reaches people likely to care. That arrangement gives a student in a poor country the same search engine, maps and email as a billionaire, and lets a small business find customers without a national advertising budget. Andrew Ferguson, now chairman of the FTC, wrote in 2024 that targeted advertising “makes much of the internet possible.” Real harms such as data breaches, fraud, stalking and sales to hostile governments should be punished hard. But rules should target those harms, not the ordinary use of data to show relevant ads, and they should be the same in every state. A patchwork of state laws burdens every business that serves the whole country, and Europe’s consent-heavy model has brought cookie banners, lower publisher revenue and more concentrated markets without making Europeans feel more in control. The Information Technology and Innovation Foundation estimated in 2019 that a GDPR-style federal law would cost the US economy about $122 billion a year, against about $6.5 billion for a narrower one.\n\nCritics say people never really agreed to the bargain. Worry in surveys is real, but it is not the same as preferring to pay, and when people choose with their own money or time, the great majority keep using free services and few use the opt-outs already on offer. We support clear notices, opt-out rights and strict rules on sensitive data and on brokers who sell to bad actors. What we reject is a regime that treats every use of data as suspect, because its costs fall on publishers, small businesses and users, while the largest firms, rich in their own first-party data, adapt most easily.",
+    "proponents": "Interactive Advertising Bureau; Mark Zuckerberg; Andrew Ferguson; Information Technology and Innovation Foundation; NetChoice; US Chamber of Commerce; John Joyce; Brett Guthrie",
+    "id": "keep-ad-funded-services-under-one"
+   },
+   {
+    "name": "Ban surveillance ads and the trade in behavioral data",
+    "color_key": "amber",
+    "steelman": "Tracking people to target ads has its harms built into its design, and no consent form can fix that. Ban it, and let ads follow the content on the page, as they did for a century.",
+    "detail": "To target ads at individuals, companies must track them across the web and the physical world, assemble profiles of their habits, health, politics and weaknesses, and broadcast fragments of those profiles to thousands of companies in every ad auction, data that then leaks to brokers, scammers, stalkers and foreign governments. Consent cannot fix this: no one can read every policy or follow where their data goes, and profiles of people who say yes reveal much about those who say no. Rights that each person must exercise one company at a time leave the burden on the weakest party. The alternative already exists. Contextual advertising, which places ads next to relevant content, does not require knowing who is reading, and the Dutch public broadcaster NPO dropped advertising cookies in 2020 after finding that untracked ads earned as much or more (Wired, summarized by Nieman Lab). Democracies ban markets that are inherently dangerous; as Shoshana Zuboff told Congress, “we can outlaw markets that trade in human futures,” as they outlawed markets in human organs.\n\nWe are told a ban would gut the revenue that keeps the internet free. The large loss estimates measure an abrupt switch inside a market built for tracking, often by firms that sell tracking. Once every advertiser faces the same rules, money now spent on profiling goes to context and audiences instead, because companies still need to sell their products. The charge of paternalism assumes a meaningful consent that does not exist at this scale. Some of us, like the Norwegian Consumer Council and European consumer groups, would still allow ads based on interests people state themselves; others would outlaw the secret extraction of behavioral data whatever its use.",
+    "proponents": "Norwegian Consumer Council; Shoshana Zuboff; Irish Council for Civil Liberties; Electronic Privacy Information Center; BEUC; Anna Eshoo; Jan Schakowsky; Cory Booker",
+    "id": "ban-surveillance-ads-and-the-trade"
+   },
+   {
+    "name": "Break the big platforms’ hold on data with competition law",
+    "color_key": "rust",
+    "steelman": "People accept invasive data terms because they have nowhere else to go. Restore competition through breakups, interoperability and limits on pooling data, and firms will compete on privacy.",
+    "detail": "Nobody can take their friends, photos and messages to another social network, and nobody can easily avoid Google’s search or ad technology, so no company has to compete on privacy. The dominance feeds itself: the more data a firm controls, the better it targets ads, and the more advertisers and money it draws to buy rivals. Alphabet, Meta and Amazon take 57.6 percent of the world’s advertising market outside China. Germany’s competition authority saw this in 2019, when it barred Facebook from combining users’ data across services without voluntary consent; its president, Andreas Mundt, called data “the essential factor for establishing the company’s dominant position.” A US court found in 2025 that Google illegally monopolized key ad technology markets, and under the EU’s Digital Markets Act Meta was fined €200 million and agreed to offer Europeans a less personalized free option. Privacy rules alone can make things worse, because the largest firms absorb compliance costs most easily. The cure is to break up integrated ad businesses, ban self-preferencing, require interoperability so people can leave, and stop dominant firms from pooling data across everything they own.\n\nThe ban camp says breakups would only create many smaller surveillance companies with the same business model. But the worst excesses come from scale and lock-in: a small firm that abuses its users loses them, and real exit options give privacy-respecting services, like encrypted messaging and private search, room to grow. We do not oppose privacy rules; they work only when users can walk away. The industry says scale is what makes free services possible, which assumes the platforms’ size reflects efficiency rather than acquisitions and exclusionary conduct that courts have found unlawful.",
+    "proponents": "Bundeskartellamt; Electronic Frontier Foundation; Cory Doctorow; Open Markets Institute; Lina Khan",
+    "id": "break-the-big-platforms-hold-on"
+   },
+   {
+    "name": "Let people own their data and share in its value",
+    "color_key": "purple",
+    "steelman": "People produce the raw material of the digital economy every day and are the only party not paid for it. Make data theirs to license, and let them bargain together over its price.",
+    "detail": "The digital economy runs on what people produce every day: their clicks, searches, posts, photos, movements and conversations. Privacy laws give people the right to say no, but most people want the services and say yes, and then the companies keep all the value. Recognizing data as property, or as a form of labor, changes the bargain: people could license their data for specific uses, revoke the license and be paid, and companies would have to compete for access instead of taking it by default. As Senator John Kennedy put it when he introduced the Own Your Own Data Act in 2019, “You create that content. You should own it.” Alone, a person has little leverage, which is why RadicalxChange proposes data coalitions that would “collectively bargain with tech companies on behalf of individuals,” the way unions bargain for workers and collective licensing bodies collect for musicians. This respects people’s choices instead of banning what many of them want. And as AI turns human-generated data into the economy’s most valuable input, leaving its producers with nothing is both unjust and politically unsustainable.\n\nPrivacy advocates warn that a price would legitimize the trade and lead poor people to sell their privacy for pennies. People already give their data away for nothing, so a price is an improvement, and collective bargaining, not individual sales, is what prevents a race to the bottom. Ownership can sit alongside inalienable protections for sensitive data and bans on harmful uses. Because what one person shares also describes others, our stronger proposals vest bargaining in groups. Some of us favor individual property rights; others, like Jaron Lanier and Glen Weyl, favor data unions; still others prefer a levy on data use paid out to everyone as a dividend.",
+    "proponents": "RadicalxChange Foundation; John Kennedy; Andrew Yang; Jaron Lanier; Glen Weyl",
+    "id": "let-people-own-their-data-and"
+   }
+  ],
+  "crux": {
+   "lead": "Should the use of personal data be governed by people’s own choices, or by limits no one can sign away?",
+   "lead_highlight": "people’s own choices, or by limits no one can sign away",
+   "subtitle": "Nearly everyone condemns hidden data sales and careless leaks. The split is whether choice, competition or payment can make the data business answer to the people it describes, or whether the harm lies in collecting the data at all.",
+   "empirical": "Some of this can be measured: how much tracking adds to what ads earn once advertisers adjust to limits, and how much of that reaches publishers rather than middlemen; whether people use a clear, easy choice when offered one; how often data gathered for ads ends up in stalking, fraud, discrimination or leaks; whether targeted ads sway behavior much more than untargeted ones; and whether new rules cut collection or shift it to the largest firms.",
+   "values": "No data settles whether privacy is a good each person may trade for convenience or money, or one a society must protect even from people’s own choices, on the grounds that data about one person reveals others and that the bargain is struck between unequal parties. Nor can evidence say how to weigh free services, and the advertisers and publishers who rely on them, against harms to people who never chose to be tracked."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "See what Americans think about data privacy",
+    "description": "Pew Research Center’s 2023 survey report on how Americans view data privacy: concern, understanding, control, privacy policies and support for regulation, broken down by age and party.",
+    "url": "https://www.pewresearch.org/internet/2023/10/18/how-americans-view-data-privacy/",
+    "for_position": null,
+    "id": "see-what-americans-think-about-data"
+   },
+   {
+    "kind": "local",
+    "title": "Ask every registered data broker to delete your information (California)",
+    "description": "California residents can use the state’s Delete Request and Opt-out Platform to send one deletion request that every data broker registered with the state must now process.",
+    "url": "https://privacy.ca.gov/drop/",
+    "for_position": "Protect personal data as a right in comprehensive law",
+    "id": "ask-every-registered-data-broker-to"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the case for a lighter national privacy standard",
+    "description": "The Information Technology and Innovation Foundation’s 2019 report estimates the costs of a GDPR-style federal privacy law and proposes a narrower national framework that preempts state laws.",
+    "url": "https://itif.org/publications/2019/08/05/costs-unnecessarily-stringent-federal-data-privacy-law/",
+    "for_position": "Keep ad-funded services under one light national standard",
+    "id": "read-the-case-for-a-lighter"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the case for banning surveillance-based advertising",
+    "description": "The Norwegian Consumer Council’s 2021 report Time to Ban Surveillance-Based Advertising sets out the harms it attributes to tracking-based ads and describes alternatives such as contextual advertising.",
+    "url": "https://storage02.forbrukerradet.no/media/2021/06/20210622-final-report-time-to-ban-surveillance-based-advertising.pdf",
+    "for_position": "Ban surveillance ads and the trade in behavioral data",
+    "id": "read-the-case-for-banning-surveillance"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the case for competition as a privacy remedy",
+    "description": "The Electronic Frontier Foundation’s white paper Privacy Without Monopoly argues that interoperability and competition would give users power over their data, and sets out privacy safeguards to go with them.",
+    "url": "https://www.eff.org/wp/interoperability-and-privacy",
+    "for_position": "Break the big platforms’ hold on data with competition law",
+    "id": "read-the-case-for-competition-as"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the proposal for data coalitions that bargain for pay",
+    "description": "RadicalxChange’s proposed Data Freedom Act would create collective “data coalitions” to negotiate the terms and price of companies’ use of their members’ data.",
+    "url": "https://www.radicalxchange.org/projects/the-data-freedom-act/",
+    "for_position": "Let people own their data and share in its value",
+    "id": "read-the-proposal-for-data-coalitions"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read Congress’s researchers on federal privacy law and preemption",
+    "description": "A Congressional Research Service report from August 2025 explains the patchwork of federal and state privacy laws and the choice Congress faces over whether a national law should override the states.",
+    "url": "https://www.everycrsreport.com/reports/R48667.html",
+    "for_position": null,
+    "id": "read-congress-s-researchers-on-federal"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Follow the EU’s proposed changes to the GDPR",
+    "description": "The European Parliament’s Legislative Train page tracks the Digital Omnibus, the Commission’s proposal to amend the GDPR’s definition of personal data, AI training rules and cookie consent.",
+    "url": "https://www.europarl.europa.eu/legislative-train/theme-a-new-plan-for-europe-s-sustainable-prosperity-and-competitiveness/file-digital-package",
+    "for_position": null,
+    "id": "follow-the-eu-s-proposed-changes"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Use the advertising industry’s own opt-out tools",
+    "description": "YourAdChoices, run by the Digital Advertising Alliance, explains interest-based advertising and lets you opt out of it from participating companies, the self-regulatory model the industry offers instead of stricter law.",
+    "url": "https://youradchoices.com/",
+    "for_position": "Keep ad-funded services under one light national standard",
+    "id": "use-the-advertising-industry-s-own"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Install a tracker blocker",
+    "description": "Privacy Badger, a free browser extension from the Electronic Frontier Foundation, blocks third-party trackers it observes following you across websites.",
+    "url": "https://privacybadger.org/",
+    "for_position": "Ban surveillance ads and the trade in behavioral data",
+    "id": "install-a-tracker-blocker"
+   }
+  ]
+ },
+ "icon": "database",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: a large smartphone as the dominant focal mass, standing upright, outlined and softly filled, its screen showing a simple feed with one plain advertisement card marked only by a small shopping-bag shape; a medium server cabinet with three stacked drawers and small round lights stands to the right, partly behind the phone; one long curved stream of small round data dots flows from the phone's screen in a gentle arc across the frame into the server; a small cursor arrow and a small location pin float near the dots; everything sits on a low rounded mound, outlined and softly filled; everything flat, no drop shadow.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #2f8f86, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: people, hands, faces, eyes, eyeballs, text, letters, numbers, code, binary digits, logos, brand marks, dollar signs, coins, money bags, cookies, fishhooks, puppet strings, surveillance cameras, magnifying glasses, padlocks, broken locks, chains, cages, shields, skulls, warning triangles, exclamation marks, red marks, octopus, tentacles, vacuum cleaners, question marks."
 }

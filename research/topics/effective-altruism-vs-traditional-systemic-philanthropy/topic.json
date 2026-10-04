@@ -1,11 +1,13 @@
 {
  "slug": "effective-altruism-vs-traditional-systemic-philanthropy",
  "title": "Effective Altruism",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-10-03T04:36:39+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "How much morality demands for distant strangers, and how to give well: cost-effectiveness against systemic change and relationship-based giving.",
+ "icon": "hand-heart",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: A large glass donation jar half full of coins as the dominant focal mass in the foreground, two coins falling into its slot. Behind and overlapping it, a small village of three simple houses with a schoolhouse and a hand water pump on a rounded hill. A winding road runs from the jar across the rolling ground to the village and on to a distant second hill with a tiny clinic building under a curving horizon. A mosquito net hung over a small cot sits beside the pump, small scale.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #b8653f, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: hearts, hands, people, faces, dollar or currency signs, text or numbers, scales of justice, charts or graphs, protest signs or banners, money bags, government buildings, trophies, a frame or border, a second color",
  "primary_category": "ethics",
  "categories": [
   "society"
@@ -14,5 +16,705 @@
   "what-we-owe-future-generations",
   "economic-inequality",
   "moral-status-of-animals"
- ]
+ ],
+ "content": {
+  "overview": {
+   "summary": "How much the well-off owe strangers in need, and how to give: where evidence says it helps most, close to home, or toward changing systems.",
+   "scope_covered": "The duty to give and how to choose where it goes: cost-effectiveness, local and religious giving, funding systemic change, trust-based grantmaking, and the case against big philanthropy.",
+   "scope_excluded": "The case for prioritizing the far future and AI risk, the moral status of animals, and taxing the very rich, each on its own page; touched here only where they bear on how to give.",
+   "why_now": "In September 2026 effective altruism became a target of the Trump administration: a Pentagon technology account posted an image of the president with the slogan “Americanism, Not Effective Altruism!” in a campaign against calls to slow AI development.",
+   "why_now_source_label": "Semafor",
+   "why_now_source_url": "https://www.semafor.com/article/09/17/2026/behind-the-trump-administrations-pro-ai-meme-campaign"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "Estimated cost to save a life through GiveWell’s top charities",
+     "viz": "bar",
+     "wide": false,
+     "value": "3,000–5,500",
+     "unit": "$ per life",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "GiveWell’s models put the average cost of saving a life through its top charities at $3,000 to $5,500; critics say such figures rest on shaky assumptions.",
+     "detail": "GiveWell, a charity evaluator founded in 2007, recommends four top charities: seasonal malaria medicine for children, insecticide-treated bed nets, vitamin A supplements, and cash incentives for childhood vaccination. Its worked example is a 2024 grant to Malaria Consortium in Nigeria, where about $3,000 is estimated to save one life. GiveWell warns that the same program can vary widely in cost-effectiveness from place to place and that costs are expected to rise over time. The estimate counts deaths averted, mostly of young children, and leaves out other benefits. Supporters treat it as the best available answer to what a donation can do; the philosopher Leif Wenar (Wired, 2024) argues that such figures rest on long chains of uncertain assumptions and leave out harms and side effects that are hard to measure.",
+     "source_label": "GiveWell, How Much Does It Cost to Save a Life?",
+     "source_url": "https://www.givewell.org/how-much-does-it-cost-to-save-a-life",
+     "source_published": "2024",
+     "source_accessed": "2026-10-02",
+     "id": "estimated-cost-to-save-a-life"
+    },
+    {
+     "label": "US charitable giving by type of recipient, 2025",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "$ billion",
+     "series": [
+      {
+       "label": "Religion",
+       "value": "151.58",
+       "highlight": false
+      },
+      {
+       "label": "Human services",
+       "value": "99.50",
+       "highlight": false
+      },
+      {
+       "label": "Education",
+       "value": "92.01",
+       "highlight": false
+      },
+      {
+       "label": "Gifts to foundations",
+       "value": "79.05",
+       "highlight": false
+      },
+      {
+       "label": "Public-society benefit",
+       "value": "72.06",
+       "highlight": false
+      },
+      {
+       "label": "Health",
+       "value": "61.43",
+       "highlight": false
+      },
+      {
+       "label": "International affairs",
+       "value": "33.02",
+       "highlight": true
+      },
+      {
+       "label": "Arts & culture",
+       "value": "27.31",
+       "highlight": false
+      },
+      {
+       "label": "Environment & animals",
+       "value": "24.57",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Americans gave an estimated $617.20 billion in 2025, the first year above $600 billion; religion received the most, and international affairs $33.02 billion, about 5 percent.",
+     "detail": "Giving USA, produced by the Giving USA Foundation with Indiana University’s Lilly Family School of Philanthropy, is the standard annual estimate of US giving. Total giving rose 5.7 percent in current dollars and 3.0 percent after inflation. Individuals gave $394.2 billion, foundations $117.15 billion, bequests $62.19 billion and corporations $43.67 billion. Religion received about a quarter of the total. The international affairs category covers development and relief, peace and security, foreign affairs and exchange organizations, so it is broader than aid to the poorest people abroad. Effective altruists read the pattern as evidence that giving follows attachment rather than impact; defenders of local and religious giving read it as an expression of community membership, not a market for outcomes.",
+     "source_label": "Giving USA 2026, via Indiana University Lilly Family School of Philanthropy",
+     "source_url": "https://philanthropy.indianapolis.iu.edu/news-events/news/_news/2026/giving-usa-report-2026.html",
+     "source_published": "2025",
+     "source_accessed": "2026-10-02",
+     "id": "us-charitable-giving-by-type-of"
+    },
+    {
+     "label": "How much more cost-effective experts think the best global poverty charity is than the average one",
+     "viz": "bar",
+     "wide": false,
+     "value": "100",
+     "unit": "times",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Asked how much more effective the best charity helping the global poor is than an average one, 45 experts’ median answer was 100 times and lay people’s 1.5; skeptics doubt such ratios.",
+     "detail": "The study, by Lucius Caviola and colleagues, asked samples of people to estimate the ratio between the cost-effectiveness of the most effective charity and the average one among those helping the world’s poor. The experts worked in global health, development economics and charity evaluation; effective altruists put the factor at about 50. In a later experiment with 423 US participants, telling people the ratio was 100 raised the share who gave a whole hypothetical $100 to the more effective charity to 55.6 percent, from 37 to 38 percent in the comparison conditions. Effective altruists read this as evidence that ordinary donors leave most of their potential impact unused because they do not realize how much charities differ. Skeptics of cost-effectiveness comparisons argue that the differences shrink, or become unknowable, once hard-to-measure effects and the work of political and community organizations are counted.",
+     "source_label": "Caviola and others, “Donors vastly underestimate differences in charities’ effectiveness” (2020)",
+     "source_url": "https://dlab.sauder.ubc.ca/sjdm/journal/20/200504/jdm200504.html",
+     "source_published": "2020",
+     "source_accessed": "2026-10-02",
+     "id": "how-much-more-cost-effective-experts"
+    },
+    {
+     "label": "Children who died before age five worldwide, 2024",
+     "viz": "bar",
+     "wide": false,
+     "value": "4.9",
+     "unit": "million",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "An estimated 4.9 million children died before their fifth birthday in 2024, 2.3 million of them newborns.",
+     "detail": "The UN Inter-agency Group for Child Mortality Estimation finds that under-five deaths have fallen by more than half since 2000, but that the pace of reduction has slowed by more than 60 percent since 2015. Sub-Saharan Africa accounted for 58 percent of the deaths and Southern Asia for 25 percent. Among children aged one month to five years, pneumonia, diarrhea and malaria remain leading causes, often worsened by malnutrition, and UNICEF says most of these deaths are preventable with proven, low-cost interventions. Effective altruists see here the scale of need behind the case for giving to global health. Those who favor systemic change argue that child survival has improved mainly through economic growth, public health systems and government programs rather than private charity.",
+     "source_label": "UN Inter-agency Group for Child Mortality Estimation, via UNICEF (March 18, 2026)",
+     "source_url": "https://www.unicef.org/press-releases/progress-reducing-child-deaths-slows-49-million-children-under-five-die-2024",
+     "source_published": "2024",
+     "source_accessed": "2026-10-02",
+     "id": "children-who-died-before-age-five"
+    },
+    {
+     "label": "Official development aid from OECD donor countries, 2025",
+     "viz": "bar",
+     "wide": false,
+     "value": "174.3",
+     "unit": "$ billion",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Government aid from members of the OECD’s Development Assistance Committee fell 23.1 percent in 2025 to $174.3 billion, the largest annual drop on record (preliminary figures).",
+     "detail": "Official development assistance is government aid to poorer countries. By the OECD’s preliminary count, as summarized by Focus 2030, it fell to 0.26 percent of donor countries’ combined gross national income, from 0.34 percent in 2024, against a long-standing UN target of 0.7 percent; 26 of 33 donor countries cut aid. The United States drove about three-quarters of the decline, its aid falling 56.9 percent after the dismantling of USAID, and humanitarian aid from donor countries fell 35.8 percent. Effective giving organizations report that donors increased gifts to fill gaps. Critics of private philanthropy reply that no plausible amount of charity can replace public aid: even after the cut, it was roughly 87 times the roughly $2 billion that Giving What We Can estimates the effective giving ecosystem moved in 2025.",
+     "source_label": "OECD, “International aid fell sharply in 2025, says OECD” (April 9, 2026)",
+     "source_url": "https://www.oecd.org/en/about/news/press-releases/2026/04/international-aid-fell-sharply-in-2025-says-oecd.html",
+     "source_published": "2025",
+     "source_accessed": "2026-10-02",
+     "id": "official-development-aid-from-oecd-donor"
+    },
+    {
+     "label": "Money directed by effective giving organizations, 2025",
+     "viz": "bar",
+     "wide": false,
+     "value": "~2",
+     "unit": "$ billion",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "By Giving What We Can’s own unaudited estimate, effective giving groups directed about $2 billion to high-impact charities in 2025, up from about $1.2 billion in 2024.",
+     "detail": "The estimate, written by a Giving What We Can staff member, adds up money moved by impact-focused evaluators and advisers, including Coefficient Giving, formerly Open Philanthropy (about $1 billion in 2025), GiveWell, Founders Pledge (about $180 million) and national groups such as Germany’s Effektiv Spenden. It counts about 86,000 donors in 2025, against about 69,000 in 2024. The organizations count money differently; GiveWell’s own report, for example, separates money raised from money directed. The total is about 0.3 percent of what Americans alone gave in 2025 (Giving USA), which supporters read as room to grow and critics as a sign of how marginal the movement’s philanthropy remains.",
+     "source_label": "Lucas Moore, Giving What We Can, “Updates on the effective giving ecosystem 2026,” EA Forum (July 28, 2026)",
+     "source_url": "https://forum.effectivealtruism.org/posts/T7CKswFYSgjePAwZh/updates-on-the-effective-giving-ecosystem-2026",
+     "source_published": "2025",
+     "source_accessed": "2026-10-02",
+     "id": "money-directed-by-effective-giving-organizations"
+    },
+    {
+     "label": "MacKenzie Scott’s giving by year",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "$ billion",
+     "series": [
+      {
+       "label": "2023",
+       "value": "2.1",
+       "highlight": false
+      },
+      {
+       "label": "2024",
+       "value": "2.6",
+       "highlight": false
+      },
+      {
+       "label": "2025",
+       "value": "7.1",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "MacKenzie Scott gave $7.1 billion in 2025, bringing her total since 2019 to $26.3 billion.",
+     "detail": "Scott, a novelist and the former wife of Amazon founder Jeff Bezos, gives through what she calls Yield Giving, whose site describes more than $26 billion distributed in more than 2,700 grants and defines “yield” as both “to increase” and “to give up control.” She makes large, unrestricted gifts, mostly to US organizations working on racial equity, economic mobility, education and community needs, chosen with research help but without applications, reporting requirements or metrics set by her. In a December 2025 essay she wrote that “any dollar amount is a vanishingly tiny fraction of the personal expressions of care being shared into communities.” She is the best-known practitioner of trust-based giving and, by scale and philosophy, the clearest contrast to choosing charities by comparing their cost-effectiveness.",
+     "source_label": "CBS News, “MacKenzie Scott donated $7.1 billion to nonprofits in 2025” (December 9, 2025)",
+     "source_url": "https://www.cbsnews.com/news/mackenzie-scott-donations-nonprofits-2025/",
+     "source_published": "2025",
+     "source_accessed": "2026-10-02",
+     "id": "mackenzie-scott-s-giving-by-year"
+    },
+    {
+     "label": "Federal revenue forgone through the US charitable deduction, fiscal 2025",
+     "viz": "bar",
+     "wide": false,
+     "value": "70.7",
+     "unit": "$ billion",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The Joint Committee on Taxation estimates that deductions for charitable gifts cost the federal government about $70.7 billion in fiscal 2025 and about $404 billion over 2025 to 2029.",
+     "detail": "A tax expenditure is revenue the government gives up through a deduction or credit; this one lets donors deduct gifts to charity, so taxpayers as a whole share the cost of every deductible gift. The figure sums the committee’s separate estimates for individual and corporate deductions for gifts to education, health and other purposes. The 2025 tax law known as the One Big Beautiful Bill Act changed the rules from 2026 (Tax Foundation): people who do not itemize may deduct up to $1,000 ($2,000 for married couples) in cash gifts, while itemizers may deduct only gifts above 0.5 percent of income, and top earners’ deductions are capped at a 35 percent benefit. Critics of philanthropic power, such as the Institute for Policy Studies, argue that the public pays for private choices it does not control; defenders of private giving argue that the deduction encourages giving that government could not do as well.",
+     "source_label": "Joint Committee on Taxation, Estimates of Federal Tax Expenditures for Fiscal Years 2025–2029, JCX-45-25",
+     "source_url": "https://www.jct.gov/getattachment/8c830c45-1680-4f7e-a649-2a0106f6b6e3/x-45-25.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-10-02",
+     "id": "federal-revenue-forgone-through-the-us"
+    },
+    {
+     "label": "Causes effective altruists rate a top priority",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "AI risks",
+       "value": "35",
+       "highlight": true
+      },
+      {
+       "label": "Global health & poverty",
+       "value": "30",
+       "highlight": false
+      },
+      {
+       "label": "Animal welfare",
+       "value": "21",
+       "highlight": false
+      },
+      {
+       "label": "Biosecurity",
+       "value": "15",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In the 2024 survey of the effective altruism community, 35 percent rated AI risks a top priority and 30 percent global health and poverty.",
+     "detail": "Rethink Priorities surveyed roughly 1,800 to 1,900 respondents per cause, asking how much each should be prioritized. About 70 percent rated AI risks or global health and poverty a top or near-top priority. Asked how they would divide resources, respondents split them roughly evenly: about 37 percent to near-term human causes, 35 percent to long-term causes and 24 percent to near-term animal causes. More engaged members leaned more toward AI risk and animal welfare. The movement many people know through bed nets is, among its most committed members, at least as focused on catastrophic risks from technology, a shift critics treat as drift and supporters as following the evidence about where the most good lies.",
+     "source_label": "Rethink Priorities, “EA Survey 2024: Cause prioritization,” EA Forum (December 4, 2025)",
+     "source_url": "https://forum.effectivealtruism.org/posts/CKwDgZGLipchAoxtN/ea-survey-2024-cause-prioritization",
+     "source_published": "2024",
+     "source_accessed": "2026-10-02",
+     "id": "causes-effective-altruists-rate-a-top"
+    },
+    {
+     "label": "People who have taken the Giving What We Can 10% Pledge",
+     "viz": "bar",
+     "wide": false,
+     "value": "11,278",
+     "unit": "pledgers",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "11,278 people in 119 countries have publicly pledged to give at least 10 percent of their income to the organizations they believe can most effectively use it.",
+     "detail": "Giving What We Can was founded in 2009 by the Oxford philosophers Toby Ord and William MacAskill. Its pledge is the movement’s most concrete answer to how much morality asks: a fixed, public, lifelong tenth, rather than Peter Singer’s more demanding principle of giving until it would cost something of comparable moral importance. Giving What We Can notes that a person earning about $65,000 a year after tax is in the top 1 percent of the world’s income distribution. Effective altruists read the count as the start of a norm; critics read it as a sign that the movement’s demands appeal to a narrow, mostly affluent and educated slice of people.",
+     "source_label": "Giving What We Can, The 10% Pledge",
+     "source_url": "https://www.givingwhatwecan.org/pledge",
+     "source_published": "2026",
+     "source_accessed": "2026-10-02",
+     "id": "people-who-have-taken-the-giving"
+    },
+    {
+     "label": "GiveWell money raised and directed, 2025 metrics year",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "$ million",
+     "series": [
+      {
+       "label": "Raised",
+       "value": "616",
+       "highlight": true
+      },
+      {
+       "label": "Directed",
+       "value": "427",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "GiveWell raised $616 million in its 2025 metrics year, 49 percent more than in 2024, and directed $427 million to programs in 32 countries.",
+     "detail": "GiveWell’s metrics year ran from February 1, 2025 to January 31, 2026. It estimates that the programs funded with the money it directed will save about 86,000 lives, a figure that is itself a model estimate. More than 35,000 donors gave, and about 95 percent of the money was given without restriction, leaving GiveWell to decide where it went. About $124 million, 29 percent of the funds directed, went to its four top charities; the rest went to other programs, including malnutrition treatment, iron fortification, syphilis screening and water treatment, many of them filling gaps left by US aid cuts. GiveWell expects its total grantmaking to approach or exceed $1 billion in 2026. Supporters see the growth as the model working at scale.",
+     "source_label": "GiveWell, “GiveWell’s 2025 Metrics and Impact” (August 31, 2026)",
+     "source_url": "https://blog.givewell.org/2026/08/31/givewells-2025-metrics-and-impact/",
+     "source_published": "2025",
+     "source_accessed": "2026-10-02",
+     "id": "givewell-money-raised-and-directed-2025"
+    },
+    {
+     "label": "MacKenzie Scott grantee leaders who say the gift strengthened their finances",
+     "viz": "radial",
+     "wide": false,
+     "value": "nearly 90",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Nearly 90 percent of nonprofit leaders who received a MacKenzie Scott gift and answered the survey said it moderately or significantly strengthened their organization’s finances.",
+     "detail": "The Center for Effective Philanthropy, a research group that studies foundation practice, followed Scott’s grantees for three years, combining surveys with tax-return data that compared them with similar organizations that received no gift. Fewer than 10 percent of respondents expected “a lot” of difficulty covering ongoing costs once the money was spent; recipients grew their investment assets relative to expenses while comparison organizations did not; and nearly 70 percent were collecting quantitative or qualitative information on results. Trust-based funders cite the study as evidence that unrestricted money given without strings works. Effective altruists answer that it measures organizational health, as reported by recipients, rather than outcomes per dollar for the people served.",
+     "source_label": "Center for Effective Philanthropy, study of MacKenzie Scott’s gifts (February 18, 2025)",
+     "source_url": "https://cep.org/blog/after-three-years-of-study-the-transformative-effect-of-mackenzie-scotts-big-gifts-are-clear/",
+     "source_published": "2025",
+     "source_accessed": "2026-10-02",
+     "id": "mackenzie-scott-grantee-leaders-who-say"
+    },
+    {
+     "label": "Malaria deaths worldwide",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "deaths",
+     "series": [
+      {
+       "label": "2015",
+       "value": "578,000",
+       "highlight": false
+      },
+      {
+       "label": "2023",
+       "value": "598,000",
+       "highlight": false
+      },
+      {
+       "label": "2024",
+       "value": "610,000",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Malaria killed an estimated 610,000 people in 2024, out of 282 million cases; 95 percent of the deaths were in the WHO African Region.",
+     "detail": "Two of GiveWell’s four top charities, the Against Malaria Foundation and Malaria Consortium, deliver malaria prevention (GiveWell). In the WHO African Region, 75 percent of malaria deaths are of children under five. The death rate per 100,000 people at risk fell from 14.9 in 2015 to 13.8 in 2024, but population growth pushed the number of deaths up. The WHO estimates that malaria control has averted 2.3 billion cases and 14 million deaths since 2000, and that malaria funding reached $3.9 billion in 2024, about 42 percent of the $9.3 billion its global strategy calls for by 2025. Effective altruists cite the funding gap as a reason to give to proven malaria programs now; advocates of public provision cite it as a gap that governments, not individual donors, must close.",
+     "source_label": "World Health Organization, World Malaria Report 2025, executive summary",
+     "source_url": "https://cdn.who.int/media/docs/default-source/malaria/world-malaria-reports/world-malaria-report-2025-executive-summary-eng.pdf?sfvrsn=154ea8d5_13",
+     "source_published": "2024",
+     "source_accessed": "2026-10-02",
+     "id": "malaria-deaths-worldwide"
+    },
+    {
+     "label": "Local economic multiplier of cash transfers in rural Kenya",
+     "viz": "bar",
+     "wide": false,
+     "value": "2.5",
+     "unit": "multiplier",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "One-time transfers of about $1,000 to more than 10,500 poor households in 653 randomized villages produced an estimated local multiplier of 2.5, with minimal price inflation.",
+     "detail": "The study, by Egger, Haushofer, Miguel, Niehaus and Walker, was run with the charity GiveDirectly. It found large gains in consumption and assets for recipients and positive spillovers to neighbors and local firms who received nothing. Cash lets the recipient, not the donor, decide what is needed, which appeals to those who favor trust and local knowledge; it is also among the most rigorously tested interventions in development, which appeals to effective altruists. GiveWell raised its estimate of GiveDirectly’s cost-effectiveness three- to fourfold in November 2024, mainly because of these spillovers, but still judged the programs it funds to be at least twice as cost-effective and does not currently fund GiveDirectly’s flagship program (GiveWell, 2024). The episode is cited both as evidence that estimates improve with evidence and as evidence of how much they can move.",
+     "source_label": "Egger, Haushofer, Miguel, Niehaus and Walker, “General Equilibrium Effects of Cash Transfers,” Econometrica, 2022",
+     "source_url": "https://www.econometricsociety.org/publications/econometrica/2022/11/01/General-Equilibrium-Effects-of-Cash-Transfers-Experimental-Evidence-From-Kenya",
+     "source_published": "2022",
+     "source_accessed": "2026-10-02",
+     "id": "local-economic-multiplier-of-cash-transfers"
+    },
+    {
+     "label": "People living in extreme poverty",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "million",
+     "series": [
+      {
+       "label": "1990",
+       "value": "~2,300",
+       "highlight": false
+      },
+      {
+       "label": "2025",
+       "value": "~831",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "About 831 million people, roughly one in ten worldwide, lived on less than $3.00 a day (2021 prices) in 2025, down from about 2.3 billion in 1990.",
+     "detail": "In June 2025 the World Bank raised its international extreme poverty line from $2.15 to $3.00 a day in 2021 purchasing-power-parity dollars, which added about 125 million people to the count; figures on the old line are not comparable. The Bank attributes the long decline mainly to “robust, broad-based economic growth in East Asia and South Asia,” and notes that poverty reduction has slowed in the last decade and is increasingly concentrated in Sub-Saharan Africa and in fragile and conflict-affected states. Those who favor systemic change read this as evidence that growth and good government, not aid, lifted most people out of poverty. Effective altruists answer that growth is slow and hard to buy, while a child’s life saved now is not.",
+     "source_label": "World Bank, Poverty & Inequality Update, October 2025",
+     "source_url": "https://thedocs.worldbank.org/en/doc/229ff18129687a785f08af7cfb28e5e1-0350012025/original/WBG-Poverty-and-Inequality-Update-Fall-2025.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-10-02",
+     "id": "people-living-in-extreme-poverty"
+    },
+    {
+     "label": "Share of the federal budget Americans think goes to foreign aid",
+     "viz": "radial",
+     "wide": false,
+     "value": "26",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "On average, US adults estimated that foreign aid makes up about 26 percent of the federal budget; KFF puts the actual share at roughly 1 percent.",
+     "detail": "KFF, a health policy research organization, has asked this question for years with similar results; the 2026 poll was fielded April 14 to 19. In the same poll, 45 percent said the United States should play a leading or major role in improving health in developing countries, down from 50 percent in February 2025 and the lowest level since 2016. The gap bears on how much rich societies already do for distant strangers: Singer and effective altruists argue that both governments and individuals give far less than people believe, while others hold that a nation’s first obligations are to its own citizens whatever the true share.",
+     "source_label": "KFF Health Tracking Poll: Public Views on Foreign Aid and Global Health Spending (May 11, 2026)",
+     "source_url": "https://www.kff.org/public-opinion/kff-health-tracking-poll-public-views-on-foreign-aid-and-global-health-spending/",
+     "source_published": "2026",
+     "source_accessed": "2026-10-02",
+     "id": "share-of-the-federal-budget-americans"
+    },
+    {
+     "label": "Development assistance for health",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "$ billion",
+     "series": [
+      {
+       "label": "2021 (pandemic peak)",
+       "value": "80.3",
+       "highlight": false
+      },
+      {
+       "label": "2024",
+       "value": "49.6",
+       "highlight": false
+      },
+      {
+       "label": "2025",
+       "value": "39.1",
+       "highlight": true
+      },
+      {
+       "label": "2030 (forecast)",
+       "value": "36.2",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Aid for health in low- and middle-income countries fell 21 percent from 2024 to 2025, to $39.1 billion in 2023 dollars, the lowest in about 15 years.",
+     "detail": "Development assistance for health counts money from governments, multilateral agencies and private foundations, including the Gates Foundation, that goes to health in poorer countries, measured in constant 2023 US dollars. The Institute for Health Metrics and Evaluation estimates that the US government cut its health aid by 67 percent, more than $9 billion, in 2025, followed by the United Kingdom, France and Germany, and forecasts a further decline by 2030. The 2021 peak reflected pandemic spending. These are the programs against malaria, HIV, tuberculosis and childhood diseases on which effective altruists concentrate their global health giving, and the cuts sharpen the dispute over whether private donors can or should fill the gap.",
+     "source_label": "Institute for Health Metrics and Evaluation, Financing Global Health 2025 (July 2025)",
+     "source_url": "https://www.healthdata.org/sites/default/files/2025-07/FGHReport_2025_2025.07.15_0.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-10-02",
+     "id": "development-assistance-for-health"
+    },
+    {
+     "label": "US adults who understand what effective altruism is",
+     "viz": "range",
+     "wide": false,
+     "value": "1–2",
+     "unit": "%",
+     "series": [],
+     "range_min": "0%",
+     "range_max": "12% know the name",
+     "note": "Although 12 percent of US adults picked “effective altruism” from a list of terms, only 1 to 2 percent showed a basic understanding of it, and fewer than 1 percent a clear one.",
+     "detail": "Rethink Priorities, a research organization connected to the movement, surveyed 4,890 US adults from July to September 2024. Among those with a clear understanding of effective altruism, 51 percent felt positive about it and 38 percent negative; among those unaware of it who were shown a definition, 64 percent were positive and 9 percent negative. Every respondent who mentioned FTX, the collapsed crypto exchange whose founder had been a major donor to the movement, expressed a negative view. The numbers suggest that most of the public meets effective altruism, if at all, through its controversies, while its basic idea is popular when described plainly.",
+     "source_label": "Rethink Priorities, “Pulse 2024: Awareness and perceptions of effective altruism,” EA Forum",
+     "source_url": "https://forum.effectivealtruism.org/posts/6xWt7uw3LhrdG45iE/pulse-2024-awareness-and-perceptions-of-effective-altruism",
+     "source_published": "2024",
+     "source_accessed": "2026-10-02",
+     "id": "us-adults-who-understand-what-effective"
+    },
+    {
+     "label": "US households that give to charity",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "2000",
+       "value": "~66",
+       "highlight": false
+      },
+      {
+       "label": "2018",
+       "value": "50.9",
+       "highlight": false
+      },
+      {
+       "label": "2020",
+       "value": "46.9",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The share of US households that gave to charity fell from about two-thirds in 2000 to 46.9 percent in 2020, while the average amount given by those who gave rose.",
+     "detail": "The Philanthropy Panel Study follows the same US households over time. Average giving among donor households rose from $2,792 before the pandemic to $3,116 in 2020, so total dollars have kept rising while the number of givers has fallen. An earlier 2021 release from the same school put the 2018 share at 49.6 percent; the 2024 release revises it to 50.9 percent. Defenders of community and religious giving tie the trend to the decline of congregations and local associations and argue that a culture of giving rests on those ties; effective altruists argue that a smaller base of more deliberate givers can still do more good if the money goes further.",
+     "source_label": "Indiana University Lilly Family School of Philanthropy, The Giving Environment (October 24, 2024)",
+     "source_url": "https://philanthropy.indianapolis.iu.edu/news-events/news/_news/2024/drop-in-share-of-americans-who-give-to-charity-accelerated-in-first-year-of-covid-19-even-as-average-amount-given-rose.html",
+     "source_published": "2020",
+     "source_accessed": "2026-10-02",
+     "id": "us-households-that-give-to-charity"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "How much does morality require well-off people to give to strangers in need?",
+    "kind": "value",
+    "why": "Almost everyone agrees that helping people in desperate need is good. The dispute is whether it is required, and how much: a serious daily duty for most people in rich countries, or a generous act no one can demand.",
+    "detail": "Peter Singer’s 1972 essay “Famine, Affluence, and Morality” holds that if we can prevent something very bad without sacrificing anything morally significant, we ought to. You would wade into a shallow pond to save a drowning child even if it ruined your clothes; a child dying of malaria far away is no less a child, and the fact that millions of others could also help does not shrink your share, any more than a crowd at the pond would. On this view the idea that charity is optional is a convenient habit, not a moral insight.\n\nThe other side holds that morality has to leave room for a life of one’s own: raising children, pursuing projects and keeping commitments that are not merely instruments for maximizing welfare. A principle that would condemn almost every decent person who has ever lived is, on this view, likely wrong. The pond is a single emergency in which one person is uniquely placed to help; global poverty is a lasting, structural condition shared among billions of potential helpers, and the duty to address it falls mainly on institutions and governments. Generosity is a virtue because it is freely given.",
+    "lean_label_a": "Give a great deal",
+    "lean_label_b": "Give what you choose",
+    "id": "how-much-does-morality-require-well"
+   },
+   {
+    "text": "Should people give first to their own family, community and country, or treat all strangers alike?",
+    "kind": "value",
+    "why": "Most giving goes to congregations, schools and local causes donors are tied to. The dispute is whether that is a bias a thoughtful giver should correct, or a legitimate expression of the ties that make a good life.",
+    "detail": "For the impartial side, where a person happens to be born is a matter of luck, and luck cannot make their suffering count for less. A dollar spent in a rich community already well served buys far less relief than the same dollar spent where children die of preventable disease. Duties to family are real, but they do not stretch to favoring a comfortable neighbor’s museum over a stranger’s child’s life, and impartiality is the core of the moral point of view.\n\nFor the other side, people learn to care through particular attachments, to family, neighbors, congregations and towns, and a giving culture built on those ties is what sustains civil society. Giving close to home draws on knowledge a distant donor lacks, answers to people the giver will see again, and builds habits of citizenship. On this view obligations of membership and reciprocity are moral facts rather than biases, and a world of purely impartial givers would be one in which no community could count on its own.",
+    "lean_label_a": "Treat all alike",
+    "lean_label_b": "Near comes first",
+    "id": "should-people-give-first-to-their"
+   },
+   {
+    "text": "Can cost-effectiveness estimates reliably tell donors which charities do the most good?",
+    "kind": "empirical",
+    "why": "Comparing the expected good per dollar of different programs is the core of the effective altruist method. Critics say the numbers miss harms and side effects and favor whatever is easiest to measure.",
+    "detail": "Supporters point out that the favored programs, such as bed nets, malaria medicine and vitamin A, are among the most studied in development, backed by randomized trials and decades of data. Evaluators publish their models line by line, revise them when evidence changes and discount uncertain benefits. An imperfect explicit estimate, they argue, beats giving by habit or sentiment, whose implicit numbers no one can check.\n\nSkeptics argue that spreadsheets lend false precision to deeply uncertain judgments. Results from one place do not reliably transfer to another; side effects, including aid’s political effects on the governments of poor countries, are real but hard to count; and outcomes such as dignity, political voice and strong local institutions drop out because they cannot be expressed as lives per dollar. The method, on this view, steers money toward narrow, measurable programs and away from slower work that often matters more.",
+    "lean_label_a": "Estimates guide well",
+    "lean_label_b": "Estimates mislead",
+    "id": "can-cost-effectiveness-estimates-reliably-tell"
+   },
+   {
+    "text": "Does funding political and systemic change do more good than funding proven direct help?",
+    "kind": "empirical",
+    "why": "Critics say charity treats the symptoms of poverty and leaves its causes in place. Effective altruists answer that most systemic bets fail and their payoffs are hard to verify. Which does more good per dollar is in principle testable, but rarely tested.",
+    "detail": "The case for systems holds that need persists because of how economies, governments, trade and tax rules are arranged, so a dollar that helps a movement win a minimum wage, a land reform or a public health system can outlast and outscale direct aid. Preferring what can be measured, on this view, blinds donors to organizing and policy change, where the largest gains are made.\n\nThe case for proven help holds that systemic change sounds larger but usually fails, and that when it succeeds no one can tell whether a given donation mattered. Many proposed changes are contested, so a donor who funds one side of a political fight may be doing harm by the lights of half the population. Proven programs save identifiable lives now, without waiting on a political battle. Effective altruists add that they already fund policy work where its expected value looks high, so the dispute, they say, is about evidence rather than ideology.",
+    "lean_label_a": "Change the system",
+    "lean_label_b": "Fund proven help",
+    "id": "does-funding-political-and-systemic-change"
+   },
+   {
+    "text": "Who decides how charitable money is used: donors judging by measured results, or the communities served?",
+    "kind": "value",
+    "why": "Effective altruism puts donors, or evaluators acting for them, in charge of choosing by measured results. Trust-based funders hold that those closest to a problem should decide. Cash transfers, which let recipients choose, draw support from both.",
+    "detail": "Those who favor evidence-led giving note that many well-loved programs have done nothing or done harm once tested, so a donor owes the people they want to help an effort to find out what works. Giving without evaluating, on this view, chooses comfort over results. Nor is it paternalistic when the evidence concerns what recipients themselves value, such as their children surviving and their incomes rising; GiveWell’s models draw on surveys of how recipients in poor countries weigh outcomes.\n\nThose who favor community control argue that funders far from a problem routinely misjudge it, that people living with a problem understand it best and answer to their neighbors in a way a distant donor does not, and that the gap in power between funders and recipients is itself a harm. On this view sharing that power produces better and more durable results than any outside measure of impact.",
+    "lean_label_a": "Donors decide",
+    "lean_label_b": "Communities decide",
+    "id": "who-should-decide-how-charitable-money"
+   },
+   {
+    "text": "Is large-scale private philanthropy a legitimate use of private wealth in a democracy?",
+    "kind": "value",
+    "why": "Most camps assume private giving is good and argue over how to do it. Another questions the premise: whether the very rich, helped by tax deductions, should be setting priorities in global health, education and politics at all.",
+    "detail": "Defenders say people have a right to give their own money as they see fit, and that a plural society gains when thousands of donors fund thousands of causes, including unpopular ones a government answering to majorities would never fund. Philanthropy can take risks, move fast and experiment in ways public budgets cannot, and many public programs began as private experiments. The realistic alternative, they add, is not a perfectly democratic government but one that may be captured, gridlocked or uninterested in foreigners, who cannot vote in it.\n\nCritics answer that when a handful of the very rich direct billions to their chosen causes, they shape public priorities without being elected or accountable, and do it with tax subsidies that make every taxpayer a silent co-funder. On this view the question of how the rich should give distracts from a better one: how much they should pay in taxes, so that governments answerable to voters can decide.",
+    "lean_label_a": "A legitimate choice",
+    "lean_label_b": "Undemocratic power",
+    "id": "is-large-scale-private-philanthropy-a"
+   },
+   {
+    "text": "Does outside aid help poor countries in the long run, or weaken the institutions they need?",
+    "kind": "empirical",
+    "why": "Development economists have argued for decades over whether foreign aid speeds or slows development. The short-term effects of health programs are well measured; the long-run effect of outside money on how countries govern themselves is not.",
+    "detail": "The case that aid helps rests above all on health. Programs against HIV, malaria and vaccine-preventable diseases have large, measurable effects, and a modeling study in The Lancet (Cavalcanti and others, 2025) estimated that USAID-funded programs prevented 91 million deaths from 2001 to 2021 and that the cuts could cause more than 14 million additional deaths by 2030; those projections are model-based and their size is disputed. People who survive childhood and stay healthy, this side argues, are better placed to build their economies.\n\nThe skeptical case, made by the economist Angus Deaton (Boston Review, 2015) among others, is that when governments depend on donors rather than on their citizens, they answer to donors. Countries that escaped poverty did so through their own growth and institutions, and aid can prop up bad governments, distort local markets and draw skilled workers away from public services. On this view the most useful things rich countries can do are to stop harming poor ones, through arms sales, trade barriers and tax havens, and to support the conditions in which they govern themselves.",
+    "lean_label_a": "Aid helps",
+    "lean_label_b": "Aid undermines",
+    "id": "does-outside-aid-help-poor-countries"
+   },
+   {
+    "text": "Should giving aimed at the most good put preventing future catastrophes ahead of relieving suffering now?",
+    "kind": "value",
+    "why": "Many of the movement’s most engaged members have shifted from global health toward risks from advanced AI and engineered pandemics, reasoning that the future could hold vast numbers of people. Critics say this trades evidence for speculation.",
+    "detail": "Those who put the present first say malaria medicine and bed nets save children now with high confidence, while estimates of how much a donation cuts the chance of a far-future catastrophe are close to guesses. Multiplying a tiny, unknowable probability by an enormous number of future people can justify almost anything, and giving that cannot be checked invites self-deception and capture by the interests of those doing the estimating.\n\nThose who put future risks first say the same reasoning that favors bed nets over local museums, followed consistently, leads to risks that could kill billions or end humanity’s future, which are badly neglected relative to their stakes. Pandemics and powerful technologies are concrete dangers within present lifetimes, so work on them protects people alive today as well as those who come later. A movement that funded only what can be measured with certainty would miss the largest stakes of all. The wider argument about the long-term future has its own page.",
+    "lean_label_a": "Present needs first",
+    "lean_label_b": "Future risks first",
+    "id": "should-giving-aimed-at-the-most"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Give where the evidence says it does the most good",
+    "color_key": "green",
+    "steelman": "Children still die of diseases we know how to prevent cheaply. Distance doesn’t excuse us, and because charities differ enormously, where you give matters as much as how much.",
+    "detail": "Every year millions of children die of diseases that cost little to prevent, and people in rich countries could stop many of those deaths with money they would barely miss. Distance and nationality do not change what we owe them. Once you decide to help, how you help matters enormously: charities differ not by a little but by factors of ten or a hundred, so the most important choice a donor makes is where to give. That means taking evidence seriously, comparing causes as well as charities, giving where an extra dollar does the most good rather than where it feels most natural, and giving a meaningful share of what you earn. This is not cold calculation replacing compassion; it is compassion taking its object seriously.\n\nWe are told charity treats symptoms and ignores power. But the method applies to anything whose expected effects can be reasoned about, and our funders have backed policy change such as eliminating lead paint and corporate campaigns that moved large egg producers toward cage-free hens. What we insist on is evidence and honest comparison, and a child who dies of malaria while donors wait for a better political system is not helped by the wait. We differ on causes: a global health wing around GiveWell and Peter Singer funds proven programs for the world’s poorest, an animal welfare wing applies the same reasoning to factory farms, and a long-term wing puts preventing catastrophes from advanced AI and engineered pandemics first.",
+    "proponents": "GiveWell; Peter Singer; Giving What We Can; William MacAskill; Coefficient Giving; The Life You Can Save",
+    "id": "give-where-the-evidence-says-it"
+   },
+   {
+    "name": "Give to the communities and causes you care about",
+    "color_key": "blue",
+    "steelman": "Giving is how free people express love, loyalty and faith and care for the places they live. The choice of cause belongs to the giver, not to a ranking compiled by experts.",
+    "detail": "Most people give to their congregation, their children’s school, the food bank down the road, the hospital that cared for a parent and the cause that touched their family, and they are right to. They know these organizations, can see the results and hold them to account, and in giving they build the web of mutual obligation that makes a community and a free society work. Donors should give wisely, checking that a charity is honest and well run, but a philosophy that calls the local food bank or the church a questionable diversion of money that should go abroad misunderstands both morality and human nature. Followed widely, it would hollow out the civil society that sustains generosity in the first place.\n\nWe are told a dollar given abroad buys far more good. But moral life is not a single ledger: the person who gives to the parish food bank is fulfilling a duty of membership, not failing a duty to maximize. Many of us also give abroad, through religious missions and relief agencies; what we reject is the claim that we must, or that our other giving is wrong. William Schambra of the Hudson Institute (2014) called the habit of treating local loyalty as an error to be corrected a failure of moral imagination. Conservatives and many religious givers stress faith, family and the freedom to give without government direction; mainstream charity evaluators such as Charity Navigator apply evidence and accountability within whatever cause a donor chooses.",
+    "proponents": "Philanthropy Roundtable; William Schambra; Ken Berger; Robert Penna",
+    "id": "give-to-the-communities-and-causes"
+   },
+   {
+    "name": "Fund movements and policy that change unjust systems",
+    "color_key": "amber",
+    "steelman": "Poverty and disease are produced by how economies and governments are arranged. Philanthropy should fund the movements and policies that change those arrangements, not just treat the symptoms.",
+    "detail": "Poverty, disease and hunger are not natural disasters; they are produced and reproduced by trade and tax rules, debt, and racial and gender hierarchies. Charity that delivers bed nets while leaving those arrangements in place leaves the next generation needing the same help. The great gains against human misery, from the abolition of slavery to labor rights, public health systems and civil rights, came through organized movements and political change. Serious philanthropy funds the people organizing for those changes, especially those most affected, and accepts that its success will not fit in a spreadsheet. The Ford Foundation calls this moving from generosity to justice. The philosopher Amia Srinivasan wrote that effective altruism “doesn’t try to understand how power works, except to better align itself with it” (London Review of Books, 2015).\n\nWe are told systemic change is slow and uncertain and that children die while the system is reformed. But uncertainty is no reason to fund only what is easy to measure; that bias guarantees the deepest causes go unaddressed. Movements for health care, labor rights and debt relief have saved far more lives than any single charity, and calling politics too contested for philanthropy is itself a political choice that favors the existing order. Some of us work through large foundations that fund justice organizations; others distrust big philanthropy itself and favor grassroots movements and mutual aid. The National Committee for Responsive Philanthropy urges foundations to devote at least 25 percent of grants to advocacy, organizing and civic engagement.",
+    "proponents": "Ford Foundation; Darren Walker; Amia Srinivasan; National Committee for Responsive Philanthropy; Alice Crary",
+    "id": "fund-movements-and-policy-that-change"
+   },
+   {
+    "name": "Trust grantees with unrestricted, long-term money",
+    "color_key": "rust",
+    "steelman": "The people closest to a problem understand it best. Give them large, multiyear, unrestricted money, do your homework before giving rather than demanding paperwork after, and step back.",
+    "detail": "Traditional philanthropy, and effective altruism even more so, keeps power with the donor: restricted grants, short funding cycles, reporting demands and metrics the funder chooses. That imbalance wastes nonprofits’ time, bends their work toward what funders can count, and starves them of the flexible money that makes organizations strong. Good philanthropy listens to grantees, trusts their judgment about what their communities need, and funds them for the long haul. Trust is not a lack of rigor; it is the recognition that the funder is not the expert. MacKenzie Scott’s Yield Giving practices this at the largest scale, and the Trust-Based Philanthropy Project promotes six practices that begin with multiyear unrestricted funding.\n\nWe are told that giving without measuring results is giving blind. We do not abandon evidence; we move the judgment to the people with the most relevant knowledge and learn through relationships and feedback rather than imposed metrics. Funder-chosen metrics are not neutral: they measure what is easy to count and reward organizations that are good at reporting rather than good at the work. Some of us give mostly to direct-service and community groups; others tie the practice to racial and economic justice and to shifting power to communities of color. Many mainstream foundations now adopt pieces of the approach, such as multiyear general operating support, without accepting the wider critique of funder power.",
+    "proponents": "Trust-Based Philanthropy Project; MacKenzie Scott",
+    "id": "trust-grantees-with-unrestricted-long-term"
+   },
+   {
+    "name": "Curb big philanthropy and fund public needs through taxes",
+    "color_key": "purple",
+    "steelman": "Arguing over how billionaires should give accepts that they should hold the power to decide. Public needs belong to accountable governments, funded by taxes the very rich actually pay.",
+    "detail": "Decisions about global health, education and politics should not be made by whoever happens to be richest. Every deductible gift lowers the donor’s tax bill, so the public helps pay for choices it has no say in; foundations and donor-advised funds can sit on assets for decades; and philanthropy launders the reputations of fortunes made through low wages, monopoly and tax avoidance. The Institute for Policy Studies (2026) reports that the four largest donor-advised fund sponsors held an average of $6.84 in assets for every $1 they paid out in grants in 2025, and that median payout at large foundations was 5.1 percent in 2024, barely above the legal minimum of 5 percent. Effective altruism, trust-based giving and justice philanthropy all improve on vanity giving, but none answers the question of power. As Anand Giridharadas put it (New Statesman, 2019), even money made cleanly and given wisely is “still too much power for one person in a democratic society.”\n\nWe are told that governments are slow, captured or indifferent to foreigners, and that without private wealth many good causes would go unfunded. We do not want to abolish charity, only to end the outsized power of a few enormous fortunes and the public subsidy that comes with it; ordinary giving is untouched. Where governments fall short, the remedy is to make them better and more accountable, not to hand the job to billionaires. Some of us focus on reforming philanthropy itself, with higher required payouts and more disclosure; others put the weight on taxing great wealth and building democratic power.",
+    "proponents": "Institute for Policy Studies; Anand Giridharadas",
+    "id": "curb-big-philanthropy-and-fund-public"
+   }
+  ],
+  "crux": {
+   "lead": "What makes one gift better than another: the good it does per dollar, or who it serves and who decides?",
+   "lead_highlight": "What makes one gift better than another",
+   "subtitle": "Every camp wants giving to help people. One side judges a gift by its expected benefit to anyone, anywhere, and gives where that is largest; others weigh ties to a community, the judgment of those closest to a problem, lasting change to institutions, or democratic say over who decides.",
+   "empirical": "Some of it can be measured: how large and reliable the differences in impact between giving options are once hard-to-measure effects are counted; whether funding advocacy and organizing does more lasting good per dollar than direct programs; whether unrestricted grants improve lives and not only budgets; and whether outside aid strengthens or weakens the institutions of the countries that receive it.",
+   "values": "No data settles whether a stranger’s need makes the same claim on us as a neighbor’s, a child’s or a fellow citizen’s; how much of a life morality can demand; whether people in need should decide how help is used even when an outsider’s evidence points elsewhere; or whether private fortunes should make these choices at all."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Read the 2015 Boston Review forum on effective altruism",
+    "description": "Peter Singer’s case for effective altruism, responses from critics and sympathizers including Angus Deaton, Daron Acemoglu, Rob Reich and Larissa MacFarquhar, and Singer’s reply.",
+    "url": "https://www.bostonreview.net/forum/peter-singer-logic-effective-altruism/",
+    "for_position": null,
+    "id": "read-the-2015-boston-review-forum"
+   },
+   {
+    "kind": "donate",
+    "title": "Give to GiveWell’s Top Charities Fund",
+    "description": "GiveWell pools donations and grants them to its four top charities, which deliver malaria prevention, vitamin A supplements and incentives for childhood vaccination.",
+    "url": "https://www.givewell.org/top-charities-fund",
+    "for_position": "Give where the evidence says it does the most good",
+    "id": "give-to-givewell-s-top-charities"
+   },
+   {
+    "kind": "local",
+    "title": "Find your local United Way",
+    "description": "United Way’s locator connects donors and volunteers with their local chapter, which funds and coordinates community services such as food, housing help and education.",
+    "url": "https://www.unitedway.org/find-your-united-way",
+    "for_position": "Give to the communities and causes you care about",
+    "id": "find-your-local-united-way"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Join young people with wealth redistributing to social movements",
+    "description": "Resource Generation organizes people aged 18 to 35 with wealth or class privilege in the United States to give to social justice movements and campaign for the equitable distribution of wealth, land and power.",
+    "url": "https://resourcegeneration.org/",
+    "for_position": "Fund movements and policy that change unjust systems",
+    "id": "join-young-people-with-wealth-redistributing"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Learn the practices of trust-based philanthropy",
+    "description": "The Trust-Based Philanthropy Project offers guides and tools for funders and donors on multiyear unrestricted giving, lighter paperwork and listening to grantees.",
+    "url": "https://www.trustbasedphilanthropy.org/",
+    "for_position": "Trust grantees with unrestricted, long-term money",
+    "id": "learn-the-practices-of-trust-based"
+   },
+   {
+    "kind": "policy",
+    "title": "Campaign for higher taxes on the very rich",
+    "description": "Patriotic Millionaires, a group of wealthy Americans, campaigns for a fairer tax system, a livable wage floor and equal access to political power, and recruits supporters through its grassroots arm.",
+    "url": "https://patrioticmillionaires.org/",
+    "for_position": "Curb big philanthropy and fund public needs through taxes",
+    "id": "campaign-for-higher-taxes-on-the"
+   },
+   {
+    "kind": "learn_more",
+    "title": "See where Americans’ charitable dollars go",
+    "description": "The Giving USA 2026 summary from Indiana University’s Lilly Family School of Philanthropy breaks down a year of US giving by source and by type of recipient.",
+    "url": "https://philanthropy.indianapolis.iu.edu/news-events/news/_news/2026/giving-usa-report-2026.html",
+    "for_position": null,
+    "id": "see-where-americans-charitable-dollars-go"
+   },
+   {
+    "kind": "donate",
+    "title": "Take the 10% Pledge",
+    "description": "Giving What We Can’s lifelong public giving commitment, with a smaller trial pledge for those not ready to commit to the full share.",
+    "url": "https://www.givingwhatwecan.org/pledge",
+    "for_position": "Give where the evidence says it does the most good",
+    "id": "take-the-10-pledge"
+   },
+   {
+    "kind": "donate",
+    "title": "Give cash directly to people in poverty",
+    "description": "GiveDirectly sends unconditional cash transfers to people living in extreme poverty, mainly in East Africa, who decide for themselves how to use the money.",
+    "url": "https://www.givedirectly.org/",
+    "for_position": "Trust grantees with unrestricted, long-term money",
+    "id": "give-cash-directly-to-people-in"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Check a charity before you give",
+    "description": "Charity Navigator rates US charities in every cause on their finances, accountability and, where available, results, so donors can check an organization they already care about.",
+    "url": "https://www.charitynavigator.org/",
+    "for_position": "Give to the communities and causes you care about",
+    "id": "check-a-charity-before-you-give"
+   }
+  ]
+ }
 }

@@ -1,8 +1,8 @@
 {
  "slug": "free-will-moral-responsibility",
  "title": "Free Will",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-10-03T05:55:29+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Free will under prior causation, and whether anyone deserves blame or praise. The philosophy; punishment policy is crime-punishment.",
@@ -13,5 +13,554 @@
   "are-moral-facts-real",
   "meaning-without-cosmic-purpose",
   "ai-consciousness"
- ]
+ ],
+ "content": {
+  "overview": {
+   "summary": "Whether people author their choices in a world of prior causes, and whether anyone ever truly deserves blame or praise.",
+   "scope_covered": "What freedom would have to be; whether it can exist in a world of causes; what neuroscience, psychology and physics add; and whether moral responsibility survives if the answer is no.",
+   "scope_excluded": "What criminal law should do about it (sentencing, retribution, prisons, the insanity defense as policy), whether moral facts are real, meaning without cosmic purpose, and whether AI systems could be agents. Legal facts appear only to show how institutions already answer the question.",
+   "why_now": "In July 2026, PNAS published the largest survey yet of neuroscientists’ philosophical views. Of 2,657 surveyed, 64 percent held that mental activity is fully reducible to brain function, yet most rejected the claim that the brain leaves people no freedom.",
+   "why_now_source_label": "Navarro-Peña and colleagues, PNAS 123(29), July 2026",
+   "why_now_source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13389498/"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "Philosophers’ views on free will",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Compatibilism",
+       "value": "59.16",
+       "highlight": true
+      },
+      {
+       "label": "Libertarianism",
+       "value": "18.83",
+       "highlight": false
+      },
+      {
+       "label": "Other",
+       "value": "13.54",
+       "highlight": false
+      },
+      {
+       "label": "No free will",
+       "value": "11.21",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2020, 59 percent of philosophers at leading departments accepted or leaned toward compatibilism, 19 percent toward libertarian free will and 11 percent toward no free will.",
+     "detail": "Compatibilism holds that free will can exist even if every choice is fully caused by prior events; libertarianism, unrelated to the political philosophy, holds that free will exists and requires choices the past does not fix; “no free will” is the skeptical view. Respondents could pick more than one option, so the shares sum to slightly over 100. The 2009 PhilPapers Survey, which asked the same question of 931 faculty at 99 departments, found 59.1 percent compatibilism, 13.7 percent libertarianism and 12.2 percent no free will, though the two surveys drew on somewhat different departments. In the 2009 survey, libertarianism was among the views most strongly correlated with theism and with rejecting physicalism about the mind (Bourget and Chalmers, 2014), one reason the debate maps partly onto religious belief.",
+     "source_label": "PhilPapers Survey 2020 (Bourget and Chalmers), “Free will,” target faculty, N = 1,758",
+     "source_url": "https://survey2020.philpeople.org/survey/results/4838",
+     "source_published": "2020",
+     "source_accessed": "2026-10-02",
+     "id": "philosophers-views-on-free-will"
+    },
+    {
+     "label": "Neuroscientists who say the nervous system leaves humans no freedom",
+     "viz": "radial",
+     "wide": false,
+     "value": "17.52",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a 2025 global survey, 17.5 percent of neuroscientists agreed that humans lack freedom because the nervous system determines their behavior, and 59.3 percent disagreed.",
+     "detail": "Respondents rated the statement “The human being does not have freedom in their actions, as their nervous system determines their behavior” on a five-point scale from totally disagree to totally agree; the remaining 23.2 percent neither agreed nor disagreed. In the same survey, 64 percent endorsed reductive physicalism, which equates the mind with brain function, so most of those who think the mind is the brain still reject the claim that the brain leaves no room for freedom. The authors read this as a widespread compatibilist attitude. The survey was run by the Mind-Brain Group at the University of Navarra and measures what the profession believes, not what the brain does.",
+     "source_label": "Navarro-Peña and colleagues, “Divergent philosophical commitments in neuroscience,” PNAS 123(29), 2026, N = 2,657",
+     "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13389498/",
+     "source_published": "2025",
+     "source_accessed": "2026-10-02",
+     "id": "neuroscientists-who-say-the-nervous-system"
+    },
+    {
+     "label": "When brain preparation and conscious intention appear before a movement",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "ms before",
+     "series": [
+      {
+       "label": "Planned readiness",
+       "value": "1050",
+       "highlight": false
+      },
+      {
+       "label": "Spontaneous readiness",
+       "value": "550",
+       "highlight": false
+      },
+      {
+       "label": "Reported awareness",
+       "value": "200",
+       "highlight": true
+      },
+      {
+       "label": "Corrected awareness",
+       "value": "150",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In Libet’s experiments, brain activity preparing a spontaneous movement began about 550 ms before it, and reported awareness of the urge about 200 ms before. What that activity means is disputed.",
+     "detail": "Participants flexed a wrist whenever they felt like it and reported, by watching a fast clock, when they first felt the urge. The readiness potential, a slow buildup of electrical activity over the motor areas of the scalp, began about 350 to 400 milliseconds before the reported awareness. When participants reported some planning ahead, it began earlier, about 1,050 milliseconds before the act; after Libet corrected for a bias in how people time such reports, awareness came about 150 milliseconds before it. Libet concluded that voluntary acts are initiated unconsciously, but argued that conscious will could still veto an action in the roughly 100 milliseconds left before the movement: “free won’t.” Later work challenged the first reading. Aaron Schurger and colleagues (2012) modeled the readiness potential as random neural noise building toward a threshold rather than a decision, and Uri Maoz and colleagues (eLife, 2019) found it present for arbitrary choices but “strikingly absent” for deliberate ones, in a task deciding real $1,000 donations to nonprofits.",
+     "source_label": "Benjamin Libet, “Do We Have Free Will?”, Journal of Consciousness Studies, 1999, summarizing Libet and colleagues, 1983",
+     "source_url": "https://spot.colorado.edu/~tooley/Benjamin%20Libet.pdf",
+     "source_published": "1983",
+     "source_accessed": "2026-10-02",
+     "id": "when-brain-preparation-and-conscious-intention"
+    },
+    {
+     "label": "Accuracy of predicting a free choice from brain activity before awareness",
+     "viz": "range",
+     "wide": false,
+     "value": "57",
+     "unit": "%",
+     "series": [],
+     "range_min": "50 chance",
+     "range_max": "100 perfect",
+     "note": "Brain scans predicted which of two buttons a person would freely press with at most 57 percent accuracy, against 50 by chance, with signals up to about 7.5 seconds before the reported decision.",
+     "detail": "Participants chose freely between a left and a right button while their brains were scanned, and reported when they made up their minds. Activity in frontopolar cortex carried information about the coming choice well before the reported decision, with accuracy peaking just before it; allowing for the lag of the fMRI signal, the authors say the underlying processes could begin up to 10 seconds earlier. The study replicated a 2008 finding by Chun Siong Soon, John-Dylan Haynes and colleagues, which the Max Planck Society summarized as predicting decisions “up to 7 seconds” before awareness, adding that “the decision could not be predicted perfectly, but prediction was clearly above chance.”",
+     "source_label": "Bode and colleagues, “Tracking the Unconscious Generation of Free Decisions Using Ultra-High Field fMRI,” PLOS ONE, 2011",
+     "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0021612",
+     "source_published": "2011",
+     "source_accessed": "2026-10-02",
+     "id": "accuracy-of-predicting-a-free-choice"
+    },
+    {
+     "label": "Laypeople who say a person in a determined universe is fully morally responsible",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Concrete case",
+       "value": "72",
+       "highlight": true
+      },
+      {
+       "label": "Abstract question",
+       "value": "14",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Told of a fully determined universe, 72 percent said a man there who kills his family is fully responsible, but only 14 percent said anyone there could be. Each side reads the gap its own way.",
+     "detail": "Two randomly assigned groups read the same description of a universe in which every decision is completely caused by what happened before. One was asked, “In Universe A, is it possible for a person to be fully morally responsible for their actions?”; 86 percent said no. The other read about Bill, who in that universe burns down his house to kill his wife and three children so he can be with his secretary, and was asked whether Bill is fully morally responsible. The study, by Shaun Nichols and Joshua Knobe in 2007, is the most cited result in the experimental philosophy of free will, and which of the two answers shows what people really think is itself disputed.",
+     "source_label": "Nichols and Knobe, Noûs, 2007, as summarized by Sarkissian and colleagues, Mind & Language, 2010",
+     "source_url": "https://people.duke.edu/~fd13/2010/Sarkissian_et_al_2010_MindLang.pdf",
+     "source_published": "2007",
+     "source_accessed": "2026-10-02",
+     "id": "laypeople-who-say-a-person-in"
+    },
+    {
+     "label": "US adults who believe in free will",
+     "viz": "radial",
+     "wide": false,
+     "value": "82.33",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2019, about 82 percent of US respondents and 85 percent in Singapore scored on the believing side of a standard free will scale; 31 percent of US respondents believed in determinism.",
+     "detail": "Belief was measured with the Free Will Inventory, a set of statements rated on a seven-point scale; respondents whose average fell on the agree side were counted as believers. Belief in free will was better predicted by belief in a nonphysical mind than by disbelief in determinism. Shown philosophical definitions, people did not sort cleanly into camps: of those who agreed with a compatibilist definition (“the ability to make a choice based on one’s beliefs and desires such that different beliefs/desires would yield different choices”), 86.19 percent in the United States and 92.29 percent in Singapore also agreed with an incompatibilist one (“the ability to make different choices even if everything leading up to one’s choice were exactly the same”). The authors call this paradoxical.",
+     "source_label": "Wisniewski, Deutschländer and Haynes, PLOS ONE, 11 September 2019 (900 respondents per country)",
+     "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0221617",
+     "source_published": "2019",
+     "source_accessed": "2026-10-02",
+     "id": "us-adults-who-believe-in-free"
+    },
+    {
+     "label": "Students who say no one can be fully responsible in a determined universe",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "United States",
+       "value": "75",
+       "highlight": true
+      },
+      {
+       "label": "India",
+       "value": "72",
+       "highlight": false
+      },
+      {
+       "label": "Colombia",
+       "value": "68",
+       "highlight": false
+      },
+      {
+       "label": "Hong Kong",
+       "value": "63",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In four very different cultures, 63 to 75 percent of students said no one could be fully morally responsible in a universe where every decision is completely caused by the past.",
+     "detail": "Participants read about two universes: in Universe A the past fully fixes every decision, and in Universe B it does not. Asked whether a person in Universe A could be fully morally responsible, most said no, the incompatibilist answer, and the differences between the four samples were not statistically significant. The samples were small and made up of students: 66 in the United States, 55 at Jadavpur University in India, 40 at Hong Kong University and 70 at Universidad Javeriana in Bogotá. Among the minority who thought our own universe deterministic, 61 percent said responsibility was still possible there. Defenders of compatibilism argue that abstract scenarios like this one invite readers to imagine their minds being bypassed, which is not what determinism says.",
+     "source_label": "Sarkissian and colleagues, “Is Belief in Free Will a Cultural Universal?”, Mind & Language, 2010 (231 students)",
+     "source_url": "https://people.duke.edu/~fd13/2010/Sarkissian_et_al_2010_MindLang.pdf",
+     "source_published": "2010",
+     "source_accessed": "2026-10-02",
+     "id": "students-who-say-no-one-can"
+    },
+    {
+     "label": "Effect of anti-free-will messages on belief in free will",
+     "viz": "bar",
+     "wide": false,
+     "value": "-0.29",
+     "unit": "Hedges’ g",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Across about 145 experiments, reading anti-free-will material lowered belief in free will by a small amount, but there was little evidence that it changed how people behaved.",
+     "detail": "Starting with a 2008 study by Kathleen Vohs and Jonathan Schooler, in which participants who read a passage arguing that behavior is determined cheated more on a math task, psychologists ran many experiments on what weakening belief in free will does: more cheating, more aggression, less helping, less punishment. Replications were mixed; Thomas Nadelhoffer and colleagues reported in Cognition in 2020 that five attempts to replicate the cheating result, with samples of up to 982 people, were “largely unsuccessful.” The meta-analysis pooled 145 experiments, 95 of them unpublished (the authors’ preprint gives 146 experiments with 26,305 participants). The manipulations also raised belief in determinism (g = 0.17), another small effect, and after correcting for small samples and publication bias the authors found little evidence of downstream consequences for behavior. Lab studies of this kind test short-term effects, not what a long, culture-wide loss of belief would do.",
+     "source_label": "Genschow and colleagues, “Manipulating Belief in Free Will and Its Downstream Consequences,” PSPR 27(1), 2023",
+     "source_url": "https://doi.org/10.1177/10888683221087527",
+     "source_published": "2022",
+     "source_accessed": "2026-10-02",
+     "id": "effect-of-anti-free-will-messages"
+    },
+    {
+     "label": "Students who say our universe is not deterministic",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "India",
+       "value": "85",
+       "highlight": false
+      },
+      {
+       "label": "United States",
+       "value": "82",
+       "highlight": true
+      },
+      {
+       "label": "Colombia",
+       "value": "77",
+       "highlight": false
+      },
+      {
+       "label": "Hong Kong",
+       "value": "65",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Majorities of students in all four samples, 65 to 85 percent, said our universe is one in which decisions are not completely caused by what happened before.",
+     "detail": "This was the first question in the same four-country study: having read about a fully determined universe and an undetermined one, participants were asked which is most like ours. In every sample a majority chose the undetermined one, and the differences across cultures were not significant. Taken together with the same students’ answers on responsibility, these are the two beliefs that make up philosophical libertarianism: that choices are not fixed by the past, and that responsibility requires this. The authors note that the convergence is striking given how differently the cultures treat related questions about fate and the self; compatibilists dispute that answers to abstract scenarios reveal what people really think.",
+     "source_label": "Sarkissian and colleagues, “Is Belief in Free Will a Cultural Universal?”, Mind & Language, 2010 (231 students)",
+     "source_url": "https://people.duke.edu/~fd13/2010/Sarkissian_et_al_2010_MindLang.pdf",
+     "source_published": "2010",
+     "source_accessed": "2026-10-02",
+     "id": "students-who-say-our-universe-is"
+    },
+    {
+     "label": "Average belief in free will across 44 countries",
+     "viz": "range",
+     "wide": false,
+     "value": "3.72",
+     "unit": "mean score",
+     "series": [],
+     "range_min": "1 strongly disagree",
+     "range_max": "5 strongly agree",
+     "note": "Across 8,917 people in 44 countries, average agreement with statements such as “People have complete free will” was 3.72 on a five-point scale, between neutral and agree.",
+     "detail": "Participants, recruited through the survey firm Dynata, rated the free will items of the Free Will Inventory from 1 (strongly disagree) to 5 (strongly agree); the standard deviation was 0.75. Only about 8.6 percent of the variation in belief lay between countries; the rest was between individuals within them. The study’s main finding was that people with stronger free will beliefs judged everyday transgressions, such as keeping too much change or driving off after denting a parked car, as more deserving of punishment. A preregistered test found no significant relationship between a country’s average belief and its support for the death penalty. The authors suggest that tempering free will belief in some contexts might reduce excessive punitiveness; defenders of desert-based blame read the same link as evidence that the belief underwrites accountability.",
+     "source_label": "Walton, Kirkland and Bastian, “Free will belief predicts everyday punitiveness across 44 countries,” BJSP, 2026",
+     "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13382202/",
+     "source_published": "2026",
+     "source_accessed": "2026-10-02",
+     "id": "average-belief-in-free-will-across"
+    },
+    {
+     "label": "Share of variation in human traits linked to genes, from twin studies",
+     "viz": "radial",
+     "wide": false,
+     "value": "49",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Across virtually all published twin studies, covering 17,804 traits from 2,748 papers, the average reported heritability was 49 percent.",
+     "detail": "Heritability is the share of differences between people in a population that is statistically associated with differences in their genes; it says nothing about how much of any one person’s behavior is caused by genes, and it varies by trait and environment. For antisocial behavior, a meta-analysis of 51 twin and adoption studies by Soo Hyun Rhee and Irwin Waldman (Psychological Bulletin, 2002) attributed about 41 percent of variation to genes, 16 percent to the environment siblings share and 43 percent to experiences unique to each person. The figures bear on this debate because the skeptical argument does not depend on physics: people choose neither their genes nor their early environments. Compatibilists answer that being shaped by causes one did not choose is the condition of every agent and does not stop a person’s choices from being their own.",
+     "source_label": "Polderman and colleagues, “Meta-analysis of the heritability of human traits,” Nature Genetics, 2015",
+     "source_url": "https://pubmed.ncbi.nlm.nih.gov/25985137/",
+     "source_published": "2015",
+     "source_accessed": "2026-10-02",
+     "id": "share-of-variation-in-human-traits"
+    },
+    {
+     "label": "Physicists’ preferred interpretation of quantum mechanics",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Copenhagen",
+       "value": "36",
+       "highlight": true
+      },
+      {
+       "label": "Many-worlds",
+       "value": "15",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a 2025 Nature survey of more than 1,100 physicists, 36 percent favored the Copenhagen interpretation, on which outcomes are random, and 15 percent many-worlds, which is deterministic.",
+     "detail": "Whether the physical world is deterministic is the starting point of the classical free will problem, and a century after quantum mechanics was formulated physicists still disagree. On the Copenhagen interpretation, measurement outcomes are genuinely random; on many-worlds and on Bohmian mechanics, the universe evolves deterministically and apparent randomness is explained in other ways. Only 24 percent of respondents described their preferred interpretation as correct, and about three-quarters expected quantum theory to be replaced by a more comprehensive one. Philosophers on all sides note that the question cuts less than it seems: compatibilists think determinism would not threaten free will, skeptics think randomness would not help it, and libertarians need indeterminism in the right place in the brain, not only somewhere in physics.",
+     "source_label": "Nature survey of more than 1,100 physicists, as reported by AFP via Phys.org, 30 July 2025",
+     "source_url": "https://phys.org/news/2025-07-physicists-quantum-world-years.html",
+     "source_published": "2025",
+     "source_accessed": "2026-10-02",
+     "id": "physicists-preferred-interpretation-of-quantum-mechanics"
+    },
+    {
+     "label": "US criminal cases in which defendants used brain or behavioral-genetics evidence",
+     "viz": "bar",
+     "wide": false,
+     "value": "1,585",
+     "unit": "cases",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Between 2005 and 2012, criminal defendants invoked neuroscience or behavioral genetics in 1,585 US cases with published opinions; 2012 alone had more than 250, over double the 2007 number.",
+     "detail": "The cases are the practical edge of the free will debate: defendants arguing, in Farahany’s phrase, that their “brains made them do it” to challenge competency, claim ineffective counsel or mitigate punishment. Farahany estimated that about 5 percent of murder trials and 25 percent of death penalty trials featured defendants seeking lower responsibility or lighter punishment with neurobiological data. Such evidence appeared across serious felony cases, not only capital sentencing, and prosecutors also used it to argue future dangerousness. How the law should respond belongs to the crime and punishment topic; the trend shows how the philosophical question reaches courtrooms.",
+     "source_label": "Nita Farahany, “Neuroscience and behavioral genetics in US criminal law,” Journal of Law and the Biosciences, 2016",
+     "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5034387/",
+     "source_published": "2005-2012",
+     "source_accessed": "2026-10-02",
+     "id": "us-criminal-cases-in-which-defendants"
+    },
+    {
+     "label": "Felony cases in which the insanity defense is raised",
+     "viz": "bar",
+     "wide": false,
+     "value": "1",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In an eight-state US study, the insanity defense was raised in about 1 percent of felony cases, and 26 percent of those who raised it were acquitted by reason of insanity.",
+     "detail": "The insanity defense is the clearest place where the law decides that a person who did a harmful act is not blameworthy, and it shows what kind of incapacity the law treats as excusing: not being caused, but being unable to know what one is doing or that it is wrong. On this test causes excuse only when they disable the capacities responsibility requires, which is why legal scholars such as Stephen Morse describe the law’s concept of responsibility as compatibilist. In Kahler v. Kansas (2020), the US Supreme Court held 6 to 3 that states need not provide an insanity defense based on moral incapacity; Justice Elena Kagan wrote that the question requires balancing “the workings of the brain, the purposes of criminal law, and the ideas of free will and responsibility.” The 1991 study is old; its figures are the most widely cited but have not been replicated on the same scale.",
+     "source_label": "Callahan, Steadman, McGreevy and Robbins, “The volume and characteristics of insanity defense pleas,” 1991",
+     "source_url": "https://jaapl.org/content/19/4/331",
+     "source_published": "1991",
+     "source_accessed": "2026-10-02",
+     "id": "felony-cases-in-which-the-insanity"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Can a choice be free if prior causes fixed it?",
+    "kind": "value",
+    "why": "Both sides agree on what happens when a person deliberates and acts. They disagree about what “free” has to mean: acting on one’s own reasons without coercion, or being able to do otherwise with the whole past held fixed.",
+    "detail": "If freedom is acting on your own reasons, without coercion, compulsion or manipulation, a determined world contains plenty of it. Harry Frankfurt argued in 1969 that a person can be responsible even when they could not have done otherwise: if a hidden device would have made you choose X had you started to choose Y, but you chose X on your own, the choice is still yours. On this view a choice uncaused by your character and reasons would be less your own, not more.\n\nIf freedom requires that more than one future be genuinely available, a determined world contains none. Peter van Inwagen’s Consequence Argument runs: you cannot change the past or the laws of nature, and if together they entail your action, you cannot do otherwise. Acting on your desires does not help when the desires themselves came from causes you never chose, and Derk Pereboom argues there is no principled difference between a person whose values were engineered by neuroscientists and one whose values came from ordinary causes.",
+    "lean_label_a": "Yes, if it’s yours",
+    "lean_label_b": "No, not if fixed",
+    "id": "can-a-choice-be-free-if"
+   },
+   {
+    "text": "Can anyone truly deserve blame or praise for what they do?",
+    "kind": "value",
+    "why": "Deserving blame, so that resentment or condemnation is owed for what one did, may demand more than acting freely in some sense. Whether it needs ultimate self-authorship or only the right control over one’s acts divides even those who accept determinism.",
+    "detail": "Those who defend desert follow P. F. Strawson’s “Freedom and Resentment” (1962): resentment, indignation, gratitude and love are not theoretical conclusions that a discovery about causation could overturn, but the way people take each other seriously as persons rather than as objects to be managed. On compatibilist accounts, someone who could grasp that an act was wrong and was able to act on that recognition deserves blame for failing to. A standard of ultimate self-creation, which no possible being could meet, is on this view the wrong standard.\n\nThose who deny it start from Galen Strawson’s Basic Argument: to be truly responsible for how you act you would have to be responsible for how you are, which would require having chosen how you are, which would require already being someone who could choose, a regress no one completes. Chance does not help, since a random choice is no more yours. Derk Pereboom replies to P. F. Strawson that a practice can be natural and still unjust: if resentment presupposes that the wrongdoer could have done otherwise in a deep sense, and that is false, the attitude is a mistake however deeply felt.",
+    "lean_label_a": "Desert is real",
+    "lean_label_b": "No one deserves it",
+    "id": "can-anyone-truly-deserve-blame-or"
+   },
+   {
+    "text": "Does brain science show that decisions are made before we are aware of them?",
+    "kind": "empirical",
+    "why": "Brain activity has been found to precede people’s reported awareness of deciding, by fractions of a second to several seconds. Whether that activity is the decision itself, or preparation a later conscious process can use or override, is disputed.",
+    "detail": "On one reading, the feeling of deciding is a report on a process already under way. Single-neuron recordings in epilepsy patients by Itzhak Fried and colleagues (2011) predicted the timing of movements before people reported intending them, and Daniel Wegner’s work on the “illusion of conscious will” showed that people can be led to feel they willed actions they did not cause, and to disown actions they did. If the conscious self is informed of decisions rather than making them, the common picture of how choice works is wrong.\n\nOn the other reading, the experiments do not measure decisions. Prediction from brain scans has peaked at 57 percent against 50 by chance, leaving most of the outcome open. Reanalyses suggest the classic early signal reflects neural noise in arbitrary choices rather than a decision made in advance. And flicking a wrist at a random moment is a poor model of deciding whom to marry or whether to lie.",
+    "lean_label_a": "Already decided",
+    "lean_label_b": "Not a decision",
+    "id": "does-brain-science-show-that-decisions"
+   },
+   {
+    "text": "Would society be worse off if people stopped believing in free will?",
+    "kind": "empirical",
+    "why": "Some fear that people who think their choices are unfree will cheat and stop trying; others expect less hatred and retribution. Early experiments backed the worry, replications did not, and newer studies tie the belief to both happiness and harsher punishment.",
+    "detail": "For the worry: belief in free will goes with feeling good. A 2026 study of 1,381 people in five European countries by Kathi Diel and colleagues found that people with stronger free will beliefs reported more positive feelings across the day, and that exposure to pro-free-will viewpoints raised them. The belief sustains the sense of agency that makes effort, self-control and hope make sense. Saul Smilansky argues that even if libertarian free will is an illusion, the illusion does moral work, and dismantling it would wear away respect for persons and the idea that people can earn what they achieve.\n\nAgainst it: what the belief reliably predicts is punitiveness. Azim Shariff and colleagues (2014) found that people who read about the neural causes of behavior recommended less retributive punishment, and a 2026 cross-national study found stronger free will belief went with harsher responses to everyday wrongs. On this view a society that believed less in free will would blame less and understand more.",
+    "lean_label_a": "Belief keeps us good",
+    "lean_label_b": "Doubt makes us kind",
+    "id": "would-society-be-worse-off-if"
+   },
+   {
+    "text": "Is the universe deterministic, and would chance help free will if it is not?",
+    "kind": "empirical",
+    "why": "Quantum mechanics is random on its standard reading, but deterministic interpretations remain live among physicists. Even if the future is open, it is disputed whether randomness reaches decisions at all, and whether it would add control or only luck.",
+    "detail": "For an open future: the best physics we have does not say the world is deterministic, and on its most widely held reading it says the opposite. The neurogeneticist Kevin Mitchell argues that brains are noisy systems that exploit this indeterminacy, which he calls “causal slack,” to keep options open, and that organisms evolved to settle among those options by their own reasons and goals. On this view determinism was a nineteenth-century assumption that science never established, and the burden lies with those who say the future is closed.\n\nAgainst: the brain works at temperatures and scales where quantum effects are generally thought to wash out, and if they did not, the added element would be chance. A choice made partly at random is less under the agent’s control, not more. This is the “luck objection” that compatibilists and skeptics alike press: if two identical agents with identical pasts choose differently, nothing about either one explains the difference.",
+    "lean_label_a": "Physics leaves room",
+    "lean_label_b": "No room in physics",
+    "id": "is-the-universe-deterministic-and-would"
+   },
+   {
+    "text": "Would giving up deserved blame and praise cost something of value?",
+    "kind": "value",
+    "why": "Skeptics say life would go on without desert, and in some ways better. Their opponents see costs that are partly hidden: achievements no longer earned, agents treated as risks to manage, and no principled limit on punishment.",
+    "detail": "Desert, its defenders say, protects people as well as condemning them. A system based only on prevention could justify detaining people who have done nothing yet, or holding offenders far longer than their acts warrant; desert sets a ceiling as well as a floor. People also want their kindness and courage credited to them rather than to their luck in genes and upbringing, and C. S. Lewis argued that being punished because one deserves it is a way of being treated as a responsible person rather than a patient to be cured.\n\nSkeptics answer that what blame adds beyond protection, moral protest and the chance of reform is suffering for its own sake, which cannot be justified if no one is ultimately responsible for who they are. Love, gratitude and joy at another’s goodness survive in modified forms, and life without the belief that one deserves one’s good fortune may make people humbler and more generous toward the less lucky. Robert Sapolsky suggests replacing pride with gratitude for having turned out the sort of person who could do well.",
+    "lean_label_a": "Much would be lost",
+    "lean_label_b": "Little would be lost",
+    "id": "would-giving-up-deserved-blame-and"
+   },
+   {
+    "text": "Does God’s foreknowledge or sovereignty leave room for human freedom?",
+    "kind": "value",
+    "why": "For believers in an all-knowing, all-governing God, the problem predates physics: if God knows or ordains everything, can choices be otherwise, and can people be blamed for sin? Christian, Jewish and Islamic traditions have each given both answers.",
+    "detail": "One answer holds that people must have genuine alternatives, or God would be the author of sin and divine judgment would be unjust. The Catholic Church teaches that God created human beings as rational persons who “can initiate and control” their own actions. Arminian and Wesleyan Protestants, Jewish thinkers following Maimonides and the Mu‘tazili school in Islam held or hold similar views, and the philosophers William Lane Craig and Alvin Plantinga defend libertarian freedom as central to answering the problem of evil.\n\nThe other holds that God ordains all that happens and that people are nonetheless free and responsible. Reformed Christians, following Augustine’s later work, Luther and Calvin, read Scripture as affirming both side by side, as in the crucifixion, which it presents as both God’s plan and the free act of those who carried it out. In Islam the Ash‘ari doctrine of acquisition (kasb) holds that God creates human acts while humans acquire responsibility for them.",
+    "lean_label_a": "Needs open choices",
+    "lean_label_b": "Fits God’s plan",
+    "id": "does-god-s-foreknowledge-or-sovereignty"
+   },
+   {
+    "text": "Do ordinary people think responsibility requires an undetermined will?",
+    "kind": "empirical",
+    "why": "Each side claims common sense. If ordinary people think responsibility needs an open future, compatibilism revises the concept; if not, incompatibilism is a philosopher’s invention. Results shift with how the question is asked.",
+    "detail": "Shaun Nichols and Joshua Knobe argue that people are incompatibilists at heart. Asked in the abstract, most deny that anyone in a determined universe can be fully responsible; they answer otherwise only in vivid cases of terrible wrongs, where emotion pushes them to blame, a performance error like other biases.\n\nEddy Nahmias and colleagues argue the reverse. When determinism is described without implying that a person’s beliefs and desires play no role, most people judge agents in determined universes to act freely and be blameworthy; in their 2006 studies, most judged a bank robber in a universe where a supercomputer could predict every action to be morally blameworthy. Nahmias and Dylan Murray trace incompatibilist answers to misreading determinism as fatalism, the idea that what you decide makes no difference. A third reading is that the everyday concept is committed to neither theory, since many people endorse compatibilist and incompatibilist definitions of free will at once.",
+    "lean_label_a": "Yes, they require it",
+    "lean_label_b": "No, causes are fine",
+    "id": "do-ordinary-people-think-responsibility-requires"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Hold people responsible, since freedom fits a caused world",
+    "color_key": "green",
+    "steelman": "A choice is free when it flows from your own reasons, without coercion. Causes don’t undo that, so people can truly deserve blame and praise.",
+    "detail": "The question is not whether our choices have causes, since a choice with none would be a random twitch, but whether they are ours. Everything that separates a free act from an unfree one, the thief from the kleptomaniac, the adult from the small child, the person who chooses from the person who is coerced, survives the discovery that the universe runs on laws. That is why the law excuses insanity and duress but not ordinary motives. Freedom is a natural capacity that evolution built and upbringing develops: to respond to reasons, reflect on one’s desires and be moved by moral considerations. People who have it deserve the resentment, gratitude, blame and praise that responsible beings give one another, and treating them as mechanisms to be managed is the real affront to their dignity. Most philosophers who study the question hold this view, and so, by their answers, do most neuroscientists.\n\nTo the objection that a fixed past means you could not have done otherwise: in the sense that matters, you had the capacity and the opportunity, and would have chosen differently had you seen the reasons differently. Manipulation cases describe values installed in a way that bypassed a person’s own reasoning; ordinary causal histories do not do that. Within the camp, John Martin Fischer ties responsibility to acting from one’s own reasons-responsive mechanism, followers of P. F. Strawson ground it in the practice of reactive attitudes, and revisionists such as Manuel Vargas would revise the everyday concept rather than abandon it. Reformed theologians such as John Frame hold the same structure with God’s ordaining in place of physical causation: freedom is doing what you want, which is “compatible with causation.”",
+    "proponents": "Daniel Dennett; John Martin Fischer; The Gospel Coalition; Christian List; Eddy Nahmias; Manuel Vargas; Pamela Hieronymi; Stephen Morse",
+    "id": "hold-people-responsible-since-freedom-fits"
+   },
+   {
+    "name": "Ground responsibility in choices the past does not fix",
+    "color_key": "blue",
+    "steelman": "When you choose, more than one future is truly open, and which one happens is up to you. Science does not rule that out, and responsibility depends on it.",
+    "detail": "If everything you will do was settled before you were born, deliberation is a show with a fixed ending, and the sense that you are the author of your life is mistaken. Most people in every culture studied see this at once: you cannot deserve blame for what you could not have avoided, given everything that came before. Nothing in science forces that bleak conclusion. Physics on its best-supported reading is not deterministic, and living things are not billiard balls but organized systems that hold their options open and settle among them for reasons of their own. Human freedom is the highest form of that capacity, the power, rooted in reason and will, “to act or not to act, to do this or that,” in the words of the Catholic Catechism. Compatibilism keeps the word “freedom” but gives up the thing people meant by it; skepticism at least admits what is lost. We hold that the thing is real.\n\nTo the objection that an undetermined choice is mere luck: on our view the agent settles it. In Robert Kane’s account, a person torn between ambition and conscience is striving either way, and whichever effort succeeds, the choice is the product of that person’s own reasons; on agent-causal views such as Timothy O’Connor’s, the agent is a cause in her own right. The luck objection proves too much, since it would equally make any compatibilist choice the luck of one’s genes and upbringing. The camp runs from naturalists such as the neurogeneticist Kevin Mitchell, who appeal to no soul, to theologians who see this freedom as necessary for sin, grace and divine justice.",
+    "proponents": "Catholic Church; Kevin Mitchell; Robert Kane; Alvin Plantinga; Timothy O’Connor; Helen Steward; William Lane Craig",
+    "id": "ground-responsibility-in-choices-the-past"
+   },
+   {
+    "name": "Give up blame and praise based on desert",
+    "color_key": "amber",
+    "steelman": "No one chose the genes, upbringing and brain behind their choices, so no one deserves to suffer or be exalted for them. We can still protect, repair and forgive.",
+    "detail": "Every choice flows from the person one had become by that moment, and that person was produced by things outside one’s control, long before one could reflect on any of it. Adding randomness does not help: a choice made partly by chance is not more yours. This is not a counsel of despair. We can still protect people from danger, ask wrongdoers to recognize what they did and change, love, be grateful and admire what is good. What we give up is the conviction that wrongdoers deserve to be hurt and that those who did well earned their place over others, a conviction that has justified a great deal of cruelty and smugness. Each time humanity learned the causes of something it once blamed, such as epilepsy, mental illness or addiction, the world became more humane. As the Stanford neurobiologist Robert Sapolsky puts it, “we have no ground to praise or blame anyone in a moral sense.”\n\nTo the objection that without desert nothing limits what society may do to wrongdoers: we may restrict dangerous people only as far as protecting others requires, by the least restrictive effective means, as we quarantine carriers of disease who are blameless, and because they are blameless we owe them humane conditions and a path back. Within the camp, hard determinists such as Sapolsky hold that determinism rules out free will; hard incompatibilists such as Derk Pereboom and Gregg Caruso hold that desert is ruled out whether the world is determined or not; Galen Strawson argues that ultimate responsibility is impossible in any possible world. Pereboom keeps forward-looking blame as moral protest aimed at reform, while Bruce Waller would drop the language of moral responsibility altogether.",
+    "proponents": "Robert Sapolsky; Derk Pereboom; Gregg Caruso; Justice Without Retribution Network; Galen Strawson; Sam Harris; Bruce Waller",
+    "id": "give-up-blame-and-praise-based"
+   }
+  ],
+  "crux": {
+   "lead": "What kind of control must a person have over a choice to deserve blame or praise for it?",
+   "lead_highlight": "What kind of control",
+   "subtitle": "One answer: enough that the choice comes from the person’s own reasons and working capacities, uncoerced, which a world of causes allows. The other: they must be its ultimate source, unfixed by the past, and then the dispute is whether such choices exist or are impossible.",
+   "empirical": "Evidence can move part of it: how much conscious deliberation shapes what people do, whether the brain processes behind deliberate choices are fixed or open, how far genes and upbringing shape the capacity to respond to reasons, and what happens when people stop believing in desert. But every side can accept the same findings: one says they show how free agents work, the other the causes behind every agent.",
+   "values": "The rest is a judgment no experiment makes: whether fairness in blame asks only that people act from capacities they have, or that they be responsible for having them. And how to weigh what defenders say desert gives, a limit on punishment and acts that belong to their authors, against what critics say it costs: suffering imposed because it is deserved, and credit and condemnation for differences that began in luck."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Stanford Encyclopedia of Philosophy, Free Will",
+    "description": "A peer-reviewed survey of the whole debate, from compatibilism, libertarianism and skepticism to the Consequence Argument, Frankfurt cases and the luck objection, with full references.",
+    "url": "https://plato.stanford.edu/entries/freewill/",
+    "for_position": null,
+    "id": "stanford-encyclopedia-of-philosophy-free-will"
+   },
+   {
+    "kind": "learn_more",
+    "title": "“Just deserts”: Daniel Dennett and Gregg Caruso debate free will",
+    "description": "A long written exchange in Aeon between a leading compatibilist and a leading skeptic on whether anyone deserves blame or punishment, each answering the other’s strongest points.",
+    "url": "https://aeon.co/essays/on-free-will-daniel-dennett-and-gregg-caruso-go-head-to-head",
+    "for_position": null,
+    "id": "just-deserts-daniel-dennett-and-gregg"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Get That Chip Out Of My Brain, a free will challenge",
+    "description": "An interactive thought experiment that walks you through Frankfurt’s cases on whether responsibility requires the ability to do otherwise, then shows whether your answers are consistent.",
+    "url": "https://www.philosophyexperiments.com/frankfurt",
+    "for_position": null,
+    "id": "get-that-chip-out-of-my"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Divine Sovereignty and Human Freedom, by John Frame",
+    "description": "An essay from The Gospel Coalition making the Reformed Christian case that freedom is doing what one wants, and that it fits with causation, including God’s ordaining of all things.",
+    "url": "https://www.thegospelcoalition.org/essay/divine-sovereignty-human-freedom/",
+    "for_position": "Hold people responsible, since freedom fits a caused world",
+    "id": "divine-sovereignty-and-human-freedom-by"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Free Agents: How Evolution Gave Us Free Will, by Kevin Mitchell",
+    "description": "A neurogeneticist argues from biology and physics that the future is open and that organisms, humans above all, evolved to choose among real options for their own reasons.",
+    "url": "https://press.princeton.edu/books/hardcover/9780691226231/free-agents",
+    "for_position": "Ground responsibility in choices the past does not fix",
+    "id": "free-agents-how-evolution-gave-us"
+   },
+   {
+    "kind": "learn_more",
+    "title": "How to live in a world without free will: Robert Sapolsky",
+    "description": "A Stanford interview in which the neurobiologist, author of Determined, explains why he thinks no one deserves praise or blame and what he thinks should replace them.",
+    "url": "https://neuroscience.stanford.edu/news/how-live-world-without-free-will",
+    "for_position": "Give up blame and praise based on desert",
+    "id": "how-to-live-in-a-world"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Catechism of the Catholic Church, Man’s Freedom",
+    "description": "The Church’s official teaching on human freedom, responsibility and the conditions that diminish it (paragraphs 1730-1748), a widely cited religious statement of libertarian free will.",
+    "url": "https://www.vatican.va/content/catechism/en/part_three/section_one/chapter_one/article_3.html",
+    "for_position": "Ground responsibility in choices the past does not fix",
+    "id": "catechism-of-the-catholic-church-man"
+   },
+   {
+    "kind": "policy",
+    "title": "Justice Without Retribution Network",
+    "description": "Lawyers, philosophers, psychologists and neuroscientists, based at the University of Aberdeen School of Law, working out approaches to wrongdoing that do not rest on a traditional understanding of free will.",
+    "url": "https://www.abdn.ac.uk/law/why-us/partnerships/the-justice-without-retribution-network/",
+    "for_position": "Give up blame and praise based on desert",
+    "id": "justice-without-retribution-network"
+   },
+   {
+    "kind": "local",
+    "title": "Find or start a Socrates Café",
+    "description": "A directory of free, open philosophical discussion groups meeting in cafés, libraries and community centers worldwide, with guidance for starting one where there is none.",
+    "url": "https://socratescafe.com/socrates-cafes-around-the-world/",
+    "for_position": null,
+    "id": "find-or-start-a-socrates-caf"
+   },
+   {
+    "kind": "donate",
+    "title": "Support the Stanford Encyclopedia of Philosophy",
+    "description": "The free, peer-reviewed reference that hosts the main entries on free will, compatibilism and moral responsibility accepts reader donations to stay free and independent.",
+    "url": "https://plato.stanford.edu/support/",
+    "for_position": null,
+    "id": "support-the-stanford-encyclopedia-of-philosophy"
+   }
+  ]
+ },
+ "icon": "signpost",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: a tall wooden signpost with two arrow boards pointing different ways stands at a fork in a path as the dominant focal mass; a row of standing dominoes runs along the near path toward the fork, the nearest domino overlapping the foot of the signpost; the path splits into two branches that wind away over rolling hills and cross the whole frame as the connective element; a small pocket watch lies open on the grass in the foreground at the smallest scale; a medium tree on a far hill behind one branch; the ground is a gentle rolling hill curve.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #b8653f, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: puppets, marionette strings, chains, shackles, cages, prison bars, gavels, scales of justice, brains, neurons, dice, coins, question marks, crossroads with people, human figures, hands, faces, eyes, toppling or falling dominoes, arrows labeled with words, text, letters on signs, halos, devils, angels, crossed-out symbols, check marks."
 }

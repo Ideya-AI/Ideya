@@ -1,0 +1,713 @@
+{
+ "slug": "homelessness",
+ "title": "Homelessness",
+ "status": "ready",
+ "authored_at": "2026-10-03T22:37:41+00:00",
+ "published_at": null,
+ "reviewed_at": [],
+ "scope": "What ends homelessness and what cities may do about it: Housing First against treatment first, encampment enforcement, and the role of addiction and mental illness. Not housing prices generally.",
+ "primary_category": "society",
+ "categories": [
+  "governance",
+  "economy"
+ ],
+ "related": [
+  "housing-affordability-crisis",
+  "drug-policy-prohibition-vs-legalization",
+  "policing-reform",
+  "loneliness-decline-of-community"
+ ],
+ "content": {
+  "overview": {
+   "summary": "Whether a home or treatment should come first in ending homelessness, and what cities may do about people living on the street.",
+   "scope_covered": "What ends homelessness and what cities may do about it, mainly in the US with Finland and Canada as comparisons: Housing First against treatment first, encampments and camping bans, addiction, mental illness and involuntary care.",
+   "scope_excluded": "Housing prices and supply as a general economic question, and drug policy in general, except where each bears directly on who becomes homeless and what gets them housed.",
+   "why_now": "On August 7, 2026 a federal judge set aside HUD’s new rules for its main homelessness grant, which would have cut protected renewal funding for existing housing projects from nearly 90 percent to 60 percent and set aside $1.3 billion favoring transitional housing and services. HUD is weighing an appeal.",
+   "why_now_source_label": "National Association of Counties",
+   "why_now_source_url": "https://www.naco.org/news/hud-releases-funding-opportunity-continuum-care-program-deadline-sept-30"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "People homeless in the US on one night",
+     "viz": "ranked",
+     "wide": true,
+     "value": "745,652",
+     "unit": "people",
+     "series": [
+      {
+       "label": "2007",
+       "value": "647,258",
+       "highlight": false
+      },
+      {
+       "label": "2013",
+       "value": "590,364",
+       "highlight": false
+      },
+      {
+       "label": "2024",
+       "value": "771,480",
+       "highlight": false
+      },
+      {
+       "label": "2025",
+       "value": "745,652",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Local counts found 745,652 people homeless on one night in January 2025, 3 percent fewer than the 2024 record and 26 percent more than in 2013.",
+     "detail": "The point-in-time count is a one-night snapshot taken in the last ten days of January by the 386 local Continuums of Care that cover virtually the whole country. It counts people in emergency shelters, transitional housing and places not meant for habitation, and leaves out people doubled up with friends or family and people already in permanent supportive housing or rapid rehousing. HUD says unsheltered numbers are probably undercounts, and weather and local policy move them from year to year. The 2025 total fell by 25,828 people, mostly in emergency shelters; New York and Illinois, which had the largest increases in 2024 after a surge of migrant arrivals, had the largest decreases, and some local programs there credited the fall partly to changes in federal immigration policy. Homelessness among single adults reached a record, while the number of people in families with children fell 11 percent. The 2007, 2013 and 2024 values are calculated from the changes HUD reports in the same table.",
+     "source_label": "HUD, 2025 Annual Homelessness Assessment Report to Congress, Part 1, Exhibit 1.2",
+     "source_url": "https://www.huduser.gov/portal/sites/default/files/pdf/2025-AHAR-Part-1.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-10-03",
+     "id": "people-homeless-in-the-us-on"
+    },
+    {
+     "label": "Share of homeless people sleeping unsheltered",
+     "viz": "radial",
+     "wide": false,
+     "value": "36",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In January 2025, 266,320 people, nearly 36 percent of those counted homeless, slept outside, in vehicles or in other places not meant for habitation.",
+     "detail": "The rest stayed in emergency shelters (56 percent) or transitional housing (8 percent). The unsheltered count fell 3 percent from 2024, when 274,224 people were counted outside, the most HUD has recorded, but it was up by more than a third since 2013. The share outside varies enormously by state, largely with shelter policy and climate: in New York, where courts and laws give a right to shelter, about 4 percent of the 145,560 people counted were unsheltered, while in California 115,583 of 181,934, or 64 percent, were. Encampments drive most public frustration and most of the legal fight over camping bans, but on any given night most homeless people in the US are indoors.",
+     "source_label": "HUD, 2025 Annual Homelessness Assessment Report, Part 1, Overview, Exhibit 1.2 and Appendix A",
+     "source_url": "https://www.huduser.gov/portal/sites/default/files/pdf/2025-AHAR-Part-1.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-10-03",
+     "id": "share-of-homeless-people-sleeping-unsheltered"
+    },
+    {
+     "label": "Chronically homeless individuals in the US",
+     "viz": "ranked",
+     "wide": true,
+     "value": "155,750",
+     "unit": "people",
+     "series": [
+      {
+       "label": "2007",
+       "value": "119,813",
+       "highlight": false
+      },
+      {
+       "label": "2013",
+       "value": "86,289",
+       "highlight": false
+      },
+      {
+       "label": "2024",
+       "value": "152,585",
+       "highlight": false
+      },
+      {
+       "label": "2025",
+       "value": "155,750",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Chronic homelessness reached a record 155,750 people in 2025, 81 percent more than in 2013, while permanent supportive housing beds rose 44 percent to about 408,000.",
+     "detail": "HUD counts a person as chronically homeless if they have a disability and have been homeless for a year continuously or repeatedly over three years; about three in ten homeless individuals met that definition in 2025. Permanent supportive housing, the main Housing First program for this group, pairs a long-term rent subsidy with voluntary services, and people living in it are not counted as homeless. Chronic homelessness fell 28 percent from 2007 to 2013 as supportive housing expanded, then climbed to new highs while beds kept growing from about 189,000 in 2007. The pairing is read in opposite ways: those who favor treatment first see a model that does not shrink homelessness at scale, while Housing First supporters see one that was never funded to keep up with rising rents and a fentanyl-driven overdose wave. Bed counts for years before 2025 are calculated from the changes HUD reports.",
+     "source_label": "HUD, 2025 Annual Homelessness Assessment Report, Part 1, Exhibits A.6, 1.2 and 2.5",
+     "source_url": "https://www.huduser.gov/portal/sites/default/files/pdf/2025-AHAR-Part-1.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-10-03",
+     "id": "chronically-homeless-individuals-in-the-us"
+    },
+    {
+     "label": "Housing First against treatment-first programs in a federal review",
+     "viz": "bar",
+     "wide": false,
+     "value": "88%",
+     "unit": "greater drop",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "A CDC-supported review of 26 studies found Housing First gave a median 88 percent greater decrease in homelessness than treatment first or usual treatment, and 41 percent greater housing stability.",
+     "detail": "These are relative differences between program groups, not shares of people housed; the homelessness figure is the median across the five studies that measured it, and housing stability across 13. On the strength of this review, the Community Preventive Services Task Force recommends permanent supportive housing with Housing First for people experiencing homelessness who have a disabling condition. The review also found less hospitalization and emergency department use, and concluded that the economic benefits exceed the costs in the United States. It found “no apparent differences in physical health, mental health, or substance abuse” between Housing First and comparison groups for the general homeless population. A 2018 National Academies of Sciences, Engineering, and Medicine committee likewise found that supportive housing keeps people housed but found no substantial published evidence that it improves health. Housing First supporters read these findings as showing the model does what it promises, ending homelessness for the person housed; those who favor treatment first read them as showing that housing alone does not treat addiction.",
+     "source_label": "Community Preventive Services Task Force, Housing First Programs finding",
+     "source_url": "https://www.thecommunityguide.org/findings/social-determinants-health-housing-first-programs.html",
+     "source_published": "2019",
+     "source_accessed": "2026-10-03",
+     "id": "housing-first-against-treatment-first-programs"
+    },
+    {
+     "label": "Homeless adults in California who have used hard drugs regularly",
+     "viz": "radial",
+     "wide": false,
+     "value": "65",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a representative California survey, 65 percent of homeless adults had at some point used hard drugs at least three times a week; 35 percent were doing so currently.",
+     "detail": "The study surveyed nearly 3,200 adults between October 2021 and November 2022, weighted to represent homeless adults statewide, and interviewed 365 of them in depth. Currently, 31 percent used methamphetamine regularly and 11 percent non-prescribed opioids. Among those who had ever used drugs regularly, 64 percent began before their first episode of homelessness, as did 79 percent of those who had ever drunk heavily. About equal shares said their drug use fell, stayed the same or rose while homeless, and 6 percent were receiving any drug or alcohol treatment. Both sides use these figures: the July 2025 federal executive order cites the lifetime figure (“nearly two-thirds of homeless individuals report having regularly used hard drugs”) to argue that addiction must be treated first, while the study’s authors put more weight on what the same people said about the cost of housing.",
+     "source_label": "UCSF Benioff Homelessness and Housing Initiative, California Statewide Study of People Experiencing Homelessness",
+     "source_url": "https://homelessness.ucsf.edu/sites/default/files/2025-12/CASPEH_Report_62023.pdf",
+     "source_published": "2021–2022",
+     "source_accessed": "2026-10-03",
+     "id": "homeless-adults-in-california-who-have"
+    },
+    {
+     "label": "Rise in homelessness linked to a $100 rent increase",
+     "viz": "bar",
+     "wide": false,
+     "value": "9",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The Government Accountability Office found a $100 rise in median monthly rent was associated with a 9 percent increase in homelessness in the areas it studied.",
+     "detail": "GAO’s econometric analysis of point-in-time count data controlled for wages, unemployment, poverty and other demographic and economic characteristics, but it is a statistical association, not an experiment. It is one of several studies finding that housing costs and vacancy rates track regional homelessness more closely than measures of addiction or mental illness. Those who emphasize individual factors do not deny that rents matter; they argue that housing costs explain how many people in a region are at risk, while addiction and mental illness explain which people end up and stay on the street.",
+     "source_label": "US Government Accountability Office, GAO-20-433, Homelessness: Better HUD Oversight of Data Collection",
+     "source_url": "https://www.gao.gov/products/gao-20-433",
+     "source_published": "2020",
+     "source_accessed": "2026-10-03",
+     "id": "rise-in-homelessness-linked-to-a"
+    },
+    {
+     "label": "Cities that penalized sleeping outside, 2024 to 2026",
+     "viz": "bar",
+     "wide": false,
+     "value": "350+",
+     "unit": "cities",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "An advocacy group that opposes such laws counts more than 350 cities and 14 states that made sleeping or camping outside a crime between June 2024 and June 2026.",
+     "detail": "In City of Grants Pass v. Johnson (2024), the Supreme Court held 6 to 3 that enforcing generally applicable public-camping laws is not cruel and unusual punishment, ending a Ninth Circuit rule that had barred enforcement whenever a city’s homeless population exceeded its available shelter beds. The count comes from the National Homelessness Law Center, which describes such laws as criminalizing homelessness; it covers camping bans and related measures and does not report how often they are enforced. The ACLU reports the same “over 350 cities” figure. A July 2025 federal executive order directs agencies to favor jurisdictions that enforce bans on urban camping when awarding discretionary grants.",
+     "source_label": "National Homelessness Law Center, statement on two years since Grants Pass",
+     "source_url": "https://homelesslaw.org/06252026statement/",
+     "source_published": "2024–2026",
+     "source_accessed": "2026-10-03",
+     "id": "cities-that-penalized-sleeping-outside-2024"
+    },
+    {
+     "label": "Homelessness rate by state",
+     "viz": "ranked",
+     "wide": true,
+     "value": "22",
+     "unit": "per 10,000",
+     "series": [
+      {
+       "label": "New York",
+       "value": "73",
+       "highlight": false
+      },
+      {
+       "label": "District of Columbia",
+       "value": "73",
+       "highlight": false
+      },
+      {
+       "label": "Oregon",
+       "value": "64",
+       "highlight": false
+      },
+      {
+       "label": "Vermont",
+       "value": "52",
+       "highlight": false
+      },
+      {
+       "label": "Hawaii",
+       "value": "47",
+       "highlight": false
+      },
+      {
+       "label": "California",
+       "value": "46",
+       "highlight": false
+      },
+      {
+       "label": "Massachusetts",
+       "value": "40",
+       "highlight": false
+      },
+      {
+       "label": "Washington",
+       "value": "40",
+       "highlight": false
+      },
+      {
+       "label": "United States",
+       "value": "22",
+       "highlight": true
+      },
+      {
+       "label": "West Virginia",
+       "value": "11",
+       "highlight": false
+      },
+      {
+       "label": "Texas",
+       "value": "9",
+       "highlight": false
+      },
+      {
+       "label": "Mississippi",
+       "value": "4",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "About 22 in every 10,000 Americans were homeless on one night in January 2025, ranging from 4 per 10,000 in Mississippi to 73 in New York and the District of Columbia.",
+     "detail": "The highest rates are on the West Coast and in the Northeast, in places with high rents, low rental vacancy and, in New York, Massachusetts and the District of Columbia, a legal right to shelter that brings more people indoors and into the count. Many of the lowest rates are in cheaper states in the South and Appalachia, including some with high rates of drug overdose. Those who see homelessness mainly as a housing-market problem treat this pattern as their core evidence. Those who stress addiction and local policy answer that high-rate places also tend to tolerate encampments and public drug use, and that homeless people move toward services and mild climates. A representative survey of homeless adults in California, conducted in 2021 and 2022 by the UCSF Benioff Homelessness and Housing Initiative, found that 90 percent lost their last housing in the state and 75 percent stayed in the same county.",
+     "source_label": "HUD, 2025 Annual Homelessness Assessment Report, Part 1, Exhibit 1.7 and Appendix A",
+     "source_url": "https://www.huduser.gov/portal/sites/default/files/pdf/2025-AHAR-Part-1.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-10-03",
+     "id": "homelessness-rate-by-state"
+    },
+    {
+     "label": "State psychiatric hospital beds",
+     "viz": "range",
+     "wide": false,
+     "value": "10.8",
+     "unit": "per 100,000",
+     "series": [],
+     "range_min": "0",
+     "range_max": "339 in 1950",
+     "note": "The US had about 11 state psychiatric hospital beds per 100,000 people in 2023, down from about 339 in 1950.",
+     "detail": "The total fell from 512,501 beds in 1950 to 36,150 in 2023, the lowest on record, and 52 percent of the remaining beds held people committed through the criminal legal system rather than civilly. Deinstitutionalization was meant to be matched by community mental health care that was never fully built, and many who favor expanding involuntary treatment trace part of today’s street homelessness to it. The Treatment Advocacy Center, which compiled the figures, campaigns for more psychiatric beds and easier civil commitment and has published a commonly cited target of 40 to 60 beds per 100,000; disability rights and civil liberties groups dispute both the target and the link between bed closures and homelessness.",
+     "source_label": "Treatment Advocacy Center, Prevention Over Punishment (2024)",
+     "source_url": "https://www.tac.org/wp-content/uploads/2024/02/Prevention-Over-Punishment-Full-Report.pdf",
+     "source_published": "2023",
+     "source_accessed": "2026-10-03",
+     "id": "state-psychiatric-hospital-beds"
+    },
+    {
+     "label": "Stably housed in Canada’s Housing First trial",
+     "viz": "ranked",
+     "wide": true,
+     "value": "62",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Housing First",
+       "value": "62",
+       "highlight": true
+      },
+      {
+       "label": "Usual services",
+       "value": "31",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a randomized trial of 2,148 homeless adults with mental illness in five Canadian cities, 62 percent offered Housing First were housed throughout the final six months, against 31 percent.",
+     "detail": "At Home/Chez Soi enrolled homeless adults with serious mental illness in Vancouver, Winnipeg, Toronto, Montreal and Moncton and randomly assigned them either to Housing First, a rent subsidy for an apartment plus a support team with no requirement to accept treatment or be sober, or to whatever services already existed. The difference was large and consistent across sites: 16 percent of the Housing First group were housed none of the final six months, against 46 percent of the others. Other outcomes were mixed; the report states that mental health and substance use problems “improved by a similar amount” in both groups. Costs were partly offset: over two years, every $10 spent on Housing First saved an average of $9.60 in other services for high-need participants, $3.42 for moderate-need participants and $21.72 for the costliest tenth. Those who favor treatment first argue the trial says less about people whose main problem is active addiction, and that staying housed is not the same as recovering.",
+     "source_label": "Mental Health Commission of Canada, National Final Report, Cross-Site At Home/Chez Soi Project (2014)",
+     "source_url": "https://www.mentalhealthcommission.ca/wp-content/uploads/drupal/mhcc_at_home_report_national_cross-site_eng_2_0.pdf",
+     "source_published": "2014",
+     "source_accessed": "2026-10-03",
+     "id": "stably-housed-in-canada-s-housing"
+    },
+    {
+     "label": "Cost per unit of new supportive housing in Los Angeles",
+     "viz": "bar",
+     "wide": false,
+     "value": "$596,846",
+     "unit": "",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Supportive housing units under construction with Los Angeles’s Proposition HHH bond averaged nearly $600,000 each in 2021, up from $531,000 a year earlier.",
+     "detail": "In November 2016 Los Angeles voters approved up to $1.2 billion in bonds under Proposition HHH, and the city set a goal of 10,000 units within ten years; by early 2022, more than five years in, 1,142 units were complete and almost 4,400 under construction. About 14 percent of the units under construction cost more than $700,000 each. The city’s subsidy averaged about $134,000 per unit, or 23 percent of the total, with the rest from tax credits and other sources. Buying and converting existing buildings cost far less: acquisitions through the city’s program averaged about $223,000 per unit.",
+     "source_label": "Los Angeles City Controller, The Problems and Progress of Prop. HHH (2022)",
+     "source_url": "https://controller.lacity.gov/audits/problems-and-progress-of-prop-hhh",
+     "source_published": "2021",
+     "source_accessed": "2026-10-03",
+     "id": "cost-per-unit-of-new-supportive"
+    },
+    {
+     "label": "Veterans experiencing homelessness",
+     "viz": "ranked",
+     "wide": true,
+     "value": "32,495",
+     "unit": "veterans",
+     "series": [
+      {
+       "label": "2009",
+       "value": "73,367",
+       "highlight": false
+      },
+      {
+       "label": "2013",
+       "value": "55,619",
+       "highlight": false
+      },
+      {
+       "label": "2024",
+       "value": "32,882",
+       "highlight": false
+      },
+      {
+       "label": "2025",
+       "value": "32,495",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Veteran homelessness fell to 32,495 people in January 2025, 56 percent below 2009, when HUD first reported it, and 42 percent below 2013.",
+     "detail": "The decline coincided with a large federal push, including the HUD–Veterans Affairs Supportive Housing program, known as HUD-VASH, which pairs rent vouchers with VA case management on Housing First principles, and Supportive Services for Veteran Families, which funds prevention and rapid rehousing. Housing First advocates cite veterans as the clearest proof that funding housing at the scale of need reduces homelessness. Those who favor treatment first point to research on overdose deaths among veterans housed through HUD-VASH, which the federal Treatment First toolkit cites as evidence that Housing First lacks enough addiction treatment. The series shows most of the fall came before 2024. The 2009 value is calculated from the change HUD reports in Exhibit B5.1.",
+     "source_label": "HUD, 2025 Annual Homelessness Assessment Report, Part 1, Exhibits A.6 and B5.1",
+     "source_url": "https://www.huduser.gov/portal/sites/default/files/pdf/2025-AHAR-Part-1.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-10-03",
+     "id": "veterans-experiencing-homelessness"
+    },
+    {
+     "label": "Fall in the Houston region’s homeless count since 2011",
+     "viz": "bar",
+     "wide": false,
+     "value": "60",
+     "unit": "% fewer",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The Houston region reports cutting its homeless count by more than 60 percent since 2011, to 3,280 people in 2024.",
+     "detail": "Houston organized more than 100 agencies into a single coordinated Housing First system, The Way Home, and is the most cited US example of a large city reducing homelessness. In 2024, 1,107 of the people counted were unsheltered. The Houston Defender reported a 2025 count of 3,325, nearly flat, with unsheltered homelessness rising as federal pandemic funds ran out. Every camp claims Houston. Housing First supporters credit the coordinated system, steady federal funding and the offer of an apartment with no preconditions. Those who stress housing supply note that Houston has no conventional zoning and much cheaper rents than coastal cities. Those who pair housing with enforcement note that the city’s published encampment strategy moves residents into housing in a planned surge and then closes the site, with police issuing warnings and enforcing city ordinances.",
+     "source_label": "Coalition for the Homeless of Houston/Harris County, 2024 Point-in-Time Count results",
+     "source_url": "https://www.cfthhouston.org/2024-pit-count-results",
+     "source_published": "2011–2024",
+     "source_accessed": "2026-10-03",
+     "id": "fall-in-the-houston-region-s"
+    },
+    {
+     "label": "What homeless Californians say would have kept them housed",
+     "viz": "ranked",
+     "wide": true,
+     "value": "82",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Housing voucher",
+       "value": "90",
+       "highlight": false
+      },
+      {
+       "label": "$5–10K once",
+       "value": "82",
+       "highlight": true
+      },
+      {
+       "label": "$300–500 a month",
+       "value": "70",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In California’s statewide survey, 82 percent of homeless adults believed a one-time payment of $5,000 to $10,000 would have prevented their homelessness.",
+     "detail": "In the six months before becoming homeless, participants’ median monthly household income was $960. Among those who held a lease, median income was $1,400 against median housing costs of $700, and 66 percent of those paying rent were rent-burdened; leaseholders had a median of 10 days’ notice before losing their housing, others one day. Nineteen percent entered homelessness from an institution such as prison or a long jail stay. People with complex behavioral health needs named housing cost as a major barrier to getting back inside just as often as those without (89 and 90 percent). These are participants’ own beliefs about what would have helped, not measured effects of payments: those who emphasize addiction and mental illness argue a self-report survey cannot separate the cost of housing from the reasons people could not keep it, while those who emphasize housing costs point to the low incomes and short notice.",
+     "source_label": "UCSF Benioff Homelessness and Housing Initiative, California Statewide Study of People Experiencing Homelessness",
+     "source_url": "https://homelessness.ucsf.edu/sites/default/files/2025-12/CASPEH_Report_62023.pdf",
+     "source_published": "2021–2022",
+     "source_accessed": "2026-10-03",
+     "id": "what-homeless-californians-say-would-have"
+    },
+    {
+     "label": "Deaths of homeless people in Los Angeles County",
+     "viz": "bar",
+     "wide": false,
+     "value": "2,208",
+     "unit": "deaths",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "2,208 homeless people died in Los Angeles County in 2024, about 300 fewer than in 2023 and the first decline since the county began tracking.",
+     "detail": "The crude death rate fell 10 percent, from 3,326 to 2,994 per 100,000, driven mainly by a 21 percent drop in the overdose death rate, to 1,199 per 100,000, so overdoses still caused roughly 40 percent of deaths. People experiencing homelessness died at 4.2 times the rate of the county’s general population, and their overdose death rate was 46 times higher, up from 41 times in 2023. The share of overdose deaths involving fentanyl fell from 70 to 59 percent. About 75 percent of those who died in 2024 had no recent contact with the county’s homeless services system. The county report recommends harm reduction, safe consumption spaces and low-barrier treatment, an approach the federal Treatment First toolkit rejects.",
+     "source_label": "Los Angeles County Department of Public Health, Mortality Among People Experiencing Homelessness, 2015–2024",
+     "source_url": "http://publichealth.lacounty.gov/chie/reports/Homeless_Mortality_Report_2026.pdf",
+     "source_published": "2024",
+     "source_accessed": "2026-10-03",
+     "id": "deaths-of-homeless-people-in-los"
+    },
+    {
+     "label": "Homeless people living alone in Finland",
+     "viz": "ranked",
+     "wide": true,
+     "value": "4,579",
+     "unit": "people",
+     "series": [
+      {
+       "label": "2023",
+       "value": "3,429",
+       "highlight": false
+      },
+      {
+       "label": "2024",
+       "value": "3,806",
+       "highlight": false
+      },
+      {
+       "label": "2025",
+       "value": "4,579",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Finland, where Housing First became national policy in 2008, counted 4,579 homeless people living alone in 2025, the largest annual rise on record.",
+     "detail": "Helsinki converted most of its shelters into supported and independent apartments, and Finland’s count of homeless single people had fallen from 17,110 in 1987, according to Shinn and Khadduri in HUD’s Cityscape journal (2020); Varke reports that long-term homelessness fell about 70 percent between 2008 and 2024. In 2025 long-term homelessness rose 29 percent, to 1,306. Finland’s definition is broad: 64 percent of homeless people in 2025 were staying with friends or relatives, and 17 percent, 758 people, were outdoors, in stairwells or in shelters. The 2023 value is calculated from Varke’s reported 2024 total and change. The Y-Foundation, Finland’s main Housing First landlord, attributes the rise to cuts in housing allowance and social assistance and to strained services, which Housing First supporters read as confirming that housing and income support drive the numbers; skeptics argue the reversal shows the model’s results are not self-sustaining.",
+     "source_label": "Housing Finance and Development Centre of Finland (Varke), Homeless people 2025",
+     "source_url": "https://www.varke.fi/en/statistics/homelessness/homeless-people-2025",
+     "source_published": "2025",
+     "source_accessed": "2026-10-03",
+     "id": "homeless-people-living-alone-in-finland"
+    },
+    {
+     "label": "California spending on homelessness and housing affordability",
+     "viz": "bar",
+     "wide": false,
+     "value": "24",
+     "unit": "$ billion",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "California allocated nearly $24 billion to homelessness and housing affordability over the five fiscal years to 2022–23; the state auditor found it had not consistently tracked results.",
+     "detail": "The figure covers both homelessness and housing affordability programs, so it is not homelessness spending alone, though it is often reported as such. The auditor found that the state’s Interagency Council on Homelessness had stopped tracking spending and outcomes in 2021, and of five programs it reviewed, judged two, the Homekey hotel conversion program and the Homeless Housing, Assistance and Prevention grants, likely cost-effective, while lacking the data to evaluate the other three. State officials say the spending is now showing results: the governor’s office reported in September 2026 that the state’s unsheltered count fell by 8,391 people, or 6.8 percent, from 2024 to 2025, the largest numerical drop of any state. HUD’s report shows California’s total count down 2.8 percent in 2025.",
+     "source_label": "California State Auditor, Report 2023-102.2, Homelessness in California (2024)",
+     "source_url": "https://www.auditor.ca.gov/wp-content/uploads/2024/04/2023-102.2-Report.pdf",
+     "source_published": "2018–19 to 2022–23",
+     "source_accessed": "2026-10-03",
+     "id": "california-spending-on-homelessness-and-housing"
+    },
+    {
+     "label": "Public support for removing homeless encampments",
+     "viz": "ranked",
+     "wide": true,
+     "value": "43",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Favor",
+       "value": "43",
+       "highlight": true
+      },
+      {
+       "label": "Neither",
+       "value": "31",
+       "highlight": false
+      },
+      {
+       "label": "Oppose",
+       "value": "24",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In August 2025, 43 percent of US adults favored removing homeless encampments in cities, 24 percent opposed it and 31 percent were neutral.",
+     "detail": "The poll of 1,121 adults asked simply about “removing homeless encampments in U.S. cities,” without saying whether shelter or housing would be offered, so it measures general sentiment rather than support for any particular policy; 24 percent favored strongly and 9 percent opposed strongly. The large neutral share suggests opinion depends on how removal is done. Polls commissioned by advocates tend to find majorities for their own framing: a 2024 Morning Consult survey for the National Alliance to End Homelessness reported majority support for housing-focused federal funding.",
+     "source_label": "UChicago Harris/AP-NORC poll, August 2025, topline",
+     "source_url": "https://apnorc.org/wp-content/uploads/2025/09/UChicago-Harris-APNORC-August-2025-Topline-Final.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-10-03",
+     "id": "public-support-for-removing-homeless-encampments"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Is homelessness driven mainly by the cost of housing or by addiction and mental illness?",
+    "kind": "empirical",
+    "why": "Both plainly play a part, so the dispute is over weight. Each side’s data answers a different question: why some regions have far more homelessness than others, or which people within a region lose their homes and stay out.",
+    "detail": "On the housing side, the places with the most addiction and mental illness are not the places with the most homelessness: cheap states in the South and Appalachia have low rates, expensive coastal states high ones, and statistical studies tie rising rents to rising homelessness. Most homeless people surveyed had very low incomes and little warning before losing their homes. Addiction and illness, in this view, decide who loses the game of musical chairs; the number of chairs decides how many lose.\n\nOn the other side, most people with low incomes in expensive cities never become homeless, and those who do, especially those who stay outside for years, overwhelmingly have serious addiction, mental illness or both, often starting before they lost their housing. Cheap rent does not keep someone housed through psychosis or methamphetamine addiction, and fentanyl has changed who is outside and how they die. Treating the individual crisis, on this view, is the precondition for any housing to last.",
+    "lean_label_a": "Housing costs",
+    "lean_label_b": "Personal crises",
+    "id": "is-homelessness-driven-mainly-by-the"
+   },
+   {
+    "text": "Does Housing First shrink homelessness across a city or country, or only for the people it houses?",
+    "kind": "empirical",
+    "why": "Trials show Housing First keeps far more participants housed than usual services, but national chronic homelessness rose as supportive housing grew. The dispute is whether that gap shows a failed model or one never funded to match the inflow.",
+    "detail": "Supporters say that where Housing First was funded at the scale of need, the problem shrank, and that national numbers rose because rents climbed and pandemic aid ended while the people already housed stayed housed. Skeptics answer that the test of a policy is whether the problem gets smaller, and after two decades as federal policy it has not. Supportive housing is costly and slow to build, so it houses a few thousand while tens of thousands wait outside; keeping a tenant in a subsidized unit is not the same as recovery or self-support; and a system that reserves its money for permanent housing leaves too little for shelter and treatment.\n\nPart of the dispute is what to count. A person in supportive housing is no longer homeless in the federal count, so success shows up as an absence, while new inflow from rising rents and the fentanyl era shows up as growth. The showcase cases have recently turned: Houston’s count stalled when pandemic money ran out and Finland’s rose sharply in 2025, and each side reads those turns as support for its view.",
+    "lean_label_a": "Works at scale",
+    "lean_label_b": "Doesn’t scale",
+    "id": "does-housing-first-shrink-homelessness-across"
+   },
+   {
+    "text": "Should publicly funded housing be offered without requiring sobriety or treatment?",
+    "kind": "value",
+    "why": "It turns partly on which approach keeps people alive and housed, but mostly on what a publicly funded home is: a precondition for recovery that should not be withheld, or support the public may tie to effort.",
+    "detail": "For no conditions: people cannot get sober on a sidewalk, and sobriety rules screen out exactly those who most need housing. Finland’s older “staircase” system, which made people earn each step toward a home, stalled in the 2000s with a hard core of long-term homeless people who could not climb it. In trials, unconditional housing does no worse on drug use than treatment-first programs, so conditions cost people their homes without buying extra recovery. Treatment works best when chosen, and a stable home makes the choice possible.\n\nFor expectations: addiction thrives on low expectations, and a building full of people actively using fentanyl is not a place to recover. Recovery housing, rewards for clean drug tests and structured programs build the accountability and community that addiction erodes. Most public benefits come with expectations, and many people in recovery say a requirement is what got them sober. The trials comparing the two mostly enrolled people with mental illness rather than people whose main problem is active addiction, so the evidence may not reach the people for whom the question matters most.",
+    "lean_label_a": "No conditions",
+    "lean_label_b": "Expect recovery",
+    "id": "should-publicly-funded-housing-be-offered"
+   },
+   {
+    "text": "Should cities be able to punish people for sleeping or camping in public places?",
+    "kind": "value",
+    "why": "The Supreme Court ruled in 2024 that the Constitution generally allows it, so the question is whether cities should. It weighs everyone’s claim to safe public space against the liberty and survival of people who may have nowhere better to go.",
+    "detail": "For order: sidewalks, parks and transit belong to everyone, including other homeless people, and encampments bring fires, violence, open drug markets and disease that fall hardest on the people living in them. Without the ability to say “not here,” outreach workers have no leverage to get people to accept shelter or treatment, and a standing camp becomes a place where people die. Clear rules paired with real offers of shelter are what move people indoors; tolerating permanent camps is not compassion.\n\nFor a right to rest: sleeping is not a choice, and fining or jailing people for doing it outdoors when they have no home gives them a criminal record, costs them documents and medication in sweeps, and makes housing harder to reach. Shelter is often full, unsafe, or closed to couples, pets or people who work nights, so an offer of a bed is not always a real one. Money spent on enforcement is money not spent on housing the people it targets.",
+    "lean_label_a": "Public order",
+    "lean_label_b": "Right to rest",
+    "id": "should-cities-be-able-to-punish"
+   },
+   {
+    "text": "Should the state commit people with severe mental illness or addiction to treatment against their will?",
+    "kind": "value",
+    "why": "It pits a duty to rescue people too ill to recognize their own illness against hard-won protections from abuse in psychiatric institutions, and it depends on hospital beds that have largely disappeared.",
+    "detail": "For compelling care: some people are too ill to know they are ill, and leaving them to die “with their rights on,” in a phrase many psychiatrists and families use, is neglect rather than respect for autonomy. A small group with psychosis or severe addiction who refuse help, on this view, account for much of the visible disorder and many deaths on the street, and many people with schizophrenia now cycle among the street, emergency rooms and jail. Several states, New York in 2025 among them, have widened the legal standard to cover people who cannot meet basic needs such as food, shelter or medical care because of mental illness, and courts can order treatment that restores the capacity to choose.\n\nFor protecting liberty: forced treatment has a long record of abuse and little evidence of lasting benefit after release, and short holds tend to end in discharge back to the street with nothing changed. People avoid services they fear will lock them up. The scarce resources are voluntary treatment beds, supportive housing and outreach, which many people accept when they are actually offered; commitment without a home to return to is a revolving door, and widening it risks sweeping up people whose main problem is poverty.",
+    "lean_label_a": "Compel care",
+    "lean_label_b": "Protect liberty",
+    "id": "should-the-state-commit-people-with"
+   },
+   {
+    "text": "Do encampment clearances get people indoors, or just move them somewhere else?",
+    "kind": "empirical",
+    "why": "Cities report falling street counts after clearance campaigns, while researchers who follow individuals find most stay nearby and lose contact with caseworkers. Much may depend on whether a real offer of shelter comes with the clearance.",
+    "detail": "Those who say clearances work point to cities that paired them with a concrete offer of a bed and saw many people accept it, and to planned closures that move a camp’s residents into housing before the site is shut. Persistent camps entrench addiction and victimization, and ending them interrupts that; the aim is not punishment but making the street a less viable option than the help on offer.\n\nThose who say clearances mostly move people cite an August 2026 preprint by Morande and colleagues, which tracked people after clearances and found they “do not travel far,” appear unlikely to move indoors and often lose contact with service providers. Street counts can fall partly because people scatter and become harder to find. Displacement also disrupts care for people who inject drugs: a 2023 modeling study in JAMA by Joshua Barocas and colleagues projected that continual displacement in 23 US cities could contribute to 15 to 25 percent of deaths in that group over ten years.",
+    "lean_label_a": "Gets people inside",
+    "lean_label_b": "Just moves them",
+    "id": "do-encampment-clearances-get-people-indoors"
+   },
+   {
+    "text": "Should limited money go to permanent housing or to faster, cheaper shelter and treatment beds?",
+    "kind": "value",
+    "why": "Money spent on costly new apartments cannot buy shelter beds, and shelter beds do not by themselves give anyone a permanent home. The answer turns on how many shelter stays end in housing, and on weighing one person housed for good against many still outside.",
+    "detail": "For permanent homes: shelter manages homelessness without ending it. People cycle through for years at high cost, while permanent housing with support ends the episode and most people stay housed. Rent vouchers and conversions of existing buildings can house people far more cheaply than new construction, and shelter without enough permanent housing to move people into simply fills up, as advocates say New York’s right-to-shelter system shows.\n\nFor beds now: with more than a quarter of a million people sleeping outside, getting people inside tonight saves lives, and interim shelter, tiny homes, sanctioned campsites and treatment beds open in months rather than years. Permanent supportive housing has become so costly and slow that it cannot keep pace with the inflow. A system that offers everyone a safe bed at once and moves them to permanent housing as they stabilize reaches far more people than one that houses a few perfectly.",
+    "lean_label_a": "Permanent homes",
+    "lean_label_b": "Beds now",
+    "id": "should-limited-money-go-to-permanent"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Offer housing first, without preconditions",
+    "color_key": "green",
+    "steelman": "Homelessness is the lack of a home, so the fastest way to end it is to give people one, with support they choose, not a test they must pass first.",
+    "detail": "Requiring people to get sober, take medication or prove they are “housing ready” screens out exactly those who are most vulnerable and most expensive to leave outside, and asks them to do the hardest thing in their lives while sleeping in a doorway. A stable home, with a lease, a rent subsidy and services they can choose, is the platform for dealing with addiction, illness and work, not a reward for having done so. We do not reject treatment; we offer it without making it the price of a roof. Our evidence is the strongest in the field: randomized trials keep about twice as many people housed as usual services, and where housing was funded at the scale of need, among veterans and in Finland, the numbers fell. As Sam Tsemberis, who developed the model in New York in the 1990s, puts it: “The only way to end homelessness is to provide housing.”\n\nNational homelessness rose because rents outran incomes and pandemic aid ended, not because people fell out of our units; the roughly 400,000 people in supportive housing would otherwise be counted as homeless, and the federal government never paid for enough homes or vouchers to meet the need. Housing First never claimed to cure addiction alone, and overdose risk in housing calls for more on-site services and naloxone, not eviction back to the street, where death rates are higher still. Some of us focus on supportive housing for people with disabilities, others on rapid rehousing, one-time cash and eviction defense for families. The lawyers among us oppose encampment clearances outright; most providers accept them only where every resident is offered housing.",
+    "proponents": "National Alliance to End Homelessness; National Low Income Housing Coalition; Sam Tsemberis; National Homelessness Law Center",
+    "id": "offer-housing-first-without-preconditions"
+   },
+   {
+    "name": "Require recovery and end street camping",
+    "color_key": "blue",
+    "steelman": "Most people living on the street for years are fighting addiction or mental illness. An apartment with treatment optional does not fix that, and permanent camps abandon them.",
+    "detail": "The fentanyl and methamphetamine era has made untreated addiction deadlier than ever, and an apartment with services optional too often means someone in active addiction using alone behind a closed door. Two decades of Housing First as federal policy brought record chronic homelessness while HUD’s main homelessness grant spending more than doubled after 2013. As HUD Secretary Scott Turner put it, “the status quo of ‘housing first’ has failed to meaningfully reduce homelessness.” Reviews friendly to Housing First found no gain in drug use or health over alternatives, and a 2026 national study of veterans in supportive housing found their risk of dying of an overdose about twice that of similar homeless veterans. What works is a continuum: get people off the street into shelter or treatment, require and reward progress toward sobriety and work, and offer recovery housing among others committed to the same goal. Accountability is a form of respect, and tolerating permanent camps abandons people to drugs, violence and exposure and takes public space from everyone, the poor most of all.\n\nRetention measures whether people stay in a subsidized unit, not whether they are sober, healthy, working or alive, and the trials compared Housing First mostly with fragmented usual services, not well-run recovery programs; as Stefan Kertesz and colleagues cautioned in 2009, they also enrolled mainly people with mental illness rather than active addiction. Treatment first does not leave people outside until they are sober; it means shelter, treatment and recovery housing now, and permanent housing as people stabilize. Many recovery providers among us want penalties only as the push needed to bring people inside; others stress enforcing camping and drug laws and widening civil commitment.",
+    "proponents": "Donald Trump; HUD Secretary Scott Turner; Cicero Institute; Michele Steeb",
+    "id": "require-recovery-and-end-street-camping"
+   },
+   {
+    "name": "Offer shelter and treatment, then enforce",
+    "color_key": "amber",
+    "steelman": "Keep the housing that works, offer everyone outside a real bed now, and once that offer is made, living on the sidewalk is no longer an option.",
+    "detail": "The choice between Housing First and treatment first is a false one, and so is the choice between compassion and order. Permanent housing without sobriety requirements works for many people and should stay, but it cannot be built fast enough for everyone outside tonight, and some people, especially those with untreated psychosis or severe addiction, will not come inside without a push. So cities should offer each person a real option, whether a shelter bed, a treatment bed, a tiny home, a hotel room or an apartment; once it is made, they should be able to enforce rules against camping, and to compel treatment for the few too ill to accept it. As California’s governor Gavin Newsom says, “There’s nothing compassionate about letting people die on the streets.” San Francisco reports unsheltered homelessness down 22 percent and shelter placements up 40 percent after pairing encampment clearing with hundreds of new treatment beds, and more Americans favor removing encampments than oppose it. Encampments are dangerous for the people in them and corrode public support for any homelessness spending; clearing them with offers of help is how to keep that support.\n\nEnforcement without an offer does just move people around; that is why we tie it to a bed and fund beds at the same time, and why studies of harm from sweeps, which mostly describe clearances with no place to go, do not answer us. To treatment-first critics we say that unconditional housing already keeps most tenants housed, so the fix is to add recovery options and shelter, not to cut what works. Some of us stress shelter guarantees, as New York does; others enforcement once shelter exists, as in California’s model ordinance; others court-ordered treatment and wider civil commitment.",
+    "proponents": "Gavin Newsom; Daniel Lurie; Kathy Hochul",
+    "id": "offer-shelter-and-treatment-then-enforce"
+   },
+   {
+    "name": "Build enough homes to end the shortage",
+    "color_key": "rust",
+    "steelman": "Addiction and illness decide who loses a home when there are too few; the shortage decides how many. Build far more housing and every program works better.",
+    "detail": "The fight between Housing First and treatment first, and over encampments, is a fight over how to manage the casualties of a housing shortage. West Virginia, with severe addiction, has a fraction of California’s homelessness rate, and the difference lines up with rents and vacancy, not drug use. The economist Gregg Colburn and data scientist Clayton Page Aldern found that measures of drug use, mental illness, poverty, weather and welfare generosity do not explain why some regions have so much more homelessness, while rents and vacancy do. Every program needs vacant apartments to move people into, and in high-cost cities with almost none, new supportive housing takes years and costs a fortune per unit. The lasting fix is to legalize and build far more housing of every type, market-rate and subsidized, so rents fall and vacancy rises; then the services debate becomes manageable.\n\nCritics say new supply takes decades to lower rents and does nothing for the person outside tonight, who needs more than a cheap apartment. Supply is no substitute for services, but it is what makes them work: a voucher is useless without a vacant unit to use it in. Zoning reform and faster permits cost governments little and start paying off within a few years, while subsidizing a handful of very expensive units at a time has failed to keep up. Some of us stress lifting rules on private building; others public and social housing on the Finnish or Viennese model; most also back vouchers and Housing First for people with the highest needs.",
+    "proponents": "YIMBY Action; Gregg Colburn; Clayton Page Aldern",
+    "id": "build-enough-homes-to-end-the"
+   }
+  ],
+  "crux": {
+   "lead": "For people who stay homeless the longest, which has to come first: a home or treatment?",
+   "lead_highlight": "which has to come first",
+   "subtitle": "Every camp wants people housed and well. They split over whether the lack of a home is what keeps people with addiction or mental illness on the street, so housing must come first, or untreated illness is, so treatment, by persuasion or by requirement, must come first.",
+   "empirical": "Much of it can be measured. Trials show unconditional housing keeps people with serious mental illness housed better than usual services, but few compare it head to head with well-run recovery housing for people whose main problem is active addiction. Evidence could also show what happens after camps are cleared with a real offer of shelter, whether forced treatment lasts after release, and how much of a region’s homelessness rents explain.",
+   "values": "Even with all the evidence in, people would still disagree about what a home paid for by the public is: something owed to anyone who lacks one, or support the public may tie to effort toward recovery and work. They weigh differently the liberty of someone who refuses help against a duty to rescue someone too ill to choose, and rank differently fewer people outside, fewer dying and more people sober and self-supporting."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Read HUD’s 2025 national homelessness count",
+    "description": "The federal Annual Homelessness Assessment Report, with national, state and local counts of sheltered, unsheltered, chronic, veteran and family homelessness, and of shelter and housing beds.",
+    "url": "https://www.huduser.gov/portal/sites/default/files/pdf/2025-AHAR-Part-1.pdf",
+    "for_position": null,
+    "id": "read-hud-s-2025-national-homelessness"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the California Statewide Study of People Experiencing Homelessness",
+    "description": "UCSF’s representative study of homeless adults in California: how they lost their housing, their health, drug use and mental health, and what they say would help.",
+    "url": "https://homelessness.ucsf.edu/our-impact/studies/california-statewide-study-people-experiencing-homelessness",
+    "for_position": null,
+    "id": "read-the-california-statewide-study-of"
+   },
+   {
+    "kind": "donate",
+    "title": "Support the National Alliance to End Homelessness",
+    "description": "The national association of homelessness service providers, which advocates for Housing First and for federal funding of housing and services.",
+    "url": "https://help.endhomelessness.org/donate/",
+    "for_position": "Offer housing first, without preconditions",
+    "id": "support-the-national-alliance-to-end"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the federal Treatment First toolkit",
+    "description": "The August 2026 guide from HUD, the White House drug control office and HHS on recovery-oriented, substance-free housing and a five-phase path out of homelessness and addiction.",
+    "url": "https://www.hud.gov/sites/default/files/Main/documents/Best-Practices-Toolkit.pdf",
+    "for_position": "Require recovery and end street camping",
+    "id": "read-the-federal-treatment-first-toolkit"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read California’s model encampment ordinance",
+    "description": "The state’s template for cities and counties, which limits persistent camping and blocking sidewalks while requiring notice and offers of shelter before a site is cleared.",
+    "url": "https://www.gov.ca.gov/2025/05/12/governor-newsom-releases-state-model-for-cities-and-counties-to-immediately-address-encampments-with-urgency-and-dignity/",
+    "for_position": "Offer shelter and treatment, then enforce",
+    "id": "read-california-s-model-encampment-ordinance"
+   },
+   {
+    "kind": "local",
+    "title": "Join a local YIMBY Action chapter",
+    "description": "A national network of local groups that lobby city councils and state legislatures to allow more homes of every type.",
+    "url": "https://yimbyaction.org/get-involved/",
+    "for_position": "Build enough homes to end the shortage",
+    "id": "join-a-local-yimby-action-chapter"
+   },
+   {
+    "kind": "local",
+    "title": "Find your local Continuum of Care and join its January count",
+    "description": "Every US region has a Continuum of Care that plans local homelessness services and recruits volunteers each January for the count; HUD’s directory lists contacts.",
+    "url": "https://www.hudexchange.info/grantees/contacts/",
+    "for_position": null,
+    "id": "find-your-local-continuum-of-care"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Support or start an Oxford House recovery home",
+    "description": "A national network of self-run, democratically managed sober homes for people in recovery from addiction, with guidance on supporting or starting one.",
+    "url": "https://www.oxfordhouse.org/",
+    "for_position": "Require recovery and end street camping",
+    "id": "support-or-start-an-oxford-house"
+   },
+   {
+    "kind": "policy",
+    "title": "Join the National Homelessness Law Center’s campaign against camping bans",
+    "description": "Tracks and challenges laws that penalize sleeping outside, with legal resources and campaign materials for local advocates.",
+    "url": "https://homelesslaw.org/",
+    "for_position": "Offer housing first, without preconditions",
+    "id": "join-the-national-homelessness-law-center"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the National Academies review of permanent supportive housing",
+    "description": "A 2018 expert committee report weighing the evidence on whether supportive housing improves health and lowers costs for chronically homeless people.",
+    "url": "https://www.nationalacademies.org/projects/PGA-STS-15-01/publication/25133",
+    "for_position": null,
+    "id": "read-the-national-academies-review-of"
+   }
+  ]
+ },
+ "icon": "tent",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: a large dome tent pitched on a city sidewalk as the dominant focal mass, its door flap tied open; behind it and overlapped by the tent, a medium apartment building with a simple window grid and a plain front door; a rolled sleeping bag and a backpack resting beside the tent as the small element; a slim streetlamp at the right; one curb line curving gently across the whole frame from lower left to right as the connective element; the ground is the soft curve of the sidewalk rising slightly toward the middle.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #9459a2, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: people, figures, faces, hands, shopping carts, trash, litter, needles, syringes, bottles, police, badges, fences, barriers, bulldozers, signs, cardboard signs with writing, dollar signs, coins, cups, crosses, hearts, a row of identical tents, rain clouds, broken windows."
+}
