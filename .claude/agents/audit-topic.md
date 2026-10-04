@@ -75,7 +75,7 @@ which you read from `topic.json`.
   another. A camp named by a posture rather than by what it wants. Two camps that
   are the same camp. A camp missing that a reader would expect. The share cards and
   poster show four camps by design; a fifth behind Go deeper is not an issue or a
-  note, unless it outweighs one of the first four.
+  note, unless it outweighs one of the first four, which is an editorial issue.
 - **No repetition.** The same figure or example carried across three or more items;
   a point met twice is not worth a note. An expanded layer that restates its glance
   layer. A stat that duplicates another.
@@ -139,11 +139,19 @@ Date, verdict (ready | not ready), one paragraph on the page as a whole.
 ## Issues for icons
 ## Needs research (stops the run)
 ## Notes for the human
-- template or CSS defects (name the template and line), and judgment calls only the
-  human can make (camp order, a title, a word choice either way defensible)
+- template or CSS defects (name the template and line), and major decisions only
 ```
 
-Notes are the human's reading list, so keep them short. Leave out: repetition,
+You make the editorial judgment calls yourself. Camp order, a crux or lean-label
+wording, which row a tile highlights, a why-now that sits outside the scope, a title
+that is one camp's coinage, a question whose sides run uneven, art that argues: when
+one choice is better for the reader, it is an issue, routed with the choice you
+recommend ("move camp 5 to 4th", "retitle to …"). A judgment call is never a note.
+Notes for the human are only what changes the project rather than the page: the
+topic's scope or framing at the root, legal or safety exposure, a template or CSS
+defect the pipeline may not fix. Most packets have none.
+
+Keep the notes short. Leave out: repetition,
 unless it adds weight to one side; blocked or redirected links; uneven action
 counts per camp; anything already decided by design (four camps on the cards, equal
 tile heights, a trailing narrow tile, a long unit dropping whole to its own line);
