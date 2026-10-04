@@ -1,7 +1,7 @@
-# v1 topic pages (archived 2026-09-15)
+# v1 topic page (archived 2026-09-15)
 
-The seventeen topics the v1 pipeline drafted, kept whole: `topic.json` with its
-full draft, the `icon.md` brief, `<slug>-hero.png` (the primary art) and
-`<slug>-social.png` (the share card). Nothing here is loaded by the site; the
-loader reads only `research/topics/`. The live files for these topics were reset
-to index-only so v2 authors them from scratch.
+Only nuclear-energy is kept whole: the edit stage reads its `topic.json` as the
+exemplar for length and layering, and the loader tests use it as a fixture. The
+other sixteen v1 pages were removed 2026-10-04 after a blind comparison found the
+current pages better on all seventeen; their art and icon briefs live on under
+`research/topics/<slug>/v1-art/`. Nothing here is loaded by the site.
