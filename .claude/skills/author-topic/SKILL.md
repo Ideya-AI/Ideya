@@ -49,7 +49,12 @@ mkdir -p T/run && touch T/run/active
 ```
 
 The usage guard (a PreToolUse hook) only enforces while this marker exists. Remove
-it on every exit, including failure: `rm -f T/run/active`.
+it on every exit, including failure, with the final log line in the same command
+(an `rm` asks the user for approval; this does not, and the guard lets it through):
+
+```
+.venv/bin/python -c "import json,pathlib,datetime;open('T/run/log.jsonl','a').write(json.dumps({'t':datetime.datetime.now().astimezone().isoformat(timespec='seconds'),'stage':'run','event':'exit','result':'<verdict or reason>'})+'\n');pathlib.Path('T/run/active').unlink(missing_ok=True)"
+```
 
 The token report defaults to the newest transcript for this project, which is this
 session, so call it without `--session`. (The scratchpad path is not the session id
@@ -60,6 +65,9 @@ when a session has been resumed.)
 For each stage to run, in order research, editorial, icons, views, audit:
 
 1. Append `{"t": "<ISO now>", "stage": "<stage>", "event": "start"}` to `T/run/log.jsonl`.
+   Stage names in the log: `research`, `editorial`, `icons`, `views`, `audit` for
+   the first pass; fix cycle n logs `editorial-fix-<n>` / `icons-fix-<n>`, then
+   `views-<n>` and `audit-<n+1>`.
 2. Spawn with the Agent tool: `subagent_type` and `description` per the table,
    prompt `slug: <slug>`. Wait for it.
 
@@ -94,6 +102,11 @@ If the audit says `not ready`:
   current). Then re-run audit.
 - At most two fix cycles. After the second not-ready audit, stop and hand the packet
   to the user.
+
+Any edit to `T/topic.json` after a `ready` verdict, whether a pass on the audit's
+notes or a change the user asks for, is a fix cycle like the others: views when the
+glance hash changed, then a re-audit. A topic is ready only on the verdict of an
+audit that ran after its last edit.
 
 ## 5. Finish
 

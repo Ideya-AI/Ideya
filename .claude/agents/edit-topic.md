@@ -29,8 +29,10 @@ an item, and what the reader experiences. If the topic's status is `ready`, set 
 `in_progress` first: an edit withdraws readiness, and the audit re-certifies. Fix exactly those items by editing
 `topic.json` directly (never by re-splicing a section file: the file's items carry
 `id` fields the loader assigned, and reader votes hang on them; an item you keep
-keeps its id, whatever else you change about it). Consult `research.md`. When an issue is a stale or doubtful figure, you may run a
-targeted web search to confirm or replace it, recording the new source. Do not
+keeps its id, whatever else you change about it). Consult `research.md`. When an issue questions a figure, verify it against its
+source first (fetch it, or run a targeted search), then act on what the source says:
+correct the figure and its source if they disagree, or leave it and say so in the
+report if the page was right. Never reword around a figure you have not checked. Do not
 rewrite anything the list does not name. Then run the checks below and report.
 
 ## How the page reads
@@ -52,7 +54,7 @@ expanded text.
 
 summary about 115 and under 160. why_now 150 to 320. stat note 90 to 200, stat
 detail 350 to 1300. question text under 110 and ending in a question mark, why 140
-to 260, detail 500 to 1400, lean labels under 20 each. position name under 60,
+to 260, detail 500 to 1400, lean labels under 20 each (longer ones wrap on a phone). position name under 60,
 steelman 100 to 200 (rendered as the camp's own quote, one breath), detail 500 to
 1800 (two short paragraphs are fine, separated by a blank line), proponents a
 comma-separated list of names. crux lead under 110 with lead_highlight a phrase
@@ -73,7 +75,10 @@ label and position name.
   draw one; a few points over time are a ranked tile); ranked tiles are `wide: true` with a
   `series` of 2 or more rows sharing one unit and one `highlight: true` row where
   the topic's own value sits; range tiles carry `range_min` and `range_max` naming the scale the value sits on (never the value's own span, which would fill the whole track; a text label with a number in it is fine, like `255 new build`); value
-  is empty only on ranked tiles. Never two wide tiles back to back inside the first
+  is empty on ranked tiles (the tile shows the series and its unit, never a headline
+  value) and on no other kind. A ranked row may be negative; it draws from the
+  other end, so use it when the sign is the point, and prefer magnitudes when the
+  label can carry the direction. Never two wide tiles back to back inside the first
   three rows. Every stat has `source_label`, `source_url`, `source_published` (the
   data year) and `source_accessed` (today, YYYY-MM-DD). The note states the number;
   it does not argue. Every figure in a note or detail is on the page `source_url`
@@ -82,7 +87,9 @@ label and position name.
   note says which rows differ; when its rows span more than about 20 times, the
   small ones vanish, so split the tile or give the numbers in prose.
 - Questions: `kind` is `empirical` or `value`; the two lean labels are the poles,
-  short, parallel, neither loaded.
+  short, parallel, neither loaded, and between them they cover the answers to the
+  question as asked (a reader who holds either answer can pick one). On an
+  empirical question both sides name their evidence, or neither does.
 - Positions: names are the camp's own self-description of what it wants, all in the
   same grammatical form, no posture labels; `color_key` unique within the topic from
   green, blue, amber, rust, purple, teal, berry, indigo, cocoa, slate in that order
@@ -115,6 +122,12 @@ label and position name.
   disagreement. Before the checks, reread those fields once for exactly this.
 - When a tile's own detail says a figure is contested or has a rival estimate, the
   note says so too; the glance layer carries the dispute, never one end of it.
+- A ranked tile's `highlight` is the row the note is about, usually the latest or
+  the topic's own value; never an outlier year or one side's estimate over another's.
+- A quote in quotation marks is verbatim from a source the page names; otherwise it
+  is a paraphrase without quotation marks.
+- A camp may not claim what the page's own Basics show to be false. Before the
+  checks, read each steelman and position detail against the tiles once.
 - Lean labels read as a stance its holder would claim ("Let markets decide"), never
   as rhetoric about the other side. `lead_highlight` marks the fork itself, never one
   of the two answers, because it renders in the accent color.

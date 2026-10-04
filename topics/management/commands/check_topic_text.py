@@ -6,13 +6,14 @@
 Two classes of finding. ERRORS exit 1: markup or straight quotes in content,
 HTML entities, bad enums, over-cap fields the loader would truncate, structural
 faults (lead_highlight not in lead, duplicate color_key, for_position that names
-no position, missing source URL on a numbered stat, wide-tile packing that
-reorders the fold). WARNINGS are printed for the editor's judgment: UK spellings
-(capitalized hits may be proper nouns) and glance-layer length targets.
+no position, missing source URL on a numbered stat). WARNINGS are printed for the
+editor's judgment: UK spellings (capitalized hits may be proper nouns), glance-layer
+length targets, lean labels that wrap on a phone, and dates that go stale soon.
 
 No network, no database. The plain-text rules exist nowhere else in code.
 """
 
+import datetime
 import json
 import re
 from pathlib import Path
@@ -171,6 +172,56 @@ def _uk_hits(text):
     return hits
 
 
+_MONTHS = {
+    m: i
+    for i, m in enumerate(
+        "january february march april may june july august september october november december".split(),
+        1,
+    )
+}
+_M = "(" + "|".join(m.capitalize() for m in _MONTHS) + ")"
+_DATE = re.compile(
+    rf"\b{_M}\s+(\d{{1,2}}),\s+(20\d\d)\b"  # November 3, 2026
+    rf"|\b(\d{{1,2}})\s+{_M}\s+(20\d\d)\b"  # 3 November 2026
+    rf"|\b{_M}\s+(20\d\d)\b"  # November 2026
+    r"|\b(20\d\d)-(\d\d)-(\d\d)\b"  # 2026-11-03
+)
+STALE_WINDOW_DAYS = 90
+
+
+def _dates(text):
+    """(date, sentence) for each date written in the text. A month without a
+    day counts as the month's last day."""
+    for sent in re.split(r"(?<=[.;?!])\s+", text):
+        for m in _DATE.finditer(sent):
+            g = m.groups()
+            try:
+                if g[0]:
+                    d = datetime.date(int(g[2]), _MONTHS[g[0].lower()], int(g[1]))
+                elif g[3]:
+                    d = datetime.date(int(g[5]), _MONTHS[g[4].lower()], int(g[3]))
+                elif g[6]:
+                    y, mo = int(g[7]), _MONTHS[g[6].lower()]
+                    d = datetime.date(y + (mo == 12), mo % 12 + 1, 1) - datetime.timedelta(days=1)
+                else:
+                    d = datetime.date(int(g[8]), int(g[9]), int(g[10]))
+            except ValueError:
+                continue
+            yield d, sent, m.group()
+
+
+def stale_dates(fields, today=None):
+    """A page goes stale on the dates it names. Warn on a date in the next
+    STALE_WINDOW_DAYS: the sentence will need rewriting after it."""
+    today = today or datetime.date.today()
+    for name, text in fields:
+        if not isinstance(text, str):
+            continue
+        for d, sent, raw in _dates(text):
+            if today < d <= today + datetime.timedelta(days=STALE_WINDOW_DAYS):
+                yield name, f"names {raw}, {(d - today).days} days out; this sentence goes stale then"
+
+
 class Check:
     def __init__(self):
         self.errors, self.warnings = [], []
@@ -218,28 +269,20 @@ class Check:
             )
 
     def pack(self, stats):
-        """Mirror Section.basics_tiles: 3 cells a row, wide costs 2. The fold is
-        3 rows. If packing pulls a later tile forward inside the fold, array
-        order is no longer display order."""
-        pending = list(range(len(stats)))
-        rows = []
-        while pending:
-            row, cells, i = [], 0, 0
-            while i < len(pending) and cells < 3:
-                w = 2 if stats[pending[i]].get("wide") else 1
-                if cells + w <= 3:
-                    row.append(pending.pop(i))
-                    cells += w
-                else:
-                    i += 1
-            rows.append(row)
-        shown = [i for row in rows[:3] for i in row]
-        if shown != sorted(shown):
-            self.err(
-                "basics",
-                f"wide-tile packing reorders the fold: display order {shown}; fix wide flags or order",
-            )
-        return len(shown)
+        """Mirror Section.basics_tiles: 3 cells a row in file order, wide costs
+        2; a tile that does not fit starts the next row. Returns how many tiles
+        the 3-row fold shows."""
+        rows, cells = 1, 0
+        for i, s in enumerate(stats):
+            w = 2 if s.get("wide") else 1
+            if cells + w > 3:
+                rows, cells = rows + 1, 0
+            if rows > 3:
+                return i
+            cells += w
+            if cells == 3 and i + 1 < len(stats):
+                rows, cells = rows + 1, 0
+        return len(stats)
 
 
 def run(doc, path):
@@ -295,6 +338,11 @@ def run(doc, path):
                 c.err(w, f"{viz} needs a series of 2+ rows")
             if viz == "ranked" and not s.get("wide"):
                 c.err(w, "ranked tiles are wide")
+            if viz == "ranked" and s.get("value"):
+                c.warn(
+                    w,
+                    "ranked tile has a value; the tile never shows it (the highlighted row and the note carry the figure), so leave value empty",
+                )
             for r in series:
                 if re.search(r"\d\s*(to|–|—)\s*\d", str(r.get("value", ""))):
                     c.err(
@@ -317,14 +365,6 @@ def run(doc, path):
                 c.err(
                     w,
                     "a two-row ranked chart whose small value is under 1 percent of the large one draws the small bar as an empty track beside a full one; use a bar tile with the large value and the small one in the note",
-                )
-            if any(
-                str(r.get("value", "")).strip().startswith(("-", "−", "–"))
-                for r in series
-            ):
-                c.err(
-                    w,
-                    "a series row is negative; bars cannot show sign (a negative renders as no bar). Use magnitudes with the sign in the label, or a bar tile with the value in the headline",
                 )
             for r in series:
                 c.text(f"{w}.series", "series.label", r.get("label"))
@@ -393,6 +433,12 @@ def run(doc, path):
             c.err(w, f"kind {q.get('kind')!r} must be empirical or value")
         if q.get("text") and not q["text"].rstrip().endswith("?"):
             c.warn(w, "question text does not end with ?")
+        for k in ("lean_label_a", "lean_label_b"):
+            if len(q.get(k) or "") > 19:
+                c.warn(
+                    w,
+                    f"{k} {q[k]!r} is {len(q[k])} chars; 20 or more wraps on a phone",
+                )
 
     positions = d.get("positions") or []
     names = [p.get("name") for p in positions]
@@ -479,6 +525,11 @@ def run(doc, path):
             if other != name and (other, name) not in reported:
                 reported.add((other, name))
                 c.warn(f"{name}", f"repeats {other}: “{gram} …”")
+
+    for name, msg in stale_dates(fields + [
+        (f"action[{n}].title", x.get("title")) for n, x in enumerate(actions)
+    ] + [(f"stat[{n}].label", x.get("label")) for n, x in enumerate(stats)]):
+        c.warn(name, msg)
 
     for key, items in (
         ("stats", stats),

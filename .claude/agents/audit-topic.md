@@ -45,7 +45,9 @@ dev server is the live one and every such click is recorded as a reader's.
 If `research/topics/<slug>/audit.md` already exists, this is a re-audit after a fix.
 Read that packet first. Confirm each issue it raised is fixed, and check that the fix
 did not break anything around it. Items it listed as notes stay notes: do not raise
-them again as issues. Raise a new issue only if it meets the bar below and the
+them again as issues. Write your notes from scratch against the page as it is now:
+never copy an earlier note forward. An earlier note survives only if you checked it
+against the current `topic.json` and it still holds; drop any the fix resolved. Raise a new issue only if it meets the bar below and the
 previous auditor could not have seen it, because the fix introduced it or it was
 genuinely missed and changes the reading. Still read the whole page, but converge:
 the question is whether it is ready now, not what else could be improved.
@@ -60,7 +62,13 @@ which you read from `topic.json`.
 - **One story.** Does the page, top to bottom, tell one coherent account of the
   debate? Does the crux follow from the questions and positions above it? Does the
   why-now event belong to this topic?
-- **Neutrality in the page's own voice.** A stat note that argues. A question whose
+- **Neutrality in the page's own voice.** These fields are read for it every time,
+  because they are the most seen: the summary, the why-now, every question `why`,
+  every lean label pair (opposite answers to the question, each a stance its holder
+  would claim), the crux lead, subtitle and values, every position's proponents
+  (advocates, never a data source, court, publisher or neutral body the page cites),
+  and every highlighted row (the row the note is about, never an outlier year or one
+  camp's estimate chosen over another's). A stat note that argues. A question whose
   wording presupposes its answer or whose lean labels are loaded. A crux framed the
   way one camp frames it. A summary or why-now that takes a side.
 - **Even steelmanning.** A camp written with more energy, evidence or length than
@@ -71,7 +79,8 @@ which you read from `topic.json`.
 - **No repetition.** The same figure or example carried across three or more items;
   a point met twice is not worth a note. An expanded layer that restates its glance
   layer. A stat that duplicates another.
-- **Internal consistency.** A figure in Basics that sits oddly beside a claim in a
+- **Internal consistency.** A camp's steelman or detail that a Basics tile on the
+  same page contradicts. A figure in Basics that sits oddly beside a claim in a
   position. Two places giving different numbers for the same thing. A date that
   cannot be right given today's date (`date -I`).
 - **Reading experience.** Glance text that is not a glance. Jargon without a foothold.
@@ -81,8 +90,11 @@ which you read from `topic.json`.
 Before calling a render stale, compare its file time with `topic.json`'s
 (`stat -c '%y' <file>`), or the glance hash as above; a render newer than the file is
 current, whatever you remember of an earlier draft. When your own memory of a fact disagrees with the page,
-say which source would settle it rather than asserting your memory; the page was
-written with web access and you were not.
+your memory is often the stale one: the page was written with web access and you
+were not, and audits that trusted memory were wrong more often than right. Raise it
+only when the difference would change the reading, and then as an editorial issue
+("verify against <source>; correct only if the source disagrees"), never as a note
+for the human. Otherwise drop it.
 
 Basics tiles in a row are deliberately equal height, so whitespace under the shorter
 tile of a pair, open or closed, is the design and not a note.
@@ -94,7 +106,9 @@ case, so a reader meets it twice"), not a preference ("could flow better").
 
 - **ready**: nothing would mislead or confuse a reader. Notes may remain for the
   human.
-- **not ready**: a reader would be misled or confused. Sentence shape, cadence,
+- **not ready**: a reader would be misled or confused. If you can state a defect as
+  a concrete edit and it changes what a reader believes, it is an issue, however
+  small the edit, never a note. Sentence shape, cadence,
   a detail that opens by echoing its steelman, four tiles that start the same way:
   these are notes for the human, never issues, because no reader is misled by them.
   An issue is something that changes what a reader believes about the debate: a
@@ -104,9 +118,6 @@ case, so a reader meets it twice"), not a preference ("could flow better").
   issue. A figure whose linked source cannot contain it (2024 data credited to a 2023
   brief, a number the cited page does not carry) is an issue however small the
   number: every figure in the page's voice must name a source a reader can follow.
-  A figure your memory puts off by a factor of two or more is an editorial issue,
-  not a note, even when the conclusion survives: route it as "verify against
-  <source> and correct", since the editor has web access and you do not.
   A repeated argument is a note: the checker already
   blocks verbatim repeats, and a reader who meets a point twice is not misled. Every issue is routed to the
   stage that fixes it: `editorial` (any text, order, count or content-caused layout
@@ -128,8 +139,17 @@ Date, verdict (ready | not ready), one paragraph on the page as a whole.
 ## Issues for icons
 ## Needs research (stops the run)
 ## Notes for the human
-- template or CSS defects, judgment calls, anything worth a second look
+- template or CSS defects (name the template and line), and judgment calls only the
+  human can make (camp order, a title, a word choice either way defensible)
 ```
+
+Notes are the human's reading list, so keep them short. Leave out: repetition,
+unless it adds weight to one side; blocked or redirected links; uneven action
+counts per camp; anything already decided by design (four camps on the cards, equal
+tile heights, a trailing narrow tile, a long unit dropping whole to its own line);
+`source_published` differing from a publication year (it is the data year by
+schema); render-capture artifacts the live page does not show; anything the views
+packet already logged.
 
 Empty sections are kept with "none". If ready, run
 `.venv/bin/python manage.py mark_ready --slug <slug>`, which writes `ready` to the

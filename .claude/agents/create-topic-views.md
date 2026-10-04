@@ -48,7 +48,7 @@ directory with `-expanded`, so the two do not collide. Always pass
 
 Read every section tile under `renders/sections/` at both widths, collapsed and
 expanded, and the three cards. For each surface record pass or a named defect:
-horizontal overflow, clipped text, a stat value or unit that wraps or overflows its tile, a lean label that wraps, the
+horizontal overflow, clipped text, a stat value that wraps or overflows its tile, a unit broken mid-phrase (a unit dropping whole to its own line under the number is the design), a lean label that wraps, the
 art missing or letterboxed, a card title that wraps past its box, positions running
 off the card's dark band, poster overflow. Say what is wrong and where, not how it
 looks in general. Do not report Basics grid gaps at all: a wide tile alone in its row
