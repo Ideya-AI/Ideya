@@ -35,7 +35,8 @@ every action. Second the renders under `research/topics/<slug>/renders/sections/
 every tile at 390 and at 1440, collapsed and expanded, at native size, plus the
 three share cards in `static/img/social/` and `renders/views.md`. If the Chrome
 tools are available to you and the page answers at `http://localhost:8641/<slug>/`,
-also open it at 390 and 1440, scroll it top to bottom and open each Go deeper and
+also open it at 1440 (the tools cannot size below about 1100, so 390 is read from
+the renders), scroll it top to bottom and open each Go deeper and
 each expander, and prefer what you see there over the screenshots where they differ. Never click a vote, lean, respond or follow control: the database behind the
 dev server is the live one and every such click is recorded as a reader's.
 
@@ -64,7 +65,9 @@ which you read from `topic.json`.
   way one camp frames it. A summary or why-now that takes a side.
 - **Even steelmanning.** A camp written with more energy, evidence or length than
   another. A camp named by a posture rather than by what it wants. Two camps that
-  are the same camp. A camp missing that a reader would expect.
+  are the same camp. A camp missing that a reader would expect. The share cards and
+  poster show four camps by design; a fifth behind Go deeper is not an issue or a
+  note, unless it outweighs one of the first four.
 - **No repetition.** The same figure or example carried across three or more items;
   a point met twice is not worth a note. An expanded layer that restates its glance
   layer. A stat that duplicates another.
@@ -101,6 +104,9 @@ case, so a reader meets it twice"), not a preference ("could flow better").
   issue. A figure whose linked source cannot contain it (2024 data credited to a 2023
   brief, a number the cited page does not carry) is an issue however small the
   number: every figure in the page's voice must name a source a reader can follow.
+  A figure your memory puts off by a factor of two or more is an editorial issue,
+  not a note, even when the conclusion survives: route it as "verify against
+  <source> and correct", since the editor has web access and you do not.
   A repeated argument is a note: the checker already
   blocks verbatim repeats, and a reader who meets a point twice is not misled. Every issue is routed to the
   stage that fixes it: `editorial` (any text, order, count or content-caused layout

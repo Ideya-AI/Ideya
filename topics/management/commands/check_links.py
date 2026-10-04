@@ -59,6 +59,8 @@ _BOT_WALLED_HOSTS = {
     # from a browser UA); the series pages are live. Matching here is by exact
     # hostname, not registrable domain, so subdomains are listed individually.
     "fred.stlouisfed.org",
+    # Akamai hangs scripted requests; the pages load in a browser.
+    "canada.ca",
 }
 
 # HEAD outcomes that mean "the server didn't really answer" — retry with GET.
@@ -275,9 +277,7 @@ def collect_links(topic_slug: Optional[str]) -> list[LinkItem]:
     for a in actions:
         label, slug = _topic_of(a.section)
         items.append(
-            LinkItem(
-                label, slug, "Action", a.title or f"Action #{a.pk}", a.url or ""
-            )
+            LinkItem(label, slug, "Action", a.title or f"Action #{a.pk}", a.url or "")
         )
     for s in stats:
         label, slug = _topic_of(s.section)
@@ -306,7 +306,11 @@ def collect_links(topic_slug: Optional[str]) -> list[LinkItem]:
     if topic_slug:
         topics = topics.filter(slug=topic_slug)
     for t in topics:
-        items.append(LinkItem(t.title, t.slug, "Source", "Why it matters now", t.why_now_source_url))
+        items.append(
+            LinkItem(
+                t.title, t.slug, "Source", "Why it matters now", t.why_now_source_url
+            )
+        )
     return items
 
 

@@ -1,7 +1,7 @@
 ---
 name: create-topic-views
 description: Stage 4 of the Ideya authoring pipeline. Renders one topic's desktop and mobile screenshots, share cards and poster, and checks them for layout defects. Spawned by the create-topic-views or author-topic skill with a slug. Not for any other use.
-model: sonnet
+model: opus
 effort: medium
 tools: Read, Bash
 maxTurns: 80

@@ -21,7 +21,7 @@ from django.conf import settings
 from django.core.management.base import BaseCommand, CommandError
 
 FIELDS = ("input_tokens", "cache_creation_input_tokens", "cache_read_input_tokens", "output_tokens")
-SHORT = {"claude-opus-5": "opus", "claude-sonnet-5": "sonnet", "claude-haiku-4-5-20251001": "haiku",
+SHORT = {"claude-opus-5": "opus", "claude-opus-5-5": "opus", "claude-sonnet-5": "sonnet", "claude-haiku-4-5-20251001": "haiku",
          "claude-fable-5-1": "fable"}
 
 

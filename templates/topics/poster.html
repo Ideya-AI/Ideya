@@ -148,7 +148,7 @@
           </div></div>
           <div class="tnote">{{ stat.note|sup_exp }}</div>
           {% else %}
-          <div class="tv"><span>{{ stat.value|sup_exp }}</span>{% if stat.unit %}<small{% if stat.unit_is_word %} class="u-word"{% endif %}>{{ stat.unit }}</small>{% endif %}</div>
+          <div class="tv"><span>{{ stat.value_shown|sup_exp }}</span>{% if stat.unit_shown %}<small{% if stat.unit_is_word %} class="u-word"{% endif %}>{{ stat.unit_shown }}</small>{% endif %}</div>
           {# Meter only when there is a true share to show — an empty track under a bare number reads as "zero" (mirrors _stat_tile's guard). #}
           <div class="vrow">{% if stat.fill_pct %}<div class="pbar"><i style="width:{{ stat.fill_pct }}%"></i></div>{% endif %}<div class="tnote">{{ stat.note|sup_exp }}</div></div>
           {% endif %}

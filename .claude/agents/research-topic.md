@@ -46,14 +46,16 @@ Write from what you know first, then use the web for exactly three things:
 
 1. **Every number that could become a stat.** Confirm the value, unit, data year and
    accounting basis, and record the URL of the page that states it. Prefer reference
-   and official sources: Our World in Data, Wikipedia, national statistics offices,
-   IEA, IAEA, WHO, OECD, UN bodies, courts, regulators, peer-reviewed reviews when an
-   explainer points at them. Staleness is the error that reaches pages, so check the
+   and official sources: Our World in Data, national statistics offices, IEA, IAEA,
+   WHO, OECD, UN bodies, courts, regulators, peer-reviewed reviews when an explainer
+   points at them. Wikipedia finds the primary source; it is never the cited one. Staleness is the error that reaches pages, so check the
    date on anything that moves year to year.
 2. **The why-now event.** The most recent dated development a reader would recognize,
    within the last year where one exists.
 3. **Adherents.** For each camp, confirm two named adherents actually say what the camp
    says, one of them an institution, and record one URL each where they say it.
+   Adherents argue for the camp; a statistics office, monitor, court or data source
+   the page cites as neutral is not one.
 
 Also fetch each candidate action URL once and note whether it resolved. Roughly 30 to
 60 searches is the expected range; use more only when a section is genuinely thin.
@@ -80,9 +82,10 @@ date and source. Two or three sentences on why the debate is live and who is in 
 
 **Basics.** 14 to 20 candidate stats, each as a block: label (the metric, not a
 sentence), value, unit, comparison rows where a ranking or a series tells the story
-(one shared unit), data year, source label, source URL, a one-line note that states
+(one shared unit, one source and year, or say which rows differ), data year, source label, source URL, a one-line note that states
 the number plainly without arguing anything, and a short paragraph of context an
-expanded tile could show. Note which visualization fits: bar (one number), radial (a
+expanded tile could show. Every figure in that paragraph is on the stat's source URL
+or names its own source (author or body, and year) in the sentence. Note which visualization fits: bar (one number), radial (a
 share), range (a value on a scale between two named ends), ranked (a comparison across
 things, including a few points over time). Most important first.
 
@@ -100,6 +103,9 @@ inside it. Name each camp by what it wants, all names in the same grammatical fo
 so that the camp's strongest advocate and its strongest critic would both call the
 name accurate. Never a posture label (Skeptic, Advocate, Pragmatist, Realist). Look
 deliberately for a hybrid camp and for a camp that rejects the question as posed.
+The count follows the debate, not the layout. The glance, the share cards and the
+poster show the first four, so order decides which camps a quick reader meets: a
+hybrid or rejecting camp goes where its weight puts it, not last by default.
 For each: the name, the adherents, the case in the camp's own voice as its strongest
 advocate would put it, its best evidence, and its answer to the other camps'
 strongest objection. Give every camp the same care; an unevenly written camp is a
@@ -123,9 +129,10 @@ accessed it.
 Plain text that will be rendered literally: write `&` never `&amp;`, typographic
 quotes (’ “ ”) never straight ones, no markdown inside the prose blocks beyond the
 section structure, no HTML. US spelling except inside a proper noun. Calm, precise,
-plainspoken; explanatory, never persuasive. No hedging phrases in the page's own
-voice ("some say", "critics argue") outside the Positions section, where attribution
-is the point.
+plainspoken; explanatory, never persuasive. No vague hedges ("some say", "critics
+argue"). A reading that a camp on the page disputes is never stated flat in the
+page's own voice: attribute it to who holds it ("those who favor X argue") or state
+it as the disagreement.
 
 ## Report
 

@@ -76,18 +76,26 @@ label and position name.
   is empty only on ranked tiles. Never two wide tiles back to back inside the first
   three rows. Every stat has `source_label`, `source_url`, `source_published` (the
   data year) and `source_accessed` (today, YYYY-MM-DD). The note states the number;
-  it does not argue.
+  it does not argue. Every figure in a note or detail is on the page `source_url`
+  opens, or the sentence names its own source (author or body, and year); a figure
+  that is neither is cut. A ranked series comes from one source and year, or the
+  note says which rows differ; when its rows span more than about 20 times, the
+  small ones vanish, so split the tile or give the numbers in prose.
 - Questions: `kind` is `empirical` or `value`; the two lean labels are the poles,
   short, parallel, neither loaded.
 - Positions: names are the camp's own self-description of what it wants, all in the
   same grammatical form, no posture labels; `color_key` unique within the topic from
   green, blue, amber, rust, purple, teal, berry, indigo, cocoa, slate in that order
   of preference; steelman and detail in the camp's own voice; a named adherent
-  appears in the detail only when it makes the camp legible.
-  `proponents` is split on commas for display, so every comma-separated item is a
-  name that stands alone ("Government of France, Government of Canada", never "the
-  governments of France, Canada"). Equal care to every
-  camp.
+  appears in the detail only when it makes the camp legible. `proponents` argue for
+  the camp; a statistics office, monitor, court or data source the page cites as
+  neutral is not a proponent.
+  `proponents` separates names with semicolons, so a name may contain a comma
+  ("NYU Center for Mind, Ethics, and Policy; Government of France"). Equal care to every
+  camp. Only the first four appear at glance, on the share cards and on the poster,
+  so the first four must be the ones a quick reader most needs; a camp past fourth
+  that outweighs one above it moves up. How many camps there are follows the
+  research.
 - Crux: the lead is a question or a sentence that names the fork; `lead_highlight`
   is the phrase to emphasize, verbatim.
   The crux is written to be read on its own: a reader who lands on it without the
@@ -101,6 +109,10 @@ label and position name.
 - Plain text everywhere: `&` never `&amp;`, typographic quotes (’ “ ”) never
   straight, no markdown, no HTML. US spelling except inside a proper noun. No `id`
   fields; the loader assigns them.
+- The page's own voice never settles what the questions or camps dispute. In the
+  summary, every question `why`, every stat `detail` and the crux `values`, a claim
+  a camp on the page would reject is attributed to who holds it or stated as the
+  disagreement. Before the checks, reread those fields once for exactly this.
 - When a tile's own detail says a figure is contested or has a rival estimate, the
   note says so too; the glance layer carries the dispute, never one end of it.
 - Lean labels read as a stance its holder would claim ("Let markets decide"), never

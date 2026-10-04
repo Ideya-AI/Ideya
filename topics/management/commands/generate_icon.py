@@ -39,7 +39,9 @@ ROOT = Path(settings.BASE_DIR)
 TOKENS = ROOT / "static" / "css" / "tokens.css"
 TOPICS = ROOT / "research" / "topics"
 MODEL = "gemini-3-pro-image"
-COST_PER_IMAGE = 0.134  # USD, 1K standard
+# USD per 1M tokens, Standard tier (ai.google.dev/gemini-api/docs/pricing, 2026-10-02).
+# A 1K output image is 1120 tokens, so $0.134.
+PRICE_INPUT, PRICE_TEXT_OUT, PRICE_IMAGE_OUT = 2.00, 12.00, 120.00
 OUT_W, OUT_H = 1035, 690  # the committed primary-art size, 3:2
 PAD_FRAC = 0.08
 NEAR_WHITE = 244
@@ -70,7 +72,9 @@ def _topic(slug):
 
 
 def hex_for(category):
-    m = re.search(rf"--cat-{re.escape(category)}:\s*(#[0-9a-fA-F]{{6}})", TOKENS.read_text())
+    m = re.search(
+        rf"--cat-{re.escape(category)}:\s*(#[0-9a-fA-F]{{6}})", TOKENS.read_text()
+    )
     if not m:
         raise CommandError(f"no --cat-{category} token in {TOKENS}")
     return m[1].lower()
@@ -123,16 +127,41 @@ def _call(parts, ratio):
         with urllib.request.urlopen(req, timeout=180) as r:
             resp = json.load(r)
     except urllib.error.HTTPError as e:
-        raise CommandError(f"Gemini HTTP {e.code}: {e.read()[:400].decode(errors='replace')}")
+        raise CommandError(
+            f"Gemini HTTP {e.code}: {e.read()[:400].decode(errors='replace')}"
+        )
     blobs = [
         p["inlineData"]["data"]
         for c in resp.get("candidates", [])
         for p in c.get("content", {}).get("parts", [])
         if "inlineData" in p
     ]
-    if not blobs:
-        raise CommandError(f"no image in response: {json.dumps(resp)[:400]}")
-    return base64.b64decode(blobs[0])
+    return (base64.b64decode(blobs[0]) if blobs else None), _tokens(resp), resp
+
+
+def _tokens(resp):
+    """Billed token counts from the response's usageMetadata. Thinking bills as text output."""
+    u = resp.get("usageMetadata", {})
+    image = sum(
+        d.get("tokenCount", 0)
+        for d in u.get("candidatesTokensDetails", [])
+        if d.get("modality") == "IMAGE"
+    )
+    return {
+        "input": u.get("promptTokenCount", 0),
+        "image_out": image,
+        "text_out": u.get("candidatesTokenCount", 0)
+        - image
+        + u.get("thoughtsTokenCount", 0),
+    }
+
+
+def _usd(t):
+    return (
+        t["input"] * PRICE_INPUT
+        + t["text_out"] * PRICE_TEXT_OUT
+        + t["image_out"] * PRICE_IMAGE_OUT
+    ) / 1e6
 
 
 def generate(slug, rnd, n=2, scene=None, edit=None, note="", ratio="3:2"):
@@ -144,48 +173,85 @@ def generate(slug, rnd, n=2, scene=None, edit=None, note="", ratio="3:2"):
         img = Path(edit).read_bytes()
         parts = [
             {"text": EDIT.format(note=note)},
-            {"inlineData": {"mimeType": "image/png", "data": base64.b64encode(img).decode()}},
+            {
+                "inlineData": {
+                    "mimeType": "image/png",
+                    "data": base64.b64encode(img).decode(),
+                }
+            },
         ]
     else:
         parts = [{"text": assemble(slug, scene)}]
     written = []
-    for _ in range(n):
-        png = _call(parts, ratio)
-        # Claim the name only once the image is back, with an exclusive create,
-        # so runs in parallel never overwrite each other's candidates.
-        for c in "abcdefghijklmnopqrstuvwxyz":
-            dst = out / f"r{rnd}-{c}.png"
-            try:
-                with open(dst, "xb") as f:
-                    f.write(png)
-                break
-            except FileExistsError:
-                continue
-        else:
-            raise CommandError(f"round {rnd} has no free candidate names left")
-        written.append(dst)
+    tokens = {"input": 0, "text_out": 0, "image_out": 0}
+    calls = 0
+    try:
+        for _ in range(n):
+            png, t, resp = _call(parts, ratio)
+            calls += 1
+            tokens = {k: tokens[k] + t[k] for k in tokens}
+            if png is None:
+                # Billed even without an image, so it is logged before failing.
+                raise CommandError(f"no image in response: {json.dumps(resp)[:400]}")
+            written.append(_claim(out, rnd, png))
+    finally:
+        if calls:
+            total = _log_spend(
+                out,
+                {
+                    "round": rnd,
+                    "images": len(written),
+                    "calls": calls,
+                    "mode": "edit" if edit else "generate",
+                    "scene": scene or "",
+                    "note": note,
+                    "tokens": tokens,
+                    "usd": round(_usd(tokens), 4),
+                },
+            )
+    return written, total
+
+
+def _claim(out, rnd, png):
+    # Claim the name only once the image is back, with an exclusive create,
+    # so runs in parallel never overwrite each other's candidates.
+    for c in "abcdefghijklmnopqrstuvwxyz":
+        dst = out / f"r{rnd}-{c}.png"
+        try:
+            with open(dst, "xb") as f:
+                f.write(png)
+            return dst
+        except FileExistsError:
+            continue
+    raise CommandError(f"round {rnd} has no free candidate names left")
+
+
+def _log_spend(out, entry):
     with open(out / "spend.json", "a+") as log:
         fcntl.flock(log, fcntl.LOCK_EX)
         log.seek(0)
         body = log.read()
         entries = json.loads(body) if body.strip() else []
-        entries.append({
-            "round": rnd, "images": n, "mode": "edit" if edit else "generate",
-            "scene": scene or "", "note": note, "usd": round(n * COST_PER_IMAGE, 3),
-        })
+        entries.append(entry)
         log.seek(0)
         log.truncate()
         log.write(json.dumps(entries, indent=1) + "\n")
-    return written, round(sum(e["usd"] for e in entries), 3)
+    return round(sum(e["usd"] for e in entries), 3)
 
 
 def normalize(src, out):
     from PIL import Image, ImageChops
 
     im = Image.open(src).convert("RGBA")
-    im = Image.alpha_composite(Image.new("RGBA", im.size, (255, 255, 255, 255)), im).convert("RGB")
+    im = Image.alpha_composite(
+        Image.new("RGBA", im.size, (255, 255, 255, 255)), im
+    ).convert("RGB")
     diff = ImageChops.difference(im, Image.new("RGB", im.size, (255, 255, 255)))
-    bbox = diff.convert("L").point(lambda p: 255 if p > (255 - NEAR_WHITE) else 0).getbbox()
+    bbox = (
+        diff.convert("L")
+        .point(lambda p: 255 if p > (255 - NEAR_WHITE) else 0)
+        .getbbox()
+    )
     if bbox is None:
         raise CommandError(f"{src} looks blank")
     content = im.crop(bbox)
@@ -197,7 +263,9 @@ def normalize(src, out):
     canvas.paste(content, ((OUT_W - size[0]) // 2, (OUT_H - size[1]) // 2))
     for xy in [(0, 0), (OUT_W - 1, 0), (0, OUT_H - 1), (OUT_W - 1, OUT_H - 1)]:
         if canvas.getpixel(xy) != (255, 255, 255):
-            raise CommandError(f"corner {xy} is not white after normalize; check the source art")
+            raise CommandError(
+                f"corner {xy} is not white after normalize; check the source art"
+            )
     out.parent.mkdir(parents=True, exist_ok=True)
     canvas.save(out, "PNG", optimize=True)
     thumb = canvas.copy()
@@ -215,9 +283,13 @@ class Command(BaseCommand):
         p.add_argument("--slug", required=True)
         p.add_argument("--round", type=int, default=1)
         p.add_argument("--n", type=int, default=2)
-        p.add_argument("--scene", default=None, help="override the brief's Scene for this round")
+        p.add_argument(
+            "--scene", default=None, help="override the brief's Scene for this round"
+        )
         p.add_argument("--edit", default=None, help="incumbent PNG to refine")
-        p.add_argument("--note", default="", help="what to change, in words (edit mode)")
+        p.add_argument(
+            "--note", default="", help="what to change, in words (edit mode)"
+        )
         p.add_argument("--ratio", default="3:2")
         p.add_argument("--src", default=None, help="candidate to normalize")
 
@@ -226,13 +298,17 @@ class Command(BaseCommand):
         if o["action"] == "brief":
             self.stdout.write(assemble(slug, o["scene"]))
         elif o["action"] == "generate":
-            paths, total = generate(slug, o["round"], o["n"], o["scene"], o["edit"], o["note"], o["ratio"])
+            paths, total = generate(
+                slug, o["round"], o["n"], o["scene"], o["edit"], o["note"], o["ratio"]
+            )
             for pth in paths:
                 self.stdout.write(str(pth))
             self.stdout.write(f"spend so far: ${total:.2f}")
         else:
             if not o["src"]:
                 raise CommandError("normalize needs --src")
-            out, thumb = normalize(o["src"], ROOT / "static" / "img" / "topics" / f"{slug}.png")
+            out, thumb = normalize(
+                o["src"], ROOT / "static" / "img" / "topics" / f"{slug}.png"
+            )
             self.stdout.write(f"wrote {out} ({OUT_W}x{OUT_H})")
             self.stdout.write(f"wrote {thumb}; read it to check legibility at 40px")

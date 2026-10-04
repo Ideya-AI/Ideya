@@ -17,7 +17,6 @@ import os
 import sys
 import time
 import urllib.request
-from datetime import datetime
 
 FIVE_HOUR_STOP = 0.80
 SEVEN_DAY_STOP = 0.90
@@ -98,13 +97,6 @@ def windows(data):
     return found
 
 
-def _hours_left(resets_at):
-    try:
-        return (datetime.fromisoformat(resets_at).timestamp() - time.time()) / 3600
-    except (TypeError, ValueError):
-        return 0
-
-
 def log(markers, line):
     for m in markers:
         try:
@@ -136,8 +128,8 @@ def main():
     except Exception:
         payload = {}
     tool = payload.get("tool_name", "")
-    if tool in ("Write", "Edit", "NotebookEdit"):
-        return 0  # a stopping agent must be able to save its work
+    if tool in ("Write", "Edit", "NotebookEdit", "SubagentHandback"):
+        return 0  # a stopping agent must be able to save its work and report
     command = str((payload.get("tool_input") or {}).get("command", ""))
     if (
         tool == "Bash"
@@ -157,20 +149,6 @@ def main():
         return 0
     five = w.get("five_hour")
     week = w.get("seven_day")
-    if five and five[0] >= 0.99 and _hours_left(five[1]) > 4.5:
-        # Right after a reset the endpoint briefly reports the new window as
-        # full, then settles near 0 (seen 2026-09-23 and 09-24; the first stopped
-        # a run for two hours). A window cannot be spent in its first half hour,
-        # so drop the reading and fetch fresh next call.
-        log(
-            fresh,
-            f"five-hour reads {five[0]:.0%} with the reset {five[1]}; window-start glitch, allowing",
-        )
-        try:
-            os.remove(CACHE)
-        except OSError:
-            pass
-        five = None
     if five is None and week is None:
         log(
             fresh,

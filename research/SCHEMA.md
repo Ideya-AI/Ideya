@@ -92,7 +92,7 @@ that art in the file; the fuller brief stays in `icon.md`.
         "detail": "...",               // the expanded layer: the camp's case in its
                                        // own voice. A named adherent belongs here,
                                        // in prose, only when they make the camp legible
-        "proponents": "..."            // comma-separated names
+        "proponents": "..."            // semicolon-separated names
       }
     ],
 

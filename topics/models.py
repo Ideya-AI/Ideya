@@ -580,8 +580,23 @@ class Stat(models.Model):
         """A unit that is a word ("million tonnes", " reactors") sits a space
         off the number; a symbol ("%", "$/MWh") sits tight. Decided here so
         no topic file has to remember a leading space."""
-        u = self.unit or ""
+        u = self.unit_shown
         return u[:1] == " " or u[:1].isalpha()
+
+    @property
+    def value_shown(self):
+        """A unit that opens with "$" ("$ billion", "$/MWh") puts the dollar
+        sign before the number, after any sign or tilde: "~$2 billion"."""
+        v = self.value or ""
+        if not (self.unit or "").startswith("$"):
+            return v
+        lead = re.match(r"[~≈<>+\-−]*", v).group()
+        return f"{lead}${v[len(lead):]}"
+
+    @property
+    def unit_shown(self):
+        u = self.unit or ""
+        return u[1:] if u.startswith("$") else u
 
     @property
     def range_band(self):
@@ -733,7 +748,7 @@ class Position(models.Model):
         help_text="The camp's case in its own voice, revealed when the position is expanded.",
     )
     proponents = models.CharField(
-        max_length=400, blank=True, help_text="Comma-separated notable proponents."
+        max_length=400, blank=True, help_text="Semicolon-separated notable proponents."
     )
     importance = models.IntegerField(
         default=0, help_text="Net importance (upvotes minus downvotes)."
@@ -761,7 +776,7 @@ class Position(models.Model):
 
     @property
     def proponent_list(self):
-        return [p.strip() for p in self.proponents.split(",") if p.strip()]
+        return [p.strip() for p in self.proponents.split(";") if p.strip()]
 
     @property
     def has_more(self) -> bool:
