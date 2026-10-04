@@ -45,6 +45,12 @@ MIN_STANCE_SAMPLE = 10
 MIN_VOTES_REORDER = 25  # per list: vote order replaces research order
 
 
+def minus_sign(text):
+    """A hyphen used as a minus sign ("-0.1", "-$0.7") becomes a true minus
+    (U+2212), which sits at the width of a digit and does not read as a dash."""
+    return re.sub(r"(^|[\s(~≈<>])-(?=[\d.$£€¥])", "\\1−", str(text))
+
+
 class Category(models.Model):
     name = models.CharField(max_length=120)
     slug = models.SlugField(max_length=120, unique=True)
@@ -409,34 +415,36 @@ class Section(models.Model):
     def basics_tiles(self):
         """Importance-ordered Stats annotated for the two-axis Basics grid:
         `is_extra` (revealed only when Go-deeper is open). Fixed fold: the
-        first BASICS_ROWS_SHOWN packed rows show; the rest is Go deeper. A
-        trailing narrow tile keeps its own width; a wide tile alone in its row
-        is marked `full` and spans it."""
+        first BASICS_ROWS_SHOWN packed rows show; the rest is Go deeper.
+
+        Tiles keep file order exactly, since order is the whole mechanism for
+        weight. Rows are 3 cells; when the next tile does not fit the open
+        row, the row's last tile widens to fill it (`widened`, or `full` for a
+        wide tile alone), so no row leaves a gap. A trailing narrow tile keeps
+        its own width."""
         stats = list(self.stats.all())
-        # Pack into desktop rows of 3 cells. A cell count that is a multiple of
-        # 3 does not guarantee the rows pack (1,1,W,W is six cells but leaves
-        # the right column empty twice), so a tile that does not fit the open
-        # row is deferred and the next one that fits is pulled forward. The
-        # first BASICS_ROWS_SHOWN rows are the fold.
-        rows, pending = [], list(stats)
-        while pending:
-            row, cells = [], 0
-            i = 0
-            while i < len(pending) and cells < 3:
-                w = 2 if pending[i].wide else 1
-                if cells + w <= 3:
-                    row.append(pending.pop(i))
-                    cells += w
+        rows, row, cells = [], [], 0
+        for s in stats:
+            s.full = s.widened = False
+            w = 2 if s.wide else 1
+            if cells + w > 3:
+                if row[-1].wide:
+                    row[-1].full = True
                 else:
-                    i += 1
+                    row[-1].widened = True
+                rows.append(row)
+                row, cells = [], 0
+            row.append(s)
+            cells += w
+            if cells == 3:
+                rows.append(row)
+                row, cells = [], 0
+        if row:
             rows.append(row)
-        # A wide tile left alone in its row (no narrow tile remains to pair
-        # with it) stretches across the row instead of leaving a third empty.
-        for row in rows:
-            for s in row:
-                s.full = len(row) == 1 and s.wide
-        stats = [s for row in rows for s in row]
-        shown = sum(len(row) for row in rows[: self.BASICS_ROWS_SHOWN])
+            # A wide tile alone in the last row stretches across it.
+            if len(row) == 1 and row[0].wide:
+                row[0].full = True
+        shown = sum(len(r) for r in rows[: self.BASICS_ROWS_SHOWN])
         for i, s in enumerate(stats):
             s.is_extra = i >= shown
         return stats
@@ -583,20 +591,39 @@ class Stat(models.Model):
         u = self.unit_shown
         return u[:1] == " " or u[:1].isalpha()
 
+    _CURRENCY = re.compile(r"(USD|EUR|GBP|[$£€¥])\s?")
+    _SYMBOL = {"USD": "$", "EUR": "€", "GBP": "£"}
+
     @property
     def value_shown(self):
-        """A unit that opens with "$" ("$ billion", "$/MWh") puts the dollar
-        sign before the number, after any sign or tilde: "~$2 billion"."""
-        v = self.value or ""
-        if not (self.unit or "").startswith("$"):
+        """A unit that opens with a currency ("$ billion", "£ million",
+        "EUR million", "$/MWh") puts the symbol before the number, after any
+        sign or tilde: "~$2 billion". A leading hyphen becomes a minus."""
+        v = minus_sign(self.value or "")
+        m = self._CURRENCY.match(self.unit or "")
+        if not m:
             return v
-        lead = re.match(r"[~≈<>+\-−]*", v).group()
-        return f"{lead}${v[len(lead):]}"
+        lead = re.match(r"[~≈<>+−]*", v).group()
+        return f"{lead}{self._SYMBOL.get(m.group(1), m.group(1))}{v[len(lead):]}"
 
     @property
     def unit_shown(self):
         u = self.unit or ""
-        return u[1:] if u.startswith("$") else u
+        m = self._CURRENCY.match(u)
+        return u[m.end():] if m else u
+
+    POSTER_ROWS = 4
+
+    @property
+    def series_glance(self):
+        """The ranked rows the poster has room for: the first four, except
+        that a highlighted row further down replaces the fourth, since the
+        highlight is the row the tile's note is about."""
+        rows = self.series[: self.POSTER_ROWS]
+        if any(r.get("highlight") for r in rows):
+            return rows
+        hi = next((r for r in self.series[self.POSTER_ROWS :] if r.get("highlight")), None)
+        return rows[:-1] + [hi] if hi else rows
 
     @property
     def range_band(self):

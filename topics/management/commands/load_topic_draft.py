@@ -72,8 +72,17 @@ def image_prompt_from_brief(path: Path) -> str:
 
 def _num(text):
     """First number in a display string ("~6,500", "8.9%", "about 4"), or None."""
-    m = re.search(r"-?\d+(?:\.\d+)?", str(text or "").replace(",", ""))
+    m = re.search(r"-?\d+(?:\.\d+)?", str(text or "").replace(",", "").replace("−", "-"))
     return float(m.group()) if m else None
+
+
+# A percent unit that is a rate or a change, not a share of a whole: a 2.2%
+# growth rate or a 40% rise drawn on a 0–100 track reads as "almost nothing"
+# or "under half", which is not what the number says.
+_RATE_UNIT = re.compile(
+    r"\b(rise|gain|increase|growth|faster|slower|more|higher|vs|a year|per year|of GDP)\b|/\s*yr",
+    re.I,
+)
 
 
 def derive_viz(s, viz, series):
@@ -81,25 +90,39 @@ def derive_viz(s, viz, series):
     file never authors them (SCHEMA.md, "Derived by code"). A value the file
     does carry wins, so exported files round-trip unchanged.
 
-    ranked/sparkline: each row's pct is its share of the largest row.
-    radial/bar: fill_pct is the value itself when the unit is a percentage.
+    ranked/sparkline: each row's pct is its magnitude's share of the largest
+    magnitude; a negative row is flagged `neg` and drawn from the other end.
+    radial/bar: fill_pct is the value itself when the unit is a share in
+    percent, or value/N for a unit "of N"; a rate or change ("% a year",
+    "% rise") gets no fill, since a 0–100 track says nothing about it.
     range: range_at is the value's position between range_min and range_max;
-    a span value ("26–36") is left to Stat.range_band at render time."""
+    a span value ("26–36") is left to Stat.range_band at render time.
+    Any nonzero value gets at least 1, so a small share never draws empty."""
     if viz in ("ranked", "sparkline"):
         nums = [_num(r.get("value")) for r in series]
-        top = max((n for n in nums if n is not None and n > 0), default=None)
+        top = max((abs(n) for n in nums if n), default=None)
         if top:
             for r, n in zip(series, nums):
                 if r.get("pct") in (None, "") and n is not None:
-                    r["pct"] = max(0, min(100, round(100 * n / top)))
+                    r["pct"] = max(1 if n else 0, min(100, round(100 * abs(n) / top)))
+                if n is not None and n < 0:
+                    r["neg"] = True
     fill = s.get("fill_pct")
     if fill in (None, "") and viz in ("radial", "bar"):
         unit = str(s.get("unit") or "")
         n = _num(s.get("value"))
-        if n is not None and ("%" in unit or "percent" in unit.lower()):
-            fill = max(0, min(100, round(n)))
-        else:
-            fill = None
+        of = re.match(r"\s*of\s+([\d,]+)", unit)
+        fill = None
+        if n is not None and of and float(of.group(1).replace(",", "")) > 0:
+            fill = 100 * n / float(of.group(1).replace(",", ""))
+        elif (
+            n is not None
+            and ("%" in unit or "percent" in unit.lower())
+            and not _RATE_UNIT.search(unit)
+        ):
+            fill = n
+        if fill is not None:
+            fill = max(1 if n > 0 else 0, min(100, round(fill)))
     at = s.get("range_at") if viz == "range" else None
     if at in (None, "") and viz == "range":
         v, lo, hi = _num(s.get("value")), _num(s.get("range_min")), _num(s.get("range_max"))

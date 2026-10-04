@@ -71,6 +71,22 @@ def dictget(mapping, key):
 
 
 @register.filter
+def amp_nbsp(text):
+    """Bind "&" to the word after it, so a wrapping title never strands it
+    alone on a line ("Loneliness / & / Community")."""
+    return str(text).replace(" & ", " &\u00a0")
+
+
+@register.filter
+def num(text):
+    """A displayed number: a hyphen used as a minus becomes a true minus,
+    then caret exponents become superscripts (sup_exp)."""
+    from topics.models import minus_sign
+
+    return sup_exp(minus_sign(text))
+
+
+@register.filter
 def sup_exp(text):
     """Render caret exponents as real superscripts: 10^26 -> 10<sup>26</sup>.
 

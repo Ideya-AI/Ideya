@@ -4,18 +4,19 @@ grid, keyed by data-xid, so row partners open together — see rowGrid in ideya.
 Axis 2 (depth): glance = label + viz + lead note; clicking the tile expands it
 to reveal the deeper paragraph + source (no button/signifier). Axis 1 (breadth):
 `is_extra` tiles appear only when the section's Go-deeper is open.{% endcomment %}
-<div class="tile{% if stat.wide %} wide{% endif %}{% if stat.full %} full{% endif %}{% if stat.is_extra %} tile-xtra{% endif %}{% if stat.detail or stat.source_label %} tile-x{% endif %}" data-xid="{{ stat.id }}"
+<div class="tile{% if stat.wide or stat.widened %} wide{% endif %}{% if stat.full %} full{% endif %}{% if stat.is_extra %} tile-xtra{% endif %}{% if stat.detail or stat.source_label %} tile-x{% endif %}" data-xid="{{ stat.id }}"
      {% if stat.detail or stat.source_label %}:class="{ 'tile-open': open[{{ stat.id }}] }" @click="toggle($el)"{% endif %}>
   {% if stat.detail or stat.source_label %}<button type="button" class="xtoggle" @click.stop="toggle($el.closest('.tile'))" :aria-expanded="!!open[{{ stat.id }}]" aria-label="Toggle details"><i class="ph-duotone ph-caret-down"></i></button>{% endif %}
   <div class="tk">{{ stat.label }}</div>
 
   {% if stat.viz == "ranked" %}
     <div class="vrow"><div class="rank">
+      {% if stat.unit %}<div class="runit">{{ stat.unit }}</div>{% endif %}
       {% for row in stat.series %}
-      <div class="rrow{% if row.highlight %} on{% endif %}">
+      <div class="rrow{% if row.highlight %} on{% endif %}{% if row.neg %} neg{% endif %}">
         <span class="rk2">{{ row.label }}</span>
         <span class="rbar"><i style="width:{{ row.pct }}%"></i></span>
-        <span class="rv">{{ row.value|sup_exp }}</span>
+        <span class="rv">{{ row.value|num }}</span>
       </div>
       {% endfor %}
     </div></div>
@@ -32,7 +33,7 @@ to reveal the deeper paragraph + source (no button/signifier). Axis 1 (breadth):
       {% with band=stat.range_band %}
       <div class="track">{% if band %}<span class="rband" style="left:{{ band.left }}%;width:{{ band.width }}%"></span>{% else %}<span class="pin" style="left:{{ stat.range_at|default:0 }}%"></span>{% endif %}</div>
       {% endwith %}
-      <div class="ends"><span>{{ stat.range_min }}</span><span>{{ stat.range_max }}</span></div>
+      <div class="ends"><span>{{ stat.range_min|num }}</span><span>{{ stat.range_max|num }}</span></div>
     </div>
 
   {% else %}{# bar / sparkline #}

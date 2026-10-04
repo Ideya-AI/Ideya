@@ -1,11 +1,11 @@
-{% load static %}{% comment %}Inner share-card content. Expects topic, cc, positions, crux.{% endcomment %}
+{% load static ideya_extras %}{% comment %}Inner share-card content. Expects topic, cc, positions, crux.{% endcomment %}
 <div class="lt">
   <div class="brand"><img class="mark" src="{% static 'img/ideya-mark.png' %}" alt="" /><span class="wm">Ideya</span></div>
   {% if cc %}<span class="cat"><i class="ph-duotone ph-{{ cc.icon|default:'squares-four' }}"></i>{{ cc.name }}</span>{% endif %}
   <div class="ttlrow">
     {% if topic.primary_art %}<span class="ticon tart"><img src="{% static topic.primary_art %}" alt="" /></span>
     {% else %}<span class="ticon"><i class="ph-duotone ph-{{ topic.glyph }}"></i></span>{% endif %}
-    <h1 class="ttl">{{ topic.title }}</h1>
+    <h1 class="ttl">{{ topic.title|amp_nbsp }}</h1>
   </div>
   <p class="summary">{{ topic.summary }}</p>
   <div class="cta">Explore the full debate<i class="ph-fill ph-arrow-right"></i></div>

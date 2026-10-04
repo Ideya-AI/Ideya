@@ -70,7 +70,10 @@
   .og.t-mid .ttl,.og.t-word .ttl{font-size:54px} .og.t-long .ttl{font-size:44px}
   .sq.t-mid .ttl{font-size:64px} .sq.t-long .ttl{font-size:52px}
   .pt.t-mid .ttl{font-size:76px} .pt.t-long .ttl{font-size:62px}
-  .og.t-mid .summary,.og.t-long .summary{-webkit-line-clamp:3}
+  .og.t-long .summary{-webkit-line-clamp:3} .og.t-mid .summary{-webkit-line-clamp:4}
+  /* a long summary sets a size smaller (same column width, more per line) so
+     it fits the clamp instead of being cut */
+  .og.s-long .summary{font-size:22px;max-width:28.5ch}
   .sq.t-mid .summary,.sq.t-long .summary{-webkit-line-clamp:3}
   .pt.t-mid .summary,.pt.t-long .summary{-webkit-line-clamp:5}
   .sq{width:1080px;height:1080px;flex-direction:column;--pad:56px;--gap:24px;--tir:20px}
@@ -100,7 +103,7 @@
 {% with cc=topic.color_category %}
 {% spaceless %}
 {% if render_card %}
-<div class="card {{ render_card }} {{ title_class }}">{% include "topics/components/_share_card.html" %}</div>
+<div class="card {{ render_card }} {{ title_class }}{% if topic.summary|length > 138 %} s-long{% endif %}">{% include "topics/components/_share_card.html" %}</div>
 {% elif render_unfurl %}
 <div class="unfurl">
   <p class="lead">How this link unfurls when shared (X / LinkedIn / Slack)</p>
@@ -118,7 +121,7 @@
   <div class="frame">
     <div class="flabel"><i class="ph-duotone ph-link"></i>OG / Link preview <span class="dim">· 1200 × 630</span></div>
     <div class="scaler" style="width:600px;height:315px">
-      <div class="card og {{ title_class }}" style="transform:scale(0.5);transform-origin:top left">
+      <div class="card og {{ title_class }}{% if topic.summary|length > 138 %} s-long{% endif %}" style="transform:scale(0.5);transform-origin:top left">
         {% include "topics/components/_share_card.html" %}
       </div>
     </div>
