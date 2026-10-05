@@ -1,9 +1,9 @@
-Targeted re-audit of: basics.stats[cbo-estimate-of-a-15-federal] highlight, basics.stats[us-minimum-wage-estimates-showing-job].label, questions[should-us-labor-law-make-it].lean_label_b
+Targeted re-audit of: durable-dates pass
 
 # Audit: Labor Power
-2026-10-05 (targeted re-audit), verdict: ready
+Date: 2026-10-05. Verdict: ready.
 
-All three fixes hold. Mechanical checks pass: 0 text errors (3 staleness warnings for October and December 2026 dates in stat details), 0 dead or placeholder links (11 blocked). The CBO tile no longer highlights any row; its figures (17, 1.4, 1.0, 0.9 million) are unchanged and still agree with the note and detail, which give raises, job losses and poverty together and credit each side's figures evenly, so the tile no longer takes a side through emphasis. The minimum-wage tile is still titled “US minimum wage estimates showing job losses, Neumark–Shirley survey”, with Cengiz and others set against it in the note. The organizing question's lean labels still read “Easier organizing” and “Keep current law”. Layout checks were run separately: 0 errors, poster fits, og not clamped, cards re-rendered.
+The only change since the last ready audit is the editor's durable-dates pass: 11 wording edits that anchor time-sensitive phrases to named dates or drop "new" and "now" where it would date. I checked each edit against the diff. Every figure, date, name and attribution is unchanged, apart from one added specificity: question 2 now reads "the Republican majority seated in August 2026" where it said "its new majority". That is consistent with position 2, which already names a Republican majority on the board, and it does not change the reading. Each changed sentence reads naturally and stays true once its date passes. The stat 13 deadline is now phrased as what the directive gives member states, and action 6 reads "as of October 2026 it awaited a Senate vote". A search for remaining now-anchored wording found nothing that will go stale. "Today" in stat 1 paraphrases Gallup's question wording, "had not published those results as of October 2026" in the contractor stat is already anchored, and "workable protections now" is in a camp's voice. check_topic_text: 0 errors and 5 warnings, each one an explicit date anchor that the pass intended. check_links: 0 dead, 0 placeholder, and 11 blocked (scripted hosts).
 
 ## Issues for editorial
 none

@@ -210,6 +210,28 @@ def _dates(text):
             yield d, sent, m.group()
 
 
+_NOW_RELATIVE = re.compile(
+    r"\b(this|next|coming) (year|month|week|summer|fall|autumn|spring|winter|"
+    r"January|February|March|April|May|June|July|August|September|October|November|December)\b"
+    r"|\b(upcoming|in the coming (days|weeks|months)|later this|so far this|currently|at present|right now)\b"
+    r"|\bwill (vote|decide|rule|hear|take effect|go into effect|expire|close) (on|in|by)\b",
+    re.I,
+)
+
+
+def now_relative(fields):
+    """Wording anchored to the moment of writing ("this year", "upcoming",
+    "currently", "will decide on…") reads as nonsense once its date passes.
+    Warn; the editor rewrites it against a date ("on the November 3, 2026
+    ballot", "as of October 2026") or confirms it is timeless."""
+    for name, text in fields:
+        if not isinstance(text, str):
+            continue
+        for m in _NOW_RELATIVE.finditer(text):
+            a = max(0, m.start() - 40)
+            yield name, f"time-relative wording “…{text[a:m.end() + 30]}…”: anchor it to a date so it reads true after that date passes"
+
+
 def stale_dates(fields, today=None):
     """A page goes stale on the dates it names. Warn on a date in the next
     STALE_WINDOW_DAYS: the sentence will need rewriting after it."""
@@ -529,6 +551,10 @@ def run(doc, path):
     for name, msg in stale_dates(fields + [
         (f"action[{n}].title", x.get("title")) for n, x in enumerate(actions)
     ] + [(f"stat[{n}].label", x.get("label")) for n, x in enumerate(stats)]):
+        c.warn(name, msg)
+    for name, msg in now_relative(fields + [
+        (f"action[{n}].title", x.get("title")) for n, x in enumerate(actions)
+    ]):
         c.warn(name, msg)
 
     for key, items in (

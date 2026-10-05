@@ -1,9 +1,9 @@
-Targeted re-audit of: basics.stats "Records tampered with to assist fraud, by model" (note, detail, series, highlights, position 3 to 7, swapped with METR task length); positions order
+Targeted re-audit of: durable-dates pass
 
 # Audit: AI Alignment
-2026-10-05, not ready (blocked on renders)
+2026-10-05, ready
 
-Both text fixes landed and read correctly. check_topic_text: 0 errors, 0 warnings. check_links: 27 links, 26 ok, 1 blocked, 0 dead, 0 placeholder. The fraud tile now packs into row 4, below the Basics fold (rows: covert actions + misalignment flags; faithfulness + METR; three narrow tiles; fraud + sabotage). Its note opens with the spread and the caveat and names no brand, and no row is highlighted. Every series value, the per-model counts in the detail (20/20, 1/20, 8/20, 0/20 for Sonnet 4.6 and Gemini 3.5 Flash), iteration against Opus 4.5 and GPT-5.2, and the warning about not finding each model's eliciting setup all match the linked Anthropic post, read first-hand. "Fourteen models" agrees with the action at line 555. The camps now run empirical training, contain, ordinary engineering, halt, internals, guarantees by design, so both poles of the debate are in the first four. Ids and colors are unchanged, and no other text refers to camp order. The page text is ready. The blocker is the renders. The share cards (static/img/social/ai-alignment{,-sq,-pt}.png, 02:01) and the poster predate the reorder (topic.json 13:39), so they still show the old first four camps, with internals where halt now stands. The post-fix layout script (poster fit, og clamp, render_social, render_poster) was denied by the auto-mode classifier for the orchestrator and again for this auditor, so it has not run.
+The editor anchored 16 phrases to dates. No figure, name, source or URL changed. check_topic_text: 0 errors, 0 warnings. check_links: 27 links, 27 ok, 0 dead, 0 placeholder. I checked each changed sentence against the diff. Stat 1 now names "GPT-6 Astra", which the stat's own series label and source (the GPT-6 Astra system card, 3 September 2026) carry. Stat 3 now names "Mythos Preview", which is the tile's highlighted row. The Apollo and Redwood findings are now in the past tense, still attributed to the same groups. "As of 2026" or "as of mid-2026" now anchors Q0 why, Q1 detail, Q3 detail and Q4 why. Q6 detail reads "had shrunk to a rounding error by 2026". The positions now say "a September 2026 frontier release" (matching the Astra card's date), "2024 to 2026" and "in 2021" (the old "five years ago"). Both crux fields are anchored to 2026. Every change reads naturally and will still be true after its date. A search for "this year", "next month", "upcoming", "currently", "pending", "awaits", "has not yet", "so far", "recent", "newest", "now" and "today" finds nothing left in the page's own voice that would read wrong later. The matches that remain are inside camp arguments ("available today", "the one we are in", "we are watching that happen now", "the record so far") or are general present tense ("today’s models" in the Q0 and Q2 text, "can now be measured on every release"). None of them hangs on a date that will pass.
 
 ## Issues for editorial
 none
@@ -15,7 +15,4 @@ none
 none
 
 ## Notes for the human
-- Re-render the share cards and poster, check poster fit and the og clamp (the scratchpad postfix.sh, or render_social --formats og,sq,pt and render_poster), then run mark_ready. The text needs no further edits.
-
-
-2026-10-05: the blocked step ran (postfix.sh: 0 errors, poster fits, og not clamped, share cards and poster re-rendered from the current topic.json). Marked ready per this audit.
+none

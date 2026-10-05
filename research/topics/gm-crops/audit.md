@@ -1,14 +1,9 @@
-Targeted re-audit of: questions[have-gm-crops-reduced-the-harm].detail
+Targeted re-audit of: durable-dates pass
 
 # Audit: GM Crops
 2026-10-05, verdict: ready.
 
-This is a targeted re-audit of one fix. check_topic_text reports 0 errors and 0 warnings. check_links reports 27 links: 24 ok, 1 redirect, 2 blocked, 0 dead, 0 placeholder. The fix holds. The two sides of the pesticide-harm question detail now run about the same length. The "less harm" side keeps the corn-borer finding, credited to Hutchison and colleagues (Science, 2010), and no longer carries its dollar figures. The "deeper dependence" side now uses the Basics figures, and each one matches the tile that carries it:
-- glyphosate use up almost 15-fold from 1996 to 2014, by Benbrook's estimate (tile: ~15, Benbrook 2016)
-- 62 glyphosate-resistant weed species (tile: 62)
-- 16 cases of Bt-resistant pests by 2016, up from 3 in 2005 (tile: 3 in 2005 to 16 in 2016)
-
-Both sides are framed as what their holders say. Each closes on its own strongest reply, so neither camp gets the last word in the page's voice.
+This re-audit covers only the durable-dates pass. check_topic_text reports 0 errors and 1 warning. The warning is the stat[14] past anchor "had not been lifted as of October 2026", which is the intended form and reads true after the date passes. check_links reports 27 links: 24 ok, 1 redirect, 1 blocked (Annenberg, 403) and 1 "dead". The dead link is the ISAAA brief 55 executive summary, which timed out in the checker but returns 200 on a direct request, so it is not dead. Each of the eight edits keeps the same figures, dates, names and attribution. The stat[1] note and detail are now anchored to 2025, which matches the USDA ERS source. The Kamala rice clause no longer says "only now". The question[5] why drops "now". The action[4] title and action[9] description name the 2026 EU regulation, which matches the why-now source (Regulation (EU) 2026/1388). Action[2] now states that a district court gave USDA until January 1, 2028. That is not a new claim: stat[7]'s detail already carries it ("in August 2026 a district court gave USDA until January 1, 2028"), so the two places agree. Every edited sentence reads naturally and will stay true after the date it names. A scan for remaining time-relative wording finds only these. The camps' own present tense in positions[0], positions[2] and question[0], which the editor kept on purpose. "Pink bollworm now resistant" in stat[12], which reports what Kranthi and Stone wrote in 2020. And "new genomic techniques", which is the regulation's own term. None of these will read wrong once a date passes.
 
 ## Issues for editorial
 none

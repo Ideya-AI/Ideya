@@ -1,9 +1,9 @@
-Targeted re-audit of: basics.stats[2] (CBO single-payer range: value, unit, viz), basics.stats[1].note (uninsured for all of 2025)
+Targeted re-audit of: durable-dates pass
 
 # Audit: Universal Healthcare
 2026-10-05, verdict: ready
 
-Both fixes landed. Mechanical checks: check_topic_text found 0 errors. Its 10 warnings are 9 older lean-label length warnings and the deliberate "trillion dollars" unit. check_links found 0 placeholders. Its one "dead" result was govtrack.us resetting the connection; the same URL returned 200 on a direct retry, so the host was briefly down and the link is fine. The CBO tile now reads "−0.7 to +0.3 trillion dollars" on the live page and on the poster. The tile shows the true minus sign and an explicit plus, so a reader can no longer take the range as a cut on both ends. With no graphic, the number and the note carry the tile. The value, the note ("a $0.7 trillion cut to a $0.3 trillion rise … in 2030"), the label and the CBO source fields agree, and the value claims nothing the note does not. The uninsured note now reads "uninsured for all of 2025". That matches the tile label, the detail (CPS counts the uninsured only if they lacked coverage for the whole year) and the why-now ("went without health insurance for all of 2025"). The editor flagged the why-now as still reading "at any point", but that phrasing is in research.md only, not on the page. Layout, checked by hand because the post-fix script was blocked: the live poster fits with 57px to spare, and the og card summary is not clamped (4 lines, title 2 lines). The og, square and portrait share cards carry no stats, so the fix does not affect them. The stale poster PDF was re-rendered (fits, 57px slack).
+The one issue from the previous packet is fixed. The positions[2] detail now reads "improper enrollments that began to be removed only in 2026, once the enhanced subsidies lapsed". This keeps the claim within what stats[17] attributes to the ASPE brief, which says 2.6 million such enrollments remained, and that is why the sentence says "began". It sits in the camp's own voice, reads naturally, and will still read true after 2026. The four rewordings from the earlier pass still hold: stats[5] says "as of September 2026", stats[17] is in the past tense, positions[0] says "as of 2026" and positions[1] says "due by January 2027". No figures, dates, names or attributions changed. check_topic_text reports 0 errors; its 10 warnings were there before this pass. check_links reports 0 dead and 0 placeholder (4 blocked, 1 redirect). A search of the content for now-anchored wording found nothing that will go stale. The why-now is tied to explicit dates. The remaining "today" and "current law" phrases are general camp argument or describe a cited analysis's baseline, and CBO's 2034 figures are labeled as projections.
 
 ## Issues for editorial
 none
@@ -15,4 +15,4 @@ none
 none
 
 ## Notes for the human
-- Code defect, reported by the editor and consistent with what renders: `Stat.range_band` in `topics/models.py` and the span check in `derive_viz` in `topics/management/commands/load_topic_draft.py` reject "to", a leading "+" and the U+2212 minus. A range that crosses zero therefore cannot keep its band and show its signs, which is why this tile dropped to a text-only `bar`.
+none

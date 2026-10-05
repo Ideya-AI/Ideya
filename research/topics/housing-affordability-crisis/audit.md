@@ -1,7 +1,7 @@
-Targeted re-audit of: basics.stats[17] (homelessness)
+Targeted re-audit of: durable-dates pass
 
 # Audit: Housing Affordability
-2026-10-05, verdict: ready. Both mechanical checks are clean: check_topic_text shows 0 errors and 0 warnings, and check_links shows 29 of 29 ok. The one issue from the last round is fixed. The NLIHC sentence ("first year-on-year decrease since 2016") is gone from the homelessness detail, both in topic.json and on the live dev page. That leaves every claim in the detail sourced to the linked HUD report. The rest of the tile still holds from the earlier fix. The value is 745,652. The 3 percent fall from the record 771,480 matches the note. The 4 percent emergency-shelter fall and the 3 percent unsheltered fall to 266,320 are consistent. No other item on the page states a homelessness figure. The note's claim that individual and chronic homelessness hit new highs agrees with the detail. This round's edit touched only expanded detail text, so the glance, summary and share cards are unchanged by it.
+2026-10-05, verdict: ready. check_topic_text: 0 errors, 0 warnings. check_links: 28 of 29 ok. The one "dead" link is the govtrack action URL, which failed only on a scripted TLS EOF; curl returns 200, so it is live. Every changed sentence keeps its facts: the figures, dates, names and attribution are the same, and no claim was added. Each now reads naturally and stays true once its date passes: "by the 2026 report", "the Joint Center's 2026 report puts", "in the years after it", "a Census Bureau projection put 2026 at", "by 2025 ... had improved", "fell in 2025", "early 2020s", "since the early 2010s", "in 2026 ... took on all three together" and "the 2026 federal law". Two changes now attribute claims to the Joint Center 2026 report: the LIHTC expiries and the mobility and existing-sales figures. Both stat tiles already cite that report as their source, so these are not new claims. A scan of the whole file found no remaining now-anchored wording that would read wrong after a date passes. Four relative phrases remain and are durable: the crux subtitle's "almost every camp now wants", "the recent migration waves", "check the source for the current value" and the Canadian plan's quoted 2027 target. The why-now is pinned to July 11, 2026. The stat[3] and stat[8] notes changed, so the glance hash differs from the renders. The orchestrator re-runs the renders, so this does not block.
 
 ## Issues for editorial
 none
@@ -13,4 +13,4 @@ none
 none
 
 ## Notes for the human
-- The layout postfix check (postfix.sh) did not run, because the auto-mode classifier blocked it. Nothing here independently confirms the poster fit or the og summary clamp. The editor reports the poster fits at data-fit=-10, and the summary text has not changed. The section renders predate the earlier homelessness value and note change: the glance hash in renders/ differs from the current one.
+none

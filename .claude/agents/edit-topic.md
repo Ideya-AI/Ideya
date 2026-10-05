@@ -141,6 +141,12 @@ label and position name.
   24 characters, and a unit is a token, under about 12; both print in narrow columns
   on the poster.
 - The summary names the central argument without declaring the others closed.
+- Write anything time-sensitive so it still reads true after its date passes: anchor
+  it to a date, never to the moment of writing. Not "voters will decide on November
+  3" but "the question is on the November 3, 2026 ballot"; not "this year" but the
+  year; not "currently", "now pending", "has not yet" or "so far" alone but with an
+  "as of <month year>". A scheduled event is stated with its date as a fact a reader
+  can place in time, never as a forecast that turns false or odd once it happens.
 - `overview.why_now_source_label` and `why_now_source_url` name where a reader can
   confirm the why-now event (from research.md's Overview). The why-now event is the
   one dated claim outside Basics, so it always carries its source.

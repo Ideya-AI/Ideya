@@ -1,9 +1,9 @@
-Targeted re-audit of: basics.stats[doomsday-clock-setting].detail, questions[would-the-world-be-safer-if].detail
+Targeted re-audit of: durable-dates pass
 
-# Audit: Nuclear Weapons
-2026-10-05, verdict: ready (targeted re-audit)
+# Audit: Nuclear deterrence vs. disarmament
+2026-10-05, verdict: ready
 
-Both fixes from run/fixes2.md landed exactly as written, and the diff changes nothing else except status and authored_at. The Doomsday Clock detail now says the board's January 27, 2026 statement cited the "coming expiry of New START". That agrees with the why-now and the New START tile, which both date the expiry to February 5, 2026, so the date contradiction is gone. The question on whether more nuclear states would make the world safer now ends with a third paragraph. In the page's own voice it says the 2025 and 2026 US and Israeli strikes on Iran are read both ways. Each reading belongs to one side, and the paragraph sides with neither. The dates match the fourth position's detail ("bombed in 2025 and again in 2026") and do not clash with the 2026 NPT review conference deadlock over Iran in stat[9] or in the verification question. Mechanical checks are clean. check_topic_text gives 0 errors and 1 warning, the existing one for the dated sentence in stat[9]. check_links gives 0 dead and 0 placeholder (3 blocked, 2 redirect). The separate layout script did not run because the permission classifier blocked it. Both edits are in expanded detail only, so no glance text, summary or og card changed. The editor measured poster fit at -72, which fits.
+The only change since the ready audit is the durable-dates pass. Each changed sentence keeps its figures, dates, names and attribution, and none adds a claim. The why-now now reports New START’s expiry as a past event, and the TPNW tile is set “as of September 2026”. The ban treaty’s review conference “was scheduled for” November 30 to December 4, so the checker’s single warning names a sentence that will still read true after the conference. The test-ban detail is anchored “as of 2025” and the Doomsday Clock reads “then its closest ever”. Both will hold. A search for “now”, “current”, “pending”, “has not”, “so far”, “latest”, “soon” and “remains” found no other page-voice wording that will go wrong when a date passes. The present tense that remains belongs to the camps’ own arguments (“Ban nuclear weapons now”, “today’s arsenals”) or describes durable facts (Hiroshima and Nagasaki as the only wartime uses). check_topic_text: 0 errors, 1 deliberate warning. check_links: no dead or placeholder links. The CBO and Asan links return 403 and the Nature link redirects, which are notes only.
 
 ## Issues for editorial
 none

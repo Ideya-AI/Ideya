@@ -1,9 +1,9 @@
-Targeted re-audit of: basics.stats[4] (hiring-discrimination-in-field-experiments)
+Targeted re-audit of: durable-dates pass
 
 # Audit: Immigration & Assimilation
 Date: 2026-10-05. Verdict: ready.
 
-This re-audit checked only the item edited after the last audit. check_topic_text reports 0 errors and 0 warnings. check_links reports 25 ok, 3 blocked, 0 dead and 0 placeholder. The hiring-discrimination range tile now reads as a span across countries rather than a single worst case: label "Callbacks for white natives per one for nonwhite applicants, by country", value "1.25–2", no unit, ends "1 = equal" and "2 = double". It matches its own note (about 1.25 in the least discriminating countries, nearly 2 in the most), its detail (France highest, then Sweden), and the Quillian et al. 2019 meta-analysis it cites. No other item on the page gives a callback ratio, so nothing conflicts. The separate layout script could not run because the permission classifier blocked it. The editor reports poster fit at -56, which means no overflow. The edit did not touch the summary or the share-card text.
+The editor changed six phrases, and in each one the time wording is now tied to a date rather than to "now". The figures, dates, names and attribution are the same. The why-now ("moved to lengthen") and the citizenship-timing question ("have moved both ways") now read as past events. The Australian survey caveat is tied to the 2025 survey, and the intermarriage caveat to 2015. The Quebec Bill 21 line now reads "had not ruled as of early October 2026", which stays true after that date. Its checker warning is the intended trade-off, so it is not a defect. In the first camp's detail, "has since 2025" matches the "2025 civics test" named in the page's own action. A search for "this year", "upcoming", "currently", "pending", "so far", "yet to", "will … on" and similar wording found nothing left that would go stale. check_topic_text shows 0 errors. check_links shows 0 dead and 0 placeholder links; the 3 blocked links are notes.
 
 ## Issues for editorial
 none

@@ -1,13 +1,17 @@
-Targeted re-audit of: crux.empirical (last sentence); topic icon (static/img/topics/degrowth-vs-green-growth.png)
-
+Targeted re-audit of: durable-dates pass
 # Audit: Degrowth vs. Green Growth
-2026-10-05, verdict: ready. Both items from run/fixes2.md are fixed. Mechanical checks are clean: check_topic_text shows 0 errors and 0 warnings, and check_links shows 26 links with 0 dead, 0 placeholder and 1 blocked (an action link returning 403, which is a note and not a failure). The crux's last sentence now sets a test for each side that has not already been met. "Far steeper annual cuts while growing" stays open for green growth. For degrowth, the test is cuts "stuck at a few percent a year as clean power grows cheaper". That looks forward, so it fairly answers green growth's own claim (positions[0].detail, questions[0].detail) that past rates came before clean power was cheapest. "A few percent a year" matches positions[1].detail and stats[1].detail ("around 4 percent a year"). The sentence adds no figures, so it needs no source. The new icon shows the same factory scene with plain rounded smoke puffs and no leaf, so the art no longer carries the green-growth claim. The smoke is the same green as the rest of the scene, but that is the single-hue house style and reads as ordinary smoke. The layout script did not run (it was blocked by the permission classifier). The editor reported poster fit at -93, so there is no overflow, and the og summary was not touched.
+Date: 2026-10-05. Verdict: ready.
+
+The diff has nine wording changes and each keeps its fact. The same figures, years, names and attribution appear. "Still rising" is now anchored to 2024. "The current rate" became "the 2025 rate", which matches the detail's 2025 emissions. The UK import share is now "in 2023", the EU's "average so far" is now "since 1990", and material extraction is anchored "as of 2024". The IRP quote now ends in the past tense with "so far" inside the quotation marks. China against the EU is "in 2024", and the IEA investment projection is anchored to 2026. "The current US administration" became "Trump’s second administration". All of them read naturally and will stay true after the dates they name. The IEA line now names May 2026, a month the earlier text did not give. It sits in a camp's voice and changes no reading, so it is not raised. check_topic_text reports 0 errors and 0 warnings. check_links reports 0 dead and 0 placeholder (2 redirects and 1 blocked, which are notes only). The why-now is already dated (September 2, 2026). The remaining "now", "current", "today’s" and "not yet" wording is in camp argument, model conditions ("current policies", "current pledges"), quotes or general framing, and none of it is tied to a date that will pass.
 
 ## Issues for editorial
 none
+
 ## Issues for icons
 none
+
 ## Needs research (stops the run)
 none
+
 ## Notes for the human
 none

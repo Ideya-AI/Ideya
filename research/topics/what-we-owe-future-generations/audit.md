@@ -1,9 +1,9 @@
-Targeted re-audit of: title, questions[how-likely-is-an-extinction-level].why, extinction-forecast tile "Public" row
+Targeted re-audit of: durable-dates pass
 
 # Audit: Future Generations
-2026-10-05, verdict: ready (targeted re-audit)
+2026-10-05, verdict: ready
 
-This was a targeted re-audit of a page already audited ready, and only the three edited items were checked. Both mechanical checks pass: 0 text errors and 0 warnings, and of 26 links 0 are dead and 0 are placeholders (3 redirect, 1 blocked). (a) The title is now "Future Generations". It names the subject rather than MacAskill's book, and no other occurrence of "What We Owe" remains in topic.json. (b) The why for the extinction-likelihood question now says "several-fold apart", which matches the tile beside it (6 percent from experts against 1 percent from superforecasters, a sixfold gap). (c) The extinction-forecast tile's row now reads "Public (separate survey)". That agrees with its detail ("The public row comes from a separate survey of college graduates"), and the highlight stays on domain experts. The orchestrator reports that the layout checks found 0 errors, that the poster fits, that the og card is not clamped and that the cards were re-rendered. None of the edits affects anything around it.
+The only change was to three stat notes in Basics, which now name a date instead of "now". In each, the figures, names and attribution are unchanged and nothing new is claimed. stats[1] "born up to 2022" matches the 2022 Population Reference Bureau count given in its detail. stats[8] "then in 2025 to none" matches the Executive Order 14154 / OMB memo of 2025 in its detail. stats[10] "in 2025 the US returned to its 2003 guidance" matches Executive Order 14192 of January 31, 2025 in its detail. All three read naturally and will stay true. A search of the file found no other wording tied to the present that would read wrong once a date passes. The why-now gives a date (March 5, 2026) and closes in the present perfect ("have stalled or been reversed"), which stays true. Every other "now", "today" or "current" is part of a camp's argument, a survey's wording ("today's children") or a scenario name ("current policies"). check_topic_text reports 0 errors and 0 warnings. check_links reports 0 dead and 0 placeholder (1 blocked at SSRN with a 403, 3 redirects).
 
 ## Issues for editorial
 none

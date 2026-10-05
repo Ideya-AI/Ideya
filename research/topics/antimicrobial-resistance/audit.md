@@ -1,15 +1,18 @@
 # Audit: Antimicrobial Resistance
-Targeted re-audit of: basics.stats[8] "Resistance to first-choice drugs for serious infections, 2023"
+Targeted re-audit of: durable-dates pass
 
 Date: 2026-10-05. Verdict: ready.
 
-The fix was checked against its own source, and it holds. The reviewer asked for the Africa bar to be relabeled to K. pneumoniae alone. The editor declined, with reason. The linked PAHO/WHO release says "In the African Region, resistance even exceeds 70%" right after giving both bacteria's global figures. The detail now names WHO's 2025 GLASS report summary as its source and gives the African Region figures for each: 70.7% for E. coli and 77.8% for K. pneumoniae. So the series row "Both bacteria, Africa >70" and the note's "over 70% for both in WHO’s African Region" agree with each other and with the named source. The global figures in the note (over 55% and 40%) still match the release word for word. No other item on the page states these figures. The source_label already names the GLASS report 2025, so the added detail sentence claims nothing its named source lacks. check_topic_text found 0 errors and 4 warnings. All 4 are "Organisation" inside proper nouns. check_links found 1 dead link, saveourantibiotics.org/our-campaign/, on a timeout. It answers HTTP 200 on a direct request, so it is a transient false positive. The separate layout script did not run because auto mode blocked it. The editor reports a poster fit of -75, so there is no overflow. The edit shortened the stat note and touched no og summary field.
+The seven changes tie time-sensitive wording to a year: stat[11] detail, stat[17] detail, questions[2] why and detail, questions[7] why and detail, and actions[8] description. Figures, names, dates and attribution are unchanged, and no new claim was added. Each sentence reads naturally and will still read true after 2026. check_topic_text shows 0 errors; its 4 warnings are all "Organisation" in the proper noun World Organisation for Animal Health. check_links shows 0 dead and 0 placeholder links (2 blocked). Searching the rest of the file for now-anchored wording found nothing that will read wrong later. "still argue" in why_now sits beside the dated May 2026 adoption. "still used" in stat[5] is tied to the 2022 survey. "not yet enough data" in stat[4] is past tense and tied to WHO's early-2025 count. The "today" and "remain" wording inside camp arguments states each camp's reasoning, not a dated fact.
 
 ## Issues for editorial
 none
+
 ## Issues for icons
 none
+
 ## Needs research (stops the run)
 none
+
 ## Notes for the human
 none

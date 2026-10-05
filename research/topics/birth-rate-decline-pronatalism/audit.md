@@ -1,9 +1,8 @@
-Targeted re-audit of: positions[raise-birth-rates-toward-replacement].steelman; basics.stats[united-states-total-fertility-rate].note
-
+Targeted re-audit of: durable-dates pass
 # Audit: Birth-Rate Decline
-2026-10-05 · verdict: ready (targeted re-audit)
+Date: 2026-10-05. Verdict: ready.
 
-Both fixes landed as the fix list asked. The first camp's steelman now leads with the birth rate as a national goal worth paying for. At a glance that sets it apart from "Help people have the children they want", whose steelman leads with the gap between wanted and actual families. The first camp's detail still makes the point about that gap, so nothing was lost. The US stat note now leads with 1.60 children per woman, which matches the tile value of 1.60 births/woman. The note keeps 1,599.5 per 1,000 women as the same rate in the other unit. It also agrees with the "about 1.6" in the ideal-family-size stat. The 2024 figures fit the cited CDC final-data report for 2024. Mechanical checks: check_topic_text found 0 errors. check_links found 29 links with 0 dead, 0 placeholder and 1 blocked. The layout script was not run. The editor reports that the poster fits (data-fit=-30).
+The only change since the ready audit is the editor's durable-dates pass: eleven phrases in the why-now, five stat details and three question details now anchor time to a stated year instead of to "now". I compared each change against the previous text. Figures, dates, names and sources are unchanged, and no new claim appears. The one addition is that question 4 now names "the OECD’s 2025 pensions report" as the source of the working-age projection. That is the same report the old-age ratio tile cites, so it adds attribution rather than a new fact. Each rewritten sentence reads naturally and will still be true after its date. A search for remaining now-anchored wording found only timeless uses: "at current rates", "a baby born today", "no society has yet tried", "steepest recent falls", and present-tense reasoning inside steelmen. check_topic_text: 0 errors, 0 warnings. check_links: 28 ok, 1 blocked (CBO, 403), 0 dead.
 
 ## Issues for editorial
 none

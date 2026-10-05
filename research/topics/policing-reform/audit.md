@@ -1,9 +1,9 @@
-Targeted re-audit of: questions[0].detail, questions[2].why
+Targeted re-audit of: durable-dates pass
 
 # Audit: Policing Reform
 Date: 2026-10-05. Verdict: ready.
 
-Both fixes landed and read cleanly. questions[0].detail now says killings by police "reached a record in 2024", which matches the lead stat (1,383 in 2024, 1,314 in 2025, Mapping Police Violence). No other item on the page makes a current-record claim about killings. questions[2].why now ends with the federal-agent sentence, naming Egbert v. Boule (2022) as its own source. That gives the why-now (a suit against the United States, an immigration agent and officials) a foothold among the accountability items. "All but closed" and "mainly claims against the United States" claim no more than the holding supports, and they agree with the why-now's list of defendants. Cutting "not Congress" and "Congress has repeatedly failed to change it" removes no fact a reader needs. "Returned in September 2025" keeps the reintroduction date. The why still reads neutrally, and the lean labels are unchanged. Mechanical checks: check_topic_text shows 0 errors and 1 warning (questions[2].why at 283 characters, accepted because the fix needs the sentence). check_links shows 0 dead and 0 placeholder (4 redirect, 2 blocked). On the live page at 1440 the lengthened why is not clamped (scrollHeight equals clientHeight).
+All nine rewordings keep their figures, dates, names and attribution, and each now names a time that will still read true after it passes. stat[1] says the drop "continued into 2026", which the CCJ first-half-2026 figure supports. In stat[10], "by 2026 … ran in many cities" makes no claim beyond what the page said before. In stat[12], "as of 2026 … applied" anchors the federal doctrine. stat[14] says staffing "partly recovered by 2025", which matches the PERF 2025 survey. stat[15] says "as of October 2026, BJS had not published". The checker warns on this sentence, but "had not" in the past tense stays true after October, so the warning is a false positive here. In questions[3].why, "as of 2026 no city had moved" adds no claim. questions[3].detail drops "new" and uses "started small", keeping the March 2026 date. questions[4].why now reads "The Trump administration dropped them in 2025", which agrees with the May 2025 dismissals in its detail, and naming the administration is neutral, not a slant. questions[5].detail now says "the decline after 2022 was also". A search for now-anchored wording found nothing that will go stale. "Few now deny", "still" in camp voice, "so far" for studies, the bills' "would", and "Cases pending" as a series label do not depend on a date. The why_now is already dated October 1, 2026. Mechanical checks: check_topic_text shows 0 errors and 2 warnings (the stat[15] date flag above, and questions[2].why at 283 characters, which an earlier audit already accepted). check_links shows 0 dead and 0 placeholder (4 redirect, 2 blocked).
 
 ## Issues for editorial
 none
@@ -15,4 +15,4 @@ none
 none
 
 ## Notes for the human
-- The glance hash changed (36187b2a2732c60c against 88002f3bb3e67dc1 in renders/glance.hash), so the renders under renders/sections/ predate this fix. The post-fix layout script (postfix.sh) was blocked by auto mode and did not run. The poster's crux and the og summary are unchanged; only the 390 Questions tile is unchecked.
+none

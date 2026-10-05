@@ -1,15 +1,18 @@
-Targeted re-audit of: basics stat `share-of-us-adults-counted-as` (series and detail)
+Targeted re-audit of: durable-dates pass
 
 # Audit: Loneliness & Community
-2026-10-05, verdict: ready
+Date: 2026-10-05. Verdict: ready.
 
-The fix from run/fixes2.md is in. The chart now has five rows, and every row is US adults overall: Cigna 57, APA weekly 30, Harvard serious 21, Gallup daily 20 (highlighted), APA every day 10. The spread now comes only from differences in the survey instrument, which is the point the chart is there to make. The note's "one in ten to more than half" still fits the rows. In the detail, the 57 is credited to Managed Healthcare Executive's coverage. The Gen Z 67 is credited to the Cigna report, which is the source the earlier audited row used, so the detail claims no more than its sources. The boomers figure is gone from the stat, and no other item on the page cites Cigna, 57 or 67, so nothing contradicts the change. check_topic_text found 0 errors. check_links found 0 dead links and 0 placeholders (1 blocked, 1 redirect). Run against the dev server, render_poster --check-only reports the poster fits with 41px of slack. The edit did not touch the summary, so the og summary is unchanged.
+The pass made two wording changes and both hold. In the question 5 `why`, adding "As of 2026" anchors "new and spreading fast" to a year without changing the claim. In the stat 17 note, "the 2023–24 row from Pew" replaces "the latest from Pew". It matches the highlighted series label "2023–24 (Pew)" exactly, and the figures, source and attribution are unchanged. The checks are clean: check_topic_text reports 0 errors and 0 warnings, and check_links reports 0 dead and 0 placeholder (2 blocked, 1 redirect). I searched the content for time-relative wording. The why-now is dated (June 17, 2026). Action 3 says "2026 bill" and describes what the bill "would" do, which stays true. The crux's "people now spend less time" is a long-run contrast. The remaining hits are inside camp arguments ("already used one", "have begun to write", "will find the vocabulary"), where they are the camp's own claims. None of them will read wrong once a date passes.
 
 ## Issues for editorial
 none
+
 ## Issues for icons
 none
+
 ## Needs research (stops the run)
 none
+
 ## Notes for the human
-- The layout re-render script was blocked by the permission classifier, so renders/ still shows the old six-row chart (the glance hash differs). Dropping a row can only shorten the tile, and the poster fit was checked directly.
+none
