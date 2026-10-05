@@ -346,7 +346,7 @@ Serves: neutral
 Kind: learn_more
 Title: Read the 2025 EAT-Lancet Commission report
 What: The EAT Foundation’s hub for the 2025 EAT-Lancet Commission on healthy, sustainable and just food systems, with its planetary health diet, summary for policymakers and country findings.
-URL: https://eatforum.org/eat-lancet-commission/
+URL: https://eatforum.org/eat-lancet-commission/ [Correction 2026-10-05: this URL redirects (301) to a page of commissioner bios, not the Commission hub; the hub with the diet and summary report is https://eatforum.org/eat-lancet/.]
 Resolved: yes
 Serves: Shift diets toward plants
 
@@ -450,7 +450,7 @@ Inside Climate News, “Top Climate Scientists Accuse the Livestock Industry of 
 Carbon Brief, “Q&A: What the ‘controversial’ GWP* methane metric means for farming emissions” — https://www.carbonbrief.org/qa-what-the-controversial-gwp-methane-metric-means-for-farming-emissions — accessed 2026-10-01
 EAT-Lancet Commission 2025, Summary for and with Policymakers — https://eatforum.org/wp-content/uploads/2026/03/2025-EATLancet_Summary-for-and-with-Policymakers.pdf — accessed 2026-10-01
 EAT, “New landmark EAT-Lancet Commission warns food systems breach planetary limits,” 3 October 2025 — https://eatforum.org/update/eat-lancet-commission-warns-food-systems-breach-planetary-limits/ — accessed 2026-10-01
-EAT, EAT-Lancet Commission hub — https://eatforum.org/eat-lancet-commission/ — accessed 2026-10-01
+EAT, EAT-Lancet Commission hub — https://eatforum.org/eat-lancet-commission/ — accessed 2026-10-01 [Correction 2026-10-05: this URL redirects (301) to a page of commissioner bios, not the Commission hub; the hub with the diet and summary report is https://eatforum.org/eat-lancet/.]
 FAO, Contribution of terrestrial animal source food to healthy diets for improved nutrition and health outcomes, 2023 — https://openknowledge.fao.org/handle/20.500.14283/cc3912en — accessed 2026-10-01
 WHO, “Cancer: Carcinogenicity of the consumption of red meat and processed meat” (Q&A) — https://www.who.int/news-room/questions-and-answers/item/cancer-carcinogenicity-of-the-consumption-of-red-meat-and-processed-meat — accessed 2026-10-01
 Global Dairy Platform, “Pathways to Dairy Net Zero Initiative Launched,” 22 September 2021 — https://globaldairyplatform.com/pathways-to-dairy-net-zero-initiative-launched/ — accessed 2026-10-01

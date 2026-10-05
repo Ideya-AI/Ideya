@@ -464,7 +464,7 @@ Serves: neutral
 
 Kind: local
 Title: Clear the first five feet around your house
-What it is: The ember-resistant zone — no bark mulch, woody shrubs, stored firewood, door mats or combustible fencing touching the wall within five feet — which IBHS research found roughly halves a structure’s ignition risk, and which California made mandatory in hazard zones in August 2026.
+What it is: The ember-resistant zone — no bark mulch, woody shrubs, stored firewood, door mats or combustible fencing touching the wall within five feet — which IBHS research found roughly halves a structure’s ignition risk, and which California made mandatory in hazard zones in August 2026. [Correction 2026-10-05: California’s Board of Forestry adopted the Zone 0 rules on August 19, 2026, but they take effect only after state review, with three to five years for existing homes; California has voted to require the zone, not yet enforced it (Best Best & Krieger, https://bbklaw.com/resources/la090926-california-board-of-forestry-adopts-emergency-zone-0-regulations-under-ab-3074).]
 URL: https://ibhs.org/wildfire/wildfire-prepared-home/
 Resolved: yes
 Serves: the home-hardening camp
