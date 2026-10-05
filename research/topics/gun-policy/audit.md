@@ -1,16 +1,13 @@
-Targeted re-audit of: background-checks question kind, protect-and-expand proponents, new primary art and share cards
+Targeted re-audit of: basics.stats[homicides-and-suicides-committed-with-a].label, basics.stats[fatal-mass-shootings-in-australia-before].detail
 
 # Audit: Gun Policy
-2026-10-05, verdict: ready. A targeted re-audit of a topic already audited ready. check_topic_text reports 0 errors (14 warnings, all advisory: ranked-tile values and two December 2026 dates that go stale after that month). check_links finds 29 links: 28 ok, 1 redirect, 0 dead, 0 placeholder. The background-checks question is now kind `value`, which fits its text (“cut gun deaths enough to justify the burden”) and its lean labels (“Worth the burden” / “Not worth it”), since both are judgments of whether the cost is worth paying. The protect-and-expand camp's proponents end with “US Department of Justice (current administration)”. The new art shows a dealer counter with a purchase form on a clipboard, two handguns in the case and three rifles racked behind. It reads plainly as buying a gun and belongs to no camp: the form at a dealer counter is a check every camp accepts as current law, not one camp's proposal. It no longer reads as sport shooting. All three share cards carry the new art, list the four camps, and show the crux without clipping.
+2026-10-05, verdict: ready. Both fixes from run/fixes2.md landed as prescribed. The radial now reads “US homicides committed with a gun” at 76%, which matches its note (76 percent of homicides, 57 percent of suicides) and the 2024 Pew/CDC source; no other item on the page states the combined share. The Australia detail now says the national buyback was announced after the December 2025 Bondi Beach attack and is set to begin in November 2026, so it no longer reports as done what has not happened; no other item mentions Bondi or the new buyback. check_topic_text: 0 errors, 3 staleness warnings (December 2026 twice, November 2026), all accurate today. check_links: 29 links, 0 dead, 0 placeholder, 1 redirect. The separate layout check did not run (permission block); the glance hash changed only through the shorter stat label, which cannot add overflow, and the editor reports poster fit at -95.
 
 ## Issues for editorial
 none
-
 ## Issues for icons
 none
-
 ## Needs research (stops the run)
 none
-
 ## Notes for the human
 none

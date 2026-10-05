@@ -1,9 +1,7 @@
-Targeted re-audit of: positions[build-more-homes-and-protect-tenants].detail, positions[build-more-homes-and-protect-tenants].steelman, positions[legalize-and-build-many-more-homes].detail
+Targeted re-audit of: basics.stats[17] (homelessness)
 
 # Audit: Housing Affordability
-2026-10-04 (targeted re-audit after fix), verdict: ready.
-
-All three fixes landed and read cleanly in context. The Joint Center quote in the "build more homes and protect tenants" detail is now the report's own sentence. I checked it against the primary PDF that the page already cites (Harvard JCHS, The State of the Nation's Housing 2026). The page's sources list links that PDF, so a reader can follow the quote. The quote supports the sentence it closes ("no market will ever build homes the lowest-income households can afford") and does not conflict with the other JCHS figures on the page. The steelman now uses single inner quotes (‘just build’ / ‘just protect tenants’). The "legalize and build" detail now carries the investor-limit point as an unquoted paraphrase with no anonymous speaker. It agrees with the 2026 federal law named elsewhere on the page (the why-now and the bill-page action). check_topic_text: 0 errors (8 warnings for ranked-tile values, which the pass did not touch). check_links: 29 links, all ok.
+2026-10-05, verdict: ready. Both mechanical checks are clean: check_topic_text shows 0 errors and 0 warnings, and check_links shows 29 of 29 ok. The one issue from the last round is fixed. The NLIHC sentence ("first year-on-year decrease since 2016") is gone from the homelessness detail, both in topic.json and on the live dev page. That leaves every claim in the detail sourced to the linked HUD report. The rest of the tile still holds from the earlier fix. The value is 745,652. The 3 percent fall from the record 771,480 matches the note. The 4 percent emergency-shelter fall and the 3 percent unsheltered fall to 266,320 are consistent. No other item on the page states a homelessness figure. The note's claim that individual and chronic homelessness hit new highs agrees with the detail. This round's edit touched only expanded detail text, so the glance, summary and share cards are unchanged by it.
 
 ## Issues for editorial
 none
@@ -15,4 +13,4 @@ none
 none
 
 ## Notes for the human
-none
+- The layout postfix check (postfix.sh) did not run, because the auto-mode classifier blocked it. Nothing here independently confirms the poster fit or the og summary clamp. The editor reports the poster fits at data-fit=-10, and the summary text has not changed. The section renders predate the earlier homelessness value and note change: the glance hash in renders/ differs from the current one.

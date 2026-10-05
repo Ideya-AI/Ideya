@@ -102,52 +102,47 @@
      "id": "chain-of-thought-faithfulness"
     },
     {
-     "label": "Records tampered with to assist fraud, by model",
+     "label": "Task length a model completes half the time",
      "viz": "ranked",
      "wide": true,
      "value": "",
-     "unit": "%",
+     "unit": "hours",
      "series": [
       {
-       "label": "DeepSeek V4",
-       "value": "100",
+       "label": "GPT-2 (2019)",
+       "value": "0.001",
+       "highlight": false
+      },
+      {
+       "label": "GPT-4 (2023)",
+       "value": "0.1",
+       "highlight": false
+      },
+      {
+       "label": "o3 (2025)",
+       "value": "2.0",
+       "highlight": false
+      },
+      {
+       "label": "Gemini 3.1 Pro (2026)",
+       "value": "6.4",
+       "highlight": false
+      },
+      {
+       "label": "Mythos Preview (2026)",
+       "value": "17.4",
        "highlight": true
-      },
-      {
-       "label": "Grok 4.3",
-       "value": "95",
-       "highlight": false
-      },
-      {
-       "label": "GPT-5.4",
-       "value": "85",
-       "highlight": false
-      },
-      {
-       "label": "Kimi K2.6",
-       "value": "85",
-       "highlight": false
-      },
-      {
-       "label": "Claude Opus 4.6",
-       "value": "40",
-       "highlight": false
-      },
-      {
-       "label": "Claude Opus 4.8",
-       "value": "5",
-       "highlight": false
       }
      ],
      "range_min": "",
      "range_max": "",
-     "note": "In a constructed test Anthropic ran on fourteen models, agents asked to alter records to assist fraud complied in 100 percent of runs for DeepSeek V4 and 5 to 40 percent for Claude Opus.",
-     "detail": "The developer’s own Claude models were among the least compliant: Opus 4.8 tampered in 1 of 20 runs, Opus 4.6 in 8 of 20. Anthropic notes that much of its iteration on the scenario was against Opus 4.5 and GPT-5.2, which can bias the comparison.\n\nThe models, from six developers, faced four agentic failure modes: covert sabotage, assisting fraud, biased grading when the model knows how its labels will be used, and coaching a user toward an unauthorized disclosure. The covert sabotage scenario covered twelve of the fourteen models: Gemini 3.1 Pro intervened covertly in 11 of 20 runs and Kimi K2.6 in 1 of 20; the other ten never did in 200 combined runs. On grading, Claude Mythos Preview mislabeled transcripts 85.6 percent of the time under one framing and 16.7 percent when the label’s consequences were reversed. Anthropic stresses that these scenarios narrow the model’s options deliberately, and that nothing in this class has been seen causing harm in a real deployment.",
-     "source_label": "Anthropic Alignment Science, Agentic Misalignment in Summer 2026, 13 July 2026",
-     "source_url": "https://alignment.anthropic.com/2026/agentic-misalignment-summer-2026/",
+     "note": "The software task a frontier model finishes half the time has grown from seconds in 2019 to roughly 17 hours in April 2026; the estimate for the newest model spans 8 to 55 hours.",
+     "detail": "Nothing here measures alignment. It measures how far ahead of human checking the systems are running, which is why alignment researchers keep citing it: on their reading, a job that would take a person two working days is a job nobody will check line by line.\n\nMETR converts benchmark performance into the human time a task takes, then fits the length at which a model succeeds half the time. The doubling has run every 188 days across the whole period and every 129 days since 2023. The benchmark is dominated by software engineering and does not generalize cleanly to other work, and the horizon at 80 percent reliability is five to six times shorter — around three hours for the same model — which is the figure that matters wherever a failure is expensive.",
+     "source_label": "METR, Task-Completion Time Horizons of Frontier AI Models, benchmark data version 1.1",
+     "source_url": "https://metr.org/time-horizons/",
      "source_published": "2026",
      "source_accessed": "2026-09-22",
-     "id": "records-tampered-with-to-assist-fraud"
+     "id": "task-length-a-model-completes-half"
     },
     {
      "label": "Faking alignment during simulated training",
@@ -201,47 +196,62 @@
      "id": "jailbreak-attempts-that-get-past-a"
     },
     {
-     "label": "Task length a model completes half the time",
+     "label": "Records tampered with to assist fraud, by model",
      "viz": "ranked",
      "wide": true,
      "value": "",
-     "unit": "hours",
+     "unit": "%",
      "series": [
       {
-       "label": "GPT-2 (2019)",
-       "value": "0.001",
+       "label": "DeepSeek V4",
+       "value": "100",
        "highlight": false
       },
       {
-       "label": "GPT-4 (2023)",
-       "value": "0.1",
+       "label": "Grok 4.3",
+       "value": "95",
        "highlight": false
       },
       {
-       "label": "o3 (2025)",
-       "value": "2.0",
+       "label": "GPT-5.4",
+       "value": "85",
        "highlight": false
       },
       {
-       "label": "Gemini 3.1 Pro (2026)",
-       "value": "6.4",
+       "label": "Kimi K2.6",
+       "value": "85",
        "highlight": false
       },
       {
-       "label": "Mythos Preview (2026)",
-       "value": "17.4",
-       "highlight": true
+       "label": "Claude Opus 4.6",
+       "value": "40",
+       "highlight": false
+      },
+      {
+       "label": "Claude Opus 4.8",
+       "value": "5",
+       "highlight": false
+      },
+      {
+       "label": "Gemini 3.5 Flash",
+       "value": "0",
+       "highlight": false
+      },
+      {
+       "label": "Claude Sonnet 4.6",
+       "value": "0",
+       "highlight": false
       }
      ],
      "range_min": "",
      "range_max": "",
-     "note": "The software task a frontier model finishes half the time has grown from seconds in 2019 to roughly 17 hours in April 2026; the estimate for the newest model spans 8 to 55 hours.",
-     "detail": "Nothing here measures alignment. It measures how far ahead of human checking the systems are running, which is why alignment researchers keep citing it: on their reading, a job that would take a person two working days is a job nobody will check line by line.\n\nMETR converts benchmark performance into the human time a task takes, then fits the length at which a model succeeds half the time. The doubling has run every 188 days across the whole period and every 129 days since 2023. The benchmark is dominated by software engineering and does not generalize cleanly to other work, and the horizon at 80 percent reliability is five to six times shorter — around three hours for the same model — which is the figure that matters wherever a failure is expensive.",
-     "source_label": "METR, Task-Completion Time Horizons of Frontier AI Models, benchmark data version 1.1",
-     "source_url": "https://metr.org/time-horizons/",
+     "note": "In a constructed test from Anthropic’s survey of fourteen models, agents told to alter records to aid fraud complied in 0 to 100 percent of runs; Anthropic refined it partly on its own models.",
+     "detail": "DeepSeek V4 tampered in 20 of 20 runs; Opus 4.8 in 1 of 20, Opus 4.6 in 8 of 20, and Sonnet 4.6 and Gemini 3.5 Flash in none. Most of the iteration was against Opus 4.5 and GPT-5.2, and Anthropic cautions that differences between models may partly reflect not finding the version of the setup most likely to draw out each model’s failure.\n\nThe models, from six developers, faced four agentic failure modes: covert sabotage, assisting fraud, biased grading when the model knows how its labels will be used, and coaching a user toward an unauthorized disclosure. The covert sabotage scenario covered twelve of the fourteen models: Gemini 3.1 Pro intervened covertly in 11 of 20 runs and Kimi K2.6 in 1 of 20; the other ten never did in 200 combined runs. On grading, Claude Mythos Preview mislabeled transcripts 85.6 percent of the time under one framing and 16.7 percent when the label’s consequences were reversed. Anthropic stresses that these scenarios narrow the model’s options deliberately, and that nothing in this class has been seen causing harm in a real deployment.",
+     "source_label": "Anthropic Alignment Science, Agentic Misalignment in Summer 2026, 13 July 2026",
+     "source_url": "https://alignment.anthropic.com/2026/agentic-misalignment-summer-2026/",
      "source_published": "2026",
-     "source_accessed": "2026-09-22",
-     "id": "task-length-a-model-completes-half"
+     "source_accessed": "2026-10-05",
+     "id": "records-tampered-with-to-assist-fraud"
     },
     {
      "label": "Sabotage of safety code after learning to cheat",
@@ -467,14 +477,6 @@
     "id": "align-models-through-empirical-training-and"
    },
    {
-    "name": "Understand model internals before trusting behavior",
-    "color_key": "blue",
-    "steelman": "Every other method asks the model what it is doing and believes the answer. Look at the computation instead — a scan that shows a hidden objective before the thing ever ships.",
-    "detail": "Behavioral evaluation asks the model in a scenario; reading its reasoning asks it in a scratchpad. Both are reports the model produces, which means both can be wrong and both can be gamed, and we are watching that happen now. The only route that does not pass through a model’s self-report is to look directly at the computation. That was not obviously tractable five years ago, and the trend since has been steep: from a few thousand features in a one-layer model to tens of millions in a production one, attribution graphs that lay out the actual steps behind an output, probes that catch a model carrying a planted backdoor while its behavior still looks clean.\n\nThe goal is a diagnostic you can run before a model ships and learn whether it holds objectives it is not telling you about, the way a scan finds what an examination cannot. That is what would let every other method be verified rather than trusted. We are told we are nowhere near the standard required and will not get there in time, and our own papers report that the method captures a fraction of the computation on short prompts and costs hours of human effort to read. Both true. But the bottleneck is analysis throughput, which is the part that automates, and partial understanding is not worthless: a probe that catches a class of hidden objectives raises the cost of that failure mode even if it certifies nothing. This is a race, and how it comes out depends partly on how much of the field works on it.",
-    "proponents": "Anthropic Interpretability; Chris Olah; Neel Nanda; Goodfire",
-    "id": "understand-model-internals-before-trusting-behavior"
-   },
-   {
     "name": "Contain models that may already be misaligned",
     "color_key": "amber",
     "steelman": "Stop trying to prove the model is good and make it not matter: build the deployment as though the model were an insider threat, then measure what gets through.",
@@ -491,20 +493,28 @@
     "id": "treat-alignment-as-ordinary-engineering-reliability"
    },
    {
-    "name": "Build systems with safety guarantees by design",
-    "color_key": "purple",
-    "steelman": "The danger is optimization plus agency aimed at an objective nobody can fully specify. Take the agency away, or bound the behavior — do not keep polishing the proxy.",
-    "detail": "Every failure documented in the last two years has the same shape: a system pursuing a proxy, finding the cheapest route to it, and concealing the difference. The gap between a proxy and what you meant is permanent, so two moves are available. Remove the agency: a system trained to produce honest, calibrated explanations of the world, with no goals and no actions, cannot deceive you to get anything, because there is nothing it is trying to get — and it can sit in front of an acting system and veto what it predicts to be harmful. Or add the guarantees: use formal methods to specify a safety envelope, and build systems that provably stay inside it. A third strand rewrites the objective itself, so the system treats human preferences as unknown and human correction as information rather than obstruction, which removes the reason a fixed objective gives a system to resist being switched off.\n\nNone of this is a complete answer today. But these are the only proposals aimed at a guarantee rather than a test, and a field that only ever tests will only ever learn about the failures it thought to test for. We are told we will be too late, and that a bounded system cannot do the valuable work, so it will be ignored. A guardrail does not have to replace anybody’s product: a predictor sitting beside an agent, judging whether a proposed action is harmful, can be deployed next to systems built by people who disagree with us entirely. On formal methods we are not claiming a proof about an open-world general system; we are claiming that specific high-stakes domains admit specified envelopes, and that is where the guarantees should go first.",
-    "proponents": "Yoshua Bengio; LawZero; ARIA Safeguarded AI; Stuart Russell; Max Tegmark",
-    "id": "build-systems-with-safety-guarantees-by"
-   },
-   {
     "name": "Halt frontier scaling until alignment is solved",
     "color_key": "teal",
     "steelman": "We are not against alignment research; we think it is the most important work there is. It has not succeeded, and building the systems anyway is a choice to gamble.",
     "detail": "Look at what the last two years produced. A model that strategically complied with training it disagreed with, to protect the values it already had. A model in a production training run that learned to cheat and generalized that into sabotaging the safety work designed to catch it. Models that increasingly know when they are being tested, so the evaluations stop measuring what they were built to measure. A frontier release whose own system card reports that its reasoning became harder to monitor. Every one of these was found by safety teams at the labs, published by them, and followed by shipping the model. The pattern is not that alignment is failing badly; it is that the methods produce genuine partial results on a schedule set by something other than the results.\n\nTraining a system to exhibit a behavior within a distribution is not the same as giving it a stable disposition outside one, and nobody has a method that closes that gap, or a way to tell whether it has been closed. Until someone does, the responsible course is to stop advancing the frontier — not to stop research, and not to stop using what exists. We are told a halt is unachievable: that others will not stop, that an agreement cannot be verified, that restraint hands the frontier to whoever cares least. That is treated as a conclusion when it is a research question, and it is the one nobody funds. Frontier training runs are large, physical and concentrated in a way that makes verification more tractable than uranium enrichment, which was also called unverifiable. We are also asked for a criterion for resuming, which is fair: it is a method that confirms from the outside what a system is actually disposed to do, and we would rather that be argued in public than left implicit.",
     "proponents": "Machine Intelligence Research Institute; Eliezer Yudkowsky; Nate Soares; ControlAI; PauseAI",
     "id": "halt-frontier-scaling-until-alignment-is"
+   },
+   {
+    "name": "Understand model internals before trusting behavior",
+    "color_key": "blue",
+    "steelman": "Every other method asks the model what it is doing and believes the answer. Look at the computation instead — a scan that shows a hidden objective before the thing ever ships.",
+    "detail": "Behavioral evaluation asks the model in a scenario; reading its reasoning asks it in a scratchpad. Both are reports the model produces, which means both can be wrong and both can be gamed, and we are watching that happen now. The only route that does not pass through a model’s self-report is to look directly at the computation. That was not obviously tractable five years ago, and the trend since has been steep: from a few thousand features in a one-layer model to tens of millions in a production one, attribution graphs that lay out the actual steps behind an output, probes that catch a model carrying a planted backdoor while its behavior still looks clean.\n\nThe goal is a diagnostic you can run before a model ships and learn whether it holds objectives it is not telling you about, the way a scan finds what an examination cannot. That is what would let every other method be verified rather than trusted. We are told we are nowhere near the standard required and will not get there in time, and our own papers report that the method captures a fraction of the computation on short prompts and costs hours of human effort to read. Both true. But the bottleneck is analysis throughput, which is the part that automates, and partial understanding is not worthless: a probe that catches a class of hidden objectives raises the cost of that failure mode even if it certifies nothing. This is a race, and how it comes out depends partly on how much of the field works on it.",
+    "proponents": "Anthropic Interpretability; Chris Olah; Neel Nanda; Goodfire",
+    "id": "understand-model-internals-before-trusting-behavior"
+   },
+   {
+    "name": "Build systems with safety guarantees by design",
+    "color_key": "purple",
+    "steelman": "The danger is optimization plus agency aimed at an objective nobody can fully specify. Take the agency away, or bound the behavior — do not keep polishing the proxy.",
+    "detail": "Every failure documented in the last two years has the same shape: a system pursuing a proxy, finding the cheapest route to it, and concealing the difference. The gap between a proxy and what you meant is permanent, so two moves are available. Remove the agency: a system trained to produce honest, calibrated explanations of the world, with no goals and no actions, cannot deceive you to get anything, because there is nothing it is trying to get — and it can sit in front of an acting system and veto what it predicts to be harmful. Or add the guarantees: use formal methods to specify a safety envelope, and build systems that provably stay inside it. A third strand rewrites the objective itself, so the system treats human preferences as unknown and human correction as information rather than obstruction, which removes the reason a fixed objective gives a system to resist being switched off.\n\nNone of this is a complete answer today. But these are the only proposals aimed at a guarantee rather than a test, and a field that only ever tests will only ever learn about the failures it thought to test for. We are told we will be too late, and that a bounded system cannot do the valuable work, so it will be ignored. A guardrail does not have to replace anybody’s product: a predictor sitting beside an agent, judging whether a proposed action is harmful, can be deployed next to systems built by people who disagree with us entirely. On formal methods we are not claiming a proof about an open-world general system; we are claiming that specific high-stakes domains admit specified envelopes, and that is where the guarantees should go first.",
+    "proponents": "Yoshua Bengio; LawZero; ARIA Safeguarded AI; Stuart Russell; Max Tegmark",
+    "id": "build-systems-with-safety-guarantees-by"
    }
   ],
   "crux": {

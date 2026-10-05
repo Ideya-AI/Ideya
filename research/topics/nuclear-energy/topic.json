@@ -2,7 +2,7 @@
  "slug": "nuclear-energy",
  "title": "Nuclear Energy",
  "status": "ready",
- "authored_at": "2026-09-22T23:16:39+00:00",
+ "authored_at": "2026-10-05T20:44:07+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Fission reactors for electricity. Civilian power, not weapons.",
@@ -23,7 +23,7 @@
    "summary": "Fission makes about a tenth of the world’s electricity. Cost is the central argument, with accidents, waste and the fuel chain close behind.",
    "scope_covered": "Civilian fission for grid power: cost, construction, safety, waste and the fuel chain.",
    "scope_excluded": "Weapons and proliferation as a security question in its own right, fusion, naval and space reactors.",
-   "why_now": "On 8 September 2026 the US Department of Energy closed a loan of up to $1.9 billion to restart Iowa’s Duane Arnold reactor, with Google contracting for the output for 25 years. It is the third shuttered US reactor to get such financing, and none has generated yet: Palisades has loaded fuel but is not back on the grid.",
+   "why_now": "On 8 September 2026 the US Department of Energy lent up to $1.9 billion to restart Iowa’s Duane Arnold reactor, whose output Google will buy for 25 years. It is the third closed US reactor financed to restart; none has run yet, and Palisades, the furthest along, paused fuel loading when an assembly tilted.",
    "why_now_source_label": "US Department of Energy",
    "why_now_source_url": "https://www.energy.gov/articles/energy-department-closes-19-billion-loan-restart-duane-arnold-nuclear-plant"
   },
@@ -140,6 +140,51 @@
      "id": "nuclear-share-of-world-electricity"
     },
     {
+     "label": "Time from construction start to grid connection",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "years",
+     "series": [
+      {
+       "label": "World, 2024 startups",
+       "value": "9.6",
+       "highlight": false
+      },
+      {
+       "label": "China, recent average",
+       "value": "6.2",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The seven reactors that started up worldwide in 2024 took 9.6 years on average from first concrete to grid connection.",
+     "detail": "Construction time is the lever that matters most for cost, because interest accrues on the capital for every year the plant produces nothing. The global average is pulled up by long-stalled projects: Flamanville 3 in France connected in December 2024 after 17 years of construction, and Olkiluoto 3 in Finland took about 18 years. The UAE’s Barakah station, four Korean APR-1400 units, ran from first concrete in 2012 to full operation in 2024 and is the most-cited counterexample outside China. Chinese durations of roughly 74 months are the current benchmark, and China’s SNPTC targets 56 months under its fleet model; that Chinese figure is an industry compilation rather than an official statistic and should be treated as approximate.",
+     "source_label": "World Nuclear Industry Status Report 2025; Chinese average from industry construction-duration data",
+     "source_url": "https://www.worldnuclearreport.org/World-Nuclear-Industry-Status-Report-2025",
+     "source_published": "2024",
+     "source_accessed": "2026-09-20",
+     "id": "time-from-construction-start-to-grid"
+    },
+    {
+     "label": "China’s share of capacity under construction",
+     "viz": "radial",
+     "wide": false,
+     "value": "46",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "62 reactors totaling 64.5 GW were under construction in 15 countries at the end of 2024, with China accounting for nearly half the capacity.",
+     "detail": "The World Nuclear Association’s September 2026 count is higher, 80 reactors and about 87 GW gross, reflecting a different cut-off and a gross rather than net basis. Either way the geography is lopsided. China connected 38 reactors and 39 GW to its grid in the decade to 2024 and has been starting roughly six to ten new units a year; almost everywhere else, construction starts are rare events, and the World Nuclear Industry Status Report counted only 11 countries building in mid-2025, two fewer than the year before. This is the single largest fact separating the optimistic and pessimistic readings of nuclear’s future: whether China’s build rate shows that reactors can be built quickly and cheaply, or that they can only be built quickly and cheaply under Chinese state financing and permitting.",
+     "source_label": "IAEA, Reference Data Series No. 2, 2025 edition",
+     "source_url": "https://www-pub.iaea.org/MTCD/publications/PDF/RDS-2-45_web.pdf",
+     "source_published": "2024",
+     "source_accessed": "2026-09-20",
+     "id": "china-s-share-of-capacity-under"
+    },
+    {
      "label": "Death rate per unit of electricity",
      "viz": "ranked",
      "wide": true,
@@ -188,51 +233,6 @@
      "id": "death-rate-per-unit-of-electricity"
     },
     {
-     "label": "China’s share of capacity under construction",
-     "viz": "radial",
-     "wide": false,
-     "value": "46",
-     "unit": "%",
-     "series": [],
-     "range_min": "",
-     "range_max": "",
-     "note": "62 reactors totaling 64.5 GW were under construction in 15 countries at the end of 2024, with China accounting for nearly half the capacity.",
-     "detail": "The World Nuclear Association’s September 2026 count is higher, 80 reactors and about 87 GW gross, reflecting a different cut-off and a gross rather than net basis. Either way the geography is lopsided. China connected 38 reactors and 39 GW to its grid in the decade to 2024 and has been starting roughly six to ten new units a year; almost everywhere else, construction starts are rare events, and the World Nuclear Industry Status Report counted only 11 countries building in mid-2025, two fewer than the year before. This is the single largest fact separating the optimistic and pessimistic readings of nuclear’s future: whether China’s build rate shows that reactors can be built quickly and cheaply, or that they can only be built quickly and cheaply under Chinese state financing and permitting.",
-     "source_label": "IAEA, Reference Data Series No. 2, 2025 edition",
-     "source_url": "https://www-pub.iaea.org/MTCD/publications/PDF/RDS-2-45_web.pdf",
-     "source_published": "2024",
-     "source_accessed": "2026-09-20",
-     "id": "china-s-share-of-capacity-under"
-    },
-    {
-     "label": "Time from construction start to grid connection",
-     "viz": "ranked",
-     "wide": true,
-     "value": "",
-     "unit": "years",
-     "series": [
-      {
-       "label": "World, 2024 startups",
-       "value": "9.6",
-       "highlight": false
-      },
-      {
-       "label": "China, recent average",
-       "value": "6.2",
-       "highlight": true
-      }
-     ],
-     "range_min": "",
-     "range_max": "",
-     "note": "The seven reactors that started up worldwide in 2024 took 9.6 years on average from first concrete to grid connection.",
-     "detail": "Construction time is the lever that matters most for cost, because interest accrues on the capital for every year the plant produces nothing. The global average is pulled up by long-stalled projects: Flamanville 3 in France connected in December 2024 after 17 years of construction, and Olkiluoto 3 in Finland took about 18 years. The UAE’s Barakah station, four Korean APR-1400 units, ran from first concrete in 2012 to full operation in 2024 and is the most-cited counterexample outside China. Chinese durations of roughly 74 months are the current benchmark, and China’s SNPTC targets 56 months under its fleet model; that Chinese figure is an industry compilation rather than an official statistic and should be treated as approximate.",
-     "source_label": "World Nuclear Industry Status Report 2025; Chinese average from industry construction-duration data",
-     "source_url": "https://www.worldnuclearreport.org/World-Nuclear-Industry-Status-Report-2025",
-     "source_published": "2024",
-     "source_accessed": "2026-09-20",
-     "id": "time-from-construction-start-to-grid"
-    },
-    {
      "label": "Operating power reactors worldwide",
      "viz": "bar",
      "wide": false,
@@ -270,7 +270,7 @@
      "range_min": "",
      "range_max": "",
      "note": "The two AP1000 reactors at Vogtle cost about $35 billion against a $14 billion estimate and came online seven years late.",
-     "detail": "Vogtle 3 entered commercial operation on 31 July 2023 and Unit 4 on 29 April 2024, against original targets of 2016 and 2017. The 2,234 MW they add are the only new US reactors completed since 1996. Westinghouse, the designer, went bankrupt in 2017 partly because of the project, and the parallel VC Summer project in South Carolina was abandoned mid-construction with its two AP1000 units never finished. Reported totals for Vogtle itself vary between about $30 and $37 billion depending on whether financing costs, the owners’ share and the Toshiba settlement payments are included.",
+     "detail": "Vogtle 3 entered commercial operation on 31 July 2023 and Unit 4 on 29 April 2024, against original targets of 2016 and 2017. The 2,234 MW they add are the first new US reactors in seven years, after Watts Bar 2, and the first both begun and finished this century. Westinghouse, the designer, went bankrupt in 2017 partly because of the project, and the parallel VC Summer project in South Carolina was abandoned mid-construction with its two AP1000 units never finished. Reported totals for Vogtle itself vary between about $30 and $37 billion depending on whether financing costs, the owners’ share and the Toshiba settlement payments are included.",
      "source_label": "Wikipedia, Vogtle Electric Generating Plant, citing Georgia PSC construction monitoring reports",
      "source_url": "https://en.wikipedia.org/wiki/Vogtle_Electric_Generating_Plant",
      "source_published": "2024",
@@ -390,7 +390,7 @@
      "range_min": "",
      "range_max": "",
      "note": "France gets about two-thirds of its electricity from nuclear; the United States, with the world’s largest fleet, gets about 17 percent.",
-     "detail": "France built 56 reactors in roughly 15 years from the mid-1970s, standardizing on a handful of designs, and is the standing proof that a country can decarbonize its grid with fission quickly. It is also a cautionary case: the fleet is aging, corrosion problems cut French output sharply in 2022, and EDF took on heavy debt finishing its first new reactor in a generation. China’s share is about 4 percent because its electricity system is enormous, even though it has the world’s third-largest fleet in absolute output. The United States has 96 operating reactors at 57 plants with 98.4 GW of net summer capacity, and an average reactor age of about 44 years.",
+     "detail": "France built 56 reactors in roughly 15 years from the mid-1970s, standardizing on a handful of designs, and is the standing proof that a country can decarbonize its grid with fission quickly. It is also a cautionary case: the fleet is aging, corrosion problems cut French output sharply in 2022, and EDF took on heavy debt finishing its first new reactor in a generation. China’s share is about 4 percent because its electricity system is enormous, even though its fleet is the world’s second-largest by output, behind only the United States. The United States has 96 operating reactors at 57 plants with 98.4 GW of net summer capacity, and an average reactor age of about 44 years.",
      "source_label": "IAEA Reference Data Series No. 2 (France); World Nuclear Association country data; EIA (United States)",
      "source_url": "https://world-nuclear.org/information-library/current-and-future-generation/nuclear-power-in-the-world-today",
      "source_published": "2024 to 2025",
@@ -449,8 +449,8 @@
      ],
      "range_min": "",
      "range_max": "",
-     "note": "Chernobyl killed 30 people immediately and 15 later from thyroid cancer, with long-term estimates from 300 to about 4,000; Fukushima produced one death from radiation and 2,313 from the evacuation.",
-     "detail": "Chernobyl’s long-term toll is genuinely contested. A Chernobyl Forum report co-authored by UNSCEAR cited an estimate of around 4,000 eventual cancer deaths among the most exposed groups; some independent researchers have put the figure in the tens of thousands by applying linear-no-threshold risk to very low doses across large populations, a method UNSCEAR and the ICRP explicitly advise against. Our World in Data’s own best approximation is 300 to 500 confirmed and strongly attributable deaths.\n\nThe Fukushima number is the one that changes minds in both directions: no member of the public is known to have died from radiation, but the evacuation of about 160,000 people, and the stress and disruption it caused among elderly and hospitalized residents, killed thousands. That raises a question the industry and its critics answer differently, about whether the harm is the radiation or the response to it.",
+     "note": "Chernobyl killed 30 at once and 15 later from thyroid cancer; long-term estimates run from about 300 to 4,000, or 16,000 to 60,000 in some independent ones. Fukushima: one radiation death, 2,313 from evacuation.",
+     "detail": "Chernobyl’s long-term toll is genuinely contested. A Chernobyl Forum report co-authored by UNSCEAR cited an estimate of around 4,000 eventual cancer deaths among the most exposed groups; some independent researchers have put the figure at 16,000 to 60,000 by applying linear-no-threshold risk to very low doses across large populations, a method UNSCEAR and the ICRP explicitly advise against. Our World in Data’s own best approximation is 300 to 500 confirmed and strongly attributable deaths.\n\nThe Fukushima number is the one that changes minds in both directions: no member of the public is known to have died from radiation, but the evacuation of about 160,000 people, and the stress and disruption it caused among elderly and hospitalized residents, killed thousands. That raises a question the industry and its critics answer differently, about whether the harm is the radiation or the response to it.",
      "source_label": "Our World in Data, summarizing UNSCEAR, WHO and Japanese government figures",
      "source_url": "https://ourworldindata.org/what-was-the-death-toll-from-chernobyl-and-fukushima",
      "source_published": "2005 to 2020",

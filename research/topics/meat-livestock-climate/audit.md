@@ -1,9 +1,9 @@
-Targeted re-audit of: stat "Private investment in alternative protein companies"
+Targeted re-audit of: basics.stats[1] (emissions per 100 grams of protein), basics.stats[2] (lowest-emitting beef compared with peas, range labels)
 
 # Audit: Meat & Alternatives
-2026-10-05, verdict: ready (targeted re-audit).
+Date: 2026-10-05. Verdict: ready.
 
-The previous audit's one note was that the stat's 2021 figure of $5 billion came from a GFI press release, while the stat links to the investment tracker. The detail now names that release by its title, "Record $5 billion invested in alt proteins in 2021," as the source for 2021. That covers the $5 billion total and the $1.4 billion for cultivated meat and seafood. The 2025 figures and the cumulative total above $19.5 billion stay credited to the tracker, so a reader can follow every figure to a named source. None of the figures changed. The git diff shows that, apart from status, the only changes are this detail and the action URL the last re-audit already accepted. The note itself is unchanged, so the glance is unaffected. The glance hash (dbf205e0…) differs from the hash saved with the renders on 2026-10-02 (1af66229…). The only glance-level change is the EAT-Lancet action URL, which the last re-audit already accepted, so the renders were not re-read. Mechanical checks pass. check_topic_text reports 0 errors and 2 warnings, both for "towards" inside quoted titles. check_links reports 27 ok, 0 redirect, 0 blocked, 0 placeholder and 0 dead.
+Both fixes from run/fixes2.md landed and read correctly. check_topic_text shows 0 errors (two pre-existing "towards" warnings, outside scope); check_links shows 27 ok, 0 dead, 0 placeholder. The ranked tile now runs from beef-herd beef (49.9, highlighted) through tofu (2.0) and peas (0.4), so the bars show the beef-to-plant gap the note states, and the note's ratios hold against the series (about 9 times poultry, 25 times tofu, over 100 times peas). The detail no longer repeats the tofu and peas values, and its per-kilogram figures are unchanged. The range tile's ends now read "0.8 worst-tenth peas" and "105 worst-tenth beef", which match the note's "highest-emitting tenth of peas at 0.8 kg" and "worst tenth of beef exceeds 105 kg". No other item on the page gives these figures. On the live page at 1440 both tiles render cleanly, and the peas bar is visible as a sliver. The poster fit check passes with 20px slack. The summary was not edited, so the og card cannot be newly clamped.
 
 ## Issues for editorial
 none

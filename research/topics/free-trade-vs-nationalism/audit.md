@@ -1,18 +1,13 @@
-Targeted re-audit of: Kiel tile detail ($200 billion basis), chipmaking tile title, customs tile highlight, "rich countries industrialized behind protection" repetition
+Targeted re-audit of: basics "US goods trade deficit, 2025", "China’s goods trade surplus, 2025", "US customs duties collected and refunded, fiscal 2026", "Federal payments to farmers hit by trade retaliation" (units); "Industrial policy spending as a share of GDP, 2019" (China row labels)
 
 # Audit: Trade & Industrial Policy
-Date: 2026-10-05 (targeted re-audit). Verdict: ready.
-
-Only the four listed fixes were checked, in topic.json, against the text that states the same facts. Mechanical checks are clean: 0 errors, 0 warnings; of 29 links, 0 dead or placeholder (4 redirect, 3 blocked). All four fixes landed. The Kiel detail now says customs revenue "rose by about $200 billion in calendar 2025". That is an increase over a calendar year, so it no longer sits against the customs tile's fiscal-year levels (FY25 net $194.9 billion, FY24 $77.0 billion) as a competing figure. The chipmaking tile is titled "US share of world chipmaking capacity, 2022 and 2032 projected". Its highlight stays on the "2032 with CHIPS Act" row, which is the row the note is about. The customs tile now highlights "Net, FY26 to Aug" (167.3), which matches the note's point that net receipts are near the year before. The protection argument is gone from Q1 and Q4. Q4's why still cites East Asia's rise as evidence for industrial policy, which is a different claim. The argument remains in Q8's detail (the room-to-develop side) and in the development camp's detail (Chang), and as one clause in the poverty tile. That is where it belongs, and no reader meets it as padding. Clearing `value` on the ranked tiles changes nothing a reader sees.
+2026-10-05, ready. The three issues from the previous packet are fixed. Both trillion tiles now read "$1.24 trillion" and "$1.19 trillion" on the loaded page (checked through `value_shown`). The two ranked tiles now carry "$ billion", so the currency leads in the header. The China rows now read "China, full CSIS count" (1.73, highlighted) and "China, comparable basis" (1.48). The tile note already says the second row uses the basis applied to the others, so the second label is no longer a dangling "same as what?". The editor's shorter label is a fair choice: the suggested wording would have wrapped on the poster. No values, sources or ids changed. check_topic_text shows 0 errors and 0 warnings. check_links shows 29 links with 0 dead and 0 placeholder (3 blocked, 4 redirect). The editor reports a poster fit of -82, so nothing overflows. The separate layout script did not run because the permission classifier blocked it.
 
 ## Issues for editorial
 none
-
 ## Issues for icons
 none
-
 ## Needs research (stops the run)
 none
-
 ## Notes for the human
 none

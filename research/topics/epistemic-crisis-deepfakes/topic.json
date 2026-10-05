@@ -2,7 +2,7 @@
  "slug": "epistemic-crisis-deepfakes",
  "title": "Deepfakes & Shared Truth",
  "status": "ready",
- "authored_at": "2026-10-02T10:17:18+00:00",
+ "authored_at": "2026-10-05T20:40:32+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Synthetic media, AI-generated content and the collapse of shared facts. Not platform moderation rules.",
@@ -23,7 +23,7 @@
    "summary": "Whether cheap, convincing AI fakes are wearing down a society’s ability to agree on facts, or riding a distrust that was already there.",
    "scope_covered": "AI-made or AI-altered images, video, audio and text that pass as real: election deepfakes, voice and video fraud, sexual deepfakes, the “liar’s dividend” by which real evidence is waved away as fake, and the responses on offer, from labels and provenance to detection, likeness rights and media literacy.",
    "scope_excluded": "Platform moderation rules and Section 230 reform, which belong to Content Moderation & Free Speech; AI training on copyrighted work; the economics of journalism; and trust in science, except where synthetic media is the mechanism.",
-   "why_now": "On August 2, 2026 the transparency duties in the EU’s AI Act began to apply: anyone deploying a deepfake must label it for viewers, and AI providers must mark generated content so machines can detect it, with generators already on the market given until December 2. It is the first such regime at continental scale.",
+   "why_now": "On August 2, 2026 the EU’s AI Act transparency duties took effect: deployers must visibly label deepfakes and AI providers must mark generated content as machine-detectable, with generators already on the market given until December 2 under the AI Omnibus agreed in May. It is the first such regime at continental scale.",
    "why_now_source_label": "European Commission, Code of Practice on Transparency of AI-generated Content",
    "why_now_source_url": "https://digital-strategy.ec.europa.eu/en/policies/code-practice-ai-generated-content"
   },
@@ -98,8 +98,8 @@
      "series": [],
      "range_min": "",
      "range_max": "",
-     "note": "Of 78 instances of AI use in 2024 elections worldwide, collected by the WIRED AI Elections Project and analyzed by Sayash Kapoor and Arvind Narayanan, 39 were deceptive and 39 were not.",
-     "detail": "The authors estimated that every deceptive case could have been produced without AI for no more than a few hundred dollars, and cite a News Literacy Project finding that “cheap fakes,” conventionally edited or miscaptioned media, were used seven times more often than AI content in the 2024 US election. They argue that the bottleneck for a disinformation campaign is distribution and audience demand, not production cost. The Alan Turing Institute’s Centre for Emerging Technology and Security identified 16 viral AI-enabled disinformation cases in the 2024 UK general election and 11 across the EU and French elections, finding no evidence they changed results while noting they amplified harmful narratives.",
+     "note": "Of 78 documented uses of AI in 2024 elections worldwide, Sayash Kapoor and Arvind Narayanan found 39 deceptive, and estimate each could have been made without AI for a few hundred dollars at most.",
+     "detail": "The cases come from the WIRED AI Elections Project. The authors cite a News Literacy Project finding that “cheap fakes,” conventionally edited or miscaptioned media, were used seven times more often than AI content in the 2024 US election. They argue that the bottleneck for a disinformation campaign is distribution and audience demand, not production cost. The Alan Turing Institute’s Centre for Emerging Technology and Security identified 16 viral AI-enabled disinformation cases in the 2024 UK general election and 11 across the EU and French elections, finding no evidence they changed results while noting they amplified harmful narratives.",
      "source_label": "Kapoor & Narayanan, We Looked at 78 Election Deepfakes, Knight First Amendment Institute",
      "source_url": "https://knightcolumbia.org/blog/we-looked-at-78-election-deepfakes-political-misinformation-is-not-an-ai-problem",
      "source_published": "2024",
@@ -107,42 +107,37 @@
      "id": "deceptive-share-of-ai-uses-documented"
     },
     {
-     "label": "Listeners judging real and fake speech correctly",
+     "label": "Trust in US mass media",
      "viz": "ranked",
      "wide": true,
      "value": "",
-     "unit": "% correct",
+     "unit": "% trust",
      "series": [
       {
-       "label": "Real speech, 2021",
-       "value": "72.7",
+       "label": "2020",
+       "value": "40",
        "highlight": false
       },
       {
-       "label": "Real speech, 2026",
-       "value": "64.1",
+       "label": "2024",
+       "value": "31",
+       "highlight": false
+      },
+      {
+       "label": "2025",
+       "value": "28",
        "highlight": true
-      },
-      {
-       "label": "Fake speech, 2021",
-       "value": "72.9",
-       "highlight": false
-      },
-      {
-       "label": "Fake speech, 2026",
-       "value": "71.2",
-       "highlight": false
       }
      ],
      "range_min": "",
      "range_max": "",
-     "note": "In a 2026 preprint study, listeners caught fake audio about as well as a 2021 baseline (71.2 against 72.9 percent) but recognized real audio as real markedly less often (64.1 against 72.7).",
-     "detail": "The study, not yet peer reviewed, is the largest listening test of audio deepfakes to date: 35,532 judgments from 1,768 participants across 138 speech-synthesis and voice-conversion systems. The authors call the finding a skepticism shift: people are not getting worse at spotting synthesis artifacts, they are increasingly distrusting authentic speech, the mechanism behind the liar’s dividend. Audio from commercial and language-model-based systems was the hardest to catch, at 61.3 to 65.9 percent accuracy. A machine-learning detector used as a reference stayed above 94.5 percent accuracy in every condition.",
-     "source_label": "Müller & Choong, Eroding Trust in Real Speech, arXiv:2605.26136 (preprint)",
-     "source_url": "https://arxiv.org/abs/2605.26136",
-     "source_published": "2026",
+     "note": "In 2025, 28 percent of Americans said they trust newspapers, television and radio to report the news fully, accurately and fairly, the lowest Gallup has recorded.",
+     "detail": "Among Republicans trust was 8 percent, the first single-digit reading; among independents 27 percent; and among Democrats 51 percent, tying their 2016 low. Americans 65 and older were the most trusting, at 43 percent. Gallup recorded trust of 68 to 72 percent in the 1970s, so the decline predates generative AI by decades. Those who argue that synthetic media is a symptom of a trust problem rather than its cause make this their central empirical point; those who favor regulation reply that a low-trust public is exactly where cheap fabrication and the liar’s dividend do the most damage.",
+     "source_label": "Gallup, Trust in Media at New Low of 28% in U.S.",
+     "source_url": "https://news.gallup.com/poll/695762/trust-media-new-low.aspx",
+     "source_published": "2025",
      "source_accessed": "2026-10-02",
-     "id": "listeners-judging-real-and-fake-speech"
+     "id": "trust-in-us-mass-media"
     },
     {
      "label": "US states with laws regulating election deepfakes",
@@ -196,6 +191,44 @@
      "id": "ai-political-ads-with-no-ai"
     },
     {
+     "label": "Listeners judging real and fake speech correctly",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% correct",
+     "series": [
+      {
+       "label": "Real speech, 2021",
+       "value": "72.7",
+       "highlight": false
+      },
+      {
+       "label": "Real speech, 2026",
+       "value": "64.1",
+       "highlight": true
+      },
+      {
+       "label": "Fake speech, 2021",
+       "value": "72.9",
+       "highlight": false
+      },
+      {
+       "label": "Fake speech, 2026",
+       "value": "71.2",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a 2026 preprint study, listeners caught fake audio about as well as a 2021 baseline (71.2 against 72.9 percent) but recognized real audio as real markedly less often (64.1 against 72.7).",
+     "detail": "The study, not yet peer reviewed, is the largest listening test of audio deepfakes to date: 35,532 judgments from 1,768 participants across 138 speech-synthesis and voice-conversion systems. The authors call the finding a skepticism shift: people are not getting worse at spotting synthesis artifacts, they are increasingly distrusting authentic speech, the mechanism behind the liar’s dividend. Audio from commercial and language-model-based systems was the hardest to catch, at 61.3 to 65.9 percent accuracy. A machine-learning detector used as a reference stayed above 94.5 percent accuracy in every condition.",
+     "source_label": "Müller & Choong, Eroding Trust in Real Speech, arXiv:2605.26136 (preprint)",
+     "source_url": "https://arxiv.org/abs/2605.26136",
+     "source_published": "2026",
+     "source_accessed": "2026-10-02",
+     "id": "listeners-judging-real-and-fake-speech"
+    },
+    {
      "label": "Platforms that showed provenance data on an AI video",
      "viz": "range",
      "wide": false,
@@ -241,7 +274,7 @@
      "detail": "The Deepfake-Eval-2024 benchmark collected 45 hours of video, 56.5 hours of audio and 1,975 images from social media and detection-platform users, spanning 88 websites and 52 languages. AUC measures how well a classifier separates real from fake, where 0.5 is a coin toss; the drop moved many off-the-shelf models close to that line. Commercial systems and models fine-tuned on the new data did better, but the authors report they still do not match trained deepfake forensic analysts.",
      "source_label": "Chandra et al., Deepfake-Eval-2024: A Multi-Modal In-the-Wild Benchmark, arXiv:2503.02857",
      "source_url": "https://arxiv.org/abs/2503.02857",
-     "source_published": "2024",
+     "source_published": "2025",
      "source_accessed": "2026-10-02",
      "id": "deepfake-detector-accuracy-lost-on-real"
     },
@@ -258,7 +291,7 @@
      "detail": "Among the 1,942 most targeted individuals, who account for 95 percent of the site’s videos, 95.3 percent were women. Most were actors and musicians, but the researchers found hundreds of targets with little or no public presence despite the site’s celebrity-only rule. Only 43 of those individuals, 2.21 percent, were geopolitical figures, which bears on a recurring point in the debate: the deepfake harms best documented so far are sexual and personal rather than political. This is the one area where US federal law now acts directly: under the TAKE IT DOWN Act, whose removal duties took effect on May 19, 2026, covered platforms must remove reported nonconsensual intimate images within 48 hours (Federal Trade Commission).",
      "source_label": "Han, Li, Kumar & Durumeric, Characterizing the MrDeepFakes Sexual Deepfake Marketplace, USENIX Security 2025",
      "source_url": "https://www.usenix.org/system/files/usenixsecurity25-han.pdf",
-     "source_published": "2023",
+     "source_published": "2025",
      "source_accessed": "2026-10-02",
      "id": "sexual-deepfake-videos-hosted-on-one"
     },
@@ -318,39 +351,6 @@
      "id": "loss-in-a-single-deepfake-video"
     },
     {
-     "label": "Trust in US mass media",
-     "viz": "ranked",
-     "wide": true,
-     "value": "",
-     "unit": "% trust",
-     "series": [
-      {
-       "label": "2020",
-       "value": "40",
-       "highlight": false
-      },
-      {
-       "label": "2024",
-       "value": "31",
-       "highlight": false
-      },
-      {
-       "label": "2025",
-       "value": "28",
-       "highlight": true
-      }
-     ],
-     "range_min": "",
-     "range_max": "",
-     "note": "In 2025, 28 percent of Americans said they trust newspapers, television and radio to report the news fully, accurately and fairly, the lowest Gallup has recorded.",
-     "detail": "Among Republicans trust was 8 percent, the first single-digit reading; among independents 27 percent; and among Democrats 51 percent, tying their 2016 low. Americans 65 and older were the most trusting, at 43 percent. Gallup recorded trust of 68 to 72 percent in the 1970s, so the decline predates generative AI by decades. Those who argue that synthetic media is a symptom of a trust problem rather than its cause make this their central empirical point; those who favor regulation reply that a low-trust public is exactly where cheap fabrication and the liar’s dividend do the most damage.",
-     "source_label": "Gallup, Trust in Media at New Low of 28% in U.S.",
-     "source_url": "https://news.gallup.com/poll/695762/trust-media-new-low.aspx",
-     "source_published": "2025",
-     "source_accessed": "2026-10-02",
-     "id": "trust-in-us-mass-media"
-    },
-    {
      "label": "Americans who say telling AI content from human content matters",
      "viz": "radial",
      "wide": false,
@@ -375,12 +375,12 @@
      "unit": "% opposed",
      "series": [],
      "range_min": "0",
-     "range_max": "44 no response",
+     "range_max": "100",
      "note": "In a 2021 experiment with 2,503 Americans, a politician’s false claim that a real, text-reported scandal was misinformation cut opposition from about 44 to 32–34 percent, across two framings.",
      "detail": "Across five survey experiments with more than 15,000 American adults, Schiff, Jackson Schiff and Bueno found that falsely crying “fake news” raised support for politicians caught in real scandals by roughly 0.15 to 0.24 standard deviations, more than apologizing or staying silent, across partisan subgroups. A November 2022 replication found opposition falling from 58 to about 49 percent. The finding most relevant to deepfakes cuts the other way: falsely claiming that a real video was a deepfake was largely ineffective in 2021, apparently because people still believed video, though in 2022 a claim framed to rally the politician’s partisans did work against video. Awareness of deepfakes rose between the studies, with 22 percent who had not heard of them in 2021 and 8 percent in 2022, and the authors flag rising familiarity as one possible reason. The false claims did not reduce general trust in media.",
      "source_label": "Schiff, Jackson Schiff & Bueno, The Liar’s Dividend, American Political Science Review",
      "source_url": "https://doi.org/10.1017/S0003055423001454",
-     "source_published": "2021",
+     "source_published": "2024",
      "source_accessed": "2026-10-02",
      "id": "opposition-to-a-scandal-hit-politician"
     },

@@ -2,7 +2,7 @@
  "slug": "data-ownership-surveillance-capitalism",
  "title": "Data Ownership & Surveillance Capitalism",
  "status": "ready",
- "authored_at": "2026-10-05T08:59:41+00:00",
+ "authored_at": "2026-10-05T20:38:41+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Who owns and profits from personal data, and the business model built on it. The commercial model, not state surveillance.",
@@ -28,37 +28,42 @@
   "basics": {
    "stats": [
     {
-     "label": "Google advertising revenue",
+     "label": "What people say they would need to be paid to give up free online services",
      "viz": "ranked",
      "wide": true,
      "value": "",
-     "unit": "$ billion",
+     "unit": "$ a year",
      "series": [
       {
-       "label": "2023",
-       "value": "237.9",
-       "highlight": false
-      },
-      {
-       "label": "2024",
-       "value": "264.6",
-       "highlight": false
-      },
-      {
-       "label": "2025",
-       "value": "294.7",
+       "label": "Search engines",
+       "value": "17,530",
        "highlight": true
+      },
+      {
+       "label": "Email",
+       "value": "8,414",
+       "highlight": false
+      },
+      {
+       "label": "Digital maps",
+       "value": "3,648",
+       "highlight": false
+      },
+      {
+       "label": "Video",
+       "value": "1,173",
+       "highlight": false
       }
      ],
      "range_min": "",
      "range_max": "",
-     "note": "Google earned $294.7 billion from advertising in 2025, 73 percent of Alphabet’s total revenue of $402.8 billion.",
-     "detail": "Alphabet’s annual report splits the total into Google Search & other ($224.5 billion in 2025), YouTube ads ($40.4 billion) and Google Network ($29.8 billion), the last being ads Google places on other companies’ websites and apps through its advertising technology. Advertising’s share of revenue has been falling slowly as Google Cloud and subscriptions grow, from 77 percent in 2023. Search ads are aimed mainly at what a person types, which is why some critics of tracking see search advertising as closer to contextual advertising than to profiling. Google also uses signed-in activity, location and other signals to personalize ads, and its ad technology runs auctions for ads across millions of other sites.",
-     "source_label": "Alphabet Inc., Form 10-K for fiscal year 2025 (revenues by type)",
-     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
-     "source_published": "2025",
+     "note": "In 2017, the median US participant said they would need $17,530 a year to give up all search engines, $8,414 to give up email and $3,648 to give up digital maps.",
+     "detail": "The economists asked large online samples how much they would have to be paid to lose a whole category of digital goods for a year, a measure economists call willingness to accept. Other categories came lower: e-commerce $842, social media $322, music $168 and messaging $155. The categories are all-or-nothing, so the numbers are high partly because there is no substitute and many people need these services for work. In a separate experiment in which participants actually lost access if they accepted payment, the median Facebook user needed about $48 to give it up for a month in 2016 and $37.76 in 2017. Defenders of the ad-funded model cite such figures as the value consumers receive for their attention and data; critics reply that the value comes from the services themselves, which could be funded with less data, and that the figures do not price the harms of data collection.",
+     "source_label": "Brynjolfsson, Collis & Eggers, Using massive online choice experiments to measure changes in well-being, PNAS, 2019",
+     "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6462102/",
+     "source_published": "2017",
      "source_accessed": "2026-10-02",
-     "id": "google-advertising-revenue"
+     "id": "what-people-say-they-would-need"
     },
     {
      "label": "Share of Meta’s revenue that comes from advertising",
@@ -215,42 +220,37 @@
      "id": "revenue-meta-earns-per-user"
     },
     {
-     "label": "What people say they would need to be paid to give up free online services",
+     "label": "Google advertising revenue",
      "viz": "ranked",
      "wide": true,
      "value": "",
-     "unit": "$ a year",
+     "unit": "$ billion",
      "series": [
       {
-       "label": "Search engines",
-       "value": "17,530",
+       "label": "2023",
+       "value": "237.9",
+       "highlight": false
+      },
+      {
+       "label": "2024",
+       "value": "264.6",
+       "highlight": false
+      },
+      {
+       "label": "2025",
+       "value": "294.7",
        "highlight": true
-      },
-      {
-       "label": "Email",
-       "value": "8,414",
-       "highlight": false
-      },
-      {
-       "label": "Digital maps",
-       "value": "3,648",
-       "highlight": false
-      },
-      {
-       "label": "Video",
-       "value": "1,173",
-       "highlight": false
       }
      ],
      "range_min": "",
      "range_max": "",
-     "note": "In 2017, the median US participant said they would need $17,530 a year to give up all search engines, $8,414 to give up email and $3,648 to give up digital maps.",
-     "detail": "The economists asked large online samples how much they would have to be paid to lose a whole category of digital goods for a year, a measure economists call willingness to accept. Other categories came lower: e-commerce $842, social media $322, music $168 and messaging $155. The categories are all-or-nothing, so the numbers are high partly because there is no substitute and many people need these services for work. In a separate experiment in which participants actually lost access if they accepted payment, the median Facebook user needed about $48 to give it up for a month in 2016 and $37.76 in 2017. Defenders of the ad-funded model cite such figures as the value consumers receive for their attention and data; critics reply that the value comes from the services themselves, which could be funded with less data, and that the figures do not price the harms of data collection.",
-     "source_label": "Brynjolfsson, Collis & Eggers, Using massive online choice experiments to measure changes in well-being, PNAS, 2019",
-     "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6462102/",
-     "source_published": "2017",
+     "note": "Google earned $294.7 billion from advertising in 2025, 73 percent of Alphabet’s total revenue of $402.8 billion.",
+     "detail": "Alphabet’s annual report splits the total into Google Search & other ($224.5 billion in 2025), YouTube ads ($40.4 billion) and Google Network ($29.8 billion), the last being ads Google places on other companies’ websites and apps through its advertising technology. Advertising’s share of revenue has been falling slowly as Google Cloud and subscriptions grow, from 77 percent in 2023. Search ads are aimed mainly at what a person types, which is why some critics of tracking see search advertising as closer to contextual advertising than to profiling. Google also uses signed-in activity, location and other signals to personalize ads, and its ad technology runs auctions for ads across millions of other sites.",
+     "source_label": "Alphabet Inc., Form 10-K for fiscal year 2025 (revenues by type)",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
+     "source_published": "2025",
      "source_accessed": "2026-10-02",
-     "id": "what-people-say-they-would-need"
+     "id": "google-advertising-revenue"
     },
     {
      "label": "Location signals one data broker said it collected each day",
@@ -504,7 +504,7 @@
     "text": "Is trading personal data for free services a fair bargain?",
     "kind": "value",
     "why": "Free search, email, maps and social media are worth a great deal to the people who use them. Whether the data they hand over is a fair price depends on whether they know the terms, could pay another way, and bear the costs themselves.",
-    "detail": "Those who call it a fair exchange say advertising has paid for free media for more than a century, from newspapers to broadcast television, and that data-driven ads make the same bargain more efficient. By people’s own valuations, search and email are worth far more to them than any platform earns from them. Relevant ads are more useful than random ones and let small businesses find customers they could never reach through mass advertising, and a paid internet would shut out the poor first. Anyone who objects can block ads, pay for a subscription or use a privacy-focused service, and most people do not. Those who call it exploitative say a bargain requires that both sides know the terms, and most people neither read nor understand them. The price is hidden and open-ended: data collected for ads can be resold to brokers, exposed in breaches or used to set prices. Much of it describes people who never agreed, such as contacts in an address book or non-users tracked across websites. And there is often no real alternative: when Meta offered Europeans a choice between tracking and a paid subscription, the European Data Protection Board said in 2024 that such a binary choice will in most cases not produce valid consent.",
+    "detail": "Those who call it a fair exchange say advertising has paid for free media for more than a century, from newspapers to broadcast television, and that data-driven ads make the same bargain more efficient. By people’s own valuations, search and email are worth far more to them than any platform earns from them. Relevant ads are more useful than random ones and let small businesses find customers they could never reach through mass advertising, and a paid internet would shut out the poor first. Anyone who objects can block ads, pay for a subscription or use a privacy-focused service, and most people do not.\n\nThose who call it exploitative say a bargain requires that both sides know the terms, and most people neither read nor understand them. The price is hidden and open-ended: data collected for ads can be resold to brokers, exposed in breaches or used to set prices. Much of it describes people who never agreed, such as contacts in an address book or non-users tracked across websites. And there is often no real alternative: when Meta offered Europeans a choice between tracking and a paid subscription, the European Data Protection Board said in 2024 that such a binary choice will in most cases not produce valid consent.",
     "lean_label_a": "A fair trade",
     "lean_label_b": "An unfair trade",
     "id": "is-trading-personal-data-for-free"
@@ -513,7 +513,7 @@
     "text": "Can individual consent meaningfully govern how companies use personal data?",
     "kind": "empirical",
     "why": "Nearly every privacy law rests on notice and choice. Whether people can really use that choice, or the number of decisions and the design of consent screens make it a formality, is partly measurable, and the evidence shifts with how the choice is offered.",
-    "detail": "Those who say consent can work point out that when a choice is put clearly and evenly, people use it: Apple’s single plain question about cross-app tracking was refused often enough that Meta expected a large revenue hit, and California’s one-stop deletion platform drew hundreds of thousands of sign-ups in its first months. On this view, consent has failed because of bad design, such as walls of legal text, pre-ticked boxes and manipulative banners, which regulators can outlaw. Opt-out signals set once in a browser, now required in many US states, and standardized consent that lasts for months, as the EU has proposed, can reduce the burden to a single setting, and abandoning consent would hand the decision to regulators who cannot know individual preferences. Those who call consent a fiction say the number of decisions is too large for anyone to make well: a typical app carries code from several tracking companies, and a single page load can send data to many bidders at once. When opting out is left to individuals, almost no one does it, even though most people tell surveyors they object to tracking. And one person’s consent cannot protect others, since data about one person reveals much about their family, friends and neighbors. Only limits on what may be collected at all, regardless of consent, would scale.",
+    "detail": "Those who say consent can work point out that when a choice is put clearly and evenly, people use it: Apple’s single plain question about cross-app tracking was refused often enough that Meta expected a large revenue hit, and California’s one-stop deletion platform drew hundreds of thousands of sign-ups in its first months. On this view, consent has failed because of bad design, such as walls of legal text, pre-ticked boxes and manipulative banners, which regulators can outlaw. Opt-out signals set once in a browser, now required in many US states, and standardized consent that lasts for months, as the EU has proposed, can reduce the burden to a single setting, and abandoning consent would hand the decision to regulators who cannot know individual preferences.\n\nThose who call consent a fiction say the number of decisions is too large for anyone to make well: a typical app carries code from several tracking companies, and a single page load can send data to many bidders at once. When opting out is left to individuals, almost no one does it, even though most people tell surveyors they object to tracking. And one person’s consent cannot protect others, since data about one person reveals much about their family, friends and neighbors. Only limits on what may be collected at all, regardless of consent, would scale.",
     "lean_label_a": "Consent can work",
     "lean_label_b": "Consent can’t work",
     "id": "can-individual-consent-meaningfully-govern-how"
@@ -522,7 +522,7 @@
     "text": "How much does tracking people add to what advertising earns?",
     "kind": "empirical",
     "why": "If behavioral targeting earns much of the internet’s ad revenue, limiting it would cost publishers and users dearly; if untracked ads earn nearly as much, the trade-off is small. Estimates vary widely and often come from parties with a stake.",
-    "detail": "Those who say tracking pays for content cite randomized evidence: Google’s own experiment and independent academic studies both found large drops in what an ad fetches when tracking is switched off, and recorded revenue from EU users fell after the GDPR took effect. The cost, they argue, falls hardest on smaller and general-interest publishers, which cannot command premium prices for their content alone. Those who say tracking adds little answer that much of its value is captured by the intermediaries who sell it, not by the publishers who produce content. One of the two largest estimates comes from a company that sells tracking-based advertising, and it measured a sudden switch in a market built around cookies, not what contextual ads would earn once advertisers had adjusted. Laub, Miller and Skiera found that a bare user identifier, not browsing history, supplies most of tracking’s value, so the most invasive data may add the least. And part of the money targeting moves, they say, is a transfer between advertisers competing for the same customers rather than new value created.",
+    "detail": "Those who say tracking pays for content cite randomized evidence: Google’s own experiment and independent academic studies both found large drops in what an ad fetches when tracking is switched off, and recorded revenue from EU users fell after the GDPR took effect. The cost, they argue, falls hardest on smaller and general-interest publishers, which cannot command premium prices for their content alone.\n\nThose who say tracking adds little answer that much of its value is captured by the intermediaries who sell it, not by the publishers who produce content. One of the two largest estimates comes from a company that sells tracking-based advertising, and it measured a sudden switch in a market built around cookies, not what contextual ads would earn once advertisers had adjusted. Laub, Miller and Skiera found that a bare user identifier, not browsing history, supplies most of tracking’s value, so the most invasive data may add the least. And part of the money targeting moves, they say, is a transfer between advertisers competing for the same customers rather than new value created.",
     "lean_label_a": "Adds a lot",
     "lean_label_b": "Adds little",
     "id": "how-much-does-tracking-people-add"
@@ -531,7 +531,7 @@
     "text": "Should companies be allowed to sell personal data to third parties at all?",
     "kind": "value",
     "why": "Data brokers support fraud prevention, identity checks, credit, marketing and research, and the FTC has alleged that some sell location histories revealing clinic visits. Most US law allows the trade subject to opt-outs; some advocates want it banned.",
-    "detail": "Those who would regulate the trade say much of what brokers do is useful and some of it essential: verifying identities to stop fraud, helping lenders reach people without credit histories, measuring the reach of advertising, locating heirs and debtors. A ban would fall on these uses along with abusive ones. The better answer, they argue, is targeted rules: registration and deletion rights, bans on selling sensitive data such as precise location and health information, and enforcement against bad actors, as the FTC did in 2024 when it barred two brokers from selling data tied to sensitive places. The industry’s trade groups support opt-out rights over sale and targeted advertising as a national standard. Those who would end the trade say opt-outs do not work against companies people have never heard of, and that its harms are built in: researchers have bought service members’ records for pennies with inconsistent checks on the buyer, and a state registry reaches only the brokers that register. Consumer Reports wants federal law to prohibit selling sensitive personal information outright, and others want to end the sale of personal data entirely. Information gathered for one purpose, they argue, should not be resold for another.",
+    "detail": "Those who would regulate the trade say much of what brokers do is useful and some of it essential: verifying identities to stop fraud, helping lenders reach people without credit histories, measuring the reach of advertising, locating heirs and debtors. A ban would fall on these uses along with abusive ones. The better answer, they argue, is targeted rules: registration and deletion rights, bans on selling sensitive data such as precise location and health information, and enforcement against bad actors, as the FTC did in 2024 when it barred two brokers from selling data tied to sensitive places. The industry’s trade groups support opt-out rights over sale and targeted advertising as a national standard.\n\nThose who would end the trade say opt-outs do not work against companies people have never heard of, and that its harms are built in: researchers have bought service members’ records for pennies with inconsistent checks on the buyer, and a state registry reaches only the brokers that register. Consumer Reports wants federal law to prohibit selling sensitive personal information outright, and others want to end the sale of personal data entirely. Information gathered for one purpose, they argue, should not be resold for another.",
     "lean_label_a": "Regulate the trade",
     "lean_label_b": "End the trade",
     "id": "should-companies-be-allowed-to-sell"
@@ -540,7 +540,7 @@
     "text": "Is the deeper problem the collection of personal data or the market power of the firms that collect it?",
     "kind": "empirical",
     "why": "The same few companies dominate both data collection and digital advertising, so it is hard to tell which causes which. The answer decides whether privacy law or competition law is the main remedy, and the two can pull against each other.",
-    "detail": "Those who see collection as the root note that smaller companies collect and sell data as aggressively as large ones, and that some of the worst practices belong to data brokers most people have never heard of. Breaking up Google or Meta would produce several smaller companies with the same business model and the same incentive to extract as much data as possible, and competition can even make matters worse as firms fight for the same advertisers by offering ever more precise targeting. Only rules that limit collection and use, applied to every firm, address the incentive itself. Those who see market power as the root say people tolerate invasive terms because they have nowhere else to go: no one can take their friends and history to another social network, so firms face little pressure to offer better terms. Privacy rules with fixed compliance costs, they add, favor the largest firms, as the shift toward Google- and Facebook-owned vendors after the GDPR suggested. Breakups, interoperability and limits on pooling data would let users leave services that abuse them, and make privacy something firms compete to offer.",
+    "detail": "Those who see collection as the root note that smaller companies collect and sell data as aggressively as large ones, and that some of the worst practices belong to data brokers most people have never heard of. Breaking up Google or Meta would produce several smaller companies with the same business model and the same incentive to extract as much data as possible, and competition can even make matters worse as firms fight for the same advertisers by offering ever more precise targeting. Only rules that limit collection and use, applied to every firm, address the incentive itself.\n\nThose who see market power as the root say people tolerate invasive terms because they have nowhere else to go: no one can take their friends and history to another social network, so firms face little pressure to offer better terms. Privacy rules with fixed compliance costs, they add, favor the largest firms, as the shift toward Google- and Facebook-owned vendors after the GDPR suggested. Breakups, interoperability and limits on pooling data would let users leave services that abuse them, and make privacy something firms compete to offer.",
     "lean_label_a": "Data collection",
     "lean_label_b": "Market power",
     "id": "is-the-deeper-problem-the-collection"
@@ -549,7 +549,7 @@
     "text": "Should personal data be property that people can own and sell?",
     "kind": "value",
     "why": "Ownership sounds like the natural answer to whose data it is. Critics note that data about one person is also about others and is created jointly with the services that record it, and fear a price would turn a right into a commodity.",
-    "detail": "Those who want ownership say people produce the raw material of an industry worth hundreds of billions of dollars and get no share of it beyond free services whose terms they never negotiated. Property rights would let them license their data on their own terms, revoke the license and be paid. Individually the sums may be small, but organized through coalitions that bargain the way unions do, people would have real leverage, and rules that only let people say no leave companies with all the value from those who say yes. Those who want data protected as a right, not sold, say a price would legitimize the trade it is meant to fix. Cameron Kerry and John Morris of the Brookings Institution wrote in 2019 that “it’s not your data; it’s not their data either,” and that treating it as property “may induce people to trade away their privacy rights for very little value.” Any dividend would be a few dollars a month, enough to buy consent but not to cover its risks, and those with the least money would sell the most. Shoshana Zuboff goes further: “Every argument that begins with ‘data’ is an argument that we have already lost.” European law treats data protection as a fundamental right that cannot be signed away.",
+    "detail": "Those who want ownership say people produce the raw material of an industry worth hundreds of billions of dollars and get no share of it beyond free services whose terms they never negotiated. Property rights would let them license their data on their own terms, revoke the license and be paid. Individually the sums may be small, but organized through coalitions that bargain the way unions do, people would have real leverage, and rules that only let people say no leave companies with all the value from those who say yes.\n\nThose who want data protected as a right, not sold, say a price would legitimize the trade it is meant to fix. Cameron Kerry and John Morris of the Brookings Institution wrote in 2019 that “it’s not your data; it’s not their data either,” and that treating it as property “may induce people to trade away their privacy rights for very little value.” Any dividend would be a few dollars a month, enough to buy consent but not to cover its risks, and those with the least money would sell the most. Shoshana Zuboff goes further: “Every argument that begins with ‘data’ is an argument that we have already lost.” European law treats data protection as a fundamental right that cannot be signed away.",
     "lean_label_a": "Make it property",
     "lean_label_b": "Keep it a right",
     "id": "should-personal-data-be-property-that"
@@ -558,7 +558,7 @@
     "text": "Does data-driven targeting manipulate people, or does it mostly fail to persuade them?",
     "kind": "empirical",
     "why": "Shoshana Zuboff’s account holds that companies use data not only to predict behavior but to shape it. Others, including some fierce critics of the model, say its persuasive power is mostly a sales pitch, and good evidence is hard to get outside the platforms.",
-    "detail": "Those who see manipulation say platforms continually test what people see and when, and optimize for engagement and purchases with a precision no traditional advertiser had. Systems that learn which emotional states make a person likely to buy, or which messages keep them scrolling, change behavior at a scale where small individual effects add up to large social ones. Zuboff told Congress in 2022 that these are “commodity markets in human futures.” Those who see the power as overrated say most measured effects of targeted advertising are small, and many claims of manipulation come from companies selling targeting or from consultancies such as Cambridge Analytica, whose own effectiveness was never shown. Economists using Facebook’s own large randomized experiments found that the methods advertisers commonly use to measure ads often overstate their effect, because they count people who would have bought anyway (Gordon, Zettelmeyer and colleagues, Marketing Science, 2019). Cory Doctorow argued in How to Destroy Surveillance Capitalism (2020) that crediting the companies with mind control repeats their own pitch to advertisers. On this view the harms of commercial surveillance are real but come from breaches, discrimination, stalking, pricing and concentrated power, not irresistible persuasion.",
+    "detail": "Those who see manipulation say platforms continually test what people see and when, and optimize for engagement and purchases with a precision no traditional advertiser had. Systems that learn which emotional states make a person likely to buy, or which messages keep them scrolling, change behavior at a scale where small individual effects add up to large social ones. Zuboff told Congress in 2022 that these are “commodity markets in human futures.”\n\nThose who see the power as overrated say most measured effects of targeted advertising are small, and many claims of manipulation come from companies selling targeting or from consultancies such as Cambridge Analytica, whose own effectiveness was never shown. Economists using Facebook’s own large randomized experiments found that the methods advertisers commonly use to measure ads often overstate their effect, because they count people who would have bought anyway (Gordon, Zettelmeyer and colleagues, Marketing Science, 2019). Cory Doctorow argued in How to Destroy Surveillance Capitalism (2020) that crediting the companies with mind control repeats their own pitch to advertisers. On this view the harms of commercial surveillance are real but come from breaches, discrimination, stalking, pricing and concentrated power, not irresistible persuasion.",
     "lean_label_a": "Shapes behavior",
     "lean_label_b": "Persuades little",
     "id": "does-data-driven-targeting-manipulate-people"
@@ -567,7 +567,7 @@
     "text": "Should rules on personal data be loosened to help companies compete in artificial intelligence?",
     "kind": "value",
     "why": "AI models train on vast amounts of data about people, and governments in Europe and the US are weighing privacy rules against the fear of falling behind. A 2025 European proposal would ease the GDPR for AI; critics say it would weaken core protections.",
-    "detail": "Those who would loosen the rules say European companies spend heavily complying with rules written before modern AI, while competitors in the United States and China train models freely. The European Commission’s November 2025 Digital Omnibus proposal holds that pseudonymized data should not count as personal data for a company with no means to re-identify anyone, and that training AI can be a legitimate interest, under conditions, without each person’s consent. Consent rules designed for advertising, they argue, make little sense for a model that learns statistical patterns rather than profiling individuals, and clearer, lighter rules would bring investment while harmful uses of AI are policed directly. Those who would hold the line say the companies that built the advertising model are now feeding the same data into AI. Narrowing the definition of personal data would let firms treat profiling data as anonymous whenever they claim not to hold the key, a claim that is hard to verify. In February 2026 the European Data Protection Board and the European Data Protection Supervisor “strongly” urged legislators not to adopt that change, saying it would contradict EU case law and substantially narrow protection, and the proposal drew more than 1,750 amendments in Parliament. Rights, they argue, are hardest to restore once given up.",
+    "detail": "Those who would loosen the rules say European companies spend heavily complying with rules written before modern AI, while competitors in the United States and China train models freely. The European Commission’s November 2025 Digital Omnibus proposal holds that pseudonymized data should not count as personal data for a company with no means to re-identify anyone, and that training AI can be a legitimate interest, under conditions, without each person’s consent. Consent rules designed for advertising, they argue, make little sense for a model that learns statistical patterns rather than profiling individuals, and clearer, lighter rules would bring investment while harmful uses of AI are policed directly.\n\nThose who would hold the line say the companies that built the advertising model are now feeding the same data into AI. Narrowing the definition of personal data would let firms treat profiling data as anonymous whenever they claim not to hold the key, a claim that is hard to verify. In February 2026 the European Data Protection Board and the European Data Protection Supervisor “strongly” urged legislators not to adopt that change, saying it would contradict EU case law and substantially narrow protection, and the proposal drew more than 1,750 amendments in Parliament. Rights, they argue, are hardest to restore once given up.",
     "lean_label_a": "Ease the rules",
     "lean_label_b": "Keep the rules",
     "id": "should-rules-on-personal-data-be"

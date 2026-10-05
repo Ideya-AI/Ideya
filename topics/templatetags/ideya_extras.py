@@ -73,8 +73,9 @@ def dictget(mapping, key):
 @register.filter
 def amp_nbsp(text):
     """Bind "&" to the word after it, so a wrapping title never strands it
-    alone on a line ("Loneliness / & / Community")."""
-    return str(text).replace(" & ", " &\u00a0")
+    alone on a line ("Loneliness / & / Community"), and make hyphens
+    non-breaking so "Phase-Out" never splits into "Phase-" / "Out"."""
+    return re.sub(r"(?<=\w)-(?=\w)", "\u2011", str(text).replace(" & ", " &\u00a0"))
 
 
 @register.filter

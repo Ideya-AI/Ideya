@@ -523,7 +523,11 @@ def share_cards(request, slug):
                 else (
                     "t-mid"
                     if len(topic.title) > 26
-                    else "t-word" if max(map(len, topic.title.split())) >= 11 else ""
+                    # measure the longest run that cannot wrap: "& Community"
+                    # binds as one unit on the card (amp_nbsp)
+                    else "t-word"
+                    if max(map(len, topic.title.replace(" & ", " &_").split())) >= 11
+                    else ""
                 )
             ),
             "render_card": (

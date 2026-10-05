@@ -2,7 +2,7 @@
  "slug": "gender-identity",
  "title": "Gender Identity",
  "status": "ready",
- "authored_at": "2026-10-05T09:04:55+00:00",
+ "authored_at": "2026-10-05T20:41:53+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Whether gender identity or birth sex should govern law and shared life: legal recognition, sports, single-sex spaces, and medical care for minors.",
@@ -21,7 +21,7 @@
   "overview": {
    "summary": "When a person’s gender identity and birth sex differ, which should govern documents, sports, single-sex spaces and care for minors?",
    "scope_covered": "Legal sex on documents and in equality law, eligibility for female sports, bathrooms, changing rooms, shelters and prisons, and youth medical care as one arena where the question is decided.",
-   "scope_excluded": "The full clinical evidence on youth transition, identity politics in general, pronouns and speech law, and whether mental-health diagnoses are expanding too far.",
+   "scope_excluded": "The full clinical evidence on youth transition, identity politics in general, pronouns and speech law, whether mental-health diagnoses are expanding too far, and differences of sex development, which raise a separate eligibility question.",
    "why_now": "On June 30, 2026, the US Supreme Court ruled 6 to 3 that states may limit girls’ and women’s school sports teams to biological females, reading “sex” in Title IX as biological sex. The ruling cited the IOC’s March 2026 policy limiting its female category to biological females.",
    "why_now_source_label": "Supreme Court of the United States",
    "why_now_source_url": "https://www.supremecourt.gov/opinions/25pdf/24-43_2b35.pdf"
@@ -91,52 +91,42 @@
      "id": "us-states-that-bar-transgender-students"
     },
     {
-     "label": "US support for policies on transgender people",
+     "label": "US high school students who attempted suicide in the past year, by gender identity",
      "viz": "ranked",
      "wide": true,
      "value": "",
-     "unit": "% favor",
+     "unit": "%",
      "series": [
       {
-       "label": "Birth-sex sports teams",
-       "value": "66",
+       "label": "Transgender",
+       "value": "25.9",
        "highlight": true
       },
       {
-       "label": "Ban care for minors",
-       "value": "56",
+       "label": "Questioning",
+       "value": "25.8",
        "highlight": false
       },
       {
-       "label": "Nondiscrimination law",
-       "value": "56",
+       "label": "Cisgender girls",
+       "value": "11.0",
        "highlight": false
       },
       {
-       "label": "Birth-sex bathrooms",
-       "value": "49",
-       "highlight": false
-      },
-      {
-       "label": "Elementary teaching ban",
-       "value": "47",
-       "highlight": false
-      },
-      {
-       "label": "Require insurer coverage",
-       "value": "22",
+       "label": "Cisgender boys",
+       "value": "5.3",
        "highlight": false
       }
      ],
      "range_min": "",
      "range_max": "",
-     "note": "In February 2025, 66 percent of Americans favored birth-sex sports teams, 56 percent a ban on transition care for minors, and 56 percent protecting transgender people from discrimination.",
-     "detail": "Each row is a separate question, so the shares do not add up, and one person can favor both a sports restriction and protections against discrimination in jobs, housing and public spaces; that is the most common combination. Every restriction gained 6 to 10 points since Pew’s 2022 survey: birth-sex sports teams from 58 percent, a ban on gender-transition care for minors from 46, birth-sex bathrooms from 41 and a ban on teaching about gender identity in elementary schools from 41. Support for protecting transgender people from discrimination fell 8 points, from 64 percent. Requiring health insurers to cover transition care, never popular, fell from 27 to 22 percent, with 53 percent opposed. The public is closely divided on bathrooms (49 percent favor, 26 oppose) and on elementary-school teaching (47 favor a ban, 34 oppose). The survey covered 5,097 adults from February 10 to 17, 2025.",
-     "source_label": "Pew Research Center (February 26, 2025)",
-     "source_url": "https://www.pewresearch.org/short-reads/2025/02/26/americans-have-grown-more-supportive-of-restrictions-for-trans-people-in-recent-years/",
-     "source_published": "2025",
+     "note": "In 2023, 25.9 percent of transgender high school students reported attempting suicide in the past year, against 11.0 percent of cisgender girls and 5.3 percent of cisgender boys.",
+     "detail": "The 2023 Youth Risk Behavior Survey was the first in which the CDC asked a nationally representative sample of high school students whether they were transgender. Transgender students also reported far higher rates of seriously considering suicide (52.9 percent, against 24.0 for cisgender girls and 12.1 for cisgender boys) and of persistent sadness or hopelessness (71.9 percent, against 50.5 and 26.0). Every camp cites these figures, for different conclusions. Those who favor recognition and affirmation read them as the product of stigma, rejection and bullying that inclusive policy reduces. Those who favor caution read them partly as a sign that gender distress often comes with other mental-health conditions that need treatment in their own right; a Finnish national register study (Ruuska and colleagues, BMJ Mental Health, 2024) found that the higher suicide mortality of young people referred to gender services was no longer statistically significant once their psychiatric treatment history was taken into account, a reading transgender advocates dispute. The survey is cross-sectional and cannot show what causes the gap.",
+     "source_label": "US Centers for Disease Control and Prevention, MMWR Supplements (2024)",
+     "source_url": "https://www.cdc.gov/mmwr/volumes/73/su/su7304a6.htm",
+     "source_published": "2023",
      "source_accessed": "2026-10-03",
-     "id": "us-support-for-policies-on-transgender"
+     "id": "us-high-school-students-who-attempted"
     },
     {
      "label": "European countries that allow legal gender change by self-declaration",
@@ -252,42 +242,52 @@
      "id": "transgender-women-s-fitness-test-edge"
     },
     {
-     "label": "US high school students who attempted suicide in the past year, by gender identity",
+     "label": "US support for policies on transgender people",
      "viz": "ranked",
      "wide": true,
      "value": "",
-     "unit": "%",
+     "unit": "% favor",
      "series": [
       {
-       "label": "Transgender",
-       "value": "25.9",
+       "label": "Birth-sex sports teams",
+       "value": "66",
        "highlight": true
       },
       {
-       "label": "Questioning",
-       "value": "25.8",
+       "label": "Ban care for minors",
+       "value": "56",
        "highlight": false
       },
       {
-       "label": "Cisgender girls",
-       "value": "11.0",
+       "label": "Nondiscrimination law",
+       "value": "56",
        "highlight": false
       },
       {
-       "label": "Cisgender boys",
-       "value": "5.3",
+       "label": "Birth-sex bathrooms",
+       "value": "49",
+       "highlight": false
+      },
+      {
+       "label": "Elementary teaching ban",
+       "value": "47",
+       "highlight": false
+      },
+      {
+       "label": "Require insurer coverage",
+       "value": "22",
        "highlight": false
       }
      ],
      "range_min": "",
      "range_max": "",
-     "note": "In 2023, 25.9 percent of transgender high school students reported attempting suicide in the past year, against 11.0 percent of cisgender girls and 5.3 percent of cisgender boys.",
-     "detail": "The 2023 Youth Risk Behavior Survey was the first in which the CDC asked a nationally representative sample of high school students whether they were transgender. Transgender students also reported far higher rates of seriously considering suicide (52.9 percent, against 24.0 for cisgender girls and 12.1 for cisgender boys) and of persistent sadness or hopelessness (71.9 percent, against 50.5 and 26.0). Every camp cites these figures, for different conclusions. Those who favor recognition and affirmation read them as the product of stigma, rejection and bullying that inclusive policy reduces. Those who favor caution read them partly as a sign that gender distress often comes with other mental-health conditions that need treatment in their own right; a Finnish national register study (Ruuska and colleagues, BMJ Mental Health, 2024) found that the higher suicide mortality of young people referred to gender services was no longer statistically significant once their psychiatric treatment history was taken into account, a reading transgender advocates dispute. The survey is cross-sectional and cannot show what causes the gap.",
-     "source_label": "US Centers for Disease Control and Prevention, MMWR Supplements (2024)",
-     "source_url": "https://www.cdc.gov/mmwr/volumes/73/su/su7304a6.htm",
-     "source_published": "2023",
+     "note": "In February 2025, 66 percent of Americans favored birth-sex sports teams, 56 percent a ban on transition care for minors, and 56 percent protecting transgender people from discrimination.",
+     "detail": "Each row is a separate question, so the shares do not add up, and one person can favor both a sports restriction and protections against discrimination in jobs, housing and public spaces; that is the most common combination. Every restriction gained 6 to 10 points since Pew’s 2022 survey: birth-sex sports teams from 58 percent, a ban on gender-transition care for minors from 46, birth-sex bathrooms from 41 and a ban on teaching about gender identity in elementary schools from 41. Support for protecting transgender people from discrimination fell 8 points, from 64 percent. Requiring health insurers to cover transition care, never popular, fell from 27 to 22 percent, with 53 percent opposed. The public is closely divided on bathrooms (49 percent favor, 26 oppose) and on elementary-school teaching (47 favor a ban, 34 oppose). The survey covered 5,097 adults from February 10 to 17, 2025.",
+     "source_label": "Pew Research Center (February 26, 2025)",
+     "source_url": "https://www.pewresearch.org/short-reads/2025/02/26/americans-have-grown-more-supportive-of-restrictions-for-trans-people-in-recent-years/",
+     "source_published": "2025",
      "source_accessed": "2026-10-03",
-     "id": "us-high-school-students-who-attempted"
+     "id": "us-support-for-policies-on-transgender"
     },
     {
      "label": "Transgender athletes in US college sports known to the NCAA president",
@@ -439,7 +439,7 @@
     "text": "Does a transgender woman who has lowered her testosterone keep a meaningful athletic advantage?",
     "kind": "empirical",
     "why": "Everyone accepts that male puberty builds a large performance advantage. The dispute is how much survives testosterone suppression, and the studies are few, small and often of non-athletes.",
-    "detail": "Those who say the advantage persists note that lowering testosterone does not undo height, limb length, skeletal structure, heart and lung size or hand and foot size built during male puberty, and that elite results are separated by fractions of a percent, so even a small residual edge can decide a race. A sex-based category, on this view, does not need to show that every transgender woman would win; it exists because the sexes differ on average, the same logic that excludes men who are slower than many women.\n\nThose who say the advantage is largely removed answer that testosterone is the main driver of male performance and that lowering it reduces muscle, hemoglobin and strength; a larger frame is not always an advantage once strength falls relative to body mass. Transgender girls who took puberty blockers never go through male puberty at all, and blanket rules treat a varied group as one. The answer also varies by sport, by measure and by whether an athlete went through male puberty. The US Supreme Court called the question “the subject of ongoing medical and scientific debate” and held that it would not change the constitutional answer either way. Even a settled answer would leave a value question: how much residual advantage is too much.",
+    "detail": "Those who say the advantage persists note that lowering testosterone does not undo height, limb length, skeletal structure, heart and lung size or hand and foot size built during male puberty, and that elite results are separated by fractions of a percent, so even a small residual edge can decide a race. A sex-based category, on this view, does not need to show that every transgender woman would win; it exists because the sexes differ on average, the same logic that excludes men who are slower than many women.\n\nThose who say the advantage is largely removed answer that testosterone is the main driver of male performance and that lowering it reduces muscle, hemoglobin and strength; a larger frame is not always an advantage once strength falls relative to body mass. Transgender girls who took puberty blockers never go through male puberty at all, and blanket rules treat a varied group as one. The answer also varies by sport, by measure and by whether an athlete went through male puberty. The IOC’s 2026 rule turns on sex development rather than identity, so it also reaches some athletes with differences of sex development. The US Supreme Court called the question “the subject of ongoing medical and scientific debate” and held that it would not change the constitutional answer either way. Even a settled answer would leave a value question: how much residual advantage is too much.",
     "lean_label_a": "Mostly persists",
     "lean_label_b": "Mostly removed",
     "id": "does-a-transgender-woman-who-has"
@@ -551,14 +551,6 @@
   "actions": [
    {
     "kind": "learn_more",
-    "title": "See how Americans’ views on gender identity have shifted",
-    "description": "Pew Research Center’s August 2026 report breaks down comfort with transgender athletes by party, age and other groups, alongside its long-running question on sex at birth.",
-    "url": "https://www.pewresearch.org/short-reads/2026/08/11/most-americans-are-uncomfortable-with-transgender-athletes-on-sports-teams-that-dont-match-their-birth-sex/",
-    "for_position": null,
-    "id": "see-how-americans-views-on-gender"
-   },
-   {
-    "kind": "learn_more",
     "title": "Read the Supreme Court’s ruling on transgender athletes",
     "description": "The full opinion in West Virginia v. B.P.J. and Little v. Hecox, with the majority, concurrences and partial dissents, sets out each side’s legal case in the Justices’ own words.",
     "url": "https://www.supremecourt.gov/opinions/25pdf/24-43_2b35.pdf",
@@ -590,6 +582,14 @@
     "id": "support-legal-defense-of-state-laws"
    },
    {
+    "kind": "donate",
+    "title": "Support crisis services for LGBTQ young people",
+    "description": "The Trevor Project runs a 24-hour crisis line, text and chat service for LGBTQ young people and advocates against laws restricting transgender youth.",
+    "url": "https://www.thetrevorproject.org/donate/",
+    "for_position": "Recognize gender identity in law and shared life",
+    "id": "support-crisis-services-for-lgbtq-young"
+   },
+   {
     "kind": "learn_more",
     "title": "Read a center-left case for recognition with limits in sport",
     "description": "The Center for American Progress’s July 2026 agenda backs civil rights protections and family-and-doctor decisions on youth care while accepting some sports eligibility restrictions.",
@@ -614,20 +614,20 @@
     "id": "read-the-uk-supreme-court-s"
    },
    {
+    "kind": "learn_more",
+    "title": "See how Americans’ views on gender identity have shifted",
+    "description": "Pew Research Center’s August 2026 report breaks down comfort with transgender athletes by party, age and other groups, alongside its long-running question on sex at birth.",
+    "url": "https://www.pewresearch.org/short-reads/2026/08/11/most-americans-are-uncomfortable-with-transgender-athletes-on-sports-teams-that-dont-match-their-birth-sex/",
+    "for_position": null,
+    "id": "see-how-americans-views-on-gender"
+   },
+   {
     "kind": "local",
     "title": "Find your state legislators",
     "description": "Most US rules on sports, bathrooms, identity documents and youth medical care are set by state legislatures; Plural Policy’s free tool finds your state lawmakers from your address.",
     "url": "https://pluralpolicy.com/find-your-legislator/",
     "for_position": null,
     "id": "find-your-state-legislators"
-   },
-   {
-    "kind": "donate",
-    "title": "Support crisis services for LGBTQ young people",
-    "description": "The Trevor Project runs a 24-hour crisis line, text and chat service for LGBTQ young people and advocates against laws restricting transgender youth.",
-    "url": "https://www.thetrevorproject.org/donate/",
-    "for_position": "Recognize gender identity in law and shared life",
-    "id": "support-crisis-services-for-lgbtq-young"
    }
   ]
  },

@@ -1,16 +1,14 @@
-Targeted re-audit of: questions[can-a-rich-country-that-borrows] lean labels; questions[should-promised-retirement-and-health-benefits].detail; basics.stats[us-government-credit-rating-moody-s].detail; actions[tell-your-member-of-congress-what].description; questions[should-central-banks-stand-behind-government].detail and positions[target-full-employment-and-stable-prices].detail; basics.stats[public-debt-when-recent-rich-country]
-
+Targeted re-audit of: overview.why_now; basics "US net interest costs and defense spending" (series order)
 # Audit: Government Debt
-2026-10-05, verdict: ready. All six fixes landed and read correctly in context. check_topic_text 0 errors (one warning: lean label a is 21 characters and may wrap on a phone, which the editor flagged and accepted); check_links 28 links, 0 dead, 0 placeholder. The lean labels now form a pair ("Crisis is a real risk" / "Crisis is unlikely"). The benefits detail no longer says Social Security grows faster than wages. The Moody's detail says 1917, and no 1919 remains in the file. The action no longer promises senators, and no "senator" remains in the file. Q8 and the employment camp both say "cancel or freeze", and the camp sentence now stands alone. The crisis-levels tile highlights Japan (200+, no crisis), so no row reads as a threshold. That fits the note and detail, which argue there is no single danger line and give the worried camp's reply.
+Date: 2026-10-05. Verdict: ready.
+
+This targeted re-audit checks only the two items in run/fixes2.md. Both fixes landed and read correctly. The why-now now says the 10-year closed at 5.11 percent on September 23, its highest since 2007. The cited CNN page states that figure and that framing, and it fits the yield tile on the same page: the June 2007 high of 5.26 sits above 5.11, and 5.29 on September 30 is above the 2006 and 2007 peaks. The net-interest tile now pairs interest and defense year by year, with Interest 2026 still highlighted. Any surface that caps the tile at four rows therefore shows the 2025 and 2026 same-year comparisons that the note makes ($1.04 trillion against $885 billion). check_topic_text reports 0 errors and 1 warning (the lean-label length, which predates this fix). check_links reports 0 dead and 0 placeholder, with 7 blocked (cbo.gov, ssa.gov and bls.gov return 403). The layout script could not run because auto mode blocked it. The editor reports a poster fit of -71, and the overview summary, which drives the og clamp, did not change.
 
 ## Issues for editorial
 none
-
 ## Issues for icons
 none
-
 ## Needs research (stops the run)
 none
-
 ## Notes for the human
 none

@@ -1,18 +1,13 @@
-Targeted re-audit of: basics.stats[public-support-for-removing-homeless-encampments].detail, basics.stats[housing-first-against-treatment-first-programs], basics.stats[chronically-homeless-individuals-in-the-us].note
+Targeted re-audit of: overview.why_now
 
 # Audit: Homelessness
-2026-10-05, verdict: ready
-
-A targeted re-audit of three Basics tiles edited after a full review. Only those items were read; the rest of the page, the renders and research.md were not. Mechanical checks are clean: 0 text errors, 9 warnings (eight about values on ranked tiles, plus the Housing First note at 210 characters against a target of 200). Of 29 links, 0 are dead or placeholder and 1 is blocked. All three fixes landed. The encampment detail no longer infers what the neutral share means and no longer offers a one-sided comparison. It now gives the poll's sample of 1,121, its dates (21 to 25 August 2025) and its margin of plus or minus 4.0 points, and says the question did not mention shelter. Those facts agree with the 43/31/24 rows and the note. The Housing First tile now uses the Community Guide's own terms, a median 88 percent greater decrease across 5 studies and 41 percent greater housing stability across 13, and says outright that these are relative figures. The label, the unit "relative" and the detail all agree with that, so the figure can no longer be read as 88 points or 88 percent of people housed. The chronic-homelessness note gives the record count and the 44 percent rise in beds as two separate facts and then states both readings in one even clause. That matches the paired readings in its detail. The 88, 41 and 44 figures each appear only in their own tile; the other "41" on the page is an unrelated overdose ratio.
+2026-10-05, verdict: ready. The why-now now gives the current state of the federal grant fight. On August 7, 2026 a judge struck HUD's Continuum of Care rules (protected renewals cut from nearly 90 percent of funds to 60 percent, plus a $1.3 billion set-aside). On September 16 an appeals court let HUD proceed during its appeal, with a September 30 deadline. The NACo page at the cited URL carries every one of these facts, including the September 16 update and the reinstated September 30 deadline. "For transitional housing and services" matches NACo's own description of the set-aside, so the text claims no more than its source. No other item on the page mentions the ruling or the appeal, so nothing contradicts it. The page voice stays neutral. check_topic_text reports 0 errors; its one warning (stat[3] note length) was already there. check_links reports 0 dead and 0 placeholder. The why-now appears only on the detail page, in an unclamped block: the poster and share cards don't use it, so the layout run that never happened cannot hide an overflow from this edit. The live page at :8641 shows the new text.
 
 ## Issues for editorial
 none
-
 ## Issues for icons
 none
-
 ## Needs research (stops the run)
 none
-
 ## Notes for the human
 none

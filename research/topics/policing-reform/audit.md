@@ -1,9 +1,9 @@
-Targeted re-audit of: abolish camp steelman; Officers charged tile (rows and highlight)
+Targeted re-audit of: questions[0].detail, questions[2].why
 
 # Audit: Policing Reform
-2026-10-05, verdict: ready
+Date: 2026-10-05. Verdict: ready.
 
-This is a targeted re-audit of two edits made to a page that had already passed as ready. Both mechanical checks pass: check_topic_text reports 0 errors and 0 warnings, and check_links reports 0 dead and 0 placeholder links. The abolish camp's steelman now reads “A century of reform has not changed what police are for. Build housing, care and community responses until police are no longer needed.” It no longer opens with the shrink-police wording that the move-money camp uses (“Shrink what police do…”), so the two camps now begin differently. The Officers charged tile no longer has the “Charged 204” total row and now highlights “Convicted 64”. Its note still gives 204 charged and 64 convicted, which agrees with the rows (92 + 64 + 48 = 204). The detail's 156 ended cases equal 92 + 64. Nothing around either edit is broken.
+Both fixes landed and read cleanly. questions[0].detail now says killings by police "reached a record in 2024", which matches the lead stat (1,383 in 2024, 1,314 in 2025, Mapping Police Violence). No other item on the page makes a current-record claim about killings. questions[2].why now ends with the federal-agent sentence, naming Egbert v. Boule (2022) as its own source. That gives the why-now (a suit against the United States, an immigration agent and officials) a foothold among the accountability items. "All but closed" and "mainly claims against the United States" claim no more than the holding supports, and they agree with the why-now's list of defendants. Cutting "not Congress" and "Congress has repeatedly failed to change it" removes no fact a reader needs. "Returned in September 2025" keeps the reintroduction date. The why still reads neutrally, and the lean labels are unchanged. Mechanical checks: check_topic_text shows 0 errors and 1 warning (questions[2].why at 283 characters, accepted because the fix needs the sentence). check_links shows 0 dead and 0 placeholder (4 redirect, 2 blocked). On the live page at 1440 the lengthened why is not clamped (scrollHeight equals clientHeight).
 
 ## Issues for editorial
 none
@@ -15,4 +15,4 @@ none
 none
 
 ## Notes for the human
-none
+- The glance hash changed (36187b2a2732c60c against 88002f3bb3e67dc1 in renders/glance.hash), so the renders under renders/sections/ predate this fix. The post-fix layout script (postfix.sh) was blocked by auto mode and did not run. The poster's crux and the og summary are unchanged; only the 390 Questions tile is unchecked.

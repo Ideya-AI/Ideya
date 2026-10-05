@@ -1,9 +1,9 @@
-Targeted re-audit of: questions[is-low-fertility-mainly-the-result].detail; positions[raise-birth-rates-toward-replacement].steelman; positions[adapt-to-fewer-births].proponents
+Targeted re-audit of: positions[raise-birth-rates-toward-replacement].steelman; basics.stats[united-states-total-fertility-rate].note
 
 # Audit: Birth-Rate Decline
 2026-10-05 · verdict: ready (targeted re-audit)
 
-check_topic_text: 0 errors, 0 warnings. check_links: 29 links, 28 ok, 1 blocked, 0 dead, 0 placeholder. All three fixes landed. The barriers side of the fertility-cause question now carries evidence (the UNFPA 2025 survey: 39 percent of those who had or wanted children said money limited or would limit their family size), which balances it against the preferences side's Kearney, Levine and Pardue citation. The 39 percent figure agrees with the UNFPA 31 percent tile's detail in survey, year, scope (14 countries) and population. The raise-birth-rates steelman now reads as the requested sentence and does not contradict the 31 percent tile. The adapt camp's proponents no longer list the UN Population Division, which the page cites as a data source.
+Both fixes landed as the fix list asked. The first camp's steelman now leads with the birth rate as a national goal worth paying for. At a glance that sets it apart from "Help people have the children they want", whose steelman leads with the gap between wanted and actual families. The first camp's detail still makes the point about that gap, so nothing was lost. The US stat note now leads with 1.60 children per woman, which matches the tile value of 1.60 births/woman. The note keeps 1,599.5 per 1,000 women as the same rate in the other unit. It also agrees with the "about 1.6" in the ideal-family-size stat. The 2024 figures fit the cited CDC final-data report for 2024. Mechanical checks: check_topic_text found 0 errors. check_links found 29 links with 0 dead, 0 placeholder and 1 blocked. The layout script was not run. The editor reports that the poster fits (data-fit=-30).
 
 ## Issues for editorial
 none

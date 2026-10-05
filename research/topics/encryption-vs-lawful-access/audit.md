@@ -1,16 +1,15 @@
-Targeted re-audit of: overview.why_now (and source), questions[should-any-private-communication-be-beyond].why, questions[does-scanning-messages-on-the-phone].detail, actions[read-the-carnegie-working-group-s].for_position
+Targeted re-audit of: basics.stats[reach-of-the-salt-typhoon-intrusion], basics.stats[cybertipline-reports-from-meta-s-platforms]
 
-# Audit: Encryption vs. lawful access
-2026-10-05, verdict: ready. Both mechanical checks pass (0 errors, 0 warnings; 28 links, 0 dead, 0 placeholder). All four fixes landed. The why-now now reports what the September 29, 2026 round produced (agreement on detection orders for public content and the EU Centre's tasks, not on private-message scanning) and cites Agence Europe of September 30, a post-meeting source whose headline carries the claim. It agrees with every other item on the page that describes the regulation's state: the civil liberties committee tile (Parliament excludes encrypted communications; the Council mandate of November 2025 dropped mandatory scanning; the 2026 talks are meant to close the gap), the derogation tile, and the Legislative Train action. The Q2 why now gives both sides their own framing ("a new gap in the rule of law" against "a return to the privacy spoken conversation always had"), and its opening sentence states the mechanism without taking a side. In the Q5 detail the "protection holds" side now runs close to the "breaks" side in length. Its added sentence (EU Centre validity checks before forwarding, under a fundamental rights officer) is a plausible reading of the proposal and is consistent with the court-issued detection orders in the sentence before it. The Carnegie action is now unassigned (for_position null), which fits a paper that presents itself as middle ground.
+# Audit: Encryption vs. Lawful Access
+Date: 2026-10-05. Verdict: ready.
+
+Both fixes landed and read correctly. The Salt Typhoon note now tells the glance reader why the intrusion belongs in this debate: it got into the carriers' court-ordered wiretap systems. "Targeted" matches the linked Nextgov/FBI headline. The detail no longer echoes the note, and the 600-organization figure now closes it with its attribution intact. The Meta series is two clean 2023/2025 pairs, Facebook and WhatsApp. The highlighted Facebook 2025 row agrees with the note's 4.9 million, and WhatsApp's rise (1.39M to 2.36M) matches the detail's "its count rose". Instagram's figures moved to the detail as prose from the same NCMEC by-ESP source, and the 2024 adjusted-drop sentence still stands without the dropped row. The position steelman's "went straight into the interception systems" now matches the note. The dev page serves the edited content. The poster fits with 54px slack, and the summary and og card were not touched. check_topic_text: 0 errors, 0 warnings. check_links: 28 links, 0 dead, 0 placeholder.
 
 ## Issues for editorial
 none
-
 ## Issues for icons
 none
-
 ## Needs research (stops the run)
 none
-
 ## Notes for the human
 none

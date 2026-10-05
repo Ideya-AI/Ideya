@@ -1,9 +1,9 @@
-Targeted re-audit of: Peter Carruthers removed from the human-interests-first camp's proponents; "Humans" = 1 reference row added to the Rethink Priorities welfare-range ranked tile
+Targeted re-audit of: basics.stats order (glance set); basics.stats["top-court-judges-siding-with-the"] series, detail, source_label
 
 # Audit: Moral Status of Animals
-Date: 2026-10-05. Verdict: ready.
+2026-10-05, verdict: ready
 
-This was a targeted re-audit of the two edits only; the rest of the page was audited ready earlier and is unchanged apart from status and authored_at. check_topic_text: 0 errors (5 warnings: four lean labels at 20 to 22 characters, and "Organisation" inside the proper noun World Organisation for Animal Health). check_links: 0 dead, 0 placeholder (2 redirect, 2 blocked). Carruthers no longer appears anywhere in topic.json, and the camp keeps six proponents, all advocates. The welfare-range tile now opens with Humans at 1, which matches its unit ("human = 1") and makes the bars scale against a human. Chickens is still the only highlighted row. The note (pig about half, chicken about a third) and the detail (intervals, method, caveats) still agree with the rows. The lead reports that layout checks pass and the cards have been re-rendered.
+Both fixes landed and read correctly on the live page at 1440. The six glance tiles now run: philosophers on consciousness (wide), US felony laws (50 of 50), welfare ranges (wide), Gallup on equal rights, top-court judges (wide), land animals slaughtered. The page now opens Basics on the legal floor the crux names, and the New York Declaration tile sits after the sentience-criteria tile behind Go deeper, with its text unchanged. The top-court chart has the Colorado, 2025 row at 0 of 6, between New York and Michigan, with Michigan still highlighted as the why-now ruling. That agrees with the note, which already names Colorado, and with the detail, which now adds "The Colorado court was unanimous." The shortened source_label names all four courts and claims no more than the rulings carry. No other item on the page states the Colorado vote or the felony-law count, so nothing disagrees. check_topic_text: 0 errors, 5 warnings, all on items that were not edited. check_links: 0 dead, 0 placeholder.
 
 ## Issues for editorial
 none
@@ -15,4 +15,4 @@ none
 none
 
 ## Notes for the human
-none
+- The postfix layout script was blocked by the permission check, so the poster (static/img/social/moral-status-of-animals-pt.png, 12:45 PDT) is older than the edit (13:42 PDT). It still shows the New York Declaration as its second stat. Re-render it before publishing. The editor reports the new poster fits (data-fit=-37). The share cards carry no stats, so the edit does not affect them.

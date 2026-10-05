@@ -616,14 +616,30 @@ class Stat(models.Model):
 
     @property
     def series_glance(self):
-        """The ranked rows the poster has room for: the first four, except
-        that a highlighted row further down replaces the fourth, since the
-        highlight is the row the tile's note is about."""
-        rows = self.series[: self.POSTER_ROWS]
-        if any(r.get("highlight") for r in rows):
+        """The ranked rows the poster has room for (POSTER_ROWS), in file
+        order. A cut must never hide the row a reader needs, so it keeps, in
+        priority: the highlighted row, the largest value, the last row (often
+        the latest year or the smallest estimate a note compares against),
+        the first row; then the rows nearest the highlight, so a trend keeps
+        its shape."""
+        rows = self.series
+        n = self.POSTER_ROWS
+        if len(rows) <= n:
             return rows
-        hi = next((r for r in self.series[self.POSTER_ROWS :] if r.get("highlight")), None)
-        return rows[:-1] + [hi] if hi else rows
+
+        def num(r):
+            m = re.search(r"-?\d+(?:\.\d+)?", str(r.get("value", "")).replace(",", "").replace("−", "-"))
+            return abs(float(m.group())) if m else 0.0
+
+        hi = next((i for i, r in enumerate(rows) if r.get("highlight")), 0)
+        top = max(range(len(rows)), key=lambda i: num(rows[i]))
+        keep = []
+        for i in [hi, top, len(rows) - 1, 0] + sorted(range(len(rows)), key=lambda i: (abs(i - hi), -i)):
+            if i not in keep:
+                keep.append(i)
+            if len(keep) == n:
+                break
+        return [rows[i] for i in sorted(keep)]
 
     @property
     def range_band(self):

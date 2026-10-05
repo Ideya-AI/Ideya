@@ -2,7 +2,7 @@
  "slug": "gain-of-function-research",
  "title": "Engineered Pandemics",
  "status": "ready",
- "authored_at": "2026-10-05T09:04:31+00:00",
+ "authored_at": "2026-10-05T20:44:50+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Enhancing pathogens in labs, and screening custom DNA synthesis and benchtop synthesizers.",
@@ -22,7 +22,7 @@
    "summary": "Whether labs may make pathogens more dangerous, and whether the companies selling synthetic DNA must screen what they ship.",
    "scope_covered": "Which enhancement experiments governments fund or permit, who reviews them, how high-containment laboratories are overseen, and whether custom DNA synthesis and benchtop synthesizers should have to screen orders and customers.",
    "scope_excluded": "Where SARS-CoV-2 came from, except where a camp’s argument depends on it; frontier AI regulation and antimicrobial resistance, which have their own topics; and pandemic preparedness in general, which appears only where it is offered as an alternative to restriction.",
-   "why_now": "On July 28, 2026 the US government released a policy barring federal funding for dangerous gain-of-function research outright, in place of case-by-case review. The next day the American Society for Microbiology said its categories were drawn so broadly they would impede the country’s response to infectious disease.",
+   "why_now": "A US policy released on July 28, 2026 bars federal funding for dangerous gain-of-function research outright, in place of case-by-case review, once agency guidance lands in November 2026. The next day the American Society for Microbiology called its categories so broad they would impede the infectious disease response.",
    "why_now_source_label": "United States Government Policy for Stopping High-Risk Life Sciences Research",
    "why_now_source_url": "https://www.whitehouse.gov/wp-content/uploads/2026/07/USG-Policy-for-Stopping-High-Risk-Life-Sciences-Research_July-2026.pdf"
   },
@@ -53,8 +53,8 @@
      ],
      "range_min": "",
      "range_max": "",
-     "note": "An MIT team ordered 1918 influenza DNA fragments from 38 gene synthesis firms under a pseudonym and a false affiliation; 36 shipped, enough to assemble the virus three times over.",
-     "detail": "The test ran with FBI approval. Kevin Esvelt of MIT told the Senate that everything his team and the companies did was perfectly legal, because US select agent rules cover the assembled agent and not the pieces that make it, so an order split across providers and fragments passes a check designed for whole genes. The International Gene Synthesis Consortium, the industry trade group, has asked Congress to regulate it, because providers have no authoritative way to tell which customers and projects are legitimate. The work was published in 2026 by Edison, Toner and Esvelt in Nature Communications, which recommends that fragments be regulated as select agents in their own right. The 1918 sequence itself was published by US federal researchers in 2005; the pandemic it caused killed an estimated 50 million people. Those who want research kept open read the result as an argument about commercial access and screening rules, not about what scientists may study.",
+     "note": "An MIT team ordered DNA fragments of the 1918 influenza virus from 38 gene synthesis firms as a test; 36 of them shipped the material, and the exercise broke no law.",
+     "detail": "The test ran with FBI approval. Kevin Esvelt of MIT told the Senate that everything his team and the companies did was perfectly legal, because US select agent rules cover the assembled agent and not the pieces that make it. The International Gene Synthesis Consortium, the industry trade group, has asked Congress to regulate it, because providers have no authoritative way to tell which customers and projects are legitimate. The work was published in 2026 by Edison, Toner and Esvelt in Nature Communications, which recommends that fragments be regulated as select agents in their own right. The 1918 sequence itself was published by US federal researchers in 2005; the pandemic it caused killed an estimated 50 million people. Those who want research kept open read the result as an argument about commercial access and screening rules, not about what scientists may study.",
      "source_label": "Kevin M. Esvelt, written testimony, US Senate Committee on Homeland Security and Governmental Affairs",
      "source_url": "https://www.hsgac.senate.gov/wp-content/uploads/Testimony-Esvelt-2024-07-11-REVISED-2.pdf",
      "source_published": "2024",
@@ -96,7 +96,7 @@
        "highlight": true
       },
       {
-       "label": "TB awards suspended",
+       "label": "— of which tuberculosis",
        "value": "22",
        "highlight": false
       }
@@ -121,12 +121,45 @@
      "range_min": "",
      "range_max": "",
      "note": "The July 2026 US policy defines dangerous gain-of-function research by seven outcomes; work that produces one, or substantially risks it, and could cause significant harm cannot be federally funded.",
-     "detail": "The seven are enhancing a biological agent’s harmful consequences; disrupting a beneficial immune response or the effectiveness of an immunization; conferring resistance to useful treatments or helping an agent evade detection; increasing stability, transmissibility or ability to disseminate; altering host range or tropism; increasing a host population’s susceptibility; and generating or reconstituting an eradicated or extinct agent. Work that could potentially produce one of these is not prohibited but goes to an independent third-party review body, which should answer within 90 calendar days, or 30 for expedited national security or emergency reviews. Institutions must stand up a review entity of at least five members, notify within 24 hours if such work is identified unexpectedly, and designate a contact who certifies applications under penalty of law; violations carry up to five years of ineligibility for federal life sciences funds, and the review body is to audit up to a quarter of negative attestations each year. The policy is to be reviewed at least every four years.",
+     "detail": "The seven are enhancing a biological agent’s harmful consequences; disrupting a beneficial immune response or the effectiveness of an immunization; conferring resistance to useful treatments or helping an agent evade detection; increasing stability, transmissibility or ability to disseminate; altering host range or tropism; increasing a host population’s susceptibility; and generating or reconstituting an eradicated or extinct agent. Work that could potentially produce one of these is not prohibited but goes to a body the policy calls an independent third-party review body — a single government board of federal officials and subject-matter experts that the funding agencies have 90 days from issuance to establish, which then recommends to the funding agency, in 90 calendar days where practicable or 30 for expedited national security or emergency reviews. Institutions must stand up a review entity of at least five members, notify within 24 hours if such work is identified unexpectedly, and designate a contact who certifies applications under penalty of law; violations carry up to five years of ineligibility for federal life sciences funds, and the review body is to audit up to a quarter of negative attestations each year.",
      "source_label": "United States Government Policy for Stopping High-Risk Life Sciences Research",
      "source_url": "https://www.whitehouse.gov/wp-content/uploads/2026/07/USG-Policy-for-Stopping-High-Risk-Life-Sciences-Research_July-2026.pdf",
      "source_published": "2026",
      "source_accessed": "2026-09-30",
      "id": "research-outcomes-that-define-dangerous-gain"
+    },
+    {
+     "label": "What gain- and loss-of-function papers actually contain",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% of papers",
+     "series": [
+      {
+       "label": "Both gain and loss",
+       "value": "29",
+       "highlight": true
+      },
+      {
+       "label": "Vaccine-related",
+       "value": "24",
+       "highlight": false
+      },
+      {
+       "label": "Serial passaging",
+       "value": "21",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "A Georgetown analysis identified about 7,000 publications from 2000 to mid-2022 using gain- or loss-of-function techniques; 29 percent involved both, and 24 percent related to vaccine development.",
+     "detail": "The study combined machine learning with expert review. Its central policy finding is that the two kinds of work are hard to separate: they use the same techniques, and loss-of-function work, which disables genes, is the more common of the two, so a rule written against gain of function also catches work that reduces a pathogen’s capabilities. Twenty-one percent of the papers used serial passaging, which needs only basic laboratory equipment and no synthetic DNA at all. Nearly all the research was done on pathogens handled at BSL-2, BSL-2+ or BSL-3 rather than BSL-4, and the most-studied pathogens are those with the highest global disease burden, such as influenza viruses. Richard Ebright of Rutgers, who takes the opposite view of the policy question, has given his own estimate of the subset he considers dangerous: less than 0.1 percent of biomedical research and less than 1 percent of virology, in Senate testimony in 2022.",
+     "source_label": "Schuerger et al., “Understanding the Global Gain-of-Function Research Landscape,” CSET, Georgetown",
+     "source_url": "https://cset.georgetown.edu/publication/understanding-the-global-gain-of-function-research-landscape/",
+     "source_published": "2023",
+     "source_accessed": "2026-09-30",
+     "id": "what-gain-and-loss-of-function"
     },
     {
      "label": "Laboratories at the highest containment level worldwide",
@@ -233,44 +266,11 @@
      "range_max": "",
      "note": "A Microsoft-led team generated over 75,000 AI-redesigned versions of proteins of concern; screening software missed many, and after patches about 3 percent of the likeliest to work still escaped.",
      "detail": "The screening tools caught the original proteins nearly every time. The team disclosed the vulnerability to the tool developers before publishing, and three of the four providers shipped updates, a fix described as taking roughly one to two weeks across the major platforms. The episode is cited by both sides. Those who favor mandatory screening treat it as proof that a patchable, coordinated system works and should be universal and resourced; those who doubt screening as the main line of defense treat the residual 3 percent of variants judged most likely to still function as evidence that sequence matching will always lag design tools. The paper, by Wittmann and colleagues in Science in October 2025, has authors from Microsoft, Twist Bioscience, Integrated DNA Technologies, the International Biosecurity and Biosafety Initiative for Science and the University of Birmingham.",
-     "source_label": "Wittmann et al., Science, summarized by the American Association for the Advancement of Science",
-     "source_url": "https://www.eurekalert.org/news-releases/1100008",
+     "source_label": "Wittmann et al., nucleic acid biosecurity screening against generative protein design tools, Science",
+     "source_url": "https://www.science.org/doi/10.1126/science.adu8578",
      "source_published": "2025",
      "source_accessed": "2026-09-30",
      "id": "ai-redesigned-proteins-of-concern-that"
-    },
-    {
-     "label": "What gain- and loss-of-function papers actually contain",
-     "viz": "ranked",
-     "wide": true,
-     "value": "",
-     "unit": "% of papers",
-     "series": [
-      {
-       "label": "Both gain and loss",
-       "value": "29",
-       "highlight": true
-      },
-      {
-       "label": "Vaccine-related",
-       "value": "24",
-       "highlight": false
-      },
-      {
-       "label": "Serial passaging",
-       "value": "21",
-       "highlight": false
-      }
-     ],
-     "range_min": "",
-     "range_max": "",
-     "note": "A Georgetown analysis identified about 7,000 publications from 2000 to mid-2022 using gain- or loss-of-function techniques; 29 percent involved both, and 24 percent related to vaccine development.",
-     "detail": "The study combined machine learning with expert review. Its central policy finding is that the two kinds of work are hard to separate: they use the same techniques, and loss-of-function work, which disables genes, is the more common of the two, so a rule written against gain of function also catches work that reduces a pathogen’s capabilities. Twenty-one percent of the papers used serial passaging, which needs only basic laboratory equipment and no synthetic DNA at all. Nearly all the research was done on pathogens handled at BSL-2, BSL-2+ or BSL-3 rather than BSL-4, and the most-studied pathogens are those with the highest global disease burden, such as influenza viruses. Richard Ebright of Rutgers, who takes the opposite view of the policy question, has given his own estimate of the subset he considers dangerous: less than 0.1 percent of biomedical research and less than 1 percent of virology, in Senate testimony in 2022.",
-     "source_label": "Schuerger et al., “Understanding the Global Gain-of-Function Research Landscape,” CSET, Georgetown",
-     "source_url": "https://cset.georgetown.edu/publication/understanding-the-global-gain-of-function-research-landscape/",
-     "source_published": "2023",
-     "source_accessed": "2026-09-30",
-     "id": "what-gain-and-loss-of-function"
     },
     {
      "label": "List price of synthetic DNA",
@@ -474,7 +474,7 @@
     "name": "Ban federally funded enhancement of pandemic pathogens",
     "color_key": "green",
     "steelman": "Some experiments can only produce a pathogen able to start a pandemic that nature might never make. No committee can make that downside acceptable.",
-    "detail": "The downside of such an experiment is not confined to the laboratory, the institution or the country that approved it. It falls on everyone, and it cannot be undone. This is not a judgment about scientists’ competence or good faith; it is a judgment about a class of risk that the ordinary machinery of grant review was never designed to carry, and that the previous system demonstrably failed to carry. An oversight framework in which funders judge their own proposals, with no published criteria and no public record of what was approved, is not oversight. Two Government Accountability Office reviews, three years apart, found that HHS never defined what triggered departmental review and still does not publish how it assesses or mitigates the risk.\n\nIf the benefit of these particular experiments were large and specific, a hard rule would be a real loss. It is not. Drawing a bright line costs the research enterprise very little and removes a risk that compounds every year as the technology spreads, and prohibition has the virtue of being enforceable: a rule that says no is checkable, while a rule that says weigh the risks becomes whatever the weighing produces. The objection is that the definitions are so broad that ordinary work gets caught. Implementation errors are correctable and the alternative is not — the new policy already separates a prohibited category from a potential category that goes to independent review and can be approved. Over-inclusion in the first pass of a new rule is the predictable cost of writing one; under-inclusion in the old rule is paid once, globally, and permanently.",
+    "detail": "The downside of such an experiment is not confined to the laboratory, the institution or the country that approved it. It falls on everyone, and it cannot be undone. This is not a judgment about scientists’ competence or good faith; it is a judgment about a class of risk that the ordinary machinery of grant review was never designed to carry, and that the previous system demonstrably failed to carry. An oversight framework in which funders judge their own proposals, with no published criteria and no public record of what was approved, is not oversight. Two Government Accountability Office reviews, three years apart, found that HHS never defined what triggered departmental review and still does not publish how it assesses or mitigates the risk.\n\nIf the benefit of these particular experiments were large and specific, a hard rule would be a real loss. It is not. Drawing a bright line costs the research enterprise very little and removes a risk that compounds every year as the technology spreads, and prohibition has the virtue of being enforceable: a rule that says no is checkable, while a rule that says weigh the risks becomes whatever the weighing produces. The objection is that the definitions are so broad that ordinary work gets caught. Implementation errors are correctable and the alternative is not — the new policy already separates a prohibited category from a potential category that goes to the new review body and can be approved. Over-inclusion in the first pass of a new rule is the predictable cost of writing one; under-inclusion in the old rule is paid once, globally, and permanently.",
     "proponents": "US Department of Health and Human Services; White House Office of Science and Technology Policy; Biosafety Now; Richard Ebright",
     "id": "ban-federally-funded-enhancement-of-pandemic"
    },
@@ -490,25 +490,25 @@
     "name": "Make screening of synthetic DNA mandatory",
     "color_key": "amber",
     "steelman": "Arguments about which experiments to permit cover a few hundred funded laboratories. Synthetic DNA is the gateway for everyone else, and it is unguarded.",
-    "detail": "Anyone can order the pieces of a pandemic virus today; the companies that would rather not sell them have no authority to verify who is asking, and the industry trade group has asked Congress to regulate it. Screening is the rare biosecurity measure that is cheap, technically mature, already practiced across most of the industry and almost invisible to legitimate customers: a sequence check and a customer check, with records kept so that an investigation afterward is possible.\n\nMaking it mandatory does three things voluntary screening cannot. It closes the gap left by providers outside the consortium and by benchtop machines sitting in a customer’s own laboratory. It stops punishing the companies that screen by letting those that do not undercut them. And it creates the legal basis for an authoritative customer-verification system, which is the part no company can build alone. None of this requires deciding whether any particular experiment should proceed; it is the physical chokepoint, and it holds whatever the answer to the research question turns out to be. The objection is that screening is defeatable — by splitting an order, by a benchtop machine, by an AI-designed variant, by passaging a virus instead. No one claims it is a wall. It is a filter that raises the cost and the traceability of misuse, and each gap has a named fix: regulate fragments as select agents, require screening functions in benchtop devices, fund continuous red-teaming of the tools against design software, keep records so an attempt leaves a trail. The alternative on offer is not a better filter but no filter.",
+    "detail": "Anyone can order the pieces of a pandemic virus today; the companies that would rather not sell them have no authority to verify who is asking, and the industry trade group has asked Congress to regulate it. Screening is the rare biosecurity measure that is cheap, technically mature, already practiced across most of the industry and almost invisible to legitimate customers: a sequence check and a customer check, with records kept so that an investigation afterward is possible.\n\nMaking it mandatory does three things voluntary screening cannot. It closes the gap left by providers outside the consortium and by benchtop machines sitting in a customer’s own laboratory. It stops punishing the companies that screen by letting those that do not undercut them. And it creates the legal basis for an authoritative customer-verification system, which is the part no company can build alone. None of this requires deciding whether any particular experiment should proceed; it is the physical chokepoint, and it holds whatever the answer to the research question turns out to be. The objection is that screening is defeatable in several documented ways, and no one claims it is a wall. It is a filter that raises the cost and the traceability of misuse, and each gap has a named fix: regulate fragments as select agents, require screening functions in benchtop devices, fund continuous red-teaming of the tools against design software, keep records so an attempt leaves a trail. The alternative on offer is not a better filter but no filter.",
     "proponents": "International Biosecurity and Biosafety Initiative for Science; Kevin Esvelt; Tom Cotton; Amy Klobuchar; Twist Bioscience; Integrated DNA Technologies; Ginkgo Bioworks; Nuclear Threat Initiative",
     "id": "make-screening-of-synthetic-dna-mandatory"
    },
    {
-    "name": "Replace self-regulation with an independent licensing body",
-    "color_key": "rust",
-    "steelman": "The question is not whether this research should exist but who gets to say yes. Today the agencies that fund high-risk work are also the ones that judge it.",
-    "detail": "The advisory board meant to check the funders reports to the department whose research it oversees. No other field with comparable stakes works this way: human-subjects research and work with radioactive materials are governed by rules with the force of law, administered by bodies that have no stake in the outcome. The fix is a single independent authority with published criteria, a transparent record of what it approved and why, membership that includes security analysts and members of the public as well as scientists, and jurisdiction over all such work in the country regardless of who pays for it — which is the gap that leaves privately funded and classified work outside every current rule.\n\nThis is both safer and better for science. A categorical ban is brittle: it will be over-inclusive at the edges, it cannot adapt as techniques change, and it invites exactly the disputes about definitions now under way. A licensing body can say yes to a well-justified experiment with specified safeguards and no to a poorly justified one, and can be held to account for either. The swing in US policy — a 2014 pause, a 2017 framework, a 2024 policy, a 2025 pause, a 2026 prohibition — is itself the argument: rules that live in executive orders change with administrations, while a statutory regulator persists. To the research community’s objection that another layer will slow work that is not dangerous, the answer is that a properly scoped body reviews a small number of proposals a year and gives everything else certainty instead of ambiguity. To the objection that review boards tend toward yes, the answer is that a body with no funding stake, public members and a published record is a different animal from a program officer judging a grant.",
-    "proponents": "Johns Hopkins Center for Health Security; Marc Lipsitch; Tom Inglesby; Anita Cicero",
-    "id": "replace-self-regulation-with-an-independent"
-   },
-   {
     "name": "Build defenses that work against any pathogen",
-    "color_key": "purple",
+    "color_key": "rust",
     "steelman": "Every restriction under discussion is national, partial and reversible, and the hazard is global. What needs nobody else’s consent is the ability to detect and stop an outbreak.",
     "detail": "Even a perfectly enforced US rule leaves the rest of the world’s laboratories, the private sector and the falling cost of the underlying technology untouched. The ability to find an outbreak early and halt transmission is the same capability for a natural spillover, a laboratory accident and a deliberate release, which means it pays off under every version of the risk estimate rather than only one. Germicidal ultraviolet light in shared indoor air, stockpiles of reusable respirators that actually fit and work, metagenomic surveillance that flags an unknown pathogen before anyone knows what to look for, and vaccine platforms that can be redirected in weeks are not speculative. They are underfunded. The Bipartisan Commission on Biodefense has costed a decade-long program at 100 billion dollars, a small fraction of a single year of what the last pandemic cost.\n\nThe argument is not that restrictions are wrong but that they are a small lever placed where it is hardest to pull, and that the same political attention and money spent on defense buys more safety per unit of controversy. The case also does not depend on settling where COVID-19 came from: the measures work the same way whichever answer is right. The objection is that no realistic countermeasure program would stop a pathogen engineered to be worse than anything evolution produces. The limit is real, so the claim is narrower: air treatment and respiratory protection are pathogen-agnostic by construction, because they act on transmission rather than on biology, which is exactly why they hold up against an adversary designing around a vaccine — and a world that can detect and contain fast is one where a laboratory accident stays an incident.",
     "proponents": "Bipartisan Commission on Biodefense; Blueprint Biosecurity; SecureBio",
     "id": "build-defenses-that-work-against-any"
+   },
+   {
+    "name": "Replace self-regulation with an independent licensing body",
+    "color_key": "purple",
+    "steelman": "The question is not whether this research should exist but who gets to say yes. Today the agencies that fund high-risk work are also the ones that judge it.",
+    "detail": "The advisory board meant to check the funders reports to the department whose research it oversees. No other field with comparable stakes works this way: human-subjects research and work with radioactive materials are governed by rules with the force of law, administered by bodies that have no stake in the outcome. The fix is a single independent authority with published criteria, a transparent record of what it approved and why, membership that includes security analysts and members of the public as well as scientists, and jurisdiction over all such work in the country regardless of who pays for it — which is the gap that leaves privately funded and classified work outside every current rule.\n\nThis is both safer and better for science. A categorical ban is brittle: it will be over-inclusive at the edges, it cannot adapt as techniques change, and it invites exactly the disputes about definitions now under way. A licensing body can say yes to a well-justified experiment with specified safeguards and no to a poorly justified one, and can be held to account for either. The swing in US policy — a 2014 pause, a 2017 framework, a 2024 policy, a 2025 pause, a 2026 prohibition — is itself the argument: rules that live in executive orders change with administrations, while a statutory regulator persists. To the research community’s objection that another layer will slow work that is not dangerous, the answer is that a properly scoped body reviews a small number of proposals a year and gives everything else certainty instead of ambiguity. To the objection that review boards tend toward yes, the answer is that a body with no funding stake, public members and a published record is a different animal from a program officer judging a grant.",
+    "proponents": "Johns Hopkins Center for Health Security; Marc Lipsitch; Tom Inglesby; Anita Cicero",
+    "id": "replace-self-regulation-with-an-independent"
    }
   ],
   "crux": {
@@ -538,8 +538,8 @@
    {
     "kind": "learn_more",
     "title": "Read the scientific societies’ case against the new restrictions",
-    "description": "The American Society for Microbiology’s advocacy pages set out its objections to the breadth of the 2026 policy and its own proposals for oversight that does not halt infectious disease research.",
-    "url": "https://asm.org/advocacy",
+    "description": "ASM’s statement of July 29, 2026 sets out its objection that the policy’s categories are drawn so broadly they would impede the national response to infectious disease.",
+    "url": "https://asm.org/press-releases/2026/july/asm-statement-on-usg-high-risk-life-sciences-resea",
     "for_position": "Narrow the restrictions and keep pathogen research moving",
     "id": "read-the-scientific-societies-case-against"
    },

@@ -1,18 +1,13 @@
-Targeted re-audit of: actions[choose-or-run-your-own-moderation].url, plus the four earlier fixes (basics.stats[x-s-trust-and-safety-staff].detail, basics.stats[us-adults-who-say-harassment-targets].detail, crux.values, actions[become-a-community-notes-contributor-on].for_position)
+Targeted re-audit of: basics.stats[14] (us-adults-who-say-harassment-targets)
 
 # Audit: Content Moderation
-2026-10-05, targeted re-audit after a fix pass, verdict: ready.
-
-The one open issue is fixed. The Bluesky action now links to https://atproto.com/guides/moderation, which returns 200 with no redirect and is titled "Moderation - AT Protocol". It covers labels, subscribing to moderation labelers, creating a labeler and running Ozone, so it fits both halves of the action's title and description. check_links: 27 links, 24 ok, 0 dead, 0 placeholder; one redirect (EFF donate) and two blocked (counterhate 403, Internet Association 429) are notes only. check_topic_text: 0 errors; the 7 warnings are lean-label length plus a false-positive "humor". The four earlier fixes still hold: the X staffing detail ends "The figures are as reported by the Associated Press."; the Pew harassment-lawsuit detail has no pipeline voice; the crux values read "a diffuse loss of lawful speech"; the Community Notes action is tagged "Give users control of moderation", which matches the fifth position. Layout checks were run separately and are clean.
+2026-10-05, verdict: ready. The one fix landed as asked. The Pew 2020 liability tile now ranks only the two answers to the question it is labeled with: "Should not get to sue" at 63, then the highlighted "Should get to sue" at 33. The unrelated 79 percent fair/poor bar is gone from the chart and still appears in the note. The tile label, the highlight, the note and the detail all agree, and every figure is in the linked Pew report, which the harassment-prevalence tile also cites. check_topic_text shows 0 errors and 7 warnings, all lean-label lengths plus a false UK-spelling hit on "humor". check_links shows 27 links, 0 dead and 0 placeholder. The separate layout script did not run because auto mode blocked it. The editor reports poster fit at -69, so nothing overflows, and this edit does not touch the og summary.
 
 ## Issues for editorial
 none
-
 ## Issues for icons
 none
-
 ## Needs research (stops the run)
 none
-
 ## Notes for the human
 none
