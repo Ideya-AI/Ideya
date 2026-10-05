@@ -2,7 +2,7 @@
  "slug": "encryption-vs-lawful-access",
  "title": "Encryption vs. Lawful Access",
  "status": "ready",
- "authored_at": "2026-09-30T02:13:34+00:00",
+ "authored_at": "2026-10-05T09:02:58+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Government access to end-to-end encrypted communication. Encryption specifically, not surveillance broadly.",
@@ -20,9 +20,9 @@
    "summary": "Whether governments should get into encrypted messages by decryption, scanning or hacking, and what each answer costs in security, privacy and child safety.",
    "scope_covered": "Government access to end-to-end encrypted messages: decryption on court order, scanning on the phone before encryption, and hacking suspects’ devices; stored data only where the same powers reach it.",
    "scope_excluded": "Surveillance in general, including metadata, data retention, facial recognition and bulk intelligence collection; moderation of public posts.",
-   "why_now": "On September 29, 2026, EU negotiators met in Brussels to seek political agreement on detection duties in the proposed child sexual abuse regulation, which critics call chat control, the sixth political round since talks opened in December 2025.",
-   "why_now_source_label": "Council of the EU, note 13051/26",
-   "why_now_source_url": "https://data.consilium.europa.eu/doc/document/ST-13051-2026-INIT/en/pdf"
+   "why_now": "At a September 29, 2026 round in Brussels, EU negotiators on the proposed child sexual abuse regulation, which critics call chat control, agreed on detection orders for public content and the tasks of a new EU Centre, but not on scanning private messages.",
+   "why_now_source_label": "Agence Europe, 30 September 2026",
+   "why_now_source_url": "https://agenceurope.eu/en/bulletin/article/13949/2/csam-regulation-co-legislators-agree-on-detection-of-public-content-and-tasks-of-eu-centre-for-child-protection"
   },
   "basics": {
    "stats": [
@@ -488,7 +488,7 @@
    {
     "text": "Should any private communication be beyond the reach of a lawful warrant?",
     "kind": "value",
-    "why": "Democratic law has always let a judge authorize a search, and end-to-end encryption is the first technology to make that order unenforceable for everyday communication at scale.",
+    "why": "A judge can order a search, but end-to-end encryption puts everyday messages at scale beyond what that order can reach. One side sees a new gap in the rule of law; the other, a return to the privacy spoken conversation always had.",
     "detail": "One side sees a gap in the rule of law. When a judge finds probable cause, police may enter a locked house, and a warrant is the product of democratic law, judicial oversight and individual suspicion, not arbitrary power. Letting companies decide by product design that no warrant can ever be served moves a decision about public safety from legislatures and courts to engineers, and those who gain most are those with most to hide.\n\nThe other side sees a restoration. For most of history the most private conversations, spoken face to face, were never recorded and could not be retrieved by any warrant; the wiretap and the stored message are recent exceptions, not the baseline. The same property that protects a suspect protects a journalist’s source, a dissident abroad, a victim hiding from an abuser and an official discussing secrets, and it cannot be offered to one and withheld from another. On this view the question is not whether the state may search, but whether everyone must be made less secure so that it always can.",
     "lean_label_a": "All within reach",
     "lean_label_b": "Some beyond reach",
@@ -516,7 +516,7 @@
     "text": "Does scanning messages on the phone before encryption keep the protection end-to-end encryption promises?",
     "kind": "empirical",
     "why": "Client-side scanning leaves the encryption untouched but adds software that inspects content before it is sent. Whether that is a narrow safety check or a surveillance channel turns on things outsiders cannot observe.",
-    "detail": "Those who say the protection holds point out that messages stay encrypted in transit and on the server and nobody gets a key. Matching on the device against a list of already-known abuse images, the hashing technique platforms have run on unencrypted services for over a decade, reveals nothing about a message that does not match. The EU proposal would allow only technologies tested and approved by a new EU Centre, with detection orders issued by courts.\n\nThose who say it breaks answer that the promise is that only sender and recipient learn what a message says, and software that inspects every message and reports on it breaks that promise wherever it runs. It can be repurposed by changing the list it matches against. Apple designed such a system for iCloud Photos in 2021 and abandoned it in 2022 after criticism from security researchers, some of whom showed its image matching could be made to produce false matches. Detecting new images and grooming needs machine-learning classifiers whose error rates, across billions of messages, would flood police with innocent material.",
+    "detail": "Those who say the protection holds point out that messages stay encrypted in transit and on the server and nobody gets a key. Matching on the device against a list of already-known abuse images, the hashing technique platforms have run on unencrypted services for over a decade, reveals nothing about a message that does not match. The EU proposal would allow only technologies tested and approved by a new EU Centre, with detection orders issued by courts. Reports would not go straight to police either: the EU Centre would first check each one for validity and forward only those that pass, under the oversight of a fundamental rights officer.\n\nThose who say it breaks answer that the promise is that only sender and recipient learn what a message says, and software that inspects every message and reports on it breaks that promise wherever it runs. It can be repurposed by changing the list it matches against. Apple designed such a system for iCloud Photos in 2021 and abandoned it in 2022 after criticism from security researchers, some of whom showed its image matching could be made to produce false matches. Detecting new images and grooming needs machine-learning classifiers whose error rates, across billions of messages, would flood police with innocent material.",
     "lean_label_a": "Protection holds",
     "lean_label_b": "Protection breaks",
     "id": "does-scanning-messages-on-the-phone"
@@ -644,7 +644,7 @@
     "title": "Read the Carnegie working group’s attempt at middle ground",
     "description": "A 2019 paper from former FBI, CIA and NSA officials, technologists and civil-liberties advocates that recommends setting aside access to messages in transit and focusing on data stored on phones.",
     "url": "https://carnegieendowment.org/research/2019/09/moving-the-encryption-policy-conversation-forward",
-    "for_position": "Target suspects’ devices, not everyone’s encryption",
+    "for_position": null,
     "id": "read-the-carnegie-working-group-s"
    },
    {

@@ -1,7 +1,9 @@
-# Audit: Homelessness
-2026-10-03, verdict: ready
+Targeted re-audit of: basics.stats[public-support-for-removing-homeless-encampments].detail, basics.stats[housing-first-against-treatment-first-programs], basics.stats[chronically-homeless-individuals-in-the-us].note
 
-This is a re-audit. The previous packet raised no issues, and topic.json was edited afterward to take up several of its notes. The fixes hold and nothing around them broke. The Housing First review tile now reads “88% greater drop” with no share-like bar, and its detail says these are relative differences between program groups. The veterans note gives both the 2009 and the 2013 base. The state-rate tile dates the UCSF survey to 2021 and 2022. The three content-caused wraps are gone (“$5–10K once”, the LA cost with no unit, “Just moves them”). The page still tells one story. Basics runs from the national count and the chronic record through the evidence each camp leans on. Seven questions run from cause to money. The crux, home or treatment first for people who stay homeless longest, follows from them, and the August 2026 ruling on HUD’s Continuum of Care rules belongs to this topic. The four camps are named by what they want, steelmen run 28 to 30 words, and each detail answers its critics and names its wings at even length. Mechanical checks are clean: 0 text errors, and of 29 links 0 are dead or placeholder (1 blocked, GAO 403). The renders are newer than topic.json, the glance hash matches (73057271f8d0d1e4), and the live page at localhost:8641 carries the fixed text. The three share cards show the four camps and the crux correctly. The tent-and-building art shows the subject without arguing. Nothing on the page would mislead a reader.
+# Audit: Homelessness
+2026-10-05, verdict: ready
+
+A targeted re-audit of three Basics tiles edited after a full review. Only those items were read; the rest of the page, the renders and research.md were not. Mechanical checks are clean: 0 text errors, 9 warnings (eight about values on ranked tiles, plus the Housing First note at 210 characters against a target of 200). Of 29 links, 0 are dead or placeholder and 1 is blocked. All three fixes landed. The encampment detail no longer infers what the neutral share means and no longer offers a one-sided comparison. It now gives the poll's sample of 1,121, its dates (21 to 25 August 2025) and its margin of plus or minus 4.0 points, and says the question did not mention shelter. Those facts agree with the 43/31/24 rows and the note. The Housing First tile now uses the Community Guide's own terms, a median 88 percent greater decrease across 5 studies and 41 percent greater housing stability across 13, and says outright that these are relative figures. The label, the unit "relative" and the detail all agree with that, so the figure can no longer be read as 88 points or 88 percent of people housed. The chronic-homelessness note gives the record count and the 44 percent rise in beds as two separate facts and then states both readings in one even clause. That matches the paired readings in its detail. The 88, 41 and 44 figures each appear only in their own tile; the other "41" on the page is an unrelated overdose ratio.
 
 ## Issues for editorial
 none
@@ -13,16 +15,4 @@ none
 none
 
 ## Notes for the human
-- Housing First review tile: the wording “88 percent greater decrease” is now framed as a relative difference. The Community Guide states it as Housing First decreasing homelessness by 88 percent compared with treatment first. Both say the same thing, but “greater decrease” can still read as an 88-point larger drop. The Community Guide page settles the phrasing.
-- Repetition (not misleading, so notes only, carried from the previous audit):
-  - “Illness decides who, the shortage decides how many” appears in the rent tile, Q1’s detail and the supply camp’s steelman.
-  - Trials enrolling mainly people with mental illness rather than active addiction appears in the Canadian trial detail, Q3, the treatment-first detail and the crux’s empirical panel.
-  - Cheap South and Appalachia against the coasts appears in the rate tile, Q1 and the supply camp.
-- Q6 (encampment clearances): the displacement side names two studies (Morande 2026 preprint, Barocas 2023 JAMA). The “clearances work” side names none. This may reflect where the evidence sits.
-- Crux: it is framed as home first against treatment first. The supply camp reaches it only through the empirical panel’s “how much of a region’s homelessness rents explain.” This is defensible given the scope to people who stay homeless longest.
-- Chronic homelessness glance: it pairs the record count with the 44 percent rise in supportive housing beds, which is the treatment-first juxtaposition. The detail and Q2’s why carry both readings.
-- Encampment poll detail: “The large neutral share suggests opinion depends on how removal is done” is an inference in the page’s voice. The point about advocate-commissioned polls is illustrated with one side’s poll only.
-- California spending detail: the governor’s figure (8,391 fewer, or 6.8 percent) implies about 115,000 unsheltered in 2025, against HUD’s 115,583 in the unsheltered tile. That is close enough to change nothing.
-- Some figures in details are credited by name but not linked: Shinn and Khadduri on Finland 1987, the Houston Defender 2025 count, the governor’s office September 2026 figure, Morande 2026 and Barocas 2023.
-- Actions: Housing First and treatment first each get two camp-tagged actions, and the other two camps get one each. The first six visible cards hold one per camp.
-- Blocked link: gao.gov returns 403 to the checker. GAO-20-433 is the right report for the $100 rent finding.
+none

@@ -2,7 +2,7 @@
  "slug": "wildfires",
  "title": "Living With Wildfire",
  "status": "ready",
- "authored_at": "2026-09-21T22:46:00+00:00",
+ "authored_at": "2026-10-05T09:10:41+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Living with wildfire: fuels, ignition, and hardening communities.",
@@ -30,6 +30,23 @@
   },
   "basics": {
    "stats": [
+    {
+     "label": "Structures destroyed since 2005",
+     "viz": "bar",
+     "value": "130,600",
+     "unit": "structures",
+     "note": "Wildfires have destroyed more than 130,600 homes, businesses and other structures in the United States since 2005, an average above 8,000 a year in the past decade.",
+     "detail": "The count comes from federal damage-inspection records and is probably low, since not every fire is inspected. Structure loss tracks the social cost of fire far better than acreage does, and it is extraordinarily concentrated: a handful of wind-driven fires at the edge of towns produce most of the loss in most years, and a single event can exceed the annual average several times over. The 2018 Camp Fire destroyed 18,804 structures by itself. California has lost the most over time, but nearly every state has lost some.",
+     "source_label": "Headwaters Economics, Wildfires destroy thousands of structures each year",
+     "source_url": "https://headwaterseconomics.org/natural-hazards/structures-destroyed-by-wildfire/",
+     "source_published": "2025",
+     "wide": false,
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "source_accessed": "2026-09-21",
+     "id": "structures-destroyed-since-2005"
+    },
     {
      "label": "US acres burned, year to date",
      "viz": "ranked",
@@ -74,21 +91,21 @@
      "id": "us-acres-burned-year-to-date"
     },
     {
-     "label": "Structures destroyed since 2005",
+     "label": "Western US forest fire area attributed to warming",
      "viz": "bar",
-     "value": "130,600",
-     "unit": "structures",
-     "note": "Wildfires have destroyed more than 130,600 homes, businesses and other structures in the United States since 2005, an average above 8,000 a year in the past decade.",
-     "detail": "The count comes from federal damage-inspection records and is probably low, since not every fire is inspected. Structure loss tracks the social cost of fire far better than acreage does, and it is extraordinarily concentrated: a handful of wind-driven fires at the edge of towns produce most of the loss in most years, and a single event can exceed the annual average several times over. The 2018 Camp Fire destroyed 18,804 structures by itself. California has lost the most over time, but nearly every state has lost some.",
-     "source_label": "Headwaters Economics, Wildfires destroy thousands of structures each year",
-     "source_url": "https://headwaterseconomics.org/natural-hazards/structures-destroyed-by-wildfire/",
-     "source_published": "2025",
+     "value": "2",
+     "unit": "× area",
+     "note": "Human-caused warming roughly doubled the area of western US forest that burned between 1984 and 2015, adding about 4.2 million hectares.",
+     "detail": "The same work attributes more than half of the rise in fuel aridity since the 1970s to human-caused warming. A separate attribution analysis of the January 2025 Los Angeles fires found the fire weather behind them about 35 percent more likely and 6 percent more intense at 1.3 degrees Celsius of warming, and dry Southern California winters now 2.4 times as likely as in the pre-industrial climate. Attribution answers a narrow question, how much warming changed the odds of a set of conditions, and not the question of what to do about them. The 2016 result concerns fuel dryness in forests, the mechanism most sensitive to warming, and says comparatively little about grass and chaparral fires driven by wind and by the timing of an ignition.",
+     "source_label": "Abatzoglou and Williams, PNAS",
+     "source_url": "https://www.pnas.org/doi/10.1073/pnas.1607171113",
+     "source_published": "2016",
      "wide": false,
      "series": [],
      "range_min": "",
      "range_max": "",
      "source_accessed": "2026-09-21",
-     "id": "structures-destroyed-since-2005"
+     "id": "western-us-forest-fire-area-attributed"
     },
     {
      "label": "Homes in the wildland-urban interface",
@@ -119,21 +136,21 @@
      "id": "homes-in-the-wildland-urban-interface"
     },
     {
-     "label": "Western US forest fire area attributed to warming",
-     "viz": "bar",
-     "value": "2",
-     "unit": "× area",
-     "note": "Human-caused warming roughly doubled the area of western US forest that burned between 1984 and 2015, adding about 4.2 million hectares.",
-     "detail": "The same work attributes more than half of the rise in fuel aridity since the 1970s to human-caused warming. A separate attribution analysis of the January 2025 Los Angeles fires found the fire weather behind them about 35 percent more likely and 6 percent more intense at 1.3 degrees Celsius of warming, and dry Southern California winters now 2.4 times as likely as in the pre-industrial climate. Attribution answers a narrow question, how much warming changed the odds of a set of conditions, and not the question of what to do about them. The 2016 result concerns fuel dryness in forests, the mechanism most sensitive to warming, and says comparatively little about grass and chaparral fires driven by wind and by the timing of an ignition.",
-     "source_label": "Abatzoglou and Williams, PNAS",
-     "source_url": "https://www.pnas.org/doi/10.1073/pnas.1607171113",
-     "source_published": "2016",
+     "label": "Ember-resistant zone, effect on ignition risk",
+     "viz": "radial",
+     "value": "50",
+     "unit": "% lower",
+     "note": "A noncombustible buffer in the first five feet around a house roughly halves its chance of igniting in a wildfire.",
+     "detail": "Up to 90 percent of building ignitions are attributed to ember exposure, and two of every three homes destroyed in the 2007 Witch Creek Fire were lost that way. What the buffer excludes is specific: bark mulch, woody shrubs, stored firewood, door mats and combustible fencing that touches the wall. Much of that is established landscaping, and the objections raised to California’s rule are about what it costs to tear out and replace a mature yard, and about how a five-foot strip gets inspected on millions of parcels with staffing that varies county by county. Supporters answer that a cleared house beside an uncleared one is still exposed to its neighbor’s radiant heat, so the rule works only if it applies to everyone.",
+     "source_label": "Insurance Institute for Business & Home Safety",
+     "source_url": "https://ibhs.org/ibhs-news-releases/ibhs-research-shows-creating-ember-resistant-buffer-around-a-home-cuts-its-risk-of-igniting-from-a-wildfire-in-half/",
+     "source_published": "2025",
      "wide": false,
      "series": [],
      "range_min": "",
      "range_max": "",
      "source_accessed": "2026-09-21",
-     "id": "western-us-forest-fire-area-attributed"
+     "id": "ember-resistant-zone-effect-on-ignition"
     },
     {
      "label": "Home survival in the Camp Fire, by build year",
@@ -167,23 +184,6 @@
      "range_max": "",
      "source_accessed": "2026-09-21",
      "id": "home-survival-in-the-camp-fire"
-    },
-    {
-     "label": "Ember-resistant zone, effect on ignition risk",
-     "viz": "radial",
-     "value": "50",
-     "unit": "% lower",
-     "note": "A noncombustible buffer in the first five feet around a house roughly halves its chance of igniting in a wildfire.",
-     "detail": "Up to 90 percent of building ignitions are attributed to ember exposure, and two of every three homes destroyed in the 2007 Witch Creek Fire were lost that way. What the buffer excludes is specific: bark mulch, woody shrubs, stored firewood, door mats and combustible fencing that touches the wall. Much of that is established landscaping, and the objections raised to California’s rule are about what it costs to tear out and replace a mature yard, and about how a five-foot strip gets inspected on millions of parcels with staffing that varies county by county. Enforcement is also what the measure’s own logic asks for, because a cleared house beside an uncleared one is still exposed to its neighbor’s radiant heat. That is why California wrote the requirement as a rule for everyone in a hazard zone rather than as advice.",
-     "source_label": "Insurance Institute for Business & Home Safety",
-     "source_url": "https://ibhs.org/ibhs-news-releases/ibhs-research-shows-creating-ember-resistant-buffer-around-a-home-cuts-its-risk-of-igniting-from-a-wildfire-in-half/",
-     "source_published": "2025",
-     "wide": false,
-     "series": [],
-     "range_min": "",
-     "range_max": "",
-     "source_accessed": "2026-09-21",
-     "id": "ember-resistant-zone-effect-on-ignition"
     },
     {
      "label": "Wildfires started by people",

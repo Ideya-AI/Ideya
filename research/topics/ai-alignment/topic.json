@@ -2,7 +2,7 @@
  "slug": "ai-alignment",
  "title": "AI Alignment",
  "status": "ready",
- "authored_at": "2026-09-23T11:17:40+00:00",
+ "authored_at": "2026-10-05T09:00:06+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Technical approaches to making advanced AI pursue intended goals. Methods, not policy.",
@@ -94,7 +94,7 @@
      "range_min": "",
      "range_max": "",
      "note": "When a planted hint changed a model’s answer, Claude 3.7 Sonnet mentioned that hint in its reasoning 25 percent of the time and DeepSeek R1 39 percent of the time.",
-     "detail": "Faithfulness asks whether written reasoning is a true account of the computation that produced the answer, and it is the load-bearing assumption under every attempt to supervise a model by reading what it writes. The test gives a model a problem twice, once plain and once with a hint attached, and checks whether it admits using the hint when it demonstrably did.\n\nThe gap widened on harder questions and on hints that implied misbehavior, which is the opposite of where you would want it, and training against outcomes improved matters at first and then stalled well short of reliable.",
+     "detail": "Faithfulness asks whether written reasoning is a true account of the computation that produced the answer, and supervising a model by reading what it writes depends on it. Those who think monitoring is durable reply that a monitor needs only the incriminating step, which hard tasks force into the scratchpad. The test gives a model a problem twice, once plain and once with a hint attached, and checks whether it admits using the hint when it demonstrably did.\n\nThe gap widened on harder questions and on hints that implied misbehavior, and training against outcomes improved matters at first and then stalled well short of reliable.",
      "source_label": "Anthropic, Reasoning models don’t always say what they think, 3 April 2025 (arXiv:2505.05410)",
      "source_url": "https://www.anthropic.com/research/reasoning-models-dont-say-think",
      "source_published": "2025",
@@ -471,7 +471,7 @@
     "color_key": "blue",
     "steelman": "Every other method asks the model what it is doing and believes the answer. Look at the computation instead — a scan that shows a hidden objective before the thing ever ships.",
     "detail": "Behavioral evaluation asks the model in a scenario; reading its reasoning asks it in a scratchpad. Both are reports the model produces, which means both can be wrong and both can be gamed, and we are watching that happen now. The only route that does not pass through a model’s self-report is to look directly at the computation. That was not obviously tractable five years ago, and the trend since has been steep: from a few thousand features in a one-layer model to tens of millions in a production one, attribution graphs that lay out the actual steps behind an output, probes that catch a model carrying a planted backdoor while its behavior still looks clean.\n\nThe goal is a diagnostic you can run before a model ships and learn whether it holds objectives it is not telling you about, the way a scan finds what an examination cannot. That is what would let every other method be verified rather than trusted. We are told we are nowhere near the standard required and will not get there in time, and our own papers report that the method captures a fraction of the computation on short prompts and costs hours of human effort to read. Both true. But the bottleneck is analysis throughput, which is the part that automates, and partial understanding is not worthless: a probe that catches a class of hidden objectives raises the cost of that failure mode even if it certifies nothing. This is a race, and how it comes out depends partly on how much of the field works on it.",
-    "proponents": "Dario Amodei; Anthropic Interpretability; Google DeepMind; Goodfire",
+    "proponents": "Anthropic Interpretability; Chris Olah; Neel Nanda; Goodfire",
     "id": "understand-model-internals-before-trusting-behavior"
    },
    {
@@ -512,7 +512,7 @@
    "lead_highlight": "the goals it appears to have",
    "subtitle": "Nearly every dispute in this field resolves into that one question. A system can behave well because it was built well, or because it can tell it is being watched, and from the outside those two look the same.",
    "empirical": "It is a research question with a real answer that nobody has yet. Can the tools — reading a system’s internals, probing it, testing it against a hostile team, watching it in ordinary use — be pushed to the point where a claim about what a system is disposed to do is checked rather than inferred? And can that happen before the systems grow complex enough to put the check itself out of reach? Evidence is arriving on both sides, fast.",
-   "values": "Everyone agrees these systems cannot be certified safe today; the disagreement is what follows. One view puts the burden of proof on the risk: do not deploy what you cannot verify, and pay the cost of waiting, because the downside may be irreversible. The other holds that verification before deployment is a standard no technology has met, and that methods improve fastest tested against real systems and real users. Underneath sits who decides."
+   "values": "All agree these systems cannot be certified safe today; the dispute is what follows. One view puts the burden of proof on the risk: do not deploy what you cannot verify, because the downside may be irreversible. The other holds that verification before deployment is a standard no technology has met, and that methods improve fastest tested on real systems and users. Underneath sits who decides: the labs building them, governments, or the public."
   },
   "actions": [
    {

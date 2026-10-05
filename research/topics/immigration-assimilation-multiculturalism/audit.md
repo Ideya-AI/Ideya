@@ -1,7 +1,9 @@
-# Audit: Immigration & Assimilation
-2026-10-03 (re-audit), verdict: ready
+Targeted re-audit of: questions[do-integration-gaps-come-mainly-from].detail
 
-This re-audit follows the fix to the one issue the first audit raised. The first Basics tile now says the sons' gap "narrowed to 3 points" and the daughters' gap "closed", which matches its bars (5, 3, 0). The page's lead point about the second generation no longer overstates convergence, and the crux's empirical half ("how fast and how fully") now builds on a tile that agrees with itself. The fix touched only that note. Nothing around it shifted: the detail, the multicultural camp's out-earning claim and the crux still read consistently with it. check_topic_text is clean. check_links finds no dead or placeholder links (3 blocked: the Canada act page, which times out, and the Jo Cox Foundation and Copenhagen Post pages, which return 403). The renders postdate topic.json and the glance hash matches (8f344514c418ece0). The dev server at :8641 serves the corrected sentence. The rest of the page still holds as the first audit described it: one story, four distinct camps steelmanned at similar length, a neutral why-now and art, and a crux that follows from the questions.
+# Audit: Immigration & Assimilation
+2026-10-05 (targeted re-audit), verdict: not ready (blocked on the link check, not on the page)
+
+The fix landed and holds. The newcomer-choices side now names Koopmans 2016 in the Journal of Ethnic and Migration Studies (Eurislam survey of Turkish, Moroccan, Pakistani and former Yugoslav Muslims). The host-barriers side names Adida, Laitin and Valfort. Each side has one named study and runs about the same length, so the two read evenly. The new sentence says the employment gaps "shrank sharply, often below statistical significance" once language skills, ties to natives and gender-role views were taken into account. That stays within the abstract's "strongly reduced and in many cases become statistically insignificant", and the sentence names no countries. check_topic_text: 0 errors, 0 warnings. check_links reports 1 dead, which stops the run under the usual rule. The dead link is the action "Read the AfD’s own definition of “remigration”" (https://www.afd.de/afd-positionspapier-zur-remigration-raeumt-mit-deportationsluege-auf/), and it returns HTTP 503. The cause is a site-wide outage: the afd.de homepage returns the same 503 with the body "Wartungen sind gerade in Gange" (maintenance in progress). The URL is not broken, and this fix pass did not touch it. Re-run check_links once afd.de is back. If the link comes back ok, the page is ready as it stands.
 
 ## Issues for editorial
 none
@@ -13,15 +15,7 @@ none
 none
 
 ## Notes for the human
-- Carried from the first audit, unchanged:
-  - Canada Multiculturalism Act link: check_links reports it blocked (timeout). The page is live; it hangs only for the checker's scripted User-Agent (Akamai). Adding www.canada.ca to `_BOT_WALLED_HOSTS` in topics/management/commands/check_links.py would stop the false alarm. The Jo Cox Foundation and Copenhagen Post links are 403 `blocked`.
-  - Why-now date: the page dates the USCIS "neighborhood investigations" Policy Manual change to August 25, 2026. The previous auditor recalled a similar policy from August 2025. The linked USCIS Policy Manual updates page would settle it.
-  - Australians' views stat: "Immigrants add new ideas" shows 78 in the chart, and the detail has a different item falling from 78 to 67. Worth checking against the Scanlon 2025 report.
-  - Fundamentalist-views detail: the phrase "first item" is ambiguous against the chart order.
-  - Return camp: its detail does use "we" and "our", so the earlier remark about third-person voice applies mainly to its steelman. It ends on Trump's harshest lines, which accurately show how far the broad wing goes.
-  - Evidence weight: in the Q2, Q5 and Q6 details, named studies fall mostly on the barriers, early-citizenship and support side.
-  - The Dutch retreat from multiculturalism appears three times: the MPI detail, the Q3 why and the multicultural camp's detail.
-  - About twelve of the seventeen stat details close on "camp A reads X; camp B reads Y."
-  - Several detail figures name a source without a link: IamExpat, EU Law Live, The World/Mandag Morgen, Canadian Press, The Local Denmark.
-  - At 390 px, the "Newcomer choices" lean label wraps, and so do the long camp tags on four action cards.
-  - Template: the og card sets "&" alone on its own title line.
+- afd.de is down for maintenance (HTTP 503 site-wide as of 2026-10-05). Re-run `check_links --topic immigration-assimilation-multiculturalism` later; if it comes back clean, run `mark_ready`.
+
+
+2026-10-05: afd.de back up; check_links re-run clean (28 links, 0 dead). Marked ready per this audit's next step.

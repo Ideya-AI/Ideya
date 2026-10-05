@@ -1,21 +1,18 @@
-# Audit: Drug Policy
-2026-10-03, verdict: ready
+Targeted re-audit of: basics.stats[people-killed-in-us-military-strikes]
 
-This is a re-audit. The 2026-10-02 packet raised no issues, and the editorial pass since then resolved the notes it was meant to: camp 1 now argues the supply-side and security case its proponents are known for, Q7 no longer ends on the uncited Duterte/ICC sentence, the National Harm Reduction Coalition action is untagged, and the poster fits (21px slack). The page still tells one coherent story. The overview names two splits: criminal law against health care against a regulated market, and safer use against recovery. The why-now (medical marijuana moved to Schedule III in April 2026) belongs to the topic. Basics runs from US deaths and the treatment gap, through opinion, arrests, prisons and disparity, to the global, comparative and supply-side figures. Where a stat could serve one camp, its detail gives both readings. The seven questions lead into a crux that gathers them, and its values card carries the safer-use/recovery split from the summary. The four camps are distinct, each is named for what it wants, and they are evenly matched: steelmen run 24 to 29 words and details 269 to 293. Each brings its own evidence, answers its strongest objection and names its internal differences. Mechanical checks are clean: 0 text errors, 0 dead or placeholder links, and 3 blocked because cdc.gov refuses the checker. The renders are current: the glance hash 0a2411240748d685 matches. The dev server at :8641 serves the current text. Nothing on the page would mislead a reader.
+# Audit: Drug Policy
+2026-10-05, verdict: ready
+
+This targeted re-audit covers only the strike-toll tile, which was edited after a full review of all audits. Mechanical checks are clean: 0 text errors (1 warning, on stat[12], for a November 3, 2026 date that will go stale; it is not part of this fix), and 27 links with 0 dead, 0 placeholder and 3 blocked (cdc.gov and one action refuse the checker). In the tile, the value (235), the note ("at least 235 people … at least 70 US military strikes, beginning September 2, 2025"), the detail ("the Associated Press tally after a strike in the Caribbean on October 4, 2026") and the source (AP via ABC News, October 4, 2026, accessed 2026-10-05) agree. The ABC URL answers 200 to a browser user agent. A search of the whole file for "strike", "boat", "234", "235" and "Southern Spear" finds the topic in Q7's why and in camp 1's detail, but neither gives a count, so no other item contradicts the tile.
 
 ## Issues for editorial
-- none
+none
 
 ## Issues for icons
-- none
+none
 
 ## Needs research (stops the run)
-- none
+none
 
 ## Notes for the human
-- Carried from the last audit and still present: Q3's opponents compare past-year cocaine use (4.2 million) with past-month drinking (129 million). The mismatch understates the gap, so the direction holds. The page also gives two US 2024 overdose totals, 81,313 (provisional, adjusted) and 79,384 (final, residents). Each tile explains its own measure.
-- Carried: some phrases repeat. "A substance less lethal than alcohol" appears in the cannabis daily-use detail and in Q4. "Five decades" or "half a century" of prohibition appears in the global-use and cocaine tiles, Q7 and camp 4.
-- Small arithmetic in details: the arrests tile says drug arrests were "about 12 percent of roughly 7.5 million" arrests in 2024, but 822,488 of 7.5 million is about 11 percent. The executions tile lists Iran 998, Saudi Arabia 240, Singapore 15 and Kuwait 2, which sum to 1,255 against the 1,257 headline, so two executions are unaccounted for. Neither changes any reading.
-- Arrests chart: its rows jump from 2020 to 2023 at even spacing. The detail explains the FBI's 2021 reporting switch, but a reader skimming the bars may not notice the gap.
-- Actions: camp 1 has two camp-tagged actions (Alberta, SAM), and camps 2, 3 and 4 have one each.
-- Template (views.md, still open): ranked Basics tiles never render their unit, so "331", "7+ / 2.6 / 0.6" and "17.7" appear without "million". Only the notes give the scale.
+none

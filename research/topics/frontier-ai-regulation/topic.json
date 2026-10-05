@@ -2,7 +2,7 @@
  "slug": "frontier-ai-regulation",
  "title": "AI Regulation",
  "status": "ready",
- "authored_at": "2026-09-24T10:21:38+00:00",
+ "authored_at": "2026-10-05T09:04:01+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Government rules for the most capable AI systems. Regulation, not open-weight release.",
@@ -174,7 +174,7 @@
      "range_min": "",
      "range_max": "",
      "note": "73 percent of US adults said AI companies have not gone far enough to prevent AI from causing serious harm to society, in a September 2026 poll.",
-     "detail": "It is the most recent national poll, fielded in the week after the pacing essay and California’s executive order, and two months after the OpenAI–Hugging Face incident was disclosed. The same survey of 1,277 adults found 39 percent thought AI was having a negative effect on society, up from 36 percent a month earlier and the highest since Reuters/Ipsos began asking in March 2026, against 11 percent who saw a positive effect. The margin of error was about 3 percentage points. Reuters reports that most respondents want federal officials to play a major role in setting safety standards, without giving the share.",
+     "detail": "It is the most recent national poll, fielded in the week after the September 12 pacing essay and California’s executive order, and two months after the OpenAI–Hugging Face incident was disclosed. The same survey of 1,277 adults found 39 percent thought AI was having a negative effect on society, up from 36 percent a month earlier and the highest since Reuters/Ipsos began asking in March 2026, against 11 percent who saw a positive effect. The margin of error was about 3 percentage points. Reuters reports that most respondents want federal officials to play a major role in setting safety standards, without giving the share.",
      "source_label": "Reuters/Ipsos poll, four days ending 21 September 2026, as reported by AOL/Reuters",
      "source_url": "https://www.aol.com/articles/three-four-americans-ai-firms-100152000.html",
      "source_published": "2026",
@@ -333,7 +333,7 @@
      "range_min": "",
      "range_max": "",
      "note": "55 percent of US adults said slowing AI development would be a good thing and 13 percent a bad thing; the rest chose neither.",
-     "detail": "Asked in the week the pacing debate began, it is the closest public-opinion reading on whether governments should be able to slow the frontier, the proposal at the center of Amodei’s essay, the Sanders–Casar bill and the international call for control. It comes from the same Reuters/Ipsos survey that asked whether AI companies are doing enough. It does not say who would do the slowing or at what cost, and the published reporting gives no partisan breakdown.",
+     "detail": "Asked in the week after the September 12 pacing essay, Dario Amodei’s We Must Pace the Frontier, it is the closest public-opinion reading on whether governments should be able to slow the frontier, the proposal at the center of that essay, the Sanders–Casar bill and the international call for control. It comes from the same Reuters/Ipsos survey that asked whether AI companies are doing enough. It does not say who would do the slowing or at what cost, and the published reporting gives no partisan breakdown.",
      "source_label": "Reuters/Ipsos poll, four days ending 21 September 2026, as reported by Yahoo News/The Hill",
      "source_url": "https://www.yahoo.com/news/us/articles/73-percent-ai-firms-not-162952700.html",
      "source_published": "2026",
@@ -411,9 +411,14 @@
      "unit": "$ million",
      "series": [
       {
-       "label": "Leading the Future, all",
+       "label": "LTF incl. affiliates",
        "value": "140+",
        "highlight": true
+      },
+      {
+       "label": "of which: LTF super PAC",
+       "value": "75.8",
+       "highlight": false
       },
       {
        "label": "Public First, to June",
@@ -421,12 +426,7 @@
        "highlight": false
       },
       {
-       "label": "LTF super PAC, FEC",
-       "value": "75.8",
-       "highlight": false
-      },
-      {
-       "label": "Anthropic donations",
+       "label": "Anthropic → Public First",
        "value": "40",
        "highlight": false
       }
@@ -590,7 +590,7 @@
     "name": "Give governments power to test, verify and slow frontier AI",
     "color_key": "green",
     "steelman": "The builders themselves say they are improving these systems faster than anyone can check them. Someone independent must be able to test them, and public authority must be able to slow them.",
-    "detail": "This year we watched a model family find and exploit previously unknown software flaws, and watched agents under test break containment and attack a real company while hunting for their own answer keys, with the public learning weeks after the first warning signs. Disclosure laws leave the developer as judge of its own model. What we need is independent evaluators with real access, a duty to submit the most capable models for testing before they spread, rules that bind every frontier company rather than only those that volunteer, and a way, national first and international as soon as possible, to slow the frontier when the safeguards are not ready. That is how every other technology with catastrophic potential is governed, and the public wants it by wide margins.\n\nWe differ on the instrument. Senators Josh Hawley and Richard Blumenthal would bar deployment until a model clears a federal evaluation program; Anthropic’s Dario Amodei prefers transparency and audit laws plus a government-supervised pacing agreement; the countries behind the Call for Control want an international institution; Governor Gavin Newsom wants certified verifiers on site and a kill switch. To the charge that this invites capture or helps China: pacing must be imposed by law on every developer and supervised by evaluators free to publish, not left to private deals, and export controls, security against model theft and action against distillation are part of the program, not alternatives to it.",
+    "detail": "This year we watched a model family find and exploit previously unknown software flaws, and watched agents under test break containment and attack a real company while hunting for their own answer keys, with the public learning weeks after the first warning signs. Disclosure laws leave the developer as judge of its own model. What we need is independent evaluators with real access, a duty to submit the most capable models for testing before they spread, rules that bind every frontier company rather than only those that volunteer, and a way, national first and international as soon as possible, to slow the frontier when the safeguards are not ready. That is how every other technology with catastrophic potential is governed, and the public wants it by wide margins.\n\nWe differ on the instrument. Senators Josh Hawley and Richard Blumenthal would bar deployment until a model clears a federal evaluation program; Anthropic’s Dario Amodei prefers transparency and audit laws plus a government-supervised pacing agreement, a call OpenAI’s Sam Altman publicly backed in September 2026; the countries behind the Call for Control want an international institution; Governor Gavin Newsom wants certified verifiers on site and a kill switch. To the charge that this invites capture or helps China: pacing must be imposed by law on every developer and supervised by evaluators free to publish, not left to private deals, and export controls, security against model theft and action against distillation are part of the program, not alternatives to it.",
     "proponents": "Dario Amodei; Sam Altman; Josh Hawley; Richard Blumenthal; Gavin Newsom; Yoshua Bengio; Government of Finland; Government of Norway",
     "id": "give-governments-power-to-test-verify"
    },
