@@ -243,6 +243,17 @@ def _with_follow_up(request, response, target, obj, trigger, eyebrow, icon):
 # --------------------------------------------------------------------------- #
 # Pages
 # --------------------------------------------------------------------------- #
+# Home spotlight and the four cards under it, chosen by Jeff 2026-10-06. A slug
+# that is not published is skipped and the slot falls back to file order.
+SPOTLIGHT = "ai-future-of-work"
+BENCH = [
+    "nuclear-energy",
+    "social-media-youth-mental-health",
+    "ai-existential-risk",
+    "housing-affordability-crisis",
+]
+
+
 def home(request):
     authored = (
         Topic.published.filter(sections__kind="positions")
@@ -250,7 +261,8 @@ def home(request):
         .distinct()
     )
     featured = (
-        authored.prefetch_related("categories").first()
+        authored.filter(slug=SPOTLIGHT).first()
+        or authored.prefetch_related("categories").first()
         or Topic.published.select_related("primary_category").first()
     )
 
@@ -272,7 +284,11 @@ def home(request):
         }
 
     bench_ids = [featured.id] if featured else []
-    bench = _decorate(authored.exclude(id__in=bench_ids)[:4])
+    rest = authored.exclude(id__in=bench_ids)
+    chosen = {t.slug: t for t in rest.filter(slug__in=BENCH)}
+    picked = [chosen[s] for s in BENCH if s in chosen]
+    picked += list(rest.exclude(slug__in=BENCH)[: 4 - len(picked)])
+    bench = _decorate(picked)
     # Pad the bench to a full row of four with curated coming-soon drafts;
     # each slot converts to a live card as the topic publishes.
     soon = []
