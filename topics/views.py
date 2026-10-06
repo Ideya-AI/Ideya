@@ -23,13 +23,17 @@ def _rate_ok(request):
         "participate",
         ratelimit.PARTICIPATE_LIMIT,
         ratelimit.PARTICIPATE_WINDOW,
+    ) or ratelimit.rate_limited(
+        request,
+        "participate-day",
+        ratelimit.PARTICIPATE_DAY_LIMIT,
+        ratelimit.PARTICIPATE_DAY_WINDOW,
     ):
         return HttpResponse("Too many requests — slow down.", status=429)
     return None
 
 
 from .models import (
-    MIN_VOTES_REORDER,
     SECTION_ORDER,
     Action,
     Category,
@@ -79,26 +83,14 @@ def _authored(qs):
 
 
 def _ordered_sections(parent_field, parent):
-    # Research seeds both rankings; community vote order takes over only once
-    # the list accrues MIN_VOTES_REORDER real votes (counted, not netted).
-    q_order = ["order", "id"]
-    if (
-        Vote.objects.filter(**{f"question__section__{parent_field}": parent}).count()
-        >= MIN_VOTES_REORDER
-    ):
-        q_order = ["-votes", "order", "id"]
-    p_order = ["order", "id"]
-    if (
-        Vote.objects.filter(**{f"position__section__{parent_field}": parent}).count()
-        >= MIN_VOTES_REORDER
-    ):
-        p_order = ["-importance"] + p_order
+    # File order only: votes show as counts and never reorder (Jeff 2026-10-06:
+    # a reorder is an editorial decision).
     positions = Position.objects.annotate(
         votes_cast=Count("importance_votes", distinct=True),
-    ).order_by(*p_order)
+    ).order_by("order", "id")
     questions = Question.objects.annotate(
         votes_cast=Count("importance_votes", distinct=True)
-    ).order_by(*q_order)
+    ).order_by("order", "id")
     qs = Section.objects.filter(**{parent_field: parent}).prefetch_related(
         Prefetch("stats", queryset=Stat.objects.order_by("order", "id")),
         Prefetch("questions", queryset=questions),
@@ -160,8 +152,6 @@ def _log_event(request, kind, action, target, payload=None, prompt=None):
         payload=payload or {},
         user=request.user if request.user.is_authenticated else None,
         session_key=request.session.session_key or "",
-        ip=ratelimit.client_ip(request),
-        user_agent=request.META.get("HTTP_USER_AGENT", "")[:300],
     )
 
 
@@ -592,12 +582,14 @@ def vote(request, target, pk):
         return limited
     if request.POST.get("dir") == "down":
         return HttpResponseBadRequest("downvotes are retired")
+    # Only items on topics this reader can see: no voting on drafts by id.
+    visible = {"section__topic__in": _visible_topics(request).all()}
     if target == "question":
-        obj = get_object_or_404(Question, pk=pk)
+        obj = get_object_or_404(Question, pk=pk, **visible)
         lookup, counter = {"question": obj}, "votes"
         template, ctx = "topics/components/_qvote.html", "q"
     elif target == "position":
-        obj = get_object_or_404(Position, pk=pk)
+        obj = get_object_or_404(Position, pk=pk, **visible)
         lookup, counter = {"position": obj}, "importance"
         template, ctx = "topics/components/_pimp.html", "p"
     else:
@@ -651,7 +643,9 @@ def question_lean(request, pk):
     retracts; the other pole switches. Returns the _qlean fragment."""
     if limited := _rate_ok(request):
         return limited
-    question = get_object_or_404(Question, pk=pk)
+    question = get_object_or_404(
+        Question, pk=pk, section__topic__in=_visible_topics(request).all()
+    )
     value = request.POST.get("value")
     if value not in (QuestionLean.A, QuestionLean.B):
         return HttpResponseBadRequest("unknown lean value")
@@ -722,13 +716,19 @@ def follow_up(request, target, pk):
     )
 
 
+# Reader text is cut to these lengths before it is stored, so a script cannot
+# fill the disk through the respond endpoint.
+MAX_TEXT = 4000
+MAX_NOTE = 1000
+
+
 def _response_payload(request, prompt):
     """Read the POST for `prompt`'s kind into Response field defaults. Returns
     (defaults, keep): `keep` is False when there's nothing worth storing (an
     empty answer → retract, mirroring the vote/stance clear semantics). Invalid
     option ids are dropped; ratings clamp to 1–5."""
     valid = set(prompt.options.values_list("id", flat=True))
-    text = (request.POST.get("text") or "").strip()
+    text = (request.POST.get("text") or "").strip()[:MAX_TEXT]
     defaults, structured = {}, False
 
     if prompt.kind == Prompt.FREE_TEXT:
@@ -750,7 +750,7 @@ def _response_payload(request, prompt):
         # Optional per-option note/answer, kept only for chosen options.
         notes = {}
         for oid in sel:
-            note = (request.POST.get(f"note_{oid}") or "").strip()
+            note = (request.POST.get(f"note_{oid}") or "").strip()[:MAX_NOTE]
             if note:
                 notes[str(oid)] = note
         defaults["option_texts"] = notes

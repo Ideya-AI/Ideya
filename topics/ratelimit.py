@@ -16,18 +16,23 @@ from django.core.cache import cache
 
 # Per-IP ceiling on participation writes (votes, stances, leans, prompt answers).
 # Generous for an enthusiastic human; murderous for a script.
-PARTICIPATE_LIMIT = 60
+PARTICIPATE_LIMIT = 20
 PARTICIPATE_WINDOW = 60  # seconds
+# Daily ceiling: a script pacing itself under the per-minute cap all day.
+PARTICIPATE_DAY_LIMIT = 300
+PARTICIPATE_DAY_WINDOW = 24 * 60 * 60
 
 
 def client_ip(request) -> str:
-    """Best-effort client IP. Behind a reverse proxy the real client is the first
-    X-Forwarded-For hop; otherwise the socket peer. (XFF is client-spoofable when
-    not behind a trusted proxy — acceptable for a soft-signal rate cap.)"""
-    xff = request.META.get("HTTP_X_FORWARDED_FOR")
-    if xff:
-        return xff.split(",")[0].strip()
-    return request.META.get("REMOTE_ADDR", "") or "unknown"
+    """Client IP. Cloudflare sets CF-Connecting-IP and overwrites any value the
+    client sends; the tunnel is the only way in, so it cannot be forged. Not
+    X-Forwarded-For: Cloudflare appends to it, leaving the first hop
+    client-controlled. Without the header (local dev) it is the socket peer."""
+    return (
+        request.META.get("HTTP_CF_CONNECTING_IP")
+        or request.META.get("REMOTE_ADDR", "")
+        or "unknown"
+    )
 
 
 def rate_limited(request, scope: str, limit: int, window: int) -> bool:

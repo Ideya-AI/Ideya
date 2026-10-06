@@ -39,11 +39,6 @@ POS_COLORS = [
 # Also gates the bar itself: below the sample, poles render without % or bar.
 MIN_STANCE_SAMPLE = 10
 
-# Importance-vote reorder gate (questions + positions). Counts votes CAST
-# (Vote rows), not the net score. Research seeds the initial order; vote order
-# takes over once real participation accrues. Counts themselves always show.
-MIN_VOTES_REORDER = 25  # per list: vote order replaces research order
-
 
 def minus_sign(text):
     """A hyphen used as a minus sign ("-0.1", "-$0.7") becomes a true minus
@@ -459,8 +454,7 @@ class Section(models.Model):
     def questions_tiles(self):
         """Ranked Questions annotated for the two-axis list: `is_extra`
         questions (beyond QUESTIONS_SHOWN) appear only when Go-deeper is open.
-        Uses the prefetched queryset (research order, or vote order once the
-        list passes MIN_VOTES_REORDER)."""
+        Uses the prefetched queryset (file order; votes never reorder)."""
         questions = list(self.questions.all())
         for i, q in enumerate(questions):
             q.is_extra = i >= self.QUESTIONS_SHOWN
@@ -707,8 +701,7 @@ class Question(models.Model):
                 name="unique_question_item_id",
             ),
         ]
-        # Research order by default; the view layer switches to vote order once
-        # a topic's questions pass MIN_VOTES_REORDER real votes.
+        # File order; votes show as counts and never reorder.
         ordering = ["order", "id"]
 
     def __str__(self) -> str:
@@ -805,9 +798,7 @@ class Position(models.Model):
                 name="unique_position_item_id",
             ),
         ]
-        # File order is the whole mechanism for weight (§8); the view layer
-        # switches to importance-vote order once the topic's positions pass
-        # MIN_VOTES_REORDER real votes.
+        # File order is the whole mechanism for weight (§8); votes never reorder.
         ordering = ["order", "id"]
 
     def __str__(self) -> str:
@@ -1099,8 +1090,6 @@ class ParticipationEvent(models.Model):
         related_name="+",
     )
     session_key = models.CharField(max_length=40, blank=True, db_index=True)
-    ip = models.CharField(max_length=45, blank=True)
-    user_agent = models.CharField(max_length=300, blank=True)
     created_at = models.DateTimeField(auto_now_add=True, db_index=True)
 
     class Meta:

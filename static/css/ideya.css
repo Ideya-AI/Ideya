@@ -230,6 +230,13 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .stub-note { display: flex; gap: 13px; margin-top: 26px; padding: 18px 20px; border-style: dashed; background: var(--ink-50); }
 .stub-note.draft-note { margin: 0 0 10px; border-color: color-mix(in srgb, var(--notice) 45%, var(--ink-100)); }
 .stub-note.draft-note i { color: var(--notice); }
+.stub-note.orient-note { margin: 0 0 10px; align-items: flex-start; }
+.orient-ok { flex: none; align-self: center; }
+@media (max-width: 640px) {
+  .stub-note.orient-note { flex-wrap: wrap; }
+  .orient-note div { flex: 1 1 calc(100% - 35px); }
+  .orient-ok { margin-left: 35px; align-self: flex-start; }
+}
 .stub-note i { font-size: 22px; color: var(--accent-strong); flex: none; margin-top: 1px; }
 .stub-note div { font-size: var(--text-sm); line-height: var(--leading-normal); color: var(--fg2); }
 .stub-note b { display: block; color: var(--fg1); font-weight: var(--weight-semibold); margin-bottom: 3px; }

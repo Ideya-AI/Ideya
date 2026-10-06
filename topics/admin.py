@@ -296,10 +296,10 @@ class ParticipationEventAdmin(admin.ModelAdmin):
 
     list_display = (
         "created_at", "kind", "action", "topic_slug", "target_kind",
-        "target_text", "prompt_text", "session_key", "ip",
+        "target_text", "prompt_text", "session_key",
     )
     list_filter = ("kind", "action", "target_kind", "trigger", "topic_slug")
-    search_fields = ("target_text", "prompt_text", "session_key", "ip", "payload")
+    search_fields = ("target_text", "prompt_text", "session_key", "payload")
     date_hierarchy = "created_at"
     readonly_fields = [f.name for f in ParticipationEvent._meta.fields]
 

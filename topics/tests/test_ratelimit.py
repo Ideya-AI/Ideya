@@ -37,11 +37,15 @@ class RateLimitHelperTests(TestCase):
         self.assertTrue(rate_limited(req, "votes", 1, 60))  # votes scope spent
         self.assertFalse(rate_limited(req, "text", 1, 60))  # text scope fresh
 
-    def test_client_ip_prefers_forwarded_for(self):
+    def test_client_ip_uses_cloudflare_header_not_forwarded_for(self):
         req = self.rf.post(
-            "/x", REMOTE_ADDR="127.0.0.1", HTTP_X_FORWARDED_FOR="9.9.9.9, 127.0.0.1"
+            "/x",
+            REMOTE_ADDR="127.0.0.1",
+            HTTP_X_FORWARDED_FOR="6.6.6.6, 9.9.9.9",
+            HTTP_CF_CONNECTING_IP="9.9.9.9",
         )
         self.assertEqual(client_ip(req), "9.9.9.9")
+        self.assertEqual(client_ip(self.rf.post("/x", REMOTE_ADDR="1.2.3.4")), "1.2.3.4")
 
 
 @override_settings(PARTICIPATION_RATELIMIT=True)
@@ -78,3 +82,15 @@ class VoteRateLimitTests(NuclearFixtureMixin, TestCase):
             ).status_code,
             200,
         )
+
+    def test_daily_cap_blocks_a_script_pacing_under_the_minute_cap(self):
+        from unittest import mock
+
+        with mock.patch("topics.ratelimit.PARTICIPATE_LIMIT", 100), mock.patch(
+            "topics.ratelimit.PARTICIPATE_DAY_LIMIT", 3
+        ):
+            codes = [
+                self.client.post(self.url, {"dir": "up"}, REMOTE_ADDR="203.0.113.9").status_code
+                for _ in range(4)
+            ]
+        self.assertEqual(codes, [200, 200, 200, 429])

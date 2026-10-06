@@ -171,7 +171,7 @@ class LayeredReadingTests(NuclearFixtureMixin, TestCase):
 
     def test_topic_page_has_expanders_not_global_toggle(self):
         resp = self.client.get("/nuclear-energy/")
-        self.assertContains(resp, "Go deeper")
+        self.assertContains(resp, "'Show less' : 'Go deeper'")
         self.assertNotContains(resp, "Reading depth")
         self.assertNotContains(resp, "data-depth")
 
@@ -180,7 +180,7 @@ class LayeredReadingTests(NuclearFixtureMixin, TestCase):
         section = Section.objects.create(topic=topic, kind=Section.QUESTIONS)
         self.assertFalse(section.questions_has_extra)
         resp = self.client.get("/bare/")
-        self.assertNotContains(resp, "Go deeper")
+        self.assertNotContains(resp, "'Show less' : 'Go deeper'")
 
 
 class SearchAndSeoTests(NuclearFixtureMixin, TestCase):

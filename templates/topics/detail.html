@@ -67,6 +67,17 @@
         {% if topic.status == "ready" %}Publish it to make it live.{% else %}It cannot be published until it is marked ready.{% endif %}</div>
       </div>
       {% endif %}
+      {% if sections %}
+      {% comment %}First-visit orientation. Dismissal is remembered in localStorage;
+      headless Chrome (the render_* captures) never shows it.{% endcomment %}
+      <div class="stub-note card orient-note" x-data="{ show: !/HeadlessChrome/.test(navigator.userAgent) &amp;&amp; (() => { try { return !localStorage.getItem('ideya-oriented') } catch (e) { return true } })() }"
+           x-show="show" x-cloak style="display:none">
+        <i class="ph-duotone ph-compass"></i>
+        <div><b>New to Ideya?</b>
+        Each topic lays out an important issue in six sections: Overview, Basics, Questions, Positions, Crux, Actions. Read each at a glance, or “Go deeper” anywhere. Upvote what matters, and tell us what’s missing.</div>
+        <button type="button" class="deeper orient-ok" @click="show = false; try { localStorage.setItem('ideya-oriented', '1') } catch (e) {}">Got it</button>
+      </div>
+      {% endif %}
       {% if not sections %}
       <section class="sec" id="overview">
         <div class="ov-badges">

@@ -78,6 +78,14 @@ CSRF_TRUSTED_ORIGINS = _env_list("DJANGO_CSRF_TRUSTED_ORIGINS")
 # leans, prompt answers). Off during the test run so the shared local-memory
 # cache counter doesn't bleed across cases; the rate-limit tests re-enable it.
 PARTICIPATION_RATELIMIT = "test" not in sys.argv
+# Rate-limit counters live here. LocMem's default 300-entry cap would evict a
+# day's per-IP counters once a few hundred readers show up.
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
+        "OPTIONS": {"MAX_ENTRIES": 100_000},
+    }
+}
 
 # Public origin baked into print artifacts (poster QR codes), scheme included,
 # e.g. PUBLIC_ORIGIN=https://ideya1.org. Empty → fall back to the
