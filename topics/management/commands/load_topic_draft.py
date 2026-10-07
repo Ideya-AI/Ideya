@@ -8,9 +8,8 @@ Reads one topic file: `{slug, title, status, scope, primary_category,
 categories, related}` plus
 `content` once there is content. That file is the topic, cradle to grave — a topic
 with only a title is the same object, earlier — and it is the ONLY source for a
-topic's identity, placement and lifecycle. The engine's own output (gate
-verdicts, the claim ledger, prescribed fixes) is process, lives in
-research/runs/<slug>/record.json, and never enters the database.
+topic's identity, placement and lifecycle. Pipeline process (research notes,
+audit packets, run logs) lives beside it and never enters the database.
 """
 
 import datetime

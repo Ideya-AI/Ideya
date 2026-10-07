@@ -39,9 +39,8 @@ class ExportTopicTests(NuclearFixtureMixin, TestCase):
         return json.loads(buf.getvalue())
 
     def test_envelope_is_the_topic_file_shape(self):
-        """One file per topic: index fields at the top, `content` under them. Gate
-        verdicts, the claim ledger and prescribed fixes are process and live in
-        research/runs/<slug>/, never here."""
+        """One file per topic: index fields at the top, `content` under them.
+        Pipeline process never lands in it."""
         payload = self._export_payload()
         self.assertNotIn("verdicts", payload)
         self.assertNotIn("claim_ledger", payload)

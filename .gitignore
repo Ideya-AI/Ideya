@@ -9,7 +9,6 @@ db.sqlite3
 db.sqlite3-journal
 db.sqlite3.bak
 staticfiles/
-media/
 .env
 *.log
 
@@ -21,7 +20,6 @@ media/
 # Agent worktrees (transient) + local Claude settings
 .claude/worktrees/
 .claude/settings.local.json
-.playwright-mcp/
 
 # Transient pipeline artifacts
 static/posters/
@@ -30,20 +28,13 @@ static/posters/
 TODO.md
 
 # Local operational data
-research/token-ledger.local.md
-research/engine-scorecard.local.md
 research/participation/
 
-# A topic is a directory (2026-09-11). Its product is tracked — topic.json,
-# evidence.json, icon.md, review.md — and its process is not. Drawing the line
-# inside the topic directory is what keeps an untracked sweep from swallowing
-# something load-bearing, the way the claim ledger nearly went with runs/.
+# A topic is a directory. Its product is tracked (topic.json, research.md,
+# icon.md, audit.md, share/); its process is not.
 research/topics/*/run/
 research/topics/*/renders/
 research/topics/*/candidates/
-
-# Archived pipeline runs (large: fetched sources, journals)
-research/runs/
 
 # Claude Code project instructions: local only
 CLAUDE.md
