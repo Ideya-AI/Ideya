@@ -19,12 +19,9 @@ from ..models import (
 
 
 class NuclearFixtureMixin:
-    """Seeds the Nuclear Energy topic the way fresh databases do now — through
-    the loader from the archived v1 page at research/archive/v1/nuclear-energy/
-    (the live topic file is index-only until v2 authors it). (The old seed
-    migration 0002 was retired/emptied 2026-07-10; content's single source of
-    truth is the per-topic JSON.) Also creates a published section-less stub
-    so the empty-state path stays covered."""
+    """Seeds the Nuclear Energy topic the way fresh databases do: through the
+    loader from its topic file. Also creates a published section-less stub so
+    the empty-state path stays covered."""
 
     @classmethod
     def setUpTestData(cls):
@@ -42,7 +39,7 @@ class NuclearFixtureMixin:
             )
         call_command(
             "load_topic_draft",
-            file=str(Path(settings.BASE_DIR) / "research/archive/v1/nuclear-energy/topic.json"),
+            file=str(Path(settings.BASE_DIR) / "research/topics/nuclear-energy/topic.json"),
             slug="nuclear-energy",
             title="Nuclear Energy",
             category="climate-energy",
