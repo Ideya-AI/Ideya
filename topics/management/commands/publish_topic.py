@@ -120,7 +120,7 @@ class Command(BaseCommand):
 
     def _live_block(self, slug, off):
         """One database serves this session and the live site, so the switch is
-        already live; what is left is committing the file (docs/DEPLOY.md §3)."""
+        already live; what is left is committing the file (docs/ARCHITECTURE.md, Operations §3)."""
         if off:
             return "Private on the live site too (one shared database).\n"
         return (

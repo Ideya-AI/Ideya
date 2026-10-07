@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # --------------------------------------------------------------------------- #
 # Environment (12-factor). A local .env (gitignored) is loaded if present so
-# `manage.py runserver` works with no exports; docs/DEPLOY.md documents every
+# `manage.py runserver` works with no exports; docs/ARCHITECTURE.md documents every
 # variable. Production sets real environment variables.
 # --------------------------------------------------------------------------- #
 def _load_dotenv(path):
