@@ -106,6 +106,12 @@ class Category(models.Model):
         rel = f"img/categories/{self.slug}.png"
         return rel if (settings.BASE_DIR / "static" / rel).exists() else None
 
+    @property
+    def primary_art_webp(self):
+        """The same art as WebP (quality 90) for web pages; None when missing."""
+        rel = f"img/categories/{self.slug}.webp"
+        return rel if (settings.BASE_DIR / "static" / rel).exists() else None
+
 
 class PublishedTopicManager(models.Manager):
     def get_queryset(self):
@@ -270,6 +276,13 @@ class Topic(models.Model):
         fall back to the Phosphor glyph tile. The committed asset rides the
         existing WhiteNoise/manifest static pipeline."""
         rel = f"img/topics/{self.slug}.png"
+        return rel if (settings.BASE_DIR / "static" / rel).exists() else None
+
+    @property
+    def primary_art_webp(self):
+        """The same art as WebP (quality 90) for web pages; None when missing.
+        Share cards and posters keep the PNG."""
+        rel = f"img/topics/{self.slug}.webp"
         return rel if (settings.BASE_DIR / "static" / rel).exists() else None
 
     @property

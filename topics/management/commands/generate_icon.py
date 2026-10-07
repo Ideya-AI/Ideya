@@ -268,6 +268,8 @@ def normalize(src, out):
             )
     out.parent.mkdir(parents=True, exist_ok=True)
     canvas.save(out, "PNG", optimize=True)
+    # Web pages serve this WebP; share cards and posters keep the PNG.
+    canvas.save(out.with_suffix(".webp"), "WEBP", quality=90, method=6)
     thumb = canvas.copy()
     thumb.thumbnail((40, 40), Image.LANCZOS)
     thumb_path = Path(src).with_suffix(".40px.png")

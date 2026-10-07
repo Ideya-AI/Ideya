@@ -188,6 +188,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .ov-hero { display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px; align-items: center; margin-bottom: 22px; }
 .ov-art { margin: 0; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
 .ov-art img { display: block; width: 100%; height: auto; }
+/* <picture> wraps art for the WebP source; it must not add a box of its own */
+.ov-art picture, .sp-art picture, .mi-art picture { display: contents; }
 .ov-hero-text { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
 .ov-hero-text .ov-badges { margin-bottom: 0; }
 .ov-desc--art { font-size: var(--text-lg); max-width: none; }

@@ -22,7 +22,7 @@
       {% if category.primary_art %}
       {# same hero as the topic page: art left in a surface card, text right #}
       <div class="ov-hero">
-        <figure class="ov-art"><img src="{% static category.primary_art %}" alt="" width="512" height="512"></figure>
+        <figure class="ov-art"><picture>{% if category.primary_art_webp %}<source srcset="{% static category.primary_art_webp %}" type="image/webp">{% endif %}<img src="{% static category.primary_art %}" alt="" width="512" height="512"></picture></figure>
         <div class="ov-hero-text">
           <span class="cov-kicker"><i class="ph-duotone ph-folders"></i>Category</span>
           <h1 class="cov-title">{{ category.name }}</h1>
