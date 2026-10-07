@@ -22,7 +22,7 @@ The control mirrors the .lean / .ad chip patterns — token-based, lightly style
       hx-post="{% url 'topics:respond' prompt.id %}" hx-include="#ptext-{{ prompt.id }}" hx-swap="none"
       hx-trigger="confirmed"
       @click="const has = document.getElementById('ptext-{{ prompt.id }}').value.trim().length > 0;
-              if (has || saved) { htmx.trigger($el, 'confirmed'); $store.toast.flash(has ? 'Saved' : 'Cleared'); saved = has; }"><i class="ph-fill ph-paper-plane-tilt"></i></button>
+              if (has || saved) { $el.dataset.ok = has ? 'Saved' : 'Cleared'; htmx.trigger($el, 'confirmed'); saved = has; }"><i class="ph-fill ph-paper-plane-tilt"></i></button>
   </div>
 
   {% comment %}--- CHOOSE ONE (radio chips; re-click the picked one to clear) ---{% endcomment %}
@@ -56,9 +56,11 @@ The control mirrors the .lean / .ad chip patterns — token-based, lightly style
       {% if not o.position %}
       <div class="note-send">
         <input type="text" class="field pick-note" name="note_{{ o.id }}" value="{% if ur %}{{ ur.option_texts|dictget:o.id }}{% endif %}" placeholder="What do you think?">
-        <button type="button" class="send-btn" aria-label="Save note"
+        <button type="button" class="send-btn" aria-label="Save note" data-ok="Saved"
           hx-post="{% url 'topics:respond' prompt.id %}" hx-include="#pf-{{ prompt.id }}" hx-swap="none"
-          @click="$store.toast.flash('Saved')"><i class="ph-fill ph-paper-plane-tilt"></i></button>
+          hx-trigger="confirmed"
+          @click="if ($el.previousElementSibling.value.trim()) $el.closest('.pick-row').querySelector('input[type=checkbox]').checked = true;
+                  htmx.trigger($el, 'confirmed')"><i class="ph-fill ph-paper-plane-tilt"></i></button>
       </div>
       {% endif %}
     </div>
@@ -69,7 +71,7 @@ The control mirrors the .lean / .ad chip patterns — token-based, lightly style
       <textarea class="pick-own-input" name="text" rows="2" placeholder="Something else — your own position…">{% if ur %}{{ ur.text }}{% endif %}</textarea>
       <button type="button" class="send-btn" aria-label="Save"
         hx-post="{% url 'topics:respond' prompt.id %}" hx-include="#pf-{{ prompt.id }}" hx-swap="none"
-        @click="$store.toast.flash('Saved')"><i class="ph-fill ph-paper-plane-tilt"></i></button>
+        data-ok="Saved"><i class="ph-fill ph-paper-plane-tilt"></i></button>
     </div>
     {% endif %}
   </div>

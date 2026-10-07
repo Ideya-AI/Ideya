@@ -46,13 +46,16 @@
       };
     });
 
-    // Transient confirmation toast — flash(msg) shows it briefly, then auto-hides.
+    // Transient toast — flash(msg) shows it briefly, then auto-hides; an error
+    // toast swaps the check for a warning icon.
     Alpine.store("toast", {
       show: false,
       msg: "",
+      error: false,
       _t: null,
-      flash(msg) {
+      flash(msg, error) {
         this.msg = msg;
+        this.error = !!error;
         this.show = true;
         clearTimeout(this._t);
         this._t = setTimeout(() => {
@@ -76,6 +79,26 @@
       if (top < 84) window.scrollBy({ top: top - 84, behavior: "instant" });
     }, 0);
   };
+
+  // Participation feedback: a control with data-ok confirms only once the
+  // server accepted the request; any failed request says why instead of
+  // failing silently.
+  function toast(msg, error) {
+    if (window.Alpine) Alpine.store("toast").flash(msg, error);
+  }
+  document.addEventListener("htmx:afterRequest", function (e) {
+    var ok = e.detail.elt && e.detail.elt.dataset && e.detail.elt.dataset.ok;
+    if (ok && e.detail.successful) toast(ok);
+  });
+  document.addEventListener("htmx:responseError", function (e) {
+    var status = e.detail.xhr ? e.detail.xhr.status : 0;
+    if (status === 429) toast("Too many actions. Try again in a minute.", true);
+    else if (status === 403) toast("This page expired. Reload it and try again.", true);
+    else toast("That didn’t save. Try again.", true);
+  });
+  document.addEventListener("htmx:sendError", function () {
+    toast("Couldn’t reach Ideya. Check your connection.", true);
+  });
 
   // Keyboard: "/" focuses search, Esc closes overlays. Registered once.
   document.addEventListener("keydown", function (e) {

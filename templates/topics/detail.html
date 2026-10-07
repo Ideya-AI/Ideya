@@ -7,12 +7,12 @@
 {% block og_title %}{{ topic.title }} — Ideya{% endblock %}
 {% block og_description %}{{ topic.summary }}{% endblock %}
 {% block og_image %}{% if topic.social_card %}
-  <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static topic.social_card %}" />
+  <meta property="og:image" content="{{ origin }}{% static topic.social_card %}" />
   <meta property="og:image:width" content="2400" />
   <meta property="og:image:height" content="1260" />
   <meta property="og:image:alt" content="{{ topic.title }} — {{ topic.summary }}" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="{{ request.scheme }}://{{ request.get_host }}{% static topic.social_card %}" />
+  <meta name="twitter:image" content="{{ origin }}{% static topic.social_card %}" />
 {% else %}{{ block.super }}{% endif %}{% endblock %}
 
 {% block head %}{% if topic.status != "published" %}<meta name="robots" content="noindex" />
@@ -330,6 +330,6 @@
   {% include "topics/components/_follow_modal.html" %}
   <div class="toast" x-data x-cloak x-show="$store.toast.show"
        x-transition.opacity.duration.250ms role="status" aria-live="polite">
-    <i class="ph-fill ph-check-circle"></i><span x-text="$store.toast.msg"></span>
+    <i class="ph-fill" :class="$store.toast.error ? 'ph-warning-circle' : 'ph-check-circle'"></i><span x-text="$store.toast.msg"></span>
   </div>
 {% endblock %}

@@ -6,10 +6,9 @@ cookie). That can't be made spam-*proof* without accounts, but a per-IP write
 cap makes it spam-*resistant*: it crushes scripted mass-voting (thousands of
 requests) while a real reader clicking around never approaches the ceiling.
 
-Backed by the Django cache (default local-memory). Note: local-memory is
-per-process, so under multiple gunicorn workers the effective limit is
-multiplied by the worker count — fine for a small self-hosted deploy; point
-CACHES at Redis or the database cache for a shared counter.
+Backed by the Django cache, a file cache shared by every gunicorn worker. Its
+increment is not atomic across processes, so a burst can slip a few requests
+past the cap; for a soft limit that is fine.
 """
 
 from django.core.cache import cache

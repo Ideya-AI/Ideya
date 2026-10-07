@@ -78,11 +78,13 @@ CSRF_TRUSTED_ORIGINS = _env_list("DJANGO_CSRF_TRUSTED_ORIGINS")
 # leans, prompt answers). Off during the test run so the shared local-memory
 # cache counter doesn't bleed across cases; the rate-limit tests re-enable it.
 PARTICIPATION_RATELIMIT = "test" not in sys.argv
-# Rate-limit counters live here. LocMem's default 300-entry cap would evict a
-# day's per-IP counters once a few hundred readers show up.
+# Rate-limit counters live here: a file cache, so every gunicorn worker counts
+# against the same per-IP limits. Inside the container it is per-container /tmp
+# and resets on restart. The entry cap is high so a day's counters are not culled.
 CACHES = {
     "default": {
-        "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
+        "BACKEND": "django.core.cache.backends.filebased.FileBasedCache",
+        "LOCATION": os.environ.get("DJANGO_CACHE_DIR") or f"/tmp/ideya-cache-{os.getuid()}",
         "OPTIONS": {"MAX_ENTRIES": 100_000},
     }
 }

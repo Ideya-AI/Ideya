@@ -56,7 +56,7 @@ detail 350 to 1300. question text under 110 and ending in a question mark, why 1
 to 260, detail 500 to 1400, lean labels under 20 each (longer ones wrap on a phone). position name under 60,
 steelman 100 to 200 (rendered as the camp's own quote, one breath), detail 500 to
 1800 (two short paragraphs are fine, separated by a blank line), proponents a
-comma-separated list of names. crux lead under 110 with lead_highlight a phrase
+semicolon-separated list of names. crux lead under 110 with lead_highlight a phrase
 copied verbatim from it, subtitle 120 to 320, empirical and values 180 to 450 each.
 action description 100 to 220. The poster is a fixed 18×24 inch sheet; it steps its
 crux type down by length and prints at most four ranked rows, so it fits any crux
