@@ -72,7 +72,7 @@ def topic_body(topic) -> str:
 
 
 def rebuild():
-    from .models import Category, Position, Topic
+    from .models import Category, Topic
 
     if not available():
         return
@@ -82,5 +82,3 @@ def rebuild():
         upsert("topic", t.id, t.title, topic_body(t))
     for cat in Category.objects.all():
         upsert("category", cat.id, cat.name, cat.description)
-    for p in Position.objects.all():
-        upsert("position", p.id, p.name, p.steelman)

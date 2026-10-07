@@ -29,10 +29,8 @@ def path_for(slug):
 
 
 def set_status(topic, status, **extra_fields):
-    """Write `status` to the topic's file, then to its row. Returns the file path.
-
-    `extra_fields` are applied to the row only (reviewed_at and friends are
-    database bookkeeping, not content)."""
+    """Write `status` and `extra_fields` (e.g. published_at) to the topic's file,
+    then to its row. Returns the file path."""
     path = path_for(topic.slug)
     if not path.exists():
         raise FileNotFoundError(
@@ -40,6 +38,8 @@ def set_status(topic, status, **extra_fields):
         )
     doc = json.loads(path.read_text(encoding="utf-8"))
     doc["status"] = status
+    for k, v in extra_fields.items():
+        doc[k] = v.isoformat() if hasattr(v, "isoformat") else v
     path.write_text(
         json.dumps(doc, ensure_ascii=False, indent=1) + "\n", encoding="utf-8"
     )

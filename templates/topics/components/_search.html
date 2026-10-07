@@ -6,9 +6,9 @@ Enter in the submit modal or a login form) while the overlay is closed.{% endcom
   <div class="scrim" @click="$store.search.open = false"></div>
   <div class="search-pop pop"
        x-data="{ q: '', busy: false, sel: -1,
-                 html: '<div class=\'sp-empty\'>Start typing to search topics, categories and positions.</div>',
+                 html: '<div class=\'sp-empty\'>Start typing to search topics and categories.</div>',
                  run() {
-                   if (!this.q.trim()) { this.html = '<div class=\'sp-empty\'>Start typing to search topics, categories and positions.</div>'; this.sel = -1; return; }
+                   if (!this.q.trim()) { this.html = '<div class=\'sp-empty\'>Start typing to search topics and categories.</div>'; this.sel = -1; return; }
                    this.busy = true;
                    fetch('{% url 'topics:search' %}?q=' + encodeURIComponent(this.q))
                      .then(r => r.text()).then(t => { this.html = t; this.sel = -1; this.busy = false; });
@@ -38,7 +38,7 @@ Enter in the submit modal or a login form) while the overlay is closed.{% endcom
     <div class="sp-field">
       <i class="ph-duotone ph-magnifying-glass"></i>
       <input type="text" x-model="q" @input.debounce.150ms="run()"
-             placeholder="Search topics, categories, positions…" aria-label="Search topics, categories, positions"
+             placeholder="Search topics and categories…" aria-label="Search topics and categories"
              x-ref="sinput" x-effect="if ($store.search.open) $nextTick(() => $refs.sinput.focus())" />
       <i class="ph-duotone ph-circle-notch spin" x-show="busy" x-cloak style="display:none"></i>
       <span class="kbd">esc</span>

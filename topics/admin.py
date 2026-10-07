@@ -35,7 +35,7 @@ class TopicSectionInline(admin.TabularInline):
 
     model = Section
     extra = 0
-    fields = ("kind", "intro")
+    fields = ("kind",)
     show_change_link = True
 
 
@@ -221,11 +221,8 @@ class CruxInline(admin.StackedInline):
 class SectionAdmin(admin.ModelAdmin):
     list_display = ("__str__", "kind", "topic", "category")
     list_filter = ("kind",)
-    search_fields = ("topic__title", "category__name", "intro", "body")
-    fieldsets = (
-        (None, {"fields": ("topic", "category", "kind")}),
-        ("Content", {"fields": ("intro", "body")}),
-    )
+    search_fields = ("topic__title", "category__name")
+    fields = ("topic", "category", "kind")
 
     def get_inlines(self, request, obj=None):
         if obj is None:
