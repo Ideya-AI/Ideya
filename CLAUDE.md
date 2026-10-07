@@ -18,7 +18,7 @@ Positions, Crux, Actions, each opening at a glance and expanding in place.
   and never `publish_topic`. Publishing is stage 5 and belongs
   to the human. A topic's core status is one field with four stops —
   `not_started` → `in_progress` → `ready` → `published`. The engine's job ends at
-  `ready`; only Jeff crosses the last line, and only `published` is public.
+  `ready`; only the human crosses the last line, and only `published` is public.
 - **The pipeline never edits templates or CSS.** Log code/CSS defects in the topic's
   review packet for the human instead.
 - **Content fields are plain text**: write `&`, never `&amp;`; typographic quotes
@@ -58,7 +58,7 @@ Positions, Crux, Actions, each opening at a glance and expanding in place.
 - `research/SCHEMA.md` — **the topic file schema**. Authoritative.
 - `docs/DESIGN.md` — the design system as notes: useful context, not a rule that
   overrides anything. The app itself is the real spec — `templates/` and
-  `static/css/tokens.css` are closer to the truth than the doc, and what Jeff
+  `static/css/tokens.css` are closer to the truth than the doc, and what the owner
   asks for wins over both.
 
 ## The authoring pipeline

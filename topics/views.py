@@ -61,7 +61,7 @@ def _authored(qs):
 
 
 def _ordered_sections(parent_field, parent):
-    # File order only: votes show as counts and never reorder (Jeff 2026-10-06:
+    # File order only: votes show as counts and never reorder (2026-10-06:
     # a reorder is an editorial decision).
     positions = Position.objects.order_by("order", "id")
     questions = Question.objects.order_by("order", "id")
@@ -217,7 +217,7 @@ def _with_follow_up(request, response, target, obj, trigger, eyebrow, icon):
 # --------------------------------------------------------------------------- #
 # Pages
 # --------------------------------------------------------------------------- #
-# Home spotlight and the four cards under it, chosen by Jeff 2026-10-06. A slug
+# Home spotlight and the four cards under it, chosen 2026-10-06. A slug
 # that is not published is skipped and the slot falls back to file order.
 SPOTLIGHT = "ai-future-of-work"
 BENCH = [
