@@ -39,7 +39,8 @@ directory with `-expanded`, so the two do not collide. Always pass
    confirm the expanded full-page image is taller than the collapsed one, otherwise
    the flag was silently ignored and the server must be restarted with DEBUG on.
 3. `.venv/bin/python manage.py render_social --slug <slug> --base-url http://localhost:8641 --formats og,sq,pt`
-   (writes `static/img/social/<slug>.png`, `-sq.png`, `-pt.png`).
+   (writes `static/img/social/<slug>.png`, and `<slug>-sq.png`, `<slug>-pt.png` to
+   `research/topics/<slug>/share/`).
 4. `.venv/bin/python manage.py render_poster --slug <slug> --base-url http://localhost:8641`
    (fit check, then `static/posters/<slug>.pdf`). An overflow is reported with the
    band that overflows.

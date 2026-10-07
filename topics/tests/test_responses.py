@@ -1,8 +1,7 @@
 """The reader-facing capture layer: the respond() view (upsert + retract for each
-prompt kind, option validation, rating clamp), the session→user merge, and that
+prompt kind, option validation, rating clamp) and that
 Prompt.response_stats reflects what was captured."""
 
-from django.contrib.auth import get_user_model
 from django.test import Client, TestCase
 from django.urls import reverse
 
@@ -14,9 +13,6 @@ from topics.models import (
     Section,
     Topic,
 )
-from topics.participation import merge_session_participation
-
-User = get_user_model()
 
 
 def client():
@@ -119,33 +115,6 @@ class RespondViewTests(TestCase):
         p = Prompt.objects.create(kind=Prompt.FREE_TEXT, text="x", active=False)
         resp, _ = self._post(p, {"text": "hi"})
         self.assertEqual(resp.status_code, 404)
-
-
-class ResponseMergeTests(TestCase):
-    def test_session_response_moves_to_user(self):
-        p = Prompt.objects.create(kind=Prompt.FREE_TEXT, text="why?")
-        Response.objects.create(prompt=p, session_key="sess", text="anon")
-        user = User.objects.create_user("u@example.com", "x")
-
-        merge_session_participation(user, "sess")
-        r = Response.objects.get(prompt=p)
-        self.assertEqual(r.user, user)
-        self.assertEqual(r.session_key, "")
-
-    def test_session_response_wins_conflict(self):
-        p = Prompt.objects.create(kind=Prompt.FREE_TEXT, text="why?")
-        user = User.objects.create_user("u@example.com", "x")
-        Response.objects.create(prompt=p, user=user, text="old user answer")
-        Response.objects.create(
-            prompt=p, session_key="sess", text="fresh session answer"
-        )
-
-        merge_session_participation(user, "sess")
-        # One row survives, and it's the session (fresher) answer, now the user's.
-        self.assertEqual(Response.objects.filter(prompt=p).count(), 1)
-        r = Response.objects.get(prompt=p)
-        self.assertEqual(r.user, user)
-        self.assertEqual(r.text, "fresh session answer")
 
 
 class ResponseStatsViewTests(TestCase):

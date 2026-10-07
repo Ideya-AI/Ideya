@@ -264,9 +264,7 @@ def collect_links(topic_slug: Optional[str]) -> list[LinkItem]:
     into the Command class."""
     items: list[LinkItem] = []
 
-    # submit_view is the internal "Add your view" CTA — no external URL by
-    # design, so it is not a link to check.
-    actions = Action.objects.exclude(kind=Action.SUBMIT_VIEW).select_related(
+    actions = Action.objects.select_related(
         "section__topic", "section__category"
     )
     stats = Stat.objects.select_related("section__topic", "section__category")

@@ -34,13 +34,10 @@
       </div>
       {% endif %}
       <p class="cov-desc">{{ category.description }}</p>
-      {% if category.parent or category.connects_to.all %}
+      {% if category.connects_to.all %}
       <div class="cov-connects">
         <div class="ck">Connects to</div>
         <div class="chips">
-          {% if category.parent %}
-          <a class="rchip" href="{{ category.parent.get_absolute_url }}"><i class="ph-duotone ph-tree-structure" style="color:var(--cat)"></i>{{ category.parent.name }}</a>
-          {% endif %}
           {% for c in category.connects_to.all %}
           <a class="rchip" href="{{ c.get_absolute_url }}"><i class="ph-duotone ph-{{ c.icon|default:'squares-four' }}"></i>{{ c.name }}</a>
           {% endfor %}

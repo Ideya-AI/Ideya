@@ -38,7 +38,7 @@
     </div>
     {% endwith %}
 
-    {% if bench or soon %}
+    {% if bench %}
     <div class="sp-bench">
       {% for t in bench %}{% with cc=t.color_category %}
       <a class="sp-mini" href="{{ t.get_absolute_url }}" {% if cc %}style="--cat: {{ cc.color_var }}; --cat-tint: {{ cc.tint_var }};"{% endif %}>
@@ -48,13 +48,6 @@
         </span>
         <div class="mn">{{ t.title }}</div>
         <span class="mgo">Explore <i class="ph-duotone ph-arrow-right"></i></span>
-      </a>
-      {% endwith %}{% endfor %}
-      {% for t in soon %}{% with cc=t.color_category %}
-      <a class="sp-mini soon" {% if cc %}href="{{ cc.get_absolute_url }}" style="--cat: {{ cc.color_var }}; --cat-tint: {{ cc.tint_var }};"{% endif %}>
-        <span class="mi"><i class="ph-duotone ph-{{ t.glyph }}"></i></span>
-        <div class="mn">{{ t.title }}</div>
-        <span class="mgo msoon">Coming soon</span>
       </a>
       {% endwith %}{% endfor %}
     </div>

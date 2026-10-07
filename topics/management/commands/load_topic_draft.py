@@ -90,7 +90,7 @@ def derive_viz(s, viz, series):
     file never authors them (SCHEMA.md, "Derived by code"). A value the file
     does carry wins, so exported files round-trip unchanged.
 
-    ranked/sparkline: each row's pct is its magnitude's share of the largest
+    ranked: each row's pct is its magnitude's share of the largest
     magnitude; a negative row is flagged `neg` and drawn from the other end.
     radial/bar: fill_pct is the value itself when the unit is a share in
     percent, or value/N for a unit "of N"; a rate or change ("% a year",
@@ -98,7 +98,7 @@ def derive_viz(s, viz, series):
     range: range_at is the value's position between range_min and range_max;
     a span value ("26–36") is left to Stat.range_band at render time.
     Any nonzero value gets at least 1, so a small share never draws empty."""
-    if viz in ("ranked", "sparkline"):
+    if viz == "ranked":
         nums = [_num(r.get("value")) for r in series]
         top = max((abs(n) for n in nums if n), default=None)
         if top:
@@ -539,7 +539,7 @@ class Command(BaseCommand):
             if viz not in dict(Stat.VIZ_CHOICES):
                 viz = "bar"
             series = s.get("series") or []
-            if viz in ("ranked", "sparkline") and not (
+            if viz == "ranked" and not (
                 isinstance(series, list) and series and isinstance(series[0], dict)
             ):
                 viz = "bar"
@@ -567,7 +567,7 @@ class Command(BaseCommand):
                         unit=s.get("unit", "")[:24],
                         viz=viz,
                         wide=bool(s.get("wide")),
-                        series=series if viz in ("ranked", "sparkline") else [],
+                        series=series if viz == "ranked" else [],
                         range_min=str(s.get("range_min") or "")[:40],
                         range_max=str(s.get("range_max") or "")[:40],
                         range_at=range_at,
@@ -736,13 +736,12 @@ class Command(BaseCommand):
 
         retired += self._sweep(Action, acts, action_keep)
 
-        # Placeholder guard: every external action must arrive with a real URL
-        # (submit_view is the internal CTA and has none by design). A "#" here
+        # Placeholder guard: every action must arrive with a real URL. A "#" here
         # means the draft skipped link authoring — flag it at the boundary so
         # the authoring engine cannot ship it silently.
         unauthored = [
             a
-            for a in acts.actions.exclude(kind=Action.SUBMIT_VIEW)
+            for a in acts.actions.all()
             if not a.url.strip() or a.url.strip().startswith("#")
         ]
         for a in unauthored:

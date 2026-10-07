@@ -24,7 +24,7 @@ from topics.models import POS_COLORS, Action, Stat
 
 POS_KEYS = [k for k, _ in POS_COLORS]
 VIZ = {k for k, _ in Stat.VIZ_CHOICES}
-ACTION_KINDS = {k for k, _ in Action.KIND_CHOICES} - {Action.SUBMIT_VIEW}
+ACTION_KINDS = {k for k, _ in Action.KIND_CHOICES}
 
 # Hard caps: the loader slices these (some silently). Over = ERROR.
 CAPS = {
@@ -347,15 +347,10 @@ def run(doc, path):
         for k, v in s.items():
             c.text(f"{w}.{k}", f"stat.{k}", v, url=(k == "source_url"))
         viz = s.get("viz")
-        if viz == "sparkline":
-            c.err(
-                w,
-                "the tile template draws no sparkline (it falls back to a bare number); use ranked for a short series or bar for one value",
-            )
         if viz not in VIZ:
             c.err(w, f"viz {viz!r} not in {sorted(VIZ)}")
         series = s.get("series") or []
-        if viz in ("ranked", "sparkline"):
+        if viz == "ranked":
             if len(series) < 2:
                 c.err(w, f"{viz} needs a series of 2+ rows")
             if viz == "ranked" and not s.get("wide"):

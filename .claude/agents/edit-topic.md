@@ -71,8 +71,8 @@ label and position name.
 - Rewording never changes a fact. Numbers, units, years, attributions and URLs come
   from `research.md` verbatim. Anything marked `[unverified]` is dropped, not kept.
 - Counts: stats 10 to 20, questions 5 to 8, positions 3 to 6, actions 6 to 10.
-- Basics: `viz` matches the data shape and is never `sparkline` (the site does not
-  draw one; a few points over time are a ranked tile); ranked tiles are `wide: true` with a
+- Basics: `viz` matches the data shape (a few points over time are a ranked
+  tile); ranked tiles are `wide: true` with a
   `series` of 2 or more rows sharing one unit and one `highlight: true` row where
   the topic's own value sits; range tiles carry `range_min` and `range_max` naming the scale the value sits on (never the value's own span, which would fill the whole track; a text label with a number in it is fine, like `255 new build`); value
   is empty on ranked tiles (the tile shows the series and its unit, never a headline

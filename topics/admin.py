@@ -22,8 +22,8 @@ from .models import (
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ("name", "slug", "color_key", "parent", "topic_count")
-    list_filter = ("color_key", "parent")
+    list_display = ("name", "slug", "color_key", "topic_count")
+    list_filter = ("color_key",)
     search_fields = ("name", "description")
     prepopulated_fields = {"slug": ("name",)}
     filter_horizontal = ("connects_to",)
@@ -92,9 +92,8 @@ class TopicAdmin(admin.ModelAdmin):
             "Review & freshness",
             {
                 "description": (
-                    "Volatility sets the review cadence (fast ~90d / medium ~180d "
-                    "/ slow ~365d); the clock runs from the last review, else the "
-                    "last research. Surfaced by the topics_due command."
+                    "Every topic is due for review 180 days after its last review, "
+                    "else its authoring. Surfaced by the topics_due command."
                 ),
                 "fields": (
                                 "review_due_display",

@@ -4,7 +4,7 @@ import qrcode.image.svg
 from django.conf import settings
 from django.contrib.contenttypes.models import ContentType
 from django.db import transaction
-from django.db.models import Count, F, Prefetch
+from django.db.models import F, Prefetch
 from django.http import HttpResponse, HttpResponseBadRequest
 from django.shortcuts import get_object_or_404, render
 from django.views.decorators.http import require_POST
@@ -54,28 +54,6 @@ from .models import (
 # --------------------------------------------------------------------------- #
 # Helpers
 # --------------------------------------------------------------------------- #
-def _decorate(topics):
-    """Attach `dots` (position colours) and `is_stub` to topic cards in one sweep."""
-    topics = list(topics)
-    if not topics:
-        return topics
-    ids = [t.id for t in topics]
-    dot_map = {}
-    for p in (
-        Position.objects.filter(section__topic_id__in=ids, section__kind="positions")
-        .select_related("section")
-        .order_by("order")
-    ):
-        dot_map.setdefault(p.section.topic_id, []).append(p.color_var)
-    authored = set(
-        Section.objects.filter(topic_id__in=ids).values_list("topic_id", flat=True)
-    )
-    for t in topics:
-        t.dots = dot_map.get(t.id, [])
-        t.is_stub = t.id not in authored
-    return topics
-
-
 def _authored(qs):
     """Public listings show only fully-mapped topics (a positions section
     exists) — stubs and in-progress topics never appear in a public list."""
@@ -85,12 +63,8 @@ def _authored(qs):
 def _ordered_sections(parent_field, parent):
     # File order only: votes show as counts and never reorder (Jeff 2026-10-06:
     # a reorder is an editorial decision).
-    positions = Position.objects.annotate(
-        votes_cast=Count("importance_votes", distinct=True),
-    ).order_by("order", "id")
-    questions = Question.objects.annotate(
-        votes_cast=Count("importance_votes", distinct=True)
-    ).order_by("order", "id")
+    positions = Position.objects.order_by("order", "id")
+    questions = Question.objects.order_by("order", "id")
     qs = Section.objects.filter(**{parent_field: parent}).prefetch_related(
         Prefetch("stats", queryset=Stat.objects.order_by("order", "id")),
         Prefetch("questions", queryset=questions),
@@ -288,23 +262,7 @@ def home(request):
     chosen = {t.slug: t for t in rest.filter(slug__in=BENCH)}
     picked = [chosen[s] for s in BENCH if s in chosen]
     picked += list(rest.exclude(slug__in=BENCH)[: 4 - len(picked)])
-    bench = _decorate(picked)
-    # Pad the bench to a full row of four with curated coming-soon drafts;
-    # each slot converts to a live card as the topic publishes.
-    soon = []
-    if len(bench) < 4:
-        teasers = [
-            "ai-existential-risk",
-            "gene-editing",
-            "democratic-backsliding-populism",
-        ]
-        by_slug = {
-            t.slug: t
-            for t in Topic.objects.filter(slug__in=teasers)
-            .exclude(status=Topic.PUBLISHED)
-            .select_related("primary_category")
-        }
-        soon = [by_slug[s] for s in teasers if s in by_slug][: 4 - len(bench)]
+    bench = picked
 
     categories = []
     for cat in Category.objects.prefetch_related(
@@ -315,13 +273,11 @@ def home(request):
     ):
         # Include every category so the directory is genuinely complete; empty
         # ones render as browsable "coming soon" cards into their category page.
-        categories.append({"category": cat, "topics": _decorate(cat.topics.all())})
+        categories.append({"category": cat, "topics": list(cat.topics.all())})
     # Populated categories lead; the not-yet-mapped ones cluster at the end.
     categories.sort(key=lambda g: 0 if g["topics"] else 1)
 
-    all_topics = _decorate(
-        _authored(Topic.published.select_related("primary_category"))
-    )
+    all_topics = _authored(Topic.published.select_related("primary_category"))
 
     return render(
         request,
@@ -329,7 +285,6 @@ def home(request):
         {
             "spotlight": spotlight,
             "bench": bench,
-            "soon": soon,
             "categories": categories,
             "all_topics": all_topics,
         },
@@ -369,7 +324,6 @@ def topic_detail(request, slug):
     related = topic.outgoing_edges.select_related(
         "target", "target__primary_category"
     ).all()
-    positions = next((s.positions.all() for s in sections if s.kind == "positions"), [])
     if request.user.is_authenticated:
         who = {"user": request.user}
     else:
@@ -408,7 +362,6 @@ def topic_detail(request, slug):
             "sections": sections,
             "can_preview": can_preview,
             "related": related,
-            "positions": positions,
             "topic_prompts": topic_prompts,
             "min_prompt_sample": MIN_PROMPT_SAMPLE,
             # DEBUG-only capture aid: ?expanded=1 forces all depth layers
@@ -422,18 +375,13 @@ def category_detail(request, slug):
     category = get_object_or_404(
         Category.objects.prefetch_related("connects_to"), slug=slug
     )
-    # Category sections are optional enrichment (none are seeded today) — the
-    # page renders overview + topics from the category itself regardless.
-    sec = {s.kind: s for s in _ordered_sections("category", category)}
-    topics = _decorate(
-        _authored(
-            category.topics(manager="published").select_related("primary_category")
-        )
+    topics = _authored(
+        category.topics(manager="published").select_related("primary_category")
     )
     return render(
         request,
         "topics/category.html",
-        {"category": category, "sec": sec, "topics": topics},
+        {"category": category, "topics": topics},
     )
 
 
@@ -561,15 +509,11 @@ def search(request):
     if q and fts.available():
         tids = fts.search_ids(q, "topic", 6)
         cids = fts.search_ids(q, "category", 4)
-        topics = _decorate(
-            _in_order(
-                _authored(
-                    Topic.published.filter(id__in=tids).select_related(
-                        "primary_category"
-                    )
-                ),
-                tids,
-            )
+        topics = _in_order(
+            _authored(
+                Topic.published.filter(id__in=tids).select_related("primary_category")
+            ),
+            tids,
         )
         categories = _in_order(Category.objects.filter(id__in=cids), cids)
     elif q:
@@ -615,14 +559,9 @@ def vote(request, target, pk):
     who = _participant(request)
     with transaction.atomic():
         existing = Vote.objects.filter(**who, **lookup).first()
-        if existing and existing.value == direction:
+        if existing:
             existing.delete()
             delta, user_vote = -direction, 0
-        elif existing:
-            delta = direction - existing.value
-            existing.value = direction
-            existing.save(update_fields=["value"])
-            user_vote = direction
         else:
             Vote.objects.create(**who, value=direction, **lookup)
             delta, user_vote = direction, direction
@@ -632,7 +571,6 @@ def vote(request, target, pk):
         )
     obj.refresh_from_db(fields=[counter])
     obj.user_vote = user_vote
-    obj.votes_cast = Vote.objects.filter(**lookup).count()
     # The control renders in the card and the mobile sheet under distinct ids.
     prefix = request.POST.get("prefix", "")
     context = {ctx: obj}

@@ -58,13 +58,6 @@ class Category(models.Model):
         blank=True,
         help_text="Equals the slug: maps to the --cat-<slug> token. Discovery tiers only.",
     )
-    parent = models.ForeignKey(
-        "self",
-        related_name="children",
-        on_delete=models.SET_NULL,
-        null=True,
-        blank=True,
-    )
     connects_to = models.ManyToManyField(
         "self",
         blank=True,
@@ -398,12 +391,6 @@ class Section(models.Model):
         except ValueError:
             return ""
 
-    def _crux_or_none(self):
-        try:
-            return self.crux
-        except Crux.DoesNotExist:
-            return None
-
     BASICS_ROWS_SHOWN = 3  # desktop rows before Go deeper
 
     @property
@@ -503,13 +490,11 @@ class Stat(models.Model):
     RADIAL = "radial"
     RANGE = "range"
     BAR = "bar"
-    SPARKLINE = "sparkline"
     VIZ_CHOICES = [
         (RANKED, "Ranked bars"),
         (RADIAL, "Radial"),
         (RANGE, "Range marker"),
         (BAR, "Single bar"),
-        (SPARKLINE, "Sparkline"),
     ]
 
     section = models.ForeignKey(Section, related_name="stats", on_delete=models.CASCADE)
@@ -687,7 +672,7 @@ class Question(models.Model):
         help_text="Deeper follow-up revealed when the question is expanded.",
     )
     votes = models.IntegerField(
-        default=0, help_text="Net importance (upvotes minus downvotes)."
+        default=0, help_text="Upvote count (a cache of its Vote rows)."
     )
     # Optional aggregated lean (shown at deep depth).
     lean_label_a = models.CharField(max_length=40, blank=True)
@@ -728,11 +713,8 @@ class Question(models.Model):
     def lean_stats(self):
         """Community direction-vote aggregate (the reader poll). Counts
         QuestionLean rows for poles a/b."""
-        a = getattr(self, "lean_a_count", None)
-        b = getattr(self, "lean_b_count", None)
-        if a is None or b is None:
-            a = self.community_leans.filter(value="a").count()
-            b = self.community_leans.filter(value="b").count()
+        a = self.community_leans.filter(value="a").count()
+        b = self.community_leans.filter(value="b").count()
         total = a + b
         return {
             "a": a,
@@ -787,7 +769,7 @@ class Position(models.Model):
         max_length=400, blank=True, help_text="Semicolon-separated notable proponents."
     )
     importance = models.IntegerField(
-        default=0, help_text="Net importance (upvotes minus downvotes)."
+        default=0, help_text="Upvote count (a cache of its Vote rows)."
     )
 
     class Meta:
@@ -850,7 +832,6 @@ class Action(models.Model):
     VOLUNTEER = "volunteer"
     POLICY = "policy"
     LOCAL = "local"
-    SUBMIT_VIEW = "submit_view"
 
     KIND_CHOICES = [
         (LEARN_MORE, "Learn more"),
@@ -858,7 +839,6 @@ class Action(models.Model):
         (VOLUNTEER, "Volunteer"),
         (POLICY, "Policy"),
         (LOCAL, "Local"),
-        (SUBMIT_VIEW, "Your view"),
     ]
 
     ICONS = {
@@ -867,7 +847,6 @@ class Action(models.Model):
         VOLUNTEER: "hand-heart",
         POLICY: "bank",
         LOCAL: "map-pin",
-        SUBMIT_VIEW: "paper-plane-tilt",
     }
 
     section = models.ForeignKey(
@@ -912,9 +891,8 @@ class Action(models.Model):
 
 
 class TopicEdge(models.Model):
-    DEPENDS_ON = "depends_on"
     RELATES_TO = "relates_to"
-    EDGE_TYPES = [(DEPENDS_ON, "Depends on"), (RELATES_TO, "Relates to")]
+    EDGE_TYPES = [(RELATES_TO, "Relates to")]
 
     source = models.ForeignKey(
         Topic, related_name="outgoing_edges", on_delete=models.CASCADE

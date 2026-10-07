@@ -36,7 +36,7 @@ to reveal the deeper paragraph + source (no button/signifier). Axis 1 (breadth):
       <div class="ends"><span>{{ stat.range_min|num }}</span><span>{{ stat.range_max|num }}</span></div>
     </div>
 
-  {% else %}{# bar / sparkline #}
+  {% else %}{# bar #}
     <div class="tv"><span class="tvn">{{ stat.value_shown|sup_exp }}</span>{% if stat.unit_shown %}<small{% if stat.unit_is_word %} class="u-word"{% endif %}>{{ stat.unit_shown }}</small>{% endif %}</div>
     {% if stat.fill_pct %}<div class="vrow"><div class="pbar"><i style="width:{{ stat.fill_pct }}%"></i></div></div>{% endif %}
   {% endif %}

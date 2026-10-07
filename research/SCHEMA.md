@@ -51,11 +51,11 @@ that art in the file; the fuller brief stays in `icon.md`.
         {
           "id": "st_...",
           "label": "...",              // <=120, the metric, not a sentence
-          "viz": "bar",                // bar | radial | ranked | range | sparkline
+          "viz": "bar",                // bar | radial | ranked | range
           "wide": false,               // spans 2 of 3 columns; ranked tiles are wide
           "value": "0.03",             // <=24, empty for ranked
           "unit": "deaths/TWh",        // <=24
-          "series": [                  // ranked and sparkline only; one shared unit
+          "series": [                  // ranked only; one shared unit
             { "label": "Coal", "value": "24.6", "highlight": false }
           ],
           "range_min": "",             // range only

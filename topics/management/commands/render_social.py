@@ -6,7 +6,8 @@ chrome-screenshot invocation the first card was made with, and mirrors
 The OG card (1200x630) is what link unfurls show and is captured at 2x
 (2400x1260), matching the existing committed asset. ``--formats`` also takes
 the square (sq, 1080x1080) and portrait/story (pt, 1080x1350) variants; those
-save alongside as <slug>-<fmt>.png and are for manual posting, not og:image.
+are for manual posting, not og:image, so they save to the topic's own directory
+(research/topics/<slug>/share/<slug>-<fmt>.png) and are never served.
 
   manage.py render_social --slug nuclear-energy            # -> static/img/social/nuclear-energy.png
   manage.py render_social --all --formats og,sq,pt
@@ -69,7 +70,7 @@ class Command(BaseCommand):
         parser.add_argument(
             "--out",
             default=None,
-            help="Output directory (default: static/img/social/).",
+            help="Output directory for every format (default: og to static/img/social/, sq/pt to the topic's share/).",
         )
 
     def handle(self, *args, **opts):
@@ -101,8 +102,7 @@ class Command(BaseCommand):
         else:
             raise CommandError("Pass --slug <slug> or --all.")
 
-        out_dir = Path(opts["out"] or settings.BASE_DIR / "static" / "img" / "social")
-        out_dir.mkdir(parents=True, exist_ok=True)
+        og_dir = Path(opts["out"] or settings.BASE_DIR / "static" / "img" / "social")
         base = opts["base_url"].rstrip("/")
 
         for topic in topics:
@@ -110,8 +110,12 @@ class Command(BaseCommand):
                 w, h, dsf = FORMATS[fmt]
                 # The og PNG is the Topic.social_card asset and keeps the bare
                 # <slug>.png name; other formats are suffixed.
-                name = f"{topic.slug}.png" if fmt == "og" else f"{topic.slug}-{fmt}.png"
-                png = out_dir / name
+                if fmt == "og":
+                    png = og_dir / f"{topic.slug}.png"
+                else:
+                    share_dir = Path(opts["out"] or settings.TOPICS_DIR / topic.slug / "share")
+                    png = share_dir / f"{topic.slug}-{fmt}.png"
+                png.parent.mkdir(parents=True, exist_ok=True)
                 subprocess.run(
                     [
                         chrome,

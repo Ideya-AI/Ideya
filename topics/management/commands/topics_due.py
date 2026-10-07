@@ -1,6 +1,6 @@
 """Report topics whose content is due for review, on the shared cadence.
 
-A topic falls due `review_interval_days` (fast 90 / medium 180 / slow 365) after
+A topic falls due `review_interval_days` (180) after
 it was last touched (latest `reviewed_at`, else `authored_at`). Never-touched topics
 are always due.
 

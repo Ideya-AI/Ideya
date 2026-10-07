@@ -112,5 +112,5 @@ audit that ran after its last edit.
 
 Remove the marker. Print the per-stage table from the last `token_report`, the total
 wall time, the verdict, and where things are: `T/audit.md`, the page at
-`http://localhost:8641/<slug>/`, the cards in `static/img/social/`. If ready, end
+`http://localhost:8641/<slug>/`, the cards in `static/img/social/` and `T/share/`. If ready, end
 with: the topic is `ready`; publishing is yours. Do not commit.

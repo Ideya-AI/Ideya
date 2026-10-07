@@ -33,7 +33,8 @@ Then read the page two ways. First the text, once, in reading order, from
 every question with why and detail, every position steelman and detail, the crux,
 every action. Second the renders under `research/topics/<slug>/renders/sections/`:
 every tile at 390 and at 1440, collapsed and expanded, at native size, plus the
-three share cards in `static/img/social/` and `renders/views.md`. If the Chrome
+three share cards (`static/img/social/<slug>.png`, `share/<slug>-sq.png`,
+`share/<slug>-pt.png`) and `renders/views.md`. If the Chrome
 tools are available to you and the page answers at `http://localhost:8641/<slug>/`,
 also open it at 1440 (the tools cannot size below about 1100, so 390 is read from
 the renders), scroll it top to bottom and open each Go deeper and
