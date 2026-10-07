@@ -48,9 +48,9 @@ Positions, Crux, Actions, each opening at a glance and expanding in place.
   - `topic.json` — the product the loader reads. Index fields at the top (slug,
     title, status, authored_at, published_at, reviewed_at, scope, primary_category,
     categories, related), `content` under them once there is content. The source of truth for everything except participation.
-  - `evidence.json` — whatever the rebuilt pipeline needs to keep. Nothing writes
-    it today; v2's ledger is not a template for it.
-  - `icon.md` the art brief; `review.md` the packet for the human, written by stage 5.
+  - `research.md` stage 1's notes; `icon.md` the art brief; `audit.md` the packet
+    for the human, written by stage 5; `share/` the square and portrait share cards
+    (manual posting, not served).
   - `run/`, `renders/`, `candidates/` — process, and untracked.
   - Shipped images stay under `static/img/{topics,social}/<slug>.png`, because
     that is where Django serves them from.

@@ -81,7 +81,7 @@ class PublishTopicTests(NuclearFixtureMixin, TestCase):
             "the switch changed the row but not the file, so a rebuild would undo it",
         )
         self.assertIsNotNone(topic.published_at, "the publish date was not stamped")
-        self.assertIn("docker exec", out, "the live commands were not printed")
+        self.assertIn("https://ideya1.org/", out, "the live check was not printed")
 
     def test_off_takes_it_private_without_touching_the_publish_date(self):
         self._run(confirm=True)

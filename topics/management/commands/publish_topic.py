@@ -25,8 +25,6 @@ A human runs this, always: `.claude/hooks/pipeline-guard.sh` blocks it for
 automation, and `--confirm` is required before anything is written.
 """
 
-from pathlib import Path
-
 from django.core.management import call_command
 from django.core.management.base import BaseCommand, CommandError
 from django.db import transaction
@@ -121,37 +119,12 @@ class Command(BaseCommand):
         self.stdout.write(self._live_block(slug, o["off"]))
 
     def _live_block(self, slug, off):
-        """The live site is a different database on another host, so the switch
-        has to be thrown there too. Printing the exact commands beats retyping
-        them out of docs/DEPLOY.md."""
+        """One database serves this session and the live site, so the switch is
+        already live; what is left is committing the file (docs/DEPLOY.md §3)."""
         if off:
-            return (
-                "\nThe live site is a separate database — take it private there too "
-                "(docs/DEPLOY.md §3):\n"
-                f"  docker exec ideya python manage.py publish_topic --slug {slug} "
-                "--off --confirm\n"
-            )
-        artifacts = [
-            f"research/topics/{slug}/topic.json",
-            f"research/topics/{slug}/evidence.json",
-            f"research/topics/{slug}/icon.md",
-            f"research/topics/{slug}/review.md",
-            f"static/img/topics/{slug}.png",
-            f"static/img/social/{slug}.png",
-        ]
-        present = " ".join(a for a in artifacts if Path(a).exists())
+            return "Private on the live site too (one shared database).\n"
         return (
-            "\nNext — commit, then put it live (docs/DEPLOY.md §3):\n"
-            f"  git add {present}\n"
-            f"  git commit -m 'Publish {slug}'\n"
-            "  # rebuild + redeploy the image first if the JSON changed since the "
-            "last build,\n"
-            "  # then load the content into the live DB and throw the switch there:\n"
-            f"  docker exec ideya python manage.py load_topic_draft "
-            f"--file research/topics/{slug}/topic.json --slug {slug}\n"
-            f"  docker exec ideya python manage.py publish_topic --slug {slug} --confirm\n"
-            "  docker exec ideya python manage.py load_universe\n"
-            "  # confirm it actually landed — a just-published topic missing from\n"
-            "  # the live site is a known failure mode (ENGINE.md §11):\n"
-            f"  curl -s -o /dev/null -w '%{{http_code}}\\n' https://<live-host>/{slug}/\n"
+            "Live now (one shared database) once the site is up. Check:\n"
+            f"  curl -s -o /dev/null -w '%{{http_code}}\\n' https://ideya1.org/{slug}/\n"
+            "New hero art or a new share card also needs an image rebuild and restart.\n"
         )
