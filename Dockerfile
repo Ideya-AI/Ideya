@@ -20,5 +20,10 @@ RUN DJANGO_DEBUG=false DJANGO_SECRET_KEY=build-only-not-used \
 
 RUN chmod +x entrypoint.sh
 
+# Run as the host user that owns /srv/ideya-data, so the SQLite WAL side files
+# stay writable by host-side tools (dev server, backups).
+USER 1000:1000
+ENV HOME=/tmp
+
 EXPOSE 8000
 CMD ["./entrypoint.sh"]

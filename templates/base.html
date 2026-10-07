@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>{% block title %}Ideya{% endblock %}</title>
   <meta name="description" content="{% block description %}A curated, navigable atlas of hard human issues — a visual wiki between an encyclopedia and a debate platform.{% endblock %}" />
-  <link rel="icon" href="{% static 'img/ideya-mark.png' %}" />
+  <link rel="icon" href="{% static 'img/favicon-96.png' %}" sizes="96x96" type="image/png" />
+  <link rel="apple-touch-icon" href="{% static 'img/apple-touch-icon.png' %}" />
   <link rel="canonical" href="{{ request.scheme }}://{{ request.get_host }}{{ request.path }}" />
   <meta property="og:site_name" content="Ideya" />
   <meta property="og:type" content="{% block og_type %}website{% endblock %}" />

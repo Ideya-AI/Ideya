@@ -5,7 +5,7 @@ from django.conf import settings
 from django.contrib.contenttypes.models import ContentType
 from django.db import transaction
 from django.db.models import F, Prefetch
-from django.http import HttpResponse, HttpResponseBadRequest
+from django.http import Http404, HttpResponse, HttpResponseBadRequest
 from django.shortcuts import get_object_or_404, render
 from django.views.decorators.http import require_POST
 
@@ -308,6 +308,18 @@ def _visible_topics(request):
     return Topic.published
 
 
+def _is_visible(request, obj):
+    """Whether the topic an item belongs to is visible to this reader. Items
+    with no topic (a category section, an unattached prompt) count as visible."""
+    if isinstance(obj, Topic):
+        topic = obj
+    elif isinstance(obj, Section):
+        topic = obj.topic
+    else:
+        topic = obj.section.topic if getattr(obj, "section", None) else None
+    return topic is None or _visible_topics(request).filter(pk=topic.pk).exists()
+
+
 def topic_detail(request, slug):
     topic = get_object_or_404(
         Topic.objects.select_related("primary_category").prefetch_related("categories"),
@@ -353,7 +365,8 @@ def topic_detail(request, slug):
         elif s.kind == "positions":
             for p in s.positions.all():
                 p.user_vote = voted_p.get(p.id, 0)
-    topic_prompts = _prompts_for(request, topic)
+    # A stub (no sections) offers no "Add your view": its pickers would be empty.
+    topic_prompts = _prompts_for(request, topic) if sections else []
     return render(
         request,
         "topics/detail.html",
@@ -517,13 +530,9 @@ def search(request):
         )
         categories = _in_order(Category.objects.filter(id__in=cids), cids)
     elif q:
-        topics = _decorate(
-            _authored(
-                Topic.published.filter(title__icontains=q).select_related(
-                    "primary_category"
-                )
-            )[:6]
-        )
+        topics = _authored(
+            Topic.published.filter(title__icontains=q).select_related("primary_category")
+        )[:6]
         categories = Category.objects.filter(name__icontains=q)[:4]
     return render(
         request,
@@ -660,6 +669,8 @@ def follow_up(request, target, pk):
     if model is None:
         return HttpResponseBadRequest("unknown target")
     obj = get_object_or_404(model, pk=pk)
+    if not _is_visible(request, obj):
+        raise Http404
     if target == "section":
         trigger, eyebrow = Prompt.TRIGGER_MISSING, "Something missing?"
     else:
@@ -743,6 +754,8 @@ def respond(request, pk):
     if limited := _rate_ok(request):
         return limited
     prompt = get_object_or_404(Prompt, pk=pk, active=True)
+    if prompt.target is not None and not _is_visible(request, prompt.target):
+        raise Http404
     defaults, keep = _response_payload(request, prompt)
     if defaults is None:
         return HttpResponseBadRequest("unknown prompt kind")

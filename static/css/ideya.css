@@ -640,6 +640,8 @@ a.sp-cat:hover { text-decoration: none; box-shadow: inset 0 0 0 1px color-mix(in
 .sp-field i { font-size: 20px; color: var(--fg3); }
 .sp-field input { flex: 1; border: 0; outline: none; background: none; font-size: var(--text-lg); color: var(--fg1); }
 .sp-field input::placeholder { color: var(--ink-300); }
+.sp-close { flex: none; padding: 0; background: none; border: 0; font: inherit; font-size: var(--text-sm); font-weight: var(--weight-semibold); color: var(--accent-strong); cursor: pointer; min-height: 44px; }
+.sp-close .kbd { font-size: 11px; font-weight: 400; color: var(--ink-300); border: 1px solid var(--border); border-radius: 6px; padding: 1px 6px; }
 .sp-body { max-height: min(60vh, 460px); overflow-y: auto; padding: 8px; }
 .sp-empty { padding: 22px; text-align: center; color: var(--fg3); font-size: var(--text-sm); }
 .sp-group { padding: 8px 10px 4px; font-size: var(--text-xs); font-weight: var(--weight-bold); text-transform: uppercase; letter-spacing: var(--tracking-wide); color: var(--fg3); }

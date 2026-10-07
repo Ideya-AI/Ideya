@@ -85,7 +85,8 @@ class Category(models.Model):
 
     @property
     def topic_count(self) -> int:
-        return self.topics.count()
+        """Published topics only: the number readers see on the category page."""
+        return self.topics.filter(status=Topic.PUBLISHED).count()
 
     @property
     def social_card(self):

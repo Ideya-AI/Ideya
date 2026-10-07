@@ -41,7 +41,9 @@ Enter in the submit modal or a login form) while the overlay is closed.{% endcom
              placeholder="Search topics and categories…" aria-label="Search topics and categories"
              x-ref="sinput" x-effect="if ($store.search.open) $nextTick(() => $refs.sinput.focus())" />
       <i class="ph-duotone ph-circle-notch spin" x-show="busy" x-cloak style="display:none"></i>
-      <span class="kbd">esc</span>
+      <button type="button" class="sp-close" @click="$store.search.open = false" aria-label="Close search">
+        <span class="kbd d-only">esc</span><span class="m-only">Cancel</span>
+      </button>
     </div>
     <div class="sp-body" x-html="html"></div>
   </div>
