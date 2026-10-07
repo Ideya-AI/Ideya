@@ -17,9 +17,11 @@ staticfiles/
 .vscode/
 .DS_Store
 
-# Agent worktrees (transient) + local Claude settings
+# Local Claude Code config: worktrees, settings, the usage-guard hook
 .claude/worktrees/
 .claude/settings.local.json
+.claude/settings.json
+.claude/hooks/
 
 # Transient pipeline artifacts
 static/posters/
