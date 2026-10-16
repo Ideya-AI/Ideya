@@ -11,6 +11,8 @@ def navigation(request):
     return {
         "origin": settings.PUBLIC_ORIGIN or f"{request.scheme}://{request.get_host()}",
         "nav_categories": Category.objects.annotate(
-            num_topics=Count("topics", filter=Q(topics__status="published"))
+            num_topics=Count(
+                "primary_topics", filter=Q(primary_topics__status="published")
+            )
         ),
     }

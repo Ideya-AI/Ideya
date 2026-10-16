@@ -4,7 +4,7 @@ import qrcode.image.svg
 from django.conf import settings
 from django.contrib.contenttypes.models import ContentType
 from django.db import transaction
-from django.db.models import Case, F, Prefetch, When
+from django.db.models import F, Prefetch
 from django.http import Http404, HttpResponse, HttpResponseBadRequest
 from django.shortcuts import get_object_or_404, render
 from django.views.decorators.http import require_POST
@@ -267,13 +267,13 @@ def home(request):
     categories = []
     for cat in Category.objects.prefetch_related(
         Prefetch(
-            "topics",
+            "primary_topics",
             queryset=_authored(Topic.published.select_related("primary_category")),
         )
     ):
         # Include every category so the directory is genuinely complete; empty
         # ones render as browsable "coming soon" cards into their category page.
-        categories.append({"category": cat, "topics": list(cat.topics.all())})
+        categories.append({"category": cat, "topics": list(cat.primary_topics.all())})
     # Populated categories lead; the not-yet-mapped ones cluster at the end.
     categories.sort(key=lambda g: 0 if g["topics"] else 1)
 
@@ -326,16 +326,16 @@ def topic_detail(request, slug):
         slug=slug,
     )
     # Drafts render in full for staff/DEBUG previews; the public gets the
-    # coming-soon stub treatment (no sections, noindex) instead of a 404 —
-    # related chips on published topics link to drafts as teasers.
+    # coming-soon stub treatment (no sections, noindex) instead of a 404.
     can_preview = settings.DEBUG or request.user.is_staff
     if topic.status != Topic.PUBLISHED and not can_preview:
         sections = []
     else:
         sections = _ordered_sections("topic", topic)
-    related = topic.outgoing_edges.select_related(
-        "target", "target__primary_category"
-    ).all()
+    # Related chips link only to published topics.
+    related = topic.outgoing_edges.filter(
+        target__status=Topic.PUBLISHED
+    ).select_related("target", "target__primary_category")
     if request.user.is_authenticated:
         who = {"user": request.user}
     else:
@@ -388,10 +388,12 @@ def category_detail(request, slug):
     category = get_object_or_404(
         Category.objects.prefetch_related("connects_to"), slug=slug
     )
-    # Topics whose home this is come first, cross-listed ones after.
+    # A category lists only the topics whose primary category it is.
     topics = _authored(
-        category.topics(manager="published").select_related("primary_category")
-    ).order_by(Case(When(primary_category=category, then=0), default=1), "title")
+        category.primary_topics(manager="published").select_related(
+            "primary_category"
+        )
+    )
     return render(
         request,
         "topics/category.html",
@@ -421,7 +423,9 @@ def category_share(request, slug):
     category = get_object_or_404(Category, slug=slug)
     topics = list(
         _authored(
-            category.topics(manager="published").select_related("primary_category")
+            category.primary_topics(manager="published").select_related(
+                "primary_category"
+            )
         )[:6]
     )
     return render(
