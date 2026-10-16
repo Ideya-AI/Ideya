@@ -188,17 +188,18 @@
           <div class="basics" x-data="rowGrid()">
             {% for stat in section.basics_tiles %}{% include "topics/components/_stat_tile.html" %}{% endfor %}
           </div>
-          {% if section.basics_has_extra %}
           <div class="deeper-row">
+            {% if section.basics_has_extra %}
             <button type="button" class="deeper" :aria-expanded="deeper" @click="deeper = !deeper; if (!deeper) anchorCollapse($el)">
               <i class="ph-duotone" :class="deeper ? 'ph-minus-circle' : 'ph-plus-circle'"></i>
               <span x-text="deeper ? 'Show less' : 'Go deeper'"></span>
             </button>
-            <button type="button" class="deeper" x-show="deeper" x-cloak hx-get="{% url 'topics:follow_up' 'section' section.id %}" hx-swap="none">
+            {% endif %}
+            {# with nothing to expand, the section is already whole, so ask right away #}
+            <button type="button" class="deeper"{% if section.basics_has_extra %} x-show="deeper" x-cloak{% endif %} hx-get="{% url 'topics:follow_up' 'section' section.id %}" hx-swap="none">
               <i class="ph-duotone ph-chat-teardrop-text"></i><span>Something missing?</span>
             </button>
           </div>
-          {% endif %}
         </div>
       </section>
 
@@ -215,17 +216,18 @@
           <div class="qlist">
             {% for q in section.questions_tiles %}{% include "topics/components/_question.html" %}{% endfor %}
           </div>
-          {% if section.questions_has_extra %}
           <div class="deeper-row">
+            {% if section.questions_has_extra %}
             <button type="button" class="deeper" :aria-expanded="deeper" @click="deeper = !deeper; if (!deeper) anchorCollapse($el)">
               <i class="ph-duotone" :class="deeper ? 'ph-minus-circle' : 'ph-plus-circle'"></i>
               <span x-text="deeper ? 'Show less' : 'Go deeper'"></span>
             </button>
-            <button type="button" class="deeper" x-show="deeper" x-cloak hx-get="{% url 'topics:follow_up' 'section' section.id %}" hx-swap="none">
+            {% endif %}
+            {# with nothing to expand, the section is already whole, so ask right away #}
+            <button type="button" class="deeper"{% if section.questions_has_extra %} x-show="deeper" x-cloak{% endif %} hx-get="{% url 'topics:follow_up' 'section' section.id %}" hx-swap="none">
               <i class="ph-duotone ph-chat-teardrop-text"></i><span>Something missing?</span>
             </button>
           </div>
-          {% endif %}
         </div>
       </section>
 
@@ -242,17 +244,18 @@
           <div class="pos-grid" x-data="rowGrid()">
             {% for p in section.positions_tiles %}{% include "topics/components/_position.html" %}{% endfor %}
           </div>
-          {% if section.positions_has_extra %}
           <div class="deeper-row">
+            {% if section.positions_has_extra %}
             <button type="button" class="deeper" :aria-expanded="deeper" @click="deeper = !deeper; if (!deeper) anchorCollapse($el)">
               <i class="ph-duotone" :class="deeper ? 'ph-minus-circle' : 'ph-plus-circle'"></i>
               <span x-text="deeper ? 'Show less' : 'Go deeper'"></span>
             </button>
-            <button type="button" class="deeper" x-show="deeper" x-cloak hx-get="{% url 'topics:follow_up' 'section' section.id %}" hx-swap="none">
+            {% endif %}
+            {# with nothing to expand, the section is already whole, so ask right away #}
+            <button type="button" class="deeper"{% if section.positions_has_extra %} x-show="deeper" x-cloak{% endif %} hx-get="{% url 'topics:follow_up' 'section' section.id %}" hx-swap="none">
               <i class="ph-duotone ph-chat-teardrop-text"></i><span>Something missing?</span>
             </button>
           </div>
-          {% endif %}
         </div>
       </section>
 
