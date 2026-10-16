@@ -1,0 +1,29 @@
+name: Report an error in a topic
+description: A fact, number, quote or source on a topic page is wrong, or a position is misrepresented.
+labels: ["content"]
+body:
+  - type: input
+    id: topic
+    attributes:
+      label: Topic page
+      description: The link to the page, e.g. https://ideya1.org/nuclear-energy/
+    validations:
+      required: true
+  - type: textarea
+    id: claim
+    attributes:
+      label: What the page says
+      description: Quote the exact sentence, stat or label.
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source
+      description: A link that shows the correct version.
