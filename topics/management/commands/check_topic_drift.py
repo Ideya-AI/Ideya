@@ -77,9 +77,9 @@ def _derived(path, disk, db):
     # range_at is only kept for a range viz; elsewhere the loader drops it
     if path.endswith(".range_at") and disk in (0, "", None) and db is None:
         return True
-    # fill_pct, range_at and series pct are derived from the values at load
-    # time when the file leaves them open (load_topic_draft.derive_viz)
-    if path.endswith((".fill_pct", ".range_at", ".pct")) and disk in ("", None, "<absent>"):
+    # fill_pct, range_at and series pct / neg are derived from the values at
+    # load time when the file leaves them open (load_topic_draft.derive_viz)
+    if path.endswith((".fill_pct", ".range_at", ".pct", ".neg")) and disk in ("", None, "<absent>"):
         return True
     # a null or missing range end in the file is stored as "" (CharField)
     if path.endswith((".range_min", ".range_max")) and disk in (None, "<absent>") and db == "":

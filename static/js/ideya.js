@@ -20,6 +20,19 @@
     // vote response triggers; its body arrives out of band — see _follow_modal).
     Alpine.store("follow", { open: false });
 
+    // Closing either modal (Done, X, Esc, scrim) sends text the reader typed
+    // but did not send, so nothing typed is lost on the way out.
+    [["follow", "#follow-body"], ["input", '[aria-label="Add your view"]']].forEach(
+      function (m) {
+        var was = false;
+        Alpine.effect(function () {
+          var open = Alpine.store(m[0]).open;
+          if (was && !open) sendUnsent(document.querySelector(m[1]));
+          was = open;
+        });
+      },
+    );
+
     // Row-synced expandable grid (positions, basics) — expansion state lives
     // on the grid (keyed by data-xid) so a click opens/closes every card
     // sharing the visual row: the CSS grid stretches row partners anyway, and
@@ -65,6 +78,24 @@
     });
   });
 
+  function sendUnsent(root) {
+    if (!root) return;
+    root.querySelectorAll(".send-btn").forEach(function (b) {
+      var f = b.previousElementSibling;
+      if (f && f.value !== f.defaultValue) b.click();
+    });
+  }
+  // Once sent, a field's text is no longer unsent.
+  document.addEventListener(
+    "click",
+    function (e) {
+      var b = e.target.closest && e.target.closest(".send-btn");
+      var f = b && b.previousElementSibling;
+      if (f) f.defaultValue = f.value;
+    },
+    true,
+  );
+
   // After collapsing a tall box the reader who clicked at its bottom would be
   // left far below where they started: the page reflows but the viewport
   // doesn't. If the collapsed element's top ended up above the viewport,
@@ -90,13 +121,20 @@
     var ok = e.detail.elt && e.detail.elt.dataset && e.detail.elt.dataset.ok;
     if (ok && e.detail.successful) toast(ok);
   });
+  // A tick that did not save must not stay ticked.
+  function untick(e) {
+    var el = e.detail.elt;
+    if (el && el.type === "checkbox") el.checked = !el.checked;
+  }
   document.addEventListener("htmx:responseError", function (e) {
+    untick(e);
     var status = e.detail.xhr ? e.detail.xhr.status : 0;
     if (status === 429) toast("Too many actions. Try again in a minute.", true);
     else if (status === 403) toast("This page expired. Reload it and try again.", true);
     else toast("That didn’t save. Try again.", true);
   });
-  document.addEventListener("htmx:sendError", function () {
+  document.addEventListener("htmx:sendError", function (e) {
+    untick(e);
     toast("Couldn’t reach Ideya. Check your connection.", true);
   });
 

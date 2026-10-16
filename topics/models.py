@@ -346,7 +346,7 @@ class Section(models.Model):
     META = {
         OVERVIEW: ("compass-rose", "the orientation"),
         BASICS: ("chart-bar", "the numbers"),
-        QUESTIONS: ("question", "what's contested"),
+        QUESTIONS: ("question", "what’s contested"),
         POSITIONS: ("scales", "the debate"),
         CRUX: ("target", "where it actually sits"),
         ACTIONS: ("compass", "paths forward, across the landscape"),

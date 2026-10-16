@@ -191,11 +191,16 @@ def _prompts_for(request, obj, trigger=""):
     return _hydrate_prompts(request, prompts)
 
 
-def _with_follow_up(request, response, target, obj, trigger, eyebrow, icon):
+def _with_follow_up(
+    request, response, target, obj, trigger, eyebrow, icon, unanswered_only=False
+):
     """Append the follow-up modal's body (and eyebrow) to a fragment response
     as out-of-band swaps and fire the "follow-up" event that opens it. A
-    no-op when the item has no prompts for this trigger."""
+    no-op when the item has no prompts for this trigger, or, with
+    `unanswered_only`, when the reader already answered one of them."""
     prompts = _prompts_for(request, obj, trigger)
+    if unanswered_only and any(p.user_response for p in prompts):
+        return response
     if prompts:
         body = render(
             request,
@@ -599,8 +604,9 @@ def vote(request, target, pk):
             target,
             obj,
             Prompt.TRIGGER_VOTE,
-            "",
-            "",
+            f"You upvoted this {target}",
+            "caret-up",
+            unanswered_only=True,
         )
     return response
 
@@ -655,6 +661,7 @@ def question_lean(request, pk):
             f"lean_{value}",
             f"You lean “{label}”",
             "arrows-left-right",
+            unanswered_only=True,
         )
     return response
 

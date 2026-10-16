@@ -11,6 +11,8 @@ increment is not atomic across processes, so a burst can slip a few requests
 past the cap; for a soft limit that is fine.
 """
 
+import time
+
 from django.core.cache import cache
 
 # Per-IP ceiling on participation writes (votes, stances, leans, prompt answers).
@@ -36,15 +38,13 @@ def client_ip(request) -> str:
 
 def rate_limited(request, scope: str, limit: int, window: int) -> bool:
     """Fixed-window counter: True once this IP exceeds `limit` hits on `scope`
-    within `window` seconds. The window does not slide — the TTL is set once when
-    the counter is created, so incrementing never extends it."""
+    within `window` seconds. The window's end is stored with the count and every
+    write keeps it, so hits never extend the window (cache.incr would: it re-sets
+    the key with the cache's default timeout)."""
     key = f"rl:{scope}:{client_ip(request)}"
-    if cache.get(key, 0) >= limit:
+    now = time.time()
+    count, ends = cache.get(key, (0, now + window))
+    if count >= limit:
         return True
-    # add() sets the counter (with TTL) only if absent; else bump it in place.
-    if not cache.add(key, 1, window):
-        try:
-            cache.incr(key)
-        except ValueError:  # expired between the get and the incr — restart it
-            cache.set(key, 1, window)
+    cache.set(key, (count + 1, ends), max(1, int(ends - now)))
     return False

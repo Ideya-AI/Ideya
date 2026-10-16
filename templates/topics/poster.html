@@ -165,7 +165,7 @@
 
     {% if sec.questions %}
     <div class="band qband">
-      <div class="eyebrow"><i class="ph-duotone ph-question"></i>Questions <span class="sub">· what's contested</span></div>
+      <div class="eyebrow"><i class="ph-duotone ph-question"></i>Questions <span class="sub">· what’s contested</span></div>
       <div class="qrow">
         {% for q in sec.questions.questions.all|slice:":3" %}
         <div class="qcell"><span class="qtag {% if q.kind == 'empirical' %}emp{% else %}val{% endif %}"><i class="ph-duotone ph-{{ q.tag_icon }}"></i>{{ q.get_kind_display }}</span><div class="qt">{{ q.text }}</div></div>

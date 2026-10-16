@@ -17,7 +17,7 @@ The control mirrors the .lean / .ad chip patterns — token-based, lightly style
   blank send with nothing saved is a no-op — no post, no toast.{% endcomment %}
   {% if prompt.kind == "free_text" %}
   <div class="text-send" x-data="{ saved: {% if ur %}true{% else %}false{% endif %} }">
-    <textarea class="field prompt-text" id="ptext-{{ prompt.id }}" name="text" rows="3" placeholder="Share your reasoning…">{% if ur %}{{ ur.text }}{% endif %}</textarea>
+    <textarea class="field prompt-text" id="ptext-{{ prompt.id }}" name="text" rows="3" placeholder="Your answer…">{% if ur %}{{ ur.text }}{% endif %}</textarea>
     <button type="button" class="send-btn" aria-label="Save your take"
       hx-post="{% url 'topics:respond' prompt.id %}" hx-include="#ptext-{{ prompt.id }}" hx-swap="none"
       hx-trigger="confirmed"

@@ -55,13 +55,13 @@ RESPOND_FOLLOW_UPS = [
     dict(
         kind=Prompt.CHOOSE_ONE,
         text="{verdict}",
-        options=["Agree", "Disagree", "Unsure"],
+        options=["Yes", "No", "Not sure"],
     ),
     dict(
         kind=Prompt.CHOOSE_MANY,
         text="What should happen to it?",
         help_text="Pick any that apply — a note on each helps the editor.",
-        options=["Keep as is", "Promote", "Demote", "Reword", "Remove"],
+        options=["Move it higher", "Move it lower", "Reword it", "Remove it"],
     ),
     dict(
         kind=Prompt.FREE_TEXT,
@@ -170,7 +170,7 @@ def seed_topic_prompts(topic) -> int:
     questions = list(
         Question.objects.filter(
             section__topic=topic, section__kind="questions"
-        ).order_by("-votes", "order", "id")
+        ).order_by("order", "id")
     )
 
     # Orphan sweep: a GenericForeignKey does not cascade, so prompts whose
