@@ -43,7 +43,7 @@
         <div class="ck">Connects to</div>
         <div class="chips">
           {% for c in category.connects_to.all %}
-          <a class="rchip" href="{{ c.get_absolute_url }}"><i class="ph-duotone ph-{{ c.icon|default:'squares-four' }}"></i>{{ c.name }}</a>
+          <a class="rchip" href="{{ c.get_absolute_url }}" style="--cat: {{ c.color_var }}; --cat-tint: {{ c.tint_var }};"><i class="ph-duotone ph-{{ c.icon|default:'squares-four' }}"></i>{{ c.name }}</a>
           {% endfor %}
         </div>
       </div>
