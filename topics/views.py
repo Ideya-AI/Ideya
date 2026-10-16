@@ -4,7 +4,7 @@ import qrcode.image.svg
 from django.conf import settings
 from django.contrib.contenttypes.models import ContentType
 from django.db import transaction
-from django.db.models import F, Prefetch
+from django.db.models import Case, F, Prefetch, When
 from django.http import Http404, HttpResponse, HttpResponseBadRequest
 from django.shortcuts import get_object_or_404, render
 from django.views.decorators.http import require_POST
@@ -388,9 +388,10 @@ def category_detail(request, slug):
     category = get_object_or_404(
         Category.objects.prefetch_related("connects_to"), slug=slug
     )
+    # Topics whose home this is come first, cross-listed ones after.
     topics = _authored(
         category.topics(manager="published").select_related("primary_category")
-    )
+    ).order_by(Case(When(primary_category=category, then=0), default=1), "title")
     return render(
         request,
         "topics/category.html",
