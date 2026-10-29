@@ -453,8 +453,9 @@ body .sec.is-open .act-grid .act-xtra { display: flex; }
 .akind i { font-size: 16px; color: var(--ink-400); }
 /* a camp name too long to share the row drops under the kind whole, rather than
    wrapping into a ragged right-aligned block */
-.afor { display: inline-flex; align-items: center; gap: 6px; flex: 0 0 auto; max-width: 100%; font-size: 11px; color: var(--fg2); }
-.afor .fd { width: 8px; height: 8px; flex-shrink: 0; border-radius: var(--radius-pill); }
+.afor { display: inline-flex; align-items: flex-start; gap: 6px; flex: 0 0 auto; max-width: 100%; font-size: 11px; color: var(--fg2); text-wrap: balance; }
+/* the dot sits on the first line, not between two when the name wraps */
+.afor .fd { width: 8px; height: 8px; flex-shrink: 0; margin-top: calc((1lh - 8px) / 2); border-radius: var(--radius-pill); }
 .atitle { font-size: var(--text-base); font-weight: var(--weight-semibold); color: var(--fg1); }
 .adesc { margin: 7px 0 0; font-size: var(--text-sm); color: var(--fg2); line-height: var(--leading-normal); }
 /* narrow phones: the kind + position labels can't share one row */
