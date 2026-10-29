@@ -12,34 +12,38 @@
   body{background:#e7eae6;font-family:var(--font-sans);-webkit-font-smoothing:antialiased;padding:44px;display:flex;justify-content:center}
   body.card-only{padding:0;background:#fff;display:block}
   body.card-only .card{position:static;box-shadow:none}
-
-  .card{width:1200px;height:630px;flex:none;background:#fff;color:var(--ink-900);position:relative;overflow:hidden;display:flex;flex-direction:column;padding:52px 72px;box-shadow:0 20px 60px -24px rgba(20,22,15,.4)}
-  .card::before{content:"";position:absolute;right:-140px;top:-140px;width:460px;height:460px;border-radius:9999px;background:var(--green-tint);opacity:.6}
+  .card{width:1200px;height:630px;flex:none;background:#f7f9f7;color:var(--ink-900);position:relative;overflow:hidden;padding:50px 72px;box-shadow:0 20px 60px -24px rgba(20,22,15,.4)}
+  .card::before{content:"";position:absolute;right:-150px;top:-190px;width:500px;height:500px;border-radius:9999px;background:var(--green-tint);opacity:.75}
   .card>*{position:relative}
-  .brand{display:flex;align-items:center;gap:12px}
-  .brand .mark{height:34px;width:auto;border-radius:8px}
-  .brand .wm{font-weight:800;font-size:26px;letter-spacing:-.03em}
-  .kicker{align-self:flex-start;display:inline-flex;align-items:center;gap:9px;margin-top:24px;font-weight:800;font-size:17px;text-transform:uppercase;letter-spacing:.06em;color:var(--accent-strong);background:var(--green-tint);border-radius:9999px;padding:8px 18px}
-  .kicker i{font-size:19px}
-  .headline{margin:22px 0 0;font-weight:800;font-size:58px;letter-spacing:-.035em;line-height:1.04;max-width:16ch}
+  .brand{display:flex;align-items:center;gap:15px}
+  .brand .mark{height:50px;width:auto;border-radius:10px}
+  .brand .wm{font-weight:800;font-size:38px;letter-spacing:-.03em}
+  .headline{margin:28px 0 0;font-weight:800;font-size:56px;letter-spacing:-.04em;line-height:1.03}
   .headline .hl{color:var(--accent-strong)}
-  .desc{margin:20px 0 24px;font-size:27px;line-height:1.4;color:var(--ink-600);max-width:54ch;text-wrap:pretty}
-  .foot{margin-top:auto;display:flex;align-items:flex-start;gap:18px;padding-top:24px;border-top:1px solid var(--ink-100)}
-  .cchips{display:flex;gap:8px;flex-wrap:wrap}
-  .cchip{display:inline-flex;align-items:center;gap:7px;font-size:14.5px;font-weight:600;color:var(--ink-700);background:var(--ink-50);border:1px solid var(--ink-100);border-radius:9999px;padding:5px 12px;white-space:nowrap}
-  .cchip .dot{width:9px;height:9px;border-radius:9999px;flex:none}
+  .desc{margin:18px 0 0;font-size:26px;line-height:1.38;color:var(--ink-600)}
+  .sections{display:flex;gap:12px;margin-top:24px}
+  .sections span{display:inline-flex;align-items:center;gap:7px;font-weight:700;font-size:22px;background:#fff;border:1px solid var(--ink-100);border-radius:9999px;padding:10px 17px}
+  .sections i{color:var(--accent-strong);font-size:25px}
+  .card>.arts{position:absolute;left:72px;right:72px;bottom:46px;display:flex;gap:12px}
+  .arts div{flex:1;aspect-ratio:1/1;background:#fff;border-radius:12px;box-shadow:0 8px 20px -10px rgba(30,40,30,.28);display:flex;align-items:center;justify-content:center}
+  .arts img{width:84%}
 </style>
 </head>
 <body{% if render_card %} class="card-only"{% endif %}>
   <div class="card">
     <div class="brand"><img class="mark" src="{% static 'img/ideya-mark.png' %}" alt="" /><span class="wm">Ideya</span></div>
-    <span class="kicker"><i class="ph-duotone ph-infinity"></i>The project</span>
-    <h1 class="headline">Understand the debate. <span class="hl">Add your voice.</span></h1>
-    <p class="desc">Every important issue on one page: what’s known, the open questions, the main views, and where they split.</p>
-    <div class="foot">
-      <div class="cchips">
-        {% for cat in categories %}<span class="cchip"><span class="dot" style="background:{{ cat.color_var }}"></span>{{ cat.name }}</span>{% endfor %}
-      </div>
+    <h1 class="headline">Understand the debate.<br><span class="hl">Add your voice.</span></h1>
+    <p class="desc">We map humanity’s most important issues. Learn the basics, explore the core positions and weigh in on the open questions. Go as deep as you like, and help find a way forward together.</p>
+    <div class="sections">
+      <span><i class="ph-duotone ph-compass-rose"></i>Overview</span>
+      <span><i class="ph-duotone ph-chart-bar"></i>Basics</span>
+      <span><i class="ph-duotone ph-question"></i>Questions</span>
+      <span><i class="ph-duotone ph-scales"></i>Positions</span>
+      <span><i class="ph-duotone ph-target"></i>Crux</span>
+      <span><i class="ph-duotone ph-compass"></i>Actions</span>
+    </div>
+    <div class="arts">
+      {% for cat in categories %}{% if cat.primary_art_webp %}<div><img src="{% static cat.primary_art_webp %}" alt="" /></div>{% endif %}{% endfor %}
     </div>
   </div>
 </body>
