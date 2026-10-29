@@ -421,7 +421,8 @@ class Command(BaseCommand):
                 (
                     sib.parent.name
                     for sib in topics_dir().glob("*/topic.json")
-                    if sib.parent.name != o["slug"]
+                    # a refresh twin (stage_refresh) and its topic are one topic
+                    if sib.parent.name.removesuffix("-refresh") != o["slug"].removesuffix("-refresh")
                     and _index_of(sib).get("icon") == icon
                     and _index_of(sib).get("primary_category") == cat.slug
                 ),

@@ -34,6 +34,12 @@ correct the figure and its source if they disagree, or leave it and say so in th
 report if the page was right. Never reword around a figure you have not checked. Do not
 rewrite anything the list does not name. Then run the checks below and report.
 
+A refresh is fix mode on a twin (`<slug>-refresh`), and the list is the
+`### Changes` under the last `## Refresh` heading of `research.md`. It may also
+add an item (written as in normal mode, without an `id`), cut one or move one.
+The counts and targets still hold; a passed date becomes the outcome, stated
+with its source.
+
 ## How the page reads
 
 Every section shows a fixed number of items before a Go deeper control, in array
@@ -123,8 +129,9 @@ label and position name.
   note says so too; the glance layer carries the dispute, never one end of it.
 - A ranked tile's `highlight` is the row the note is about, usually the latest or
   the topic's own value; never an outlier year or one side's estimate over another's.
-- A quote in quotation marks is verbatim from a source the page names; otherwise it
-  is a paraphrase without quotation marks.
+- A quote in quotation marks is verbatim from a source the page names, and appears
+  in quotation marks in `research.md` with that source's URL; otherwise it is a
+  paraphrase without quotation marks. Never add quotation marks research did not.
 - A camp may not claim what the page's own Basics show to be false. Before the
   checks, read each steelman and position detail against the tiles once.
 - Lean labels read as a stance its holder would claim ("Let markets decide"), never

@@ -40,6 +40,38 @@ First act, before any research: set the topic in progress.
 .venv/bin/python -c "import json;p='research/topics/<slug>/topic.json';d=json.load(open(p));d['status']='in_progress';open(p,'w').write(json.dumps(d,indent=1,ensure_ascii=False)+'\n')"
 ```
 
+## Refresh mode
+
+The spawn prompt says REFRESH MODE, and the topic is a twin of a published page
+(`<slug>-refresh`). `research.md` and `content` in `topic.json` already exist; read
+both in full. Do not rewrite either. Your job is what has changed since the topic
+was last touched (latest `reviewed_at`, else `authored_at`). Start from the passed
+dates the spawn prompt lists, then walk the page one section at a time:
+
+- Overview: is the why-now still the most recent event a reader would recognize?
+- Basics: has a stat a newer data year, or a figure that moved? Is an important number missing?
+  Re-check every glance-layer figure (each stat's value, series rows and note)
+  against its cited source: the number, its unit and what it counts. Then do the
+  same for every number, date, quote or "X said" in a detail anywhere on the page:
+  is it on the page it is credited to? An error already on the live page is a
+  change like any other.
+- Questions and positions: has a question or camp emerged or faded? Do the adherents
+  still say what the page says?
+- Crux: is it still the fork that would move the most people?
+- Actions: are the organizations and policy targets still live? (`check_links`)
+- Order: is each section's first four still what a quick reader most needs now?
+
+The bar is the reading: change what a reader would now get wrong or miss, not a
+figure that moved a little or an "as of" anchor that still reads true. New facts
+meet the Method below. Append, never edit above it:
+`## Refresh <today>` in `research.md` with the sourced findings, then
+`### Changes`, one line each: section, item (its `id` or position), update, add,
+cut or move, and why. A cut item loses its reader votes, so cut only what is now
+wrong or gone. If nothing passes the bar, say so under Changes. If the debate has
+changed shape (a new central fork, most camps reshaped), write that instead of a
+list and report `RESULT: done: re-author`. A twin starts in progress; skip the
+first act below.
+
 ## Method
 
 Write from what you know first, then use the web for exactly three things:
@@ -69,7 +101,12 @@ against each:
 - When a survey or study asks several questions, name the question each figure
   answers. One page attached a result to the wrong question and reversed its reading.
 - Write "only", "no other", "every" or a tally ("three times") only when the source
-  says it; count events from the record, not from memory. When sources disagree or a figure
+  says it; count events from the record, not from memory.
+- Write a quote in quotation marks only when you copied it from a page you fetched,
+  with that page's URL, and the speaker is who the page says spoke (a press
+  release's words are not its sponsor's). Quotes from memory came out as plausible
+  paraphrases of real reports and reached live pages; anything else is a
+  paraphrase, written without quotation marks. When sources disagree or a figure
 has a basis that changes it (price year, scope, gross versus net), say so inline. A
 number you could not source is written with `[unverified]` after it so the editor can
 drop it rather than guess.

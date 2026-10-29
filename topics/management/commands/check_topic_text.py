@@ -244,6 +244,33 @@ def stale_dates(fields, today=None):
                 yield name, f"names {raw}, {(d - today).days} days out; this sentence goes stale then"
 
 
+def _strings(node, name=""):
+    """(dotted path, text) for every string in a content tree."""
+    if isinstance(node, str):
+        yield name, node
+    elif isinstance(node, dict):
+        for k, v in node.items():
+            yield from _strings(v, f"{name}.{k}" if name else k)
+    elif isinstance(node, list):
+        for n, v in enumerate(node):
+            yield from _strings(v, f"{name}[{n}]")
+
+
+def passed_dates(doc, today=None):
+    """Dates that were still ahead when the topic was last touched (latest
+    reviewed_at, else authored_at) and are behind us now: each sentence says
+    something about an event that has since happened. Refresh starts here."""
+    today = today or datetime.date.today()
+    stamps = [s for s in (doc.get("reviewed_at") or []) if s] or [doc.get("authored_at") or ""]
+    if not stamps[-1]:
+        return
+    since = datetime.date.fromisoformat(str(stamps[-1])[:10])
+    for name, text in _strings(doc.get("content") or {}):
+        for d, sent, raw in _dates(text):
+            if since < d <= today:
+                yield name, raw, sent
+
+
 class Check:
     def __init__(self):
         self.errors, self.warnings = [], []
@@ -575,6 +602,11 @@ class Command(BaseCommand):
             action="store_true",
             help="print a hash of everything a render can show (all but detail text) and exit",
         )
+        p.add_argument(
+            "--passed",
+            action="store_true",
+            help="list dates that were ahead at the last touch and have passed since, and exit",
+        )
 
     def handle(self, *a, **o):
         if not (o["slug"] or o["file"]):
@@ -590,6 +622,12 @@ class Command(BaseCommand):
         except (OSError, ValueError) as e:
             self.stderr.write(self.style.ERROR(f"{path}: {e}"))
             raise SystemExit(1)
+        if o["passed"]:
+            hits = list(passed_dates(doc))
+            for name, raw, sent in hits:
+                self.stdout.write(f"{name}: {raw}: “{sent}”")
+            self.stdout.write(f"{len(hits)} passed date(s) in {path}")
+            return
         if o["glance_hash"]:
             import hashlib
 
