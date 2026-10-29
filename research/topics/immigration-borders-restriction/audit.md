@@ -1,9 +1,7 @@
-Targeted re-audit of: durable-dates pass
-
 # Audit: Immigration & Borders
-Date: 2026-10-05. Verdict: ready.
+2026-10-28, verdict: ready.
 
-The durable-dates pass anchored 13 time-relative passages to explicit dates. No figures, sources or URLs changed, and none of the 13 adds a claim. The why-now, Japan and South Korea, Census projection, safe-countries list, Frontex, ICE record, q0, q5, p0 and p2 edits all read naturally and stay true after the dates they name. The Census "January 2026 release" matches the source URL (2026/01). The CBO credit for deaths outnumbering births from 2030 in p2 matches the CBO projection already stated in stat 6's detail. The Ipsos "every 2026 reading through September" narrows "throughout 2026" and makes no new claim. A scan for remaining now-anchored wording found only durable phrasing: "the administration says" is a present-tense attribution, "the current system" and "today's global inequality" sit inside camp arguments, and stat 6's CBO projection is stated as a projection. check_topic_text: 0 errors, 0 warnings. check_links: 0 dead, 0 placeholder (5 blocked, 3 redirect).
+Re-audit after a fix. Both issues from the first audit are fixed, and nothing around them broke. The border encounters tile now links CBP's October 16, 2026 release, which carries the highlighted FY2026 figure; Pew stays named in the source label for fiscal 2019 to 2025, and the detail says the 2026 figure comes from the linked CBP release. In the EU asylum tile, the first-half 2026 figure is now credited in the sentence to EUAA's mid-2026 Latest Asylum Trends report, so it no longer leans on the full-year 2025 link. The rest of the page reads as it did before. Basics run from global scale through the falls in crossings and claims to opinion, labor, budgets, crime, detention and deaths. The eight questions cover the empirical and value disputes, and their lean labels are fair opposites. Five camps, each named by what it wants, are steelmanned at even length. The crux follows from the questions and positions, and the why-now (the EU Return Regulation) is in scope. Mechanical checks are clean: 0 errors, and no dead or placeholder links. The glance hash matches, and every render is newer than topic.json. The 1440 and 390 renders and the share cards show the fixed tiles correctly.
 
 ## Issues for editorial
 none
