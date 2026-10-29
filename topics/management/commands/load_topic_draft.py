@@ -14,6 +14,7 @@ audit packets, run logs) lives beside it and never enters the database.
 
 import datetime
 import json
+import math
 import re
 from pathlib import Path
 
@@ -91,6 +92,9 @@ def derive_viz(s, viz, series):
 
     ranked: each row's pct is its magnitude's share of the largest
     magnitude; a negative row is flagged `neg` and drawn from the other end.
+    With `"scale": "log"` the pct is the row's place on a log axis that starts
+    one decade below the smallest value, so values spanning orders of
+    magnitude all stay visible.
     radial/bar: fill_pct is the value itself when the unit is a share in
     percent, or value/N for a unit "of N"; a rate or change ("% a year",
     "% rise") gets no fill, since a 0–100 track says nothing about it.
@@ -100,10 +104,17 @@ def derive_viz(s, viz, series):
     if viz == "ranked":
         nums = [_num(r.get("value")) for r in series]
         top = max((abs(n) for n in nums if n), default=None)
+        log = s.get("scale") == "log" and all(n and n > 0 for n in nums)
+        if log:
+            floor = math.log10(min(nums) / 10)
+            span = math.log10(top) - floor
         if top:
             for r, n in zip(series, nums):
                 if r.get("pct") in (None, "") and n is not None:
-                    r["pct"] = max(1 if n else 0, min(100, round(100 * abs(n) / top)))
+                    if log:
+                        r["pct"] = max(1, min(100, round(100 * (math.log10(n) - floor) / span)))
+                    else:
+                        r["pct"] = max(1 if n else 0, min(100, round(100 * abs(n) / top)))
                 if n is not None and n < 0:
                     r["neg"] = True
     fill = s.get("fill_pct")
@@ -566,6 +577,7 @@ class Command(BaseCommand):
                         unit=s.get("unit", "")[:24],
                         viz=viz,
                         wide=bool(s.get("wide")),
+                        log_scale=viz == "ranked" and s.get("scale") == "log",
                         series=series if viz == "ranked" else [],
                         range_min=str(s.get("range_min") or "")[:40],
                         range_max=str(s.get("range_max") or "")[:40],

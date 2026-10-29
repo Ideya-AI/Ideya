@@ -146,7 +146,7 @@
       <div class="basics">
         {% for stat in sec.basics.stats.all|slice:":3" %}
         <div class="tile">
-          <div class="tk">{{ stat.label }}{% if stat.viz == "ranked" and stat.unit %}<span class="runit">{{ stat.unit }}</span>{% endif %}</div>
+          <div class="tk">{{ stat.label }}{% if stat.viz == "ranked" and stat.unit or stat.log_scale %}<span class="runit">{{ stat.unit }}{% if stat.log_scale %}{% if stat.unit %} · {% endif %}log scale{% endif %}</span>{% endif %}</div>
           {% if stat.viz == "ranked" %}
           <div class="vrow" style="margin-top:2px"><div class="rank">
             {% for row in stat.series_glance %}<div class="rrow{% if row.highlight %} on{% endif %}{% if row.neg %} neg{% endif %}"><span class="rk">{{ row.label }}</span><span class="rbar"><i style="width:{{ row.pct }}%"></i></span><span class="rv">{{ row.value|num }}</span></div>{% endfor %}

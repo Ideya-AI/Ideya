@@ -522,6 +522,9 @@ class Stat(models.Model):
     label = models.CharField(max_length=120, help_text="The metric, not a sentence.")
     viz = models.CharField(max_length=12, choices=VIZ_CHOICES, default=BAR)
     wide = models.BooleanField(default=False, help_text="Span two columns (ranked).")
+    log_scale = models.BooleanField(
+        default=False, help_text="Ranked bars on a log scale, for values spanning orders of magnitude."
+    )
     value = models.CharField(max_length=24, blank=True, help_text="Headline number.")
     unit = models.CharField(
         max_length=24,

@@ -55,6 +55,7 @@ that art in the file; the fuller brief stays in `icon.md`.
           "wide": false,               // spans 2 of 3 columns; ranked tiles are wide
           "value": "0.03",             // <=24, empty for ranked
           "unit": "deaths/TWh",        // <=24
+          "scale": "log",              // ranked only, optional: values spanning orders of magnitude
           "series": [                  // ranked only; one shared unit
             { "label": "Coal", "value": "24.6", "highlight": false }
           ],

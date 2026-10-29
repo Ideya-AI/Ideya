@@ -39,6 +39,7 @@ def _stat(s):
         "unit": s.unit,
         "viz": s.viz,
         "wide": s.wide,
+        **({"scale": "log"} if s.log_scale else {}),
         "fill_pct": s.fill_pct,
         "series": s.series,
         "range_min": s.range_min,

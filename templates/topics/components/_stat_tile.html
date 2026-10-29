@@ -11,7 +11,7 @@ to reveal the deeper paragraph + source (no button/signifier). Axis 1 (breadth):
 
   {% if stat.viz == "ranked" %}
     <div class="vrow"><div class="rank">
-      {% if stat.unit %}<div class="runit">{{ stat.unit }}</div>{% endif %}
+      {% if stat.unit or stat.log_scale %}<div class="runit">{{ stat.unit }}{% if stat.log_scale %}{% if stat.unit %} · {% endif %}log scale{% endif %}</div>{% endif %}
       {% for row in stat.series %}
       <div class="rrow{% if row.highlight %} on{% endif %}{% if row.neg %} neg{% endif %}">
         <span class="rk2">{{ row.label }}</span>
