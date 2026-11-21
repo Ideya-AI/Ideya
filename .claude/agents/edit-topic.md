@@ -38,7 +38,12 @@ A refresh is fix mode on a twin (`<slug>-refresh`), and the list is the
 `### Changes` under the last `## Refresh` heading of `research.md`. It may also
 add an item (written as in normal mode, without an `id`), cut one or move one.
 The counts and targets still hold; a passed date becomes the outcome, stated
-with its source.
+with its source. The live page (`research/topics/<slug without -refresh>/topic.json`)
+is the floor: nothing ends up worse than it is there. When an addition does not fit
+a length target, shorten the addition or leave it out and say so in the report;
+never make room by cutting or compressing an argument, example or piece of evidence
+the live page has, and keep the camps and the two sides of a question as even as
+they were.
 
 ## How the page reads
 

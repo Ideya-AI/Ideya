@@ -62,8 +62,13 @@ dates the spawn prompt lists, then walk the page one section at a time:
 - Order: is each section's first four still what a quick reader most needs now?
 
 The bar is the reading: change what a reader would now get wrong or miss, not a
-figure that moved a little or an "as of" anchor that still reads true. New facts
-meet the Method below. Append, never edit above it:
+figure that moved a little or an "as of" anchor that still reads true. A refresh
+never leaves a part of the page worse than it was. News belongs where it is the
+subject: the why-now, a stat, an action. A question's or camp's detail holds lasting
+reasoning; propose a change to one only when the event changes the argument itself,
+not to illustrate it, and never an addition that would crowd out an argument,
+example or piece of evidence already there, or lengthen one camp past the others.
+New facts meet the Method below. Append, never edit above it:
 `## Refresh <today>` in `research.md` with the sourced findings, then
 `### Changes`, one line each: section, item (its `id` or position), update, add,
 cut or move, and why. A cut item loses its reader votes, so cut only what is now

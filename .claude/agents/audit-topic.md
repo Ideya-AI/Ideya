@@ -58,6 +58,36 @@ Renders older than `topic.json` are current when
 `research/topics/<slug>/renders/glance.hash`: the fix touched only expanded detail text,
 which you read from `topic.json`.
 
+## A refresh
+
+A slug ending `-refresh` is a twin of a published topic. The live page is the
+baseline: `research/topics/<slug without -refresh>/topic.json`. A refresh may improve
+the page or leave a part as it was; it may never leave a part worse than the page
+readers have now. After your read, compare the two `content` blocks item by item
+(match by `id`) and read every changed, cut and added field against what it replaced.
+This check runs on every audit of a twin, first or re-audit, and the convergence rule
+above does not limit it.
+
+A regression is an editorial issue, however small, with the fix stated (usually:
+restore the live wording, or cut the addition that displaced it):
+
+- an argument, example or piece of evidence a camp or a side of a question had, now
+  dropped or weakened, when nothing made it outdated or wrong;
+- lasting reasoning replaced by a news item, or a question's detail pulled toward the
+  news and off the question it asks;
+- camps or sides left less even in length, evidence or energy than they were;
+- a fact, source or link lost, or made harder for a reader to follow;
+- glance text, a label, a chart or an order that reads less clearly than before;
+- actions left less useful to a reader than they were, when a like-for-like
+  replacement exists;
+- a layout that was clean in the live renders
+  (`research/topics/<slug without -refresh>/renders/`, when present) and is not now.
+
+Not a regression: something cut because it is outdated, wrong or overtaken by events;
+a tighter restatement that keeps the point; a change that is neither better nor worse.
+Name the outcome in the packet's opening paragraph: "no regression against the live
+page", or the regressions listed as issues.
+
 ## What you read for
 
 - **One story.** Does the page, top to bottom, tell one coherent account of the
