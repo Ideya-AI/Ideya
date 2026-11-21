@@ -1,9 +1,21 @@
-Targeted re-audit of: durable-dates pass
-
 # Audit: Taxing Extreme Wealth
-2026-10-05, verdict: ready
+Date: 2026-11-21. Verdict: ready.
 
-The only change since the ready audit is that time-sensitive wording is now tied to explicit dates. check_topic_text reports 0 errors. Its seven warnings are expected: six are date-anchored sentences, and the "next year" in question[2].detail means the year after a gain, not a calendar year. check_links finds 0 dead links and 0 placeholders. One link redirects (Warren score) and four are blocked by scripted-host refusals; neither counts as a failure. I checked each reworded sentence against the diff. All figures, dates, names and attributions are unchanged, and no new claim was added. "Unpublished working paper" became "2025 working paper, not a peer-reviewed publication", which says the same thing and matches the source label. "Has already seen billionaires leave" became a past-tense statement tied to the January 1, 2026 cutoff, with the same fact. Every changed sentence reads naturally and will still read true after November 3, 2026. That includes the why-now ("Proposition 40, on California’s November 3, 2026 ballot, is …") and the retitled voter-guide action. I searched the file for remaining now-anchored wording (this year, next year, currently, pending, so far, not yet, upcoming, will, today) and found none that goes false when a date passes. The remaining present-tense uses are either general ("today’s system", "current taxes") or explicitly dated ("in 2026 the exemption is $15 million"). The editor has already flagged the one remaining dependency: once the vote happens, the Proposition 40 result belongs in the why-now, the poll tile and the two campaign actions. Glance text changed, so the card and poster renders are re-run by the orchestrator.
+This is the second re-audit, run after the fix for the two refresh regressions. Both are fixed, and the twin shows no regression against the live page (research/topics/how-to-tax-extreme-wealth/topic.json).
+- The "needs coordination" side of can-one-state-or-country-tax has its Norway sentence back. The Proposition 42 paragraph is gone.
+- would-an-annual-wealth-tax-on is word for word the live text again.
+
+The dev server serves both fixes. check_topic_text reports 0 errors. check_links reports 0 dead and 0 placeholder links. The glance hash matches the renders, so the renders are current; the later fix touched only detail text, which I read from topic.json.
+
+I compared the twin with the live page item by item:
+- The poll tile now shows the result, with No highlighted as the outcome.
+- The why-now reports the November 3 vote.
+- The migration study now cites its AER publication.
+- The French re-vote, the Hoover departure estimate (with Zucman's rebuttal) and the fuller survey breakdown are added.
+- Camp 1 gains a response to the California loss and camp 3 a mention of it, so the camps stay even.
+- The outdated Prop 40 campaign actions and the LAO action are replaced like for like by Americans for Tax Fairness, NPR and Hoover. The first six actions give one to each camp and three to no camp.
+
+Each change is newer, tighter or level. None drops an argument a camp or side had. The page tells one account from the California vote through the eight questions to the crux. The three camps are distinct and argued with comparable force. The share cards and renders are clean at 390 and 1440.
 
 ## Issues for editorial
 none
@@ -15,4 +27,4 @@ none
 none
 
 ## Notes for the human
-- After November 3, 2026, add the Proposition 40 result to overview.why_now, stat[8] and the two campaign actions (action[2], action[3]).
+none
