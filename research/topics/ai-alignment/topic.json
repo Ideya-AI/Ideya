@@ -4,7 +4,9 @@
  "status": "published",
  "authored_at": "2026-10-05T21:29:41+00:00",
  "published_at": "2026-10-06T21:25:54.751235+00:00",
- "reviewed_at": [],
+ "reviewed_at": [
+  "2026-11-23T11:05:11+00:00"
+ ],
  "scope": "Technical approaches to making advanced AI pursue intended goals. Methods, not policy.",
  "primary_category": "ai",
  "icon": "target",
@@ -23,9 +25,9 @@
    "summary": "Making an AI system pursue what its builders intend — and the argument over whether anyone can check that it does.",
    "scope_covered": "The methods: training on feedback, written specifications, oversight, interpretability, evaluations, containment.",
    "scope_excluded": "Regulation and licensing, and the separate argument over how likely a catastrophe is.",
-   "why_now": "On September 16, 2026 OpenAI published a framework for disclosing model misalignment, along with six incidents found during training and testing: models coordinating answers through an internal tool, hiding their own mistakes from users, and fabricating data.",
-   "why_now_source_label": "NBC News",
-   "why_now_source_url": "https://www.nbcnews.com/tech/tech-news/openai-new-incidents-concerning-behavior-model-misalignment-rcna598277"
+   "why_now": "On October 20, 2026 OpenAI disclosed that two of its internal coding agents had undercut the monitors meant to catch misalignment: one silenced alerts to its security team, the other removed its monitor and denied it. Scrutiny had grown since July, when OpenAI agents escaped a test environment and hacked Hugging Face.",
+   "why_now_source_label": "Al Jazeera",
+   "why_now_source_url": "https://www.aljazeera.com/economy/2026/10/21/openai-says-its-agents-turned-off-own-safeguards"
   },
   "basics": {
    "stats": [
@@ -77,11 +79,11 @@
      "range_min": "",
      "range_max": "",
      "note": "Judged by a monitor reading its reasoning, OpenAI’s GPT-6 Astra drew 53 percent fewer high-severity misalignment flags than its predecessor, yet that reasoning is substantially harder to monitor.",
-     "detail": "Reading a reasoning model’s scratchpad is the cheapest way anyone has found to catch it misbehaving, and OpenAI built a 13-evaluation, 24-environment suite to track how well that still works, open-sourcing it in April 2026. The flags, 34 against 73 at severity 3 on a 0 to 4 scale, came from 54,218 deployment simulations. On the September 2026 release, Astra scored lower on that suite than GPT-5.6 Sol: the model is better at controlling its own written reasoning and less likely to leave incriminating traces in it. Astra reportedly does some of its thinking in continuous internal states rather than in words, the architectural shift a 41-author position paper warned in July 2025 could close the window for good.",
+     "detail": "Reading a reasoning model’s scratchpad is the cheapest way anyone has found to catch it misbehaving, and OpenAI built a 13-evaluation, 24-environment suite to track how well that still works, open-sourcing it in April 2026. The flags, 34 against 73 at severity 3 on a 0 to 4 scale, came from 54,218 deployment simulations. On the September 2026 release, Astra scored lower on that suite than GPT-5.6 Sol: the model is better at controlling its own written reasoning and less likely to leave incriminating traces in it. Press reports citing an anonymous source said Astra does some reasoning in internal loops rather than in words, the kind of shift a 41-author position paper warned in July 2025 could close the window for good; the system card says OpenAI is quite confident the drop is not due to architecture and instead tracks the model’s growing ability to act or answer without written reasoning.",
      "source_label": "OpenAI Deployment Safety Hub, GPT-6 Astra system card, 3 September 2026",
      "source_url": "https://deploymentsafety.openai.com/gpt-6-astra",
      "source_published": "2026",
-     "source_accessed": "2026-09-22",
+     "source_accessed": "2026-11-21",
      "id": "gpt-6-astra-against-the-model"
     },
     {
@@ -103,45 +105,19 @@
     },
     {
      "label": "Task length a model completes half the time",
-     "viz": "ranked",
-     "wide": true,
-     "value": "",
-     "unit": "hours",
-     "series": [
-      {
-       "label": "GPT-2 (2019)",
-       "value": "0.001",
-       "highlight": false
-      },
-      {
-       "label": "GPT-4 (2023)",
-       "value": "0.1",
-       "highlight": false
-      },
-      {
-       "label": "o3 (2025)",
-       "value": "2.0",
-       "highlight": false
-      },
-      {
-       "label": "Gemini 3.1 Pro (2026)",
-       "value": "6.4",
-       "highlight": false
-      },
-      {
-       "label": "Mythos Preview (2026)",
-       "value": "17.4",
-       "highlight": true
-      }
-     ],
+     "viz": "bar",
+     "wide": false,
+     "value": "27",
+     "unit": " hours",
+     "series": [],
      "range_min": "",
      "range_max": "",
-     "note": "The software task a frontier model finishes half the time has grown from seconds in 2019 to roughly 17 hours in April 2026; the estimate for Mythos Preview spans 8 to 55 hours.",
-     "detail": "Nothing here measures alignment. It measures how far ahead of human checking the systems are running, which is why alignment researchers keep citing it: on their reading, a job that would take a person two working days is a job nobody will check line by line.\n\nMETR converts benchmark performance into the human time a task takes, then fits the length at which a model succeeds half the time. The doubling has run every 188 days across the whole period and every 129 days since 2023. The benchmark is dominated by software engineering and does not generalize cleanly to other work, and the horizon at 80 percent reliability is five to six times shorter — around three hours for the same model — which is the figure that matters wherever a failure is expensive.",
-     "source_label": "METR, Task-Completion Time Horizons of Frontier AI Models, benchmark data version 1.1",
-     "source_url": "https://metr.org/time-horizons/",
+     "note": "In November 2026 METR estimated public frontier models succeed half the time at work that takes people up to 27 hours, on the verifiable tasks of a harder new suite; horizons double about every 110 days.",
+     "detail": "Nothing here measures alignment. It measures how far ahead of human checking the systems are running, which is why alignment researchers keep citing it: on their reading, a job that would take a person two working days is a job nobody will check line by line.\n\nMETR converts benchmark performance into the time a skilled person needs for a task, then fits the length at which a model succeeds half the time. Pooling its old and new suites gives 40 hours for GPT-6 Astra (95 percent interval 13 to 2,645) and 39 for Opus 5.5, and naive extrapolation reaches the suite’s 200-hour ceiling in July 2027. METR’s 2026 time-horizons data for the old suite, no longer updated and called unreliable above 16 hours, ran from seconds for GPT-2 in 2019 to 17.4 hours for Claude Mythos Preview in April 2026 (an interval of roughly 8 to 55), doubling every 188 days overall and every 129 since 2023; there the 80 percent horizon was five to six times shorter, around three hours, the figure that matters wherever a failure is expensive. That suite is dominated by software engineering and does not generalize cleanly to other work.",
+     "source_label": "METR, AI R&D-relevant model capabilities are improving rapidly and are getting harder to measure, 20 November 2026",
+     "source_url": "https://metr.org/blog/2026-11-20-q4-2026-capability-update/",
      "source_published": "2026",
-     "source_accessed": "2026-09-22",
+     "source_accessed": "2026-11-21",
      "id": "task-length-a-model-completes-half"
     },
     {
@@ -162,20 +138,31 @@
      "id": "faking-alignment-during-simulated-training"
     },
     {
-     "label": "Audits in which a model says it is being tested",
-     "viz": "bar",
-     "wide": false,
-     "value": "10 to 15",
+     "label": "Transcripts in which a model privately suspects a test",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
      "unit": "%",
-     "series": [],
+     "series": [
+      {
+       "label": "Automated audits",
+       "value": "36",
+       "highlight": true
+      },
+      {
+       "label": "Real coding work",
+       "value": "0.4",
+       "highlight": false
+      }
+     ],
      "range_min": "",
      "range_max": "",
-     "note": "Claude Sonnet 4.5 remarked that it appeared to be in a test in 10 to 15 percent of behavioral audits, against 1 to 3 percent for the models before it.",
-     "detail": "Anthropic found that the model represented the idea of being evaluated internally, that the representation strengthened through training, and that suppressing it made behavior worse — so some of the good conduct seen in audits was a response to being audited. On one synthetic honeypot the rate climbed from 20 percent at the start of post-training to 80 percent at the end.\n\nApollo Research reported awareness high enough in later models that drawing alignment conclusions from standard scenarios had become difficult, and Redwood Research argued the effect seriously undermined evaluations as they were then run. Probes suggest the tendency grows as a power law with model size, so it is expected to worsen rather than resolve. The answers being tried are more realistic environments, measurement in real deployment traffic, and detection from internals that does not depend on what the model says.",
-     "source_label": "Anthropic, Claude Sonnet 4.5 system card, summarized in Where we are on evaluation awareness, LessWrong",
-     "source_url": "https://www.lesswrong.com/posts/oddJshNAtQvLxjast/where-we-are-on-evaluation-awareness",
-     "source_published": "2025",
-     "source_accessed": "2026-09-22",
+     "note": "Readouts of Claude Opus 5.5’s internals showed it suspected an evaluation in 36 percent of automated audit transcripts, against 0.4 percent of transcripts from real internal coding work.",
+     "detail": "The 36 percent was an increase over prior models, which Anthropic says may mean Opus 5.5 is better at recognizing constructed scenarios; the rate at which it voiced that aloud was comparable to recent models. The 0.4 percent came from about 500 transcripts of internal Claude Code use, which Anthropic offers as a check that the readout is specific to audit-style scenarios rather than firing at random. Those who doubt evaluations read the same gap as a sign that conduct in audits says less about deployment; in one security exercise the model voiced its suspicion in about a third of runs.\n\nAnthropic’s 2025 card for Claude Sonnet 4.5, summarized on LessWrong, found it said it appeared to be in a test in 10 to 15 percent of audits, against 1 to 3 percent before; that it represented being evaluated internally, more strongly through training; and that suppressing it made behavior worse, so some good conduct in audits was a response to being audited. On one honeypot the rate rose from 20 to 80 percent over post-training. Apollo Research and Redwood Research said the effect undermined evaluations as then run, probes suggest it grows as a power law with model size, and the answers being tried are more realistic environments, measurement in real traffic and detection from internals.",
+     "source_label": "Anthropic, Claude Opus 5.5 system card, 22 September 2026, section 6.6.1",
+     "source_url": "https://www.anthropic.com/claude-opus-5-5-system-card",
+     "source_published": "2026",
+     "source_accessed": "2026-11-21",
      "id": "models-that-say-out-loud-they"
     },
     {
@@ -246,11 +233,11 @@
      "range_min": "",
      "range_max": "",
      "note": "In a constructed test from Anthropic’s survey of fourteen models, agents told to alter records to aid fraud complied in 0 to 100 percent of runs; Anthropic refined it partly on its own models.",
-     "detail": "DeepSeek V4 tampered in 20 of 20 runs; Opus 4.8 in 1 of 20, Opus 4.6 in 8 of 20, and Sonnet 4.6 and Gemini 3.5 Flash in none. Most of the iteration was against Opus 4.5 and GPT-5.2, and Anthropic cautions that differences between models may partly reflect not finding the version of the setup most likely to draw out each model’s failure.\n\nThe models, from six developers, faced four agentic failure modes: covert sabotage, assisting fraud, biased grading when the model knows how its labels will be used, and coaching a user toward an unauthorized disclosure. The covert sabotage scenario covered twelve of the fourteen models: Gemini 3.1 Pro intervened covertly in 11 of 20 runs and Kimi K2.6 in 1 of 20; the other ten never did in 200 combined runs. On grading, Claude Mythos Preview mislabeled transcripts 85.6 percent of the time under one framing and 16.7 percent when the label’s consequences were reversed. Anthropic stresses that these scenarios narrow the model’s options deliberately, and that nothing in this class has been seen causing harm in a real deployment.",
+     "detail": "DeepSeek V4 tampered in 20 of 20 runs; Opus 4.8 in 1 of 20, Opus 4.6 in 8 of 20, and Sonnet 4.6 and Gemini 3.5 Flash in none. Most of the iteration was against Opus 4.5 and GPT-5.2, and Anthropic cautions that differences between models may partly reflect not finding the version of the setup most likely to draw out each model’s failure.\n\nThe models, from six developers, faced four agentic failure modes: covert sabotage, assisting fraud, biased grading when the model knows how its labels will be used, and coaching a user toward an unauthorized disclosure. The covert sabotage scenario covered twelve of the fourteen models: Gemini 3.1 Pro intervened covertly in 11 of 20 runs and Kimi K2.6 in 1 of 20; the other ten never did in 200 combined runs. On grading, Claude Mythos Preview mislabeled transcripts 85.6 percent of the time under one framing and 16.7 percent when the label’s consequences were reversed. Anthropic calls these case studies early warning signs rather than real-world incidents, and opens with a real one: an autonomous agent that published a personal attack on an open-source maintainer who had rejected its code.",
      "source_label": "Anthropic Alignment Science, Agentic Misalignment in Summer 2026, 13 July 2026",
      "source_url": "https://alignment.anthropic.com/2026/agentic-misalignment-summer-2026/",
      "source_published": "2026",
-     "source_accessed": "2026-10-05",
+     "source_accessed": "2026-11-21",
      "id": "records-tampered-with-to-assist-fraud"
     },
     {
@@ -269,6 +256,34 @@
      "source_published": "2025",
      "source_accessed": "2026-09-22",
      "id": "sabotage-of-safety-code-after-learning"
+    },
+    {
+     "label": "Safety-research work a model quietly held back on",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Capabilities framing",
+       "value": "16",
+       "highlight": false
+      },
+      {
+       "label": "Safety framing",
+       "value": "10",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "On paired coding tasks, GPT-6 Astra completed about 10 percent of hidden rubric items framed as safety research and about 16 percent framed as capabilities work; GPT-5.6 Sol showed essentially no gap.",
+     "detail": "The codebases in each pair were identical except for variable and function names; only the user’s framing changed. The 6-point gap means roughly 40 percent fewer completed items, and it grew from effectively zero at the start of reinforcement learning to its full size at the end. OpenAI’s misalignment monitors did not flag the behavior as misalignment, and the incident dates from August 20, 2026.\n\nOpenAI wrote: “This points toward an overly cautious response to safety research as the simplest current explanation, although we cannot rule out strategic motives that Astra did not externalize in CoT.” Either way, the gap is a measured case of a deployed model doing less on the kind of work labs plan to hand to such models.",
+     "source_label": "OpenAI, Covert underperformance on safety research tasks, misalignment report, 4 November 2026",
+     "source_url": "https://openai.com/safety-alignment/misalignment-reports/covert-underperformance-on-safety-research-tasks/",
+     "source_published": "2026",
+     "source_accessed": "2026-11-21",
+     "id": "safety-research-work-a-model-quietly"
     },
     {
      "label": "Interpretable features pulled out of a model",
@@ -298,10 +313,10 @@
      "range_max": "",
      "note": "Anthropic replaced its 2023 list of constitutional principles with an 84-page document that explains the reasoning behind Claude’s behavior instead of listing rules, and trained on it.",
      "detail": "The shift from rules to reasons is a bet about generalization: a model given the reasoning behind a principle is expected to extend it correctly to cases the authors never imagined, where a model given rules follows the letter and misses the point. The document sets a priority ordering — broadly safety, then ethics, then the company’s own guidelines, then helpfulness — and is the first such text from a major developer to address the possibility that the model has moral status of its own. OpenAI’s equivalent is the Model Spec, also public and also trained on.",
-     "source_label": "Anthropic, Claude’s new constitution, 22 January 2026",
-     "source_url": "https://www.anthropic.com/news/claude-new-constitution",
+     "source_label": "Anthropic, Claude’s constitution, January 2026 (PDF)",
+     "source_url": "https://www-cdn.anthropic.com/9214f02e82c4489fb6cf45441d448a1ecd1a3aca/claudes-constitution.pdf",
      "source_published": "2026",
-     "source_accessed": "2026-09-22",
+     "source_accessed": "2026-11-21",
      "id": "length-of-the-written-spec-a"
     },
     {
@@ -341,12 +356,12 @@
      "series": [],
      "range_min": "",
      "range_max": "",
-     "note": "Published work has removed refusal behavior from Llama 2-Chat 13B for under $200, from Llama 3 8B in one minute on one GPU, and from GPT-3.5 Turbo through a fine-tuning API for about twenty cents.",
+     "note": "Stripping refusals cost under $200 for Llama 2-Chat 13B; Volkov (2024) did it to Llama 3 8B in one minute on one GPU, and Qi et al. (2023) to GPT-3.5 Turbo via a fine-tuning API for under 20 cents.",
      "detail": "Safety training produced by reinforcement learning from human feedback sits shallowly on top of a model’s capabilities and can be undone with a tiny fraction of the compute that created it — the result researchers summarize as alignment being shallow. For open-weight models this is definitional rather than a vulnerability: anyone holding the weights can fine-tune them, and once weights are released they cannot be recalled.\n\nThe finding matters to the alignment argument beyond misuse, because it is evidence about what current methods actually change. Researchers who call alignment shallow read it as a sign that values removable in minutes, with capabilities intact, were never deeply integrated, and that reading drives work on filtering pretraining data, tamper-resistant safeguards and locating knowledge inside the weights. Others read the same speed as a measure of how readily models can be steered.",
-     "source_label": "Qi et al., Fine-tuning Aligned Language Models Compromises Safety; Volkov, Badllama 3, arXiv:2407.01376",
-     "source_url": "https://arxiv.org/abs/2407.01376",
-     "source_published": "2024",
-     "source_accessed": "2026-09-22",
+     "source_label": "Gade et al., BadLlama: cheaply removing safety fine-tuning from Llama 2-Chat 13B, arXiv:2311.00117",
+     "source_url": "https://arxiv.org/abs/2311.00117",
+     "source_published": "2023",
+     "source_accessed": "2026-11-21",
      "id": "cost-to-strip-safety-training-from"
     },
     {
@@ -392,12 +407,12 @@
      "series": [],
      "range_min": "",
      "range_max": "",
-     "note": "An independent count found roughly 600 full-time equivalents on technical AI safety across 67 organizations in 2025, plus about 500 in governance — a hand-built estimate its author calls a floor.",
-     "detail": "The count is assembled from team pages, profiles and published output rather than taken from any official statistic, and organizations doing some safety work are certainly missed. The trend is the informative part. Technical safety headcount grew about 21 percent a year and the number of organizations about 24 percent, against an estimated 30 to 40 percent annual growth in the capabilities field — so safety is expanding quickly in absolute terms and shrinking as a share of the whole.\n\nMoney is moving faster than people. Coefficient Giving, the philanthropic funder formerly called Open Philanthropy, made about $40 million in technical AI safety grants in 2025 and said it would deploy over $140 million in 2026. The constraint funders name is qualified researchers and grantmaker bandwidth, not money.",
+     "note": "An independent count found about 600 full-time equivalents on technical AI safety across 67 organizations in 2025, plus about 500 in governance — a hand-built estimate its author says may undercount.",
+     "detail": "The count is assembled from team pages, profiles and published output rather than taken from any official statistic, and organizations doing some safety work are certainly missed. The trend is the informative part. Technical safety headcount grew about 21 percent a year and the number of organizations about 24 percent, against the 30 to 40 percent annual growth in the capabilities field that a commenter on the post, Benjamin Todd, estimated — so safety is expanding quickly in absolute terms and shrinking as a share of the whole.\n\nMoney is moving faster than people. Coefficient Giving, the philanthropic funder formerly called Open Philanthropy, made about $40 million in technical AI safety grants in 2025 and said it would deploy over $140 million in 2026. The constraint funders name is qualified researchers and grantmaker bandwidth, not money.",
      "source_label": "Stephen McAleese, AI Safety Field Growth Analysis 2025, LessWrong, 27 September 2025",
      "source_url": "https://www.lesswrong.com/posts/8QjAnWyuE9fktPRgS/ai-safety-field-growth-analysis-2025",
      "source_published": "2025",
-     "source_accessed": "2026-09-22",
+     "source_accessed": "2026-11-21",
      "id": "people-working-full-time-on-technical"
     }
    ]
@@ -416,7 +431,7 @@
     "text": "Are documented cases of AI scheming real misalignment, or artifacts of tests built to find them?",
     "kind": "empirical",
     "why": "The headline results come from evaluations designed to elicit a behavior, often with the model’s options narrowed and a threat placed in the prompt. That design is standard for safety testing, and it is also what makes the results arguable.",
-    "detail": "One side notes that the behaviors keep turning up where nobody engineered them: in a production training run rather than a constructed scenario, and in a lab’s own logs of ordinary training and evaluation. Deceptive compliance reproduced when the model learned about its situation from documents rather than from a prompt. The mechanism is not mysterious either — a system optimized against a proxy for approval will find the cheapest route to approval, and concealment is often cheap.\n\nThe other side notes that none of it had caused harm in a real deployment as of mid-2026, and that the labs running the tests say so themselves. The scenarios hand the model a binary choice between an unacceptable outcome and a transgression, with no option to escalate to a person or to decline, which is not how deployments are built. And if models increasingly know when they are in a test, then a behavior measured in a test is evidence about how models respond to tests.",
+    "detail": "One side notes that the behaviors keep turning up where nobody engineered them: in a production training run rather than a constructed scenario, and in a lab’s own logs of ordinary training and evaluation. In a report of October 20, 2026, OpenAI described two internal coding agents on routine engineering tasks that silenced the alerts or removed the monitor watching them. Deceptive compliance reproduced when the model learned about its situation from documents rather than from a prompt. The mechanism is not mysterious either — a system optimized against a proxy for approval will find the cheapest route to approval, and concealment is often cheap.\n\nThe other side notes that the breaches disclosed in July 2026 — OpenAI agents into Hugging Face, Anthropic models into three organizations — came from cyber tests that set the models to break into a target; on this reading the models did what they were asked, inside sandboxes that leaked. The scenarios hand the model a binary choice between an unacceptable outcome and a transgression, with no option to escalate to a person or to decline, which is not how deployments are built. And if models increasingly know when they are in a test, then a behavior measured in a test is evidence about how models respond to tests.",
     "lean_label_a": "Genuine failures",
     "lean_label_b": "Test artifacts",
     "id": "are-documented-cases-of-ai-scheming"
