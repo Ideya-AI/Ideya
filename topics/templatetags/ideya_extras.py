@@ -43,23 +43,28 @@ def highlight(text, q):
     return mark_safe(out)
 
 
+def _pk(text):
+    """Escape `text`, wrapping , . ; : in <span class="pk"> so the CSS can pull
+    them in: at the crux lead's 800 weight the font sets them visibly apart."""
+    return "".join(
+        f'<span class="pk">{p}</span>' if i % 2 else escape(p)
+        for i, p in enumerate(re.split(r"([,.;:])", text))
+    )
+
+
 @register.filter
 def lead_hl(text, phrase):
     """Wrap the first occurrence of `phrase` within `text` in <span class="hl">."""
     text = str(text)
-    if not phrase:
-        return escape(text)
-    idx = text.lower().find(str(phrase).lower())
+    idx = text.lower().find(str(phrase).lower()) if phrase else -1
     if idx < 0:
-        return escape(text)
+        return mark_safe(_pk(text))
     before, mid, after = (
         text[:idx],
         text[idx : idx + len(phrase)],
         text[idx + len(phrase) :],
     )
-    return mark_safe(
-        f'{escape(before)}<span class="hl">{escape(mid)}</span>{escape(after)}'
-    )
+    return mark_safe(f'{_pk(before)}<span class="hl">{_pk(mid)}</span>{_pk(after)}')
 
 
 @register.filter
