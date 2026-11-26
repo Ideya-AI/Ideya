@@ -157,7 +157,11 @@ def _request(url: str, method: str, timeout: float) -> ProbeResult:
     single bad URL can't crash the run.
     """
     redirects = _CountingRedirectHandler()
-    opener = urllib.request.build_opener(redirects)
+    # A cookie jar: some hosts redirect to themselves while setting a cookie
+    # and loop forever for a client that drops it.
+    opener = urllib.request.build_opener(
+        redirects, urllib.request.HTTPCookieProcessor()
+    )
     req = urllib.request.Request(url, method=method, headers=_HEADERS)
     try:
         with opener.open(req, timeout=timeout) as resp:
@@ -264,9 +268,7 @@ def collect_links(topic_slug: Optional[str]) -> list[LinkItem]:
     into the Command class."""
     items: list[LinkItem] = []
 
-    actions = Action.objects.select_related(
-        "section__topic", "section__category"
-    )
+    actions = Action.objects.select_related("section__topic", "section__category")
     stats = Stat.objects.select_related("section__topic", "section__category")
     if topic_slug:
         actions = actions.filter(section__topic__slug=topic_slug)

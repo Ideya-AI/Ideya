@@ -79,6 +79,18 @@ def amp_nbsp(text):
 
 
 @register.filter
+def nbhy(text):
+    """Glance text: a short two-part compound ("low-income", "net-zero")
+    gets a non-breaking hyphen so a phone never splits it across lines.
+    Longer compounds keep the break, so a narrow column cannot overflow."""
+    return re.sub(
+        r"(?<![\w-])\w+-\w+(?![\w-])",
+        lambda m: m.group().replace("-", "\u2011") if len(m.group()) <= 16 else m.group(),
+        str(text),
+    )
+
+
+@register.filter
 def num(text):
     """A displayed number: a hyphen used as a minus becomes a true minus,
     then caret exponents become superscripts (sup_exp)."""
@@ -96,7 +108,7 @@ def sup_exp(text):
     break that register and can't be searched. The transform belongs here, at
     the display edge — a reader should not have to parse a caret.
     """
-    s = str(text)
+    s = re.sub(r"(?<=\d) (?=°[CF]\b)", "\u00a0", str(text))  # 1.5 °C never splits
     if "^" not in s:
         return escape(s)
     out, last = [], 0

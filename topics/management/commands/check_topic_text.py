@@ -202,7 +202,9 @@ def _dates(text):
                     d = datetime.date(int(g[5]), _MONTHS[g[4].lower()], int(g[3]))
                 elif g[6]:
                     y, mo = int(g[7]), _MONTHS[g[6].lower()]
-                    d = datetime.date(y + (mo == 12), mo % 12 + 1, 1) - datetime.timedelta(days=1)
+                    d = datetime.date(
+                        y + (mo == 12), mo % 12 + 1, 1
+                    ) - datetime.timedelta(days=1)
                 else:
                     d = datetime.date(int(g[8]), int(g[9]), int(g[10]))
             except ValueError:
@@ -261,7 +263,9 @@ def passed_dates(doc, today=None):
     reviewed_at, else authored_at) and are behind us now: each sentence says
     something about an event that has since happened. Refresh starts here."""
     today = today or datetime.date.today()
-    stamps = [s for s in (doc.get("reviewed_at") or []) if s] or [doc.get("authored_at") or ""]
+    stamps = [s for s in (doc.get("reviewed_at") or []) if s] or [
+        doc.get("authored_at") or ""
+    ]
     if not stamps[-1]:
         return
     since = datetime.date.fromisoformat(str(stamps[-1])[:10])
@@ -425,11 +429,14 @@ def run(doc, path):
             nums = [
                 float(m.group())
                 for m in re.finditer(
-                    r"-?\d+(?:\.\d+)?", str(s.get("value", "")).replace(",", "")
+                    r"-?\d+(?:\.\d+)?", str(s.get("value", "")).replace(",", "").replace("−", "-")
                 )
             ]
-            lo = re.search(r"-?\d+(?:\.\d+)?", str(s.get("range_min")).replace(",", ""))
-            hi = re.search(r"-?\d+(?:\.\d+)?", str(s.get("range_max")).replace(",", ""))
+            lo = re.search(
+                r"-?\d+(?:\.\d+)?",
+                str(s.get("range_min")).replace(",", "").replace("−", "-"),
+            )
+            hi = re.search(r"-?\d+(?:\.\d+)?", str(s.get("range_max")).replace(",", "").replace("−", "-"))
             if lo and hi and nums:
                 lo, hi = float(lo.group()), float(hi.group())
                 if hi <= lo:
@@ -570,13 +577,15 @@ def run(doc, path):
                 reported.add((other, name))
                 c.warn(f"{name}", f"repeats {other}: “{gram} …”")
 
-    for name, msg in stale_dates(fields + [
-        (f"action[{n}].title", x.get("title")) for n, x in enumerate(actions)
-    ] + [(f"stat[{n}].label", x.get("label")) for n, x in enumerate(stats)]):
+    for name, msg in stale_dates(
+        fields
+        + [(f"action[{n}].title", x.get("title")) for n, x in enumerate(actions)]
+        + [(f"stat[{n}].label", x.get("label")) for n, x in enumerate(stats)]
+    ):
         c.warn(name, msg)
-    for name, msg in now_relative(fields + [
-        (f"action[{n}].title", x.get("title")) for n, x in enumerate(actions)
-    ]):
+    for name, msg in now_relative(
+        fields + [(f"action[{n}].title", x.get("title")) for n, x in enumerate(actions)]
+    ):
         c.warn(name, msg)
 
     for key, items in (

@@ -1,4 +1,4 @@
-{% comment %}One engagement option. Expects `a`. Axis 1 (breadth): `is_extra` cards
+{% load ideya_extras %}{% comment %}One engagement option. Expects `a`. Axis 1 (breadth): `is_extra` cards
 appear only when the section's Go-deeper is open.{% endcomment %}
 {% with grp=a.kind %}
 <a class="act{% if a.is_extra %} act-xtra{% endif %}"
@@ -8,6 +8,6 @@ appear only when the section's Go-deeper is open.{% endcomment %}
     {% if a.position %}<span class="afor"><span class="fd" style="background:{{ a.position.color_var }}"></span>{{ a.position.name }}</span>{% endif %}
   </div>
   <div class="atitle">{{ a.title }}{% if a.url %} ↗{% endif %}</div>
-  {% if a.description %}<p class="adesc">{{ a.description }}</p>{% endif %}
+  {% if a.description %}<p class="adesc">{{ a.description|sup_exp }}</p>{% endif %}
 </a>
 {% endwith %}

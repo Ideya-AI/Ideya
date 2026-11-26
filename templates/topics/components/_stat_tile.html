@@ -7,18 +7,18 @@ to reveal the deeper paragraph + source (no button/signifier). Axis 1 (breadth):
 <div class="tile{% if stat.wide or stat.widened %} wide{% endif %}{% if stat.full %} full{% endif %}{% if stat.is_extra %} tile-xtra{% endif %}{% if stat.detail or stat.source_label %} tile-x{% endif %}" data-xid="{{ stat.id }}"
      {% if stat.detail or stat.source_label %}:class="{ 'tile-open': open[{{ stat.id }}] }" @click="toggle($el)"{% endif %}>
   {% if stat.detail or stat.source_label %}<button type="button" class="xtoggle" @click.stop="toggle($el.closest('.tile'))" :aria-expanded="!!open[{{ stat.id }}]" aria-label="Toggle details"><i class="ph-duotone ph-caret-down"></i></button>{% endif %}
-  <div class="tk">{{ stat.label }}</div>
+  <div class="tk">{{ stat.label|sup_exp }}</div>
 
   {% if stat.viz == "ranked" %}
     <div class="vrow"><div class="rank">
       {% if stat.unit or stat.log_scale %}<div class="runit">{{ stat.unit }}{% if stat.log_scale %}{% if stat.unit %} · {% endif %}log scale{% endif %}</div>{% endif %}
-      {% for row in stat.series %}
+      {% with z=stat.zero_at %}{% for row in stat.series_bars %}
       <div class="rrow{% if row.highlight %} on{% endif %}{% if row.neg %} neg{% endif %}">
         <span class="rk2">{{ row.label }}</span>
-        <span class="rbar"><i style="width:{{ row.pct }}%"></i></span>
+        <span class="rbar"><i style="{{ row.bar }}"></i>{% if z is not None %}<b class="rzero" style="left:{{ z }}%"></b>{% endif %}</span>
         <span class="rv">{{ row.value|num }}</span>
       </div>
-      {% endfor %}
+      {% endfor %}{% endwith %}
     </div></div>
 
   {% elif stat.viz == "radial" %}
@@ -41,7 +41,7 @@ to reveal the deeper paragraph + source (no button/signifier). Axis 1 (breadth):
     {% if stat.fill_pct %}<div class="vrow"><div class="pbar"><i style="width:{{ stat.fill_pct }}%"></i></div></div>{% endif %}
   {% endif %}
 
-  {% if stat.note %}<div class="tnote">{{ stat.note|sup_exp }}</div>{% endif %}
+  {% if stat.note %}<div class="tnote">{{ stat.note|nbhy|sup_exp }}</div>{% endif %}
 
   {% if stat.detail or stat.source_label %}
   <div class="tmore" x-show="open[{{ stat.id }}]" x-cloak>

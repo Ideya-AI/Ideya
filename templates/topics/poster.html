@@ -61,7 +61,8 @@
   .rank{display:flex;flex-direction:column;gap:8px}
   .rrow{display:grid;grid-template-columns:1.25in 1fr 0.6in;align-items:center;gap:10px}
   .rk{font-size:10pt;line-height:1.25;color:var(--ink-500)}
-  .rbar{height:11px;border-radius:9999px;background:var(--ink-100);overflow:hidden}
+  .rbar{position:relative;height:11px;border-radius:9999px;background:var(--ink-100);overflow:hidden}
+  .rzero{position:absolute;top:0;bottom:0;width:2px;margin-left:-1px;background:var(--ink-700)}
   .rbar i{display:block;height:100%;border-radius:9999px;background:var(--ink-300)}
   .rrow.on .rbar i{background:var(--green-500)} .rrow.on .rk{color:var(--ink-900);font-weight:700}
   .rv{font-size:11pt;text-align:right;font-variant-numeric:tabular-nums;color:var(--ink-400)}
@@ -146,16 +147,16 @@
       <div class="basics">
         {% for stat in sec.basics.stats.all|slice:":3" %}
         <div class="tile">
-          <div class="tk">{{ stat.label }}{% if stat.viz == "ranked" and stat.unit or stat.log_scale %}<span class="runit">{{ stat.unit }}{% if stat.log_scale %}{% if stat.unit %} · {% endif %}log scale{% endif %}</span>{% endif %}</div>
+          <div class="tk">{{ stat.label|sup_exp }}{% if stat.viz == "ranked" and stat.unit or stat.log_scale %}<span class="runit">{{ stat.unit }}{% if stat.log_scale %}{% if stat.unit %} · {% endif %}log scale{% endif %}</span>{% endif %}</div>
           {% if stat.viz == "ranked" %}
           <div class="vrow" style="margin-top:2px"><div class="rank">
-            {% for row in stat.series_glance %}<div class="rrow{% if row.highlight %} on{% endif %}{% if row.neg %} neg{% endif %}"><span class="rk">{{ row.label }}</span><span class="rbar"><i style="width:{{ row.pct }}%"></i></span><span class="rv">{{ row.value|num }}</span></div>{% endfor %}
+            {% for row in stat.series_glance %}<div class="rrow{% if row.highlight %} on{% endif %}{% if row.neg %} neg{% endif %}"><span class="rk">{{ row.label }}</span><span class="rbar"><i style="{{ row.bar }}"></i>{% if stat.zero_at is not None %}<b class="rzero" style="left:{{ stat.zero_at }}%"></b>{% endif %}</span><span class="rv">{{ row.value|num }}</span></div>{% endfor %}
           </div></div>
-          <div class="tnote">{{ stat.note|sup_exp }}</div>
+          <div class="tnote">{{ stat.note|nbhy|sup_exp }}</div>
           {% else %}
           <div class="tv"><span>{{ stat.value_shown|sup_exp }}</span>{% if stat.unit_shown %}<small{% if stat.unit_is_word %} class="u-word"{% endif %}>{{ stat.unit_shown }}</small>{% endif %}</div>
           {# Meter only when there is a true share to show — an empty track under a bare number reads as "zero" (mirrors _stat_tile's guard). #}
-          <div class="vrow">{% if stat.fill_pct %}<div class="pbar"><i style="width:{{ stat.fill_pct }}%"></i></div>{% endif %}<div class="tnote">{{ stat.note|sup_exp }}</div></div>
+          <div class="vrow">{% if stat.fill_pct %}<div class="pbar"><i style="width:{{ stat.fill_pct }}%"></i></div>{% endif %}<div class="tnote">{{ stat.note|nbhy|sup_exp }}</div></div>
           {% endif %}
         </div>
         {% endfor %}
@@ -168,7 +169,7 @@
       <div class="eyebrow"><i class="ph-duotone ph-question"></i>Questions <span class="sub">· what’s contested</span></div>
       <div class="qrow">
         {% for q in sec.questions.questions.all|slice:":3" %}
-        <div class="qcell"><span class="qtag {% if q.kind == 'empirical' %}emp{% else %}val{% endif %}"><i class="ph-duotone ph-{{ q.tag_icon }}"></i>{{ q.get_kind_display }}</span><div class="qt">{{ q.text }}</div></div>
+        <div class="qcell"><span class="qtag {% if q.kind == 'empirical' %}emp{% else %}val{% endif %}"><i class="ph-duotone ph-{{ q.tag_icon }}"></i>{{ q.get_kind_display }}</span><div class="qt">{{ q.text|sup_exp }}</div></div>
         {% endfor %}
       </div>
     </div>

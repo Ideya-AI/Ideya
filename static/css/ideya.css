@@ -283,6 +283,9 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .rrow.on .rv { color: var(--fg1); font-weight: var(--weight-semibold); }
 /* a negative row draws its magnitude from the right end, so sign reads without color */
 .rrow.neg .rbar i { margin-left: auto; }
+/* mixed-sign series: a zero line, negatives left of it, positives right (Stat.zero_at) */
+.rrow .rbar { position: relative; }
+.rzero { position: absolute; top: 0; bottom: 0; width: 2px; margin-left: -1px; background: var(--fg2); }
 /* the series' shared unit, once, over the value column */
 .runit { font-size: var(--text-xs); color: var(--fg3); text-align: right; margin-bottom: -4px; }
 /* plain percentage bar */

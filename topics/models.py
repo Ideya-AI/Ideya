@@ -523,7 +523,8 @@ class Stat(models.Model):
     viz = models.CharField(max_length=12, choices=VIZ_CHOICES, default=BAR)
     wide = models.BooleanField(default=False, help_text="Span two columns (ranked).")
     log_scale = models.BooleanField(
-        default=False, help_text="Ranked bars on a log scale, for values spanning orders of magnitude."
+        default=False,
+        help_text="Ranked bars on a log scale, for values spanning orders of magnitude.",
     )
     value = models.CharField(max_length=24, blank=True, help_text="Headline number.")
     unit = models.CharField(
@@ -606,7 +607,7 @@ class Stat(models.Model):
     def unit_shown(self):
         u = self.unit or ""
         m = self._CURRENCY.match(u)
-        return u[m.end():] if m else u
+        return u[m.end() :] if m else u
 
     POSTER_ROWS = 4
 
@@ -621,21 +622,54 @@ class Stat(models.Model):
         rows = self.series
         n = self.POSTER_ROWS
         if len(rows) <= n:
-            return rows
+            return self._bars(rows)
 
         def num(r):
-            m = re.search(r"-?\d+(?:\.\d+)?", str(r.get("value", "")).replace(",", "").replace("−", "-"))
+            m = re.search(
+                r"-?\d+(?:\.\d+)?",
+                str(r.get("value", "")).replace(",", "").replace("−", "-"),
+            )
             return abs(float(m.group())) if m else 0.0
 
         hi = next((i for i, r in enumerate(rows) if r.get("highlight")), 0)
         top = max(range(len(rows)), key=lambda i: num(rows[i]))
         keep = []
-        for i in [hi, top, len(rows) - 1, 0] + sorted(range(len(rows)), key=lambda i: (abs(i - hi), -i)):
+        for i in [hi, top, len(rows) - 1, 0] + sorted(
+            range(len(rows)), key=lambda i: (abs(i - hi), -i)
+        ):
             if i not in keep:
                 keep.append(i)
             if len(keep) == n:
                 break
-        return [rows[i] for i in sorted(keep)]
+        return self._bars([rows[i] for i in sorted(keep)])
+
+    @property
+    def zero_at(self):
+        """Where zero sits on the track (0–100) when a ranked series mixes
+        negative and positive rows, else None. Negatives run left from it and
+        positives right, so a loss never reads as a small gain."""
+        neg = [r.get("pct") or 0 for r in self.series if r.get("neg")]
+        pos = [r.get("pct") or 0 for r in self.series if not r.get("neg")]
+        if not neg or not max(pos, default=0):
+            return None
+        return round(100 * max(neg) / (max(neg) + max(pos)), 1)
+
+    @property
+    def series_bars(self):
+        return self._bars(self.series)
+
+    def _bars(self, rows):
+        """Rows with `bar`, the inline style of the drawn bar."""
+        z = self.zero_at
+        if z is None:
+            return [{**r, "bar": f"width:{r.get('pct') or 0}%"} for r in rows]
+        k = (100 - z) / max(r.get("pct") or 0 for r in self.series if not r.get("neg"))
+        out = []
+        for r in rows:
+            w = round((r.get("pct") or 0) * k, 1)
+            left = z - w if r.get("neg") else z
+            out.append({**r, "bar": f"margin-left:{round(left, 1)}%;width:{w}%"})
+        return out
 
     @property
     def range_band(self):
