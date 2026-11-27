@@ -65,6 +65,8 @@ _BOT_WALLED_HOSTS = {
     # Close the connection on scripted requests; the pages load in a browser.
     "afar.org",
     "longevity.technology",
+    # Serves an incomplete certificate chain; browsers complete it, urllib can't.
+    "localnewsinitiative.northwestern.edu",
 }
 
 # HEAD outcomes that mean "the server didn't really answer" — retry with GET.
