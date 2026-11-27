@@ -1,8 +1,8 @@
 {
  "slug": "technological-restraint-vs-acceleration",
  "title": "Technological Restraint vs. Acceleration",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-11-23T12:05:38+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Slowing or relinquishing dangerous technology versus accelerating it.",
@@ -15,5 +15,702 @@
   "what-we-owe-future-generations",
   "frontier-ai-regulation",
   "ai-existential-risk"
- ]
+ ],
+ "icon": "gauge",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: A large square microchip with pins on all four sides stands as the dominant mass, tilted slightly, on a gently rounded hill; a medium car speedometer dial with a plain needle overlaps the chip's lower right corner; a medium gear sits behind the chip's left edge; a small atom and a small DNA helix float in the upper sky; a winding road runs from the lower left across the hill and over the horizon to the right, crossing the whole frame.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #b3404f, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: robots, humanoid figures, glowing brains, skulls, explosions, mushroom clouds, stop signs, red lights, warning triangles, chains, padlocks, fire, rockets launching, upward arrows, rising charts, gas and brake pedals, ruins, Terminator eyes, any text or numbers on the dial",
+ "content": {
+  "overview": {
+   "summary": "How fast to build technology that could do great harm, AI above all. The central argument: would agreed restraint hold, and leave the world safer?",
+   "scope_covered": "The pace of dangerous technology in general: precaution, acceleration, steering and who controls it, argued from the history of scientific pauses, weapons treaties and bans and, today above all, from AI.",
+   "scope_excluded": "The design of AI law, the odds of an AI catastrophe, rules for risky pathogen research, open model weights and the weight owed to future people, each of which has its own page.",
+   "why_now": "After Democrats won both houses of Congress on November 3, 2026, Representative Yassamin Ansari wrote that the “top of the Democratic agenda on day 1 needs to be a pause on advanced AI development,” alongside a ban on artificial superintelligence.",
+   "why_now_source_label": "Yahoo News",
+   "why_now_source_url": "https://www.yahoo.com/news/politics/articles/congresswoman-calls-ai-superintelligence-ban-193920688.html"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "Americans’ view on whether superhuman AI should be developed",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Not until safe, or never",
+       "value": "64",
+       "highlight": true
+      },
+      {
+       "label": "Ambiguous",
+       "value": "16",
+       "highlight": false
+      },
+      {
+       "label": "As usual or faster",
+       "value": "16",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "A 2025 poll for the Future of Life Institute, which campaigns for a ban, found 64 percent of US adults want superhuman AI built only once proven safe and controllable, or never; 30 percent said never.",
+     "detail": "The institute’s full report shows that the survey of 2,000 adults, run by Bryson Gillette Insights from September 29 to October 5, 2025, described superhuman AI as systems that “significantly exceed the best human performance across virtually all cognitive tasks,” and told respondents that Meta and OpenAI have said they intend to build it. The last row groups those who chose normal business processes or as quickly as possible; the institute’s summary puts those wanting expert-level or superhuman AI as quickly as possible at 5 percent. On a separate question, 64 percent supported an “immediate pause” on advanced AI development until it is proven safe, and 73 percent supported robust regulation. The poll was released alongside the institute’s Statement on Superintelligence. Those who favor acceleration answer that a hypothetical about a technology described in alarming terms measures unease, not a considered trade-off against forgone benefits.",
+     "source_label": "Future of Life Institute, Advanced AI Survey (Bryson Gillette Insights)",
+     "source_url": "https://futureoflife.org/recent-news/americans-want-regulation-or-prohibition-of-superhuman-ai/",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "americans-view-on-whether-superhuman-ai"
+    },
+    {
+     "label": "Growth in training compute for frontier AI models",
+     "viz": "bar",
+     "wide": false,
+     "value": "5",
+     "unit": "× per year",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The computing power used to train the leading language models has grown about fivefold a year since 2020, and the cost of training them about 3.5-fold a year.",
+     "detail": "Training compute is the clearest single measure of how hard the field is pushing, and it is what most proposed AI pauses would cap. A fivefold yearly increase compounds to roughly 3,000-fold over five years. Epoch AI also reports that AI chip performance per dollar has grown 49 percent a year since 2023 and that frontier AI labs have raised more than $370 billion. Those who favor restraint read the curve as the reason to act soon, since every year of delay in agreeing limits starts from a higher base; those who favor acceleration read it as the engine of the benefits, and note that compute caps chase a moving target as algorithms and chips improve.",
+     "source_label": "Epoch AI, Trends in Artificial Intelligence",
+     "source_url": "https://epoch.ai/trends",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "growth-in-training-compute-for-frontier"
+    },
+    {
+     "label": "AI researchers’ preferred pace of AI progress",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Slower",
+       "value": "34.7",
+       "highlight": false
+      },
+      {
+       "label": "Current speed",
+       "value": "26.9",
+       "highlight": false
+      },
+      {
+       "label": "Faster",
+       "value": "38.4",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Asked what pace of AI progress over the next five years would make them most optimistic for humanity, 34.7 percent of AI researchers chose slower, 26.9 the current speed and 38.4 faster.",
+     "detail": "The question added: “Assume any change in speed affects all projects equally.” That takes the race argument, that slowing down at home only hands the lead to others, out of the calculation. The 2,778 respondents had published at six leading AI venues and were surveyed in late 2023. The slower and faster rows sum the published categories: 4.8 percent much slower, 29.9 somewhat slower, 22.8 somewhat faster and 15.6 much faster. In the same survey about 70 percent of the 1,329 asked said society should prioritize AI safety research more than it does. A split this close is itself the finding: the people who build AI do not agree on whether it is moving too fast.",
+     "source_label": "Grace et al., Thousands of AI Authors on the Future of AI (AI Impacts), arXiv:2401.02843",
+     "source_url": "https://arxiv.org/abs/2401.02843",
+     "source_published": "2023",
+     "source_accessed": "2026-11-23",
+     "id": "ai-researchers-preferred-pace-of-ai"
+    },
+    {
+     "label": "AI researchers’ median odds of human extinction or disempowerment from AI",
+     "viz": "bar",
+     "wide": false,
+     "value": "5",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The median AI researcher put the chance of AI causing human extinction or similarly permanent disempowerment at 5 percent; a 2022 forecasting tournament put extinction far lower.",
+     "detail": "This is the number underneath much of the AI restraint debate: a pause is easy to justify if the risk is large and hard to justify if it is negligible. It is a median of widely spread answers from the 1,321 respondents to this version of the question; framed as humans being unable to control future advanced AI, the median among the 661 who answered rose to 10 percent. The same survey found most respondents more optimistic than pessimistic overall. Those who favor restraint ask what other technology would be built with a 1 in 20 chance of ending humanity. Those who favor acceleration answer that researchers have no track record forecasting such events, and that professional forecasters in a 2022 tournament run by the Forecasting Research Institute put AI-caused extinction by 2100 under half a percent. The probability and its sources are the subject of the AI Existential Risk page.",
+     "source_label": "Grace et al., Thousands of AI Authors on the Future of AI (AI Impacts), arXiv:2401.02843",
+     "source_url": "https://arxiv.org/abs/2401.02843",
+     "source_published": "2023",
+     "source_accessed": "2026-11-23",
+     "id": "ai-researchers-median-odds-of-human"
+    },
+    {
+     "label": "Deaths per unit of electricity, by source",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "deaths/TWh",
+     "scale": "log",
+     "series": [
+      {
+       "label": "Coal",
+       "value": "24.62",
+       "highlight": false
+      },
+      {
+       "label": "Oil",
+       "value": "18.43",
+       "highlight": false
+      },
+      {
+       "label": "Gas",
+       "value": "2.82",
+       "highlight": false
+      },
+      {
+       "label": "Hydropower",
+       "value": "1.3",
+       "highlight": false
+      },
+      {
+       "label": "Wind",
+       "value": "0.035",
+       "highlight": false
+      },
+      {
+       "label": "Nuclear",
+       "value": "0.03",
+       "highlight": true
+      },
+      {
+       "label": "Solar",
+       "value": "0.019",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Counting accidents and air pollution, nuclear power has caused about 0.03 deaths per terawatt-hour of electricity, close to wind and solar and roughly 800 times fewer than coal.",
+     "detail": "Civilian nuclear power is the case those who favor acceleration cite most often for the cost of restraint: in their account, a technology slowed by public fear and regulation after Three Mile Island in 1979 and Chernobyl in 1986, while the coal and gas it would have displaced kept killing far more people through air pollution. Its share of world electricity peaked at 17.4 percent in 1996 and fell to 8.8 percent in 2025, by Our World in Data’s Ember-based series. The rates draw on Markandya and Wilkinson (2007), Sovacool et al. (2016) and UNSCEAR. The nuclear rate counts the deaths attributed to Chernobyl and Fukushima, including the evacuation deaths at Fukushima, against nuclear generation from 1965 to 2021; the fossil rates come from European plant studies and are probably higher where pollution controls are weaker. Those who favor restraint answer that the nuclear story shows the cost of a technology losing public trust after accidents, an argument for building safety in before deployment rather than for dropping caution, and that its slowdown also had economic causes, chiefly cost overruns.",
+     "source_label": "Our World in Data, What are the safest and cleanest sources of energy?",
+     "source_url": "https://ourworldindata.org/safest-sources-of-energy",
+     "source_published": "2021",
+     "source_accessed": "2026-11-23",
+     "id": "deaths-per-unit-of-electricity-by"
+    },
+    {
+     "label": "Countries that prohibit heritable human genome editing",
+     "viz": "radial",
+     "wide": false,
+     "value": "75",
+     "unit": "of 96",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Of 106 countries surveyed in 2020, 96 had a policy on editing human embryos, and 75 of those prohibit using an edited embryo to start a pregnancy; no country explicitly permits it.",
+     "detail": "Heritable editing, changing an embryo’s genes so that the change passes to future generations, is the clearest current case of a capability that exists and that no country explicitly allows. Five of the 75 prohibitions allow exceptions. Laboratory research on edited embryos that does not start a pregnancy is less settled: among countries whose policy addresses it, 23 prohibit it and 11 explicitly permit it. The consensus was tested in 2018, when the Chinese scientist He Jiankui announced the birth of twin girls from embryos he had edited; he was later convicted and imprisoned in China. The survey was published by researchers at the Center for Genetics and Society, which opposes heritable editing, and Dalhousie University. In November 2025 Business Standard reported that Preventive, a startup backed by technology investors, was researching embryo editing, which those who favor restraint read as the start of pressure on the ban and those who favor acceleration as a sign that a prohibition built on fear of unknowns will not hold once the medical case is made.",
+     "source_label": "Baylis, Darnovsky, Hasson & Krahn, The CRISPR Journal 3(5), via Center for Genetics and Society",
+     "source_url": "https://geneticsandsociety.org/article/human-germ-line-and-heritable-genome-editing-global-policy-landscape",
+     "source_published": "2020",
+     "source_accessed": "2026-11-23",
+     "id": "countries-that-prohibit-heritable-human-genome"
+    },
+    {
+     "label": "Private investment in AI by region, 2025",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "$ billion",
+     "series": [
+      {
+       "label": "United States",
+       "value": "285.9",
+       "highlight": true
+      },
+      {
+       "label": "Europe",
+       "value": "20.9",
+       "highlight": false
+      },
+      {
+       "label": "China",
+       "value": "12.4",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Private investment in AI companies reached about $286 billion in the United States in 2025, against about $21 billion in Europe and $12 billion in China, a count that misses state funds.",
+     "detail": "Global corporate investment in AI reached a record $581.69 billion in 2025, led by private investment of $344.66 billion and mergers and acquisitions of $214.44 billion, and private investment grew 127.5 percent in a year. The Chinese figure counts tracked private venture deals and understates China’s total effort, which runs heavily through state guidance funds and the budgets of large companies. The size of the flow matters to every side: those who favor acceleration see capital chasing a technology with enormous returns, those who favor restraint see commercial pressure that no voluntary slowdown can withstand, and those who frame the question as one of power see its concentration in a handful of firms as the problem in itself.",
+     "source_label": "Stanford HAI, 2026 AI Index Report, Economy chapter",
+     "source_url": "https://hai.stanford.edu/ai-index/2026-ai-index-report/economy",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "private-investment-in-ai-by-region"
+    },
+    {
+     "label": "Local data center ballot measures in 2026 that went toward limits",
+     "viz": "radial",
+     "wide": false,
+     "value": "46",
+     "unit": "of 47",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Of the 47 local ballot measures on data centers decided in the United States in 2026 through November 13, 46 went in favor of limiting development and one in favor of allowing it.",
+     "detail": "Most came on November 3, 2026, when, by Ballotpedia’s count of that day, voters favored limits in 40 of 41 local measures, approving 27 that limited or opposed data centers, including five full bans, twelve partial bans and three six-month moratoriums in Maine, and defeating 13 that favored development. The one exception was in Harwood, North Dakota. These were local land-use and zoning questions, and the reporting around them points to electricity prices, water, noise and strain on infrastructure rather than fear of advanced AI as the main concerns. Those who favor restraint read them as public appetite for limits; those who favor acceleration, as local opposition of the kind that has long slowed housing and power plants.",
+     "source_label": "Ballotpedia News, Voters have decided on 47 measures related to data centers in 2026",
+     "source_url": "https://news.ballotpedia.org/2026/11/15/voters-have-decided-on-47-measures-related-to-data-centers-in-2026-in-december-they-will-consider-four-more/",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "local-data-center-ballot-measures-in"
+    },
+    {
+     "label": "Nuclear test explosions by decade",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "tests",
+     "series": [
+      {
+       "label": "1945–49",
+       "value": "7",
+       "highlight": false
+      },
+      {
+       "label": "1950s",
+       "value": "291",
+       "highlight": false
+      },
+      {
+       "label": "1960s",
+       "value": "706",
+       "highlight": false
+      },
+      {
+       "label": "1970s",
+       "value": "550",
+       "highlight": false
+      },
+      {
+       "label": "1980s",
+       "value": "439",
+       "highlight": false
+      },
+      {
+       "label": "1990s",
+       "value": "57",
+       "highlight": false
+      },
+      {
+       "label": "2000s",
+       "value": "2",
+       "highlight": false
+      },
+      {
+       "label": "2010s",
+       "value": "4",
+       "highlight": false
+      },
+      {
+       "label": "2020–25",
+       "value": "0",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Of 2,056 nuclear test explosions recorded since 1945, ten came after the 1996 test-ban treaty, the last by North Korea in 2017; the US alleges that China tested secretly in 2020.",
+     "detail": "Nuclear testing is the clearest case of states restraining a dangerous technology they already had. Testing peaked in 1962, with 178 explosions, fell after the 1963 Limited Test Ban Treaty moved it underground, and nearly stopped after the Comprehensive Nuclear-Test-Ban Treaty opened for signature in 1996; that treaty has not entered into force because several states, including the United States and China, have not ratified it. The later tests were India (2) and Pakistan (2) in 1998 and North Korea (6) from 2006 to 2017; the tally counts simultaneous explosions as one. In February 2026 the US State Department alleged a concealed, yield-producing Chinese test at Lop Nur on June 22, 2020, which China called “entirely unfounded” and the treaty organization said it lacked the data to confirm (NPR, 2026). In late October 2025 President Trump wrote that he had ordered testing “on an equal basis,” and Energy Secretary Chris Wright then said the planned tests were “not nuclear explosions” (AIP FYI, 2025). Those who favor restraint cite the record as proof that rivals can agree verifiable limits; others note that the restraint came after the weapons were built, and that a test is easy to detect in a way software is not.",
+     "source_label": "Arms Control Association, The Nuclear Testing Tally (decade totals summed from its yearly table)",
+     "source_url": "https://www.armscontrol.org/factsheets/nuclear-testing-tally",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "nuclear-test-explosions-by-decade"
+    },
+    {
+     "label": "Share of AI research that is about AI safety",
+     "viz": "radial",
+     "wide": false,
+     "value": "2",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Research on AI safety grew 312 percent from 2018 to 2023, to about 45,000 articles, but still makes up only about 2 percent of all research into AI.",
+     "detail": "The Emerging Technology Observatory identified safety articles in its Merged Academic Corpus with a machine-learning classifier, so the figures are estimates that include some false positives. The measure counts publications, not money or staff, and much safety work inside AI companies is never published. Advocates of differential development put this gap at the center of their case: if the ability to build powerful systems is growing many times faster than the ability to understand and control them, they argue, effort should shift toward safety and defense rather than everything being sped up or stopped evenly. Those who favor a pause read the same gap as the reason to wait.",
+     "source_label": "Emerging Technology Observatory (Georgetown CSET), Still a drop in the bucket",
+     "source_url": "https://eto.tech/blog/still-drop-bucket-ai-safety-research/",
+     "source_published": "2018 to 2023",
+     "source_accessed": "2026-11-23",
+     "id": "share-of-ai-research-that-is"
+    },
+    {
+     "label": "World life expectancy at birth",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "years",
+     "series": [
+      {
+       "label": "1800",
+       "value": "28.5",
+       "highlight": false
+      },
+      {
+       "label": "1900",
+       "value": "32.0",
+       "highlight": false
+      },
+      {
+       "label": "1950",
+       "value": "46.4",
+       "highlight": false
+      },
+      {
+       "label": "1975",
+       "value": "58.3",
+       "highlight": false
+      },
+      {
+       "label": "2000",
+       "value": "66.4",
+       "highlight": false
+      },
+      {
+       "label": "2023",
+       "value": "73.2",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Average life expectancy at birth worldwide rose from about 46 years in 1950 to about 73 years in 2023.",
+     "detail": "Those who favor acceleration put this gain at the center of the ledger, crediting technologies that were new and frightening in their day, including vaccines, antibiotics, chlorinated water, synthetic fertilizer and refrigeration. Those who favor restraint do not dispute the record; they argue that its lesson applies to technologies whose worst failure is local and recoverable, and not to those whose worst failure is not. Figures before 1950 are historical reconstructions with wide uncertainty.",
+     "source_label": "Our World in Data, Life expectancy (UN World Population Prospects and historical reconstructions)",
+     "source_url": "https://ourworldindata.org/grapher/life-expectancy",
+     "source_published": "2023",
+     "source_accessed": "2026-11-23",
+     "id": "world-life-expectancy-at-birth"
+    },
+    {
+     "label": "Signatures on the 2025 call to prohibit superintelligence",
+     "viz": "bar",
+     "wide": false,
+     "value": "79,049",
+     "unit": "signatures",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The Future of Life Institute’s 2025 call to prohibit superintelligence showed 79,049 signatures on November 23, 2026.",
+     "detail": "The institute’s 2023 letter seeking a six-month pause, published March 22, 2023, showed 31,810 signatures on the same day on its own page (Future of Life Institute, “Pause Giant AI Experiments: An Open Letter”). It asked “all AI labs to immediately pause for at least 6 months the training of AI systems more powerful than GPT-4”; no lab paused. The 2025 statement asks for “a prohibition on the development of superintelligence, not lifted before there is broad scientific consensus that it will be done safely and controllably, and strong public buy-in.” The shift from a timed pause to a conditional prohibition is the movement’s own measure of how its demands have hardened. Signatures on open web statements are not a sample of anything and can be inflated; the 2025 count includes 5,000 gathered by the campaign group Ekō. Their weight comes mostly from the named signatories, who for the 2025 statement included Geoffrey Hinton, Yoshua Bengio, Stuart Russell, Steve Wozniak, Richard Branson, Steve Bannon, Susan Rice and Prince Harry, according to the institute.",
+     "source_label": "Future of Life Institute, Statement on Superintelligence (count as displayed November 23, 2026)",
+     "source_url": "https://superintelligence-statement.org/",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "signatures-on-the-2025-call-to"
+    },
+    {
+     "label": "US public and AI experts: more excited or more concerned about AI",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Public: concerned",
+       "value": "51",
+       "highlight": true
+      },
+      {
+       "label": "Public: excited",
+       "value": "11",
+       "highlight": false
+      },
+      {
+       "label": "Experts: concerned",
+       "value": "15",
+       "highlight": false
+      },
+      {
+       "label": "Experts: excited",
+       "value": "47",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Half of US adults say they are more concerned than excited about the growing use of AI in daily life; nearly half of AI experts say they are more excited than concerned.",
+     "detail": "Pew surveyed 5,410 US adults in August 2024 and 1,013 AI experts, people whose work or research relates to AI, identified mainly through conference authorship, from August to October 2024. The two groups were far apart on excitement but close on control: 55 percent of adults and 57 percent of experts said they want more control over how AI is used in their lives, and about six in ten adults and 56 percent of experts were more worried that government regulation of AI would not go far enough than that it would go too far. Those who favor restraint cite the gap as a reason the public should have more say; those who favor acceleration, as evidence that the people who understand the technology best fear it least.",
+     "source_label": "Pew Research Center, How the US Public and AI Experts View Artificial Intelligence",
+     "source_url": "https://www.pewresearch.org/internet/2025/04/03/how-the-us-public-and-ai-experts-view-artificial-intelligence/",
+     "source_published": "2024",
+     "source_accessed": "2026-11-23",
+     "id": "us-public-and-ai-experts-more"
+    },
+    {
+     "label": "People worldwide who say AI offers more benefits than drawbacks",
+     "viz": "radial",
+     "wide": false,
+     "value": "59",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Across the countries Ipsos surveyed, 59 percent of people in 2025 said AI products and services offer more benefits than drawbacks, while 52 percent said they make them nervous.",
+     "detail": "Optimism and nervousness run high at the same time, which is the shape of public opinion the restraint debate has to deal with: most people expect AI to be useful and many are uneasy about it. The AI Index reports that India had the sharpest rise in AI-related concern from 2024 to 2025, up 14 percentage points, and that more than 80 percent of respondents in Malaysia, Thailand, Indonesia and Singapore expect AI to profoundly change their lives within three to five years. The AI Index’s summary of its 2026 findings adds that only 31 percent of Americans trust their government to regulate AI, the lowest among the countries surveyed.",
+     "source_label": "Stanford HAI, 2026 AI Index Report, Public Opinion chapter (Ipsos surveys)",
+     "source_url": "https://hai.stanford.edu/ai-index/2026-ai-index-report/public-opinion",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "people-worldwide-who-say-ai-offers"
+    },
+    {
+     "label": "Share of the world living in extreme poverty",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "1990",
+       "value": "43.4",
+       "highlight": false
+      },
+      {
+       "label": "2000",
+       "value": "36.2",
+       "highlight": false
+      },
+      {
+       "label": "2010",
+       "value": "21.0",
+       "highlight": false
+      },
+      {
+       "label": "2023",
+       "value": "10.5",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The share of people living on less than $3 a day, adjusted for prices, fell from 43 percent of the world in 1990 to about 10 percent in 2023.",
+     "detail": "The international poverty line was raised to $3 a day in 2021 prices in 2025, so these figures are higher than older ones based on the $2.15 line, and figures for 2024 onward on the source page are projections. Most of the fall came from growth in China, India and the rest of Asia, driven by trade, industrialization and the spread of existing technologies. Those who favor acceleration cite it as what growth buys; those who see the question as one of power answer that the gains followed from institutions and policy choices about who benefited, not from technology on its own; and those who favor restraint call it an argument for spreading proven technologies, not for racing to build untested ones.",
+     "source_label": "Our World in Data, Share of population living in extreme poverty (World Bank Poverty and Inequality Platform 2026)",
+     "source_url": "https://ourworldindata.org/grapher/share-of-population-in-extreme-poverty",
+     "source_published": "2023",
+     "source_accessed": "2026-11-23",
+     "id": "share-of-the-world-living-in"
+    },
+    {
+     "label": "Length of the US ban on overland supersonic flight",
+     "viz": "bar",
+     "wide": false,
+     "value": "53",
+     "unit": "years",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The FAA has barred civil aircraft from flying faster than sound over US land since 1973, and on July 2, 2026 proposed replacing the ban with a limit on sonic-boom noise.",
+     "detail": "The rule, 14 C.F.R. §91.817, was adopted to protect the public from sonic booms. Those who favor acceleration have long cited it as a precautionary rule that outlived its reason: it banned speed itself rather than the noise, and so removed any incentive to design quieter aircraft. The proposal, which responds to the June 2025 executive order “Leading the World in Supersonic Flight,” would allow overland supersonic flight where an operator shows that the sonic boom at the surface stays at or below 0.11 pounds per square foot; comments closed on August 17, 2026, and no final rule had been published as of November 23, 2026. The case is useful because it is low-stakes: it shows what lifting a long-standing restraint looks like when the harm is a nuisance rather than a catastrophe.",
+     "source_label": "Beveridge & Diamond, FAA Proposes to End Ban on Overland Supersonic Flights",
+     "source_url": "https://www.bdlaw.com/transportation/publications/faa-proposes-to-end-ban-on-overland-supersonic-flights-establish-interim-noise-based-en-route-standard-as-first-step-to-fully-authorizing-supersonic-operations/",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "length-of-the-us-ban-on"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Can a dangerous technology be held back once it becomes possible?",
+    "kind": "empirical",
+    "why": "Both sides argue from the historical record, and it has examples for each. The disagreement is over which past cases are the right analogy for AI and the other technologies now in dispute.",
+    "detail": "Those who say restraint holds point to the many times societies have declined, delayed or tightly limited a technology against strong incentives. Biologists paused recombinant DNA experiments in 1974 and wrote containment rules at Asilomar before resuming. No verified human reproductive clone has been born. Nuclear weapons spread far more slowly than was feared in the 1960s, and nine countries hold them. Frontier AI, they add, has an unusual handle: it needs vast data centers full of specialized chips made by very few companies, which can be counted, located and licensed.\n\nThose who say it gets built anyway answer that the successes are mostly technologies that were expensive, easy to detect, of limited commercial value or already held by the states doing the restraining; a nuclear test shakes the ground, a training run does not. The Soviet Union signed the Biological Weapons Convention and then ran a vast covert weapons program, and He Jiankui edited embryos despite a global consensus against it. A technology with large economic and military returns, many developers and falling costs is a different kind of thing: chips and algorithms get cheaper every year, and what once took a frontier lab ends up on ordinary hardware. On this view a ban does not stop a technology; it decides who builds it, and pushes the work toward the least scrupulous and least visible actors.",
+    "lean_label_a": "Restraint holds",
+    "lean_label_b": "It gets built",
+    "id": "can-a-dangerous-technology-be-held"
+   },
+   {
+    "text": "Would slowing down at home just hand the lead to rivals?",
+    "kind": "empirical",
+    "why": "Most arguments against restraint in AI run through China, and most arguments for it depend on international agreement. Neither side can observe the other government’s real intentions, and both cite the same Cold War history.",
+    "detail": "Those who expect rivals to follow say China’s government has its own reasons to fear uncontrollable AI, which threatens the Communist Party’s control at least as much as any Western government’s, and it has regulated generative AI more tightly than the United States has. Chinese officials and scientists have signed international statements on AI risk, and the United States and the Soviet Union agreed verified nuclear arms limits at the height of their hostility. The American lead in investment and advanced chips lets Washington set terms. A race framed as unstoppable becomes self-fulfilling, they argue, and the more dangerous the technology, the more each side gains from a verifiable agreement.\n\nThose who expect defection answer that restraint by democracies that authoritarian rivals do not match is worse than none, because it hands the most powerful technology of the century to the governments least likely to use it well. Even Anthropic’s Dario Amodei, who argues for pacing, accepts in a 2026 essay that a unilateral slowdown followed by Chinese defection could give China geopolitical dominance. Software is hard to verify; Epoch AI estimates that the best open-weight models, now mostly Chinese, trailed the closed frontier by about four months on average in 2026. On this view the safest path is for the United States and its allies to lead, so that democracies write the rules.",
+    "lean_label_a": "Rivals would follow",
+    "lean_label_b": "Rivals would defect",
+    "id": "would-slowing-down-at-home-just"
+   },
+   {
+    "text": "How much risk of catastrophe is worth accepting for large benefits?",
+    "kind": "value",
+    "why": "Even with an agreed probability, people would disagree on what it implies, because the answer turns on weighing an irreversible worst case against large gains and against the people who die while waiting.",
+    "detail": "Those who refuse the gamble say an outcome that ends humanity, or permanently takes the future out of human hands, is not one bad outcome among others: it forecloses every future good, so no benefit to the present generation can offset it. Bridges, aircraft and reactors are designed to failure probabilities far below one percent, and AI researchers’ own median estimate of an extinction-level outcome is well above that. Nobody consented to the risk, and those placing the bet are mostly those who stand to profit. When harm is irreversible and the people imposing the risk are not the people bearing it, the burden is on those who want to proceed.\n\nThose who weigh the benefits answer that delay has victims too. Every year that AI-driven drug discovery, cheaper energy or faster science arrives later, people die who would have lived. Treating a speculative probability as decisive while ignoring certain costs would, applied consistently, have forbidden most of the technologies that doubled life expectancy. The right response to a small chance of catastrophe, on this view, is to reduce it while proceeding, as was done with aviation, and a technology that could cure most diseases or end material poverty is worth significant risk.",
+    "lean_label_a": "Refuse the gamble",
+    "lean_label_b": "Weigh the benefits",
+    "id": "how-much-risk-of-catastrophe-is"
+   },
+   {
+    "text": "Who should carry the burden of proof for a new technology?",
+    "kind": "value",
+    "why": "This is the old dispute between the precautionary principle and its rivals, sometimes called the proactionary principle or permissionless innovation. It is a choice of default rules, which evidence alone cannot settle.",
+    "detail": "Those who want safety proven first note that drugs, aircraft and bridges must be shown to be safe before the public is exposed to them, with the burden on the party that profits and knows the most; a technology whose failure could be catastrophic and irreversible should meet at least that standard. Proving harm after the fact means waiting for the harm, and with leaded gasoline, asbestos, tobacco and chlorofluorocarbons the evidence arrived decades after the damage was done. A requirement to show safety, they argue, does not stop innovation; it changes who pays for the uncertainty.\n\nThose who want harm proven first answer that no new technology can be proven safe in advance, because its uses and failures are learned in practice, so a prove-it-safe rule is in effect a rule against anything new. Its costs fall on people who never see them, such as the patients who die waiting for a drug to be approved. Marc Andreessen calls the precautionary principle the “enemy” because, as he puts it, it “would have prevented virtually all progress since man first harnessed fire.” On this view regulation should target demonstrated harms, and the default for a new technology should be permission.",
+    "lean_label_a": "Prove safety first",
+    "lean_label_b": "Prove harm first",
+    "id": "who-should-carry-the-burden-of"
+   },
+   {
+    "text": "Does extra time make a dangerous technology safer?",
+    "kind": "empirical",
+    "why": "A pause is only worth its cost if the time is used well. People who agree the risks are real still disagree on whether safety comes from waiting or from working with the most capable systems.",
+    "detail": "Those who say pausing helps argue that safety work lags far behind capability work and that the methods for understanding what a large model is doing internally are immature. A pause lets understanding catch up, lets institutions for testing and oversight be built, and lets society adapt before the next jump. The years between the first nuclear weapons and working arms control, they note, produced near-misses such as the Cuban missile crisis. Without time, safety research is a race it cannot win, because each advance in capability creates new failure modes faster than they can be studied.\n\nThose who say building helps answer that much of what is known about making AI systems behave came from studying the most capable systems, and a system’s risks cannot be studied before it exists. A pause on training frontier models would freeze the safety work along with it while chips and algorithms kept improving, so that when it ended the next model would be a bigger jump than if progress had continued, the problem they call an overhang. Releasing capabilities gradually lets society see problems while the stakes are low. On this view, held by some of the AI labs themselves, the real choice is between learning from deployment and guessing in advance.",
+    "lean_label_a": "Pausing helps",
+    "lean_label_b": "Building helps",
+    "id": "does-extra-time-make-a-dangerous"
+   },
+   {
+    "text": "Can defensive technology keep ahead of offensive technology?",
+    "kind": "empirical",
+    "why": "The middle positions in this debate rest on the answer. If protective technologies can be built faster than destructive ones, the case for blanket restraint weakens; if not, it strengthens.",
+    "detail": "Those who think defense can keep up argue that many dangerous capabilities have protective counterparts that can be deliberately funded and sped up, from early detection of new pathogens to AI that finds and patches software flaws before attackers do. Funded, such defenses come fast: in DARPA’s AI Cyber Challenge, whose results came in August 2025, automated systems found 18 real, unplanted flaws in open-source software and submitted patches in an average of 45 minutes. Vitalik Buterin argues that some technologies are defense-favoring and “worth promoting.” Historically, they add, defenses have caught up with most offensive innovations, from fortifications to antibiotics to spam filters.\n\nThose who think offense stays ahead answer that for the most dangerous technologies the asymmetry runs the other way: one engineered pathogen or one attack on a power grid can do damage that thousands of defenders cannot undo, and a single failure of defense may be enough. Nick Bostrom’s vulnerable world argument holds that some technologies, once cheap, would let small groups cause catastrophe, and that no defensive technology can make that safe; only control of the capability itself can. The faster an offensive capability spreads, the less time there is to build defenses, which is why they see restraint, not acceleration of any kind, as the precondition for defense.",
+    "lean_label_a": "Defense keeps up",
+    "lean_label_b": "Offense leads",
+    "id": "can-defensive-technology-keep-ahead-of"
+   },
+   {
+    "text": "Who should decide how fast a technology moves?",
+    "kind": "value",
+    "why": "A few companies now make the choices that set the pace of AI, and its effects reach everyone. Whether that is the normal working of a free society or a democratic failure is a dispute about legitimacy, not evidence.",
+    "detail": "Those who want the public to decide argue that when a technology could change the conditions of life for everyone, or end them, the choice to build it should not rest with a handful of executives and investors. Polls show large majorities wanting AI developed more slowly and under strong regulation, and the experts Pew surveyed were far more excited about AI than the public was. On this view pace should be set through elections, legislation and international agreement, as it was for nuclear weapons.\n\nThose who want the market to decide answer that what to invent has always been settled by inventors, entrepreneurs and the customers who choose what to use, and that this decentralized process produced most of the gains in human welfare. Public opinion on unfamiliar technologies is easily moved by fear and by how a poll question is framed, and politicians who set the pace of science would bring the same cost overruns and capture they bring to everything else. Government’s role, on this view, is to punish concrete harms and set general rules, not to decide in advance how fast knowledge may advance.",
+    "lean_label_a": "The public decides",
+    "lean_label_b": "The market decides",
+    "id": "who-should-decide-how-fast-a"
+   },
+   {
+    "text": "Is the bigger danger the speed of a technology or who controls it?",
+    "kind": "value",
+    "why": "Much of the debate assumes the problem is a technology moving too fast. A significant body of critics argues that this framing hides a more pressing question of ownership, labor and power.",
+    "detail": "Those who put speed first say the distinctive risks of advanced AI and engineered biology come from the capabilities themselves: a system that can design pathogens or deceive its overseers is dangerous whoever owns it, and fair distribution of a technology that might end humanity is beside the point. Concentration of power is a real problem, they grant, but it can be addressed after the technology is safe, while a catastrophe cannot be addressed after it happens.\n\nThose who put power first answer that the harms already visible, from job displacement to surveillance to the concentration of wealth and political influence in a few firms, come from who controls the technology and what they choose to build, and that the decisions that would change them can be made now rather than after some future danger has passed. “The future we’re being sold is not inevitable,” in the words of Amba Kak of the AI Now Institute.",
+    "lean_label_a": "Speed is the danger",
+    "lean_label_b": "Power is the danger",
+    "id": "is-the-bigger-danger-the-speed"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Pause dangerous technology until it is proven safe",
+    "color_key": "green",
+    "steelman": "Some technologies are dangerous enough that we should stop pushing them forward until we know how to control them, and the people building them should have to show that we do.",
+    "detail": "Advanced AI is the clearest case today. The companies racing to build systems smarter than people say openly that they do not know how to make such systems reliably do what we intend, and no one asked the public whether it accepts those odds. A pause is not the end of the technology; it is the time needed for the science of control to catch up and for institutions that can verify safety to be built. Restraint of this kind has worked before: biologists stopped recombinant DNA work in 1974 and resumed with rules, nuclear test explosions all but ended, most countries with a policy on it forbid heritable editing of the human genome, and leading synthetic biologists, some of whom had worked toward mirror life, have asked that no one create mirror bacteria.\n\nFrontier AI is easier to restrain than most technologies, because it needs vast data centers and advanced chips made by a handful of companies, so a pause can be verified the way arms control is, by counting hardware. The pause we want is international and verified, not unilateral: PauseAI calls the involvement of both the United States and China essential, and the Machine Intelligence Research Institute wants a treaty with the power to shut down frontier projects anywhere. Beijing, too, has reason to fear what it could not command, and a race to build something no one can control has no winner. We differ on how long and how conditional the pause should be, from a fixed term on training beyond a threshold to a prohibition lifted only by scientific consensus and public consent.",
+    "proponents": "Future of Life Institute; PauseAI; Machine Intelligence Research Institute; George Church; Kevin Esvelt",
+    "id": "pause-dangerous-technology-until-it-is"
+   },
+   {
+    "name": "Accelerate technology and lift the brakes",
+    "color_key": "blue",
+    "steelman": "Technology is the reason most people alive today are not poor, hungry or dead in childhood, and the most dangerous thing a society can do is stop producing more of it.",
+    "detail": "AI could compress decades of medical and scientific progress into years, and every year of delay is paid for in lives that would have been saved, even if no one sees those deaths. Precaution has a record too: civilian nuclear power, among the safest sources of electricity, was strangled by fear and regulation while coal kept killing, and supersonic flight was banned over land for half a century. The way to make a technology safe is to build it, learn from it and improve it, as was done with cars, aircraft and medicine. Where specific harms appear, address them specifically, by law and better engineering; the burden is on those who would stop progress to show concrete harm, not on builders to prove a negative.\n\nCalls to pause rest on probabilities that are guesses, not measurements, and every powerful technology was once described as uniquely dangerous. A pause would hand the most important technology of the century to a bureaucracy, or to the Chinese Communist Party, which will not pause; the country that leads in AI will set its standards and reap its benefits. Rules sold as safety, such as licensing regimes and compute thresholds, are easiest for the largest firms to meet and would lock in whoever is ahead. We come in two wings. Techno-optimists such as Marc Andreessen see growth as close to an unconditional good and distrust government involvement; the national-security wing, represented by the White House’s AI Action Plan and writers such as Leopold Aschenbrenner, accepts that AI is dangerous and argues that this is exactly why the United States must build it first.",
+    "proponents": "Marc Andreessen; Andreessen Horowitz; White House; Guillaume Verdon; Leopold Aschenbrenner",
+    "id": "accelerate-technology-and-lift-the-brakes"
+   },
+   {
+    "name": "Accelerate defensive technology first and steer the rest",
+    "color_key": "amber",
+    "steelman": "Technology is not one dial. The order in which inventions arrive matters more than the overall speed, so speed up what protects us and pace what endangers us.",
+    "detail": "The choice between stopping technology and flooring the accelerator is a false one. Accelerate, deliberately and with public money if needed, the technologies that make the world more robust: pathogen surveillance, broad-spectrum vaccines, far-ultraviolet light, DNA synthesis screening, secure software, tools for seeing what AI systems are doing inside, and decentralized systems that keep any one actor from gaining unchecked power. Pace, test and contain the most dangerous capabilities, with independent evaluators who can see inside the labs, but do not ban them outright, because a ban hands the field to whoever ignores it and freezes the safety work that needs capable systems to study. Safety is not the opposite of progress; seat belts, clinical trials and fire codes are progress.\n\nVitalik Buterin calls this d/acc, the d standing for defense, decentralization, democracy and differential; Jason Crawford of the Roots of Progress Institute asks for solutionism, naming the risks and solving them; Anthropic’s Dario Amodei wrote in 2026 that “pacing does not mean halting model training or technical progress.” To the objection that offense beats defense for the worst technologies, we answer that this is a claim about particular technologies, not a law, and that funding defenses at the scale of the threat has never been tried; where a capability truly cannot be defended against, we support restraint. To those who fear any pacing, we answer that pacing tied to measurable capabilities and outside testing is far narrower than a general license to regulate, and that refusing all caution is the surest way to provoke blunt bans.",
+    "proponents": "Vitalik Buterin; Roots of Progress Institute; Jason Crawford; Dario Amodei",
+    "id": "accelerate-defensive-technology-first-and-steer"
+   },
+   {
+    "name": "Redirect technology to serve the public",
+    "color_key": "rust",
+    "steelman": "Faster or slower is the wrong question. At every point people choose what to build, for whom and who keeps the gains, and that choice should be made democratically.",
+    "detail": "For most of history the gains from new technology went to those who owned it until workers, voters and governments forced them to be shared; Daron Acemoglu and Simon Johnson trace how the gains of industrialization spread widely only after the rise of unions, democratic reform and public investment. Today a handful of companies, flush with hundreds of billions of dollars, are deciding the direction of the most consequential technology of the age, and they have chosen to build systems that replace workers, gather data and concentrate power. The accelerationist story of inevitable progress and the pause story of a runaway superintelligence both accept the industry’s claim that AI is a single unstoppable force. Both distract from questions that can be settled now: who owns the data centers and the models, what they may be used for, whether workers have a say, and whether the public gets a share.\n\nWe do not ignore danger. The surest protection against reckless development is to end the concentration of power that makes it profitable, and speculative catastrophes have been used to hand still more control to the same companies, as self-appointed stewards of a dangerous technology, while present harms go unaddressed. Some of us focus on labor, steering AI toward tools that augment workers rather than replace them through tax and research policy; some on antitrust; some, like the writer Brian Merchant, revive the Luddites as a movement against using machinery to strip workers of power rather than against machinery itself. Some support specific moratoria, such as on police use of facial recognition, while rejecting the pause movement’s framing.",
+    "proponents": "AI Now Institute; Daron Acemoglu; Simon Johnson; Open Markets Institute; Brian Merchant",
+    "id": "redirect-technology-to-serve-the-public"
+   },
+   {
+    "name": "Never build the most dangerous technologies",
+    "color_key": "purple",
+    "steelman": "Some technologies should never be built, not now and not once someone claims to have made them safe, and a machine more capable than humans at everything is one of them.",
+    "detail": "Even if such a machine could be controlled, the question of who would control it has no safe answer, and a world in which human labor, judgment and purpose are no longer needed is not one that people have asked for. Promises that a technology will be made safe later are how dangerous technologies get built; a pause that ends when the builders declare success is a pause in name only. Humanity has put things off-limits before regardless of benefit, such as biological weapons and the cloning of human beings, and the same should be done here: permanently, in law, with real penalties and by international agreement. Thirty percent of Americans polled for the Future of Life Institute in 2025 said superhuman AI should never be built.\n\nThe benefits people hope for, such as cures for disease, can be pursued with narrower systems that do specific jobs, like predicting protein structures, without building a general machine that surpasses humans. A ban that is permanent in law can be revisited by a future democratic decision; an uncontrolled superintelligence cannot be undone. We differ on scope. Stop AI wants a permanent global ban on further development of frontier AI; the Ban Artificial Superintelligence Act from Senator Bernie Sanders and Representative Greg Casar would outlaw superintelligence and pause other advanced AI only until a federal regulator is running; writers in a longer tradition, from Bill Joy’s 2000 essay Why the Future Doesn’t Need Us to Paul Kingsnorth, argue for giving up whole classes of technology. What sets us apart from the pause camp is one answer: superintelligence should not be built even if it can be shown to be safe.",
+    "proponents": "Stop AI; Bernie Sanders; Greg Casar; Bill Joy; Paul Kingsnorth",
+    "id": "never-build-the-most-dangerous-technologies"
+   }
+  ],
+  "crux": {
+   "lead": "Is the world safer if those able to build a dangerous technology agree to slow it, or if they race ahead?",
+   "lead_highlight": "agree to slow it, or if they race ahead",
+   "subtitle": "Most positions follow from the answer. A pause or a ban makes sense only if rivals would keep the agreement and the time would buy safety; racing ahead makes sense if they would not, or if safety comes from building. Some answer differently for each technology, and some say who decides matters more than pace.",
+   "empirical": "Whether the key inputs to a dangerous technology can be counted and checked well enough to catch cheating, as nuclear test explosions are. Whether the leading powers would accept and keep a mutual limit. Whether time spent paused yields progress in understanding and controlling the technology, or a backlog of unused hardware and methods that makes the eventual jump bigger. And how large the catastrophic risk is, on which experts differ widely.",
+   "values": "How much benefit, including lives that faster medicine or cheaper energy might save, is worth giving up to cut a chance of irreversible catastrophe, and how much future generations count. Who has the right to choose: those who build, the voters and governments who live with it, or an international body. And whether some technologies should be refused on principle, however safe they are said to be. Evidence can narrow the first, but settles none."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Read the 2026 AI Index",
+    "description": "Stanford’s annual, independent compilation of data on AI capability, investment, safety, policy and public opinion, the source much other reporting draws on.",
+    "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report",
+    "for_position": null,
+    "id": "read-the-2026-ai-index"
+   },
+   {
+    "kind": "local",
+    "title": "Follow data center decisions where you live",
+    "description": "Ballotpedia’s running count of the 2026 local ballot measures on data centers, a guide to where voters, zoning boards and utility commissions decide the physical build-out of AI.",
+    "url": "https://news.ballotpedia.org/2026/11/15/voters-have-decided-on-47-measures-related-to-data-centers-in-2026-in-december-they-will-consider-four-more/",
+    "for_position": null,
+    "id": "follow-data-center-decisions-where-you"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Join PauseAI",
+    "description": "A volunteer movement with local groups that lobbies and protests for an international treaty pausing the training of the most powerful AI systems.",
+    "url": "https://pauseai.info/join",
+    "for_position": "Pause dangerous technology until it is proven safe",
+    "id": "join-pauseai"
+   },
+   {
+    "kind": "donate",
+    "title": "Support the Abundance Institute",
+    "description": "A nonprofit that argues for removing regulatory barriers to AI, nuclear power and other emerging technologies, and against measures such as mandated AI kill switches.",
+    "url": "https://www.abundance.institute/",
+    "for_position": "Accelerate technology and lift the brakes",
+    "id": "support-the-abundance-institute"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read Vitalik Buterin’s “My techno-optimism”",
+    "description": "The 2023 essay that set out defensive and decentralized acceleration as an alternative both to unconditional acceleration and to a pause.",
+    "url": "https://vitalik.eth.limo/general/2023/11/27/techno_optimism.html",
+    "for_position": "Accelerate defensive technology first and steer the rest",
+    "id": "read-vitalik-buterin-s-my-techno"
+   },
+   {
+    "kind": "donate",
+    "title": "Support the Open Markets Institute",
+    "description": "An antimonopoly research and advocacy group that works to keep AI from being controlled by a few large corporations, through competition policy and public oversight.",
+    "url": "https://www.openmarketsinstitute.org/donate",
+    "for_position": "Redirect technology to serve the public",
+    "id": "support-the-open-markets-institute"
+   },
+   {
+    "kind": "policy",
+    "title": "Tell Congress where you stand on banning superintelligence",
+    "description": "Senator Bernie Sanders and Representative Greg Casar introduced the Ban Artificial Superintelligence Act on September 23, 2026; their release sets out what it would ban, what it would pause and its penalties.",
+    "url": "https://www.sanders.senate.gov/press-releases/news-sanders-casar-introduce-legislation-to-create-new-federal-agency-to-ban-artificial-superintelligence-pause-advanced-ai-development/",
+    "for_position": "Never build the most dangerous technologies",
+    "id": "tell-congress-where-you-stand-on"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the International AI Safety Report",
+    "description": "The scientific assessment of general-purpose AI capabilities and risks, led by Yoshua Bengio with contributors nominated by some 30 governments and international bodies, written to inform rather than recommend.",
+    "url": "https://internationalaisafetyreport.org/",
+    "for_position": null,
+    "id": "read-the-international-ai-safety-report"
+   },
+   {
+    "kind": "policy",
+    "title": "Sign the Statement on Superintelligence",
+    "description": "Add your name to the Future of Life Institute’s call to prohibit superintelligence until it can be built safely, whose signers range from AI pioneers to politicians of the left and right.",
+    "url": "https://superintelligence-statement.org/",
+    "for_position": "Pause dangerous technology until it is proven safe",
+    "id": "sign-the-statement-on-superintelligence"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the Techno-Optimist Manifesto",
+    "description": "Marc Andreessen’s 2023 statement of the accelerationist case: that growth and technology are the source of human welfare and that the precautionary principle is the enemy of progress.",
+    "url": "https://a16z.com/the-techno-optimist-manifesto/",
+    "for_position": "Accelerate technology and lift the brakes",
+    "id": "read-the-techno-optimist-manifesto"
+   }
+  ]
+ }
 }

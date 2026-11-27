@@ -1,12 +1,14 @@
 {
  "slug": "climate-adaptation",
  "title": "Climate Adaptation",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-11-27T05:22:12+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Adapting to warming already under way: flood defenses, insurance, disaster aid and managed retreat from high-risk places. Wildfire is its own topic.",
  "primary_category": "climate-energy",
+ "icon": "waves",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: one compact scene sitting on a single small rounded island mound, outlined and filled, whose curved edges slope down and end well inside the frame on both sides, never a flat line: a small simple house raised high on tall stilts as the dominant focal mass, filled, standing on the crest of the mound; a short low wall of stacked sandbags of medium size curving along the mound's slope in front of the stilts, overlapping their feet, filled; a slim water-depth gauge post with evenly spaced tick marks, filled, standing at the right foot of the mound, the smallest element; a round-crowned tree behind the house's left side, partly hidden by it; one long gentle wavy water line crossing the whole scene in front of the mound's lower slopes and the gauge post as the connective element, starting and ending inside the frame.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #3f9a6a, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: no storm clouds, no lightning, no rain, no hurricane spiral, no submerged or wrecked houses, no people, no rescue boats, no dollar signs or money, no insurance documents, no government buildings, no thermometer, no globe, no melting ice, no factory smoke, no arrows",
  "categories": [
   "economy",
   "governance"
@@ -16,5 +18,693 @@
   "net-zero-pace",
   "climate-tipping-points",
   "geoengineering"
- ]
+ ],
+ "content": {
+  "overview": {
+   "summary": "Few oppose adapting to warming. The central argument is who pays for climate risk, and whether public help lowers it or keeps people exposed.",
+   "scope_covered": "Living with warming already under way: flood defenses and other protection, weather insurance, disaster aid and adaptation finance, and managed retreat from the riskiest places.",
+   "scope_excluded": "Wildfire, the pace of emission cuts, solar geoengineering and climate tipping points, each its own topic; heat, drought and farm adaptation except where they touch these instruments.",
+   "why_now": "On November 22, 2026 the UN climate talks in Antalya, COP31, closed nearly 50 hours late without agreement on a cover decision, and an attempt to put a number on the pledge to triple adaptation finance by 2035 failed to make it into any final text.",
+   "why_now_source_label": "Carbon Brief",
+   "why_now_source_url": "https://www.carbonbrief.org/cop31-key-outcomes-agreed-at-the-un-climate-talks-in-antalya"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "Natural-disaster losses worldwide",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "$ billion",
+     "series": [
+      {
+       "label": "2025, overall",
+       "value": "224",
+       "highlight": true
+      },
+      {
+       "label": "2025, insured",
+       "value": "108",
+       "highlight": false
+      },
+      {
+       "label": "2024, adjusted",
+       "value": "368",
+       "highlight": false
+      },
+      {
+       "label": "10-year average",
+       "value": "266",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Munich Re counts about $224 billion of natural-disaster losses in 2025, about half of it uninsured; the 2024 and ten-year figures are adjusted for inflation.",
+     "detail": "The uninsured share, about 50 percent, was below Munich Re’s ten-year average of about 60 percent, mainly because the year’s costliest event, the January 2025 Los Angeles wildfires at about $53 billion, was heavily insured. The gap between overall and insured losses is what insurers call the protection gap, and it is widest where people are poorest: in Asia-Pacific about $9 billion of some $73 billion in losses was insured, against about $93 billion of $133 billion in the Americas. Weather disasters made up 92 percent of overall losses and 97 percent of insured ones; the rest were earthquakes, chiefly in Myanmar. Totals rise with more people and property in exposed places as well as with a changing climate, and how much each contributes is one of the disputes on this page.",
+     "source_label": "Munich Re, Natural disaster figures 2025",
+     "source_url": "https://www.munichre.com/en/company/media-relations/media-information-and-corporate-news/media-information/2026/natural-disaster-figures-2025.html",
+     "source_published": "2025",
+     "source_accessed": "2026-11-26",
+     "id": "natural-disaster-losses-worldwide"
+    },
+    {
+     "label": "World population exposed to a 1-in-100-year flood",
+     "viz": "radial",
+     "wide": false,
+     "value": "23",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "About 1.81 billion people, 23 percent of humanity, live where a 1-in-100-year flood would bring dangerous water; 89 percent of them are in low- and middle-income countries.",
+     "detail": "Exposure here means living where such a flood, from rivers, rain or the sea, would bring water deeper than 0.15 meters, enough to pose a significant risk to life and livelihoods. The figure is a present-day snapshot, not a projection; warming and continued building on floodplains both push it up. South and East Asia hold 1.24 billion of the exposed, including 395 million in China and 390 million in India. Some 170 million exposed people also live in extreme poverty, under $1.90 a day, 44 percent of them in Sub-Saharan Africa, and more than 780 million people living on under $5.50 a day face high flood risk. The study was led by World Bank economists, and its point is distributional: most of the world’s flood risk sits where there is least money to defend against it or insure it.",
+     "source_label": "Rentschler, Salhab and Jafino, Flood exposure and poverty in 188 countries, Nature Communications",
+     "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9240081",
+     "source_published": "2022",
+     "source_accessed": "2026-11-26",
+     "id": "world-population-exposed-to-a-1"
+    },
+    {
+     "label": "US flood insurance program’s debt to the Treasury",
+     "viz": "range",
+     "wide": false,
+     "value": "22.525",
+     "unit": "$ billion",
+     "series": [],
+     "range_min": "0",
+     "range_max": "30.425 limit",
+     "note": "The National Flood Insurance Program owed the Treasury $22.525 billion in 2026, against a statutory borrowing limit of $30.425 billion.",
+     "detail": "The program writes most US residential flood insurance: nearly 4.5 million policies and over $1.3 trillion of coverage as of August 31, 2026. It borrowed heavily after Hurricane Katrina in 2005 and Sandy in 2012, had $16 billion cancelled by Congress in October 2017 so it could pay Harvey, Irma and Maria claims, and borrowed a further $2 billion in February 2025; from FY2006 to FY2022 it paid $2.82 billion in principal and $6.17 billion in interest. GAO’s 2026 testimony puts its total borrowing since 2005 at about $38.5 billion. The Congressional Research Service counts 36 short-term extensions of the program’s authority since the end of FY2017; as of November 2026 the latest ran to December 11, 2026. During a lapse it cannot sell or renew policies. Advocates of risk-based pricing read the debt as the cost of decades of discounted premiums; advocates of affordability, as proof that the households exposed cannot fund catastrophic risk alone.",
+     "source_label": "Congressional Research Service, Introduction to the National Flood Insurance Program (R44593)",
+     "source_url": "https://www.everycrsreport.com/files/2026-10-05_R44593_8e270232253192a97e17d2fbbae260754117a3b3.html",
+     "source_published": "2026",
+     "source_accessed": "2026-11-26",
+     "id": "us-flood-insurance-program-s-debt"
+    },
+    {
+     "label": "Developing countries’ adaptation finance, needed and delivered",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "$bn a year",
+     "series": [
+      {
+       "label": "Needed by 2035",
+       "value": "305",
+       "highlight": true
+      },
+      {
+       "label": "Tripled by 2035",
+       "value": "120",
+       "highlight": false
+      },
+      {
+       "label": "Delivered, 2024",
+       "value": "31.7",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "UNEP estimates developing countries will need about $305 billion a year for adaptation by 2035, roughly ten times the $28.2 to 31.7 billion of international public finance delivered in 2024.",
+     "detail": "UNEP assembles the needs figure from countries’ own adaptation plans and climate pledges and from model-based estimates, and it largely leaves out what companies would spend protecting their own assets. International public adaptation finance rose by only about $1 billion from 2023 to 2024. The bars show the upper end of each range. The middle one is the COP30 aspiration to triple that finance by 2035, $85 to 120 billion a year; UNEP calculates that even this would cover only 20 to 29 percent of inflation-adjusted needs in 2035, or 49 to 83 percent for the least developed countries and small island states, and that private finance could close only 15 to 20 percent of the gap for public works such as sea walls and drainage. Down To Earth’s 2026 summary of the report adds that loans made up 55 percent of the finance delivered, and that developing countries spend about $50 billion a year of their own public money on adaptation.",
+     "source_label": "UNEP, Adaptation Gap Report 2026: Ready? Not",
+     "source_url": "https://www.unep.org/en/news-and-stories/press-release/world-heads-overshoot-15degc-adaptation-too-slow",
+     "source_published": "2026",
+     "source_accessed": "2026-11-26",
+     "id": "developing-countries-adaptation-finance-needed-and"
+    },
+    {
+     "label": "Flood insurance claim dollars paid to repeatedly flooded properties",
+     "viz": "radial",
+     "wide": false,
+     "value": "48",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Properties with two or more flood losses have received 48 percent of all National Flood Insurance Program claim dollars, as of December 2021.",
+     "detail": "Unmitigated repetitive loss properties make up only about 2.5 percent of the program’s policies, but the two figures answer different questions and are not one ratio: the 48 percent counts all claim dollars ever paid to properties with two or more losses. GAO counted about 131,000 repetitive loss properties in 2009, 176,000 in 2018 and 227,000 in 2026, growth of about 73 percent, faster than mitigation removed them. Buying such properties out is the most common form of FEMA mitigation, GAO notes, but it takes at least two to three years and often longer.",
+     "source_label": "US Government Accountability Office, Flood Risk Mitigation (GAO-26-109045)",
+     "source_url": "https://files.gao.gov/reports/GAO-26-109045/index.html",
+     "source_published": "2026",
+     "source_accessed": "2026-11-26",
+     "id": "flood-insurance-claim-dollars-paid-to"
+    },
+    {
+     "label": "Benefit per dollar of US disaster mitigation",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "$ per $1",
+     "series": [
+      {
+       "label": "Building codes",
+       "value": "11",
+       "highlight": false
+      },
+      {
+       "label": "Federal grants",
+       "value": "6",
+       "highlight": true
+      },
+      {
+       "label": "Grants, 2005 study",
+       "value": "4",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The National Institute of Building Sciences estimated that federal mitigation grants save about $6 per $1 spent and modern building codes $11; the codes figure is from its 2019 report.",
+     "detail": "The “Grants, 2005 study” bar is the institute’s original 2005 estimate of 4 to 1. Its later study covered 23 years of mitigation grants from FEMA, the Department of Housing and Urban Development and the Economic Development Administration: about $27 billion of grants produced an estimated $158 billion of savings, including $68 billion in avoided deaths and injuries and $58 billion in avoided property damage. The International Code Council’s summary of the codes report gives about $6 per $1 for floods, $10 for hurricanes and $12 for earthquakes from adopting the 2018 International Codes. The ratios are national averages over projects that were funded, and so had already passed a benefit-cost test; they do not mean every additional dollar would earn the same return.",
+     "source_label": "Yale Environment 360, on National Institute of Building Sciences, Mitigation Saves; NIBS 2019 report for codes",
+     "source_url": "https://e360.yale.edu/digest/federal-resiliency-efforts-pay-off-six-times-their-investment-new-report-finds",
+     "source_published": "2018",
+     "source_accessed": "2026-11-26",
+     "id": "benefit-per-dollar-of-us-disaster"
+    },
+    {
+     "label": "Homeowners premiums in the riskiest fifth of US ZIP codes",
+     "viz": "bar",
+     "wide": false,
+     "value": "2,321",
+     "unit": "$ a year",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Homeowners in the riskiest fifth of US ZIP codes paid $2,321 a year on average in 2018 to 2022, 82 percent more than in the safest fifth, and were dropped about 80 percent more often.",
+     "detail": "Treasury’s Federal Insurance Office covered more than 330 insurers and more than 246 million policies aggregated to ZIP codes. Average claims in the highest-risk ZIP codes were about $24,000, against about $19,000 in the lowest-risk, and average premiums per policy rose 8.7 percent faster than inflation from 2018 to 2022. Homeowners policies generally exclude flood, so these figures cover wind, hail, fire and other perils, not the federal flood program. Supporters of risk-based pricing see higher premiums in risky places as prices carrying the news that risk has risen; supporters of affordability see families priced out of homes they cannot sell.",
+     "source_label": "US Treasury, Federal Insurance Office, Analyses of US Homeowners Insurance Markets 2018-2022",
+     "source_url": "https://home.treasury.gov/news/press-releases/jy2791",
+     "source_published": "2018–2022",
+     "source_accessed": "2026-11-26",
+     "id": "homeowners-premiums-in-the-riskiest-fifth"
+    },
+    {
+     "label": "Deaths from natural disasters worldwide",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "deaths",
+     "series": [
+      {
+       "label": "2025",
+       "value": "17,200",
+       "highlight": true
+      },
+      {
+       "label": "2024",
+       "value": "11,000",
+       "highlight": false
+      },
+      {
+       "label": "10-year average",
+       "value": "17,800",
+       "highlight": false
+      },
+      {
+       "label": "30-year average",
+       "value": "41,900",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "About 17,200 people died in natural disasters in 2025, Munich Re counts, well under half the thirty-year average of 41,900.",
+     "detail": "Our World in Data, drawing on the EM-DAT disaster database (2026), reports that disasters now kill roughly 10,000 to 20,000 people a year on average, that years with more than a million deaths were not uncommon in the 20th century, and that death rates per person have fallen by more than 90 percent over the last century while population quadrupled. The totals include earthquakes and volcanoes, which are not climate hazards; in 2025 the Myanmar earthquake alone killed about 4,500. Those who favor development-led adaptation read the decline as proof that wealth, warning and building standards work; others stress that the gains are unevenly shared between rich and poor places.",
+     "source_label": "Munich Re, Natural disaster figures 2025",
+     "source_url": "https://www.munichre.com/en/company/media-relations/media-information-and-corporate-news/media-information/2026/natural-disaster-figures-2025.html",
+     "source_published": "2025",
+     "source_accessed": "2026-11-26",
+     "id": "deaths-from-natural-disasters-worldwide"
+    },
+    {
+     "label": "Flood-prone US properties bought out with FEMA funds",
+     "viz": "bar",
+     "wide": false,
+     "value": "69,415",
+     "unit": "properties",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "FEMA-funded programs bought out 69,415 flood-prone properties from 1989 to 2025, about 72.5 percent of the 95,762 properties they mitigated.",
+     "detail": "Most bought-out homes are demolished and the land kept as open space; the rest of the mitigation was elevation and floodproofing. The Hazard Mitigation Grant Program, triggered by a disaster declaration, funded about 77 percent of it, and GAO reports that states took 16 months on average after a declaration to submit acquisition applications; in February 2026 more than 575 Hurricane Helene applications were pending, 82 of them approved. A study of 43,633 FEMA-funded buyouts from 1989 to 2017 found them in 1,148 counties in 49 states and three territories, more often in wealthier and more populous counties, and within those counties concentrated in more socially vulnerable neighborhoods (Mach and colleagues, Science Advances, 2019). The same paper cites estimates that about 41 million Americans live in the 1-in-100-year floodplain, roughly three times the population in FEMA’s mapped flood zones. Advocates of retreat read the buyout total as a program never scaled up; opponents, as a sign of how few people want to leave.",
+     "source_label": "US Government Accountability Office, GAO-26-109045",
+     "source_url": "https://files.gao.gov/reports/GAO-26-109045/index.html",
+     "source_published": "1989–2025",
+     "source_accessed": "2026-11-26",
+     "id": "flood-prone-us-properties-bought-out"
+    },
+    {
+     "label": "Rate of global sea level rise",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "mm a year",
+     "series": [
+      {
+       "label": "1901–1971",
+       "value": "1.3",
+       "highlight": false
+      },
+      {
+       "label": "2006–2018",
+       "value": "3.7",
+       "highlight": true
+      },
+      {
+       "label": "2024 (NASA)",
+       "value": "5.9",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Seas rose about 20 centimeters from 1901 to 2018 and the rate roughly tripled, the IPCC finds; the 2024 bar is NASA’s single-year figure.",
+     "detail": "The IPCC’s likely range for the rise since 1901 is 15 to 25 centimeters. By 2100, relative to 1995-2014, it projects 0.28 to 0.55 meters under very low emissions, 0.44 to 0.76 under intermediate emissions and 0.63 to 1.01 under very high emissions, and it says rise approaching 2 meters under very high emissions cannot be ruled out because of deep uncertainty about ice sheets. Sea level is committed to keep rising for centuries whatever happens to emissions. NASA reported in 2025 that global sea level had risen 10 centimeters since 1993 and that the 2024 rate exceeded the 4.3 millimeters it expected. The spread between scenarios ties this topic to the emissions debate: about half a meter against about a meter by 2100 helps decide whether many coastal places are defended or abandoned.",
+     "source_label": "IPCC AR6 Working Group I, Summary for Policymakers; NASA for 2024",
+     "source_url": "https://www.ipcc.ch/report/ar6/wg1/downloads/report/IPCC_AR6_WGI_SPM.pdf",
+     "source_published": "2021",
+     "source_accessed": "2026-11-26",
+     "id": "rate-of-global-sea-level-rise"
+    },
+    {
+     "label": "US disaster declarations that would fail a proposed higher threshold",
+     "viz": "radial",
+     "wide": false,
+     "value": "29",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "By the FEMA Review Council’s draft estimate, 29 percent of major disaster declarations from 2012 to 2025 would not have met its proposed damage threshold.",
+     "detail": "FEMA recommends a major disaster declaration when estimated public damage passes a per capita threshold for the state, $1.97 per resident in FY2026 according to the National League of Cities’ 2026 summary of the council’s final report; the council argues the formula has not kept up with inflation and that federal help should be reserved for catastrophes. The declarations that would have failed drew only $1.5 billion of federal spending, which is read both ways: as proof the change would save little federal money, and as proof that states could absorb such events. NPR reported the figure from the council’s December 2025 draft; whether the final report kept the same number was not confirmed. Smaller and rural states, whose thresholds are lowest in absolute dollars, would be most affected by a higher bar.",
+     "source_label": "NPR, What experts say about proposed FEMA changes (quoting the FEMA Review Council)",
+     "source_url": "https://www.npr.org/2026/02/17/nx-s1-5698320/fema-reform-trump-hurricane-earthquake",
+     "source_published": "2025",
+     "source_accessed": "2026-11-26",
+     "id": "us-disaster-declarations-that-would-fail"
+    },
+    {
+     "label": "US weather and climate disasters costing $1 billion or more",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "disasters",
+     "series": [
+      {
+       "label": "1980s average",
+       "value": "3",
+       "highlight": false
+      },
+      {
+       "label": "2016–2025 average",
+       "value": "20",
+       "highlight": false
+      },
+      {
+       "label": "2024",
+       "value": "27",
+       "highlight": false
+      },
+      {
+       "label": "2025",
+       "value": "23",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The United States had 23 disasters costing at least $1 billion each in 2025, the third-highest count on record; why the count has risen is disputed.",
+     "detail": "NOAA kept this series from 1980 until it discontinued it in 2025; Climate Central hired the NOAA scientist who built it, Adam Smith, and continues it with the same method. The 2025 events caused $115 billion in damage and 276 deaths; 2023 had 28, and the 1980-2025 average is 9 a year. Climate Central’s database page (2026) counts 453 such events since 1980, costing $3.2 trillion in 2026 dollars, and $50.3 billion of damage in 2026 through September. The threshold is adjusted for inflation, but the count still rises with property values and building in exposed places as well as with more extreme weather, which is why some analysts prefer losses measured as a share of GDP.",
+     "source_label": "Climate Central, 2025 in review",
+     "source_url": "https://climatecentral.org/climate-matters/2025-in-review",
+     "source_published": "2025",
+     "source_accessed": "2026-11-26",
+     "id": "us-weather-and-climate-disasters-costing"
+    },
+    {
+     "label": "Countries with multi-hazard early warning systems",
+     "viz": "radial",
+     "wide": false,
+     "value": "60",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "60 percent of countries, 119 in all, reported multi-hazard early warning systems in 2025, a record; small island developing states trailed at 43 percent.",
+     "detail": "Asia-Pacific led at 72 percent, and the Americas and Caribbean stood at 51 percent. The UN’s Early Warnings for All initiative aims to cover every person on Earth by 2027. WMO and UNDRR report that disaster mortality is nearly six times lower in countries with comprehensive early warning than in those with limited capability, the core of the argument its advocates make that warnings are the cheapest adaptation there is. Fewer than a third of countries report the risk-knowledge capability that tells a warning system who is exposed, and money to run and maintain systems once built is often not sustained.",
+     "source_label": "WMO and UNDRR, Global Status of Multi-Hazard Early Warning Systems 2025",
+     "source_url": "https://wmo.int/news/media-centre/early-warning-systems-reach-new-heights-critical-gaps-jeopardize-global-progress",
+     "source_published": "2025",
+     "source_accessed": "2026-11-26",
+     "id": "countries-with-multi-hazard-early-warning"
+    },
+    {
+     "label": "Cyclone deaths in Bangladesh, by storm",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "deaths",
+     "scale": "log",
+     "series": [
+      {
+       "label": "Bhola, 1970",
+       "value": "500,000",
+       "highlight": false
+      },
+      {
+       "label": "Cyclone, 1991",
+       "value": "138,958",
+       "highlight": false
+      },
+      {
+       "label": "Sidr, 2007",
+       "value": "4,000",
+       "highlight": false
+      },
+      {
+       "label": "Amphan, 2020",
+       "value": "26",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Reported cyclone deaths in Bangladesh fell from an uncertain estimate of around 500,000 in 1970 to 26 in Cyclone Amphan in 2020; the bars use a log scale.",
+     "detail": "The storms differed in strength and landfall, and estimates of the 1970 toll vary widely, but the direction is not in dispute. The decline followed the Cyclone Preparedness Programme, launched in 1970 by the Bangladesh Red Crescent and now run with the government, which has about 200 staff and 76,000 volunteers, half of them women; the country went from 44 cyclone shelters in 1970 to more than 14,000 able to hold 2.4 million people. The same article stresses the limit: Amphan’s losses to homes, crops and livestock were not much reduced, which makes Bangladesh a standard example both of what cheap warning and evacuation can do and of what they cannot.",
+     "source_label": "The Business Standard (Bangladesh), 50 years of cyclone preparedness, Tahsin and Bodrud-Doza",
+     "source_url": "https://www.tbsnews.net/thoughts/50-years-cyclone-preparedness-success-saving-lives-not-livelihood-368398",
+     "source_published": "2022",
+     "source_accessed": "2026-11-26",
+     "id": "cyclone-deaths-in-bangladesh-by-storm"
+    },
+    {
+     "label": "US pre-disaster resilience grants halted in 2025",
+     "viz": "bar",
+     "wide": false,
+     "value": "4.5",
+     "unit": "$ billion",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "FEMA’s April 2025 cancellation of its main pre-disaster grant program left about $4.5 billion for nearly 2,000 projects in limbo, Washington State counts; PBS NewsHour/AP said $3.6 billion.",
+     "detail": "Building Resilient Infrastructure and Communities, or BRIC, was created by the 2018 Disaster Recovery Reform Act to fund projects before disasters rather than after. FEMA, then under acting head Cameron Hamilton, cancelled it, calling it “wasteful and ineffective” (PBS NewsHour/AP, 2026). A coalition of 22 Democratic-led states and the District of Columbia sued, and in December 2025 a federal judge ruled the termination unlawful. After further orders from Judge Richard G. Stearns, FEMA reopened BRIC on March 26, 2026 with $1 billion for fiscal years 2024 and 2025 and a 120-day application window. The fight is a direct test of whether pre-disaster protection is a federal responsibility.",
+     "source_label": "Washington State Attorney General, news release",
+     "source_url": "https://www.atg.wa.gov/news/news-releases/washington-and-multistate-coalition-secure-victory-preventing-billions-cuts",
+     "source_published": "2025",
+     "source_accessed": "2026-11-26",
+     "id": "us-pre-disaster-resilience-grants-halted"
+    },
+    {
+     "label": "Loss and damage fund, first round",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "$ billion",
+     "series": [
+      {
+       "label": "Requested",
+       "value": "2.8",
+       "highlight": true
+      },
+      {
+       "label": "Available",
+       "value": "0.342",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Developing countries asked the loss and damage fund for $2.8 billion in its first round, about eight times the $342 million it had available.",
+     "detail": "Countries agreed at COP27 in 2022 to create the fund to help them recover from climate harms that adaptation cannot prevent. Developed countries resisted any language implying liability, and the decision adopting the Paris Agreement states that its loss and damage article “does not involve or provide a basis for any liability or compensation” (as quoted by Carbon Brief, 2025). Carbon Brief reports that little new money was announced at COP31, about €15 million from Spain plus formalized earlier pledges, and that as of November 2026 the fund’s board planned to begin distributing money no earlier than December 2026. UNEP says the overall loss and damage finance gap is not yet known.",
+     "source_label": "UNEP, Adaptation Gap Report 2026 press release",
+     "source_url": "https://www.unep.org/en/news-and-stories/press-release/world-heads-overshoot-15degc-adaptation-too-slow",
+     "source_published": "2026",
+     "source_accessed": "2026-11-26",
+     "id": "loss-and-damage-fund-first-round"
+    },
+    {
+     "label": "People living in places highly vulnerable to climate change",
+     "viz": "bar",
+     "wide": false,
+     "value": "3.3–3.6",
+     "unit": "billion",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The IPCC finds that 3.3 to 3.6 billion people live in contexts highly vulnerable to climate change.",
+     "detail": "The IPCC locates the hotspots in West, Central and East Africa, South Asia, Central and South America, small island states and the Arctic, and ties vulnerability to poverty, weak governance, conflict and livelihoods that depend on the weather. From 2010 to 2020, mortality from floods, droughts and storms was 15 times higher in highly vulnerable regions than in those with very low vulnerability. The same report sets out the limits the adaptation debate argues over: some coastal settlements already face soft limits, where protection is technically or financially out of reach, and adaptation does not prevent all losses even before limits are reached.",
+     "source_label": "IPCC AR6 Working Group II, Summary for Policymakers",
+     "source_url": "https://www.ipcc.ch/report/ar6/wg2/downloads/report/IPCC_AR6_WGII_SummaryForPolicymakers.pdf",
+     "source_published": "2022",
+     "source_accessed": "2026-11-26",
+     "id": "people-living-in-places-highly-vulnerable"
+    },
+    {
+     "label": "Estimated global return on adaptation investment, 2020 to 2030",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "$ trillion",
+     "series": [
+      {
+       "label": "Net benefits",
+       "value": "7.1",
+       "highlight": true
+      },
+      {
+       "label": "Invested",
+       "value": "1.8",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The Global Commission on Adaptation estimated that $1.8 trillion invested in five areas from 2020 to 2030 could yield $7.1 trillion in net benefits.",
+     "detail": "The five areas were early warning systems, climate-resilient infrastructure, improved dryland agriculture, mangrove protection and more resilient water resources, with benefit-cost ratios from 2:1 to 10:1. The commission was led by Ban Ki-moon, Bill Gates and Kristalina Georgieva and managed by the Global Center on Adaptation and the World Resources Institute, so the figure comes from the adaptation community’s main advocacy body rather than a neutral audit. Its triple-dividend framing counts avoided losses, economic gains from reduced risk, and wider social and environmental benefits; the second and third are harder to measure than the first, and the estimate assumes the money goes to well-chosen projects.",
+     "source_label": "Global Commission on Adaptation, Adapt Now, via World Resources Institute",
+     "source_url": "https://www.wri.org/news/2019/09/global-leaders-call-urgent-action-climate-adaptation-commission-finds-adaptation-can",
+     "source_published": "2019",
+     "source_accessed": "2026-11-26",
+     "id": "estimated-global-return-on-adaptation-investment"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Who should carry the cost of climate risk: those exposed, all taxpayers, or those who caused the warming?",
+    "kind": "value",
+    "why": "Every instrument here is an answer: a premium priced to one home’s risk, a disaster grant paid by every taxpayer, a fee on fossil fuel producers. No fact about the climate settles the choice; it turns on fairness and on what each arrangement makes people do.",
+    "detail": "The case for leaving the cost with those at risk is that people who choose where to live and build know their own circumstances best, and will weigh risk properly only if they bear it. A household in a floodplain that pays the expected cost of flooding has a reason to elevate, floodproof, move or not build there at all; when the cost is spread, safer and often poorer households subsidize the riskiest choices, including expensive coastal second homes. Help for those who cannot pay, on this view, should be direct and means-tested rather than a hidden discount for everyone in harm’s way.\n\nThe case for sharing it is that most people in exposed places did not choose a risk that was unknown when they bought, and many cannot sell or move without losing what they own. Climate risk is a hazard created collectively, and disasters are a national problem in the way defense and public health are. Those who add that emitters should pay argue that neither the household nor the taxpayer caused the warming that changed the risk, and that the companies and countries that profited from emissions should bear it, as polluters do under existing pollution law.",
+    "lean_label_a": "Those at risk pay",
+    "lean_label_b": "Others share it",
+    "id": "who-should-carry-the-cost-of"
+   },
+   {
+    "text": "Does public protection and disaster aid make places safer, or keep people in harm’s way?",
+    "kind": "empirical",
+    "why": "Since Gilbert White in the 1940s, geographers have described a levee effect: protection draws building behind it until a bigger flood brings a bigger loss. Yet places that built protection have seen deaths fall. The dispute is which effect wins out, and when.",
+    "detail": "Those who say help builds resilience point to the record where protection was built: Bangladesh’s shelters and warnings, WMO’s finding that disaster mortality is far lower where early warning is comprehensive, and benefit-cost studies of US mitigation grants and building codes. Communities without protection, they add, rarely empty out; they stay and suffer worse losses, and aid that requires rebuilding higher and stronger turns recovery into protection.\n\nThose who say help invites exposure point to the public record of repeated loss: GAO’s count of repetitive loss properties growing faster than mitigation removes them, and the share of flood claims those properties draw. The IPCC warns that sea walls can reduce harm in the short term while locking in exposure in the long term unless they sit inside a long-term plan, which it calls maladaptation. When premiums are discounted and rebuilding is publicly financed, they argue, people keep building where losses will recur, and each new defense raises the stakes of the flood it fails to stop.",
+    "lean_label_a": "Builds resilience",
+    "lean_label_b": "Invites exposure",
+    "id": "does-public-protection-and-disaster-aid"
+   },
+   {
+    "text": "Should insurance prices reflect each property’s full risk even when that makes cover unaffordable?",
+    "kind": "value",
+    "why": "The US flood program’s Risk Rating 2.0, phased in since October 2021, ties each premium to a property’s modeled risk, with yearly increases capped at 18 percent for most; private homeowners cover is moving the same way in high-risk states.",
+    "detail": "The case for full-risk prices is that a price below the risk is a subsidy for building and staying in the most dangerous places, paid by taxpayers and by lower-risk policyholders. Accurate prices tell buyers, lenders and towns what a place really costs, reward owners who elevate or floodproof, and leave room for private insurers to compete. Affordability problems are real, on this view, but should be met with means-tested vouchers and mitigation grants rather than by hiding the risk from everyone.\n\nThe case for capping is that full-risk prices land on people who bought under the old prices and cannot recover the lost value, and that they cut take-up, so more people go uninsured and fall back on disaster aid or ruin. Insurance exists to pool risk across people and time, and catastrophic risk concentrated in particular places cannot be carried by those places alone. The UK’s Flood Re, which sets the flood part of premiums by council tax band rather than flood risk and plans a move to risk-reflective prices by 2039 (Flood Re annual report, 2025-26), shows a country can choose affordability for a generation while it adapts.",
+    "lean_label_a": "Price full risk",
+    "lean_label_b": "Cap premiums",
+    "id": "should-insurance-prices-reflect-each-property"
+   },
+   {
+    "text": "When should a community retreat rather than defend itself in place?",
+    "kind": "value",
+    "why": "Some places will become ruinous to protect as seas rise; the IPCC already reports soft limits for some coastal settlements. Where that line falls, who draws it, and whether moving is policy or defeat turn on community and money as much as engineering.",
+    "detail": "The case for planning retreat early is that moving before a disaster costs less and hurts less than moving after one, and every year of rebuilding in the riskiest places adds to the eventual bill. A planned move lets a community go together, with time to choose a site, keep its institutions and be paid fairly, instead of being scattered by a storm and a slow buyout. Fiji’s national relocation guidelines and trust fund, and the resettlement of Isle de Jean Charles in Louisiana, which PBS NewsHour reported in 2016 had lost 98 percent of its land over 60 years, show it can be done. Waiting, on this view, means retreat happens anyway, through price collapse and insurance withdrawal, with the poorest last to leave.\n\nThe case for defending in place is that homes, livelihoods, cemeteries, churches and kin networks are in those places, and leaving gives up things money cannot replace. Many coastal and river cities are too large and valuable to abandon and can be protected, as the Netherlands has done for centuries; its Delta Programme aims to give everyone behind a primary flood defense protection of at least 1 in 100,000 a year by 2050. Retreat programs, defenders add, have fallen hardest on poorer and more diverse neighborhoods, and maps of unprotectable places often look like maps of who has least political power.",
+    "lean_label_a": "Plan retreat early",
+    "lean_label_b": "Defend in place",
+    "id": "when-should-a-community-retreat-rather"
+   },
+   {
+    "text": "Should disaster response and recovery be led nationally, or by states and localities?",
+    "kind": "value",
+    "why": "The FEMA Review Council’s May 2026 report proposes reserving federal help for catastrophes, paying states directly by formula and raising the damage threshold for declarations; critics say states cannot absorb what FEMA now carries.",
+    "detail": "The case for a national lead is that disasters strike unevenly: a state hit by a hurricane in a given year faces costs no single budget can plan for, while the national government can pool risk across states and years. A national system also brings expertise, surge staff and standards that smaller and rural states cannot keep up on their own. Pulling federal support back, on this view, saves little, shifts losses onto the poorest states and the people least able to recover, and slows recovery when speed matters most.\n\nThe case for states is that response is best run by those closest to it, who know their communities and answer to them. When the federal government pays most of the bill for even modest events, states have little reason to build reserves or tighten codes; returning routine events to them would make each answerable for its own readiness and keep federal money for true catastrophes. Supporters add that today’s reimbursement process can take years, and council member Glenn Youngkin said the recommendations “are all about accelerating federal dollars” (CBS News/AP, 2026).",
+    "lean_label_a": "Nation leads",
+    "lean_label_b": "States lead",
+    "id": "should-disaster-response-and-recovery-be"
+   },
+   {
+    "text": "Do high-emitting countries and fossil fuel producers owe adaptation and loss and damage finance?",
+    "kind": "value",
+    "why": "Under the UN climate treaties rich countries pledged finance but resisted liability. The International Court of Justice’s 2025 advisory opinion said breaches of climate obligations can carry a duty of reparation; major emitters dispute how that applies.",
+    "detail": "The case for an obligation is that the countries and companies whose emissions caused most of the warming grew rich from them, while the countries suffering most contributed least. Paying for the harm, on this view, is not charity but the ordinary rule that whoever causes damage pays for it, and voluntary finance has consistently fallen short of both what was promised and what is needed. New York and Vermont applied the same reasoning at home in 2024, passing climate superfund laws that charge fossil fuel producers for adaptation costs.\n\nThe case for assistance is that emissions were produced over two centuries by billions of people, most of them before the harm was understood, and that assigning legal liability to particular countries or companies today is both unfair and unworkable. Adaptation finance is better treated as investment and aid, directed where it does most good and backed by voters willing to give it, than as reparations that donor publics reject and courts may not enforce. Two federal courts held in August and September 2026 that New York’s law intruded on federal authority over interstate and international emissions; Vermont’s faced a federal challenge as of November 2026.",
+    "lean_label_a": "Owed as reparation",
+    "lean_label_b": "Given as assistance",
+    "id": "do-high-emitting-countries-and-fossil"
+   },
+   {
+    "text": "Does public spending on disaster prevention pay for itself?",
+    "kind": "empirical",
+    "why": "Benefit-cost estimates for mitigation are high, but they come from samples of funded projects, rest on assumptions about future disasters and the value of avoided deaths, and are produced partly by institutions that advocate the spending.",
+    "detail": "Those who say it pays back many times point to study after study with high returns, from the national ratios for US grants and building codes to the global commission’s estimates across warnings, infrastructure, farming, mangroves and water. Avoided losses are real money that would otherwise come out of disaster budgets, insurers and households, and the cheapest measures, such as warnings and codes, return the most.\n\nThose who say returns are overstated answer that averages from selected projects do not mean the next dollar earns the same: the best projects are funded first, and grant programs can drift toward politically favored ones with weaker returns. Many estimates value avoided deaths at assumed figures and assume disasters will strike where the projects are, and competitive grants reward places with the staff to apply. FEMA said in 2025 that its main pre-disaster program had become too bureaucratic and focused on “climate change” initiatives (PBS NewsHour/AP, 2026); on this view the money is better left to the states and localities that bear the consequences.",
+    "lean_label_a": "Pays for itself",
+    "lean_label_b": "Returns overstated",
+    "id": "does-public-spending-on-disaster-prevention"
+   },
+   {
+    "text": "Are rising disaster losses driven mainly by a changing climate or by more property in harm’s way?",
+    "kind": "empirical",
+    "why": "Losses depend on hazard, exposure and vulnerability together, and separating them is hard. The answer steers policy: if exposure dominates, land use and building codes are the main levers; if climate does, losses keep rising whatever local policy does.",
+    "detail": "Those who say climate is the main driver point to attribution science, which now links many specific events, such as heavier hurricane rainfall and more intense heat waves, to warming, and to the IPCC’s finding that human influence is the main driver of the faster sea level rise since at least 1971, which raises every storm surge. They note that the US count of billion-dollar disasters has climbed even with its threshold adjusted for inflation.\n\nThose who say exposure dominates point to the growth of people and expensive property in coastal and floodplain zones, which raises losses even in a constant climate. Roger Pielke Jr., using Verisk data, argues that weather-related catastrophe losses as a share of global GDP have not risen since 1990 and were about 0.18 percent in 2025, below a long-term average of 0.22 percent (AEI, 2026). On this reading, the most effective way to cut losses is to change where and how people build.",
+    "lean_label_a": "Mostly climate",
+    "lean_label_b": "Mostly exposure",
+    "id": "are-rising-disaster-losses-driven-mainly"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Invest in protection before disasters strike",
+    "color_key": "green",
+    "steelman": "Warming is already here, and the cheapest disaster is the one that never happens: fund warnings, codes and defenses steadily before the storm, not just the rebuilding after it.",
+    "detail": "Every serious study of protection finds that it pays, yet governments still pour money into rebuilding after disasters while starving the programs that would have prevented them. Treat adaptation as core infrastructure: levees and drainage designed for the climate to come, building codes every jurisdiction adopts, early warnings for every person on Earth, and international finance that matches developing countries’ needs instead of a tenth of them. Adaptation is not a substitute for cutting emissions and it is not a surrender; it is how people stay safe while the world does both. As Ban Ki-moon put it when the Global Commission on Adaptation reported, “Adaptation is not only the right thing to do, it is also the smart thing to do.”\n\nWe are told that protection invites more building in harm’s way. The remedy is better design, not less protection: pair defenses with land-use rules, require rebuilding to higher standards, and spend first on warnings and codes, which lure no one into danger because they make every building safer. Wetlands, mangroves and room for rivers belong in the same toolkit and lock in less. To those who would shrink the federal role: pre-disaster money is exactly the spending that cuts the later federal bill.",
+    "proponents": "Global Commission on Adaptation; Global Center on Adaptation; World Resources Institute; Ban Ki-moon; Washington Attorney General Nick Brown",
+    "id": "invest-in-protection-before-disasters-strike"
+   },
+   {
+    "name": "Keep insurance and recovery affordable",
+    "color_key": "blue",
+    "steelman": "People live on coasts and rivers because their families and jobs are there; keep cover within reach and treat recovery as a national commitment, not a bill for the unlucky.",
+    "detail": "Families bought their homes under the rules and prices that existed then. Abruptly repricing every policy to a model’s estimate of full risk moves no one to safety; it strips equity from working families, pushes them to drop coverage, and leaves them dependent on disaster aid or ruined when the water comes. The congressional Flood Resilience Caucus reports that the average flood program premium has reached $1,808 a year, 103.6 percent above legacy rates, and the program lapsed from October 1 to November 12, 2025, when no policy could be sold or renewed. Give long-term certainty instead of short extensions, invest in mitigation that lowers the risk itself, and keep a public program that, in the caucus’s words, “keeps coverage affordable, narrows the insurance gap, and rewards mitigation.”\n\nThe objection is that subsidized premiums keep building in the most dangerous places and send the bill to taxpayers and lower-risk policyholders. Affordability and mitigation are not opposites: tie caps to mitigation so the help goes to owners who elevate or floodproof, and price and regulate new construction differently from homes people already own. The alternative to affordable cover is not people moving to safety; it is people staying uninsured, with the loss landing on disaster aid anyway. That is why realtors, homebuilders and city governments have warned against moving flood policies to private insurers.",
+    "proponents": "Flood Resilience Caucus; Rep. Troy Carter; National Association of Realtors; National Association of Home Builders; National League of Cities",
+    "id": "keep-insurance-and-recovery-affordable-where"
+   },
+   {
+    "name": "Price insurance to risk and fund voluntary buyouts",
+    "color_key": "amber",
+    "steelman": "The cheapest flood is the one with no house in its path: charge what the risk costs, help low-income owners directly, and offer a fast buyout to anyone who wants out.",
+    "detail": "For decades the United States has charged too little for flood risk, paid to rebuild the same houses again and again, and let new construction go up where the water will certainly return; the flood program’s debt and the claims drawn by repeatedly flooded homes are the result. Prices that tell the truth show home buyers, banks and local governments the real cost of a place, and reward every owner who elevates or moves. They should not be cruel: SmarterSafer says risk-based pricing “must be paired with affordability assistance and mitigation support to protect vulnerable households.” NRDC’s Rob Moore has proposed a guaranteed buyout through the flood insurance policy for owners who no longer want to rebuild, since some of the most flood-prone homes have been “repeatedly rebuilt” when it “would be less expensive to help homeowners move to higher ground.”\n\nTold that full-risk prices fall on families who bought under the old rules and cannot sell, we answer that hiding the risk does not protect them; it only delays the reckoning until a disaster or an insurer’s exit wipes out their equity at once. A buyout offered in advance lets people leave with their equity rather than after it is gone, and planned retreat, done early and fairly, beats the unplanned retreat that insurance withdrawal and repeated disasters will otherwise force. Market-minded members such as R Street stress moving flood risk to private insurers; environmental groups stress buyouts, floodplain restoration and disclosing flood risk at sale.",
+    "proponents": "SmarterSafer; Natural Resources Defense Council; Rob Moore; R Street Institute",
+    "id": "price-insurance-to-risk-and-fund"
+   },
+   {
+    "name": "Make polluters pay for adaptation and loss",
+    "color_key": "rust",
+    "steelman": "The people paying for sea walls and rebuilt homes did not cause the warming; those who profited from the emissions should pay for the damage, as polluters do for any other cleanup.",
+    "detail": "A small number of fossil fuel companies and wealthy countries produced most of the emissions, profited from them, and in many cases knew the consequences; small island states and poor countries produced almost none and now face the largest bills relative to their size. Every other kind of pollution follows a simple rule, that the polluter pays, and the federal Superfund law has applied it to toxic waste for decades. Voluntary aid has never come close to the need, and charging those responsible is fairer than charging taxpayers or the victims, and the only source large enough. New York’s climate superfund law would have collected $75 billion from fossil fuel producers in proportion to their emissions; the Polluters Pay Climate Fund Act, led by Sen. Chris Van Hollen, would charge the largest fossil fuel companies for a $1 trillion fund; and Vanuatu led the push for the world court’s opinion.\n\nWe are told that historic emissions were made by billions of people doing something legal, and that assigning liability now is unfair and unenforceable. The companies’ share of emissions is measurable, they kept producing and in some cases misleading the public long after the harm was known, and the law adapts to new harms, as it did with toxic waste. The first court rulings went against New York’s law, but losing the first round is how most accountability laws begin, and appeals and the international route remain open.",
+    "proponents": "Government of Vanuatu; Alliance of Small Island States; Least Developed Countries group; Sen. Chris Van Hollen; Center for Climate Integrity; Union of Concerned Scientists; Vermont legislature; New York legislature",
+    "id": "make-polluters-pay-for-adaptation-and"
+   },
+   {
+    "name": "Return disaster response to the states",
+    "color_key": "purple",
+    "steelman": "Disasters are local, and those closest to them respond best: keep the federal government for true catastrophes and give states fast, formula-based money they can direct themselves.",
+    "detail": "Over decades the federal government became the first payer for events that states once handled themselves, declaring disasters for storms well within a state’s means, and that dulled the incentive for states and towns to prepare. The reimbursement system is slow, paper-heavy and audited for years, so money reaches communities late. Raise the threshold so routine events return to the states, reserve federal help for catastrophes, and move flood insurance toward a private market that can price risk without a federal debt. The FEMA Review Council’s final report of May 7, 2026 describes the goal as response that is “locally executed, state managed and federally supported”; the Cato Institute’s Dominik Lett put it as “We should be charting a path that shifts financial responsibility back to the states, for disasters.”\n\nThe objection is that states, especially small and rural ones, cannot absorb catastrophic costs or build the surge capacity FEMA provides. The proposal keeps the federal government for catastrophes and changes only the routine events states can handle, and states already run response on the ground. Faster direct payments would leave states better resourced after a real disaster than the current wait for reimbursement. A leaner federal role is not abandonment; it is a clearer division of responsibility. The council stopped short of abolishing FEMA, though President Trump has spoken of dismantling it.",
+    "proponents": "FEMA Review Council; President Donald Trump; Cato Institute; Heritage Foundation",
+    "id": "return-disaster-response-to-the-states"
+   },
+   {
+    "name": "Put growth and adaptation ahead of rapid net zero",
+    "color_key": "teal",
+    "steelman": "Climate change is a real problem, not the end of the world; wealth is the strongest adaptation there is, so spend first on growth, cheap energy, warnings and defenses.",
+    "detail": "The question is how to do the most good with limited money. Humanity has adapted to every climate on Earth, and the richer a country gets, the fewer of its people die when disasters strike; disaster death rates have collapsed over a century of warming. Adaptation pays back immediately and to the people who fund it, while rapid net-zero policies are enormously expensive, fall hardest on the poor and change temperatures only slowly. Bjorn Lomborg argues that adaptation “often offers immediate and very localized advantages” while emission cuts offer “modest benefits,” and that “lifting countries out of poverty becomes a crucial complementary approach to mitigating the damage caused by climate change.” The Breakthrough Institute argues that general economic development and energy access explain adaptation’s historical success.\n\nWe are told that adaptation has limits, that the sea will rise for centuries, and that the poorest cannot adapt fast enough without deep emission cuts. We do not reject emission cuts, only their pace and cost, and the fastest way to give the poorest the means to adapt is to make them richer: a Bangladesh with Dutch income can build Dutch defenses. Innovation that makes clean energy cheaper than fossil fuels, not rationing, is what will cut emissions in the countries whose emissions are still growing.",
+    "proponents": "Bjorn Lomborg; Copenhagen Consensus Center; Breakthrough Institute",
+    "id": "put-growth-and-adaptation-ahead-of"
+   }
+  ],
+  "crux": {
+   "lead": "Should the cost of climate risk steer people away from danger, or be shared so they can stay?",
+   "lead_highlight": "steer people away from danger, or be shared so they can stay",
+   "subtitle": "The fight is over who pays and what paying does. If a cost left with those exposed moves homes and building to safer ground, full-risk prices and buyouts follow. If it mostly ruins families who stay, the cost belongs with taxpayers, insurance pools or the emitters behind the warming.",
+   "empirical": "Much of this is measurable. How strongly do subsidized insurance, disaster aid and public defenses draw building and rebuilding into exposed places? How far do protection, codes and warnings cut losses at the margin, beyond the projects already chosen? Who drops cover, sells or moves when premiums rise to full risk? Property-level premium and claims data, and follow-up of bought-out and priced-out households, would narrow most of it.",
+   "values": "No data says how much weight a family’s claim to stay in its home and community deserves against other taxpayers’ claim not to pay for it, whether people who bought under old prices are owed protection from new ones, or whether the harm of warming is a debt owed by those who caused it or a misfortune the fortunate should help with. Two people who agree on every number can still answer differently."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Look up the flood risk at a US address",
+    "description": "FEMA’s Flood Map Service Center shows the official flood zone for any US address, the maps that decide whether a mortgage requires flood insurance.",
+    "url": "https://msc.fema.gov/portal/home",
+    "for_position": null,
+    "id": "look-up-the-flood-risk-at"
+   },
+   {
+    "kind": "policy",
+    "title": "Tell your representative what to do about flood insurance",
+    "description": "Congress extended the National Flood Insurance Program’s authority to December 11, 2026; whether to renew it long term, price it to risk or add affordability aid is a decision for Congress.",
+    "url": "https://www.house.gov/representatives/find-your-representative",
+    "for_position": null,
+    "id": "tell-your-representative-what-to-do"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Follow the Global Center on Adaptation",
+    "description": "The Global Center on Adaptation, which co-managed the Global Commission on Adaptation, works with governments and development banks to scale up adaptation investment in developing countries.",
+    "url": "https://gca.org/",
+    "for_position": "Invest in protection before disasters strike",
+    "id": "follow-the-global-center-on-adaptation"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Help disaster survivors with their insurance claims",
+    "description": "United Policyholders, a nonprofit, helps households through insurance claims after disasters and campaigns for affordable, available coverage; it takes volunteers and donations.",
+    "url": "https://uphelp.org/",
+    "for_position": "Keep insurance and recovery affordable",
+    "id": "help-disaster-survivors-with-their-insurance"
+   },
+   {
+    "kind": "policy",
+    "title": "Back risk-based flood insurance reform",
+    "description": "SmarterSafer is the coalition pressing Congress for risk-based flood insurance prices paired with means-tested help, mitigation funding and an end to repeated rebuilding.",
+    "url": "https://www.smartersafer.org/",
+    "for_position": "Price insurance to risk and fund voluntary buyouts",
+    "id": "back-risk-based-flood-insurance-reform"
+   },
+   {
+    "kind": "policy",
+    "title": "Back climate superfund laws",
+    "description": "The Center for Climate Integrity tracks and supports state climate superfund bills and lawsuits that seek to make fossil fuel companies pay for adaptation costs.",
+    "url": "https://climateintegrity.org/",
+    "for_position": "Make polluters pay for adaptation and loss",
+    "id": "back-climate-superfund-laws"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the FEMA Review Council’s final report",
+    "description": "The President’s council on FEMA sets out its case for state-led disaster response, a higher bar for federal declarations, direct payments to states and private flood insurance.",
+    "url": "https://www.dhs.gov/sites/default/files/2026-05/26_0507_fema%20review%20council_final%20report.pdf",
+    "for_position": "Return disaster response to the states",
+    "id": "read-the-fema-review-council-s"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Weigh climate spending against other priorities",
+    "description": "The Copenhagen Consensus Center, led by Bjorn Lomborg, publishes cost-benefit rankings that compare adaptation, emission cuts and development spending.",
+    "url": "https://copenhagenconsensus.com/",
+    "for_position": "Put growth and adaptation ahead of rapid net zero",
+    "id": "weigh-climate-spending-against-other-priorities"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the IPCC’s assessment of adaptation and its limits",
+    "description": "The Summary for Policymakers of the IPCC’s Working Group II report sets out who is vulnerable, what adaptation achieves, where its limits lie and what counts as maladaptation.",
+    "url": "https://www.ipcc.ch/report/ar6/wg2/downloads/report/IPCC_AR6_WGII_SummaryForPolicymakers.pdf",
+    "for_position": null,
+    "id": "read-the-ipcc-s-assessment-of"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Join a Red Cross disaster action team",
+    "description": "Local American Red Cross volunteers respond to home fires and disasters, open shelters and help families in the first days after a flood or storm.",
+    "url": "https://www.redcross.org/volunteer/volunteer-opportunities/disaster-action-team.html",
+    "for_position": null,
+    "id": "join-a-red-cross-disaster-action"
+   }
+  ]
+ }
 }

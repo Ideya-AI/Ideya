@@ -1,8 +1,8 @@
 {
  "slug": "animal-agriculture-welfare-reform-vs-abolition",
  "title": "Animal Agriculture",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-11-23T13:25:01+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Industrial animal farming: welfare reform, alternative proteins, or abolition.",
@@ -15,5 +15,699 @@
   "moral-status-of-animals",
   "meat-livestock-climate",
   "land-sparing-vs-sharing"
- ]
+ ],
+ "icon": "barn",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: a large standing pig in side view as the dominant focal mass in the foreground, calm and plain; behind it a long low livestock barn with a row of roof vents and a tall feed silo, the pig overlapping the base of the barn; a medium hen with two small chicks pecking on a curved grassy slope to one side; a simple wooden fence line running in a gentle curve across the whole frame as the connective element; the ground is the curve of the slope, never a flat line.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #7d8a4e, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: cages, crates, bars, chains, slaughterhouse, knives, meat, plates, burgers, blood, sad or crying animals, cartoon smiling animal faces, protest signs, crossed-out symbols, warning signs, price tags, test tubes or lab meat, a cow as the main figure, smokestacks, a farmer or any person.",
+ "content": {
+  "overview": {
+   "summary": "Tens of billions of animals a year are raised on industrial farms. The argument is whether to improve that system, replace it or end it.",
+   "scope_covered": "Cage and crate laws, ballot measures, corporate welfare pledges, the cost of higher standards, alternative proteins, and the dispute over whether reform helps animals or entrenches their use.",
+   "scope_excluded": "How much animals matter morally, livestock and climate, and land sparing versus sharing, each on its own page; subsistence herding and pastoralism.",
+   "why_now": "In July 2026 the European Commission committed to propose new welfare rules for laying hens and broilers by the end of 2026. In November a leaked draft was reported to phase out cages for hens over 12 years, with similar rules for imports, and the Commission set a discussion of the proposals for December 9, 2026.",
+   "why_now_source_label": "just-food, November 11, 2026",
+   "why_now_source_url": "https://www.just-food.com/newsletters/eu-pushes-ahead-with-plan-to-ban-caged-hen-egg-farming"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "Land animals slaughtered for meat each year",
+     "viz": "bar",
+     "wide": false,
+     "value": "86.3",
+     "unit": "billion",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "FAO data count about 86 billion chickens, ducks, pigs, sheep, goats, turkeys and cattle slaughtered for meat in 2024, about 78.5 billion of them chickens.",
+     "detail": "The other six species in the total are ducks at 4.2 billion, pigs 1.49 billion, sheep 0.70 billion, goats 0.56 billion, turkeys 0.50 billion and cattle 0.30 billion. The count leaves out geese, rabbits, buffalo and other species, and all fish. Chickens dominate because each bird yields little meat; the number slaughtered rose from about 6.6 billion in 1961 to 18.4 billion in 1980 and 40.5 billion in 2000. By country in 2024, China slaughtered about 11.9 billion chickens and 703 million pigs, the United States about 9.6 billion chickens and 130 million pigs, and the EU about 6.7 billion chickens and 224 million pigs. A shift from beef toward chicken lowers emissions per kilogram of meat but raises the number of animals raised, which is why welfare groups have made broiler chickens a central campaign.",
+     "source_label": "FAO (2025), processed by Our World in Data, “Yearly number of animals slaughtered for meat”",
+     "source_url": "https://ourworldindata.org/grapher/animals-slaughtered-for-meat",
+     "source_published": "2024",
+     "source_accessed": "2026-11-23",
+     "id": "land-animals-slaughtered-for-meat-each"
+    },
+    {
+     "label": "Farmed land animals living on factory farms",
+     "viz": "radial",
+     "wide": false,
+     "value": "74",
+     "unit": "% worldwide",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The Sentience Institute estimates that about 74% of farmed land animals worldwide, and about 99% in the United States, live on factory farms; the global figure is far less certain.",
+     "detail": "“Factory farm” has no single legal definition. For the United States, the Sentience Institute counts animals on farms above the size thresholds the Environmental Protection Agency uses to define concentrated animal feeding operations, from USDA Census of Agriculture data. On that basis it puts 99.9% of US meat chickens, 99.8% of turkeys, 98.6% of pigs, 98.3% of egg-laying hens and 74.9% of cattle on factory farms (Sentience Institute, updated November 2024). Cattle score lower because only those fed in concentrated operations for at least 45 days a year count, and many beef cattle spend much of their lives on pasture. The global estimate, covering about 23 billion animals alive at any time, rests partly on older Worldwatch Institute assumptions that Our World in Data says are not clearly documented. Counting farmed fish, nearly all of which Our World in Data treats as factory-farmed, the share rises to about 94%. Industry groups dispute the label rather than the farm sizes, arguing that large operations can care for animals as well as small ones or better.",
+     "source_label": "Our World in Data, Hannah Ritchie, “How many animals are factory-farmed?”, using Sentience Institute estimates",
+     "source_url": "https://ourworldindata.org/how-many-animals-are-factory-farmed",
+     "source_published": "2023",
+     "source_accessed": "2026-11-23",
+     "id": "farmed-land-animals-living-on-factory"
+    },
+    {
+     "label": "Farmed fish slaughtered each year",
+     "viz": "bar",
+     "wide": false,
+     "value": "130",
+     "unit": "billion fish",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Fishcount estimates that about 130 billion farmed fish were slaughtered worldwide in 2022, within a range of 86 to 180 billion.",
+     "detail": "FAO reports fish farming by tonnage, not by number of animals, so counts have to be estimated from average fish weights, which is why the range is wide. Fishcount’s estimate for 2019 was 120 billion (78 to 170 billion), and its estimate for the EU in 2022 is 670 million to 1.1 billion fish. Farmed crustaceans are more numerous still: Fishcount estimates that 310 to 950 billion were killed in 2022, 230 to 780 billion of them shrimps and prawns. Fish and shrimp have few legal welfare protections at slaughter in most countries, and most reform campaigns and laws have focused on hens, pigs and broiler chickens.",
+     "source_label": "Fishcount, “Numbers of farmed fish slaughtered each year”",
+     "source_url": "https://fishcount.org.uk/fish-count-estimates-2/numbers-of-farmed-fish-slaughtered-each-year",
+     "source_published": "2022",
+     "source_accessed": "2026-11-23",
+     "id": "farmed-fish-slaughtered-each-year"
+    },
+    {
+     "label": "US egg-laying hens in cage-free systems",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% of hens",
+     "series": [
+      {
+       "label": "2014",
+       "value": "10.5",
+       "highlight": false
+      },
+      {
+       "label": "2016",
+       "value": "13.4",
+       "highlight": false
+      },
+      {
+       "label": "2018",
+       "value": "17.8",
+       "highlight": false
+      },
+      {
+       "label": "2020",
+       "value": "28.0",
+       "highlight": false
+      },
+      {
+       "label": "2022",
+       "value": "34.1",
+       "highlight": false
+      },
+      {
+       "label": "2024",
+       "value": "39.5",
+       "highlight": false
+      },
+      {
+       "label": "2025",
+       "value": "45.3",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The cage-free share of US egg-laying hens rose from about 11% in 2014 to about 45% in 2025, counting barns, aviaries and free-range farms.",
+     "detail": "The rise followed state laws, led by California’s Proposition 2 (2008) and Proposition 12 (2018) and Massachusetts’s Question 3 (2016), and pledges by hundreds of food companies from 2015 on. USDA’s monthly cage-free report put the cage-free flock at about 151.5 million hens on November 2, 2026, and USDA’s statistics service counted 319 million hens laying table eggs on October 1, 2026, which implies a share near 47%, though the two counts are collected differently. Growth stalled in 2022, the first year of the US avian influenza outbreak that began then, which forced the culling of millions of hens and pushed egg prices up. Egg producers cite that period when arguing that housing mandates add to supply shocks; welfare groups reply that caged flocks were culled too.",
+     "source_label": "Our World in Data, “Share of egg-laying hens in cage-free systems” (US official statistics)",
+     "source_url": "https://ourworldindata.org/grapher/eggs-cage-free?country=~USA",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "us-egg-laying-hens-in-cage"
+    },
+    {
+     "label": "Broiler chickens with poor walking ability",
+     "viz": "radial",
+     "wide": false,
+     "value": "27.6",
+     "unit": "% of birds",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a 2008 survey of 51,000 broilers from 176 UK flocks, 27.6% walked poorly and 3.3% were almost unable to walk; breeders say leg health has improved since.",
+     "detail": "The birds, at a mean age of 40 days, came from flocks totaling 4.8 million, and poor walking here means a gait score of 3 or higher. The high prevalence held despite culling policies meant to remove severely lame birds. The authors found that the main risk factors were linked to growth rate, and noted that the fixes they identified would likely slow growth and production. The study covers a single country and is nearly two decades old, and welfare groups dispute how much breeding has improved leg health since. It remains one of the most-cited measurements behind demands for slower-growing breeds.",
+     "source_label": "Knowles et al., PLoS ONE, 2008",
+     "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0001545",
+     "source_published": "2008",
+     "source_accessed": "2026-11-23",
+     "id": "broiler-chickens-with-poor-walking-ability"
+    },
+    {
+     "label": "Effect of Proposition 12 on California pork prices",
+     "viz": "bar",
+     "wide": false,
+     "value": "20",
+     "unit": "% price rise",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Using retail scanner data, economists estimated that Proposition 12 raised California prices for covered pork by about 20% and cut consumption by about 15%, relative to national trends.",
+     "detail": "By cut, the estimated premium from July 2022 to June 2025 was about 30% for loins, 21% for ribs and 14% for shoulders and bacon. Proposition 12 requires that pork, veal and eggs sold in California come from breeding pigs, calves and hens kept under minimum space standards, wherever they were raised; it took full effect for pork in January 2024, after the Supreme Court upheld it 5 to 4 in National Pork Producers Council v. Ross in May 2023. The authors, at North Dakota State University and the USDA Office of the Chief Economist, found little change for exempt pork products, which supports reading the effect as the law’s. The National Pork Producers Council cites the study, with university estimates that compliant barns cost 25% to 40% more per sow, in seeking a federal override (NPPC, April 2026); welfare groups reply that the added cost per serving is small and a fair price for letting breeding sows turn around.",
+     "source_label": "Lwin, Cooper, Meyer and Steinbach, ARPC White Paper 2025-03, North Dakota State University and USDA, 2025",
+     "source_url": "https://ageconsearch.umn.edu/record/362671/files/ARPC%20White%20Paper%202025-03.pdf",
+     "source_published": "2022 to 2025",
+     "source_accessed": "2026-11-23",
+     "id": "effect-of-proposition-12-on-california"
+    },
+    {
+     "label": "Yes votes on farm-animal ballot measures",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% yes",
+     "series": [
+      {
+       "label": "D.C. foie gras, 2026",
+       "value": "73",
+       "highlight": false
+      },
+      {
+       "label": "Denver foie gras, 2026",
+       "value": "66.6",
+       "highlight": false
+      },
+      {
+       "label": "California Prop 12, 2018",
+       "value": "62.7",
+       "highlight": true
+      },
+      {
+       "label": "Swiss initiative, 2022",
+       "value": "37",
+       "highlight": false
+      },
+      {
+       "label": "Denver slaughter, 2024",
+       "value": "35.7",
+       "highlight": false
+      },
+      {
+       "label": "Sonoma CAFO ban, 2024",
+       "value": "15.0",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Voters have approved measures that set housing standards or ban one practice, such as Proposition 12 with 62.7% in 2018, and rejected bans on factory farms or slaughterhouses.",
+     "detail": "Each row is a separate vote with its own source. Proposition 12 passed with 7,551,434 votes to 4,499,702. The Swiss initiative of September 25, 2022, which would have written an end to factory farming into the constitution and applied its standards to imports, passed only in Basel City (swissinfo). Denver’s 2024 measure would have closed the city’s one slaughterhouse, a large lamb plant (Denver7, unofficial results), and Sonoma County’s Measure J would have phased out large animal operations (Ballotpedia). In November 2026 Pro-Animal Future, the Denver group behind the slaughterhouse measure, won foie gras bans in Denver and Washington, D.C. (Sentient via Stacker). Reformers read the pattern as support for ending specific cruel practices, farm groups as a rejection of attempts to end animal farming, and abolitionists as each ban moving the line of what is acceptable.",
+     "source_label": "UC Berkeley IGS (Proposition 12); swissinfo, Denver7, Ballotpedia and Sentient via Stacker (other rows)",
+     "source_url": "https://igs.berkeley.edu/library/california-ballot-proposition-guides/november-6-2018-general-election-summary/november-6-9",
+     "source_published": "2018 to 2026",
+     "source_accessed": "2026-11-23",
+     "id": "yes-votes-on-farm-animal-ballot"
+    },
+    {
+     "label": "EU citizens who say farmed animal welfare should be better protected",
+     "viz": "radial",
+     "wide": false,
+     "value": "84",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a 2023 survey of 26,376 people across the EU, 84% said the welfare of farmed animals should be better protected in their country than it is.",
+     "detail": "In the same Special Eurobarometer, fielded in March 2023, 83% supported limiting animal transport times, three-quarters found the killing of male chicks after hatching unacceptable, and 84% wanted EU welfare rules applied to imports or imported food labeled by the standards used. On price, 60% said they would be willing to pay more for welfare-friendly products, with around a quarter of all respondents (26%) putting that premium at up to 5%. Each side reads the gap between stated concern and purchasing differently: reformers take it as a mandate for law, since shoppers cannot fix the problem alone, and farm groups as proof that consumers will not pay for standards imposed on producers.",
+     "source_label": "European Commission, Special Eurobarometer 533, press release of October 19, 2023",
+     "source_url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_23_4951",
+     "source_published": "2023",
+     "source_accessed": "2026-11-23",
+     "id": "eu-citizens-who-say-farmed-animal"
+    },
+    {
+     "label": "Global meat production",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "million t",
+     "series": [
+      {
+       "label": "1961",
+       "value": "71",
+       "highlight": false
+      },
+      {
+       "label": "1980",
+       "value": "137",
+       "highlight": false
+      },
+      {
+       "label": "2000",
+       "value": "232",
+       "highlight": false
+      },
+      {
+       "label": "2010",
+       "value": "292",
+       "highlight": false
+      },
+      {
+       "label": "2024",
+       "value": "374",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The world produced about 374 million tonnes of meat in 2024, more than five times the 71 million tonnes of 1961.",
+     "detail": "Production has grown faster than population, driven by rising incomes in Asia and Latin America and by the spread of intensive poultry and pig production. The OECD and FAO project that global output of meat, dairy and eggs will grow by 17% over the decade to 2034 (UN News, July 2025). Those who favor intensive farming cite this demand as the reason efficient, large-scale production is needed; alternative-protein advocates cite it as the reason welfare reform and diet persuasion alone cannot keep up.",
+     "source_label": "FAO (2025), processed by Our World in Data, “Global meat production”",
+     "source_url": "https://ourworldindata.org/grapher/global-meat-production",
+     "source_published": "2024",
+     "source_accessed": "2026-11-23",
+     "id": "global-meat-production"
+    },
+    {
+     "label": "US adults who say they are vegetarian",
+     "viz": "radial",
+     "wide": false,
+     "value": "4",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In July 2023, 4% of US adults said they were vegetarian and 1% vegan, slightly below the 6% vegetarian Gallup found in 1999 and 2001.",
+     "detail": "Vegetarianism is more common among liberals (9%), lower-income adults (7%) and women (6%) than among other groups, and the share has been broadly flat for a quarter-century. The figure matters to the strategy dispute: abolitionists who rely on persuading individuals to go vegan point to the movement’s growing visibility, while alternative-protein advocates and welfare reformers cite the flat line as evidence that individual diet change will not by itself end factory farming.",
+     "source_label": "Gallup, “In U.S., 4% Identify as Vegetarian, 1% as Vegan,” August 24, 2023",
+     "source_url": "https://news.gallup.com/poll/510038/identify-vegetarian-vegan.aspx",
+     "source_published": "2023",
+     "source_accessed": "2026-11-23",
+     "id": "us-adults-who-say-they-are"
+    },
+    {
+     "label": "Share of egg-laying hens in cage-free systems, by country",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% of hens",
+     "series": [
+      {
+       "label": "Austria",
+       "value": "100",
+       "highlight": false
+      },
+      {
+       "label": "Sweden",
+       "value": "99.3",
+       "highlight": false
+      },
+      {
+       "label": "Germany",
+       "value": "99.3",
+       "highlight": false
+      },
+      {
+       "label": "Netherlands",
+       "value": "85.2",
+       "highlight": false
+      },
+      {
+       "label": "United Kingdom",
+       "value": "82.7",
+       "highlight": false
+      },
+      {
+       "label": "Italy",
+       "value": "66.8",
+       "highlight": false
+      },
+      {
+       "label": "United States",
+       "value": "45.3",
+       "highlight": true
+      },
+      {
+       "label": "Spain",
+       "value": "40.2",
+       "highlight": false
+      },
+      {
+       "label": "Poland",
+       "value": "37.8",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2025 more than 99% of hens were cage-free in Austria, Sweden and Germany, against fewer than half in the United States and about 38% in Poland.",
+     "detail": "Cage-free covers barns and aviaries as well as free-range and organic farms. Countries at or near 100% have banned or nearly eliminated enriched cages; Austria, Luxembourg and Germany ban them outright (FoodNavigator, November 2026). Our World in Data approximates the UK figure from the share of eggs produced in each system. Outside Europe and the US the data are older and patchy: drawing on a Welfare Footprint Institute compilation, the same chart shows about 3% of hens cage-free in China and 5% in Brazil and Japan in 2018. Cage-free is a minimum, not a guarantee of good welfare: aviaries can have high rates of keel-bone fractures and feather pecking, which egg producers cite and welfare scientists study.",
+     "source_label": "Our World in Data, “Share of egg-laying hens in cage-free systems,” from European Commission and national statistics",
+     "source_url": "https://ourworldindata.org/grapher/eggs-cage-free",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "share-of-egg-laying-hens-in"
+    },
+    {
+     "label": "Corporate cage-free egg pledges fulfilled",
+     "viz": "radial",
+     "wide": false,
+     "value": "92",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The Open Wing Alliance, a coalition of welfare groups, reports that 92% of corporate cage-free egg pledges due by 2024 were fulfilled as of July 2025, up from 89% a year earlier.",
+     "detail": "More than 2,750 companies have made cage-free pledges, many of them in 2015 and 2016 with deadlines of 2025, so reporting on 2025 deadlines covers the larger share. The figure is compiled from company reports tracked on ChickenWatch by the advocates who ran the campaigns. Welfare groups cite it as evidence that corporate campaigns work and the reforms are real. Skeptics note that the hardest pledges, including broiler commitments under the Better Chicken Commitment, have far lower compliance, and abolitionists argue that a cage-free barn still confines tens of thousands of birds.",
+     "source_label": "Open Wing Alliance, 2025 cage-free fulfillment report, published by The Humane League",
+     "source_url": "https://thehumaneleague.org/article/2025-cage-free-fulfillment-report",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "corporate-cage-free-egg-pledges-fulfilled"
+    },
+    {
+     "label": "EU laying hens kept in enriched cages",
+     "viz": "radial",
+     "wide": false,
+     "value": "34.5",
+     "unit": "% of EU hens",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "About 135 million of the EU’s 392 million laying hens, or 34.5%, were kept in enriched cages in 2025.",
+     "detail": "The rest were in barns (42.3%), free-range systems (16.6%) and organic farms (6.5%). The figures count the maximum capacity member states notify under Commission Implementing Regulation 2017/1185, and some states report older years. Barren battery cages have been banned in the EU since 2012; enriched, or colony, cages give each hen a little more space plus a nest, perch and scratching area. The End the Cage Age citizens’ initiative, which gathered 1.4 million signatures, asked for those to go as well (European Commission). Member states with low cage-free shares, such as Spain and Poland, have the most to convert, which is why the length of any transition is contested.",
+     "source_label": "European Commission, DG AGRI, “Eggs – market situation” dashboard, updated November 20, 2026",
+     "source_url": "https://agriculture.ec.europa.eu/document/download/9bdf9842-1eb6-41a2-8845-49738b812b2b_en",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "eu-laying-hens-kept-in-enriched"
+    },
+    {
+     "label": "Investment in alternative-protein companies, 2025",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "$ million",
+     "series": [
+      {
+       "label": "Plant-based",
+       "value": "450",
+       "highlight": false
+      },
+      {
+       "label": "Fermentation",
+       "value": "357",
+       "highlight": false
+      },
+      {
+       "label": "Cultivated meat",
+       "value": "74",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Alternative-protein companies raised $881 million in 2025, the Good Food Institute reports, including $74 million for cultivated meat and seafood.",
+     "detail": "Funding peaked in 2021, which GFI reported at the time as a record $5 billion based on PitchBook data (GFI, March 2022). GFI now uses a different dataset, from Net Zero Insights, so the two figures are not strictly comparable, but both show a fall of roughly four-fifths. GFI counts $466 million raised in the first three quarters of 2026 and more than $19.6 billion since 2017. Separately, the National Agricultural Law Center listed seven US states, among them Florida and Texas, with laws banning cultivated meat as of April 2026.",
+     "source_label": "Good Food Institute, “Invest in a good food future,” analysis of Net Zero Insights data",
+     "source_url": "https://gfi.org/investment/",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "investment-in-alternative-protein-companies-2025"
+    },
+    {
+     "label": "Plant-based share of US retail packaged meat sales",
+     "viz": "radial",
+     "wide": false,
+     "value": "1.4",
+     "unit": "% of sales",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "US retail sales of plant-based meat and seafood were about $1.0 billion in 2025, down 10% in dollars and 11% in units, or 1.4% of packaged meat sales.",
+     "detail": "Counting all retail meat, not only packaged, the share is about 0.7%. US household penetration of plant-based meat has fallen from a high of 20% in 2021, according to the same Good Food Institute analysis of SPINS data. Alternative-protein advocates attribute the slump to products that still cost more and taste less like meat than buyers expected; critics attribute it to consumer resistance to processed substitutes.",
+     "source_label": "Good Food Institute, analysis of SPINS retail data, US plant-based market research, 2026",
+     "source_url": "https://gfi.org/marketresearch/",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "plant-based-share-of-us-retail"
+    },
+    {
+     "label": "Growth of a modern broiler against a 1957 strain",
+     "viz": "bar",
+     "wide": false,
+     "value": "400+",
+     "unit": "% faster",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Raised side by side on the same feed, a 2005 commercial broiler strain grew more than 400% faster than a 1957 strain and needed half the feed per kilogram of gain.",
+     "detail": "The study raised preserved 1957 and 1978 strains next to a modern Ross 308 broiler to separate the effect of genetics from feed and management. Selection for fast growth is the main reason chicken became cheap and why its feed and emissions footprint per kilogram is low. Scientists also cite it as the leading welfare problem in broilers, because fast growth is linked to leg disorders, heart failure and reduced activity. The European Food Safety Authority recommended in 2023 limiting broiler growth to 50 grams a day, and England’s 2025 Animal Welfare Strategy commits to promoting slower-growing breeds. Slower breeds need more feed, land and time per kilogram, the trade-off at the center of the fight over the Better Chicken Commitment.",
+     "source_label": "Zuidhof et al., Poultry Science, 2014",
+     "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4988556/",
+     "source_published": "2005",
+     "source_accessed": "2026-11-23",
+     "id": "growth-of-a-modern-broiler-against"
+    },
+    {
+     "label": "US adults agreeing with statements on animal farming, 2017",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% agree",
+     "series": [
+      {
+       "label": "Some discomfort",
+       "value": "69.6",
+       "highlight": false
+      },
+      {
+       "label": "Ban factory farming",
+       "value": "48.9",
+       "highlight": true
+      },
+      {
+       "label": "Ban slaughterhouses",
+       "value": "47.4",
+       "highlight": false
+      },
+      {
+       "label": "Ban animal farming",
+       "value": "32.5",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a 2017 Sentience Institute survey, 48.9% of US adults backed a ban on factory farming; a larger 2022 Rethink Priorities survey found 15.7% backing a slaughterhouse ban.",
+     "detail": "Each bar answers a separate agree-or-disagree statement in the October 2017 survey of 1,094 adults, and the shares leave out respondents with no opinion. Rethink Priorities noted in 2022 that counting them, support for the two bans was about 42% and 43%; that Norwood and Murray found in a 2018 replication that 27.1% of respondents did not know what a slaughterhouse is; and that in its own survey of 2,698 adults, weighted opposition to banning slaughterhouses was 67.7%. Advocates of bans read the 2017 numbers as latent support; skeptics read the fall under fuller questioning as evidence that the support is shallow, a question the ballot results bear on.",
+     "source_label": "Sentience Institute, “Survey of US Attitudes Towards Animal Farming and Animal-Free Food,” October 2017",
+     "source_url": "https://www.sentienceinstitute.org/animal-farming-attitudes-survey-2017",
+     "source_published": "2017",
+     "source_accessed": "2026-11-23",
+     "id": "us-adults-agreeing-with-statements-on"
+    },
+    {
+     "label": "Antimicrobials used in food animals worldwide",
+     "viz": "bar",
+     "wide": false,
+     "value": "99,502",
+     "unit": "tonnes",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "An estimated 99,502 tonnes of antimicrobials, a central figure with wide uncertainty, were used in cattle, sheep, chickens and pigs in 2020, projected to rise 8% by 2030.",
+     "detail": "China, Brazil, India, the United States and Australia accounted for 58% of the 2020 total, and the paper’s upper bound for that year is roughly twice its central figure. The 2030 projection, on current trends, is 107,472 tonnes. Antibiotics are used in intensive systems to treat and prevent disease where many animals are kept close together, and their overuse is linked to drug-resistant infections in people. Critics of factory farming cite this as a public-health cost the price of meat does not carry; producers point to falling use in the EU and US since growth-promoter bans and to veterinary oversight of what remains.",
+     "source_label": "Mulchandani et al., PLOS Global Public Health, 2023",
+     "source_url": "https://journals.plos.org/globalpublichealth/article?id=10.1371/journal.pgph.0001305",
+     "source_published": "2020",
+     "source_accessed": "2026-11-23",
+     "id": "antimicrobials-used-in-food-animals-worldwide"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Do welfare reforms reduce animal suffering, or entrench the use of animals?",
+    "kind": "empirical",
+    "why": "Almost everyone agrees a cage-free barn or a crate ban changes conditions for the animals inside. The dispute is the net effect over time: whether reforms relieve enough suffering to matter, or make people more comfortable farming animals at all.",
+    "detail": "Supporters of reform point to a record: cage-free housing and crate bans have spread through law and corporate pledges and have largely been kept, and welfare science backs the direction. A 2021 meta-analysis of 6,040 commercial flocks holding 176 million hens in 16 countries found that mortality in cage-free systems is not inherently higher than in cages once producers gain experience with them (Schuck-Paim et al., Scientific Reports). They add that the alternative to reform is not abolition but decades more of the status quo for tens of billions of animals a year.\n\nCritics answer that reform treats the symptom and protects the cause. The legal scholar Gary Francione writes that “as a practical matter, animal welfare regulation simply does not work,” because while animals remain property such laws mainly make society more comfortable using them (Rutgers University, 2010). On this view rising animal numbers show what reform has failed to change, and higher-welfare labels let uneasy shoppers keep buying with a clear conscience. No study has isolated what the reform era did to consumption, so both sides are reading indirect evidence.",
+    "lean_label_a": "Reforms help",
+    "lean_label_b": "Reforms entrench",
+    "id": "do-welfare-reforms-reduce-animal-suffering"
+   },
+   {
+    "text": "Can animals raised at industrial scale have lives worth living?",
+    "kind": "empirical",
+    "why": "Welfare science and policy often ask whether an animal has a life worth living, weighing pain, fear and frustration against comfort and positive experience. Those states must be inferred from health and behavior, and scientists weigh the signs differently.",
+    "detail": "Producers and many farm veterinarians argue that indoor housing protects animals from predators, weather, parasites and many diseases, that veterinary oversight and breeding have cut mortality, and that stockmanship matters more to welfare than the type of building. The American Veterinary Medical Association holds that “no one husbandry style is appropriate for all circumstances” (AVMA letter, April 2026), and Temple Grandin, whose livestock-handling designs are widely used in North American meat plants, argues that welfare problems on such farms can be corrected without ending the system. Conditions vary enormously between species, systems and individual farms, which on this view makes blanket verdicts unreliable.\n\nCritics argue that for the most numerous animals the answer is no. Broilers have been bred to grow more than 400% faster than in 1957, more than a quarter of birds in a large UK survey walked poorly, and they are slaughtered at a few weeks of age. Caged hens cannot dust-bathe, forage or nest properly, and sows in crates cannot turn around for weeks at a time. On this view a life of chronic pain and frustration followed by slaughter is a net harm, which is why some advocates argue that the most valuable welfare change is for fewer such animals to be born at all.",
+    "lean_label_a": "Worth living",
+    "lean_label_b": "Not worth living",
+    "id": "can-animals-raised-at-industrial-scale"
+   },
+   {
+    "text": "Is it wrong to raise and kill animals for food if they live well?",
+    "kind": "value",
+    "why": "This is about what people owe animals, not about conditions on farms. It turns on whether death harms an animal that does not anticipate it, and whether using a sentient being as a resource is wrong however well it is treated.",
+    "detail": "Those who accept humane use argue that the wrong in factory farming lies in the suffering, not the use. The animal scientist Temple Grandin writes that killing animals for food is ethical if they have what the Farm Animal Welfare Council calls “a life worth living” (Grandin, “Eating Meat is Ethical”). Farm animals exist only because people raise them, and on this view a good life with a quick death is a fair exchange; mixed farming with animals also cycles nutrients, uses grassland that cannot grow crops, and sustains cultures and livelihoods.\n\nAnimal rights advocates argue that a being with interests of its own has a right not to be used as a resource, however kindly. PETA’s founding principle is that animals are “not ours to experiment on, eat, wear, use for entertainment, or abuse in any other way.” Death, on this view, takes from an animal every good its future would have held, and farm animals are killed young, broilers at a few weeks and pigs at a fraction of their natural lifespan. Even those who would accept humane use in principle note that it describes a small fraction of the animal products people actually eat. The question divides reformers from abolitionists even if every factual dispute were settled; animals’ moral status in general has its own page.",
+    "lean_label_a": "Humane use is fine",
+    "lean_label_b": "Any use is wrong",
+    "id": "is-it-wrong-to-raise-and"
+   },
+   {
+    "text": "Should welfare standards be set by law, or left to producers, veterinarians and buyers?",
+    "kind": "value",
+    "why": "The choice weighs democratic, collective rules against flexibility, professional expertise and consumer freedom. Surveys find strong stated support for better welfare while most people buy on price, and each side reads that gap as support for its approach.",
+    "detail": "Those who favor mandates argue that welfare is a collective-action problem. Shoppers cannot see how animals were raised, labels are confusing, and a producer who spends more on welfare is undercut by one who does not, so only a rule that applies to everyone works. Groups such as Humane World for Animals and the RSPCA press for legislation on that ground: corporate pledges help, but they are voluntary and can slip, while laws hold. Europe’s food safety authority advised in 2023 that hens be housed out of cages, and voters have passed such laws when asked.\n\nThose who favor flexibility argue that housing rules written into statutes or ballot measures freeze one design in place regardless of disease risk, climate or new evidence. The American Veterinary Medical Association wrote in April 2026 that “the requirements in Prop 12 are not scientifically based and have not been objectively demonstrated to reliably and consistently improve animal welfare.” Buyers who want higher welfare can choose certified products, and few say they would pay much more for them, which on this view means mandates impose on everyone a premium most people would not choose.",
+    "lean_label_a": "Binding law",
+    "lean_label_b": "Vets and buyers",
+    "id": "should-welfare-standards-be-set-by"
+   },
+   {
+    "text": "Will alternative proteins displace a large share of animal products?",
+    "kind": "empirical",
+    "why": "The answer depends on whether plant-based, fermented and cultivated products can match meat on price, taste and convenience, how fast their costs fall at scale, and whether governments help or ban them. Each side reads recent sales as a trough or a ceiling.",
+    "detail": "Those who expect displacement argue that diet persuasion has failed and price competition will not. Bruce Friedrich of the Good Food Institute says “the vast majority of people eat meat because they like meat, not because of how it’s produced” (Green Queen, February 2026), so products that match meat on taste and price will win. Worldwide, store sales of plant-based meat and fish alternatives have tripled since 2015 (GFI), the first products simply missed parity, and on this view fermentation and cultivated meat are where solar power once was on cost, while conventional meat benefits from decades of public research and subsidy.\n\nSkeptics point to the market’s verdict: US plant-based meat sales fell again in 2025, household penetration has fallen since 2021, investment has dropped steeply from its peak, and several US states have banned cultivated meat. They argue that animal products are nutrient-dense, culturally central and cheap at scale, that many consumers distrust highly processed substitutes, and that global meat output is still projected to rise. On this view alternatives will be a useful option, not a replacement, and reform of animal farming cannot wait for them.",
+    "lean_label_a": "Large share",
+    "lean_label_b": "Small share",
+    "id": "will-alternative-proteins-displace-a-large"
+   },
+   {
+    "text": "Are the costs of higher welfare standards worth paying?",
+    "kind": "value",
+    "why": "Higher standards mean more space, slower-growing breeds and new barns. How much they raise prices is an empirical question early studies have begun to answer; whether the gain to animals justifies the cost, and who should bear it, is a value choice.",
+    "detail": "Those who favor higher standards argue that the cost per serving is small relative to the suffering prevented, and that cheap meat already carries costs its price does not show, from water pollution to drug-resistant infections. The cost can be shared: Italy’s 2026 budget law created a public fund for farms converting to cage-free systems (Humane World for Animals), and long transitions let producers replace barns at the end of their life. Some reformers, including the RSPCA, treat lower consumption at higher prices as part of the goal rather than a side effect.\n\nThose who oppose mandates, including the National Pork Producers Council, point to the measured effects of Proposition 12 on California pork prices and consumption, and to the cost of rebuilding sow barns. Food costs weigh most on low-income households, smaller farms are least able to finance new housing, and higher domestic standards can shift production to exporters with weaker rules unless imports are covered too. In developing countries the same reasoning becomes a case for intensifying poultry and pig production to supply affordable protein to fast-growing populations.",
+    "lean_label_a": "Worth the cost",
+    "lean_label_b": "Too costly",
+    "id": "are-the-costs-of-higher-welfare"
+   },
+   {
+    "text": "Should a state or trading bloc set welfare standards for food produced elsewhere?",
+    "kind": "value",
+    "why": "California’s Proposition 12 sets standards for pork, veal and eggs sold in the state wherever the animals were raised, and EU rules on imports raise the same issue. The dispute is whether buyers’ rules may reach producers who never voted on them.",
+    "detail": "The US Supreme Court let Proposition 12 stand in 2023, and on April 30, 2026 the House passed a farm bill, 224 to 200, that would override it and similar confinement laws in at least 15 states (vegconomist); the Senate Agriculture Committee’s draft of June 23, 2026 left that provision out (The New Lede).\n\nSupporters of sales standards, among them The Humane League, which campaigns against the override, argue that every market sets rules for what is sold in it, from food safety to labeling, and that a rule applying only to local farms would hand the market to lower-welfare imports; to them, a federal override would strip voters of laws they passed. Opponents argue that one state should not dictate how farmers elsewhere raise animals. The National Pork Producers Council and American Farm Bureau Federation warn that Proposition 12 “sets the stage for an unworkable 50-state patchwork of laws” (NPPC, April 2026), and exporting countries make the same argument against EU import standards, calling them protectionism dressed as welfare.",
+    "lean_label_a": "Where it’s sold",
+    "lean_label_b": "Where it’s raised",
+    "id": "should-a-state-or-trading-bloc"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Raise welfare standards within animal farming",
+    "color_key": "green",
+    "steelman": "Most of the cruelty in farming comes from a handful of practices science has identified: cages, crates and fast-growing breeds. We can end them now, law by law and company by company.",
+    "detail": "Ending those practices does not require persuading the world to stop eating meat or waiting for substitutes that may not arrive. It requires clear, enforceable standards and transitions long enough for farmers to rebuild. Shoppers alone cannot fix this, because they cannot see inside barns and the producer who does better is undercut by the one who does not, so the standard has to apply to everyone. Reform has a record: the cage-free share of US hens more than quadrupled between 2014 and 2025, and 92% of corporate cage-free pledges due by 2024 were kept. Europe’s food safety scientists advised in 2023 moving hens out of cages and capping how fast broilers grow, 84% of EU citizens want farmed animals better protected, and England’s December 2025 strategy commits to move away from colony cages and farrowing crates. As the RSPCA puts it, “we need to farm fewer animals and farm them better.”\n\nTo producers who say mandates raise costs without proven benefit, we reply that the science on cages, crates and fast growth is as settled as such science gets, and that transitions can be phased over a decade with public support. To abolitionists who say reform entrenches use, we reply that the billions of animals alive now cannot wait for a vegan world, and that the industry’s fight against Proposition 12 shows how much reform bites. We differ among ourselves on the end state, some seeing well-run farming as the goal and others reform as a step toward fewer animals, and on scale: the RSPCA’s certification scheme holds that “animals can be extremely well cared for on larger farms,” while others among us see large operations themselves as the problem.",
+    "proponents": "RSPCA; The Humane League; Humane World for Animals; Open Wing Alliance; Temple Grandin",
+    "id": "raise-welfare-standards-within-animal-farming"
+   },
+   {
+    "name": "Keep modern animal farming, guided by vets and markets",
+    "color_key": "blue",
+    "steelman": "Modern farming turned meat, milk and eggs into affordable everyday foods. Good welfare comes from stockmanship and veterinary care, not from square footage written into a ballot measure.",
+    "detail": "Indoor housing designed with veterinarians protects animals from predators, weather and disease, and farmers care for their animals because their livelihoods depend on it. Modern breeding and housing have also cut the feed, land and emissions needed for each kilogram: a modern broiler needs about half the feed per unit of gain of a 1957 bird, which matters as world demand for meat, dairy and eggs keeps growing. When states impose rigid rules, and impose them on farmers in other states who never voted for them, prices rise, consumption falls, and smaller farms that cannot afford new barns close, which drives the very consolidation critics say they oppose. Proposition 12 has done the first two in California, and the American Veterinary Medical Association opposes it. Standards should be national, science-based and set with veterinarians, and shoppers who want something different should be free to buy it. We reject the premise that today’s system is a cruelty to be reduced or ended.\n\nTo welfare reformers, we reply that we support welfare and that producers have moved to cage-free housing where customers pay for it; what we oppose is mandates that lock in one design whatever the disease risk, and cage-free aviaries bring their own problems, from bone fractures to pecking injuries. To abolitionists, we reply that the great majority of people choose to eat animal products, that voters asked to end factory farming or slaughter outright have said no, and that campaigns presented as welfare reform are often steps toward ending animal agriculture. We differ on how far to accommodate change: egg producers have largely accepted a voluntary shift to cage-free housing while pork producers fight sow-housing mandates.",
+    "proponents": "National Pork Producers Council; American Farm Bureau Federation; American Veterinary Medical Association; Animal Agriculture Alliance",
+    "id": "keep-modern-animal-farming-guided-by"
+   },
+   {
+    "name": "Replace animal products with alternative proteins",
+    "color_key": "amber",
+    "steelman": "Most people eat meat because they like it, not because of how it is produced. Make alternatives that taste as good and cost less, and factory farming becomes obsolete.",
+    "detail": "Decades of moral and health appeals have not lowered meat consumption: 4% of Americans call themselves vegetarian, below the 6% of 1999, and global meat production has risen more than fivefold since 1961. Welfare reforms, however worthwhile, improve conditions for a fraction of animals while the numbers keep rising. The way out is to change the product, not the eater: meat made from plants, by fermentation and from cultivated cells that tastes as good and costs the same or less, so that people switch without being asked to give anything up. That needs what every food technology has needed: public research funding, open science, fair regulatory approval, and an end to bans and label rules designed to protect incumbents. It ends factory farming by making it obsolete, not by asking voters to ban it, which they have declined to do when asked to end factory farms or slaughterhouses outright.\n\nTechnology moves fast once costs fall. Worldwide, shoppers spent an estimated $6.6 billion on plant-based meat and seafood in 2025, triple the 2015 figure (GFI, citing Euromonitor), and China, Denmark, Germany, Portugal and Spain now prioritize plant-based foods in their national food strategies. To skeptics who cite falling US sales and investment, we reply that the first generation of products did not reach price or taste parity and the slump reflects that, not a ceiling; the remedy is public research and scale, as with solar panels and batteries, and the spread of state bans on cultivated meat shows that incumbents fear the competition. To abolitionists, we reply that animals spared because a cheaper product won are spared all the same. We differ on which technology matters most, and on motive: climate for some, animal welfare and food security for others.",
+    "proponents": "Good Food Institute; Bruce Friedrich; Bill Gates",
+    "id": "replace-animal-products-with-alternative-proteins"
+   },
+   {
+    "name": "End the use of animals for food",
+    "color_key": "rust",
+    "steelman": "Animals are not ours to use. A bigger cage is still a cage, and the only answer to breeding and killing sentient beings for food we do not need is to stop.",
+    "detail": "The wrong in animal agriculture is not only how animals are kept but that they are bred, used and killed for products people do not need. Pigs, cows and chickens are sentient beings with interests of their own, and a being with interests should not be treated as a resource. Humane farming is a fantasy at the scale of tens of billions of animals, and even higher-welfare animals are killed young. The number of chickens slaughtered nearly doubled between 2000 and 2024, through the whole era of welfare reform. Yet many people already feel the tension: in a 2017 survey, 69.6% of US adults agreed they had some discomfort with how animals are used in the food industry (Sentience Institute), and societies do end practices once thought normal, as Denver and Washington, D.C. voters did when they banned foie gras in November 2026.\n\nThe task is a transition to a plant-based food system: veganism as a personal baseline, campaigns that shift institutions and public opinion, and a just transition for the farmers and workers whose livelihoods depend on the current system. To those who say people will never give up animal products, we reply that moral progress has always looked impossible before it happened, and plant-based options make the change easier each year. We are divided on welfare reform itself. A strand following the legal scholar Gary Francione holds that advocates should promote veganism rather than reforms. PETA supports some reforms but opposed California’s 2018 initiative as too weak, arguing it would “ingrain the farming practice of giving hens a minuscule amount of space for years to come.” Others back practice bans and ballot measures as steps toward abolition, and Animal Rising campaigns for fully plant-based catering in public institutions.",
+    "proponents": "PETA; Animal Rising; Gary Francione",
+    "id": "end-the-use-of-animals-for"
+   },
+   {
+    "name": "Replace factory farms with smaller, pasture-based farms",
+    "color_key": "purple",
+    "steelman": "The problem is the industrial model itself, not a few bad cages: halt new large operations, phase out the largest, and return to smaller, pasture-based farms.",
+    "detail": "Tens of thousands of animals per building, controlled by a handful of corporations, bred for maximum output and producing more manure than nearby land can absorb: that model harms the animals, the workers, the water and the independent farmers it has driven out of business. Nearly all US farmed animals live on factory farms, and intensive systems depend on antibiotics, roughly 100,000 tonnes a year in food animals worldwide. The answer is to buy out the farmers who want to leave and rebuild a farm economy of mixed farms where animals can behave naturally and help restore soil. People would eat less meat and pay more for it. The Farm System Reform Act, which would halt new and expanding large operations and phase out the largest by 2040, drew backing from farm, labor, environmental, public-health and animal welfare groups.\n\nTo producers who say intensive systems use less land and feed per kilogram, we reply that efficiency per kilogram ignores pollution, public-health risks and the farmers driven out, and that the goal is to produce and eat less. To reformers who say good care does not depend on farm size, we reply that the economics of scale, not the intentions of individual farmers, set the conditions. To abolitionists, we reply that well-managed grazing animals can have good lives and benefit the land. To alternative-protein advocates, we reply that replacing livestock with products from a few technology companies would repeat the concentration problem in another form. In Europe, where animal welfare groups lead, the call is for less and better meat; in the United States we are a coalition of environmental, anti-monopoly and family-farm groups, divided on legislating a phase-out against driving the shift through incentives and public procurement.",
+    "proponents": "Compassion in World Farming; Food & Water Watch; Cory Booker; Family Farm Action",
+    "id": "replace-factory-farms-with-smaller-pasture"
+   }
+  ],
+  "crux": {
+   "lead": "Can animals be farmed at scale with lives worth living, and if they can, is that enough?",
+   "lead_highlight": "is that enough",
+   "subtitle": "Some hold that animals can live good lives on farms at something like today’s scale and price, and that this would settle the matter. Others doubt good welfare survives at that scale and price, and some hold that raising animals to kill them is wrong however well they live.",
+   "empirical": "Welfare science can measure how animals fare in cages, crates, barns and pastures: lameness, injury, disease, death rates, and whether they can do what they are strongly driven to do. Economics can measure what higher standards cost and how buyers respond, and markets will show whether meat alternatives match meat on price and taste. If good welfare proves cheap, reformed farming gains; if only far below today’s scale, replacing it gains.",
+   "values": "No measurement settles whether a good life followed by an early death is a fair exchange or a wrong done to the animal, or how much a chicken’s or a pig’s suffering should weigh against food prices, farmers’ livelihoods and the freedom to eat as one chooses. People who agree on every fact still divide here, between those who see animal farming done well as legitimate and those who see any use of animals for food as wrong."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Our World in Data: Animal Welfare",
+    "description": "Charts and explainers on how many animals are farmed and slaughtered, how many live on factory farms, and how housing systems differ by country, with sources for each figure.",
+    "url": "https://ourworldindata.org/animal-welfare",
+    "for_position": null,
+    "id": "our-world-in-data-animal-welfare"
+   },
+   {
+    "kind": "policy",
+    "title": "The Humane League: oppose the farm bill override of state welfare laws",
+    "description": "Background and a contact-your-lawmakers tool for opposing the Save Our Bacon provision, which would nullify Proposition 12 and similar state confinement laws.",
+    "url": "https://thehumaneleague.org/article/2026-farm-bill",
+    "for_position": "Raise welfare standards within animal farming",
+    "id": "the-humane-league-oppose-the-farm"
+   },
+   {
+    "kind": "policy",
+    "title": "Fix Prop 12 (National Pork Producers Council)",
+    "description": "Pork producers’ campaign for a federal farm bill provision ending Proposition 12’s reach over pork raised outside California, with their cost and price arguments.",
+    "url": "https://fixprop12.com/",
+    "for_position": "Keep modern animal farming, guided by vets and markets",
+    "id": "fix-prop-12-national-pork-producers"
+   },
+   {
+    "kind": "donate",
+    "title": "Good Food Institute",
+    "description": "A nonprofit that funds open-access research on plant-based, fermented and cultivated proteins and lobbies for public research funding and fair regulation.",
+    "url": "https://gfi.org/donate/",
+    "for_position": "Replace animal products with alternative proteins",
+    "id": "good-food-institute"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Animal Rising",
+    "description": "A UK group campaigning for a transition to a plant-based food system, including local campaigns for plant-based catering in public institutions.",
+    "url": "https://www.animalrising.org/",
+    "for_position": "End the use of animals for food",
+    "id": "animal-rising"
+   },
+   {
+    "kind": "learn_more",
+    "title": "European Food Safety Authority: animal welfare opinions",
+    "description": "The EU’s scientific advice on the welfare of hens, broilers, pigs and other farmed animals, including the 2023 opinions recommending cage-free housing and slower broiler growth.",
+    "url": "https://www.efsa.europa.eu/en/topics/topic/animal-welfare",
+    "for_position": null,
+    "id": "european-food-safety-authority-animal-welfare"
+   },
+   {
+    "kind": "policy",
+    "title": "Food & Water Watch: campaigns against factory farms",
+    "description": "The group’s 2026 state campaigns, including a push for a halt on new factory farms in New York and stronger rules on factory farm pollution elsewhere.",
+    "url": "https://www.foodandwaterwatch.org/news/2026/01/20/top-priorities-food-water-climate-2026/",
+    "for_position": "Replace factory farms with smaller, pasture-based farms",
+    "id": "food-water-watch-campaigns-against-factory"
+   },
+   {
+    "kind": "local",
+    "title": "Certified Humane: find higher-welfare products",
+    "description": "A third-party label for meat, eggs and dairy from farms audited against welfare standards, with a guide to where certified products are sold.",
+    "url": "https://certifiedhumane.org/",
+    "for_position": "Raise welfare standards within animal farming",
+    "id": "certified-humane-find-higher-welfare-products"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Animal Agriculture Alliance",
+    "description": "An industry coalition’s resources on farm animal care and on the strategies of animal rights groups, written from the producers’ point of view.",
+    "url": "https://animalagalliance.org/initiatives/",
+    "for_position": "Keep modern animal farming, guided by vets and markets",
+    "id": "animal-agriculture-alliance"
+   },
+   {
+    "kind": "learn_more",
+    "title": "European Commission: End the Cage Age initiative",
+    "description": "The Commission’s page on the citizens’ initiative that gathered 1.4 million signatures and on its response, the starting point for the EU’s planned cage proposals.",
+    "url": "https://food.ec.europa.eu/animals/animal-welfare/eci/eci-end-cage-age_en",
+    "for_position": null,
+    "id": "european-commission-end-the-cage-age"
+   }
+  ]
+ }
 }

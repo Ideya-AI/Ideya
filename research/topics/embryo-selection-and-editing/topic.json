@@ -1,8 +1,8 @@
 {
  "slug": "embryo-selection-and-editing",
  "title": "Embryo Selection & Editing",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-11-24T08:09:01+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Choosing children’s genes: ranking IVF embryos by predicted disease risk and traits, and permanent edits to embryos and gametes. Not somatic therapy for the living.",
@@ -12,5 +12,614 @@
  ],
  "related": [
   "what-we-owe-future-generations"
- ]
+ ],
+ "content": {
+  "overview": {
+   "summary": "Embryos can be ranked by genetic risk and traits, and edited in the lab. The central argument is how far, if at all, choosing a child’s genes should go.",
+   "scope_covered": "Testing IVF embryos, from screening for chromosome and single-gene disease to polygenic ranking for common disease and traits; heritable editing of embryos, eggs and sperm; and mitochondrial donation where it informs the debate.",
+   "scope_excluded": "Somatic gene therapy for living patients, prenatal screening and abortion, and the general ethics of IVF, except where those arguments carry over.",
+   "why_now": "On September 9, 2026, a Columbia University team reported in Nature that base editing, a more precise successor to CRISPR, changed some human embryos cleanly but left others mosaic or with unintended edits; its leader said editing embryos for pregnancy could not yet be done safely.",
+   "why_now_source_label": "Columbia University Irving Medical Center",
+   "why_now_source_url": "https://www.cuimc.columbia.edu/news/study-shows-limits-precise-gene-editing-human-embryos"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "US IVF cycles that included genetic testing of embryos",
+     "viz": "radial",
+     "wide": false,
+     "value": "56",
+     "unit": "% of cycles",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "More than half of US IVF cycles reported for 2023, 233,073 of 415,953, included genetic testing of embryos, mostly for chromosome abnormalities.",
+     "detail": "Most of this testing is PGT-A, which screens embryos for missing or extra chromosomes; the count also includes testing for single-gene diseases (PGT-M) and for chromosome rearrangements. In 2022, counted differently, 59.4 percent of egg retrievals included PGT-A, so the two years are not a trend. The authors favor PGT-A, whose benefit for younger patients is itself debated among fertility specialists. Polygenic screening, which ranks embryos by scores for common diseases and traits, is a small add-on to this base, usually run on the same biopsy data: NPR reported in May 2026 that the companies offering it had scored thousands of embryos for hundreds of prospective parents and helped create dozens, possibly hundreds, of screened babies.",
+     "source_label": "Griffin, McWilliams, Munné & Gordon, analysis of SART data, BMJ Connections Clinical Genetics and Genomics, 2025",
+     "source_url": "https://kar.kent.ac.uk/112525/",
+     "source_published": "2023",
+     "source_accessed": "2026-11-23",
+     "id": "us-ivf-cycles-that-included-genetic"
+    },
+    {
+     "label": "Average gain from picking the top-scoring of five embryos",
+     "viz": "bar",
+     "wide": false,
+     "value": "2.5",
+     "unit": "cm / IQ pts",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "A 2019 model put the gain from picking the top-scoring of five embryos at about 2.5 cm of height or 2.5 IQ points; a company selling IQ screening reports larger spreads.",
+     "detail": "Both figures compare the best embryo with the average one. The authors simulated embryos from real genomes and checked predictions in large families: the child with the highest height score was the tallest child in only 7 of 28 families. They noted that polygenic scores “lose substantial power, or may even be invalid, when applied across different populations.” Prediction has improved since. Herasight, which sells embryo IQ prediction, reported in April 2026 an expected spread of about 10 IQ points between the highest- and lowest-scoring of five embryos for parents of European ancestry, about 13 with ten embryos, and 6 with five embryos for African ancestry, calling these “expected values across many selections, not guarantees for any individual case.” The two figures are on different bases: Herasight measures the best embryo against the worst, which roughly doubles the number, and its figure is the seller’s own analysis.",
+     "source_label": "Karavani et al., “Screening Human Embryos for Polygenic Traits Has Limited Utility,” Cell, 2019",
+     "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6957074/",
+     "source_published": "2019",
+     "source_accessed": "2026-11-23",
+     "id": "average-gain-from-picking-the-top"
+    },
+    {
+     "label": "Countries with a heritable-editing policy that prohibit it",
+     "viz": "radial",
+     "wide": false,
+     "value": "75",
+     "unit": "of 78",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Of 78 countries with a policy on heritable genome editing in a 2020 survey, 75 prohibited it, 5 of them with possible exceptions; none explicitly permitted it.",
+     "detail": "The survey covered 106 countries; 70 ban the practice outright and 3 could not be classified. The published abstract (The CRISPR Journal, 2020) counts the same 75 against a different base, the 96 countries with any relevant policy document, so the share depends on the denominator. Two of the authors work at the Center for Genetics and Society, which favors prohibition. The United States has no statute banning the practice; instead, a rider first attached to the 2016 appropriations act bars the FDA from even acknowledging an application for clinical research on edited embryos (JAMA, 2017), and the House passed the language again for fiscal 2027 on June 4, 2026 (FDA Law Blog). China’s July 2024 ethics guidelines call any clinical research involving germline genome editing irresponsible and not allowed (Government of China, 2024).",
+     "source_label": "Baylis, Darnovsky, Hasson & Krahn, The CRISPR Journal, 2020 (authors’ summary)",
+     "source_url": "https://www.geneticsandsociety.org/biopolitical-times/assessing-global-policy-landscape-human-germline-and-heritable-genome-editing",
+     "source_published": "2020",
+     "source_accessed": "2026-11-23",
+     "id": "countries-with-a-heritable-editing-policy"
+    },
+    {
+     "label": "US adults approving polygenic embryo screening, by purpose",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% approve",
+     "series": [
+      {
+       "label": "Physical health",
+       "value": "77.7",
+       "highlight": true
+      },
+      {
+       "label": "Psychiatric conditions",
+       "value": "72.0",
+       "highlight": false
+      },
+      {
+       "label": "Behavioral traits",
+       "value": "36.0",
+       "highlight": false
+      },
+      {
+       "label": "Physical traits",
+       "value": "30.3",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a 2023 national survey, 77.7 percent of US adults approved of screening embryos for physical health conditions; about a third approved of screening for traits.",
+     "detail": "Overall, 72.0 percent of the representative sample of 1,427 approved of polygenic embryo screening, and 81.9 percent expressed some interest in using it if already doing IVF. At the same time, 55.3 percent found the risk of false expectations very or extremely concerning, and 54.8 percent said the same of promoting eugenic practices. In a second, smaller sample, showing people the list of concerns at the start of the survey rather than the end lowered approval by 28 percentage points, mostly by raising uncertainty rather than disapproval, a sign that these views are not settled.",
+     "source_label": "Furrer et al., “Public Attitudes, Interests, and Concerns Regarding Polygenic Embryo Screening,” JAMA Network Open, 2024",
+     "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11094562/",
+     "source_published": "2023",
+     "source_accessed": "2026-11-23",
+     "id": "us-adults-approving-polygenic-embryo-screening"
+    },
+    {
+     "label": "Cut in schizophrenia risk from picking the lowest-scoring of five embryos",
+     "viz": "bar",
+     "wide": false,
+     "value": "52",
+     "unit": "% relative",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Picking the lowest-scoring of five embryos cut modeled schizophrenia risk by up to about half in relative terms, about half a percentage point in absolute terms.",
+     "detail": "The study, a simulation using case-control genomes, found that the benefit depends on the strategy. Excluding only embryos with very high scores achieves little, while choosing the embryo with the lowest score gave relative risk reductions of up to about 45 to 52 percent for schizophrenia and Crohn’s disease, assuming five viable embryos. Because schizophrenia affects about 1 percent of people, halving the relative risk moves the absolute risk by about half a point. The size of the gain also depends on how many usable embryos a patient has to choose among.",
+     "source_label": "Lencz et al., “Utility of polygenic embryo screening for disease depends on the selection strategy,” eLife, 2021",
+     "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8510582/",
+     "source_published": "2021",
+     "source_accessed": "2026-11-23",
+     "id": "cut-in-schizophrenia-risk-from-picking"
+    },
+    {
+     "label": "IVF patients with no chromosomally normal embryo, by age",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Ages 26–37 (at most)",
+       "value": "6",
+       "highlight": false
+      },
+      {
+       "label": "Age 42",
+       "value": "33",
+       "highlight": true
+      },
+      {
+       "label": "Age 44",
+       "value": "53",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "A third of 42-year-old IVF patients whose embryos were tested had no chromosomally normal embryo to transfer; at 44, more than half; at 26 to 37, 2 to 6 percent.",
+     "detail": "The figures come from 15,169 embryo biopsies. The share of embryos with chromosome abnormalities was lowest between ages 26 and 30 and rose steadily after that. This matters for selection because ranking embryos by polygenic score helps only when several healthy embryos are available to choose among, and published models of the gains assume five. The UK regulator’s scientific advisers concluded that adding polygenic screening would likely reduce the number of embryos available for transfer and so lower the chance of a healthy baby (HFEA, 2026). Companies answer that patients can bank embryos across several IVF cycles, at added cost.",
+     "source_label": "Franasiak et al., “The nature of aneuploidy with increasing age of the female partner,” Fertility and Sterility, 2014",
+     "source_url": "https://pubmed.ncbi.nlm.nih.gov/24355045/",
+     "source_published": "2014",
+     "source_accessed": "2026-11-23",
+     "id": "ivf-patients-with-no-chromosomally-normal"
+    },
+    {
+     "label": "Cells in CRISPR-edited human embryos with large unintended changes",
+     "viz": "radial",
+     "wide": false,
+     "value": "16",
+     "unit": "% of cells",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "About 16 percent of cells analyzed from CRISPR-edited human embryos in a 2021 study had large unintended changes at the target region.",
+     "detail": "The Francis Crick Institute team found unintended changes spanning 4,000 to 20,000 DNA letters, including losses and gains of chromosome segments, that standard checks missed; a University of Cambridge summary describes the share as about 16 percent of samples. A 2020 Cell study from Dieter Egli’s Columbia lab found that about half of the DNA breaks Cas9 made in embryos went unrepaired, often leading to loss of a chromosome arm (Zuccaro et al., 2020). Newer base editing reduces such damage without eliminating it: the same Columbia group reported in Nature in September 2026 that base editing still produced mosaic embryos, edits at other sites and some large deletions, though far less often than CRISPR (Columbia University, 2026).",
+     "source_label": "Alanis-Lobato et al., “Frequent loss of heterozygosity in CRISPR-Cas9–edited early human embryos,” PNAS, 2021",
+     "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8179174/",
+     "source_published": "2021",
+     "source_accessed": "2026-11-23",
+     "id": "cells-in-crispr-edited-human-embryos"
+    },
+    {
+     "label": "How much genetic associations shrink when measured between siblings",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% smaller",
+     "series": [
+      {
+       "label": "Depressive symptoms",
+       "value": "50",
+       "highlight": false
+      },
+      {
+       "label": "Educational attainment",
+       "value": "47",
+       "highlight": true
+      },
+      {
+       "label": "Cognitive ability",
+       "value": "22",
+       "highlight": false
+      },
+      {
+       "label": "Height",
+       "value": "10",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Genetic associations with educational attainment were 47 percent smaller between siblings than across the population; for cognitive ability, 22 percent; for height, 10.",
+     "detail": "Embryos from the same parents are siblings, so what matters for selection is how well a score predicts differences within a family. Population studies mix direct genetic effects with family environment, ancestry and parenting that tracks parents’ genes; comparing 178,086 siblings from 19 cohorts strips those out. Shrinkage was largest for social and behavioral outcomes, such as number of children at 67 percent and age at first birth at 52, moderate for cognitive ability, and small for height and most biological measures such as cholesterol. The estimates describe the genetic data available in 2022.",
+     "source_label": "Howe et al., within-sibship genome-wide association study, Nature Genetics, 2022",
+     "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9110300/",
+     "source_published": "2022",
+     "source_accessed": "2026-11-23",
+     "id": "how-much-genetic-associations-shrink-when"
+    },
+    {
+     "label": "Polygenic score accuracy, European compared with African ancestry",
+     "viz": "bar",
+     "wide": false,
+     "value": "4.5",
+     "unit": "times higher",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2019, polygenic scores predicted about 4.5 times more accurately for people of European ancestry than African, and 2 times more than East Asian; companies say newer scores narrow the gap.",
+     "detail": "As of 2016, 80 percent of participants in genetic studies were of European descent, so scores built from them work best for people of similar ancestry (Martin et al., Nature Genetics, 2019). Data have since diversified somewhat. Herasight reports that its cognitive-ability score keeps about 64 percent of its strength in African Americans and 59 percent in East Asian Americans in one US cohort, with wide uncertainty (Herasight, 2026). The American Society for Reproductive Medicine’s 2025 report cites the same limit as one reason polygenic screening is not ready for clinical use.",
+     "source_label": "Broad Institute summary of Martin et al., Nature Genetics, 2019",
+     "source_url": "https://www.broadinstitute.org/news/study-highlights-need-increase-diversity-within-genetic-data-sets",
+     "source_published": "2019",
+     "source_accessed": "2026-11-23",
+     "id": "polygenic-score-accuracy-european-compared-with"
+    },
+    {
+     "label": "US adults on widespread gene editing to cut a baby’s disease risk",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Good idea",
+       "value": "30",
+       "highlight": false
+      },
+      {
+       "label": "Bad idea",
+       "value": "30",
+       "highlight": false
+      },
+      {
+       "label": "Not sure",
+       "value": "39",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Asked in 2022 whether widespread editing of babies’ genes to greatly reduce serious disease risk would be good for society, Americans split 30 to 30; 39 percent were unsure.",
+     "detail": "Asked about their own baby, 48 percent said they definitely or probably would want such editing and 49 percent would not. Views tracked religion closely: among highly religious adults 46 percent called it a bad idea and 14 percent a good one, while among the least religious 43 percent called it good and 20 percent bad. Fifty-two percent chose the statement that it is meddling with nature and crosses a line we should not cross, against 46 percent who said it is no different from other efforts to better ourselves. Seventy-three percent expected most parents would feel pressure to use it if it became widespread, and 84 percent expected it to be used in morally unacceptable ways. The question asked about disease, not traits.",
+     "source_label": "Pew Research Center, “Americans are closely divided over editing a baby’s genes to reduce serious health risk”",
+     "source_url": "https://www.pewresearch.org/internet/2022/03/17/americans-are-closely-divided-over-editing-a-babys-genes-to-reduce-serious-health-risk/",
+     "source_published": "2022",
+     "source_accessed": "2026-11-23",
+     "id": "us-adults-on-widespread-gene-editing"
+    },
+    {
+     "label": "Top reported price of polygenic embryo screening in the US",
+     "viz": "bar",
+     "wide": false,
+     "value": "50,000",
+     "unit": "US dollars",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Polygenic embryo screening can cost as much as $50,000, NPR reported in 2026, on top of IVF, which a 2025 White House order priced at $12,000 to $25,000 a cycle.",
+     "detail": "Prices vary widely by company and package. Orchid priced its whole-genome embryo test at $2,500 per embryo at launch (CNBC, 2023). Nucleus Genomics’ IVF+ program cost $30,000 for analysis of both parents and up to 20 embryos across more than 2,000 traits and conditions (CBS News, 2025). Many patients need more than one IVF cycle. The services are bought almost entirely out of pocket, by people who can already afford IVF, which makes cost central to the argument over inequality.",
+     "source_label": "NPR, “These companies help parents try to pick their babies’ traits. Experts are wary,” May 6, 2026",
+     "source_url": "https://www.npr.org/2026/05/06/nx-s1-5704317/genetic-embryo-screening",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "top-reported-price-of-polygenic-embryo"
+    },
+    {
+     "label": "US adults likely to use each service for a better shot at a top college",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% likely",
+     "series": [
+      {
+       "label": "SAT prep course",
+       "value": "68",
+       "highlight": false
+      },
+      {
+       "label": "Embryo screening",
+       "value": "38",
+       "highlight": true
+      },
+      {
+       "label": "Gene editing",
+       "value": "28",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Told a service was free and safe and that they were already doing IVF, 38 percent of US adults said they would likely use embryo screening to raise a child’s odds of a top-100 college.",
+     "detail": "Respondents were told each service would raise the chance of having a child who attends a top-100 college from 3 to 5 percent; a likely user is one who reported a better than even chance of using it. A separate question asked about moral acceptability for medical and nonmedical traits: 58 percent had no moral objection to polygenic embryo screening, 41 percent to gene editing and 76 percent to SAT prep. Younger and more educated respondents were more willing, and people told that 9 in 10 others used a service were more willing to use it themselves. The survey of 6,823 adults was fielded in January 2022 and asked about educational attainment, not disease.",
+     "source_label": "Meyer, Tan, Benjamin, Laibson & Turley, “Public views on polygenic screening of embryos,” Science, 2023",
+     "source_url": "https://escholarship.org/content/qt83d2c51b/qt83d2c51b.pdf",
+     "source_published": "2022",
+     "source_accessed": "2026-11-23",
+     "id": "us-adults-likely-to-use-each"
+    },
+    {
+     "label": "Share of US infants born after assisted reproduction",
+     "viz": "radial",
+     "wide": false,
+     "value": "2.6",
+     "unit": "% of infants",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "About 2.6 percent of US infants born in 2022, 98,289 babies, were conceived with assisted reproduction such as IVF.",
+     "detail": "In 2022, 457 reporting US clinics performed 435,426 assisted reproduction cycles on 251,542 patients, producing 94,039 live-birth deliveries. Every embryo-selection or editing technique on this page requires IVF, so its reach is bounded by IVF’s. Worldwide, a 2025 study in Fertility and Sterility estimated 10 to 13 million IVF births from 1978 to 2018, and 13 to 17 million by 2024 (UNSW, 2025).",
+     "source_label": "CDC, National ART Surveillance System",
+     "source_url": "https://www.cdc.gov/art/php/surveillance/index.html",
+     "source_published": "2022",
+     "source_accessed": "2026-11-23",
+     "id": "share-of-us-infants-born-after"
+    },
+    {
+     "label": "Global moratorium on heritable editing proposed by gene therapy groups",
+     "viz": "bar",
+     "wide": false,
+     "value": "10",
+     "unit": "years",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Three leading gene therapy organizations called in May 2025 for a ten-year global moratorium on heritable human genome editing.",
+     "detail": "The Alliance for Regenerative Medicine, the International Society for Cell & Gene Therapy and the American Society of Gene & Cell Therapy represent companies and scientists developing gene therapies for living patients. They said current science cannot ensure safety and the world lacks regulatory infrastructure and ethical consensus, and they called for stronger national and international legal prohibitions, denying incentives to researchers who pursue unsanctioned work and restricting access to the materials needed. The Third International Summit on Human Genome Editing had concluded in March 2023 that “Heritable human genome editing remains unacceptable at this time” (Royal Society, 2023). Startups such as Preventive and Origin Genomics argue that the safety questions can be answered only by doing the research a moratorium would discourage.",
+     "source_label": "Alliance for Regenerative Medicine, ISCT and ASGCT, press release, May 27, 2025",
+     "source_url": "https://alliancerm.org/press-release/moratorium-on-hhge/",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "global-moratorium-on-heritable-editing-proposed"
+    },
+    {
+     "label": "Known children born from genome-edited embryos",
+     "viz": "bar",
+     "wide": false,
+     "value": "3",
+     "unit": "children",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Three children are known to have been born from embryos edited by He Jiankui in 2018; a Chinese court sentenced him to three years in prison.",
+     "detail": "He announced in November 2018 that he had edited embryos to disable the gene HIV uses to enter cells, aiming to make twin girls resistant to infection. A Shenzhen court later confirmed a third child born to a second woman and fined him 3 million yuan, about $430,000. The births were announced at the 2018 Hong Kong summit on genome editing, and the international commission convened by the US national academies and the UK Royal Society was formed in the aftermath (National Academies, 2020). The case still anchors the summits and moratorium calls that shape the debate.",
+     "source_label": "PBS NewsHour (Associated Press), “Chinese scientist linked to gene-edited babies sentenced to prison,” December 30, 2019",
+     "source_url": "https://www.pbs.org/newshour/world/chinese-scientist-linked-to-gene-edited-babies-sentenced-to-prison",
+     "source_published": "2019",
+     "source_accessed": "2026-11-23",
+     "id": "known-children-born-from-genome-edited"
+    },
+    {
+     "label": "Babies born after mitochondrial donation at Newcastle, UK",
+     "viz": "bar",
+     "wide": false,
+     "value": "8",
+     "unit": "babies",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Newcastle reported in July 2025 that eight babies were born to seven women at high risk of passing on mitochondrial disease, using a technique the UK legalized in 2015.",
+     "detail": "Mitochondrial donation moves the parents’ nuclear DNA into a donor egg or embryo with healthy mitochondria, so the child carries a small amount of donor DNA that daughters would pass on. It replaces whole mitochondria rather than editing genes. Levels of the disease-causing mitochondrial mutation in the babies ranged from undetectable to 16 percent in newborn blood, and pronuclear transfer had produced one further pregnancy. In the United States, the same appropriations rider that covers edited embryos keeps the FDA from considering mitochondrial replacement trials (JAMA, 2017).",
+     "source_label": "Newcastle University, on papers in the New England Journal of Medicine, July 16, 2025",
+     "source_url": "https://www.ncl.ac.uk/press/articles/archive/2025/07/mitochondrialdonationtreatment/",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "babies-born-after-mitochondrial-donation-at"
+    },
+    {
+     "label": "US IVF clinics offering sex selection",
+     "viz": "radial",
+     "wide": false,
+     "value": "72.7",
+     "unit": "% of clinics",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Nearly three in four US IVF clinics answering a 2017 survey, 346 of 476, offered to select embryos by sex.",
+     "detail": "Among clinics offering it, 289 offered sex selection for family balancing and 258 for unspecified elective reasons, a large rise from a 2006 survey in which 42 percent of 186 clinics allowed non-medical sex selection. Sex selection is the oldest test of the line between medical and non-medical choice. The UK allows embryo testing only for purposes the law lists, such as avoiding serious inherited illness (HFEA, 2026), while US federal law does not restrict which conditions or traits embryos may be tested for. On March 31, 2025, a federal court in Texas vacated the FDA’s rule to regulate laboratory-developed tests, holding that they are services rather than medical devices, which leaves embryo tests largely outside FDA review (Arnold & Porter, 2025).",
+     "source_label": "Capelouto et al., “Sex selection for non-medical indications,” Journal of Assisted Reproduction and Genetics, 2018",
+     "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5904054/",
+     "source_published": "2017",
+     "source_accessed": "2026-11-23",
+     "id": "us-ivf-clinics-offering-sex-selection"
+    },
+    {
+     "label": "Modeled schizophrenia risk after editing ten variants in an embryo",
+     "viz": "bar",
+     "wide": false,
+     "value": "0.1",
+     "unit": "% lifetime",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "A 2025 theoretical model predicted that editing ten variants could cut lifetime schizophrenia risk from 1 percent to 0.1, if they are causal; critics call its assumptions speculative.",
+     "detail": "The same model gave falls from 6 to 0.1 percent for coronary artery disease, 10 to 0.2 for type 2 diabetes, 5 to under 0.6 for Alzheimer’s disease and 15 to 9 for major depression. It assumes that the variants found in genetic studies cause disease and that many could be edited safely at once, which is not possible today; the authors say it may become technically possible within about three decades, and warn that it could deepen health inequalities and that variants protecting against one disease can raise the risk of another. Shai Carmi, Henry Greely and Kevin Mitchell replied in Nature that the modeling rests on speculative assumptions and that embryo editing for disease remains unsafe and unproven. Unlike selection, which can only choose among the variants parents already carry, editing could in principle add ones neither parent has.",
+     "source_label": "Visscher, Gyngell, Yengo & Savulescu, “Heritable polygenic editing,” Nature, 2025",
+     "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11735401/",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "modeled-schizophrenia-risk-after-editing-ten"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "How much can ranking embryos by polygenic scores actually change a child’s health or traits?",
+    "kind": "empirical",
+    "why": "Published models find modest average gains; companies selling the tests report larger ones from newer scores. As of 2026, no child chosen this way has long-term outcome data.",
+    "detail": "Those who see meaningful gains say the right comparison spans a lifetime of risks, not one disease: lowering scores for type 1 and type 2 diabetes, heart disease, several cancers and schizophrenia at once adds up, and halving the relative risk of one disease matters greatly to a family with a history of it. Scores improve as genetic datasets grow and diversify, and within-family tests of the newest scores show most of their predictive power surviving between siblings for height and cognitive ability. Parents already choose among embryos on crude grounds such as appearance under a microscope, and better information improves that choice.\n\nThose who see marginal gains say the expected benefits are small, hold on average across many selections rather than for any one child, and depend on having several healthy embryos, which many patients lack. Scores are least accurate for people of non-European ancestry, overstate prediction for social outcomes because population studies capture family environment, and may raise one risk while lowering another, since many variants affect several conditions. The American Society for Reproductive Medicine (2025), the American College of Medical Genetics and Genomics (2024) and the UK’s fertility regulator (2026) all concluded that the evidence does not support clinical use.",
+    "lean_label_a": "Meaningful gains",
+    "lean_label_b": "Marginal gains",
+    "id": "how-much-can-ranking-embryos-by"
+   },
+   {
+    "text": "Should parents be free to choose embryos for traits that are not diseases, such as height or intelligence?",
+    "kind": "value",
+    "why": "The test that ranks embryos for diabetes risk can rank them for predicted height or schooling, so the line between medical and non-medical selection is a policy choice, not a technical limit. US law draws no such line; UK law does.",
+    "detail": "Those who favor parents’ choice say parents already shape their children’s prospects in countless ways, through whom they marry, where they live and how they school them, and that choosing among their own embryos harms no existing person. Philosopher Julian Savulescu argues that prospective parents have strong reason to choose the child expected to have the best life. Traits such as intelligence are linked to health, income and longevity, so the medical line is blurry anyway, and the state has no business ranking which reasons for choosing a child are acceptable.\n\nThose who would confine selection to medicine say treating children as products to be optimized turns the parent-child relationship from acceptance into specification, and that selecting for traits markets reward, such as height or test scores, writes social prejudice into who gets born. Unlike tutoring, the choice is made for a person who cannot consent, and it cannot be undone. Widespread trait selection could become an arms race that pressures parents who would rather not take part. Medical uses rest on a shared understanding of serious disease; trait selection has no such limit.",
+    "lean_label_a": "Parents’ choice",
+    "lean_label_b": "Medicine only",
+    "id": "should-parents-be-free-to-choose"
+   },
+   {
+    "text": "Can editing embryos ever be made safe enough to start a pregnancy?",
+    "kind": "empirical",
+    "why": "Each generation of editing tools has done less unintended damage to embryos, but as of 2026 none edits cleanly every time. A biopsy samples only a few cells, so no embryo can be fully checked before transfer.",
+    "detail": "Those who think it can be made safe say each generation of editors has been more precise than the last, that base and prime editing avoid the double-strand breaks behind the worst damage, and that the remaining problems, mosaicism and edits at the wrong sites, are engineering problems that laboratory work on donated embryos and stem cells can measure and reduce. Medicine has accepted first-in-human risks before, from IVF itself to mitochondrial donation, after careful preclinical work. Cathy Tie, chief executive of the startup Origin Genomics, argues that “it is unethical to not pursue this research” if it could spare families devastating disease.\n\nThose who think it never can be say the bar for an elective procedure on a healthy future child, whose every cell and descendants would carry any error, is far higher than for treating a sick patient. Even base editing, the most precise tool, left some embryos in 2026 mosaic, edited in only some cells, or changed at sites it was not aimed at, and a check that reads a handful of cells cannot vouch for the rest. Dieter Egli, who led that work, said “Mosaicism creates a range of possibilities, making it impossible to predict outcomes” (Columbia University, 2026). No laboratory test can establish long-term safety in advance; only a child followed over a lifetime can.",
+    "lean_label_a": "Can be made safe",
+    "lean_label_b": "Never safe enough",
+    "id": "can-editing-embryos-ever-be-made"
+   },
+   {
+    "text": "Does screening embryos for conditions express that people living with them are worth less?",
+    "kind": "value",
+    "why": "Disability-rights advocates say choosing against embryos with a condition sends a message about people who have it and erodes their support; others answer that preferring a child without a painful disease is like preferring health in any other choice.",
+    "detail": "Those who see devaluation say many conditions screened for are compatible with good lives, that much of the suffering associated with disability comes from social barriers rather than the condition itself, and that marketing embryo selection as the path to a healthy baby trades on stereotypes and fear. Each screened-out condition becomes rarer, research and services for it shrink, and the families who remain face the implied question of why they did not prevent it. The US National Council on Disability warned in 2024 that commercial heritable editing could lead to “even greater health disparities, if not the complete eradication of their populations.” The argument reached autism in October 2026, when Herasight began offering embryo screening for autism risk (Herasight, 2026).\n\nThose who see prevention say choosing an embryo without Tay-Sachs or Huntington’s disease is an act of care for the future child, not a judgment on anyone now living, just as taking folic acid to prevent spina bifida is not. Parents choosing among embryos are choosing which child to have, not ending an existing life. Many families with inherited disease, such as those who campaigned for mitochondrial donation in the UK, seek these tools because they know the conditions firsthand. Respect is owed to people, and it is compatible with wanting one’s own child to avoid a serious disease.",
+    "lean_label_a": "Devalues lives",
+    "lean_label_b": "Spares suffering",
+    "id": "does-screening-embryos-for-conditions-express"
+   },
+   {
+    "text": "Would widely available embryo selection entrench inequality or spread its benefits?",
+    "kind": "empirical",
+    "why": "Who benefits depends on future prices, insurance coverage and public policy that no one can yet observe, and on whether scores built mostly from European data come to work as well for everyone.",
+    "detail": "Those who expect a wider gap say the people who can afford IVF and screening are already advantaged, that any real gains in health or schooling would compound that privilege across generations, and that scores built mostly from European data deliver least to the groups already worst served by medicine. The Center for Genetics and Society warns of a world of genetic haves and have-nots, and Savulescu, a leading advocate of selection, has voiced concern that worsening inequality could become cemented. Over time, groups that select could diverge from groups that do not, turning social inequality into biological inequality.\n\nThose who expect the benefits to spread say new technologies start expensive and become cheap: genome sequencing costs fell by orders of magnitude, and IVF went from experimental to routine. Inequality is a reason to fund access, not to forbid the technology, and selection could even narrow inequality by giving everyone a shot at genes that today are handed out by luck. A ban in one country simply sends the wealthy abroad, as UK couples who send embryo data to US companies already do.",
+    "lean_label_a": "Widens the gap",
+    "lean_label_b": "Spreads over time",
+    "id": "would-widely-available-embryo-selection-entrench"
+   },
+   {
+    "text": "Is a genetic change passed to future generations different in kind from other medical choices?",
+    "kind": "value",
+    "why": "Heritable editing alone deliberately changes the genes of people not yet conceived. Some ethicists answer that every reproductive choice, from choosing a partner to choosing an embryo, shapes descendants’ genes too.",
+    "detail": "Those who see a difference in kind say heritable editing alters the shared human genome without the consent of any of the people affected, that its errors would multiply across generations, and that it puts one generation in the position of designing the next. Even medical uses would normalize the idea that people can be engineered, and judgments about which traits count as defects have shifted with prejudice before. The Catholic Church, the Center for Genetics and Society and many disability-rights advocates hold, for different reasons, that this is a boundary rather than a matter of risk.\n\nThose who see medicine like any other say removing a mutation that causes Huntington’s disease or Tay-Sachs from a family line benefits descendants rather than harming them, and that future people cannot consent to any reproductive decision, including leaving a known mutation in place. Natural reproduction reshuffles genomes every generation, and selection already changes which variants are passed on. The 2020 International Commission on the Clinical Use of Heritable Human Genome Editing treated heritable editing as a medical intervention to be judged by safety and need, and set out a pathway for any country that decides to permit it.",
+    "lean_label_a": "Different in kind",
+    "lean_label_b": "Like other medicine",
+    "id": "is-a-genetic-change-passed-to"
+   },
+   {
+    "text": "Does editing offer anything that embryo selection cannot?",
+    "kind": "empirical",
+    "why": "Almost every couple at risk of passing on a single-gene disease has some unaffected embryos that testing can find. The dispute is how much the remaining cases, and editing’s possible future uses, should count.",
+    "detail": "Those who see an unmet need point to couples in which every embryo would be affected, as when both parents have the same recessive disease or one carries two copies of a dominant mutation, and to patients, often older, who produce few embryos and cannot afford to discard affected ones. Correcting a mutation would rescue embryos rather than discard them, which matters to people who object to discarding embryos. Further ahead, editing a handful of protective variants could cut the risk of common diseases far more than choosing among a couple’s few embryos. The International Commission limited initial uses to couples who “have no option or extremely poor options for having a biologically related child who is not genetically affected.”\n\nThose who see little need cite a fertility-clinic analysis finding that the need for germline editing to prevent inherited disease “is typically grossly overestimated” because preimplantation testing already serves most families (Viotti et al., 2019). The rare remaining cases can be served by donor eggs or sperm, adoption or future somatic therapies, without editing’s risks. Even Dieter Egli, whose lab edits embryos for research, has said editing is not the method of choice when safer technologies can prevent the disease. On this view the push for editing is driven by the commercial and enhancement uses that selection cannot deliver.",
+    "lean_label_a": "Real unmet need",
+    "lean_label_b": "Selection suffices",
+    "id": "does-editing-offer-anything-that-embryo"
+   },
+   {
+    "text": "Does the moral status of embryos make creating and discarding them to choose among them wrong?",
+    "kind": "value",
+    "why": "Every form of selection creates more embryos than will be transferred. Whether setting the rest aside is acceptable depends on when a human being acquires moral status, which divides religions, philosophers and the public.",
+    "detail": "Those who hold that embryos are persons from fertilization say ranking them by predicted health or traits and discarding the rest treats some human lives as unworthy of continuing. The embryo is the same human organism that, left to develop, becomes the child, and any later line, whether implantation, a nervous system or birth, is arbitrary. That many embryos are lost naturally no more licenses discarding them deliberately than deaths from disease license killing. On this view the question of which embryo to choose never arises, because no embryo should be created in order to be judged.\n\nThose who hold that early embryos are not yet persons say a five-day blastocyst of a hundred or so cells, with no nervous system, has a different moral status from a fetus or a baby, and that many embryos fail naturally. What matters morally is the welfare of the child who will be born and of the parents, and choosing the embryo most likely to become a healthy child is responsible, not dehumanizing. IVF as practiced in most countries rests on this view, and laws such as the UK’s allow embryos to be tested, selected and discarded within set limits.",
+    "lean_label_a": "Already persons",
+    "lean_label_b": "Not yet persons",
+    "id": "does-the-moral-status-of-embryos"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Allow only proven uses against serious disease",
+    "color_key": "green",
+    "steelman": "Sparing children serious inherited disease is a triumph of medicine. Anything new must first prove it works and is safe, and choosing traits is not medicine.",
+    "detail": "Couples who carry the mutations for cystic fibrosis, Tay-Sachs or Huntington’s disease can have children free of those diseases by choosing among their own embryos, and that should stay available and be better supported. Every new genetic choice faces the same test: is it aimed at serious disease, and has it been shown to work and to be safe? Polygenic screening fails the second part today. It predicts small average effects, works poorly for many ancestries and can cost patients usable embryos, which is why the American Society for Reproductive Medicine concluded in 2025 that “Any use of PGT-P should occur only in research settings under Institutional Review Board oversight.” Heritable editing fails it too, for now, because no one can yet show that every cell of an edited embryo carries the intended change and nothing else.\n\nThat is a reason for rigorous laboratory research, not for prohibition forever. If editing can one day be shown to be precise and safe, the first uses should be limited to serious single-gene diseases in couples with no good alternative, with every child followed for the long term. Lines like these hold where law and licensing draw them: the UK has long allowed embryo testing only for listed serious conditions, has refused polygenic testing even when done abroad, and licensed mitochondrial donation through a careful, staged pathway. We differ on pace. The gene therapy groups want a moratorium and stronger legal bans meanwhile; some editing startups accept the limit to severe disease but want research, and eventually trials, to move now. Choosing embryos for height, intelligence or eye color is not medicine and should not be sold as if it were.",
+    "proponents": "American Society for Reproductive Medicine; International Commission on the Clinical Use of Heritable Human Genome Editing; American College of Medical Genetics and Genomics; American Society of Gene & Cell Therapy; Alliance for Regenerative Medicine; International Society for Cell & Gene Therapy; Paul Knoepfler; Dieter Egli",
+    "id": "allow-only-proven-uses-against-serious"
+   },
+   {
+    "name": "Let parents choose their children’s traits",
+    "color_key": "blue",
+    "steelman": "Choosing among the embryos you have already made, for the best health and prospects, harms no one. Tell parents what the tests can do, then let them decide.",
+    "detail": "Every parent wants the best for their child, and nobody objects when parents pay for tutoring, braces or a better school district. Choosing, among the embryos a couple has already made, the one with the best predicted health and prospects is no different in kind, and it harms no one: the alternative is not a better life for the same child but a different child chosen by chance. The science is real and improving: polygenic scores already identify embryos at lower risk of diabetes, heart disease and schizophrenia. Julian Savulescu argues that “we have a moral duty to pursue polygenic test scoring if it means ensuring a healthier life for future humans.”\n\nWhat eugenics got wrong was state coercion; its opposite is parents freely choosing for their own families, with no one forced to take part. Inequality is a reason to make these tools cheaper and more widely available, not to forbid them to everyone. Choosing a healthier embryo says nothing about the worth of people now living, any more than vaccinating a child insults people who had polio. We differ on pace: Herasight presents its predictions as averages across many selections, not guarantees, while Nucleus Genomics markets more broadly, including eye color, and Savulescu co-authored a 2022 paper calling polygenic embryo scores not ready for prime time. As Nucleus puts it, “Not every parent will want to use them, and that’s okay. But everyone deserves to know.”",
+    "proponents": "Nucleus Genomics; Herasight; Julian Savulescu; Kian Sadeghi",
+    "id": "let-parents-choose-their-children-s"
+   },
+   {
+    "name": "Ban heritable editing and trait selection outright",
+    "color_key": "amber",
+    "steelman": "Engineering children’s genes, or sorting embryos by the traits rich parents prize, is a commercial revival of eugenics. Both should be banned by law.",
+    "detail": "The question is not whether genetic engineering of children can be made a little safer but whether a society that believes in equal human worth should permit it at all. Heritable editing would change people who cannot consent, and all their descendants, and in the Center for Genetics and Society’s words it “remains unacceptably risky and can likely never be fully safe.” It is also unnecessary, since embryo screening already lets nearly every at-risk couple have an unaffected child. What drives the push is not unmet medical need but a market in optimized babies backed by technology fortunes, the same market that already sells IQ and height predictions for embryos. It would sort children by the traits rich parents value, deepen the gap between genetic haves and have-nots, and tell people with disabilities that their lives were mistakes to be prevented.\n\nSoft guidance has not stopped the companies. Stronger prohibitions are needed in the US and internationally, including a binding international agreement and a US statute in place of a spending rider renewed each year. Bans define what is legitimate, deny rogue actors funding and respectability, and make clear that the next He Jiankui will be prosecuted, not celebrated. We span politics. The Center for Genetics and Society argues from reproductive justice and does not oppose IVF or screening for serious inherited disease; the Autistic Self Advocacy Network also objects to selecting against disabilities such as autism, which it sees as identities rather than defects; and conservatives such as Senator John Cornyn object in the name of human dignity.",
+    "proponents": "Center for Genetics and Society; Autistic Self Advocacy Network; Gender Justice and Disability Rights Coalition on Heritable Genome Editing; Katie Hasson; John Cornyn",
+    "id": "ban-heritable-editing-and-trait-selection"
+   },
+   {
+    "name": "Stop discarding embryos to choose among them",
+    "color_key": "rust",
+    "steelman": "Every embryo is a human life with the dignity of any child. Creating extra embryos to rank by their genes and discard the rest decides which of our children may live.",
+    "detail": "The argument over screening for disease or for traits misses the prior question. Every embryo is a human life from fertilization, with the same dignity whether it is in a womb or a laboratory dish. Embryo selection works by creating more lives than will be carried, ranking them by their genes and discarding, or freezing indefinitely, those judged less fit. The Catholic Church teaches that preimplantation diagnosis “is therefore the expression of a eugenic mentality,” because it makes the right to be born depend on health and normality, and that “germ line cell therapy in all its forms is morally illicit.” The Southern Baptist Convention warns that IVF “increasingly engages in dehumanizing methods for determining suitability for life and genetic sorting, based on notions of genetic fitness and parental preferences.”\n\nPolygenic ranking and editing are the latest steps down a road that began when human beginnings were moved into the laboratory and made subject to quality control, and a principle that allows discarding embryos for being less fit has no stopping point. Compassion for infertile couples and families facing inherited disease is owed through medical care, research into treatments for the living, support and adoption, including of frozen embryos, not through choosing which children may live. Catholic teaching rejects IVF itself; the Southern Baptist resolution does not, but urges couples to create only as many embryos as they will transfer, which in practice rules out selection.",
+    "proponents": "Catholic Church; Southern Baptist Convention; Albert Mohler; Andrew Walker",
+    "id": "stop-discarding-embryos-to-choose-among"
+   }
+  ],
+  "crux": {
+   "lead": "Is choosing a child’s genes an act of care, or a judgment about who should exist?",
+   "lead_highlight": "an act of care, or a judgment about who should exist",
+   "subtitle": "Beneath the arguments over accuracy, safety and cost lies this one. If choosing genes is care for the child, what matters is how well the tools work. If it is a judgment about which people should exist, better tools sharpen the problem rather than solve it.",
+   "empirical": "Evidence can settle what the tools do: how much choosing among a couple’s embryos changes the health and traits of the children born, within families and across ancestries; whether editing can change every cell as intended and nothing else; how many couples have no other route to an unaffected child; and whether the services spread as prices fall. Research under way can narrow each of these.",
+   "values": "No data closes the weighing. Even with perfect prediction and safe editing, people differ on whether choosing a child’s height or intelligence is like choosing a school or like ranking human worth, whether descendants are wronged by changes they could not consent to, whether parents’ freedom or the equal value of disabled lives should prevail, and, for some, whether an early embryo is already a person."
+  },
+  "actions": [
+   {
+    "kind": "local",
+    "title": "Talk to a genetic counselor before IVF or embryo testing",
+    "description": "The National Society of Genetic Counselors’ directory finds board-certified counselors by location and specialty, including reproductive counseling on what embryo tests can and cannot tell you.",
+    "url": "https://findageneticcounselor.nsgc.org/",
+    "for_position": null,
+    "id": "talk-to-a-genetic-counselor-before"
+   },
+   {
+    "kind": "learn_more",
+    "title": "See how the UK regulates embryo testing",
+    "description": "The Human Fertilisation and Embryology Authority’s patient guide to testing embryos for inherited conditions and chromosome problems, mitochondrial donation and what British law permits.",
+    "url": "https://www.hfea.gov.uk/treatments/embryo-testing-and-treatments-for-disease/",
+    "for_position": null,
+    "id": "see-how-the-uk-regulates-embryo"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the fertility doctors’ verdict on polygenic embryo screening",
+    "description": "The American Society for Reproductive Medicine’s committee opinion concluding that polygenic embryo screening is unproven and should be used only in supervised research.",
+    "url": "https://www.asrm.org/practice-guidance/ethics-opinions/use-of-preimplantation-genetic-testing-for-polygenic-disorders-pgt-p-an-ethics-committee-opinion-2026/",
+    "for_position": "Allow only proven uses against serious disease",
+    "id": "read-the-fertility-doctors-verdict-on"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read a company’s case that embryo IQ prediction works",
+    "description": "Herasight’s summary of its peer-reviewed validation of a polygenic predictor of cognitive ability, including within-family tests, ancestry differences and expected gains from selection.",
+    "url": "https://herasight.substack.com/p/cogpgtpub",
+    "for_position": "Let parents choose their children’s traits",
+    "id": "read-a-company-s-case-that"
+   },
+   {
+    "kind": "donate",
+    "title": "Support the campaign against heritable editing",
+    "description": "The Center for Genetics and Society works for prohibitions on heritable genome editing and against commercial trait selection, from a social-justice and disability-rights perspective.",
+    "url": "https://www.geneticsandsociety.org/donate",
+    "for_position": "Ban heritable editing and trait selection outright",
+    "id": "support-the-campaign-against-heritable-editing"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the Catholic Church’s teaching on embryo selection",
+    "description": "The Vatican instruction Dignitas Personae, which addresses IVF, preimplantation diagnosis, embryo freezing and genetic engineering from the view that the embryo is a person.",
+    "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20081208_dignitas-personae_en.html",
+    "for_position": "Stop discarding embryos to choose among them",
+    "id": "read-the-catholic-church-s-teaching"
+   },
+   {
+    "kind": "policy",
+    "title": "Tell your representative what should happen to the ban on edited-embryo trials",
+    "description": "The FDA is barred from reviewing heritable-editing and mitochondrial-replacement trials only by a rider in yearly spending bills, so Congress decides each year whether to keep, lift or replace it.",
+    "url": "https://www.house.gov/representatives/find-your-representative",
+    "for_position": null,
+    "id": "tell-your-representative-what-should-happen"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read how Americans view editing babies’ genes",
+    "description": "Pew Research Center’s survey report on public views of gene editing to reduce a baby’s risk of serious disease, broken down by religion, gender and other groups.",
+    "url": "https://www.pewresearch.org/internet/2022/03/17/americans-are-closely-divided-over-editing-a-babys-genes-to-reduce-serious-health-risk/",
+    "for_position": null,
+    "id": "read-how-americans-view-editing-babies"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the philosophical case for choosing the best child",
+    "description": "Julian Savulescu’s essay arguing that there is a moral duty to pursue polygenic embryo screening for healthier future people, and answering the charge of eugenics. Partly paywalled.",
+    "url": "https://iai.tv/articles/the-moral-case-for-eugenics-auid-1916",
+    "for_position": "Let parents choose their children’s traits",
+    "id": "read-the-philosophical-case-for-choosing"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the disability-rights view of embryo technologies",
+    "description": "The National Council on Disability’s 2024 report on how fetal surgery, embryo screening and heritable editing affect people with disabilities, with recommendations to Congress and federal agencies.",
+    "url": "https://www.ncd.gov/assets/uploads/reports/2024/ncd-fetal-surgery-genetic-editing.pdf",
+    "for_position": "Ban heritable editing and trait selection outright",
+    "id": "read-the-disability-rights-view-of"
+   }
+  ]
+ },
+ "icon": "dna",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: one compact scene grouped in the center with wide white margins, nothing touching the edges: one large round embryo drawn as a big circle with a soft cluster of round cells inside as the dominant focal mass, filled; a long DNA double helix ribbon sweeps across the whole frame from left to right passing behind the embryo as the connective element; a slim glass micropipette slants in from the upper right and its tip touches the embryo's edge, overlapping it; a medium shallow culture dish sits on the ground at the lower left, partly behind the embryo; a small family house with a pitched roof on a gently curved hill at the right; the ground is a gentle curve.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #b0567f, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: text, letters, numbers, babies, fetuses, pregnant bellies, human figures, faces, scissors, syringes with needles, microscopes, test tubes, medals or rankings, podiums, checkmarks, crosses, warning signs, stop signs, chains, question marks, scales or balances, laboratory flasks, sparkles, halos, sinister or clinical mood."
 }

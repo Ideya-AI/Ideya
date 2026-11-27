@@ -1,12 +1,14 @@
 {
  "slug": "collapse-of-local-news",
  "title": "The Collapse of Local News",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-11-27T07:02:53+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Sustaining local watchdog journalism as newspapers vanish.",
  "primary_category": "digital",
+ "icon": "newspaper",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: one compact small-town scene grouped in the center with wide white margins, nothing touching the edges: a large folded newspaper standing upright on its edge as the dominant focal mass, its front page showing only a blank masthead band, one plain picture box and a few blank ruled column lines, no letters; behind it and partly overlapped by it, a small town hall of medium size with a little clock tower and a plain front door; a small reporter's spiral notepad with a pencil lying at the newspaper's foot, overlapping its lower corner; a low wooden utility pole at one side with a single power line drooping across the frame behind the town hall; all of it sitting on one gently rounded filled hill whose curve ends well inside the frame on both sides.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #2f8f86, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: any letters or words or headlines or a masthead name, torn or crumpled or burning newspapers, tombstones, gravestones, wilting flowers, for-sale or closed signs, boarded-up windows, cobwebs, dollar signs, tech company logos, robots, smartphones crushing paper, megaphones, protest signs, people or faces, a frame or border around the scene",
  "categories": [
   "society"
  ],
@@ -15,5 +17,684 @@
   "content-moderation-free-speech",
   "antitrust-market-power",
   "democratic-backsliding-populism"
- ]
+ ],
+ "content": {
+  "overview": {
+   "summary": "US local newspapers are vanishing. The central argument is who should pay for local reporting, with how much the loss hurts towns close behind.",
+   "scope_covered": "US local newspapers, digital and nonprofit outlets, public media and local TV: what losing them costs communities and the remedies on offer, with Canada and Australia for comparison.",
+   "scope_excluded": "Trust and bias in national media, misinformation and deepfakes, platform content moderation and AI copyright in general, except where they bear on local reporting.",
+   "why_now": "On October 13, 2026 Northwestern University’s Medill Local News Initiative reported the largest one-year rise in US counties with no local news source since it began keeping records five years earlier, and counted local TV newsrooms for the first time.",
+   "why_now_source_label": "Nieman Lab",
+   "why_now_source_url": "https://www.niemanlab.org/2026/10/from-bad-to-worse-2026-is-shaping-up-to-be-a-super-el-nino-year-for-local-news/"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "US counties with no local news source",
+     "viz": "bar",
+     "wide": false,
+     "value": "238",
+     "unit": "counties",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In October 2026 Medill counted 238 US counties with no locally based news source, 26 more than a year earlier.",
+     "detail": "Medill defines a news desert as a county without a locally based source of professional local news, whether a newspaper, a digital site, public radio or another outlet. It revises earlier years as it corrects its database, so the yearly totals are best read as published rather than as a strict series: its 2025 report counted 213, up from a revised 206 for 2024 (Medill, 2025), and the 2026 rise of 26 implies a revised 2025 base of 212. Fewer than 50 US counties without a newspaper have a digital or broadcast outlet in its place, and Illinois lost more newspapers than any other state, 30 between July 2025 and August 2026 (Nieman Lab’s reading of the 2026 report).",
+     "source_label": "Medill Local News Initiative, The State of Local News 2026, via Editor & Publisher",
+     "source_url": "https://www.editorandpublisher.com/stories/local-news-losses-accelerate-as-digital-traffic-plunges-medill-warns,264046",
+     "source_published": "2026",
+     "source_accessed": "2026-11-26",
+     "id": "us-counties-with-no-local-news"
+    },
+    {
+     "label": "Employment at US newspaper publishers",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "thousand",
+     "series": [
+      {
+       "label": "2005",
+       "value": "371.0",
+       "highlight": false
+      },
+      {
+       "label": "2010",
+       "value": "255.1",
+       "highlight": false
+      },
+      {
+       "label": "2015",
+       "value": "193.8",
+       "highlight": false
+      },
+      {
+       "label": "2020",
+       "value": "116.5",
+       "highlight": false
+      },
+      {
+       "label": "2025",
+       "value": "83.4",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "US newspaper publishers employed about 83,000 people on average in 2025, down from 371,000 in 2005, a fall of 78 percent.",
+     "detail": "The series counts everyone on a newspaper payroll, including advertising, printing, circulation and office staff, at papers published in print or online; it leaves out journalists at TV and radio stations, digital-only outlets and nonprofits. The annual averages here are computed from the BLS monthly, not seasonally adjusted figures. The steepest drop came in the 2008 to 2009 recession, when the average fell from 325,500 to 278,000, and employment has fallen every year since; the preliminary figure for September 2026 was 74,900. Medill, using a different federal count, says the industry “has now lost more than three-quarters of its jobs since 2005” (Medill, 2025).",
+     "source_label": "US Bureau of Labor Statistics, Current Employment Statistics, Newspaper publishers, all employees",
+     "source_url": "https://data.bls.gov/timeseries/CEU5051311001",
+     "source_published": "2005 to 2026",
+     "source_accessed": "2026-11-26",
+     "id": "employment-at-us-newspaper-publishers"
+    },
+    {
+     "label": "Americans with limited or no access to local news",
+     "viz": "bar",
+     "wide": false,
+     "value": "47",
+     "unit": "million",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Nearly 47 million Americans live in places with limited or no access to locally based professional journalism, Medill’s 2026 report found.",
+     "detail": "Limited access means a county with no local news source or only one. Medill’s 2025 report put the number at some 50 million and found 1,524 counties with only one remaining news source (Medill, 2025); its 2024 report gave nearly 55 million. Because Medill revises its counts each year as it finds outlets and corrects records, the falling totals do not by themselves show coverage improving. Public media fills part of the gap: nearly 300 public radio stations and more than 100 public television stations produce local reporting, and in nine counties public radio is the only news source (Medill, 2025).",
+     "source_label": "Medill Local News Initiative, The State of Local News 2026, via Editor & Publisher",
+     "source_url": "https://www.editorandpublisher.com/stories/local-news-losses-accelerate-as-digital-traffic-plunges-medill-warns,264046",
+     "source_published": "2026",
+     "source_accessed": "2026-11-26",
+     "id": "americans-with-limited-or-no-access"
+    },
+    {
+     "label": "US newspaper revenue by source",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "$ billion",
+     "series": [
+      {
+       "label": "Ads, 2005",
+       "value": "49.4",
+       "highlight": false
+      },
+      {
+       "label": "Circulation, 2022",
+       "value": "11.6",
+       "highlight": false
+      },
+      {
+       "label": "Ads, 2022",
+       "value": "9.8",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "US newspapers took in an estimated $9.8 billion from advertising in 2022, a fifth of the $49.4 billion of 2005 before inflation, and less than readers paid.",
+     "detail": "Figures through 2012 come from the News Media Alliance, then called the Newspaper Association of America; from 2013 Pew estimates them from the year-over-year changes reported by publicly traded newspaper companies, four in 2022 covering about 300 dailies, so recent years are estimates, and no year is adjusted for inflation. Circulation revenue overtaking advertising marks a shift in who pays for newspapers, from advertisers to readers. Estimated weekday circulation, print and digital combined, fell from 53.3 million in 2005 to 20.9 million in 2022. Pew stopped updating the fact sheet after its 2023 edition.",
+     "source_label": "Pew Research Center, Newspapers Fact Sheet",
+     "source_url": "https://www.pewresearch.org/journalism/fact-sheet/newspapers/",
+     "source_published": "2022",
+     "source_accessed": "2026-11-26",
+     "id": "us-newspaper-revenue-by-source"
+    },
+    {
+     "label": "Rise in municipal borrowing costs after a local newspaper closes",
+     "viz": "bar",
+     "wide": false,
+     "value": "5–11",
+     "unit": "basis points",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "After a local newspaper closes, municipal borrowing costs rise by 5 to 11 basis points, about $650,000 per bond issue, one study estimates.",
+     "detail": "A basis point is a hundredth of a percentage point on a bond’s yield. Pengjie Gao, Chang Lee and Dermot Murphy compared counties that lost a daily newspaper with similar counties that did not, and argue that the effect is causal rather than a product of local economic decline. They link the lost monitoring to higher government wages and deficits and to costlier ways of selling bonds. The working paper version (Brookings, 2018) covers closures from 1996 to 2015, before most nonprofit newsrooms existed, so the study measures what happens when coverage disappears, not whether a replacement outlet restores it.",
+     "source_label": "Gao, Lee and Murphy, “Financing dies in darkness?”, Journal of Financial Economics",
+     "source_url": "https://ideas.repec.org/a/eee/jfinec/v135y2020i2p445-467.html",
+     "source_published": "2020",
+     "source_accessed": "2026-11-26",
+     "id": "rise-in-municipal-borrowing-costs-after"
+    },
+    {
+     "label": "US adults who paid or gave money to a local news source in the past year",
+     "viz": "radial",
+     "wide": false,
+     "value": "15",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Fifteen percent of US adults had paid or given money to a local news source in the past year, while 63 percent thought local outlets were doing well financially.",
+     "detail": "The share paying has changed little since 2018, while the share who think local outlets are doing very or somewhat well fell from 71 percent. Eighty-five percent said local news outlets are at least somewhat important to their community’s well-being. Following local news very closely fell from 37 percent in 2016 to 22 percent in 2024. Preferences have moved toward screens: 32 percent preferred to get local news from TV, down from 41 percent in 2018, 26 percent from news websites, 23 percent from social media and 9 percent each from print newspapers and radio. In a separate Pew survey in December 2025, 8 percent said individual Americans have a responsibility to pay for news (Pew, 2026).",
+     "source_label": "Pew Research Center, Americans’ Changing Relationship With Local News",
+     "source_url": "https://www.pewresearch.org/journalism/2024/05/07/americans-changing-relationship-with-local-news/",
+     "source_published": "2024",
+     "source_accessed": "2026-11-26",
+     "id": "us-adults-who-paid-or-gave"
+    },
+    {
+     "label": "Fall in traffic to 100 of the largest US local newspaper websites since 2022",
+     "viz": "bar",
+     "wide": false,
+     "value": "~50",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Traffic to 100 of the largest US local newspaper websites fell by nearly half over the four years to 2026, Medill’s 2026 report found.",
+     "detail": "Across more than 700 local news sites in Comscore’s data, monthly traffic fell by an average of nearly 2 million pageviews, or almost 30 percent (Nieman Lab’s reading of the report). Medill researcher Zach Metzger said artificial intelligence and changing search interfaces may be contributing. The decline matters because many local outlets had rebuilt around digital subscriptions and digital advertising, both of which depend on readers arriving from search engines and social media.",
+     "source_label": "Medill Local News Initiative, The State of Local News 2026, via Editor & Publisher",
+     "source_url": "https://www.editorandpublisher.com/stories/local-news-losses-accelerate-as-digital-traffic-plunges-medill-warns,264046",
+     "source_published": "2026",
+     "source_accessed": "2026-11-26",
+     "id": "fall-in-traffic-to-100-of"
+    },
+    {
+     "label": "US newsroom employees by sector, 2020",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "thousand",
+     "series": [
+      {
+       "label": "Newspapers",
+       "value": "31",
+       "highlight": true
+      },
+      {
+       "label": "Broadcast TV",
+       "value": "28",
+       "highlight": false
+      },
+      {
+       "label": "Digital-native",
+       "value": "18",
+       "highlight": false
+      },
+      {
+       "label": "Radio",
+       "value": "3.4",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Newspapers employed about 31,000 newsroom staff in 2020, down 57 percent from about 71,000 in 2008, while broadcast TV held near 28,000.",
+     "detail": "Newsroom employees here are reporters, editors, photographers and videographers, counted from federal occupational data. Across all news industries, newsroom employment fell about 26 percent, from about 114,000 in 2008 to about 85,000 in 2020, a net loss of about 30,000 jobs; cable TV newsrooms employed another 2,000 to 3,000. Pew has not updated the analysis since 2021, and the federal payroll count of newspaper employment kept falling after 2020.",
+     "source_label": "Pew Research Center, “U.S. newsroom employment has fallen 26% since 2008”",
+     "source_url": "https://www.pewresearch.org/short-reads/2021/07/13/u-s-newsroom-employment-has-fallen-26-since-2008/",
+     "source_published": "2008 and 2020",
+     "source_accessed": "2026-11-26",
+     "id": "us-newsroom-employees-by-sector-2020"
+    },
+    {
+     "label": "US newspapers that closed or merged in a year",
+     "viz": "bar",
+     "wide": false,
+     "value": "170",
+     "unit": "newspapers",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In the year covered by Medill’s 2026 report, 170 US newspapers closed or merged, about three a week, while 75 local news startups launched.",
+     "detail": "The 2026 count combines closures and mergers, so it is not strictly comparable with the closure-only counts of earlier reports: 127 in the 2024 report, later revised to 130, and 136 in 2025 (Medill, 2024 and 2025). Of the nearly 300 startups of the past five years, about 80 percent are in urban areas. More than 425 newspapers changed hands in the year, 75 percent more than the year before (Benton Institute summary). Newsprint prices rose nearly 18 percent in the year, and by April 2026 the United States had one newsprint producer left (Nieman Lab).",
+     "source_label": "Medill Local News Initiative, The State of Local News 2026, via Editor & Publisher",
+     "source_url": "https://www.editorandpublisher.com/stories/local-news-losses-accelerate-as-digital-traffic-plunges-medill-warns,264046",
+     "source_published": "2026",
+     "source_accessed": "2026-11-26",
+     "id": "us-newspapers-that-closed-or-merged"
+    },
+    {
+     "label": "Net decline in US newspapers since 2005",
+     "viz": "bar",
+     "wide": false,
+     "value": "3,300",
+     "unit": "newspapers",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Medill counted about 3,300 fewer US newspapers in September 2024 than in 2005, more than a third of the total; tallies of its 2025 report differ.",
+     "detail": "Coverage of Medill’s 2025 report put the loss at nearly 3,500 newspapers and said the country had, for the first time, fewer than 1,000 daily papers (Poynter, 2025), while Fortune’s account of the same report gave 7,325 newspapers in 2005 and 4,490 in 2025, a smaller drop. R Street Institute president Eli Lehrer puts it at more than 3,500, including more than 500 dailies (National Affairs, 2026). About 70 percent of the papers lost over two decades were in urban or suburban areas, but recent closures have shifted toward smaller, rural and poorer communities (Nieman Lab, 2026).",
+     "source_label": "Medill School of Journalism, “Medill report shows local news deserts expanding”",
+     "source_url": "https://www.medill.northwestern.edu/news/2024/medill-report-shows-local-news-deserts-expanding.html",
+     "source_published": "2024",
+     "source_accessed": "2026-11-26",
+     "id": "net-decline-in-us-newspapers-since"
+    },
+    {
+     "label": "Fewer articles after a private equity buyout of a newspaper",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% fewer",
+     "series": [
+      {
+       "label": "Obituaries",
+       "value": "29",
+       "highlight": false
+      },
+      {
+       "label": "Local government",
+       "value": "23",
+       "highlight": true
+      },
+      {
+       "label": "All articles",
+       "value": "16.7",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "After private equity firms bought newspapers, the papers were less likely to close but ran 23 percent fewer local government articles, one study found.",
+     "detail": "Michael Ewens, Arpit Gupta and Sabrina Howell studied buyouts from 2002 to 2019 and report “nuanced effects”: private equity ownership “leads to higher digital circulation and lower chances of newspaper exit,” while news shifts away from local governance and the number of reporters and editors falls. Turnout in county commission and council elections fell 0.82 percentage points, against a mean of 9 percent. The share of newspapers owned by private equity rose from about 5 percent in 2002 to roughly a fifth by 2019. The study is the main evidence in the argument over financial owners such as Alden Global Capital, cited both by their critics and by those who say such owners keep alive papers that would otherwise close.",
+     "source_label": "Ewens, Gupta and Howell, “Local Journalism under Private Equity Ownership,” NBER Working Paper 29743",
+     "source_url": "https://www.nber.org/papers/w29743",
+     "source_published": "2022",
+     "source_accessed": "2026-11-26",
+     "id": "fewer-articles-after-a-private-equity"
+    },
+    {
+     "label": "Revenue of nonprofit newsrooms in the Institute for Nonprofit News network",
+     "viz": "bar",
+     "wide": false,
+     "value": "750+",
+     "unit": "$ million",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Nonprofit newsrooms in the Institute for Nonprofit News network took in more than $750 million in 2025, up 14 percent from 2024.",
+     "detail": "The figure covers 412 surveyed members and leaves out 2025 startups and public media members. Median revenue per outlet was $525,000, down from $532,000 in 2024, while median expenses rose to $449,000. Individual giving made up 33 percent of revenue in 2025, up from 29 percent in 2023; philanthropy remains the largest source. Fifty-four percent of INN members are local outlets. Growth in new outlets has slowed sharply: nine new members began publishing in 2025, against about 20 a year in 2019 and 2020. Seventy-six percent of publishers said the political climate had affected their organizations negatively.",
+     "source_label": "Institute for Nonprofit News, INN Index 2026, via Nieman Lab",
+     "source_url": "https://www.niemanlab.org/2026/06/ai-use-growth-challenges-and-funding-cuts-a-new-report-looks-at-the-state-of-nonprofit-news/",
+     "source_published": "2025",
+     "source_accessed": "2026-11-26",
+     "id": "revenue-of-nonprofit-newsrooms-in-the"
+    },
+    {
+     "label": "Press Forward investment in local news since 2023",
+     "viz": "bar",
+     "wide": false,
+     "value": "~600",
+     "unit": "$ million",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Press Forward, a coalition of foundations led by Knight and MacArthur, had invested nearly $600 million in local news by November 10, 2026, two years ahead of schedule.",
+     "detail": "Press Forward launched in September 2023 with a pledge of more than $500 million over five years and counts 144 funders; about 50 local chapters have invested $87 million, $53 million of it in the past year. Its leaders do not present it as a cure. Executive director Dale Anglin told AP, “You can’t nonprofit your way out of this problem,” and Knight Foundation chief executive Maribel Pérez Wadsworth said, “Philanthropy writ large is not a business model.” The money is concentrated in cities: Medill’s 2025 report found 98 percent of the dollars from the 10,000 largest journalism grants over five years went to urban areas (Poynter, 2025).",
+     "source_label": "Associated Press, “Press Forward completes nearly $600M in journalism investments about 2 years early,” via WFTV",
+     "source_url": "https://www.wftv.com/news/business/press-forward/BZJ6ARVJMAZQBCMNMEKF46NF4E/?outputType=amp",
+     "source_published": "2026",
+     "source_accessed": "2026-11-26",
+     "id": "press-forward-investment-in-local-news"
+    },
+    {
+     "label": "Estimated state government support for local news in 2026",
+     "viz": "bar",
+     "wide": false,
+     "value": "74",
+     "unit": "$ million",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Rebuild Local News estimated in January 2026 that newsrooms would receive about $74 million from state governments that year as a result of public policy.",
+     "detail": "Programs behind the estimate include Illinois’s 2024 law, $25 million, and New York’s three-year, $90 million program to offset the cost of hiring and retaining journalists. In its first year Illinois’s credit, $15,000 per existing journalist and $10,000 per new position, supported more than 260 journalist jobs at more than 120 outlets for a little over $4 million (Rebuild Local News report, via Nieman Lab, February 2026). The estimate predates California’s Community NEWS Act, signed September 30, 2026, which offers refundable credits of $20,000 for each of a newsroom’s first five local journalists and $15,000 for each one after, plus $15,000 per new hire, about $200 million over five years (Poynter, October 2026).",
+     "source_label": "Poynter, “State government support for local news,” quoting Steven Waldman of Rebuild Local News",
+     "source_url": "https://www.poynter.org/business-work/2026/state-government-support-local-news-journalism/",
+     "source_published": "2026",
+     "source_accessed": "2026-11-26",
+     "id": "estimated-state-government-support-for-local"
+    },
+    {
+     "label": "Google visits in which users clicked a search result link",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% of visits",
+     "series": [
+      {
+       "label": "No AI summary",
+       "value": "15",
+       "highlight": false
+      },
+      {
+       "label": "With AI summary",
+       "value": "8",
+       "highlight": true
+      },
+      {
+       "label": "Link in summary",
+       "value": "1",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Users clicked a traditional search result in 8 percent of Google visits that showed an AI summary, against 15 percent when none appeared.",
+     "detail": "Pew tracked the browsing of 900 US adults who agreed to install tracking software, covering 68,879 unique Google searches in March 2025; about 18 percent produced an AI summary. Users clicked a link inside the summary itself in 1 percent of visits, and ended their browsing session after 26 percent of visits to pages with a summary, against 16 percent without one. The study covers search in general, not local news specifically, but local publishers depend heavily on readers arriving from search.",
+     "source_label": "Pew Research Center, “Google users are less likely to click on links when an AI summary appears in the results”",
+     "source_url": "https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/",
+     "source_published": "2025",
+     "source_accessed": "2026-11-26",
+     "id": "google-visits-in-which-users-clicked"
+    },
+    {
+     "label": "Local commercial TV newsrooms controlled by the 10 largest owners",
+     "viz": "radial",
+     "wide": false,
+     "value": "75",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Ten companies control about three quarters of the 678 local commercial TV newsrooms in the United States.",
+     "detail": "The five largest owners control more than half, and Nexstar’s $6.2 billion purchase of Tegna would combine the second- and fourth-largest (Nieman Lab’s reading of the Medill report). The combined company would own 265 stations in 44 states and Washington, D.C., reaching about 80 percent of US households, above the national audience cap the FCC waived for the deal in March 2026, and Nexstar projected $300 million a year in savings, including from consolidating programming teams in major markets (NPR, April 2026). A federal judge ordered the companies held apart pending an antitrust trial brought by eight states and DirecTV, and an appeals court heard Nexstar’s appeal on November 17, 2026 (NewscastStudio).",
+     "source_label": "Medill Local News Initiative, The State of Local News 2026, via Editor & Publisher",
+     "source_url": "https://www.editorandpublisher.com/stories/local-news-losses-accelerate-as-digital-traffic-plunges-medill-warns,264046",
+     "source_published": "2026",
+     "source_accessed": "2026-11-26",
+     "id": "local-commercial-tv-newsrooms-controlled-by"
+    },
+    {
+     "label": "US adults with at least some trust in information from each source",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Local news",
+       "value": "75",
+       "highlight": true
+      },
+      {
+       "label": "National news",
+       "value": "62",
+       "highlight": false
+      },
+      {
+       "label": "Social media",
+       "value": "38",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Three quarters of US adults had at least some trust in information from local news organizations in September 2026, against 62 percent for national ones.",
+     "detail": "Trust in local news rose from 70 percent in September 2025. The partisan gap is much smaller than for national news: 69 percent of Republicans and Republican-leaning independents and 81 percent of Democrats and leaners trusted local news, against 50 and 73 percent for national news organizations. Of the three sources asked about, local news is the only one a clear majority of both parties trusts, which advocates for local news cite when they argue that its loss pushes readers toward national, more partisan sources.",
+     "source_label": "Pew Research Center, “Americans’ trust in information from news organizations has risen in the past year”",
+     "source_url": "https://www.pewresearch.org/short-reads/2026/11/02/americans-trust-in-information-from-news-organizations-has-risen-in-the-past-year/",
+     "source_published": "2026",
+     "source_accessed": "2026-11-26",
+     "id": "us-adults-with-at-least-some"
+    },
+    {
+     "label": "Federal public broadcasting funds rescinded by Congress",
+     "viz": "bar",
+     "wide": false,
+     "value": "1.07",
+     "unit": "$ billion",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In July 2025 Congress took back $1.07 billion it had approved for the Corporation for Public Broadcasting’s next two fiscal years, and the corporation moved to close.",
+     "detail": "The Corporation for Public Broadcasting passed federal money to more than 1,500 local public radio and TV stations, and it moved to dissolve in January 2026. Rural and tribal stations, many of which relied on it for more than half their budgets, face the greatest risk (Columbia Journalism Review, January 2026). Supporters of the rescission argued that federal taxpayers should not fund broadcasters they consider politically biased; opponents pointed to public radio’s place as the only local news source in some counties.",
+     "source_label": "Poynter, “Corporation for Public Broadcasting to close after Congress pulls funding”",
+     "source_url": "https://www.poynter.org/business-work/2025/corporation-for-public-broadcasting-to-close-after-congress-pulls-funding/",
+     "source_published": "2025",
+     "source_accessed": "2026-11-26",
+     "id": "federal-public-broadcasting-funds-rescinded-by"
+    },
+    {
+     "label": "Google’s yearly payment to Canadian news outlets",
+     "viz": "bar",
+     "wide": false,
+     "value": "100",
+     "unit": "CA$ million",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Google pays CA$100 million a year, indexed to inflation, to a collective of Canadian news outlets in exchange for an exemption from the Online News Act.",
+     "detail": "More than 400 organizations have received money through the Canadian Journalism Collective, with part reserved for the CBC and Indigenous outlets. Meta chose instead to block news on Facebook and Instagram in Canada from August 2023, and Facebook’s use as a news source in Canada fell from 29 percent in 2023 to 25 percent in 2025 (Reuters Institute Digital News Report). Australia, which pioneered a bargaining code in 2021, passed a News Bargaining Incentive on August 20, 2026 that charges large social media and search platforms unless they strike deals with news businesses (Australian Treasury).",
+     "source_label": "Reuters Institute, “How Google’s funding for Canadian news publishers is split – and who benefits the most”",
+     "source_url": "https://reutersinstitute.politics.ox.ac.uk/news/how-googles-funding-canadian-news-publishers-split-and-who-benefits-most",
+     "source_published": "2025",
+     "source_accessed": "2026-11-26",
+     "id": "google-s-yearly-payment-to-canadian"
+    },
+    {
+     "label": "Main way US adults say news organizations should make money",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Advertising",
+       "value": "45",
+       "highlight": false
+      },
+      {
+       "label": "Not sure",
+       "value": "25",
+       "highlight": false
+      },
+      {
+       "label": "Subscriptions",
+       "value": "11",
+       "highlight": false
+      },
+      {
+       "label": "Government",
+       "value": "10",
+       "highlight": true
+      },
+      {
+       "label": "Donations",
+       "value": "5",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Asked the main way news organizations should make money, 45 percent of US adults chose advertising and 10 percent government funding.",
+     "detail": "The December 2025 question was about news organizations in general, not local news; 2 percent chose some other way. Democrats were more likely than Republicans to choose government funding, 14 percent against 7, and adults under 50 more likely than older adults, 15 percent against 5; Republicans more often chose advertising, 51 percent against 41. On public broadcasting specifically, a March 2025 Pew survey found 43 percent of adults said the federal government should continue funding NPR and PBS, 24 percent that it should remove funding and 33 percent were not sure.",
+     "source_label": "Pew Research Center, “Few say Americans have a responsibility to pay for news”",
+     "source_url": "https://www.pewresearch.org/journalism/2026/02/11/few-say-americans-have-a-responsibility-to-pay-for-news/",
+     "source_published": "2025",
+     "source_accessed": "2026-11-26",
+     "id": "main-way-us-adults-say-news"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Does losing local news measurably harm a community’s government and civic life?",
+    "kind": "empirical",
+    "why": "Every camp cites the research on newspaper closures, but the best studies cover daily papers before 2015, while recent losses fall more on small papers in rural and poorer places, and none test whether a newer outlet restores what was lost.",
+    "detail": "Those who see real harm argue that studies using different methods and data point the same way: when no reporter attends the meetings, officials pay themselves more, borrow more expensively and face fewer challengers, and voters fall back on national partisan cues. After a newspaper closes, split-ticket voting falls by 1.9 percent (Darr, Hitt and Dunaway, Journal of Communication, 2018). A few basis points on every bond issue, multiplied across thousands of counties, is real taxpayer money. The harms are also the hardest to see, because no one reports the stories that go uncovered, which is why most people assume their local outlets are fine.\n\nThose who think the harm is overstated argue that the effects found are small, come from a period when the local daily was the only source, and may partly reflect the economic decline that also kills newspapers. Many of the papers lost were thin weeklies full of press releases and wire copy rather than watchdog reporting. Residents now learn about their towns through local TV websites, newsletters, community Facebook groups, government livestreams and public records online (by 2024 fewer than one in ten preferred print for local news, Pew found). The real question is narrower: which specific functions, such as covering courts and councils, are actually going undone, and what is the cheapest way to supply them.",
+    "lean_label_a": "Real civic harm",
+    "lean_label_b": "Harm overstated",
+    "id": "does-losing-local-news-measurably-harm"
+   },
+   {
+    "text": "Should government money pay for local journalism?",
+    "kind": "value",
+    "why": "States have moved quickly to fund local reporting through tax credits while Congress ended federal money for public broadcasting, and part of the press’s job is checking the governments that would pay it.",
+    "detail": "Those who favor public funding argue that local reporting is a public good, like roads or schools, that markets underprovide because its benefits reach everyone, including people who never read it. Other rich democracies, from the United Kingdom to Canada, spend far more per person on public media, and the United States itself subsidized newspapers through postal rates from 1792 and legal-notice requirements for two centuries. Programs can be built to keep officials away from content: automatic, formula-based credits per journalist employed involve no one judging which outlet deserves money. Without some public money, they argue, the reporting will simply not exist in much of the country.\n\nThose who would keep government out argue that a newsroom dependent on the state for its payroll will hesitate to bite the hand that feeds it, and that politicians will learn to use eligibility rules, renewals and budget threats as leverage; the federal defunding of public broadcasting shows how quickly support can be withdrawn. Subsidies tie journalists to officials rather than to the readers they must persuade. Philanthropy, readers, advertising and new business models should carry the load, and if government acts at all, it should remove legal barriers rather than write checks.",
+    "lean_label_a": "Fund it publicly",
+    "lean_label_b": "No public money",
+    "id": "should-government-money-pay-for-local"
+   },
+   {
+    "text": "Can nonprofit and digital startups replace what local newspapers did?",
+    "kind": "empirical",
+    "why": "Nonprofit and digital newsrooms have grown fast with philanthropic backing, but closures still outnumber launches and new outlets cluster in cities, far from many of the counties now losing their papers.",
+    "detail": "Those who expect replacement argue that the startups are young and growing, with revenue rising and individual giving a rising share of it. Outlets such as the Texas Tribune, Spotlight PA, the Baltimore Banner and hundreds of smaller sites now do the statehouse and city hall reporting that chain-owned dailies abandoned. Networks that share back offices, statewide collaborations and philanthropic hubs in local community foundations are spreading the model beyond cities, and the obstacles, such as startup capital, legal status and access to press credentials, are fixable. The fair comparison is with what the hollowed-out papers were producing in their last years, not with their peak.\n\nThose who see a growing gap argue that the numbers do not come close. The whole nonprofit sector’s revenue is under a tenth of what newspapers took in from advertising alone in 2022, philanthropy goes overwhelmingly to metro areas, and the places losing papers fastest are rural, poorer counties that struggle to sustain a donor base. Growth in new nonprofit outlets has also slowed. Without a new and broad source of money, on this view, the map of news deserts will keep spreading however good the startups are.",
+    "lean_label_a": "They can, in time",
+    "lean_label_b": "The gap will grow",
+    "id": "can-nonprofit-and-digital-startups-replace"
+   },
+   {
+    "text": "Should technology and AI companies be made to pay for the news they use?",
+    "kind": "value",
+    "why": "Australia and Canada have pushed platforms into paying publishers, and Meta answered Canada by blocking news, while AI search sends fewer readers to the sites its answers draw on. US bills to require payment have stalled.",
+    "detail": "Those who favor payment argue that Google, Meta and now AI companies captured the advertising that once funded local reporting and still profit from the news they display, summarize and train on, while sending ever less traffic back. Individual publishers cannot bargain with companies of that size, so law must set the terms. Payment, on this view, is not a subsidy but a price for a valuable input, and AI strengthens the case, because an answer built on local reporting replaces the visit entirely.\n\nThose who oppose forced payment argue that links send publishers traffic they choose to receive, that charging for them breaks the open web, and that the money flows mostly to large national publishers and broadcasters rather than to the small local outlets the laws claim to save. The advertising loss came from technological change, not wrongdoing. On AI, they answer that facts cannot be owned, that learning from published reporting is a lawful use, and that voluntary licensing deals between AI companies and publishers are already forming without a mandate. Canada’s law ended with news blocked on the platforms where many people found local stories, and a charge that applies whether or not news appears on a platform is, critics say, a tax by another name.",
+    "lean_label_a": "Make platforms pay",
+    "lean_label_b": "No forced payment",
+    "id": "should-technology-and-ai-companies-be"
+   },
+   {
+    "text": "Does consolidated ownership preserve local news or hollow it out?",
+    "kind": "empirical",
+    "why": "Broadcasters say only bigger owners can compete with tech platforms for advertising, critics say debt-financed buyers cut newsrooms, and the evidence from newspaper buyouts points both ways: fewer closures, thinner local coverage.",
+    "detail": "Those who see scale as preservation argue that bigger owners spread the fixed costs of a newsroom over more markets and that small owners cannot compete for advertising with Google, Meta and streaming services. Shared technology, sales and production free money for reporters, and a struggling paper or station bought by a larger owner is often one that would otherwise have closed.\n\nThose who see consolidation as the problem argue that buyers financed with debt pay for their deals by cutting newsrooms and centralizing coverage, and that merger plans count the savings from combining programming and news staff across markets. A company that owns stations in many markets can replace local reporting with shared national segments, and fewer owners mean fewer independent editorial voices in each community.",
+    "lean_label_a": "Scale saves it",
+    "lean_label_b": "Scale erodes it",
+    "id": "does-consolidated-ownership-preserve-local-news"
+   },
+   {
+    "text": "Do readers value local news enough to pay for it?",
+    "kind": "empirical",
+    "why": "Few Americans pay for local news and most assume their outlets are doing fine, yet reader giving is a growing share of nonprofit newsroom revenue and some local outlets have built paying audiences.",
+    "detail": "Those who think readers will pay argue that low payment reflects an awareness gap, not indifference: most people do not know their outlet is in trouble, and when they learn, as membership drives and matching campaigns show, many give. Large majorities say local news matters to their community and trust it more than other sources. Digital subscriptions, memberships, events and donations can sustain lean newsrooms that offer something readers cannot get elsewhere, and outlets rebuilt around readers are less exposed to the decisions of platforms and governments.\n\nThose who doubt it argue that subscriptions always covered a fraction of a newspaper’s costs, with advertisers buying the rest. A product whose benefits go to the whole community will always be underpaid by individuals who can free-ride, especially when free alternatives, from TV websites to social media, feel good enough. Paying audiences concentrate among older, wealthier and more educated readers, so a reader-funded model produces good journalism for those who can afford it and deserts everywhere else.",
+    "lean_label_a": "Readers will pay",
+    "lean_label_b": "Readers won’t pay",
+    "id": "do-readers-value-local-news-enough"
+   },
+   {
+    "text": "Should policy try to save existing newspapers or build new kinds of outlets?",
+    "kind": "value",
+    "why": "Critics note that many proposals, from tax credits to link payments, would send most of their money to existing publishers, including chains and hedge fund owners; supporters answer that newspapers still employ a large share of the local reporters who remain.",
+    "detail": "Those who would sustain existing papers argue that they hold archives, legal standing and community recognition, and cover places startups have not reached. Closing a paper destroys institutional knowledge that takes decades to rebuild, and once a county becomes a news desert, as Medill’s 2026 report puts it, the news “stays gone.” Policy that pays per journalist employed, regardless of owner or format, keeps reporters at work now while new models develop, and nothing in it stops a startup from qualifying too.\n\nThose who would build new outlets argue that the newspaper was an industrial-era bundle sustained by advertising monopolies and legal privileges that no longer exist, and that propping it up rewards owners who have already cut the newsroom to the bone. The better use of policy is to make it easier for new outlets to form and to help public media stations, newsletters and community reporters take on the watchdog role. On this view the goal is the function, not the institution.",
+    "lean_label_a": "Rescue newspapers",
+    "lean_label_b": "Build new outlets",
+    "id": "should-policy-try-to-save-existing"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Fund local reporting through public policy",
+    "color_key": "green",
+    "steelman": "Local reporting is a public good the market will always underproduce, so fund it on purpose, by formula, in ways that leave no official deciding who deserves support.",
+    "detail": "Everyone benefits when someone reads the school budget and sits through the zoning hearing, including the people who never read the story. For a century advertising hid that fact by paying for newsrooms as a side effect of selling department-store and classified ads. That money is gone and will not return, and twenty years of startups, paywalls and philanthropy have not replaced it. So we want the support done deliberately: refundable tax credits for every local journalist employed, government advertising placed with local outlets, fellowships that put reporters in underserved places, and strong public media. Illinois’s first year of payroll credits shows the approach keeps reporters at work for modest sums.\n\nThe design is what protects independence. As Rebuild Local News’s Steven Waldman writes, these programs “don’t involve government officials making decisions about content”: a credit claimed automatically for each journalist on payroll, open to any qualifying outlet regardless of viewpoint, gives officials nothing to reward or withhold. It is no more corrupting than the tax deduction behind every nonprofit newsroom. Canada has run a journalism labor tax credit since 2019, with an independent board advising on which outlets qualify, and public broadcasters in many democracies are among the most trusted news organizations in their countries. The real threat to independence is a county with no reporter at all. We differ among ourselves on instruments, from payroll credits to citizen vouchers that let each taxpayer direct a subsidy to a chosen outlet to a larger public media system, and on whether chain and hedge-fund-owned papers should qualify.",
+    "proponents": "Rebuild Local News; Steven Waldman; Free Press; Dean Baker; Victor Pickard",
+    "id": "fund-local-reporting-through-public-policy"
+   },
+   {
+    "name": "Make platforms and AI companies pay for news",
+    "color_key": "blue",
+    "steelman": "The advertising that paid for local reporting moved to Google and Meta, which still profit from the news they show; paying for it is a fair price, not a subsidy.",
+    "detail": "Platforms take most digital advertising while displaying, summarizing and recommending journalism that newsrooms pay to produce, and no single publisher can bargain with companies of that size; refusing to be indexed means disappearing. AI raises the stakes, because a chatbot answer built on local reporting sends almost no one back to read it: Tollbit data cited by the News/Media Alliance found AI chatbot click-through rates 95.7 percent lower than traditional Google search (March 2025). A lopsided market needs law to set the terms through collective bargaining. As Australia’s communications minister Anika Wells said when its incentive passed, “Journalism is an essential part of a strong democracy, it holds people, businesses and governments to account.”\n\nAustralia and Canada have shown it can be done: platforms have paid hundreds of news outlets, including small local ones, without the internet breaking. We are told the money goes to big publishers and that platforms will simply drop news, as Meta did in Canada. Distribution can be designed for local outlets, as Canada’s collective does by dividing most of its money in proportion to newsroom size. Meta’s blackout is why Australia’s new charge applies whether or not a platform carries news, so withdrawing it is no escape, and a company that would rather cut its users off from news than pay for it is showing its market power. We differ on tools: bargaining codes, a charge that deals can offset, a fixed fund, licensing deals and lawsuits against AI companies, and whether money should follow journalists employed or negotiated deals.",
+    "proponents": "News/Media Alliance; Danielle Coffey; Government of Australia; Government of Canada",
+    "id": "make-platforms-and-ai-companies-pay"
+   },
+   {
+    "name": "Clear the way for new kinds of outlets",
+    "color_key": "amber",
+    "steelman": "The old newspaper was an accident of advertising monopolies; rescuing it with subsidies or link taxes makes watchdogs dependent, so remove the barriers that keep new ones from forming.",
+    "detail": "The local newspaper was a profitable product of printing presses, advertising monopolies and legal privileges, and when the internet removed those, the institution collapsed. Its civic functions, tracking power, explaining events and holding a community’s memory, still matter, and their loss is real. But as R Street’s Eli Lehrer writes, “A restorationist approach — focused on reviving legacy institutions — risks reinforcing the very dynamics that produced the collapse.” Link payments flow mainly to large publishers, invite governments to decide which links are allowed and, as Canada showed, can end with news cut off from the platforms where people find it. “Local media has not lost ad revenue because of anticompetitive practices by big tech,” as Reason Foundation’s Max Gulker put it. Direct subsidies make newsrooms answer to the officials they are supposed to watch and are nearly impossible to end once started.\n\nRemove the barriers instead: a tax status that fits civic journalism, safe harbors so small outlets can share back-office services, press credentials and shield-law protection for anyone who does the reporting, and room for philanthropy to test ideas such as subscription vouchers in a single city. Told that markets have had twenty years and the deserts keep spreading, we answer that the market that failed was the old one, shaped by rules written for printed newspapers, and that new forms are already growing: digital-native newsroom employment rose 144 percent between 2008 and 2020 (Pew, 2021). Among us, some accept payroll tax credits for local reporters as the least-bad idea on offer, best tested at state level; others want no government role at all.",
+    "proponents": "R Street Institute; Eli Lehrer; Reason Foundation; Max Gulker; J.D. Tuccille",
+    "id": "clear-the-way-for-new-kinds"
+   },
+   {
+    "name": "Lift ownership limits so local media can scale",
+    "color_key": "rust",
+    "steelman": "Local stations compete with platforms that face none of broadcasting’s ownership rules; letting them combine is how local news gets the scale it needs to survive.",
+    "detail": "Local TV newsrooms held their staffing while newspapers shed more than half of theirs, and they deliver news, weather and emergency information free over the air. But they compete for audiences and advertising against YouTube, streaming services and digital platforms that reach every household. Local news production has strong economies of scale: shared technology, sales and graphics let a group owner spend more on reporters in each market than a stand-alone station can. As the National Association of Broadcasters told the Senate in February 2026, “Scale is Not the Enemy of Localism. It is Often What Makes Localism Possible.” Rules written in the analog era, such as the 39 percent national audience cap, keep broadcasters small at exactly the moment they need to grow.\n\nWe are told consolidation brings layoffs, centralized coverage and fewer independent voices. The real comparison is not between a merged company and a thriving independent station but between a merged company and a stand-alone owner losing audiences and advertisers every year. Back-office savings are what allow continued investment in local newsrooms, and a group owner can afford investigative units and political coverage that small stations cannot. The competitors that matter are no longer the station across town but national platforms that employ no local reporters at all. As FCC Chairman Brendan Carr put it, “If you care about local news, you should care about the future of local broadcast TV stations.” We differ on whether to lift the national cap or raise it, whether the FCC can waive it or only Congress can change it, and whether to approve deals with conditions attached.",
+    "proponents": "National Association of Broadcasters; Curtis LeGeyt; Nexstar Media Group; Perry Sook; Brendan Carr",
+    "id": "lift-ownership-limits-so-local-media"
+   }
+  ],
+  "crux": {
+   "lead": "Without ad money, can local reporting live on readers and donors alone, or must it take outside money?",
+   "lead_highlight": "live on readers and donors alone, or must it take outside money",
+   "subtitle": "Few dispute that the advertising that once paid for local reporting is gone. If readers, donors and new kinds of outlets can fill the gap, the task is to help them grow. If they cannot, the choice is among government, tech platforms and larger owners, and which a watchdog can depend on and still bite.",
+   "empirical": "Some of this can be measured. Whether new local outlets spread beyond big cities fast enough to reach the places losing papers, or closures keep outpacing launches. Whether tax credits per journalist add reporters, and whether outlets that rely on them cover government differently. Whether laws making platforms pay reach small outlets or mostly big ones. Whether owners add or cut local reporting after mergers.",
+   "values": "No data settles whether every community is owed local reporting whatever its residents will pay, or whether it should exist where people value it enough to support it. Nor how much risk to a newsroom’s independence is worth accepting in exchange for having a newsroom at all, or whether tech companies owe publishers for using their work or are being asked to pay for a decline they did not cause."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Check the news desert map for your county",
+    "description": "Medill Local News Initiative’s annual county-by-county count of newspapers, digital sites, public radio and, from 2026, local TV newsrooms, with a map of the counties that have none.",
+    "url": "https://localnewsinitiative.northwestern.edu/projects/state-of-local-news/2026/",
+    "for_position": null,
+    "id": "check-the-news-desert-map-for"
+   },
+   {
+    "kind": "local",
+    "title": "Find an independent local news outlet near you",
+    "description": "The member list of LION Publishers, an association of independent, mostly digital local news businesses, where you can find an outlet serving your area and subscribe, join or advertise.",
+    "url": "https://lionpublishers.com/members/",
+    "for_position": null,
+    "id": "find-an-independent-local-news-outlet"
+   },
+   {
+    "kind": "policy",
+    "title": "Track local news bills in your state",
+    "description": "Rebuild Local News’s tracker of tax credits, government advertising, fellowships and other local news policies enacted or pending in each state, with a playbook for contacting legislators.",
+    "url": "https://www.rebuildlocalnews.org/solutions/state-activity-tracker/",
+    "for_position": "Fund local reporting through public policy",
+    "id": "track-local-news-bills-in-your"
+   },
+   {
+    "kind": "policy",
+    "title": "Join the campaign for AI companies to compensate publishers",
+    "description": "The News/Media Alliance’s Support Responsible AI campaign, which asks Washington to require Big Tech and AI companies to fairly compensate the publishers whose content they use.",
+    "url": "https://www.newsmediaalliance.org/support-responsible-ai-campaign/",
+    "for_position": "Make platforms and AI companies pay for news",
+    "id": "join-the-campaign-for-ai-companies"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read “How to Bring Back Local News”",
+    "description": "Eli Lehrer’s fall 2026 National Affairs essay, published by the R Street Institute, arguing against link taxes and direct subsidies and for legal reforms that make it easier for new civic outlets to form.",
+    "url": "https://www.rstreet.org/wp-content/uploads/2026/10/How-to-Bring-Back-Local-News.pdf",
+    "for_position": "Clear the way for new kinds of outlets",
+    "id": "read-how-to-bring-back-local"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the broadcasters’ case for lifting ownership limits",
+    "description": "National Association of Broadcasters president Curtis LeGeyt’s February 2026 statement to the Senate Commerce Committee, arguing that ownership limits leave local stations too weak to compete with Big Tech.",
+    "url": "https://www.commerce.senate.gov/services/files/6772D1F4-B9BE-45D1-9D37-08D85318DE36",
+    "for_position": "Lift ownership limits so local media can scale",
+    "id": "read-the-broadcasters-case-for-lifting"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read Pew’s local news fact sheet",
+    "description": "Pew Research Center’s fact sheet on how Americans get, follow, trust and pay for local news, drawn from its national surveys of US adults.",
+    "url": "https://www.pewresearch.org/journalism/fact-sheet/local-news-fact-sheet/",
+    "for_position": null,
+    "id": "read-pew-s-local-news-fact"
+   },
+   {
+    "kind": "donate",
+    "title": "Double a gift to a nonprofit newsroom through NewsMatch",
+    "description": "The Institute for Nonprofit News’s annual matching campaign, which matches individual donations to about 440 participating nonprofit newsrooms from November 1 to December 31.",
+    "url": "https://inn.org/our-work/newsmatch/",
+    "for_position": null,
+    "id": "double-a-gift-to-a-nonprofit"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Become a Documenter",
+    "description": "City Bureau’s Documenters Network trains and pays residents to attend under-covered public meetings and publish notes, with programs in more than 20 communities across the country.",
+    "url": "https://www.citybureau.org/documenters",
+    "for_position": "Clear the way for new kinds of outlets",
+    "id": "become-a-documenter"
+   },
+   {
+    "kind": "donate",
+    "title": "Find and support your public radio station",
+    "description": "NPR’s station finder lists the public radio station serving any zip code, many of which lost federal support when the Corporation for Public Broadcasting closed.",
+    "url": "https://www.npr.org/stations/",
+    "for_position": "Fund local reporting through public policy",
+    "id": "find-and-support-your-public-radio"
+   }
+  ]
+ }
 }

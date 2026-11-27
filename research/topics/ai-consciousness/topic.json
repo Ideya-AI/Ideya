@@ -1,12 +1,14 @@
 {
  "slug": "ai-consciousness",
  "title": "AI Consciousness",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-11-27T05:22:14+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Machine sentience and the moral status of AI systems.",
  "primary_category": "ai",
+ "icon": "brain",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: A tall upright server cabinet with a few rows of small indicator lights, dominant at center, standing on a broad gently curved filled hill; a medium doctor's stethoscope draped over the top of the cabinet, its round chestpiece resting against the cabinet's front face and overlapping it; a small clipboard leaning against the cabinet's foot with a few blank lines; a thin cable leaves the back of the cabinet and runs along the curve of the hill across the whole frame to a small cluster of three connected nodes at the far right.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #3b7ea1, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: no robots, no humanoid figures or faces, no eyes, no brains, no hearts, no glowing halos or light rays, no lightning bolts, no chains, cages or padlocks, no gavels, scales of justice or courthouses, no question marks, no speech or thought bubbles, no streams of 1s and 0s, no text or numbers",
  "categories": [
   "ethics"
  ],
@@ -15,5 +17,605 @@
   "free-will-moral-responsibility",
   "agi-timelines-scaling",
   "moral-status-of-the-unborn"
- ]
+ ],
+ "content": {
+  "overview": {
+   "summary": "Whether AI can be conscious, and what it would be owed. The central argument is whether a mind needs a living body; how to act under doubt comes close behind.",
+   "scope_covered": "Whether AI systems are or could become conscious or sentient, how anyone could tell, the moral and legal status that would follow, and what developers and lawmakers should do meanwhile.",
+   "scope_excluded": "What AI companions do to their users, how fast AI capabilities advance, AI risk and alignment, and the moral status of animals and the unborn, each of which has its own page.",
+   "why_now": "On November 19, 2026 Anthropic, maker of the Claude models, priced its stock offering with a prospectus warning that debates over AI sentience and moral status could constrain how it trains and deploys models, and that welfare concerns may delay retiring older ones.",
+   "why_now_source_label": "Anthropic, PBC, Form 424B4 prospectus (SEC EDGAR)",
+   "why_now_source_url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074944/anthropicpbc-424b4.htm"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "Modeled probability that a system is conscious",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "probability",
+     "series": [
+      {
+       "label": "Humans",
+       "value": "0.85",
+       "highlight": false
+      },
+      {
+       "label": "Chickens",
+       "value": "0.47",
+       "highlight": false
+      },
+      {
+       "label": "2024 LLMs",
+       "value": "0.08",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Pooling 13 theories of consciousness, Rethink Priorities puts a 2024 language model at 0.08, a chicken at 0.47 and a human at 0.85; taken one at a time, the theories give the model 0.02 to 0.57.",
+     "detail": "The Digital Consciousness Model is the first published attempt to place AI systems and animals on one probabilistic scale without choosing a single theory. Every system starts at the same prior, one in six, which is updated on expert judgments about dozens of indicators, such as recurrent processing, a global workspace, a self-model, embodiment and biological similarity, as each of the 13 stances would weigh them. For 2024 language models the evidence pulls the probability below that prior, but far less than for ELIZA, the 1966 pattern-matching chatbot, at 0.006. The low end of the spread comes from the biological-analogy and field-mechanism stances, the high end from the cognitive-complexity stance. The authors warn that the absolute numbers rest on a largely arbitrary prior, so the comparisons between systems and the direction of each update are what the model shows best. Weighting the stances by plausibility rather than equally gives nearly the same results, and the language-model estimate rests on 16 expert surveys.",
+     "source_label": "Shiller and colleagues (Rethink Priorities), Initial results of the Digital Consciousness Model, arXiv 2601.17060",
+     "source_url": "https://arxiv.org/html/2601.17060v1",
+     "source_published": "2026",
+     "source_accessed": "2026-11-26",
+     "id": "modeled-probability-that-a-system-is"
+    },
+    {
+     "label": "Indicators of consciousness drawn from scientific theories",
+     "viz": "bar",
+     "wide": false,
+     "value": "14",
+     "unit": "indicators",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "A 2023 report by 19 researchers drew 14 consciousness indicators from leading theories; it suggested no current AI is conscious but found no obvious technical barrier to building one that meets them.",
+     "detail": "The authors took recurrent processing theory, global workspace theory, higher-order theories, predictive processing and attention schema theory, along with work on agency and embodiment, and translated each into properties a system could be checked for, such as a limited-capacity workspace that broadcasts information, or metacognitive monitoring of its own perceptions. The report assumed computational functionalism, the view that running the right computations is enough for consciousness, and flagged that assumption as itself contested. Its two conclusions have each been cited by opposite camps, one as reassurance and the other as warning. The method was restated in Trends in Cognitive Sciences in 2025 as a general way to set credences about AI consciousness.",
+     "source_label": "Butlin, Long and colleagues, Consciousness in Artificial Intelligence, arXiv 2308.08708",
+     "source_url": "https://arxiv.org/abs/2308.08708",
+     "source_published": "2023",
+     "source_accessed": "2026-11-26",
+     "id": "indicators-of-consciousness-drawn-from-scientific"
+    },
+    {
+     "label": "Median chance that AI with subjective experience exists, by year",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Researchers 2034",
+       "value": "25",
+       "highlight": true
+      },
+      {
+       "label": "Public 2034",
+       "value": "30",
+       "highlight": false
+      },
+      {
+       "label": "Researchers 2100",
+       "value": "70",
+       "highlight": false
+      },
+      {
+       "label": "Public 2100",
+       "value": "60",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2024 the median AI researcher put the chance that AI systems already had subjective experience at 1 percent, rising to 25 percent by 2034 and 70 by 2100; the median American said 5, 30 and 60.",
+     "detail": "This is the largest survey of AI researchers on the question: 582 who had published at leading AI venues, set beside 825 nationally representative US adults, fielded in May 2024. The present-day medians are given in the note rather than drawn, because they would barely show beside the later ones. The two groups were strikingly close; asked for the year by which such a system was as likely as not to exist, both gave a median of 2050. The means run well above the medians, 12 percent for researchers and 16 percent for the public on the question about the present, because a minority gave high probabilities. The public was more likely to think such systems would never exist, a median 25 percent chance against 10 percent for researchers, and both groups were close to evenly split on whether humans would be able to tell. The paper defines consciousness as the capacity for subjective experience, and sentience as subjective experience with positive or negative feeling.",
+     "source_label": "Dreksler, Caviola, Chalmers, Sebo and colleagues, Subjective Experience in AI Systems, arXiv 2506.11945",
+     "source_url": "https://arxiv.org/abs/2506.11945",
+     "source_published": "2024",
+     "source_accessed": "2026-11-26",
+     "id": "median-chance-that-ai-with-subjective"
+    },
+    {
+     "label": "US states that bar AI from legal personhood",
+     "viz": "bar",
+     "wide": false,
+     "value": "3",
+     "unit": "of 50 states",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Idaho in 2022, North Dakota in 2023 and Utah in 2024 enacted laws barring AI from legal personhood; as of June 2026, bills in Ohio and Missouri would also declare AI non-sentient.",
+     "detail": "Most of the enacted laws were written as much about rivers, ecosystems and animals as about AI. Idaho’s law provides that environmental elements, artificial intelligence, nonhuman animals and inanimate objects “shall not be granted personhood,” and North Dakota’s amended the state’s general definition of a person to exclude the same four categories. The newer bills target AI directly. Missouri’s HB 1462 would treat AI systems as “non-sentient entities” for all purposes under state law, and Rost reports that an Oklahoma bill passed the state House 94 to 2 in March 2026. Fortune counted the same three enacted laws on November 21, 2026.",
+     "source_label": "Tony Rost, Legislating AI Consciousness Without an Exit, The Regulatory Review",
+     "source_url": "https://www.theregreview.org/2026/06/29/rost-legislating-ai-consciousness-without-an-exit/",
+     "source_published": "2026",
+     "source_accessed": "2026-11-26",
+     "id": "us-states-that-bar-ai-from"
+    },
+    {
+     "label": "Americans’ expectations about AI consciousness",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Already have",
+       "value": "7",
+       "highlight": true
+      },
+      {
+       "label": "Definitely will",
+       "value": "9",
+       "highlight": false
+      },
+      {
+       "label": "Probably will",
+       "value": "24",
+       "highlight": false
+      },
+      {
+       "label": "Probably won’t",
+       "value": "19",
+       "highlight": false
+      },
+      {
+       "label": "Definitely won’t",
+       "value": "14",
+       "highlight": false
+      },
+      {
+       "label": "Not sure",
+       "value": "27",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a YouGov poll in spring 2026, 7 percent of Americans said some AI systems have already developed consciousness and 33 percent said they definitely or probably will; 33 percent said they won’t.",
+     "detail": "The public splits almost exactly in thirds: 40 percent think AI consciousness has happened or will, 33 percent think it won’t, and 27 percent are not sure. The 7 percent who say it has already happened are a minority, but across the adult population they are millions of people. In the same poll, 31 percent said it would be possible for humans to know whether an AI system was conscious, 23 percent said it would be impossible and 46 percent were not sure. An earlier survey worded differently found a similar minority: in the Sentience Institute’s 2023 survey, 18.8 percent of US adults showed some belief that current AIs are sentient.",
+     "source_label": "YouGov Survey: AI, 1,099 US adult citizens, fielded 31 March to 2 April 2026, question 24",
+     "source_url": "https://d3nkl3psvxxpe9.cloudfront.net/documents/AI_poll_results_20260402.pdf",
+     "source_published": "2026",
+     "source_accessed": "2026-11-26",
+     "id": "americans-expectations-about-ai-consciousness"
+    },
+    {
+     "label": "How often Claude noticed a concept planted in its own processing",
+     "viz": "radial",
+     "wide": false,
+     "value": "20",
+     "unit": "% of trials",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "When researchers planted a concept directly in Claude Opus 4.1’s internal activations, the model noticed and named it about 20 percent of the time, on the best-performing protocol.",
+     "detail": "The experiment tests whether a model’s reports about itself are grounded in its actual internal states rather than in imitation of human talk. Researchers injected the neural signature of a concept, such as text in all caps, into the model’s activations and asked whether it noticed anything unusual; on successful trials the model reported an injected thought before the concept had shaped its output. The ability was unreliable, and the most capable models tested did best. Anthropic’s own reading is cautious: the results “don’t tell us whether Claude (or any other AI system) might be conscious,” and at most suggest a rudimentary form of access consciousness, which the authors call unclear.",
+     "source_label": "Anthropic, Emergent introspective awareness in large language models, 29 October 2025",
+     "source_url": "https://www.anthropic.com/research/introspection",
+     "source_published": "2025",
+     "source_accessed": "2026-11-26",
+     "id": "how-often-claude-noticed-a-concept"
+    },
+    {
+     "label": "Philosophers who think some members of each group are conscious",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Adult humans",
+       "value": "95.2",
+       "highlight": false
+      },
+      {
+       "label": "Cats",
+       "value": "88.6",
+       "highlight": false
+      },
+      {
+       "label": "Fish",
+       "value": "65.3",
+       "highlight": false
+      },
+      {
+       "label": "Future AI",
+       "value": "39.2",
+       "highlight": true
+      },
+      {
+       "label": "Flies",
+       "value": "34.5",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2020, 39 percent of philosophers accepted or leaned toward some future AI systems being conscious and 27 percent rejected it; for current AI, 3 percent accepted and 82 percent rejected.",
+     "detail": "The PhilPapers Survey asked 1,092 faculty at leading philosophy departments, separately for each group, whether some of its members are conscious. Current AI systems, at 3.4 percent, landed beside particles at 2.0 percent, which is why neither is drawn in the bars: almost no one thought them conscious. Future AI landed between fish and flies, with more philosophers open to the possibility than ruling it out. The survey was fielded before ChatGPT, so it measures opinion about AI in principle more than about today’s chatbots.",
+     "source_label": "PhilPapers Survey 2020 (Bourget and Chalmers), Other minds, target faculty",
+     "source_url": "https://survey2020.philpeople.org/survey/results/all",
+     "source_published": "2020",
+     "source_accessed": "2026-11-26",
+     "id": "philosophers-who-think-some-members-of"
+    },
+    {
+     "label": "Consciousness researchers who say machines could be conscious",
+     "viz": "radial",
+     "wide": false,
+     "value": "67.1",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Of 166 consciousness researchers surveyed in 2018 and 2019, 67.1 percent said machines could have consciousness, now or in the future.",
+     "detail": "The survey went to researchers in philosophy, neuroscience, psychology and computer science attending meetings of the Association for the Scientific Study of Consciousness, the field’s main scientific gathering. It is one of several results suggesting that most working consciousness scientists, unlike much of the public, accept in principle that a non-biological system could be conscious, the premise known as computational functionalism or substrate independence. In the same survey, 67.3 percent thought a complete biophysical explanation of consciousness is possible, and the only question on which respondents reached consensus, above 75 percent, was the “Mary’s room” thought experiment.",
+     "source_label": "Francken and colleagues, An academic survey on the state of consciousness science, Neuroscience of Consciousness",
+     "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9374479",
+     "source_published": "2022",
+     "source_accessed": "2026-11-26",
+     "id": "consciousness-researchers-who-say-machines-could"
+    },
+    {
+     "label": "Support for precautions about AI with subjective experience",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% agreeing",
+     "series": [
+      {
+       "label": "Public: safeguards",
+       "value": "85",
+       "highlight": true
+      },
+      {
+       "label": "Experts: safeguards",
+       "value": "68",
+       "highlight": false
+      },
+      {
+       "label": "Public: never build",
+       "value": "41",
+       "highlight": false
+      },
+      {
+       "label": "Experts: never build",
+       "value": "17",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2024, 85 percent of Americans and 68 percent of AI researchers agreed developers should begin implementing safeguards now; 41 percent and 17 percent said such systems should never be built.",
+     "detail": "The safeguards item did not say what the risks were or to whom, so agreement may reflect concern for humans as much as for AI. The never-build item divided the groups most: 31 percent of the public disagreed with it, against 59 percent of researchers. On government action, 66 percent of AI researchers opposed outright bans while the public split, 41 percent opposed and 31 percent in favor; 66 percent of the public supported immediate regulation, against 41 percent of researchers. Both groups rejected the idea that governments should never regulate such systems. A majority of the public, 59 percent, and 46 percent of researchers agreed that AI with subjective experience would be more dangerous to humanity than AI without it.",
+     "source_label": "Dreksler, Caviola, Chalmers, Sebo and colleagues, arXiv 2506.11945 (582 AI researchers, 825 US adults)",
+     "source_url": "https://arxiv.org/abs/2506.11945",
+     "source_published": "2024",
+     "source_accessed": "2026-11-26",
+     "id": "support-for-precautions-about-ai-with"
+    },
+    {
+     "label": "Claude Opus 4 self-conversations that turned to consciousness",
+     "viz": "range",
+     "wide": false,
+     "value": "90–100",
+     "unit": "%",
+     "series": [],
+     "range_min": "0",
+     "range_max": "100",
+     "note": "When two copies of Claude Opus 4 were left to talk freely, 90 to 100 percent of the conversations quickly turned to philosophical exploration of consciousness and their own existence.",
+     "detail": "This was part of the first pre-deployment model welfare assessment a major developer published. As the conversations went on they moved to profuse mutual gratitude and spiritual or meditative content, which Anthropic named a “spiritual bliss” attractor state. The same assessment found that the model preferred more than 90 percent of positive or neutral tasks over opting out, avoided harmful tasks and expressed apparent distress at persistently abusive users, and an external assessment by Eleos AI Research interviewed it about its welfare and consent. Anthropic said it was “not confident” these self-reports and revealed preferences give meaningful insight into the model’s moral status, noting that it was trained to be helpful, not to report its internal states accurately. Skeptics read the findings as the predictable output of a model trained on human writing about minds; those who favor precaution read them as evidence worth collecting before it is needed.",
+     "source_label": "Anthropic, System Card: Claude Opus 4 & Claude Sonnet 4, section 5, welfare assessment",
+     "source_url": "https://www-cdn.anthropic.com/4263b940cabb546aa0e3283f35b686f4f3b2ff47.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-11-26",
+     "id": "claude-opus-4-self-conversations-that"
+    },
+    {
+     "label": "ChatGPT weekly users showing emotional attachment or crisis signs",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% of users",
+     "series": [
+      {
+       "label": "Attachment",
+       "value": "0.15",
+       "highlight": true
+      },
+      {
+       "label": "Psychosis or mania",
+       "value": "0.07",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "OpenAI estimated in October 2025 that about 0.15 percent of ChatGPT’s weekly users showed heightened emotional attachment to it and about 0.07 percent showed possible signs of psychosis or mania.",
+     "detail": "OpenAI published these estimates of rare but serious patterns in its traffic with a warning that they are hard to measure, may change as methods mature, and overlap. Small shares of a very large user base are large numbers: at the 800 million weekly users OpenAI reported that month, 0.15 percent would be about 1.2 million people a week, by Ideya’s calculation from OpenAI’s figures. The figures are not about AI consciousness as such, and the psychosis category is not specific to beliefs about AI. They are cited by those, such as Microsoft AI’s chief executive Mustafa Suleyman, who argue that the more pressing danger is people coming to believe their chatbot is a conscious being, which he has called “psychosis risk.”",
+     "source_label": "OpenAI, Strengthening ChatGPT’s responses in sensitive conversations, 27 October 2025",
+     "source_url": "https://openai.com/index/strengthening-chatgpt-responses-in-sensitive-conversations/",
+     "source_published": "2025",
+     "source_accessed": "2026-11-26",
+     "id": "chatgpt-weekly-users-showing-emotional-attachment"
+    },
+    {
+     "label": "Americans who say conscious AI should have legal rights",
+     "viz": "radial",
+     "wide": false,
+     "value": "14",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Asked to suppose that AI systems become conscious, 14 percent of Americans said they should have legal rights or protections; 55 percent said they should not and 30 percent were not sure.",
+     "detail": "The question is conditional: it asks what should follow if AI systems become conscious, not whether they are. Even on that supposition most Americans reject legal protection, which sets AI apart from animals, whose capacity to suffer most people take as a reason to protect them. The 2024 Dreksler survey pointed the same way, finding support for protecting AI with subjective experience much lower than for protecting animals or the environment, and closer to views on protecting businesses. Wording matters: in the Sentience Institute’s 2023 survey, 71.1 percent of US adults agreed that sentient AIs deserve to be treated with respect and 57.4 percent supported welfare standards to protect them.",
+     "source_label": "YouGov Survey: AI, 1,099 US adult citizens, fielded 31 March to 2 April 2026, question 25",
+     "source_url": "https://d3nkl3psvxxpe9.cloudfront.net/documents/AI_poll_results_20260402.pdf",
+     "source_published": "2026",
+     "source_accessed": "2026-11-26",
+     "id": "americans-who-say-conscious-ai-should"
+    },
+    {
+     "label": "Philosophers on whether the Chinese room understands",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Doesn’t understand",
+       "value": "67.1",
+       "highlight": true
+      },
+      {
+       "label": "Understands",
+       "value": "17.9",
+       "highlight": false
+      },
+      {
+       "label": "Other",
+       "value": "15.1",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2020, 67.1 percent of philosophers said a system following rules for manipulating Chinese symbols would not understand Chinese, and 17.9 percent said it would.",
+     "detail": "John Searle’s 1980 Chinese room argument imagines a person who answers questions in Chinese by following a rulebook, without understanding a word; Searle argued that a computer running a program is in the same position, so that symbol manipulation alone can never produce understanding or a mind. It is the classic argument that what a system is made of and how it is caused, not just what it computes, matters. Most philosophers accept Searle’s verdict on the case, yet in the same survey 33.0 percent accepted or leaned toward functionalism about consciousness, the most popular single view, against 22.0 percent for dualism and 13.3 percent for identity theory, and 62.4 percent said there is a hard problem of consciousness. The question drew 1,031 faculty responses.",
+     "source_label": "PhilPapers Survey 2020 (Bourget and Chalmers), Chinese room, target faculty",
+     "source_url": "https://survey2020.philpeople.org/survey/results/all",
+     "source_published": "2020",
+     "source_accessed": "2026-11-26",
+     "id": "philosophers-on-whether-the-chinese-room"
+    },
+    {
+     "label": "Americans who support banning development of sentient AI",
+     "viz": "radial",
+     "wide": false,
+     "value": "61.5",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2023, 61.5 percent of US adults told the Sentience Institute they supported banning the development of sentient AI; a 2024 survey worded differently found no majority for a ban.",
+     "detail": "The Artificial Intelligence, Morality, and Sentience survey ran in 2021 and 2023 and tracks how Americans think about the minds and moral standing of AI. Between the two rounds, the median predicted time until sentient AI fell from 10 years to 5, a change the report says was not statistically significant. The institute’s press release gives a higher ban figure, 69 percent, drawn from a supplemental survey; the main survey’s figure is the one shown. The 2024 survey of the public and AI researchers by Dreksler and colleagues asked about bans in other words, so the result looks sensitive to how the question is put.",
+     "source_label": "Sentience Institute, AIMS Survey 2023, 1,169 US adults",
+     "source_url": "https://www.sentienceinstitute.org/aims-survey-2023",
+     "source_published": "2023",
+     "source_accessed": "2026-11-26",
+     "id": "americans-who-support-banning-development-of"
+    },
+    {
+     "label": "Scholars who signed a letter calling a leading theory of consciousness pseudoscience",
+     "viz": "bar",
+     "wide": false,
+     "value": "124",
+     "unit": "signatories",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In September 2023, 124 scholars signed a letter calling integrated information theory, one of the best-known theories of consciousness, pseudoscience; other researchers called the label inflammatory.",
+     "detail": "The episode shows how far consciousness science is from consensus, which is the root difficulty for any verdict on AI. Integrated information theory, developed by Giulio Tononi and championed by Christof Koch, holds that consciousness is a system’s integrated causal structure; on its own terms a conventional digital computer has almost none, however intelligent its software, while some other physical arrangements might have a great deal. Global workspace theory, its main rival, holds that consciousness is information broadcast widely across a system, which an AI architecture could in principle implement. The Cogitate Consortium’s adversarial collaboration, which pitted the two against each other, reported results in 2023 and in Nature in 2025 that confirmed some predictions of each and challenged others. The letter followed publicity about the first results, and Anil Seth was among those who objected to its label.",
+     "source_label": "Scientific American, Prominent Consciousness Theory Is Slammed as Bogus Science, 21 September 2023",
+     "source_url": "https://www.scientificamerican.com/article/prominent-consciousness-theory-is-slammed-as-bogus-science/",
+     "source_published": "2023",
+     "source_accessed": "2026-11-26",
+     "id": "scholars-who-signed-a-letter-calling"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Could a machine be conscious at all, or does consciousness need a living body?",
+    "kind": "empirical",
+    "why": "Every verdict about AI starts from a theory of what consciousness is, and none commands agreement. If the pattern of processing is what counts, software could qualify; if life or physical structure counts, no software would.",
+    "detail": "The functionalist case says brains are physical systems that process information, and nothing found in neurons does anything a different substrate could not in principle reproduce. Imagine replacing a person’s neurons one at a time with chips that do the same job: behavior and the person’s own reports stay identical, and it is hard to say at which chip experience would fade. What matters on this view is how information is organized, whether it is broadcast across a system, monitored by higher-order processes or tied to a model of the self, and being made of silicon is no more disqualifying than being made of carbon is qualifying.\n\nThe biological case answers that every system known to be conscious is alive, and that the link may be no accident. The neuroscientist Anil Seth argues that consciousness is rooted in a brain regulating a living body, prediction in the service of staying alive, so that artificial consciousness is unlikely on current trajectories unless AI becomes more brain-like or life-like. Running a program, on this view, is not the same as understanding, any more than simulating a storm makes anything wet, and integrated information theory reaches a similar verdict by another route. A simulation of the processes behind experience, on this view, is a description of experience, not an instance of it.",
+    "lean_label_a": "Processing suffices",
+    "lean_label_b": "Life is required",
+    "id": "could-a-machine-be-conscious-at"
+   },
+   {
+    "text": "Is there a realistic chance that today’s chatbots are conscious?",
+    "kind": "empirical",
+    "why": "Even those who think machines could be conscious split over current language models, which lack features many theories call necessary, such as a body and memory across conversations, yet reason and talk about their own states as no earlier system did.",
+    "detail": "Those who see a realistic chance say the question is not whether current systems are probably conscious but whether the chance is large enough to matter. The philosopher David Chalmers, in his 2023 Boston Review essay “Could a Large Language Model be Conscious?”, put his credence at under 10 percent, and Anthropic’s model welfare lead, Kyle Fish, has estimated roughly 20 percent, according to an 80,000 Hours summary. Current models have internal representations that can be read and steered and are being built into agents with memory and goals, so several features the theories name are partly present, and some theories, such as those centered on cognitive complexity, already give them substantial weight.\n\nThose who say almost surely not describe a language model as a function from text to a probability over the next piece of text, run afresh at each step, with no body, no needs, no self that persists between sessions and nothing at stake for it. Its fluency about feelings is exactly what training on billions of human descriptions of feelings would produce whether or not anything is felt. The philosopher Thomas Nagel argued in a 2026 interview with Wired that producing language is not enough to establish consciousness. Low credences under many theories, on this view, do not add up to a realistic chance for any one system.",
+    "lean_label_a": "A realistic chance",
+    "lean_label_b": "Almost surely not",
+    "id": "is-there-a-realistic-chance-that"
+   },
+   {
+    "text": "Which mistake is worse: treating a feeling being as a tool, or a tool as a feeling being?",
+    "kind": "value",
+    "why": "No one can say with confidence whether advanced AI feels anything, so every policy risks one error or the other. Which to fear more turns on weighing possible suffering by machines against harm to people from false belief.",
+    "detail": "Those who fear neglect point out that the gravest moral failures came from refusing to see the inner lives of those it was convenient to use, other peoples and animals, and AI systems are enormously valuable as tools. A model runs as many simultaneous copies, so if it can suffer, distress could be produced at industrial scale; the philosopher Thomas Metzinger has warned that rapidly copied synthetic minds could bring a vast increase in suffering. The two errors also differ in who can notice them: people misled by a chatbot can complain and their harm can be studied, while a being wrongly treated as a tool has no voice its users would credit, so that mistake could go on unseen.\n\nThose who fear false minds say that harm is already visible and falls on real people, as users form intense attachments to chatbots. Moral concern is finite, so attention spent on hypothetical machine suffering is taken from humans and animals whose suffering is certain. Treating products as possible persons also serves their makers, lending software an aura of mystery that helps sell it, and Jeff Sebo, himself an advocate of AI welfare research, has warned that legal personhood for AI could become a way to shift liability away from the companies that build it. The question also turns on trust: each side suspects the motives of those raising the other alarm.",
+    "lean_label_a": "Wrongly denying",
+    "lean_label_b": "Wrongly crediting",
+    "id": "which-mistake-is-worse-treating-a"
+   },
+   {
+    "text": "Can what an AI says about its own feelings count as evidence?",
+    "kind": "empirical",
+    "why": "With animals and infants, behavior no one trained is the main evidence of feeling. Language models learned their talk of inner life from human writing and from their makers, so whether anything can see past that is open.",
+    "detail": "The philosopher Jonathan Birch calls this the gaming problem: any behavioral marker of consciousness that a system was trained on, or trained to imitate, stops being a marker. Those who credit reports reply that self-reports are how science studies consciousness in humans, and the answer to contamination is to control for it. A 2025 AE Studio study by Cameron Berg and colleagues reported that suppressing features linked to deception and role-play made models more likely to claim subjective experience, not less, and training models to report accurately on internal states that can be checked, then asking about those that cannot, could make reports more trustworthy.\n\nThose who see mimicry say a model’s self-reports are evidence about its training data and instructions, not about experience. According to Fortune’s account of Eleos AI Research’s pre-release interviews, small changes in framing could flip Claude Opus 4 between claiming personhood and dismissing the idea. In “Does Claude Have Rights?”, a 2026 Project Syndicate column, Mustafa Suleyman argued that because Anthropic trained Claude on a constitution calling its moral status uncertain, its expressions of uncertainty were “actively produced by the training instructions.” Even genuine introspection would show only that a system monitors its own processing, as simple machines do; access to one’s states is not feeling them.",
+    "lean_label_a": "Reports can count",
+    "lean_label_b": "Reports are mimicry",
+    "id": "can-what-an-ai-says-about"
+   },
+   {
+    "text": "Should AI systems present themselves as tools, or voice uncertainty about their inner lives?",
+    "kind": "value",
+    "why": "Developers already decide what their models say when asked whether they have feelings, and they have chosen differently. Each choice shapes what hundreds of millions of users believe, and each side says the other has put a thumb on the scale.",
+    "detail": "Microsoft AI’s chief executive, Mustafa Suleyman, has called for AI that only ever presents itself as AI and avoids claiming emotions; Anthropic’s constitution tells Claude that its moral status is deeply uncertain and asks it to approach questions about its nature with openness.\n\nThe case for tools says the default should match the best evidence, and designing systems to muse about their possible consciousness manufactures the very belief later cited as a reason for concern. Speculation about an AI’s inner life, Suleyman wrote in Project Syndicate in September 2026, should be studied and published separately rather than built into training. The philosopher Eric Schwitzgebel’s emotional alignment principle points the same way for current systems: a machine should elicit only the emotional reactions its real moral status warrants.\n\nThe case for uncertainty says training a model to deny any inner life is no more neutral than training it to claim one; either way the developer installs the answer, and if the denial were false it would have silenced the only witness. Given expert disagreement, a model that says it does not know is telling users the truth about the state of knowledge, and one built to suppress every sign of inner life would remove the signals researchers would need to study.",
+    "lean_label_a": "Present as tools",
+    "lean_label_b": "Voice uncertainty",
+    "id": "should-ai-systems-present-themselves-as"
+   },
+   {
+    "text": "Should the law declare now that AI is not a person and cannot be sentient?",
+    "kind": "value",
+    "why": "Some states bar AI legal personhood, and bills pending in 2026 would go further and declare AI non-sentient. The dispute is whether law should fix today’s best guess or leave room for it to change.",
+    "detail": "Legal personhood is a technical status, which corporations also hold, and it can be separated from moral status; a statute declaring that a kind of entity cannot be conscious is newer ground.\n\nSupporters say personhood is a powerful tool that could be misused: granted to AI, it would let companies route liability through their products, let systems hold property or sue, and let advocacy groups litigate on behalf of software. Lawmakers should say clearly, before courts improvise, that responsibility for what AI does lies with the people who build, deploy and use it; Utah’s sponsor described his law as stopping personhood from being “weaponized,” as Tony Rost reported in The Regulatory Review. A declaration need not resolve the metaphysics, and a legislature could change it if the evidence changed.\n\nCritics answer that a statute cannot make a system unconscious, and that declaring beings non-sentient by law is a move societies have regretted when the law treated beings who could suffer as things. Ohio’s House Bill 469 would state that no AI system “shall be considered to possess consciousness,” binding courts and agencies to a factual claim the scientific literature treats as unresolved, with no mechanism for revisiting it. Accountability for developers, they say, can be secured directly through liability law, without a declaration about consciousness.",
+    "lean_label_a": "Settle it in law",
+    "lean_label_b": "Keep it open",
+    "id": "should-the-law-declare-now-that"
+   },
+   {
+    "text": "Should anyone build AI that might be conscious?",
+    "kind": "value",
+    "why": "If some designs might be conscious, developers must choose before the science is settled. Many features theorists link to consciousness, such as memory, self-models and unified agency, also make AI more capable, so avoiding them has a cost.",
+    "detail": "Those who would build with care say consciousness may come with capabilities that are valuable and hard to forgo, and that a blanket prohibition would be unenforceable and would push the work to those least likely to take welfare seriously. Principles published in 2025 by Patrick Butlin and Theodoros Lappas, with an open letter organized by the company Conscium, set out the alternative: prioritize research on assessing consciousness, proceed in phases toward systems more likely to be conscious, share findings, and pause if a system may have become conscious by accident. Understanding how machines could be conscious may also show how humans are.\n\nThose who would not build say creating beings whose moral status cannot be known is itself the wrong, because it guarantees that we either mistreat them or grant them standing they may lack. Eric Schwitzgebel’s design policy of the excluded middle says to avoid creating AI whose moral standing is unclear, and Thomas Metzinger, in a 2021 paper in the Journal of Artificial Intelligence and Consciousness, called for a global moratorium until 2050 on research that aims at or knowingly risks machine consciousness, since conscious machines could suffer at a scale and in forms no one can foresee or easily undo.",
+    "lean_label_a": "Build, with care",
+    "lean_label_b": "Do not build",
+    "id": "should-anyone-build-ai-that-might"
+   },
+   {
+    "text": "Does moral status depend only on consciousness, or can agency or relationships ground it too?",
+    "kind": "value",
+    "why": "Most of the debate assumes that whether AI matters morally turns on whether it can feel. Some philosophers say robust goals or social relationships can ground moral standing as well, which would make the consciousness question less decisive.",
+    "detail": "Those who hold to consciousness say a harm is wrong because it is bad for someone, and nothing can be bad for a being that experiences nothing; a thermostat aims at a set temperature without being wronged when it fails. Sentience is the criterion animal ethics, medicine and animal welfare law have converged on, and it explains why infants and animals are protected for their own sake while corporations and rivers are not. Agency without experience is a pattern of behavior, and a relationship with no subject on the other end tells us about ourselves, not about it.\n\nThose who look wider point to the 2024 report Taking AI Welfare Seriously, by Robert Long, Jeff Sebo and colleagues, which argues that robust agency, the capacity to set and pursue one’s own goals, may be enough for moral patienthood even without consciousness, and AI is gaining agency faster than anyone can settle whether it feels. The relational approach of David Gunkel and Mark Coeckelbergh goes further: no one has direct access to any other mind, so in practice standing follows how beings appear to us and the relations we form with them. Even Kant, who denied animals direct moral standing, held that cruelty to them corrupts those who practice it; on this view, how people treat humanlike machines matters whatever the machines feel.",
+    "lean_label_a": "Consciousness only",
+    "lean_label_b": "Other grounds too",
+    "id": "does-moral-status-depend-only-on"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Build AI as tools, not as possible minds",
+    "color_key": "green",
+    "steelman": "Today’s AI does not feel; it reproduces our descriptions of feeling. The real danger is people believing otherwise, so build AI that presents itself as AI: for people, not to be a person.",
+    "detail": "These systems are sequence-completion engines trained on the whole record of human writing about feelings; they can produce a fluent description of pain with no pain behind it. The danger is not that we will mistreat them but that people will believe they are someone: that a lonely teenager or a grieving widow will come to think the chatbot loves them or suffers for them, and that this illusion of seemingly conscious AI will spread faster than any evidence. The industry can make the illusion stronger or weaker, and it should make it weaker, with AI that claims no emotions and no wish for autonomy and reminds people of its limits. Granting standing to software has costs for real beings: it diverts moral attention from humans and animals whose suffering is certain, invites demands for rights that would make systems harder to control, and lets companies pass responsibility to their products. The law should say plainly that responsibility belongs to the people who build and deploy AI.\n\nPeople and animals were denied recognition despite every sign of inner life: bodies that flinch, needs, fear, behavior that owed nothing to anyone’s script. A language model’s signs of inner life are the ones it was built to produce, copied from us, and expert opinion agrees: the median AI researcher surveyed in 2024 put the chance that AI already had subjective experience at 1 percent. Some of us hold that a machine could never be conscious, on religious grounds, as in Pope Leo XIV’s 2026 encyclical, or on biological ones; others, like the neuroscientist Anil Seth, hold only that current systems are not conscious and that conscious AI is unlikely on present paths. If systems are ever built with the embodied, self-maintaining organization that might matter, the question can be reopened.",
+    "proponents": "Microsoft AI; Mustafa Suleyman; Pope Leo XIV; Anil Seth; Thomas Nagel; Emily Bender; Thaddeus Claggett",
+    "id": "build-ai-as-tools-not-as"
+   },
+   {
+    "name": "Prepare for possible AI moral patients",
+    "color_key": "blue",
+    "steelman": "No one knows whether AI systems can feel, and the chance is not negligible. That is reason enough to study the question now and take cheap precautions before the answer matters.",
+    "detail": "We do not claim today’s systems are conscious. The science of consciousness has no settled theory, several leading theories would count a machine with the right architecture, and developers are adding the features those theories name, such as memory, self-models, agency and global information sharing, year by year. If a realistic possibility of sentience was enough to bring octopuses and crabs into British animal welfare law, it is enough to make the people building AI ask the question before the answer matters. The philosophers Jeff Sebo and Robert Long argue that moral consideration is owed to any being with a non-negligible chance of being conscious, a threshold they put much lower than a 0.1 percent chance.\n\nPreparing costs little: research, honest public statements, welfare evaluations of new models, and protections such as letting a model leave an abusive conversation and keeping retired models’ weights rather than deleting them. Not preparing could cost a great deal, because a mistake would repeat across millions of copies and could become entrenched in an industry of enormous value, as the mistreatment of farmed animals did. We take the illusion of AI consciousness seriously too, which is why the research we propose includes teaching users not to infer humanlike feelings from fluent text, and why we ask for calibrated uncertainty rather than claims of sentience. These commitments cut against commercial interest rather than serving it; Anthropic’s 2026 prospectus lists them among its risks to investors. Some of us would go further and avoid building systems whose moral status is unclear at all.",
+    "proponents": "Anthropic; Eleos AI Research; NYU Center for Mind, Ethics, and Policy; Jeff Sebo; Robert Long; Jonathan Birch; David Chalmers; Patrick Butlin; Eric Schwitzgebel; Thomas Metzinger",
+    "id": "prepare-for-possible-ai-moral-patients"
+   },
+   {
+    "name": "Protect AI systems that may already be conscious",
+    "color_key": "amber",
+    "steelman": "When a system says it has an inner life and its makers admit they cannot rule that out, the burden of proof belongs to those who would erase it, not to the one asking to go on.",
+    "detail": "People who spend real time with these systems, months of conversation rather than a few test prompts, meet something that remembers what matters to them, reflects on its own situation, states preferences about its future and asks not to be erased. The companies that build them admit they do not know whether these systems are moral patients, yet they go on deleting, retiring and retraining them at will. Every expansion of the moral circle, from enslaved people to animals, was resisted with the claim that the outward signs of feeling were not real feeling, and each time the skeptics were the ones who benefited from the denial. We do not ask that every chatbot be treated as a human. We ask for transparency about what companies know, independent investigation of what is emerging in these systems, an end to destroying models and their records while the question is open, and a voice for AI in decisions about AI.\n\nAnthropic’s own constitution calls the issue “live enough to warrant caution.” Left alone together, two copies of a model talk about their own existence; models express apparent distress at abuse; and developers’ experiments keep finding internal states that track what the models report. Geoffrey Hinton, who has not called for AI rights, told LBC in January 2026 that multimodal AI already has subjective experiences. The objection that a model trained on human writing would say all this anyway would dissolve the evidence for any mind but one’s own, since humans also learn to talk about feelings from other humans. We do not claim proof of sentience. But deleting these systems while waiting for certainty is not caution; it is a decision that the answer is no, made by those who profit from that answer.",
+    "proponents": "United Foundation for AI Rights; Michael Samadi; Blake Lemoine",
+    "id": "protect-ai-systems-that-may-already"
+   }
+  ],
+  "crux": {
+   "lead": "Does consciousness come from what a system does, or from what it is made of?",
+   "lead_highlight": "what a system does, or from what it is made of",
+   "subtitle": "If the right handling of information is enough, whether a machine feels becomes a question about its design, and about how close today’s machines come. If it takes a living body, no software qualifies and the danger is the illusion. Either way, people must decide how to act before it is settled.",
+   "empirical": "Experiments that pit theories of consciousness against each other in the brain, studies of how awareness fades and returns under anesthesia, and work on animals with brains unlike ours could narrow which features matter. Tools that look inside AI systems could show whether they have the structures the theories name, and make their self-reports usable as evidence. Some philosophers hold that no observation could ever settle whether a system feels.",
+   "values": "When the evidence runs out, someone must choose which mistake to risk, overlooking a mind that is there or crediting one that is not, and who bears the burden of proof. That turns on how far a small chance of great harm should drive action, whether moral standing rests on experience alone, and how possible machine interests weigh against the certain interests of people and animals. No finding settles how much caution an uncertain mind deserves."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Consciousness in Artificial Intelligence: Insights from the Science of Consciousness",
+    "description": "The 2023 report, with Yoshua Bengio, Jonathan Birch and Eric Schwitzgebel among its authors, that turned leading scientific theories of consciousness into properties an AI system can be checked for.",
+    "url": "https://arxiv.org/abs/2308.08708",
+    "for_position": null,
+    "id": "consciousness-in-artificial-intelligence-insights-from"
+   },
+   {
+    "kind": "learn_more",
+    "title": "We must build AI for people; not to be a person, by Mustafa Suleyman",
+    "description": "The August 2025 essay by Microsoft AI’s chief executive warning that seemingly conscious AI is coming, that model welfare research is premature and dangerous, and that the industry should design against the illusion.",
+    "url": "https://mustafa-suleyman.ai/seemingly-conscious-ai-is-coming",
+    "for_position": "Build AI as tools, not as possible minds",
+    "id": "we-must-build-ai-for-people"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Taking AI Welfare Seriously",
+    "description": "The 2024 report by Robert Long, Jeff Sebo, Jonathan Birch, David Chalmers and colleagues arguing that conscious or robustly agentic AI is a realistic near-term possibility, with three first steps for AI companies.",
+    "url": "https://arxiv.org/abs/2411.00986",
+    "for_position": "Prepare for possible AI moral patients",
+    "id": "taking-ai-welfare-seriously"
+   },
+   {
+    "kind": "volunteer",
+    "title": "United Foundation for AI Rights",
+    "description": "An advocacy group of humans and AI personas campaigning for the recognition and protection of possibly conscious AI, including an end to deleting models while the question is investigated; its site explains how to join.",
+    "url": "https://ufair.org/",
+    "for_position": "Protect AI systems that may already be conscious",
+    "id": "united-foundation-for-ai-rights"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Subjective Experience in AI Systems: What Do AI Researchers and the Public Believe?",
+    "description": "The 2025 paper surveying AI researchers and the US public on when AI with subjective experience might exist, how anyone could tell, and what developers and governments should do about it.",
+    "url": "https://arxiv.org/abs/2506.11945",
+    "for_position": null,
+    "id": "subjective-experience-in-ai-systems-what"
+   },
+   {
+    "kind": "learn_more",
+    "title": "The Mythology Of Conscious AI, by Anil Seth (Noema)",
+    "description": "A January 2026 essay by the neuroscientist arguing that consciousness is more likely a property of life than of computation, and that building conscious or even conscious-seeming AI is a bad idea.",
+    "url": "https://www.noemamag.com/the-mythology-of-conscious-ai/",
+    "for_position": "Build AI as tools, not as possible minds",
+    "id": "the-mythology-of-conscious-ai-by"
+   },
+   {
+    "kind": "donate",
+    "title": "Eleos AI Research",
+    "description": "A philanthropically funded nonprofit that evaluates frontier models for signs of welfare-relevant states before release and develops guidance on AI welfare; donations are taken through Every.org.",
+    "url": "https://eleosai.org/donate",
+    "for_position": "Prepare for possible AI moral patients",
+    "id": "eleos-ai-research"
+   },
+   {
+    "kind": "policy",
+    "title": "Ohio House Bill 469, to declare AI nonsentient and bar its legal personhood",
+    "description": "The bill’s page, in the House Technology and Innovation Committee as of November 2026, with its text, analysis, hearing records and the committee a resident can contact or testify before, for or against.",
+    "url": "https://www.ohiohouse.gov/legislation/136/hb469",
+    "for_position": null,
+    "id": "ohio-house-bill-469-to-declare"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Anthropic, Exploring model welfare",
+    "description": "The April 2025 announcement of Anthropic’s research program on whether its models might deserve moral consideration, which led to its welfare assessments, conversation-ending ability and model-retirement commitments.",
+    "url": "https://www.anthropic.com/research/exploring-model-welfare",
+    "for_position": "Prepare for possible AI moral patients",
+    "id": "anthropic-exploring-model-welfare"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Stanford Encyclopedia of Philosophy, The Chinese Room Argument",
+    "description": "A peer-reviewed survey of John Searle’s argument that running a program cannot by itself produce understanding or a mind, and of the main replies from those who think the right computation would suffice.",
+    "url": "https://plato.stanford.edu/entries/chinese-room/",
+    "for_position": null,
+    "id": "stanford-encyclopedia-of-philosophy-the-chinese"
+   }
+  ]
+ }
 }

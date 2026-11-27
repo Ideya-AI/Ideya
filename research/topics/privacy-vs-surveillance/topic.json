@@ -1,8 +1,8 @@
 {
  "slug": "privacy-vs-surveillance",
  "title": "Privacy vs. Surveillance",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-11-23T12:31:09+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "State surveillance powers and facial recognition against citizen privacy. Not commercial data or encryption specifically.",
@@ -13,5 +13,610 @@
  "related": [
   "encryption-vs-lawful-access",
   "data-ownership-surveillance-capitalism"
- ]
+ ],
+ "icon": "security-camera",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: a large box-shaped security camera on a short wall bracket as the dominant focal mass, its rounded housing outlined and softly filled with a plain round lens, mounted on the corner of a medium apartment building with plain square windows, the camera overlapping the building's edge; a small rooftop antenna on the building; a small row of low houses at the right; a power line on simple wooden poles sweeps across the whole frame behind the buildings; everything sits on a low rounded mound, outlined and softly filled, with a curving footpath; everything flat, no drop shadow.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #2f8f86, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: people, crowds, silhouettes, faces, eyes, eyeballs, face outlines, facial recognition boxes, crosshairs, targets, red dots, recording lights, view cones, beams, spotlights, police, badges, handcuffs, sirens, flags of nations, government domes, padlocks, keys, shields, chains, bars, cages, warning triangles, exclamation marks, question marks, protest signs, text, letters, numbers, logos, smartphones.",
+ "content": {
+  "overview": {
+   "summary": "Spy agencies and police can now watch citizens at scale. The central argument is what keeps that power confined: oversight, warrants or bans.",
+   "scope_covered": "State surveillance of citizens and others: intelligence collection and searches under laws like Section 702, police facial recognition, license-plate networks, communications-data powers and the oversight of all of them.",
+   "scope_excluded": "Companies’ collection and sale of personal data for their own ends, and government access to encrypted messages, each a topic of its own; commercial data enters only where the state buys or searches it.",
+   "why_now": "Section 702, the US law under which the National Security Agency collects foreign targets’ communications from US companies, lapsed in June 2026, its first lapse since 2008. Collection continues under court certifications valid to March 2027; as of November 2026, Congress was split over renewal and a warrant rule.",
+   "why_now_source_label": "CBS News",
+   "why_now_source_url": "https://www.cbsnews.com/news/fisa-section-702-expiring-congress-what-that-means/"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "Foreign targets of Section 702 surveillance",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "targets",
+     "series": [
+      {
+       "label": "2023",
+       "value": "268,590",
+       "highlight": false
+      },
+      {
+       "label": "2024",
+       "value": "291,824",
+       "highlight": false
+      },
+      {
+       "label": "2025",
+       "value": "349,823",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The US government estimates it targeted 349,823 non-US persons abroad under Section 702 in 2025, up from 268,590 in 2023.",
+     "detail": "Section 702 lets the National Security Agency, with help from the FBI and CIA, compel US email, phone and internet companies to hand over the communications of foreigners reasonably believed to be outside the United States, without an individual court order for each target; the Foreign Intelligence Surveillance Court approves the overall rules once a year. Only non-US persons may be targeted, but every American who emails, calls or messages a target is collected too, which is why searching that data for Americans is so contested. The count has risen every year since reporting began except 2020, and it is conservative: one person with several accounts is counted once where possible. The FBI receives data on only about 3.02 percent of all targets, those relevant to its own open national security investigations.",
+     "source_label": "Office of the Director of National Intelligence, Annual Statistical Transparency Report for calendar year 2025",
+     "source_url": "https://www.dni.gov/files/CLPT/documents/2026_ASTR_for_CY2025.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "foreign-targets-of-section-702-surveillance"
+    },
+    {
+     "label": "Improper FBI searches of Section 702 data, 2020 to early 2021",
+     "viz": "bar",
+     "wide": false,
+     "value": "278,000",
+     "unit": "queries",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "A surveillance court opinion found the FBI had improperly searched Section 702 data about 278,000 times in 2020 and early 2021.",
+     "detail": "The opinion, written in April 2022 and released in redacted form in May 2023, described searches that broke the bureau’s own querying standards: about people arrested at protests after the police killing of George Floyd, about suspects in the January 6, 2021 attack on the Capitol, about crime victims, and a single batch query of 19,000 donors to a congressional campaign. The FBI said the errors predated corrective measures it began in mid-2021, and the Reforming Intelligence and Securing America Act of 2024 later wrote several of those measures into law. Those who defend the current rules read the steep fall in queries since then as proof the fixes worked; those who want a warrant requirement read this record as proof that internal rules fail.",
+     "source_label": "Lawfare, on the Foreign Intelligence Surveillance Court opinion of April 2022 unsealed May 19, 2023",
+     "source_url": "https://www.lawfaremedia.org/article/unsealed-surveillance-court-document-reveals-702-misuse",
+     "source_published": "2020 to 2021",
+     "source_accessed": "2026-11-23",
+     "id": "improper-fbi-searches-of-section-702"
+    },
+    {
+     "label": "President’s Daily Brief articles drawing on Section 702",
+     "viz": "radial",
+     "wide": false,
+     "value": "63",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2025, 63 percent of the articles in the President’s Daily Brief contained Section 702 information, the oversight board’s staff reported.",
+     "detail": "The President’s Daily Brief is the intelligence community’s daily summary of the most serious threats to the country, so the share of its articles that rely on a program is a rough gauge of how central that program is. The intelligence community’s June 2023 fact sheet put the share at 59 percent in 2022. The Privacy and Civil Liberties Oversight Board’s 2026 staff report, its third review of the program in twelve years, judged Section 702 one of the country’s most valuable tools against foreign threats and put its targeting compliance rate above 99.8 percent. The measure counts how often the program’s intelligence appears, not whether the same information could have been obtained another way, which is the point critics press. Since the president removed its three Democratic members in January 2025, the board has had one member and no quorum, so the report was written by staff (Nextgov, April 2026), which reform advocates cite when questioning its conclusions.",
+     "source_label": "Privacy and Civil Liberties Oversight Board, press release on its 2026 Section 702 report (April 2, 2026)",
+     "source_url": "https://documents.pclob.gov/prod/Documents/EventsAndPress/afadd0ac-08cf-401a-b6ce-88a38f27c5fa/PCLOB%20FISA%20SECTION%20702%20PRESS%20RELEASE%204.2.26.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "president-s-daily-brief-articles-drawing"
+    },
+    {
+     "label": "FBI searches of Section 702 data using Americans’ identifiers",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "queries",
+     "series": [
+      {
+       "label": "Year to Nov 2023",
+       "value": "57,094",
+       "highlight": false
+      },
+      {
+       "label": "Year to Nov 2024",
+       "value": "5,518",
+       "highlight": false
+      },
+      {
+       "label": "Year to Nov 2025",
+       "value": "7,413",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The FBI reported 7,413 searches of Section 702 data for Americans in the year to November 2025, against 57,094 two years before; a 2025 court opinion found filtering-tool searches went uncounted.",
+     "detail": "A US person query searches already collected Section 702 data with an identifier such as an American’s name, email address or phone number; critics call these backdoor searches because they reach Americans’ communications without a warrant. The FBI counts unique query terms, so one identifier searched many times counts once, and if one term in a batch belongs to a US person, every query in the batch counts. The same report shows 7,724 US person query terms used by the NSA, CIA and National Counterterrorism Center together, and 1,081 FBI queries run for court discovery, up from 113. Officials credit the fall after 2023 to new controls, including attorney pre-approval required by the 2024 reauthorization law; the oversight board’s 2026 staff report put the decline at about 87 percent and said it may mean personnel are being overly deterred (PCLOB, April 2026). The Brennan Center argues the 2024 and 2025 counts are therefore incomplete, since that March 2025 opinion found the tool’s queries were neither tracked nor audited, and says a March 2026 opinion reportedly found a similar tool still in use (Brennan Center, April 2026).",
+     "source_label": "Office of the Director of National Intelligence, Annual Statistical Transparency Report for calendar year 2025, Figure 9",
+     "source_url": "https://www.dni.gov/files/CLPT/documents/2026_ASTR_for_CY2025.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "fbi-searches-of-section-702-data"
+    },
+    {
+     "label": "Arrests from London police live facial recognition, one year",
+     "viz": "bar",
+     "wide": false,
+     "value": "962",
+     "unit": "arrests",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "London’s police made 962 arrests in a year from live facial recognition, which scanned 3,147,436 faces and produced 2,077 alerts, 10 of them false.",
+     "detail": "Live facial recognition compares the face of everyone passing a camera, usually on a marked van, against a watchlist of wanted people and alerts officers to possible matches. Over 203 deployments from September 2024 to September 2025, the Metropolitan Police’s annual report said 549 of the arrests were of people wanted by the courts, with others made on reasonable grounds of an offense or of people such as registered sex offenders breaching conditions, and more than a quarter were linked to violence against women and girls. It put false alerts at 0.0003 percent of faces scanned, or 0.48 percent of alerts, and none led to arrest. Seven of the 10 people falsely flagged were Black men and one a Black woman, which the Met called not statistically significant given the small sample and Big Brother Watch called disturbing. The figures are as The Register reported the Met’s report, which refuses automated requests.",
+     "source_label": "Metropolitan Police, Live Facial Recognition Annual Report 2025, as reported by The Register",
+     "source_url": "https://www.theregister.com/2025/11/03/metropolitan_police_hails_facial_recognition/",
+     "source_published": "2024 to 2025",
+     "source_accessed": "2026-11-23",
+     "id": "arrests-from-london-police-live-facial"
+    },
+    {
+     "label": "Demographic gap in facial recognition false matches",
+     "viz": "bar",
+     "wide": false,
+     "value": "10–100",
+     "unit": "times higher",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Across 189 algorithms from 99 developers, NIST found false-positive rates for some demographic groups often 10 to 100 times higher than for others in one-to-one matching.",
+     "detail": "NIST tested the algorithms on 18.27 million images of 8.49 million people. In one-to-one matching, the kind used to unlock a phone or check a passport, false positives were higher for Asian and African American faces than for white faces; in one-to-many searching, the kind police use to look for a suspect in a database, they were highest for African American women. The size of the gap varied enormously by algorithm, and the most equitable algorithms were also among the most accurate, which supporters of police use read as a case for buying the best systems and opponents as a sign that many systems in use are not the best. The study dates from 2019; NIST keeps publishing demographic results for newly submitted algorithms, and any false-positive rate also depends on how strict a match threshold the operator sets.",
+     "source_label": "NIST, Face Recognition Vendor Test Part 3: Demographic Effects (NISTIR 8280)",
+     "source_url": "https://www.nist.gov/news-events/news/2019/12/nist-study-evaluates-effects-race-age-sex-face-recognition-software",
+     "source_published": "2019",
+     "source_accessed": "2026-11-23",
+     "id": "demographic-gap-in-facial-recognition-false"
+    },
+    {
+     "label": "Targets of individual FISA court orders",
+     "viz": "bar",
+     "wide": false,
+     "value": "606",
+     "unit": "targets",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2025 about 606 people were targeted under individual, probable-cause FISA court orders, 49 of them US persons, a sliver of Section 702’s targets.",
+     "detail": "The Foreign Intelligence Surveillance Act works in two very different modes. Under its original Title I, the government must show a judge probable cause that a specific person is a foreign power or its agent before monitoring them; the estimate was 602 such targets in 2024 and 759 in 2023. Under Section 702, added in 2008, the court approves annual certifications and targeting procedures, and the agencies then choose targets themselves. Almost all foreign intelligence collection under the act now happens without an individual court order, which is why Section 702 carries most of the debate. For criminal investigations, a separate system applies: federal and state judges authorized 1,735 wiretaps in 2025 (Administrative Office of the US Courts, Wiretap Report 2025).",
+     "source_label": "Office of the Director of National Intelligence, Annual Statistical Transparency Report for calendar year 2025",
+     "source_url": "https://www.dni.gov/files/CLPT/documents/2026_ASTR_for_CY2025.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "targets-of-individual-fisa-court-orders"
+    },
+    {
+     "label": "England and Wales: police live facial recognition to find suspects",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Always or usually",
+       "value": "59",
+       "highlight": true
+      },
+      {
+       "label": "Sometimes",
+       "value": "29",
+       "highlight": false
+      },
+      {
+       "label": "Never",
+       "value": "8",
+       "highlight": false
+      },
+      {
+       "label": "Unsure",
+       "value": "4",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a Home Office survey of 3,920 adults, 59 percent said police use of live facial recognition to locate suspects is always or usually acceptable; 8 percent said never.",
+     "detail": "The 59 percent combines 24 percent who said always and 35 percent who said usually. Respondents were asked, for each of several scenarios, “How acceptable or unacceptable do you think it is for the police to use facial recognition technology in this way?” Acceptance was higher for using live facial recognition to find vulnerable people (65 percent always or usually, 5 percent never) and highest for searching recorded footage after the fact (81 percent always or usually, 1 percent never). It was higher among people aged 55 and over and white respondents, and the share saying never was higher among men, people aged 16 to 34, Asian respondents and graduates. Only 25 percent had heard a lot or a fair amount about police use of the technology.",
+     "source_label": "Home Office, Public attitudes to police use of facial recognition technology (2025)",
+     "source_url": "https://www.gov.uk/government/publications/public-attitudes-to-police-use-of-facial-recognition-technology/public-attitudes-to-police-use-of-facial-recognition-technology",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "england-and-wales-police-live-facial"
+    },
+    {
+     "label": "Documented US wrongful arrests after facial recognition matches",
+     "viz": "bar",
+     "wide": false,
+     "value": "8",
+     "unit": "people",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "A Washington Post investigation found at least eight people in the United States wrongfully arrested after facial recognition identified them.",
+     "detail": "In most of the cases the Post examined, police treated a facial recognition match as enough to arrest without corroborating evidence, failing to check alibis or ignoring contradictory evidence such as DNA and fingerprints; all of the cases were eventually dismissed. The Post called its count a small sample, because most police departments are not required to disclose when they use the technology. Several of the best-known cases, including those of Robert Williams and Porcha Woodruff in Detroit, involved Black people. Supporters of police use note that the documented errors arose from departments breaking their own rule that a match is only an investigative lead, not from the software alone. The figures are as Fortune summarized the Post’s January 13, 2025 investigation.",
+     "source_label": "Washington Post investigation, January 13, 2025, as summarized by Fortune",
+     "source_url": "https://fortune.com/2025/01/16/police-continue-to-use-facial-recognition-software-despite-evidence-of-racial-bias-and-false-arrests",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "documented-us-wrongful-arrests-after-facial"
+    },
+    {
+     "label": "UK investigatory powers warrants and authorizations",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "issued",
+     "series": [
+      {
+       "label": "2020",
+       "value": "271,692",
+       "highlight": false
+      },
+      {
+       "label": "2021",
+       "value": "303,782",
+       "highlight": false
+      },
+      {
+       "label": "2022",
+       "value": "318,711",
+       "highlight": false
+      },
+      {
+       "label": "2023",
+       "value": "337,615",
+       "highlight": false
+      },
+      {
+       "label": "2024",
+       "value": "363,656",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "UK public authorities were issued 363,656 warrants and authorizations under investigatory powers in 2024, up from 271,692 in 2020.",
+     "detail": "The total covers interception, equipment interference, communications data, covert surveillance and covert human intelligence sources, across the intelligence agencies, police, wider public authorities, local councils and prisons. Law enforcement accounted for 342,864 in 2024, mostly requests for communications data, which reveals who contacted whom, when and from where, but not what was said; the intelligence agencies accounted for 17,330. Under the Investigatory Powers Act 2016, most police communications-data requests are approved by the commissioner’s independent authorizing office rather than by senior officers, and the most intrusive warrants need both a minister’s signature and a judicial commissioner’s approval. The commissioner corrected double counting in returns for 2022 and 2023, so the years are not perfectly comparable. The 2024 report, published in December 2025, was the latest as of November 2026.",
+     "source_label": "Investigatory Powers Commissioner’s Office, Annual Report 2024, Table 10.1",
+     "source_url": "https://ipco-wpmedia-prod-s3.s3.eu-west-2.amazonaws.com/IPCO-Annual-Report-2024.pdf",
+     "source_published": "2024",
+     "source_accessed": "2026-11-23",
+     "id": "uk-investigatory-powers-warrants-and-authorizations"
+    },
+    {
+     "label": "Federal law enforcement agencies using facial recognition",
+     "viz": "radial",
+     "wide": false,
+     "value": "20",
+     "unit": "of 42",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Twenty of the 42 US federal agencies that employ law enforcement officers told the GAO they owned facial recognition systems or used others’.",
+     "detail": "All 14 agencies that used facial recognition for criminal investigations also used systems owned by non-federal entities, such as state databases or private companies like Clearview AI, and only one of them knew which non-federal systems its employees used. Six agencies said they had used the technology on images from the unrest after George Floyd’s death in May 2020, and three on images from the January 6, 2021 Capitol attack. The GAO made 26 recommendations to 13 agencies to track use and assess privacy and accuracy risks. The survey, from 2020, predates Mobile Fortify, a phone app immigration agents began using in 2025 to photograph a face and search, by press accounts, over 200 million images in government databases; a lawsuit alleges it was used more than 100,000 times by January 2026 (The Register, February 2026).",
+     "source_label": "US Government Accountability Office, GAO-21-518, Facial Recognition Technology (June 2021)",
+     "source_url": "https://www.gao.gov/products/gao-21-518",
+     "source_published": "2020",
+     "source_accessed": "2026-11-23",
+     "id": "federal-law-enforcement-agencies-using-facial"
+    },
+    {
+     "label": "Unique FBI leads from the NSA’s phone records program",
+     "viz": "radial",
+     "wide": false,
+     "value": "2",
+     "unit": "of 15",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The NSA’s call detail records program cost about $100 million and produced 15 intelligence reports, two of which gave the FBI unique information.",
+     "detail": "After Edward Snowden revealed in 2013 that the NSA was collecting nearly every American’s phone records in bulk under Section 215 of the Patriot Act, Congress replaced the program in 2015 with a narrower one in which phone companies kept the records and the NSA requested them case by case. The NSA suspended that program in early 2019 after weighing its intelligence value, costs and repeated compliance and data-integrity problems, and later deleted most of the records. The oversight board found no abuse and judged the program constitutional, but its members wrote separately on whether it had been worth it. Critics of bulk collection cite the outcome as the clearest public accounting of what a mass-surveillance program yielded; defenders reply that a program’s value cannot be judged by counting reports.",
+     "source_label": "Privacy and Civil Liberties Oversight Board, fact sheet on its report on the call detail records program (February 2020)",
+     "source_url": "https://documents.pclob.gov/prod/Documents/OversightReport/7f5bfdcf-0ae0-4a10-b6ef-0c53137161ea/CDR%20Fact%20sheet%20FINAL.pdf",
+     "source_published": "2015 to 2019",
+     "source_accessed": "2026-11-23",
+     "id": "unique-fbi-leads-from-the-nsa"
+    },
+    {
+     "label": "US view of widespread police use of facial recognition",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Good idea",
+       "value": "46",
+       "highlight": true
+      },
+      {
+       "label": "Bad idea",
+       "value": "27",
+       "highlight": false
+      },
+      {
+       "label": "Not sure",
+       "value": "27",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a 2021 Pew survey, 46 percent of US adults said widespread police use of facial recognition would be a good idea for society, 27 percent a bad idea.",
+     "detail": "The same survey found that 66 percent of Americans think police would probably or definitely use the technology to monitor Black and Hispanic neighborhoods more often than others, including 48 percent of Black adults who said police definitely would. Asked about fairness, 34 percent said widespread use would make policing more fair, 25 percent less fair, and about four in ten no different. Safeguards moved opinion: 64 percent said use would be more acceptable if officers were trained in how the systems make errors, and 53 percent if people were told which spaces are scanned. On who should set rules, 61 percent of Democrats and 35 percent of Republicans said federal agencies should play a major role. The survey was taken in 2021, before facial recognition spread into immigration enforcement in 2025.",
+     "source_label": "Pew Research Center, “Public more likely to see facial recognition use by police as good, rather than bad for society”",
+     "source_url": "https://www.pewresearch.org/internet/2022/03/17/public-more-likely-to-see-facial-recognition-use-by-police-as-good-rather-than-bad-for-society/",
+     "source_published": "2021",
+     "source_accessed": "2026-11-23",
+     "id": "us-view-of-widespread-police-use"
+    },
+    {
+     "label": "Americans concerned about how the government uses their data",
+     "viz": "radial",
+     "wide": false,
+     "value": "71",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "71 percent of US adults said in 2023 they were very or somewhat concerned about how the government uses data it collects about them, up from 64 percent in 2019.",
+     "detail": "The rise came mostly from Republicans, whose concern went from 63 percent in 2019 to 77 percent in 2023, while Democrats’ views did not change significantly. In the same survey, 79 percent said they have very little or no control over the data the government collects about them, and 77 percent said they have very little or no understanding of what the government does with it. The question asks about government data use in general, not intelligence surveillance specifically, and the survey was taken in May 2023, before the change of administration and the 2025 expansion of immigration enforcement that reshaped the partisan politics of surveillance.",
+     "source_label": "Pew Research Center, “How Americans View Data Privacy” (October 18, 2023)",
+     "source_url": "https://www.pewresearch.org/internet/2023/10/18/views-of-data-privacy-risks-personal-data-and-digital-privacy-laws/",
+     "source_published": "2023",
+     "source_accessed": "2026-11-23",
+     "id": "americans-concerned-about-how-the-government"
+    },
+    {
+     "label": "National Security Letters issued by the FBI",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "letters",
+     "series": [
+      {
+       "label": "2023",
+       "value": "11,158",
+       "highlight": false
+      },
+      {
+       "label": "2024",
+       "value": "10,854",
+       "highlight": false
+      },
+      {
+       "label": "2025",
+       "value": "8,865",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The FBI issued 8,865 National Security Letters, demands for records made without a judge, in 2025, down from 11,158 in 2023.",
+     "detail": "A National Security Letter is an administrative demand, issued by the FBI without a judge, that compels phone companies, internet providers, banks and credit agencies to hand over records such as subscriber details, billing and transaction records, but not the content of communications; it usually comes with a gag order. The letters contained 32,946 requests for information in 2023, 37,267 in 2024 and 29,203 in 2025. The number of individuals or organizations covered is much smaller than the number of requests, because one person may be the subject of several letters under different statutes or for several accounts.",
+     "source_label": "Office of the Director of National Intelligence, Annual Statistical Transparency Report for 2025, Figure 18",
+     "source_url": "https://www.dni.gov/files/CLPT/documents/2026_ASTR_for_CY2025.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "national-security-letters-issued-by-the"
+    },
+    {
+     "label": "Countries using AI surveillance technology",
+     "viz": "radial",
+     "wide": false,
+     "value": "75",
+     "unit": "of 176",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "At least 75 of 176 countries studied were actively using AI for surveillance in 2019, 64 of them facial recognition systems.",
+     "detail": "The index, built from open-source reporting, also counted 56 countries using smart city or safe city platforms and 52 using smart policing. It found AI surveillance spreading among democracies as well as autocracies, with Chinese companies, led by Huawei, the largest suppliers and US companies also major vendors. Its author, Steven Feldstein, stressed that using the technology is not in itself abuse; what matters is the legal limits and accountability around it. Carnegie has not updated the figures since 2019, so they likely understate current use. A more recent gauge of the political setting is Freedom House’s Freedom on the Net 2025, which found global internet freedom declining for a 15th consecutive year, with people arrested or imprisoned for online expression in at least 57 of the 72 countries assessed.",
+     "source_label": "Carnegie Endowment for International Peace, AI Global Surveillance Index (Steven Feldstein, September 2019)",
+     "source_url": "https://carnegieendowment.org/research/2019/09/the-global-expansion-of-ai-surveillance",
+     "source_published": "2019",
+     "source_accessed": "2026-11-23",
+     "id": "countries-using-ai-surveillance-technology"
+    },
+    {
+     "label": "UK funding to triple police facial recognition vans",
+     "viz": "bar",
+     "wide": false,
+     "value": "11",
+     "unit": "£ million",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "On November 4, 2026 the UK government said it would spend £11 million to triple the live facial recognition vans available to police in England and Wales.",
+     "detail": "The same announcement set out a planned law: police use must be intelligence led and proportionate, deployed only where officers believe wanted people could be present; any system must be independently tested for bias by age, gender and race; a new independent regulator will set standards and may seek a court injunction to stop a force that repeatedly fails to comply; and a separate code will cover shops and other businesses. Home Secretary Shabana Mahmood called facial recognition “the biggest breakthrough for catching criminals since DNA matching.” The consultation behind the plan ran from December 4, 2025 to February 12, 2026 (Home Office, government response, October 2026), and no bill had been introduced as of November 2026. Until one passes, police in England and Wales rely on common-law powers, data-protection and equality law, and the Court of Appeal’s 2020 Bridges ruling, which found South Wales Police’s early use unlawful for lack of clear rules.",
+     "source_label": "Home Office, “Stronger laws for police using facial recognition technology” (November 4, 2026)",
+     "source_url": "https://www.gov.uk/government/news/stronger-laws-for-police-using-facial-recognition-technology",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "uk-funding-to-triple-police-facial"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Should searching already collected intelligence for a particular citizen require a judge’s warrant?",
+    "kind": "value",
+    "why": "The data was gathered lawfully while targeting someone else, often a foreigner abroad. One side sees a search for an American’s name in it as a new intrusion; the other sees a look through files the government already holds.",
+    "detail": "For the warrant side, Section 702 sweeps in every American who talks to a foreign target, and when the FBI searches that pool for Americans in ordinary investigations, it is searching a citizen’s private communications. The Constitution’s answer for such searches is a warrant from a neutral judge, not a supervisor’s sign-off inside the agency that wants to look, with exceptions for emergencies, consent and searches meant to protect a victim.\n\nFor the other side, a query is like using Ctrl-F on a file in the government’s own cabinet, and the surveillance court approves the querying rules each year. A warrant for each query would let the FBI look only after it already had probable cause, yet queries matter most at the start of a case, to learn quickly whether a foreign spy, hacker or terrorist has been in contact with an American, often a victim. The courts have not settled it: a federal district court in New York held in 2025 that a Section 702 query was a search requiring a warrant, without excluding the evidence, and the ruling was on appeal as of February 2026 (Stewart Baker, answers to the Senate Judiciary Committee, 2026). In Britain the parallel question is whether each live facial recognition deployment should need outside approval or only a senior officer’s authorization under a statutory code.",
+    "lean_label_a": "Warrant first",
+    "lean_label_b": "Internal approval",
+    "id": "should-searching-already-collected-intelligence-for"
+   },
+   {
+    "text": "Do large-scale surveillance programs stop enough serious crime and terrorism to justify their reach?",
+    "kind": "empirical",
+    "why": "Most of the evidence is classified or comes from the agencies that run the programs, and the counterfactual is hard to measure: a plot disrupted with surveillance might have been caught another way.",
+    "detail": "Those who say the programs pay off point to the oversight board’s 2026 staff report, which says Section 702 information has been used to capture foreign terrorists, defend critical infrastructure against cyber and other attacks, and interdict international narcotics trafficking. At street level they point to arrest counts from facial recognition, many of them people wanted by the courts for serious offenses. The value of a surveillance tool, they add, lies in the cases where nothing happens because the plot was caught, which by nature are hard to show the public.\n\nThose who see thin returns note that when independent overseers have been able to measure a program, the results have been modest. The oversight board concluded in 2014 that it had “not identified a single instance involving a threat to the United States in which the program made a concrete difference in the outcome of a counterterrorism investigation” for bulk phone-records collection. A 40-year meta-analysis of 76 studies found that camera surveillance cuts crime only modestly, mostly property crime in places like car parks (Piza, Welsh, Farrington and Thomas, Criminology & Public Policy, 2019). Agency examples are chosen by the agencies, and the question asked is never whether a targeted, court-approved order would have produced the same result; arrest counts measure activity, not crime prevented.",
+    "lean_label_a": "They pay off",
+    "lean_label_b": "They fall short",
+    "id": "do-mass-surveillance-programs-stop-enough"
+   },
+   {
+    "text": "Do people have a right to be anonymous in public spaces?",
+    "kind": "value",
+    "why": "The law in most democracies holds that what a person shows in public is not private. Cameras that can identify and log faces and license plates at scale test whether that rule still fits.",
+    "detail": "On one view, anyone on a street can be seen and recognized by anyone, and a camera matching a wanted face does what an officer with wanted posters always has. The Supreme Court held in United States v. Knotts (1983) that a driver on public roads has no reasonable expectation of privacy in their movements. When the Court required a warrant for months of phone location records in Carpenter v. United States (2018), its majority called the ruling narrow and left conventional tools such as security cameras untouched. In Bridges (2020), Britain’s Court of Appeal found a force’s live facial recognition a proportionate intrusion; it faulted the lack of clear rules, not identification in public. A right to be unidentifiable in public never existed and would mainly shield the wanted.\n\nOn the other, being seen is not the same as being identified, logged and tracked. Cities have always offered practical obscurity, since no one could recognize and record everyone; it lets people attend a protest, clinic, mosque or meeting unknown to the state. Carpenter turned on that difference: compiling someone’s movements over time is a search though each movement happened in public, and face and license-plate networks do the same. Knowing one might be identified changes behavior: after the Snowden disclosures, views of terrorism-related Wikipedia articles fell by close to 30 percent (Jon Penney, 2016).",
+    "lean_label_a": "Public is public",
+    "lean_label_b": "Right to anonymity",
+    "id": "do-people-have-a-right-to"
+   },
+   {
+    "text": "Can facial recognition be made accurate and fair enough for police to rely on?",
+    "kind": "empirical",
+    "why": "Accuracy varies widely by algorithm, image quality, match threshold and how officers use a match. Laboratory tests show the best systems far ahead of early ones, while field cases show innocent people arrested.",
+    "detail": "Those who say it can point to federal testing: modern algorithms are far more accurate than the systems behind early headlines, and the most accurate are also the most equitable. Police can choose those systems, set strict thresholds and have an officer check every alert before anyone is stopped. The documented US wrongful arrests came from departments that treated a match as proof and skipped basic investigation, a failure of practice that rules can fix: Detroit’s June 2024 settlement with Robert Williams bars its police from arresting anyone based only on a facial recognition match (ACLU, Williams v. City of Detroit). Human eyewitnesses, the traditional alternative, also misidentify suspects, with racial bias of their own.\n\nThose who say it cannot note that the systems police actually buy are not always the best performers, and that even a tiny error rate becomes many wrongly stopped people when millions of faces are scanned. Officers handed a computer match tend to trust it, as the wrongful-arrest cases show, where police ignored alibis and contradicting evidence. And many critics hold that accuracy is not the main objection: a system that identifies everyone in a crowd perfectly is a more powerful tool of control, not a safer one.",
+    "lean_label_a": "Reliable enough",
+    "lean_label_b": "Not reliable enough",
+    "id": "can-facial-recognition-be-made-accurate"
+   },
+   {
+    "text": "Can courts, legislatures and watchdogs keep surveillance powers within their intended limits?",
+    "kind": "empirical",
+    "why": "Every major surveillance power in the US and UK has layers of oversight, and each has a record of violations found by that same oversight. Whether the record shows the system working or failing depends on what one expected of it.",
+    "detail": "Those who say oversight holds note that the abuses the public knows about were found and disclosed by the system itself: the surveillance court’s opinions, Justice Department audits, inspector general reports and the oversight board’s reviews. Each discovery led to change, from the end of bulk phone-records collection in 2015 to the 2024 query reforms. In Britain, judicial commissioners review intrusive warrants and the commissioner publishes error counts. No system of human institutions is free of error; what matters is whether errors are caught and corrected.\n\nThose who say powers creep see a pattern across decades: a power created for a narrow purpose expands to others and is reined in only after leaks or scandals. Bulk phone-records collection ran secretly for years until Snowden revealed it; Section 702, created to target foreigners abroad, is routinely searched by the FBI for Americans; British local councils used powers under the Regulation of Investigatory Powers Act 2000 to investigate school-catchment applications and dog fouling. Oversight weakens when it becomes inconvenient: the US oversight board has lacked a quorum since January 2025, and the surveillance court’s March 2026 opinion on new querying violations was not declassified by its statutory deadline. Immigration agents scan faces in the street with an app no specific law authorizes.",
+    "lean_label_a": "Oversight holds",
+    "lean_label_b": "Powers creep",
+    "id": "can-courts-legislatures-and-watchdogs-keep"
+   },
+   {
+    "text": "Is it safe to build surveillance capacity that a future government could misuse?",
+    "kind": "value",
+    "why": "The same tools serve very different ends depending on who controls them, and control changes with elections. In the US, partisan positions on Section 702 and facial recognition have reversed more than once as power changed hands.",
+    "detail": "Those who would build with safeguards say the threats from terrorism, foreign espionage, cyberattacks and organized crime are real now, and refusing effective tools because a hypothetical future government might abuse them leaves people exposed to present dangers. Democracies have courts, elections, a free press and oversight bodies precisely so that powerful tools can be held in check. A government determined to abuse power would build its own tools anyway; the better protection is strong institutions, transparency and laws that bind whoever holds office.\n\nThose who would not build it say every surveillance system is inherited by the next government, whatever its intentions. Infrastructure built for counterterrorism or finding wanted criminals can be turned against journalists, protesters, political opponents or minorities in a single administrative decision, and once cameras, databases and search tools exist, the barrier to misuse is a policy rather than a capability. Officials of both US parties have defended and denounced the same powers as their side entered and left office. China’s networks of cameras and facial recognition, used to monitor Uyghurs in Xinjiang, show where the capacity can lead when institutions fail.",
+    "lean_label_a": "Build, with limits",
+    "lean_label_b": "Do not build it",
+    "id": "is-it-safe-to-build-surveillance"
+   },
+   {
+    "text": "Should governments be able to buy data on citizens that they would otherwise need a warrant to obtain?",
+    "kind": "value",
+    "why": "Data brokers sell location histories, license-plate reads and app data, and US agencies including the FBI, the Defense Intelligence Agency and immigration authorities have bought them. As of November 2026 the law had not settled whether buying is a search.",
+    "detail": "For one side, information that companies sell openly to marketers, insurers and anyone else is not private in any meaningful sense, and it would be perverse to let every advertiser buy it while barring police investigating a kidnapping or a drug cartel. Buying data is not compelling it: no one is forced to hand anything over, and agencies use it under internal legal review. A warrant rule for any purchase would handicap the government against criminals and foreign intelligence services that face no such limit; the answer to data brokers is consumer-privacy law that limits collection for everyone.\n\nFor the other, the Supreme Court’s 2018 ruling that police need a warrant for historical cell-phone location records from a phone company means little if an agency can buy the same kind of record from a broker, often drawn from apps on the same phone, with a credit card. The House passed the Fourth Amendment Is Not For Sale Act, banning such purchases without a warrant, by 219 to 199 on April 17, 2024 (House Clerk, roll call 136), and Senators Ron Wyden and Mike Lee included a similar ban in a bill they introduced in March 2026. Without such a rule, every limit placed on compelled surveillance can be bypassed by purchase.",
+    "lean_label_a": "Free to buy",
+    "lean_label_b": "Warrant needed",
+    "id": "should-governments-be-able-to-buy"
+   },
+   {
+    "text": "Should foreigners abroad get the same privacy protections as citizens?",
+    "kind": "value",
+    "why": "Section 702 may target only non-US persons abroad, who generally lack US constitutional protection, but human-rights law treats privacy as every person’s right, and Europe’s top court has twice struck down EU-US data deals partly over US surveillance.",
+    "detail": "Those who put citizens first say spying on foreign governments, terrorists and criminals abroad is what intelligence agencies exist to do, and every major country does it. A government’s constitutional duties run to its own people; extending warrant requirements to foreigners abroad would make foreign intelligence collection impossible and bind democracies while their adversaries remain free. The privacy debate rightly focuses on citizens swept up in foreign collection, which is where minimization rules and query restrictions apply.\n\nThose who see a universal right point to the International Covenant on Civil and Political Rights, and say a person’s emails do not deserve less protection because of their passport. The line between foreign and domestic is porous, since every American who talks to a foreigner is collected along with them. Europe’s highest court invalidated the Privacy Shield data framework in 2020 because US surveillance lacked proportionality and redress for Europeans, and the current framework rests on a 2022 executive order a president can revoke. Treating foreigners’ privacy as worthless, they add, lowers the standard other governments apply to democracies’ own citizens.",
+    "lean_label_a": "Citizens first",
+    "lean_label_b": "Universal right",
+    "id": "should-foreigners-abroad-get-the-same"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Allow surveillance only with warrants and specific laws",
+    "color_key": "green",
+    "steelman": "We are not trying to blind the spies or disarm the police. If the state wants to read a citizen’s messages or pick her out of a crowd, it should show a judge a good reason first.",
+    "detail": "The rule that has governed searches for two centuries should govern the tools of this one, under laws the people’s representatives actually debated. Section 702 was enacted to collect intelligence on foreigners; using it as a searchable archive of Americans’ communications turns a foreign program into a domestic one by the back door. Internal approvals have been tried and have failed repeatedly, from the improper queries the surveillance court found in 2020 and 2021 to the uncounted searches through filtering tools after the 2024 reforms. Facial recognition, meanwhile, is spreading through policing on general powers and vendor contracts rather than specific statutes, which is why Britain’s Court of Appeal found South Wales Police’s early use unlawful. The European Union shows another way: its AI Act lets police scan faces live in public only for a few narrow purposes, each use approved in advance by a court or an independent authority.\n\nA warrant is not a ban. The NSA’s foreign targeting would be untouched, and the bills carry exceptions for emergencies, consent, cybersecurity and protecting a victim. The idea draws support across both parties: a warrant amendment failed in the House on a 212 to 212 tie in April 2024. To those who would ban the tools outright: finding a missing child or identifying a murder suspect from video are uses worth keeping under law and judicial approval, and a ban that collapses leaves no rules at all, as when Virginia replaced its ban on local police use with broad guidelines in 2022.",
+    "proponents": "Brennan Center for Justice; Senator Mike Lee; Senator Ron Wyden; Center for Democracy & Technology; Ada Lovelace Institute; Electronic Privacy Information Center; Liberty; European Union; Representative Warren Davidson; Representative Zoe Lofgren; Representative Andy Biggs",
+    "id": "allow-surveillance-only-with-warrants-and"
+   },
+   {
+    "name": "Keep surveillance tools under institutional oversight",
+    "color_key": "blue",
+    "steelman": "The threats are real and fast: foreign spies, ransomware gangs, cartels, terrorists. These tools catch them, and audits, courts and regulators already catch the abuses.",
+    "detail": "Searching data the government already lawfully holds is not a new search. Demanding a warrant first means the FBI must prove probable cause before it may even check whether a foreign spy has contacted an American, which is backwards: the first hours of a case are when those checks count and delay can be fatal, and administrations of both parties have treated a warrant rule as a red line. Section 702 informs a majority of the articles in the President’s Daily Brief, and no other authority can replace it. The abuses critics cite came before the 2021 and 2024 reforms and were found by this very oversight system; FBI searches for Americans fell about 87 percent afterward, and targeting compliance stays above 99.8 percent.\n\nLive facial recognition finds people already wanted by the courts without stopping or searching anyone else, and fixed cameras in Croydon led to 173 arrests in six months alongside a 10.5 percent fall in crime there, by the Home Office’s count. Most of the public agrees: 88 percent of adults in England and Wales find police use to locate suspects acceptable at least sometimes. The US wrongful arrests happened where officers skipped the basic checks their departments already required, and the answer is to enforce those checks. Buying the most accurate algorithms addresses bias, and a statutory code with independent bias testing and a regulator with teeth protects privacy as well as a ban would, without leaving wanted offenders on the street.",
+    "proponents": "Attorney General Todd Blanche; UK Home Office; Metropolitan Police; Director of National Intelligence Jay Clayton; CIA Director John Ratcliffe; Stewart Baker; Representative Jim Himes; Senator Mark Warner; Senator John Cornyn; Senator Mike Rounds; Christopher Wray; Security Industry Association",
+    "id": "use-surveillance-tools-widely-under-institutional"
+   },
+   {
+    "name": "Ban facial recognition and end mass surveillance",
+    "color_key": "amber",
+    "steelman": "Some tools cannot be made safe by rules. A face scanner on every street ends the anonymity free people need, whoever holds the switch.",
+    "detail": "Facial recognition in public space turns every camera into a checkpoint and every crowd into a lineup. Accuracy is not the core problem: a perfectly accurate system is a more efficient instrument of control. Rules and regulators are promises made by today’s government and kept, or not, by tomorrow’s, while the infrastructure stays. The United States shows what that means: immigration agents scanning faces in the street with a phone app that, according to a federal lawsuit, people cannot decline, and whose scans, citizens’ included, are kept for 15 years (Biometric Update, January 2026); and license-plate data from local cameras reaching federal agencies that cities never agreed to share with. Bulk and programmatic surveillance follow the same cycle: built for one purpose, expanded to others, exposed by leaks, trimmed, and expanded again.\n\nRegulation has so far meant legitimizing expansion, as Britain’s plan to triple its vans alongside a new law shows, and the EU AI Act’s exceptions for serious crime, terrorism and missing persons are broad enough for routine use. Warrants help with targeted searches but do nothing about cameras that scan everyone. Arrest counts are not crime prevented: Big Brother Watch reports deployments outside London that scanned hundreds of thousands of faces with few or no arrests, about 400,000 in Northamptonshire with none. Bans are workable. San Francisco, Boston and other cities have lived with them for years, and dozens of US cities have canceled license-plate camera contracts since 2025.",
+    "proponents": "Electronic Frontier Foundation; Big Brother Watch; Amnesty International; Senator Ed Markey; Representative Pramila Jayapal; Fight for the Future; European Digital Rights; Reclaim Your Face; DeFlock",
+    "id": "ban-facial-recognition-and-end-mass"
+   }
+  ],
+  "crux": {
+   "lead": "Can rules and watchdogs keep surveillance powers confined, or does that take a judge’s approval each time, or no such tool at all?",
+   "lead_highlight": "keep surveillance powers confined",
+   "subtitle": "Governments can now search their citizens’ messages, movements and faces at scale. Nearly everyone agrees the power needs limits. They split on whether internal approvals, audits and regulators hold across changes of government, whether each use needs a judge first, or whether some tools should not exist.",
+   "empirical": "Much of this could be measured: how many serious cases truly depended on these tools, judged by someone other than the agencies that run them; whether a targeted court order would have done as well; complete counts of searches under the latest controls; real-world error rates of the face-matching systems police actually buy; and whether warrant rules, where they exist, have slowed urgent cases.",
+   "values": "No measurement settles how much privacy is worth trading for how much security, when the costs and the benefits may fall on different people; whether a machine naming someone in a crowd is the same as an officer seeing them; or whether to write rules for the government in office or for the worst one that might inherit the tools."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Read the oversight board’s 2026 review of Section 702",
+    "description": "The Privacy and Civil Liberties Oversight Board’s staff report on how Section 702 has changed since 2023, with figures on its intelligence value, compliance rates and FBI searches for Americans.",
+    "url": "https://documents.pclob.gov/prod/Documents/OversightReport/40f1122d-3ecb-4db1-a109-80123e5b569a/2026%20PCLOB%20702%20Report.pdf",
+    "for_position": null,
+    "id": "read-the-oversight-board-s-2026"
+   },
+   {
+    "kind": "policy",
+    "title": "Tell your representative where you stand on Section 702",
+    "description": "As of November 2026, Congress was weighing whether to renew Section 702 and whether to add a warrant requirement. The House directory finds your member by ZIP code.",
+    "url": "https://www.house.gov/representatives/find-your-representative",
+    "for_position": null,
+    "id": "tell-your-representative-where-you-stand"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read Congress’s researchers on Section 702 and the 2024 reforms",
+    "description": "A Congressional Research Service report explaining how Section 702 works, what the 2024 Reforming Intelligence and Securing America Act changed, and the options before Congress.",
+    "url": "https://www.everycrsreport.com/reports/R48592.html",
+    "for_position": null,
+    "id": "read-congress-s-researchers-on-section"
+   },
+   {
+    "kind": "local",
+    "title": "Push for a local law requiring public approval of police surveillance tools",
+    "description": "The ACLU’s Community Control Over Police Surveillance campaign, with a model ordinance requiring city councils to approve new surveillance technology after public hearings, adopted in a number of US cities.",
+    "url": "https://www.aclu.org/community-control-over-police-surveillance",
+    "for_position": "Allow surveillance only with warrants and specific laws",
+    "id": "push-for-a-local-law-requiring"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the UK government’s case for expanding facial recognition under a new law",
+    "description": "The Home Office’s November 2026 announcement of a statutory framework, an independent regulator and funding to triple police live facial recognition vans, with the results it cites from London pilots.",
+    "url": "https://www.gov.uk/government/news/stronger-laws-for-police-using-facial-recognition-technology",
+    "for_position": "Keep surveillance tools under institutional oversight",
+    "id": "read-the-uk-government-s-case"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Join Big Brother Watch’s campaign to stop facial recognition",
+    "description": "The UK civil-liberties group’s campaign against live facial recognition in public spaces, including its backing for a legal challenge to the Metropolitan Police and its records of police deployments.",
+    "url": "https://bigbrotherwatch.org.uk/campaigns/stop-facial-recognition/",
+    "for_position": "Ban facial recognition and end mass surveillance",
+    "id": "join-big-brother-watch-s-campaign"
+   },
+   {
+    "kind": "local",
+    "title": "Look up the surveillance tools your local police use",
+    "description": "A searchable database, built by the Electronic Frontier Foundation and the University of Nevada, Reno, of which US law enforcement agencies use facial recognition, license-plate readers, drones and other tools.",
+    "url": "https://atlasofsurveillance.org/",
+    "for_position": null,
+    "id": "look-up-the-surveillance-tools-your"
+   },
+   {
+    "kind": "policy",
+    "title": "Call Congress to demand a warrant requirement in any Section 702 renewal",
+    "description": "A 5 Calls script and phone numbers for asking your representative and senators to oppose renewing Section 702 without reforms such as a warrant requirement for searches of Americans’ communications.",
+    "url": "https://5calls.org/issue/fisa-section-702-fbi-surveillance/",
+    "for_position": "Allow surveillance only with warrants and specific laws",
+    "id": "call-congress-to-demand-a-warrant"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the Justice Department’s case and compliance record for Section 702",
+    "description": "The Justice Department National Security Division’s Section 702 page, collecting the department’s fact sheet, FBI query guidance, compliance reports and letters supporting reauthorization.",
+    "url": "https://www.justice.gov/nsd/section-702",
+    "for_position": "Keep surveillance tools under institutional oversight",
+    "id": "read-the-justice-department-s-case"
+   },
+   {
+    "kind": "local",
+    "title": "Map and challenge license-plate cameras in your town",
+    "description": "DeFlock, a volunteer project that maps automated license-plate reader cameras across the US and supports residents campaigning to end their cities’ contracts.",
+    "url": "https://deflock.me/",
+    "for_position": "Ban facial recognition and end mass surveillance",
+    "id": "map-and-challenge-license-plate-cameras"
+   }
+  ]
+ }
 }

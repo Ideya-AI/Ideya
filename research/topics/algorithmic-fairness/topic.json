@@ -1,8 +1,8 @@
 {
  "slug": "algorithmic-fairness",
  "title": "Algorithmic Fairness",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-11-26T09:54:00+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Fairness in automated decisions on lending, hiring and policing.",
@@ -16,5 +16,655 @@
   "governing-autonomous-agents",
   "dei-in-institutions",
   "crime-punishment-reform"
- ]
+ ],
+ "icon": "scales",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: a large tall stack of plain paper application forms with blank ruled lines as the dominant focal mass, outlined and softly filled, slightly fanned so the edges of each sheet show; out of the top of the stack grows a simple decision tree of round nodes joined by smooth lines, overlapping the stack's upper corner, that branches downward and across the frame; each of its three end branches touches one small destination standing on the ground: a small house, a small briefcase and a small columned courthouse; everything sits on one broad gently rounded mound, outlined and softly filled; everything flat, no drop shadow.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #2f8f86, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: people, silhouettes, faces, eyes, robots, brains, scales of justice, gavels, check marks, crosses, thumbs, red or green lights, stop signs, warning triangles, police badges, handcuffs, police cars, sirens, dollar signs, coins, money, text, letters, numbers, logos, smartphones, security cameras, padlocks, servers, magnifying glasses.",
+ "content": {
+  "overview": {
+   "summary": "Software now helps decide who gets a loan, a job or police attention. The central argument is what fair should mean, and whether machines beat people at it.",
+   "scope_covered": "Automated decisions in lending, hiring and policing, including pretrial risk scores and police face recognition: what fairness means, how it is tested and who answers for it.",
+   "scope_excluded": "Medical, insurance and welfare algorithms, social media ranking and chatbot bias. Surveillance and privacy, diversity programs in general and bail policy as such have their own pages.",
+   "why_now": "On April 22, 2026 the Consumer Financial Protection Bureau finalized a rule, effective July 21, 2026, deleting the disparate-impact test from the regulation that implements the Equal Credit Opportunity Act, part of a wider federal move away from the doctrine most algorithmic fairness enforcement has rested on.",
+   "why_now_source_label": "Consumer Financial Protection Bureau",
+   "why_now_source_url": "https://www.consumerfinance.gov/rules-policy/final-rules/equal-credit-opportunity-act-regulation-b/"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "COMPAS risk score errors by race",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Black, wrongly high",
+       "value": "44.85",
+       "highlight": true
+      },
+      {
+       "label": "White, wrongly high",
+       "value": "23.45",
+       "highlight": false
+      },
+      {
+       "label": "White, wrongly low",
+       "value": "47.72",
+       "highlight": false
+      },
+      {
+       "label": "Black, wrongly low",
+       "value": "27.99",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Among defendants who did not reoffend, COMPAS had labeled 44.85 percent of Black and 23.45 percent of white defendants higher risk.",
+     "detail": "Among those who did reoffend, the error ran the other way: 47.72 percent of white and 27.99 percent of Black defendants had been labeled lower risk. COMPAS, sold by Northpointe (now Equivant), scores the likelihood of rearrest and informs pretrial, sentencing and supervision decisions. ProPublica matched the scores of all 18,610 people scored in Broward County, Florida, in 2013 and 2014 to later criminal records; its error table covers 7,214 defendants. The same analysis found the score correctly predicted recidivism at roughly the same rate for both groups, 63 percent for Black and 59 percent for white defendants, and Northpointe’s rebuttal rested on that: a given score meant about the same chance of reoffending whatever the defendant’s race. Both findings are true of the same data, and the clash between them launched the modern fairness debate.",
+     "source_label": "ProPublica, How We Analyzed the COMPAS Recidivism Algorithm (May 2016)",
+     "source_url": "https://www.propublica.org/article/how-we-analyzed-the-compas-recidivism-algorithm",
+     "source_published": "2013–2014",
+     "source_accessed": "2026-11-26",
+     "id": "compas-risk-score-errors-by-race"
+    },
+    {
+     "label": "The four-fifths rule for adverse impact in hiring",
+     "viz": "range",
+     "wide": false,
+     "value": "80",
+     "unit": "%",
+     "series": [],
+     "range_min": "0",
+     "range_max": "100",
+     "note": "Under 1978 federal guidelines, a group selected at under 80 percent of the top group’s rate is generally evidence of adverse impact; the Justice Department called them unconstitutional in 2026.",
+     "detail": "The rule of thumb turns disparate impact into a number: if a résumé screener advances 50 percent of men and 35 percent of women, the ratio is 70 percent, below the line. New York City’s audit law requires employers to publish these impact ratios for automated hiring tools, and vendors commonly test against them. The challenge came in a June 2026 opinion from the Justice Department’s Office of Legal Counsel, after which the Equal Employment Opportunity Commission moved to rescind the interpretive parts of the guidelines. Employment lawyers note that Title VII’s statutory disparate-impact provision, and private lawsuits under it, remain either way (SHRM, October 30, 2026).",
+     "source_label": "Uniform Guidelines on Employee Selection Procedures, 29 CFR 1607.4(D)",
+     "source_url": "https://www.law.cornell.edu/cfr/text/29/1607.4",
+     "source_published": "1978",
+     "source_accessed": "2026-11-26",
+     "id": "the-four-fifths-rule-for-adverse"
+    },
+    {
+     "label": "Black-white mortgage denial gap, before and after controls",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "points",
+     "series": [
+      {
+       "label": "Raw gap",
+       "value": "14.6",
+       "highlight": false
+      },
+      {
+       "label": "Income, loan amount",
+       "value": "12.3",
+       "highlight": false
+      },
+      {
+       "label": "Plus loan type",
+       "value": "13.9",
+       "highlight": false
+      },
+      {
+       "label": "Same lender, with DTI",
+       "value": "7.8",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Black home buyers were 7.8 points likelier than white ones to be denied in 2024 at the same lender, income, loan amount and debt ratio; the public data omit credit scores.",
+     "detail": "In 2024, 27.2 percent of Black, 21.0 percent of Hispanic, 12.1 percent of white and 10.1 percent of Asian home purchase applicants who reached a decision were denied; the bars come from a separate table of the same paper, so its raw gap differs slightly. The authors analyzed more than 30 million Home Mortgage Disclosure Act applications from 2018 to 2024 and describe the gap as “remarkably persistent,” between 13 and 15 percentage points, with observable characteristics explaining at most 41 percent of it. Because the public records lack credit scores and full credit histories, part of the remaining gap may reflect differences the data cannot see. That limit is itself contested: those who favor disparate-impact testing say only lenders and regulators hold the data to settle it, while lenders say unexplained gaps in incomplete data are not evidence of discrimination.",
+     "source_label": "García and Garriga, Federal Reserve Bank of St. Louis Working Paper 2026-007, Tables 4 and 13",
+     "source_url": "https://s3.amazonaws.com/real.stlouisfed.org/wp/2026/2026-007.pdf",
+     "source_published": "2024",
+     "source_accessed": "2026-11-26",
+     "id": "black-white-mortgage-denial-gap-before"
+    },
+    {
+     "label": "Spread in face recognition false positives across demographic groups",
+     "viz": "bar",
+     "wide": false,
+     "value": "10–100+",
+     "unit": "times",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Across 189 mostly commercial algorithms tested in 2019, false positive rates often differed by factors of 10 to beyond 100 between demographic groups.",
+     "detail": "NIST processed 18.27 million images of 8.49 million people. With high-quality application photos, false positives were highest for West and East African and East Asian people and lowest for Eastern Europeans, though some algorithms developed in China reversed the East Asian result; with US mugshots they were highest for American Indians, with elevated rates for African American and Asian people. False positives were also higher for women than men and for the elderly and children. The spread between vendors was as striking as the spread between groups: the most accurate algorithms made many fewer errors, and some highly accurate one-to-many search algorithms showed undetectable differences. NIST concluded it is “incumbent upon the system owner to know their algorithm,” which is why those who would regulate police use and those who would ban it both cite the report.",
+     "source_label": "NIST, Face Recognition Vendor Test Part 3: Demographic Effects, NISTIR 8280",
+     "source_url": "https://nvlpubs.nist.gov/nistpubs/ir/2019/NIST.IR.8280.pdf",
+     "source_published": "2019",
+     "source_accessed": "2026-11-26",
+     "id": "spread-in-face-recognition-false-positives"
+    },
+    {
+     "label": "Simulated gains from an algorithmic pretrial release rule",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Jailing cut, same crime",
+       "value": "42.0",
+       "highlight": true
+      },
+      {
+       "label": "Crime cut, same jailing",
+       "value": "24.8",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a New York City simulation, a machine-learning release rule could have cut jailing 42.0 percent with no rise in crime; critics dispute the assumption it rests on.",
+     "detail": "Alternatively the rule could have cut crime by up to 24.8 percent with no change in jailing rates, and in either case it reduced the share of Black and Hispanic defendants in jail. The authors trained a model on 758,027 defendants arrested in New York City from 2008 to 2013 and compared it with judges’ actual decisions: judges released 48.5 percent of the defendants the model placed in the riskiest 1 percent, whose predicted crime risk was 62.6 percent. Figures differ slightly across versions of the paper, 24.7 and 41.8 percent in its text and 24.7 and 41.9 percent in the published version. The result assumes detained defendants would have behaved like released defendants with the same observable characteristics; Megan Stevenson argued in the Minnesota Law Review in 2018 that this is “almost certainly not true” and that real-world adoption has produced far smaller gains.",
+     "source_label": "Kleinberg, Lakkaraju, Leskovec, Ludwig and Mullainathan, Human Decisions and Machine Predictions, NBER 23180",
+     "source_url": "https://www.nber.org/papers/w23180",
+     "source_published": "2008–2013",
+     "source_accessed": "2026-11-26",
+     "id": "simulated-gains-from-an-algorithmic-pretrial"
+    },
+    {
+     "label": "Extra interest charged to Latino and Black mortgage borrowers",
+     "viz": "bar",
+     "wide": false,
+     "value": "7.9",
+     "unit": "basis points",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Lenders charged otherwise comparable Latino and Black borrowers 7.9 basis points more on purchase mortgages; algorithmic lenders did too, but 40 percent less than face-to-face ones.",
+     "detail": "On refinances the gap was 3.6 basis points. The study uses 2009 to 2015 loans backed by Fannie Mae and Freddie Mac, whose guarantee removes credit risk from the lender, so rate differences among borrowers with the same credit characteristics cannot be explained by default risk. The authors estimate the extra interest costs these borrowers $765 million a year, that 0.74 to 1.3 million minority applications were rejected because of discrimination over the period, and that algorithmic lenders did not discriminate in approvals. They attribute the remaining pricing gap to lenders profiting from weaker competition or from borrowers less likely to shop around. Both sides of the debate cite it: algorithms reduced the disparity but did not remove it.",
+     "source_label": "Bartlett, Morse, Stanton and Wallace, Consumer-Lending Discrimination in the FinTech Era, NBER Working Paper 25943",
+     "source_url": "https://www.nber.org/papers/w25943",
+     "source_published": "2009–2015",
+     "source_accessed": "2026-11-26",
+     "id": "extra-interest-charged-to-latino-and"
+    },
+    {
+     "label": "Job applications rejected through Workday’s hiring software",
+     "viz": "bar",
+     "wide": false,
+     "value": "1.1 billion",
+     "unit": "applications",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In Mobley v. Workday, the largest algorithmic hiring case, Workday represented that about 1.1 billion applications were rejected using its tools in the period at issue.",
+     "detail": "The figure shows the scale at which one vendor’s software touches hiring. The case alleges that Workday’s screening disadvantaged applicants over 40, as well as Black and disabled applicants, and on May 16, 2025 the court conditionally certified a nationwide age-discrimination collective of applicants 40 and older. In July 2026 the court refused to order Workday to produce data on its customers’ applicants, which the Congressional Research Service noted in October 2026 could make a disparate impact harder to prove. On November 10, 2026 Workday asked the judge to decertify the collective, by then more than 15,000 applicants (MLex).",
+     "source_label": "Proskauer, AI Bias Lawsuit Against Workday Reaches Next Stage (June 11, 2025)",
+     "source_url": "https://www.proskauer.com/blog/ai-bias-lawsuit-against-workday-reaches-next-stage-as-court-grants-conditional-certification-of-adea-claim",
+     "source_published": "2025",
+     "source_accessed": "2026-11-26",
+     "id": "job-applications-rejected-through-workday-s"
+    },
+    {
+     "label": "Accuracy of COMPAS against people with no training",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% correct",
+     "series": [
+      {
+       "label": "Lay guesses, pooled",
+       "value": "67.0",
+       "highlight": false
+      },
+      {
+       "label": "COMPAS",
+       "value": "65.2",
+       "highlight": true
+      },
+      {
+       "label": "Lay guesser, average",
+       "value": "62.8",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "On 1,000 Broward County defendants, COMPAS predicted two-year reoffending correctly 65.2 percent of the time; pooled guesses of untrained online participants, 67.0 percent.",
+     "detail": "Participants saw a short description of each defendant, including age, sex and criminal history but not race, and guessed whether he or she would reoffend. The authors found COMPAS “no more accurate or fair than predictions made by people with little or no criminal justice expertise,” and that a simple predictor using only age and number of prior convictions nearly matched the accuracy of COMPAS’s 137 features. Those who argue such tools add little cite the study; defenders of risk tools reply that the relevant comparison is with judges’ actual decisions, not a lab task, and that simple, transparent tools are what they recommend.",
+     "source_label": "Dressel and Farid, The accuracy, fairness, and limits of predicting recidivism, Science Advances (2018)",
+     "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5777393/",
+     "source_published": "2013–2014",
+     "source_accessed": "2026-11-26",
+     "id": "accuracy-of-compas-against-people-with"
+    },
+    {
+     "label": "AI résumé screening comparisons favoring white-associated names",
+     "viz": "radial",
+     "wide": false,
+     "value": "85.1",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Three AI text models ranking otherwise identical résumés favored white-associated names in 85.1 percent of comparisons and female-associated names in 11.1 percent; other audits find other biases.",
+     "detail": "The researchers attached names associated with different races and genders to more than 500 résumés across nine occupations; in intersectional comparisons, résumés with Black male names were disadvantaged in up to 100 percent of cases. The models were general-purpose open models, not a commercial hiring product, so the study shows a risk rather than measuring a deployed tool. Other audits of language models point in different directions: David Rozado’s 2025 study of 22 models across 70 professions found that all of them favored female-named candidates and most favored whichever candidate was listed first. Together the studies suggest these models’ preferences are unstable and depend on how they are used, which is why audits of actual deployments matter.",
+     "source_label": "Wilson and Caliskan, Gender, Race, and Intersectional Bias in Resume Screening via Language Model Retrieval, AIES 2024",
+     "source_url": "https://arxiv.org/html/2407.20371v1",
+     "source_published": "2024",
+     "source_accessed": "2026-11-26",
+     "id": "ai-r-sum-screening-comparisons-favoring"
+    },
+    {
+     "label": "Effects of an AI lending model, as reported by the lender",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "More applicants approved",
+       "value": "27",
+       "highlight": true
+      },
+      {
+       "label": "Lower average APR",
+       "value": "16",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Upstart told the CFPB its model approved 27 percent more applicants than a traditional one at 16 percent lower APRs; the CFPB did not replicate it, and a later monitor found disparities.",
+     "detail": "Upstart also reported that applicants with FICO scores from 620 to 660 were approved about twice as often, that applicants under 25 were 32 percent more likely to be approved, and that minority, female and older applicants showed no disparities requiring further fair lending analysis. A later independent monitorship, run by the law firm Relman Colfax with the NAACP Legal Defense Fund and the Student Borrower Protection Center, found no pricing disparities but did find approval disparities for Black applicants; it ended in March 2024 at an impasse after Upstart rejected the monitor’s proposed less discriminatory model as too costly to accuracy (Student Borrower Protection Center, 2024). Upstart’s own 2025 report says its model approves 52 percent more Black applicants than a traditional model, based on simulated decisions and inferred race.",
+     "source_label": "CFPB, An update on credit access and the Bureau’s first No-Action Letter (August 6, 2019)",
+     "source_url": "https://www.consumerfinance.gov/archive/blog/update-credit-access-and-no-action-letter/",
+     "source_published": "2017–2019",
+     "source_accessed": "2026-11-26",
+     "id": "effects-of-an-ai-lending-model"
+    },
+    {
+     "label": "Publicly known US wrongful arrests after police face recognition",
+     "viz": "bar",
+     "wide": false,
+     "value": "14",
+     "unit": "people",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The ACLU, which campaigns against police face recognition, counted 14 people publicly known to have been wrongfully arrested because of it as of April 2026; other trackers differ.",
+     "detail": "The count covers only publicly documented cases. Police often do not disclose that a face search led to a suspect, so the true number is unknown. The first widely reported case was Robert Williams, arrested in Detroit in 2020; in a June 2024 settlement, Detroit police agreed not to arrest people based solely on face recognition results or on photo lineups that directly follow a face search (ACLU, 2024). Police departments and vendors respond that a match is a lead, not probable cause, and that the wrongful arrests followed failures of investigation, such as skipping corroboration, rather than of the software alone. Both readings point to the same policy question: what a match should and should not be allowed to justify.",
+     "source_label": "ACLU, press release on the wrongful jailing of a Maryland woman (April 14, 2026)",
+     "source_url": "https://www.aclu.org/press-releases/woman-wrongly-jailed-for-months-based-on-faulty-facial-recognition-technology-demands-apology-from-maryland-police-departments",
+     "source_published": "2026",
+     "source_accessed": "2026-11-26",
+     "id": "publicly-known-us-wrongful-arrests-after"
+    },
+    {
+     "label": "False matches in UK police face searches, by group",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "scale": "log",
+     "series": [
+      {
+       "label": "Black women",
+       "value": "9.9",
+       "highlight": false
+      },
+      {
+       "label": "Black subjects",
+       "value": "5.5",
+       "highlight": true
+      },
+      {
+       "label": "Asian subjects",
+       "value": "4.0",
+       "highlight": false
+      },
+      {
+       "label": "Black men",
+       "value": "0.4",
+       "highlight": false
+      },
+      {
+       "label": "White subjects",
+       "value": "0.04",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "At a 0.8 match threshold, the face search used on Britain’s Police National Database returned a false candidate in 5.5 percent of searches of Black subjects and 0.04 percent of white ones.",
+     "detail": "The bars are on a log scale. Retrospective facial recognition lets trained operators compare an image from CCTV or social media against custody images, about 180,000 in the test, and results are treated as intelligence, not evidence. The disparity depends heavily on the threshold the operator sets: at 0.9 the system returned no false positives for any group, at 0.85 the differences were too small to be statistically significant, and at 0.7 false positives reached 51.0 percent for Black subjects and 11.6 percent for white subjects. With no threshold applied, the system found the right person among its top candidates in nearly every case. On November 4, 2026 the Home Office said it had independently tested a new algorithm for these searches, “proven to be highly accurate and without bias” (GOV.UK).",
+     "source_label": "National Physical Laboratory for the Home Office, evaluation of Cognitec FaceVACS-DBScan ID v5.5",
+     "source_url": "https://assets.publishing.service.gov.uk/media/693002a4cdec734f4dff4149/1a_Cognitec_NPL_Equitability_Report_October_25.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-11-26",
+     "id": "false-matches-in-uk-police-face"
+    },
+    {
+     "label": "Gender classification error for darker-skinned women",
+     "viz": "radial",
+     "wide": false,
+     "value": "34.7",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Three commercial gender classifiers misclassified darker-skinned women at error rates of up to 34.7 percent; for lighter-skinned men the maximum was 0.8 percent.",
+     "detail": "The study tested systems that guess a person’s gender from a photo, not the face matching systems police use to identify people, but it showed how a model trained mostly on lighter-skinned faces can fail the people least represented in its data. The authors built a new benchmark balanced by gender and skin type to expose the gap. Buolamwini went on to found the Algorithmic Justice League, and the study became the standard example of a public audit exposing a gap that a vendor’s aggregate accuracy figures had hidden.",
+     "source_label": "Buolamwini and Gebru, Gender Shades, Proceedings of Machine Learning Research 81 (2018)",
+     "source_url": "https://proceedings.mlr.press/v81/buolamwini18a.html",
+     "source_published": "2017",
+     "source_accessed": "2026-11-26",
+     "id": "gender-classification-error-for-darker-skinned"
+    },
+    {
+     "label": "Predictive policing hit rate in Plainfield, New Jersey",
+     "viz": "radial",
+     "wide": false,
+     "value": "<0.5",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Fewer than 100 of the 23,631 crime predictions Geolitica, formerly PredPol, made for Plainfield police in 2018 matched a reported crime of the predicted type in the predicted area.",
+     "detail": "Place-based systems like PredPol draw boxes on a map where crime is predicted and send patrols there. The Markup and Wired matched the predictions against crimes reported to police, which leaves out crimes never reported; for robbery and aggravated assault the hit rate was about 6 in 1,000, and for burglary about 1 in 1,000. Plainfield officials said they never used the system to direct patrols. The Markup reported, citing Wired, that Geolitica was ceasing operations at the end of 2023. The finding is central to those who argue that the first problem with many predictive tools is that they do not work.",
+     "source_label": "The Markup, Predictive Policing Software Terrible at Predicting Crimes (October 2, 2023)",
+     "source_url": "https://themarkup.org/prediction-bias/2023/10/02/predictive-policing-software-terrible-at-predicting-crimes",
+     "source_published": "2018",
+     "source_accessed": "2026-11-26",
+     "id": "predictive-policing-hit-rate-in-plainfield"
+    },
+    {
+     "label": "NYC employers found posting a required AI hiring bias audit",
+     "viz": "bar",
+     "wide": false,
+     "value": "18",
+     "unit": "of 391",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Of 391 employers checked after New York City began requiring bias audits of automated hiring tools in 2023, 18 had posted an audit and 13 the required notice to applicants.",
+     "detail": "Local Law 144, enforced since July 5, 2023, was the first law anywhere to require independent bias audits of automated employment decision tools, with published selection rates by race, ethnicity and sex. It lets each employer decide whether its tool substantially assists hiring decisions and so falls within the law, which is why the authors call a missing audit “null compliance”: it cannot be shown to be a violation. A December 2025 audit by the New York State Comptroller found the city agency had received only two complaints about such tools in two years, and that where the agency found one instance of potential non-compliance, the comptroller’s staff found at least 17. Advocates of audit laws read this as a case for stronger rules; opponents of new AI rules read it as a sign that audit mandates produce paperwork rather than fairness.",
+     "source_label": "Wright et al., Null Compliance: NYC Local Law 144 and the Challenges of Algorithm Accountability, ACM FAccT 2024",
+     "source_url": "https://arxiv.org/html/2406.01399v1",
+     "source_published": "2023–2024",
+     "source_accessed": "2026-11-26",
+     "id": "nyc-employers-found-posting-a-required"
+    },
+    {
+     "label": "US adults with no credit record",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "2010, first estimate",
+       "value": "11.0",
+       "highlight": false
+      },
+      {
+       "label": "2010, corrected",
+       "value": "5.8",
+       "highlight": false
+      },
+      {
+       "label": "2020",
+       "value": "2.7",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The CFPB estimates 2.7 percent of US adults, about 7.0 million, had no credit record in 2020, and cut its widely cited 2010 estimate from 11.0 to 5.8 percent after finding a data error.",
+     "detail": "For a decade the figure of 26 million “credit invisible” Americans, disproportionately Black, Hispanic, young and low-income, was the standard argument for feeding new data such as rent, utility and bank account cash flows into lending algorithms; the corrected 2010 figure is 13.5 million. The same report finds 87.5 percent of adults had a scored credit record in 2020, which leaves, by subtraction, about 10 percent with a record too thin to score, a larger group than those with none. Laura Blattner and Scott Nelson estimate that sparse and noisy credit records account for a large share of the gap in how well scores predict for low-income and minority borrowers (cited by FinRegLab, 2025).",
+     "source_label": "CFPB, Technical Correction and Update to the CFPB’s Credit Invisibles Estimate (June 2025)",
+     "source_url": "https://files.consumerfinance.gov/f/documents/cfpb_update-credit-invisibles-estimate_2025-06.pdf",
+     "source_published": "2020",
+     "source_accessed": "2026-11-26",
+     "id": "us-adults-with-no-credit-record"
+    },
+    {
+     "label": "Americans opposed to AI making a final hiring decision",
+     "viz": "radial",
+     "wide": false,
+     "value": "71",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a December 2022 survey, 71 percent of US adults opposed AI making a final hiring decision and 7 percent favored it; 66 percent would not want to apply for a job that uses AI in hiring.",
+     "detail": "The public is ambivalent rather than simply hostile. In the same survey of 11,004 adults, 47 percent said AI would do better than humans at evaluating all job applicants in the same way and 15 percent said worse; among those who see bias by race or ethnicity in hiring as a problem, 53 percent said it would get better if employers used AI more and 13 percent said worse. Opposition to machines making final decisions coexists with a sizable belief that they would apply rules more evenly than people. Each figure answers a different question, and they should not be combined.",
+     "source_label": "Pew Research Center, AI in Hiring and Evaluating Workers: What Americans Think (April 20, 2023)",
+     "source_url": "https://www.pewresearch.org/internet/2023/04/20/ai-in-hiring-and-evaluating-workers-what-americans-think/",
+     "source_published": "2022",
+     "source_accessed": "2026-11-26",
+     "id": "americans-opposed-to-ai-making-a"
+    },
+    {
+     "label": "Massachusetts settlement over an AI underwriting model",
+     "viz": "bar",
+     "wide": false,
+     "value": "2.5",
+     "unit": "$ million",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The lender Earnest agreed in 2025 to pay Massachusetts $2.5 million and drop two model inputs after the state alleged disparate impact on Black, Hispanic and non-citizen applicants. Earnest denied it.",
+     "detail": "The attorney general alleged that Earnest used a school’s federal student loan Cohort Default Rate as a model variable, which penalized Black and Hispanic applicants more than white applicants, and a knockout rule that automatically denied applicants based on immigration status, and that it failed to test its models for disparate impact. The settlement requires AI governance policies, regular fair lending testing and reporting to the attorney general. It is one of the first state enforcement actions over an AI model’s discriminatory effect, and with federal agencies withdrawing from disparate-impact enforcement, the fourteen-state guidance of September 2026 cites it as a model for what states will do.",
+     "source_label": "Consumer Finance Monitor (Ballard Spahr), Massachusetts AG settlement with Earnest (July 18, 2025)",
+     "source_url": "https://www.consumerfinancemonitor.com/2025/07/18/massachusetts-ag-reaches-settlement-with-student-loan-company-earnest-operations-llc/",
+     "source_published": "2025",
+     "source_accessed": "2026-11-26",
+     "id": "massachusetts-settlement-over-an-ai-underwriting"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Should a decision be unlawful because its results fall unequally on a protected group, even without intent?",
+    "kind": "value",
+    "why": "Federal law since 1971 has let people challenge neutral practices whose effects fall disproportionately on a protected group. A model rarely intends anything, so the answer shapes what the law can reach in automated decisions.",
+    "detail": "Those who say outcomes count argue that an algorithm almost never discriminates on purpose. It discriminates because its training data, its target or its inputs carry the imprint of past discrimination, through proxies such as zip code, school, gaps in employment or a college’s loan default rate. If the law reaches only intent, most algorithmic discrimination becomes legal by definition, since no one’s intent can be proved and the model is too complex to read. Nor is the test a quota: a lender or employer can defend a gap as necessary, and loses only if a less discriminatory alternative would serve as well. Fourteen state attorneys general said in September 2026 that the liability remains enforceable.\n\nThose who say intent is required argue that equal protection means treating each person the same, not producing equal results across groups. When liability turns on group outcomes alone, a company can escape it only by watching the racial results of its decisions and adjusting them, which is itself race-based decision-making; the Justice Department’s Office of Legal Counsel wrote in June 2026 that the approach “functions as a qualified racial-proportionality mandate.” Applied to a model, that means bending predictions toward demographic targets. The real problem, a model using a proxy to stand in for race, can be targeted directly without a general outcomes test.",
+    "lean_label_a": "Outcomes count",
+    "lean_label_b": "Intent required",
+    "id": "should-a-decision-be-unlawful-because"
+   },
+   {
+    "text": "Do automated decisions treat protected groups better or worse than the human decisions they replace?",
+    "kind": "empirical",
+    "why": "Most audits measure an algorithm against an ideal of no disparity; most defenses measure it against the loan officer, recruiter or judge it replaced. Head-to-head tests are rare, because human decisions were seldom recorded in a form anyone could audit.",
+    "detail": "The case that algorithms are fairer starts from human judgment as the real baseline, and finds it badly biased and invisible. Mortgage pricing data show algorithmic lenders discriminating less than face-to-face ones, and a pretrial simulation found judges releasing many of the defendants a model rated riskiest. An algorithm’s bias, unlike a person’s, can be measured on every decision, retested after a fix and corrected. Where real deployments have disappointed, defenders point to the humans: in Kentucky, judges ignored the law’s presumption of release in more than two-thirds of cases (Stevenson, 2018).\n\nThe case that they spread bias at scale says models learn from the records of past human decisions, inherit their bias and apply it to millions of people at once, with an aura of objectivity that makes it harder to challenge. Amazon abandoned an experimental résumé-rating tool after, trained mostly on men’s résumés, it began to penalize résumés containing the word “women” (BBC, 2018). When Kentucky made pretrial risk assessment mandatory in 2011, release rates rose only slightly, and the change eroded within a couple of years as judges returned to old habits (Stevenson, 2018). One biased loan officer harms the applicants at one branch; one biased vendor model reaches everyone who applies through it.",
+    "lean_label_a": "Fairer than people",
+    "lean_label_b": "Biased at scale",
+    "id": "do-automated-decisions-treat-protected-groups"
+   },
+   {
+    "text": "Should a risk score have equal error rates across groups, or mean the same risk for every group?",
+    "kind": "value",
+    "why": "Kleinberg, Mullainathan and Raghavan proved in 2016 that when groups differ in their underlying rates, a score cannot both mean the same risk for everyone and spread its errors equally. So the choice is between kinds of fairness.",
+    "detail": "The case for equal error rates is that the harm that matters falls on the person wrongly labeled: the defendant held in jail who would not have reoffended, or the creditworthy applicant wrongly denied. If those errors fall more often on one group, that group bears a burden the other does not, whatever the score means on average. And because gaps in base rates such as rearrest partly reflect where police patrol and whom they arrest, calibrating a score to those rates builds past discrimination into it. A tool that cannot equalize its mistakes across groups should have its thresholds adjusted, or not be used for decisions about liberty.\n\nThe case for the same risk is that a score should mean the same thing whatever a defendant’s race. If a 7 meant a 60 percent risk for one group and 40 percent for another, judges would have to adjust scores by race, which is exactly what anti-discrimination law forbids. When groups truly differ in rates of the predicted outcome, any calibrated score will produce different error rates, so forcing equal error rates means holding individuals to different standards by group. The better remedy for unequal base rates is to address their causes and to choose carefully what is predicted, not to bend the measurement.",
+    "lean_label_a": "Equal error rates",
+    "lean_label_b": "One score, one risk",
+    "id": "should-a-risk-score-have-equal"
+   },
+   {
+    "text": "Should predictive tools be used in policing and pretrial decisions at all?",
+    "kind": "value",
+    "why": "The stakes are liberty rather than a loan, the data are police records rather than repayment histories, and the evidence on accuracy varies widely from tool to tool. Governments have gone both ways, some banning uses and others expanding them under new rules.",
+    "detail": "The case for use with safeguards is that police and courts make predictions anyway, about who is dangerous, where crime will happen and whether a face on a camera matches a suspect, and the alternative to a tested tool is an untested human hunch. Face recognition run at strict thresholds can show no measurable difference between groups, and the answer to wrongful arrests is a rule that a match alone never justifies one, not abandoning a tool that helps identify suspects. Pretrial risk tools let jurisdictions release more people without money bail. On November 4, 2026 Britain took this route, announcing a law for police face recognition that requires independent testing for bias rather than a ban.\n\nThe case for a ban is that policing data record where police looked, not where crime happened, so prediction sends officers back to the same neighborhoods, generates more stops and arrests there, and confirms itself. The Pretrial Justice Institute, once a leading promoter of risk tools, concluded in 2020 that they “perpetuate structural racism and institutional inequities.” Safeguards also depend on police disclosing when a tool was used, which they often do not. The European Union took this route for one use: since February 2, 2025 its AI Act has banned predicting whether a person will commit a crime based solely on profiling, while leaving place-based forecasting legal.",
+    "lean_label_a": "Use with safeguards",
+    "lean_label_b": "Ban them",
+    "id": "should-predictive-tools-be-used-in"
+   },
+   {
+    "text": "Do bias audits and disclosure rules actually reduce discrimination by automated systems?",
+    "kind": "empirical",
+    "why": "Audit mandates are the main tool of those who want new rules, and the first one produced few audits. Whether that reflects one law’s design or audits as such is disputed, and little evidence yet links any audit regime to fairer outcomes for applicants.",
+    "detail": "The case that audits work is that every documented case of algorithmic bias in these fields was found by testing, from the COMPAS analysis to Gender Shades, and visibility is what makes enforcement possible. On this view New York City’s weak results reflect a badly drafted law, one that let employers decide for themselves whether they were covered and relied on complaints to an agency that, the state comptroller found in December 2025, had not checked whether its complaint line worked. A law with clear coverage, access to data and real penalties would do better.\n\nThe case that audits mostly produce paperwork is that an audit tests what the auditor chooses to measure, on data the company supplies, usually a single selection-rate ratio, and can bless a tool that is invalid or discriminatory in ways the ratio misses. The first audit law drew compliance from only a small fraction of employers, and the people harmed by a tool usually cannot get the data to check it themselves. Better drafting, on this view, does not change what an audit can see.",
+    "lean_label_a": "Audits work",
+    "lean_label_b": "Mostly paperwork",
+    "id": "do-bias-audits-and-disclosure-rules"
+   },
+   {
+    "text": "Who should answer for a biased automated decision, the vendor that built the tool or the firm that used it?",
+    "kind": "value",
+    "why": "Civil rights law was written for employers, lenders and landlords, not for the software companies whose products now shape their decisions. The user usually cannot see inside the model; the vendor usually does not see the user’s applicants.",
+    "detail": "The case for holding vendors liable is that the vendor designs the model, chooses its training data and sells it to thousands of employers or lenders, so it is the only party that can find and fix a bias at its source; suing each small employer is slow and lets the same flaw recur everywhere. In 2024 the court in Mobley v. Workday held that, on the facts alleged, Workday could be liable as the employers’ agent (Congressional Research Service, 2026). The proposed AI Civil Rights Act would put evaluation duties on developers as well as deployers.\n\nThe case for holding users liable is that the employer or lender makes the decision: it chooses the tool, configures it, sets its thresholds and decides whether to follow its recommendations, so the existing law that already holds the decision-maker responsible is enough. Workday argues that its tools do not make hiring decisions, its customers do. Colorado rewrote its AI law in 2026 partly because companies worried about being held responsible for harmful outcomes of technology they did not build, in the words of Assistant House Majority Leader Jennifer Bacon (Denver7). Vendor liability for every customer’s use, on this view, would push developers to withdraw products or bury them in disclaimers.",
+    "lean_label_a": "Hold vendors liable",
+    "lean_label_b": "Hold users liable",
+    "id": "who-should-answer-for-a-biased"
+   },
+   {
+    "text": "Does adding new kinds of data to lending models widen access to credit or create new proxies for race?",
+    "kind": "empirical",
+    "why": "Lenders and fintechs say cash flow, rent and other new data can score people traditional credit files miss, disproportionately young, low-income, Black and Hispanic. Consumer advocates say the same data carry hidden links to race and invite surveillance.",
+    "detail": "The case that new data widen access is that traditional credit files are thin or noisy for many low-income and minority borrowers, which makes scores least accurate for exactly those people, and better data fix that at the source. FinRegLab’s 2025 study, using loan-level data from six firms, found that a machine-learning model combining credit bureau and cash-flow data was the most predictive overall and across all subgroups, and produced the highest approval rates.\n\nThe case that they create new proxies is that the more data a model uses, the more ways it can reconstruct race without being told it. A study by Fuster and colleagues, summarized by FinRegLab in 2025, found that more accurate machine-learning mortgage models raised approvals modestly for all groups, most for Black borrowers, but widened the spread of predicted risk in a way that increased pricing disparities between groups. The National Consumer Law Center warns that weaker fair lending rules will bring “an uptick in digital redlining” in an economy “where black box AI models advertise, offer, approve, and price credit.”",
+    "lean_label_a": "Widens access",
+    "lean_label_b": "Adds proxies",
+    "id": "does-adding-new-kinds-of-data"
+   },
+   {
+    "text": "Should models be allowed to use race, sex or other protected traits in order to correct for bias?",
+    "kind": "value",
+    "why": "The law generally forbids using protected traits in decisions, and lenders are largely barred from collecting race outside mortgages. Yet a model blind to race can discriminate through proxies, and fixing that may mean knowing who is in which group.",
+    "detail": "The case for using them to correct is that removing race from the inputs does not remove race from the model, because zip codes, names, schools and purchase histories stand in for it; the only way to detect and fix that is to measure outcomes by group, and sometimes to adjust. Kleinberg, Ludwig, Mullainathan and Rambachan found in a college admissions example that “the inclusion of variables such as race can increase both equity and efficiency,” arguing that fairness goals should shape how predictions are used (2018). Even firms that want to test must now guess: Upstart does not collect demographic data and estimates race from surname and location.\n\nThe case for keeping models blind is that adjusting a model’s outputs by race is treating applicants differently by race, which is what civil rights law was written to forbid, whatever the motive, and after the Supreme Court’s 2023 admissions decision such corrections face sharper constitutional scrutiny. The Justice Department challenged Colorado’s 2024 law in part because it exempted from algorithmic discrimination any differential treatment meant to increase diversity or redress historic discrimination. The remedy for a proxy is to remove or justify it, as the Massachusetts settlement with Earnest did by ending use of a school default-rate variable, not to add race back in. Collecting more demographic data also invites misuse.",
+    "lean_label_a": "Use to correct",
+    "lean_label_b": "Keep models blind",
+    "id": "should-models-be-allowed-to-use"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Require bias testing and accountability for algorithms",
+    "color_key": "green",
+    "steelman": "Systems that decide who is hired, lent to or policed learn from past discrimination, so whoever builds or uses one must test it for unequal effects and answer for the results.",
+    "detail": "Without testing, nobody knows whether a model is reproducing that history, least of all the applicant it rejected, who may never learn a machine was involved. Civil rights law already forbids discrimination, but it was built for human decision-makers whose motives could be questioned; a model has no motive, its reasoning is often opaque, and the evidence of its effects sits in data only the company holds. So the burden has to shift. Those who build and deploy high-stakes systems should test them for disparate impact before and after deployment, look for less discriminatory alternatives, tell people when a machine is deciding, explain adverse decisions and offer a human to appeal to. Disparate-impact liability is the legal backbone, because it reaches discrimination no one intended, which is the kind algorithms produce. With federal agencies abandoning it, states and private plaintiffs must carry it.\n\nWe are told outcome tests push companies toward racial balancing. They do not: a company can justify a gap as necessary and loses only if an equally effective, less discriminatory alternative exists, a test the Supreme Court upheld in 2015. Searching for such alternatives is ordinary model building, since there are usually many models of nearly equal accuracy and some are fairer than others. We differ on whether testing should come before deployment, as under the European Union’s AI Act from December 2, 2027, or be enforced afterward under existing law, and on whether vendors should share liability.",
+    "proponents": "ACLU; Leadership Conference on Civil and Human Rights; Edward J. Markey; Yvette Clarke; Fourteen state attorneys general; European Union; National Consumer Law Center; Lawyers’ Committee for Civil Rights Under Law; Algorithmic Justice League; Center for Democracy & Technology; Electronic Frontier Foundation",
+    "id": "require-bias-testing-and-accountability-for"
+   },
+   {
+    "name": "Judge algorithms by equal treatment, not group outcomes",
+    "color_key": "blue",
+    "steelman": "Civil rights law promises each person equal treatment, not each group equal results; forcing models to equalize outcomes makes them less accurate and sorts people by race.",
+    "detail": "A credit model or hiring screen that applies the same job- or risk-related criteria to everyone is fair even when outcomes differ, because groups differ in income, credit history, experience and much else for reasons the lender or employer did not cause and cannot fix. Make a company liable for any statistical gap it cannot defend to a regulator’s satisfaction and it has every reason to watch the racial results of its models and tune them until the numbers come out right, which is discrimination by race in the name of preventing it. The Supreme Court held in Ricci v. DeStefano in 2009 that an employer that threw out a test because of its racial results engaged in disparate treatment. For AI the cost is sharper: a model forced to equalize outcomes has to approve loans that will default or pass over the strongest candidates. The real wrongs, a model told to use race or built around a proxy chosen to stand in for it, are disparate treatment and stay illegal.\n\nThe objection is that without outcome tests algorithmic discrimination becomes invisible, since no model has intent. That is why reform should target proxies directly. The Manhattan Institute proposes that a challenger could show an algorithm relies on factors with no reasonable relationship to the job, or warps job-related factors into proxies for protected traits, with a safe harbor for employers who audit for that in advance. Intent-based law already reaches a developer who designs or selects a model for its discriminatory effect. What it rightly refuses is to treat every unexplained gap as proof of wrongdoing. Some of us would end disparate-impact liability entirely; others would keep it as evidence of hidden intent.",
+    "proponents": "US Department of Justice; The White House; Equal Employment Opportunity Commission; Manhattan Institute; xAI; Reason Foundation",
+    "id": "judge-algorithms-by-equal-treatment-not"
+   },
+   {
+    "name": "Rely on existing anti-discrimination law, not new AI rules",
+    "color_key": "amber",
+    "steelman": "Discrimination by algorithm is already illegal under the laws we have; fifty new AI codes would add paperwork, not protection, and push firms back to less consistent human judgment.",
+    "detail": "Title VII, the Equal Credit Opportunity Act, the Fair Housing Act, the Age Discrimination in Employment Act and state civil rights and consumer laws apply whether a person or software makes the decision, and the cases brought so far, from the Workday litigation to the Massachusetts settlement with Earnest, were brought under them. New AI statutes add vague definitions of high-risk systems and algorithmic discrimination, impact assessments and compliance filings, in a different version for every state, while adding little protection. The costs fall hardest on smaller firms and on the employers and lenders with the most to gain from tools that are more consistent than people. Colorado spent two years, including a 2025 special session that delayed its 2024 law, trying to make that law workable before dropping its central duties in 2026 in favor of notice, explanation and human review. Where real gaps exist, Congress should fill them with one risk-based national standard, sector by sector, and regulators should enforce the laws they have.\n\nThe objection is that victims cannot see the model or get the data, so existing law cannot reach them. The cure is targeted: transparency to regulators, the adverse action explanations credit law already requires, and discovery rules. If federal agencies have stepped back from disparate impact, that is a question of enforcement priorities under existing statutes, which private plaintiffs and state attorneys general still use, not a reason for a separate AI code in every state. We differ among ourselves on disparate impact itself: some, like Chamber of Progress, want existing civil rights laws strengthened and enforced; others are content with the federal retreat.",
+    "proponents": "US Chamber of Commerce; Chamber of Progress; Glenn Youngkin; Jared Polis",
+    "id": "rely-on-existing-anti-discrimination-law"
+   },
+   {
+    "name": "Ban predictive tools from policing and criminal justice",
+    "color_key": "rust",
+    "steelman": "Police records measure where officers looked, not where crime happened, so no audit can make crime prediction fair; where liberty is at stake, the answer is no score at all.",
+    "detail": "The data these tools learn from are records of police activity, arrests, stops and calls, and they reflect decades of heavier policing in Black and poor neighborhoods. A tool trained on them sends officers back to the same blocks and flags the same people, producing more records that confirm the prediction. Better measurement cannot fix that, because the bias sits in the thing being predicted. Many of the tools also simply do not work, and they shift responsibility for taking someone’s liberty from accountable officials to software a defendant cannot cross-examine. Amnesty International UK, which found almost three-quarters of UK police forces using crime-predicting technology, concluded in 2025 that “these systems have been built with discriminatory data and serve only to supercharge racism.”\n\nWe are told human judgment is worse. But the choice is not between a biased human and a fair machine: the machine is trained on the biased human’s records and then lends them false authority. Reducing bias in policing and pretrial detention means changing what police and courts do, fewer stops and arrests for minor offenses and release unless there is specific evidence of danger, not adding a prediction layer to the same system. So end predictive policing, end police face recognition and make release the default. Some of us would ban only person-based prediction and face recognition, others hot-spot forecasting too; the Stop LAPD Spying Coalition rejects reformed versions of data-driven policing as well. Groups that seek audits for hiring and lending tools, the ACLU among them, join us on police face recognition.",
+    "proponents": "Amnesty International UK; Pretrial Justice Institute; Stop LAPD Spying Coalition; Fair Trials; Ruha Benjamin",
+    "id": "ban-predictive-tools-from-policing-and"
+   },
+   {
+    "name": "Replace human judgment with algorithms built to be fairer",
+    "color_key": "purple",
+    "steelman": "The real choice is between algorithms and people, and people are the more biased and less correctable; a model can be tested on every decision, fixed and tested again.",
+    "detail": "Loan officers, recruiters and judges carry biases they cannot see and will not admit, decide inconsistently and leave no record that could prove discrimination. A well-built algorithm can be inspected, checked against every group and retrained, and its trade-offs between accuracy and fairness are explicit numbers rather than hidden instincts. Used properly, algorithms find the creditworthy borrowers traditional scores miss, the strong candidates from unfamiliar schools and the defendants who can safely go home. As Kleinberg, Ludwig, Mullainathan and Sunstein wrote in 2018, “with the right safeguards, they can be a potential positive force for equity.” So adopt them faster, with the right requirements: data and objectives disclosed to regulators, outcomes measured by group, fairness built into how predictions are used, and limits on human overrides that bring the bias back.\n\nThe objection is that algorithms learn from biased data and that real deployments have not delivered what simulations promise. Both are problems of design and use, not of algorithms as such. Biased labels can be identified and replaced, which is what the Algorithmic Bias Playbook published at the University of Chicago walks organizations through. Where pretrial tools fell short, it was partly because judges overrode them, which argues for making them more binding, not for abandoning them. Academics among us support transparency to regulators and outcome measurement, and some support disparate-impact law; lenders among us generally prefer existing fair lending law to new AI statutes. We differ on whether models should use protected traits to correct bias.",
+    "proponents": "Jon Kleinberg; Jens Ludwig; Sendhil Mullainathan; Cass Sunstein; Ziad Obermeyer; Upstart; Center for Applied Artificial Intelligence at Chicago Booth",
+    "id": "replace-human-judgment-with-algorithms-built"
+   }
+  ],
+  "crux": {
+   "lead": "Is a decision fair if it applies one rule to all, or only if its unequal effects can be justified?",
+   "lead_highlight": "one rule to all, or only if its unequal effects can be justified",
+   "subtitle": "If fairness means one rule for all, an accurate model is fair even when outcomes differ, and testing for gaps invites sorting people by race. If it means unequal effects must be justified, a model that copies an unequal past is unfair unless no fairer model would serve as well, and must be tested to find out.",
+   "empirical": "Part of this can be measured: how automated and human decisions compare in the same settings on real outcomes by group, not simulations; whether gaps left after accounting for credit, income and qualifications reflect unequal treatment or differences the data miss; and how often a fairer model of nearly equal accuracy exists.",
+   "values": "No measurement settles which kind of fairness should govern when, as the mathematics shows for groups whose underlying rates differ, they cannot all hold at once; how much accuracy is worth giving up to narrow a gap; whether race may be used to correct a model; or whether a decision about liberty should stay with an accountable person."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Read Congress’s researchers on algorithmic discrimination law",
+    "description": "The Congressional Research Service’s October 2026 report explains disparate treatment and disparate impact, how each applies to algorithms, the open legal questions and the options before Congress.",
+    "url": "https://www.congress.gov/crs_external_products/R/PDF/R49490/R49490.1.pdf",
+    "for_position": null,
+    "id": "read-congress-s-researchers-on-algorithmic"
+   },
+   {
+    "kind": "policy",
+    "title": "Weigh in on the AI Civil Rights Act",
+    "description": "The bill reintroduced in December 2025 by Senator Ed Markey and Representative Yvette Clarke would require evaluations of algorithms used in high-stakes decisions and bar those that produce discriminatory results.",
+    "url": "https://www.markey.senate.gov/news/press-releases/sen-markey-rep-clarke-reintroduce-ai-civil-rights-act-to-eliminate-ai-discrimination-and-enact-guardrails-on-use-of-algorithms-in-decisions-impacting-peoples-rights-civil-liberties-livelihoods",
+    "for_position": "Require bias testing and accountability for algorithms",
+    "id": "weigh-in-on-the-ai-civil"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read a proposal to replace disparate impact with a test for algorithmic proxies",
+    "description": "The Manhattan Institute’s October 2026 report argues for paring back disparate impact while giving plaintiffs a targeted way to challenge algorithms that turn job-related factors into proxies for race or sex.",
+    "url": "https://manhattan.institute/article/the-future-of-disparate-impact",
+    "for_position": "Judge algorithms by equal treatment, not group outcomes",
+    "id": "read-a-proposal-to-replace-disparate"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the business case for existing law and one national framework",
+    "description": "The US Chamber of Commerce’s 2026 technology priorities ask Congress to preempt sweeping state AI laws and to rely on existing laws and voluntary standards for AI harms.",
+    "url": "https://www.uschamber.com/assets/documents/20260303-CTEC-Policy-Priorities-2026-021226.pdf",
+    "for_position": "Rely on existing anti-discrimination law, not new AI rules",
+    "id": "read-the-business-case-for-existing"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read Amnesty’s case for banning predictive policing in the UK",
+    "description": "Amnesty International UK’s 2025 report on crime-predicting technology in British policing, and its call on the government to prohibit these systems across England and Wales.",
+    "url": "https://www.amnesty.org.uk/latest/uk-police-forces-supercharging-racism-crime-predicting-tech-new-report/",
+    "for_position": "Ban predictive tools from policing and criminal justice",
+    "id": "join-amnesty-s-call-to-ban"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Use the Algorithmic Bias Playbook",
+    "description": "A free, step-by-step guide from Chicago Booth’s Center for Applied Artificial Intelligence for organizations to inventory their algorithms, measure bias and retrain or replace biased ones. A short form is required.",
+    "url": "https://www.chicagobooth.edu/research/center-for-applied-artificial-intelligence/research/algorithmic-bias/playbook",
+    "for_position": "Replace human judgment with algorithms built to be fairer",
+    "id": "use-the-algorithmic-bias-playbook"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the free textbook on fairness in machine learning",
+    "description": "Fairness and Machine Learning by Solon Barocas, Moritz Hardt and Arvind Narayanan sets out the competing definitions of fairness, why they conflict and what each costs, with lending, hiring and justice examples.",
+    "url": "https://fairmlbook.org/",
+    "for_position": null,
+    "id": "read-the-free-textbook-on-fairness"
+   },
+   {
+    "kind": "local",
+    "title": "Report an unaudited AI hiring tool in New York City",
+    "description": "New York City requires employers using automated hiring tools to publish a bias audit and notify candidates; its Department of Consumer and Worker Protection takes complaints from applicants.",
+    "url": "https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page",
+    "for_position": "Require bias testing and accountability for algorithms",
+    "id": "report-an-unaudited-ai-hiring-tool"
+   },
+   {
+    "kind": "local",
+    "title": "Push for a local vote on police surveillance technology",
+    "description": "The ACLU’s Community Control Over Police Surveillance model ordinance requires city council approval and public reporting before police acquire tools such as face recognition or predictive software.",
+    "url": "https://www.aclu.org/community-control-over-police-surveillance",
+    "for_position": "Ban predictive tools from policing and criminal justice",
+    "id": "push-for-a-local-vote-on"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the Justice Department’s case against disparate-impact liability",
+    "description": "The Office of Legal Counsel’s June 2026 opinion argues that liability based on disparate effects alone pushes employers into race-based decisions, and sets out the narrower test the administration wants applied.",
+    "url": "https://www.justice.gov/olc/media/1444871/dl?inline",
+    "for_position": "Judge algorithms by equal treatment, not group outcomes",
+    "id": "read-the-justice-department-s-case"
+   }
+  ]
+ }
 }

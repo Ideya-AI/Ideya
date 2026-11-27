@@ -1,12 +1,14 @@
 {
  "slug": "antitrust-market-power",
  "title": "Antitrust & Market Power",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-11-27T05:53:48+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Corporate concentration and what antitrust enforcement is for: consumer prices alone, or competition and power more broadly.",
  "primary_category": "economy",
+ "icon": "chart-pie-slice",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: one compact scene grouped in the center with wide white margins, nothing touching the edges: two large jigsaw puzzle pieces locking together, standing upright on a small rounded hill, as the dominant focal mass, one piece a little larger than the other; a large round magnifying glass held up at an angle in front of the joint where they meet, overlapping both pieces; a small shopping cart at the foot of the pieces; a row of three small shopfronts with plain striped awnings on the crest behind at medium scale; a winding road running across the hill from the shops past the cart as the connective element, starting and ending inside the frame.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #b48f2c, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: monopoly board game, top hats, octopus, giant hands, crushing, chains, dollar signs, currency symbols, banknotes, money bags, gavels, scales of justice, courthouses, columns, coin stacks, charts, graphs, arrows, brand logos, people, tug of war, contrast of light and dark halves.",
  "categories": [
   "digital",
   "governance"
@@ -16,5 +18,708 @@
   "free-trade-vs-nationalism",
   "drug-pricing-vs-innovation",
   "shareholder-vs-stakeholder"
- ]
+ ],
+ "content": {
+  "overview": {
+   "summary": "The central argument is what antitrust law is for: preventing harm to buyers, or checking corporate power itself, with Big Tech and mergers close behind.",
+   "scope_covered": "US antitrust law and enforcement, with the EU and UK for comparison: market concentration, Big Tech, mergers, labor markets, digital rules, remedies and agency independence.",
+   "scope_excluded": "Personal data and surveillance, tariffs and trade, drug pricing, whom corporations should serve, and unions, except where antitrust reaches them.",
+   "why_now": "On October 6, 2026, Paramount Skydance completed its takeover of Warner Bros. Discovery, joining two Hollywood studios with CBS, CNN and HBO. The Justice Department had cleared the deal without conditions; a coalition of states sued and settled for commitments on film releases, jobs and newsroom independence.",
+   "why_now_source_label": "The Philadelphia Inquirer",
+   "why_now_source_url": "https://www.inquirer.com/entertainment/paramount-warner-brothers-deal-closes-20261006.html"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "Average markup over marginal cost, US public companies",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "1980",
+       "value": "21",
+       "highlight": false
+      },
+      {
+       "label": "2016",
+       "value": "61",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "One widely cited study has the average US public company pricing 61 percent above marginal cost in 2016, up from 21 percent in 1980; critics say it overstates the rise.",
+     "detail": "A markup is the gap between what a firm charges and what one more unit costs it to make, so a rising average is one sign of growing market power. De Loecker, Eeckhout and Unger built the series from the financial statements of US listed firms from 1955 onward, and found that the average profit rate rose from 1 percent to 8 percent over the same period. The rise came from a minority of high-markup firms; the median firm’s markup barely changed. James Traina (2018) argues that the method treats marketing, research and other overhead as profit, and that counting those costs shrinks the rise considerably; others note that heavy fixed investment in software and brands can lift markups without any weakening of competition. The authors reply that the rise survives several alternative cost measures. The figures cover public companies only, not the whole economy.",
+     "source_label": "De Loecker, Eeckhout and Unger, Quarterly Journal of Economics (2020)",
+     "source_url": "https://academic.oup.com/qje/article/135/2/561/5714769",
+     "source_published": "2016",
+     "source_accessed": "2026-11-26",
+     "id": "average-markup-over-marginal-cost-us"
+    },
+    {
+     "label": "Share of US industries where concentration rose",
+     "viz": "radial",
+     "wide": false,
+     "value": "75",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Concentration rose in more than three-quarters of US industries from the late 1990s to 2014, by one study’s measure; another finds that local concentration fell.",
+     "detail": "Grullon, Larkin and Michaely measured concentration with the Herfindahl-Hirschman index, the standard gauge of how concentrated a market is, and found that firms in the industries where it rose most earned higher profit margins and made more profitable acquisitions, gains reflected in shareholder returns. They report that the results hold when private firms and foreign competition are counted. Their categories are national industries, which are not the markets antitrust law defines. Esteban Rossi-Hansberg, Pierre-Daniel Sarte and Nicholas Trachter (NBER, 2018) found that national concentration rose from 1990 to 2014 while local concentration fell, partly because large chains opened outlets in towns where they competed with local businesses. The Information Technology and Innovation Foundation argues that counting imports also lowers measured concentration in manufacturing.",
+     "source_label": "Grullon, Larkin and Michaely, “Are US Industries Becoming More Concentrated?,” Review of Finance (2019)",
+     "source_url": "https://ideas.repec.org/a/oup/revfin/v23y2019i4p697-743..html",
+     "source_published": "2014",
+     "source_accessed": "2026-11-26",
+     "id": "share-of-us-industries-where-concentration"
+    },
+    {
+     "label": "Google’s share of US general search queries",
+     "viz": "radial",
+     "wide": false,
+     "value": "89.2",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2020, Google received 89.2 percent of US general search queries, and 94.9 percent of mobile queries, figures Google did not contest in court.",
+     "detail": "Judge Amit Mehta found that Google’s share had risen from 80 percent in 2009, against about 6 percent for Bing by 2020, and held in August 2024 that Google unlawfully maintained monopolies in general search services and search text advertising through exclusive distribution deals. In his remedies decision of September 2, 2025 he declined the government’s request to force a sale of the Chrome browser, barred exclusive contracts, and ordered Google to share some search index and user-interaction data with qualified rivals, citing in part the arrival of generative AI chatbots as a new competitive force (NPR, 2025). Both sides appealed to the D.C. Circuit: Google contests liability and the data-sharing remedy, and the government and states argue that Google should also be barred from paying for default placement. The shares count queries, not revenue, and the court’s market excludes specialized sites such as Amazon and social media.",
+     "source_label": "US District Court for the District of Columbia, United States v. Google LLC, memorandum opinion (August 5, 2024)",
+     "source_url": "https://storage.courtlistener.com/recap/gov.uscourts.dcd.223205/gov.uscourts.dcd.223205.1033.0_3.pdf",
+     "source_published": "2020",
+     "source_accessed": "2026-11-26",
+     "id": "google-s-share-of-us-general"
+    },
+    {
+     "label": "Google’s payments for default search placement",
+     "viz": "bar",
+     "wide": false,
+     "value": "26.3",
+     "unit": "$ billion",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2021 Google paid Apple, Mozilla, Android device makers and wireless carriers $26.3 billion to be the default search engine on their browsers and devices.",
+     "detail": "The court found that these revenue-share payments were Google’s largest search-related expense that year, almost four times all its other search costs combined, research and development included. Defaults are powerful because few users change them; on Android, 80 percent of queries flow through search access points that default to Google. The government argued that the payments shut rivals out of the most valuable distribution; Google argued that partners chose it because it is the best search engine and that users can switch in seconds. Judge Mehta’s 2025 remedies barred exclusivity but let Google keep paying for default placement, partly because cutting off the payments could harm Apple, Mozilla and device makers.",
+     "source_label": "US District Court for the District of Columbia, United States v. Google LLC, memorandum opinion (August 5, 2024)",
+     "source_url": "https://storage.courtlistener.com/recap/gov.uscourts.dcd.223205/gov.uscourts.dcd.223205.1033.0_3.pdf",
+     "source_published": "2021",
+     "source_accessed": "2026-11-26",
+     "id": "google-s-payments-for-default-search"
+    },
+    {
+     "label": "US local labor markets that are highly concentrated",
+     "viz": "radial",
+     "wide": false,
+     "value": "60",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2016, 60 percent of US local labor markets were highly concentrated among employers posting jobs, though they held 20 percent of employment; critics say postings overstate it.",
+     "detail": "Using nearly every US online job posting in 2016, the authors measured how concentrated hiring was for each occupation in each commuting zone, counting a market as highly concentrated above a Herfindahl-Hirschman index of 2,500. The average market scored 4,378, the equivalent of 2.3 employers with equal shares of postings. Concentration is highest in rural areas and small cities; big metropolitan markets, where most people work, are far less concentrated, which is why the concentrated markets hold so few of the jobs. Economists call a few employers’ hold over hiring monopsony power, and studies by these and other authors link higher concentration to lower posted wages. Critics argue that the measure overstates concentration because workers can switch occupations, commute or move.",
+     "source_label": "Azar, Marinescu, Steinbaum and Taska, NBER Working Paper 24395 (2018)",
+     "source_url": "https://www.nber.org/papers/w24395",
+     "source_published": "2016",
+     "source_accessed": "2026-11-26",
+     "id": "us-local-labor-markets-that-are"
+    },
+    {
+     "label": "Reported mergers given an in-depth federal investigation",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "FY2016",
+       "value": "3.0",
+       "highlight": false
+      },
+      {
+       "label": "FY2017",
+       "value": "2.6",
+       "highlight": false
+      },
+      {
+       "label": "FY2018",
+       "value": "2.2",
+       "highlight": false
+      },
+      {
+       "label": "FY2019",
+       "value": "3.0",
+       "highlight": false
+      },
+      {
+       "label": "FY2020",
+       "value": "3.0",
+       "highlight": false
+      },
+      {
+       "label": "FY2021",
+       "value": "1.9",
+       "highlight": false
+      },
+      {
+       "label": "FY2022",
+       "value": "1.6",
+       "highlight": false
+      },
+      {
+       "label": "FY2023",
+       "value": "2.1",
+       "highlight": false
+      },
+      {
+       "label": "FY2024",
+       "value": "3.0",
+       "highlight": false
+      },
+      {
+       "label": "FY2025",
+       "value": "2.1",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Of 1,944 reportable mergers in fiscal 2025, 41, or 2.1 percent, received a Second Request, the step that opens a full federal investigation.",
+     "detail": "Companies planning large mergers must notify the FTC and the Justice Department in advance and wait before closing. In fiscal 2025, from October 2024 to September 2025, 2,006 transactions were reported, worth $2.5 trillion in all, about 31.8 percent of them valued at over $1 billion; the FTC issued 20 Second Requests and the Justice Department 21. Rates are calculated on the adjusted count, which excludes filings the agencies could not investigate. Those who favor tougher enforcement read the low rate as a sign that merger control is a narrow filter; those who favor restraint read it as a sign that most mergers raise no competitive concern. Early termination of the waiting period, suspended in 2021, resumed in 2025 and was granted in 265 transactions, against 3 in fiscal 2024.",
+     "source_label": "Federal Trade Commission and Department of Justice, Hart-Scott-Rodino Annual Report, Fiscal Year 2025",
+     "source_url": "https://www.ftc.gov/system/files/ftc_gov/pdf/fy_2025_hsr_annual_report_for_transmittal_to_congress.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-11-26",
+     "id": "reported-mergers-given-an-in-depth"
+    },
+    {
+     "label": "Index level at which a market is presumed highly concentrated",
+     "viz": "range",
+     "wide": false,
+     "value": "1,800",
+     "unit": "HHI",
+     "series": [],
+     "range_min": "0",
+     "range_max": "10,000 monopoly",
+     "note": "Under the 2023 Merger Guidelines, a market scoring above 1,800 is highly concentrated, and a merger that raises its score there by over 100 points is presumed to harm competition.",
+     "detail": "The Herfindahl-Hirschman index adds up the squares of each firm’s market share in percent: four equal firms score 2,500 and a monopoly 10,000. The 2023 guidelines, written under Lina Khan at the FTC and Jonathan Kanter at the Justice Department, restored the 1,800 threshold first used in 1982, which the 2010 guidelines had raised, and added a presumption against a merger that creates a firm with over 30 percent of a market while raising the index by more than 100 points. FTC Chairman Andrew Ferguson kept the guidelines in effect in February 2025, saying the agencies should prize stability and that the guidelines largely restated earlier versions (FTC, 2025). Guidelines describe how the agencies analyze mergers; they do not bind courts, which decide each case under the Clayton Act.",
+     "source_label": "US Department of Justice and Federal Trade Commission, 2023 Merger Guidelines, Guideline 1",
+     "source_url": "https://www.justice.gov/atr/merger-guidelines/applying-merger-guidelines/guideline-1",
+     "source_published": "2023",
+     "source_accessed": "2026-11-26",
+     "id": "index-level-at-which-a-market"
+    },
+    {
+     "label": "Mergers the FTC and Justice Department acted against",
+     "viz": "bar",
+     "wide": false,
+     "value": "18",
+     "unit": "mergers",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In fiscal 2025 the FTC took enforcement action against 8 mergers and the Justice Department against 10, out of 2,006 reported to the two agencies.",
+     "detail": "The FTC’s eight were three lawsuits, three consent orders and two deals abandoned during investigation; the Justice Department’s ten were two lawsuits, two settlements filed with the complaint, two abandonments and four deals restructured after the division raised concerns. The year straddled the change of administration in January 2025. Since then the agencies have leaned more on negotiated settlements with divestitures or conduct conditions, which the Biden-era agencies had disfavored as hard to police; in October 2026 the FTC let Publicis buy LiveRamp under a consent order with five years of conduct remedies rather than a divestiture, the law firm DLA Piper reported. The count covers only actions first made public during the year, not deals never attempted because of expected opposition.",
+     "source_label": "Federal Trade Commission and Department of Justice, Hart-Scott-Rodino Annual Report, Fiscal Year 2025",
+     "source_url": "https://www.ftc.gov/system/files/ftc_gov/pdf/fy_2025_hsr_annual_report_for_transmittal_to_congress.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-11-26",
+     "id": "mergers-the-ftc-and-justice-department"
+    },
+    {
+     "label": "Four largest beef packers’ share of US cattle purchases",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "1980",
+       "value": "36",
+       "highlight": false
+      },
+      {
+       "label": "1995",
+       "value": "81",
+       "highlight": false
+      },
+      {
+       "label": "Recent years",
+       "value": "85",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Four meatpacking firms handle about 85 percent of US steer and heifer purchases, up from 36 percent in 1980, according to the USDA.",
+     "detail": "Beef packing consolidated quickly in the 1980s and early 1990s as packers built larger plants with lower costs per animal. USDA’s Economic Research Service, reviewing studies from the 1990s and 2000s, found that packers did exercise some market power and paid somewhat less for cattle, but that the cost savings of bigger plants more than offset that effect, so cattle prices still rose. Since 2016, it reports, packers have been able to pay less for cattle, which it attributes to high concentration combined with limited plant capacity. Ranchers’ groups and the Biden administration cited the industry as a case of concentration hurting both producers and consumers; packers point to drought, herd sizes and plant fires as the drivers of price swings. The four firms are Tyson, JBS, Cargill and National Beef.",
+     "source_label": "USDA Economic Research Service, Amber Waves (January 2024)",
+     "source_url": "https://www.ers.usda.gov/amber-waves/2024/january/concentration-in-u-s-meatpacking-industry-and-how-it-affects-competition-and-cattle-prices",
+     "source_published": "2024",
+     "source_accessed": "2026-11-26",
+     "id": "four-largest-beef-packers-share-of"
+    },
+    {
+     "label": "US workers bound by noncompete agreements",
+     "viz": "bar",
+     "wide": false,
+     "value": "30",
+     "unit": "million",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The FTC estimated in 2024 that about 30 million US workers, nearly one in five, were bound by a noncompete agreement.",
+     "detail": "A noncompete bars a worker from joining or starting a rival business for a time after leaving a job. The FTC under Lina Khan voted in April 2024 to ban most of them, estimating that the rule would raise the average worker’s earnings by $524 a year and lead to more than 8,500 additional new businesses a year. A federal court in Texas set the rule aside in August 2024, holding that the FTC lacked authority to issue it, and in September 2025 the FTC under Andrew Ferguson moved to dismiss its appeal, while saying it would pursue harmful noncompetes case by case. Supporters saw the rule as antitrust protecting workers’ freedom to move; opponents, including the US Chamber of Commerce, saw an agency exceeding the powers Congress gave it. Several states, including California, Minnesota and Oklahoma, ban most noncompetes by statute.",
+     "source_label": "Federal Trade Commission, “FTC Announces Rule Banning Noncompetes” (April 23, 2024)",
+     "source_url": "https://www.ftc.gov/news-events/news/press-releases/2024/04/ftc-announces-rule-banning-noncompetes",
+     "source_published": "2024",
+     "source_accessed": "2026-11-26",
+     "id": "us-workers-bound-by-noncompete-agreements"
+    },
+    {
+     "label": "US domestic airline market share",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Four largest",
+       "value": "70.2",
+       "highlight": true
+      },
+      {
+       "label": "Alaska",
+       "value": "7.3",
+       "highlight": false
+      },
+      {
+       "label": "JetBlue",
+       "value": "4.7",
+       "highlight": false
+      },
+      {
+       "label": "Frontier",
+       "value": "3.9",
+       "highlight": false
+      },
+      {
+       "label": "All others",
+       "value": "13.9",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Four airlines, Delta, American, United and Southwest, held 70.2 percent of the US domestic market in the year to August 2026.",
+     "detail": "The four shares are 18.0, 17.8, 17.3 and 17.1 percent. A wave of mergers between 2008 and 2013 (Delta and Northwest, United and Continental, Southwest and AirTran, American and US Airways) left four large carriers. Jonathan Baker, a former FTC and Justice Department economist, has cited airlines, with brewing and hospitals, as industries where the growth of oligopoly cannot be explained simply by economies of scale; defenders of the mergers note that inflation-adjusted average fares are far below their levels before deregulation and that low-cost carriers expanded. Enforcers blocked JetBlue’s purchase of Spirit in January 2024; Spirit has since gone through bankruptcy twice. Alaska’s share includes Hawaiian, which it acquired in 2024, and all others combines SkyWest, Spirit, Envoy and other carriers (2.6, 1.7, 1.2 and 8.4 percent). The statistics page does not say whether shares are measured by passengers or by miles flown.",
+     "source_label": "Bureau of Transportation Statistics, TranStats, Airline Domestic Market Share",
+     "source_url": "https://www.transtats.bts.gov/",
+     "source_published": "2026",
+     "source_accessed": "2026-11-26",
+     "id": "us-domestic-airline-market-share"
+    },
+    {
+     "label": "Big Tech acquisitions that escaped merger review",
+     "viz": "bar",
+     "wide": false,
+     "value": "616",
+     "unit": "deals",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Between 2010 and 2019, Alphabet, Amazon, Apple, Facebook and Microsoft made 616 acquisitions of $1 million or more that were not reported to US antitrust agencies.",
+     "detail": "Deals below a size threshold need not be reported in advance, so enforcers may not learn of them until later. The FTC study found that 65 percent of the 616 were valued between $1 million and $25 million, that at least 39.3 percent of the targets with available data were less than five years old, and that over 75 percent included noncompete clauses for founders or key employees; 94 exceeded the reporting threshold but were exempt for other reasons. The study fed concern over killer acquisitions, in which a dominant firm buys a young rival before it can grow. Defenders of the deals say that being bought by a large firm is the main way startups and their investors get paid, so restricting acquisitions would reduce startup funding. The FTC said in January 2026 that it was examining acqui-hires of AI startups, the law firm Mayer Brown reported.",
+     "source_label": "FTC, staff report on unreported acquisitions by the biggest tech companies (2021)",
+     "source_url": "https://www.ftc.gov/news-events/news/press-releases/2021/09/ftc-staff-presents-report-nearly-decade-unreported-acquisitions-biggest-technology-companies",
+     "source_published": "2019",
+     "source_accessed": "2026-11-26",
+     "id": "big-tech-acquisitions-that-escaped-merger"
+    },
+    {
+     "label": "Platform services designated under the EU Digital Markets Act",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "services",
+     "series": [
+      {
+       "label": "Alphabet",
+       "value": "8",
+       "highlight": true
+      },
+      {
+       "label": "Meta",
+       "value": "5",
+       "highlight": false
+      },
+      {
+       "label": "Apple",
+       "value": "4",
+       "highlight": false
+      },
+      {
+       "label": "Amazon",
+       "value": "2",
+       "highlight": false
+      },
+      {
+       "label": "Microsoft",
+       "value": "2",
+       "highlight": false
+      },
+      {
+       "label": "Booking",
+       "value": "1",
+       "highlight": false
+      },
+      {
+       "label": "ByteDance",
+       "value": "1",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The EU has designated seven companies as gatekeepers under the Digital Markets Act, covering 23 platform services, eight of them Alphabet’s.",
+     "detail": "The act, which began applying to gatekeepers in March 2024, sets obligations in advance instead of waiting for a case-by-case finding of abuse: gatekeepers may not rank their own products above rivals’, must let users uninstall preinstalled apps and choose defaults, must allow app developers to steer customers to offers outside the app store, and must make some services interoperable. The act allows fines of up to 10 percent of worldwide turnover. The United Kingdom took a similar approach in its Digital Markets, Competition and Consumers Act 2024, designating Google search and Apple’s and Google’s mobile platforms as having strategic market status in October 2025. In 2026 the Commission’s first review of the act recommended extending obligations to services that integrate AI, and the Commission moved to examine whether Amazon’s and Microsoft’s cloud services should be designated, the law firm Mayer Brown reported.",
+     "source_label": "European Commission, Digital Markets Act, “Gatekeepers”",
+     "source_url": "https://digital-markets-act.ec.europa.eu/gatekeepers_en",
+     "source_published": "2026",
+     "source_accessed": "2026-11-26",
+     "id": "platform-services-designated-under-the-eu"
+    },
+    {
+     "label": "Jury-found overcharge in concert ticket fees",
+     "viz": "bar",
+     "wide": false,
+     "value": "1.72",
+     "unit": "$ per ticket",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "A federal jury found in April 2026 that Live Nation and Ticketmaster had illegally maintained monopolies, and that New York buyers were overcharged $1.72 per ticket in fees.",
+     "detail": "The Justice Department and states sued in 2024, alleging that Live Nation, the largest concert promoter and owner of Ticketmaster, used its control of venues and artists to lock in its ticketing monopoly. A week into the trial, which began in March 2026, the Justice Department settled on terms that, Bloomberg Law reported, require Live Nation to give up control of 13 amphitheaters or their booking arrangements, cap fees at its own venues and end Ticketmaster’s exclusive deals with large venues, but not to sell Ticketmaster. A coalition of 34 attorneys general rejected the settlement and won the verdict, which found that Ticketmaster unlawfully maintains a monopoly in ticketing at major concert venues and that Live Nation unlawfully ties its amphitheaters to its promotion services. The states asked for a sale of Ticketmaster at a separate remedies trial, and Live Nation said it would appeal. Other coverage describes the per-ticket figure as applying to buyers in all the plaintiff states.",
+     "source_label": "New York State Attorney General, Live Nation verdict release (April 15, 2026)",
+     "source_url": "https://ag.ny.gov/press-release/2026/attorney-general-james-and-coalition-states-win-trial-against-live-nation-and",
+     "source_published": "2026",
+     "source_accessed": "2026-11-26",
+     "id": "jury-found-overcharge-in-concert-ticket"
+    },
+    {
+     "label": "Largest EU antitrust fines on US technology companies",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "€ billion",
+     "series": [
+      {
+       "label": "Google Android 2018",
+       "value": "4.125",
+       "highlight": true
+      },
+      {
+       "label": "Google adtech 2025",
+       "value": "2.95",
+       "highlight": false
+      },
+      {
+       "label": "Google Shopping 2017",
+       "value": "2.42",
+       "highlight": false
+      },
+      {
+       "label": "Apple music 2024",
+       "value": "1.84",
+       "highlight": false
+      },
+      {
+       "label": "Meta Marketplace 2024",
+       "value": "0.80",
+       "highlight": false
+      },
+      {
+       "label": "Apple DMA 2025",
+       "value": "0.50",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Google’s Android fine, €4.125 billion after appeal and upheld by the EU’s top court in July 2026, is the largest; each row is a separate decision from 2017 to 2025.",
+     "detail": "The Commission fined Google €4.34 billion in 2018 for restrictions on Android device makers; the General Court cut the fine in 2022 and the Court of Justice confirmed it on July 2, 2026 (Skadden, 2026). The 2017 Shopping fine, for favoring Google’s own comparison-shopping service, was upheld by the Court of Justice in 2024, and a €1.49 billion fine over AdSense contracts in 2019 was annulled by the General Court in 2024 and is not shown. On the September 2025 adtech decision, Commissioner Teresa Ribera said a structural remedy might be needed. Apple’s 2024 fine was for barring music-streaming apps from telling users about cheaper offers, and Meta’s concerned Facebook Marketplace. The April 2025 fines, €500 million on Apple and €200 million on Meta, were the first under the Digital Markets Act. The Trump administration has criticized such fines as discrimination against American companies and has threatened trade retaliation.",
+     "source_label": "European Commission decision press releases; Court of Justice, Case C-738/22 P",
+     "source_url": "https://curia.europa.eu/site/upload/docs/application/pdf/2026-07/cp260093en.pdf",
+     "source_published": "2026",
+     "source_accessed": "2026-11-26",
+     "id": "largest-eu-antitrust-fines-on-us"
+    },
+    {
+     "label": "New establishments as a share of all US business locations",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "1978",
+       "value": "15.1",
+       "highlight": false
+      },
+      {
+       "label": "2022",
+       "value": "11.6",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "New establishments made up 11.6 percent of all US business locations in 2022, down from 15.1 percent in 1978.",
+     "detail": "Economists use the entry rate as one gauge of economic dynamism, and its long decline since the late 1970s is cited by those who argue that incumbents have become harder to challenge. The Congressional Research Service notes that the number of startups is cyclical rather than falling: there were 519,559 in 2022, about 7 percent more than in 1978, in a far larger economy. The share of employment at older firms rose to about 90 percent by 2019, according to the Census Bureau. Business applications surged after 2020, which some economists read as a reversal. Entry can fall for many reasons besides market power, including an aging workforce and slower population growth, and economists disagree about how much each matters. The Census Bureau released data for 2023 in September 2025; the CRS figures run through 2022.",
+     "source_label": "Congressional Research Service, “Is U.S. Entrepreneurship Declining?” (2024)",
+     "source_url": "https://www.congress.gov/crs_external_products/IF/PDF/IF12792/IF12792.2.pdf",
+     "source_published": "2022",
+     "source_accessed": "2026-11-26",
+     "id": "new-establishments-as-a-share-of"
+    },
+    {
+     "label": "Americans who want more regulation of major tech companies",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "2018",
+       "value": "51",
+       "highlight": false
+      },
+      {
+       "label": "2021",
+       "value": "56",
+       "highlight": false
+      },
+      {
+       "label": "2022",
+       "value": "44",
+       "highlight": false
+      },
+      {
+       "label": "2024",
+       "value": "51",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2024, 51 percent of US adults said major technology companies should be regulated more than they are now, 31 percent the same and 16 percent less.",
+     "detail": "The survey of 10,133 adults in February 2024 asked about government regulation of major technology companies in general, not antitrust specifically. Support for more regulation was 60 percent among Democrats and 45 percent among Republicans, and the share wanting less rose from 9 percent in 2018. In the same survey, 78 percent said social media companies have too much power and influence in politics, up from 72 percent in 2020, with Republicans (84 percent) more likely than Democrats (74 percent) to say so. Anti-monopoly populists on the left and the right both draw on that shared distrust of Big Tech.",
+     "source_label": "Pew Research Center, “Americans’ Views of Technology Companies” (April 29, 2024)",
+     "source_url": "https://www.pewresearch.org/internet/2024/04/29/americans-views-of-technology-companies-2/",
+     "source_published": "2024",
+     "source_accessed": "2026-11-26",
+     "id": "americans-who-want-more-regulation-of"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Should antitrust protect only buyers from harm, or also check corporate size and power for their own sake?",
+    "kind": "value",
+    "why": "Since the late 1970s, US courts have read the antitrust laws as protecting competition for the benefit of buyers. A revived movement says the laws were written against concentrated private power, and each side claims the statutes’ history.",
+    "detail": "The case for a harm test is that it asks a question courts can answer: is this conduct or merger likely to leave buyers worse off by weakening competition? The test reaches quality, choice and innovation as well as price. Adding goals such as protecting small business, dispersing political power or raising wages would leave enforcers no way to weigh one aim against another, so outcomes would turn on who holds office. Bigness won by making better products at lower cost is the competitive process working.\n\nThe case for checking power itself starts in 1890, when the Sherman Act was passed against the railroad and oil trusts, whose danger lay in their hold over farmers, workers, rivals and legislatures, not only their prices. On this reading the consumer welfare test, popularized by Robert Bork in the 1970s, narrowed that purpose without Congress changing a word. A firm that controls a marketplace its rivals depend on, such as an app store or a search engine, can extract tolls and dictate terms while charging consumers little, and its economic weight becomes political weight, through lobbying and through control over what news and speech reach people.",
+    "lean_label_a": "Consumer harm",
+    "lean_label_b": "Check power itself",
+    "id": "should-antitrust-protect-only-buyers-from"
+   },
+   {
+    "text": "Has competition in the US economy weakened enough to raise prices and hold down wages?",
+    "kind": "empirical",
+    "why": "Studies find rising concentration, markups and profits since the 1980s and falling business entry. Other economists answer that the measures are flawed and that the industries where concentration rose often gained the most productivity.",
+    "detail": "Those who see weaker competition point to several measures moving together: corporate profits rising as a share of the economy while business investment and the startup rate lagged, and concentration rising in industry after industry. Thomas Philippon’s comparison of the United States and Europe found that US prices for broadband and mobile service rose relative to Europe’s as American markets consolidated. On this reading the pattern is what four decades of permissive enforcement allowed.\n\nThose who see markets as still competitive answer that the headline studies measure the wrong things. Concentration in broad national industry codes says little about competition in the markets where people actually buy and work. Much of the rise reflects superstar firms that won customers with better technology and lower prices: Amazon, Walmart and the big software firms grew because people preferred them. Prices for many consumer goods and digital services have fallen in real terms. A diagnosis this uncertain, they argue, does not justify remaking the law.",
+    "lean_label_a": "It has weakened",
+    "lean_label_b": "It remains strong",
+    "id": "has-competition-in-the-us-economy"
+   },
+   {
+    "text": "Are the biggest technology platforms entrenched monopolies, or companies that won by being better?",
+    "kind": "empirical",
+    "why": "US courts have ruled both ways: Google was found to hold illegal monopolies in search and parts of ad technology, while Meta won its case in November 2025. The dispute is whether network effects lock leaders in or new technology keeps them in check.",
+    "detail": "Those who see entrenched power say digital markets tip: the more users a platform has, the more valuable it becomes, so the leader’s advantage feeds on itself, and the largest firms have used that position to close the paths rivals could take. Facebook bought Instagram in 2012 and WhatsApp in 2014 while each was a fast-growing potential rival, and internal emails showed its leaders saw buying as preferable to competing. Apple controls the only way to install apps on iPhones in the United States and was found in contempt of court in 2025 for defying an order to let developers steer customers to cheaper payment options.\n\nThose who see earned dominance say these companies grew by offering products people chose, often for free, and keep spending heavily to stay ahead. The Meta trial showed how fast markets move: TikTok, a newcomer, took a large share of attention within a few years, and the court found that it and YouTube compete directly with Meta. Generative AI is reshaping search, advertising and software, and acquired startups such as Instagram succeeded because the buyer invested in them.",
+    "lean_label_a": "Entrenched power",
+    "lean_label_b": "Earned dominance",
+    "id": "are-the-biggest-technology-platforms-entrenched"
+   },
+   {
+    "text": "Are harmful mergers, including buyouts of young rivals, slipping past US review?",
+    "kind": "empirical",
+    "why": "The 2023 Merger Guidelines lowered the bar for presuming a deal harmful, and the Trump administration kept them while settling more deals with conditions. The dispute is how often mergers harm competition and how well enforcers can tell which will.",
+    "detail": "Those who see harmful deals slipping through say mergers are the one form of market power the law can stop before it exists, since rivals that combine are rarely unwound. Retrospective studies of mergers in concentrated markets, such as John Kwoka’s reviews, find that many raised prices, and courts have been slow to credit claims that savings will reach buyers. Buying a potential rival, documented in pharmaceuticals and suspected in technology, removes competition that would have emerged later, and hospital, grocery and airline mergers left many communities with one or two choices.\n\nThose who see few slipping through say most mergers combine complementary assets, rescue failing firms or let founders and investors cash out, which is what makes venture funding possible, and the agencies already examine the few that raise concern. Enforcers who challenge deals on speculative theories lose in court, as the FTC did against Microsoft’s purchase of Activision and Meta’s purchase of Within, and the attempts themselves deter beneficial deals. Where a merger does raise a real problem, a targeted divestiture or condition usually solves it without blocking the whole transaction.",
+    "lean_label_a": "Many slip through",
+    "lean_label_b": "Few slip through",
+    "id": "are-harmful-mergers-including-buyouts-of"
+   },
+   {
+    "text": "Should antitrust protect workers’ pay and bargaining power, not just consumers?",
+    "kind": "value",
+    "why": "Antitrust long reached employer cartels, but harm to workers rarely blocked a merger until 2022, when a court stopped a publishing merger over authors’ pay. In 2026 the Justice Department found workers’ concerns about Paramount’s deal not actionable.",
+    "detail": "The case for protecting workers is that the Sherman Act condemns restraints of trade in every market, and a labor market is one in which employers are the buyers. When a few employers dominate hiring for nurses, truck drivers or meat-plant workers in a region, they can hold wages below what competition would pay, and a merger that removes one of them harms workers as surely as one that raises prices harms consumers. Noncompete and no-poach agreements stop people from taking better jobs or starting rival businesses, and most Americans earn their living as workers, not only as shoppers.\n\nThe case for leaving it to labor law accepts that antitrust should stop wage-fixing cartels and no-poach pacts, which are plain conspiracies. Blocking mergers on predicted wage effects, though, asks enforcers to forecast labor markets they measure poorly, and mergers that cut costs often expand output and hiring. Turning enforcement toward protecting particular workers risks becoming industrial policy that preserves inefficient firms. Wages, bargaining and job mobility are better handled by labor law, unions, state limits on noncompetes and a strong job market, tools accountable to legislatures.",
+    "lean_label_a": "Protect workers too",
+    "lean_label_b": "Leave to labor law",
+    "id": "should-antitrust-protect-workers-pay-and"
+   },
+   {
+    "text": "Once a court finds an illegal monopoly, can rules on its conduct restore competition, or only a breakup?",
+    "kind": "empirical",
+    "why": "Courts broke up Standard Oil in 1911 and AT&T in 1984 but rarely order divestitures now: both judges in the Google cases chose conduct remedies, while Europe has said only a structural remedy may resolve Google’s ad-tech conflict.",
+    "detail": "The case for breakups is that conduct remedies ask a monopolist to stop behaving like one while keeping every incentive to do so, and require years of monitoring by courts and technical committees that the firm can outlast. Critics say the conduct rules of the 2001 Microsoft settlement did little, while the AT&T breakup opened long-distance service and telephone equipment to competition. When a firm owns both a marketplace and products that compete on it, as in advertising technology or in venues and ticketing, the conflict of interest is structural, and only separating the businesses removes it.\n\nThe case for conduct remedies is that a breakup is irreversible and can destroy the efficiencies that made the integrated product valuable, harming customers who were not part of the case. Modern technology businesses are integrated in code, data and staff; Judge Leonie Brinkema found in 2026 that divesting Google’s ad exchange would be unprecedented and complex, and that behavioral remedies could achieve the same aims. The AT&T breakup took a decade and most of the old Bell companies later recombined, and remedies aimed at 2020 markets may be obsolete before a divestiture is finished, as generative AI changes search and advertising.",
+    "lean_label_a": "Break it up",
+    "lean_label_b": "Fix the conduct",
+    "id": "once-a-court-finds-an-illegal"
+   },
+   {
+    "text": "Would up-front rules for the largest platforms restore competition faster than lawsuits do?",
+    "kind": "empirical",
+    "why": "The EU’s Digital Markets Act and a 2024 UK law set obligations for the largest platforms in advance, while the United States relies on lawsuits under century-old statutes. Evidence from Europe on whether the rules work is still coming in.",
+    "detail": "The case for rules is that by the time a monopoly case is won, the market has often moved on and the harm is locked in: Google’s search case was filed in 2020, decided in 2024, remedied in 2025 and then appealed. Judges cannot supervise a platform’s evolving technical design for a decade, while obligations set in advance tell every gatekeeper what it may not do and let rivals plan. In Europe they have brought choice screens for browsers and search engines and app distribution outside Apple’s store on iPhones, and Britain and Japan have adopted similar regimes. Nor do they single out American firms: designation turns on size and user numbers, and covers Booking and ByteDance.\n\nThe case for lawsuits is that up-front rules apply the same prohibitions to every designated firm whether or not the conduct harms anyone in that setting, and freeze today’s view of the technology into law. Apple and Google have delayed or withheld features in Europe, including AI tools, citing the act, and compliance disputes have turned into years of litigation of their own. US courts have shown with the Google rulings that existing law can reach dominant platforms, and a regulator setting rules for a handful of firms is exposed to capture and political pressure. The Trump administration and US technology companies add that rules aimed almost entirely at American firms work as a trade barrier.",
+    "lean_label_a": "Rules in advance",
+    "lean_label_b": "Case by case",
+    "id": "would-up-front-rules-for-the"
+   },
+   {
+    "text": "Should antitrust enforcement answer to the president, or be insulated from politics?",
+    "kind": "value",
+    "why": "Congress made the FTC a bipartisan commission in 1914, its members removable only for cause; in June 2026 the Supreme Court let the president fire them at will. Critics of several recent merger reviews question whether they turned on the merits.",
+    "detail": "The case for presidential control is that enforcement is executive power: deciding whom to sue, which mergers to challenge and what settlements to accept. In a democracy that power belongs to officials accountable to voters through an elected president. Independent agencies were never truly insulated, since they reflected whoever appointed them and were shaped by the industries they oversaw. Presidential control lets voters choose an antitrust policy, and the courts, which decide every contested case, remain an independent check; on this view Trump v. Slaughter, which overruled Humphrey’s Executor (1935), restores the constitutional design.\n\nThe case for insulation is that antitrust works only if businesses and the public believe cases turn on evidence, not on whether a company’s owners are friends or critics of the president, a danger sharpest in media. Roger Alford, a senior Antitrust Division official removed in July 2025, publicly accused Justice Department leaders of letting politically connected lobbyists override staff in settling the Hewlett Packard Enterprise–Juniper merger (Bloomberg Law, 2025). Bipartisan commissions with staggered terms gave enforcement continuity across administrations; without them, Congress and the courts must find other safeguards.",
+    "lean_label_a": "Under the president",
+    "lean_label_b": "Kept independent",
+    "id": "should-antitrust-enforcement-answer-to-the"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Restore antitrust as a check on corporate power",
+    "color_key": "green",
+    "steelman": "Antitrust was born as a democratic movement against private power. Low prices do not make a monopoly harmless; the law should protect open markets, workers and self-government.",
+    "detail": "Beginning in the 1970s, judges influenced by the Chicago School reduced the law’s purpose to one test, the effect on consumer prices, and enforcement shrank to match. The result is an economy in which a handful of firms pack most of the beef, fly most passengers and answer most searches. Dominant firms set the terms for the businesses that depend on them, copy and bury rivals, push down wages where they are the main employer, and turn size into political influence. Many of the harms, such as a startup that never got funded or a farmer with one buyer, never show up in a price. So restore structural presumptions against mergers that concentrate markets, bright-line limits on dominant platforms competing with the businesses that rely on them, attention to workers and suppliers, and breakups where power cannot otherwise be checked.\n\nWe span the left and the populist right. Lina Khan, Tim Wu and Elizabeth Warren stress workers, small business and inequality; Josh Hawley and Gail Slater stress Big Tech’s power over speech and its alliance with government, and the two wings have split over whether the Trump administration’s merger settlements betray the cause. To the charge that a broader standard is vague, we answer that the consumer welfare test is itself malleable, since it lets courts credit speculative efficiencies, and that structural rules are more predictable than an economist’s forecast of prices. To the charge that we would hurt consumers, we answer that monopolies raise prices once rivals are gone. When courts reject our cases, that shows Congress must restore the law’s original purpose.",
+    "proponents": "Open Markets Institute; American Economic Liberties Project; Lina Khan; Tim Wu; Elizabeth Warren; Josh Hawley; Gail Slater; Jonathan Kanter; Matt Stoller; Institute for Local Self-Reliance; American Compass",
+    "id": "restore-antitrust-as-a-check-on"
+   },
+   {
+    "name": "Keep antitrust narrow to protect scale and innovation",
+    "color_key": "blue",
+    "steelman": "Firms that grow because people prefer their products are what competition is supposed to produce. Stop cartels and proven harm to consumers, and leave success alone.",
+    "detail": "Large firms are, on average, more productive, pay higher wages, invest more in research and export more than small ones, and much of the rise in concentration reflects the most efficient firms winning customers in markets transformed by software, logistics and scale. Punishing that success discourages the investment that creates it. The consumer welfare standard, built over decades of case law and economics, disciplines enforcers by making them prove harm, and it already covers quality, innovation and harm to trading partners; power without a measure of harm is an invitation to arbitrary enforcement and political favoritism. The standard has survived the neo-Brandeisian challenge: Congress declined to rewrite the laws, and courts rejected many of the Biden-era agencies’ novel theories.\n\nTurning antitrust against size, or against Big Tech in particular, would weaken the American companies that lead the world in technology just as they compete with Chinese firms backed by their state. Robert Atkinson of the Information Technology and Innovation Foundation calls those firms a key part of America’s arsenal of democracy, funding research no government budget could match, and Europe, which regulates its digital markets heavily, has produced few world-leading technology firms. Dynamic competition from new technology disciplines incumbents faster than any lawsuit. We differ in degree: the US Chamber of Commerce defends existing doctrine and case-by-case enforcement, ITIF adds the competitiveness case for scale, and some libertarians would repeal the antitrust laws altogether.",
+    "proponents": "US Chamber of Commerce; Information Technology and Innovation Foundation; International Center for Law & Economics; Global Antitrust Institute; Joshua Wright; Christine Wilson; NetChoice; Computer & Communications Industry Association",
+    "id": "keep-antitrust-narrow-to-protect-scale"
+   },
+   {
+    "name": "Enforce the consumer welfare standard harder",
+    "color_key": "amber",
+    "steelman": "The goal of antitrust is right; the problem is that it has been under-enforced. Tighten the presumptions, bring more cases against dominant firms and fund the enforcers.",
+    "detail": "Protecting the competitive process for the benefit of trading partners, consumers and, properly read, workers and suppliers gives the law a clear and testable aim that economics can inform and courts can apply. Over four decades, though, courts loaded plaintiffs with heavy burdens, credited speculative efficiencies and grew skeptical of cases against dominant firms, while agency budgets stagnated as the economy grew. As seven economists and former enforcers wrote in a 2020 report for the Washington Center for Equitable Growth, “The U.S. economy is plagued by a problem of excessive market power”; they urged $600 million a year in added agency funding and legislation to ease plaintiffs’ burdens.\n\nThe framework has delivered: the Google rulings were won on consumer harm, as were the challenges to the Kroger–Albertsons and JetBlue–Spirit mergers. Abandoning it would give enforcers no principled way to decide cases and make antitrust a weapon for whoever holds office, a risk the controversies of 2025 and 2026 made concrete. Carl Shapiro of Berkeley wrote in 2018 that antitrust institutions “are ill suited to directly address concerns associated with the political power of large corporations,” which need their own remedies. To those who say concentration reflects efficient superstar firms, we answer that efficiency does not explain the price increases found after many mergers, or the exclusionary conduct courts found at Google and Live Nation. And error costs run both ways: the current presumption against intervention was calibrated to avoid only one kind.",
+    "proponents": "Washington Center for Equitable Growth; Carl Shapiro; Herbert Hovenkamp; Jonathan Baker; Steven Salop; John Kwoka; Nancy Rose; American Antitrust Institute",
+    "id": "enforce-the-consumer-welfare-standard-more"
+   },
+   {
+    "name": "Regulate digital gatekeepers with up-front rules",
+    "color_key": "rust",
+    "steelman": "A platform every business must pass through needs rules everyone knows in advance. Lawsuits arrive years too late; clear obligations keep digital markets open now.",
+    "detail": "A search engine, app store or operating system that billions of people use becomes a gateway, and its owner is tempted to favor its own services, copy its customers and lock users in. General antitrust law reaches this only after years of litigation, a fight over market definition and a remedy one judge must design and police, by which time the market has tipped. Fiona Scott Morton, a former chief economist of the Justice Department’s Antitrust Division, wrote in 2025 that “antitrust enforcement alone is no longer sufficient to restore competition in these markets.” So identify the few gatekeepers by objective size criteria, set clear obligations in advance, and let a specialist regulator adjust them as technology changes.\n\nOur goal is the one the consumer welfare tradition shares, contestable markets where rivals compete on the merits, not hostility to size as such; but we agree with the anti-monopoly movement that lawsuits alone are too slow, and that rules can apply now while a structural case takes a decade. Europe has adopted the model, and the United Kingdom and Japan have followed with versions of their own. Designation follows size and user numbers, not nationality: American firms dominate the list because they dominate the markets. The product delays in Europe were the gatekeepers’ own choices, and European users have gained options, such as alternative app stores, that US users lack.",
+    "proponents": "Fiona Scott Morton; Andreas Schwab; Jason Furman; Stigler Center; Amy Klobuchar; Chuck Grassley",
+    "id": "regulate-digital-gatekeepers-with-up-front"
+   }
+  ],
+  "crux": {
+   "lead": "Should antitrust act against a firm’s market power itself, or only once it is shown to hurt people?",
+   "lead_highlight": "market power itself, or only once it is shown to hurt people",
+   "subtitle": "Every side wants cartels punished and agrees that some monopolies do harm. They split on whether concentrated power is a danger in its own right, to prices over time, to workers and rivals and to self-government, or whether size usually reflects efficiency, so that acting before harm is proven would punish success.",
+   "empirical": "Some of this can be measured: whether rising concentration and markups reflect weaker competition or more efficient firms, and whether they show up in the local markets where people shop and work; how often mergers that were allowed later raised prices or cut wages, and how often blocked ones would have helped; and whether rules on a monopolist’s conduct restore competition as well as breaking it up does.",
+   "values": "No data settles whether spreading out private economic power is worth some cost in efficiency, for the sake of liberty, small enterprise and self-government; how to weigh blocking a beneficial deal against allowing a harmful one that cannot be undone; or how much discretion enforcers should hold, and whether they should answer to the president or stand apart from politics."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "The FTC’s guide to the antitrust laws",
+    "description": "The Federal Trade Commission’s plain-language introduction to the Sherman, Clayton and FTC Acts, with fact sheets on mergers, monopolization and agreements among competitors.",
+    "url": "https://www.ftc.gov/advice-guidance/competition-guidance/guide-antitrust-laws",
+    "for_position": null,
+    "id": "the-ftc-s-guide-to-the"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Congressional Research Service primer on antitrust law",
+    "description": "A short nonpartisan overview, written for members of Congress, of the main antitrust statutes, how they are enforced and the dispute over the consumer welfare standard (May 2025 version).",
+    "url": "https://www.everycrsreport.com/reports/IF11234.html",
+    "for_position": null,
+    "id": "congressional-research-service-primer-on-antitrust"
+   },
+   {
+    "kind": "donate",
+    "title": "Support the Open Markets Institute",
+    "description": "Donations fund the think tank’s research and advocacy for stronger anti-monopoly laws and enforcement, including on platforms, AI and media.",
+    "url": "https://www.openmarketsinstitute.org/donate",
+    "for_position": "Restore antitrust as a check on corporate power",
+    "id": "support-the-open-markets-institute"
+   },
+   {
+    "kind": "learn_more",
+    "title": "ITIF’s antitrust research",
+    "description": "The Information Technology and Innovation Foundation’s work arguing that large firms drive productivity and innovation and that aggressive antitrust weakens US competitiveness.",
+    "url": "https://itif.org/issues/antitrust/",
+    "for_position": "Keep antitrust narrow to protect scale and innovation",
+    "id": "itif-s-antitrust-research"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Equitable Growth’s Competitive Edge series",
+    "description": "Essays by economists and former enforcers on market power, merger enforcement and the evidence behind proposals to strengthen antitrust within its economic framework.",
+    "url": "https://equitablegrowth.org/category/competitive-edge/",
+    "for_position": "Enforce the consumer welfare standard harder",
+    "id": "equitable-growth-s-competitive-edge-series"
+   },
+   {
+    "kind": "learn_more",
+    "title": "The EU’s Digital Markets Act site",
+    "description": "The European Commission’s site for the act, listing the designated gatekeepers, their obligations, compliance reports and enforcement decisions.",
+    "url": "https://digital-markets-act.ec.europa.eu/index_en",
+    "for_position": "Regulate digital gatekeepers with up-front rules",
+    "id": "the-eu-s-digital-markets-act"
+   },
+   {
+    "kind": "policy",
+    "title": "Comment on a merger or report a concern to the FTC",
+    "description": "The FTC’s form for commenting on mergers under review or reporting suspected anticompetitive conduct, open to consumers, workers and businesses.",
+    "url": "https://www.ftc.gov/enforcement/submit-merger-antitrust-comment",
+    "for_position": null,
+    "id": "comment-on-a-merger-or-report"
+   },
+   {
+    "kind": "local",
+    "title": "Back independent local businesses with the Institute for Local Self-Reliance",
+    "description": "Research and organizing for independent retailers, grocers and pharmacies competing with dominant chains and platforms, with resources for local advocates.",
+    "url": "https://ilsr.org/",
+    "for_position": "Restore antitrust as a check on corporate power",
+    "id": "back-independent-local-businesses-with-the"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Truth on the Market",
+    "description": "The International Center for Law & Economics blog, with daily commentary defending the consumer welfare standard and criticizing expansive enforcement and digital regulation.",
+    "url": "https://truthonthemarket.com/",
+    "for_position": "Keep antitrust narrow to protect scale and innovation",
+    "id": "truth-on-the-market"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Follow the American Antitrust Institute",
+    "description": "An independent organization that files amicus briefs, comments and research urging vigorous enforcement of the antitrust laws.",
+    "url": "https://www.antitrustinstitute.org/",
+    "for_position": "Enforce the consumer welfare standard harder",
+    "id": "follow-the-american-antitrust-institute"
+   }
+  ]
+ }
 }

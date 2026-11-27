@@ -1,8 +1,8 @@
 {
  "slug": "plastics-production-vs-waste",
  "title": "Plastics",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-11-23T11:02:53+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Capping plastic production versus managing plastic waste and recycling.",
@@ -10,9 +10,727 @@
  "categories": [
   "governance"
  ],
+ "icon": "bag",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: A tall plastic water bottle with a screw cap stands as the dominant focal mass on a gently curved rise of ground. Behind it on the left, partly overlapped by the bottle, a small factory with two short stacks and a row of plastic pellets in a hopper. On the right, a lidded collection bin with a few containers beside it. A conveyor belt crosses the frame from the factory past the bottle's foot to the bin, carrying small bottles and tubs. A small plastic bag drifts above the bin.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #7d8a4e, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: recycling arrows symbol, sea turtle, dead animals, fish tangled in plastic, garbage heaps or overflowing landfill, smoke plumes, skull or warning signs, red circle-slash, crossed-out bottle, ocean gyre, logos, labels with text, people, hands",
  "related": [
   "fossil-fuel-phaseout",
   "water-commodity-vs-right",
   "critical-minerals"
- ]
+ ],
+ "content": {
+  "overview": {
+   "summary": "Most plastic waste is never recycled. The central argument is whether to cap how much plastic is made or to fix how its waste is handled.",
+   "scope_covered": "Production limits, product and chemical rules, waste collection and recycling, the waste trade, and the health and climate arguments as they bear on that choice.",
+   "scope_excluded": "How fast to phase out fossil fuels in general, water access, and personal shopping habits except where policy shapes them.",
+   "why_now": "On October 1, 2026, after closed-door talks in Bangkok, treaty chair Julio Cordano said he expected countries to adopt a global plastics treaty at the next session, in March 2027. Talks in 2024 and 2025 had ended without a deal, and a cap on production was still among the outline’s disputed sections.",
+   "why_now_source_label": "AFP via France 24",
+   "why_now_source_url": "https://www.france24.com/en/live-news/20261001-plastic-treaty-talks-chair-sees-deal-possible-in-march"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "Global plastics production",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "Mt per year",
+     "series": [
+      {
+       "label": "1980",
+       "value": "70",
+       "highlight": false
+      },
+      {
+       "label": "2000",
+       "value": "213",
+       "highlight": false
+      },
+      {
+       "label": "2010",
+       "value": "313",
+       "highlight": false
+      },
+      {
+       "label": "2015",
+       "value": "381",
+       "highlight": false
+      },
+      {
+       "label": "2019",
+       "value": "460",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "About 460 million tonnes of plastic were made in 2019, against 2 million in 1950. On other bases, Plastics Europe counts 430.9 million for 2024 and the Lancet Countdown 475 million for 2022.",
+     "detail": "The series joins two sources: the 1950 to 2015 values come from Geyer, Jambeck and Law’s 2017 accounting of all plastic ever made, and the 2019 value from the OECD’s Global Plastics Outlook (2022), with Our World in Data filling 2016 to 2018 at 5 percent a year. The OECD describes production as having doubled between 2000 and 2019. The industry count is lower mainly because Plastics Europe leaves out polyester (PET), polyamide and acrylic fibers and some adhesives, coatings and sealants; on that basis it reports 2024 output up 4.1 percent on 2023. The Lancet Countdown on health and plastics (Landrigan et al., 2025) counts on a broader basis.",
+     "source_label": "Our World in Data, from Geyer et al. (2017) and OECD Global Plastics Outlook (2022)",
+     "source_url": "https://ourworldindata.org/grapher/global-plastics-production",
+     "source_published": "2019",
+     "source_accessed": "2026-11-23",
+     "id": "global-plastics-production"
+    },
+    {
+     "label": "Greenhouse gas emissions from making new plastic",
+     "viz": "bar",
+     "wide": false,
+     "value": "2.24",
+     "unit": "Gt CO2e",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "A Berkeley Lab study puts 2019 emissions from making virgin plastic at 2.24 billion tonnes CO2e, 5.3 percent of emissions outside agriculture and land use; the OECD’s life-cycle share is 3.4 percent.",
+     "detail": "The two shares differ in basis. The laboratory counts only primary (virgin) production and divides by global emissions excluding agriculture, forestry and land use; the OECD’s figure (2022) covers the whole plastics life cycle against total emissions. The laboratory projects emissions from primary production rising to 4.75 billion tonnes by 2050 if output grows 2.5 percent a year, or 6.78 billion tonnes at 4 percent. Pew’s Breaking the Plastic Wave 2025 projects plastic-related emissions rising 58 percent between 2025 and 2040 under business as usual. What those emissions imply for policy depends on what would replace the plastic, which is the subject of a separate dispute over substitutes.",
+     "source_label": "Karali, Khanna & Shah, Climate Impact of Primary Plastic Production, Lawrence Berkeley National Laboratory (April 2024)",
+     "source_url": "https://eta-publications.lbl.gov/publications/climate-impact-primary-plastic",
+     "source_published": "2019",
+     "source_accessed": "2026-11-23",
+     "id": "greenhouse-gas-emissions-from-making-new"
+    },
+    {
+     "label": "Uses where plastic beat its substitutes on emissions",
+     "viz": "bar",
+     "wide": false,
+     "value": "13",
+     "unit": "of 14 uses",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "A 2022 McKinsey analysis of 14 US uses found plastics had lower life-cycle emissions than the alternatives used at scale in 13, comparing material with material, not with reuse.",
+     "detail": "McKinsey reports savings of 10 to 90 percent across product life cycle and use, and notes that in many food packaging uses there are few alternatives to plastic today. The comparison is substitution, for example glass, paper or metal in place of plastic. It does not model reduction or reuse systems, which are the main levers in production-cap scenarios such as Pew’s. The chemical industry and supporters of a waste-first approach cite it as evidence that cutting plastic would raise emissions; supporters of production limits answer that the right comparison is with using less material, not with switching material.",
+     "source_label": "McKinsey & Company, Climate impact of plastics (6 July 2022)",
+     "source_url": "https://www.mckinsey.com/industries/chemicals/our-insights/climate-impact-of-plastics",
+     "source_published": "2022",
+     "source_accessed": "2026-11-23",
+     "id": "uses-where-plastic-beat-its-substitutes"
+    },
+    {
+     "label": "What happened to the world’s plastic waste",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Landfilled",
+       "value": "49",
+       "highlight": false
+      },
+      {
+       "label": "Mismanaged",
+       "value": "22",
+       "highlight": false
+      },
+      {
+       "label": "Incinerated",
+       "value": "19",
+       "highlight": false
+      },
+      {
+       "label": "Recycled",
+       "value": "9",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The OECD counted about 353 million tonnes of plastic waste in 2019. About 9 percent was recycled, and 22 percent was dumped, burned in the open or leaked into the environment.",
+     "detail": "In the OECD’s own words, “Only 9% of plastic waste is recycled (15% is collected for recycling but 40% of that is disposed of as residues),” and the mismanaged share “evades waste management systems and goes into uncontrolled dumpsites, is burned in open pits or ends up in terrestrial or aquatic environments, especially in poorer countries.” Plastic waste generation more than doubled between 2000 and 2019. The unrounded shares in the Our World in Data chart are 49.2 percent landfilled, 22.5 percent mismanaged, 19.0 percent incinerated and 9.3 percent recycled. Both sides cite the figure: one as proof that recycling cannot absorb current volumes, the other as proof that collection and recycling are badly underbuilt.",
+     "source_label": "Our World in Data, from OECD Global Plastics Outlook (2022/2023 database)",
+     "source_url": "https://ourworldindata.org/grapher/share-plastic-fate",
+     "source_published": "2019",
+     "source_accessed": "2026-11-23",
+     "id": "what-happened-to-the-world-s"
+    },
+    {
+     "label": "Countries backing a global target to cut plastic production",
+     "viz": "range",
+     "wide": false,
+     "value": "97",
+     "unit": "countries",
+     "series": [],
+     "range_min": "0",
+     "range_max": "nearly 180 in the talks",
+     "note": "At the UN Ocean Conference on June 10, 2025, 97 countries endorsed a call for a global target to reduce plastic production and consumption; counts reported at the time ran from 95 to 97.",
+     "detail": "The declaration, led by France and co-hosted with Costa Rica, calls “for the adoption of a global target to reduce the production and consumption of primary plastic polymers” and for a legally binding obligation to phase out the most problematic plastic products and chemicals of concern. Nearly 180 countries take part in the talks (Washington Post, August 2026). At the Geneva session in August 2025, the Associated Press reported that about 100 countries wanted to limit production. Because the talks have run by consensus, majority support had not put a production target into the text as of November 2026.",
+     "source_label": "French Ministry of Ecological Transition, “Nice wake up call for an ambitious plastics treaty”",
+     "source_url": "https://www.ecologie.gouv.fr/en/rendez-vous/nice-wake-up-call-for-an-ambitious-plastics-treaty",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "countries-backing-a-global-target-to"
+    },
+    {
+     "label": "Largest emitters of macroplastic pollution",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "Mt per year",
+     "series": [
+      {
+       "label": "India",
+       "value": "9.3",
+       "highlight": true
+      },
+      {
+       "label": "Nigeria",
+       "value": "3.5",
+       "highlight": false
+      },
+      {
+       "label": "Indonesia",
+       "value": "3.4",
+       "highlight": false
+      },
+      {
+       "label": "China",
+       "value": "2.8",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "A 2024 Nature inventory found India emitted about 9.3 million tonnes of plastic a year as debris or by open burning, nearly a fifth of the world’s; high-income countries together emitted 0.16 million.",
+     "detail": "The study puts world emissions at 52.1 million tonnes a year in 2020 and reports that “Littering is the largest emission source in the Global North, whereas uncollected waste is the dominant emissions source across the Global South.” About 69 percent of emissions come from 20 countries, all low- or middle-income, and high-income countries contribute 0.3 percent because most have full collection and controlled disposal. China ranks fourth, lower than in earlier models, because newer data show its shift to incineration and controlled landfill. The paper counts emissions where waste is generated and mismanaged; it does not trace waste that rich countries export, and it covers large plastic items, not microplastics. Supporters of waste-first policies read it as showing where money for collection would do most good; supporters of production limits note that it measures where waste escapes, not where plastic is made or sold.",
+     "source_label": "Cottom, Cook & Velis, “A local-to-global emissions inventory of macroplastic pollution,” Nature (2024)",
+     "source_url": "https://www.nature.com/articles/s41586-024-07758-6",
+     "source_published": "2020",
+     "source_accessed": "2026-11-23",
+     "id": "largest-emitters-of-macroplastic-pollution"
+    },
+    {
+     "label": "Projected growth, 2025 to 2040, under business as usual",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Plastic production",
+       "value": "+52",
+       "highlight": true
+      },
+      {
+       "label": "Waste capacity",
+       "value": "+26",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Pew and partners, who favor cutting production, project primary plastic output up 52 percent from 2025 to 2040, from 450 to 680 million tonnes, while waste management capacity grows 26 percent.",
+     "detail": "The report states that waste management capacity “will expand by only 26%, despite considerable investment.” Its System Transformation scenario, which combines reduction, reuse, substitution, redesign, better collection and recycling, brings primary production to 390 million tonnes by 2040, 44 percent below business as usual and 14 percent below 2025. The report was produced with ICF, the Ellen MacArthur Foundation, Imperial College London, Systemiq and the University of Oxford. Because Pew advocates production cuts, readers on the waste-management side treat its scenarios as advocacy-adjacent.",
+     "source_label": "The Pew Charitable Trusts and partners, Breaking the Plastic Wave 2025 (December 2025)",
+     "source_url": "https://www.pew.org/en/research-and-analysis/reports/2025/12/breaking-the-plastic-wave-2025",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "projected-growth-2025-to-2040-under"
+    },
+    {
+     "label": "Plastic waste generated per person",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "kg per year",
+     "series": [
+      {
+       "label": "United States",
+       "value": "221",
+       "highlight": true
+      },
+      {
+       "label": "European OECD",
+       "value": "114",
+       "highlight": false
+      },
+      {
+       "label": "Japan and Korea",
+       "value": "69",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2019 the average American generated about 221 kilograms of plastic waste, roughly twice the average in European OECD countries and three times that in Japan and Korea.",
+     "detail": "The OECD reports that almost half of all plastic waste is generated in OECD countries, yet OECD countries account for 14 percent of plastic leakage into the environment: 11 percent of large plastic items and 35 percent of microplastics. Nearly two-thirds of plastic waste comes from items with lifetimes under five years, 40 percent from packaging, 12 percent from consumer goods and 11 percent from clothing and textiles. The gap between where waste is generated and where it leaks is the empirical core of the dispute over whose problem plastic pollution is.",
+     "source_label": "OECD Global Plastics Outlook, press release (22 February 2022)",
+     "source_url": "https://www.oecd.org/en/about/news/press-releases/2022/02/plastic-pollution-is-growing-relentlessly-as-waste-management-and-recycling-fall-short.html",
+     "source_published": "2019",
+     "source_accessed": "2026-11-23",
+     "id": "plastic-waste-generated-per-person"
+    },
+    {
+     "label": "Share of world plastics production by region",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "China",
+       "value": "34.5",
+       "highlight": true
+      },
+      {
+       "label": "Rest of Asia",
+       "value": "20.1",
+       "highlight": false
+      },
+      {
+       "label": "North America",
+       "value": "16.3",
+       "highlight": false
+      },
+      {
+       "label": "Europe",
+       "value": "12.0",
+       "highlight": false
+      },
+      {
+       "label": "Middle East & Africa",
+       "value": "8.3",
+       "highlight": false
+      },
+      {
+       "label": "Central & South America",
+       "value": "3.7",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Plastics Europe estimates China made about a third of the world’s plastics in 2024, the rest of Asia a fifth, North America about a sixth and Europe about an eighth.",
+     "detail": "Europe here is the EU27 plus Norway, Switzerland and the UK, which made 54.6 million tonnes in 2024; Japan made 2.6 percent of the world total and the CIS 2.5 percent. Europe’s share has fallen as production shifted to Asia and the Middle East. The split matters for the treaty: a global production target would weigh most on China, the Gulf states and the United States, while the countries where most plastic leaks are mainly importers and users of plastic rather than polymer producers. The shares are read from the report’s regional chart, with labels matched to values by legend order, so treat them as approximate.",
+     "source_label": "Plastics Europe, Plastics the Fast Facts 2025",
+     "source_url": "https://plasticseurope.org/de/wp-content/uploads/sites/3/2025/10/PE_TheFacts_25_digital-A4.pdf",
+     "source_published": "2024",
+     "source_accessed": "2026-11-23",
+     "id": "share-of-world-plastics-production-by"
+    },
+    {
+     "label": "Oil needed for plastics and synthetic fibers, 2030",
+     "viz": "bar",
+     "wide": false,
+     "value": "18.4",
+     "unit": "mb/d",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The IEA projects that making polymers and synthetic fibers will take 18.4 million barrels of oil a day by 2030, more than one in every six barrels.",
+     "detail": "The IEA wrote in 2025 that “the petrochemical industry is set to become the dominant source of global oil demand growth from 2026 onwards,” led by new capacity in China and the United States, while demand for oil burned as fuel “may peak as early as 2027.” Its 2018 Future of Petrochemicals report had projected petrochemicals to account for over a third of oil demand growth to 2030 and nearly half to 2050. The figure is read both ways: supporters of a production cap see plastics as the oil industry’s growth hedge against electric vehicles and the reason producers resist limits, while producer states and companies see a cap as an attack on a major industry and on development.",
+     "source_label": "International Energy Agency, Oil 2025, Executive summary",
+     "source_url": "https://www.iea.org/reports/oil-2025/executive-summary",
+     "source_published": "2025, projection to 2030",
+     "source_accessed": "2026-11-23",
+     "id": "oil-needed-for-plastics-and-synthetic"
+    },
+    {
+     "label": "Plastic entering the environment each year",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "Mt per year",
+     "series": [
+      {
+       "label": "2025",
+       "value": "130",
+       "highlight": true
+      },
+      {
+       "label": "2040, business as usual",
+       "value": "280",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Pew estimates 130 million tonnes of plastic polluted land, air and water in 2025 and projects 280 million a year by 2040 without new policy; narrower definitions give much lower totals.",
+     "detail": "Pew’s definition is broad: large and micro plastics entering land and water, plus large plastic items disposed of by open burning. Narrower counts come out lower, which is why headline pollution numbers vary so much: the 2024 Nature inventory of large plastic items from municipal waste finds well under half Pew’s total, and the OECD estimated that 6.1 million tonnes leaked into rivers, lakes and seas in 2019 (OECD, 2022). Pew finds microplastics are 13 percent of plastic pollution in 2025, largest from tire wear and paint, and projects them to reach 79 percent of plastic pollution in high-income economies by 2040. That matters because tire and paint particles are not addressed by better waste collection.",
+     "source_label": "The Pew Charitable Trusts and partners, Breaking the Plastic Wave 2025",
+     "source_url": "https://www.pew.org/en/research-and-analysis/reports/2025/12/breaking-the-plastic-wave-2025",
+     "source_published": "2025, projection to 2040",
+     "source_accessed": "2026-11-23",
+     "id": "plastic-entering-the-environment-each-year"
+    },
+    {
+     "label": "Heart attack, stroke or death with microplastics in artery plaque",
+     "viz": "bar",
+     "wide": false,
+     "value": "4.53",
+     "unit": "hazard ratio",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a 2024 Italian study of 257 surgery patients, the 150 with polyethylene in their artery plaque had about 4.5 times the risk of heart attack, stroke or death; it shows association, not cause.",
+     "detail": "Patients were followed for a mean of 34 months, and the hazard ratio was 4.53 (95 percent confidence interval 2.00 to 10.27). Because the study was observational, people with more plastic in their plaque may differ in other ways. It is the most-cited human evidence in the health argument, along with a 2025 Nature Medicine study reporting rising microplastic levels in human brains between 2016 and 2024 (Nihart et al.). The measurement method used in both, pyrolysis gas chromatography mass spectrometry, has been criticized for misreading fats as polyethylene; Germany’s Federal Institute for Risk Assessment wrote of the brain study in December 2025 that “the measured amounts appear implausibly high.”",
+     "source_label": "Marfella et al., “Microplastics and Nanoplastics in Atheromas and Cardiovascular Events,” NEJM (2024)",
+     "source_url": "https://pubmed.ncbi.nlm.nih.gov/38446676/",
+     "source_published": "2024",
+     "source_accessed": "2026-11-23",
+     "id": "heart-attack-stroke-or-death-with"
+    },
+    {
+     "label": "Plastic chemicals of concern",
+     "viz": "bar",
+     "wide": false,
+     "value": "4,200",
+     "unit": "of 16,000",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Researchers found at least 16,000 chemicals used in or present in plastics, more than 4,200 of them of concern for health or the environment; about 6 percent are regulated internationally.",
+     "detail": "The PlastChem report, funded by the Norwegian Research Council and coordinated by Martin Wagner of the Norwegian University of Science and Technology, also finds that hazard data are lacking for about 66 percent of plastic chemicals, and that national regulations cover about 1,000 more beyond those regulated internationally. Whether a treaty should list chemicals of concern for global phase-out was among the issues bracketed in the chair’s August 2026 text, and the US delegation has argued that restricting plastics and chemicals could limit access to defense-related products (Washington Post, August 2026).",
+     "source_label": "PlastChem project, State of the Science on Plastic Chemicals (March 2024)",
+     "source_url": "https://plastchem-project.org/",
+     "source_published": "2024",
+     "source_accessed": "2026-11-23",
+     "id": "plastic-chemicals-of-concern"
+    },
+    {
+     "label": "US plastics recycling rate",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Milk-jug bottles (HDPE)",
+       "value": "29.3",
+       "highlight": false
+      },
+      {
+       "label": "PET bottles and jars",
+       "value": "29.1",
+       "highlight": false
+      },
+      {
+       "label": "All plastics",
+       "value": "8.7",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The EPA’s latest national figure is that 8.7 percent of plastic in US municipal waste was recycled in 2018, with bottles near 29 percent; a Beyond Plastics study put 2021 at 5 to 6 percent.",
+     "detail": "Of 35.7 million tons of plastics generated in 2018, the EPA reports 3 million tons recycled, 5.6 million tons burned with energy recovery and 27 million tons landfilled. As of November 2026 the EPA had published no newer national plastics rate on this page. Beyond Plastics and The Last Beach Cleanup, which favor production limits, derived their lower 2021 estimate from falling exports (May 2022), and industry groups disputed the analysis. The bottle figures show recycling working best for a few simple, high-value forms, which supporters of design rules cite as a reason to standardize packaging.",
+     "source_label": "US Environmental Protection Agency, Plastics: Material-Specific Data",
+     "source_url": "https://www.epa.gov/facts-and-figures-about-materials-waste-and-recycling/plastics-material-specific-data",
+     "source_published": "2018",
+     "source_accessed": "2026-11-23",
+     "id": "us-plastics-recycling-rate"
+    },
+    {
+     "label": "Share of world plastics made from mechanically recycled waste",
+     "viz": "radial",
+     "wide": false,
+     "value": "9.5",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Plastic made from mechanically recycled waste was 9.5 percent of world output in 2024 and chemically recycled 0.1 percent; on a broader count the OECD put recycled output at 6 percent in 2019.",
+     "detail": "Plastics Europe reports 40.8 million tonnes of mechanically recycled and 0.4 million tonnes of chemically recycled post-consumer plastic in 2024; 89.8 percent of output was fossil-based and 0.6 percent bio-based. It estimates chemically recycled output with a mass-balance attribution rule. The OECD found secondary plastics grew from 6.8 million tonnes in 2000 to 29.1 million tonnes in 2019, “still only 6% of the size of total plastics production” (OECD, 2022); the two shares differ mainly in denominator and year. Chemical or “advanced” recycling, which breaks plastic down into feedstock, is central to industry plans and to the waste-management case.",
+     "source_label": "Plastics Europe, Plastics the Fast Facts 2025",
+     "source_url": "https://plasticseurope.org/de/wp-content/uploads/sites/3/2025/10/PE_TheFacts_25_digital-A4.pdf",
+     "source_published": "2024",
+     "source_accessed": "2026-11-23",
+     "id": "share-of-world-plastics-made-from"
+    },
+    {
+     "label": "EU plastic waste exports by destination",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "tonnes",
+     "series": [
+      {
+       "label": "Türkiye",
+       "value": "510,000",
+       "highlight": false
+      },
+      {
+       "label": "Malaysia",
+       "value": "276,000",
+       "highlight": true
+      },
+      {
+       "label": "Indonesia",
+       "value": "215,000",
+       "highlight": false
+      },
+      {
+       "label": "Vietnam",
+       "value": "137,000",
+       "highlight": false
+      },
+      {
+       "label": "United Kingdom",
+       "value": "108,000",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2025 Türkiye took the most EU plastic waste and Malaysia the most of any non-OECD country; EU exports of plastic waste to non-OECD countries are banned from November 21, 2026.",
+     "detail": "The Commission says the EU generates about 40 million tonnes of plastic waste a year and exports 1 to 1.5 million tonnes, roughly half of it to non-OECD countries in 2025. The ban runs until at least May 21, 2029, after which non-OECD countries may apply to receive EU plastic waste; exports to OECD members such as Türkiye and the UK continue under closer scrutiny. Exported waste counts as recycled in the exporter’s statistics. Critics of the trade say much of the sorting residue is dumped or burned on arrival; defenders say clean, sorted plastic is a commodity, and that consent rules and inspection can police abuse.",
+     "source_label": "European Commission, “EU bans plastic waste exports to non-OECD countries” (20 November 2026)",
+     "source_url": "https://environment.ec.europa.eu/news/eu-bans-plastic-waste-exports-non-oecd-countries-2026-11-20_en",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "eu-plastic-waste-exports-by-destination"
+    },
+    {
+     "label": "Countries with bans or taxes on single-use plastics",
+     "viz": "bar",
+     "wide": false,
+     "value": "120+",
+     "unit": "countries",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "More than 120 countries had bans or taxes on single-use plastics by 2022, according to the OECD.",
+     "detail": "The OECD found these rules “are not doing enough to reduce overall pollution,” because most cover items such as plastic bags that make up a tiny share of plastic waste, and they reduce litter more than overall consumption. It called for wider use of extended producer responsibility, landfill taxes, and deposit-refund and pay-as-you-throw systems. Since then the EU’s Packaging and Packaging Waste Regulation began applying on August 12, 2026, requiring all packaging to be recyclable by 2030, banning some single-use formats from 2030 and setting rising recycled-content targets (European Commission). As of November 2026, seven US states, California, Colorado, Maine, Maryland, Minnesota, Oregon and Washington, had enacted packaging producer responsibility laws (Retail Industry Leaders Association).",
+     "source_label": "OECD Global Plastics Outlook, press release (22 February 2022)",
+     "source_url": "https://www.oecd.org/en/about/news/press-releases/2022/02/plastic-pollution-is-growing-relentlessly-as-waste-management-and-recycling-fall-short.html",
+     "source_published": "2022",
+     "source_accessed": "2026-11-23",
+     "id": "countries-with-bans-or-taxes-on"
+    },
+    {
+     "label": "Plastic accumulated in rivers and oceans",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "Mt",
+     "series": [
+      {
+       "label": "Rivers",
+       "value": "109",
+       "highlight": false
+      },
+      {
+       "label": "Seas and oceans",
+       "value": "30",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The OECD estimates that about 30 million tonnes of plastic waste have built up in seas and oceans and 109 million in rivers, with 1.7 million tonnes reaching the ocean in 2019.",
+     "detail": "The OECD notes that the build-up in rivers “implies that leakage into the ocean will continue for decades to come, even if mismanaged plastic waste could be significantly reduced.” Estimates of yearly ocean inputs have come down as models improved: Our World in Data summarizes recent studies at 1 to 2 million tonnes a year, against earlier estimates of up to 8 million. Ocean plastic is the most visible part of the problem but a small share of all mismanaged waste, much of which is burned or dumped on land.",
+     "source_label": "OECD Global Plastics Outlook, press release (22 February 2022)",
+     "source_url": "https://www.oecd.org/en/about/news/press-releases/2022/02/plastic-pollution-is-growing-relentlessly-as-waste-management-and-recycling-fall-short.html",
+     "source_published": "2019",
+     "source_accessed": "2026-11-23",
+     "id": "plastic-accumulated-in-rivers-and-oceans"
+    },
+    {
+     "label": "People who want global rules to cut plastic production",
+     "viz": "radial",
+     "wide": false,
+     "value": "87",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a 2023 Ipsos survey for WWF and the Plastic Free Foundation across 32 countries, 87 percent called global rules to reduce plastic production important; eight rules tested drew 84 to 90 percent.",
+     "detail": "The survey reached 24,727 people between August 25 and October 6, 2023, and asked of each rule whether it is important to have global rules to do it. Banning chemicals in plastic that are hazardous to health and the environment drew the most support, at 90 percent, and making manufacturers pay a fee toward reuse, recycling and waste management the least, at 84 percent; waste-side rules such as recycled content (86) and sorting labels (88) scored about as high as production cuts. Both sponsors campaign for an ambitious treaty, and the report notes that the mostly online samples skew more urban, educated or affluent in some countries. It did not test trade-offs such as higher prices.",
+     "source_label": "WWF and Plastic Free Foundation, Rising Tides III (Ipsos survey of 24,727 people in 32 countries)",
+     "source_url": "https://wwfint.awsassets.panda.org/downloads/rising-tides-iii---english.pdf",
+     "source_published": "2023",
+     "source_accessed": "2026-11-23",
+     "id": "people-who-want-global-rules-to"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Can waste collection and disposal be built fast enough to keep up with rising plastic production?",
+    "kind": "empirical",
+    "why": "Both sides agree that most plastic pollution today escapes from uncollected and mismanaged waste. They disagree over whether that gap is a shortfall money and policy can close, or the built-in result of making more plastic than any system absorbs.",
+    "detail": "The case that waste systems can catch up points to the 2024 Nature inventory of plastic emissions, in which countries with near-universal collection and controlled disposal leak almost no large plastic waste, so the remaining gap is a known engineering and financing problem rather than a mystery. Producer fees, deposit systems and recycled-content mandates can pay for collection and create demand for recycled material at the same time. On this reading the fastest cut in pollution comes from funding collection where it is missing.\n\nThe case that production will outrun them points to Pew’s modeling, in which even considerable investment leaves waste capacity growing half as fast as output, so the absolute volume of unmanaged plastic keeps rising. Landfill and incineration move the problem into soil, air and emissions rather than ending it, and particles shed by tires, paint and textiles, a growing share of pollution, cannot be collected at all. Every tonne made eventually becomes waste, so on this view the only way to make the problem smaller rather than chase it is to make less.",
+    "lean_label_a": "Waste can keep up",
+    "lean_label_b": "Production outpaces",
+    "id": "can-waste-collection-and-disposal-be"
+   },
+   {
+    "text": "Should a global treaty bind countries to reduce how much plastic they produce?",
+    "kind": "value",
+    "why": "Even people who agree production is too high split over whether a UN treaty should set a collective limit on an industrial output, which would fall unevenly on producer economies, or leave each country to set its own path.",
+    "detail": "Supporters of a binding target argue that plastic and its pollution cross borders through trade, rivers and oceans, so a limit set by one country leaks into imports from another. A shared target written as a cut in primary polymers would leave room for recycled material and essential uses, give every producer the same rules and send investors a clear signal. Small island states, which make almost no plastic but receive it on their shores, argue that voluntary national plans have not worked for any global pollutant.\n\nSupporters of national choice argue that plastic’s role differs between a rich country and one still building its economy, and that a collective limit on an industrial output would fall hardest on the consumers least able to pay higher prices. The US State Department has rejected proposals that would, in its words, “damage the American economy, drive inflation, and restrict consumer choice” (Washington Post, August 2026). They favor nationally determined plans, as under the Paris Agreement, on the view that a treaty the key producers ratify and carry out does more than an ambitious one they refuse to join.",
+    "lean_label_a": "Global target",
+    "lean_label_b": "National choice",
+    "id": "should-a-global-treaty-bind-countries"
+   },
+   {
+    "text": "How much harm do microplastics and plastic chemicals do to human health?",
+    "kind": "empirical",
+    "why": "Plastic particles have been found in blood, placentas, arteries and brains, and some additives, such as certain phthalates and bisphenols, have established links to disease. Methods for measuring particles are new, and the sides read the evidence differently.",
+    "detail": "The case for serious harm rests on breadth and plausibility. The Lancet Countdown on health and plastics (2025) concludes that plastics cause disease and death from infancy to old age, linking plastic chemicals to cancer, heart disease, reduced fertility and harm to children’s neurodevelopment, and puts health-related losses above US$1.5 trillion a year. Particles turn up throughout the body, and most plastic chemicals have never been tested for hazard. When exposure is universal and the plausible harms are severe, waiting for proof means waiting until the damage is done, which is the lesson of lead and tobacco.\n\nThe case that harm is unproven rests on the quality of that evidence. Germany’s Federal Institute for Risk Assessment found “no reliable toxicological evidence of health risks from the intake of microplastics via food” (December 2025). The artery plaque study is small and observational, and the Lancet’s loss estimate is built on a handful of cost studies. Specific harmful additives are best handled by chemical rules aimed at those substances, as with existing bans on certain phthalates, rather than by limiting all plastic, and policy built on alarming but fragile findings risks misdirecting money and losing public trust if results fail to replicate.",
+    "lean_label_a": "Serious harm",
+    "lean_label_b": "Unproven so far",
+    "id": "how-much-harm-do-microplastics-and"
+   },
+   {
+    "text": "Is plastic pollution mainly a failure of waste systems in poorer countries or overproduction in richer ones?",
+    "kind": "value",
+    "why": "The data draw two maps: where plastic leaks, mostly low- and middle-income countries with gaps in collection, and where it is made and used per person, mostly richer economies. Which map defines responsibility shapes who should act and pay.",
+    "detail": "Those who see a waste-system failure start from the leakage map. Most large plastic litter that reaches the environment comes from a small group of low- and middle-income countries, driven by waste that is never collected rather than by littering. Richer countries generate more plastic per person but leak very little because they collect and manage it. The most direct way to keep plastic out of rivers and oceans, and to protect people who live beside open dumps and burning, is to finance collection, sanitary landfill and recycling where they are missing.\n\nThose who see overproduction start from the production map. Pew estimates that upper-middle- and high-income economies make nearly 80 percent of the world’s virgin plastic (2025). Rich countries exported large volumes of their waste to poorer ones for decades and counted it as recycled. Producers and brands in rich economies decide what is made and how it is packaged, and framing pollution as a Global South waste problem, on this view, shifts responsibility to the countries with the least money and the least say over what they receive.",
+    "lean_label_a": "Uncollected waste",
+    "lean_label_b": "Overproduction",
+    "id": "is-plastic-pollution-mainly-a-failure"
+   },
+   {
+    "text": "Can recycling, including chemical recycling, scale up enough to close the loop?",
+    "kind": "empirical",
+    "why": "Recycling is the central promise of the waste-first approach, and industry has invested in chemical or “advanced” recycling for plastics mechanical recycling cannot handle. Critics say the promise is oversold; supporters say it has never been properly funded.",
+    "detail": "The case that recycling can scale says rates are low mainly because collection and sorting are underfunded and virgin plastic is cheap, and both can be changed by policy. Mechanical recycling already supplies close to a tenth of world output, and in the United States bottles are recycled at about 29 percent with no national mandate; deposit systems elsewhere recover far more. Producer fees, design-for-recycling rules and recycled-content mandates such as the EU’s create steady demand. Chemical recycling can turn mixed and contaminated plastic back into virgin-quality feedstock, and it is early in its scale-up, as solar power once was.\n\nThe case for built-in limits says the low rate reflects the material, not just the money. Only about 9 percent of the world’s plastic waste is recycled. Most plastic is not one material but thousands of combinations of polymers and additives, so recycled output is degraded, often carries chemicals of concern, and is usually used once more before disposal. Chemically recycled output was about 0.1 percent of world production in 2024, and critics say much pyrolysis output is burned as fuel. A strategy that has been promised for 40 years and still falls short is, on this view, evidence about plastic itself.",
+    "lean_label_a": "Recycling can scale",
+    "lean_label_b": "Built-in limits",
+    "id": "can-recycling-including-chemical-recycling-scale"
+   },
+   {
+    "text": "Would using less plastic raise emissions and costs by pushing users toward worse substitutes?",
+    "kind": "empirical",
+    "why": "Plastic is light and cheap, so swapping it for glass, metal or paper can raise transport emissions, food waste and costs. Whether that makes production limits counterproductive depends on whether less plastic means switching materials or using less material.",
+    "detail": "The case that substitutes do worse starts from life-cycle comparisons, including McKinsey’s, in which plastic usually beats glass, paper and metal on emissions. Plastic packaging extends the shelf life of food, and lightweight plastic parts cut fuel use in vehicles and aircraft. Paper bags and glass bottles carry higher footprints per use unless they are reused many times. A production cap would push users toward heavier, costlier or less hygienic materials, raising prices for the poorest households and emissions for everyone.\n\nThe case that reduction does better says the relevant comparison is not plastic against glass but plastic against no single-use item at all: reuse systems, refill, concentrates and less packaging. Pew’s system-change scenario, which it says keeps the same level of service, cuts plastic-related emissions 38 percent below business as usual by 2040, and reuse accounts for about two-thirds of its packaging reduction. Life-cycle studies of plastic also rarely count the costs of pollution, open burning and damage to health.",
+    "lean_label_a": "Worse overall",
+    "lean_label_b": "Better overall",
+    "id": "would-using-less-plastic-raise-emissions"
+   },
+   {
+    "text": "Who should pay to collect and manage plastic waste?",
+    "kind": "value",
+    "why": "The options include producer responsibility fees, a global fee on primary polymers, aid from richer countries, and ordinary public budgets and user charges, and the treaty talks have stalled over finance as well as over production.",
+    "detail": "The case that producers should pay is that those who make and sell plastic profit from it, while cleanup falls on municipalities, taxpayers and the communities living with pollution. Extended producer responsibility makes brands fund collection and gives them a reason to design packaging that is cheaper to recycle. A fee on primary polymers would raise money for the countries least able to pay and nudge production toward recycled material.\n\nThe case for shared public funding is that waste management is a basic public service, like water and sanitation, and every consumer generates waste. Fees on producers are passed through to prices, so they work as consumption taxes that fall hardest on the poor, and their compliance costs favor large firms. Development finance, public budgets and user charges are more transparent and can be aimed at the communities without collection, while a global polymer levy would hand a new taxing power to an international body without the accountability national governments face.",
+    "lean_label_a": "Producers pay",
+    "lean_label_b": "Shared public cost",
+    "id": "who-should-pay-to-collect-and"
+   },
+   {
+    "text": "Should countries that back production or chemical limits adopt a treaty without those that oppose them?",
+    "kind": "value",
+    "why": "The talks have run by consensus, so any country can block a measure, and production and chemical limits remain disputed in the draft. Options range from forcing votes under UN rules to a separate treaty among willing countries, as was done for landmines.",
+    "detail": "The case for waiting is that a plastics treaty without the main producers, among them the United States, Saudi Arabia and Russia, and possibly China and India, would cover little of the world’s production and invite trade disputes. Consensus is slow, but it produces agreements that countries actually carry out, and voting on substance would break a norm that has made environmental treaties durable. Positions have shifted between rounds before, and patient negotiation can shift them again.\n\nThe case for going ahead is that consensus had produced no treaty by November 2026, more than four years after the 2022 mandate, and that a small minority has used the rule to veto measures a large majority backs. A treaty among the many willing countries, including the large consumer markets of the EU, could still set product standards that exporters must meet to sell there and draw holdouts in later, as the landmine and cluster munitions treaties did. CIEL argued in February 2026 that governments can use other multilateral tools, including voting, when consensus fails.",
+    "lean_label_a": "Universal deal",
+    "lean_label_b": "Willing coalition",
+    "id": "should-countries-that-want-an-ambitious"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Cap and cut plastic production",
+    "color_key": "green",
+    "steelman": "Plastic pollution is a production problem before it is a waste problem. Nobody mops faster than an open tap runs, so the world has to make less virgin plastic.",
+    "detail": "Waste systems where plastic use grows fastest cannot be built quickly enough to absorb it, recycling has stayed marginal because most plastic is not designed to be remade, and a rising share of pollution is particles no collection system can catch. Plastic also harms people before it is waste, through the emissions of making it and the chemicals fenceline communities breathe. The one lever that shrinks every one of these harms at once is making less virgin plastic, starting with avoidable single-use items and keeping essential uses such as medical plastics. A binding global target is how the Montreal Protocol phased down ozone-depleting chemicals, with time and money for developing countries. Pew’s 2025 modeling agrees that the deepest cut in pollution, 83 percent, needs lower primary production alongside reuse, redesign and better collection.\n\nCritics say a cap would raise prices and push users to heavier substitutes. Reduction does not mean substitution: most of the cut comes from reuse, refill and dropping unnecessary packaging, which lowers both plastic and emissions. We support better waste management too; we deny it can work alone while production keeps growing. And virgin plastic is cheap because its pollution, health and cleanup costs are paid by others, often the poorest communities. We differ on the size of the cut, from Greenpeace’s at least 75 percent by 2040 to the 40 percent from 2025 levels that Rwanda and Peru proposed in 2024, and on the tool, from a cap to a polymer fee to a schedule of product phase-outs. Many of us would now adopt a treaty by vote or among willing countries rather than accept a weak consensus text, and waste pickers’ organizations largely back reduction while insisting on a just transition for informal workers.",
+    "proponents": "Greenpeace; Center for International Environmental Law; Scientists’ Coalition for an Effective Plastics Treaty; Government of France; Government of Costa Rica; Government of Rwanda; Government of Peru; Pacific Small Island Developing States; Break Free From Plastic",
+    "id": "cap-and-cut-plastic-production"
+   },
+   {
+    "name": "Fix waste systems instead of limiting production",
+    "color_key": "blue",
+    "steelman": "The problem is plastic in the environment, not plastic in the economy. Pollution happens where waste goes uncollected, so build collection everywhere instead of rationing a useful material.",
+    "detail": "Plastic keeps food safe and fresh, makes medicine sterile, insulates buildings and lightens vehicles, and in most uses studied it has a smaller carbon footprint than the materials that would replace it. About 2.7 billion people have no solid waste collection, and the countries that leak the most plastic are mostly not the ones that make it. Wealthy countries, which use the most plastic per person, leak almost no large plastic waste because they collect and manage it, which shows the solution works. So the treaty should help every country build collection, sorting and recycling, design products to be recyclable, invest in new recycling technologies, and mobilize private and public finance where systems are missing.\n\nA global cap on production is a quota on a commodity. It would raise prices for the poorest consumers, hand market share to whoever holds the quota, override national choices about development, and do nothing for the waste that already exists. The 2022 mandate was to end plastic pollution, not to ration plastic, and a treaty the largest producers and consumers can sign and implement, including the United States, which needs a two-thirds Senate vote to ratify, will achieve more than an ambitious text they cannot join. We are told waste systems cannot grow as fast as production. Production grows with rising incomes in developing countries, the same growth that pays for waste systems, and collection coverage has risen alongside it; the binding constraint is finance and governance, not volume. Capping supply would not cut demand for food packaging, pipes or medical goods, so the gap would be filled by substitutes or by plastic from outside the treaty. And projections of runaway production assume no gains in recycling, design or reuse, all of which we support.",
+    "proponents": "International Council of Chemical Associations; American Chemistry Council; Government of the United States; Government of Saudi Arabia; Government of Russia; Government of Iran; Government of Kuwait",
+    "id": "fix-waste-systems-instead-of-limiting"
+   },
+   {
+    "name": "Set global product rules without a production cap",
+    "color_key": "amber",
+    "steelman": "Ask which plastics are made, how, and where they end up, not how many tonnes. One set of global rules on products, chemicals, design and producer fees cuts pollution without a quota fight.",
+    "detail": "Global rules that ban the problem products most likely to leak, restrict chemicals of concern, require designs that can actually be reused or recycled, and make producers pay for collection everywhere would cut pollution and toxic exposure directly and lower demand for virgin plastic along the way. Harmonized rules matter because companies sell into nearly 200 markets: a patchwork of national standards raises costs and slows change, while one set of criteria lets firms redesign once and invest with confidence. Producer fees give waste systems a lasting source of money that aid and municipal budgets never have. The Business Coalition for a Global Plastics Treaty estimates that harmonized global rules would more than double cumulative producer responsibility revenues between 2026 and 2040, to $576 billion against $279 billion under voluntary national measures, and cut mismanaged plastic waste by 23 percent.\n\nA numerical cap on polymer production is the one measure that unites producer states against the treaty, would be hard to allocate among countries and to verify, and is unnecessary if product and design rules are strong. To those who say growth will outpace product rules: bans, design rules and producer fees cut virgin demand where it is most avoidable, as a cap would, without the quota fight that has stalled the treaty since 2024; a production clause can be revisited once the rules work. To those who say global lists override national choice: products are traded globally, so national lists fragment markets, and common criteria still leave each country to choose how to apply them. Within the camp, the business coalition wants binding global lists and criteria, while Japan has preferred common criteria with design guidelines and implementation set country by country.",
+    "proponents": "Business Coalition for a Global Plastics Treaty; Government of Japan",
+    "id": "set-global-product-rules-without-a"
+   }
+  ],
+  "crux": {
+   "lead": "Can the world keep making more plastic every year and still keep it out of nature and out of people’s bodies?",
+   "lead_highlight": "keep making more plastic every year and still keep it out",
+   "subtitle": "Everyone in this debate wants plastic pollution to end, and almost everyone accepts better waste management as part of the answer. The split is whether waste systems can contain a growing volume, or whether the amount made has to come down for pollution to come down.",
+   "empirical": "Part of this can be measured: whether collection can be built in fast-growing economies faster than their plastic use grows; whether recycling can climb far past its single-digit share once producers pay for it; how much pollution is particles from tires, paint and textiles that no bin catches; whether using less plastic means reuse or heavier substitutes; and whether today’s exposure to plastic harms health.",
+   "values": "No measurement settles how much precaution to buy against health harms whose size is disputed, at the price of a cheap, useful material and the jobs built on it; whether responsibility lies with those who make and sell plastic or with the places where it escapes; or whether a global body should limit what sovereign countries produce."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Explore the data on plastic pollution",
+    "description": "Our World in Data’s plastic pollution page brings together production, waste, recycling, ocean and trade figures in interactive charts, each with its sources.",
+    "url": "https://ourworldindata.org/plastic-pollution",
+    "for_position": null,
+    "id": "explore-the-data-on-plastic-pollution"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Follow the treaty negotiations",
+    "description": "The Geneva Environment Network keeps a running, dated tracker of the plastics treaty process: the chair’s letters, draft texts, meetings and stakeholder statements.",
+    "url": "https://www.genevaenvironmentnetwork.org/resources/updates/international-cooperation-on-plastic-pollution/",
+    "for_position": null,
+    "id": "follow-the-treaty-negotiations"
+   },
+   {
+    "kind": "policy",
+    "title": "Back Greenpeace’s treaty campaign",
+    "description": "Greenpeace’s global plastics treaty campaign makes the case for cutting plastic production by at least 75 percent by 2040 and offers ways to press governments on the treaty.",
+    "url": "https://www.greenpeace.org/international/global-plastics-treaty/",
+    "for_position": "Cap and cut plastic production",
+    "id": "back-greenpeace-s-treaty-campaign"
+   },
+   {
+    "kind": "donate",
+    "title": "Support better recycling systems",
+    "description": "The Recycling Partnership, a US nonprofit, works with cities and companies to fund carts, sorting upgrades and education that raise recycling rates and improve the quality of what is collected.",
+    "url": "https://recyclingpartnership.org/",
+    "for_position": "Fix waste systems instead of limiting production",
+    "id": "support-better-recycling-systems"
+   },
+   {
+    "kind": "policy",
+    "title": "Bring your company into the business coalition",
+    "description": "Convened by the Ellen MacArthur Foundation and WWF, this coalition of more than 330 businesses, investors and NGOs asks firms to back harmonized global rules on products, chemicals and producer responsibility.",
+    "url": "https://www.businessforplasticstreaty.org/",
+    "for_position": "Set global product rules without a production cap",
+    "id": "bring-your-company-into-the-business"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Join a coastal or waterway cleanup",
+    "description": "Ocean Conservancy’s International Coastal Cleanup organizes volunteer cleanups worldwide each year and logs every item collected in a public database that researchers and policymakers use.",
+    "url": "https://oceanconservancy.org/trash-free-seas/international-coastal-cleanup/",
+    "for_position": null,
+    "id": "join-a-coastal-or-waterway-cleanup"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Join the Break Free From Plastic movement",
+    "description": "A global movement that says more than 13,000 organizations and individual supporters have joined it, campaigning for production cuts, reuse and a strong treaty, with brand audits tracing litter to its makers.",
+    "url": "https://www.breakfreefromplastic.org/",
+    "for_position": "Cap and cut plastic production",
+    "id": "join-the-break-free-from-plastic"
+   },
+   {
+    "kind": "learn_more",
+    "title": "See industry-funded waste projects",
+    "description": "The Alliance to End Plastic Waste, founded by industry with plastics and chemical companies among its members, has backed more than 125 collection and recycling projects and reports on what works.",
+    "url": "https://endplasticwaste.org/",
+    "for_position": "Fix waste systems instead of limiting production",
+    "id": "see-industry-funded-waste-projects"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Learn how circular design works",
+    "description": "The Ellen MacArthur Foundation’s plastics program explains how elimination, reuse and design for recycling could keep plastic in use and out of the environment, with company case studies.",
+    "url": "https://www.ellenmacarthurfoundation.org/topics/plastics/overview",
+    "for_position": "Set global product rules without a production cap",
+    "id": "learn-how-circular-design-works"
+   },
+   {
+    "kind": "local",
+    "title": "Recycle right where you live",
+    "description": "How2Recycle explains the on-pack recycling labels used by many US and Canadian brands, so you can tell which packaging your local program accepts and keep contamination out of the bin.",
+    "url": "https://how2recycle.info/",
+    "for_position": null,
+    "id": "recycle-right-where-you-live"
+   }
+  ]
+ }
 }

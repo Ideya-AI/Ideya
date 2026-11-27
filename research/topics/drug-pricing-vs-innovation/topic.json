@@ -1,12 +1,14 @@
 {
  "slug": "drug-pricing-vs-innovation",
  "title": "Drug Pricing",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-11-23T11:06:51+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Medicine prices against the profits that fund new-drug research.",
  "primary_category": "bio-health",
+ "icon": "pill",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: A large blister pack of tablets, standing upright and tilted slightly, is the dominant focal mass on a softly curving hill. A small blank paper price tag on a string hangs from one corner of the blister pack, overlapping its edge. To the left, a medium laboratory microscope stands beside a short stack of three plain coins with no markings. A winding path crosses the hill behind them, leading to a small pharmacy storefront with a plain cross sign at the right. Big blister pack, medium microscope and pharmacy, small coins and tag.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #b0567f, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: dollar signs, currency symbols, numbers or text on the tag, money bags, piles of cash, scales of justice, broken or crossed-out pills, coffins, sad or sick people, hands, factory smokestacks, arrows, upward charts, red ink, second color",
  "categories": [
   "economy"
  ],
@@ -16,5 +18,735 @@
   "treating-aging-as-disease",
   "antitrust-market-power",
   "universal-healthcare"
- ]
+ ],
+ "content": {
+  "overview": {
+   "summary": "Drugmakers fund most research and recoup it through prices while patents last. The central argument is what lower prices would cost in future cures.",
+   "scope_covered": "How brand-name drug prices are set in the US and abroad, what drug research costs, how it responds to revenue, and other ways to pay for it.",
+   "scope_excluded": "Who should insure health care, weight-loss drugs, antibiotic incentives and antitrust in general, except where they bear on prices and innovation.",
+   "why_now": "On September 30, 2026 Medicare finalized GLOBE, its first mandatory program tying what drugmakers owe to prices in other rich countries. It runs from January 1, 2027 to March 31, 2032 for certain clinic-given drugs, in areas holding about a quarter of Original Medicare enrollees.",
+   "why_now_source_label": "Centers for Medicare & Medicaid Services",
+   "why_now_source_url": "https://www.cms.gov/newsroom/press-releases/cms-finalizes-new-mandatory-drug-payment-model-deliver-lower-drug-prices-beneficiaries-original"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "US brand-name drug prices as a percentage of prices in other rich countries",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "vs Japan",
+       "value": "464",
+       "highlight": false
+      },
+      {
+       "label": "vs France",
+       "value": "445",
+       "highlight": false
+      },
+      {
+       "label": "vs all 33",
+       "value": "422",
+       "highlight": true
+      },
+      {
+       "label": "vs Germany",
+       "value": "387",
+       "highlight": false
+      },
+      {
+       "label": "vs UK",
+       "value": "385",
+       "highlight": false
+      },
+      {
+       "label": "vs Canada",
+       "value": "324",
+       "highlight": false
+      },
+      {
+       "label": "All 33, after rebates",
+       "value": "308",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "US manufacturer prices for brand-name drugs were 422 percent of those in 33 other OECD countries in 2022, or 308 percent after an estimated allowance for US rebates.",
+     "detail": "RAND compared prices for the same drugs, weighted by the US mix of medicines, using 2022 IQVIA sales data. Because US prices after confidential rebates are not public, RAND reached the lower figure by cutting US brand prices 37.2 percent, a published estimate of the average retail discount; it did not adjust other countries’ prices for their own confidential discounts, which would widen the gap. Across all drugs, brand and generic together, US prices were 278 percent of the comparison countries’, and prices elsewhere were about 36 percent of US prices; the gap lies in brand-name drugs. The comparison covers prices only, not how soon or how widely each country gets new medicines.",
+     "source_label": "RAND for HHS/ASPE, International Prescription Drug Price Comparisons (RR-A788-3), February 2024",
+     "source_url": "https://www.rand.org/pubs/research_reports/RRA788-3.html",
+     "source_published": "2022",
+     "source_accessed": "2026-11-23",
+     "id": "us-brand-name-drug-prices-as"
+    },
+    {
+     "label": "US share of OECD revenue from innovative drugs launched 2020 to 2025",
+     "viz": "radial",
+     "wide": false,
+     "value": "79.87",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The United States supplied about 80 percent of OECD revenue from innovative drugs launched in 2020 to 2025, or about 71 percent after allowing for US rebates.",
+     "detail": "HHS’s planning office (ASPE) treats revenue from innovative branded drugs, discounted for the cost of capital, as the best feasible stand-in for the reward that draws companies into drug development. On that measure the US share for newly launched drugs is 2.32 times its share of OECD economic output and 3.24 times its share of OECD population. Across all innovative branded drugs the US share is 66.98 percent, and Japan, the next largest market, supplies 5.46 percent of revenue from new launches. An earlier estimate by Dana Goldman and Darius Lakdawalla of the USC Schaeffer Center (2018), using 2016 data, put the US share of worldwide pharmaceutical profits at 64 to 78 percent, against 27 percent of world income. The brief comes from an administration pursuing most-favored-nation pricing; its data are IQVIA’s, the industry’s standard source.",
+     "source_label": "HHS/ASPE, Measuring the Pull-Side Innovation Burden for Pharmaceutical Drugs by OECD Country, June 2026",
+     "source_url": "https://aspe.hhs.gov/reports/innovation-burden-pharmaceutical-drugs",
+     "source_published": "2020–2025",
+     "source_accessed": "2026-11-23",
+     "id": "us-share-of-oecd-revenue-from"
+    },
+    {
+     "label": "US adults who did not take a medicine as prescribed because of cost in the past year",
+     "viz": "radial",
+     "wide": false,
+     "value": "43",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a March 2026 KFF poll, 43 percent of US adults said cost had kept them from taking a medicine as prescribed at some point in the past year.",
+     "detail": "The figure combines three behaviors: taking an over-the-counter product instead of filling a prescription (31 percent), not filling a prescription at all (27 percent), and cutting pills in half or skipping doses (19 percent). The same poll found 59 percent of adults worried about affording prescription drugs for themselves or their family, 22 percent very worried, the highest share since KFF began asking in 2018. It surveyed 1,343 adults, with a margin of error of plus or minus 3 percentage points. The poll records what people say they did, not why their costs were high.",
+     "source_label": "KFF Health Tracking Poll, Public Views on Prescription Drug Costs, Regulation, Affordability and TrumpRx, March 2026",
+     "source_url": "https://www.kff.org/public-opinion/public-views-on-prescription-drug-costs-regulation-affordability-and-trumprx/",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "us-adults-who-did-not-take"
+    },
+    {
+     "label": "Estimated research cost per new drug, counting failures and the cost of capital",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "$ million",
+     "series": [
+      {
+       "label": "Tufts, 2016",
+       "value": "2,558",
+       "highlight": false
+      },
+      {
+       "label": "Wouters, 2020",
+       "value": "1,559",
+       "highlight": false
+      },
+      {
+       "label": "RAND, 2025",
+       "value": "1,310",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Average estimates of what it costs to bring one new drug to market, counting failures and the cost of capital, run from about $1.3 billion (RAND, 2025) to $2.6 billion (Tufts, 2016).",
+     "detail": "The studies differ in sample and method, and each side of the debate tends to cite one end. RAND’s study of 38 drugs approved in 2019 put the median at $708 million and found a few costly drugs pull the average up: dropping two of them cut it to $950 million. Before counting failures and capital, RAND’s direct spending per drug had a median of $150 million. Wouters, McKee and Luyten (JAMA, 2020) used public filings for 63 drugs approved from 2009 to 2018, in 2018 dollars; such filings over-represent smaller companies, and their median ran from $765.9 million for nervous-system drugs to $2,771.6 million for cancer and immune drugs. The Tufts figure by DiMasi, Grabowski and Hansen, in 2013 dollars and the one the industry cites most, rests on confidential company data that outside researchers cannot check, a point Public Citizen and Knowledge Ecology International have long pressed. In all three the cost of capital, the return investors forgo while money is tied up for a decade or more, is a large part; in the Tufts estimate it is close to half.",
+     "source_label": "Mulcahy et al. (RAND), JAMA Network Open, January 2025, via EurekAlert; Wouters et al., JAMA, 2020; DiMasi et al., 2016",
+     "source_url": "https://www.eurekalert.org/news-releases/1069759",
+     "source_published": "2016 to 2025",
+     "source_accessed": "2026-11-23",
+     "id": "estimated-research-cost-per-new-drug"
+    },
+    {
+     "label": "Share of 287 new drugs launched 2018 to 2022 that were sold in the United States by late 2022",
+     "viz": "radial",
+     "wide": false,
+     "value": "74",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Of 287 new drugs launched from 2018 to 2022, 74 percent were sold in the United States by late 2022, against 52 percent in Germany and 43 percent in Japan and the UK.",
+     "detail": "The study, by RAND for HHS, covered the United States and 26 other OECD countries. Further down the table were Italy at 37 percent, France at 34, Canada at 28 and Australia at 22. Nearly 85 percent of the new drugs sold in the United States were sold there first or in the same quarter as anywhere else, and other major markets lagged by about a year on average. Availability runs both ways: 75 of the 287 drugs were sold only outside the United States, and 47 of the 122 sold in Japan were not available in the US. The 164 drugs sold both in the United States and elsewhere made up 90 percent of 2022 US spending on all the new drugs.",
+     "source_label": "HHS/ASPE (RAND), Comparing New Prescription Drug Availability and Launch Timing, February 2024",
+     "source_url": "https://www.aspe.hhs.gov/sites/default/files/documents/430a3e61c234f06270b04414e797ad3a/new-drug-availability-launch-timing.pdf",
+     "source_published": "2018–2022",
+     "source_accessed": "2026-11-23",
+     "id": "share-of-287-new-drugs-launched"
+    },
+    {
+     "label": "Projected reduction in new drugs from Medicare price negotiation",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "fewer drugs",
+     "series": [
+      {
+       "label": "CBO, 30 years",
+       "value": "13",
+       "highlight": true
+      },
+      {
+       "label": "U. Chicago, 20 years",
+       "value": "135",
+       "highlight": false
+      },
+      {
+       "label": "Vital Transf., 10 years",
+       "value": "139",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The Congressional Budget Office projects about 13 fewer new drugs over 30 years from Medicare negotiation; independent studies project 135 over 20 years and 139 over 10.",
+     "detail": "CBO expects about 1,300 new drugs over that period, so its figure is about 1 percent: one fewer in the first decade, about five in the second and about seven in the third. Its model ties new drugs to expected revenue using estimates from the economic literature, and the effect is small partly because drugs become eligible only after years on the market, when much of their revenue has been earned. The University of Chicago study (November 2021), by Tomas Philipson and colleagues, examined the bill that became the law and assumes larger revenue losses and a stronger response of research to revenue; the Vital Transformation estimate dates from June 2023. No forecast can yet be checked against outcomes, because the drugs in question would launch in the 2030s and 2040s.",
+     "source_label": "House Budget Committee letter to CBO Director Phillip Swagel, November 2023, restating CBO and independent estimates",
+     "source_url": "https://budget.house.gov/imo/media/doc/cbo_letter_ira_drug_development.pdf",
+     "source_published": "2021 to 2023",
+     "source_accessed": "2026-11-23",
+     "id": "projected-reduction-in-new-drugs-from"
+    },
+    {
+     "label": "Estimated rise in new drugs for each 1 percent rise in expected market size",
+     "viz": "bar",
+     "wide": false,
+     "value": "0.23",
+     "unit": "% more drugs",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Dubois and colleagues (2015) estimate that a 1 percent larger expected market brings 0.23 percent more new drugs; Acemoglu and Linn (2004) found 4 to 6 percent.",
+     "detail": "How strongly research answers to revenue is the hinge of every forecast of drugs lost to lower prices. Dubois, de Mouzon, Scott-Morton and Seabright studied new chemical entities across disease classes worldwide, and their estimate implies that about $2.5 billion of additional revenue is needed, on average, to call forth one new drug. Acemoglu and Linn used shifts in US demand driven by an aging population, counted new generic entry as well as new brand-name drugs, and measured market size differently, so the two figures are not directly comparable.",
+     "source_label": "Dubois, de Mouzon, Scott-Morton and Seabright, Market Size and Pharmaceutical Innovation (working paper)",
+     "source_url": "https://publications.ut-capitole.fr/id/eprint/3571/1/dmss.pdf",
+     "source_published": "2015",
+     "source_accessed": "2026-11-23",
+     "id": "estimated-rise-in-new-drugs-for"
+    },
+    {
+     "label": "Estimated cut in Medicare net spending on drugs with negotiated prices",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Round 1, 10 drugs",
+       "value": "22",
+       "highlight": false
+      },
+      {
+       "label": "Round 2, 15 drugs",
+       "value": "44",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "CMS estimates negotiated prices would have cut Medicare net spending on the selected drugs by 22 percent in the first round and 44 percent, about $12 billion, in the second.",
+     "detail": "Each estimate applies the new prices to a past year: 2023 for the first round’s 10 drugs, a saving of about $6 billion, and 2024 for the second round’s 15. Counting spending under Medicare’s coverage gap discount program, the second-round cut is about 36 percent, or $8.5 billion. Because the comparison is with spending after the rebates plans already received, the cut from list price is larger: semaglutide (Ozempic, Wegovy, Rybelsus) went from a $959 monthly list price to $274, and the cancer drug Xtandi from $13,480 to $7,004. The 15 second-round drugs made up $42.5 billion, about 15 percent, of gross Part D spending in 2024. The first prices took effect January 1, 2026 and the second take effect in 2027; the third round, 15 drugs including the first given in doctors’ offices, had a publication deadline of November 30, 2026.",
+     "source_label": "CMS, negotiated price fact sheets for 2026 and 2027",
+     "source_url": "https://www.cms.gov/files/document/fact-sheet-negotiated-prices-ipay-2027.pdf",
+     "source_published": "2023 and 2024 base years",
+     "source_accessed": "2026-11-23",
+     "id": "estimated-cut-in-medicare-net-spending"
+    },
+    {
+     "label": "Share of new drugs approved 2010 to 2019 with NIH-funded research behind them",
+     "viz": "radial",
+     "wide": false,
+     "value": "99.4",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "NIH-funded research contributed to 354 of the 356 new drugs the FDA approved from 2010 to 2019, with associated NIH spending of $187 billion.",
+     "detail": "The authors traced published research on each drug and on its biological target back to NIH grants, so most of the money counted went to basic research on targets rather than to the drugs themselves. They found NIH spending on drugs with novel targets was no less than reported industry spending on comparable drugs once both were counted on the same basis, while a companion study found NIH spending on clinical trials, the costliest stage, much smaller than industry’s.",
+     "source_label": "Cleary, Jackson, Zhou and Ledley, JAMA Health Forum, April 2023",
+     "source_url": "https://jamanetwork.com/journals/jama-health-forum/fullarticle/2804378",
+     "source_published": "2010–2019",
+     "source_accessed": "2026-11-23",
+     "id": "share-of-new-drugs-approved-2010"
+    },
+    {
+     "label": "Median net profit margin, large drug companies against other large companies, 2000 to 2018",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Drug companies",
+       "value": "13.8",
+       "highlight": true
+      },
+      {
+       "label": "Other S&P 500",
+       "value": "7.7",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "From 2000 to 2018 large drug companies’ median net margin was 13.8 percent of revenue, against 7.7 percent for other S&P 500 firms; the gap narrows once size and research spending are adjusted for.",
+     "detail": "The study compared 35 large pharmaceutical companies with 357 companies in the S&P 500. Other measures showed the same pattern: median gross profit margins of 76.5 against 37.4 percent, and earnings before interest, taxes, depreciation and amortization of 29.4 against 19 percent. Price-control supporters read the margins as room to cut prices without touching research. The industry and its defenders argue that accounting margins understate risk and the cost of capital in a business where most projects fail, and that high returns on the successes are what draw investment into the field in the first place.",
+     "source_label": "Ledley, McCoy, Vaughan and Cleary, JAMA, March 2020",
+     "source_url": "https://jamanetwork.com/journals/jama/fullarticle/2762308",
+     "source_published": "2000–2018",
+     "source_accessed": "2026-11-23",
+     "id": "median-net-profit-margin-large-drug"
+    },
+    {
+     "label": "Median annual net price of new drugs launched in the United States",
+     "viz": "bar",
+     "wide": false,
+     "value": "257,000",
+     "unit": "$ per year",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The median new drug launched in the United States in 2025 cost about $257,000 a year after discounts, 35 percent more than in 2022 after inflation.",
+     "detail": "The figure comes from ICER, an independent nonprofit that also argues for pricing drugs by their health benefit, and the West Health Policy Center. Most of the rise came between 2022 and 2023, with prices roughly stable afterward, though trending upward once the mix of drugs launched each year is accounted for. Of 2025 launches, 42.6 percent had annual net prices under $200,000, 34 percent between $200,000 and $500,000, and 23.4 percent above $500,000; single-dose gene therapies priced at $2.2 million to $4.25 million sit at the top. ICER also compares launch prices with its own benchmark of the price that would match a drug’s health gains, and industry analysts dispute those benchmarks, arguing they understate benefits to patients and society.",
+     "source_label": "ICER and West Health Policy Center, 2026 Launch Price and Access Report, October 2026",
+     "source_url": "https://icer.org/wp-content/uploads/2026/10/ICER_LPAR_2026_One-Pager_ForPublication.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "median-annual-net-price-of-new"
+    },
+    {
+     "label": "Consumer prices for prescription drugs, change over 12 months",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Dec 2025",
+       "value": "+2.0",
+       "highlight": false
+      },
+      {
+       "label": "Mar 2026",
+       "value": "−0.2",
+       "highlight": false
+      },
+      {
+       "label": "Jun 2026",
+       "value": "−2.5",
+       "highlight": false
+      },
+      {
+       "label": "Aug 2026",
+       "value": "−2.9",
+       "highlight": false
+      },
+      {
+       "label": "Sep 2026",
+       "value": "−4.5",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "By the Bureau of Labor Statistics measure, consumer prices for prescription drugs were 4.5 percent lower in September 2026 than a year earlier; other price measures point other ways.",
+     "detail": "The White House called it the largest year-over-year decline since 1963 and credited its pricing deals (November 3, 2026). The index tracks transaction prices for a sample of prescriptions, does not capture all confidential rebates, and had no October 2025 reading. List prices still rose in January 2026 on 872 brand-name drugs, by a median of 4 percent, according to the nonprofit 46brooklyn as reported by NPR. How much of the decline comes from the administration’s deals, from Medicare negotiation, from falling prices for weight-loss drugs or from earlier laws is disputed.",
+     "source_label": "US Bureau of Labor Statistics, CPI-U prescription drugs (CUUR0000SEMF01)",
+     "source_url": "https://data.bls.gov/timeseries/CUUR0000SEMF01",
+     "source_published": "2025–2026",
+     "source_accessed": "2026-11-23",
+     "id": "consumer-prices-for-prescription-drugs-change"
+    },
+    {
+     "label": "Gross-to-net reductions on US brand-name drugs",
+     "viz": "bar",
+     "wide": false,
+     "value": "416",
+     "unit": "$ billion",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Drug Channels Institute estimates that rebates, discounts and fees cut brand-name drug revenue about $416 billion below list prices in 2025.",
+     "detail": "The figure is the difference between what drugs would bring in at list price and what manufacturers actually receive after rebates to insurers and pharmacy benefit managers, mandatory discounts to Medicaid and the 340B program, and other concessions. It is a private analyst firm’s estimate, not an official one. Across eight large manufacturers in 2025, the firm found list prices rose by an unweighted average of 3.7 percent while net prices fell 1.8 percent, with net prices falling at seven of the eight. Congress changed how pharmacy benefit managers operate in February 2026, in the fiscal 2026 appropriations package, changes critics expected to do less than hoped (Fortune, March 2026).",
+     "source_label": "Drug Channels Institute, 2025 Gross-to-Net Realities at Eight Manufacturers, July 2026",
+     "source_url": "https://www.drugchannels.net/2026/07/2025-gross-to-net-realities-at-eight.html",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "gross-to-net-reductions-on-us"
+    },
+    {
+     "label": "Novel drugs approved by the FDA’s drug center each year",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "drugs",
+     "series": [
+      {
+       "label": "2016",
+       "value": "22",
+       "highlight": false
+      },
+      {
+       "label": "2017",
+       "value": "46",
+       "highlight": false
+      },
+      {
+       "label": "2018",
+       "value": "59",
+       "highlight": false
+      },
+      {
+       "label": "2019",
+       "value": "48",
+       "highlight": false
+      },
+      {
+       "label": "2020",
+       "value": "53",
+       "highlight": false
+      },
+      {
+       "label": "2021",
+       "value": "50",
+       "highlight": false
+      },
+      {
+       "label": "2022",
+       "value": "37",
+       "highlight": false
+      },
+      {
+       "label": "2023",
+       "value": "54",
+       "highlight": false
+      },
+      {
+       "label": "2024",
+       "value": "50",
+       "highlight": false
+      },
+      {
+       "label": "2025",
+       "value": "46",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The FDA’s drug center approved 46 novel drugs in 2025, close to its ten-year average of about 47 a year.",
+     "detail": "The count is the figure most often used to judge whether drug innovation is speeding up or slowing down, though it does not weigh how much each drug adds. Of the 2025 approvals, 20 were the first in their class, 23 had orphan designation for rare diseases, and 32 were approved in the United States before any other country. The FDA puts the average since 2007 at 38 a year. Because the drugs approved in the 2020s reflect investment decisions made a decade or more earlier, the series cannot yet show the effect of Medicare negotiation or of most-favored-nation pricing.",
+     "source_label": "FDA Center for Drug Evaluation and Research, New Drug Therapy Approvals 2025",
+     "source_url": "https://www.fda.gov/media/190705/download",
+     "source_published": "2016–2025",
+     "source_accessed": "2026-11-23",
+     "id": "novel-drugs-approved-by-the-fda"
+    },
+    {
+     "label": "Share of US prescriptions filled with unbranded generics",
+     "viz": "radial",
+     "wide": false,
+     "value": "90",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Unbranded generics filled 90 percent of US prescriptions in 2022 but made up 8 percent of spending at gross prices.",
+     "detail": "In the 33 comparison OECD countries, generics averaged 41 percent of volume and 13 percent of spending, and US generics were priced at 67 percent of comparison-country prices. Defenders of US pricing say this is the patent bargain working as designed: high prices for a limited period pay for research, then cheap medicines indefinitely. Critics say companies stretch the expensive period with extra patents on minor changes, known as patent thickets and evergreening, that biologic drugs face slower and weaker competition from biosimilars, and that the bargain holds only if exclusivity actually ends on time.",
+     "source_label": "RAND for HHS/ASPE, International Prescription Drug Price Comparisons (RR-A788-3), February 2024",
+     "source_url": "https://www.rand.org/pubs/research_reports/RRA788-3.html",
+     "source_published": "2022",
+     "source_accessed": "2026-11-23",
+     "id": "share-of-us-prescriptions-filled-with"
+    },
+    {
+     "label": "NICE cost-effectiveness threshold for new medicines, from April 2026",
+     "viz": "bar",
+     "wide": true,
+     "value": "25,000–35,000",
+     "unit": "£ per QALY",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "NICE raised the cost per quality-adjusted life year it accepts for new medicines from £20,000–30,000 to £25,000–35,000, announced alongside a 2025 US–UK trade deal.",
+     "detail": "NICE decides which medicines England’s National Health Service pays for, judging each by its cost per quality-adjusted life year, a measure that combines length and quality of life. The old range had stood without a formal increase since 1999. The agreement gave UK pharmaceutical exports a zero US tariff for at least three years; the government said it would invest around 25 percent more in innovative treatments, and NICE expected to approve three to five more medicines or uses a year. The UK industry body, the ABPI, welcomed the change. Sally Gainsbury of the Nuffield Trust objected: “A big increase in the price the NHS pays by raising the NICE threshold will not bring additional benefits.”",
+     "source_label": "The Pharmaceutical Journal, NICE thresholds increased as UK strikes trade deal with US, December 2025",
+     "source_url": "https://pharmaceutical-journal.com/article/news/nice-cost-effectiveness-thresholds-increased-as-uk-strikes-trade-deal-with-united-states",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "nice-cost-effectiveness-threshold-for-new"
+    },
+    {
+     "label": "US adults saying there is not enough government regulation of drug prices",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "All adults",
+       "value": "72",
+       "highlight": true
+      },
+      {
+       "label": "Democrats",
+       "value": "77",
+       "highlight": false
+      },
+      {
+       "label": "Independents",
+       "value": "72",
+       "highlight": false
+      },
+      {
+       "label": "Republicans",
+       "value": "68",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a 2026 KFF poll, 72 percent of US adults said there is not enough government regulation of prescription drug prices, including 68 percent of Republicans.",
+     "detail": "Fifteen percent said regulation was about right and 13 percent said there was too much. The same poll found 41 percent thought the Trump administration’s policies were very or somewhat likely to lower their own drug costs, split sharply by party: 79 percent of Republicans, 35 percent of independents and 11 percent of Democrats. Among registered voters, 38 percent trusted Democrats more on prescription drug costs, 28 percent Republicans and 27 percent neither. Polls rarely ask people to weigh lower prices against fewer future drugs, so these figures do not settle the trade-off at the center of the debate.",
+     "source_label": "KFF Health Tracking Poll, March 2026",
+     "source_url": "https://www.kff.org/public-opinion/public-views-on-prescription-drug-costs-regulation-affordability-and-trumprx/",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "us-adults-saying-there-is-not"
+    },
+    {
+     "label": "Drugmakers with most-favored-nation pricing agreements with the US government",
+     "viz": "bar",
+     "wide": false,
+     "value": "26",
+     "unit": "companies",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The White House says 26 drugmakers covering 90 percent of the branded US market had signed most-favored-nation pricing agreements by September 18, 2026; most terms are confidential.",
+     "detail": "By KFF’s summary (January 2026), companies make certain products available to state Medicaid programs at most-favored-nation prices, launch new medicines at such prices, sell some products directly to consumers at a discount through the TrumpRx website, launched in February 2026, and invest in US manufacturing, in exchange for a three-year reprieve from tariffs. A presidential proclamation of April 2, 2026 set 100 percent tariffs on imported patented medicines, with a zero rate for companies holding both a US manufacturing plan and such an agreement. A STAT analysis in September 2026 found the agreements could exempt many medicines from Medicare’s new international-price models and cut their projected savings by as much as 80 percent. All 16 companies that had deals by January 2026 raised list prices on some drugs that month, NPR reported.",
+     "source_label": "White House, President Trump Extends Most-Favored-Nation Pricing to Every Medicaid Program in America, September 2026",
+     "source_url": "https://www.whitehouse.gov/releases/2026/09/president-trump-extends-most-favored-nation-pricing-to-every-medicaid-program-in-america/",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "drugmakers-with-most-favored-nation-pricing"
+    },
+    {
+     "label": "US retail prescription drug spending",
+     "viz": "bar",
+     "wide": false,
+     "value": "467.0",
+     "unit": "$ billion",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Americans spent $467.0 billion on retail prescription drugs in 2024, up 7.9 percent from 2023 and about 9 percent of the $5.3 trillion national health bill.",
+     "detail": "CMS counts retail prescriptions only, so drugs given in hospitals and doctors’ offices, such as many cancer infusions, fall under those services instead. A wider measure from the IQVIA Institute (2026), counting all channels at manufacturer net prices, rose 10.6 percent from $548 billion in 2024 to $606 billion in 2025, mostly from patent-protected brands, and put patients’ out-of-pocket costs at a record $110 billion. CMS projects retail drug spending to grow faster than any other major category of health spending, about 5.7 percent a year over 2025 to 2034. The industry stresses that drugs are a modest share of health spending; price-control supporters stress that the share is rising and that drugs are where patients most directly face prices.",
+     "source_label": "CMS, National Health Expenditure Fact Sheet",
+     "source_url": "https://www.cms.gov/data-research/statistics-trends-and-reports/national-health-expenditure-data/nhe-fact-sheet",
+     "source_published": "2024",
+     "source_accessed": "2026-11-23",
+     "id": "us-retail-prescription-drug-spending"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "How many valuable new medicines would lower drug prices cost?",
+    "kind": "empirical",
+    "why": "Forecasts of lost drugs rest on models, because a price change shows up in research only years later, and each side disputes the other’s assumptions about how much revenue matters and which drugs would go.",
+    "detail": "Those who expect few losses say most of a drug’s revenue comes in the years before Medicare negotiation begins, that the industry’s margins leave room to absorb lower prices, and that the estimates they find most credible of how research responds to market size, such as Dubois and colleagues’ 0.23, are well below one, so a 10 percent cut in revenue would trim new drugs by a few percent at most. The drugs at the margin, the ones no longer worth developing, are on this view disproportionately close copies of existing medicines, and venture investment in biotech did not collapse after the Inflation Reduction Act passed, a point Boston University economist Rena Conti has made.\n\nThose who expect many losses say drug development is a long chain of risky bets financed by the hope of a few large successes, so a cut in the payoff for success hits the earliest and riskiest research hardest, along with later studies of new uses for existing drugs. They point to early reports of sharply falling venture funding for small-molecule startups since the law passed. And the losses are invisible: no one sees the cure that was never developed, so a policy that costs many future lives can look costless for a decade.",
+    "lean_label_a": "Few would be lost",
+    "lean_label_b": "Many would be lost",
+    "id": "how-many-valuable-new-medicines-would"
+   },
+   {
+    "text": "Do Americans pay for the world’s drug research, and should other rich countries pay more?",
+    "kind": "value",
+    "why": "Few dispute that the United States supplies most of the industry’s revenue. What that means is the argument: other rich countries riding free on American patients, or American patients charged whatever their market will bear.",
+    "detail": "Those who favor sharing the burden argue that drug research is a global public good whose results reach every country, so its cost should be shared roughly by ability to pay, and that other rich countries use their power as single buyers to hold prices below what funding that research would require. On this view other countries’ low prices are possible only because American prices are high.\n\nThose who reject the free-riding frame argue that companies set prices market by market to maximize revenue, so a higher price abroad would add to profits rather than lower US prices. Other countries also pay through their public research budgets: an NBER working paper (w31272) found the rest of the world’s contributions to returns on drug research below America’s but far from zero. And the United States has chosen not to bargain as a single buyer. The fix, on this view, is for it to use the bargaining power other countries already use, not to ask them to pay more.",
+    "lean_label_a": "Others underpay",
+    "lean_label_b": "Americans overpay",
+    "id": "do-americans-pay-for-the-world"
+   },
+   {
+    "text": "Is the real affordability problem drug prices, or how insurance passes them on to patients?",
+    "kind": "empirical",
+    "why": "Patients often pay deductibles and coinsurance figured on a drug’s list price, while manufacturers receive far less than list after rebates. Each side points at the other’s part of the chain.",
+    "detail": "Those who blame prices argue that rebates are a symptom of high launch prices, not their cause: even after estimated rebates, RAND finds US prices for brand-name drugs far above those abroad, and launch prices for new drugs have been rising. Fixing insurance design, on this view, only moves the same high cost onto premiums and taxpayers, who pay it anyway.\n\nThose who blame insurance design argue that net prices for brand-name drugs have been flat or falling while list prices rise, as Drug Channels Institute found at most large manufacturers in 2025; that pharmacy benefit managers and insurers profit from high list prices and keep rebates rather than passing them on; and that capping patients’ out-of-pocket costs and requiring rebates to reach the pharmacy counter would solve most of what people experience as unaffordable drugs, without touching the revenue that funds research.",
+    "lean_label_a": "Drug prices",
+    "lean_label_b": "Insurance design",
+    "id": "is-the-real-affordability-problem-drug"
+   },
+   {
+    "text": "Should a drug’s price track the health it delivers?",
+    "kind": "value",
+    "why": "Most rich countries other than the US decide what to pay by weighing a drug’s price against the healthy years it adds. US law bars Medicare from doing so in ways that value extending older, disabled or terminally ill people’s lives less.",
+    "detail": "Those who favor pricing by value argue that it is the only principled answer to what a drug is worth. A payer with a fixed budget that pays more for a drug than the health it delivers takes health away from other patients whose care is displaced. Refusing to compare price with benefit does not end rationing, on this view; it hides it in deductibles, coverage denials and prices patients cannot pay.\n\nThose who oppose it argue that quality-adjusted life years put a lower value on extending the lives of people who are old, disabled or chronically ill, because their years count as lower in quality; that assessments miss benefits that appear only over time, such as later improvements on a first drug in a class; and that thresholds work in practice as a tool for rationing and delaying access, which they see in the narrower availability of new drugs in Britain and elsewhere. Patients and doctors, not an agency with a formula, should decide what a treatment is worth.",
+    "lean_label_a": "Price by value",
+    "lean_label_b": "Let patients decide",
+    "id": "should-a-drug-s-price-track"
+   },
+   {
+    "text": "When a government decides what it will pay for a drug, is that fair bargaining or price control?",
+    "kind": "value",
+    "why": "Medicare negotiation, international price benchmarks and state payment limits all have government fixing a price. Where bargaining ends and control begins shapes court challenges and how far such policies can reach.",
+    "detail": "Those who call it bargaining argue that a patented drug is a government-granted monopoly, so there is no free market to protect; that every other rich country sets or negotiates prices through a single public payer; and that Medicare, spending public money, has the same right as any large buyer to refuse to pay more than a fair price.\n\nThose who call it price control argue that negotiation backed by heavy taxes on refusal and mandatory participation is not bargaining but a government-imposed price; that importing foreign price controls imports foreign delays and narrower access; and that competition among insurers and drugmakers, ending in generics when exclusivity runs out, lowers prices over time better than a regulator’s formula. Some of the administration’s allies share the objection: more than 50 conservative and free-market leaders signed a letter opposing making most-favored-nation pricing permanent in law.",
+    "lean_label_a": "Fair bargaining",
+    "lean_label_b": "Price control",
+    "id": "when-a-government-decides-what-it"
+   },
+   {
+    "text": "Are high US prices the price of faster access to new drugs?",
+    "kind": "empirical",
+    "why": "New drugs reach American patients sooner and more widely than patients in most other rich countries. Whether that follows from what the United States pays or from other features of its system is disputed.",
+    "detail": "Those who see a link argue that companies launch first and most widely where they can earn the most and where regulators do not hold out for low prices. Tying US prices to foreign ones would then give companies reason to delay launches abroad, or to delay US launches until foreign prices are set. The Swiss drug industry warned in November 2026 that US most-favored-nation pricing would delay launches in Switzerland.\n\nThose who see the two as separable argue that most of the lag abroad comes from slower assessment and reimbursement in other countries, not from the price the United States pays, and that a market as large as the American one would still come first under any plausible price. Some drugs, especially in Japan, are sold abroad but not in the US, and Switzerland’s federal price overseer disputed the industry’s warning about delays.",
+    "lean_label_a": "Prices buy access",
+    "lean_label_b": "Access is separate",
+    "id": "are-high-us-prices-the-price"
+   },
+   {
+    "text": "Does Medicare’s shorter negotiation clock for pills distort which drugs get developed?",
+    "kind": "empirical",
+    "why": "Pills (small molecules) become eligible for negotiation 7 years after approval and biologics after 11, which the industry calls a “pill penalty.” Whether that steers research away from pills, or the shift came first, is disputed.",
+    "detail": "Those who see distortion argue that pills are cheaper to make, easier to take and often the better medicine, so tilting the payoff toward biologics will cost patients over time. They cite a Health Affairs Scholar study finding that the monthly average of industry-funded cancer trials after first approval fell 45.3 percent for small molecules after the law, against 32.5 percent for biologics, and a survey presented at the 2026 ISPOR conference in which 77 percent of investors said the shorter clock discourages small-molecule research. Bills such as the EPIC Act would give pills the biologic timeline.\n\nThose who doubt it argue that the shift toward biologics began years before the law, that the longer clock for biologics reflects their slower route to competition from biosimilars, and that the early declines coincide with the biotech funding downturn that began after 2021. Public Citizen calls the pill penalty a pharmaceutical industry myth and argues that equalizing the clocks would hand drugmakers billions by keeping high-spending drugs out of negotiation longer.",
+    "lean_label_a": "Real distortion",
+    "lean_label_b": "Little effect",
+    "id": "does-medicare-s-shorter-negotiation-clock"
+   },
+   {
+    "text": "Could public funding or prizes replace high prices as the reward for new drugs?",
+    "kind": "empirical",
+    "why": "Proposals to pay for research directly, through public trials or prizes, and then sell drugs at generic prices have never been tried across a whole industry, so their costs and results can only be estimated from partial examples.",
+    "detail": "Those who think it could work point to nonprofit developers such as the Drugs for Neglected Diseases initiative, to publicly funded drugs of the past such as AZT and Taxol, and to prize models proposed for antibiotics. To the objection that governments cannot pick winners, they reply that public agencies already choose and pay for most basic science, and that companies would still compete for research contracts and prizes, keeping the bets spread across many hands. Paying for research directly would, they argue, cost less than the monopoly profits now paid for it: the public already funds much of the underlying science, and a monopoly price on a drug that costs little to make keeps some patients from using it at all.\n\nThose who doubt it argue that governments are poor at choosing among thousands of possible projects, that prizes require putting a value on drugs not yet invented, and that public budgets are hostage to politics, as the administration’s proposed cuts to NIH funding in 2025 showed. Public science mostly produces knowledge; turning a target into an approved product is the costly, risky step companies take. The private system, for all its costs, spreads the bets across many investors and has produced most of the medicines approved in recent decades; replacing it risks a sharp fall in development before any public system could take its place.",
+    "lean_label_a": "Yes, it could",
+    "lean_label_b": "No, it couldn’t",
+    "id": "could-public-funding-or-prizes-replace"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Let government negotiate lower prices",
+    "color_key": "green",
+    "steelman": "A patent is a monopoly the government grants; Medicare should bargain like any large buyer, because modest cuts to inflated prices cost few cures and spare millions who skip doses.",
+    "detail": "A monopoly charges what the market will bear, and Americans pay three to four times what people in other rich countries pay for the same brand-name medicines. Until 2022 Medicare, spending public money, was barred from bargaining at all. Negotiation works: the second round cut net spending on its 15 drugs by an estimated 44 percent, and the courts have let the program stand. It should reach more drugs, sooner after launch, and people with private insurance, and US prices should be anchored to what other rich countries pay; Patients For Affordable Drugs holds that “a well-designed MFN plan could align U.S. prices with the lower prices abroad.” Many of us welcomed the administration’s most-favored-nation push in principle while judging its confidential deals too weak.\n\nLower prices need not mean fewer cures. The industry is among the most profitable in the economy, and spends heavily on marketing and share buybacks. The government’s own budget office expects only a small loss of new drugs from negotiation, and the drugs at the margin are mostly ones that add little over what exists; the industry has predicted the end of innovation before every reform. If society wants more research in particular areas, it can pay for that directly, far more cheaply than paying monopoly prices on every drug. We differ on tools: expanding negotiation, international reference prices as in bills from Senator Bernie Sanders and from Senators Hawley and Welch, state affordability boards with payment limits, or patent reform to bring generics sooner.",
+    "proponents": "Patients For Affordable Drugs; Bernie Sanders; AARP; Public Citizen",
+    "id": "let-government-negotiate-lower-prices"
+   },
+   {
+    "name": "Keep prices market-set and lower patients’ costs",
+    "color_key": "blue",
+    "steelman": "America gets new medicines first because a success here can repay the many failures; price controls cut that payoff, and patients’ real burden comes from how insurance passes on costs.",
+    "detail": "The United States is where most new medicines are discovered, launched first and made widely available, and that is no accident: it is the market where a successful drug can earn back the cost of the many that fail. Government price-setting, whether called negotiation or most-favored-nation pricing, cuts the payoff for success and so the research behind the next cures. PhRMA says the Inflation Reduction Act’s “pill penalty” “has contributed to a 70% drop in investment in small molecule drug development,” and that “MFN takes away billions of dollars that could otherwise be used to expand manufacturing in America.”\n\nWhat patients pay at the counter is driven by insurance design: deductibles and coinsurance tied to list prices, and pharmacy benefit managers that keep rebates rather than passing them on. Cap out-of-pocket costs, fix that and the 340B discount program, and patients get relief without sacrificing future medicines. The system already ends in low prices: once exclusivity expires, cheap generics fill most US prescriptions. The answer to foreign underpayment is to press other countries to pay their “fair share,” in PhRMA’s words, not to import their controls. Some of us, like biotech investor Peter Kolchinsky, add that high prices during exclusivity are justified only if drugs reliably go generic afterward, and want patent abuses fixed to keep that bargain honest; much of the industry resists those reforms.",
+    "proponents": "PhRMA; Biotechnology Innovation Organization; Tomas Philipson; Peter Kolchinsky",
+    "id": "keep-prices-market-set-and-lower"
+   },
+   {
+    "name": "Make other rich countries pay their share",
+    "color_key": "amber",
+    "steelman": "Americans fund most of the world’s drug research while other rich countries ride free; rebalance the bill, lower prices here and higher prices abroad, so the cures keep coming.",
+    "detail": "Research that produces new medicines benefits every country, but Americans pay for most of it. The United States supplies about 80 percent of OECD revenue from new innovative drugs, and other wealthy governments use their power as monopoly buyers to hold prices below a fair share of the cost. As the 2025 executive order puts it, “The inflated prices in the United States fuel global innovation while foreign health systems get a free ride.” Forcing US prices down to foreign levels while foreign prices stay put would shrink the world’s research budget; leaving things as they are keeps overcharging Americans. So use trade negotiations, tariffs and the pull of the American market to make other rich countries pay more, while bringing US prices down toward theirs. It has begun to work: in December 2025 the UK agreed to raise the threshold its health service uses to judge new medicines, and to spend more on them, in exchange for zero US tariffs.\n\nTold that companies will simply pocket higher foreign prices, we answer that this is why the US half matters: most-favored-nation terms require companies to offer Americans the lowest price paid in comparable countries, so raising foreign prices becomes their only way to protect revenue. We differ on that half. The administration pairs pressure abroad with limits at home, through agreements with drugmakers, Medicare pricing models and tariffs waived for companies that sign. Free-market economists at the Mercatus Center reject tying US prices to foreign ones, warning that “Importing foreign caps on patented drug prices will likely slow US generic entry,” and would shift the burden through trade deals alone.",
+    "proponents": "Trump administration; Mercatus Center",
+    "id": "make-other-rich-countries-pay-their"
+   },
+   {
+    "name": "Pay for drugs by the health they deliver",
+    "color_key": "rust",
+    "steelman": "Every health budget is finite, so a drug should cost what its health gains are worth; pricing by value rewards real advances and stops paying top dollar for marginal ones.",
+    "detail": "The real question is not whether drug prices are high or low but whether they match what a drug does for patients. Pricing by value, measured as the years and quality of life a drug adds compared with existing care, pays most for the biggest advances and least for marginal ones, which is the right signal for research. By that test the US system is badly off: ICER found that 23 of 26 drugs it reviewed from 2022 to 2025 launched above the price that would match their benefit. In ICER’s words, “Moving away from a system that allows prices to be out of line with value and access restrictions not based on objective notions of fair access requires urgent action.” This is how England’s NICE and similar bodies in Canada, Australia and much of Europe already work.\n\nTold that this undervalues the old, the disabled and the seriously ill, we answer that measures can and do adjust for severity and disability, as ICER’s equal value life year does, and that delays in Europe come from slow processes and low thresholds, which can be fixed, not from the principle. We disagree among ourselves about the threshold. ICER’s benchmarks use $100,000 per quality-adjusted life year and $150,000 per equal value life year. Karl Claxton and colleagues at the University of York argue that the right threshold is the health a system actually buys with its marginal spending, below England’s old range, and opposed the 2025 increase: “We urgently need to see an impact assessment, which takes account of the full weight of robust research evidence.”",
+    "proponents": "Institute for Clinical and Economic Review; Karl Claxton",
+    "id": "pay-for-drugs-by-the-health"
+   },
+   {
+    "name": "Fund research publicly and sell drugs near cost",
+    "color_key": "purple",
+    "steelman": "Monopoly pricing is a choice, not a law of nature: pay for research directly with public money and prizes, and every new medicine could sell at roughly what it costs to make.",
+    "detail": "The usual question, how high prices must be to pay for innovation, assumes monopoly prices are the only way to pay for research. That is a costly choice: a drug that costs a few dollars to make is priced so that many patients cannot get it, and the research bill lands on the sickest people’s prescriptions. Taxpayers already fund much of the science: nearly every drug approved in the 2010s, 354 of 356, drew on research paid for by the NIH. Paying for the rest directly, through publicly funded clinical trials, prizes for new drugs and open licensing, would let every new medicine sell at about what it costs to make, as generics do now, and would likely cost the public less than the monopoly profits it pays today. Knowledge Ecology International calls this delinkage, a model in which “the price of a medical technology is not linked to the cost of R&D.” Economist Dean Baker argues that with publicly financed research and no patent monopolies, most drugs would sell for generic prices.\n\nTold that governments cannot pick winners and public budgets are unreliable, we answer that governments already pick and fund most basic science, and private firms would still compete for prizes and contracts, so the bets stay spread out. The real failure is the current system, which funds research only where monopoly profits are large and neglects antibiotics and diseases of the poor. Some of us want patents replaced outright; others would start with public trials for important drugs or neglected areas, or with public manufacturing after exclusivity ends, as California’s CalRx insulin program and the nonprofit generic maker Civica do.",
+    "proponents": "Knowledge Ecology International; Dean Baker; Drugs for Neglected Diseases initiative; UCL Institute for Innovation and Public Purpose",
+    "id": "fund-research-publicly-and-sell-drugs"
+   }
+  ],
+  "crux": {
+   "lead": "Would lower drug prices cost many future cures or only a few, and what is that trade worth?",
+   "lead_highlight": "many future cures or only a few",
+   "subtitle": "Almost every argument here turns on two things: how strongly the search for new medicines responds to the money a successful one can earn, and how a society weighs cheaper drugs for today’s patients against new ones for tomorrow’s.",
+   "empirical": "The size of the response can be measured, slowly. Economists agree that research follows expected revenue but differ by an order of magnitude or more on how strongly, and on whether the drugs lost would be real advances or near copies of existing ones. Studies of trials, investment and approvals in the decade after recent price cuts can narrow that range, as can evidence on whether drugmakers recover lost revenue by charging other countries more.",
+   "values": "No estimate settles the weighing. People differ on how much affordability now to trade for medicines later; on whether sick people paying high prices should carry research that benefits everyone; on whether taxpayers, patients or foreign governments should pay; and on whether pricing a drug by the health it delivers is fair to people whose lives get counted as lower in quality."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Read KFF’s key facts on Medicare drug price negotiation",
+    "description": "A nonpartisan explainer of how Medicare’s negotiation program works, which drugs it covers and what the negotiated prices mean for people with Medicare.",
+    "url": "https://www.kff.org/medicare/key-facts-about-medicare-drug-price-negotiation/",
+    "for_position": null,
+    "id": "read-kff-s-key-facts-on"
+   },
+   {
+    "kind": "policy",
+    "title": "Share your drug-cost story with Patients For Affordable Drugs",
+    "description": "The patient advocacy group collects stories from people affected by high drug prices for use in testimony and campaigns for Medicare negotiation and patent reform.",
+    "url": "https://www.patientsforaffordabledrugs.org/share-your-story/",
+    "for_position": "Let government negotiate lower prices",
+    "id": "share-your-drug-cost-story-with"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read PhRMA’s case against government price-setting",
+    "description": "The drug industry trade group’s policy page on Medicare negotiation and most-favored-nation pricing, with its proposals on pharmacy benefit managers, insurers and foreign prices.",
+    "url": "https://phrma.org/policy-issues/government-price-setting",
+    "for_position": "Keep prices market-set and lower patients’ costs",
+    "id": "read-phrma-s-case-against-government"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the case for higher foreign contributions to drug research",
+    "description": "A 2026 Mercatus Center working paper by Alden Abbott and Satya Marar on using trade deals to get other rich countries to pay more toward the cost of new medicines.",
+    "url": "https://www.mercatus.org/research/working-papers/fostering-higher-foreign-contributions-pharma-rd-through-trade-deals",
+    "for_position": "Make other rich countries pay their share",
+    "id": "read-the-case-for-higher-foreign"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read ICER’s assessments of what new drugs are worth",
+    "description": "The Institute for Clinical and Economic Review publishes free reports estimating the price at which new drugs would match their health benefit, and invites public comment on drafts.",
+    "url": "https://icer.org/",
+    "for_position": "Pay for drugs by the health they deliver",
+    "id": "read-icer-s-assessments-of-what"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Learn about delinking research from prices",
+    "description": "Knowledge Ecology International’s collection of proposals, resolutions and papers on paying for drug research through grants and prizes rather than monopoly prices.",
+    "url": "https://www.keionline.org/book/support-for-the-delinkage-of-the-costs-of-r-d-and-the-price-of-medicines",
+    "for_position": "Fund research publicly and sell drugs near cost",
+    "id": "learn-about-delinking-research-from-prices"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Compare US drug prices with other countries",
+    "description": "RAND’s report for HHS comparing US prescription drug prices with 33 other OECD countries, with breakdowns for brand-name drugs, generics and biologics.",
+    "url": "https://www.rand.org/pubs/research_reports/RRA788-3.html",
+    "for_position": null,
+    "id": "compare-us-drug-prices-with-other"
+   },
+   {
+    "kind": "donate",
+    "title": "Support the Drugs for Neglected Diseases initiative",
+    "description": "A nonprofit research organization that develops treatments for diseases the market neglects, such as sleeping sickness and leishmaniasis, and makes them available at low cost.",
+    "url": "https://dndi.org/donate/",
+    "for_position": "Fund research publicly and sell drugs near cost",
+    "id": "support-the-drugs-for-neglected-diseases"
+   },
+   {
+    "kind": "local",
+    "title": "Check cash prices on TrumpRx",
+    "description": "The federal website, launched in February 2026, lists cash prices for drugs offered under the administration’s most-favored-nation agreements with drugmakers, along with hundreds of generics.",
+    "url": "https://trumprx.gov/",
+    "for_position": "Make other rich countries pay their share",
+    "id": "check-cash-prices-on-trumprx"
+   },
+   {
+    "kind": "local",
+    "title": "Compare Medicare drug plans for your prescriptions",
+    "description": "Medicare’s Plan Finder lets people with Medicare compare Part D and Medicare Advantage drug coverage and costs for their own prescriptions during each fall’s open enrollment, October 15 to December 7.",
+    "url": "https://www.medicare.gov/plan-compare/",
+    "for_position": null,
+    "id": "compare-medicare-drug-plans-for-your"
+   }
+  ]
+ }
 }

@@ -1,8 +1,8 @@
 {
  "slug": "crime-punishment-reform",
  "title": "Crime & Punishment",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-11-26T08:24:09+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "What justifies punishment and what the justice system is for: desert, deterrence, rehabilitation, abolition, and the death penalty.",
@@ -16,5 +16,719 @@
   "free-will-moral-responsibility",
   "gun-policy",
   "policing-reform"
- ]
+ ],
+ "icon": "gavel",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: A large judge's gavel resting on its round sound block is the dominant mass in the foreground on a broad gently curved hill whose whole area under the curve is filled with a pale tint; behind it, partly hidden by the gavel head, a low prison building with a long wall, small barred windows and one watchtower sits on the hill; a path leaves the prison gate and winds across the hill to two small houses on the far right.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #6a62b0, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: handcuffs, chains, nooses, electric chair, gallows, syringes, blood, prisoners in stripes, silhouettes or figures, faces, broken bars, open cage doors, padlocks, tilted scales, blindfolded Lady Justice figure, courthouse dome or capitol, police cars, text, letters, numbers, frame, border, second color, shadows, gradients",
+ "content": {
+  "overview": {
+   "summary": "The core dispute is whether punishment answers the wrong done or must earn its cost by preventing crime. Prison terms and executions test both.",
+   "scope_covered": "Why the state punishes and how much: sentence length, life terms, prison conditions, second-look review, alternatives to prison and the death penalty, centered on the United States.",
+   "scope_excluded": "How police operate, drug legalization, gun regulation and free will, each covered in its own topic and entering here only where it bears on punishment.",
+   "why_now": "On November 5, 2026 California’s governor announced the commutation of all 548 of the state’s death sentences, which the Death Penalty Information Center calls the largest mass commutation in US history. A third took effect at once; the rest need the California Supreme Court’s agreement.",
+   "why_now_source_label": "CalMatters",
+   "why_now_source_url": "https://calmatters.org/justice/2026/11/gavin-newsom-death-penalty-commutation/"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "US imprisonment rate",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "per 100,000",
+     "series": [
+      {
+       "label": "2013",
+       "value": "479",
+       "highlight": false
+      },
+      {
+       "label": "2019",
+       "value": "419",
+       "highlight": false
+      },
+      {
+       "label": "2020",
+       "value": "357",
+       "highlight": false
+      },
+      {
+       "label": "2021",
+       "value": "350",
+       "highlight": false
+      },
+      {
+       "label": "2022",
+       "value": "355",
+       "highlight": false
+      },
+      {
+       "label": "2023",
+       "value": "360",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "At the end of 2023, state and federal prisons held 360 sentenced prisoners for every 100,000 US residents, 25 percent fewer than in 2013.",
+     "detail": "This is the official federal measure: it counts people sentenced to more than a year in state or federal prison, not people in local jails or awaiting trial. By that measure the United States held 1,254,200 people in state and federal prisons at the end of 2023, up 2 percent from 2022, the second annual rise after the steep fall of 2020, when courts slowed and prisons released people during the pandemic. Over the longer run, the National Research Council’s 2014 review found that the US imprisonment rate had more than quadrupled over the preceding four decades. As of November 2026 the Bureau of Justice Statistics had not published national prison totals for 2024; its separate federal report puts the federal prison population at 154,093 at the end of 2024, down about 1 percent.",
+     "source_label": "Bureau of Justice Statistics, Prisoners in 2023 – Statistical Tables (September 2025), table 5",
+     "source_url": "https://bjs.ojp.gov/document/p23st.pdf",
+     "source_published": "2023",
+     "source_accessed": "2026-11-26",
+     "id": "us-imprisonment-rate"
+    },
+    {
+     "label": "US murder rate",
+     "viz": "bar",
+     "wide": false,
+     "value": "4.1",
+     "unit": "per 100,000",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The FBI estimates that murder fell 18.1 percent in 2025, to 4.1 per 100,000 people, tied with 1955 and 1956 for the lowest it has recorded.",
+     "detail": "The FBI also reported that violent crime fell more in 2025 than in any year since its estimates began in 1936. The figure is read from both sides of the punishment debate. Those who favor shorter sentences note that imprisonment has fallen by about a quarter since 2013 while murder sits near record lows, which to them shows that fewer prisoners need not mean more crime. Those who favor firm punishment point out that murder rose sharply in 2020, and credit the decline since partly to renewed enforcement against repeat violent offenders.",
+     "source_label": "FBI, FBI Releases 2025 Reported Crimes in the Nation Statistics (14 August 2026)",
+     "source_url": "https://www.fbi.gov/news/press-releases/fbi-releases-2025-reported-crimes-in-the-nation-statistics",
+     "source_published": "2025",
+     "source_accessed": "2026-11-26",
+     "id": "us-murder-rate"
+    },
+    {
+     "label": "Prison population rate by country",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "per 100,000",
+     "scale": "log",
+     "series": [
+      {
+       "label": "El Salvador",
+       "value": "1659",
+       "highlight": false
+      },
+      {
+       "label": "United States",
+       "value": "542",
+       "highlight": true
+      },
+      {
+       "label": "Brazil",
+       "value": "439",
+       "highlight": false
+      },
+      {
+       "label": "England and Wales",
+       "value": "140",
+       "highlight": false
+      },
+      {
+       "label": "Germany",
+       "value": "69",
+       "highlight": false
+      },
+      {
+       "label": "Norway",
+       "value": "54",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Counting jails and pretrial detention, the US holds about 542 people per 100,000, fourth in the world and roughly ten times Norway’s rate; years differ by country.",
+     "detail": "The World Prison Brief counts everyone held in penal institutions, including pretrial detainees and people in local jails, which is why its US figure, 1,833,700 people in 2023, is higher than the federal count of sentenced prisoners alone. The brief’s country pages show the US rate at 755 per 100,000 in 2008, its peak, falling to 541 in 2022, and El Salvador’s rising from 572 in 2020 to 1,659 in March 2024 after the government suspended constitutional protections in March 2022 to arrest suspected gang members. Each figure is the latest the brief holds for that country, so the dates differ: the US figure is from 2023 and El Salvador’s from March 2024. Rates reflect crime levels as well as policy, so they measure how much a country imprisons, not by themselves how punitive its sentencing is. The bars use a logarithmic scale.",
+     "source_label": "World Prison Brief, Institute for Crime & Justice Policy Research, Highest to Lowest – Prison Population Rate",
+     "source_url": "https://www.prisonstudies.org/highest-to-lowest/prison_population_rate?field_region_taxonomy_tid=All",
+     "source_published": "latest per country; US 2023",
+     "source_accessed": "2026-11-26",
+     "id": "prison-population-rate-by-country"
+    },
+    {
+     "label": "State prisoners serving time for a violent offense",
+     "viz": "radial",
+     "wide": false,
+     "value": "62",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Of the 1,039,500 people serving more than a year in state prisons at the end of 2022, 647,600, or 62 percent, were there for a violent offense.",
+     "detail": "This is the most recent year for which the Bureau of Justice Statistics has state offense data. The rest were held for drug offenses (13 percent), property offenses (13 percent) and public order offenses (12 percent). The violent total includes 157,600 people serving time for murder or nonnegligent manslaughter and 163,100 for rape or sexual assault. Each person is counted once, by the most serious offense for which they are serving time. The figure limits how far prison populations can fall by releasing people convicted of drug or other nonviolent offenses alone: those who favor deep cuts argue that reform must therefore reach sentences for violence, and those who favor firm punishment argue that the prison population is already mostly people who have hurt others.",
+     "source_label": "Bureau of Justice Statistics, Prisoners in 2023 – Statistical Tables (September 2025), tables 16 and 17",
+     "source_url": "https://bjs.ojp.gov/document/p23st.pdf",
+     "source_published": "2022",
+     "source_accessed": "2026-11-26",
+     "id": "state-prisoners-serving-time-for-a"
+    },
+    {
+     "label": "Americans who favor the death penalty for murder",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% in favor",
+     "series": [
+      {
+       "label": "1994",
+       "value": "80",
+       "highlight": false
+      },
+      {
+       "label": "2000",
+       "value": "67",
+       "highlight": false
+      },
+      {
+       "label": "2010",
+       "value": "64",
+       "highlight": false
+      },
+      {
+       "label": "2016",
+       "value": "60",
+       "highlight": false
+      },
+      {
+       "label": "2020",
+       "value": "55",
+       "highlight": false
+      },
+      {
+       "label": "2025",
+       "value": "52",
+       "highlight": false
+      },
+      {
+       "label": "2026",
+       "value": "49",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In October 2026, 49 percent told Gallup they favor the death penalty for murder, the first reading below half since 1971; online polls run higher, 66 percent in Pew’s July 2026 survey.",
+     "detail": "Gallup has asked the same telephone question, “Are you in favor of the death penalty for a person convicted of murder?”, since 1936. Support was 42 percent in 1966, the record low, and 80 percent in 1994, the record high; in 2026, 45 percent were opposed. Support stood at 73 percent among Republicans, 50 percent among independents and 28 percent among Democrats, and at 41 percent among adults aged 18 to 34. Pew Research Center’s parallel phone surveys in 2019 and 2020 ran 9 to 13 points lower than its online ones, which Pew attributes to survey mode, so the Gallup and Pew series are not comparable with each other, though each shows its own trend.",
+     "source_label": "Gallup, Crime survey final topline, October 2026",
+     "source_url": "https://news.gallup.com/file/poll/716492/261101DeathPenalty.pdf",
+     "source_published": "2026",
+     "source_accessed": "2026-11-26",
+     "id": "americans-who-favor-the-death-penalty"
+    },
+    {
+     "label": "Released state prisoners rearrested within 10 years",
+     "viz": "radial",
+     "wide": false,
+     "value": "82",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Of people released from state prisons in 24 states in 2008, 66 percent were arrested again within three years and 82 percent within ten.",
+     "detail": "This counts arrests, not convictions, for any offense; it is the longest recidivism follow-up the Bureau of Justice Statistics has published. The share arrested in a given year fell from 43 percent in the first year after release to 22 percent in the tenth, and about 61 percent returned to prison within ten years for a new sentence or a violation of parole or probation. Those who favor long sentences read the figure as evidence that most people released will offend again; those who favor rehabilitation read it as evidence that American prisons fail to change people. Rearrest rates are not directly comparable with the reconviction rates other countries publish, which count fewer events.",
+     "source_label": "Bureau of Justice Statistics, Recidivism of Prisoners Released in 24 States in 2008 (September 2021)",
+     "source_url": "https://bjs.ojp.gov/library/publications/recidivism-prisoners-released-24-states-2008-10-year-follow-period-2008-2018",
+     "source_published": "2008–2018",
+     "source_accessed": "2026-11-26",
+     "id": "released-state-prisoners-rearrested-within-10"
+    },
+    {
+     "label": "US executions per year",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "executions",
+     "series": [
+      {
+       "label": "1999",
+       "value": "98",
+       "highlight": false
+      },
+      {
+       "label": "2009",
+       "value": "52",
+       "highlight": false
+      },
+      {
+       "label": "2015",
+       "value": "28",
+       "highlight": false
+      },
+      {
+       "label": "2020",
+       "value": "17",
+       "highlight": false
+      },
+      {
+       "label": "2024",
+       "value": "25",
+       "highlight": false
+      },
+      {
+       "label": "2025",
+       "value": "47",
+       "highlight": true
+      },
+      {
+       "label": "2026 to Nov 19",
+       "value": "39",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "US states carried out 47 executions in 2025, nearly double the 25 of 2024 and the most since 2009, and 39 more in 2026 through November 19.",
+     "detail": "Executions peaked at 98 in 1999. The recent rise is concentrated: Florida carried out 19 executions in 2025, 40 percent of the national total, after one in 2024, and, by the center’s 2026 list, 20 of the 39 in 2026 through November 19, with the rest in Texas (9), Oklahoma (4), Alabama (3), and Arizona, Indiana and Tennessee (1 each). The center counts 1,693 executions since the 1970s. New death sentences have fallen far more steeply than executions: the center’s 2025 year-end report counted 22 new death sentences as of December 15, 2025, with only 14 juries agreeing unanimously on death out of more than 50 capital trials, so most current executions are of people sentenced decades ago. On September 30, 2026 Christa Gail Pike survived two doses of pentobarbital in Tennessee’s execution chamber, and the governor halted the state’s remaining execution for the year pending an outside review, PBS NewsHour reported. The center’s data are widely used as the reference count; it is also critical of how the death penalty is administered.",
+     "source_label": "Death Penalty Information Center, Execution List by year",
+     "source_url": "https://deathpenaltyinfo.org/executions/2025",
+     "source_published": "2025",
+     "source_accessed": "2026-11-26",
+     "id": "us-executions-per-year"
+    },
+    {
+     "label": "People exonerated after being sentenced to death in the US",
+     "viz": "bar",
+     "wide": false,
+     "value": "203",
+     "unit": "people",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Since 1973, 203 people sentenced to death in the United States have later been exonerated, in 30 states.",
+     "detail": "The Death Penalty Information Center counts people who were convicted and sentenced to death and later acquitted, had all charges dismissed, or were pardoned on grounds of innocence; it calls the count a floor, not a ceiling, and finds official misconduct by police, prosecutors or other officials in 70.5 percent of death row exonerations. A 2014 study in the Proceedings of the National Academy of Sciences by Gross and colleagues estimated that if everyone sentenced to death remained under that sentence indefinitely, at least 4.1 percent would eventually be exonerated, which its authors call a conservative estimate of the rate of false conviction among death sentences. Supporters of the death penalty answer that exonerations show the appeals process catching errors, and that no execution of a person later proved innocent has been officially established.",
+     "source_label": "Death Penalty Information Center, What to know: innocence and the death penalty (updated 18 September 2026)",
+     "source_url": "https://deathpenaltyinfo.org/what-to-know-innocence-and-the-death-penalty",
+     "source_published": "1973–2026",
+     "source_accessed": "2026-11-26",
+     "id": "people-exonerated-after-being-sentenced-to"
+    },
+    {
+     "label": "People under sentence of death in the US",
+     "viz": "bar",
+     "wide": false,
+     "value": "1,388",
+     "unit": "people",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Counting all of California’s November 2026 commutations, including those awaiting court approval, the US death row stood at about 1,388 people, the fewest since 1984.",
+     "detail": "The Death Penalty Information Center says the commutations cut the national death row by nearly 30 percent. California had not executed anyone since 2006 and had been under a governor’s moratorium since 2019, so the commutations change sentences rather than the pace of executions; the death penalty remains in California law and prosecutors may still seek it. Under the state constitution, the commutations for people with more than one felony conviction require four of the seven state Supreme Court justices to agree, and the Criminal Justice Legal Foundation has pledged to challenge them, CalMatters reports. Death rows shrink as sentences are commuted or overturned and as prisoners die of other causes, and grow only slowly as new death sentences have become rare.",
+     "source_label": "Death Penalty Information Center, Governor Gavin Newsom grants largest mass commutation in U.S. history (November 2026)",
+     "source_url": "https://deathpenaltyinfo.org/news/governor-gavin-newsom-grants-largest-mass-commutation-in-u-s-history-to-death-sentenced-prisoners-in-california",
+     "source_published": "November 2026",
+     "source_accessed": "2026-11-26",
+     "id": "people-under-sentence-of-death-in"
+    },
+    {
+     "label": "US prisoners serving life sentences",
+     "viz": "radial",
+     "wide": false,
+     "value": "16",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "One in six people in US prisons, nearly 200,000, is serving a life sentence, The Sentencing Project counts; 56,245 are serving life without parole, the most ever counted.",
+     "detail": "The Sentencing Project, which advocates reducing imprisonment, surveys state and federal corrections departments for its census; no federal statistical agency publishes a comparable count. It counts life with parole, life without parole and “virtual life” terms of 50 years or more. Life without parole rose 68 percent from 2003 to 2024. Almost 70,000 of those serving life were under 25 when they committed their offense, and nearly two fifths are 55 or older. The group says the United States holds 40 percent of the world’s life-sentenced population with about 4 percent of its people.",
+     "source_label": "The Sentencing Project, A Matter of Life (press release, 8 January 2025)",
+     "source_url": "https://www.sentencingproject.org/press-releases/locked-away-for-life-new-report-from-the-sentencing-project-unveils-alarming-data-on-long-term-imprisonment/",
+     "source_published": "2024",
+     "source_accessed": "2026-11-26",
+     "id": "us-prisoners-serving-life-sentences"
+    },
+    {
+     "label": "Imprisonment rate by race, US adults",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "per 100,000",
+     "series": [
+      {
+       "label": "Black",
+       "value": "1218",
+       "highlight": true
+      },
+      {
+       "label": "Am. Indian/Alaska Native",
+       "value": "1045",
+       "highlight": false
+      },
+      {
+       "label": "Hispanic",
+       "value": "606",
+       "highlight": false
+      },
+      {
+       "label": "White",
+       "value": "231",
+       "highlight": false
+      },
+      {
+       "label": "Asian/Pacific Islander",
+       "value": "88",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2023, Black American adults were imprisoned at a rate of 1,218 per 100,000, five times the rate for White adults.",
+     "detail": "The gap has narrowed: the adult imprisonment rate fell 33 percent for Black Americans and 22 percent for White Americans from 2013 to 2023. The last row combines Asian, Native Hawaiian and Other Pacific Islander adults. Researchers disagree over how much of the disparity reflects differences in offending, particularly for violent crime, and how much reflects decisions by police, prosecutors and judges. The US Sentencing Commission’s study of federal sentences from 2017 to 2021 found that, after controlling for available offense and personal characteristics, Black men were 23.4 percent less likely than White men to receive probation and, among those sent to prison, received sentences 4.7 percent longer; the commission notes that it lacked data on earlier decisions by police and prosecutors.",
+     "source_label": "Bureau of Justice Statistics, Prisoners in 2023 – Statistical Tables (September 2025), table 6",
+     "source_url": "https://bjs.ojp.gov/document/p23st.pdf",
+     "source_published": "2023",
+     "source_accessed": "2026-11-26",
+     "id": "imprisonment-rate-by-race-us-adults"
+    },
+    {
+     "label": "Americans who see a risk of executing the innocent",
+     "viz": "radial",
+     "wide": false,
+     "value": "73",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In July 2026, 73 percent of Americans told Pew there is some risk an innocent person will be put to death; 25 percent said there are adequate safeguards to prevent it.",
+     "detail": "The same online survey of 3,554 adults found 68 percent saying the death penalty is morally justified when someone commits a crime like murder, and 59 percent saying it does not deter people from committing serious crimes, against 39 percent who say it does. Republicans were more likely than Democrats to see adequate safeguards against executing the innocent (38 percent against 14 percent). The share seeing a risk of executing the innocent was 78 percent in Pew’s April 2021 online survey.",
+     "source_label": "Pew Research Center, Most Americans Favor the Death Penalty for Those Convicted of Murder (6 August 2026)",
+     "source_url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/08/pp_2026-8-6_death-penalty_report.pdf",
+     "source_published": "2026",
+     "source_accessed": "2026-11-26",
+     "id": "americans-who-see-a-risk-of"
+    },
+    {
+     "label": "Reconviction within two years of release, Nordic countries",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Finland",
+       "value": "33",
+       "highlight": false
+      },
+      {
+       "label": "Sweden",
+       "value": "31",
+       "highlight": false
+      },
+      {
+       "label": "Denmark",
+       "value": "30",
+       "highlight": false
+      },
+      {
+       "label": "Iceland",
+       "value": "22",
+       "highlight": false
+      },
+      {
+       "label": "Norway",
+       "value": "18",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Of people released from Norwegian prisons in 2019, 18 percent were convicted of a new crime within two years, the lowest rate among the Nordic countries.",
+     "detail": "The Nordic correctional services publish a common measure: the share of released sentenced prisoners who commit a new crime within two years that leads to a new prison or community sentence. Norway’s rate fell from 22 percent for 2016 releases to 18 percent for 2019 and 16 percent for 2020; the report warns that the pandemic reduced prosecutions and may have lowered the 2020 figures, and that a 2017 Norwegian police reorganization may have affected later years. Norway’s correctional service describes its approach as the principle of normality: “The punishment is the restriction of liberty; no other rights have been removed by the sentencing court,” and life inside should resemble life outside as much as possible.",
+     "source_label": "Nordic Statistics on Correctional Services 2018–2022, section 2.11",
+     "source_url": "https://www.fangelsi.is/media/skjol/Nordic-Statistics-2018_2022_final.pdf",
+     "source_published": "2019 releases",
+     "source_accessed": "2026-11-26",
+     "id": "reconviction-within-two-years-of-release"
+    },
+    {
+     "label": "Restorative justice trials pointing to less reoffending",
+     "viz": "radial",
+     "wide": false,
+     "value": "9",
+     "unit": "of 10 trials",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In nine of ten randomized trials of face-to-face meetings between victims and offenders, repeat offending fell; the combined effect over two years was modest.",
+     "detail": "The review, first published as a Campbell Collaboration systematic review in 2013, found a combined standardized effect on later convictions or arrests of d = −0.155, which its authors call modest but highly cost-effective: for the seven trials in the United Kingdom, they estimate 3.7 to 8.1 times as much benefit in crime prevented as the cost of running the conferences. Victims who took part were more satisfied with how their cases were handled, more likely to receive an apology and less likely to report post-traumatic stress symptoms. The trials included only cases in which victim and offender both agreed to meet, and most practices described as restorative justice have never been tested this way.",
+     "source_label": "Sherman, Strang and colleagues, Journal of Quantitative Criminology (2015)",
+     "source_url": "https://link.springer.com/article/10.1007/s10940-014-9222-9",
+     "source_published": "trials through 2013",
+     "source_accessed": "2026-11-26",
+     "id": "restorative-justice-trials-pointing-to-less"
+    },
+    {
+     "label": "El Salvador homicide rate, official count",
+     "viz": "bar",
+     "wide": false,
+     "value": "1.3",
+     "unit": "per 100,000",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "El Salvador reported 1.3 homicides per 100,000 people in 2025, down from about 103 in 2015; InSight Crime says the official count leaves out some killings.",
+     "detail": "The government reported 82 homicides in 2025, the lowest rate in its history and in Latin America, after 114 in 2024, a rate of 1.9, as The Tico Times reported. Since March 2022, more than 90,000 people have been detained under a state of exception aimed at the MS-13 and 18th Street gangs. Admirers of the crackdown hold up the fall as proof that incapacitation works; human rights groups describe it as bought with mass arbitrary detention, and Amnesty International reported in July 2026 that at least 470 people had died in state custody and that the detentions, torture and disappearances could constitute crimes against humanity. InSight Crime cautions that the official count excludes killings by police, deaths in prisons and bodies found in unmarked graves, and that a lack of transparency makes the data hard to verify; the 2015 figure comes from its round-up of that year, under counting rules that may not match. Homicides had already fallen sharply before 2022: in December 2021 the US Treasury sanctioned two Salvadoran officials, accusing them of organizing secret meetings with jailed gang leaders to broker a truce, which President Nayib Bukele denied.",
+     "source_label": "InSight Crime, 2025 Homicide Round-Up (March 2026)",
+     "source_url": "https://insightcrime.org/news/insight-crime-2025-homicide-round-up/",
+     "source_published": "2025",
+     "source_accessed": "2026-11-26",
+     "id": "el-salvador-homicide-rate-official-count"
+    },
+    {
+     "label": "Executions recorded worldwide, excluding China",
+     "viz": "bar",
+     "wide": false,
+     "value": "2,707",
+     "unit": "executions",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Amnesty International recorded at least 2,707 executions in 17 countries in 2025, up from 1,518 in 2024 and the most since 1981, not counting the thousands it believes China carried out.",
+     "detail": "Amnesty counts only executions it can verify, so its totals are minimums; it treats China’s figure as a state secret and also excludes Vietnam and North Korea. Iran accounted for at least 2,159 of the 2025 total, more than double its 2024 figure, and Saudi Arabia for at least 356; the United States ranked fifth among countries with a known count. Amnesty recorded at least 2,334 new death sentences in 48 countries in 2025 and at least 25,508 people under sentence of death at the end of the year. It recorded no executions or death sentences in Europe and Central Asia.",
+     "source_label": "Amnesty International, Death penalty in 2025: facts and figures (18 May 2026)",
+     "source_url": "https://www.amnesty.org/en/latest/news/2026/05/death-penalty-in-2025-facts-and-figures/",
+     "source_published": "2025",
+     "source_accessed": "2026-11-26",
+     "id": "executions-recorded-worldwide-excluding-china"
+    },
+    {
+     "label": "Countries that have abolished the death penalty in law or practice",
+     "viz": "bar",
+     "wide": false,
+     "value": "145",
+     "unit": "countries",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "By the end of 2025, 145 countries had abolished the death penalty in law or in practice, 113 of them for all crimes.",
+     "detail": "“In practice” covers countries that keep the death penalty in law but have not executed anyone for at least ten years and are believed to have a policy of not doing so, Amnesty International’s standard category. Amnesty did not record any country fully abolishing the death penalty during 2025; Vietnam abolished it for eight offenses. In the United States the death penalty is set state by state, and the federal government and the military also keep it. As of November 2026 the Army had set December 3, 2026 for the firing-squad execution of Nidal Hasan, who killed 13 people at Fort Hood in 2009, which would be the first US military execution since 1961, Stars and Stripes reported.",
+     "source_label": "Amnesty International, Death penalty in 2025: facts and figures (18 May 2026)",
+     "source_url": "https://www.amnesty.org/en/latest/news/2026/05/death-penalty-in-2025-facts-and-figures/",
+     "source_published": "2025",
+     "source_accessed": "2026-11-26",
+     "id": "countries-that-have-abolished-the-death"
+    },
+    {
+     "label": "Annual cost of holding a federal prisoner",
+     "viz": "bar",
+     "wide": false,
+     "value": "47,564",
+     "unit": "$ a year",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Holding one person in federal prison for a year cost an average of $47,564 in fiscal 2025, about $130 a day.",
+     "detail": "The Bureau of Prisons calculates the figure by dividing its facilities’ spending, excluding the cost of opening new ones, by the number of prisoner-days; its previous Federal Register notice put it at $47,162 for fiscal 2024. It is an average cost, not the saving from releasing one person: much of a prison’s budget is fixed staffing and buildings, a point the Manhattan Institute presses against claims that modest cuts in prison populations save much money. State costs vary widely and are not published on a common basis.",
+     "source_label": "Federal Bureau of Prisons, Annual Determination of Average Cost of Incarceration Fee (Federal Register, 2 November 2026)",
+     "source_url": "https://www.federalregister.gov/d/2026-22340",
+     "source_published": "fiscal year 2025",
+     "source_accessed": "2026-11-26",
+     "id": "annual-cost-of-holding-a-federal"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Should punishment be set by what the offender deserves, or by what best prevents future crime?",
+    "kind": "value",
+    "why": "Most legal systems mix the two, and they collide in real cases: a deserved sentence can outlast any danger an elderly prisoner poses, or fall short of what prevention would demand for a young, high-risk offender.",
+    "detail": "The desert answer holds that meeting a wrong with a proportionate penalty treats offenders as responsible agents rather than hazards to be managed. It also protects them: it forbids punishing anyone more than the crime warrants because he is thought dangerous, or punishing an innocent scapegoat to deter others, which a purely preventive theory cannot rule out on principle. On this view prevention may shape a sentence only inside the limits that desert sets.\n\nThe prevention answer holds that deliberately inflicting suffering can be justified only by the good it achieves, which is fewer victims. Desert, on this view, is either retaliation in dignified dress or too vague to guide anyone, since people agree on the rough ranking of crimes but not on how many years each deserves. A system aimed at prevention can be both milder and more protective: it can send a low-risk first offender home under supervision, keep a dangerous one confined, and spend on whatever actually reduces reoffending, from drug treatment to education, rather than on suffering for its own sake.",
+    "lean_label_a": "What is deserved",
+    "lean_label_b": "What prevents it",
+    "id": "should-punishment-be-set-by-what"
+   },
+   {
+    "text": "At today’s levels of imprisonment, would locking up more people, for longer, reduce crime?",
+    "kind": "empirical",
+    "why": "Everyone agrees a prisoner cannot commit crimes outside. The dispute is whether, at the margin where policy now operates, the crime prevented outweighs the crime prison may cause later by cutting people off from work and family.",
+    "detail": "Those who answer yes point to concentration: a small share of offenders commits a large share of serious violence, and many were free on probation, parole or pretrial release, so confining them prevents crimes directly. The null findings, they reply, mostly measure average lower-level prisoners, not the high-rate violent offenders a targeted policy would hold. A study of Norwegian cases randomly assigned to stricter or more lenient judges found that imprisonment cut the probability of reoffending within five years by 29 percentage points, mostly among people who had not been working before (Bhuller, Dahl, Løken and Mogstad).\n\nThose who answer little or none say a country imprisoning at several times the rate of other rich democracies has already reached people less dangerous than those inside. David Roodman’s 2017 review of rigorous studies for Open Philanthropy put the best estimate of the net effect of decarceration at typical US margins on crime outside prison at about zero, with incapacitation roughly cancelled by extra crime after release. They read the Norwegian result as the product of short stays with job training, unlike most American terms.\n\nCareful studies differ by country, population and type of stay. The National Research Council found in 2014 that four decades of US prison growth likely reduced crime, by an uncertain amount most studies suggest was not large.",
+    "lean_label_a": "Yes, meaningfully",
+    "lean_label_b": "Little or none",
+    "id": "at-today-s-levels-of-imprisonment"
+   },
+   {
+    "text": "Can a justice system that sometimes convicts the innocent justly put anyone to death?",
+    "kind": "value",
+    "why": "No one defends executing the innocent. The question is whether a known risk of error rules the penalty out or calls for stronger safeguards, and whether death differs in kind because a wrongful execution cannot be undone.",
+    "detail": "Those who answer yes note that every punishment risks error, including decades of wrongful imprisonment, and society does not abolish prison for that reason; it demands proof beyond reasonable doubt and long appeals, which in capital cases are the most thorough in the law. For a small number of crimes, such as mass murder, they hold that justice requires the gravest penalty, and that refusing it tells victims’ families the worst crime is punished like many lesser ones. Limiting the penalty to cases with overwhelming evidence, such as DNA, can bring the risk of error close to zero.\n\nThose who answer no hold that a state that executes at all will, over time, execute some innocent people, and that no compensation is possible afterward. Many add that deliberately killing a restrained, defenseless prisoner violates human dignity whatever he has done; the Catholic Church revised its catechism in 2018 to teach that “the death penalty is inadmissible because it is an attack on the inviolability and dignity of the person.” Life without parole, they argue, protects the public just as well.",
+    "lean_label_a": "Yes, for the worst",
+    "lean_label_b": "No, never",
+    "id": "can-a-justice-system-that-sometimes"
+   },
+   {
+    "text": "Does the death penalty deter murder more than life imprisonment does?",
+    "kind": "empirical",
+    "why": "Deterrence is the most common practical argument for executions, and economists have published estimates of large effects and of none. Executions are rare and coincide with other changes in policing and sentencing, so results hinge on statistical assumptions.",
+    "detail": "Those who say it deters argue that people respond to incentives and that death is the most severe threat the state can make. Several econometric studies of state panel data found executions followed by fewer murders; the best known estimated about 18 fewer murders per execution, with a margin of error of 10 (Dezhbakhsh, Rubin and Shepherd, 2003). If executions do deter, they add, abolishing them costs innocent lives, so the uncertainty cuts both ways.\n\nThose who see no added effect cite the National Research Council’s 2012 review, which concluded that “research to date on the effect of capital punishment on homicide is not informative” about whether it decreases, increases or has no effect on homicide, and recommended that such studies not be used to inform policy on the death penalty. Reanalyses found the large estimates disappear under small, reasonable changes in method (Donohue and Wolfers). The relevant comparison, they add, is death against life imprisonment, with executions carried out on average decades after the crime, a weak signal to anyone contemplating murder.",
+    "lean_label_a": "Deters more",
+    "lean_label_b": "No added effect",
+    "id": "does-the-death-penalty-deter-murder"
+   },
+   {
+    "text": "Should long sentences be reviewed after a set number of years, with release for those no longer dangerous?",
+    "kind": "value",
+    "why": "People tend to offend less as they age, which reformers take to mean the late years of long sentences protect few; others hold that a sentence is a promise to victims and a statement of how grave the crime was.",
+    "detail": "Supporters of review hold that people change and most stop offending as they age, so keeping people in prison into their sixties and seventies costs tens of thousands of dollars a year each and protects almost no one. The Sentencing Project proposes a universal “second look” review within 10 years of imprisonment and a cap of 20 years on punishment for serious offenses, and the American Law Institute’s model sentencing code includes a power to modify very long prison terms that would override mandatory minimums. Many of those serving life were young when they offended, at an age when judgment is still developing.\n\nOpponents hold that a sentence pronounced in open court tells the victim and the public what the crime was worth. Revisiting it years later reopens wounds for victims’ families, who must return to argue against release, and turns punishment into a provisional decision managed by parole boards. Predictions that someone is no longer dangerous are fallible, and the cost of error falls on new victims. For the gravest crimes, many hold that a life sentence is what justice requires whatever the person later becomes. Parents of Murdered Children, a national support group for families of homicide victims, runs a Parole Block Program that helps families work against the early release of their loved ones’ killers.",
+    "lean_label_a": "Review after years",
+    "lean_label_b": "Sentences stand",
+    "id": "should-long-sentences-be-reviewed-after"
+   },
+   {
+    "text": "Would prisons run on Norway’s model produce Norway’s results in a country like the United States?",
+    "kind": "empirical",
+    "why": "Norway runs small prisons built to resemble ordinary life and has among Europe’s lowest reconviction rates. Whether the model causes those results or reflects a small, wealthy, low-crime country decides whether it is a blueprint.",
+    "detail": "Those who think it transfers note that Norway changed its own system deliberately and saw reconviction fall afterward, and that the mechanisms are not specific to Norway: people who leave prison with education, work experience, stable housing and family ties offend less, wherever they live. The correctional service’s rule that “no-one shall serve their sentence under stricter circumstances than necessary for the security in the community” could, on this view, apply anywhere, and the American approach is not working on its own record.\n\nThose who doubt it note that Norway’s prison population is small and its homicide rate a fraction of America’s, so its prisons hold a different population, mostly people serving short sentences, and its outcomes reflect a strong welfare state, low inequality and high trust outside the walls. American prisons hold many people convicted of serious violence, often organized in gangs, for whom open conditions would endanger staff and other prisoners. And spending of Norway’s kind per prisoner would be hard to justify to voters while services for victims go underfunded.",
+    "lean_label_a": "Model transfers",
+    "lean_label_b": "Model stays local",
+    "id": "would-prisons-run-on-norway-s"
+   },
+   {
+    "text": "Can communities keep people safe from serious violence without prisons?",
+    "kind": "empirical",
+    "why": "Abolitionists say investing in housing, health, jobs and community responses to harm can make prisons unnecessary; critics say a dangerous core will always need confining. There is evidence on particular alternatives, little on a society without prisons.",
+    "detail": "Abolitionists argue that prisons have not delivered safety on their own terms: most people released are rearrested, and the communities with the most imprisonment remain among the least safe. Survivor-centered programs already handle some violent felonies without prison when the people harmed choose it. Abolition, on this view, is a direction rather than an overnight event, and each step, from closing a jail to funding services in its place, can be tested on its own.\n\nCritics answer that some people commit repeated serious violence and will not stop when offered help, so confinement is the only reliable protection. The alternatives with the best evidence have been tested on consenting participants and modest caseloads, not on the most dangerous offenders, and no society of any size has done without some form of secure confinement. Victims of violence, concentrated in poor communities, want protection as well as prevention; to them, removing prisons before alternatives are proven at scale would be an experiment with their safety.",
+    "lean_label_a": "Yes, over time",
+    "lean_label_b": "No, not fully",
+    "id": "can-communities-keep-people-safe-from"
+   },
+   {
+    "text": "How much weight should victims’ wishes carry in deciding punishment?",
+    "kind": "value",
+    "why": "Criminal law treats crime as an offense against the state, with victims as witnesses. Victims’ rights laws and restorative justice give them more voice, but victims differ, and following their wishes treats similar crimes differently.",
+    "detail": "Those who want victims to shape outcomes hold that the person harmed has the strongest stake in what happens next, yet the conventional process often leaves victims uninformed and unheard. Offered a meeting with the person who harmed them, many victims take it and come away more satisfied with how their case was handled. Others want to be heard in favor of the full penalty, and their voice matters just as much; Right on Crime, for one, calls for “victim-centered policies that elevate the voices of crime victims.”\n\nThose who want the public interest to decide hold that equal justice requires the same crime to receive similar punishment whoever the victim is. If sentences track victims’ wishes, the forgiving victim’s attacker goes free sooner and the vengeful victim’s goes away for longer, and victims who are poor, unsympathetic or dead have less say. Crime also harms the public, which is why prosecutors, not victims, decide charges. Victims can be heard, informed and compensated without being made sentencers, and restorative processes work only when both sides consent, so they cannot be the general rule.",
+    "lean_label_a": "A deciding voice",
+    "lean_label_b": "A voice, not a vote",
+    "id": "how-much-weight-should-victims-wishes"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Keep long sentences and the death penalty for serious crime",
+    "color_key": "green",
+    "steelman": "The first duty of justice is to protect the innocent, and the surest way is to keep people who commit serious violence away from victims for as long as their crimes warrant.",
+    "detail": "A small number of repeat offenders commits a large share of shootings, robberies and rapes, and again and again the person arrested for a terrible crime turns out to have been free on probation, parole or early release despite a long record. Long sentences prevent those crimes directly, and firm, predictable penalties tell would-be offenders that crime will cost them. Punishment is also owed to victims: a murderer who receives a few years has been told his victim’s life was worth little. For the worst crimes, the deliberate killing of children, mass murder, the murder of police officers, justice requires the gravest penalty the law allows; the order President Trump signed in January 2025 calls capital punishment “an essential tool for deterring and punishing those who would commit the most heinous crimes.” The past decade’s reform experiments produced disorder that voters rejected, even in California, which passed Proposition 36 in November 2024 to raise penalties for repeat theft and drug offenses.\n\nWhen critics say more prison no longer reduces crime at the margin, we answer that the margin that matters is the high-rate violent offender, not the average prisoner, and that the studies finding little effect mostly measure lower-level offenders. When they cite exonerations, we answer that they show the appeals process working, and that life imprisonment carries its own risk of error without anyone proposing to abolish it. To the charge of racial disparity, we answer that victims of violent crime are disproportionately Black too, and releasing offenders into their neighborhoods does them no favor. We differ among ourselves on the death penalty, and most of us reject El Salvador’s suspension of constitutional rights, citing it only as evidence that incapacitation works.",
+    "proponents": "Trump administration; Manhattan Institute; Criminal Justice Legal Foundation; Crime Victims United",
+    "id": "keep-long-sentences-and-the-death"
+   },
+   {
+    "name": "Cut imprisonment and invest in rehabilitation",
+    "color_key": "blue",
+    "steelman": "Almost everyone in prison comes home, so the question is what kind of neighbor they will be: punish no more than protects the public, in conditions that prepare people for release.",
+    "detail": "The United States imprisons people at several times the rate of other democracies without being safer, and the extra imprisonment buys little. Long sentences hold people long after they would have stopped offending, and prison itself often makes reoffending more likely by severing people from work and family. So we want terms served with education, treatment and work, followed by real help with housing and jobs. The National Institute of Justice sums up the research: “the chance of being caught is a vastly more effective deterrent than even draconian punishment,” so money moved from long terms to solving and preventing crimes buys more safety. The death penalty should go: it does not demonstrably deter, it has condemned innocent people, it is imposed unevenly, and life imprisonment protects the public as well.\n\nWe do not propose releasing the dangerous. Second-look review releases people only after a judge finds they no longer pose a threat, typically in middle age, when offending has fallen steeply. The crime rise of 2020 and 2021 happened nationwide, in states with and without reforms, and crime has since fallen to historic lows while imprisonment stayed well below its peak. A homicide decline bought, as in El Salvador, with mass detention, hundreds of deaths in custody and suspended courts is not a policy a democracy can adopt. Our coalition runs from The Sentencing Project, which wants reform to reach sentences for violent crime because most prisoners are serving time for violence, to Right on Crime, the conservative campaign holding that “public safety—not punishment for punishment’s sake—must be the central measure of a successful justice system,” which still backs incapacitating violent and career criminals.",
+    "proponents": "The Sentencing Project; Right on Crime; FAMM; Catholic Church; Gavin Newsom",
+    "id": "cut-imprisonment-and-invest-in-rehabilitation"
+   },
+   {
+    "name": "Punish in proportion to what the crime deserves",
+    "color_key": "amber",
+    "steelman": "People who commit crimes deserve punishment, and no more than the crime deserves: proportion condemns the wrong, treats the offender as responsible, and forbids excess however useful.",
+    "detail": "This view takes both crime and the criminal seriously. It condemns the wrong done to victims with a penalty that reflects its gravity, and it treats the offender as a person answerable for his choices, not a dangerous object to be managed or a patient to be treated until officials judge him cured. The two great failures of modern sentencing came from abandoning desert: the rehabilitative era gave parole boards open-ended power to hold people for years on predictions, and the era of mass incarceration added decades through three-strikes laws and mandatory minimums in the name of deterrence and incapacitation, down to life terms for shoplifting. Proportion rules out both. The American Law Institute’s Model Penal Code: Sentencing, approved in 2017, is built on it, requiring sentences “within a range of severity proportionate to the gravity of offenses, the harms done to crime victims, and the blameworthiness of offenders” and allowing other aims only within those limits.\n\nDesert is also practical. Paul Robinson argues that a criminal law tracking ordinary people’s shared sense of justice earns the moral credibility that makes them obey it, report crime and serve as witnesses. Desert is not vengeance: vengeance is personal, unlimited and indifferent to guilt, while desert is imposed by a neutral court, only on the guilty, and only up to a limit. Many Americans who back the death penalty doubt that it deters, which tells us they are already reasoning from desert. We differ on that penalty ourselves: some, following Kant, hold that murder deserves death; many hold that desert sets a maximum, not a requirement, and that the risk of executing the innocent forbids death even where it is deserved.",
+    "proponents": "American Law Institute; Paul H. Robinson",
+    "id": "punish-in-proportion-to-what-the"
+   },
+   {
+    "name": "Abolish prisons and build community safety instead",
+    "color_key": "rust",
+    "steelman": "Prisons do not produce safety; they produce harm. What prevents violence is housing, health care, jobs, schools and strong relationships, the very things imprisonment strips away.",
+    "detail": "Prisons take people already damaged by poverty, abuse and neglect, subject them to violence and isolation, and return them more damaged to the same neighborhoods, which is why most are rearrested. The communities most heavily policed and imprisoned are not the safest but among the least safe. The system falls hardest on the poor and on Black, Latino and Native Americans, as it has since it grew out of the control of freed slaves after the Civil War, and each generation’s reforms became the next generation’s scandal. So the question is not how to punish better but how to address harm and prevent it. As Ruth Wilson Gilmore puts it, “the society that we want to bring into being won’t come into being through a better system of punishment.” We would move money from police, prisons and courts to schools, social work and the conditions of safety, answer violence through community accountability that centers the people harmed, and shrink police, prisons and surveillance step by step. Abolition is building as much as tearing down.\n\nAsked about murderers and rapists, we answer that today’s system already fails victims of serious violence, many of whose cases are never solved, and that prison has not made rape or murder rare. Abolition is a long project, and some form of separation may be needed for some people along the way, guided by safety and care rather than punishment. Every major change in how societies treat people, from the end of slavery to the end of public executions, was called utopian until it happened. Critical Resistance will not support reforms that extend the system’s life or scope; many of us distinguish reforms that shrink it, like closing a prison, from those that legitimize it, like building a jail described as humane.",
+    "proponents": "Critical Resistance; Ruth Wilson Gilmore; Mariame Kaba; Angela Davis",
+    "id": "abolish-prisons-and-build-community-safety"
+   },
+   {
+    "name": "Repair harm through restorative justice",
+    "color_key": "purple",
+    "steelman": "Crime is first a harm to people, not only a broken law; justice should ask who was hurt, what they need and who must make it right, with prison a last resort.",
+    "detail": "The conventional process asks which law was broken and what the offender deserves, then hands the answer to strangers in a courtroom; the person harmed becomes a witness, and the person responsible never has to face what he did. The University of Wisconsin Law School’s Restorative Justice Project frames the alternative as asking “Who has been hurt? What are their needs? Whose obligations are these?” In a restorative process, with the consent of both sides, the person harmed can tell the offender what the crime did to them, ask the questions only he can answer, and help decide what he must do to make things right, from restitution to work to changes in his life. That is more demanding accountability than sitting in a cell, and in randomized trials it has helped victims and modestly cut reoffending at low cost. Prison may remain for people who refuse responsibility or remain dangerous, but it should not be the default response to harm.\n\nParticipation is voluntary for victims, and the approach is not only for minor cases: several of the trials involved robbery and violent offenses, and Common Justice in New York runs what it calls “the first alternative-to-incarceration and victim-service program in the United States” for violent felonies in adult courts. We accept that it will not fit every case. Some of us use it alongside conventional sentencing, for youth offenses or as diversion; Prison Fellowship International’s Sycamore Tree Project brings victims together with groups of unrelated prisoners. Others want it to replace punishment as the organizing principle, a view that shades into abolition. To abolitionists who see it as propping up the system, we answer that people harmed today cannot wait for the system to disappear.",
+    "proponents": "Howard Zehr; Common Justice; University of Wisconsin Law School Restorative Justice Project; Prison Fellowship International",
+    "id": "repair-harm-through-restorative-justice"
+   }
+  ],
+  "crux": {
+   "lead": "Is punishment justified by the wrong already done, or by the harm it prevents?",
+   "lead_highlight": "by the wrong already done, or by the harm it prevents",
+   "subtitle": "Most arguments here turn on this. If the guilty are owed a penalty that fits their wrong, the sentence follows the crime whatever it prevents. If only prevention justifies punishment, every year in prison and every execution must earn its place by the crimes it stops, and that is a question of evidence.",
+   "empirical": "Evidence can measure the trade-offs prevention depends on: how much crime longer sentences prevent at today’s levels, for repeat violent offenders and for everyone else; whether time in prison makes people more or less likely to offend again, and under what conditions; whether executions deter beyond life imprisonment; and whether alternatives to prison keep people safe at scale and for serious violence.",
+   "values": "No data can say how many years a robbery deserves, whether the state may ever kill a prisoner, or how much risk to future victims is an acceptable price for releasing someone who may have changed. Each answer also weighs two errors differently: punishing too harshly, which falls on the convicted and sometimes the innocent, and too leniently, which falls on future victims."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Read the Council on Criminal Justice report on long sentences",
+    "description": "The nonpartisan council’s Task Force on Long Sentences, co-chaired by Trey Gowdy and Sally Yates, made 14 recommendations in March 2023, from selective second-look reviews to more services for victims.",
+    "url": "https://counciloncj.org/task-force-on-long-sentences/",
+    "for_position": null,
+    "id": "read-the-council-on-criminal-justice"
+   },
+   {
+    "kind": "donate",
+    "title": "Support families of homicide victims through Parents of Murdered Children",
+    "description": "A national support organization for families and friends of people killed by violence, with local chapters, court accompaniment and help petitioning against the early release of convicted murderers.",
+    "url": "https://pomc.org/",
+    "for_position": "Keep long sentences and the death penalty for serious crime",
+    "id": "support-families-of-homicide-victims-through"
+   },
+   {
+    "kind": "policy",
+    "title": "Back second-look sentencing laws with FAMM",
+    "description": "FAMM, a criminal justice reform group, campaigns for laws letting people serving long sentences ask a court for resentencing after 10 to 15 years, and offers tools to contact lawmakers.",
+    "url": "https://famm.org/our-work/second-look/",
+    "for_position": "Cut imprisonment and invest in rehabilitation",
+    "id": "back-second-look-sentencing-laws-with"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the Model Penal Code’s sentencing framework",
+    "description": "The University of Minnesota’s Robina Institute hosts materials on the American Law Institute’s 2017 sentencing code, which caps severity by proportionality and leaves room for other aims within it.",
+    "url": "https://robinainstitute.umn.edu/model-penal-code",
+    "for_position": "Punish in proportion to what the crime deserves",
+    "id": "read-the-model-penal-code-s"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read Critical Resistance’s Abolitionist Toolkit",
+    "description": "Free political education materials first written in 2004, with fact sheets, sections on confronting harm without prisons, organizing guides and workshop exercises.",
+    "url": "https://criticalresistance.org/resources/the-abolitionist-toolkit/",
+    "for_position": "Abolish prisons and build community safety instead",
+    "id": "read-critical-resistance-s-abolitionist-toolkit"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Find restorative justice work through the Restorative Justice Exchange",
+    "description": "Prison Fellowship International’s hub explains restorative justice and links to programs and practitioners, including the Sycamore Tree Project, in which victims meet groups of prisoners.",
+    "url": "https://restorativejustice.org/what-is-restorative-justice/",
+    "for_position": "Repair harm through restorative justice",
+    "id": "find-restorative-justice-work-through-the"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Compare imprisonment around the world with the World Prison Brief",
+    "description": "A free database from the Institute for Crime & Justice Policy Research at Birkbeck, University of London, with prison populations, imprisonment rates, pretrial shares and trends for more than 200 countries.",
+    "url": "https://www.prisonstudies.org/",
+    "for_position": null,
+    "id": "compare-imprisonment-around-the-world-with"
+   },
+   {
+    "kind": "policy",
+    "title": "Review the Manhattan Institute’s model legislation on repeat offenders",
+    "description": "Model state bills from November 2023 for a points-based three-strikes law, truth-in-sentencing rules requiring a minimum share of a sentence to be served, and standardized crime data reporting.",
+    "url": "https://manhattan.institute/article/new-model-legislation-incapacitating-serious-criminals-and-promoting-data-transparency",
+    "for_position": "Keep long sentences and the death penalty for serious crime",
+    "id": "review-the-manhattan-institute-s-model"
+   },
+   {
+    "kind": "donate",
+    "title": "Support the Innocence Project",
+    "description": "The organization uses DNA testing and legal advocacy to free people who were wrongly convicted, and presses for reforms such as better eyewitness identification and forensic standards.",
+    "url": "https://innocenceproject.org/",
+    "for_position": "Cut imprisonment and invest in rehabilitation",
+    "id": "support-the-innocence-project"
+   },
+   {
+    "kind": "local",
+    "title": "Track a case or register for custody notifications with VINELink",
+    "description": "Look up whether a person is in custody in most US jurisdictions and register for alerts on releases, transfers and parole hearings, a way to follow how sentences are carried out locally.",
+    "url": "https://www.vinelink.com/",
+    "for_position": null,
+    "id": "track-a-case-or-register-for"
+   }
+  ]
+ }
 }

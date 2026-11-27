@@ -1,8 +1,8 @@
 {
  "slug": "ai-copyright-training-data",
  "title": "AI & Copyright",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-11-24T05:31:54+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Copyright and payment for works used to train generative models.",
@@ -16,5 +16,619 @@
   "data-ownership-surveillance-capitalism",
   "epistemic-crisis-deepfakes",
   "ai-future-of-work"
- ]
+ ],
+ "content": {
+  "overview": {
+   "summary": "Generative AI is built by copying books, images, music and news. The central argument is whether that copying needs the makers’ permission, pay, or neither.",
+   "scope_covered": "US fair use lawsuits, text-and-data-mining exceptions and opt-outs in the EU, UK and Japan, licensing deals, and proposals for collective or statutory licenses.",
+   "scope_excluded": "Copyright in AI-generated output, deepfakes and likeness, privacy of personal data in training sets, and AI’s wider effect on jobs.",
+   "why_now": "On September 29, 2026, in the first AI copyright case to reach a US federal appeals court, the Third Circuit held that copying Westlaw headnotes to train a legal research tool was not fair use. The tool did not generate new writing, so the ruling left the question for generative models open.",
+   "why_now_source_label": "Nieman Lab",
+   "why_now_source_url": "https://www.niemanlab.org/2026/09/federal-appeals-court-upholds-thomson-reuters-landmark-ai-copyright-win/"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "US copyright suits against AI companies",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "lawsuits",
+     "series": [
+      {
+       "label": "Feb 14, 2026",
+       "value": "81",
+       "highlight": false
+      },
+      {
+       "label": "Oct 8, 2026",
+       "value": "148",
+       "highlight": false
+      },
+      {
+       "label": "Nov 23, 2026",
+       "value": "169",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "A litigation tracker counted 169 copyright suits against AI companies in US courts on November 23, 2026, roughly double its February 2026 count of 81.",
+     "detail": "The count is kept by Edward Lee, a law professor at Santa Clara University. It counts each filed suit, so cases later consolidated still appear separately: the New York Times, Daily News, Authors Guild and other suits against OpenAI and Microsoft now sit in one multidistrict proceeding in Manhattan. It also includes a few claims beyond classic training disputes, such as removal of copyright information. The tracker’s world map of February 2026 counted 27 further suits outside the United States, among them GEMA’s cases against OpenAI and Suno in Munich and Getty Images’ case against Stability AI in London, and noted only seven court decisions on AI training by then.",
+     "source_label": "ChatGPT Is Eating the World, US map of copyright suits v. AI companies",
+     "source_url": "https://chatgptiseatingtheworld.com/category/map-of-ai-copyright-lawsuits/",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "us-copyright-suits-against-ai-companies"
+    },
+    {
+     "label": "Bartz v. Anthropic class settlement",
+     "viz": "bar",
+     "wide": false,
+     "value": "1.5",
+     "unit": "$ billion",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Anthropic agreed to pay $1.5 billion, about $3,000 for each of 482,460 books, to settle claims that it downloaded pirated copies to build its training library.",
+     "detail": "The settlement does not turn on whether training is fair use. Judge William Alsup had already ruled in June 2025 that training on the books was fair use; what was headed for a class trial over statutory damages was the pirated library. The court gave final approval on July 20, 2026. Its order notes that the per-work payment is four times the $750 statutory minimum, and records that by April 16, 2026 claims had been filed for 440,490 of the listed works, 91.3 percent. Class counsel were awarded $101,561,111 in fees, about 6.8 percent of the fund, well below the 12.5 percent they sought. The release covers past conduct only, not future training or model outputs. Authors’ groups read the settlement as proof that piracy carries a price; AI developers point out that it left the fair use ruling on training untouched.",
+     "source_label": "US District Court, N.D. California, Order on Final Approval, Bartz v. Anthropic",
+     "source_url": "https://www.susmangodfrey.com/wp-content/uploads/2026/07/Order-on-Final-Approval.pdf",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "bartz-v-anthropic-class-settlement"
+    },
+    {
+     "label": "Llama 3 training data",
+     "viz": "bar",
+     "wide": false,
+     "value": "15+ trillion",
+     "unit": "tokens",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Meta trained Llama 3 on more than 15 trillion tokens, all collected from publicly available sources, about seven times the data used for its predecessor.",
+     "detail": "A token is a word or part of a word, and publicly available means reachable on the web, not licensed or out of copyright. The scale is read in opposite directions. Developers argue that no market could clear rights for billions of documents from millions of owners, so a permission rule would end the technology or hand it to the few firms that can afford deals. Rights holders reply that developers chose which sources to take, that the most valuable material comes from a few thousand publishers, labels and libraries who can license it, and that scale is a reason for collective licensing, not for free use.",
+     "source_label": "Meta AI, “Introducing Meta Llama 3”",
+     "source_url": "https://ai.meta.com/blog/meta-llama-3/",
+     "source_published": "2024",
+     "source_accessed": "2026-11-23",
+     "id": "training-data-for-meta-s-llama"
+    },
+    {
+     "label": "Reported value of AI content licensing deals",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "$M a year",
+     "series": [
+      {
+       "label": "Reddit–Google, 2024",
+       "value": "60",
+       "highlight": true
+      },
+      {
+       "label": "Wiley, FY2025",
+       "value": "40",
+       "highlight": false
+      },
+      {
+       "label": "Wiley, FY2024",
+       "value": "23",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The largest annual fee reported for a single training-data deal, Reddit’s with Google, is about $60 million; Wiley’s own results show $40 million from AI licensing in fiscal 2025.",
+     "detail": "The Reddit figure is a Reuters report from an unnamed source, and the Wiley rows are audited company revenue covering several deals. The Wall Street Journal reported OpenAI’s May 2024 deal with News Corp at more than $250 million over five years, in cash and credits for OpenAI technology. Licensing has spread across news (the Associated Press, Axel Springer, the Financial Times and News Corp with OpenAI; publishers with Amazon, Google, Microsoft and Perplexity), music (Universal and Warner with Udio, and Warner with Suno, settling their lawsuits in late 2025), stock images and academic publishing. Most terms are confidential, and most deals bundle training rights with display rights for real-time answers and with attribution, so the price of training alone is rarely visible. Rights holders cite the deals as proof of a working market that unlicensed training harms; developers say they pay for access, freshness and display, not because training requires permission.",
+     "source_label": "Reuters via NBC News (Reddit); Wiley fiscal 2025 results (Wiley)",
+     "source_url": "https://www.nbcnews.com/tech/tech-news/reddit-strikes-60m-deal-allowing-google-train-ai-models-posts-unveils-rcna140168",
+     "source_published": "2024 to 2025",
+     "source_accessed": "2026-11-23",
+     "id": "reported-value-of-ai-content-licensing"
+    },
+    {
+     "label": "UK consultation respondents preferring licenses for all training",
+     "viz": "radial",
+     "wide": false,
+     "value": "81",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "81 percent of online respondents to the UK’s 2024–25 consultation preferred requiring licenses for all AI training; 3 percent backed the government’s own opt-out proposal.",
+     "detail": "The consultation drew 11,520 responses, 10,110 through the online form on which the percentages rest and 1,410 by email. Ten percent preferred keeping the current law, and very few chose a broad exception with no opt-out. A consultation is not a poll: respondents choose themselves, and this one ran during a public campaign by the creative industries against the opt-out plan, so the shares measure who engaged, not the views of the population. In its March 18, 2026 report the government nonetheless concluded that a broad exception with an opt-out was no longer its preferred way forward, and said it would gather more evidence before changing the law. The fight had reached Parliament in 2025, when the House of Lords repeatedly amended the Data (Use and Access) Bill to require AI transparency; the compromise was the statutory duty to publish this report and an economic impact assessment.",
+     "source_label": "UK Government, Report on Copyright and Artificial Intelligence",
+     "source_url": "https://www.gov.uk/government/publications/report-and-impact-assessment-on-copyright-and-artificial-intelligence/report-on-copyright-and-artificial-intelligence",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "uk-consultation-respondents-preferring-licenses-for"
+    },
+    {
+     "label": "US statutory damages per infringed work",
+     "viz": "range",
+     "wide": true,
+     "value": "750–30,000",
+     "unit": "$ per work",
+     "series": [],
+     "range_min": "200 innocent",
+     "range_max": "150,000 willful",
+     "note": "US copyright law lets a court award $750 to $30,000 for each infringed work, and up to $150,000 when the infringement is willful, without proof of actual loss.",
+     "detail": "A court may lower the award to $200 a work when the infringer had no reason to believe it was infringing. Because a training set holds millions of works, and a class of owners who registered their copyrights can claim per work without showing what each lost, the remedy sets the stakes of every training case. At the $750 floor, a class the size of the Anthropic one, 482,460 works, carries more than $360 million in minimum exposure; a willful finding raises the ceiling above $72 billion. Defenders of the remedy say it exists because harm from copying is hard to prove. Critics, including AI developers and some copyright scholars, say it was designed for individual infringers and, applied to mass copying, yields damages untethered to any real loss.",
+     "source_label": "17 U.S. Code § 504, via Cornell Legal Information Institute",
+     "source_url": "https://www.law.cornell.edu/uscode/text/17/504",
+     "source_published": "current law",
+     "source_accessed": "2026-11-23",
+     "id": "us-statutory-damages-per-infringed-work"
+    },
+    {
+     "label": "Pirated book copies Anthropic downloaded",
+     "viz": "bar",
+     "wide": false,
+     "value": "7+ million",
+     "unit": "copies",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "A federal judge found that Anthropic downloaded over seven million pirated copies of books from shadow libraries before it began buying and scanning print books.",
+     "detail": "Judge Alsup’s June 2025 order lists 196,640 books from Books3, at least five million from Library Genesis and at least two million from the Pirate Library Mirror, downloaded in 2021 and 2022. Anthropic later spent many millions of dollars buying print books, whose bindings were stripped so the pages could be scanned. The judge held that training on the books, bought or pirated, was fair use, but that downloading pirated copies to keep in a permanent central library was a separate use that was not justified. The order says Anthropic preferred piracy to avoid what its chief executive Dario Amodei called the “legal/practice/business slog” of acquiring books lawfully. To the licensing camp, shadow libraries show what developers chose when lawful sources were slower or costlier.",
+     "source_label": "Bartz v. Anthropic, Order on Fair Use, N.D. California, June 23, 2025",
+     "source_url": "https://www.govinfo.gov/content/pkg/USCOURTS-cand-3_24-cv-05417/pdf/USCOURTS-cand-3_24-cv-05417-0.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "pirated-book-copies-anthropic-downloaded"
+    },
+    {
+     "label": "Creators’ revenue at risk from generative AI by 2028, projected",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Music creators",
+       "value": "24",
+       "highlight": true
+      },
+      {
+       "label": "Audiovisual creators",
+       "value": "21",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "A projection commissioned by CISAC, the world body of authors’ collecting societies, puts 24 percent of music and 21 percent of audiovisual creators’ revenue at risk by 2028 without new rules.",
+     "detail": "The study, by PMP Strategy and published in December 2024, projects a cumulative loss of €22 billion over five years, €10 billion in music and €12 billion in audiovisual, while the market for generative AI music and audiovisual output grows from about €3 billion to €64 billion in 2028. It is a projection built on interviews and market modeling, not a measurement of losses already incurred. It models substitution by AI output, the harm the licensing camp says training enables; developers counter that losses to competition from new works are not a copyright harm at all, a dispute taken up in the questions below.",
+     "source_label": "CISAC and PMP Strategy, global economic study",
+     "source_url": "https://www.cisac.org/Newsroom/news-releases/global-economic-study-shows-human-creators-future-risk-generative-ai",
+     "source_published": "2024",
+     "source_accessed": "2026-11-23",
+     "id": "creators-revenue-at-risk-from-generative"
+    },
+    {
+     "label": "Share of AI crawling done to collect training data",
+     "viz": "radial",
+     "wide": false,
+     "value": "79",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "79 percent of AI crawler activity on Cloudflare’s network in July 2025 collected content for model training, up from 72 percent a year earlier; 17 percent was for search.",
+     "detail": "Cloudflare, which handles a large share of global web traffic, classifies crawlers by declared purpose and compares how often each AI platform crawls a site with how often it sends a visitor back. In July 2025 it measured Anthropic at about 38,066 pages crawled per referral, down from about 286,930 in January after Claude gained web search with clickable citations, OpenAI at about 1,091 and Perplexity at about 195. Google’s referrals to news sites in April 2025 were 15 percent below January. Publishers read the numbers as evidence that AI systems take value without returning traffic; the ratios vary widely by period and method, and later secondary reports differ, so they are best read as orders of magnitude.",
+     "source_label": "Cloudflare, “The crawl-to-click gap”",
+     "source_url": "https://blog.cloudflare.com/crawlers-click-ai-bots-training/",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "share-of-ai-crawling-done-to"
+    },
+    {
+     "label": "UK translators and illustrators reporting losses to AI",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Translator income down",
+       "value": "43",
+       "highlight": false
+      },
+      {
+       "label": "Illustrator income down",
+       "value": "37",
+       "highlight": false
+      },
+      {
+       "label": "Translator lost work",
+       "value": "36",
+       "highlight": true
+      },
+      {
+       "label": "Illustrator lost work",
+       "value": "26",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a self-selected 2024 Society of Authors survey, 36 percent of translators and 26 percent of illustrators who responded said they had already lost work to generative AI.",
+     "detail": "The Society of Authors, the UK trade union for writers, illustrators and translators, surveyed its roughly 12,500 members and other authors in January 2024 and received 787 responses, so the results are self-reported by those who chose to answer rather than a random sample. Asked about income, 43 percent of translators and 37 percent of illustrators said theirs had decreased in value. Lost work is a labor-market effect of AI outputs; whether copyright on training data is the right tool to address it is itself one of the questions on this page.",
+     "source_label": "Society of Authors AI survey (2024), reported by the European Writers’ Council",
+     "source_url": "https://europeanwriterscouncil.eu/soa-survey-uk-ai-2024/",
+     "source_published": "2024",
+     "source_accessed": "2026-11-23",
+     "id": "uk-translators-and-illustrators-reporting-losses"
+    },
+    {
+     "label": "UK respondents wanting AI developers to disclose training sources",
+     "viz": "radial",
+     "wide": false,
+     "value": "90+",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Over 90 percent of those who answered the relevant UK consultation question agreed that AI developers should disclose the sources of their training material.",
+     "detail": "Transparency draws support well beyond the licensing camp, because rights holders cannot enforce any rule, whether a license, an opt-out or a levy, without knowing what was used. The EU’s AI Act already requires general-purpose model providers to publish a sufficiently detailed summary of their training content on a Commission template, a duty that has applied to new models since August 2, 2025 (Regulation (EU) 2024/1689, Article 53). AI developers generally accept summaries but resist work-by-work disclosure, citing trade secrets and the impracticality of listing billions of documents.",
+     "source_label": "UK Government, Report on Copyright and Artificial Intelligence",
+     "source_url": "https://www.gov.uk/government/publications/report-and-impact-assessment-on-copyright-and-artificial-intelligence/report-on-copyright-and-artificial-intelligence",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "uk-respondents-wanting-ai-developers-to"
+    },
+    {
+     "label": "European Parliament vote on copyright and generative AI",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "votes",
+     "series": [
+      {
+       "label": "For",
+       "value": "460",
+       "highlight": true
+      },
+      {
+       "label": "Abstained",
+       "value": "88",
+       "highlight": false
+      },
+      {
+       "label": "Against",
+       "value": "71",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "On March 10, 2026 the European Parliament voted 460 to 71, with 88 abstentions, to call for fair pay for creators whose works train generative AI, including for past use.",
+     "detail": "The resolution, drafted by the German MEP Axel Voss, is non-binding: only the European Commission can propose legislation, and it is preparing a review of the 2019 Copyright in the Digital Single Market Directive, whose Article 4 permits text and data mining unless rights holders have reserved their rights in machine-readable form. Parliament asked that providers give an itemized list of the works used in training, with missing records potentially treated as infringement; that the EU Intellectual Property Office could manage an opt-out list; and that EU rules apply to any model on the EU market regardless of where it was trained. It rejected a global license in exchange for a flat-rate payment. Technology groups such as ITIF urged the Commission instead to keep the existing exception as the basis for AI training.",
+     "source_label": "European Parliament press release, “Protecting copyrighted work and the EU’s creative sector in the age of AI”",
+     "source_url": "https://www.europarl.europa.eu/news/en/press-room/20260306IPR37511/protecting-copyrighted-work-and-the-eu-s-creative-sector-in-the-age-of-ai",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "european-parliament-vote-on-copyright-and"
+    },
+    {
+     "label": "Estimated stock of public human-written text",
+     "viz": "bar",
+     "wide": false,
+     "value": "300 trillion",
+     "unit": "tokens",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Epoch AI estimates the stock of public, human-written text usable for training at about 300 trillion tokens, within a 90 percent confidence range of 100 to 1,000 trillion.",
+     "detail": "The estimate counts text of sufficient quality and allows for training on the same data more than once. Epoch projected in 2024 that, at the growth rates then seen, frontier training runs could use up the stock between 2026 and 2032, though it noted that this need not halt progress, since developers can turn to synthetic data, private data, images and video. For the copyright debate the estimate cuts two ways: it suggests human-made work is becoming scarce and so more valuable to license, and it gives developers a reason to argue that the next gains will come from sources other than copyrighted text.",
+     "source_label": "Villalobos et al., Epoch AI, “Will we run out of data?”",
+     "source_url": "https://epoch.ai/publications/will-we-run-out-of-data-limits-of-llm-scaling-based-on-human-generated-data",
+     "source_published": "2024",
+     "source_accessed": "2026-11-23",
+     "id": "estimated-stock-of-public-human-written"
+    },
+    {
+     "label": "Share of a major AI training corpus closed to crawlers",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Terms of service",
+       "value": "45",
+       "highlight": false
+      },
+      {
+       "label": "Top sources, robots",
+       "value": "28",
+       "highlight": true
+      },
+      {
+       "label": "All text, robots",
+       "value": "5",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In the year to April 2024, websites closed 28 percent or more of the most critical sources in the C4 training corpus to AI crawlers through robots.txt, and 5 percent or more of all its text.",
+     "detail": "The Data Provenance Initiative audited 14,000 web domains behind C4, a widely used training corpus, from April 2023 to April 2024; counting terms of service as well, 45 percent of C4 was restricted. Robots.txt is a voluntary file in which a website asks crawlers not to visit. It was built for search engines, and whether AI crawlers obey it is up to each company. The restrictions were concentrated among news sites, forums and other high-quality sources, and were often inconsistent with the sites’ own terms of service. Rights holders cite the finding as evidence that creators do not consent and that opt-outs cannot reach text already collected; AI developers cite it as evidence that the opt-out tools the EU and others rely on already function.",
+     "source_label": "Longpre et al., “Consent in Crisis,” Data Provenance Initiative (NeurIPS 2024)",
+     "source_url": "https://arxiv.org/abs/2407.14933",
+     "source_published": "2024",
+     "source_accessed": "2026-11-23",
+     "id": "share-of-a-major-ai-training"
+    },
+    {
+     "label": "Signatories of the Statement on AI Training",
+     "viz": "bar",
+     "wide": false,
+     "value": "50,544",
+     "unit": "signatories",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "As of November 23, 2026, 50,544 people had signed a one-sentence statement that unlicensed training on creative works is an unjust threat to creators and must not be permitted.",
+     "detail": "The statement was organized in October 2024 by Ed Newton-Rex, a composer and former Stability AI executive who resigned over the company’s position on fair use and who founded Fairly Trained, which certifies models trained only on licensed or public-domain data. Signatories include authors, actors, musicians and visual artists, among them well-known names in each field. It is a petition, not a sample, and measures the reach of the licensing campaign rather than the distribution of opinion.",
+     "source_label": "Statement on AI Training",
+     "source_url": "https://www.aitrainingstatement.org/",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "signatories-of-the-statement-on-ai"
+    },
+    {
+     "label": "US adults on whether AI may train on the open internet",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Should not be allowed",
+       "value": "44",
+       "highlight": true
+      },
+      {
+       "label": "Not sure",
+       "value": "36",
+       "highlight": false
+      },
+      {
+       "label": "Should be allowed",
+       "value": "20",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a May 2024 YouGov poll, 44 percent of Americans said AI companies should not be allowed to train on the open internet, described as holding much copyrighted material; 20 percent said they should.",
+     "detail": "The poll of 12,876 US adults was fielded on May 2 and 3, 2024. Its question told respondents that the open internet includes large amounts of copyrighted data, which may have shaped answers. Opposition was bipartisan: 43 percent of Democrats and 48 percent of Republicans said such training should not be allowed. In the same poll, 28 percent said AI companies rarely or never have permission from copyright holders, against 22 percent who said they always or usually do, and 40 percent expected creators rather than AI companies to win the lawsuits.",
+     "source_label": "YouGov, “Should consent be required for data used to train AI models?”",
+     "source_url": "https://yougov.com/en-us/articles/49867-americans-consent-be-required-data-used-to-train-ai-models-artificial-intelligence-poll",
+     "source_published": "2024",
+     "source_accessed": "2026-11-23",
+     "id": "us-adults-on-whether-ai-may"
+    },
+    {
+     "label": "Public comments to the US Copyright Office’s AI inquiry",
+     "viz": "bar",
+     "wide": false,
+     "value": "10,000+",
+     "unit": "comments",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The US Copyright Office received over 10,000 public comments on AI and copyright in late 2023, and drew on them for a May 2025 report on AI training.",
+     "detail": "Part 3 of the report, on generative AI training, concluded that some training uses will be fair use and others will not, that training on large, diverse datasets “will often be transformative,” and that using pirated material or producing outputs that compete with the originals weighs against fair use. It treated market dilution, the flooding of a market with AI works that compete with the originals, as a harm courts may weigh, and recommended for the time being letting the licensing market develop without government intervention. The report came out in pre-publication form on May 9, 2025, a day before the White House removed the Register of Copyrights, Shira Perlmutter; as of November 23, 2026 the Office still said a final version would be published later. It has no force of law, and courts have cited it on both sides.",
+     "source_label": "US Copyright Office, Copyright and Artificial Intelligence",
+     "source_url": "https://copyright.gov/ai/",
+     "source_published": "2023 to 2025",
+     "source_accessed": "2026-11-23",
+     "id": "public-comments-to-the-us-copyright"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Is training a model on a work more like learning from it or copying it?",
+    "kind": "value",
+    "why": "Copyright has always let people read, study and imitate, but training makes full digital copies, and the system it builds runs at a scale no person matches. Which analogy governs shapes how courts and lawmakers read existing law.",
+    "detail": "The learning view: training extracts statistical patterns about language, images or sound from many works. The model does not store a library and, in most cases, cannot reproduce what it learned from, which is what human readers, students and artists do, and copyright protects expression, not ideas, facts or style. Judge Alsup wrote in Bartz v. Anthropic that the models trained on works not to replicate or supplant them but to create something different, like “any reader aspiring to be a writer.”\n\nThe copying view: whatever the mechanism, training starts from complete, exact copies, and the human analogy flatters the machine: a person cannot read every book ever written in a month, cannot be duplicated a million times, and does not compete with every author at once. The copying builds a system that turns out the same kind of expressive goods, at a fraction of the cost, for the same buyers. Calling that learning describes the mechanism, not the economic use.",
+    "lean_label_a": "Like learning",
+    "lean_label_b": "Like copying",
+    "id": "is-training-a-model-on-a"
+   },
+   {
+    "text": "Should creators be able to refuse training, or only to be paid for it?",
+    "kind": "value",
+    "why": "Many who agree that creators deserve something split over what. One side holds that the core of copyright is the power to say no; the other that a guaranteed payment serves creators better than a veto most could never enforce.",
+    "detail": "The case for refusal: the right to decide how a work is used is the heart of copyright and of an artist’s control over their own voice. Some creators do not want their work to train systems that will compete with them, imitate their style or serve purposes they object to, and no royalty compensates for that. A compulsory license sets the price by decree rather than negotiation, and such rates, on this view, tend to settle low; when owners can refuse, AI firms must bargain and the price reflects value.\n\nThe case for payment without a veto: a veto means something only to owners large enough to enforce it. For millions of individual writers, photographers and posters, a consent rule produces either no license or one signed by an intermediary on their behalf. A model that leaves out every owner who refuses or cannot be found is weaker and more skewed, while a statutory license or levy pays every creator whose work is used, including those no AI company would ever approach. The split runs through policy itself: the European Parliament in March 2026 asked for both pay and an opt-out and rejected a flat-rate global license, while an Indian government committee in December 2025 proposed a mandatory license with royalties and no opt-out.",
+    "lean_label_a": "Right to refuse",
+    "lean_label_b": "Right to be paid",
+    "id": "should-creators-be-able-to-refuse"
+   },
+   {
+    "text": "Does AI output take away the market for the works it learned from?",
+    "kind": "empirical",
+    "why": "Harm to the market for the original often decides US fair use cases, and European arguments over pay turn on it too. The dispute is whether competition from AI output counts as that harm, and the evidence is early.",
+    "detail": "Those who see substitution point to products competing for the same buyers. A study of an online freelancing platform by Xiang Hui, Oren Reshef and Luofeng Zhou (Organization Science, 2024) found that after ChatGPT’s release, writing-related freelancers saw about 2 percent fewer monthly jobs and 5.2 percent lower monthly earnings. Judge Vince Chhabria wrote in Kadrey v. Meta that this flooding of the market was the authors’ “potentially winning argument,” though they had offered no evidence of it. A separate harm is the lost licensing market itself, which the Third Circuit held unlicensed copying had usurped.\n\nThose who see little substitution answer that most of this is competition from new works, which copyright has never blocked: fair use asks whether a use substitutes for the specific work copied, and a model trained on a novel does not supply that novel to anyone. The freelancer and survey effects measure what AI tools do to labor markets, and would follow just as well from models built solely on licensed material. The licensing-market argument, they add, is circular, since a market for training licenses exists only if the law requires one; Judge Chhabria held that the authors “are not entitled to the market for licensing their works as AI training data.”",
+    "lean_label_a": "Real substitution",
+    "lean_label_b": "Little substitution",
+    "id": "does-ai-output-take-away-the"
+   },
+   {
+    "text": "Can licensing work at the scale models are trained on?",
+    "kind": "empirical",
+    "why": "Frontier models train on billions of documents with millions of owners, many unknown. Licensing advocates point to a fast-growing market of deals; developers say those deals cover a sliver of what a model needs.",
+    "detail": "Those who say it can scale point out that collecting societies have licensed mass uses before: radio, public performance and photocopying all involved millions of works and owners, and were handled with blanket licenses. Most of the value of a training set, on this view, sits in a manageable number of large catalogs. Fairly Trained certifies models built without unlicensed data, showing it can be done.\n\nThose who say it cannot answer that the deals so far cover large owners of premium content and are often about real-time display and access rather than training. The open web, the bulk of any training set, consists of billions of pages by people and small firms who cannot be identified, located or paid economically, and transaction costs would exceed the value of most individual licenses. A model limited to licensable data would be smaller, older and skewed toward the catalogs of a few large rights holders. The US Copyright Office, in its 2025 report, found voluntary licensing feasible in some sectors while acknowledging practical challenges across the full range of works.",
+    "lean_label_a": "It can scale",
+    "lean_label_b": "It cannot scale",
+    "id": "can-licensing-work-at-the-scale"
+   },
+   {
+    "text": "Is a trained model itself a copy of the works it learned from?",
+    "kind": "empirical",
+    "why": "If a model’s weights hold works in recoverable form, every copy of the model is a reproduction, which matters for open-weight releases and for training done abroad. Courts in Munich and London split on it in November 2025.",
+    "detail": "Those who say the model holds copies point to memorization as a measured fact for some works. A study led by A. Feder Cooper and Mark Lemley found that Meta’s Llama 3.1 70B “entirely memorizes some books, like the first Harry Potter book and 1984.” If the information needed to reproduce a work is encoded in the weights, the form of the encoding should not matter, any more than a compressed file escapes copyright because it is not human-readable. The Munich Regional Court applied that reasoning in GEMA v. OpenAI, holding that song lyrics memorized in the model were reproduced in it.\n\nThose who say the model holds patterns answer that its weights are far smaller than its training data and represent statistical relationships, not stored works. The same study found that most models tested did not memorize most books; memorizing a small share of heavily duplicated texts is a defect developers work to reduce, not what the model is for. The English High Court found in Getty Images v. Stability AI that Stable Diffusion’s weights had never contained or stored the images, so the model was not an infringing copy; Getty appealed, and the Court of Appeal heard the case in November 2026. Treating a whole model as a copy because a few works can be extracted would make every model unlawful to distribute over a fraction of its contents.",
+    "lean_label_a": "Holds copies",
+    "lean_label_b": "Holds patterns",
+    "id": "is-a-trained-model-itself-a"
+   },
+   {
+    "text": "Would a licensing requirement entrench the biggest AI companies?",
+    "kind": "empirical",
+    "why": "Both sides claim to defend competition. One says only the richest firms could pay for licenses at scale; the other that free use already favors whoever has the most computing power and distribution.",
+    "detail": "Those who see entrenchment argue that clearing rights is a fixed cost that scales with the data, not with a firm’s revenue. Google, Microsoft, Meta and OpenAI can sign nine-figure deals; a university lab, a startup or an open-weight project cannot. Large firms also own data troves of their own, from user content to search indexes, that would become a moat if public data required licenses. The Justice Department, in its September 2026 filing, and the Electronic Frontier Foundation have both made this argument, and some note that the largest AI companies have been among the first to sign licensing deals.\n\nThose who see a leveler answer that training costs are dominated by computing, which already concentrates the industry, and that paying creators would be a modest addition for frontier firms valued in the hundreds of billions of dollars. A clear licensing system, especially a collective or statutory one with set rates, would let small developers buy access on the same terms as large ones, while today only the largest can afford the litigation risk of unlicensed training. Free use, on this view, protects not startups but whoever can scrape fastest, at the expense of millions of creators who are the smallest players of all.",
+    "lean_label_a": "Favors incumbents",
+    "lean_label_b": "Levels the field",
+    "id": "would-a-licensing-requirement-entrench-the"
+   },
+   {
+    "text": "Should competition with China shape the rules for AI training?",
+    "kind": "value",
+    "why": "US developers and the US administration argue that limits on training would cede AI leadership to China. Creators and many legislators reply that national competition does not justify narrowing creators’ rights.",
+    "detail": "The case for putting the race first: AI capability depends on data, and the country whose firms can train on the broadest data will lead in a technology with economic and military stakes. President Trump said at the launch of the AI Action Plan in July 2025 that paying for every work used is “not doable” and “China’s not doing it,” and the Justice Department told the court in September 2026 that the benefits of AI training overlap with national security. Japan, under Article 30-4 of its Copyright Act since 2018, and Singapore, under its 2021 computational data analysis exception, already allow training without a general opt-out.\n\nThe case for putting rights first: every industry could claim that competition with China justifies ignoring the property of others. America’s creative industries are themselves a strategic asset and a major export, and weakening their rights to subsidize AI firms trades one industry for another. In July 2025 the Republican senator Josh Hawley joined the Democrat Richard Blumenthal to propose requiring express consent for training on copyrighted works, a sign the argument has not settled the question even within the President’s party. And the evidence that licensing would cripple US developers is, on this view, thin: they are among the most valuable companies in history and already pay for data when courts or deals require it.",
+    "lean_label_a": "Race comes first",
+    "lean_label_b": "Rights come first",
+    "id": "should-competition-with-china-shape-the"
+   },
+   {
+    "text": "Does licensing money reach the people who made the works?",
+    "kind": "empirical",
+    "why": "Most deals are signed by publishers, labels, platforms and image libraries, not by individual writers, musicians and photographers. Whether licensing pays creators or companies depends on contracts, many signed before AI.",
+    "detail": "Those who say it reaches creators point to collective licensing’s long record: performing rights organizations and reproduction rights societies distribute money to millions of members. In the Anthropic settlement the default split for trade and university press books is half to the author and half to the publisher, and authors who hold their own rights receive the whole award, according to the Authors Guild. Guilds and unions can bargain for creators’ shares, as the Writers Guild and SAG-AFTRA did for AI terms in 2023. Without a licensing requirement, creators get nothing at all.\n\nThose who say companies capture it note that the largest deals so far have gone to platforms and publishers: Reddit was paid for posts its users wrote, and academic authors told The Bookseller that Taylor & Francis licensed their research to Microsoft for AI in 2024 without consulting them. Individual creators have little leverage over how a publisher or label divides AI revenue, and statutory schemes can be eaten by administration costs or distributed by formulas that favor the largest catalogs. The real problem, on this view, is creators’ bargaining power, and expanding copyright mostly enlarges what intermediaries can demand of them.",
+    "lean_label_a": "Reaches creators",
+    "lean_label_b": "Goes to companies",
+    "id": "does-licensing-money-reach-the-people"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Require permission and payment for training",
+    "color_key": "green",
+    "steelman": "Training copies whole works to build products that compete with them. Every other input an AI company uses is paid for, and the work that gives models their abilities should be too.",
+    "detail": "Copyright gives authors the exclusive right to copy their work, and building a training set means copying millions of works in full, many of them pirated, to make something to sell. There is no exception for copying a great deal, or for copying in order to build something valuable. The companies doing it are among the most valuable in the world, and when they have wanted content badly enough they have paid for it, which shows licensing is possible. A permission rule does not stop AI; it makes the industry negotiate with the people whose work it depends on, as radio and streaming eventually did, and it keeps alive the incentive to make the human work future models will also need.\n\nCourts have accepted key parts of this. Judge Chhabria wrote in Kadrey v. Meta that “in most cases” training on protected works without permission will likely be illegal, ruling for Meta only because the authors had not built a record of market harm, and the Third Circuit recognized a “rapidly developing” market for licensing training data. Told that licensing cannot work at scale and will entrench incumbents, we answer that music solved the same problem with collective licensing through organizations that represent many owners, backed by transparency, and that a license fee is small next to the computing budgets of frontier labs. We differ on mechanism: the Authors Guild favors voluntary and extended collective licensing, with an antitrust exemption so authors can bargain together, while others want individual licensing only.",
+    "proponents": "Authors Guild; The New York Times; Ed Newton-Rex; News/Media Alliance; Society of Authors; Human Artistry Campaign; GEMA; CISAC; Josh Hawley; Richard Blumenthal",
+    "id": "require-permission-and-payment-for-training"
+   },
+   {
+    "name": "Treat training as lawful use that needs no permission",
+    "color_key": "blue",
+    "steelman": "Copyright protects expression, not the patterns that run through it, and has never required permission to learn. Police outputs that copy; let models learn from what people have made.",
+    "detail": "Training is learning at scale: a model studies billions of examples to extract the statistical structure of language or images and keeps no library of the works. The copies made along the way are intermediate and unseen, the kind courts allowed for Google Books, search engines and software reverse-engineering, because what comes out is new. Where a model does reproduce a protected work, that output can infringe and should be treated that way. A permission rule could never be met for the open web, would shut out all but the richest firms, and would push the frontier of the most important technology of the age to countries that do not ask.\n\nThe two US judges who ruled on training generative models in June 2025 both found it fair use on the records before them, and Judge Alsup called the technology “among the most transformative many of us will see in our lifetimes.” Told that AI output competes with the creators whose work trained it, we answer that competition from new works is not a copyright harm; Judge Alsup compared the authors’ complaint to objecting that teaching schoolchildren to write well would create competitors. Where a cheaper technology hurts creators, the remedies lie in labor, competition and social policy, needed just as much if every model were trained only on licensed data. Some of us, like the Electronic Frontier Foundation and the writer Cory Doctorow, argue from creators’ own interests: a new licensing right would simply be signed away to publishers, labels and platforms. We differ on pirated sources, which developers have defended as fair use and many scholars among us treat as a separate wrong.",
+    "proponents": "OpenAI; Meta; Google; US Department of Justice; Electronic Frontier Foundation; Microsoft; Anthropic; Stability AI; Computer & Communications Industry Association; Chamber of Progress; Donald Trump",
+    "id": "treat-training-as-lawful-use-that"
+   },
+   {
+    "name": "Allow training unless creators opt out",
+    "color_key": "amber",
+    "steelman": "Neither extreme works. Let developers train on the vast body of work whose owners do not object, and give every owner who does a simple, enforceable way to say no.",
+    "detail": "A licensing requirement for every work cannot be met for the open web and would drive AI development elsewhere, while a free-for-all ignores creators who plainly do not want their work used. An exception with an opt-out gives each side what it most needs: developers get legal certainty to train on material whose owners do not object, and owners who care get a way to refuse, which also gives them leverage to license on their own terms. This is not a theory. It is already the law across the European Union, and the AI Act requires general-purpose model providers to respect those reservations wherever they train, without having halted European AI development.\n\nThe signals are spreading: websites have closed many of their most valuable pages to AI crawlers, and Cloudflare reported more than one million customers using its one-click AI-crawler block by July 2025. Told that opt-outs put the burden on creators, most of whom will never use them, and cannot reach works already scraped or copied elsewhere, we answer that standards, registries and defaults can lighten it: one machine-readable signal recognized by every developer, a public registry like the one the European Parliament proposed, and transparency so owners can check compliance. Imperfect uptake still gives far more control than fair use and far more access than a licensing rule the open web cannot satisfy. We differ on whether opting out should open a path to payment, which the European Parliament wants and Google rejects, and on whether the exception should cover all commercial training or only research.",
+    "proponents": "Tony Blair Institute for Global Change; Nasscom; Google; Information Technology and Innovation Foundation",
+    "id": "allow-training-unless-creators-opt-out"
+   },
+   {
+    "name": "Pay creators through a statutory training license",
+    "color_key": "rust",
+    "steelman": "Neither permission nor free use can work at internet scale. Make training lawful for everyone on the same terms, and make sure every creator whose work is used gets paid.",
+    "detail": "Individual licensing will cover only the largest catalogs and leave out the millions of writers, photographers and musicians no AI company will ever approach, while free use pays no one. A statutory license makes training lawful on equal terms, startups included, and makes payment certain for every creator whose work is used, through collecting bodies that also pay non-members. Rates set by a public body and open to review avoid both the cost of millions of negotiations and the hold-up power of a few large owners, and collecting from the revenue of commercial AI systems ties creators’ income to the value their work helped create while sparing research and non-commercial uses.\n\nStatutory and collective licenses have handled mass uses before, from mechanical licenses for recorded music to broadcast retransmission and private-copying levies. In December 2025 the majority of a committee of India’s Department for Promotion of Industry and Internal Trade recommended a mandatory blanket license with a statutory right to remuneration, royalties set as a share of AI revenue by a government-appointed committee, and a central collecting body; it found that an opt-out “leaves small creators largely unprotected.” Told that this takes away creators’ right to say no and lets the state set a price that will settle too low, we answer that most creators never had a practical right to refuse web-scale scraping, and what they lack is payment; rate-setting can be independent and reviewable, as music royalty boards are. We differ on where to collect, on training as India proposes or on output as the University of Amsterdam’s Martin Senftleben proposes, and on whether an opt-out should survive alongside the license.",
+    "proponents": "DPIIT Committee on AI and Copyright (India); India’s Ministry of Electronics and Information Technology; Martin Senftleben",
+    "id": "pay-creators-through-a-statutory-training"
+   }
+  ],
+  "crux": {
+   "lead": "Does training an AI model on a work take something from its creator that should be paid for?",
+   "lead_highlight": "take something from its creator",
+   "subtitle": "Those who require licenses say yes: training copies the work to build a product that competes with it. Those who see lawful use say no: the model learns patterns, and new competition takes nothing. Others answer something short of a permission rule, and split over whether it is a right to refuse or a right to be paid.",
+   "empirical": "Evidence can show whether models trained on copyrighted works measurably displace sales, commissions and licensing income for those works, as distinct from what any capable AI would do whatever it learned from; how often models retain and reproduce what they were trained on; and whether licensing can reach the millions of small owners on the open web at a cost small developers can bear.",
+   "values": "No data settles how much weight a creator’s control over a work deserves against the public’s interest in broad access to knowledge and fast-improving AI, whether a machine’s learning should be judged like a person’s, whether competition between nations can justify narrowing creators’ rights, or, if creators are owed something, whether it is the right to refuse or only a share."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Track the AI copyright lawsuits",
+    "description": "A law professor’s regularly updated map and docket summaries of US copyright suits against AI companies, with links to the key rulings and filings.",
+    "url": "https://chatgptiseatingtheworld.com/",
+    "for_position": null,
+    "id": "track-the-ai-copyright-lawsuits"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the Copyright Office’s analysis of AI training",
+    "description": "The US Copyright Office’s AI project page, with its 2025 report on generative AI training, the public comments behind it, and its reports on digital replicas and authorship.",
+    "url": "https://copyright.gov/ai/",
+    "for_position": null,
+    "id": "read-the-copyright-office-s-analysis"
+   },
+   {
+    "kind": "policy",
+    "title": "Add your name to the Statement on AI Training",
+    "description": "A one-sentence public statement opposing the unlicensed use of creative works to train generative AI, open for anyone to sign and backed by many well-known creators.",
+    "url": "https://www.aitrainingstatement.org/",
+    "for_position": "Require permission and payment for training",
+    "id": "add-your-name-to-the-statement"
+   },
+   {
+    "kind": "donate",
+    "title": "Donate to the Electronic Frontier Foundation",
+    "description": "The EFF litigates and lobbies for fair use in AI training, arguing that licensing mandates would entrench the largest technology firms and harm independent creators and researchers.",
+    "url": "https://supporters.eff.org/donate",
+    "for_position": "Treat training as lawful use that needs no permission",
+    "id": "donate-to-the-electronic-frontier-foundation"
+   },
+   {
+    "kind": "local",
+    "title": "Add AI crawlers to your robots.txt",
+    "description": "A community-maintained list of known AI crawlers with ready-made robots.txt and web-server rules, so anyone running a website, on any host, can reserve their content from AI training.",
+    "url": "https://github.com/ai-robots-txt/ai.robots.txt",
+    "for_position": "Allow training unless creators opt out",
+    "id": "add-ai-crawlers-to-your-robots"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read India’s proposal for a mandatory AI license with royalties",
+    "description": "The December 2025 working paper of India’s DPIIT committee, proposing training on all lawfully accessed works in exchange for royalties paid through a central collecting body, with Nasscom’s dissent annexed.",
+    "url": "https://openfuture.eu/wp-content/uploads/2026/02/251208one_nation_one_license_one_payment.pdf",
+    "for_position": "Pay creators through a statutory training license",
+    "id": "read-india-s-proposal-for-a"
+   },
+   {
+    "kind": "policy",
+    "title": "Tell your senators where you stand on S. 2367",
+    "description": "The text of the Hawley–Blumenthal bill, which would let people sue AI companies that train on their copyrighted works or personal data without express prior consent. Readers on either side can write to their senators.",
+    "url": "https://www.congress.gov/119/bills/s2367/BILLS-119s2367is.htm",
+    "for_position": null,
+    "id": "tell-your-senators-where-you-stand"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Join the Authors Guild",
+    "description": "The US writers’ organization that is a lead plaintiff against OpenAI and campaigns for consent, compensation and transparency in AI training, with guidance for authors in the Anthropic settlement.",
+    "url": "https://authorsguild.org/join/",
+    "for_position": "Require permission and payment for training",
+    "id": "join-the-authors-guild"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read Authors Alliance’s brief for fair use in AI training",
+    "description": "Authors Alliance, a nonprofit of authors who want their work widely read and used, explains its amicus brief in the Thomson Reuters v. ROSS appeal arguing that AI training should be fair use.",
+    "url": "https://www.authorsalliance.org/2025/09/30/authors-alliance-files-amicus-brief-in-thomson-reuters-v-ross/",
+    "for_position": "Treat training as lawful use that needs no permission",
+    "id": "read-authors-alliance-s-brief-for"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the UK’s March 2026 report on copyright and AI",
+    "description": "The UK government’s statutory report and economic impact assessment, setting out four policy options, the consultation results and the evidence offered on each side.",
+    "url": "https://www.gov.uk/government/publications/report-and-impact-assessment-on-copyright-and-artificial-intelligence",
+    "for_position": null,
+    "id": "read-the-uk-s-march-2026"
+   }
+  ]
+ },
+ "icon": "copyright",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: A tall stack of hardbound books, dominant at left of center; a medium picture canvas on a small easel leaning against the stack, overlapping its side; a small vinyl record resting at the foot of the stack; a single winding ribbon of loose pages rising from the top of the stack and drifting across the frame to the right, where it feeds into a medium cluster of connected nodes like a neural network; the ground a gentle shallow curve running the whole width behind every element.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #3b7ea1, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: no copyright symbols, no letters or text on spines or pages, no robots, no humanoid figures or faces, no brains, no hands, no padlocks, no chains, no keys, no gavels, no scales of justice, no dollar signs or coins, no pirate flags or skulls, no vacuum or funnel sucking things in, no warning triangles, no streams of 1s and 0s, no lightning bolts, no text or numbers"
 }

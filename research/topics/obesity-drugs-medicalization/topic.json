@@ -1,8 +1,8 @@
 {
  "slug": "obesity-drugs-medicalization",
  "title": "Obesity Drugs",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-11-23T13:12:27+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "GLP-1 drugs and treating obesity as a chronic disease, against diet, environment and the medicalization of weight.",
@@ -16,5 +16,714 @@
   "overdiagnosis-mental-health",
   "drug-pricing-vs-innovation",
   "universal-healthcare"
- ]
+ ],
+ "content": {
+  "overview": {
+   "summary": "GLP-1 drugs produce large weight loss while people take them. The central argument is whether obesity is a disease to medicate, and who pays.",
+   "scope_covered": "How well the GLP-1 drugs work and what stopping them does, whether obesity is a disease and how to define it, who should get the drugs, who pays, and the food-environment and weight-neutral alternatives.",
+   "scope_excluded": "Drug pricing and innovation in general, health insurance in general, aging as a disease, and the drugs’ use for type 2 diabetes except as background.",
+   "why_now": "On July 1, 2026, Medicare began paying for drugs prescribed for weight loss for the first time, through a temporary demonstration, the GLP-1 Bridge, in which eligible enrollees pay $50 a month. The law barring Part D from covering such drugs is unchanged, and the Bridge is set to end December 31, 2027.",
+   "why_now_source_label": "Centers for Medicare & Medicaid Services",
+   "why_now_source_url": "https://www.cms.gov/medicare/coverage/prescription-drug-coverage/medicare-glp-1-bridge"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "US adults with obesity, by measured height and weight",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "2013–14",
+       "value": "37.7",
+       "highlight": false
+      },
+      {
+       "label": "2015–16",
+       "value": "39.6",
+       "highlight": false
+      },
+      {
+       "label": "2017–20",
+       "value": "41.9",
+       "highlight": false
+      },
+      {
+       "label": "2021–23",
+       "value": "40.3",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2021–2023, 40.3 percent of US adults had obesity, a body mass index of 30 or more, by measured height and weight.",
+     "detail": "The National Health and Nutrition Examination Survey measures people rather than asking them, which makes it the reference series for US obesity; the rows are age-adjusted, for adults 20 and older. The dip after 2017–2020 was not statistically significant. Severe obesity, a body mass index of 40 or more, rose significantly over the same decade, from 7.7 to 9.7 percent age-adjusted. Obesity was most common at ages 40 to 59, at 46.4 percent, and slightly more common among women (41.3 percent) than men (39.2 percent). The CDC’s Adult Obesity Facts page puts the share at 30.5 percent in 1999–2000. The survey ended in August 2023, before GLP-1 use rose most steeply, so it cannot show what the drugs have done to the national rate.",
+     "source_label": "CDC National Center for Health Statistics, Data Brief No. 508",
+     "source_url": "https://www.cdc.gov/nchs/products/databriefs/db508.htm",
+     "source_published": "2021–2023",
+     "source_accessed": "2026-11-23",
+     "id": "us-adults-with-obesity-by-measured"
+    },
+    {
+     "label": "US adults currently taking a GLP-1 drug",
+     "viz": "radial",
+     "wide": false,
+     "value": "12",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In late 2025, 12 percent of US adults said they were taking a GLP-1 drug for weight loss, diabetes or another condition, double the share in May 2024.",
+     "detail": "KFF asked whether people were taking a drug such as Ozempic or Wegovy either to lose weight or to treat a chronic condition, so the figure includes people taking it for diabetes; KFF does not report a weight-loss-only share. In all, 18 percent had ever taken one. Current use was highest at ages 50 to 64, at 22 percent, and higher among women (15 percent) than men (9 percent). Among people who had used the drugs, 56 percent said they were difficult to afford, 14 percent had stopped because of cost and 13 percent because of side effects, and 27 percent of insured users paid the full cost themselves. The poll of 1,350 adults was fielded October 27 to November 2, 2025, with a margin of error of plus or minus 3 points.",
+     "source_label": "KFF Health Tracking Poll, November 14, 2025",
+     "source_url": "https://www.kff.org/public-opinion/poll-1-in-8-adults-say-they-are-currently-taking-a-glp-1-drug-for-weight-loss-diabetes-or-another-condition-even-as-half-say-the-drugs-are-difficult-to-afford/",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "us-adults-currently-taking-a-glp"
+    },
+    {
+     "label": "Average weight loss in obesity drug trials",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% of weight",
+     "series": [
+      {
+       "label": "Tirzepatide",
+       "value": "20.2",
+       "highlight": true
+      },
+      {
+       "label": "Semaglutide",
+       "value": "13.7",
+       "highlight": false
+      },
+      {
+       "label": "Placebo (SURMOUNT-1)",
+       "value": "3.1",
+       "highlight": false
+      },
+      {
+       "label": "Placebo (STEP 1)",
+       "value": "2.4",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a 72-week head-to-head trial, tirzepatide users lost 20.2 percent of body weight on average and semaglutide users 13.7 percent; placebo groups in STEP 1 and SURMOUNT-1 lost 2 to 3 percent.",
+     "detail": "All three trials enrolled people with obesity and without diabetes, and every arm included diet and exercise counseling. Averages hide wide variation: in STEP 1, 86.4 percent of people on semaglutide lost at least 5 percent of their weight and 50.5 percent at least 15 percent, against 4.9 percent on placebo; in SURMOUNT-1, 57 percent on the highest tirzepatide dose lost at least 20 percent. The most common side effects in all three were nausea, diarrhea, vomiting and constipation, mostly while doses were being raised. SURMOUNT-5 enrolled 751 people and was funded by Lilly, which makes tirzepatide; STEP 1 was funded by Novo Nordisk, which makes semaglutide. Bariatric surgery, the main alternative for severe obesity, reaches fewer than 1 percent of eligible people, according to a November 2026 JAMA Summit report.",
+     "source_label": "Aronne et al., SURMOUNT-5, New England Journal of Medicine; with STEP 1 (2021) and SURMOUNT-1 (2022)",
+     "source_url": "https://pubmed.ncbi.nlm.nih.gov/40353578/",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "average-weight-loss-in-obesity-drug"
+    },
+    {
+     "label": "Adults without diabetes who stopped a GLP-1 drug within a year",
+     "viz": "radial",
+     "wide": false,
+     "value": "64.8",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Of US adults with overweight or obesity but no type 2 diabetes who started a GLP-1 drug in 2018–2023, 64.8 percent stopped within a year.",
+     "detail": "The study followed 125,474 adults in electronic health records from a group of US health systems (Truveta) who started liraglutide, semaglutide or tirzepatide. Among those with type 2 diabetes, 46.5 percent stopped within a year. Many came back: within a year of stopping, 36.3 percent of those without diabetes restarted, and 47.3 percent of those with it. Greater weight loss was associated with staying on the drug, and moderate or severe gastrointestinal side effects with stopping; among people with diabetes, higher income was also linked to staying on, which the authors said could widen disparities in obesity. The period ends before the cash-price cuts of 2025 and 2026 and before pills were approved, so persistence may now differ.",
+     "source_label": "Rodriguez et al., JAMA Network Open, January 2025",
+     "source_url": "https://pubmed.ncbi.nlm.nih.gov/39888616/",
+     "source_published": "2018–2023",
+     "source_accessed": "2026-11-23",
+     "id": "adults-without-diabetes-who-stopped-a"
+    },
+    {
+     "label": "Weight regained in the year after stopping semaglutide",
+     "viz": "range",
+     "wide": false,
+     "value": "11.6",
+     "unit": "points",
+     "series": [],
+     "range_min": "0",
+     "range_max": "17.3 lost",
+     "note": "A year after stopping semaglutide, trial participants had regained 11.6 of the 17.3 percentage points of body weight they had lost, about two-thirds.",
+     "detail": "In this extension of the STEP 1 trial, 327 participants stopped both the drug and the lifestyle program at week 68 and were followed to week 120, when their net loss was 5.6 percent of starting weight, against 0.1 percent for the placebo group. Most of the improvements in blood pressure, blood sugar and cholesterol seen on treatment moved back toward baseline. A 2026 review in The BMJ by University of Oxford researchers, pooling 37 studies and 9,341 participants, found that people regained an average of 0.4 kilograms a month after stopping weight-loss drugs, faster than after behavioral programs, and projected that heart and metabolic markers return to baseline within 1.4 years.",
+     "source_label": "Wilding et al., STEP 1 trial extension, Diabetes, Obesity and Metabolism",
+     "source_url": "https://pubmed.ncbi.nlm.nih.gov/35441470/",
+     "source_published": "2022",
+     "source_accessed": "2026-11-23",
+     "id": "weight-regained-in-the-year-after"
+    },
+    {
+     "label": "Monthly US price of GLP-1 obesity drugs, by how they are bought",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "$/month",
+     "series": [
+      {
+       "label": "Wegovy, list",
+       "value": "1,349",
+       "highlight": false
+      },
+      {
+       "label": "Zepbound, list",
+       "value": "1,087",
+       "highlight": false
+      },
+      {
+       "label": "Zepbound, cash",
+       "value": "299",
+       "highlight": false
+      },
+      {
+       "label": "Medicare Bridge, net",
+       "value": "245",
+       "highlight": false
+      },
+      {
+       "label": "Wegovy pen, cash",
+       "value": "199",
+       "highlight": true
+      },
+      {
+       "label": "Wegovy pill, cash",
+       "value": "149",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Wegovy lists at $1,349 a month, but TrumpRx shows cash prices from $199 for the pen and $149 for the pill; under the Bridge, Medicare pays a net $245, per KFF.",
+     "detail": "List prices are set by the manufacturer before rebates, and insurers have long paid less. The cash prices followed the November 2025 agreements between the administration and Lilly and Novo Nordisk; they are the lowest listed, usually for starting doses, and higher doses cost more. From 2027, Medicare’s negotiated price for semaglutide under the Inflation Reduction Act is $274 a month, 71 percent below its 2024 list price of $959 (CMS, via Healthcare Dive). Prices abroad are far lower. Generic semaglutide went on sale in India on March 21, 2026, at about 1,290 to 4,200 rupees a month for starting doses against 10,850 for branded Wegovy (ThePrint), and on April 28, 2026 Canada became the first G7 country to approve a generic (Health Canada). Lilly’s 2025 annual report lists the US compound patent on tirzepatide as expiring in 2036. Compounded copies, sold widely during the 2022–2025 shortages, are still marketed; on February 6, 2026 the FDA said it intends to restrict the ingredients used in mass-marketed versions.",
+     "source_label": "TrumpRx.gov price list; KFF on the Medicare GLP-1 Bridge, May 2026",
+     "source_url": "https://trumprx.gov/",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "monthly-us-price-of-glp-1"
+    },
+    {
+     "label": "Heart attacks, strokes and cardiovascular deaths in the SELECT trial",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Semaglutide",
+       "value": "6.5",
+       "highlight": true
+      },
+      {
+       "label": "Placebo",
+       "value": "8.0",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Among 17,604 people with heart disease and overweight or obesity but no diabetes, 6.5 percent on semaglutide and 8.0 percent on placebo had a heart attack, stroke or cardiovascular death.",
+     "detail": "That is a 20 percent lower risk, a hazard ratio of 0.80, over a mean follow-up of 39.8 months. SELECT, funded by Novo Nordisk, was the first trial to show that an obesity drug reduces hard outcomes rather than only weight in people without diabetes, and it later led the FDA to approve Wegovy to reduce cardiovascular risk, which let some Medicare plans cover it before the Bridge. Entry required a body mass index of 27 or more and established cardiovascular disease, so the result applies to a high-risk group, not to everyone with obesity. Side effects led 16.6 percent of the semaglutide group and 8.2 percent of the placebo group to stop the drug permanently.",
+     "source_label": "Lincoff et al., SELECT, New England Journal of Medicine",
+     "source_url": "https://pubmed.ncbi.nlm.nih.gov/37952131/",
+     "source_published": "2023",
+     "source_accessed": "2026-11-23",
+     "id": "heart-attacks-strokes-and-cardiovascular-deaths"
+    },
+    {
+     "label": "Cost per year of healthy life gained, tirzepatide",
+     "viz": "range",
+     "wide": false,
+     "value": "57,779",
+     "unit": "$/QALY",
+     "series": [],
+     "range_min": "0",
+     "range_max": "150,000 upper threshold",
+     "note": "ICER found tirzepatide cost $57,779 and injectable semaglutide $66,355 per quality-adjusted life year gained at 2025 net prices, below the $100,000 to $150,000 thresholds common in the US.",
+     "detail": "A quality-adjusted life year is one year of life in full health, and cost per QALY is the standard yardstick for whether a treatment is worth its price; oral semaglutide came to $75,456 at a placeholder price. ICER, an independent nonprofit whose reports US payers use, assumed estimated net prices of $7,973 a year for tirzepatide and $6,829 for injectable semaglutide. The prices at which the drugs would just meet its thresholds were higher, $11,700 to $16,100 a year for tirzepatide and $9,100 to $12,500 for injectable semaglutide, which is why ICER’s chief medical officer, David Rind, said in its press release that “on average, these drugs are highly cost-effective.” ICER’s 2022 review had reached the opposite finding, that semaglutide exceeded typical thresholds at an estimated net price of $13,618 a year. Whether a treatment is worth its price is a separate question from whether a budget can absorb it.",
+     "source_label": "Institute for Clinical and Economic Review, Treatments for Obesity, Final Evidence Report",
+     "source_url": "https://icer.org/wp-content/uploads/2025/12/ICER_Obesity_Final-Report_For-Publication_121625-1.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "cost-per-year-of-healthy-life"
+    },
+    {
+     "label": "Share of eligible Americans treatable within ICER’s budget threshold",
+     "viz": "radial",
+     "wide": false,
+     "value": "<1",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "At 2025 net prices, fewer than 1 percent of the 92 million Americans eligible for the drugs could be treated over five years within ICER’s threshold of $880 million a year in added spending.",
+     "detail": "ICER’s budget-impact threshold is the added yearly spending on one new treatment that it judges the US health system can absorb without displacing other care or driving up premiums, set to track growth in the economy. Even if the new Medicare price applied to every eligible patient, the share stayed below 1 percent. ICER issued an access and affordability alert for semaglutide and tirzepatide, warning that the added costs “may be difficult for the health care system to absorb over the short term.” The alert does not change ICER’s finding that the drugs are worth their price per year of healthy life; it measures how fast a health system can pay for that much care at once.",
+     "source_label": "Institute for Clinical and Economic Review, Final Evidence Report, Access and Affordability Alert",
+     "source_url": "https://icer.org/wp-content/uploads/2025/12/ICER_Obesity_Final-Report_For-Publication_121625-1.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "share-of-eligible-americans-treatable-within"
+    },
+    {
+     "label": "Federal cost of letting Medicare cover obesity drugs, 2026–2034",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "$ billion",
+     "series": [
+      {
+       "label": "Drug spending",
+       "value": "38",
+       "highlight": false
+      },
+      {
+       "label": "Health savings",
+       "value": "3",
+       "highlight": false
+      },
+      {
+       "label": "Net cost",
+       "value": "35",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "CBO estimated a net federal cost of $35 billion over nine years, with health savings offsetting $3 billion of $38 billion in drug spending; other models range from larger net costs to net savings.",
+     "detail": "CBO modeled an illustrative policy in October 2024, before the November 2025 price agreements lowered what Medicare pays; KFF, in May 2026, cited estimates of $25 billion to $35 billion over 10 years for Part D coverage and about $15 billion for Medicaid. A 2025 JAMA Health Forum analysis by Hwang and colleagues projected $65.9 billion in Medicare drug costs against $18.2 billion in offsets over 10 years, a net increase of $47.7 billion. A 2023 USC Schaeffer Center white paper projected instead that coverage would save Medicare $175 billion to $245 billion in its first 10 years; the center discloses funding from companies with interests in obesity treatment. As of November 2026, CMS had not published the cost of the Bridge.",
+     "source_label": "Committee for a Responsible Federal Budget, summarizing CBO, October 2024",
+     "source_url": "https://www.crfb.org/blogs/cbo-estimates-medicare-coverage-weight-loss-drugs",
+     "source_published": "2024",
+     "source_accessed": "2026-11-23",
+     "id": "federal-cost-of-letting-medicare-cover"
+    },
+    {
+     "label": "US adults with obesity under the old and new definitions",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "BMI 30 or more",
+       "value": "42.9",
+       "highlight": false
+      },
+      {
+       "label": "Lancet definition",
+       "value": "68.6",
+       "highlight": true
+      },
+      {
+       "label": "Clinical obesity",
+       "value": "36.1",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Applying the 2025 Lancet Commission definition to 301,026 US adults raised the share with obesity from 42.9 to 68.6 percent; 36.1 percent met its test for clinical obesity, the disease form.",
+     "detail": "The Lancet Diabetes & Endocrinology Commission, published in January 2025 and endorsed by 76 organizations, proposed confirming obesity with a direct measure of body fat or with waist measurements rather than body mass index alone. It divides obesity into clinical obesity, a chronic disease with ongoing organ dysfunction or limits on daily living, and preclinical obesity, excess fat with normal organ function, which calls for counseling, monitoring and risk reduction. In this analysis of the NIH All of Us cohort, the whole rise came from people with a normal-range body mass index but high waist measurements. Clinical obesity carried an adjusted hazard ratio of 6.11 for new diabetes and 5.88 for cardiovascular events; preclinical obesity carried smaller but still raised risks. The framework labels more people as having obesity, but fewer as having a disease that warrants treatment.",
+     "source_label": "Fourman et al., JAMA Network Open, October 2025",
+     "source_url": "https://pubmed.ncbi.nlm.nih.gov/41091468/",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "us-adults-with-obesity-under-the"
+    },
+    {
+     "label": "Share of US calories from ultra-processed foods",
+     "viz": "radial",
+     "wide": false,
+     "value": "55.0",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Americans ages 1 and older got 55.0 percent of their calories from ultra-processed foods in 2021–2023; children and teens got 61.9 percent.",
+     "detail": "Ultra-processed foods are industrial formulations such as soft drinks, packaged snacks, sweetened cereals and reconstituted meat products. Adults got 53.0 percent of their calories from them, down from 55.8 percent in 2013–2014 while obesity did not fall; the share was 50.4 percent in families at or above 350 percent of the poverty level and 54.7 percent below 130 percent. The best-known controlled evidence that such foods cause overeating is a 2019 NIH inpatient trial in which 20 adults ate about 508 more calories a day on an ultra-processed diet than on an unprocessed one matched for nutrients, gaining 0.9 kilograms in two weeks (Hall et al., Cell Metabolism). In England, obesity among girls ages 10 to 11 was 1.6 percentage points below the prior trend after the soft drinks industry levy, with no change for boys (Rogers et al., PLOS Medicine, 2023).",
+     "source_label": "CDC National Center for Health Statistics, Data Brief No. 536, August 2025",
+     "source_url": "https://www.cdc.gov/nchs/products/databriefs/db536.htm",
+     "source_published": "2021–2023",
+     "source_accessed": "2026-11-23",
+     "id": "share-of-us-calories-from-ultra"
+    },
+    {
+     "label": "Self-reported obesity and GLP-1 use for weight loss, Gallup",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Obesity, 2022",
+       "value": "39.9",
+       "highlight": false
+      },
+      {
+       "label": "Obesity, 2025",
+       "value": "37.0",
+       "highlight": true
+      },
+      {
+       "label": "GLP-1 use, 2024",
+       "value": "5.8",
+       "highlight": false
+      },
+      {
+       "label": "GLP-1 use, 2025",
+       "value": "12.4",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In Gallup’s survey, self-reported obesity fell from 39.9 percent of adults in 2022 to 37.0 percent in 2025, as the share taking GLP-1 drugs for weight loss rose from 5.8 to 12.4 percent.",
+     "detail": "About 17,000 web-panel respondents reported their own height and weight in 2025, which typically understates obesity compared with measured data, but the method has been consistent over time. The largest drops came among adults ages 40 to 64, the groups with the highest GLP-1 use, which suggests but does not prove that the drugs drove the decline. Diabetes reached a record 13.8 percent in the same survey. The 2024 GLP-1 figure is from February of that year. The 2025 weight-loss figure sits slightly above KFF’s 12 percent for any use because the two surveys ask and sample differently, Gallup about weight loss in a web panel of about 17,000 and KFF about any use in a phone and online poll of 1,350; the gap is within KFF’s margin of error. As of November 2026, measured national data covering 2024 and later had not been published.",
+     "source_label": "Gallup, “U.S. Obesity Rate Declining,” October 28, 2025",
+     "source_url": "https://news.gallup.com/poll/696599/obesity-rate-declining.aspx",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "self-reported-obesity-and-glp-1"
+    },
+    {
+     "label": "Share of the world’s adults with obesity",
+     "viz": "radial",
+     "wide": false,
+     "value": "16",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "WHO counts about 940 million adults with obesity in 2024, 16 percent of the world’s adults, and adult obesity has more than doubled since 1990.",
+     "detail": "Counting overweight as well, WHO puts the total at 2.6 billion adults, 45 percent, up from 25 percent in 1990, along with 400 million children and adolescents ages 5 to 19, including 170 million with obesity, against 31 million in 1990. Without action, WHO projects the global economic cost of overweight and obesity at $3 trillion a year by 2030. In its first guideline on the drugs, issued December 1, 2025, WHO said obesity was associated with 3.7 million deaths in 2024 and that GLP-1 therapies “are projected to reach fewer than 10% of those who could benefit by 2030.”",
+     "source_label": "World Health Organization, Obesity and overweight fact sheet",
+     "source_url": "https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight",
+     "source_published": "2024",
+     "source_accessed": "2026-11-23",
+     "id": "share-of-the-world-s-adults"
+    },
+    {
+     "label": "Large employers covering GLP-1 drugs for weight loss, by firm size",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "200–999 workers",
+       "value": "16",
+       "highlight": false
+      },
+      {
+       "label": "1,000–4,999",
+       "value": "29",
+       "highlight": false
+      },
+      {
+       "label": "5,000 or more",
+       "value": "33",
+       "highlight": false
+      },
+      {
+       "label": "All 200 or more",
+       "value": "18",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2026, 18 percent of US firms with 200 or more workers that offer health benefits covered GLP-1 drugs for weight loss, against 19 percent in 2025 and 18 percent in 2024.",
+     "detail": "Among firms with 5,000 or more workers, coverage was down from 43 percent in 2025, a change KFF does not count as statistically significant. Of firms that cover the drugs, 40 percent require workers to see a dietitian, case manager or therapist or to join a lifestyle program first, and 29 percent say coverage has had a significant effect on their prescription drug spending, 61 percent among the largest firms. Of large firms without coverage, 12 percent dropped it in the past 12 months and 79 percent said they were not likely to add it within a year. KFF notes that lower direct-to-consumer prices let employers fund access through account contributions instead. In public programs, KFF counted 13 state Medicaid programs covering GLP-1s for obesity in January 2026, after California, New Hampshire, Pennsylvania and South Carolina dropped coverage.",
+     "source_label": "KFF, 2026 Employer Health Benefits Survey, October 2026",
+     "source_url": "https://www.kff.org/health-costs/2026-employer-health-benefits-survey/",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "large-employers-covering-glp-1-drugs"
+    },
+    {
+     "label": "Adults who say Medicare should cover GLP-1 drugs for weight loss",
+     "viz": "radial",
+     "wide": false,
+     "value": "61",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2024, 61 percent of US adults said Medicare should pay for GLP-1 drugs prescribed for weight loss, with majorities of both Democrats and Republicans.",
+     "detail": "Support was 66 percent among Democrats, 55 percent among Republicans and 71 percent among adults who had taken a GLP-1. The poll asked, “Do you think Medicare should cover the cost of these drugs when prescribed for weight loss for people who are overweight?” KFF then read respondents arguments for and against, including that coverage “could increase premiums paid by people with Medicare,” and support stayed at about six in ten. The poll was fielded April 23 to May 1, 2024, before the price cuts and the Bridge; no newer KFF reading on the question was found as of November 2026.",
+     "source_label": "KFF Health Tracking Poll, May 2024",
+     "source_url": "https://www.kff.org/health-costs/kff-health-tracking-poll-may-2024-the-publics-use-and-views-of-glp-1-drugs/",
+     "source_published": "2024",
+     "source_accessed": "2026-11-23",
+     "id": "adults-who-say-medicare-should-cover"
+    },
+    {
+     "label": "Medicare enrollees eligible for and reached by the GLP-1 Bridge",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "million",
+     "series": [
+      {
+       "label": "Met the rules, 2023",
+       "value": "3.8",
+       "highlight": false
+      },
+      {
+       "label": "Signed up, Aug 2026",
+       "value": "0.6",
+       "highlight": false
+      },
+      {
+       "label": "Had access, Nov 2026",
+       "value": "1.0",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "KFF estimates 3.8 million Part D enrollees met the Bridge’s rules in 2023; by November 6, 2026, more than 1 million beneficiaries had gained access, per the USC Schaeffer Center.",
+     "detail": "Enrollees qualify with a body mass index of 35 or more; 30 or more with heart failure with preserved ejection fraction, uncontrolled high blood pressure or chronic kidney disease; or 27 or more with prediabetes, a prior heart attack or stroke, or peripheral artery disease. People diagnosed with type 2 diabetes, sleep apnea or a serious liver disease, MASH, are excluded because Part D already covers the drugs for those conditions. KFF estimated 9.7 million enrollees met the clinical criteria, but only 39 percent of them met all the rules. The $50 copay does not count toward the out-of-pocket cap, and low-income subsidies do not apply to it. CMS Administrator Mehmet Oz said about 600,000 people had signed up by the end of August 2026 (TechTarget). KFF notes that without further action, enrollees could lose the coverage when the Bridge ends.",
+     "source_label": "KFF, Medicare GLP-1 Bridge eligibility, June 2026; USC Schaeffer Center, November 2026",
+     "source_url": "https://www.kff.org/medicare/nearly-four-million-medicare-beneficiaries-met-the-eligibility-criteria-in-2023-for-the-medicare-glp-1-bridge/",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "medicare-enrollees-eligible-for-and-reached"
+    },
+    {
+     "label": "Yearly US medical spending attributable to obesity",
+     "viz": "bar",
+     "wide": false,
+     "value": "173",
+     "unit": "$ billion",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Obesity accounts for nearly $173 billion a year in US medical spending, in 2019 dollars, or $1,861 more per adult with obesity than per adult at a healthy weight.",
+     "detail": "The extra cost per adult rises to $3,097 a year with severe obesity, also in 2019 dollars. The estimate comes from Ward and colleagues, published in PLOS One in 2021, and covers medical costs only: it leaves out lost work, disability and early death, which other estimates add. It is the baseline usually set against the cost of treating obesity, and both sides of the coverage argument cite it, one as the price of not treating and the other as a bill the drugs would rival.",
+     "source_label": "CDC, Adult Obesity Facts, citing Ward et al., PLOS One, 2021",
+     "source_url": "https://www.cdc.gov/obesity/adult-obesity-facts/index.html",
+     "source_published": "2019",
+     "source_accessed": "2026-11-23",
+     "id": "yearly-us-medical-spending-attributable-to"
+    },
+    {
+     "label": "Share of Eli Lilly’s 2025 revenue from tirzepatide",
+     "viz": "radial",
+     "wide": false,
+     "value": "56",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Eli Lilly earned $36.5 billion from tirzepatide, sold as Mounjaro and Zepbound, in 2025, 56 percent of the company’s total revenue.",
+     "detail": "Mounjaro, approved for type 2 diabetes, brought in $23.0 billion, up from $11.5 billion in 2024; Zepbound, approved for obesity and sleep apnea, brought in $13.5 billion, up from $4.9 billion. Lilly’s total revenue was $65.2 billion. Its annual report says Zepbound’s US growth was partly offset by lower realized prices. Supporters of broad coverage read revenue on this scale as a sign of unmet demand and of investment that is producing pills and newer drugs; critics of medicalization see the commercial force behind redefining a common body type as a lifelong disease, and point to industry funding of patient and professional groups that lobby for coverage.",
+     "source_label": "Eli Lilly and Company, Form 10-K for fiscal year 2025",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/59478/000005947826000013/lly-20251231.htm",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "share-of-eli-lilly-s-2025"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Is obesity a disease in itself, or a risk that becomes one only when it harms the body?",
+    "kind": "value",
+    "why": "Calling something a disease is partly a definition rather than a finding, and the definition decides who is treated and who pays. The 2025 Lancet Commission split obesity into clinical and preclinical forms, and obesity-medicine groups objected.",
+    "detail": "Those who hold that obesity is a disease in its own right, including the Obesity Medicine Association and the European Association for the Study of Obesity, see excess fat as a chronic, progressive, relapsing condition in which the body defends a higher weight through appetite and metabolism. Waiting for organ damage before treating it, they argue, is like waiting for a heart attack before treating high cholesterol, and the label lifts the moral blame that has kept people from care and insurers from paying. The association warned that the Lancet framework “risks redefining obesity from a disease to merely a risk factor.”\n\nThose who draw the line at illness, including the commission and the Royal College of Physicians, argue that body mass index measures neither fat nor health, so a cutoff of 30 overdiagnoses muscular or metabolically healthy people and misses dangerous fat at lower weights. The dispute is old: the American Medical Association voted in 2013 to call obesity a disease, over a report from its own science council that did not support the label and warned it “may worsen outcomes for others.” Weight-neutral advocates go further and reject the disease label for body size altogether.",
+    "lean_label_a": "A disease in itself",
+    "lean_label_b": "Only when it harms",
+    "id": "is-obesity-a-disease-in-itself"
+   },
+   {
+    "text": "Should public insurance pay for obesity drugs for everyone who qualifies?",
+    "kind": "value",
+    "why": "The drugs produce weight loss while people take them; the fight is over a bill that could strain public budgets, because so many people qualify. Medicare is barred by law from covering weight-loss drugs, and the Bridge is a temporary workaround.",
+    "detail": "Those who favor broad coverage, including the Obesity Action Coalition and physicians such as Fatima Cody Stanford, argue that no other chronic disease is excluded from Medicare by law, that the exclusion dates from an era when weight-loss drugs were seen as cosmetic, and that leaving access to those who can pay cash turns a treatment for a disease concentrated among poorer people into a benefit for the better-off. Medicare pays for many treatments that improve health while raising total spending, they note; it does not ask dialysis or cancer drugs to pay for themselves, and falling prices make coverage cheaper every year.\n\nThose who favor limits, including the Cato Institute and health insurers, argue that cost-effective is not the same as affordable: with so many people eligible, even moderately priced drugs add up to a large bill, and because most people stop within a year and regain weight, much of the spending buys temporary results. Coverage should go first to those at highest risk, such as people with heart disease, while prices fall further. Some in this camp would rather remove barriers, for instance by letting people buy the drugs without a prescription, than subsidize them.",
+    "lean_label_a": "Cover all eligible",
+    "lean_label_b": "Limit coverage",
+    "id": "should-public-insurance-pay-for-obesity"
+   },
+   {
+    "text": "Can changing the food environment reverse obesity?",
+    "kind": "empirical",
+    "why": "Obesity rose across rich countries from about 1980, too fast for genes to explain, which points to the environment. But public-health campaigns have not reversed it anywhere, and the best-studied policies have modest effects.",
+    "detail": "Those who put the food environment first, including food-policy researchers and England’s chief medical officer, Chris Whitty, argue that what changed most since 1980 is food: cheap, heavily marketed ultra-processed products that now supply most of Americans’ calories and that led people in a controlled NIH trial to overeat. Whitty has argued that countries that regulate food marketing to children and keep strong food cultures, such as France, have held obesity fairly stable. Taxes, labels, school standards and marketing limits reach everyone at low cost, including the children who would otherwise become patients.\n\nThose who doubt that policy can reverse obesity, including many obesity-medicine physicians, argue that once obesity develops the body defends the higher weight through hormones and appetite, which is why diets fail most people over time and why drugs that act on those hormones work where willpower did not. Population policies help at the margins, as the English sugar levy’s small effect on girls and none on boys shows, but no country has brought adult obesity down by policy alone, and people who already have obesity cannot wait for a better food system. Prevention and treatment, they say, are not rivals.",
+    "lean_label_a": "Policy can reverse",
+    "lean_label_b": "Biology outweighs",
+    "id": "is-rising-obesity-mainly-caused-by"
+   },
+   {
+    "text": "Can people safely take these drugs for decades?",
+    "kind": "empirical",
+    "why": "Because weight returns when the drugs stop, most people who benefit would need them indefinitely. Yet obesity trials of the newer drugs have lasted a few years at most, and rare harms surface only across many users over long periods.",
+    "detail": "Those who expect long-term safety point out that GLP-1 drugs have been used for type 2 diabetes for about two decades, with liraglutide and semaglutide taken by millions of patients; that the largest heart-outcomes trial in obesity followed people for more than three years with fewer heart attacks and strokes; and that regulators examining suspected harms have mostly found them rare. In June 2025 the European Medicines Agency concluded that NAION, a sudden optic nerve condition, is a very rare side effect of semaglutide. Untreated obesity, they argue, carries known, large risks that should be weighed against uncertain, small ones.\n\nThose who worry about long-term use argue that taking a drug that reshapes appetite and metabolism for 30 or 40 years, in some cases from adolescence, is a different exposure from the diabetes experience. The drugs are hard to tolerate even under close supervision: in the same heart-outcomes trial, 16.6 percent of people on semaglutide quit it for good because of side effects, twice the 8.2 percent on placebo. Weight lost on the drugs includes lean tissue as well as fat, a concern for older adults. And today’s users, including people on compounded or unapproved versions, are a broader and less closely monitored group than trial participants.",
+    "lean_label_a": "Safe for decades",
+    "lean_label_b": "Too soon to know",
+    "id": "can-people-safely-take-these-drugs"
+   },
+   {
+    "text": "Will the drugs pay for themselves through lower spending on heart disease, diabetes and other illness?",
+    "kind": "empirical",
+    "why": "Savings depend on how long people stay on the drugs, how much illness they prevent and how fast prices fall, and the illnesses that would generate savings take years to appear. Published models disagree by hundreds of billions of dollars.",
+    "detail": "Those who expect large savings, such as the USC Schaeffer Center, argue that obesity drives diabetes, heart disease, kidney disease, sleep apnea, osteoarthritis and some cancers, so treating it early prevents expensive illness later; that drug prices fall sharply over time as generics arrive; and that the drugs keep showing benefits in new conditions. Counting only near-term budget effects, they argue, ignores gains to people’s working lives and to the health system as a whole.\n\nThose who expect a net cost, including the Congressional Budget Office and the authors of a 2025 JAMA Health Forum model, find that savings from averted illness offset only a small share of drug costs within a decade. Savings build slowly while drug costs start at once, and if people stop and regain the weight the savings never arrive. A treatment can be worth paying for without saving money, they note, but projected savings should not be the reason to cover it.",
+    "lean_label_a": "Largely pay back",
+    "lean_label_b": "Stay a net cost",
+    "id": "will-the-drugs-pay-for-themselves"
+   },
+   {
+    "text": "Should adolescents with obesity be prescribed these drugs?",
+    "kind": "value",
+    "why": "The American Academy of Pediatrics’ 2023 guideline says pediatricians should offer medication to adolescents 12 and older with obesity, and Wegovy is approved from age 12. But use would likely last decades, and long-term data in growing children are limited.",
+    "detail": "The CDC counts 19.7 percent of US children and teens ages 2 to 19 with obesity in 2017–March 2020, about 14.7 million. Those who favor treatment, including the AAP and pediatric obesity specialists such as Fatima Cody Stanford, who treats patients as young as 12, argue that adolescent obesity usually persists into adulthood and already causes diabetes, liver disease and depression in teenagers; that watchful waiting lets the disease progress; that adolescents in trials lose weight as adults do; and that withholding an effective treatment from children while adults receive it is unfair to those who most need it.\n\nThose who favor caution, including the authors of the 2025 MAHA report, eating-disorder specialists and weight-neutral advocates, argue that children’s bodies and relationships with food are still developing, that there are no data on decades of use starting at 12, that a drug begun in adolescence may be lifelong, and that appetite suppressants risk disordered eating and teach teenagers their bodies are a disease. For children above all, they say, the answer is the food and activity environment around them.",
+    "lean_label_a": "Treat early",
+    "lean_label_b": "Wait for evidence",
+    "id": "should-adolescents-with-obesity-be-prescribed"
+   },
+   {
+    "text": "Does treating obesity as a disease reduce weight stigma or deepen it?",
+    "kind": "empirical",
+    "why": "Both sides oppose weight stigma. They disagree about whether the medical frame relieves it or feeds it, and the evidence on how labels change attitudes is thin and mixed.",
+    "detail": "Those who favor the disease frame argue that seeing obesity as biology rather than laziness is the strongest remedy for blame, and that the drugs’ success shows weight is not simply a matter of willpower; Fatima Cody Stanford describes the disease process as going beyond willpower and self-control. Patients, they say, describe relief at learning their struggle had a biological cause, and stigma has been one reason insurers excluded treatment, so the disease label is a route to fair coverage.\n\nThose who reject the frame, including the Association for Size Diversity and Health and the writer Virginia Sole-Smith, argue that calling a body type a disease tells fat people their bodies are wrong and need fixing; that a push to medicate weight away is the old obsession with thinness in medical form; and that people who cannot or will not take the drugs will be blamed even more for not using the cure. Health care, they argue, should not depend on weight loss at all.",
+    "lean_label_a": "Reduces stigma",
+    "lean_label_b": "Deepens stigma",
+    "id": "does-treating-obesity-as-a-disease"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Treat obesity as a chronic disease and cover the drugs",
+    "color_key": "green",
+    "steelman": "Obesity is a chronic disease the body defends, not a failure of will. We finally have drugs that treat it, and they should be covered like any other treatment.",
+    "detail": "The body defends a higher weight through hormones that drive hunger and slow metabolism, which is why diet and exercise alone fail most people over the long run and why medicines aimed at those hormones succeed. For the first time there are treatments that take off up to a fifth of body weight on average and cut heart attacks and strokes in people with heart disease. Yet Medicare is barred by law from covering them, most employers do not, and the coverage that exists is pulled back whenever budgets tighten, so people with the most severe obesity, who are disproportionately poorer and from minority groups, are the least likely to be treated. As the physician Fatima Cody Stanford puts it, “coverage should look like it does for type 2 diabetes.” That means passing the Treat and Reduce Obesity Act, making the Bridge permanent, dropping step-therapy and prior-authorization hurdles, and treating early rather than waiting for complications.\n\nThe cost objection rests on old prices. Cash prices have fallen from more than $1,000 a month to a few hundred, generics are arriving abroad, and Medicare already covers costly chronic treatments for heart disease, diabetes and cancer without demanding that they save money. Obesity already costs the health system dearly; the choice is between paying to treat the disease and paying for its complications. Weight returning when people stop is what any chronic condition does when treatment stops, as blood pressure rises when people stop their pills. Prevention matters, but no one tells a hypertensive patient to wait for a better food system. We divide on the Lancet Commission: the Obesity Medicine Association opposed its split between clinical and preclinical obesity, while other obesity physicians, Stanford among them, helped write it.",
+    "proponents": "Obesity Medicine Association; Obesity Action Coalition; Fatima Cody Stanford; European Association for the Study of Obesity; Endocrine Society",
+    "id": "treat-obesity-as-a-chronic-disease"
+   },
+   {
+    "name": "Fix the food environment before medicating a population",
+    "color_key": "blue",
+    "steelman": "Human biology did not change around 1980; the food did. Drugs treat the symptom only while people take them, but policy can reach every child before obesity starts.",
+    "detail": "Ultra-processed products engineered to be eaten quickly and in excess now supply more than half of Americans’ calories and even more of children’s, and they are marketed hardest to children and the poor. The drugs help individuals, and for people with severe disease they can be life-changing, but they put a large share of the population on lifelong medication paid for by public programs while the companies that shaped the food environment carry on. As Marion Nestle writes, “GLP-1 drugs may help, but they cannot address dysfunctional food systems.” The Harvard evolutionary biologist Daniel Lieberman frames it as a mismatch between our bodies and our surroundings: treat only the symptoms and the problem keeps coming back, and “the one thing that’s changed the most, of course, is our food.”\n\nThe answer is population policy: taxes on sugary drinks, limits on marketing to children, clear front-of-package labels, school food standards, food assistance that favors whole foods, and research on what ultra-processing does to the body. These reach every child, cost little and do not depend on a drug company’s price, and with the drugs expected to reach only a small fraction of those who could benefit worldwide, prevention has to carry most of the load. Food policy has not failed so much as gone untried at scale: most sugary-drink taxes are too low to change behavior much, according to WHO, marketing limits are rare, and the food industry has fought each measure. Nor have the drugs reversed obesity; they lower weight only while people take them. We span politics, from public-health researchers who would regulate the food industry to the Make America Healthy Again movement, which stresses whole foods, additives and parental choice.",
+    "proponents": "Make America Healthy Again Commission; Marion Nestle; Daniel Lieberman; Chris Whitty; Healthy Food America; Obesity Health Alliance; Chris van Tulleken",
+    "id": "fix-the-food-environment-before-medicating"
+   },
+   {
+    "name": "Limit public coverage until prices fall",
+    "color_key": "amber",
+    "steelman": "These are good drugs, and adults should be free to buy them. But public programs cannot pay to treat tens of millions of people indefinitely, so let prices keep falling.",
+    "detail": "Some 92 million Americans are eligible, most who start stop within a year and regain much of the weight, and by the Congressional Budget Office’s estimate the health savings cover less than a tenth of the drug costs within a decade. ICER, which finds the drugs cost-effective, also finds that only a sliver of eligible people could be treated without straining what the health system can absorb. Putting the government on the hook now, while prices are still falling, would lock in high spending and blunt the pressure driving prices down: cash prices fell because patients were paying and companies competed for them. John R. Puri argues in National Review that the price “will probably keep falling, but only if patients have to pay for the drugs themselves,” and that “governments should limit their appetite for providing short-term relief at long-term expense.”\n\nWhere public money is spent, it should go to the people at highest risk, with evidence of lasting benefit, while governments remove barriers instead; the Cato Institute has argued for letting patients buy the drugs without a prescription. Promising more than a program can fund ends in abrupt cuts, as several state Medicaid programs have shown, and that is worse for patients than a limited benefit that lasts. Libertarians such as Cato oppose taxpayer coverage in principle. Insurers and many state budget officials accept coverage for high-risk patients with utilization controls; the Alliance of Community Health Plans urged CMS in November 2026 to keep any future coverage targeted and “financially sustainable for the program.” Some fiscal conservatives would accept wider coverage once prices fall far enough to make the arithmetic work.",
+    "proponents": "Cato Institute; John R. Puri; Alliance of Community Health Plans",
+    "id": "limit-public-coverage-until-prices-fall"
+   },
+   {
+    "name": "Stop treating body size as a disease",
+    "color_key": "rust",
+    "steelman": "Fat bodies are not diseases. Treat the conditions people actually have, at whatever size they are, and end the discrimination that harms fat people’s health.",
+    "detail": "Body size varies, as height does, and the health problems linked to it are shaped as much by weight stigma, weight cycling from repeated dieting, poverty and unequal care as by fat itself. Turning a body type into a lifelong condition, managed with injections that most people stop and that leave them regaining, extends a culture that has always told fat people their bodies are wrong. Virginia Sole-Smith puts it plainly: “Widespread use of GLP-1s for weight loss is weight loss culture.” The drugs’ popularity has made it more acceptable, not less, to say that being fat is unacceptable. Under the Health at Every Size principles of the Association for Size Diversity and Health, access to compassionate and comprehensive care “should not depend on obtaining a certain BMI, pursuing weight loss, and/or holding health as a value or pursuit.”\n\nWe do not deny that higher weight is associated with illness or that the drugs improve some outcomes. We deny that the answer is to define a body type as sick. High blood pressure, diabetes and joint pain can each be treated directly, and the heart benefits seen in trials may come partly from effects other than weight loss. A health system that treated disease rather than size would serve fat people better, and would not leave those who cannot afford, tolerate or want the drugs to be blamed for staying fat. Most of us defend each person’s right to choose the drugs; our objection is to the social pressure and the medical framing, and some fat people with diabetes take GLP-1s and remain in the movement. The industry money behind many of the groups that promote the disease frame deserves more scrutiny than it gets.",
+    "proponents": "Association for Size Diversity and Health; Virginia Sole-Smith; National Association to Advance Fat Acceptance; Aubrey Gordon",
+    "id": "stop-treating-body-size-as-a"
+   },
+   {
+    "name": "Diagnose obesity by illness, not body size",
+    "color_key": "purple",
+    "steelman": "Body mass index cannot tell the sick from the healthy. Treat obesity that is harming the body as a disease, and monitor excess fat that is not.",
+    "detail": "The argument over whether obesity is a disease has stalled because both sides accept a false premise. In the words of the commission’s chair, Francesco Rubino, the question “is flawed because it presumes an implausible all-or-nothing scenario where obesity is either always a disease or never a disease.” Body mass index is a useful screen, but it does not measure fat, where fat sits, or whether it is harming anyone: some people with a high BMI have normal organ function, while others with a lower BMI carry dangerous visceral fat. Obesity should be confirmed with body-fat or waist measurements and then divided. Clinical obesity, where excess fat is causing organ dysfunction or limiting daily life, is a chronic disease that deserves timely treatment, drugs and surgery included, covered like any other. Preclinical obesity is a risk state that calls for counseling, monitoring and risk reduction.\n\nTo the objection that this means waiting for damage: preclinical obesity is not left alone, and where risk is high it calls for intervention. What changes is that a number on a chart no longer makes someone a patient, which protects healthy people from overtreatment and protects the credibility of obesity as a disease for those who have it. Treating everyone early is not possible at current budgets anyway, so the real choice is how to prioritize, and illness, which predicts diabetes and heart disease far more sharply than body mass index, is the better guide. Supporters differ on whether people with high-risk preclinical obesity should also be offered drugs.",
+    "proponents": "Lancet Diabetes & Endocrinology Commission on Clinical Obesity; Francesco Rubino; Royal College of Physicians",
+    "id": "diagnose-obesity-by-illness-not-body"
+   }
+  ],
+  "crux": {
+   "lead": "Is lifelong medication the right main answer to obesity, or should it be kept for the sickest?",
+   "lead_highlight": "the right main answer to obesity",
+   "subtitle": "Most of the other disagreements feed this one. If the drugs are the main answer, the task is to cover them widely and early. If they are for the sickest, society has to meet obesity another way: through the food people eat, a narrower definition of disease, or by no longer treating body size as a problem.",
+   "empirical": "Evidence can settle what decades of wide use deliver: whether the drugs cut heart attacks, diabetes and deaths in people without existing heart disease; how many people stay on them, and what cycling on and off does; whether rare harms emerge, especially from starting young; what they save at the prices that hold once cheap copies arrive; and how much food policy at full strength changes obesity.",
+   "values": "No data settle what kind of problem obesity is or who should carry its cost: whether a body type that raises the risk of illness is a disease, whether to change people’s biology or the surroundings that shaped them, whether public money goes first to the sickest or to all who qualify, and how to weigh children who might be spared by prevention against adults living with obesity now."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Read KFF’s guide to Medicare and Medicaid coverage of GLP-1s",
+    "description": "A nonpartisan explainer of the Medicare GLP-1 Bridge and the BALANCE model: who qualifies, what it costs, and what happens when the Bridge ends.",
+    "url": "https://www.kff.org/medicare/what-to-know-about-the-balance-model-for-glp-1s-in-medicare-and-medicaid/",
+    "for_position": null,
+    "id": "read-kff-s-guide-to-medicare"
+   },
+   {
+    "kind": "policy",
+    "title": "Urge Congress to pass the Treat and Reduce Obesity Act",
+    "description": "The Obesity Action Coalition’s letter tool asking members of Congress to pass H.R. 4231 / S. 1973, which would let Medicare Part D cover FDA-approved obesity drugs and expand behavioral therapy.",
+    "url": "https://actionnetwork.org/letters/treat-and-reduce-obesity-act-of-2025-troa-hr4231s1973",
+    "for_position": "Treat obesity as a chronic disease and cover the drugs",
+    "id": "urge-congress-to-pass-the-treat"
+   },
+   {
+    "kind": "policy",
+    "title": "Campaign for a local sugary-drink tax",
+    "description": "Healthy Food America’s toolkit on how sugary-drink taxes work, where they have passed and how local campaigns have won them.",
+    "url": "https://www.healthyfoodamerica.org/taxing_sugary_drinks",
+    "for_position": "Fix the food environment before medicating a population",
+    "id": "campaign-for-a-local-sugary-drink"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the case against taxpayer coverage of GLP-1s",
+    "description": "A National Review argument that government coverage would slow the fall in GLP-1 prices, and that public programs should avoid short-term relief at long-term cost.",
+    "url": "https://www.nationalreview.com/corner/dont-ruin-glp-1-prices-by-having-the-government-cover-them/",
+    "for_position": "Limit public coverage until prices fall",
+    "id": "read-the-case-against-taxpayer-coverage"
+   },
+   {
+    "kind": "local",
+    "title": "Find a weight-inclusive health care provider",
+    "description": "The Association for Size Diversity and Health’s directory of clinicians and practitioners who follow Health at Every Size principles and provide care that does not center weight loss.",
+    "url": "https://asdah.org/listing/",
+    "for_position": "Stop treating body size as a disease",
+    "id": "find-a-weight-inclusive-health-care"
+   },
+   {
+    "kind": "local",
+    "title": "Check whether you qualify for Medicare’s GLP-1 Bridge",
+    "description": "Medicare’s official page for the GLP-1 Bridge, where people with Part D coverage can read the eligibility rules and how to ask a doctor to enroll them.",
+    "url": "https://www.medicare.gov/glp1bridge",
+    "for_position": null,
+    "id": "check-whether-you-qualify-for-medicare"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the Lancet Commission’s case for diagnosing obesity by illness",
+    "description": "King’s College London’s summary of the commission’s proposal to confirm obesity with body-fat measures and to separate clinical from preclinical obesity, with links to the full open-access report.",
+    "url": "https://www.kcl.ac.uk/news/commission-proposes-major-overhaul-of-obesity-diagnosis",
+    "for_position": "Diagnose obesity by illness, not body size",
+    "id": "read-the-lancet-commission-s-case"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read ICER’s assessment of what the drugs are worth and what they cost",
+    "description": "The Institute for Clinical and Economic Review’s 2025 review of semaglutide and tirzepatide, with its cost-effectiveness findings, price benchmarks and affordability alert.",
+    "url": "https://icer.org/assessment/obesity-2025/",
+    "for_position": null,
+    "id": "read-icer-s-assessment-of-what"
+   },
+   {
+    "kind": "local",
+    "title": "Know the risks of unapproved and compounded GLP-1 drugs",
+    "description": "The FDA’s page on unapproved and compounded versions of GLP-1 drugs sold online, including dosing errors and counterfeit products, for anyone considering a cheaper source.",
+    "url": "https://www.fda.gov/drugs/postmarket-drug-safety-information-patients-and-providers/fdas-concerns-unapproved-glp-1-drugs-used-weight-loss",
+    "for_position": null,
+    "id": "know-the-risks-of-unapproved-and"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the WHO guideline on GLP-1 medicines for obesity",
+    "description": "The World Health Organization’s first global guideline on the drugs, with its conditional recommendations, the case for pairing them with behavioral support, and its outlook on global access.",
+    "url": "https://www.who.int/news/item/01-12-2025-who-issues-global-guideline-on-the-use-of-glp-1-medicines-in-treating-obesity",
+    "for_position": null,
+    "id": "read-the-who-guideline-on-glp"
+   }
+  ]
+ },
+ "icon": "prescription",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: A large weekly injection pen (a slim cylinder with a dial cap at one end and a short needle cap at the other, the kind used for GLP-1 drugs) leans diagonally as the dominant mass, its lower end overlapping the rim of a round dinner plate with a fork beside it. The plate rests on a gently curving hill of ground. A small grocery bag with a few leafy vegetables and a bread loaf sits at the medium scale to one side. A winding path crosses the frame from the plate area back over the hill to a small pharmacy building with a plain cross on its sign in the distance.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #b0567f, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: bathroom scale, tape measure, numbers or digits, before and after bodies, human figures or silhouettes, faces, belts, oversized clothing, junk food or burgers, soda cans, dollar signs, price tags, sad or happy emoji, warning signs, crossed out symbols, a second color"
 }

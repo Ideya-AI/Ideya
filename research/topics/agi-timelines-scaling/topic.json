@@ -1,8 +1,8 @@
 {
  "slug": "agi-timelines-scaling",
  "title": "AGI Timelines",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-11-26T08:27:05+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Capability forecasts and the scaling hypothesis. Timelines, not safety or regulation.",
@@ -15,5 +15,551 @@
   "ai-consciousness",
   "ai-future-of-work",
   "ai-alignment"
- ]
+ ],
+ "icon": "hourglass",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: A large hourglass, dominant at center, its upper bulb holding a small stack of server-rack blocks and its lower bulb a small heap of microchips; a medium low data center building on the right, partly hidden behind the hourglass base, with a few tiny power-line pylons behind it; a small telescope on a tripod at left pointed toward the right horizon; a single smooth road crossing the whole frame from the lower left, passing in front of the hourglass and winding to the far right horizon, with no posts or markers along it; the ground a broad gentle hill that ends inside the frame with white space around it on every side.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #3b7ea1, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: no robots, no humanoid figures or faces, no brains, no glowing eyes, no rockets, no explosions or starbursts, no rising arrows or exponential charts, no clocks counting down, no calendars with dates, no finish lines or flags, no cliffs, no fog walls, no lightning bolts, no warning signs, no streams of 1s and 0s, no text or numbers",
+ "content": {
+  "overview": {
+   "summary": "Forecasts for AI that can do most human cognitive work run from 2026 to decades away. The central argument: will scaling get there?",
+   "scope_covered": "Capability forecasts and their definitions, the scaling hypothesis, and AI doing the work of improving AI insofar as it moves the date.",
+   "scope_excluded": "Whether such systems would be safe or controllable, how to regulate them, their effect on jobs, and whether they could be conscious.",
+   "why_now": "On November 10, 2026 the AI Futures Project, authors of the AI 2027 scenario, said all its forecasters now expect a superhuman AI researcher in 2027 unless labs deliberately slow down. It cited an assessment by METR, an independent evaluator, that Anthropic’s own use of AI was speeding up its research.",
+   "why_now_source_label": "AI Futures Project",
+   "why_now_source_url": "https://blog.aifutures.org/p/q35-timelines-update-looks-like-the"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "Length of task the best AI agents complete half the time",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "hours",
+     "series": [
+      {
+       "label": "GPT-4 (2023)",
+       "value": "0.06",
+       "highlight": false
+      },
+      {
+       "label": "Claude 3.7 (2025)",
+       "value": "1.0",
+       "highlight": false
+      },
+      {
+       "label": "o3 (2025)",
+       "value": "2.0",
+       "highlight": false
+      },
+      {
+       "label": "GPT-5 (2025)",
+       "value": "3.6",
+       "highlight": false
+      },
+      {
+       "label": "Opus 4.5 (2025)",
+       "value": "5.3",
+       "highlight": false
+      },
+      {
+       "label": "GPT-6 Astra (2026)",
+       "value": "40",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The best public AI agents in November 2026 finished, half the time, tasks that take a skilled human about 40 hours; the earlier rows are METR’s January 2026 estimates on an easier task suite.",
+     "detail": "METR’s time horizon is the length of task, measured by how long skilled professionals take, at which an AI agent succeeds half the time. It has become the most cited single trend in the timelines debate because it tracks something like autonomy rather than knowledge. The intervals are wide because few tasks are that long: 13 to 2,645 hours for GPT-6 Astra, with Opus 5.5 at 39 hours. Across both suites the doubling time is about 3.6 months (95 percent interval 2.08 to 4.94), against 130.8 days since 2023 on the earlier suite. Models saturated the original suite, with tasks up to 30 hours, within about a year, so METR built a harder one; naive extrapolation reaches its longest threshold, 200 hours, around July 2027. METR found no strong acceleration across public frontier models on its composite capability index, while writing that “current public evidence is insufficient to rule out drastic AI R&D acceleration in the next couple of years.” Those expecting long timelines note that these are well-specified, automatically scored tasks, and that success half the time is far from the reliability real jobs require.",
+     "source_label": "METR, Q4 2026 capability update (November 20, 2026) and Time Horizon 1.1 (January 29, 2026)",
+     "source_url": "https://metr.org/blog/2026-11-20-q4-2026-capability-update/",
+     "source_published": "2026",
+     "source_accessed": "2026-11-26",
+     "scale": "log",
+     "id": "length-of-task-the-best-ai"
+    },
+    {
+     "label": "Dates leading AI figures give for AGI or its near equivalents",
+     "viz": "range",
+     "wide": false,
+     "value": "2026–2045",
+     "unit": "year",
+     "series": [],
+     "range_min": "2026",
+     "range_max": "2100",
+     "note": "Leading figures’ stated dates for AGI or something close to it run from the end of 2026 (Sam Altman) to about 2045 (Ege Erdil), each on the speaker’s own definition.",
+     "detail": "Sam Altman told TIME in August 2026, as reported by The Decoder, that OpenAI was not quite at AGI but expected an internal system he would call AGI by the end of the year. Daniel Kokotajlo of the AI Futures Project put his median for a superhuman AI researcher at May 2027 in November 2026. Dario Amodei of Anthropic told the Dwarkesh Podcast in February 2026 that “a country of geniuses in the data center” could come “in one to two years,” and put 90 percent on it within ten. Shane Legg, Google DeepMind’s co-founder, who has given 50 percent for human-level machine intelligence by 2028 since 2009, said at the University of Auckland in November 2026 that it would probably come in 2027 or 2028. Demis Hassabis, after years of saying five to ten years, was reported by The Wall Street Journal in October 2026 to expect AGI within two to three. Ilya Sutskever told the Dwarkesh Podcast in November 2025 that a system that learns as well as a human is 5 to 20 years away. Ege Erdil of Mechanize wrote in April 2025 that his median for full automation of remote work is about 20 years. Yann LeCun gives no year.",
+     "source_label": "AI Futures Project, Q3.5 Timelines Update (November 10, 2026), and each speaker’s statement",
+     "source_url": "https://blog.aifutures.org/p/q35-timelines-update-looks-like-the",
+     "source_published": "2025–2026",
+     "source_accessed": "2026-11-26",
+     "id": "dates-leading-ai-figures-give-for"
+    },
+    {
+     "label": "Expert median year for AGI under a demanding definition",
+     "viz": "range",
+     "wide": false,
+     "value": "2050",
+     "unit": "median year",
+     "series": [],
+     "range_min": "2026",
+     "range_max": "2100",
+     "note": "Asked in spring 2026 when a demanding definition of AGI would be met, the median expert on the Forecasting Research Institute’s panel said 2050 and the median superforecaster 2047.",
+     "detail": "The definition is an AI that can outperform the 90th-percentile professional in every primarily non-physical occupation, on at least 90 percent of the economically useful tasks they perform, at no more than five times the cost of human labor; the year is when a majority of the panel would agree a commercially available system meets it. The years are conditional on that happening before 2100, which the median expert and the median superforecaster each put at 80 percent and the median member of the public at 65 percent. The experts’ middle half runs from 2039 to 2065, and the public’s median is 2055. This wave had 205 experts (44 computer scientists, 37 industry researchers, 49 economists and 75 think-tank staff), 52 superforecasters and 601 members of the public, surveyed April 20 to May 11, 2026. The same wave’s median expert expected AI to reach 80 percent success on software tasks of eight hours or more by about 2030, and the median superforecaster by 2028.",
+     "source_label": "Forecasting Research Institute, Longitudinal Expert AI Panel, Wave 8",
+     "source_url": "https://leap.forecastingresearch.org/reports/wave8",
+     "source_published": "2026",
+     "source_accessed": "2026-11-26",
+     "id": "expert-median-year-for-agi-under"
+    },
+    {
+     "label": "AI researchers who doubt scaling current approaches will yield AGI",
+     "viz": "radial",
+     "wide": false,
+     "value": "76",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Of 475 researchers answering a survey by AAAI, the field’s oldest professional society, in late 2024 and early 2025, 76 percent said scaling up current approaches is unlikely to yield AGI.",
+     "detail": "Respondents chose “unlikely” or “very unlikely.” The survey accompanied a report by 24 AI researchers convened by the Association for the Advancement of Artificial Intelligence and was answered mostly by academics (67 percent; 19 percent from corporate research; about 20 percent students), so it reflects the broader research community rather than the frontier labs. In the same section 77 percent said they prioritize designing AI systems with an acceptable risk-benefit profile over directly pursuing AGI. It predates the reasoning-model and agent gains of 2025 and 2026. Scaling proponents argue that current approaches now include reinforcement learning and inference-time compute that many respondents did not have in mind; skeptics of scaling answer that the result describes the people who build and study these systems for a living outside the labs that sell them.",
+     "source_label": "AAAI 2025 Presidential Panel on the Future of AI Research, community survey, p. 66",
+     "source_url": "https://aaai.org/wp-content/uploads/2025/03/AAAI-2025-PresPanel-Report-FINAL.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-11-26",
+     "id": "ai-researchers-who-doubt-scaling-current"
+    },
+    {
+     "label": "Speed-up in Anthropic’s capability progress, October 2026",
+     "viz": "bar",
+     "wide": false,
+     "value": "1.9",
+     "unit": "× prior pace",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "METR estimated Anthropic improved its models on well-specified tasks 1.9 times as fast in October 2026 as in March 2024 to October 2025, mostly via its own AI; other analyses gave 1.1 to 2.9.",
+     "detail": "This is the first outside measurement of the feedback loop at the center of short timelines: AI speeding up the work of building better AI. METR staff worked inside Anthropic from August 12 to October 29, 2026. The 95 percent interval on its benchmark-based estimate is 1.5 to 2.8, METR says it would not be surprised by a true figure nearer 1.3 or 3, and using only non-Anthropic models gave about 1.4. Its guess is that about 80 percent of the acceleration came from Anthropic’s use of AI in its research. METR reported early signs of fully autonomous AI contributions to research and a significant risk of even faster acceleration over the following year. The report states its limits: Anthropic redacted most of the evidence METR found most informative, METR lacked staff-level access, Anthropic’s own staff disagreed on how much of the speed-up was due to AI, and the benchmarks used are saturating. Those expecting longer timelines note that it covers one company and rests on judgment the public cannot check.",
+     "source_label": "METR, Independent Assessment of AI R&D Acceleration at Anthropic in October 2026 (November 5, 2026)",
+     "source_url": "https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/",
+     "source_published": "2026",
+     "source_accessed": "2026-11-26",
+     "id": "speed-up-in-anthropic-s-capability"
+    },
+    {
+     "label": "Freelance projects AI agents complete as well as a professional",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Gemini 3 Pro",
+       "value": "1.25",
+       "highlight": false
+      },
+      {
+       "label": "Grok 4",
+       "value": "2.08",
+       "highlight": false
+      },
+      {
+       "label": "GPT-5.2",
+       "value": "2.50",
+       "highlight": false
+      },
+      {
+       "label": "Opus 4.6 (Cowork)",
+       "value": "4.17",
+       "highlight": false
+      },
+      {
+       "label": "GPT-5.5",
+       "value": "6.3",
+       "highlight": false
+      },
+      {
+       "label": "Opus 4.8",
+       "value": "8.3",
+       "highlight": false
+      },
+      {
+       "label": "Fable 5",
+       "value": "15.8",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "On the Remote Labor Index, paid freelance projects judged by people, the best agent in July 2026 matched or beat the professional on 15.8 percent, up from a field best of 2.5 percent in October 2025.",
+     "detail": "The index, built by the Center for AI Safety and Scale AI, uses whole projects from freelance platforms, such as design, video, data and writing jobs, rather than tasks written for AI, so it measures the gap between benchmark scores and economically complete work. A project counts as automated when human evaluators judge the AI’s work as good as or better than the professional’s; agents had up to 24 hours and a budget of $50 per project ($150 for Fable 5). The authors found an AI judge overstated the newest models (17.9 percent for GPT-5.5, against 6.25 percent from human judges), so they keep human evaluation. Short-timeline forecasters point to the sixfold rise in nine months; long-timeline forecasters point out that the best agent still fails about five projects in six.",
+     "source_label": "Center for AI Safety and Scale AI, Remote Labor Index update (July 1, 2026)",
+     "source_url": "https://safe.ai/blog/significant-increase-in-digital-labor-automation",
+     "source_published": "2026",
+     "source_accessed": "2026-11-26",
+     "id": "freelance-projects-ai-agents-complete-as"
+    },
+    {
+     "label": "Growth in training compute for frontier language models",
+     "viz": "bar",
+     "wide": false,
+     "value": "5",
+     "unit": "× a year",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The computing power used to train frontier language models has grown about fivefold each year since 2020, a doubling roughly every five months.",
+     "detail": "Epoch AI, which tracks the inputs to AI, puts the 90 percent interval at 4 to 6 times a year. Compute is the core input of the scaling hypothesis: the empirical scaling laws of 2020 to 2022 showed predictable gains in model performance as compute, parameters and data grew together. Epoch’s site summary lists Grok 4, at roughly 5 × 10^26 floating point operations, as the largest known training run; GPT-4 in 2023 is estimated at about 2 × 10^25, roughly 25 times less. Epoch also reports that the largest AI data center, SpaceXAI’s Colossus 2 in Memphis, holds an estimated 1.1 million H100-equivalent chips. Whether compute keeps growing this fast depends on power, chips and money; whether more compute keeps buying general capability is the scaling question itself.",
+     "source_label": "Epoch AI, Trends in Artificial Intelligence (updated November 5, 2026)",
+     "source_url": "https://epoch.ai/trends",
+     "source_published": "2026",
+     "source_accessed": "2026-11-26",
+     "id": "growth-in-training-compute-for-frontier"
+    },
+    {
+     "label": "AI researchers’ 50 percent year for machines beating humans at every task",
+     "viz": "range",
+     "wide": false,
+     "value": "2047",
+     "unit": "year",
+     "series": [],
+     "range_min": "2023",
+     "range_max": "2116 all jobs",
+     "note": "Surveyed in late 2023, 2,778 published AI researchers put a 50 percent chance on machines outperforming humans at every task by 2047, but on every occupation being fully automatable only by 2116.",
+     "detail": "The Expert Survey on Progress in AI, run by AI Impacts, asked people who had published at six top machine learning venues and is the largest survey of its kind. Its 50 percent year for every task moved from 2060 in the 2022 survey, and for every occupation from 2164; the 10 percent years were 2027 and 2037, assuming science continues undisrupted. The gap of about seventy years between two framings of nearly the same question is its most quoted finding: those skeptical of survey forecasts take it as evidence that respondents have no stable model, and others as a sign that every task and every job are read very differently. The survey was fielded before reasoning models and capable agents.",
+     "source_label": "Grace et al., Thousands of AI Authors on the Future of AI (AI Impacts), arXiv:2401.02843",
+     "source_url": "https://arxiv.org/abs/2401.02843",
+     "source_published": "2023",
+     "source_accessed": "2026-11-26",
+     "id": "ai-researchers-50-percent-year-for"
+    },
+    {
+     "label": "GPT-6 Astra’s score on ARC-AGI-3, by test setup",
+     "viz": "range",
+     "wide": false,
+     "value": "62.7–99.9",
+     "unit": "% solved",
+     "series": [],
+     "range_min": "0",
+     "range_max": "100 humans",
+     "note": "On ARC-AGI-3, unfamiliar interactive puzzles humans can solve, GPT-6 Astra scored 62.7 percent under the standard setup and 99.9 percent with OpenAI’s own tooling; which is fairer is disputed.",
+     "detail": "The ARC Prize Foundation, founded by François Chollet and Mike Knoop, builds tests meant to measure how efficiently a system learns new skills rather than what it already knows, and says humans can solve all of ARC-AGI-3’s environments. OpenAI’s launch headlined the score from its own provider adapter, which adds memory and tooling, at high reasoning effort ($18,817 for the run); the provider-neutral standard harness was run at maximum effort ($26,098). With its own harness Astra used fewer actions than the human baseline on 96 percent of levels. ARC Prize wrote that Astra “represents meaningful progress towards generalization,” noting that the benchmark consists of closed, deterministic worlds. Those who see scaling as on track read the adapter score as the real capability of the system as deployed; those who doubt it read the standard score as the fairer measure of general learning.",
+     "source_label": "ARC Prize Foundation, GPT-6 Astra on ARC-AGI-3 (September 3, 2026)",
+     "source_url": "https://arcprize.org/blog/astra",
+     "source_published": "2026",
+     "source_accessed": "2026-11-26",
+     "id": "gpt-6-astra-s-score-on"
+    },
+    {
+     "label": "2026 capital spending by the largest AI infrastructure companies",
+     "viz": "bar",
+     "wide": false,
+     "value": "803–828",
+     "unit": "$ billion",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "After third-quarter earnings, Amazon, Alphabet, Meta, Microsoft and SpaceX were forecast to spend $803 billion to $828 billion on capital in 2026, mostly on AI data centers.",
+     "detail": "The figure tallies company guidance after October 2026 earnings: Amazon kept about $220 billion in cash capital spending, Microsoft guided to about $170 billion for the calendar year, and SpaceX, which now includes xAI, to about $48.1 billion; the five spent about $227 billion in the third quarter alone. The International Energy Agency noted in June 2026 that capital spending by five technology companies, largely on data centers, now exceeds global investment in oil and gas production. Epoch AI separately counts more than $370 billion raised by frontier AI labs. The spending assumes demand for AI keeps growing, and whether revenue keeps pace decides how long it can be sustained.",
+     "source_label": "Hargreaves Lansdown (Business Insider), AI hyperscalers’ 2026 capex forecast (October 30, 2026)",
+     "source_url": "https://www.hl.co.uk/news/ai-hyperscalers-are-expected-to-finish-the-year-spending-a-whopping-828-billion-on-capex",
+     "source_published": "2026",
+     "source_accessed": "2026-11-26",
+     "id": "2026-capital-spending-by-the-largest"
+    },
+    {
+     "label": "Time for better algorithms to halve the compute a language model needs",
+     "viz": "bar",
+     "wide": false,
+     "value": "8",
+     "unit": "months",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Better algorithms cut the compute needed to reach a given language model performance in half roughly every eight months between 2012 and 2023.",
+     "detail": "Epoch AI’s estimate has a 95 percent interval of 5 to 14 months, which means algorithmic improvements alone multiply effective compute severalfold a year on top of the growth in physical compute. The same analysis attributes about 60 to 95 percent of performance gains over the period to more compute and data, and 5 to 40 percent to algorithms. The number matters to both sides: scaling proponents count algorithmic progress as part of scaling and as the input AI researchers could themselves accelerate, while those expecting long timelines point out that most of the historical gain came from spending more, which power, chips and capital limit.",
+     "source_label": "Epoch AI, Algorithmic Progress in Language Models (March 12, 2024)",
+     "source_url": "https://epoch.ai/blog/algorithmic-progress-in-language-models",
+     "source_published": "2024",
+     "source_accessed": "2026-11-26",
+     "id": "time-for-better-algorithms-to-halve"
+    },
+    {
+     "label": "Largest training run Epoch AI judges feasible by 2030",
+     "viz": "bar",
+     "wide": false,
+     "value": "2 × 10^29",
+     "unit": "operations",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Epoch AI estimated that training runs of 2 × 10^29 operations, about 10,000 times GPT-4’s, will likely be feasible by the end of the decade.",
+     "detail": "The analysis checked four constraints. Power is the most likely to bind first: single campuses of 1 to 5 gigawatts could support runs of about 10^28 to 3 × 10^29 operations, and training spread across sites more. Chip manufacturing could supply around 100 million H100-equivalents for training (range 20 to 400 million). Data, counting text, images, video and audio, would allow runs of roughly 6 × 10^28 to 2 × 10^32, and the minimum time to process each batch sets a ceiling of about 3 × 10^30 to 10^32. Epoch stresses that this is feasibility, not a prediction that anyone will spend the money. The scale-up from GPT-2 to GPT-4 was of similar size, which is why scaling proponents read the estimate as room for another jump of that kind before any physical wall.",
+     "source_label": "Epoch AI, Can AI Scaling Continue Through 2030? (August 20, 2024)",
+     "source_url": "https://epoch.ai/blog/can-ai-scaling-continue-through-2030",
+     "source_published": "2024",
+     "source_accessed": "2026-11-26",
+     "id": "largest-training-run-epoch-ai-judges"
+    },
+    {
+     "label": "Electricity used by data centers worldwide",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "TWh",
+     "series": [
+      {
+       "label": "2024",
+       "value": "415",
+       "highlight": true
+      },
+      {
+       "label": "2030 (base case)",
+       "value": "945",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Data centers used about 415 terawatt hours of electricity in 2024, around 1.5 percent of the world’s total, and the IEA’s base case has that roughly doubling to about 945 by 2030.",
+     "detail": "The International Energy Agency expects AI-optimized data centers to drive most of the growth, with China and the United States accounting for nearly 80 percent of it, and its range for 2035 runs from 700 to 1,700 terawatt hours. In a June 2026 briefing, Key questions on energy and AI, the agency said data center electricity demand grew by almost 20 percent in 2025. Those expecting slower progress cite power as the physical input that better algorithms cannot speed up: new generation and grid connections arrive on construction timescales.",
+     "source_label": "International Energy Agency, Energy and AI (April 2025)",
+     "source_url": "https://www.iea.org/reports/energy-and-ai/executive-summary",
+     "source_published": "2024",
+     "source_accessed": "2026-11-26",
+     "id": "electricity-used-by-data-centers-worldwide"
+    },
+    {
+     "label": "Growth in the cost to train frontier language models",
+     "viz": "bar",
+     "wide": false,
+     "value": "3.5",
+     "unit": "× a year",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The cost of training the most advanced language models has grown about three and a half times a year since 2020, doubling roughly every seven months.",
+     "detail": "Cost grows more slowly than compute because chips get cheaper per operation: Epoch AI estimates about 49 percent better performance per dollar each year since 2023. Epoch puts a gigawatt-scale data center at about $38 billion in up-front capital and about two years to build. Compounding at this rate, the cost of the largest single runs rises quickly from one model generation to the next, which is why the question of whether scaling can continue is partly a question of whether AI revenue grows fast enough to fund it.",
+     "source_label": "Epoch AI, Trends in Artificial Intelligence (updated November 5, 2026)",
+     "source_url": "https://epoch.ai/trends",
+     "source_published": "2026",
+     "source_accessed": "2026-11-26",
+     "id": "growth-in-the-cost-to-train"
+    },
+    {
+     "label": "Stock of human-written public text usable for training",
+     "viz": "bar",
+     "wide": false,
+     "value": "300 trillion",
+     "unit": "tokens",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Epoch AI estimates the effective stock of public human-written text at around 300 trillion tokens, which frontier models would fully use between 2026 and 2032 if trends continued.",
+     "detail": "Data was the scaling constraint most discussed in 2024: if model size and data must grow together, a finite internet sets a limit. The answers since have come from outside human text: reinforcement learning on problems with checkable answers, synthetic data generated by models, multimodal data, and training agents in simulated work environments, which companies including Mechanize now build. Scaling proponents say these have already replaced the data wall; skeptics say text was the cheap fuel and the substitutes are costlier and narrower.",
+     "source_label": "Epoch AI, Will We Run Out of Data? Limits of LLM Scaling Based on Human-Generated Data (June 6, 2024)",
+     "source_url": "https://epoch.ai/blog/will-we-run-out-of-data-limits-of-llm-scaling-based-on-human-generated-data",
+     "source_published": "2024",
+     "source_accessed": "2026-11-26",
+     "id": "stock-of-human-written-public-text"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Will scaling up today’s methods reach AGI, or does it need ideas nobody has yet?",
+    "kind": "empirical",
+    "why": "For a decade, more compute, data and training reliably bought more capability. Whether that regularity carries through to general intelligence or levels off short of it is the question nearly every forecast rests on.",
+    "detail": "Those who think scaling suffices note that every predicted wall has been crossed by scaling something. When gains from pretraining slowed in 2024, reinforcement learning on problems with checkable answers and more thinking time at inference took over, producing reasoning models and a mathematical olympiad gold medal in 2025 without a new architecture. On this reading, general methods that use more computation keep beating clever designs, and the people inside the labs, who see the next systems first, are the ones with the shortest timelines.\n\nThose who think new ideas are needed answer that scaling laws describe how prediction error falls with compute, not how close a system is to general intelligence, and that the abilities that matter most, such as learning after deployment, have not improved the way test scores have. Reasoning models needed a new training method, not just more chips, so the recent record may show new ideas being called scaling. A curve that has bent before can bend again, and ten years of a working extrapolation say nothing about what lies past the edge of the data.",
+    "lean_label_a": "Scaling suffices",
+    "lean_label_b": "New ideas needed",
+    "id": "will-scaling-up-today-s-methods"
+   },
+   {
+    "text": "Will AI that does AI research compress the path to AGI into a few years?",
+    "kind": "empirical",
+    "why": "The shortest timelines rest on a feedback loop: once AI does much of the work of improving AI, research effort is set by compute rather than hiring, and progress compounds. In 2026 the loop began to be measured, and the first measurements are disputed.",
+    "detail": "The compounding case: AI systems can be copied without limit, run faster than people and work without rest, and they can improve the very algorithms that keep making each result cheaper to reach. OpenAI said in September 2026 that it had built an automated research intern and is aiming for a fully automated AI researcher by March 2028. If even part of AI research can be handed to AI, each generation shortens the time to the next, and a modest measured speed-up today is the start of a curve, not its height.\n\nThe bottleneck case: the loop has limits outside software. Experiments need compute, new compute needs data centers and power plants that take years to build whatever the code does, and the hardest parts of research, choosing what to try and judging what worked, may be the last to automate. On this view one lab’s speed-up says little about the field as a whole, and writing code faster is not the same as making discoveries faster.",
+    "lean_label_a": "Loop compounds",
+    "lean_label_b": "Bottlenecks bind",
+    "id": "will-ai-that-does-ai-research"
+   },
+   {
+    "text": "Do rising benchmark scores measure progress toward general intelligence?",
+    "kind": "empirical",
+    "why": "Most of the evidence for rapid progress comes from benchmarks, and new ones saturate within months. Whether rising scores track the abilities open-ended work needs, or reflect training aimed at the tests, decides how much the trend lines should move anyone.",
+    "detail": "Those who read benchmarks as a real signal point out that the tests that matter were built to resist gaming and to look like real work: tasks drawn from software and research jobs and measured in human hours, new problems written by research mathematicians, puzzles no model has seen, and paid freelance projects. Progress shows up on all of them at once, and in the market: Epoch AI counts OpenAI’s annualized revenue growing 3.2 times a year since 2024, which is hard to explain if the systems cannot do useful work. Every task a skeptic has named as beyond AI, a later generation has done.\n\nThose who read them as narrow test-taking answer that when a measure becomes a target it stops being a good measure, and labs now train against the benchmarks the field watches. Scores swing with the test setup, and the tests that saturate fastest are well specified and automatically scored, while open-ended work lags; Rob Wiblin of 80,000 Hours described AI-run shops losing money in 2026 trials. A benchmark measures the benchmark.",
+    "lean_label_a": "Tracks real ability",
+    "lean_label_b": "Tracks the tests",
+    "id": "do-rising-benchmark-scores-measure-progress"
+   },
+   {
+    "text": "Whose forecasts deserve more weight: those of people building the systems, or of broad expert panels?",
+    "kind": "empirical",
+    "why": "People building frontier systems give dates in the late 2020s; broad panels of experts and superforecasters give medians decades later. Both have been wrong before, in opposite directions, and choosing between them is most of forming a view.",
+    "detail": "The case for insiders: they see systems months before anyone else and watch the internal metrics that drive their forecasts, while outsiders have repeatedly been too slow. The Forecasting Research Institute’s interim accuracy review in September 2026, as reported by The Decoder, found its expert panel had significantly underestimated recent benchmark progress. Short-timeline forecasters read that as a reason to discount panel medians; the panel’s defenders read it as a miss on benchmarks rather than on general capability.\n\nThe case for broad panels: insiders have every incentive to say AGI is near, because it raises money and attracts talent, and the people who believe it are the ones who choose to work at labs. AI has a long record of confident near-term predictions by its leading figures, from the 1950s onward, that did not come true. Panels of experts and superforecasters, who are scored on accuracy and have no stake in a particular company, still put the median decades out after seeing the same trends, and aggregated independent judgment tends to beat the most confident individual.",
+    "lean_label_a": "Frontier insiders",
+    "lean_label_b": "Broad panels",
+    "id": "whose-forecasts-deserve-more-weight-those"
+   },
+   {
+    "text": "Can chips, power and money keep growing at current rates through 2030?",
+    "kind": "empirical",
+    "why": "The scaling path assumes training compute keeps growing at its recent pace. That takes chips, electricity and capital on a scale no industry has raised this fast, and each input has its own bottleneck and its own skeptics.",
+    "detail": "The case that the buildout continues: the money is already committed, frontier labs have raised hundreds of billions of dollars, and Epoch AI’s feasibility study found training runs far larger than today’s likely possible by 2030 on power, chips, data and latency. Chips keep getting cheaper per operation, revenue is growing fast enough that customers and not only investors are paying, and the constraints are engineering problems with known solutions: build power plants, spread training across sites, add chip factories.\n\nThe case that physical limits bind: the International Energy Agency said in June 2026 that gas turbines, transformers, grid connections, memory and advanced packaging all constrain data center deployment, and that its 2030 outlook remained close to its 2025 trajectory despite the spending boom. The cost of the largest runs compounds every year, which works only if revenue compounds too. Gary Marcus compared the hyperscalers to airlines in June 2026: heavy capital, similar products, thin margins. If the investment cycle turns, the trend every short timeline extrapolates turns with it.",
+    "lean_label_a": "Buildout continues",
+    "lean_label_b": "Limits bind",
+    "id": "can-chips-power-and-money-keep"
+   },
+   {
+    "text": "Is AGI a meaningful threshold to put a date on?",
+    "kind": "value",
+    "why": "Every forecast rests on a definition, and they differ widely: AI that does typical cognitive tasks, AI that beats top professionals at nearly everything, AI that adds 10 percent a year to world growth. Whether AGI is one point or many milestones is disputed.",
+    "detail": "Those who see a real threshold say there is a difference in kind between tools that help people do cognitive work and systems that can do nearly all of it, including improving themselves, and that difference drives everything downstream. Definitions can be made precise and checked: the Forecasting Research Institute, Metaculus and the AI Futures Project each publish operational criteria. A fuzzy threshold can still be important, as a recession is; arguing about the edges does not erase the middle, and refusing to name the milestone leaves people unprepared for the change they most need to see coming.\n\nThose who see no single threshold answer that a term meaning a typical worker to some and the best researcher to others measures nothing. AI capability is jagged, rising on some tasks and stalling on others, so there is no single crossing to date, and a crossing that can only be recognized in hindsight cannot guide anyone. What can be measured is particular capabilities and how widely they are adopted.",
+    "lean_label_a": "Real threshold",
+    "lean_label_b": "No single threshold",
+    "id": "is-agi-a-meaningful-threshold-to"
+   },
+   {
+    "text": "When forecasts range from the late 2020s to mid-century, which end should people plan around?",
+    "kind": "value",
+    "why": "No evidence will settle the date before it arrives, so people, companies and governments have to choose how much weight to give the early end. It is a question about the costs of different kinds of error, not about the forecasts themselves.",
+    "detail": "The case for preparing early is that the costs are lopsided. Preparing for an arrival that comes late wastes some effort; failing to prepare for one that comes early could mean the largest transition in history meets institutions, careers and plans built for a world that no longer exists. Even cautious forecasters leave real probability on the near term: in the Forecasting Research Institute’s 2026 panel, a quarter of the superforecasters’ probability falls before 2036. Planning on the median of a distribution this wide is planning to be surprised.\n\nThe case for planning on the median is that the early end has costs too: it moves money into a possible bubble, steers students away from careers that will still exist, and spends public attention on a kind of forecast with a long record of missing. Overreacting to the most confident voices rewards those with the most to gain from being believed. A sound plan works across the range, building flexible skills and institutions that adapt as the evidence arrives, rather than betting on a date that the people offering it cannot agree on.",
+    "lean_label_a": "Prepare for early",
+    "lean_label_b": "Plan on the median",
+    "id": "when-forecasts-range-from-the-late"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Expect AGI within a few years from scaling and AI-built AI",
+    "color_key": "green",
+    "steelman": "For ten years more compute has bought more capability, and now AI is doing much of the work of building the next AI. Unless someone deliberately slows down, AGI comes this decade.",
+    "detail": "Look at the curves, not the headlines. Every time someone named a wall, whether data, reasoning or the end of pretraining gains, the field found another way to turn compute into intelligence. The length of task an agent can finish has gone from minutes in 2023 to about 40 hours of skilled work in 2026. And the decisive step has begun: an outside evaluator has measured a lab improving its models faster, mostly because of its own AI. Once AI researchers can be copied by the thousand, run day and night and improve the algorithms that make the next generation cheaper, progress stops being limited by how many people can be hired. We do not claim certainty; we claim the most likely outcome, if nobody deliberately slows down, is AI that can do nearly all cognitive work, including AI research, before the end of the decade, and possibly within a year or two.\n\nWe have a stake in saying this, which is why we point to measurement by evaluators that are not labs. Benchmarks are not the economy, but the gap between benchmark and real work has been closing on every measure that tracks it, and revenue growing several times a year is the economy’s own verdict. Redactions in an inside assessment are a reason for humility about the exact multiplier, not for assuming there is none. If we are wrong it will show within two years: task lengths will stall, AI research will stop accelerating, and we will say so.",
+    "proponents": "AI Futures Project; Daniel Kokotajlo; Anthropic; Dario Amodei; OpenAI; Sam Altman; Shane Legg",
+    "id": "expect-agi-within-a-few-years"
+   },
+   {
+    "name": "Expect AGI soon, but only after breakthroughs beyond scaling",
+    "color_key": "blue",
+    "steelman": "Scaling is necessary but not sufficient. A few known gaps, like learning after deployment, still need real breakthroughs, and with today’s resources those are years away, not decades.",
+    "detail": "Scaling has been the most productive idea in the history of AI, and it is not finished, but scale alone has never been the whole story. Today’s systems are frozen when training ends and cannot keep learning from experience the way a new employee does; they win olympiad medals and then fail an elementary question phrased differently; they plan well over hours and poorly over months. Demis Hassabis, who runs Google DeepMind, names those three gaps, and Ilya Sutskever says the field is “back to the age of research again, just with big computers.” They are research problems, and they look tractable. Our timelines are short because the field now has enormous computers, thousands of the best researchers and AI tools that speed research, all aimed at a short list of known problems.\n\nSome say the distinction is empty because the breakthroughs arrive through scaling; others that if breakthroughs are needed, nobody can date them. To the first: it decides what to build and what to watch. If continual learning and reliable generalization fall to more compute, the trend lines are the forecast; if they need new ideas, the forecast is the research pipeline. To the second: breakthroughs are not random when the problems are well defined and the effort is enormous. We judge a few specific, well-studied problems close to solved, and say plainly that the date moves if they are not.",
+    "proponents": "Google DeepMind; Demis Hassabis; Ilya Sutskever; Safe Superintelligence; Andrej Karpathy",
+    "id": "expect-agi-soon-but-only-after"
+   },
+   {
+    "name": "Expect human-level AI only beyond language models",
+    "color_key": "amber",
+    "steelman": "Language models predict text, a thin record of a world they have never touched. Human-level AI will come from systems that model the world and learn from experience, not from scaling chatbots.",
+    "detail": "Language models are a remarkable technology and the wrong road to human-level intelligence. Text is a secondhand record of the world, and a four-year-old has taken in more of that world through its eyes than any model has read, learning from a handful of examples what a model needs millions to approximate. That is why the same failures persist through every generation: confident fabrication, no model of cause and effect, no learning once training ends. The labs cover the gaps with more data, more compute and more tools, and the benchmarks rise, but the architecture underneath and its limits have not changed. Real intelligence needs systems that model the world, plan toward goals and learn from experience. Yann LeCun’s AMI Labs builds world models that plan in learned representations of sensor data, Gary Marcus argues for hybrids of neural networks and explicit symbols, and Richard Sutton for agents that learn continually from their own experience.\n\nWe have said for years what language models could not do, and some of it they now do; we update on that. But look at how: with code interpreters, search engines, memory and scaffolds built by engineers, on oceans of data no brain needs. That is evidence the language model alone is not enough, and that the progress comes from adding what we said was missing. When a system can learn a new physical task from a few tries, keep learning after deployment and plan over months, we will agree it is close. It will not be a scaled-up chatbot.",
+    "proponents": "AMI Labs; Yann LeCun; Gary Marcus; Richard Sutton",
+    "id": "expect-human-level-ai-only-beyond"
+   },
+   {
+    "name": "Expect full automation over decades, not years",
+    "color_key": "purple",
+    "steelman": "AI will eventually do nearly all human work, but research waits on experiments, chips and power plants that take years to build. Expect automation piece by piece, over decades.",
+    "detail": "AI will eventually be able to do nearly all the work people do, and it will be the biggest economic change since the industrial revolution. It will not happen in two years. The short timelines rest on one mechanism, a software feedback loop in which AI improves AI ever faster, and that loop is weaker than it looks: research is bottlenecked by experiments, experiments by compute, and compute by capital and construction. Automating AI research is about as hard as automating remote work in general, because it needs the same breadth: judgment, coordination, taste, long projects with unclear goals. Mechanize, founded by Ege Erdil, Tamay Besiroglu and Matthew Barnett, is building toward the full automation of the economy and still expects it to take decades.\n\nThe objection is that 2026 has already broken the case. We take it seriously, and Erdil’s own forecast gave about 30 percent to full automation of remote work within a decade. But the evidence comes from well-specified, automatically scored tasks and from a single lab’s partly withheld evidence, and it does not show the breadth that replacing a remote worker or a research team requires. Faster coding is not a faster economy. If agents start completing most real freelance projects and AI-run firms start turning a profit, we will shorten our timelines; until then, decades remain the better bet.",
+    "proponents": "Mechanize; Ege Erdil; Tamay Besiroglu; Matthew Barnett; Daron Acemoglu",
+    "id": "expect-full-automation-over-decades-not"
+   },
+   {
+    "name": "Expect no AGI moment, only gradual measurable change",
+    "color_key": "rust",
+    "steelman": "AGI is not an event that arrives. AI gets better unevenly at particular tasks and spreads at the pace of institutions, so track measurable change, not a mythical date.",
+    "detail": "The question of when AGI will arrive has no answer, because there is no capability threshold past which the world changes overnight. There are particular systems getting better at particular tasks, unevenly, adopted at the pace of organizations, regulation and trust. The term serves whatever its speaker needs: a fundraising pitch, a contract trigger, a warning. Within eight days in 2026 OpenAI’s chief executive said it was not quite at AGI, its president said the AGI era had begun, and the makers of the benchmark it featured said they were not claiming AGI. In April 2026 Microsoft and OpenAI replaced the AGI trigger in their contract with payments that do not depend on OpenAI’s technical progress. As Arvind Narayanan and Sayash Kapoor put it, “AGI is not a milestone because it is not actionable.”\n\nWhat matters is measurable: which jobs AI does well enough to be used for, how fast it is adopted, whether it shows up in productivity and growth. Satya Nadella’s test is the world economy growing at 10 percent a year, not a lab’s announcement. We do not deny that AI can become very capable; we say capability is not impact. Nor is the view unfalsifiable: Narayanan has said evidence that a profession could be automated wholesale would change it. Until then, tracking real-world change is the more honest forecast.",
+    "proponents": "Arvind Narayanan; Sayash Kapoor; Microsoft; Satya Nadella; Borhane Blili-Hamelin; Margaret Mitchell",
+    "id": "expect-no-agi-moment-only-gradual"
+   }
+  ],
+  "crux": {
+   "lead": "Can AI soon take over the work of improving AI, or will progress stay tied to human ideas and hardware?",
+   "lead_highlight": "the work of improving AI",
+   "subtitle": "Nearly every other disagreement runs through this one. If AI can largely do AI research within a few years, progress compounds and the short forecasts follow. If automating research is as hard as automating any broad profession, progress moves at the pace of money and construction, and dates spread out over decades.",
+   "empirical": "This half is close to being tested, with measurements arriving every few months: how much faster labs improve their models with AI help, whether the length of task agents can finish keeps doubling once tasks are long, messy and judged by people, how agents do on whole paid projects, and whether chips, power and capital keep pace. Several camps have said in advance what would change their minds.",
+   "values": "No measurement settles what counts as arriving. One view says the line is capability: once systems can do most cognitive work, including improving themselves, the world has crossed it whether or not anyone has adopted them. The other says the line is change in people’s lives and in what the economy produces, which comes at the pace of institutions, and that dating a capability nobody defines the same way twice invites hype and complacency alike."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "METR, AI R&D-relevant model capabilities are improving rapidly and are getting harder to measure",
+    "description": "METR’s November 2026 quarterly update on how long a task the best AI agents can complete, with its doubling time, its intervals, the limits of the measurement and its reading of research acceleration.",
+    "url": "https://metr.org/blog/2026-11-20-q4-2026-capability-update/",
+    "for_position": null,
+    "id": "metr-ai-r-d-relevant-model"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Forecasting Research Institute, Longitudinal Expert AI Panel",
+    "description": "A standing panel of computer scientists, economists, policy experts and superforecasters who forecast AI progress every few months, with question wording, results by group and accuracy checks.",
+    "url": "https://leap.forecastingresearch.org/",
+    "for_position": null,
+    "id": "forecasting-research-institute-longitudinal-expert-ai"
+   },
+   {
+    "kind": "learn_more",
+    "title": "AI Futures Project, Q3.5 Timelines Update",
+    "description": "The November 2026 update from the authors of the AI 2027 scenario, with each forecaster’s medians, the models behind them and the doubts they still hold.",
+    "url": "https://blog.aifutures.org/p/q35-timelines-update-looks-like-the",
+    "for_position": "Expect AGI within a few years from scaling and AI-built AI",
+    "id": "ai-futures-project-q3-5-timelines"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Ilya Sutskever on the Dwarkesh Podcast",
+    "description": "The November 2025 interview in which Safe Superintelligence’s co-founder argues that the age of scaling has given way to an age of research, and explains why current models generalize worse than people.",
+    "url": "https://www.dwarkesh.com/p/ilya-sutskever-2",
+    "for_position": "Expect AGI soon, but only after breakthroughs beyond scaling",
+    "id": "ilya-sutskever-on-the-dwarkesh-podcast"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Yann LeCun on his new venture, AMI Labs",
+    "description": "MIT Technology Review’s January 2026 interview in which LeCun explains why he thinks scaling language models will not produce human-level intelligence, and what world models are meant to do instead.",
+    "url": "https://www.technologyreview.com/2026/01/22/1131661/yann-lecuns-new-venture-ami-labs/",
+    "for_position": "Expect human-level AI only beyond language models",
+    "id": "yann-lecun-on-his-new-venture"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Ege Erdil, The Case for Multi-Decade AI Timelines",
+    "description": "The April 2025 essay by Mechanize’s co-founder setting out why he expects full automation of remote work around 20 years out, and why he doubts a software-only intelligence explosion.",
+    "url": "https://epoch.ai/gradient-updates/the-case-for-multi-decade-ai-timelines",
+    "for_position": "Expect full automation over decades, not years",
+    "id": "ege-erdil-the-case-for-multi"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Arvind Narayanan and Sayash Kapoor, AI as Normal Technology",
+    "description": "The essay, published by the Knight First Amendment Institute, arguing that AI’s effects will arrive through gradual diffusion rather than a sudden threshold, with its companion piece “AGI is not a milestone.”",
+    "url": "https://knightcolumbia.org/content/ai-as-normal-technology",
+    "for_position": "Expect no AGI moment, only gradual measurable change",
+    "id": "arvind-narayanan-and-sayash-kapoor-ai"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Epoch AI, Trends in Artificial Intelligence",
+    "description": "A regularly updated dashboard of the inputs behind scaling, from training compute, cost and chip performance to data center size, investment and revenue, each with its method and data.",
+    "url": "https://epoch.ai/trends",
+    "for_position": null,
+    "id": "epoch-ai-trends-in-artificial-intelligence"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Forecast the date of AGI on Metaculus",
+    "description": "The longest-running public forecasting question on when the first general AI system will be devised, tested and announced; anyone can register, submit a forecast and see how the community median has moved.",
+    "url": "https://www.metaculus.com/questions/5121/date-of-artificial-general-intelligence/",
+    "for_position": null,
+    "id": "forecast-the-date-of-agi-on"
+   },
+   {
+    "kind": "donate",
+    "title": "Support Epoch AI",
+    "description": "Donations fund Epoch AI’s public data on compute, cost, chips, data and benchmarks, the measurements that every side of the timelines debate cites.",
+    "url": "https://epoch.ai/about/donate",
+    "for_position": null,
+    "id": "support-epoch-ai"
+   }
+  ]
+ }
 }

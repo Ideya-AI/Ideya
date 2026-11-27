@@ -1,8 +1,8 @@
 {
  "slug": "school-choice-public-education",
  "title": "School Choice",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-11-24T05:46:44+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Public funds following students to private and charter schools.",
@@ -16,5 +16,697 @@
   "dei-in-institutions",
   "social-media-youth-mental-health",
   "higher-education-student-debt"
- ]
+ ],
+ "content": {
+  "overview": {
+   "summary": "Public school money increasingly follows US children to private and charter schools. The central argument is whether it should.",
+   "scope_covered": "Vouchers, education savings accounts, tax-credit scholarships and charter schools: what they do for students, district schools and budgets, and the values beneath them.",
+   "scope_excluded": "What schools teach, funding formulas between districts, homeschooling rules in general, and higher education.",
+   "why_now": "In the November 3, 2026 elections, Democrats who had campaigned against private school choice or promised to rein it in won governorships in Georgia, Iowa, Ohio and Texas, where Gina Hinojosa pledged to repeal the new education savings accounts. Republicans kept at least one legislative chamber in Iowa, Ohio and Texas.",
+   "why_now_source_label": "Education Week",
+   "why_now_source_url": "https://www.edweek.org/policy-politics/after-elections-democrats-will-run-school-choice-programs-theyve-blasted/2026/11"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "Students using private school choice programs",
+     "viz": "bar",
+     "wide": false,
+     "value": "1.5",
+     "unit": "million",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "More than 1.5 million students use 75 private school choice programs in 34 states, Washington, D.C., and Puerto Rico, by the count of EdChoice, a group that backs school choice.",
+     "detail": "The programs are vouchers, education savings accounts and tax-credit scholarships; charter schools are counted separately. Education Week, citing EdChoice, reports that participation was under 500,000 in 2018–19 and about 1 million roughly a year and a half before the 2026 count. The count covers the 2025–26 school year where programs had reported, so it leaves out the Texas accounts that opened for 2026–27; the American Federation for Children, a pro-choice group, put enrollment at nearly 2 million after the Texas launch (Education Week, November 2026). Florida runs the largest programs: EdChoice’s 2026 participation rankings put its two Family Empowerment Scholarship accounts at 280,611 and 140,147 students, followed by North Carolina’s Opportunity Scholarship at 103,400 and Ohio’s EdChoice Expansion at 100,922.",
+     "source_label": "EdChoice, The 2026 ABCs of School Choice",
+     "source_url": "https://www.edchoice.org/the-2026-abcs-of-school-choice-is-available-now/",
+     "source_published": "2025–26",
+     "source_accessed": "2026-11-23",
+     "id": "students-using-private-school-choice-programs"
+    },
+    {
+     "label": "Where US K-12 students learn, outside traditional public schools",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Charter",
+       "value": "7.2",
+       "highlight": false
+      },
+      {
+       "label": "Private, no program",
+       "value": "6.1",
+       "highlight": false
+      },
+      {
+       "label": "Magnet",
+       "value": "5.0",
+       "highlight": false
+      },
+      {
+       "label": "Homeschool",
+       "value": "4.8",
+       "highlight": false
+      },
+      {
+       "label": "Private choice program",
+       "value": "2.8",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "About 74 percent of US K-12 students attend a traditional district public school; 2.8 percent use a private school choice program, by EdChoice’s estimate.",
+     "detail": "EdChoice assembled the picture from sources of different years: public, magnet and charter enrollment for 2023–24 from federal data and the National Alliance for Public Charter Schools, private enrollment for 2021–22, homeschooling estimates that vary by state, and choice program counts from its 2026 edition. It is the only single estimate that covers every sector. The national shares hide large state differences: EdChoice puts the traditional public school share at 51 percent in Florida and 68 percent in Arizona for 2025–26, the first two states with more than 10 percent of K-12 students in a choice program. Supporters of choice read the national share as evidence that most families stay in district schools even when they can leave; opponents read the state figures as a preview of where universal programs lead. The figures leave out families who choose by transferring to another district, which EdChoice calls the most common form of school choice and cannot measure.",
+     "source_label": "EdChoice, 2026 EdChoice Share",
+     "source_url": "https://www.edchoice.org/2026-edchoice-share/",
+     "source_published": "2021–2026",
+     "source_accessed": "2026-11-23",
+     "id": "where-us-k-12-students-learn"
+    },
+    {
+     "label": "States where nearly every student is eligible for private school choice",
+     "viz": "bar",
+     "wide": false,
+     "value": "18",
+     "unit": "of 50 states",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Education Week counts 18 states where virtually every student can get public money for private school or homeschooling, all made universal in the four years to 2026; FutureEd counts 17.",
+     "detail": "Counts differ with the definition of universal. FutureEd at Georgetown University counts 17 states that “have, or soon will have” programs open to all students regardless of income (legislative tracker, July 2026). Arizona’s 2022 law is generally described as the first universal program; Texas, Tennessee, Idaho, Wyoming and New Hampshire enacted or expanded programs in 2025, according to EdChoice. Universal eligibility does not guarantee funding: Texas and Tennessee cap total spending or the number of accounts, and allocate demand above the cap by priority tiers and lotteries. Counting every kind of program, targeted ones included, EdTrust found 34 states and Washington, D.C. with some form of voucher or private-school funding as of May 2026.",
+     "source_label": "Education Week, As School Choice Goes Universal, What New Research Is Showing",
+     "source_url": "https://www.edweek.org/policy-politics/as-school-choice-goes-universal-what-new-research-is-showing/2026/01",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "states-where-nearly-every-student-is"
+    },
+    {
+     "label": "Private school choice spending as a share of K-12 spending",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Florida",
+       "value": "11.19",
+       "highlight": false
+      },
+      {
+       "label": "Arizona",
+       "value": "8.35",
+       "highlight": false
+      },
+      {
+       "label": "Wisconsin",
+       "value": "5.37",
+       "highlight": false
+      },
+      {
+       "label": "Ohio",
+       "value": "4.20",
+       "highlight": false
+      },
+      {
+       "label": "Indiana",
+       "value": "3.53",
+       "highlight": false
+      },
+      {
+       "label": "United States",
+       "value": "1.3",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Private school choice programs spent an estimated $10.6 billion in their latest year, 1.3 percent of public K-12 spending nationally and more than 11 percent in Florida, by EdChoice’s estimate.",
+     "detail": "Spending rose 29 percent from the year before. EdChoice measures it against its own projection of $783 billion in public K-12 current spending, not the Census Bureau’s reported fiscal 2024 total, and its program data run through November 2025. State shares compare program spending with program and public spending combined. The total includes tax-credit scholarships, whose cost is forgone tax revenue rather than direct appropriations. In dollars, counting every program in each state, Florida spent $4.3 billion, Arizona $1.16 billion (its ESA and tax-credit scholarships together, not the ESA alone) and Ohio $1.12 billion. The figures are gross: what a state saves or spends on net depends on how many participants would otherwise have been in public school at state expense. Opponents point to the fast-growing states at the top of the chart; supporters point to the national share of just over 1 percent.",
+     "source_label": "EdChoice, 2026 EdChoice Spending Share Rankings",
+     "source_url": "https://www.edchoice.org/2026-edchoice-spending-share-rankings/",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "private-school-choice-spending-as-a"
+    },
+    {
+     "label": "Arizona universal ESA students previously in private school or homeschooled",
+     "viz": "radial",
+     "wide": false,
+     "value": "71",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Of 64,133 Arizona ESA students under universal eligibility in April 2025, an estimated 71 percent had been in private school or homeschooled and 18 percent came straight from public school.",
+     "detail": "RAND computed the shares from the state’s quarterly reports and could not separate former private school students from former homeschoolers; the remaining 11 percent were entering school for the first time, in pre-K or kindergarten. The privately educated share was an estimated 79 percent in 2023–24, the first year with data. RAND estimates that 38 percent of Arizona’s privately educated students had opened accounts, against 7 percent of all students, and advises states to budget expecting “a significant share of first adopters” to come from private school or homeschooling. Iowa and Arkansas showed a similar early pattern: FutureEd reported that 66 percent and 64 percent of their 2023–24 recipients were already in private school. The study was funded by the Walton Family Foundation, which supports school choice.",
+     "source_label": "RAND Corporation, Case Study of Arizona’s K–12 Education Savings Account Program",
+     "source_url": "https://www.rand.org/pubs/research_reports/RRA3431-2.html",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "arizona-universal-esa-students-previously-in"
+    },
+    {
+     "label": "Effect of Louisiana’s voucher on math scores after one year",
+     "viz": "range",
+     "wide": false,
+     "value": "-0.4",
+     "unit": "SD",
+     "series": [],
+     "range_min": "-0.5",
+     "range_max": "+0.5",
+     "note": "In a lottery study, Louisiana’s voucher lowered users’ math scores by 0.4 standard deviations after one year, a large drop; a later team found no significant overall effect after three years.",
+     "detail": "The Louisiana Scholarship Program served low-income students in low-rated public schools, and 2012–13 was the first school year after its statewide expansion. Scores in reading, science and social studies fell by less. The authors suggest that low-quality private schools entering the program may explain part of the loss. The later team, at the University of Arkansas and including Jonathan Mills and Patrick Wolf, found negative math effects again after four years. Effects of this size are measured in standard deviations of the test-score distribution; zero means no difference between voucher users and similar students who stayed in public school.",
+     "source_label": "Abdulkadiroğlu, Pathak and Walters, American Economic Journal: Applied Economics",
+     "source_url": "https://www.aeaweb.org/articles?id=10.1257/app.20160634",
+     "source_published": "2018",
+     "source_accessed": "2026-11-23",
+     "id": "effect-of-louisiana-s-voucher-on"
+    },
+    {
+     "label": "Studies finding public school students gain from private school choice",
+     "viz": "radial",
+     "wide": false,
+     "value": "26",
+     "unit": "of 29",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "By the count of EdChoice, which backs choice, 26 of 29 studies found public school students did better after private school choice arrived; critics say those programs were far smaller than today’s.",
+     "detail": "Of the other three studies, two found a negative effect and one found none. The tally treats each study equally regardless of size or rigor, and most examine smaller, targeted programs. The strongest single study is of Florida: David Figlio, Cassandra Hart and Krzysztof Karbownik found that as the state’s tax-credit scholarship grew, public school students facing more private competition had modestly higher test scores and lower absence and suspension rates, especially low-income students (NBER Working Paper 26758). Critics add that measured effects are small and miss the fiscal strain on districts that lose many students; the Ohio appeals court that struck down the state’s EdChoice voucher in October 2026 described a “downward spiral of reduced enrollment, reduced revenue, and increased fiscal pressure” on public schools (Associated Press, October 15, 2026).",
+     "source_label": "EdChoice, Here’s What the Research Really Says About School Choice in 2026",
+     "source_url": "https://www.edchoice.org/heres-what-the-research-really-says-about-school-choice-in-2026/",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "studies-finding-public-school-students-gain"
+    },
+    {
+     "label": "Texas education savings accounts, first year",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "students",
+     "series": [
+      {
+       "label": "Applied",
+       "value": "274,000",
+       "highlight": false
+      },
+      {
+       "label": "Funded",
+       "value": "100,000",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "More than 274,000 Texas students applied for education savings accounts for 2026–27, the program’s first year; by June 2026 the state had awarded accounts to more than 100,000.",
+     "detail": "The program, created by Senate Bill 2 in 2025, gave priority first to low- and middle-income students with disabilities, then to low-income students, with a lottery for the last of the money. The program office said in June 2026 that about four in five awarded students had household incomes below 200 percent of the federal poverty level and more than one in four had a documented disability. In its April 22, 2026 release on the first round of awards, mostly students with disabilities in the top-priority tier, the comptroller’s office reported that “approximately half of these students previously attended a public school.” The program’s published figures put its first-year funding at $1 billion and an account at $10,474 for a student at an accredited private school and $2,000 for a homeschooled student.",
+     "source_label": "Texas Comptroller of Public Accounts, overview of Texas Education Freedom Account applications",
+     "source_url": "https://comptroller.texas.gov/about/media-center/news/20260402-texas-comptrollers-office-releases-comprehensive-overview-of-texas-education-freedom-account-applications-1775142014682",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "texas-education-savings-accounts-first-year"
+    },
+    {
+     "label": "States opted into the federal scholarship tax credit",
+     "viz": "radial",
+     "wide": false,
+     "value": "32",
+     "unit": "of 50 states",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "By November 2026, 32 states had opted into the new federal tax credit of up to $1,700 per taxpayer for gifts to scholarship groups, by one tracker’s count; the IRS’s June list had 27.",
+     "detail": "The credit, section 25F of the tax code, was enacted on July 4, 2025 in the budget reconciliation law and applies to tax years ending after December 31, 2026. It is dollar-for-dollar and nonrefundable, and Treasury’s proposed rules let each spouse claim the full amount. Scholarships may go to students eligible to enroll in a public school whose household income is no more than 300 percent of the area median, and scholarship organizations must spend at least 90 percent of their income on scholarships. Credits flow only in states whose governor or designated body opts in each year. The tracker, kept by Democrats for Education Reform, adds Kansas, Kentucky, New Mexico, New York and North Carolina to the IRS list. Because scholarships can cover a wide range of school expenses, some Democratic governors, including New York’s Kathy Hochul, opted in on the stated condition that public school students benefit too; Education Week reports that Virginia’s new governor, Abigail Spanberger, plans to withdraw.",
+     "source_label": "Democrats for Education Reform, Federal Scholarship Tax Credit Opt-In Tracker",
+     "source_url": "https://dfer.org/fstc/opt-in-tracker/",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "states-opted-into-the-federal-scholarship"
+    },
+    {
+     "label": "Estimated federal revenue loss from the scholarship tax credit",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "$ billion",
+     "series": [
+      {
+       "label": "2027",
+       "value": "0.5",
+       "highlight": false
+      },
+      {
+       "label": "2028",
+       "value": "2.6",
+       "highlight": false
+      },
+      {
+       "label": "2030",
+       "value": "3.4",
+       "highlight": false
+      },
+      {
+       "label": "2032",
+       "value": "4.0",
+       "highlight": false
+      },
+      {
+       "label": "2034",
+       "value": "4.4",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Congress’s Joint Committee on Taxation estimated the credit would cost $25.9 billion in federal revenue over 2025 to 2034, rising to $4.4 billion a year.",
+     "detail": "The estimate, dated July 1, 2025, scored the Senate-passed bill, which the House then passed unchanged; the years are federal fiscal years. It measures revenue the Treasury forgoes, not spending on scholarships, and it rests on how many states opt in and how many taxpayers give, both unknown when it was made. With no overall cap on credits, the cost could run higher or lower. Supporters of the credit note that it is small next to federal spending on elementary and secondary schools and that donors choose where the money goes. The Institute on Taxation and Economic Policy and other critics describe it as a federally funded voucher program with weak oversight.",
+     "source_label": "Joint Committee on Taxation, JCX-35-25",
+     "source_url": "https://www.jct.gov/publications/2025/jcx-35-25/",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "estimated-federal-revenue-loss-from-the"
+    },
+    {
+     "label": "Statewide private school choice ballot measures rejected in 2024",
+     "viz": "bar",
+     "wide": false,
+     "value": "3",
+     "unit": "of 3",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Voters in Kentucky, Nebraska and Colorado rejected private school choice measures in November 2024, including two states that voted for the Republican presidential candidate the same day.",
+     "detail": "Kentucky’s Amendment 2, to allow public funding of private school choice, was rejected by more than 60 percent statewide and in every county. Nebraska voters repealed the state’s new private school scholarship law by nearly 15 percentage points. Colorado’s Amendment 80, a constitutional right to school choice including private schools, won about 49 percent, short of the 55 percent required. The authors write that no statewide school choice ballot question in their table, going back to a 1978 Michigan vote, had passed. Supporters of choice respond that teachers union spending dominates ballot campaigns, that legislators who passed choice laws have mostly been reelected, and that Texas enacted its program in 2025 after a 2024 primary campaign against Republican opponents of vouchers. No statewide choice measure was on the November 2026 ballot: Arizona’s Proposition 212, which would have added income caps and rules to its program, was disqualified for lack of valid signatures (Axios Phoenix, August 2026).",
+     "source_label": "Baxter, Hartney and Kogan, Voters Reject Vouchers Again, Education Next",
+     "source_url": "https://www.educationnext.org/voters-reject-vouchers-again-defeat-private-school-choice-measures/",
+     "source_published": "2024",
+     "source_accessed": "2026-11-23",
+     "id": "statewide-private-school-choice-ballot-measures"
+    },
+    {
+     "label": "Support for school choice policies among US adults",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "ESAs, described",
+       "value": "78",
+       "highlight": false
+      },
+      {
+       "label": "Tax-credit scholarships",
+       "value": "72",
+       "highlight": false
+      },
+      {
+       "label": "Vouchers",
+       "value": "69",
+       "highlight": false
+      },
+      {
+       "label": "Charter schools",
+       "value": "68",
+       "highlight": false
+      },
+      {
+       "label": "ESAs, no description",
+       "value": "54",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In EdChoice’s 2026 survey, 54 percent of adults backed education savings accounts when asked plainly and 78 percent once they were described; other polls find narrower majorities.",
+     "detail": "The survey, fielded March 24 to April 4, 2026 among 1,504 adults and 2,466 school parents, is run by an organization that advocates for school choice, and it shows how much answers depend on wording. Parents were more supportive than the general public on every policy: 84 percent backed described ESAs and 79 percent vouchers. Polls worded differently find less: Parker Baxter, Michael Hartney and Vladimir Kogan write in Education Next (Spring 2025) that nearly every survey fielded since 2017 has found a narrow majority for universal private school choice, and Education Next’s own 2018 poll put support for vouchers for all students at 54 percent, with 31 percent opposed.",
+     "source_label": "EdChoice, 2026 Schooling in America Survey",
+     "source_url": "https://www.edchoice.org/highlights-from-the-newly-released-2026-schooling-in-america-survey/",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "support-for-school-choice-policies-among"
+    },
+    {
+     "label": "US private school students in religious schools",
+     "viz": "radial",
+     "wide": false,
+     "value": "76",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "About 5.1 million students attended 30,553 US private schools in 2023–24; 76 percent were in religious schools, with Catholic schools alone enrolling 33.7 percent.",
+     "detail": "Other religious schools enrolled 42.1 percent and nonsectarian schools 24.2 percent. Because religious schools hold most private seats, nearly every private choice program raises the question of public money for religious education. Tulane researchers Douglas Harris and Gabriel Olivier found that the largest enrollment gains in states with near-universal programs came in small, non-Catholic religious schools (Education Week, January 2026). Thirty-nine percent of private schools enrolled fewer than 50 students. Sixty-three percent of private school students were White non-Hispanic, 13 percent Hispanic and 10 percent Black non-Hispanic. The survey counts students in schools offering kindergarten or higher, so its total may not match the 4.7 million K-12 figure NCES reported for fall 2021.",
+     "source_label": "National Center for Education Statistics, 2023–24 Private School Universe Survey",
+     "source_url": "https://ies.ed.gov/nces/2026/05/characteristics-private-schools-united-states-results-2023-24-private-school-universe-survey",
+     "source_published": "2023–24",
+     "source_accessed": "2026-11-23",
+     "id": "us-private-school-students-in-religious"
+    },
+    {
+     "label": "Charter students’ yearly learning gains over matched district peers",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "days",
+     "series": [
+      {
+       "label": "Network, reading",
+       "value": "27",
+       "highlight": false
+      },
+      {
+       "label": "Network, math",
+       "value": "23",
+       "highlight": false
+      },
+      {
+       "label": "All, reading",
+       "value": "16",
+       "highlight": true
+      },
+      {
+       "label": "Stand-alone, reading",
+       "value": "10",
+       "highlight": false
+      },
+      {
+       "label": "All, math",
+       "value": "6",
+       "highlight": false
+      },
+      {
+       "label": "Stand-alone, math",
+       "value": "0",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "CREDO found charter students gained the equivalent of 16 more days of learning a year in reading and 6 in math than matched district peers; a 2025 paper says the days conversion overstates gains.",
+     "detail": "The study covered 2014–15 to 2018–19 in 29 states, Washington, D.C., and New York City, matching each charter student with district students of the same characteristics and prior test scores. Schools run by charter management organizations gained the most; stand-alone charters matched district schools in math. Gains were larger for Black and Hispanic students and students in poverty, smaller for students in special education, and varied widely by state, by 109 days in reading and 120 in math between the best and the worst. Thirty-six percent of charter schools outperformed their local district schools in both subjects, while 17 percent had weaker gains in reading and 25 percent in math. CREDO’s 2009 and 2013 national studies found weaker charter results, and this one credits most of the improvement to existing schools getting better. Gregory Camilli’s 2025 arXiv working paper, “The ‘Days of Learning’ Metric for Education Evaluations,” argues that converting test gains into days of learning overstates them by roughly a factor of three.",
+     "source_label": "CREDO at Stanford University, National Charter School Study III",
+     "source_url": "https://credo.stanford.edu/wp-content/uploads/2023/06/NCSS3-Press-Release-.pdf",
+     "source_published": "2014–2019",
+     "source_accessed": "2026-11-23",
+     "id": "charter-students-yearly-learning-gains-over"
+    },
+    {
+     "label": "Students in public charter schools",
+     "viz": "bar",
+     "wide": false,
+     "value": "~4",
+     "unit": "million",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Nearly 4 million students attended public charter schools in 2024–25; over six years charters gained more than half a million students while district schools lost nearly 2 million.",
+     "detail": "The figures come from the National Alliance for Public Charter Schools, an advocacy group, using state agency data; it puts the charter gain at 15 percent and the district loss at 4.4 percent, and counts more than 8,100 charter schools. In the most recent year, it reports, charters added 111,349 students while districts lost 221,729, and charter enrollment grew over the six years in 41 of the 43 states with charter sectors. The latest federal count is older: NCES counted 3.7 million charter students in fall 2021, 7 percent of public school students, up from 1.8 million in fall 2010. Charter schools are public, tuition-free and open to all, usually admitting by lottery when oversubscribed. They are funded per student, so their growth moves money from district budgets to charter budgets.",
+     "source_label": "National Alliance for Public Charter Schools, Enrollment Brief: Charter Schools 2025",
+     "source_url": "https://files.eric.ed.gov/fulltext/ED677324.pdf",
+     "source_published": "2024–25",
+     "source_accessed": "2026-11-23",
+     "id": "students-in-public-charter-schools"
+    },
+    {
+     "label": "Public school current spending per pupil",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "$ per pupil",
+     "series": [
+      {
+       "label": "New York",
+       "value": "31,918",
+       "highlight": false
+      },
+      {
+       "label": "New Jersey",
+       "value": "27,234",
+       "highlight": false
+      },
+      {
+       "label": "United States",
+       "value": "17,619",
+       "highlight": true
+      },
+      {
+       "label": "Arizona",
+       "value": "12,003",
+       "highlight": false
+      },
+      {
+       "label": "Utah",
+       "value": "11,347",
+       "highlight": false
+      },
+      {
+       "label": "Idaho",
+       "value": "11,060",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "US public schools spent $17,619 per pupil in current spending in fiscal 2024, up 6.6 percent from 2023 before inflation; New York spent $31,918 and Idaho $11,060.",
+     "detail": "Current spending excludes construction and debt; the national total was $842.3 billion. Revenue came 45.2 percent from states, 43.2 percent from local sources, mostly property taxes, and 11.6 percent from the federal government. The figure matters to the choice debate because most programs pay less per student than public schools spend: EdChoice put the median Arizona ESA at $7,194 and $7,409 in the first two years of universal eligibility. Several of the states with the lowest per-pupil spending, including Arizona, Utah and Idaho, have universal or broad programs.",
+     "source_label": "US Census Bureau, Annual Survey of School System Finances",
+     "source_url": "https://www.census.gov/newsroom/press-releases/2026/school-system-finances.html",
+     "source_published": "2024",
+     "source_accessed": "2026-11-23",
+     "id": "public-school-current-spending-per-pupil"
+    },
+    {
+     "label": "Arizona education savings account spending",
+     "viz": "bar",
+     "wide": false,
+     "value": "886",
+     "unit": "$ million",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Arizona’s ESA program cost $886 million in 2024–25, about a tenth of the state education department’s budget, as enrollment grew from almost 12,000 before universal eligibility to nearly 90,000.",
+     "detail": "RAND reports the cost in 2025 dollars; in 2011–12 the program served 144 students at $2.2 million. Before 2022 it served specific groups, and students with disabilities fell from 60 percent of users in 2021–22 to 18 percent after universal eligibility. Families spend roughly 60 percent of account money on private tuition and the rest on tutoring, curriculum and other services, and 28 percent of awarded funds had not been spent as of 2023–24, because balances roll over. Vendors on the state’s online marketplace rose from 1,339 in 2021 to 6,091 in 2024, and private schools from 451 to 515 since 2022. Private elementary tuition rose 12 percent and high school tuition 5 percent, which RAND could not attribute definitively to the program. KJZZ reported in November 2026 that enrollment had passed 110,000 and that the state education department estimates the cost at $1 billion a year.",
+     "source_label": "RAND Corporation, Case Study of Arizona’s K–12 Education Savings Account Program",
+     "source_url": "https://www.rand.org/pubs/research_reports/RRA3431-2.html",
+     "source_published": "2024–25",
+     "source_accessed": "2026-11-23",
+     "id": "arizona-education-savings-account-spending"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Do private school choice programs leave the students who use them better educated?",
+    "kind": "empirical",
+    "why": "The strongest evidence comes from older programs for low-income students, and it splits by measure: test scores often fell or held flat, while graduation and college enrollment more often rose. As of 2026, universal programs had barely been studied.",
+    "detail": "Those who expect gains argue that state tests are the wrong yardstick for schools that do not teach to them, and that graduation, college, safety and character matter more to parents and to adult success. On those measures they find the record better: Matthew Chingos, David Figlio and Krzysztof Karbownik found in 2025 that students who used Ohio’s targeted EdChoice voucher between 2008 and 2014 were more likely to enroll in college and finish a bachelor’s degree, and the federal evaluation of the Washington, D.C., program found it raised high school graduation, based on parent reports.\n\nThose who expect losses answer that randomized lotteries, the most rigorous design, found some of the largest test-score declines measured in education research; the federal D.C. evaluation found no effect on math or reading after three years, and Patrick Wolf of the University of Arkansas summarizes voucher test results as “neutral to negative” (Education Week, January 2026). Douglas Harris of Tulane cautioned in January 2026 that researchers could not yet separate program effects from selection, since schools choose students and students choose schools. Few universal programs require a common test: FutureEd found that of the first eight universal states only Indiana and Iowa require users to take state tests.",
+    "lean_label_a": "Students gain",
+    "lean_label_b": "Students lose",
+    "id": "do-private-school-choice-programs-leave"
+   },
+   {
+    "text": "Should public money go to families who already pay for private school?",
+    "kind": "value",
+    "why": "In the first years of universal programs, most users were already in private school or homeschooled. Whether that is a flaw or the point depends on what the program is for.",
+    "detail": "Those who favor universal eligibility argue that education money belongs to the child and that every family pays the taxes that fund schools, so a family paying tuition on top of those taxes pays twice; treating it equally is fairness, not a giveaway. Universal programs also build a broad coalition that keeps them funded, where small programs for the poor have repeatedly been cut or capped, and they avoid the cliffs and paperwork of means tests. The share of new users arriving from public schools grows as families learn of the option: among Arizona’s new recipients in grades 1–12, it rose from 21 percent in 2022–23 to 48 percent in 2023–24, by FutureEd’s count.\n\nThose who favor targeting answer that the public case for choice was always about giving children without options what wealthier families already have. Paying families who would have chosen private school anyway adds cost without changing where any child learns, and it sends money to the families who need it least; Jon Valant of the Brookings Institution told a Senate forum in June 2025 that the new programs are “much larger than past voucher programs and less targeted to students in need.” Income caps, in this view, keep the option for those who need it while limiting the cost.",
+    "lean_label_a": "Fund every child",
+    "lean_label_b": "Fund new access",
+    "id": "should-public-money-go-to-families"
+   },
+   {
+    "text": "Does private school choice push public schools to improve, or drain them?",
+    "kind": "empirical",
+    "why": "Studies of smaller programs mostly find small gains for students who stay in public schools. Today’s programs are far larger, and what big, concentrated enrollment losses do to district finances had not been studied at scale as of 2026.",
+    "detail": "Those who see improvement argue that institutions do not improve without pressure, and that districts that can lose students and money have reason to listen to parents. They point to the weight of competition studies, most of which find positive or neutral effects on public school students. They add that public enrollment has been falling mainly because of birth rates, that private choice has not made a major dent in aggregate public enrollment (Education Week, January 2026), and that public per-pupil spending has kept rising.\n\nThose who see a drain argue that district costs such as buildings, buses, special education and pensions do not fall when a few students leave each school, so losing per-student funding means cuts for the children who remain, who are disproportionately poor or have disabilities. The competition studies measured programs a fraction of today’s size, they say, and the effect of a state moving a tenth of its education department’s budget into private choice, as Arizona has, is untested. Rural districts with few or no private schools nearby bear the costs without gaining options, which is why rural Republicans in states such as Texas and Tennessee long resisted vouchers.",
+    "lean_label_a": "Pushes improvement",
+    "lean_label_b": "Drains resources",
+    "id": "does-private-school-choice-push-public"
+   },
+   {
+    "text": "What do universal choice programs really cost taxpayers?",
+    "kind": "empirical",
+    "why": "Gross spending is known. The net cost depends on what the state would have spent on the same students without the program, which turns on how many would otherwise have been in public school, and the two sides estimate that very differently.",
+    "detail": "Those who see a modest cost argue that each student who leaves a public school saves the state more than the account costs, since accounts are typically well below public per-pupil spending, and that paying for students already in private school is a one-time transition cost of treating all families equally. EdChoice’s Martin Lueken estimates the net cost of Arizona’s universal expansion at $178.3 million in its first year and $118.0 million in its second. Arizona’s budget troubles, they add, had several causes, including tax cuts and falling district enrollment that would have happened anyway.\n\nThose who see a large cost argue that paying for students who were never in public school is new spending, and that costs have repeatedly overrun projections: FutureEd reports that Arizona’s actual costs ran well above the $33 million and $64 million projected for the first two years of universal eligibility. Because many universal programs work as entitlements, costs grow with demand rather than with appropriations, crowding out other priorities, and the new federal credit adds forgone revenue on top.",
+    "lean_label_a": "Modest net cost",
+    "lean_label_b": "Large new cost",
+    "id": "what-do-universal-choice-programs-really"
+   },
+   {
+    "text": "Should private schools that take public money follow public school rules?",
+    "kind": "value",
+    "why": "Public schools must admit all students, give state tests and follow special education law; most private choice programs ask far less. Each added rule protects students and taxpayers to one side and erodes private schools’ independence to the other.",
+    "detail": "Those who want public rules argue that public money should bring public accountability: state tests so results can be compared, financial audits, background checks, and admission open to any child the money is meant for. The National Education Association argues that “private and religious schools can — and do — discriminate in admissions” and that students with disabilities give up federal special education protections when they use vouchers. Unspent balances and thousands of newly registered vendors in Arizona’s program invite waste, in this view, unless they are audited.\n\nThose who resist rules argue that the accountability that matters is a parent’s ability to leave, and that making private schools give state tests and follow public rules would turn them into the schools families left. A single required test pushes every school toward the same curriculum, and open admission would force religious schools to abandon their missions. Frederick Hess of the American Enterprise Institute has asked whether Louisiana’s regulations deterred good private schools from joining its program. They support basic fraud controls and financial audits, but not academic mandates.",
+    "lean_label_a": "Same rules",
+    "lean_label_b": "Freedom to differ",
+    "id": "should-private-schools-that-take-public"
+   },
+   {
+    "text": "Should public money pay for religious schooling?",
+    "kind": "value",
+    "why": "The Supreme Court has held that a state that funds private schooling cannot exclude schools for being religious, but many state constitutions bar such aid, and people divide over whether it serves families’ faith or compels taxpayers to fund one.",
+    "detail": "The Court allowed religious schools in a voucher program in Zelman v. Simmons-Harris (2002) and held in Espinoza v. Montana Department of Revenue (2020) and Carson v. Makin (2022) that a state funding private schools cannot leave out religious ones. In May 2025 it split 4–4 on whether a state may approve a religious public charter school, leaving in place Oklahoma’s ruling against it, and in April 2026 it agreed to hear Catholic preschools’ challenge to their exclusion from Colorado’s universal preschool program over nondiscrimination rules (PBS NewsHour).\n\nThose who favor inclusion argue that the money goes to families making a private choice, so the state no more funds religion than when a Pell Grant pays for a Catholic university; excluding religious schools singles out faith for unequal treatment and denies religious families, many of them poor and urban, the education they want. Many state bans, the so-called Blaine amendments, date from nineteenth-century hostility to Catholic immigrants. Those opposed argue that taxpayers should not be compelled to pay for religious instruction they do not share, and that schools taking public money should not turn away students or teachers for their faith, sexuality or family; the founding generation’s concern, they say, was precisely compelled support for religion.",
+    "lean_label_a": "Fund them equally",
+    "lean_label_b": "Keep funds secular",
+    "id": "should-public-money-pay-for-religious"
+   },
+   {
+    "text": "Who should decide how a child is educated: parents or the public?",
+    "kind": "value",
+    "why": "This is the oldest disagreement in the debate, and evidence cannot settle it. Most Americans hold some of both views, which is why the same people can like their local public school and support choice.",
+    "detail": "One view holds that education is first a family responsibility that the state funds. Parents know and love their children best and live with the consequences of their schooling. Families differ in their values, and a free society should not require them to accept one model of education to receive their share of public support; pluralism, on this view, is a strength.\n\nThe other holds that public schooling is a shared civic institution through which a diverse society educates its next generation together, governed by elected boards and open meetings. It is one of the few places where children of different backgrounds, faiths and politics learn side by side. Splitting education money into private accounts turns a common good into a private benefit and weakens the institution most children will continue to rely on, and parents already have a voice in public schools through the boards they elect.",
+    "lean_label_a": "Parents decide",
+    "lean_label_b": "The public decides",
+    "id": "who-should-decide-how-a-child"
+   },
+   {
+    "text": "Do charter schools serve students better than the district schools they draw from?",
+    "kind": "empirical",
+    "why": "Supporters read the national evidence as showing charters outperform matched district schools, most of all for disadvantaged students. Critics dispute how the gains are measured and whether matching captures who applies.",
+    "detail": "The question matters because charters are the form of choice that keeps schools public, and their record shapes whether public school choice can meet families’ demand without private vouchers. Those who favor charters argue that the evidence has strengthened across three national studies and that charters work under public accountability: they must accept applicants by lottery, report state test results and face closure for poor performance, a fate rarely met by a failing district school. Rapid enrollment growth, they add, shows families value them.\n\nThose who doubt the record argue that the average effect is small, that converting it to days of learning exaggerates it, and that families who enter charter lotteries are motivated in ways that matching on test scores cannot capture. Charter growth drains district budgets as vouchers do, some charters, especially online ones, have performed very poorly, and uneven results across states and recurring closures and scandals suggest, in this view, that charters are not a reliable improvement over well-funded district schools.",
+    "lean_label_a": "Charters do better",
+    "lean_label_b": "No clear advantage",
+    "id": "do-charter-schools-serve-students-better"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Fund every student wherever they learn",
+    "color_key": "green",
+    "steelman": "Education money is raised for children, not systems, so every child should carry their share to the school or services that fit them, as affluent families already can.",
+    "detail": "Assigning children to schools by address gives real choice only to families who can buy a house in a good district or pay tuition on top of their taxes. Universal accounts extend that freedom to everyone, whether the right fit is a district school, a charter, a religious or secular private school, a microschool, tutoring or homeschooling. Parents are the best judges of their own children, and the ability to leave is the strongest accountability there is. Demand makes the case: in Texas, applicants outnumbered funded places more than two to one in the first year. Universal eligibility matters too. Programs limited to the poor have been small, politically fragile and easy to cut, while universal ones build a broad constituency and treat every taxpaying family alike. Competition helps the children who stay, and each student costs less than in the public system.\n\nTo the objection that most of the money goes to families already in private school, with no proof of better learning: those families pay school taxes too, and the share of new participants leaving public schools rises as families learn about the option. State exams measure alignment with the public curriculum, not the outcomes parents care about most, and the evidence on graduation and college is positive. Within the camp, some prefer education savings accounts because they cover services beyond tuition; others, including many at the Cato Institute, prefer tax-credit scholarships because private donations keep government further from the schools. Most oppose state testing mandates, though some accept a nationally normed test of the school’s choosing.",
+    "proponents": "American Federation for Children; EdChoice; Corey DeAngelis; Heritage Foundation; Cato Institute; Institute for Justice; Trump administration",
+    "id": "fund-every-student-wherever-they-learn"
+   },
+   {
+    "name": "Keep public money in public schools",
+    "color_key": "blue",
+    "steelman": "Public schools take every child and answer to voters. Public money belongs there, not in private schools that can turn children away and need not show results.",
+    "detail": "Public schools educate nearly nine in ten American children. Vouchers and education savings accounts move public money to private schools that can refuse students, need not give state tests and do not carry the same protections for students with disabilities. The results do not justify the cost. The most rigorous voucher studies found test-score declines, some among the largest ever measured, and universal programs mostly pay families whose children were already in private school, which is new spending, not new choice. That money comes out of budgets for the children who remain, in districts whose fixed costs do not shrink when a few students leave, and rural communities with no private schools pay without gaining options. Voters have rejected statewide voucher measures again and again.\n\nTo the objection that this traps poor children in failing schools while richer families already choose: the programs now expanding do not mainly serve poor children in failing schools; by RAND’s finding in Arizona, users come disproportionately from more affluent districts. Families who want options within public education have them in many places through magnet schools, open enrollment and career academies, and helping a few children leave while cutting the budgets of the schools the rest attend is no remedy. Some in the camp want existing programs repealed; others, including several new Democratic governors, seek caps, audits and testing as a step toward winding them down. On charter schools the camp divides: the Network for Public Education and many union members oppose charter expansion, while others accept well-regulated charters as public schools.",
+    "proponents": "National Education Association; American Federation of Teachers; Randi Weingarten; Network for Public Education; Gina Hinojosa",
+    "id": "keep-public-money-in-public-schools"
+   },
+   {
+    "name": "Target choice to need and hold schools accountable",
+    "color_key": "amber",
+    "steelman": "Choice can help children without options, but not as a blank check: aim the money at need, and make every school that takes it show its results and its books.",
+    "detail": "Public money following children to private schools can do real good for families without options, especially low-income children and children with disabilities whose public schools do not serve them well. So put the money where it changes what children can do, through income limits or priority for low-income students and students with disabilities, rather than subsidizing tuition families were already paying. Schools and vendors that take public money should show what they do with it: annual audits, background checks, published results on a common test, and basic admission and disability protections. The design is workable: Iowa requires state tests of account users, and Texas reserves its money first for low-income students and students with disabilities. Large programs in Arizona, Texas and Florida are established and serve many children; repealing them would hurt families, but leaving them unchecked invites waste and erodes public trust.\n\nTo choice supporters who say rules shrink the supply of schools and the coalition: scandals and runaway costs, not rules, are what winning candidates campaigned against in 2026, and tests need not dictate curriculum if schools can choose among sound ones. To opponents who want repeal: tens of thousands of families now depend on these programs, and Josh Cowen of Michigan State, a leading critic of vouchers, has argued that programs of that size should not be dismantled (The 74). The camp joins choice supporters who want programs to last with opponents of universal programs who see reform as the achievable path, such as Iowa’s Governor-elect Rob Sand. They differ on how strict to be: proposed income caps run from $150,000, the Arizona Democrats’ starting point, to $250,000, the cap Governor Katie Hobbs proposed earlier in 2026.",
+    "proponents": "Democrats for Education Reform; Jorge Elorza; Rob Sand; Katie Hobbs; Thomas B. Fordham Institute",
+    "id": "target-choice-to-need-and-hold"
+   },
+   {
+    "name": "Keep choice within public schools",
+    "color_key": "rust",
+    "steelman": "Families deserve real choices, and charters, magnet schools and open enrollment can give them inside public education, open to all and answerable to the public.",
+    "detail": "Choice inside the public system keeps what makes public schools public. Charter schools are tuition-free, take students by lottery, give state tests and can be closed when they fail, so the public can see and act on results. The evidence favors this path: the national charter study found charter students gained more than matched district peers, with the biggest gains for Black, Hispanic and low-income students, while the best studies of private vouchers found test-score losses. Vouchers mostly subsidize families who could already pay; as Third Way puts it, “vouchers don’t actually make private schools affordable.” And private schools can select their students. The answer to families’ demand is to expand choice within public education, with enrollment systems every family can use, not to divert public money to schools the public cannot hold accountable. John B. King Jr., the former US Education Secretary, made the case in 2017: “The evidence is quite clear that voucher programs that exist around the country have not delivered the results.”\n\nTo the objection that charters also drain district budgets and shut out families who want religious education: money that follows a student to a charter stays in public education, under public oversight, open to all. Families remain free to choose religious schooling, as they always have, but the public is not obliged to pay for schools that can turn its children away. Within the camp, some put charters first; others emphasize open enrollment and district options and are wary of charter growth in particular places, and some accept narrow private programs for students with disabilities.",
+    "proponents": "Third Way; Progressive Policy Institute; David Osborne; John B. King Jr.",
+    "id": "keep-choice-within-public-schools"
+   },
+   {
+    "name": "Keep private and home schooling off public money",
+    "color_key": "purple",
+    "steelman": "Private schools and homeschooling are worth having because they answer to families, not the state; public money would bring public rules and end that independence.",
+    "detail": "The question of how public money should follow children assumes the money should exist in the first place. Private schools and home educators are free to teach their own faith, curriculum and values. Once they depend on public money, rules follow, because legislators must answer for how taxpayers’ dollars are spent: testing mandates, approved-vendor lists, reapplication, curriculum standards and admissions rules. It is already happening. Utah tightened its universal program in 2026 with preapproval, audits and reporting requirements, Arizona’s new majority plans background checks and income caps, and every scandal brings demands for more control. Over time a tax-funded private sector becomes a second public system. As Carolyn Martin of Christian Home Educators of Colorado put it, “Government money comes with government control.” The better answer is to lower the taxes that fund government schooling so families keep their own money to spend as they choose.\n\nTo the objection that refusing public money leaves families who cannot afford tuition without options: government money cannot buy independence, and the families it helps today will face the rules it brings tomorrow. Families can be helped through private scholarships, lower taxes and cheaper models such as homeschool co-ops and microschools, which have grown on their own. The camp joins libertarians who, in the tradition of Murray Rothbard, oppose all public funding of education with homeschool families who object mainly to programs that could bring new rules for those who do not take part; some accept tax credits for a family’s own tuition spending as letting it keep its own money.",
+    "proponents": "Mises Institute; Christian Home Educators of Colorado; Texans for Homeschool Freedom; Tennessee Stands",
+    "id": "keep-private-and-home-education-independent"
+   }
+  ],
+  "crux": {
+   "lead": "Should public school money follow each child to any school, or stay with schools the public runs in common?",
+   "lead_highlight": "follow each child to any school, or stay with schools the public runs in common",
+   "subtitle": "Most arguments here come back to this. If the money belongs to the child, the case for choice rests on freedom and fit, and the test is whether children do well. If it belongs to a shared system, the case rests on what happens to the schools most children attend when money leaves them.",
+   "empirical": "Evidence can settle what large programs open to every family actually do. Studies of older, smaller programs for low-income students were mixed: weak on tests, better on finishing school and going to college. As of 2026 no study had measured whether students in the new open programs learn more, how many would otherwise be in public school and so what the programs truly cost, or whether districts that lose many students improve or decline.",
+   "values": "People who agree on every finding can still differ on whether education is first a family’s responsibility that the public funds or a civic institution the public runs; whether taxpayers should fund schools that teach a faith or can turn some children away; whether the right check on a school is a parent’s freedom to leave or a public test and an elected board; and how much risk to the schools most children attend is worth more options for some."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Follow every state’s school choice legislation",
+    "description": "FutureEd, a nonpartisan think tank at Georgetown University, tracks private school choice bills, new programs, oversight changes and federal tax credit opt-ins in every state.",
+    "url": "https://www.future-ed.org/legislative-tracker-2026-state-private-school-choice-bills/",
+    "for_position": null,
+    "id": "follow-every-state-s-school-choice"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read RAND’s study of Arizona’s universal program",
+    "description": "The most detailed independent look at the largest universal education savings account program: who uses it, where they came from, how the money is spent, and what happened to costs and tuition.",
+    "url": "https://www.rand.org/pubs/research_reports/RRA3431-2.html",
+    "for_position": null,
+    "id": "read-rand-s-study-of-arizona"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Join the American Federation for Children’s advocacy network",
+    "description": "The national school choice group organizes parents and supporters to contact legislators and testify for education savings accounts, vouchers and tax-credit scholarships.",
+    "url": "https://www.federationforchildren.org/get-involved/",
+    "for_position": "Fund every student wherever they learn",
+    "id": "join-the-american-federation-for-children"
+   },
+   {
+    "kind": "policy",
+    "title": "Take action with the National Education Association",
+    "description": "The teachers union’s action center lets members and supporters contact lawmakers to oppose vouchers and support public school funding.",
+    "url": "https://www.nea.org/advocating-for-change/action-center",
+    "for_position": "Keep public money in public schools",
+    "id": "take-action-with-the-national-education"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the case for accountable, targeted choice",
+    "description": "Jorge Elorza of Democrats for Education Reform argues that Democrats should embrace school choice, private options included, so long as it is accessible and accountable.",
+    "url": "https://dfer.org/2026/02/17/democrats-its-time-to-embrace-school-choice/",
+    "for_position": "Target choice to need and hold schools accountable",
+    "id": "read-the-case-for-accountable-targeted"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the case for public school choice instead of vouchers",
+    "description": "Third Way’s October 2026 report urges rejecting vouchers while expanding charter schools, magnet schools and open enrollment within public education.",
+    "url": "https://www.thirdway.org/report/democrats-reject-vouchers-embrace-family-agency-in-public-education",
+    "for_position": "Keep choice within public schools",
+    "id": "read-the-case-for-public-school"
+   },
+   {
+    "kind": "local",
+    "title": "Check whether your state has joined the federal scholarship tax credit",
+    "description": "The IRS announcement and list of states that opted into the federal tax credit for gifts to scholarship groups, which begins in 2027; governors can opt in or out each year.",
+    "url": "https://www.irs.gov/newsroom/more-than-half-the-us-states-signed-up-to-participate-in-the-federal-scholarship-tax-credit-program-enacted-under-the-one-big-beautiful-bill",
+    "for_position": null,
+    "id": "check-whether-your-state-has-joined"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the libertarian case against vouchers",
+    "description": "A Mises Institute essay arguing that vouchers extend government funding, and with it government control, into private education.",
+    "url": "https://mises.org/power-market/economics-and-ethics-vouchers-and-free-market-education",
+    "for_position": "Keep private and home schooling off public money",
+    "id": "read-the-libertarian-case-against-vouchers"
+   },
+   {
+    "kind": "donate",
+    "title": "Fund a scholarship for a low-income child",
+    "description": "The Children’s Scholarship Fund provides privately funded partial tuition scholarships so low-income families can choose private schools.",
+    "url": "https://scholarshipfund.org/donate/",
+    "for_position": "Fund every student wherever they learn",
+    "id": "fund-a-scholarship-for-a-low"
+   },
+   {
+    "kind": "donate",
+    "title": "Support the Network for Public Education",
+    "description": "An advocacy group founded by historian Diane Ravitch that campaigns against vouchers and for public school funding, and grades states on their support for public schools.",
+    "url": "https://networkforpubliceducation.org/donate/",
+    "for_position": "Keep public money in public schools",
+    "id": "support-the-network-for-public-education"
+   }
+  ]
+ },
+ "icon": "backpack",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: one compact school scene grouped in the center with wide white margins, nothing touching the edges: a large classic school bus seen from the side as the dominant focal mass, filled, driving along an open road that sweeps in a gentle S-curve across the whole foreground from lower left to the right, the road's ends simply stopping short of the margins, never closing into a loop or ring; a medium traditional schoolhouse with a small bell tower on a rounded hill behind the bus, the bus overlapping the foot of the hill, filled; a small school of a different shape, a low modern building with a flat roof and a row of windows, on a second, farther hill to the right, filled; one narrow lane branches off the road and winds up to each school; a small school backpack resting on the grass beside the road in front of the bus; the ground is two overlapping gentle rounded hills, filled.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #9459a2, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: dollar signs, banknotes, coins, money bags, piggy banks, vouchers, tickets, price tags, signposts, road signs, arrows, ladders, cracks, crumbling or boarded-up buildings, locked gates, fences, padlocks, crosses, steeples, churches, flags, protest signs, balance scales, question marks, charts, graphs, children, students, teachers, crowds, faces, apples, chalkboards with writing, clocks, bicycles, swings, kites."
 }

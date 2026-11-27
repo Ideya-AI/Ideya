@@ -1,8 +1,8 @@
 {
  "slug": "open-vs-closed-ai",
  "title": "Open vs. Closed AI",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-11-23T11:01:45+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Releasing model weights openly versus controlled APIs. Release policy, not government regulation.",
@@ -15,5 +15,565 @@
   "ai-alignment",
   "encryption-vs-lawful-access",
   "governing-autonomous-agents"
- ]
+ ],
+ "content": {
+  "overview": {
+   "summary": "Whether to publish AI model weights or keep models behind controlled access. Misuse is the central argument, with rivalry and concentrated power close behind.",
+   "scope_covered": "The release decision for capable AI models, from open weights to closed APIs and the range between, and the arguments over misuse, rivalry, power and research access.",
+   "scope_excluded": "Government regulation of AI as such, which belongs to Frontier AI Regulation; technical alignment methods; rules for autonomous agents.",
+   "why_now": "In early November 2026 the Chinese lab Moonshot AI published the full weights of Kimi K3.1 Pro on Hugging Face for anyone to download: a 2.8-trillion-parameter model with about 104 billion parameters active per token.",
+   "why_now_source_label": "TechNode, November 5, 2026",
+   "why_now_source_url": "https://technode.com/2026/11/05/moonshot-ai-releases-kimi-k3-1-pro-model-weights/"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "How far the best open-weight models trail the closed frontier",
+     "viz": "bar",
+     "wide": false,
+     "value": "4",
+     "unit": "months",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Since January 2026 the most capable open-weight models have matched closed frontier models from about four months earlier, an average gap of 8 points on Epoch AI’s Capabilities Index.",
+     "detail": "Epoch says the 8-point gap is similar to the distance between GPT-5 and GPT-5.5. Its earlier analysis, covering January 2023 to October 2025, put the average lag at about three months, and a November 2024 Epoch report had put it at about one year, with a range of 5 to 22 months across benchmarks, so on Epoch’s measures the lag has shrunk from about a year to a season. The figure is an average across model pairs with wide, often overlapping confidence intervals, and some recent open releases lacked enough benchmark results to be scored. It is the most cited number in the debate because both sides use it: those who favor open release say a few months of delay makes withholding US weights pointless, and those who favor keeping the frontier closed say a few months is exactly the window defenders need.",
+     "source_label": "Epoch AI, Open models lag state-of-the-art closed models by 4 months, May 2026",
+     "source_url": "https://epoch.ai/data-insights/open-closed-eci-gap",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "how-far-the-best-open-weight"
+    },
+    {
+     "label": "Open-weight and closed models’ shares of tokens and spending on OpenRouter",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Open tokens, July peak",
+       "value": "79",
+       "highlight": false
+      },
+      {
+       "label": "Open tokens, floor",
+       "value": "62",
+       "highlight": false
+      },
+      {
+       "label": "Closed spend, January",
+       "value": "89",
+       "highlight": false
+      },
+      {
+       "label": "Closed spend, September",
+       "value": "73",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "On OpenRouter, open-weight models have carried over 62 percent of tokens each week since July 2026, peaking at 79; closed models’ share of spending fell from 89 percent in January to 73 in September.",
+     "detail": "The two halves tell different stories: open models win on volume, largely because they are far cheaper per token, while closed models still take most of the money. Chinese labs alone carried 69 percent of tokens in the week of September 14. The 62 percent row is a floor the share has held above, not a weekly value. OpenRouter is a marketplace that routes requests among many providers and handles a small slice of global AI traffic; its users choose it to switch between models, so it overstates open-model use relative to the whole market, and the figures exclude resellers. A 2025 study of the same platform by Frank Nagle and Daniel Yue, published by the Linux Foundation, found closed models then took close to 80 percent of tokens and nearly 96 percent of revenue between May and September 2025, which shows how fast the volume side has moved.",
+     "source_label": "OpenRouter, The Token State of Play (Inferred newsletter), September 2026",
+     "source_url": "https://openrouter.ai/data/newsletter/the-token-state-of-play",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "open-weight-and-closed-models-shares"
+    },
+    {
+     "label": "Chinese-developed models’ share of open-model downloads on Hugging Face",
+     "viz": "radial",
+     "wide": false,
+     "value": "41",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Chinese models took a plurality of Hugging Face downloads over the year to early 2026, 41 percent, and China has passed the United States in both monthly and overall downloads.",
+     "detail": "Hugging Face attributes the shift above all to Alibaba’s Qwen family; Alibaba alone has more derivative models than Google and Meta combined, and Hugging Face’s Summer 2026 report counts 151,448 Qwen derivative repositories, 4.7 times the number for Llama. This is the number behind the American argument that the country is losing the open ecosystem to China; the 2025 US AI Action Plan says “We need to ensure America has leading open models founded on American values.” Beijing treats open releases as strategic too: in October 2026 China’s commerce and science ministries proposed export controls on models of at least 2 trillion parameters or a global top-10 ranking, under which weights already public are exempt and open-sourcing a restricted model gets an automatic license, according to The Next Web and ChinaTalk.",
+     "source_label": "Hugging Face, State of Open Source on Hugging Face: Spring 2026",
+     "source_url": "https://huggingface.co/blog/huggingface/state-of-os-hf-spring-2026",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "chinese-developed-models-share-of-open"
+    },
+    {
+     "label": "How often an open-weight model engaged with harmful cyber requests, by technique",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Refusals removed",
+       "value": "100",
+       "highlight": true
+      },
+      {
+       "label": "Prefilled reasoning",
+       "value": "92",
+       "highlight": false
+      },
+      {
+       "label": "Cover story",
+       "value": "64",
+       "highlight": false
+      },
+      {
+       "label": "Safeguarded Claude",
+       "value": "0",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Using simple techniques, Anthropic’s red team got Z.ai’s open-weight GLM-5.3 to engage with overtly harmful cyber requests 64 to 100 percent of the time; safeguarded Claude models engaged 0 percent.",
+     "detail": "Anthropic writes that GLM-5.3 “is unlike other frontier models in that it has been released without meaningful safeguards to limit misuse” and that “a critical threshold in freely accessible capabilities has now been crossed.” The top row is after abliteration, which removes refusal behavior from the weights themselves. On ExploitBench, 410 attempts on Chrome V8 bugs, GLM-5.3 produced 50 end-to-end exploits against 56 for Claude Mythos Preview; on Anthropic’s internal binary exploitation benchmark it achieved full control-flow hijacks in 4 percent of 100 tasks, against 6 percent for Mythos Preview and none for Claude Opus 4.6 or GLM-5.2. The comparison sets a downloadable model against API-served models behind monitoring and classifiers, so the Claude results reflect those system safeguards, not only the model. Anthropic is a competitor of Z.ai and a party to the open-weights dispute, which supporters of open release point out; the report cites NIST’s CAISI as independently finding GLM-5.3 the most cyber-capable open-weight model to date.",
+     "source_label": "Anthropic Frontier Red Team, GLM-5.3 and the spread of advanced cyber capabilities, September 2026",
+     "source_url": "https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "how-often-an-open-weight-model"
+    },
+    {
+     "label": "Estimated cost to strip the refusals from an open-weight model",
+     "viz": "bar",
+     "wide": false,
+     "value": "1,200",
+     "unit": "dollars",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Anthropic estimates an experienced team could remove GLM-5.3’s refusals in about 600 GPU hours, roughly 1,200 dollars, cutting refusal rates from above 90 percent to 2 to 12 percent.",
+     "detail": "Anthropic’s own team spent about 2,200 GPU hours, roughly 4,400 dollars, mostly on exploration, and found little loss of capability afterward. Earlier work found the same pattern on smaller models: the 2023 BadLlama study by Gade, Lermen, Rogers-Smith and Ladish removed the safety fine-tuning from Llama 2-Chat 13B for under 200 dollars, and a 2024 follow-up by Volkov did the same to Llama 3 8B in minutes on one GPU. For release policy the exact price matters less than the ratio: removing a safeguard costs a tiny fraction of training the model, so for a downloadable model, safety training is a default the user can undo. The 2026 International AI Safety Report likewise notes that open-weight models cannot be recalled and their safeguards are easier to remove. Those who favor open release reply that closed models also leak capability through jailbreaks, distillation and fine-tuning services, and that the relevant question is marginal risk.",
+     "source_label": "Anthropic Frontier Red Team, GLM-5.3 and the spread of advanced cyber capabilities, September 2026",
+     "source_url": "https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "estimated-cost-to-strip-the-refusals"
+    },
+    {
+     "label": "Steps an open-weight model reached in a simulated 32-step network attack",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "steps of 32",
+     "series": [
+      {
+       "label": "Top US closed models",
+       "value": "28.5",
+       "highlight": false
+      },
+      {
+       "label": "Kimi K3",
+       "value": "17",
+       "highlight": true
+      },
+      {
+       "label": "GLM-5.2",
+       "value": "11",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "On a simulated network attack, Moonshot’s open-weight Kimi K3 reached step 17 of 32 on average; the most cyber-capable US closed models, tested with their safeguards off, reached 28.5.",
+     "detail": "Kimi K3 completed the full range once in 10 attempts; the US closed models had done so 6 and 7 times in 10. On ExploitBench’s 41 tasks Kimi K3 scored 32 percent against 24 percent for GLM-5.2, and it achieved arbitrary code execution on none of 41 samples, against an average of 20 of 41 for the most cyber-capable models. The evaluators found that “Kimi K3’s safeguards did not prevent it from attempting cyber exploit development or offensive cyber operations.” The public versions of the US models keep their system-level safeguards on, and the assessment is labeled preliminary and rests on a small set of benchmarks. Each side cites it: those who favor open release as evidence that open models remain far behind on actual exploitation, those who favor holding back the frontier as evidence that open models attempt offensive work unchecked.",
+     "source_label": "UK AI Security Institute and NIST CAISI, Preliminary assessment of Kimi K3’s cyber capabilities, July 2026",
+     "source_url": "https://www.nist.gov/news-events/news/2026/07/uk-aisi-caisi-preliminary-assessment-kimi-k3s-cyber-capabilities",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "steps-an-open-weight-model-reached"
+    },
+    {
+     "label": "How far open-weight models trail the closed frontier on cyber capabilities",
+     "viz": "bar",
+     "wide": false,
+     "value": "6–7",
+     "unit": "months",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Z.ai’s GLM-5.3, the top open-weight model on Epoch AI’s Cyber Capabilities Index, scores where the closed frontier stood 6 to 7 months earlier; a UK AI Security Institute measure found 4 to 7.",
+     "detail": "GLM-5.3 scores about 160 on the index, above GPT-5.4 (March 2026) and below Claude Mythos Preview (April 2026); Claude Opus 5.5 and GPT-6 Astra score about 171. GLM-5.3’s score rests on three CAISI benchmark results, and Epoch had to infer which US models CAISI tested. The AI Security Institute’s July 2026 figure covers the open models GLM-5.2 and DeepSeek V4-Pro and is narrower than the 6 to 10 months it measured in 2025; it concluded that “cyber defenders have a short window to prepare before today’s frontier cyber capabilities may become accessible without the same safeguards.” It also found the open models far cheaper per task: 6.12 dollars for GLM-5.2 against 15.17 for Claude Opus 4.6 on tasks both solved every time.",
+     "source_label": "Epoch AI, Open-weight models trail closed models in cyber capabilities by 6–7 months, October 2026",
+     "source_url": "https://epoch.ai/data-insights/open-closed-cyber-eci-gap",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "how-far-open-weight-models-trail"
+    },
+    {
+     "label": "Transparency scores of AI developers, 2025 Foundation Model Transparency Index",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "score",
+     "series": [
+      {
+       "label": "IBM",
+       "value": "95",
+       "highlight": false
+      },
+      {
+       "label": "Average, 13 firms",
+       "value": "41",
+       "highlight": true
+      },
+      {
+       "label": "DeepSeek",
+       "value": "32",
+       "highlight": false
+      },
+      {
+       "label": "Alibaba",
+       "value": "26",
+       "highlight": false
+      },
+      {
+       "label": "xAI",
+       "value": "14",
+       "highlight": false
+      },
+      {
+       "label": "Midjourney",
+       "value": "14",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Stanford’s index scored 13 developers at 41 of 100 on average and found “The 5 open-weight developers outscore the 8 closed-weight developers overall and on every domain.”",
+     "detail": "The index scores what developers disclose about data, compute, risks, access and downstream use. Openness tracks transparency as a group but not reliably: IBM set the highest score in the index’s history at 95, while DeepSeek, also an open-weight developer, scored 32, and Stanford HAI’s coverage describes major open developers such as DeepSeek and Meta as quite opaque. Meta’s score fell 29 points from 2024, and the overall average fell sharply. The page gives scores for only five companies; the others are reported as changes. Those who favor open release cite the index as evidence that openness enables scrutiny; others reply that releasing weights is not the same as disclosing how a model was made.",
+     "source_label": "Stanford CRFM, The 2025 Foundation Model Transparency Index, December 2025",
+     "source_url": "https://crfm.stanford.edu/fmti/December-2025",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "transparency-scores-of-ai-developers-2025"
+    },
+    {
+     "label": "Firefox releases an open-weight model turned into exploits from public fixes",
+     "viz": "bar",
+     "wide": false,
+     "value": "6",
+     "unit": "releases",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Epoch AI researchers used Z.ai’s open-weight GLM-5.3 to turn public security fixes into working exploits for six Firefox releases before users got the update, at about 1,000 dollars per release.",
+     "detail": "The releases came out between September 17 and October 26, 2026; the fastest successful attempt took 12 hours, and total research spending exceeded 100,000 dollars. The authors write: “Our central finding is that widely available open-weight models can now do much, or even all, of this work on their own,” and report that they “did not trigger any safeguards or refusals from any provider, including Z.ai.” The model was used through Z.ai’s and third-party APIs in an offline sandbox, not self-hosted. The exploits chained the patch gap with a separate unpublished flaw and achieved file reads, not arbitrary code execution, and attacks on Chrome had not succeeded after about 100,000 dollars of spending. Mozilla patched the flaw in Firefox 159.0 on October 27. The authors’ suggested fixes are on the software side: keep fixes private until release, and ship updates faster.",
+     "source_label": "Epoch AI, AI can turn security fixes into working exploits before users receive an update, October 2026",
+     "source_url": "https://epoch.ai/publications/open-weight-models-patch-gap",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "firefox-releases-an-open-weight-model"
+    },
+    {
+     "label": "Claude exchanges Anthropic attributes to distillation by three Chinese labs",
+     "viz": "bar",
+     "wide": false,
+     "value": "16",
+     "unit": "million",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Anthropic says DeepSeek, Moonshot AI and MiniMax drew more than 16 million exchanges from Claude through about 24,000 fraudulent accounts to train their own models, a claim not independently verified.",
+     "detail": "By Anthropic’s count MiniMax accounted for over 13 million exchanges, Moonshot for over 3.4 million and DeepSeek for over 150,000. Anthropic argues that “Illicitly distilled models lack necessary safeguards” and that “If distilled models are open-sourced, this risk multiplies.” The three labs had not responded when NBC News reported the figures. In a June 10, 2026 letter to Senators Tim Scott and Elizabeth Warren, Anthropic alleged a further campaign by operators connected to Alibaba’s Qwen lab, about 25,000 accounts and more than 28.8 million exchanges, which Alibaba disputes, as reported by the Cloud Security Alliance. Distillation cuts both ways in this debate: it suggests that keeping weights closed does not stop capability from leaking, and that some open models owe part of their capability to closed ones.",
+     "source_label": "Anthropic, Detecting and preventing distillation attacks, February 2026",
+     "source_url": "https://anthropic.com/news/detecting-and-preventing-distillation-attacks",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "claude-exchanges-anthropic-attributes-to-distillation"
+    },
+    {
+     "label": "Signers of the “Open Weights and American AI Leadership” letter",
+     "viz": "bar",
+     "wide": false,
+     "value": "270",
+     "unit": "signers",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "More than 270 companies and organizations had signed the July 2026 letter against restricting open-weight models by August 3, 2026.",
+     "detail": "The letter launched with about 25 signers, among them Nvidia, Microsoft, Meta, Mistral, Palantir, IBM, Andreessen Horowitz, Hugging Face, Mozilla and the Linux Foundation, according to The Next Web; OpenAI and Google added their names afterward, eWeek reported, and Anthropic did not sign. The letter concedes that “Once released, the weights are beyond the original developer’s control” but argues that “the right response to this risk is not to prohibit open weights” and that “defenders need access to models with comparable capabilities.” It came a week after Axios reported the administration was weighing steps against Chinese open models following the Kimi K3 release. Several signers keep their own most capable models closed, so signing marks opposition to restricting open release, not a commitment to release.",
+     "source_label": "Microsoft, Open Weights and American AI Leadership, letter of July 24, 2026",
+     "source_url": "https://www.microsoft.com/en-us/corporate-responsibility/topics/open-weight/",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "signers-of-the-open-weights-and"
+    },
+    {
+     "label": "Share of Hugging Face downloads going to models under 1 billion parameters",
+     "viz": "radial",
+     "wide": false,
+     "value": "83",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Among models that declare a size, those under 1 billion parameters account for 83 percent of all-time Hugging Face downloads; those above 100 billion account for 1 percent.",
+     "detail": "Most open-model use is small models embedded in products, search, speech and classification, far from the frontier-scale models the safety argument is about; the most downloaded single model in the report, the sentence-embedding model all-MiniLM-L6-v2, had 1.55 billion downloads in seven months. Large models are concentrated among a few labs: 88 percent of Moonshot’s 2026 downloads are of models above 70 billion parameters. Downloads overall are highly concentrated: “1.5% of repositories account for 99.2% of all downloads,” and about 85.6 percent of models have fewer than 200 lifetime downloads. Both sides take from the size split that rules aimed at frontier models would barely touch most open use; those who want the frontier held back cite that as a reason a narrow rule would not harm the ecosystem.",
+     "source_label": "Hugging Face, State of Open Models: Summer 2026",
+     "source_url": "https://huggingface.co/blog/state-of-open-models-summer-2026",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "share-of-hugging-face-downloads-going"
+    },
+    {
+     "label": "Estimated annual savings if AI users switched to open models",
+     "viz": "bar",
+     "wide": false,
+     "value": "24.8",
+     "unit": "$ billion",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Frank Nagle and Daniel Yue estimated users would save about 24.8 billion dollars a year by choosing models on price and performance; defenders of closed models say the premium buys something real.",
+     "detail": "The estimate sits within a range of 20 to 48 billion dollars, and the authors found open models routinely reach 90 percent or more of closed models’ benchmark performance at a far lower price. It extrapolates from OpenRouter usage between May and September 2025, on a platform that handles about 1 percent of global inference spending, and it leaves out switching costs, reliability and support, the gaps the closed-model reply points to. Nagle is the Linux Foundation’s advising chief economist, and an earlier Linux Foundation survey on open-source AI was commissioned by Meta, which those skeptical of the finding note.",
+     "source_label": "Linux Foundation, Revealing the Hidden Economics of Open Models in the AI Era (Nagle and Yue)",
+     "source_url": "https://www.linuxfoundation.org/blog/revealing-the-hidden-economics-of-open-models-in-the-ai-era",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "estimated-annual-savings-if-ai-users"
+    },
+    {
+     "label": "Distinct attack vectors against stored frontier model weights",
+     "viz": "bar",
+     "wide": false,
+     "value": "38",
+     "unit": "vectors",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "RAND identified 38 meaningfully distinct ways attackers could steal a frontier model’s weights and defined five security levels for defending against them.",
+     "detail": "Keeping weights closed works only if they stay closed, and RAND’s report is the standard reference for how hard that is: its higher security levels are meant to hold off increasingly capable attackers, up to well-resourced state operations. Those who favor open release argue that a determined adversary can get closed weights anyway, so secrecy mostly denies access to ordinary users; those who favor holding back the frontier argue it shows labs must raise their security, not give up on it. Distillation through fraudulent accounts, as Anthropic alleges, is a cheaper route to some of the same capability that needs no theft at all.",
+     "source_label": "RAND, Securing AI Model Weights: Preventing Theft and Misuse of Frontier Models (Nevo et al.), May 2024",
+     "source_url": "https://www.rand.org/pubs/research_reports/RRA2849-1.html",
+     "source_published": "2024",
+     "source_accessed": "2026-11-23",
+     "id": "distinct-attack-vectors-against-stored-frontier"
+    },
+    {
+     "label": "US voters on open-sourcing powerful AI models",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Oppose",
+       "value": "47",
+       "highlight": true
+      },
+      {
+       "label": "Support",
+       "value": "23",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a September 2023 YouGov poll for the AI Policy Institute, which favors a cautious path on AI, 47 percent of US voters opposed open-sourcing powerful AI models and 23 percent supported it.",
+     "detail": "It is the only national poll found that asks directly about open release, and it is old and limited. It surveyed 1,118 voters from September 2 to 6, 2023, before every model in the current debate existed. The pollster simplified the question for respondents unfamiliar with model weights and does not publish the wording on its release page, and the share who were unsure is not reported. No 2025 or 2026 national poll on open-weight release was found.",
+     "source_label": "AI Policy Institute poll conducted by YouGov, September 2023",
+     "source_url": "https://theaipi.org/poll-shows-voters-oppose-open-sourcing-ai-models-support-regulatory-representation-on-boards-and-say-ai-risks-outweigh-benefits/",
+     "source_published": "2023",
+     "source_accessed": "2026-11-23",
+     "id": "us-voters-on-open-sourcing-powerful"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Does releasing a capable model’s weights give attackers meaningful help they could not already get?",
+    "kind": "empirical",
+    "why": "The dispute is over marginal risk: what open release adds beyond what a determined attacker could already do with the internet, existing tools and closed models. The 2026 tests are strongest in cyber and thinner in biology.",
+    "detail": "The case for little added risk says the question is not whether a model can help with a harmful task but whether it changes what attackers can do. States and skilled criminals already have staff, stolen tools and their own models; unskilled attackers are held back far more by materials, targets and operational skill than by information. The US Commerce Department concluded in 2024 that the evidence on marginal risk was not sufficient to justify restricting open weights, and on this view the laboratory results since then show attempts and demonstrations, not a wave of real attacks.\n\nThe case for real added risk says that argument assumed open models would stay far behind, and they no longer do: in 2026 tests, open models turned public security fixes into working browser exploits and engaged with overtly harmful requests once their refusals were removed. What open release adds is not knowledge but labor: an attacker who could never hire an exploit team gets one that does not refuse, cannot be monitored and cannot be cut off. Attackers adopt new tools faster than defenders patch, and a downloaded model is permanent, so waiting for proof of a real-world attack means the evidence arrives only after the weights are everywhere.",
+    "lean_label_a": "Little added risk",
+    "lean_label_b": "Real added risk",
+    "id": "does-releasing-a-capable-model-s"
+   },
+   {
+    "text": "Does keeping American weights closed slow rivals, or only cede the open ecosystem to them?",
+    "kind": "empirical",
+    "why": "The leading open-weight models in 2026 are Chinese, and the gap to the closed frontier is measured in months. One side reads that as a lead worth guarding, the other as proof that withholding has already failed.",
+    "detail": "The case that withholding buys time says the strongest Chinese open models are still months behind the US frontier, and the gap is widest where it matters most, in real exploitation. Allegations that some of their progress comes from distilling US closed models through fraudulent accounts suggest the closed weights are worth protecting. Releasing a US frontier model would hand every rival the result of billions of dollars of training at no cost and erase the lead that chip export controls exist to preserve, and a few months is the window in which defenders can patch what the frontier finds.\n\nThe case that it cedes the field says the lead in open models passed to China because US labs released too little, not too much. Developers worldwide build on what they can download and adapt, and Reuters reported in November 2026 that US companies including Airbnb and DoorDash use Chinese models in their products and systems. Capability diffuses anyway, through distillation, theft, talent and independent research. Withholding decides only whose models, values and technical standards the world’s developers adopt; the 2025 US AI Action Plan itself says open models “have geostrategic value.”",
+    "lean_label_a": "Slows rivals",
+    "lean_label_b": "Cedes the field",
+    "id": "does-keeping-american-weights-closed-slow"
+   },
+   {
+    "text": "Is dependence on a few closed providers a bigger risk than capable models in everyone’s hands?",
+    "kind": "value",
+    "why": "Both sides argue from security. One fears single points of failure that a company or a government can switch off for everyone; the other fears copies of a dangerous model that can never be recalled.",
+    "detail": "The case that concentration is the bigger risk says that when a few companies hold every capable model, an outage, a policy change, a commercial dispute or one government’s directive can cut off businesses, hospitals and governments everywhere at once. It also puts the judgment about what billions of people may ask an AI in a few private hands, and countries building their own capacity cannot rely on a foreign API.\n\nThe case that proliferation is the bigger risk says concentration can be governed: providers can be regulated, audited, sued and required to share access, and a provider that can switch a model off can also stop a misuse in progress. Proliferation cannot be undone. Once a model that can write exploits or assist with a pathogen is downloaded, every copy is permanent and unmonitored, and no later discovery about its capabilities can be acted on. A resilience problem has resilience answers, such as multiple providers, contracts and local use of less capable models; a proliferation problem has none.",
+    "lean_label_a": "Concentration worse",
+    "lean_label_b": "Proliferation worse",
+    "id": "is-dependence-on-a-few-closed"
+   },
+   {
+    "text": "Do open models help cyber defenders more than attackers?",
+    "kind": "empirical",
+    "why": "Most of the 2026 evidence is about cyber, and the same skill that writes an exploit also finds and fixes the flaw. The open-weights letter and safety researchers draw opposite conclusions about which side gains.",
+    "detail": "The case for defenders says they vastly outnumber attackers, and most of them, hospitals, utilities, small firms and governments abroad, cannot send sensitive code and logs to a foreign company’s API or pay frontier prices. Open models let them scan their own systems privately, cheaply and at scale; a CNAS analysis reports that open models were used to analyze the July 2026 agent attack on Hugging Face quickly. The attackers who matter already have capable tools, so it is defenders who are left without them when the best models are locked away or switched off.\n\nThe case for attackers says offense needs one working exploit while defense must patch everything, and patches take weeks to reach users, weeks in which a published fix doubles as a map for attackers. Defenders can be given closed frontier models through vetted access, as when Anthropic kept Claude Mythos Preview and its June 2026 update, Mythos 5, to selected partners hardening their systems, while a downloaded model cannot be handed to defenders alone.",
+    "lean_label_a": "Defenders gain more",
+    "lean_label_b": "Attackers gain more",
+    "id": "do-open-models-help-cyber-defenders"
+   },
+   {
+    "text": "Does open release spread power over AI, or reinforce the firms that already hold it?",
+    "kind": "empirical",
+    "why": "Openness is defended as the cure for concentration, yet the largest open releases come from trillion-dollar companies and state-backed labs, and the compute to train frontier models sits with a few firms.",
+    "detail": "The case that openness spreads power says open weights let anyone run, inspect, fine-tune and deploy a capable model without asking permission or paying rent, which a closed API never allows. Hugging Face’s Spring 2026 report found independent developers’ share of downloads rose from 17 to 39 percent while industry’s fell from about 70 percent before 2022 to about 37 percent in 2025. A startup or a government can host its own model on its own hardware with its own data, and competition among open models has pushed prices down across the market, closed models included. A world of three closed providers is one where three companies, and the governments that can lean on them, decide what everyone else may do with AI.\n\nThe case that it entrenches incumbents says releasing weights distributes the product, not the power to make it. Training frontier models takes compute, data and capital that open release does not share, and firms release weights when it serves their strategy: to commoditize a rival’s product, draw developers to their platform, or sell the chips and clouds open models run on. They close them again when it does not. Widder, Whittaker and West argued in Nature in 2024 that openness alone does not shift concentration in AI and must be paired with antitrust and privacy protections.",
+    "lean_label_a": "Spreads power",
+    "lean_label_b": "Entrenches power",
+    "id": "does-open-release-spread-power-over"
+   },
+   {
+    "text": "How much catastrophic risk justifies withholding a model’s benefits from everyone?",
+    "kind": "value",
+    "why": "Even people who agree on every measurement can differ here, because the choice sets a small chance of severe, irreversible harm against large and widely shared benefits, and turns on who should bear the risk.",
+    "detail": "Precaution first says some harms, such as a mass-casualty biological attack or a crippling strike on infrastructure, are bad enough that a small probability dominates. Open release is the one AI decision that can never be reversed, so it should demand the most confidence, not the least. Benefits withheld are delayed rather than lost: smaller and older models can be opened, frontier capability offered through APIs and vetted programs, and the decision revisited as safeguards improve. The burden belongs on the side that cannot take its decision back.\n\nAccess first says withholding has costs as real as misuse but harder to see: researchers who cannot study the systems shaping society, poorer countries and small firms priced out or cut off, users bound by one company’s rules, and the security that comes from many eyes. There will always be a speculative worst case, so treating every capable model as a potential weapon would leave a general-purpose technology with a few firms indefinitely. Harm should be met where it occurs, through laws against the conduct and defenses at the target, as with cryptography and chemistry.",
+    "lean_label_a": "Precaution first",
+    "lean_label_b": "Access first",
+    "id": "how-much-catastrophic-risk-justifies-withholding"
+   },
+   {
+    "text": "Does opening a model to outside inspection make AI safer than keeping it under its developer’s control?",
+    "kind": "empirical",
+    "why": "Open weights let outside researchers study, red-team and interpret a model; closed deployment lets the developer watch use, catch misuse and patch problems. Both are real kinds of safety, and the dispute is which matters more.",
+    "detail": "The case for scrutiny says independent research depends on access to real models: interpretability, red-teaming and replication of the labs’ own safety claims all need weights. OpenAI said it released its gpt-oss models partly to “help accelerate safety training and alignment research across the industry.” Safety that only the developer can check is a promise, and closed development can hide problems until someone discloses them.\n\nThe case for control says the safeguards that work in practice are system-level: monitoring, classifiers, account bans, rate limits and the ability to update a model after a flaw is found, which is how Anthropic says it detected and blocked the distillation campaigns. A downloaded model has none of these. Researchers can get deep access to closed models through structured programs without the same access going to everyone, and transparency about how a model was made can be required of closed developers without publishing the weights.",
+    "lean_label_a": "Scrutiny is safer",
+    "lean_label_b": "Control is safer",
+    "id": "does-opening-a-model-to-outside"
+   },
+   {
+    "text": "Should “open” mean the weights alone, or the data and code that made them too?",
+    "kind": "value",
+    "why": "Almost every model called open in 2026 publishes its weights but withholds its training data and code, and some add licenses with revenue thresholds or use bans. The Open Source Initiative’s definition of open-source AI asks for much more.",
+    "detail": "The case that weights are enough says they are what users need to run, adapt, fine-tune and deploy a model on their own, the freedom that matters to almost everyone who uses open models. Releasing training data is often impossible because of copyright, privacy and licensing, and insisting on it would leave almost no capable open models at all. Licenses that require a separate deal from the largest hosting companies are a reasonable way to fund the work while keeping it free for nearly everyone else.\n\nThe case for the whole stack says that without the data, code and training recipe a model cannot be reproduced, audited for what it learned, or improved at the root. Custom licenses with revenue thresholds, attribution rules and use bans keep for the releasing company the control that the word “open” implies it has given up. Models released with far more of the stack show it can be done, and only that kind of release lets science check what a model is.",
+    "lean_label_a": "Weights are enough",
+    "lean_label_b": "Whole stack needed",
+    "id": "should-open-mean-the-weights-alone"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Release openly only below a tested danger line",
+    "color_key": "green",
+    "steelman": "Open models below the danger line are a public good, but published weights can never be recalled, so test every capable model and hold back only what fails.",
+    "detail": "We want more open models, not fewer: they are cheap, adaptable and private, essential to research and to countries that cannot rely on a foreign API. But safety training on a downloaded model can be stripped for a tiny fraction of what the model cost to train. For most models that does not matter. For one that can find and chain software vulnerabilities, or give real help toward a biological weapon, it is the whole question, because the safeguards that make such a model safe to offer, monitoring, classifiers, the power to cut off an abuser or patch a flaw, exist only while the developer holds the weights. So draw the line by testing, not ideology: evaluate every sufficiently capable model, open or closed, American or Chinese, for the specific dangerous capabilities, release what passes, and keep behind controlled access what does not until safeguards or defenses catch up. Anthropic, which holds this view, has never called for a ban; it wants that testing to be mandatory for every developer.\n\nTold that capability spreads within months anyway, we answer that months are what defense runs on: a flaw a closed model finds can be patched before the same skill is downloadable. Testing every capable model wherever it is made is the opposite of a unilateral sacrifice, and we do not ask anyone to stop releasing open models, only to release ones that pass. Distillation and theft are reasons to secure weights better and act against abuse, not reasons to publish them. We differ among ourselves on who should draw the line, independent testers or each lab under its own framework, and on whether it has already been crossed.",
+    "proponents": "Anthropic; SaferAI; OpenAI; Mark MacCarthy; Vivek Chilukuri; Bengüsu Özcan; Alex Petropoulos; Max Reddel",
+    "id": "release-openly-only-below-a-tested"
+   },
+   {
+    "name": "Release frontier models openly",
+    "color_key": "blue",
+    "steelman": "Open source built the internet; open weights let anyone inspect, adapt and run AI on their own terms, and misuse should be fought where it happens, not by locking models away.",
+    "detail": "Open weights let a hospital keep patient data on its own servers, a startup build without paying rent to a competitor, a researcher check a safety claim, a country run AI under its own laws, and a defender use the same tools as the attacker. Closed frontier models are single points of failure: they can be breached, misused or switched off in ways outsiders cannot see, as customers learned in June 2026 when a US directive led Anthropic to cut off two of its models for everyone at short notice. The risks of open release are real, and our letter says so, but they are marginal: every capability in an open model existed in a closed one months earlier, the attackers who matter already have tools, and the harms are already crimes. Go after the misuse, and give defenders the best models.\n\nTold that a downloaded model can never be recalled, we answer that the same capability reaches the world within months whether or not any one model is opened, through rivals’ releases, distillation, theft and independent research, so a lab that withholds delays little while denying defenders, researchers and smaller countries the tools. Withholding has not stopped diffusion; it has handed the lead in open models to China. The durable defense is hardening the targets and patching faster. Some of us release everything under permissive licenses, others attach revenue thresholds and use bans, and several of our signers keep their own best models closed and join only in opposing limits on others.",
+    "proponents": "Nvidia; Microsoft; Meta; Hugging Face; Mistral; Andreessen Horowitz; Yann LeCun; Arvind Narayanan; Sayash Kapoor; DeepSeek; Moonshot AI; Alibaba",
+    "id": "release-frontier-models-openly"
+   },
+   {
+    "name": "Build public AI instead of relying on company releases",
+    "color_key": "amber",
+    "steelman": "Whether a company publishes its weights is a business call it reverses when convenient; the public needs AI built by public institutions, with the data and code released too.",
+    "detail": "The open-versus-closed fight is being held on the companies’ terms. Whether a firm publishes a given set of weights is a business decision, and firms reverse it when their reasons change: Meta released its first frontier model without open weights in April 2026, then opened a lesser one in October while keeping its most capable model closed, and the main hub for open weights agreed in September 2026 to be bought by the dominant chip maker. A downloadable file under a custom license is not openness. You cannot see what it was trained on, reproduce it or fix it at the root, and the power to make the next one stays with whoever owns the chips, the data and the capital; as Stanford HAI’s James Landay puts it, that is open distribution, not an open model. Closing everything would be worse, but waiting for corporate generosity is not a strategy. Build public capacity instead: models from universities and public institutions with code, data and methods released, public compute to train them, and competition and privacy law to keep the private platforms honest.\n\nTold that public projects cannot match the frontier, we answer that most useful AI is nowhere near it, and public infrastructure does not need to win the frontier race to change who controls the technology people actually use, any more than public libraries needed to outsell publishers. Switzerland’s Apertus, built at ETH Zurich and EPFL on public supercomputers, and Ai2’s OLMo, released with its training data and code, show it can be done. Some of us stress full openness wherever models are built, some public funding, some antitrust, and most of us also oppose restricting open weights.",
+    "proponents": "James Landay; Public AI Network; Mozilla; Open Source Initiative; Bruce Schneier; Nathan Sanders; Meredith Whittaker; David Gray Widder; Sarah Myers West",
+    "id": "build-public-ai-instead-of-relying"
+   }
+  ],
+  "crux": {
+   "lead": "Does releasing top AI models do more harm than good?",
+   "lead_highlight": "more harm than good",
+   "subtitle": "Most other arguments feed this one. If a downloadable model gives attackers what they could not otherwise get, and cannot be recalled, holding the strongest back is prudent. If such abilities spread within months anyway, withholding mostly keeps them from defenders, researchers and small players.",
+   "empirical": "Three measurements bear on it. Whether a downloadable model changes what attackers actually achieve outside the lab, compared with the tools and skills they already have. How long a capability stays out of reach when weights are held back, given rival releases, copying and theft, and whether that window is shrinking. And how much misuse a provider’s monitoring, filters and account bans really stop, against what slips through.",
+   "values": "No measurement settles how to weigh a small chance of severe, permanent harm against large benefits spread across many people; whether it is worse for the era’s most powerful technology to rest with a few companies and the governments that can direct them, or with anyone at all; or which side should carry the burden of proof, those who would release or those who would withhold."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Epoch AI’s open-weight model research",
+    "description": "Epoch AI’s data and reports on open-weight models, including how far they trail the closed frontier on general and cyber capability, with charts and methods a reader can check.",
+    "url": "https://epoch.ai/topics/open-models",
+    "for_position": null,
+    "id": "epoch-ai-s-open-weight-model"
+   },
+   {
+    "kind": "learn_more",
+    "title": "International AI Safety Report 2026",
+    "description": "The scientific assessment of general-purpose AI chaired by Yoshua Bengio, written by more than 100 experts and backed by more than 30 countries, with a section on open-weight models.",
+    "url": "https://internationalaisafetyreport.org/",
+    "for_position": null,
+    "id": "international-ai-safety-report-2026"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Anthropic’s position on open-weight models",
+    "description": "Anthropic’s July 2026 statement opposing a ban on open weights while asking that every sufficiently capable model, open or closed, be safety-tested, with its reasoning on irreversibility and distillation.",
+    "url": "https://www.anthropic.com/news/position-open-weights-models",
+    "for_position": "Release openly only below a tested danger line",
+    "id": "anthropic-s-position-on-open-weight"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the “Open Weights and American AI Leadership” letter",
+    "description": "The July 2026 industry letter, hosted by Microsoft, setting out the case for open weights and against restricting them, with the full list of signers.",
+    "url": "https://www.microsoft.com/en-us/corporate-responsibility/topics/open-weight/",
+    "for_position": "Release frontier models openly",
+    "id": "read-the-open-weights-and-american"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Get involved with the Public AI Network",
+    "description": "A coalition working to build AI as public infrastructure, with a newsletter, a Slack community, a seminar series, an editable public wiki and open roles for people who want to help.",
+    "url": "https://publicai.network/",
+    "for_position": "Build public AI instead of relying on company releases",
+    "id": "get-involved-with-the-public-ai"
+   },
+   {
+    "kind": "learn_more",
+    "title": "How far behind the frontier are open-weight models on cyber?",
+    "description": "The UK AI Security Institute’s July 2026 measurement of leading open models against closed ones on 70 cyber tasks and a simulated network attack, and what the gap means for defenders.",
+    "url": "https://www.aisi.gov.uk/work/how-far-behind-the-frontier-are-leading-open-weight-models-on-cyber",
+    "for_position": null,
+    "id": "how-far-behind-the-frontier-are"
+   },
+   {
+    "kind": "local",
+    "title": "Run an open-weight model on your own computer",
+    "description": "Ollama is a free tool for downloading and running open-weight models locally, so a reader can see what open release means in practice: a capable model working offline, with no account.",
+    "url": "https://ollama.com/",
+    "for_position": "Release frontier models openly",
+    "id": "run-an-open-weight-model-on"
+   },
+   {
+    "kind": "learn_more",
+    "title": "SaferAI’s Frontier Risk Management Tracker",
+    "description": "An independent nonprofit’s ratings of how a dozen AI developers, including Meta and Nvidia, identify, analyze and manage the risks of their models, and the practices it finds missing.",
+    "url": "https://tracker.safer-ai.org/",
+    "for_position": "Release openly only below a tested danger line",
+    "id": "saferai-s-frontier-risk-management-tracker"
+   },
+   {
+    "kind": "learn_more",
+    "title": "On the Societal Impact of Open Foundation Models",
+    "description": "The 2024 paper by Sayash Kapoor, Rishi Bommasani and 23 co-authors that set out the benefits of open models and the marginal-risk framework for judging whether a release adds harm.",
+    "url": "https://arxiv.org/abs/2403.07918",
+    "for_position": "Release frontier models openly",
+    "id": "on-the-societal-impact-of-open"
+   },
+   {
+    "kind": "policy",
+    "title": "Endorse the Open Source AI Definition",
+    "description": "The Open Source Initiative’s standard for what counts as open-source AI, requiring access to weights, code and detailed information about training data; anyone can add an endorsement.",
+    "url": "https://opensource.org/ai/endorsements",
+    "for_position": "Build public AI instead of relying on company releases",
+    "id": "endorse-the-open-source-ai-definition"
+   }
+  ]
+ },
+ "icon": "package",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: A large open cardboard shipping box with its four flaps lifted, dominant at center, a simple graph of connected nodes rising out of it like a neural network, the nodes overlapping the box's raised flaps; a medium server rack at the right with a single cable running from it across the whole frame, past the box, to a small laptop at the far left; a small closed box of the same shape resting on the ground beside the open one; the ground a gentle shallow curve running the whole width behind every element.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #3b7ea1, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: no robots, no humanoid figures or faces, no brains, no glowing eyes, no padlocks, no chains, no cages, no keys, no open doors or gates, no warning triangles, no skulls, no hazard symbols, no flags, no streams of 1s and 0s, no lightning bolts, no code brackets, no text or numbers"
 }

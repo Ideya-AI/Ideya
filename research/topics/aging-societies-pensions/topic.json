@@ -1,8 +1,8 @@
 {
  "slug": "aging-societies-pensions",
  "title": "Aging Societies & Pensions",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-11-24T08:05:56+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Paying for longer lives: retirement ages, the solvency of public pensions and Social Security, and what each generation owes the others.",
@@ -14,5 +14,753 @@
   "government-debt-sustainability",
   "birth-rate-decline-pronatalism",
   "treating-aging-as-disease"
- ]
+ ],
+ "content": {
+  "overview": {
+   "summary": "Longer lives and fewer births strain pensions. Who pays: workers through taxes or longer careers, retirees through smaller checks, or high earners and capital?",
+   "scope_covered": "Retirement ages, the finances of US Social Security and of public pensions in Europe and East Asia, and how their costs are shared across generations.",
+   "scope_excluded": "Health and long-term care for older people, private employer pensions, US state and local public-employee plans, and birth-rate policy and government debt as subjects of their own.",
+   "why_now": "On June 9, 2026 the Social Security trustees projected that the retirement trust fund will run out in 2032, or in 2034 if Congress merges it with the disability fund, and reported a larger 75-year shortfall than a year before.",
+   "why_now_source_label": "Committee for a Responsible Federal Budget, on the 2026 Trustees Reports",
+   "why_now_source_url": "https://www.crfb.org/blogs/social-security-and-medicare-trustees-release-2026-reports"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "Social Security retirement benefits payable once reserves run out",
+     "viz": "radial",
+     "wide": false,
+     "value": "78",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Once the retirement trust fund’s reserves are gone, incoming taxes would cover 78 percent of scheduled benefits, falling to 62 percent by 2100.",
+     "detail": "Running out of reserves does not stop payments. Under current law Social Security can pay only what its income covers, so every benefit would be cut automatically, across the board, by the same share. The disability fund is projected to stay solvent for the full 75 years; merged, the two funds would last to 2034 and then pay 83 percent, falling to 65 percent by 2100. Because merging requires a change in law, the Center for Retirement Research at Boston College treats 2032 as the date that forces action, and estimates that the cut would lower a typical retiree’s replacement rate at 65 from about 36 percent to about 29 percent of pre-retirement earnings (Alicia Munnell, June 2026).",
+     "source_label": "2026 Social Security Trustees Report, Table II.A1 and Highlights",
+     "source_url": "https://www.govinfo.gov/content/pkg/CDOC-119hdoc163/pdf/CDOC-119hdoc163.pdf",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "social-security-retirement-benefits-payable-once"
+    },
+    {
+     "label": "Old-age dependency ratio, selected countries",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "per 100",
+     "series": [
+      {
+       "label": "Japan",
+       "value": "50.1",
+       "highlight": false
+      },
+      {
+       "label": "Italy",
+       "value": "38.0",
+       "highlight": false
+      },
+      {
+       "label": "Germany",
+       "value": "36.0",
+       "highlight": false
+      },
+      {
+       "label": "France",
+       "value": "35.3",
+       "highlight": false
+      },
+      {
+       "label": "United States",
+       "value": "26.8",
+       "highlight": true
+      },
+      {
+       "label": "South Korea",
+       "value": "25.9",
+       "highlight": false
+      },
+      {
+       "label": "China",
+       "value": "20.7",
+       "highlight": false
+      },
+      {
+       "label": "World",
+       "value": "15.4",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2023 Japan had 50.1 people aged 65 and over for every 100 aged 15 to 64, the United States 26.8 and the world as a whole 15.4.",
+     "detail": "The ratio counts ages, not who is working, so it overstates the burden where many people over 65 work and understates it where many of working age do not. It has risen fast: in the same UN data Japan stood at 8.2 in 1950 and 25.6 in 2000, and South Korea at 9.9 and China at 10.3 in 2000. The OECD, which counts working age from 20, puts its members’ average at 33 in 2025, up from 22 in 2000, and projects 52 by 2050 (Pensions at a Glance 2025). The UN projects that by the late 2070s people aged 65 and over will outnumber people under 18 worldwide (UN News, on World Population Prospects 2024).",
+     "source_label": "Our World in Data, from UN World Population Prospects 2024",
+     "source_url": "https://ourworldindata.org/grapher/age-dependency-ratio-old",
+     "source_published": "2023",
+     "source_accessed": "2026-11-23",
+     "id": "old-age-dependency-ratio-selected-countries"
+    },
+    {
+     "label": "Social Security’s 75-year funding shortfall",
+     "viz": "bar",
+     "wide": false,
+     "value": "4.42",
+     "unit": "% of payroll",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Paying every scheduled benefit through 2100 would take extra income equal to 4.42 percent of taxable earnings, up from 3.82 a year earlier; the Penn Wharton Budget Model puts it at 4.78.",
+     "detail": "The shortfall is the average amount by which income would have to rise, or costs fall, over 75 years to pay every scheduled benefit and end with a one-year reserve. In present value the trustees put the unfunded obligation at $29.3 trillion, about 1.5 percent of GDP over the period. They call their cut in assumed fertility, from 1.90 to 1.75 children per woman, “the largest contributor to the significantly increased deficit”; lower assumed immigration and the 2025 One Big Beautiful Bill Act, whose lower income tax rates and extra deduction for people over 65 reduce the tax on benefits that flows to the trust funds, also worsened it, while faster assumed near-term productivity and wage growth helped. After the 1983 rescue law, which raised payroll taxes, began taxing benefits and phased the full retirement age up from 65 to 67, the trustees projected a small surplus. The Center for Retirement Research attributes more than half of the drift since then to the 75-year window moving forward a year at a time and picking up years of deficit, with worse economic and demographic assumptions accounting for most of the rest (June 2026). The Penn Wharton figure comes from its own model rather than the trustees’ (September 2026).",
+     "source_label": "2026 Social Security Trustees Report, Highlights",
+     "source_url": "https://www.govinfo.gov/content/pkg/CDOC-119hdoc163/pdf/CDOC-119hdoc163.pdf",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "social-security-s-75-year-funding"
+    },
+    {
+     "label": "Life expectancy at 65, US men",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "years",
+     "series": [
+      {
+       "label": "1940",
+       "value": "11.9",
+       "highlight": false
+      },
+      {
+       "label": "1960",
+       "value": "12.9",
+       "highlight": false
+      },
+      {
+       "label": "2000",
+       "value": "15.9",
+       "highlight": false
+      },
+      {
+       "label": "2025",
+       "value": "18.2",
+       "highlight": true
+      },
+      {
+       "label": "2050, projected",
+       "value": "19.9",
+       "highlight": false
+      },
+      {
+       "label": "2100, projected",
+       "value": "22.6",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "A 65-year-old American man could expect 18.2 more years of life in 2025, against 11.9 in 1940; for women the figures are 20.7 and 13.4.",
+     "detail": "Period life expectancy applies a single year’s death rates, so it reflects that year’s conditions; for men it dipped to 16.9 years in 2020 and 2021, during the COVID-19 pandemic. When Social Security began paying monthly benefits in 1940 the full retirement age was 65; it has since risen to 67, for people reaching 62 in 2022 or later. Those who favor raising it further point to that gap. Those who oppose it point to the wide differences by income behind the averages and to slowing gains: men’s life expectancy at 65 rose 2.2 years from 2000 to 2019, and the trustees project only 1.7 more years from 2025 to 2050. For women they project 22.3 years in 2050 and 24.6 in 2100.",
+     "source_label": "2026 Social Security Trustees Report, Table V.A4, Period Life Expectancy",
+     "source_url": "https://www.govinfo.gov/content/pkg/CDOC-119hdoc163/pdf/CDOC-119hdoc163.pdf",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "life-expectancy-at-65-us-men"
+    },
+    {
+     "label": "Life expectancy gap, richest vs poorest 1% of Americans",
+     "viz": "bar",
+     "wide": false,
+     "value": "14.6",
+     "unit": "years",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "At age 40, men in the top 1 percent of incomes could expect to live 14.6 years longer than men in the bottom 1 percent; for women the gap was 10.1 years.",
+     "detail": "The study linked 1.4 billion deidentified tax records to death records. The gap widened over the period: life expectancy rose 2.34 years for men in the top 5 percent of incomes and 0.32 years for men in the bottom 5 percent. Opponents of raising the retirement age cite these findings because a later age removes a larger share of lifetime benefits from people who die younger, who are disproportionately lower earners; some reformers respond by proposing to raise the age only for higher earners or to pair it with a stronger minimum benefit. The findings are correlations: the study does not show that income itself causes the differences, and it found local health behaviors strongly associated with life expectancy among the poor.",
+     "source_label": "Chetty et al., “The Association Between Income and Life Expectancy in the United States, 2001-2014,” JAMA (2016)",
+     "source_url": "https://pubmed.ncbi.nlm.nih.gov/27063997/",
+     "source_published": "2001 to 2014",
+     "source_accessed": "2026-11-23",
+     "id": "life-expectancy-gap-richest-vs-poorest"
+    },
+    {
+     "label": "Workers paying into Social Security per beneficiary",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "workers",
+     "series": [
+      {
+       "label": "1960",
+       "value": "5.1",
+       "highlight": false
+      },
+      {
+       "label": "1975",
+       "value": "3.2",
+       "highlight": false
+      },
+      {
+       "label": "2000",
+       "value": "3.4",
+       "highlight": false
+      },
+      {
+       "label": "2025",
+       "value": "2.6",
+       "highlight": true
+      },
+      {
+       "label": "2035, projected",
+       "value": "2.3",
+       "highlight": false
+      },
+      {
+       "label": "2075, projected",
+       "value": "1.9",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "There were 2.6 workers paying Social Security taxes for each beneficiary in 2025, down from 5.1 in 1960; the trustees project 2.3 by 2035 and 1.9 by 2075.",
+     "detail": "In a pay-as-you-go system this ratio drives cost: with fewer workers per beneficiary, each worker’s taxes must cover a larger share of each benefit. The ratio was 16.5 in 1950, when the program was young and few people had yet qualified, and stayed between 3.2 and 3.4 from 1974 through 2008 before falling with the 2007 to 2009 recession and the retirement of the baby boom generation. The trustees attribute the long decline to “workers of lower-birth-rate generations” replacing earlier ones, combined with longer lives, and expect it to level off after about 2075. In 2026 about 185 million people pay into the program and 71 million receive benefits.",
+     "source_label": "2026 Social Security Trustees Report, Table IV.B4, Covered Workers and Beneficiaries",
+     "source_url": "https://www.govinfo.gov/content/pkg/CDOC-119hdoc163/pdf/CDOC-119hdoc163.pdf",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "workers-paying-into-social-security-per"
+    },
+    {
+     "label": "Payroll tax needed to pay all scheduled Social Security benefits",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Current rate",
+       "value": "12.40",
+       "highlight": false
+      },
+      {
+       "label": "Raised from 2026",
+       "value": "16.65",
+       "highlight": true
+      },
+      {
+       "label": "Raised from 2034",
+       "value": "17.30",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Closing the gap with taxes alone would mean raising the payroll tax from 12.40 to 16.65 percent of covered wages from 2026, or to 17.30 percent if the rise waited until 2034.",
+     "detail": "The tax is split evenly, 6.2 percent from the employee and 6.2 percent from the employer, on earnings up to a cap of $184,500 in 2026, rising to $192,300 in 2027 (Social Security Administration, October 2026). The trustees present these rates as a measure of the gap’s size, not a recommendation, noting that “other equivalent combinations of increased revenue and/or reduced benefits” would also work. Because earnings above the cap have grown faster than the rest, the share of covered earnings that is taxed fell from 88.6 percent in 1984 to about 83 percent in the 2010s, and the trustees project 82.5 percent in 2035; that trend underlies proposals to raise or remove the cap. In 2025 the program took in $1,449 billion, 91.3 percent of it from payroll taxes, and spent $1,609 billion.",
+     "source_label": "2026 Social Security Trustees Report, Highlights, “Size of the Solvency Gap”",
+     "source_url": "https://www.govinfo.gov/content/pkg/CDOC-119hdoc163/pdf/CDOC-119hdoc163.pdf",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "payroll-tax-needed-to-pay-all"
+    },
+    {
+     "label": "Benefit cut needed to keep Social Security solvent without new revenue",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "All, from 2026",
+       "value": "25.2",
+       "highlight": true
+      },
+      {
+       "label": "New only, from 2026",
+       "value": "30.3",
+       "highlight": false
+      },
+      {
+       "label": "All, from 2034",
+       "value": "28.5",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Closing the gap with benefit cuts alone would mean cutting every benefit 25.2 percent from 2026, or 30.3 percent for new beneficiaries only if those already receiving benefits were spared.",
+     "detail": "The rows show two trade-offs that run through this debate. Sparing people already retired makes the cut larger for everyone who comes after; waiting makes it larger for the fewer generations left to bear it. The trustees urge lawmakers to act “in a timely way to phase in necessary changes gradually,” since acting early “would allow more generations to share in the needed revenue increases or reductions in scheduled benefits.” Real plans usually mix tools: the Penn Wharton Budget Model’s seven illustrative packages run from all-tax to all-benefit-cut (September 2026), and Wendell Primus and colleagues at Brookings point to plans that split the gap roughly equally between tax increases and benefit reductions (January 2026).",
+     "source_label": "2026 Social Security Trustees Report, Highlights, “Size of the Solvency Gap”",
+     "source_url": "https://www.govinfo.gov/content/pkg/CDOC-119hdoc163/pdf/CDOC-119hdoc163.pdf",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "benefit-cut-needed-to-keep-social"
+    },
+    {
+     "label": "Legislated pension ages, selected countries",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "years",
+     "series": [
+      {
+       "label": "Denmark, from 2040",
+       "value": "70",
+       "highlight": false
+      },
+      {
+       "label": "UK, 2044 to 2046",
+       "value": "68",
+       "highlight": false
+      },
+      {
+       "label": "Germany, from 2031",
+       "value": "67",
+       "highlight": false
+      },
+      {
+       "label": "United States",
+       "value": "67",
+       "highlight": true
+      },
+      {
+       "label": "France, 2023 law",
+       "value": "64",
+       "highlight": false
+      },
+      {
+       "label": "China, men",
+       "value": "63",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Social Security’s full retirement age is 67; Denmark has legislated 70 from 2040, the highest in Europe, while France has suspended its rise from 62 to 64 until 2028.",
+     "detail": "Each row comes from that country’s own law, so the sources differ. Denmark’s parliament voted 81 to 21 on May 22, 2025 to raise the age from 67 to 68 in 2030, 69 in 2035 and 70 in 2040; it has indexed the age to life expectancy since 2006 (AFP). The UK’s state pension age rises from 66 to 67 between 2026 and 2028 and is legislated to reach 68 between 2044 and 2046 (GOV.UK). Germany completes its move to 67 in 2031, and its pension commission has proposed raising the age after that by two months for every three months of added life expectancy (German federal government). China, in its first change since the 1950s, is raising men’s age from 60 to 63 over 15 years from January 2025, and women’s from 50 to 55 in blue-collar jobs and from 55 to 58 in white-collar ones (Xinhua). France’s 2023 law is suspended until January 1, 2028, leaving ages of 62 years 9 months to 63 years 9 months for people born 1964 to 1968 (Service Public). The measures differ, and the US lets people claim reduced benefits from 62. Across the OECD, the average age for a full pension will rise from 64.7 for men retiring in 2024 to 66.4 for men starting work that year, under laws already passed (OECD, Pensions at a Glance 2025).",
+     "source_label": "AFP via Report.az (Denmark); GOV.UK; German federal government; Social Security trustees; Service Public; Xinhua",
+     "source_url": "https://report.az/en/amp/other-countries/denmark-raises-retirement-age-to-70-by-2040",
+     "source_published": "as legislated, 2026",
+     "source_accessed": "2026-11-23",
+     "id": "legislated-pension-ages-selected-countries"
+    },
+    {
+     "label": "Social Security cost and income, share of US GDP",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% of GDP",
+     "series": [
+      {
+       "label": "Cost, 2026",
+       "value": "5.3",
+       "highlight": true
+      },
+      {
+       "label": "Cost, peak ~2084",
+       "value": "6.9",
+       "highlight": false
+      },
+      {
+       "label": "Income, 2026",
+       "value": "4.4",
+       "highlight": false
+      },
+      {
+       "label": "Income, 2100",
+       "value": "4.5",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Social Security costs 5.3 percent of US GDP in 2026 and is projected to peak near 6.9 percent around 2084, while its dedicated income stays near 4.4 to 4.8 percent.",
+     "detail": "Income here excludes interest earned on the trust funds’ reserves. Cost has exceeded total income every year since 2021 and non-interest income every year since 2010, with reserves covering the difference. Those who see the problem as manageable stress how small the gap is against the whole economy; those who see it as urgent stress that it keeps growing and that each year of delay raises the eventual adjustment. Cost rises faster against taxable payroll than against GDP partly because a growing share of pay comes as untaxed health benefits.",
+     "source_label": "2026 Social Security Trustees Report, section II.D",
+     "source_url": "https://www.govinfo.gov/content/pkg/CDOC-119hdoc163/pdf/CDOC-119hdoc163.pdf",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "social-security-cost-and-income-share"
+    },
+    {
+     "label": "People Social Security kept out of poverty",
+     "viz": "bar",
+     "wide": false,
+     "value": "28.8",
+     "unit": "million",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Social Security lifted 28.8 million Americans above the Supplemental Poverty Measure line in 2025, more than any other government program.",
+     "detail": "The Supplemental Poverty Measure counts taxes, benefits and necessary expenses such as medical costs, so it can show what each program does to poverty; the overall rate was 13.1 percent in 2025. The figure covers people of all ages, including children in households that receive retirement, survivor or disability benefits. Those who defend the current benefit formula cite it as the program’s central achievement; those who favor a flatter, more targeted benefit argue that much of the spending goes to retirees who would not be poor without it, and that the antipoverty effect could be kept at lower cost.",
+     "source_label": "US Census Bureau, Poverty in the United States: 2025 (P60-290)",
+     "source_url": "https://www.census.gov/library/publications/2026/demo/p60-290.html",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "people-social-security-kept-out-of"
+    },
+    {
+     "label": "Old-age income poverty",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "South Korea, 66+",
+       "value": "40",
+       "highlight": false
+      },
+      {
+       "label": "OECD, over 65",
+       "value": "14.8",
+       "highlight": true
+      },
+      {
+       "label": "OECD, all ages",
+       "value": "11.5",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "On average 14.8 percent of people over 65 in OECD countries have incomes below half their country’s median, against 11.5 percent of all ages; in South Korea about 40 percent do.",
+     "detail": "The measure is relative and counts cash income only, not owned homes or in-kind benefits, which older people hold more of, so it can overstate hardship among asset-rich retirees. South Korea’s rate, the highest in the OECD, has fallen from 48 percent in 2011; its public pension system is still maturing, so many of today’s old have short contribution records or none. In the United States, the Census Bureau’s Supplemental Poverty Measure put poverty among people 65 and older at 15.4 percent in 2025, the fifth straight annual rise (AARP Foundation analysis reported by NPR, September 2026).",
+     "source_label": "OECD, Pensions at a Glance 2025, “Old-age income poverty”",
+     "source_url": "https://www.oecd.org/en/publications/pensions-at-a-glance-2025_e40274c1-en/full-report/old-age-income-poverty_3cd946d7.html",
+     "source_published": "around 2022",
+     "source_accessed": "2026-11-23",
+     "id": "old-age-income-poverty"
+    },
+    {
+     "label": "Lifetime effect of closing the gap with benefit cuts, by generation",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "$",
+     "series": [
+      {
+       "label": "Age 60 in 2027",
+       "value": "-80,645",
+       "highlight": true
+      },
+      {
+       "label": "Born in 2052",
+       "value": "306,866",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In one model, every way of closing the gap costs middle-income households aged 60 in 2027, from $2,460 by taxes to $80,645 by cuts, and helps those born in 2052; other models dispute the size.",
+     "detail": "The Penn Wharton Budget Model compares each reform with a baseline in which the government keeps paying full benefits by borrowing, so the gains for future households partly reflect avoiding the economic drag of that debt; that baseline is itself a modeling choice. Its summary says “every package produces losses for older current workers and near-retirees and gains for future households.” For a middle-income household born in 2052 the gain runs from $27,725 under the all-tax package to $306,866 under the all-cut one. Under the all-cut package, benefits for people born in 2015 would be 35.8 percent lower for middle earners, 28.2 percent lower for the bottom fifth and 47.8 percent lower for the top fifth. The model finds larger long-run gains in GDP the more a package relies on benefit cuts, because people save and work more; other models, and those who favor revenue, dispute how much extra saving and work cuts would produce.",
+     "source_label": "Penn Wharton Budget Model, “Seven Social Security Reform Packages: Effects on Growth and Generations”",
+     "source_url": "https://budgetmodel.wharton.upenn.edu/p/2026-09-21-seven-social-security-reform-packages-effects-on-growth-benefits-and-generations/",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "lifetime-effect-of-closing-the-gap"
+    },
+    {
+     "label": "Federal spending per older adult and per child",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "$",
+     "series": [
+      {
+       "label": "Per adult 65+",
+       "value": "40,050",
+       "highlight": true
+      },
+      {
+       "label": "Per child",
+       "value": "6,860",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The federal government spent about $40,050 per American aged 65 and over in 2024 and about $6,860 per child, roughly 5.8 times as much.",
+     "detail": "Federal spending on children totaled $532 billion in 2024, 8 percent of federal outlays, and the Urban Institute projects that share falling to about 6 percent by 2035 (Urban Wire, April 2026). The comparison covers federal spending only; state and local governments pay for most public schooling, which narrows the gap considerably when all levels of government are counted. Older adults’ benefits are also partly financed by payroll taxes they paid while working. Those who argue that the balance between generations has tilted too far toward the old cite these figures; defenders of the programs reply that Social Security and Medicare are earned insurance, not a transfer that children are competing for.",
+     "source_label": "Peter G. Peterson Foundation, citing the Urban Institute’s Kids’ Share report",
+     "source_url": "https://www.pgpf.org/article/how-much-government-spending-goes-to-children",
+     "source_published": "2024",
+     "source_accessed": "2026-11-23",
+     "id": "federal-spending-per-older-adult-and"
+    },
+    {
+     "label": "French pension system deficit, projected",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% of GDP",
+     "series": [
+      {
+       "label": "2025",
+       "value": "0.2",
+       "highlight": true
+      },
+      {
+       "label": "2030",
+       "value": "0.2",
+       "highlight": false
+      },
+      {
+       "label": "2045",
+       "value": "0.9",
+       "highlight": false
+      },
+      {
+       "label": "2070",
+       "value": "2.4",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "France spends 14.1 percent of GDP on pensions; its pension council projects a deficit rising from 0.2 percent of GDP in 2025 to 2.4 percent by 2070, a balance it calls an imperfect guide.",
+     "detail": "The Conseil d’orientation des retraites, an independent body attached to the prime minister, revised its projections in June 2026 using new INSEE population assumptions: 1.45 children per woman from 2028, net migration of 150,000 a year and slightly smaller gains in life expectancy. Its 2070 deficit is larger than the 1.4 percent of GDP it projected a year earlier. Spending stays roughly flat as a share of GDP to 2045 because the 2010 and 2023 reforms raise the average retirement age and pensions fall relative to wages; the deficit grows mainly because the system’s resources fall from 13.9 to 12.9 percent of GDP. About 277 billion of its 417 billion euros of resources in 2025 came from contributions, the rest from earmarked taxes and state transfers, so the size of the deficit depends on accounting conventions. The council calls the balances “des repères très imparfaits” (very imperfect guides) and frames the question as what size of pension system the country can finance.",
+     "source_label": "Conseil d’orientation des retraites, Rapport annuel, June 2026, Synthèse",
+     "source_url": "https://www.cor-retraites.fr/sites/default/files/2026-06/Synth%C3%A8se_RA_2026.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "french-pension-system-deficit-projected"
+    },
+    {
+     "label": "Americans who say Social Security benefits should not be reduced",
+     "viz": "radial",
+     "wide": false,
+     "value": "79",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "79 percent of Americans say Social Security benefits should not be reduced in any way, including 77 percent of Republicans and 83 percent of Democrats.",
+     "detail": "Nineteen percent said some reductions need to be considered. The question asks only whether benefits should be cut; it does not measure support for any particular tax increase or other way of closing the gap, and answers to questions that spell out a trade-off depend heavily on wording and on whether the cost is stated in dollars. Proposals to raise the retirement age generally poll poorly, while taxing earnings above the cap generally polls well.",
+     "source_label": "Pew Research Center, “Americans’ views of government aid to poor, role in health care and Social Security”",
+     "source_url": "https://www.pewresearch.org/politics/2024/06/24/americans-views-of-government-aid-to-poor-role-in-health-care-and-social-security/",
+     "source_published": "2024",
+     "source_accessed": "2026-11-23",
+     "id": "americans-who-say-social-security-benefits"
+    },
+    {
+     "label": "US private-sector workers with a workplace retirement plan",
+     "viz": "radial",
+     "wide": false,
+     "value": "72",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "72 percent of US private-sector workers had access to a workplace retirement plan in March 2026, but 52 percent took part, and 14 percent had access to a traditional pension.",
+     "detail": "Access to a defined-contribution plan such as a 401(k) was 70 percent, and 49 percent participated in one. Among state and local government workers, 86 percent had access to a defined-benefit pension and 81 percent took part in some plan. Those who favor relying more on personal saving point to the growth of 401(k)-type plans and to automatic enrollment, which raises participation; those who defend Social Security’s earnings-related benefit point to the half of private workers who do not take part, and to the shift from pensions that bore investment and longevity risk for workers to accounts in which the worker bears both.",
+     "source_label": "US Bureau of Labor Statistics, The Economics Daily",
+     "source_url": "https://www.bls.gov/opub/ted/2026/retirement-benefits-were-available-to-72-percent-of-private-industry-workers-in-march-2026.htm",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "us-private-sector-workers-with-a"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Should retirement ages rise as people live longer?",
+    "kind": "value",
+    "why": "Lives have lengthened far more than pension ages have, but the gains are uneven by income and by job. The dispute is less over the averages than over what fairness requires when the averages hide so much.",
+    "detail": "Those who would raise the age argue that a pension age set when retirement lasted about a dozen years cannot stay fixed when it lasts far longer, and that linking the age to life expectancy keeps the share of adult life spent in retirement roughly stable without cutting anyone’s monthly check. A later age is also the one lever that improves both sides of the ledger at once: more years of contributions and fewer years of benefits. Hardship, on this view, is better handled by targeted disability and long-career exits than by holding the age down for everyone.\n\nThose who would hold it argue that a later age is the most regressive way to cut pensions, because it takes the largest share of lifetime benefits from people with the shortest lives, who are disproportionately lower earners. For a cleaner, a nurse or a roofer, a later pension age often means more years on disability or unemployment, not more years of work. They would rather pay for the extra years of retirement as a collective gain of a richer society.",
+    "lean_label_a": "Tie to longevity",
+    "lean_label_b": "Keep current ages",
+    "id": "should-retirement-ages-rise-as-people"
+   },
+   {
+    "text": "Should the funding gap be closed mainly with new revenue or mainly with benefit changes?",
+    "kind": "value",
+    "why": "The arithmetic allows any mix of higher taxes and smaller benefits. The choice turns on how large a public pension people want, who should pay, and disputed evidence on what each choice does to the economy.",
+    "detail": "Those who favor revenue argue that the promised benefits are modest: the Social Security Administration put the average retired worker’s benefit for January 2027 at about $2,163 a month (reported by NAPA). Cutting them, they say, would push more older people into poverty. Part of the gap opened because a rising share of earnings escaped the tax cap, so asking high earners to pay the same rate on all their wages would close much of it without touching benefits. A tax increase of a few points phased in over years is, they say, a small price for keeping a promise people planned their lives around.\n\nThose who favor benefit changes argue that the gap comes from the program’s design meeting a new demography: each new cohort’s starting benefits grow with wages, faster than prices, and people collect them for longer. Raising payroll taxes by a third would fall on young workers who already face high housing and debt costs, and they cite models in which slowing benefit growth does far more for long-run output than raising taxes. Lifting the cap alone, they add, would also raise high earners’ benefits unless the formula changed.\n\nThe same split runs through Europe, where the choice is between higher contributions and slower-growing or later pensions.",
+    "lean_label_a": "Mainly revenue",
+    "lean_label_b": "Mainly benefits",
+    "id": "should-the-funding-gap-be-closed"
+   },
+   {
+    "text": "Can most people keep working into their late sixties?",
+    "kind": "empirical",
+    "why": "Whether a later pension age is fair depends on whether people can work to it. Health in later life has improved on average, but employers often push older workers out regardless of health, and the dispute is over which evidence describes the typical worker.",
+    "detail": "Those who expect longer working lives point to measured gains in cognitive and physical health: IMF economists found that “a person who was 70 in 2022 had the same cognitive health score as a 53-year-old in 2000” (Finance & Development, June 2025). Work has become less physically demanding, part-time work allows a gradual exit, and where pension ages have risen, as in Germany and Denmark, employment among older people has risen with them, suggesting that many leave at the pension age because of the rules rather than because they cannot continue.\n\nThose who doubt it argue that the averages are lifted by educated workers in desk jobs, and that gains in health and longevity have gone mostly to higher earners. A ProPublica and Urban Institute analysis of the Health and Retirement Study found that 56 percent of Americans who reach their 50s in steady jobs are laid off or pushed out at least once before they choose to retire, and that only about one in ten of them ever again earns as much. For those workers, a later pension age means a longer gap between losing work and receiving a pension.",
+    "lean_label_a": "Most can",
+    "lean_label_b": "Most cannot",
+    "id": "can-most-people-keep-working-into"
+   },
+   {
+    "text": "Who should bear more of the adjustment, people near or in retirement, or younger workers?",
+    "kind": "value",
+    "why": "Every way of closing a pension gap shifts costs between generations. Most plans spare people already retired, which makes the change larger for everyone who follows; whether that is fairness or favoritism is the dispute.",
+    "detail": "Those who want older generations to carry more argue that the baby boom generation received generous returns on its contributions, gained from decades of rising asset prices, and is better off on average than younger cohorts at the same age, while public spending tilts heavily toward the old. Sparing everyone over a certain age loads the whole adjustment onto people who had no say in the promises and who also face a larger national debt. Modest changes for current retirees, such as a smaller cost-of-living adjustment for those with high incomes or more income tax on high benefits, would spread the burden more widely.\n\nThose who would protect people near retirement argue that a pension is a promise on which people have built their lives: someone at 60 cannot go back and save more or choose a different career, while younger workers have decades to adjust. Cutting benefits for current retirees, many of them old, widowed and living mainly on their pension, would be cruel and politically impossible. Each generation both pays and receives, since today’s retirees paid the taxes that financed their parents’ benefits, and the 1983 reform, often cited as a model, phased in its later retirement age over decades so that no one near retirement was caught.",
+    "lean_label_a": "Retirees share more",
+    "lean_label_b": "Spare near-retirees",
+    "id": "who-should-bear-more-of-the"
+   },
+   {
+    "text": "Should public pensions be partly prefunded by investing in markets?",
+    "kind": "value",
+    "why": "Pay-as-you-go pensions earn, in effect, the growth of wages and the workforce, which aging is slowing. An invested fund promises more but brings market risk, transition costs and, if financed by borrowing, a bet that returns beat interest.",
+    "detail": "Canada, Sweden, Japan and Norway invest public funds in markets, and Chile and Australia built systems on individual accounts; US Social Security holds only special-issue Treasury securities.\n\nSupporters argue that a fund invested over decades earns far more than government bonds, easing the taxes or cuts later generations face and making pensions depend less on past birth rates. A collective fund can wait out a crash instead of selling, spreading risk across generations as no single saver can. Canada built its reserve after a late-1990s reform by raising contributions, with no borrowing; even a borrowed fund, they add, should gain over 75 years, since stocks have long returned more than governments pay to borrow.\n\nSkeptics argue that prefunding does not create money from nothing. A transition generation pays twice, building the fund while paying current retirees; a crash just before retirement can cut its pensions sharply, as individual-account systems learned in 2008; and a big government fund in private companies raises questions of political control. A borrowed fund pays only if returns beat interest: the Center for Retirement Research concluded that the Cassidy-Kaine plan would do “virtually nothing” to solve Social Security’s financing problems, and the Committee for a Responsible Federal Budget argues that “a sovereign debt fund can’t save Social Security” (both 2026).",
+    "lean_label_a": "Invest a fund",
+    "lean_label_b": "No invested fund",
+    "id": "should-public-pensions-be-partly-prefunded"
+   },
+   {
+    "text": "Should a public pension replace a share of earnings or mainly prevent poverty?",
+    "kind": "value",
+    "why": "Social Security and most European state pensions pay more to those who earned more. Supporters of a flatter benefit say it would close much of a funding gap; opponents say it would change what the program is and who backs it.",
+    "detail": "New Zealand pays everyone the same flat pension, and Australia means-tests its public pension and relies on mandatory private saving; the US and most of Europe pay benefits tied to past wages.\n\nThose who favor earnings replacement argue that a pension earned by working, in proportion to what was paid in, is why social insurance is popular across classes and parties and has lasted more than 90 years; a program only for the poor, they say, becomes a program with poor political support. It also protects the middle class from a collapse in living standards at retirement, which private saving has not reliably done. Wendell Primus and colleagues at Brookings warn that flat-benefit proposals would “shift Social Security from being a wage replacement program to a poverty reduction program” (January 2026).\n\nThose who favor a flatter benefit argue that public money should go first to people who need it. Today’s formula, they say, gives the most to the highest earners, the group that also lives longest and so collects for the most years. The Cato Institute cites a Congressional Budget Office estimate that a flat benefit pegged above the poverty line would eliminate the long-term shortfall, while paying the poorest retirees more than now. Middle and upper earners can save in accounts they own and pass on.",
+    "lean_label_a": "Replace earnings",
+    "lean_label_b": "Prevent poverty",
+    "id": "should-a-public-pension-replace-a"
+   },
+   {
+    "text": "Can economic growth, immigration or higher birth rates close the gap?",
+    "kind": "empirical",
+    "why": "Pension finances depend on how many people work and what they earn, so faster growth, more immigration and more births all help. The dispute is how much, and whether any of them can be counted on.",
+    "detail": "The trustees’ own sensitivity tests give the size of each effect: each extra 0.1 percentage point of real wage growth improves the 75-year balance by about 0.19 percent of payroll, each extra 0.1 in the fertility rate by about 0.22, and each additional 100,000 net immigrants a year by about 0.10 (2026 Trustees Report).\n\nThose who look to growth argue that projections are not destiny. Artificial intelligence and automation could lift productivity well above the trustees’ assumption of 1.63 percent a year; immigration is the fastest lever, because immigrants arrive mostly at working age; and policies that raise employment among women and older people can enlarge the workforce further. Some on the populist right in the US and Europe argue that growth and cuts to other spending, not tax increases or benefit cuts, are the answer.\n\nThose who doubt it point to the same report. Even the trustees’ optimistic scenarios leave deficits: 3.27 percent of payroll with real wage growth of 1.74 percent a year, 3.67 with a fertility rate of 2.1, and 4.00 with net immigration averaging 1.62 million a year. Faster wage growth raises future benefits too, because starting benefits are indexed to wages; higher fertility takes two decades to add workers; and immigrants themselves age and earn benefits.",
+    "lean_label_a": "They can close it",
+    "lean_label_b": "Reform still needed",
+    "id": "can-economic-growth-immigration-or-higher"
+   },
+   {
+    "text": "Should pensions adjust automatically or only through new political decisions?",
+    "kind": "value",
+    "why": "Some countries let formulas trim benefits or raise pension ages as demographics shift. US Social Security has none, so its only automatic rule is an abrupt cut when reserves run out. Whether hard choices belong to formulas or to voters is contested.",
+    "detail": "Sweden’s balancing mechanism trims indexation when liabilities outrun assets, Japan’s macroeconomic slide slows benefit growth as the workforce shrinks, Germany’s sustainability factor ties pension increases to the ratio of contributors to pensioners, and Denmark links its pension age to life expectancy.\n\nThose who favor automatic adjustment argue that it takes the hardest decisions out of election cycles and spreads small changes over many years and cohorts, instead of forcing a crisis every few decades; a rule set in advance is easier to plan around than a last-minute deal. Germany’s pension commission recommended restoring the sustainability factor after 2031 and setting the retirement age by formula.\n\nThose who prefer political decisions argue that a pension is a social bargain whose terms voters should set openly, not a formula that trims benefits quietly every year. Automatic mechanisms get suspended when they bite, as Germany did by holding the pension level at 48 percent to 2031. Denmark’s prime minister Mette Frederiksen said in 2024, “We no longer believe that the retirement age should be increased automatically,” even as her government went on to legislate age 70 (AFP via The Local Denmark). Formulas also embed assumptions, such as that longer average lives justify later retirement for everyone, that hide unequal effects.",
+    "lean_label_a": "Automatic rules",
+    "lean_label_b": "Elected choices",
+    "id": "should-pensions-adjust-automatically-or-only"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Keep benefits and retirement ages, and raise revenue",
+    "color_key": "green",
+    "steelman": "Pensions are earned insurance that people plan their lives around. Keep the promise and the age, and ask the highest earners and capital to cover a modest gap.",
+    "detail": "The so-called crisis is a predictable gap: in the United States about 1.5 percent of GDP over 75 years, in a country that spends far less on public pensions than France or Italy. Richer societies can afford to support people through the extra years they now live; that is what economic growth is for. Part of the gap opened because a growing share of earnings escaped the payroll tax cap, and recent tax cuts drained revenue from the trust funds, so that is where the money should come from. Raising the retirement age is the most regressive cut there is, because lower earners have gained least in life expectancy and many older workers are pushed out of jobs long before the official age. Cutting benefits would push more older people into poverty just as it is rising.\n\nWe are told that paying for everything with taxes means raising the payroll tax by a third and loading the cost onto the young. It need not fall on ordinary workers. Senators Elizabeth Warren and Bernie Moreno propose removing the cap so that the wealthiest Americans “should contribute the same percentage of their income as a factory worker in Chillicothe, Ohio,” and taxes on capital income and large fortunes can supply the rest; the United States collects less in taxes than most rich democracies that pay comparable or larger pensions. Young workers are the ones who most need the program to be there when they retire. Holding ages steady is not denial of aging but a choice to share its cost collectively, rather than through later retirement that falls on those least able to bear it.",
+    "proponents": "Social Security Works; Roosevelt Institute; Deutscher Gewerkschaftsbund (DGB); CGT; Elizabeth Warren; Bernie Moreno",
+    "id": "keep-benefits-and-retirement-ages-and"
+   },
+   {
+    "name": "Raise retirement ages with longevity and split the rest",
+    "color_key": "blue",
+    "steelman": "Longer lives are a gain to be shared: spend part of the added years working, and close the rest of the gap early, gradually and with both taxes and benefits.",
+    "detail": "When pensions began, retirement was far shorter than it is now. A system that never adjusts its age to longer lives quietly promises each generation a longer retirement paid for by fewer workers. Working somewhat longer splits the gain in years between work and rest instead of cutting monthly checks or raising taxes on the young, and it is the only lever that strengthens both sides of the ledger and the economy. France’s pension council found, in models from the French Treasury, OFCE, Cepremap and the Paris School of Economics, that raising the effective retirement age increases employment and output, while pension cuts and higher contributions slow activity in the short run (June 2026). Germany’s pension commission proposes adjusting the age moderately after 2031, with added years split two to one between work and retirement. The rest of the gap should be closed with a balanced mix of slower benefit growth for higher earners and new revenue, phased in early so no one near retirement is caught by surprise.\n\nThe objection that a later age is regressive is about design, not principle. Disability insurance, long-career and hardship exits and a higher minimum benefit can protect those who cannot work longer, and the age can rise only partly in line with longevity, as the two-to-one rule does. Higher payroll taxes also fall on low earners, who pay on every dollar they earn. And holding the age fixed while lives lengthen gives the most to those who live longest, who are disproportionately well-off, so a fixed age is not as progressive as it looks.",
+    "proponents": "International Monetary Fund; Alterssicherungskommission (Germany’s pension commission); Danish Parliament",
+    "id": "raise-retirement-ages-with-longevity-and"
+   },
+   {
+    "name": "Build invested funds alongside pay-as-you-go pensions",
+    "color_key": "amber",
+    "steelman": "Pay-as-you-go pensions ride on how many children were born decades ago. Investing part of the money lets today’s workers build real assets for tomorrow’s retirees.",
+    "detail": "A pay-as-you-go pension earns, in effect, the growth rate of the workforce and wages, and aging societies are running that rate down. Money invested in a diversified portfolio over decades has historically earned much more. Done collectively, with professional management and a long horizon, it can close part of the gap without the tax increases or benefit cuts that voters reject. Most rich countries already do some of this, from Canada’s plan, reformed in the late 1990s to build an invested reserve, to Sweden’s mandatory premium-pension accounts. The United States, whose trust fund reserves earned an effective 2.6 percent in 2025 in special-issue Treasury securities, is the outlier.\n\nOur proposals differ in form. Senators Bill Cassidy and Tim Kaine would borrow $1.5 trillion for a fund invested for 75 years alongside the trust fund, promising that “no one on Social Security or nearing retirement sees any change to the benefits whatsoever.” Germany’s pension commission recommends a mandatory funded pension on the Swedish model, financed by an extra 2 percent of wages. Marine Le Pen’s Rassemblement National proposes a mandatory funded pillar for workers under 52, fed by at least 12 billion euros a year of redirected employer levies. Critics call borrowing to invest a gamble. Prefunding was never meant to be the whole answer, only the part that reduces what must come from cuts and taxes; over 75 years the gap between equity returns and government borrowing costs has historically been large; and a fund that never has to sell in a crash pools risk across generations as no individual saver can. Where the fund is built from contributions rather than debt, there is no borrowing bet at all, only the choice to save now rather than pay later.",
+    "proponents": "Bill Cassidy; Tim Kaine; Rassemblement National; Alterssicherungskommission (Germany’s pension commission)",
+    "id": "build-invested-funds-alongside-pay-as"
+   },
+   {
+    "name": "Focus public pensions on poverty and expand personal saving",
+    "color_key": "rust",
+    "steelman": "Government’s job is to make sure no one grows old poor, not to replace the wages of people who can save. A flat floor plus accounts people own does that for less.",
+    "detail": "Today’s earnings-related systems pay the largest checks to the highest earners, who also live longest, and finance them with a payroll tax on young workers, many of whom earn less than the retirees they support. A flat benefit set above the poverty line would raise benefits for the poorest retirees, close the funding gap, and leave middle- and higher-income workers to save in accounts they own, can invest and can pass on to their families. Andrew Biggs of the American Enterprise Institute describes a flat benefit at 125 or 150 percent of the poverty threshold that would “eliminate poverty among seniors and the disabled” and “(easily) address Social Security’s long-term funding gap.” In the Penn Wharton Budget Model’s 2026 comparison, closing the gap entirely through benefit reductions raises GDP by 6.5 percent by 2050 and 12.1 percent by 2060, because people save and work more, against a small loss to 2050 under the all-tax package. Personal saving builds real capital and does not depend on a promise the next generation of voters must keep, and Australia and New Zealand show that a flat or means-tested public pension plus private saving can deliver adequate incomes at lower public cost.\n\nThe objection is that a flat benefit would gut middle-class retirement security and turn Social Security into welfare. A well-designed floor would be phased in over decades, so no current retiree or near-retiree would be affected, and middle earners would gain an account they own in place of a promise already set to be cut by about a fifth under current law. Programs for everyone can stay popular even when flat: New Zealand’s universal pension is both. And today’s formula is not neutral, because it moves money from lower earners, who die younger, to higher earners, who collect longer.",
+    "proponents": "Cato Institute; Andrew Biggs",
+    "id": "focus-public-pensions-on-poverty-and"
+   }
+  ],
+  "crux": {
+   "lead": "As lives lengthen, should the added years go to work or to retirement?",
+   "lead_highlight": "go to work or to retirement",
+   "subtitle": "Most pension fights turn on how the years longer lives add are split between work and rest, and who pays for the rest. Years spent working shrink the gap by adding contributions and shortening the years benefits are paid; years spent retired must be paid for by workers’ taxes, by borrowing or by invested savings.",
+   "empirical": "Evidence can show whether most people in their late sixties are healthy and employable enough to keep working, and how that differs by income and occupation; whether gains in life expectancy are reaching lower earners; and what later pension ages have done to employment, disability claims and old-age poverty where they were raised. It can also show how far growth, immigration or invested funds could pay for longer retirements.",
+   "values": "No data settles whether a pension is a fixed, earned promise to keep as written or a shared bargain each generation may reset as lives lengthen; how to weigh lower earners who die younger against young workers facing higher taxes; whether people near retirement deserve more protection than those decades away; or whether security in old age should rest on a collective guarantee or on individual ownership."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Build your own plan to fix Social Security",
+    "description": "The Committee for a Responsible Federal Budget’s interactive Social Security Reformer lets you combine tax, benefit and retirement-age options and see how much of the shortfall each closes.",
+    "url": "http://www.crfb.org/socialsecurityreformer/",
+    "for_position": null,
+    "id": "build-your-own-plan-to-fix"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Join Social Security Works",
+    "description": "A US advocacy group that campaigns to protect and expand Social Security benefits and to fund them by asking high earners to pay more; it organizes volunteers and accepts donations.",
+    "url": "https://socialsecurityworks.org/",
+    "for_position": "Keep benefits and retirement ages, and raise revenue",
+    "id": "join-social-security-works"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the IMF on growth in an aging world",
+    "description": "An IMF Finance & Development article on healthier aging, longer working lives and why retirement ages could rise in line with life expectancy.",
+    "url": "https://www.imf.org/en/publications/fandd/issues/2025/06/sustaining-growth-in-an-aging-world-bertrand-gruss",
+    "for_position": "Raise retirement ages with longevity and split the rest",
+    "id": "read-the-imf-on-growth-in"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the Cassidy-Kaine plan for an invested Social Security fund",
+    "description": "Senator Bill Cassidy’s summary of the op-ed he wrote with Senator Tim Kaine proposing a $1.5 trillion fund invested alongside the Social Security trust fund.",
+    "url": "https://www.cassidy.senate.gov/newsroom/press-releases/icymi-cassidy-outlines-plan-to-save-social-security-in-op-ed",
+    "for_position": "Build invested funds alongside pay-as-you-go pensions",
+    "id": "read-the-cassidy-kaine-plan-for"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the case for a flat Social Security benefit",
+    "description": "Andrew Biggs of the American Enterprise Institute explains how converting Social Security to a flat benefit above the poverty line would work, and who would gain and lose.",
+    "url": "http://nsjonline.com/article/2025/05/biggs-what-might-a-flat-benefit-social-security-reform-look-like/",
+    "for_position": "Focus public pensions on poverty and expand personal saving",
+    "id": "read-the-case-for-a-flat"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the 2026 Social Security Trustees Report",
+    "description": "The official annual report on Social Security’s finances, with the depletion dates, the size of the gap and the sensitivity tests behind the projections.",
+    "url": "https://www.govinfo.gov/content/pkg/CDOC-119hdoc163/pdf/CDOC-119hdoc163.pdf",
+    "for_position": null,
+    "id": "read-the-2026-social-security-trustees"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Compare seven ways to close the gap, generation by generation",
+    "description": "The Penn Wharton Budget Model’s September 2026 analysis of seven reform packages, from all-tax to all-benefit-cut, with their effects on growth, benefits and each generation.",
+    "url": "https://budgetmodel.wharton.upenn.edu/p/2026-09-21-seven-social-security-reform-packages-effects-on-growth-benefits-and-generations/",
+    "for_position": null,
+    "id": "compare-seven-ways-to-close-the"
+   },
+   {
+    "kind": "policy",
+    "title": "Tell your senators how you would close the gap",
+    "description": "The Senate directory lists contact details for every senator, so you can say which mix of taxes, benefit changes and retirement ages you would back.",
+    "url": "https://www.senate.gov/senators/senators-contact.htm",
+    "for_position": null,
+    "id": "tell-your-senators-how-you-would"
+   },
+   {
+    "kind": "policy",
+    "title": "Follow the PROMISE Act, a bipartisan bill to force a Social Security vote",
+    "description": "A Senate bill (S. 4979, July 2026) that would have the Social Security Advisory Board draft a plan keeping the trust funds solvent for at least 50 years and guarantee it a fast vote; AARP has opposed it.",
+    "url": "https://www.durbin.senate.gov/newsroom/press-releases/durbin-cassidy-kaine-tillis-king-cornyn-coons-armstrong-introduce-bipartisan-proposal-to-initiate-congressional-action-on-social-security",
+    "for_position": "Raise retirement ages with longevity and split the rest",
+    "id": "follow-the-promise-act-a-bipartisan"
+   },
+   {
+    "kind": "local",
+    "title": "Check your own Social Security record and benefit estimate",
+    "description": "A my Social Security account lets you check that your earnings are recorded correctly and see your estimated benefits at different claiming ages.",
+    "url": "https://www.ssa.gov/myaccount/",
+    "for_position": null,
+    "id": "check-your-own-social-security-record"
+   }
+  ]
+ },
+ "icon": "armchair",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: one compact scene grouped in the center with wide white margins, nothing touching the edges: a large empty wooden rocking chair, seen at a three-quarter angle, as the dominant focal mass on the crest of a broad gently curved hill, filled; a wooden walking cane with a hooked handle leans against the chair's arm, overlapping it; a medium-sized empty swivel office chair with a filled seat and back stands on the path partway down the slope; a small child's tricycle with filled wheels sits at the foot of the path on the lower left; one continuous winding path, drawn as a filled band, climbs from the tricycle past the office chair to the rocking chair, crossing the whole scene as the connective element; the hill is filled and its top is a gentle curve.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #b48f2c, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: text, numbers, currency symbols, dollar signs, coins, banknotes, piggy banks, hourglasses, clocks, calendars, scales or balances, seesaws, arrows, charts, graphs, cracks, broken or empty piggy banks, sunsets, wilting plants, gravestones, wheelchairs, hospital beds, people, hands, faces."
 }

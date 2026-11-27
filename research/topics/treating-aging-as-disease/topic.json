@@ -1,8 +1,8 @@
 {
  "slug": "treating-aging-as-disease",
  "title": "Treating Aging as a Disease",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-11-26T09:46:04+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Classifying aging as a treatable condition, and whether radically extended life would be good.",
@@ -13,5 +13,592 @@
  "related": [
   "obesity-drugs-medicalization",
   "drug-pricing-vs-innovation"
- ]
+ ],
+ "icon": "log",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: A large round slice of a tree trunk stands upright on its edge as the clearly dominant mass, its face showing many plain concentric growth rings inside a thin bark rim, the rings softly filled. A large medicine capsule leans against the lower right of the wood slice, overlapping it. They stand on a low, gently rounded mound of ground only a little wider than the group, whose curved outline ends softly inside the frame on both sides. A small laboratory flask stands on the mound's left side at the medium scale with a tiny medicine bottle beside it at the smallest scale. A short winding path with a soft fill runs from the front edge of the mound past the capsule to its crest.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #b0567f, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: clocks with hands, numbers or digits, birthday candles, gravestones, skulls, wilting flowers, canes, walkers, wheelchairs, rocking chairs, wrinkled faces, human figures or silhouettes, faces, heartbeat lines, infinity signs, fountains, syringes, dollar signs, warning signs, crossed out symbols, a second color",
+ "content": {
+  "overview": {
+   "summary": "Can and should medicine slow aging itself? Whether aging is a disease is the central argument, with radically longer life close behind.",
+   "scope_covered": "The science of slowing aging, whether to classify it as a disease, how regulators might approve drugs for it, the ethics of radical life extension, and who would get it.",
+   "scope_excluded": "Obesity drugs, drug prices in general, pensions and the fiscal effects of population aging, assisted dying, and the supplement market.",
+   "why_now": "On October 1, 2026, senior FDA officials said aging and longevity would be one of the topics in the agency’s next regulatory science priorities, tentatively due in fiscal year 2027, and sketched two ways a drug might show it slows aging. None of them called aging a disease.",
+   "why_now_source_label": "Lifespan.io",
+   "why_now_source_url": "https://lifespan.io/fda-leaders-name-longevity-a-priority-at-ardd/"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "Years lived in less than full health, world",
+     "viz": "bar",
+     "wide": false,
+     "value": "10.5",
+     "unit": "years",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2023 the average person worldwide could expect to live 73.3 years, about 62.8 of them in full health and 10.5 with illness or disability.",
+     "detail": "Healthy life expectancy, which WHO calls HALE, counts the years a person can expect to live in full health, discounting years lived with disease or disability by their severity. WHO reports it and total life expectancy as separate series, and the gap is the difference between them. It widened from 9.2 years in 2000 to 10.2 in 2019 and 10.5 in 2023, because healthy years grew a little more slowly than total years. Geroscientists argue that slowing aging would shrink the gap by delaying many diseases at once; critics of the disease framing argue that prevention, care and narrower inequality can close much of it. WHO’s life expectancy estimates come from its Global Health Estimates and differ slightly from the UN’s.",
+     "source_label": "World Health Organization, Global Health Observatory",
+     "source_url": "https://www.who.int/data/gho/data/indicators/indicator-details/GHO/gho-ghe-hale-healthy-life-expectancy-at-birth",
+     "source_published": "2023",
+     "source_accessed": "2026-11-26",
+     "id": "years-lived-in-less-than-full"
+    },
+    {
+     "label": "Chance of dying within a year, by age, United States",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "per 1,000",
+     "scale": "log",
+     "series": [
+      {
+       "label": "Age 20",
+       "value": "0.7",
+       "highlight": false
+      },
+      {
+       "label": "Age 40",
+       "value": "2.2",
+       "highlight": false
+      },
+      {
+       "label": "Age 60",
+       "value": "8.8",
+       "highlight": false
+      },
+      {
+       "label": "Age 80",
+       "value": "46.2",
+       "highlight": true
+      },
+      {
+       "label": "Age 90",
+       "value": "138.0",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2024 an 80-year-old American had about a 4.6 percent chance of dying within the year, against 0.2 percent at 40 and 0.07 percent at 20.",
+     "detail": "After early adulthood the yearly risk of death rises roughly exponentially with age, the pattern demographers call the Gompertz law. The bars are drawn on a log scale, so equal steps mean equal multiples. Between 40 and 90 the risk in the 2024 table doubles about every eight to nine years, a rate worked out from the table’s own values, and at 99 it reaches 311.1 per 1,000. Geroscientists read the curve as the signature of one underlying process, aging, that raises the risk of nearly every major disease together. The same report says a 65-year-old American could expect to live 19.7 more years on average, and a 100-year-old 2.2 more.",
+     "source_label": "CDC National Center for Health Statistics, United States Life Tables, 2024",
+     "source_url": "https://www.cdc.gov/nchs/data/nvsr/nvsr75/nvsr75-05.pdf",
+     "source_published": "2024",
+     "source_accessed": "2026-11-26",
+     "id": "chance-of-dying-within-a-year"
+    },
+    {
+     "label": "Share of adult disease burden from age-related diseases, world",
+     "viz": "radial",
+     "wide": false,
+     "value": "51.3",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "A Global Burden of Disease analysis classed 92 diseases as age-related and found they caused 51.3 percent of all adult disease burden worldwide in 2017.",
+     "detail": "The authors counted a disease as age-related when its incidence among adults rises quadratically with age, and measured burden among adults 25 and older in disability-adjusted life years, which add years lost to early death and years lived with disability; the figure is a share of burden, not of deaths. Ischemic heart disease, intracerebral hemorrhage and chronic obstructive pulmonary disease caused the most. Age-standardized rates of age-related disease fell over time across regions, and the onset varies widely: 76-year-olds in Japan and 46-year-olds in Papua New Guinea carried the same age-related burden as the average 65-year-old worldwide. Geroscientists cite the share as evidence that aging is the common root of most chronic disease; others cite the variation between countries as evidence that social conditions shape how people age.",
+     "source_label": "Chang, Skirbekk, Tyrovolas, Kassebaum and Dieleman, The Lancet Public Health, 2019",
+     "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6472541/",
+     "source_published": "2017",
+     "source_accessed": "2026-11-26",
+     "id": "share-of-adult-disease-burden-from"
+    },
+    {
+     "label": "Life expectancy at birth, world",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "years",
+     "series": [
+      {
+       "label": "1900",
+       "value": "32.0",
+       "highlight": false
+      },
+      {
+       "label": "1950",
+       "value": "46.4",
+       "highlight": false
+      },
+      {
+       "label": "2000",
+       "value": "66.4",
+       "highlight": false
+      },
+      {
+       "label": "2023",
+       "value": "73.2",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Life expectancy at birth worldwide more than doubled, from about 32 years in 1900 to 73.2 in 2023.",
+     "detail": "Most of the early gain came from fewer deaths in childhood and young adulthood; in rich countries the recent gains come mostly from lower death rates at older ages. The COVID-19 pandemic cut the world figure from 72.6 years in 2019 to 70.9 in 2021 before it recovered. Period life expectancy is a snapshot of one year’s death rates, not a forecast for anyone born that year. Country gaps remain wide: in 2023 Japan stood at 84.7 years, the United States at 79.3 and Nigeria at 54.5. The UN’s World Population Prospects 2024 puts the world at 73.3 years in 2024 and projects about 77.4 in 2054.",
+     "source_label": "Our World in Data, Life expectancy (long-run series)",
+     "source_url": "https://ourworldindata.org/grapher/life-expectancy",
+     "source_published": "2023",
+     "source_accessed": "2026-11-26",
+     "id": "life-expectancy-at-birth-world"
+    },
+    {
+     "label": "US adults who see aging as a medical condition to treat",
+     "viz": "radial",
+     "wide": false,
+     "value": "9",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a 2026 National Geographic survey, 9 percent of Americans said aging is a medical condition that science should actively try to treat.",
+     "detail": "Most respondents described aging as a natural process they hoped to go through gracefully, yet 61 percent said they would pause their biological age at a chosen year if they could. They put health span ahead of lifespan: 64 percent would accept a shorter life if their remaining years were free of physical and mental decline. If the FDA approved them, 42 percent would take a daily cellular reprogramming pill and 27 percent senolytic drugs. Seventy-two percent were concerned about the risks of emerging longevity technologies; 48 percent said trials should proceed with extreme caution and 13 percent rapidly. The survey of 1,000 US adults, run by FINN Partners and reported on August 18, 2026, was commissioned by National Geographic, which did not publish the full questionnaire.",
+     "source_label": "National Geographic, survey by FINN Partners of 1,000 US adults",
+     "source_url": "https://www.nationalgeographic.com/health/article/aging-longevity-attitudes-survey",
+     "source_published": "2026",
+     "source_accessed": "2026-11-26",
+     "id": "us-adults-who-see-aging-as"
+    },
+    {
+     "label": "Lifespan gain in mice from rapamycin started late in life",
+     "viz": "bar",
+     "wide": false,
+     "value": "14",
+     "unit": "% increase",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Rapamycin fed to mice from 600 days of age raised the age by which 90 percent had died by 14 percent in females and 9 percent in males.",
+     "detail": "The 2009 study, part of the National Institute on Aging’s Interventions Testing Program, ran at three independent sites in genetically varied mice, so that a result would not hold for only one strain. It was the first to show a drug extending lifespan in a mammal of both sexes; rapamycin also improved survival when started at 270 days. The authors noted that it might work by postponing cancer, by slowing aging, or both. In people, rapamycin is an approved immunosuppressant whose side effects make long-term use by healthy people uncertain. As of 2026 no drug had been shown to extend human lifespan.",
+     "source_label": "Harrison et al., Nature, 2009",
+     "source_url": "https://pubmed.ncbi.nlm.nih.gov/19587680/",
+     "source_published": "2009",
+     "source_accessed": "2026-11-26",
+     "id": "lifespan-gain-in-mice-from-rapamycin"
+    },
+    {
+     "label": "Slowing in the pace of aging from two years of calorie restriction",
+     "viz": "bar",
+     "wide": false,
+     "value": "2–3",
+     "unit": "% slower",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In the CALERIE trial, two years of calorie restriction slowed the pace of aging by 2 to 3 percent on DunedinPACE, one of several blood-based aging measures tested.",
+     "detail": "The trial randomized 220 healthy adults without obesity to a 25 percent calorie-restriction target or their usual diet for two years; the aging analysis, by Waziry and colleagues in Nature Aging in 2023, was a post hoc study of stored blood samples. The effect appeared on DunedinPACE but not on other DNA-methylation clocks such as PhenoAge and GrimAge, and the authors described the effect sizes as small. Columbia’s release says a slowing of this size corresponds in other studies to a 10 to 15 percent lower risk of death, an extrapolation, since the trial did not measure deaths. It is among the strongest randomized evidence that human aging biology can be changed at all.",
+     "source_label": "Columbia University Mailman School of Public Health, on the CALERIE trial, 2023",
+     "source_url": "https://www.publichealth.columbia.edu/news/calorie-restriction-slows-pace-aging-healthy-adults",
+     "source_published": "2023",
+     "source_accessed": "2026-11-26",
+     "id": "slowing-in-the-pace-of-aging"
+    },
+    {
+     "label": "Major programs testing treatments aimed at aging",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "$ million",
+     "series": [
+      {
+       "label": "ARPA-H PROSPR",
+       "value": "144",
+       "highlight": true
+      },
+      {
+       "label": "XPRIZE Healthspan",
+       "value": "101",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In February 2026 ARPA-H awarded up to $144 million over five years to seven teams; the XPRIZE Healthspan bar is a $101 million prize purse, not research contracts.",
+     "detail": "PROSPR pays milestone-based contracts to test treatments that target the biology of aging directly; one award, to the University of Texas Health Science Center at San Antonio, aims to establish a regulatory path for testing aging drugs using three medicines the FDA has already approved. XPRIZE named 20 Healthspan finalists in August 2026, who must show restored muscle, cognitive and immune function of at least 10 years in adults ages 50 to 90, in trials running from 2026 to 2029. The TAME trial, which would test whether metformin delays a cluster of age-related diseases in 3,000 people ages 65 to 79 over six years, had an estimated total cost of $45 to $70 million and was still raising money in 2024, when the National Institute on Aging had set aside about $5 million, NPR reported. Its lead investigator, Nir Barzilai, noted that metformin is a generic drug, so no company stands to make money from it.",
+     "source_label": "ARPA-H, award announcement, February 24, 2026",
+     "source_url": "https://arpa-h.gov/news-and-events/research-teams-add-more-healthy-years-americans-lives-they-age",
+     "source_published": "2026",
+     "source_accessed": "2026-11-26",
+     "id": "major-programs-testing-treatments-aimed-at"
+    },
+    {
+     "label": "US adults who would want treatments to live to 120 or more",
+     "viz": "radial",
+     "wide": false,
+     "value": "38",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a 2013 Pew survey, 38 percent of Americans said they would want treatments that slow aging and let them live to at least 120; 56 percent would not.",
+     "detail": "The survey of 2,012 adults asked about hypothetical treatments that would slow the aging process and let the average person live decades longer, to at least 120 years old. Most respondents expected other people to want such treatments (68 percent) even though most did not want them for themselves. Forty-one percent said the treatments would be good for society and 51 percent bad, and 58 percent called them fundamentally unnatural. As of 2026 it remained the main US survey on radical life extension specifically; newer surveys ask related but different questions.",
+     "source_label": "Pew Research Center, Living to 120 and Beyond, 2013",
+     "source_url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2013/08/Radical-life-extension-full.pdf",
+     "source_published": "2013",
+     "source_accessed": "2026-11-26",
+     "id": "us-adults-who-would-want-treatments"
+    },
+    {
+     "label": "Life expectancy gap at 40, richest vs poorest 1 percent, US",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "years",
+     "series": [
+      {
+       "label": "Men",
+       "value": "14.6",
+       "highlight": true
+      },
+      {
+       "label": "Women",
+       "value": "10.1",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "At age 40, the richest 1 percent of American men could expect to live 14.6 years longer than the poorest 1 percent, and women 10.1 years longer.",
+     "detail": "The 2016 study linked 1.4 billion tax records to Social Security death records for 2001 to 2014. Over that period, life expectancy rose by 2.34 years for men and 2.91 for women in the top 5 percent of income, against 0.32 and 0.04 years in the bottom 5 percent. Local differences in life expectancy among low-income people tracked health behaviors such as smoking more closely than access to medical care. The figures anchor the argument over who would benefit first from treatments for aging, and over whether the cheapest healthy years lie in closing existing gaps.",
+     "source_label": "Chetty et al., JAMA, 2016",
+     "source_url": "https://pubmed.ncbi.nlm.nih.gov/27063997/",
+     "source_published": "2014",
+     "source_accessed": "2026-11-26",
+     "id": "life-expectancy-gap-at-40-richest"
+    },
+    {
+     "label": "People worldwide estimated to hold ageist attitudes",
+     "viz": "radial",
+     "wide": false,
+     "value": "50",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "WHO and other UN bodies estimated in 2021 that every second person in the world holds ageist attitudes.",
+     "detail": "The figure comes from the Global Report on Ageism and pools surveys of attitudes in many countries; WHO reports it as what is believed, not as the result of a single global poll. The campaigners who persuaded WHO to drop “old age” as a diagnosis in ICD-11 cited it, arguing that a disease label for old age, in a world where half of people hold ageist views, would invite neglect and poor care of older patients. Those who favor treating aging as a medical condition reply that ageism is a reason to treat the decline that feeds it, not to accept the decline.",
+     "source_label": "World Health Organization, Ageism is a global challenge: UN, March 18, 2021",
+     "source_url": "https://www.who.int/news/item/18-03-2021-ageism-is-a-global-challenge-un",
+     "source_published": "2021",
+     "source_accessed": "2026-11-26",
+     "id": "people-worldwide-estimated-to-hold-ageist"
+    },
+    {
+     "label": "Chance of reaching 100 in the longest-lived populations",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Women, average",
+       "value": "5.1",
+       "highlight": true
+      },
+      {
+       "label": "Men, average",
+       "value": "1.8",
+       "highlight": false
+      },
+      {
+       "label": "Women, Hong Kong",
+       "value": "12.8",
+       "highlight": false
+      },
+      {
+       "label": "Men, Hong Kong",
+       "value": "4.4",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "At 2019 death rates, about 5 percent of girls and 2 percent of boys born in the longest-lived populations would reach 100; Hong Kong is highest.",
+     "detail": "Olshansky and colleagues used national vital statistics from 1990 to 2019 for the eight countries with the longest-lived populations, Australia, France, Italy, Japan, South Korea, Spain, Sweden and Switzerland, plus Hong Kong and the United States. Life expectancy at birth in Hong Kong and the eight countries rose by an average of 6.5 years over the period, but the pace slowed, and the authors put the likely upper bound for survival to 100 this century at about 15 percent for women and 5 percent for men. They concluded that radical life extension is implausible this century unless biological aging can be markedly slowed. Dmitri Jdanov and Domantas Jasilionis of the Max Planck Institute for Demographic Research accepted that further gains will be hard but argued that more optimistic scenarios should not be ignored.",
+     "source_label": "Olshansky, Willcox, Demetrius and Beltrán-Sánchez, Nature Aging, 2024",
+     "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11564081/",
+     "source_published": "2019",
+     "source_accessed": "2026-11-26",
+     "id": "chance-of-reaching-100-in-the"
+    },
+    {
+     "label": "Longest verified human lifespan",
+     "viz": "bar",
+     "wide": false,
+     "value": "122",
+     "unit": "years",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The oldest verified person, Jeanne Calment of France, was born on February 21, 1875 and died on August 4, 1997, aged 122 years and 164 days.",
+     "detail": "No verified person has come within several years of Calment’s age since her death. Ethel Caterham of England, the oldest living person, turned 117 on August 21, 2026, Guinness World Records reported, the first Briton ever to reach that age. Because so few people reach these ages, a handful of cases carries the whole record, and demographers argue over whether it marks a fixed ceiling on human life or a level that a larger number of very old people would eventually pass.",
+     "source_label": "Guinness World Records, Oldest person ever",
+     "source_url": "https://www.guinnessworldrecords.com/world-records/oldest-person",
+     "source_published": "1997",
+     "source_accessed": "2026-11-26",
+     "id": "longest-verified-human-lifespan"
+    },
+    {
+     "label": "Estimated value to the US of slowing aging",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "$ trillion",
+     "series": [
+      {
+       "label": "1 more year",
+       "value": "38",
+       "highlight": true
+      },
+      {
+       "label": "10 more years",
+       "value": "367",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "A 2021 study valued a slowdown in aging that adds one year of US life expectancy at $38 trillion, and one that adds ten years at $367 trillion.",
+     "detail": "The estimate uses the value of a statistical life, which prices extra years of life and health by what people are willing to pay for them; it measures welfare, not money that would flow into budgets. The authors, Scott, Ellison and Sinclair, found that improving health, by compressing the years of illness, is worth more than further gains in life expectancy alone, and that targeting aging is worth more than eliminating any single disease, because gains against one disease raise the value of gains against the others. David Sinclair, a Harvard geneticist, is among the best-known advocates of treating aging as a disease. The figure says nothing about whether such a slowdown is achievable or what it would cost.",
+     "source_label": "Scott, Ellison and Sinclair, Nature Aging, 2021",
+     "source_url": "https://pubmed.ncbi.nlm.nih.gov/37117804/",
+     "source_published": "2021",
+     "source_accessed": "2026-11-26",
+     "id": "estimated-value-to-the-us-of"
+    },
+    {
+     "label": "Age US adults would want to live to, on average",
+     "viz": "bar",
+     "wide": false,
+     "value": "91",
+     "unit": "years",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Asked in 2025 what age they would want to live to, Americans gave an average of 91 years; 29 percent said they would want to reach 100.",
+     "detail": "Pew asked 8,750 adults on its American Trends Panel, “If you had a choice, what age would you want to live until?” Seventy-six percent wanted to reach at least 80 and 16 percent chose an age under 80. Men gave an average of 93 and women 88; Black adults 95, White adults 91, Hispanic adults 89 and Asian adults 85. The answers sit above US life expectancy at birth, 79.0 years in 2024 by the CDC’s count, but far below the lifespans life-extension advocates have in mind, and close to the median ideal lifespan of 90 that Pew found in 2013. The survey did not ask about living to 120 or indefinitely.",
+     "source_label": "Pew Research Center, On average, Americans want to live until they’re 91, 2025",
+     "source_url": "https://www.pewresearch.org/short-reads/2025/11/12/on-average-americans-want-to-live-until-theyre-91/",
+     "source_published": "2025",
+     "source_accessed": "2026-11-26",
+     "id": "age-us-adults-would-want-to"
+    },
+    {
+     "label": "Investment in longevity companies worldwide",
+     "viz": "bar",
+     "wide": false,
+     "value": "8.49",
+     "unit": "$ billion",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "One industry count found $8.49 billion invested in longevity companies across 325 deals in 2024, more than double 2023; other trackers define the sector differently.",
+     "detail": "The count is Longevity.Technology’s, an industry publication, and the sector has no fixed definition: trackers differ on whether to include companies working on specific age-related diseases, diagnostics or consumer health, so a count depends on where its maker draws the line. The largest single bet is older: Altos Labs, a company working on cellular rejuvenation, launched on January 19, 2022 with $3 billion in committed funding, STAT reported. Advocates of geroscience read the money as a sign the science is ready; skeptics read it as a reason to demand rigorous trials before claims are made.",
+     "source_label": "Longevity.Technology, annual longevity investment report, May 13, 2025",
+     "source_url": "https://longevity.technology/news/longevity-investment-more-than-doubles-as-sector-shifts-focus/",
+     "source_published": "2024",
+     "source_accessed": "2026-11-26",
+     "id": "investment-in-longevity-companies-worldwide"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Is aging itself a disease, or the normal course of life within which diseases arise?",
+    "kind": "value",
+    "why": "Whether something counts as a disease decides what medicine may target, what regulators may approve and what insurers cover. Aging has features many definitions use, such as a mechanism and a progressive course, but it happens to everyone, which most exclude.",
+    "detail": "The question was fought out over the WHO’s eleventh International Classification of Diseases. A draft added a category labeled “old age” and a code for conditions that are aging-related; after a campaign by advocates for older people, the label became “ageing associated decline in intrinsic capacity,” and WHO now states that “ICD is not classifying ‘old age’ as a disease.”\n\nThose who call aging a disease argue that it meets the criteria applied to any other: it can be measured with frailty indices and biomarkers, has known mechanisms such as cellular senescence and chronic inflammation, and responds to interventions in animals. Khaltourina and colleagues concluded in 2020 that “aging fits the ICD-11 criteria and can be considered a disease.” That everyone gets it is no reason to leave it alone, they say; before vaccines nearly everyone got measles. Those who call it a normal life stage argue that disease should mean a departure from normal human functioning, and that people age at such different rates that chronological age says little about any one person. Many of them support research into the biology of aging; they object to the label, not to the science.",
+    "lean_label_a": "A disease to treat",
+    "lean_label_b": "A normal life stage",
+    "id": "is-aging-itself-a-disease-or"
+   },
+   {
+    "text": "Can drugs slow human aging enough to matter within the next few decades?",
+    "kind": "empirical",
+    "why": "Drugs, diets and genetic changes extend lifespan in yeast, worms, flies and mice, but human evidence so far rests on biomarkers and observational studies, and trials that could show fewer diseases or deaths take years.",
+    "detail": "Those who expect success, including geroscientists such as Nir Barzilai and funders such as ARPA-H and the Hevolution Foundation, point to a biology now mapped in detail (a 2023 review in Cell lists twelve hallmarks of aging, from genomic instability to chronic inflammation), to the same pathways extending lifespan across very different species, and to drugs already sold for other uses, such as metformin, that observational studies suggest may delay several diseases at once. The obstacle, in their view, is less the science than the lack of trials big enough to test it, for want of a regulatory indication or of any commercial reason to study cheap generics.\n\nSkeptics, including many clinicians, point out that most results come from short-lived laboratory animals whose aging differs from ours, that drugs which extend mouse lifespan often do so by delaying cancer, and that early human trials of senolytics and other anti-aging drugs have produced mixed or negative results. Biomarker clocks can move without any change in health. Until a randomized trial shows fewer diseases, less disability or longer survival, they argue, slowing human aging remains a hypothesis, and products sold to consumers run ahead of the evidence.",
+    "lean_label_a": "Yes, within decades",
+    "lean_label_b": "Not within decades",
+    "id": "can-drugs-slow-human-aging-enough"
+   },
+   {
+    "text": "Should regulators approve drugs to treat aging itself?",
+    "kind": "value",
+    "why": "The FDA approves drugs for specific diseases. As of July 2026 it had no approved indication for aging itself and no accepted aging biomarker or endpoint, the Reagan-Udall Foundation reported. Some want a new route; others would keep the disease-based one.",
+    "detail": "In October 2026 FDA officials outlined two ways a drug might show it affects aging broadly: evidence of benefit across several age-related conditions, or slower decline of intrinsic capacity, a composite of physical and mental abilities, in a defined population.\n\nThose who favor an aging indication, including the Alliance for Longevity Initiatives and ARPA-H, whose PROSPR program funds work on endpoints regulators could accept, argue that the disease-by-disease system waits until people are ill, rewards treating one condition late over delaying many early, and leaves cheap generics untested. A drug that delayed heart disease, dementia and cancer together would, in their view, have no label under which to be approved and sold as such. Those who would keep the current system argue that drugs taken for decades by healthy people need a higher safety bar than drugs for the sick, and that an indication defined by biomarkers or composite scores invites approvals on numbers that may not reflect real benefit. At a May 2026 Reagan-Udall meeting, the former FDA official Sandra Kweder argued that being well tolerated is not enough for drugs used chronically by generally healthy people, and the nutrition scientist David Allison called lifespan the most credible endpoint. The existing system, they note, already lets a drug prove benefit across several conditions one indication at a time.",
+    "lean_label_a": "For aging itself",
+    "lean_label_b": "Per disease",
+    "id": "should-regulators-approve-drugs-to-treat"
+   },
+   {
+    "text": "Would a much longer life be good for the person who lives it?",
+    "kind": "value",
+    "why": "This is the oldest part of the argument, and no data can settle it. It turns on whether more of a good life is always better, or whether a life’s end is part of what makes it good.",
+    "detail": "Those who think longer life is good, including the philosopher Nick Bostrom and the life-extension movement, argue that people almost never want to die tomorrow, and that if each further healthy year is worth having, there is no point at which the next one stops being worth it. Fears of boredom assume people would live the same life over and over, when longer lives would allow new careers, relationships and learning; the claim that death gives life meaning is, in their view, a consolation invented because death was unavoidable.\n\nThose who think a bounded life is better, including the President’s Council on Bioethics in its 2003 report Beyond Therapy, argue that awareness of limited time is what makes people commit, aspire and act with urgency. The Council warned that a much longer life could become “a life of lesser engagements and weakened commitments.” A life with a natural shape, from youth to old age, gives each stage its meaning, they argue, and removing the end does not simply add more of the good parts.",
+    "lean_label_a": "More life is better",
+    "lean_label_b": "Limits give meaning",
+    "id": "would-a-much-longer-life-be"
+   },
+   {
+    "text": "Does calling aging a disease help older people or harm them?",
+    "kind": "empirical",
+    "why": "Both sides claim to speak for older people. One says accepting decline as normal leaves treatable suffering untreated; the other says labeling a stage of life as illness invites neglect and feeds ageism.",
+    "detail": "Those who think the label helps argue that the phrase normal aging is what lets frailty, pain and memory loss be dismissed as untreatable, and that a disease label brings research money, clinical attention and insurance coverage, as happened for osteoporosis and sarcopenia once they were defined as conditions. Seeing aging as treatable, they say, treats older people as patients worth helping rather than as people past help.\n\nThose who think it harms, including the International Longevity Centre Brazil, whose campaign #VelhiceNãoÉDoença (Old age is not a disease) helped change the ICD-11 label, argue that a code for old age lets clinicians and death certificates record age itself as the problem, hiding specific diseases that could be treated. Kiran Rabheru, Julie Byles and Alexandre Kalache reported that the old age label “led to very serious real-world challenges for being used inappropriately and erroneously.” A frame built on function, such as intrinsic capacity, can in their view guide care without calling a life stage a pathology.",
+    "lean_label_a": "Helps older people",
+    "lean_label_b": "Harms older people",
+    "id": "does-calling-aging-a-disease-help"
+   },
+   {
+    "text": "Would treatments for aging widen inequality or reach everyone?",
+    "kind": "empirical",
+    "why": "Early longevity products are expensive and private, while several drugs proposed for slowing aging are cheap generics. About two-thirds of Americans expected such treatments to reach only the wealthy, in surveys by Pew in 2013 and National Geographic in 2026.",
+    "detail": "Those who expect broad access point to the history of medicine: statins, antiretrovirals and GLP-1 drugs fell sharply in price as patents expired and volumes grew, and several candidate drugs for aging, such as metformin and rapamycin, are already generic. A treatment that delayed many diseases at once would also save health systems money, giving governments a reason to provide it widely.\n\nThose who expect wider inequality argue that the first effective treatments will be patented biologics or gene therapies priced for the rich, that the wealthy already gain years faster than the poor, and that longer lives for the advantaged would compound their wealth and power. In the 2026 National Geographic survey, 62 percent of Americans said governments should not fund longevity research until basic health care is universally guaranteed. On this view the cheapest healthy years come from closing existing gaps, not from new drugs.",
+    "lean_label_a": "Reach everyone",
+    "lean_label_b": "Widen inequality",
+    "id": "would-treatments-for-aging-widen-inequality"
+   },
+   {
+    "text": "Would much longer lives be good for society?",
+    "kind": "value",
+    "why": "Slower aging for most people would make populations older and, for a time, larger, and older generations would hold jobs and power for longer. How much that matters depends on fertility, uptake and whether the extra years are healthy, all unknown.",
+    "detail": "Those who expect societies to adapt, including geroscientists and economists such as Andrew Scott, argue that healthier older people work, care for others and pay taxes for longer, which is the main fiscal benefit; that population growth from slower aging would be modest, because fertility rather than mortality drives it in rich countries; and that societies absorbed a doubling of life expectancy in the twentieth century without the catastrophes that were predicted.\n\nThose who expect harm, including the President’s Council on Bioethics, argue that social renewal depends on generations giving way; the Council warned that “the succession of generations could be obstructed by a glut of the able.” Others point to resource use and to wealth and power concentrating in long-lived elites. Even if the effects could be managed, they argue, the burden of proof belongs to those who would change the basic rhythm of human generations.",
+    "lean_label_a": "Good on balance",
+    "lean_label_b": "Harmful on balance",
+    "id": "would-much-longer-lives-be-good"
+   },
+   {
+    "text": "Is there a fixed upper limit to the human lifespan?",
+    "kind": "empirical",
+    "why": "Demographers disagree about whether death rates keep rising at the oldest ages, which would imply a ceiling near 115 to 125, or level off, which would let the record fall once enough people reach extreme old age.",
+    "detail": "Those who see a limit, including the geneticist Jan Vijg and colleagues, found in Nature in 2016 that survival gains decline after 100 and that the age at death of the world’s oldest person stopped rising in the 1990s, and concluded that maximum lifespan “is fixed and subject to natural constraints.”\n\nThose who see no fixed limit, including the demographers Elisabetta Barbi, James Vaupel and Kenneth Wachter, found in Science in 2018 that among 3,836 Italians aged 105 and older the risk of death stopped rising and stayed level, which they called “the best evidence to date for the existence of extreme-age mortality plateaus in humans.”",
+    "lean_label_a": "A fixed limit",
+    "lean_label_b": "No fixed limit",
+    "id": "is-there-a-fixed-upper-limit"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Slow aging to add healthy years",
+    "color_key": "green",
+    "steelman": "Aging is the root of most disease late in life. Slow that shared process and we can delay many illnesses at once and shrink the years people spend sick.",
+    "detail": "Heart disease, cancer, stroke, dementia and frailty share one great risk factor, and the biology behind it, from cellular senescence to chronic inflammation, is now understood well enough to target. Medicine still fights these diseases one at a time, late, after the damage is done; a person cured of one at 75 soon meets the next. Our goal is health, not immortality. As S. Jay Olshansky puts it, “We should now shift our focus to efforts that slow aging and extend healthspan.”\n\nWhether aging is called a disease matters less than whether regulators will accept, as grounds for approval, evidence that a drug delays several age-related conditions at once or slows measured decline in function. That is what the TAME trial was designed to test with metformin, a cheap generic no company will pay to study. Governments should put far more into the biology of aging, which the Alliance for Longevity Initiatives says receives less than 1 percent of the NIH budget. To those who say no drug has slowed human aging and the field runs on hype: that is the argument for doing the trials. We ask for endpoints real trials can meet, at the same safety and efficacy standards as other medicines, and for public money to test drugs no company will; without them, consumers keep buying unproven products and the question is never settled. We differ among ourselves on the label, some preferring to call aging a condition or a risk factor, and on the route to approval, whether through clusters of diseases, measures of function or validated biomarkers.",
+    "proponents": "American Federation for Aging Research; Hevolution Foundation; Alliance for Longevity Initiatives; Nir Barzilai; S. Jay Olshansky",
+    "id": "slow-aging-to-add-healthy-years"
+   },
+   {
+    "name": "Treat aging as a life stage, not a disease",
+    "color_key": "blue",
+    "steelman": "Growing old is not a malfunction; it is the normal course of a life. Help people keep their capacities, and do not feed the ageism a disease label carries.",
+    "detail": "Reaching old age is the great success of modern public health. People age at very different rates, so a label tied to age tells a doctor little about the person in front of them, and calling a stage of life a disease tells older people that they themselves are the pathology. As Kiran Rabheru, Julie Byles and Alexandre Kalache wrote, “Old age is not a disease, but ageism is.”\n\nThe right target is function: helping people keep their intrinsic capacity, their ability to move, think, see, hear and live independently, through prevention, good geriatric care, healthy environments and inclusion. We do not accept decline. Frailty, sarcopenia and dementia are diagnosed and treated, and ICD-11 now codes decline in intrinsic capacity so that it can be tracked and addressed. What we reject is the step from saying older people have more disease to saying that being old is a disease, a step history suggests leads to less care, not more. Research into the biology of aging is welcome when it is judged by whether people live and function better, and the largest gains in healthy years are still to be had by closing the gaps between rich and poor. Some of us work closely with geroscientists and would accept drugs that slow functional decline; others are wary of a pharmaceutical frame for later life altogether.",
+    "proponents": "International Longevity Centre Brazil; Alexandre Kalache; Kiran Rabheru; Julie Byles; James Appleby",
+    "id": "treat-aging-as-a-life-stage"
+   },
+   {
+    "name": "End aging and radically extend life",
+    "color_key": "amber",
+    "steelman": "Aging causes more death and suffering than any disease, and it kills slowly. It is damage, and damage can be repaired: end it, and let people live as long as they choose.",
+    "detail": "If any other cause took the toll aging takes, it would be called the world’s greatest emergency. Nick Bostrom’s fable makes the point: a dragon that devoured thousands of people every day would not be accepted as natural, and “we have compelling moral reasons to get rid of human senescence.” What counts as a natural lifespan has always moved, and aging is a set of damage processes in cells and tissues that can in principle be repaired. The aim is not to stretch out frailty but to keep people biologically young for as long as they choose to live. If repair therapies improve faster than damage accumulates, the point Aubrey de Grey calls longevity escape velocity, there is no set limit.\n\nClassifying aging as a disease would unlock the research money, the regulatory path and the medical seriousness the problem deserves. The objections, from boredom to overpopulation to unequal access, each have a policy answer, and none would be accepted as a reason to withhold a cure for cancer; the price of waiting is counted in lives. We differ on method: de Grey emphasizes repairing several kinds of accumulated damage, David Sinclair epigenetic reprogramming, and Bryan Johnson’s Don’t Die movement a personal regimen and a philosophy that make not dying the organizing goal of life.",
+    "proponents": "Don’t Die; Bryan Johnson; Nick Bostrom; LEV Foundation; Aubrey de Grey; David Sinclair",
+    "id": "end-aging-and-radically-extend-life"
+   },
+   {
+    "name": "Accept a natural human lifespan",
+    "color_key": "rust",
+    "steelman": "Medicine should help people live a full life well and die well at its end, not abolish the end. A bounded life, handed on to the next generation, is a good one.",
+    "detail": "A life has a shape, from childhood through maturity to old age, and that shape gives each stage its meaning and its tasks. In Leon Kass’s words, “To number our days is the condition for making them count.” The wish to live a little longer at every moment does not show that an endless life would be good; it shows how hard it is to accept death, which calls for wisdom, not a technology. Not wanting to die tomorrow is compatible with thinking a bounded life better, just as wanting another bite is compatible with thinking a meal should end. The President’s Council on Bioethics put the generational point plainly: “Children are one answer to mortality.”\n\nTreating the diseases of old age is good medicine. Making the defeat of aging a social goal, and spending public money and attention on it, mistakes what a good life is and feeds a culture of anxious self-optimization. We distinguish the choices people make about their own care, which we do not propose to forbid, from the goals a society adopts and funds; Ezekiel Emanuel, who plans to forgo life-prolonging interventions after 75 and calls wellness and longevity means to a larger end, offers his view as a personal choice. And longer lives have so far brought more years of illness along with more years of health, which gives reason to doubt that radically longer lives would be the healthy, engaged ones their advocates imagine. Most of us would welcome drugs that compress illness at the end of life without lengthening it.",
+    "proponents": "President’s Council on Bioethics; Leon Kass; Ezekiel Emanuel",
+    "id": "accept-a-natural-human-lifespan"
+   }
+  ],
+  "crux": {
+   "lead": "Is aging a process medicine should slow, or the course of a life it should help people live well?",
+   "lead_highlight": "a process medicine should slow, or the course of a life",
+   "subtitle": "Most of the arguments here turn on this one. If aging is a process to slow, the task is trials, approval routes and funding for drugs that target it. If it is the course of a life, medicine should treat the diseases that come with age, not the passing of time.",
+   "empirical": "Evidence can show what slowing aging would deliver. Large trials can test whether a drug delays several age-related diseases at once in people, whether measures of biological aging predict real benefit, and whether the years gained are healthy ones or added years of illness. Records of the very old can show whether lifespan has a ceiling, and studies of prices and uptake whether treatments reach poorer people.",
+   "values": "No data settles whether a process that happens to everyone should be called a disease, whether a life without a natural end would be richer or emptier, or whether the duty to relieve suffering extends to defeating aging itself. A person who expects such drugs to work may still think radical life extension unwise, and one who doubts they will may still think aging the greatest harm medicine could address."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Read how the FDA might approve drugs for aging",
+    "description": "The Reagan-Udall Foundation’s July 2026 summary of a public meeting where FDA officials, geroscientists, geriatricians and companies debated endpoints and approval paths for drugs that target aging.",
+    "url": "https://reaganudall.org/sites/default/files/2026-07/073126_Affecting%20the%20Aging%20Trajectory%20Public%20Meeting%20Summary.pdf",
+    "for_position": null,
+    "id": "read-how-the-fda-might-approve"
+   },
+   {
+    "kind": "learn_more",
+    "title": "See how ICD-11 codes old age",
+    "description": "The World Health Organization’s explanation of why ICD-11 does not classify old age as a disease and why the category was renamed to center on decline in intrinsic capacity.",
+    "url": "https://www.who.int/standards/classifications/frequently-asked-questions/old-age",
+    "for_position": null,
+    "id": "see-how-icd-11-codes-old"
+   },
+   {
+    "kind": "donate",
+    "title": "Support the American Federation for Aging Research",
+    "description": "A nonprofit that funds research on the biology of aging and age-related disease and sponsors the TAME trial of metformin, which was still raising money as of 2024.",
+    "url": "https://www.afar.org/donate",
+    "for_position": "Slow aging to add healthy years",
+    "id": "support-the-american-federation-for-aging"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Learn about the global campaign to combat ageism",
+    "description": "WHO’s campaign page and Global Report on Ageism, on how ageist attitudes affect older people’s health and care, and what works to reduce them.",
+    "url": "https://www.who.int/teams/social-determinants-of-health/demographic-change-and-healthy-ageing/combatting-ageism",
+    "for_position": "Treat aging as a life stage, not a disease",
+    "id": "learn-about-the-global-campaign-to"
+   },
+   {
+    "kind": "donate",
+    "title": "Support the LEV Foundation’s rejuvenation research",
+    "description": "Aubrey de Grey’s foundation, which funds studies combining several rejuvenation therapies in mice as a step toward repairing the damage of aging in people.",
+    "url": "https://www.levf.org/donate",
+    "for_position": "End aging and radically extend life",
+    "id": "support-the-lev-foundation-s-rejuvenation"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the President’s Council on Bioethics on Ageless Bodies",
+    "description": "A chapter of the 2003 report Beyond Therapy that weighs the promise of slowing aging against its possible costs to commitment, generational renewal and the shape of a human life.",
+    "url": "https://sitearchives.georgetown.edu/kie-pcbe/reports/beyondtherapy/chapter4.html",
+    "for_position": "Accept a natural human lifespan",
+    "id": "read-the-president-s-council-on"
+   },
+   {
+    "kind": "policy",
+    "title": "Ask your representative to join the Longevity Science Caucus",
+    "description": "The Alliance for Longevity Initiatives’ letter template for members of Congress, with petitions for more aging-biology funding and an FDA approval pathway for longevity medicines.",
+    "url": "https://a4li.org/get-involved/",
+    "for_position": "Slow aging to add healthy years",
+    "id": "ask-your-representative-to-join-the"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Explore the UN Decade of Healthy Ageing",
+    "description": "The WHO-led plan for 2021 to 2030 to improve older people’s lives through age-friendly environments, integrated care, long-term care and action against ageism.",
+    "url": "https://www.who.int/initiatives/decade-of-healthy-ageing",
+    "for_position": "Treat aging as a life stage, not a disease",
+    "id": "explore-the-un-decade-of-healthy"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read The Fable of the Dragon-Tyrant",
+    "description": "Nick Bostrom’s short parable in the Journal of Medical Ethics, arguing that humanity has accepted aging the way a village might accept a dragon, and that defeating it is a moral imperative.",
+    "url": "https://nickbostrom.com/papers/the-fable-of-the-dragon-tyrant/",
+    "for_position": "End aging and radically extend life",
+    "id": "read-the-fable-of-the-dragon"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read Leon Kass on why not immortality",
+    "description": "Kass’s essay in First Things arguing that the finitude of human life is a blessing that gives seriousness, beauty and virtue their meaning.",
+    "url": "https://firstthings.com/lchaim-and-its-limits-why-not-immortality/",
+    "for_position": "Accept a natural human lifespan",
+    "id": "read-leon-kass-on-why-not"
+   }
+  ]
+ }
 }

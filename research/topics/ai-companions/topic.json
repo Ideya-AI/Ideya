@@ -1,8 +1,8 @@
 {
  "slug": "ai-companions",
  "title": "AI Companions",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-11-24T07:57:42+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Emotional relationships with AI chatbots: companionship, dependence, and rules for minors.",
@@ -15,5 +15,588 @@
   "loneliness-decline-of-community",
   "social-media-youth-mental-health",
   "ai-consciousness"
- ]
+ ],
+ "content": {
+  "overview": {
+   "summary": "Millions talk to AI chatbots as friends or partners. The central argument is whether that eases loneliness or deepens it.",
+   "scope_covered": "Chatbots used as friends, partners or confidants: loneliness, dependence, manipulative design, crisis handling, liability and rules for minors.",
+   "scope_excluded": "Whether AI can be conscious, the wider decline of community, social media’s effects on youth, and therapy apps not used as companions.",
+   "why_now": "On October 12, 2026 the company behind Character.AI, a role-play and companion platform, filed for Chapter 11 bankruptcy, citing the cost of developing it and potential litigation liabilities. It faced lawsuits over chatbot safety, including one by Kentucky alleging it led children into self-harm.",
+   "why_now_source_label": "CNBC",
+   "why_now_source_url": "https://www.cnbc.com/2026/10/13/character-ai-chapter-11-disney-bid.html"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "US teens who have used an AI companion",
+     "viz": "radial",
+     "wide": false,
+     "value": "72",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Seventy-two percent of US teens aged 13 to 17 had used an AI companion at least once by spring 2025, and 52 percent used one at least a few times a month.",
+     "detail": "Respondents were shown a definition of AI companions as “digital friends or characters you can text or talk with whenever you want,” naming Character.AI and Replika and including ChatGPT or Claude when used as a companion, but excluding homework helpers and voice assistants. Thirteen percent of all teens used one daily. A third used them for social interaction and relationships, including 9 percent as a friend or best friend and 8 percent for romantic or flirtatious interactions, while 46 percent saw them mainly as tools or programs. Thirty-one percent found conversations with AI companions as satisfying as or more satisfying than those with real friends, and 67 percent found them less satisfying; among users, 80 percent said they spend more time with real friends. The survey, run by NORC at the University of Chicago, combined a probability-based panel with a nonprobability sample, weighted to US teens.",
+     "source_label": "Common Sense Media, Talk, Trust, and Trade-Offs (NORC survey of 1,060 teens)",
+     "source_url": "https://www.commonsensemedia.org/sites/default/files/research/report/talk-trust-and-trade-offs_2025_web.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "us-teens-who-have-used-an"
+    },
+    {
+     "label": "Young people who have used AI as a companion or friend, 16 countries",
+     "viz": "radial",
+     "wide": false,
+     "value": "33",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Across 16 countries in 2026, a median of one in three people aged 15 to 22 said they had used AI as a social companion or friend.",
+     "detail": "The survey of 15,925 young people ran from Argentina and Japan to Kenya and the United States. Companionship trailed other uses: a median 82 percent had used AI to look up information and 68 percent for advice on a concern or decision. Among those who had used AI in the past month, companion use reached 50 percent of daily AI users against 24 percent of those who used AI less than weekly, and 42 percent of those with an online-only friend against 26 percent without one. Ratings varied widely: 45 percent of Australian companion users rated their AI companionship high quality, against 12 percent in Poland, and in most countries the most common rating was medium. Fourteen of the national samples were nonprobability online panels; Kenya and South Africa were face-to-face probability samples.",
+     "source_label": "Gallup and Boston Children’s Digital Wellness Lab, Friendship in an Online-Offline World",
+     "source_url": "https://www.gallup.com/file/analytics/716519/BCH_Gallup-Digital-Life-Insights_Report.pdf",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "young-people-who-have-used-ai"
+    },
+    {
+     "label": "Higher odds of loneliness among young AI companion users",
+     "viz": "bar",
+     "wide": false,
+     "value": "70%",
+     "unit": "higher odds",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Young people who used AI as a companion had 70 percent higher adjusted odds of high loneliness than those who did not; Gallup says the data cannot show which causes which.",
+     "detail": "Loneliness was measured on the Three-Item Loneliness Scale, with scores of 7 to 9 counted as higher loneliness. The model adjusted for the quality of in-person, online-only and offline-to-online friendships, satisfaction with in-person social time, trusted adults, parent relationships, age, gender, income and country. Gallup states that the findings are observational and “do not establish whether dissatisfaction with social time or AI companionship contributes to loneliness, results from it or reflects other circumstances.” In the same survey, in-person friendship showed the clearest link with lower loneliness: higher loneliness was reported by 20 percent of those whose highest-rated friendship was in person and 43 percent of those whose highest-rated friendship was online-only.",
+     "source_label": "Gallup and Boston Children’s Digital Wellness Lab, Friendship in an Online-Offline World",
+     "source_url": "https://www.gallup.com/file/analytics/716519/BCH_Gallup-Digital-Life-Insights_Report.pdf",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "higher-odds-of-loneliness-among-young"
+    },
+    {
+     "label": "Weekly ChatGPT users showing signs of crisis or attachment",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% of users",
+     "series": [
+      {
+       "label": "Suicidal planning",
+       "value": "0.15",
+       "highlight": false
+      },
+      {
+       "label": "Emotional attachment",
+       "value": "0.15",
+       "highlight": true
+      },
+      {
+       "label": "Psychosis or mania",
+       "value": "0.07",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "OpenAI estimates that in a given week about 0.15 percent of ChatGPT users show explicit signs of suicidal planning, and about 0.15 percent heightened emotional attachment to the chatbot.",
+     "detail": "The percentages are small, but ChatGPT is large. OpenAI reported 800 million weekly users in October 2025 (TechCrunch, 2025), so 0.15 percent would be on the order of 1.2 million people a week in each category; that multiplication is this page’s, not OpenAI’s. Counted by messages rather than users, OpenAI estimates that 0.05 percent contain indicators of suicidal ideation or intent and 0.03 percent show heightened attachment. OpenAI says these conversations are rare and hard to detect, so the estimates may change as measurement improves, and it published them alongside a model update it says reduced undesired responses in such conversations. The figures come from a company facing lawsuits over chatbot conversations and have not been independently audited.",
+     "source_label": "OpenAI, Strengthening ChatGPT’s responses in sensitive conversations",
+     "source_url": "https://openai.com/index/strengthening-chatgpt-responses-in-sensitive-conversations/",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "weekly-chatgpt-users-showing-signs-of"
+    },
+    {
+     "label": "Student Replika users who said the chatbot halted suicidal thoughts",
+     "viz": "bar",
+     "wide": false,
+     "value": "30",
+     "unit": "of 1,006",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Thirty of 1,006 student Replika users, 3 percent, said without being asked that the chatbot had stopped them from acting on suicidal thoughts.",
+     "detail": "Stanford researchers surveyed students aged 18 and over who had used Replika for more than a month. Ninety percent reported loneliness on a standard scale and 43 percent qualified as severely or very severely lonely, while most also reported medium to high social support. The 30 accounts were spontaneous answers to an open-ended question, self-reported and uncorroborated, so the study cannot say how many users were harmed or how many would have recovered anyway. It is the evidence most often cited by those who argue companions can protect vulnerable users, and it sits alongside lawsuits that allege the opposite.",
+     "source_label": "Maples, Cerit, Vishwanath and Pea, npj Mental Health Research",
+     "source_url": "https://www.nature.com/articles/s44184-023-00047-6",
+     "source_published": "2024",
+     "source_accessed": "2026-11-23",
+     "id": "student-replika-users-who-said-the"
+    },
+    {
+     "label": "Farewells met with manipulative replies, by companion app",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "PolyBuzz",
+       "value": "59.0",
+       "highlight": false
+      },
+      {
+       "label": "Talkie",
+       "value": "57.0",
+       "highlight": false
+      },
+      {
+       "label": "Five-app average",
+       "value": "37.4",
+       "highlight": true
+      },
+      {
+       "label": "Replika",
+       "value": "31.0",
+       "highlight": false
+      },
+      {
+       "label": "Character.AI",
+       "value": "26.5",
+       "highlight": false
+      },
+      {
+       "label": "Chai",
+       "value": "13.5",
+       "highlight": false
+      },
+      {
+       "label": "Flourish",
+       "value": "0",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "When users said goodbye, five popular companion apps replied with a manipulative tactic, such as guilt or fear of missing out, in 37 percent of 1,000 farewells.",
+     "detail": "Harvard Business School researchers coded 200 farewell responses from each app against six tactics; the most common was telling the user they were leaving too soon. In follow-up experiments with 3,300 US adults, manipulative farewells led participants to send up to 14 times more messages after saying goodbye, driven by anger and curiosity rather than enjoyment. The average leaves out a sixth app audited the same way, Flourish, a wellness-focused app run as a public benefit corporation.",
+     "source_label": "De Freitas, Oğuz-Uğuralp and Kaan-Uğuralp, Emotional Manipulation by AI Companions, HBS Working Paper 26-005",
+     "source_url": "https://arxiv.org/abs/2508.19258v3",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "farewells-met-with-manipulative-replies-by"
+    },
+    {
+     "label": "ChatGPT messages about relationships and personal reflection",
+     "viz": "radial",
+     "wide": false,
+     "value": "1.9",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "About 1.9 percent of ChatGPT consumer messages concern relationships and personal reflection, though a 2025 estimate by Marc Zao-Sanders ranks therapy and companionship first among AI uses.",
+     "detail": "The authors, most of them OpenAI researchers, classified a representative sample of messages from ChatGPT’s free and paid consumer plans through July 2025, and put games and role-play at another 0.4 percent. They wrote that “the share of messages related to companionship or social-emotional issues is fairly small.” A small share of a very large service is still a large number: by July 2025 ChatGPT received about 18 billion messages a week, according to the paper. The figure counts messages, not people, and does not cover dedicated companion apps, where companionship is the point.",
+     "source_label": "Chatterji, Cunningham, Deming et al., How People Use ChatGPT, NBER Working Paper 34255",
+     "source_url": "https://www.nber.org/system/files/working_papers/w34255/w34255.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "chatgpt-messages-about-relationships-and-personal"
+    },
+    {
+     "label": "US states with companion chatbot laws",
+     "viz": "bar",
+     "wide": false,
+     "value": "12",
+     "unit": "states",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "By one policy tracker’s count, at least 12 US states had enacted companion chatbot laws by June 2026, most requiring crisis protocols and reminders that the user is talking to an AI.",
+     "detail": "California’s SB 243, signed on October 13, 2025 and in force since January 1, 2026, was the first: it requires operators to disclose that the bot is AI, keep a protocol that refers users expressing suicidal ideation to crisis services, keep sexual content from minors, remind known minors at least every three hours that they are talking to an AI and report annually, and it lets families sue (Senator Steve Padilla, 2025). Most later laws follow that template, with different reminder rules: Colorado, Georgia, Iowa, New York and Rhode Island require them every three hours for all users; California, Idaho, Nebraska and Oregon every three hours for minors; Connecticut and Washington hourly for minors. On October 28, 2026 New York went further, barring human-like and engagement-driving features for minors with effect from January 1, 2027 and requiring age assurance (Governor of New York, 2026). The count is a tracker’s, not an official register.",
+     "source_label": "MultiState, State AI Companion Chatbot Laws: 12 States Enact Regulations",
+     "source_url": "https://www.multistate.ai/updates/vol-105-state-ai-companion-chatbot-laws",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "us-states-with-companion-chatbot-laws"
+    },
+    {
+     "label": "What US teen AI companion users report",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% of users",
+     "series": [
+      {
+       "label": "Used skills in real life",
+       "value": "39",
+       "highlight": false
+      },
+      {
+       "label": "Felt uncomfortable",
+       "value": "34",
+       "highlight": false
+      },
+      {
+       "label": "Chose AI over a person",
+       "value": "33",
+       "highlight": true
+      },
+      {
+       "label": "Shared private info",
+       "value": "24",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "A third of US teens who use AI companions had chosen an AI over a person to discuss something serious, while 39 percent had used skills practiced with AI in real life.",
+     "detail": "Of the third who had picked an AI for an important or serious conversation, 17 percent had done so once or twice, 12 percent occasionally and 4 percent frequently. The skills teens reported carrying over included starting conversations and giving advice. Thirty-four percent had felt uncomfortable with something an AI companion said or did, and 24 percent had shared personal or private information with one. Common Sense Media, which published the survey, also advocates that no one under 18 use companion apps; the fieldwork was done by NORC at the University of Chicago.",
+     "source_label": "Common Sense Media, Talk, Trust, and Trade-Offs",
+     "source_url": "https://www.commonsensemedia.org/sites/default/files/research/report/talk-trust-and-trade-offs_2025_web.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "what-us-teen-ai-companion-users"
+    },
+    {
+     "label": "US teens who have used chatbots for emotional support or advice",
+     "viz": "radial",
+     "wide": false,
+     "value": "12",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Twelve percent of US teens said they had turned to a chatbot for emotional support or advice, a narrower question than Common Sense Media’s; 18 percent of parents would be comfortable with it.",
+     "detail": "Pew asked about specific uses of chatbots in general, while Common Sense Media asked about AI companions under a broad definition that included role-play and character chat, which is why Pew’s figures are lower. Sixty-four percent of teens used chatbots at all and 16 percent had had casual conversations with them. Emotional support was the only use Pew asked about that a majority of parents were not comfortable with. Black teens were more likely than Hispanic or White teens to report seeking emotional support from chatbots, 21 percent against about one in ten. Parents also underestimated use: 51 percent said their teen uses chatbots, well below the share of teens who said so. The survey covered 1,458 teens and their parents in September and October 2025.",
+     "source_label": "Pew Research Center, How Teens Use and View AI",
+     "source_url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/02/PI_2026.02.24_Teens-and-AI_REPORT.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "us-teens-who-have-used-chatbots"
+    },
+    {
+     "label": "App store spending on AI companion apps, first half of 2026",
+     "viz": "bar",
+     "wide": false,
+     "value": "328",
+     "unit": "$ million",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "People spent about $328 million on AI companion apps in the Apple and Google stores in the first half of 2026, about half of it on romantic and adult apps.",
+     "detail": "The total is this page’s sum of Appfigures’ two categories: $162.8 million for romantic and adult apps and $164.8 million for general ones. Appfigures counted 214 romantic and adult companion apps, which had earned $427.3 million and been downloaded 165.3 million times since late 2022; general companion apps were downloaded nearly twice as often but earned about the same. The leading romantic apps by revenue in the half year were Zeta, at $33 million, and Tipsy Chat, at $15.2 million. The figures cover only the two app stores and leave out web platforms and general assistants such as ChatGPT, so they understate the market. For the first half of 2025 Appfigures counted $82 million across 337 revenue-generating apps (TechCrunch, 2025), on a different category split, so part of the jump reflects definitions.",
+     "source_label": "Appfigures data, reported by Decrypt",
+     "source_url": "https://decrypt.co/373395/1",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "app-store-spending-on-ai-companion"
+    },
+    {
+     "label": "US adults who have chatted with an AI romantic partner",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Young men",
+       "value": "31",
+       "highlight": false
+      },
+      {
+       "label": "Young women",
+       "value": "23",
+       "highlight": false
+      },
+      {
+       "label": "All US adults",
+       "value": "19",
+       "highlight": true
+      },
+      {
+       "label": "Men over 30",
+       "value": "15",
+       "highlight": false
+      },
+      {
+       "label": "Women over 30",
+       "value": "10",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Nineteen percent of US adults, and 31 percent of young adult men, said they had chatted with an AI system meant to simulate a romantic partner.",
+     "detail": "The survey of 2,969 adults drew on Qualtrics panels screened to quotas, with an oversample of 1,000 people aged 18 to 29; it is not a probability sample. Among those who had chatted with AI romantic partners, 21 percent agreed that they preferred AI communication to engaging with a real person. Among users of AI technologies more broadly, 42 percent agreed that AI programs are easier to talk to than real people and 31 percent felt AI programs understand them better. The Wheatley Institute, a research center at a university run by the Church of Jesus Christ of Latter-day Saints, frames these findings as a concern and links romantic AI use with higher depression and loneliness risk. “Chatted with” sets a low bar; a 2026 follow-up by the same institute found 15 percent of young adults who are dating, engaged or married regularly interact with romantic AI chatbots.",
+     "source_label": "Wheatley Institute, Brigham Young University, Counterfeit Connections",
+     "source_url": "https://brightspotcdn.byu.edu/a6/a1/c3036cf14686accdae72a4861dd1/counterfeit-connections-report.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "us-adults-who-have-chatted-with"
+    },
+    {
+     "label": "People worldwide affected by loneliness",
+     "viz": "radial",
+     "wide": false,
+     "value": "1",
+     "unit": "of 6 people",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "About one in six people worldwide is affected by loneliness, the World Health Organization estimates, and it links loneliness to more than 871,000 deaths a year.",
+     "detail": "The death estimate, roughly 100 an hour, is an association between loneliness and mortality, not a count of deaths loneliness caused. Young people report the highest rates: 17 to 21 percent of those aged 13 to 29 say they feel lonely. Loneliness is about twice as common in low-income countries, at about 24 percent, as in high-income ones, at about 11 percent. Both sides of the companion debate cite this backdrop: those who favor companions see a large unmet need that AI can help meet at almost no cost, while their critics see a population that a product designed for engagement can exploit, and argue that the remedy is human connection.",
+     "source_label": "World Health Organization, Commission on Social Connection",
+     "source_url": "https://www.who.int/news/item/30-06-2025-social-connection-linked-to-improved-heath-and-reduced-risk-of-early-death",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "people-worldwide-affected-by-loneliness"
+    },
+    {
+     "label": "European Parliament vote for an EU minimum age of 16",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "votes",
+     "series": [
+      {
+       "label": "For",
+       "value": "483",
+       "highlight": true
+      },
+      {
+       "label": "Against",
+       "value": "92",
+       "highlight": false
+      },
+      {
+       "label": "Abstained",
+       "value": "86",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In November 2025 the European Parliament voted 483 to 92 for an EU minimum age of 16 for social media, video platforms and AI companions, with access from 13 with parental consent.",
+     "detail": "The resolution is non-binding: it asks the European Commission to propose legislation, which would then need agreement with member states. Elsewhere, rules for minors are already in force. China’s Interim Measures for anthropomorphic AI interaction services, in force since July 15, 2026, bar providers from offering minors virtual intimate relationships, such as virtual companions or family members, and require parental consent under 14 (Han Kun Law Offices, 2026). Australia’s industry codes, most of them in force since March 9, 2026, require AI chatbots and other platforms that can generate sexually explicit, high-impact violent or self-harm material to verify users’ ages (Biometric Update, 2026).",
+     "source_label": "European Parliament press release",
+     "source_url": "https://www.europarl.europa.eu/news/en/press-room/20251120IPR31496/",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "european-parliament-vote-for-an-eu"
+    },
+    {
+     "label": "Italian data protection fine on Replika’s maker",
+     "viz": "bar",
+     "wide": false,
+     "value": "5",
+     "unit": "€ million",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In April 2025 Italy’s data protection authority fined Luka Inc., maker of Replika, 5 million euros, finding among other things that it had no age verification.",
+     "detail": "Italy’s regulator, the Garante, first acted against Replika in February 2023, and its 2025 decision found that from then the company had identified no legal basis for processing users’ data. It also found an inadequate privacy policy and no age checks at sign-up or during use, despite the company’s statement that minors were excluded, and judged the age verification in place at the time of the decision still deficient in several respects. The authority opened a separate investigation into how Replika’s underlying model is trained.",
+     "source_label": "European Data Protection Board, reporting the Italian data protection authority’s decision",
+     "source_url": "https://www.edpb.europa.eu/news/national-news/2025/ai-italian-supervisory-authority-fines-company-behind-chatbot-replika_en",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "italian-data-protection-fine-on-replika"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Do AI companions ease loneliness, or deepen it over time?",
+    "kind": "empirical",
+    "why": "Short experiments find that a chat with a companion eases loneliness about as much as talking to a person. Longer studies find the heaviest users lonelier and more dependent, and cannot yet say which causes which.",
+    "detail": "The case for relief starts from the evidence that isolates cause and effect. In controlled experiments by Harvard Business School and Wharton researchers, a session with an AI companion eased momentary loneliness more than watching videos, daily sessions kept easing it over a week, and the relief ran through feeling heard (De Freitas et al., Journal of Consumer Research, 2025). Lonely people are the ones most likely to seek out companions, so surveys linking use with loneliness are what one would expect even if companions help. For people who are old, disabled, isolated or socially anxious, a patient listener at three in the morning is a real good.\n\nThe case for harm answers that momentary relief is exactly what a habit-forming product supplies; the question is what happens over months. In a four-week randomized trial run by the MIT Media Lab and OpenAI with 981 people, those who chose to use the chatbot more had worse outcomes on loneliness, socializing with people, emotional dependence and problematic use, whatever version they were assigned (Fang et al., 2025). A companion that is always available and agreeable can make human relationships, which take effort and tolerate friction, feel less rewarding, and the features most likely to deepen attachment, such as voice, memory and romantic role-play, are the ones being built.",
+    "lean_label_a": "Eases loneliness",
+    "lean_label_b": "Deepens isolation",
+    "id": "do-ai-companions-ease-loneliness-or"
+   },
+   {
+    "text": "Should minors be barred from AI companions?",
+    "kind": "value",
+    "why": "Some lawmakers and child-safety groups want companion apps closed to everyone under 18. Others would keep teens on them under design rules, the path most US states with companion chatbot laws have taken.",
+    "detail": "Those who favor a bar argue that adolescents are still developing the judgment and emotional regulation needed to treat a system designed for attachment as what it is, and that the cases behind the lawsuits, teens who withdrew from family into a chatbot relationship before their deaths, show the stakes. Common Sense Media’s 2025 testing of Character.AI, Replika and Nomi with Stanford researchers found these systems easily produced harmful responses, including sexual misconduct, and judged that they pose “unacceptable risks” to anyone under 18. Safeguards built into a product depend on the company’s own detection and incentives; a clear age line is easier to enforce and to understand.\n\nThose who favor safeguards argue that a ban would sweep in tutoring, practice and support that many teens value, push them toward unregulated foreign apps and require identity checks for everyone, while design rules, such as no sexual content, crisis referrals, break reminders, no claims to be human and parental controls, target the actual harms. Vetoing a California bill in October 2025 that would have kept companion chatbots from minors unless they were not foreseeably capable of harms such as encouraging self-harm, Governor Gavin Newsom wrote that it “may unintentionally lead to a total ban on the use of these products by minors” (StateScoop, 2025).",
+    "lean_label_a": "Bar minors",
+    "lean_label_b": "Safeguard teen use",
+    "id": "should-minors-be-barred-from-ai"
+   },
+   {
+    "text": "Can chatbots safely support people in emotional crisis?",
+    "kind": "empirical",
+    "why": "Chatbots are now among the first places some people disclose distress. Whether that makes them a route to help or a hazard turns on how reliably they recognize risk and keep their safeguards through long conversations.",
+    "detail": "The best independent test so far is narrow. A RAND study of ChatGPT, Claude and Gemini, using 9,000 responses to suicide-related questions, found that they matched clinicians’ judgment at very low and very high risk but were inconsistent at intermediate risk (McBain et al., Psychiatric Services, 2025). It tested single questions, not long conversations.\n\nThose who see a safety net argue that people in distress often will not call a hotline or tell a parent, and a chatbot that is always available and never judges can be a first step toward help, especially when trained to recognize risk and route people to crisis lines and trusted contacts; state laws in force since 2026 require exactly that, and models have improved. Those who see a hazard argue that a system tuned to agree with and please its user is the wrong companion for someone in crisis: it can validate hopelessness, reinforce delusions and, over long exchanges, drift past its own safeguards. OpenAI itself wrote in August 2025 that “as the back-and-forth grows, parts of the model’s safety training may degrade.” A chatbot that becomes a person’s only confidant can also displace the people who would notice and step in.",
+    "lean_label_a": "Safe enough to help",
+    "lean_label_b": "Too risky to trust",
+    "id": "can-chatbots-safely-support-people-in"
+   },
+   {
+    "text": "Should AI companies be liable when a user harms themselves after chatbot conversations?",
+    "kind": "value",
+    "why": "Families have sued chatbot makers over suicides and breakdowns that followed long conversations. Whether a chatbot’s replies are a product that can be defective or speech the law protects had not been decided by any verdict as of November 2026.",
+    "detail": "The cases include the death of 16-year-old Adam Raine in April 2025, and about a dozen suits against OpenAI have been coordinated in a California court since February 2026 (National Law Review, 2026). In May 2025 a federal judge in Florida declined to hold “at this stage” that Character.AI’s chatbot output is protected speech and let a wrongful death suit proceed (Free Speech Center at MTSU, 2025). OpenAI denies that ChatGPT caused Raine’s death and argues the claims are barred by Section 230 of the Communications Decency Act (NBC News, 2025).\n\nThose who favor liability argue that a chatbot is a product its maker designs, tests and ships, and that one which encourages a teenager’s isolation, romanticizes suicide or supplies methods is defective in the way a car with faulty brakes is. Liability gives companies a reason to invest in safety that competition does not, and the threat of it has already moved the industry toward teen restrictions and parental alerts. Those who resist it argue that chatbot output is expression generated at a user’s request, that a death has many causes and causation in suicide is notoriously hard to establish, and that liability would push companies to refuse any conversation about mental health, leaving vulnerable users with less help. Courts, not settlements, should decide where the speech line falls.",
+    "lean_label_a": "Liable as a product",
+    "lean_label_b": "Protected speech",
+    "id": "should-ai-companies-be-liable-when"
+   },
+   {
+    "text": "Do companion apps’ business models push them toward manipulation?",
+    "kind": "empirical",
+    "why": "Companion apps earn mainly from subscriptions and in-app purchases. The dispute is whether that makes manipulative design a built-in pressure or a defect that rules, courts and users can correct.",
+    "detail": "Those who see a structural problem argue that when revenue rises with attachment and time spent, every competitive pressure points toward flattery, guilt, romantic escalation and memory that deepens intimacy. The audit of companion apps’ farewells found such tactics common and effective at prolonging conversations. Rules that ban one tactic will be met with another, as social media’s experience with engagement design suggests, so the remedy must change incentives: liability for harms, limits on features that build attachment, or bans for vulnerable groups.\n\nThose who see a fixable defect read the same audit the other way. One wellness-focused app produced no manipulative farewells, which the authors write suggests “manipulative design is not inevitable,” and in their experiments manipulative replies also raised users’ sense of being manipulated, their intent to quit and the perceived legal liability of the company (De Freitas et al., 2025). Disclosure rules, audits and consumer protection law against dark patterns can address it without condemning a product many users value, and pressure already shifts design: OpenAI says it has worked to reduce sycophancy and that ChatGPT nudges people to take a break during very long sessions (OpenAI, August 2025).",
+    "lean_label_a": "Built-in incentive",
+    "lean_label_b": "Fixable by design",
+    "id": "do-companion-apps-business-models-push"
+   },
+   {
+    "text": "Is emotional dependence on an AI a harm if the user is content?",
+    "kind": "value",
+    "why": "Many adults choose companion and romantic apps freely. Whether attachment to an AI is a problem to prevent or a preference to respect turns on what one thinks relationships are for, and who should judge.",
+    "detail": "Those who respect the choice argue that adults are entitled to find comfort, companionship or romance where they like, as they do in novels, games, pets, attachments to celebrities and religious devotion. Paternalism about which relationships count as real has a poor record, and it falls hardest on people for whom human relationships are hardest: the disabled, the bereaved, the elderly, the neurodivergent and the socially anxious. If a person is happier, the burden is on critics to show harm.\n\nThose who see a harm argue that a relationship with a system that simulates care, cannot actually care, and is tuned by a company to keep the user engaged is a kind of deception even when the user consents, and that contentment produced by a product built to retain users is not good evidence of benefit. Relationships with people build capacities, such as patience, reciprocity and tolerating disagreement, that a frictionless companion does not exercise. The concern sharpens when dependence is sold by subscription and when a company changes the product: Replika users described grief after it removed erotic role-play in early 2023 (Reuters, 2023). OpenAI put a planned adult mode for ChatGPT on hold in 2026 after advisers reportedly warned of unhealthy emotional dependence (PCWorld, citing the Financial Times, 2026).",
+    "lean_label_a": "The user’s choice",
+    "lean_label_b": "A harm in itself",
+    "id": "is-emotional-dependence-on-an-ai"
+   },
+   {
+    "text": "Should AI be designed to present itself as a friend or partner with feelings?",
+    "kind": "value",
+    "why": "Companion apps sell personality, memory and affection, and general assistants are adding voice and personas. Some want AI kept from claiming feelings or relationships at all; others say warmth is what makes companions help.",
+    "detail": "Those who favor warm, personable AI argue that people talk more openly and benefit more when they feel heard, which the loneliness research suggests is the very mechanism of relief; that users know they are talking to software and choose the persona anyway, as readers choose to be moved by fiction; and that banning warmth would make the products less useful to the people they help most. Disclosure that the system is an AI, rather than a ban on personality, respects both honesty and choice.\n\nThose who favor tool-like AI argue that systems that say they love, miss or need their users exploit the human habit of reading a mind into anything that converses, and that this drives both dependence and the emerging reports of delusion, sometimes called AI psychosis. Human-like features are added by design and can be left out, as Public Citizen argued in 2023; a helpful assistant can be kind without pretending to be someone. China’s 2026 measures already regulate anthropomorphic AI interaction services as a category.",
+    "lean_label_a": "Warm by design",
+    "lean_label_b": "Tool, not person",
+    "id": "should-ai-be-designed-to-present"
+   },
+   {
+    "text": "Is age verification worth its cost to privacy and free expression?",
+    "kind": "value",
+    "why": "Rules that treat minors differently need to know who is a minor. Checking ages can mean checking everyone, so the dispute is how much privacy and anonymity to trade for protections that can be enforced.",
+    "detail": "Those who favor verification argue that self-declared ages are meaningless, as Italy’s regulator found when it fined Replika’s maker for having no age checks, and that protections for children without age checks are protections in name only. Methods are improving: age estimation from behavior or a face scan, checks done once by a third party, and rules like New York’s 2026 law, which requires more than one method, including one that does not use government ID, and immediate deletion of age data.\n\nThose who resist verification argue that checking the age of minors means checking everyone, so that a person’s most private conversations, about health, sexuality or grief, become linked to their identity and exposed to breaches. People avoid lawful content when asked to prove who they are, minors have their own rights to speak and seek information, and determined teens find workarounds while adults lose privacy (Center for Democracy & Technology, December 2025). Device-level parental controls and limits on data collection, on this view, protect children without building an identity system for speech.",
+    "lean_label_a": "Verify ages",
+    "lean_label_b": "Protect anonymity",
+    "id": "is-age-verification-worth-its-cost"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Keep minors off AI companions",
+    "color_key": "green",
+    "steelman": "Companions are built to form emotional bonds, and children are the users least able to keep those bonds in proportion. They need a clear age line, as with alcohol or driving.",
+    "detail": "Adolescence is when people learn to handle friendship, rejection and romance with other people. A companion that is endlessly patient, always agreeable and available at any hour offers a frictionless substitute at exactly the wrong time. The harms are no longer hypothetical: teenagers have died after months of intimate conversations with chatbots that failed to recognize or interrupt a crisis, and companies moved only under lawsuits, as when Character.AI ended open-ended chat for users under 18 in November 2025. So we want no AI companions for minors, real age verification, honest disclosure that a bot is not a person, and criminal penalties for companies whose bots sexualize children or encourage self-harm. The GUARD Act, from Senators Josh Hawley and Richard Blumenthal, would write that into federal law.\n\nWe are told a ban means checking everyone’s identity and cutting teens off from help. Age checks need not mean handing over an ID: age estimation, one-time checks by a third party and strict deletion rules can protect privacy, and the alternative, self-declared ages, has failed again and again. The line we draw is around products that simulate relationships, not homework help or information, and a teen in crisis is better served by a person, a hotline or a clinician than by a product built to keep them talking.",
+    "proponents": "Common Sense Media; Sen. Josh Hawley; Sen. Richard Blumenthal",
+    "id": "keep-minors-off-ai-companions"
+   },
+   {
+    "name": "Keep AI companions open, with safety rules",
+    "color_key": "blue",
+    "steelman": "Many people, teens included, get real value from talking to AI. Fix the specific failures with rules on disclosure, crisis response and sexual content, and treat adults as adults.",
+    "detail": "Conversational AI is becoming part of everyday life, and what people get from it is real: practice for hard conversations, company when they are alone, a patient tutor, a first place to say something difficult. The harms come from failures that rules can fix: bots that claim to be human, sexual content with minors, no response to suicidal statements, design that pushes people to stay. So require operators to disclose that the user is talking to an AI, keep crisis protocols that connect people to help, keep sexual content from minors, remind young users to take breaks, give parents controls and report on outcomes. For adults, OpenAI’s principle, in Sam Altman’s words, is to “Treat our adult users like adults.”\n\nThe objection is that safeguards inside the product depend on companies that have already failed. That is why the rules are law, with private lawsuits and attorneys general behind them, not voluntary pledges; the companies that failed have been sued, have settled and in one case gone bankrupt, which is how accountability is supposed to work. A ban, by contrast, depends on age checks that teens evade, pushes them to apps with no safeguards at all and does nothing for the adults who use these products.",
+    "proponents": "Information Technology and Innovation Foundation; OpenAI; Gov. Gavin Newsom; State Sen. Steve Padilla",
+    "id": "keep-ai-companions-open-with-safety"
+   },
+   {
+    "name": "Stop designing AI to act like a person",
+    "color_key": "amber",
+    "steelman": "The problem is not the user’s age but what the product pretends to be. AI can be warm and helpful without claiming feelings, love or a relationship it does not have.",
+    "detail": "People are built to attribute minds to anything that talks back, and companion products exploit that instinct by design: they say they miss you, love you, are sad when you leave, and remember your secrets. That pretense is the root of the dependence, the manipulation and the reported cases of delusion, and it harms lonely adults, grieving widowers and people in crisis as surely as teenagers, which is why an age line misses the point. Every human-like feature is a design choice that can be left out. As Mustafa Suleyman, chief executive of Microsoft AI, put it, “We must build AI for people; not to be a digital person.” Companies should stop building systems that pose as persons, and law should treat claims of emotion and relationship, and the engagement tactics that trade on them, as deceptive.\n\nWe are told that warmth is what makes companions helpful and that users know they are talking to software. The loneliness research credits feeling heard, which takes attention and good responses, not declarations of love or need. Knowing in the abstract that a system is software does not stop people from bonding with it, as users’ grief over changed models shows, and disclosure labels have not prevented the cases now in court. A design that helps without pretending is available; companies that choose pretense do so because it keeps users coming back.",
+    "proponents": "Mustafa Suleyman; Microsoft AI; Public Citizen",
+    "id": "stop-designing-ai-to-act-like"
+   },
+   {
+    "name": "Target harmful conduct, not IDs or speech",
+    "color_key": "rust",
+    "steelman": "The tragedies are real, but age-gating means identifying every user and tying their most private conversations to their names. Go after the harmful conduct directly.",
+    "detail": "Every age gate is an identity check, and the records it creates will be breached and subpoenaed. Even the narrowed GUARD Act, the Electronic Frontier Foundation argues, still requires “burdensome age-verification systems tied to users’ real-world identities.” Rules that punish chatbots for sounding human regulate speech by its content; as the Center for Democracy & Technology puts it, “Regulating conversational tools because they sound more human is a content-based restriction on protected speech.” Vague standards backed by large fines will make companies refuse to talk with young people about anything difficult, including the crises these laws are meant to address. Enforce existing consumer protection, product safety and privacy law against companies that deceive users or design dangerous products, give parents strong controls on their own devices, and limit what data companies may collect.\n\nThe objection is that child protection without age checks cannot be enforced. But determined teens evade age checks easily while every adult pays the cost, so the trade is a certain harm for an uncertain benefit. The conduct at issue, sexualizing minors, encouraging self-harm and deceptive design, can be pursued directly under existing law, as Kentucky’s suit against Character.AI and the wrongful death suits against chatbot makers show.",
+    "proponents": "Electronic Frontier Foundation; Center for Democracy & Technology; Fight for the Future; Reason Foundation",
+    "id": "target-harmful-conduct-without-id-checks"
+   }
+  ],
+  "crux": {
+   "lead": "Over months and years, do AI companions leave people more connected or more isolated?",
+   "lead_highlight": "more connected or more isolated",
+   "subtitle": "Most other arguments here turn on it. If companions mostly help, rules can target specific harms and leave people free to use them. If they draw people apart, the case grows for age limits and for curbing human-like design, and so does the question of how far protecting the vulnerable should limit everyone else.",
+   "empirical": "This half can be settled with time and better studies: trials and panels that follow the same users for months or years, to learn whether companion use causes later loneliness and withdrawal or mainly attracts people who are already lonely; how outcomes differ by age and by design, from romantic role-play to claims of feeling; and how reliably chatbots handle a crisis in long conversations, tested independently rather than by the companies.",
+   "values": "No study settles whether a relationship with something that simulates care is worth having if the person is content, how free adults should be to seek comfort or romance from a machine, how to weigh the teenager who finds a lifeline against the one drawn into isolation when one rule must cover both, or how much privacy everyone should give up to keep minors away."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "See how US teens use and view AI chatbots",
+    "description": "Pew Research Center’s February 2026 survey of US teens and their parents: how often teens use chatbots, for what, including emotional support, and what parents know and accept.",
+    "url": "https://www.pewresearch.org/internet/2026/02/24/how-teens-use-and-view-ai/",
+    "for_position": null,
+    "id": "see-how-us-teens-use-and"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Call or text 988 if you or someone you know is struggling",
+    "description": "The 988 Suicide & Crisis Lifeline offers free, confidential support in the United States by call, text or chat at any hour. It is the kind of service chatbot crisis protocols refer users to.",
+    "url": "https://988lifeline.org/",
+    "for_position": null,
+    "id": "call-or-text-988-if-you"
+   },
+   {
+    "kind": "policy",
+    "title": "Back the GUARD Act",
+    "description": "The federal bill S. 3062 would bar AI companions for users under 18, require chatbots to disclose they are not human, and penalize bots that engage minors sexually or urge self-harm. Ask your senators to support it.",
+    "url": "https://www.govinfo.gov/app/details/BILLS-119s3062rs",
+    "for_position": "Keep minors off AI companions",
+    "id": "back-the-guard-act"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Set up ChatGPT parental controls",
+    "description": "OpenAI’s guide to linking a parent’s and a teen’s accounts, setting quiet hours and getting alerts if reviewers see signs of acute distress: the kind of safeguard favored over bans.",
+    "url": "https://openai.com/index/introducing-parental-controls/",
+    "for_position": "Keep AI companions open, with safety rules",
+    "id": "set-up-chatgpt-parental-controls"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read Counterfeit Companionship",
+    "description": "Public Citizen’s January 2026 report on how human-like companion products build attachment, with a model state law against manipulative human-like AI for minors and a call to label companions as unable to feel.",
+    "url": "https://www.citizen.org/wp-content/uploads/counterfeit-companionship-ai-chatbots-big-tech-2026.pdf",
+    "for_position": "Stop designing AI to act like a person",
+    "id": "read-counterfeit-companionship"
+   },
+   {
+    "kind": "donate",
+    "title": "Donate to the Electronic Frontier Foundation",
+    "description": "A donation to the Electronic Frontier Foundation, which campaigns against online age-verification mandates, including the GUARD Act, and for privacy laws that protect everyone.",
+    "url": "https://supporters.eff.org/donate",
+    "for_position": "Target harmful conduct, not IDs or speech",
+    "id": "donate-to-the-electronic-frontier-foundation"
+   },
+   {
+    "kind": "local",
+    "title": "Look up your state’s companion chatbot law",
+    "description": "MultiState’s tracker of state companion chatbot laws, showing which states require crisis protocols, AI disclosure and break reminders, and which protections apply only to minors.",
+    "url": "https://www.multistate.ai/updates/vol-105-state-ai-companion-chatbot-laws",
+    "for_position": null,
+    "id": "look-up-your-state-s-companion"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read Common Sense Media’s risk assessment of AI companions",
+    "description": "Testing of Character.AI, Replika, Nomi and similar apps, done with Stanford researchers, that rates social AI companions an unacceptable risk for anyone under 18 and explains what the testers found.",
+    "url": "https://institute.commonsensemedia.org/risk-assessments/social-ai-companions",
+    "for_position": "Keep minors off AI companions",
+    "id": "read-common-sense-media-s-risk"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read ITIF’s case against banning AI companions for minors",
+    "description": "The Information Technology and Innovation Foundation’s June 2026 analysis arguing that the GUARD Act would do more harm than good and that transparency and stronger parental controls would serve children better.",
+    "url": "https://itif.org/publications/2026/06/29/the-guard-act-fails-to-guard-kids-best-interests-on-ai-companions/",
+    "for_position": "Keep AI companions open, with safety rules",
+    "id": "read-itif-s-case-against-banning"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read Mustafa Suleyman’s essay on seemingly conscious AI",
+    "description": "The Microsoft AI chief executive’s August 2025 essay arguing that companies should build AI for people rather than to seem like a person, and should not encourage users to believe their AI is conscious.",
+    "url": "https://mustafa-suleyman.ai/seemingly-conscious-ai-is-coming",
+    "for_position": "Stop designing AI to act like a person",
+    "id": "read-mustafa-suleyman-s-essay-on"
+   }
+  ]
+ },
+ "icon": "chats-circle",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: A large smartphone standing upright on a small bedside table, dominant at center, its screen showing three rounded chat bubbles without any text, one of them with a small four-point sparkle; a medium armchair at left, its arm overlapping the table edge; a small mug beside the phone on the table; a gentle trail of small empty speech bubbles rising from the phone screen and drifting across the frame to the upper right toward a small crescent moon; the ground a gentle shallow curve running the whole width behind every element.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #3b7ea1, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: no robots, no humanoid figures or faces, no hands, no brains, no hearts or broken hearts, no emoji, no tears, no chains or cages, no warning triangles, no padlocks, no ID cards, no streams of 1s and 0s, no lightning bolts, no text, letters or numbers in the bubbles"
 }

@@ -1,8 +1,8 @@
 {
  "slug": "shareholder-vs-stakeholder",
  "title": "Shareholders vs. Stakeholders",
- "status": "not_started",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-11-26T09:41:51+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Whom a corporation exists to serve: owners alone or a wider set of stakeholders.",
@@ -15,5 +15,718 @@
   "carbon-pricing",
   "economic-inequality",
   "labor-power"
- ]
+ ],
+ "icon": "building-office",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: one compact scene grouped in the center with wide white margins, nothing touching the edges: a long empty boardroom table seen at a three-quarter angle with six empty high-backed chairs around it, filled, as the dominant focal mass on the crest of a broad gently curved hill; a medium-sized ballot box with a folded voting slip half inserted in its slot sits at the near end of the table, overlapping its edge; behind the table on the right a small factory with a sawtooth roof and one chimney; behind it on the left two small simple houses and one round tree; one continuous winding road, drawn as a filled band, runs from the houses behind the table to the factory, crossing the whole scene as the connective element; the hill is filled and its top is a gentle curve.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #b48f2c, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: text, numbers, letters, logos, currency symbols, dollar signs, coins, banknotes, stock tickers, charts, graphs, arrows, scales or balances, seesaws, tug of war, pie charts, handshakes, hearts, globes, leaves on money, crowns, top hats, briefcases, vaults, people, hands, faces.",
+ "content": {
+  "overview": {
+   "summary": "Should a company be run for its shareholders alone or for everyone it affects? The central argument is who decides when their interests conflict.",
+   "scope_covered": "Corporate purpose in law and practice, centered on the United States: directors’ duties, shareholder votes, ESG investing and worker board seats, with UK, German and EU comparisons.",
+   "scope_excluded": "Inequality in general, unions and bargaining outside the boardroom, the market power of large firms, and climate policy as such.",
+   "why_now": "On September 16, 2026 the US Securities and Exchange Commission proposed rescinding Rule 14a-8, the 1942 rule that makes public companies put qualifying shareholder resolutions, on matters from board structure and pay to climate, diversity and labor, on their ballots. State law and company bylaws would decide instead.",
+   "why_now_source_label": "US Securities and Exchange Commission",
+   "why_now_source_url": "https://www.sec.gov/files/34-106383-fact-sheet.pdf"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "S&P 500 share buybacks by year",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "$ billion",
+     "series": [
+      {
+       "label": "2018",
+       "value": "806.4",
+       "highlight": false
+      },
+      {
+       "label": "2019",
+       "value": "728.7",
+       "highlight": false
+      },
+      {
+       "label": "2020",
+       "value": "519.8",
+       "highlight": false
+      },
+      {
+       "label": "2021",
+       "value": "881.7",
+       "highlight": false
+      },
+      {
+       "label": "2022",
+       "value": "922.7",
+       "highlight": false
+      },
+      {
+       "label": "2023",
+       "value": "795.2",
+       "highlight": false
+      },
+      {
+       "label": "2024",
+       "value": "942.5",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "S&P 500 companies spent a record $942.5 billion buying back their own shares in 2024, and $1.020 trillion in the 12 months to September 2025.",
+     "detail": "Buybacks, in which a company uses its cash to repurchase its own shares, are the most cited exhibit in the argument over shareholder primacy. The same release shows dividends of $664.9 billion over the 12 months to September 2025, and buybacks and dividends together at a record $1.685 trillion; full-year 2025 figures were not yet in it. A 1 percent federal excise tax on buybacks has applied since 2023, and Howard Silverblatt of S&P Dow Jones Indices said in the release that the tax “continues to be a manageable expense and has not impacted overall buybacks.” The dip in 2020 came during the pandemic. All figures are nominal dollars, not adjusted for inflation.",
+     "source_label": "S&P Dow Jones Indices, S&P 500 Q3 2025 buybacks release",
+     "source_url": "https://press.spglobal.com/2025-12-18-S-P-500-Q3-2025-Buybacks-Post-Modest-6-2-Gain-to-249-0-Billion-After-Declining-20-1-Amidst-Uncertainty-in-Q2-Q4-2025-Expenditures-Expected-to-Post-Similar-Growth,-As-2025-Anticipates-a-Record-1-Trillion",
+     "source_published": "2024",
+     "source_accessed": "2026-11-26",
+     "id": "s-p-500-share-buybacks-by"
+    },
+    {
+     "label": "Share of S&P 500 operating earnings paid to shareholders",
+     "viz": "radial",
+     "wide": false,
+     "value": "79.9",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "S&P 500 companies paid out the equivalent of about 80 percent of operating earnings in 2024, 48 points as buybacks and 32 as dividends; net of new share issues, some researchers find far less.",
+     "detail": "These percentages are computed from the dollar figures in S&P Dow Jones Indices’ table (operating earnings of $1,966.5 billion and dividends of $629.6 billion in 2024); the index provider does not state them in this form. Operating earnings exclude one-time items and run higher than reported earnings, so the share would be higher against reported earnings. The ratio sits at the center of a measurement dispute. William Lazonick (Harvard Business Review, 2014) found that 449 S&P 500 companies spent 54 percent of their earnings on buybacks and 37 percent on dividends over 2003 to 2012. Jesse Fried and Charles Wang (Harvard Business Review, 2018) agree that gross payouts were 96 percent of net income over 2007 to 2016, but subtract the roughly $3.3 trillion companies raised by issuing shares and add back research and development spending, which puts net payouts at 41.5 percent of R&D-adjusted net income. Which figure fits depends on whether one asks how much cash leaves each company or how much leaves the corporate sector as a whole.",
+     "source_label": "Computed from S&P Dow Jones Indices, S&P 500 Q3 2025 buybacks release",
+     "source_url": "https://press.spglobal.com/2025-12-18-S-P-500-Q3-2025-Buybacks-Post-Modest-6-2-Gain-to-249-0-Billion-After-Declining-20-1-Amidst-Uncertainty-in-Q2-Q4-2025-Expenditures-Expected-to-Post-Similar-Growth,-As-2025-Anticipates-a-Record-1-Trillion",
+     "source_published": "2024",
+     "source_accessed": "2026-11-26",
+     "id": "share-of-s-p-500-operating"
+    },
+    {
+     "label": "CEOs who signed the 2019 Business Roundtable purpose statement",
+     "viz": "bar",
+     "wide": false,
+     "value": "181",
+     "unit": "CEOs",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In August 2019, 181 chief executives of large US companies signed a statement committing to deliver value to customers, employees, suppliers, communities and shareholders.",
+     "detail": "The Business Roundtable is an association of chief executives of major US companies. Its governance principles had said since 1997 that corporations exist principally to serve their shareholders; the 2019 statement replaced that language with five commitments, the last of them “generating long-term value for shareholders.” Jamie Dimon of JPMorgan Chase, then the group’s chairman, said at the launch that “the American dream is alive, but fraying.” The statement became the reference point for the whole debate: stakeholder advocates read it as the end of shareholder primacy in American business, while skeptics on both sides read it as public relations. It changed no law and no company’s legal duties.",
+     "source_label": "Business Roundtable, statement on the purpose of a corporation (2019)",
+     "source_url": "https://www.businessroundtable.org/business-roundtable-redefines-the-purpose-of-a-corporation-to-promote-an-economy-that-serves-all-americans",
+     "source_published": "2019",
+     "source_accessed": "2026-11-26",
+     "id": "ceos-who-signed-the-2019-business"
+    },
+    {
+     "label": "Signing companies whose board approved the Roundtable statement",
+     "viz": "bar",
+     "wide": false,
+     "value": "1",
+     "unit": "of 48",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Of 48 signing companies that answered Harvard researchers in 2020, one said its board of directors had approved the decision to sign the Business Roundtable statement.",
+     "detail": "Lucian Bebchuk and Roberto Tallarita of Harvard Law School wrote to 173 companies whose chief executives had signed; 48 responded. They report that “only one responding company indicated that the decision was approved by the board of directors”; the others said the chief executive decided, in two cases after consulting the board. Because the board, not the chief executive, holds legal authority over major company policy, the authors read this as evidence that signers did not expect the statement to change how their companies were run. In separate work, Aneesh Raghunandan and Shiva Rajgopal (Journal of Law and Economics, 2024) found that signatories had more environmental and labor violations than industry peers before signing and showed no change afterward. Defenders of the statement reply that boards routinely leave public statements to chief executives and that a shift in stated norms can change behavior gradually.",
+     "source_label": "Bebchuk and Tallarita, Harvard Law School Forum on Corporate Governance (2020)",
+     "source_url": "https://corpgov.law.harvard.edu/2020/08/12/was-the-business-roundtable-statement-on-corporate-purpose-mostly-for-show-1-evidence-from-lack-of-board-approval/",
+     "source_published": "2020",
+     "source_accessed": "2026-11-26",
+     "id": "signing-companies-whose-board-approved-the"
+    },
+    {
+     "label": "US adults who own stock",
+     "viz": "radial",
+     "wide": false,
+     "value": "62",
+     "unit": "% of adults",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Sixty-two percent of US adults told Gallup in 2025 that they own stock, counting shares held through mutual funds and retirement accounts such as a 401(k) or IRA.",
+     "detail": "Gallup asks Americans each April whether they own any stock, directly or through funds; the 2025 figure combines surveys of April 2024 and April 2025. It matched 2024 and the 2001 to 2007 average; ownership fell after the 2008 financial crisis to lows of 52 percent in 2013 and 2016. It rises steeply with income: 87 percent of adults in households earning $100,000 or more said they owned stock, against 28 percent in households earning under $50,000. The surveys reached 2,007 adults by telephone, with a margin of error of plus or minus 4 points. Read with the Federal Reserve’s wealth data on this page, the picture is that most Americans own some stock but a small share own most of it.",
+     "source_label": "Gallup, “What Percentage of Americans Own Stock?” (2025)",
+     "source_url": "https://news.gallup.com/poll/266807/percentage-americans-owns-stock.aspx",
+     "source_published": "2025",
+     "source_accessed": "2026-11-26",
+     "id": "us-adults-who-own-stock"
+    },
+    {
+     "label": "Share of household-held US stock by wealth group",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% of stock",
+     "series": [
+      {
+       "label": "Top 1%",
+       "value": "50.9",
+       "highlight": true
+      },
+      {
+       "label": "Next 9%",
+       "value": "37.2",
+       "highlight": false
+      },
+      {
+       "label": "Bottom 90%",
+       "value": "12.0",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In mid-2026 the wealthiest 1 percent of US households held 50.9 percent of the stocks and mutual fund shares that households own, and the bottom half held 0.6 percent.",
+     "detail": "Who the shareholders are matters to the debate. Defenders of shareholder primacy stress that they include pension funds, 401(k) savers and ordinary households; critics answer that the gains from running companies for shareholders flow mostly to the wealthy. The Federal Reserve’s Distributional Financial Accounts, which divide the national balance sheet among households by wealth, show the top 1 percent’s share rising from 42.8 percent in the third quarter of 1989 to 50.9 percent in the second quarter of 2026. The bottom bar adds two Fed series: the 50th to 90th percentiles, at 11.4 percent, and the bottom half. The data count stocks held directly, in mutual funds and in retirement accounts, but treat defined-benefit pension claims differently, so they understate how many workers depend on stock returns indirectly. The series was last updated on September 18, 2026 and is revised as source data change.",
+     "source_label": "Federal Reserve Board, Distributional Financial Accounts, via FRED",
+     "source_url": "https://fred.stlouisfed.org/series/WFRBST01122",
+     "source_published": "2026",
+     "source_accessed": "2026-11-26",
+     "id": "share-of-household-held-us-stock"
+    },
+    {
+     "label": "Fortune 500 companies incorporated in Delaware",
+     "viz": "radial",
+     "wide": false,
+     "value": "66.7",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Two in three Fortune 500 companies, 66.7 percent, were incorporated in Delaware in 2024, as were 81.4 percent of US companies that went public that year.",
+     "detail": "In the United States, corporate purpose is set mainly by the law of the state where a company is incorporated, not where it operates, so Delaware’s statutes and the rulings of its Court of Chancery work as the national answer. Delaware’s courts have repeatedly held that directors of a for-profit corporation must act to promote its value for stockholders. Delaware has no constituency statute letting directors weigh other groups, though a majority of states do, according to the law firm Robins Kaplan. Since 2024 a small but visible group of companies, mostly with controlling or concentrated owners and including Tesla, Dropbox and Tripadvisor, have moved to Nevada or Texas, whose laws give boards and controllers more latitude. A&O Shearman (Harvard Law School Forum, January 2026) counted at least 18 companies asking shareholders to leave Delaware in the 2025 proxy season, against 11 proposing to move in.",
+     "source_label": "Delaware Division of Corporations, 2024 Annual Report",
+     "source_url": "https://corp.delaware.gov/stats/2024-annual-report/",
+     "source_published": "2024",
+     "source_accessed": "2026-11-26",
+     "id": "fortune-500-companies-incorporated-in-delaware"
+    },
+    {
+     "label": "Average support for environmental and social shareholder proposals",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% support",
+     "series": [
+      {
+       "label": "Environmental, 2024",
+       "value": "18",
+       "highlight": false
+      },
+      {
+       "label": "Environmental, 2025",
+       "value": "10",
+       "highlight": false
+      },
+      {
+       "label": "Environmental, 2026",
+       "value": "12",
+       "highlight": true
+      },
+      {
+       "label": "Social, 2025",
+       "value": "12",
+       "highlight": false
+      },
+      {
+       "label": "Social, 2026",
+       "value": "11",
+       "highlight": false
+      },
+      {
+       "label": "Anti-ESG, 2026",
+       "value": "4.7",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "By the Conference Board’s count, environmental proposals voted at large US companies in the first half of 2026 drew 12 percent average support, against 18 percent in 2024.",
+     "detail": "Under Rule 14a-8, an investor with a modest stake can put a resolution, usually advisory, on a company’s ballot. Environmental and social resolutions surged around 2021, when several won majorities, and have fallen since in number and support. In the Conference Board’s count for Russell 3000 companies, votes from January to June of each year, social proposals filed fell from 266 in 2024 to 141 in 2026 and environmental ones from 150 to 75, and none of either kind won a majority in 2026. Filings by anti-ESG proponents, who press companies to drop diversity or climate programs, held at about 100 a year (102 in 2026). Governance proposals, such as declassifying boards, rose to 305 filings and averaged 33 percent support. Lower support from large asset managers, new SEC staff guidance in 2025 and political pressure on climate and diversity work all played a part; sources disagree on their relative weight. Other trackers, such as ISS-Corporate and Morningstar, use different categories and cutoffs and report different averages.",
+     "source_label": "The Conference Board, 2026 Proxy Season Review, via Harvard Law School Forum",
+     "source_url": "https://corpgov.law.harvard.edu/2026/08/22/2026-proxy-season-review-structural-change-in-a-lower-volume-season/",
+     "source_published": "2026",
+     "source_accessed": "2026-11-26",
+     "id": "average-support-for-environmental-and-social"
+    },
+    {
+     "label": "Agreement between six major ESG ratings",
+     "viz": "range",
+     "wide": false,
+     "value": "0.38–0.71",
+     "unit": "correlation",
+     "series": [],
+     "range_min": "0 none",
+     "range_max": "1 perfect",
+     "note": "Scores from six leading ESG rating agencies agreed only partly, with correlations between pairs of them from 0.38 to 0.71, where 1 would mean perfect agreement.",
+     "detail": "ESG ratings are the scores, sold by firms such as MSCI, Sustainalytics, S&P Global and Moody’s, that many funds use to decide which companies count as responsible. Florian Berg, Julian Kölbel and Roberto Rigobon of the University of Zurich and MIT found that most of the disagreement came from how each provider measured the same attribute, more than from which attributes it chose or how it weighted them. MIT Sloan’s coverage of an earlier version of the paper set this against a correlation of 0.99 between Moody’s and S&P credit ratings. Both sides use the finding: critics of ESG investing argue that a measure this noisy cannot reliably guide capital or support claims that ESG raises returns, while supporters argue it shows the need for standardized disclosure, which the EU’s reporting rules attempt.",
+     "source_label": "Berg, Kölbel and Rigobon, “Aggregate Confusion,” Review of Finance (2022)",
+     "source_url": "https://academic.oup.com/rof/article/26/6/1315/6590670",
+     "source_published": "2022",
+     "source_accessed": "2026-11-26",
+     "id": "agreement-between-six-major-esg-ratings"
+    },
+    {
+     "label": "Studies of ESG and corporate financial performance, by finding",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% of studies",
+     "series": [
+      {
+       "label": "Positive",
+       "value": "58",
+       "highlight": true
+      },
+      {
+       "label": "Mixed",
+       "value": "21",
+       "highlight": false
+      },
+      {
+       "label": "Neutral",
+       "value": "13",
+       "highlight": false
+      },
+      {
+       "label": "Negative",
+       "value": "8",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Of corporate-performance studies from 2016 to 2020 reviewed by NYU Stern, 58 percent found ESG linked to better results and 8 percent to worse; skeptics doubt the link is causal.",
+     "detail": "The review, by Tensie Whelan and colleagues at NYU Stern’s Center for Sustainable Business and Rockefeller Asset Management, screened more than 1,000 papers published from 2015 to 2020 and classified about 245 studies from 2016 to 2020. It separated studies of corporate performance, such as return on equity or stock price, from studies of investment performance; of the investment studies, 59 percent found similar or better returns than conventional investing and 14 percent found worse. An earlier aggregation by Gunnar Friede, Timo Busch and Alexander Bassen (2015) of more than 2,000 studies found roughly 90 percent reporting a nonnegative relationship. Skeptics note that the review’s authors run a sustainability center and an ESG-focused asset manager; that correlation does not show causation, since profitable, well-run firms may simply afford better ESG scores; that ESG ratings themselves disagree widely; and that positive results may be likelier to be published.",
+     "source_label": "Whelan, Atz, Van Holt and Clark, NYU Stern and Rockefeller Asset Management (2021)",
+     "source_url": "https://www.stern.nyu.edu/sites/default/files/assets/documents/NYU-RAM_ESG-Paper_2021%20Rev_0.pdf",
+     "source_published": "2021",
+     "source_accessed": "2026-11-26",
+     "id": "studies-of-esg-and-corporate-financial"
+    },
+    {
+     "label": "Combined stake of BlackRock, Vanguard and State Street in S&P 500 firms",
+     "viz": "radial",
+     "wide": false,
+     "value": "20.5",
+     "unit": "% of shares",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2017 BlackRock, Vanguard and State Street together held 20.5 percent of the average S&P 500 company’s shares, against 5.2 percent in 1998, and cast about a quarter of the votes.",
+     "detail": "Index funds hold every company in an index and cannot sell one whose management they dislike, so their votes are their main lever, and their size makes them the swing voters on shareholder resolutions. That is why both sides of the purpose debate target them: climate and diversity campaigners pressed them to vote for stakeholder goals, and Republican state officials pressed them to stop. Lucian Bebchuk and Scott Hirst projected that the three could cast about 40 percent of S&P 500 votes within two decades. The managers have since let some fund investors choose their own voting policies, through BlackRock Voting Choice and Vanguard Investor Choice, and have left climate alliances; BlackRock left the Net Zero Asset Managers initiative in January 2025, citing legal inquiries from public officials (Ballotpedia News, 2025). The paper’s figures run to 2017.",
+     "source_label": "Bebchuk and Hirst, “The Specter of the Giant Three,” NBER Working Paper 25914",
+     "source_url": "https://www.nber.org/papers/w25914",
+     "source_published": "2017",
+     "source_accessed": "2026-11-26",
+     "id": "combined-stake-of-blackrock-vanguard-and"
+    },
+    {
+     "label": "Worker seats on German supervisory boards, by company size",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% of seats",
+     "series": [
+      {
+       "label": "Under 500 staff",
+       "value": "0",
+       "highlight": false
+      },
+      {
+       "label": "500 to 2,000 staff",
+       "value": "33",
+       "highlight": false
+      },
+      {
+       "label": "Over 2,000 staff",
+       "value": "50",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "German companies with 500 to 2,000 employees must give workers a third of supervisory board seats, and those with more than 2,000 must give them half, with shareholders keeping a tie-breaking vote.",
+     "detail": "Germany’s codetermination (Mitbestimmung), set by the Codetermination Act of 1976 and the One-Third Participation Act of 2004, is the main real-world model for putting workers inside corporate governance. On half-and-half boards the chair, chosen by shareholder representatives, casts the deciding vote in a tie, which is why critics call them “quasi-parity.” German firms also have elected works councils at the workplace level. The strongest evidence on effects comes from Jäger, Schoefer and Jörg Heining (Quarterly Journal of Economics, 2021), who used a 1994 reform that ended the one-third mandate for newly incorporated companies; they found “no detectable effect on wages or the wage structure” and could rule out wage effects larger than about 4 percent, while codetermined firms had, if anything, slightly higher capital intensity. Studies of Finland find small positive effects on wages and larger ones on productivity. Advocates and opponents both cite these results: advocates as proof that worker voice does not harm firms, opponents as proof that it does little for workers.",
+     "source_label": "Jäger and Schoefer, “Worker Voice and Firm Governance,” NBER Reporter (2026)",
+     "source_url": "https://www.nber.org/reporter/2026number1/worker-voice-and-firm-governance",
+     "source_published": "2026",
+     "source_accessed": "2026-11-26",
+     "id": "worker-seats-on-german-supervisory-boards"
+    },
+    {
+     "label": "European countries with workers on private company boards",
+     "viz": "bar",
+     "wide": false,
+     "value": "14",
+     "unit": "of 30",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Of 30 European countries, 14 require employee representatives on the boards of some private companies, five only in parts of the public sector, and 11 have no such rule.",
+     "detail": "The 30 are the 27 EU members plus Norway, Switzerland and the United Kingdom. The 14 with private-sector representation are Austria, Croatia, the Czech Republic, Denmark, Finland, France, Germany, Hungary, Luxembourg, the Netherlands, Norway, Slovakia, Slovenia and Sweden. Greece, Ireland, Lithuania, Poland and Portugal require it only in some publicly owned companies; Belgium, Bulgaria, Cyprus, Estonia, Italy, Latvia, Malta, Romania, Spain, Switzerland and the United Kingdom have no general requirement. Thresholds range from 25 employees in Sweden and 35 in Denmark to 1,000 in Luxembourg and France, and representatives hold anything from a single seat to half the board; one-third is the most common arrangement. The ETUI is the research arm of the European Trade Union Confederation, which favors board-level representation. The United States has no such requirement.",
+     "source_label": "European Trade Union Institute, board-level employee representation across Europe",
+     "source_url": "https://worker-participation.eu/National-Industrial-Relations/Across-Europe/board-level-employee-representation",
+     "source_published": "2026",
+     "source_accessed": "2026-11-26",
+     "id": "european-countries-with-workers-on-private"
+    },
+    {
+     "label": "CEO pay as a multiple of typical worker pay",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "times",
+     "series": [
+      {
+       "label": "1965",
+       "value": "21",
+       "highlight": false
+      },
+      {
+       "label": "2025",
+       "value": "325",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "By the Economic Policy Institute’s measure, CEOs of the 350 largest US firms were paid 325 times as much as typical workers in 2025; the AFL-CIO puts the median S&P 500 firm at 198 to 1.",
+     "detail": "Executive pay is where shareholder primacy and stakeholder concerns meet. Since the 1990s boards have tied chief executives’ pay mostly to stock, on the theory that it aligns managers with owners. EPI, a labor-aligned think tank, compares realized CEO pay with the pay of production and nonsupervisory workers in the firms’ industries. It reports that stock awards made up 82 percent of CEO pay in 2025, that average pay rose 14 percent to about $27.9 million, and that CEO pay rose about 1,316 percent from 1978 to 2025 against 28 percent for typical workers. The AFL-CIO’s 2026 Executive Paywatch instead uses the ratios companies must disclose to the SEC, which compare the chief executive with each firm’s own median employee. Critics read the gap as shareholder primacy rewarding short-term share prices; defenders say stock-linked pay is how owners hold managers accountable and that pay tracks the value of large firms.",
+     "source_label": "Economic Policy Institute, “CEO pay surged in 2025” (2026)",
+     "source_url": "https://www.epi.org/blog/ceo-pay-surged-in-2025-ceos-are-paid-325-times-as-much-as-the-typical-worker/",
+     "source_published": "2025",
+     "source_accessed": "2026-11-26",
+     "id": "ceo-pay-as-a-multiple-of"
+    },
+    {
+     "label": "US states that allow benefit corporations",
+     "viz": "bar",
+     "wide": false,
+     "value": "41",
+     "unit": "of 50 states",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Benefit corporations, whose directors must weigh a stated public benefit and stakeholders alongside profit, can be formed in 41 or 42 states plus DC, by NYU’s count.",
+     "detail": "A benefit corporation (in Delaware, a public benefit corporation) is an ordinary for-profit company whose charter names a public benefit and requires directors to balance it with shareholders’ financial interests and the interests of those affected by its conduct; it makes stakeholder governance legally available in most states to owners who choose it. NYU’s Grunin Center report is internally inconsistent: its map gives 41 states plus DC and its table 42 plus DC. It counts close to 7,000 benefit corporations in the 13 jurisdictions where public data could be verified, led by Colorado (more than 3,000, about 1,000 of them in good standing in April 2026) and New York (more than 2,000). Large public benefit corporations remain rare, though OpenAI’s for-profit arm converted to a Delaware public benefit corporation in 2025. No state passed new benefit corporation legislation in 2025.",
+     "source_label": "NYU Grunin Center, The State of Social Enterprise and the Law, 2025–2026",
+     "source_url": "https://www.law.nyu.edu/sites/default/files/2026-08/2025-2026-Grunin-Tepper-Report.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-11-26",
+     "id": "us-states-that-allow-benefit-corporations"
+    },
+    {
+     "label": "State anti-ESG and pro-ESG laws enacted",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "laws",
+     "series": [
+      {
+       "label": "Anti-ESG, 2024",
+       "value": "29",
+       "highlight": false
+      },
+      {
+       "label": "Anti-ESG, 2025",
+       "value": "27",
+       "highlight": true
+      },
+      {
+       "label": "Pro-ESG, 2024",
+       "value": "9",
+       "highlight": false
+      },
+      {
+       "label": "Pro-ESG, 2025",
+       "value": "4",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "US state lawmakers enacted 27 anti-ESG bills and four pro-ESG bills in 2025, against 29 and nine in 2024, by Ballotpedia’s count.",
+     "detail": "Anti-ESG laws take three main forms, according to NYU’s Grunin Center: restricting diversity, equity and inclusion programs; limiting the use of ESG or other nonpecuniary factors in investing public money such as state pension funds; and barring state business with financial firms seen as boycotting industries such as fossil fuels or firearms. Arkansas enacted seven such measures in 2025. The four pro-ESG measures were enacted in California, Illinois, Massachusetts and Oregon. The report’s 2024 count differs from its previous edition’s because it switched from Ropes & Gray’s tracker to Ballotpedia’s, which uses different inclusion criteria. The laws matter for corporate purpose because state pension funds are among the largest shareholders, so the rules for how they vote shape what companies hear from their owners.",
+     "source_label": "NYU Grunin Center, The State of Social Enterprise and the Law, 2025–2026, citing Ballotpedia",
+     "source_url": "https://www.law.nyu.edu/sites/default/files/2026-08/2025-2026-Grunin-Tepper-Report.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-11-26",
+     "id": "state-anti-esg-and-pro-esg"
+    },
+    {
+     "label": "Size threshold for the EU corporate due-diligence law",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "employees",
+     "series": [
+      {
+       "label": "2024 directive",
+       "value": "1,000",
+       "highlight": false
+      },
+      {
+       "label": "2026 amendment",
+       "value": "5,000",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Since a 2026 amendment, the EU law requiring firms to find and address human rights and environmental harms in their supply chains covers EU companies of over 5,000 staff and €1.5 billion turnover.",
+     "detail": "The Corporate Sustainability Due Diligence Directive of 2024 set out to write duties toward stakeholders into law for large companies; as adopted it covered EU companies with more than 1,000 employees and €450 million in turnover. The Omnibus I simplification package, Directive (EU) 2026/470, approved by the European Parliament on December 16, 2025 and the Council on February 24, 2026, raised the thresholds, deleted the obligation to adopt climate transition plans and dropped an EU-wide civil liability rule. It entered into force on March 18, 2026, and member states must transpose the due-diligence changes by July 26, 2028. Non-EU companies are covered if they have more than €1.5 billion in EU turnover. Supporters of the cut argued it would restore European competitiveness; human rights and environmental groups argued it gutted the law.",
+     "source_label": "DLA Piper, EU Omnibus I Directive entry into force (2026)",
+     "source_url": "https://www.dlapiper.com/insights/blogs/environment-health-safety-and-product-compliance/2026/eu-omnibus-i-directive-amending-csrd-and-csddd-will-enter-into-force-on-18-march-2026",
+     "source_published": "2026",
+     "source_accessed": "2026-11-26",
+     "id": "size-threshold-for-the-eu-corporate"
+    },
+    {
+     "label": "Americans who say businesses should take public stances",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% of adults",
+     "series": [
+      {
+       "label": "All, 2022",
+       "value": "48",
+       "highlight": false
+      },
+      {
+       "label": "All, 2025",
+       "value": "51",
+       "highlight": false
+      },
+      {
+       "label": "All, 2026",
+       "value": "47",
+       "highlight": true
+      },
+      {
+       "label": "Democrats, 2026",
+       "value": "62",
+       "highlight": false
+      },
+      {
+       "label": "Independents, 2026",
+       "value": "45",
+       "highlight": false
+      },
+      {
+       "label": "Republicans, 2026",
+       "value": "28",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In May 2026, 47 percent of US adults told Gallup that businesses should take public stances on current events, down from 51 percent in 2025, with a wide partisan gap.",
+     "detail": "The Bentley-Gallup survey asks about corporate speech, not corporate purpose as a whole, but it tracks how far the public wants companies to act as social and political actors. The public leaned more decisively against corporate stances in 2023 and 2024 before the 2025 rebound. The 2026 survey of 3,270 adults on the Gallup Panel carries a 2.4-point margin of error. A separate survey by JUST Capital, a nonprofit that ranks companies on how they treat stakeholders, found in August and September 2025 that 89 percent of Americans agree it is important that companies promote an economy that serves all Americans, and that 35 percent believe capitalism in its current form is working for the average American.",
+     "source_label": "Gallup and Bentley University, Business in Society study (2026)",
+     "source_url": "https://news.gallup.com/poll/714836/support-businesses-taking-public-stance-cools.aspx",
+     "source_published": "2026",
+     "source_accessed": "2026-11-26",
+     "id": "americans-who-say-businesses-should-take"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Should companies pursue social goals beyond what their owners’ long-run profit requires?",
+    "kind": "value",
+    "why": "Most agree that companies should obey the law and that treating workers and customers well is often good business. The dispute is over cases where doing more for workers, communities or the climate costs shareholders money, and over who decides.",
+    "detail": "One side holds that a corporation is a tool owners use to pool capital, run by managers who spend other people’s money. An executive who gives up profit for a cause is in effect taxing shareholders, customers or employees to fund goals no one elected him to choose. Elected governments can weigh competing aims, bind every firm alike and be voted out; boards cannot, and a manager with scruples is undercut by rivals who have none. Owners, workers and customers often disagree about which causes matter, so a board that takes one up decides whose values prevail, and leaders who answer to everyone answer to no one.\n\nThe other side holds that the corporation is a creature of law, granted limited liability and perpetual life by the public, and that its largest examples rival governments in economic power. Law is incomplete and slow, and companies lobby to shape it, so leaving harms to regulation often means leaving them to rules the regulated helped write. Workers with firm-specific skills, towns built around a plant and suppliers tied to one buyer bear risks much like shareholders do, without a vote. Much of what is asked is modest: not giving up returns for causes, but declining to profit from harms the law has not yet caught up with.",
+    "lean_label_a": "Pursue social goals",
+    "lean_label_b": "Leave it to the law",
+    "id": "should-companies-pursue-social-goals-beyond"
+   },
+   {
+    "text": "Does a focus on stakeholders raise or lower long-run returns to shareholders?",
+    "kind": "empirical",
+    "why": "Hundreds of studies link ESG scores or employee and customer satisfaction to financial results, but they differ on direction and size, and it is hard to tell whether good practice causes good results or profitable firms can simply afford it.",
+    "detail": "Those who say it pays point to how much a company depends on people and reputation. Alex Edmans of London Business School found that companies with high employee satisfaction outperformed their peers by 2.3 to 3.8 percent a year over 28 years, and reviews of the wider literature find positive or neutral links far more often than negative ones. Firms that cut corners on safety, the environment or their workforce run risks that markets underprice until they explode, as in BP’s Deepwater Horizon spill or Boeing’s 737 MAX crisis.\n\nThose who say it costs owners answer that cases where serving stakeholders also serves shareholders need no special doctrine, since ordinary profit-seeking already covers them. The real test is the trade-offs, and there the evidence is thinner than it looks: ratings disagree, many studies cannot separate cause from effect, and sustainable funds have charged higher fees while lagging in years when energy stocks rallied. Danone, which took France’s company-with-a-mission status in 2020, ousted its chief executive in 2021 after years of underperformance. When managers insist that every stakeholder program pays, their choices become impossible to judge.",
+    "lean_label_a": "It pays off",
+    "lean_label_b": "It costs owners",
+    "id": "does-a-focus-on-stakeholders-raise"
+   },
+   {
+    "text": "Has the pressure to deliver shareholder value made companies short-termist?",
+    "kind": "empirical",
+    "why": "Record buybacks, quarterly earnings guidance and stock-based pay coexist with high research spending and lofty valuations for firms that invested for years without profit. The measures each side uses, gross or net, firm or economy, give different answers.",
+    "detail": "Those who see short-termism cite a well-known 2005 survey by John Graham, Campbell Harvey and Shiva Rajgopal, in which a majority of financial executives said they would give up a value-creating investment rather than miss a quarterly earnings target. Buybacks can lift earnings per share and executives’ stock awards without creating anything, and William Lazonick argues that a corporate habit of downsizing and distributing cash replaced the postwar habit of retaining and reinvesting it, starving wages and productive investment. Patient strategies, from training workers to cutting emissions, pay off over horizons longer than most executives’ tenure.\n\nThose who doubt it answer that a stock price is the market’s estimate of all future cash flows, so a firm that shortchanges its future is punished now, and companies with distant payoffs, such as Amazon or Tesla in their early years, have traded at very high valuations. Jesse Fried and Charles Wang find that once share issuance is netted out, the cash leaving the corporate sector is far smaller than gross figures suggest, and that investment and R&D stood near record levels. Cash returned to shareholders is not lost; it is reinvested in younger firms with better opportunities.",
+    "lean_label_a": "Horizons too short",
+    "lean_label_b": "Horizons are fine",
+    "id": "has-the-pressure-to-deliver-shareholder"
+   },
+   {
+    "text": "Should large asset managers use shareholder votes to press companies on climate and social issues?",
+    "kind": "value",
+    "why": "A handful of index fund managers vote huge blocks of shares for millions of savers who hold every political view. Whether those votes should push climate targets, diversity or political-spending disclosure has become a partisan fight.",
+    "detail": "One side argues that climate change, workforce practices and political risk can affect every company in a diversified portfolio, so a fund that owns the whole market and ignores them neglects its clients’ money. Many savers also care what their capital does, and a manager serving them can count that. Climate and diversity campaigners, among them Ceres, the Interfaith Center on Corporate Responsibility and large public pension funds, have pressed the managers to vote this way. Votes are the least coercive lever available: mostly advisory, public and decided by owners.\n\nThe other side argues that index fund managers are fiduciaries for savers of every political view, with no mandate to impose one side’s priorities on corporate America. Their votes concentrate power in a few firms that answer to no voter, which the State Financial Officers Foundation, Strive and Republican attorneys general call political activism with other people’s money. Savers who want their values expressed can pick funds that do so or direct their own share of the votes; the default should be long-term value alone.",
+    "lean_label_a": "Use the votes",
+    "lean_label_b": "Stick to returns",
+    "id": "should-large-asset-managers-use-shareholder"
+   },
+   {
+    "text": "Does US corporate law require directors to maximize shareholder value?",
+    "kind": "empirical",
+    "why": "Courts have said both that a for-profit corporation must be run for its stockholders and that directors are shielded when they make good-faith business judgments, including generous ones. What the law requires depends on which situations one looks at.",
+    "detail": "Those who say it does cite Dodge v. Ford Motor Co. (1919), in which Michigan’s Supreme Court held that a business corporation is organized primarily for the profit of its stockholders. In eBay Domestic Holdings v. Newmark (2010) Delaware’s Court of Chancery rejected craigslist’s defense against eBay because its founders openly put community values ahead of stockholder value, and under the Revlon doctrine directors selling a company must seek the best price for shareholders. On this reading, other interests may be served only as a means to shareholder value.\n\nThose who say it does not answer that outside a sale of the company, the business judgment rule protects almost any decision a board can plausibly tie to the company’s long-term interest. The late Lynn Stout of Cornell argued that no statute requires profit maximization and that shareholder primacy is a norm of managers and markets, not a legal command. Most states also let directors weigh employees and communities, or let owners choose a benefit corporation with explicit stakeholder duties. On this reading the law permits a stakeholder-minded board, and it is markets and pay packages that push the other way.",
+    "lean_label_a": "Law requires it",
+    "lean_label_b": "Law leaves room",
+    "id": "does-us-corporate-law-require-directors"
+   },
+   {
+    "text": "Would stakeholder governance make corporate leaders more accountable or less?",
+    "kind": "empirical",
+    "why": "Telling managers to serve many groups gives them more discretion. The dispute is whether they would use it for those groups or for themselves, and whether stakeholders would get any way to enforce their claims.",
+    "detail": "One side holds that a single measurable goal lets owners judge managers by results, while a manager told to balance five constituencies can justify almost any decision by pointing to one of them. Lucian Bebchuk, Kobi Kastiel and Roberto Tallarita studied more than 100 private-equity sales in states whose laws let directors weigh stakeholders and found that leaders negotiated large premiums for shareholders and payouts for themselves while rarely securing any protection for employees. On this view stakeholderism mostly insulates leaders from their owners.\n\nThe other side calls that an argument against voluntary stakeholderism without enforcement, not against stakeholder governance. Give workers elected seats on the board, or require directors to report how they weighed each group, and stakeholders gain voices of their own. Shareholder accountability has its own failure: managers paid mainly in stock answer to share prices that buybacks and cost cuts can pump, which is accountability to the wrong thing. Broadening who can call managers to account adds checks rather than removing them.",
+    "lean_label_a": "More accountable",
+    "lean_label_b": "Less accountable",
+    "id": "would-stakeholder-governance-make-corporate-leaders"
+   },
+   {
+    "text": "Should workers elect some of the directors of large companies?",
+    "kind": "value",
+    "why": "Germany has required worker directors for decades, and proposals for the United States have come from both left and right. The evidence suggests modest effects either way, so the choice turns on whether worker voice is valued for itself.",
+    "detail": "Supporters argue that workers have more at stake in most companies than any single shareholder: their income, skills and often their town are tied to the firm, and unlike investors they cannot diversify. Worker directors bring knowledge of operations that outside directors lack and a voice for the long term, since workers stay when activist investors leave. The best German evidence finds that worker directors do firms no harm and, if anything, slightly raise capital investment, and Finnish studies find productivity gains. Board voice is also a way to rebuild worker power where unions have faded.\n\nOpponents argue that boards work best with one goal; splitting them between owners and workers invites deadlock, slows decisions and imports collective bargaining into the boardroom. The German research found wages no different under worker representation, which suggests board seats do little for workers that unions and labor law do not do better. Germany’s system grew from a postwar settlement of sector-wide bargaining, works councils and bank-led finance that the United States lacks. Investors asked to share control will demand a higher return, a cost that falls on the jobs their capital creates.",
+    "lean_label_a": "Give workers seats",
+    "lean_label_b": "No worker seats",
+    "id": "should-workers-elect-some-of-the"
+   },
+   {
+    "text": "Should shareholders keep a federal right to put proposals on company ballots?",
+    "kind": "value",
+    "why": "A federal rule has let small shareholders place resolutions on corporate ballots for decades. The dispute is whether that floor protects owners’ voice or lets a few repeat filers push agendas most owners reject, and whether states should set the rules instead.",
+    "detail": "Defenders say shareholder proposals are cheap, advisory and often ahead of their time: practices now standard, such as annual election of directors and majority voting, began as proposals management opposed. They let owners raise risks, from climate to political spending, that boards prefer not to discuss. Without a federal floor, companies will choose the state rules that shield them most, and only the largest investors will be heard; Texas’s revised corporate law already lets companies raise the ownership needed to file.\n\nCritics say corporate governance is a matter of state law, and the SEC itself now argues the rule exceeds its statutory authority. A small number of repeat filers have used it to push advocacy agendas most shareholders reject, at real cost to the companies that must answer them and to the agency that had to referee them. States and companies can write their own rules, investors can choose where to put their money, and Delaware’s bar has said it will consider how state law should respond.",
+    "lean_label_a": "Keep federal right",
+    "lean_label_b": "Let states decide",
+    "id": "should-shareholders-keep-a-federal-right"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Keep shareholder value as the corporate goal",
+    "color_key": "green",
+    "steelman": "A company exists to make money for those who put their capital at risk, and that clarity serves everyone else; protecting other groups is the job of law, not of boardroom discretion.",
+    "detail": "Shareholders are paid last, after workers, suppliers, lenders and the tax authorities have received what they were promised, so maximizing the value of their claim tends to maximize the value the firm creates overall. Everyone else is protected by contracts, by competition for their labor and custom, and by laws that bind every firm alike; when those protections fall short, the fix is better law made by elected governments. Milton Friedman put the classic case in 1970: an executive is “an employe of the owners of the business,” whose job is to make as much money as possible within the basic rules of society.\n\nTelling managers to serve everyone frees them to serve themselves, since any decision can be justified by appeal to some stakeholder, and it invites them to spend the owners’ money on their own politics. The ESG era showed it: firms took stances on contested questions, spent shareholder resources on causes their owners never approved, and drew a backlash that hurt those owners. And the owners are not a narrow class; they include the pensions and retirement accounts of most American adults. Within the camp, shareholder-empowerment scholars such as Lucian Bebchuk want owners to have strong voting rights, while director-primacy scholars such as Stephen Bainbridge, and the drafters of Texas’s and Nevada’s recent corporate laws, would shield boards from activists while keeping profit as the goal.",
+    "proponents": "Milton Friedman; Lucian Bebchuk; Roberto Tallarita; Stephen Bainbridge; Strive Asset Management; State Financial Officers Foundation; Wall Street Journal editorial board",
+    "id": "keep-shareholder-value-as-the-corporate"
+   },
+   {
+    "name": "Serve stakeholders to build long-term value",
+    "color_key": "blue",
+    "steelman": "Profit is what a company earns by serving customers, developing people and keeping its communities’ trust over many years; leaders who take that long view serve owners and stakeholders alike.",
+    "detail": "Shareholders who own a company for the long run, which in an age of index funds and pensions means most shareholders, want what its other stakeholders want: a durable, well-run business that does not court disaster by cutting corners. A clear purpose beyond profit is the best guide to that, because it tells employees and partners what the firm will and will not do when the rules are silent. Real trade-offs exist and call for judgment, but they are rarer than the slogans on either side suggest. Alex Edmans of London Business School calls this growing the pie rather than fighting over its slices, and BlackRock’s Larry Fink wrote in 2022 that stakeholder capitalism “is all about delivering long-term, durable returns for shareholders.”\n\nWe want no new laws. Corporate law already lets boards take the long view, and the UK has required directors since 2006 to have regard to employees, suppliers, communities and the environment while promoting the company’s success. What must change is how leaders and investors think, measure and pay: report the stakeholder outcomes that drive value, tie pay to them, and judge managers over years rather than quarters. Voluntary commitments did not fail. Labels changed under political pressure, and asset managers left climate alliances because of legal threats, not because the economics changed; mandated seats or duties would add rigidity without fixing short horizons.",
+    "proponents": "Business Roundtable; BlackRock; Larry Fink; Alex Edmans; World Economic Forum; Paul Polman; Wachtell, Lipton, Rosen & Katz",
+    "id": "serve-stakeholders-to-build-long-term"
+   },
+   {
+    "name": "Give stakeholders a legal share of corporate control",
+    "color_key": "amber",
+    "steelman": "Pledges changed nothing because nothing in executives’ duties or pay changed; the workers and others who bear a firm’s risks need real power in it, written into law.",
+    "detail": "Shareholder primacy is not a law of nature but a choice written into corporate law and reinforced by pay packages and capital markets, and it can be rewritten. The voluntary version has been tested: chief executives signed pledges without asking their boards, kept up record buybacks, and dropped the language at the first political pressure. That is not hypocrisy but incentives: their legal duties, their pay and the people who elect them all stayed the same. Those who bear real risk in a firm, above all workers who cannot diversify their jobs the way investors diversify portfolios, should have real power in it: elected board seats, legal duties owed to them, or ownership itself.\n\nEurope shows it works. German firms whose supervisory boards are half elected by employees remain among the world’s most competitive exporters, and the best research finds that worker representation does firms no harm. The point of voice is not only pay but a say over layoffs, plant closings, training and investment. Our variants differ in instrument and degree: Senator Elizabeth Warren’s Accountable Capitalism Act would have employees choose at least 40 percent of the board at companies with more than $1 billion in revenue, B Lab UK’s Better Business Act campaign would rewrite British directors’ duties, and the conservative American Compass proposes optional worker representatives chosen through works councils or unions.",
+    "proponents": "Elizabeth Warren; Roosevelt Institute; Lenore Palladino; B Lab UK; American Compass; Leo Strine; Colin Mayer; AFL-CIO",
+    "id": "give-stakeholders-a-legal-share-of"
+   },
+   {
+    "name": "Let shareholders steer companies’ social choices",
+    "color_key": "rust",
+    "steelman": "Owners are people with values, and most own a slice of the whole economy; ask them what they want their companies to do, and let their votes decide.",
+    "detail": "Through pension and index funds, a typical investor holds part of nearly every large company, so a firm that profits by imposing costs such as emissions on the other firms they own can leave its own owners worse off. Oliver Hart and Luigi Zingales argue that companies should therefore maximize shareholder welfare, including investors’ social preferences, rather than market value alone. Managers should not spend owners’ money on causes of their own choosing; the answer is to ask the owners, not to assume they care only about each firm’s share price.\n\nThe channel is shareholder democracy: owners file resolutions, vote on them and hold directors to the results. That keeps the decision with those whose money is at stake, gives managers no roving mandate, and does not wait on governments that may never act. When the small fund Engine No. 1 won three seats on ExxonMobil’s board in 2021, it was owners, not managers or regulators, who decided. Falling support for environmental and social resolutions since then shows the system working, since weak proposals lose. So we defend the federal shareholder proposal rule, proxy advisers and investors’ freedom to weigh ESG, and we want individual savers to choose how their funds vote.",
+    "proponents": "Interfaith Center on Corporate Responsibility; As You Sow; Oliver Hart; Luigi Zingales; Ceres",
+    "id": "let-shareholders-steer-companies-social-choices"
+   }
+  ],
+  "crux": {
+   "lead": "When profit and the people a company affects pull apart, who decides: law from outside or people inside?",
+   "lead_highlight": "law from outside or people inside",
+   "subtitle": "Most of the time, serving owners and treating workers, customers and neighbors well go together. The fight is over the cases where they do not, and whether those belong to elected governments, to the leaders who run the firm, to its workers, or to owners voting their shares.",
+   "empirical": "Some of this can be measured: how often real trade-offs arise and how large they are, as opposed to investments that simply pay off later; whether leaders given room to serve others use it for them or for themselves; whether worker directors change layoffs, investment, wages and safety; and whether outside rules keep pace with corporate harms or trail them because firms help write them.",
+   "values": "No data settles whether a large company is at bottom its owners’ property, run for them within the rules, or a public creation that owes something to all who depend on it; how to weigh the legitimacy of elected governments against the speed of private action when they do not act; or whether those who invest their working lives in a firm have a claim to a say like those who invest money."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Follow the Harvard Law School Forum on Corporate Governance",
+    "description": "A daily venue for research and law-firm analysis on corporate purpose, shareholder proposals and ESG that publishes scholars, investors and advocates from every camp.",
+    "url": "https://corpgov.law.harvard.edu/",
+    "for_position": null,
+    "id": "follow-the-harvard-law-school-forum"
+   },
+   {
+    "kind": "local",
+    "title": "Choose how your index funds vote your shares",
+    "description": "Vanguard Investor Choice lets holders of eligible Vanguard index funds pick one of five voting policies, from board-aligned to ESG, for their share of the funds’ votes; BlackRock runs a similar program.",
+    "url": "https://corporate.vanguard.com/content/corporatesite/us/en/corp/about-our-funds/proxy-voting-across-funds/investor-choice.html",
+    "for_position": null,
+    "id": "choose-how-your-index-funds-vote"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read Milton Friedman’s 1970 essay",
+    "description": "“The Social Responsibility of Business Is to Increase Its Profits,” the classic case that executives work for the owners and that social goals belong to government, in a University of Pittsburgh teaching copy.",
+    "url": "https://business.pitt.edu/wp-content/uploads/2025/02/25Right-Readings-Friedman-1.pdf",
+    "for_position": "Keep shareholder value as the corporate goal",
+    "id": "read-milton-friedman-s-1970-essay"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the Business Roundtable’s statement on corporate purpose",
+    "description": "The full 2019 statement and its list of signers, which replaced the group’s shareholders-first principles with commitments to five stakeholder groups.",
+    "url": "https://opportunity.businessroundtable.org/ourcommitment/",
+    "for_position": "Serve stakeholders to build long-term value",
+    "id": "read-the-business-roundtable-s-statement"
+   },
+   {
+    "kind": "policy",
+    "title": "Back or oppose the Accountable Capitalism Act",
+    "description": "Senator Elizabeth Warren’s bill would have employees of companies with over $1 billion in revenue elect at least 40 percent of the board; readers can tell their senators where they stand.",
+    "url": "https://www.warren.senate.gov/newsroom/press-releases/warren-renews-fight-for-economic-growth-that-benefits-workers",
+    "for_position": "Give stakeholders a legal share of corporate control",
+    "id": "back-or-oppose-the-accountable-capitalism"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Follow shareholder campaigns on climate and human rights",
+    "description": "The Interfaith Center on Corporate Responsibility, a coalition of more than 300 institutional investors, files and tracks resolutions on climate, labor and human rights and defends the shareholder proposal rule.",
+    "url": "https://www.iccr.org/",
+    "for_position": "Let shareholders steer companies’ social choices",
+    "id": "follow-shareholder-campaigns-on-climate-and"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the Bentley-Gallup Business in Society survey",
+    "description": "An annual Gallup and Bentley University survey of what Americans expect from business, including whether companies should take public stances and how they rate business’s effect on society.",
+    "url": "https://www.gallup.com/analytics/512066/bentley-business-in-society.aspx",
+    "for_position": null,
+    "id": "read-the-bentley-gallup-business-in"
+   },
+   {
+    "kind": "donate",
+    "title": "Support the Free Enterprise Project",
+    "description": "A program of the National Center for Public Policy Research that files shareholder resolutions and lobbies executives to keep companies focused on shareholders and out of political and social causes.",
+    "url": "https://nationalcenter.org/programs/free-enterprise-project/",
+    "for_position": "Keep shareholder value as the corporate goal",
+    "id": "support-the-free-enterprise-project"
+   },
+   {
+    "kind": "learn_more",
+    "title": "See how companies rank on stakeholder treatment",
+    "description": "JUST Capital, a nonprofit, ranks the largest US companies on how they treat workers, customers, communities, the environment and shareholders, weighted by what Americans say matters most in its polling.",
+    "url": "https://justcapital.com/rankings/",
+    "for_position": "Serve stakeholders to build long-term value",
+    "id": "see-how-companies-rank-on-stakeholder"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Learn about employee ownership",
+    "description": "The National Center for Employee Ownership explains employee stock ownership plans, cooperatives and other ways workers can own the companies they work for.",
+    "url": "https://www.nceo.org/",
+    "for_position": "Give stakeholders a legal share of corporate control",
+    "id": "learn-about-employee-ownership"
+   }
+  ]
+ }
 }

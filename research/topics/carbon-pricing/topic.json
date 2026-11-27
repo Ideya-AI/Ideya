@@ -1,8 +1,8 @@
 {
  "slug": "carbon-pricing",
  "title": "Carbon Pricing",
- "status": "in_progress",
- "authored_at": null,
+ "status": "ready",
+ "authored_at": "2026-11-23T11:03:39+00:00",
  "published_at": null,
  "reviewed_at": [],
  "scope": "Carbon taxes, cap-and-trade, and tradable credits for avoided or removed emissions.",
@@ -15,5 +15,590 @@
   "net-zero-pace",
   "fossil-fuel-phaseout",
   "degrowth-vs-green-growth"
- ]
+ ],
+ "content": {
+  "overview": {
+   "summary": "Carbon taxes, trading systems and credits put a price on emissions. The central argument is whether a price people will accept can cut enough.",
+   "scope_covered": "Carbon taxes, emissions trading, carbon credits, border carbon levies and free allowances for heavy industry.",
+   "scope_excluded": "How fast to reach net zero, limits on fossil fuel supply and extraction, and the wider argument over growth and the climate.",
+   "why_now": "On November 12, 2026 the European Parliament and EU member states provisionally agreed to give energy-intensive industry about 121 million extra free emission allowances for 2026 to 2030, the latest turn in a year-long fight over the EU Emissions Trading System, the world’s oldest major carbon market.",
+   "why_now_source_label": "Eunews",
+   "why_now_source_url": "https://www.eunews.it/en/2026/11/13/council-and-parliament-agree-on-free-ets-co2-allowance-increase-to-shield-industry-from-foreign-competition/"
+  },
+  "basics": {
+   "stats": [
+    {
+     "label": "Global emissions under a carbon tax or trading system",
+     "viz": "radial",
+     "wide": false,
+     "value": "29",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Carbon taxes and emissions trading systems put a direct price on 29 percent of the world’s greenhouse gas emissions, as of April 2026.",
+     "detail": "The World Bank counts 87 instruments, 47 carbon taxes and 40 trading systems, up from 39 instruments covering about 12 percent of emissions in 2016. Almost all of the growth came from trading systems, whose share rose from 8 percent to over 24 percent while carbon taxes stayed at around 4 to 5 percent. The past year’s increase came mostly from new trading systems in India and Viet Nam, and Japan’s GX-ETS became mandatory on April 1, 2026 for over 700 companies. The count covers explicit carbon prices only. Fuel excise taxes, which price carbon indirectly, are larger in financial terms, and the World Bank calls indirect carbon pricing “the dominant mechanism.” A price that works also shrinks the emissions it covers, so a falling share is not by itself a sign of retreat.",
+     "source_label": "World Bank, State and Trends of Carbon Pricing 2026",
+     "source_url": "https://documents1.worldbank.org/curated/en/099051826185087983/pdf/P502283-3ee8b1dc-6f1a-46dd-8141-e6534fd34af9.pdf",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "global-emissions-under-a-carbon-tax"
+    },
+    {
+     "label": "Average direct carbon price by region",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "$/t",
+     "series": [
+      {
+       "label": "Europe & Central Asia",
+       "value": "68",
+       "highlight": false
+      },
+      {
+       "label": "North America",
+       "value": "43",
+       "highlight": false
+      },
+      {
+       "label": "World",
+       "value": "21",
+       "highlight": true
+      },
+      {
+       "label": "Sub-Saharan Africa",
+       "value": "19",
+       "highlight": false
+      },
+      {
+       "label": "East Asia & Pacific",
+       "value": "11",
+       "highlight": false
+      },
+      {
+       "label": "Latin America",
+       "value": "4",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "The average direct carbon price was nearly US$21 a tonne worldwide as of April 2026, from about US$68 in Europe and Central Asia to about US$2 in the Middle East and North Africa.",
+     "detail": "Prices are in 2026 US dollars per tonne of CO2-equivalent. The world average rose 7 percent in the year to April 2026 and has doubled since 2016, when it was US$10. Individual prices move a lot around it: Singapore raised its carbon tax 80 percent, from SGD 25 to SGD 45 a tonne, and South Africa raised its tax 31 percent for 2026, while New Zealand’s allowance price fell 26 percent over the year. By income group the averages are US$44 in high-income countries, US$11 in upper-middle-income and US$7 in lower-middle-income countries. Israel’s carbon tax is the only instrument in the Middle East and North Africa. The regional figures leave out the new trading systems in India, Japan and Viet Nam, whose prices were not available at publication. The gap between regions underlies two disputes on this page: leakage, the risk that emissions-intensive production moves to where carbon is cheap, and border levies that charge imports the difference.",
+     "source_label": "World Bank, State and Trends of Carbon Pricing 2026",
+     "source_url": "https://documents1.worldbank.org/curated/en/099051826185087983/pdf/P502283-3ee8b1dc-6f1a-46dd-8141-e6534fd34af9.pdf",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "average-direct-carbon-price-by-region"
+    },
+    {
+     "label": "Emission cuts after a carbon price is introduced",
+     "viz": "range",
+     "wide": false,
+     "value": "5–21",
+     "unit": "%",
+     "series": [],
+     "range_min": "0",
+     "range_max": "100",
+     "note": "A 2024 review of 80 studies found cuts of 5 to 21 percent in at least 17 of 21 schemes; a 2021 review of 37 studies by Jessica Green found yearly cuts of mostly 0 to 2 percent.",
+     "detail": "The 2024 meta-analysis, by Döbbeling-Hildebrandt and colleagues in Nature Communications, pooled 483 effect sizes and found “immediate and substantial emission reductions for at least 17 of these policies, despite the low level of prices in most instances.” Corrected for publication bias, its range is 4 to 15 percent. Each cut is measured against what the study estimates would otherwise have happened over its evaluation period, not per year. The authors note that dozens of schemes have never been rigorously evaluated and that the evidence says little about how much more a higher price would cut. Jessica Green’s 2021 review in Environmental Research Letters, mostly of European studies, found that carbon taxes generally did better than trading systems and concluded that “the evidence indicates that carbon pricing has a limited impact on emissions.” The two figures are not directly comparable: a cut of one or two percent a year sustained for a decade lands in a similar range. The reviews differ less on the size of the effect than on whether it is enough to make pricing the main climate instrument.",
+     "source_label": "Döbbeling-Hildebrandt et al., Nature Communications",
+     "source_url": "https://www.nature.com/articles/s41467-024-48512-w",
+     "source_published": "2024",
+     "source_accessed": "2026-11-23",
+     "id": "emission-cuts-after-a-carbon-price"
+    },
+    {
+     "label": "Carbon credits representing real reductions, by project type",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "HFC-23 destruction",
+       "value": "68",
+       "highlight": false
+      },
+      {
+       "label": "Avoided deforestation",
+       "value": "25",
+       "highlight": false
+      },
+      {
+       "label": "All credits studied",
+       "value": "<16",
+       "highlight": true
+      },
+      {
+       "label": "Cookstoves",
+       "value": "11",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "A 2024 synthesis of studies covering 2,346 credited projects estimated that less than 16 percent of the credits examined represent real emission reductions.",
+     "detail": "Probst and colleagues combined 14 rigorous studies of credited projects with 51 studies of similar projects run without credits. The credits covered almost 1 billion tonnes of CO2-equivalent, about a fifth of all credits issued to date. SF6 destruction scored 16 percent, and wind power and improved forest management showed no statistically significant reductions. The authors concluded that “carbon crediting mechanisms need to be reformed fundamentally to meaningfully contribute to climate change mitigation.” A 2023 study in Science by West and colleagues had examined 26 avoided-deforestation project sites in six countries and found that most had not significantly reduced deforestation. The industry has since adopted integrity standards, ratings and eligibility rules, and the World Bank reported in 2026 that highly rated credits sell at a premium. Whether those reforms close the gap is one of the open questions on this page.",
+     "source_label": "Probst et al., Nature Communications",
+     "source_url": "https://www.nature.com/articles/s41467-024-53645-z",
+     "source_published": "2024",
+     "source_accessed": "2026-11-23",
+     "id": "carbon-credits-representing-real-reductions-by"
+    },
+    {
+     "label": "Global emissions priced at or above US$63 a tonne",
+     "viz": "radial",
+     "wide": false,
+     "value": "<1",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In 2024 seven carbon prices, covering less than 1 percent of global emissions, were at or above US$63 a tonne, the low end of a 2017 expert range for 2030.",
+     "detail": "The benchmark comes from the High-Level Commission on Carbon Prices, chaired by Joseph Stiglitz and Nicholas Stern, which said in 2017 that prices of US$50 to 100 a tonne by 2030 were needed for a path to well below 2 °C, assuming supporting policies alongside; US$63 is the low end adjusted for inflation. The World Bank also found every carbon price below the IPCC’s 1.5 °C range, the modeled cost of cutting the last tonne, US$226 to 385 in 2024 dollars, and wrote that “the majority of these carbon pricing instruments are not ambitious enough to drive the level of change required to meet the Paris Agreement’s temperature goals.” The 2026 edition does not repeat the count, so the figure is two years old. Those who favor pricing read the gap as a reason prices must rise; those who favor other tools read it as evidence that prices cannot rise that far.",
+     "source_label": "World Bank, State and Trends of Carbon Pricing 2024",
+     "source_url": "https://documents1.worldbank.org/curated/en/099081624122529330/pdf/P50228315fd8d1050186341ea02e1c107bc.pdf",
+     "source_published": "2024",
+     "source_accessed": "2026-11-23",
+     "id": "global-emissions-priced-at-or-above"
+    },
+    {
+     "label": "Fall in EU trading system emissions since 2005",
+     "viz": "bar",
+     "wide": false,
+     "value": "~50",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Emissions from the sectors under the EU Emissions Trading System about halved from 2005 to 2025, the European Commission reports; how much the price caused is disputed.",
+     "detail": "The system covers power and heat generation, heavy industry, aviation within Europe and, since 2024, shipping. Covered emissions fell 1.3 percent in 2025, as coal power emissions dropped 6.8 percent and solar generation grew 24.6 percent, and emissions from energy-intensive industry fell 2.5 percent. The Commission says the system “remains on track to achieve the 2030 target of a 62% reduction.” It also runs the system and is a party to the reform debate. Renewable subsidies, national coal phase-outs, the 2008 recession and the 2022 gas crisis all pushed emissions the same way, and ex-post studies that try to separate the price from those causes attribute a real but smaller share of the fall to the trading system itself.",
+     "source_label": "European Commission, EU ETS covered emissions 2025",
+     "source_url": "https://climate.ec.europa.eu/news-other-reads/news/eu-emissions-trading-system-sustains-downward-trend-covered-emissions-2026-04-10_en",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "fall-in-eu-trading-system-emissions"
+    },
+    {
+     "label": "Government revenue from carbon pricing",
+     "viz": "bar",
+     "wide": false,
+     "value": "107",
+     "unit": "$bn",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "Carbon taxes and trading systems raised over US$107 billion for governments in 2025, more than three times the 2016 level.",
+     "detail": "Revenue has topped US$100 billion a year in real terms since 2021. In 2025 trading systems raised about US$80 billion and carbon taxes US$27 billion. Tax revenue fell mainly because Canada set its federal fuel charge to zero from April 1, 2025, while Washington’s cap-and-invest revenue nearly doubled and California’s fell about 31 percent. Europe and Central Asia raised over 85 percent of the total and North America a further 10 percent. Around 70 percent of the emissions covered by carbon pricing are in middle- or low-income countries, which raise about 1 percent of the revenue, because their prices are lower and systems such as China’s, India’s and Viet Nam’s give allowances away rather than auctioning them. For scale, the same report puts explicit fossil fuel subsidies at more than US$900 billion in 2024.",
+     "source_label": "World Bank, State and Trends of Carbon Pricing 2026",
+     "source_url": "https://documents1.worldbank.org/curated/en/099051826185087983/pdf/P502283-3ee8b1dc-6f1a-46dd-8141-e6534fd34af9.pdf",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "government-revenue-from-carbon-pricing"
+    },
+    {
+     "label": "Support for a carbon tax, by use of the revenue",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "% support",
+     "series": [
+      {
+       "label": "High-income, cash",
+       "value": "37",
+       "highlight": true
+      },
+      {
+       "label": "High-income, other",
+       "value": "~60",
+       "highlight": false
+      },
+      {
+       "label": "Middle-income, cash",
+       "value": "59",
+       "highlight": false
+      },
+      {
+       "label": "Middle-income, other",
+       "value": "~75",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "In a 20-country survey, a carbon tax returned as equal cash payments drew 37 percent support in high-income countries, against around 60 percent when the money funded other uses.",
+     "detail": "The other uses tested were environmental infrastructure, low-carbon subsidies and income tax cuts. The survey, by Antoine Dechezleprêtre, Stefanie Stantcheva and colleagues, was fielded in 2021 and 2022 and published in the American Economic Review in 2025; the figures are the share who somewhat or strongly support the policy, among respondents who saw no explanatory video. Carbon taxes ranked among the least popular climate policies, below bans and green investment programs. Support turned on three beliefs: whether a policy works, whether it hurts low-income households, and whether it costs the respondent. The result cuts against a design many economists favor: the equal per-person dividend, progressive in most countries, was among the least popular uses of revenue, while a tax with transfers to the poorest or most constrained households drew majority support.",
+     "source_label": "Dechezleprêtre et al., American Economic Review",
+     "source_url": "https://eprints.lse.ac.uk/127870/1/dechezlepr_tre-et-al-2025-fighting-climate-change-international-attitudes-toward-climate-policies.pdf",
+     "source_published": "2021–22",
+     "source_accessed": "2026-11-23",
+     "id": "support-for-a-carbon-tax-by"
+    },
+    {
+     "label": "Washington voters rejecting repeal of the state carbon market",
+     "viz": "radial",
+     "wide": false,
+     "value": "62",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "In November 2024 about 62 percent of Washington voters rejected Initiative 2117, which would have repealed the state’s cap-and-invest program.",
+     "detail": "The certified count, from December 4, 2024, was 2,340,077 votes against the measure and 1,437,103 for, or 61.95 percent against. Initiative 2117 would have repealed the Climate Commitment Act, the economy-wide cap-and-invest program that began in 2023, and barred state agencies from any carbon tax credit trading. The program’s auction revenue funds transit, clean energy and pollution reduction. Supporters of carbon pricing cite the vote as the main recent evidence that a price can survive a direct popular challenge when its revenue pays for visible local benefits; skeptics point to the consumer carbon prices that other governments have repealed or abandoned.",
+     "source_label": "Washington State Senate Journal, certified results",
+     "source_url": "https://leg.wa.gov/media/gs1fmnen/sj_25_002.pdf",
+     "source_published": "2024",
+     "source_accessed": "2026-11-23",
+     "id": "washington-voters-rejecting-repeal-of-the"
+    },
+    {
+     "label": "Emissions with an effective carbon price above €60 a tonne",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "%",
+     "series": [
+      {
+       "label": "Sweden",
+       "value": "63",
+       "highlight": false
+      },
+      {
+       "label": "Germany",
+       "value": "60",
+       "highlight": true
+      },
+      {
+       "label": "United Kingdom",
+       "value": "46",
+       "highlight": false
+      },
+      {
+       "label": "Japan",
+       "value": "9",
+       "highlight": false
+      },
+      {
+       "label": "United States",
+       "value": "7",
+       "highlight": false
+      },
+      {
+       "label": "China",
+       "value": "4",
+       "highlight": false
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Counting fuel taxes as well as carbon prices, 60 percent of Germany’s emissions faced over €60 a tonne in 2023, against 7 percent of the US’s and 4 percent of China’s.",
+     "detail": "The OECD’s net effective carbon rate is the broadest measure of what emitters pay per tonne: explicit carbon prices, from taxes and trading permits, plus fuel excise taxes, which price carbon implicitly, minus fossil fuel subsidies. The US figure is stated before subsidies are netted out. In Germany the average net rate in 2023 was €93.44 a tonne, of which explicit carbon prices contributed €47.72 and fuel excise taxes €54.46, while subsidies subtracted €8.74. That is why an argument about carbon pricing is partly an argument about fuel taxes. Each row comes from a separate OECD country note in the Effective Carbon Rates 2025 series, published in February 2026; Morocco, not shown, stands at 15 percent. €60 is a widely used mid-range benchmark for carbon costs.",
+     "source_label": "OECD, Effective Carbon Rates 2025, country notes",
+     "source_url": "https://www.oecd.org/en/publications/effective-carbon-rates-2025_a5a5d71f-en.html",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "emissions-with-an-effective-carbon-price"
+    },
+    {
+     "label": "Global emissions covered by the EU carbon border levy",
+     "viz": "radial",
+     "wide": false,
+     "value": "0.3",
+     "unit": "%",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "The EU’s carbon border levy, charged on imports since January 1, 2026, covers about 0.3 percent of global greenhouse gas emissions, by an early World Bank estimate.",
+     "detail": "Importers of cement, iron and steel, aluminum, fertilizers, electricity and hydrogen must buy certificates priced like EU allowances for the emissions embedded in those goods, about 171 million tonnes of CO2-equivalent, minus any carbon price already paid where they were made. A 2023 World Bank analysis put the trade affected at about US$113 billion, 4.2 percent of the EU’s merchandise imports from outside the bloc. The charge phases in as free allowances to EU producers in these sectors phase out, through 2034 under current law and through 2038 under the European Commission’s July 2026 proposal. The levy is small globally but large for some exporters, and the World Bank reports that it has prompted others to price carbon: Albania is raising its coal carbon tax toward EU levels, Malaysia has cited it as a reason for a planned industrial carbon tax, the UK expects its own border mechanism in 2027, and Serbia passed one alongside a new carbon tax. India, China, South Africa and other developing economies have objected to it as unilateral trade protection.",
+     "source_label": "World Bank, State and Trends of Carbon Pricing 2026",
+     "source_url": "https://documents1.worldbank.org/curated/en/099051826185087983/pdf/P502283-3ee8b1dc-6f1a-46dd-8141-e6534fd34af9.pdf",
+     "source_published": "2026",
+     "source_accessed": "2026-11-23",
+     "id": "global-emissions-covered-by-the-eu"
+    },
+    {
+     "label": "Voluntary carbon credits traded, annual value",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "$m",
+     "series": [
+      {
+       "label": "2021 peak",
+       "value": "2,100",
+       "highlight": false
+      },
+      {
+       "label": "2024",
+       "value": "535",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "About US$535 million of voluntary carbon credits traded in 2024, roughly a quarter of the 2021 peak of about US$2.1 billion.",
+     "detail": "In the voluntary market companies buy credits toward their own climate pledges, and it shrank after 2021 as investigations and studies questioned credit quality. In 2025 issuance rose 8 percent but stayed 20 percent below 2022, retirements fell more than 10 percent, and voluntary uses made up over 80 percent of the credits retired. Money for the future is larger than current trade: capital committed to future credit projects in 2025 is estimated at US$12 to 16 billion, including about US$12 billion of offtake agreements, three times the 2024 level. Credits eligible for the airline scheme CORSIA have traded at US$15 to 22 a tonne since September 2025, against US$1 to 14 for most other types, and the UN’s new Paris Agreement Crediting Mechanism provisionally issued its first credits, to a cookstove project in Myanmar. The market is small next to compliance carbon pricing, so the argument over credits is about integrity and future scale more than present size.",
+     "source_label": "World Bank, State and Trends of Carbon Pricing 2026",
+     "source_url": "https://documents1.worldbank.org/curated/en/099051826185087983/pdf/P502283-3ee8b1dc-6f1a-46dd-8141-e6534fd34af9.pdf",
+     "source_published": "2024",
+     "source_accessed": "2026-11-23",
+     "id": "voluntary-carbon-credits-traded-annual-value"
+    },
+    {
+     "label": "Emissions covered by China’s national trading system",
+     "viz": "bar",
+     "wide": false,
+     "value": "~8",
+     "unit": "Gt CO2/yr",
+     "series": [],
+     "range_min": "",
+     "range_max": "",
+     "note": "China’s national carbon market covers about 8 billion tonnes of CO2 a year, the most of any system, at a 2025 average price of about US$10 a tonne.",
+     "detail": "The system began in 2021 with power plants and now also covers steel, cement and aluminum smelting: more than 60 percent of China’s CO2 emissions and about 3,300 companies. The 2025 average secondary-market price was CNY 70.78, about US$9.85. Unlike the EU’s, its cap is set by emissions intensity, tonnes per unit of output, rather than total emissions, and all allowances are given away free on output-based benchmarks, so it raises no government revenue. In August 2025 China’s leadership issued guidance setting out a path from an intensity-based to an absolute cap alongside wider coverage. For those who favor pricing the system shows the tool spreading to the largest emitter; for those who doubt it, a market that can exist at a price too low to change much.",
+     "source_label": "International Carbon Action Partnership, China National ETS factsheet",
+     "source_url": "https://icapcarbonaction.com/en/ets/china-national-ets",
+     "source_published": "2025",
+     "source_accessed": "2026-11-23",
+     "id": "emissions-covered-by-china-s-national"
+    },
+    {
+     "label": "Emissions covered by California’s carbon market",
+     "viz": "ranked",
+     "wide": true,
+     "value": "",
+     "unit": "Mt CO2e",
+     "series": [
+      {
+       "label": "2016",
+       "value": "324",
+       "highlight": false
+      },
+      {
+       "label": "2024",
+       "value": "256",
+       "highlight": true
+      }
+     ],
+     "range_min": "",
+     "range_max": "",
+     "note": "Emissions covered by California’s cap-and-invest program fell from 324 to 256 million tonnes between 2016 and 2024, a drop of about 21 percent.",
+     "detail": "The program, linked with Québec’s, is the largest carbon market in North America and covers power, industry, and transport and heating fuels under one cap. It auctioned over 40 percent of its allowances in 2025. On September 19, 2025 Governor Gavin Newsom signed AB 1207 and SB 840, renaming the program cap-and-invest and extending it through 2045, the International Carbon Action Partnership reported. The state also runs renewable power mandates, vehicle rules and other climate policies, and analysts disagree over whether the cap or those policies did most of the work; some argue the cap has been loose enough that the price played a small part.",
+     "source_label": "World Bank, State and Trends of Carbon Pricing 2026",
+     "source_url": "https://documents1.worldbank.org/curated/en/099051826185087983/pdf/P502283-3ee8b1dc-6f1a-46dd-8141-e6534fd34af9.pdf",
+     "source_published": "2024",
+     "source_accessed": "2026-11-23",
+     "id": "emissions-covered-by-california-s-carbon"
+    }
+   ]
+  },
+  "questions": [
+   {
+    "text": "Does a carbon price cut emissions enough to be the main climate policy?",
+    "kind": "empirical",
+    "why": "Reviews agree that carbon prices cut the emissions they cover. They disagree on how much of the fall the price itself caused, and whether that effect, at the prices seen so far, can carry climate policy or only support it.",
+    "detail": "Those who favor pricing argue that the measured effects came from prices that were mostly low, so they understate what a price at benchmark levels would do. A price reaches every emitter and every decision at once, including ones no regulator could foresee, and it finds the cheapest cuts first. Their clearest case is Britain: a rising minimum carbon price for power generators, introduced in 2013, made coal uneconomic from 2015, and coal went from 39 percent of British electricity in 2012 to none when the last plant closed on September 30, 2024, Ember reports.\n\nThose who see pricing as secondary argue that the big declines in Europe and California came mostly from renewable subsidies, coal phase-out laws, efficiency and vehicle standards and recessions, with the price playing a smaller part. The price that would do the whole job, on the IPCC’s 1.5 °C range, is ten or more times the 2026 world average. And the technologies now driving emissions down were made cheap by subsidies and deployment mandates: solar panel costs fell 90 percent in a decade, Our World in Data reports.",
+    "lean_label_a": "Main tool",
+    "lean_label_b": "Supporting tool",
+    "id": "does-a-carbon-price-cut-emissions"
+   },
+   {
+    "text": "Can carbon prices rise high enough to matter and still survive politically?",
+    "kind": "empirical",
+    "why": "Carbon pricing has spread for two decades, yet several governments have repealed or abandoned consumer carbon prices, and the EU’s own system came under pressure in 2026. The dispute is whether those reversals reflect bad design or a hard limit.",
+    "detail": "Those who expect pricing to last point to the EU and California systems, which have survived recessions and energy shocks; to California’s 2025 extension of its program through 2045; to new national systems in India, Japan and Viet Nam; and to Washington’s 2024 vote. They argue that the failures came from visible consumer taxes introduced without visible benefits, and that design answers them: return or visibly spend the revenue, phase prices in, price industry upstream, and pair the price with a border levy so domestic firms are not undercut.\n\nThose who expect pricing to stall argue that whenever a price is high enough to be felt at the pump or on a heating bill, it becomes the opposition’s best campaign issue. Australia’s Senate repealed the national carbon tax in July 2014, France dropped a planned fuel-tax rise in December 2018 after the gilets jaunes protests, and Canada set its consumer carbon price to zero in April 2025 and repealed it in law in March 2026; the same year, the pressure reached the EU system itself, carbon pricing’s strongest home. A policy that works only at prices voters will not accept is, in this view, not a policy that works.",
+    "lean_label_a": "Can endure",
+    "lean_label_b": "Will stall",
+    "id": "can-carbon-prices-rise-high-enough"
+   },
+   {
+    "text": "Should heavy industry be shielded from carbon prices with free allowances and border levies?",
+    "kind": "value",
+    "why": "Free allowances and border levies both answer leakage, the risk that a carbon price moves production and its emissions abroad. How large that risk is, and whether a border levy is fair trade or protection, are both disputed.",
+    "detail": "Those who favor protection argue that without free allocation or a border charge, a carbon price simply exports factories, jobs and emissions to countries without one. Italy’s business minister Adolfo Urso said in February 2026 that “the mechanism of the ETS, as it is currently drafted, is only a tax, a tariff on the energy-intensive companies,” Euronews reported. A border levy also presses trading partners to price carbon themselves, and several have cited the EU’s in moving toward their own.\n\nThose who favor a full price argue that ex-post studies have found little evidence of large-scale leakage so far, and that free allocation blunts the incentive to decarbonize exactly where emissions are hardest to cut. Developing-country governments add that a border levy charges their exporters for a cost they did not choose, set by countries that caused most past warming, and that the Paris Agreement’s principle of common but differentiated responsibilities commits rich countries to move first and furthest rather than to make poorer ones pay the same price per tonne.",
+    "lean_label_a": "Shield industry",
+    "lean_label_b": "Price it fully",
+    "id": "should-heavy-industry-be-shielded-from"
+   },
+   {
+    "text": "Do carbon credits for avoided deforestation, cookstoves and similar projects represent real cuts?",
+    "kind": "empirical",
+    "why": "Studies of past credits found that most did not deliver the cuts claimed. The industry has since tightened its rules, and the open question is whether reformed credits are reliable, not whether many past ones were.",
+    "detail": "Those who defend credits argue that the critical studies examined older methodologies and project types, some since rejected or tightened, and that new rules require stricter baselines, satellite monitoring of forests and buffer pools against reversal. The Integrity Council for the Voluntary Carbon Market now labels approved methodologies, buyers pay a premium for highly rated credits, and some project types score well even in the critical studies. Credits are, on this view, a fixable measurement problem attached to real money for forests and communities.\n\nThose who doubt credits argue that the failure is structural. A credit depends on a counterfactual, what would have happened without the project, that cannot be observed, and every party to the sale, from developer to verifier to buyer, gains from an inflated estimate. The reformed rules have not yet been tested by independent ex-post studies of the kind that found the earlier failures, and until they are, a credit lets a buyer claim a reduction that may not exist.",
+    "lean_label_a": "Mostly real",
+    "lean_label_b": "Mostly not real",
+    "id": "do-carbon-credits-for-avoided-deforestation"
+   },
+   {
+    "text": "Should carbon pricing revenue go back to households or into clean investment?",
+    "kind": "value",
+    "why": "Many economists favor equal per-person rebates, arguing that they make a carbon price progressive and keep government small. Others answer that voters barely noticed rebates, and that visible spending on transit and clean power holds support better.",
+    "detail": "Those who favor dividends argue that returning the money keeps the price signal intact while leaving most lower-income households better off on direct costs. Canada’s Parliamentary Budget Officer estimated in October 2024 that, for 2030–31, the average household in each province would get back more in rebates than it paid in fuel charges; the same analysis found most households with a net loss once the drag on wages and investment income was counted, a figure that leaves out climate damage avoided. Dividends answer the charge that carbon pricing is a tax grab, and they let households, not governments, decide how to adjust.\n\nThose who favor investment argue that dividends proved invisible to voters and so failed politically, while spending produces benefits people can see. Investment also lowers the cost of cutting emissions, which reduces the price needed, and can be steered to the communities most exposed to pollution: Washington directs at least 35 percent of its program’s revenue to overburdened communities. Washington and California now call their systems cap-and-invest, and EU law requires trading revenue to go to climate and energy purposes.",
+    "lean_label_a": "Rebate households",
+    "lean_label_b": "Fund clean projects",
+    "id": "should-carbon-pricing-revenue-go-back"
+   },
+   {
+    "text": "Should carbon prices be eased when energy prices spike?",
+    "kind": "value",
+    "why": "Energy prices rose across Europe in 2026, driven by a March cut in world oil supply that the World Bank calls the largest oil shock on record. Several EU governments pressed to suspend or delay carbon pricing; others resisted.",
+    "detail": "In February 2026 Italy asked to suspend the EU trading system until it was reformed. In October, Poland, Hungary, Slovakia and the Czech Republic pressed to delay the second system, for heating and road fuel, from 2028 to 2030; the Nordic member states resisted reopening the timetable, and leaders agreed only to a review, EU Today reported. EU allowance prices swung between €62 and €91 a tonne in the first four months of 2026, which the World Bank says may reflect “heightened policy uncertainty” among other drivers.\n\nThose who would hold the price argue that a carbon price matters most for investment decisions that last decades, and that suspending it whenever fuel is dear tells every investor the signal is negotiable. A shock caused by dependence on imported oil and gas is, on this view, the best argument for cutting that dependence faster, and relief is better delivered through targeted transfers funded by carbon revenue.\n\nThose who would ease the price argue that adding a carbon cost on top of a record shock hits households and energy-intensive firms when they can least absorb it, and pushes production to competitors that pay no such price. Temporary suspension or price caps, on this view, protect public support for climate policy, because a policy that deepens a cost-of-living crisis is the one most likely to be repealed for good.",
+    "lean_label_a": "Hold the price",
+    "lean_label_b": "Ease the price",
+    "id": "should-carbon-prices-be-eased-when"
+   },
+   {
+    "text": "Should buyers be allowed to count purchased credits against their own emissions?",
+    "kind": "value",
+    "why": "Corporate net-zero claims, the aviation scheme CORSIA and trading between countries under the Paris Agreement all rest on it. Even if every credit were real, the dispute is whether a tonne cut elsewhere should cancel a tonne emitted at home.",
+    "detail": "The question is spreading into compliance markets: the European Commission’s July 2026 proposal would set aside allowances to buy up to 260 million tonnes of international credits for 2036 to 2040, about 2 percent of the EU’s 1990 net emissions, the International Carbon Action Partnership reports.\n\nThose who favor counting credits argue that a tonne avoided or removed anywhere has the same effect on the climate, so letting buyers pay for the cheapest tonnes lowers the cost of meeting targets and moves money to developing countries. Removals will be needed to balance emissions that cannot be cut, and only a market will pay for them at scale.\n\nThose who favor cutting at the source argue that offsetting delays the changes rich emitters must make, keeps pollution in the communities next to their plants, and shifts the work of mitigation onto land and people in the Global South, sometimes at the cost of Indigenous land rights. If credits are used at all, on this view, they should fund action beyond a buyer’s own cuts rather than cancel out its emissions.",
+    "lean_label_a": "Count credits",
+    "lean_label_b": "Cut at the source",
+    "id": "should-buyers-be-allowed-to-count"
+   },
+   {
+    "text": "What price should a tonne of carbon carry?",
+    "kind": "value",
+    "why": "In theory the price should equal the damage one more tonne does, the social cost of carbon. Estimates of that damage swing widely with how much future harm counts today and whether harm abroad counts.",
+    "detail": "US government estimates show the swing, as the Congressional Research Service summarized them in 2025: about US$1 to 8 a tonne in 2019, counting only domestic damage, at 7 and 3 percent discount rates; US$89 for 2030 emissions in 2021, at 2.5 percent; and US$140 to 380 for 2030 emissions in 2023, at 2.5 to 1.5 percent. In January 2025 Executive Order 14154 withdrew the estimates “as no longer representative of governmental policy.”\n\nThose who favor a high value argue that the welfare of future generations should count nearly as much as ours, so discount rates should be low, and that a national price should reflect global damage, because emissions mix globally and every country gains when others act. Modeled 1.5 °C pathways put the needed cost in the hundreds of dollars a tonne.\n\nThose who favor a low value argue that governments should weigh the costs to their own citizens today, that market interest rates are the honest discount rate, and that damage estimates centuries out are too uncertain to set prices by. A domestic price high enough to matter imposes certain costs now for benefits that depend on other countries acting too.",
+    "lean_label_a": "Full social cost",
+    "lean_label_b": "Low or none",
+    "id": "what-price-should-a-tonne-of"
+   }
+  ],
+  "positions": [
+   {
+    "name": "Pair a carbon price with rules and investment",
+    "color_key": "green",
+    "steelman": "A carbon price helps, but two decades show it cannot carry climate policy alone; standards, subsidies and public investment did most of the cutting, and the price should back them up.",
+    "detail": "Carbon pricing works in theory and helps in practice, but prices have stayed far below the levels models call for, because the industries that would pay most have the political power to keep them low and voters punish prices they can feel. Most of the cuts so far came from policies aimed at technologies directly: renewable mandates and subsidies that drove down the cost of solar and wind, efficiency and vehicle standards, coal phase-out rules, and public investment in grids and research. Those tools work where a price of a few tens of dollars a tonne changes little, in steel, cement, buildings and anywhere the clean technology is not yet built at scale. Danny Cullenward and David Victor argue that California’s cuts came mostly from such policies while its allowance prices stayed low, and that facing the structural problems of markets requires relying more heavily on smart regulation and industrial policy.\n\nThe usual objection is that standards and subsidies cost more per tonne than a price. That advantage is large in a model and small in practice, because the price never reaches the level the model assumes. Subsidies and standards created markets for technologies that then became cheaper than fossil fuels, which no politically plausible carbon price would have done alone, and that learning is the largest cost saving in climate policy. So keep a carbon price as a backstop, a revenue source and a way to cover industry, return or invest its revenue where people can see it, and do not stake the climate on the price alone.",
+    "proponents": "Third Way; Danny Cullenward; David Victor",
+    "id": "pair-a-carbon-price-with-standards"
+   },
+   {
+    "name": "Make a rising carbon price the core of climate policy",
+    "color_key": "blue",
+    "steelman": "Climate change is a pollution problem, and the cheapest way to cut pollution is to make polluters pay: a predictable, rising price finds the cheapest cuts across the whole economy at once.",
+    "detail": "A price on carbon reaches every emitter, every product and every choice, from how a steel plant runs to whether a family buys a heat pump, without a regulator having to know in advance where the cheapest cuts are. Those who can cut cheaply do so first; those who cannot, pay. That is why a price achieves a given cut at lower cost than any mix of mandates, and why economists across the political spectrum back one: the Climate Leadership Council’s economists’ statement calls a carbon tax “the most cost-effective lever to reduce carbon emissions at the scale and speed that is necessary.” Start the price moderate, raise it predictably, cover as much of the economy as possible, return the revenue to households or use it to cut other taxes, and add a border adjustment so industry is not undercut by countries that do not price carbon. Fairness between countries can be built in: IMF staff have proposed an international price floor for the largest emitters, phased in by 2030 at US$75, US$50 and US$25 a ton for high-, middle- and low-income countries.\n\nTo the objection that prices never rise high enough and voters reject them: prices were low because systems were built with loose caps and generous free allocation, not because pricing fails. The EU tightened its cap and built a reserve to absorb surplus allowances, and its price rose accordingly. The repeals came from consumer taxes whose rebates voters could not see, and Washington’s vote shows a program can survive a direct challenge when its benefits are visible. Subsidies carry their own political risk: many of the wind and solar tax credits the United States enacted in 2022 were cut back by a law signed on July 4, 2025.",
+    "proponents": "Climate Leadership Council; International Monetary Fund; Citizens’ Climate Lobby",
+    "id": "make-a-rising-carbon-price-the"
+   },
+   {
+    "name": "Repeal or suspend carbon prices to cut energy costs",
+    "color_key": "amber",
+    "steelman": "A carbon price is a tax on energy, which is in everything people buy: it raises living costs and drives industry abroad, while the countries whose emissions grow fastest price carbon lightly.",
+    "detail": "It raises what families pay for fuel, heating and food, and what factories pay to make steel, fertilizer and cement. The result is higher living costs at home, and production, jobs and emissions moving abroad. Voters understood this: they turned against carbon taxes in Australia and Canada and forced France to back down. Rebates do not fix it, because they hand back part of what was taken while the economy pays the rest; Canada’s own budget officer found most households coming out behind once the effect on wages and investment income was counted. In an energy price shock like 2026’s, adding a carbon cost on top is the worst possible policy. Some of us want full repeal; others would suspend, slow or cap prices until they are reformed, or replace a domestic carbon price with a fee on carbon-intensive imports, as in the Foreign Pollution Fee Act that US Senators Bill Cassidy and Lindsey Graham reintroduced in April 2025.\n\nTo the objection that removing the price leaves climate damage unpaid: the cuts achievable from a price voters will tolerate are small, and the large declines in power-sector emissions came from technology and plant closures that do not need a consumer price. The damage figures that justify high prices rest on contested discount rates and long-range models, while the cost of energy today is certain and falls hardest on rural and lower-income households. Emissions should fall through innovation, nuclear power and cleaner technology that wins on cost, not through policies designed to make energy dearer.",
+    "proponents": "Canadian Taxpayers Federation; Pierre Poilievre; Adolfo Urso",
+    "id": "repeal-or-suspend-carbon-prices-to"
+   },
+   {
+    "name": "Cut emissions at the source without pricing pollution",
+    "color_key": "rust",
+    "steelman": "Putting a price on carbon turns pollution into a right the biggest emitters can buy; cut emissions where they happen and leave fossil fuels in the ground instead.",
+    "detail": "A price lets the biggest polluters keep polluting as long as they can pay, and it concentrates harm in the low-income, Black, Brown and Indigenous communities next to refineries, power plants and industrial zones, which breathe the other pollutants that come with the carbon. A 2018 study of California’s first years of trading, by Cushing and colleagues in PLOS Medicine, found that 52 percent of regulated facilities reported higher in-state greenhouse gas emissions after trading began, and that neighborhoods near increases had higher shares of people of color and poor residents; its authors call the results preliminary. Trading and offsets are worse: they let a corporation in the North claim credit for a forest in the South, often on land taken from or managed without the consent of the Indigenous peoples who live there, while the reductions on paper do not happen. Some of us would accept a carbon tax whose revenue funds frontline communities; others reject any pricing of carbon as commodification.\n\nTo the objection that direct limits cost more, and that the EU system has halved its covered emissions: a cost estimate that leaves out the health of fence-line communities and the rights of forest peoples is not a full cost. Coal plants have been closed by rules and timetables, which deliver a known result on a known date, and where a price helped, it sped up what regulation was already doing. Pricing has been the favored policy of governments and economists for three decades, and global emissions are still higher than when it started. What works is a managed decline of fossil fuel extraction and burning, binding limits on each facility, and public investment in a just transition led by the communities most affected.",
+    "proponents": "Indigenous Environmental Network; Climate Justice Alliance; Tom Goldtooth",
+    "id": "cut-emissions-at-the-source-without"
+   },
+   {
+    "name": "Scale trade in high-integrity carbon credits",
+    "color_key": "purple",
+    "steelman": "Carbon credits send money from those who emit to those who can cut or remove emissions more cheaply, mostly in developing countries; the early market’s flaws call for better rules, not abandonment.",
+    "detail": "Forests, clean cookstoves, methane capture and clean power in the developing world are short of finance, and credits pay for them; Kenya’s president William Ruto called Africa’s carbon sinks an “unparalleled economic goldmine” in 2023. The early market had serious quality problems, and the answer has been to fix them: independent standards, the Integrity Council’s Core Carbon Principles, ratings agencies, CORSIA eligibility rules and the UN’s new Paris Agreement Crediting Mechanism. Even the critical 2024 synthesis found that HFC-23 destruction projects delivered 68 percent of their claimed cuts. Companies that buy credits are cutting their own emissions faster, not slower: MSCI found in June 2023 that companies using material quantities of credits were “decarbonizing at twice the rate of companies that do not use carbon credits.” Removal credits, from forests to direct air capture, will be the main way to pay for taking carbon out of the air.\n\nTo the objection that most credits have not represented real reductions: the studies looked at a market built before integrity standards existed, and at project types the new standards have tightened or rejected. Every regulated market has needed rules to establish trust, and the answer to measurement error is better measurement, from satellite monitoring of forests to dynamic baselines, buffer pools and independent ratings, not closing the main channel of private climate finance to the countries that most need it.",
+    "proponents": "Integrity Council for the Voluntary Carbon Market; Coalition to Grow Carbon Markets; William Ruto",
+    "id": "scale-trade-in-high-integrity-carbon"
+   }
+  ],
+  "crux": {
+   "lead": "Can a carbon price set at a level people will accept do enough of the work of cutting emissions?",
+   "lead_highlight": "do enough of the work",
+   "subtitle": "Most of the arguments here come back to this. If a price that can survive politics still cuts emissions cheaply and at scale, it belongs at the center of climate policy. If it cannot, the work falls to rules, subsidies and public spending, and a price is at most a backstop.",
+   "empirical": "This half can be measured: how far emissions fall per dollar of price, and whether the effect grows as prices rise; how much of past declines the price caused, rather than subsidies, rules, plant closures and recessions; how much production really moves to places without a price; whether reformed credits deliver what they claim; and whether designs that hand back or visibly spend the revenue survive the higher energy bills a tighter limit brings.",
+   "values": "No data settles how much today’s costs to households and industry should weigh against climate damage decades away, whether a country should count the harm its emissions do abroad, whether rich and poor countries and households should pay the same per tonne, whether policy should hold steady through an energy shock, or whether emissions should carry a price at all."
+  },
+  "actions": [
+   {
+    "kind": "learn_more",
+    "title": "Explore the world’s carbon taxes and trading systems",
+    "description": "The World Bank’s annual State and Trends of Carbon Pricing report, the standard global count of carbon taxes and trading systems, with prices, coverage and revenue for each.",
+    "url": "https://documents1.worldbank.org/curated/en/099051826185087983/pdf/P502283-3ee8b1dc-6f1a-46dd-8141-e6534fd34af9.pdf",
+    "for_position": null,
+    "id": "explore-the-world-s-carbon-taxes"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read “Making Climate Policy Work”",
+    "description": "Danny Cullenward and David Victor’s case that carbon markets underdeliver and that climate policy should lean on regulation and industrial policy, with a price in a supporting role.",
+    "url": "https://www.ghgpolicy.org/book",
+    "for_position": "Pair a carbon price with rules and investment",
+    "id": "read-making-climate-policy-work"
+   },
+   {
+    "kind": "volunteer",
+    "title": "Join Citizens’ Climate Lobby",
+    "description": "A volunteer organization with local chapters that lobbies the US Congress and other legislatures for a carbon fee whose revenue is returned to households.",
+    "url": "https://citizensclimatelobby.org/",
+    "for_position": "Make a rising carbon price the core of climate policy",
+    "id": "join-citizens-climate-lobby"
+   },
+   {
+    "kind": "policy",
+    "title": "Follow the Canadian Taxpayers Federation’s campaigns",
+    "description": "The taxpayer advocacy group that campaigned to end Canada’s consumer carbon tax and has also campaigned against the country’s industrial carbon price.",
+    "url": "https://www.taxpayer.com/campaigns",
+    "for_position": "Repeal or suspend carbon prices to cut energy costs",
+    "id": "follow-the-canadian-taxpayers-federation-s"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Read the Indigenous Environmental Network on carbon pricing",
+    "description": "The network’s resources on why it opposes carbon taxes, cap-and-trade and offsets, and what frontline and Indigenous communities propose instead.",
+    "url": "https://www.ienearth.org/carbon-pricing/",
+    "for_position": "Cut emissions at the source without pricing pollution",
+    "id": "read-the-indigenous-environmental-network-on"
+   },
+   {
+    "kind": "learn_more",
+    "title": "See the Core Carbon Principles",
+    "description": "The Integrity Council for the Voluntary Carbon Market’s benchmark for high-integrity credits and its list of approved methodologies, for buyers who want to use credits.",
+    "url": "https://icvcm.org/",
+    "for_position": "Scale trade in high-integrity carbon credits",
+    "id": "see-the-core-carbon-principles"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Browse the ICAP map of emissions trading systems",
+    "description": "The International Carbon Action Partnership’s interactive map and factsheets on every operating and planned emissions trading system, with caps, prices and allocation rules.",
+    "url": "https://icapcarbonaction.com/en/ets",
+    "for_position": null,
+    "id": "browse-the-icap-map-of-emissions"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Look up carbon credit quality scores",
+    "description": "The Carbon Credit Quality Initiative, run by Environmental Defense Fund, WWF-US and Oeko-Institut, scores credit project types against quality criteria in a free public tool.",
+    "url": "https://carboncreditquality.org/",
+    "for_position": null,
+    "id": "look-up-carbon-credit-quality-scores"
+   },
+   {
+    "kind": "local",
+    "title": "Track Washington’s Climate Commitment Act",
+    "description": "The Washington Department of Ecology’s page on the state’s cap-and-invest program, with auction results, rulemaking and opportunities for public comment.",
+    "url": "https://ecology.wa.gov/air-climate/climate-commitment-act",
+    "for_position": null,
+    "id": "track-washington-s-climate-commitment-act"
+   },
+   {
+    "kind": "learn_more",
+    "title": "Explore Resources for the Future’s carbon pricing research",
+    "description": "The nonpartisan research institution’s analyses of carbon tax proposals, revenue options, border adjustments and how carbon prices affect households at different incomes.",
+    "url": "https://www.rff.org/topics/carbon-pricing/",
+    "for_position": null,
+    "id": "explore-resources-for-the-future-s"
+   }
+  ]
+ },
+ "icon": "tag",
+ "primary_image_prompt": "A minimalist flat vector-style icon illustration, in a clean editorial line-art style: one compact scene grouped in the center with wide white margins, nothing touching the edges: a large blank price tag with a round hole, hanging at a tilt, as the dominant focal mass in the upper middle, filled; its string loops down and ties around a rounded puff of smoke rising from a medium power station chimney below it, so the tag overlaps the smoke; the chimney stands on a gently curved hill; a small stand of three young trees on the right slope of the hill; one long sagging power line on poles crossing the whole scene behind the chimney as the connective element; the ground is a gentle curve.\n\nComposition: one dominant focal mass with smaller supporting elements at clearly different scales (big, medium, small); at least one element overlaps another so the scene has depth; the ground is a gentle curve, never a flat line; one connective element runs across the frame to tie the pieces together. A single coherent scene, not a row of separate objects. Centered with generous, even padding.\n\nStyle: monoline line art with ONE uniform stroke weight on every element, including the thinnest wisps and lines. Rounded line caps and corners. Confident, slightly bold strokes so it stays legible when small. No fussy internal detail.\n\nColor: a single hue, two tones only. Draw all lines in solid #3f9a6a, and give every major mass a clearly visible soft fill of the same hue at about 15-18% opacity, so the duotone is obviously present rather than white interiors. No other colors, no gradients, no shadows, no 3D, no texture.\n\nImportant: NO border, NO frame, NO box or outline around the scene, just the illustration on a plain white background. No text, letters, or numbers. No human figures or faces. Calm, neutral, editorial mood: show the subject plainly, neither celebrating nor warning. Also avoid: text, numbers, currency symbols, dollar signs, coins with faces, banknotes, scales or balances, seesaws, arrows, charts, graphs, thermometers, globes, warning signs, black smoke, flames, skulls, dead trees, gauges or dials, factories with sawtooth roofs, oil pumpjacks."
 }
