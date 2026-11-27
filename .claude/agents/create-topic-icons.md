@@ -27,7 +27,9 @@ scope, `content.overview.summary`, the position names (they tell you what the
 tension is), `primary_category`. Look at `static/img/categories/<primary_category>.png`
 so the topic sits in the same house style. Look at any sibling topic art in the same category
 (`static/img/topics/*.png` for topics whose `primary_category` matches) so this one
-reads as different at tile size.
+reads as different at tile size. Then read every other topic's scene
+(`grep -A2 -h '^## Scene' research/topics/*/icon.md`) and do not make another
+topic's dominant focal object yours (an hourglass, a microchip): reuse costs a redraw.
 
 ## The tool
 
@@ -92,7 +94,12 @@ Pick the most literal single glyph for the topic. It must not repeat another top
 the same primary category: check with
 `grep -l '"primary_category": "<cat>"' research/topics/*/topic.json | xargs grep -h '"icon"'`.
 Write it to `icon` in `topic.json` with a one-line python edit that preserves the
-file's formatting (`json.dumps(d, indent=1, ensure_ascii=False) + "\n"`).
+file's formatting (`json.dumps(d, indent=1, ensure_ascii=False) + "\n"`). If the file
+has no `icon` key yet, insert it right after `primary_category`, never at the end.
+
+The editor may be writing `content` in the same file while you work. Re-read
+`topic.json` immediately before each write and change only `icon` and
+`primary_image_prompt`; never write back a copy you read earlier.
 
 Write the winning prompt into the topic file as provenance, exactly as it stands in
 `icon.md` under `## Prompt` (the schema's `primary_image_prompt`, placed after `icon`), reading the blockquote the same way the loader does:

@@ -8,7 +8,8 @@ Scans every user-facing URL in the topic content tree — the primary target is
     redirect     reachable after one or more 3xx hops (final URL is reported so
                  an editor can update the stored link)
     blocked      401/403/429, or a network failure to a known bot-walled host
-                 (e.g. *.gov). Live, but unverifiable by a script — needs a
+                 (e.g. *.gov), or a 404 from one whose home page also 404s
+                 (ftc.gov). Live, but unverifiable by a script — needs a
                  manual check. NOT counted as dead.
     dead         other 4xx/5xx, DNS failure, or timeout
 
@@ -61,6 +62,9 @@ _BOT_WALLED_HOSTS = {
     "fred.stlouisfed.org",
     # Akamai hangs scripted requests; the pages load in a browser.
     "canada.ca",
+    # Close the connection on scripted requests; the pages load in a browser.
+    "afar.org",
+    "longevity.technology",
 }
 
 # HEAD outcomes that mean "the server didn't really answer" — retry with GET.
@@ -243,8 +247,16 @@ def check_one(url: str, timeout: float, cache: Optional[dict] = None) -> LinkChe
     if cache is not None and raw in cache:
         return cache[raw]
     probe = _probe(raw, timeout)
-    status = classify(probe, _is_bot_walled(raw))
-    result = LinkCheck(status, raw, probe.final_url or raw, _note_for(status, probe))
+    walled = _is_bot_walled(raw)
+    status = classify(probe, walled)
+    note = _note_for(status, probe)
+    # A bot-walled host that 404s its own home page (ftc.gov) is refusing the
+    # script, not reporting a missing page.
+    if status == "dead" and walled and probe.status_code == 404:
+        parts = urllib.parse.urlsplit(raw)
+        if _probe(f"{parts.scheme}://{parts.netloc}/", timeout).status_code == 404:
+            status, note = "blocked", "HTTP 404, home page too"
+    result = LinkCheck(status, raw, probe.final_url or raw, note)
     if cache is not None:
         cache[raw] = result
     return result
